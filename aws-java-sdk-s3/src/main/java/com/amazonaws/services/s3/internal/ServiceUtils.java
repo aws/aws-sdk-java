@@ -285,7 +285,7 @@ public class ServiceUtils {
         if ( parentDirectory != null && !parentDirectory.exists() ) {
             if (!(parentDirectory.mkdirs())) {
                 throw new AmazonClientException(
-                        "Unable to create directory in the path"
+                        "Unable to create directory in the path: "
                                 + parentDirectory.getAbsolutePath());
             }
         }

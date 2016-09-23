@@ -199,10 +199,8 @@ final class DownloadCallable implements Callable<File> {
         final File parentDirectory = dstfile.getParentFile();
         if (parentDirectory == null || parentDirectory.exists()) {
             truncateDestinationFileIfNecessary();
-        } else {
-            if (!parentDirectory.mkdirs()) {
-                throw new AmazonClientException("Unable to create directory in the path" + parentDirectory.getAbsolutePath());
-            }
+        } else if (!parentDirectory.mkdirs()) {
+            throw new AmazonClientException("Unable to create directory in the path: " + parentDirectory.getAbsolutePath());
         }
 
         for (Future<File> f : futureFiles) {
