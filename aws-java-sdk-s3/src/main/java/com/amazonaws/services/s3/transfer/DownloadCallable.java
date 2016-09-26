@@ -15,7 +15,6 @@
 package com.amazonaws.services.s3.transfer;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.net.SocketException;
 import java.util.ArrayList;
@@ -197,7 +196,10 @@ final class DownloadCallable implements Callable<File> {
      * Merges all the individual part Files into dstFile
      */
     private void combineFiles() throws Exception {
-        truncateDestinationFileIfNecessary();
+        if (!ServiceUtils.createParentDirectoryIfNecessary(dstfile)) {
+            truncateDestinationFileIfNecessary();
+        }
+
         for (Future<File> f : futureFiles) {
             File partFile = f.get();
             ServiceUtils.appendFile(partFile, dstfile);
@@ -217,7 +219,7 @@ final class DownloadCallable implements Callable<File> {
      * operation), adjust the file length so that the part starts writing from
      * the correct position.
      */
-    private void truncateDestinationFileIfNecessary() throws IOException {
+    private void truncateDestinationFileIfNecessary() {
         RandomAccessFile raf = null;
         if (!FileLocks.lock(dstfile)) {
             throw new FileLockException("Fail to lock " + dstfile);

@@ -280,15 +280,7 @@ public class ServiceUtils {
         final boolean appendData,
         final long expectedFileLength)
     {
-        // attempt to create the parent if it doesn't exist
-        File parentDirectory = dstfile.getParentFile();
-        if ( parentDirectory != null && !parentDirectory.exists() ) {
-            if (!(parentDirectory.mkdirs())) {
-                throw new AmazonClientException(
-                        "Unable to create directory in the path"
-                                + parentDirectory.getAbsolutePath());
-            }
-        }
+        createParentDirectoryIfNecessary(dstfile);
 
         if (!FileLocks.lock(dstfile)) {
             throw new FileLockException("Fail to lock " + dstfile
@@ -339,6 +331,25 @@ public class ServiceUtils {
                         "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
                         "The data stored in '" + dstfile.getAbsolutePath() + "' may be corrupt.");
             }
+        }
+    }
+
+    /**
+     * Creates the parent directory for a file if it doesn't already exist.
+     * @param file
+     * @throws AmazonClientException when creation of parent directory failed.
+     *
+     * @return true if the parent directory was created, false if the directory already existed
+     */
+    public static boolean createParentDirectoryIfNecessary(final File file) {
+        final File parentDirectory = file.getParentFile();
+        if (parentDirectory == null || parentDirectory.exists()) {
+            return false;
+        }
+        if (parentDirectory.mkdirs()) {
+            return true;
+        } else {
+            throw new AmazonClientException("Unable to create directory in the path: " + parentDirectory.getAbsolutePath());
         }
     }
 
