@@ -196,11 +196,8 @@ final class DownloadCallable implements Callable<File> {
      * Merges all the individual part Files into dstFile
      */
     private void combineFiles() throws Exception {
-        final File parentDirectory = dstfile.getParentFile();
-        if (parentDirectory == null || parentDirectory.exists()) {
+        if (!ServiceUtils.createParentDirectoryIfNecessary(dstfile)) {
             truncateDestinationFileIfNecessary();
-        } else if (!parentDirectory.mkdirs()) {
-            throw new AmazonClientException("Unable to create directory in the path: " + parentDirectory.getAbsolutePath());
         }
 
         for (Future<File> f : futureFiles) {
