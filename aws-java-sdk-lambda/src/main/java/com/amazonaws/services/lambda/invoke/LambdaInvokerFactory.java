@@ -113,14 +113,13 @@ public final class LambdaInvokerFactory {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-
-            LambdaFunction annotation = validateInterfaceMethod(method, args);
-
-            InvokeRequest invokeRequest = buildInvokeRequest(method, annotation, args == null ? null : args[0]);
-
-            InvokeResult invokeResult = awsLambda.invoke(invokeRequest);
-
-            return processInvokeResult(method, invokeResult);
+            if(method.getName().equals("toString")) return this.toString();
+            else {
+                LambdaFunction annotation = validateInterfaceMethod(method, args);
+                InvokeRequest invokeRequest = buildInvokeRequest(method, annotation, args == null ? null : args[0]);
+                InvokeResult invokeResult = awsLambda.invoke(invokeRequest);
+                return processInvokeResult(method, invokeResult);
+            }
         }
 
         /**
