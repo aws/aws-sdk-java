@@ -515,6 +515,11 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * Returns the description for the specified stack; if no stack name was specified, then it returns the description
      * for all the stacks created.
      * </p>
+     * <note>
+     * <p>
+     * If the stack does not exist, an <code>AmazonCloudFormationException</code> is returned.
+     * </p>
+     * </note>
      * 
      * @param describeStacksRequest
      *        The input for <a>DescribeStacks</a> action.
@@ -528,6 +533,11 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * Returns the description for the specified stack; if no stack name was specified, then it returns the description
      * for all the stacks created.
      * </p>
+     * <note>
+     * <p>
+     * If the stack does not exist, an <code>AmazonCloudFormationException</code> is returned.
+     * </p>
+     * </note>
      * 
      * @param describeStacksRequest
      *        The input for <a>DescribeStacks</a> action.
@@ -1023,7 +1033,9 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Validates a specified template.
+     * Validates a specified template. AWS CloudFormation first checks if the template is valid JSON. If it isn't, AWS
+     * CloudFormation checks if the template is valid YAML. If both these checks fail, AWS CloudFormation returns a
+     * template validation error.
      * </p>
      * 
      * @param validateTemplateRequest
@@ -1035,7 +1047,9 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Validates a specified template.
+     * Validates a specified template. AWS CloudFormation first checks if the template is valid JSON. If it isn't, AWS
+     * CloudFormation checks if the template is valid YAML. If both these checks fail, AWS CloudFormation returns a
+     * template validation error.
      * </p>
      * 
      * @param validateTemplateRequest

@@ -80,8 +80,8 @@ public class StackResourceDetail implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The JSON format content of the <code>Metadata</code> attribute declared for the resource. For more information,
-     * see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+     * The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      * Attribute</a> in the AWS CloudFormation User Guide.
      * </p>
      */
@@ -500,14 +500,13 @@ public class StackResourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The JSON format content of the <code>Metadata</code> attribute declared for the resource. For more information,
-     * see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+     * The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      * Attribute</a> in the AWS CloudFormation User Guide.
      * </p>
      * 
      * @param metadata
-     *        The JSON format content of the <code>Metadata</code> attribute declared for the resource. For more
-     *        information, see <a
+     *        The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      *        Attribute</a> in the AWS CloudFormation User Guide.
      */
@@ -518,15 +517,14 @@ public class StackResourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The JSON format content of the <code>Metadata</code> attribute declared for the resource. For more information,
-     * see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+     * The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      * Attribute</a> in the AWS CloudFormation User Guide.
      * </p>
      * 
-     * @return The JSON format content of the <code>Metadata</code> attribute declared for the resource. For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-     *         Attribute</a> in the AWS CloudFormation User Guide.
+     * @return The content of the <code>Metadata</code> attribute declared for the resource. For more information, see
+     *         <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">
+     *         Metadata Attribute</a> in the AWS CloudFormation User Guide.
      */
 
     public String getMetadata() {
@@ -535,14 +533,13 @@ public class StackResourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The JSON format content of the <code>Metadata</code> attribute declared for the resource. For more information,
-     * see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+     * The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      * Attribute</a> in the AWS CloudFormation User Guide.
      * </p>
      * 
      * @param metadata
-     *        The JSON format content of the <code>Metadata</code> attribute declared for the resource. For more
-     *        information, see <a
+     *        The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      *        Attribute</a> in the AWS CloudFormation User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.

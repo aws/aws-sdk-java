@@ -14,7 +14,7 @@ package com.amazonaws.services.kms.model;
 
 /**
  * <p>
- * The request was rejected because a grant token provided as part of the request is invalid.
+ * The request was rejected because the specified grant token is not valid.
  * </p>
  */
 public class InvalidGrantTokenException extends com.amazonaws.services.kms.model.AWSKMSException {

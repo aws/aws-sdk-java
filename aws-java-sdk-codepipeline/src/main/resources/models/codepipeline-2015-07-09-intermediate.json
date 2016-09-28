@@ -10925,10 +10925,10 @@
         "c2jName" : "category",
         "c2jShape" : "ActionCategory",
         "deprecated" : false,
-        "documentation" : "<p>The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p> </note>",
+        "documentation" : "<p>The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p> </note>",
         "enumType" : "ActionCategory",
-        "fluentSetterDocumentation" : "/**<p>The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p> </note>\n@param category The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionCategory*/",
-        "getterDocumentation" : "/**<p>The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p> </note>\n@return The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p>\n@see ActionCategory*/",
+        "fluentSetterDocumentation" : "/**<p>The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p> </note>\n@param category The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionCategory*/",
+        "getterDocumentation" : "/**<p>The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p> </note>\n@return The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p>\n@see ActionCategory*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -10953,7 +10953,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Category",
-        "setterDocumentation" : "/**<p>The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p> </note>\n@param category The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p>\n@see ActionCategory*/",
+        "setterDocumentation" : "/**<p>The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p> </note>\n@param category The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p>\n@see ActionCategory*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "category",
@@ -10963,12 +10963,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p> </note>\n@param category The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionCategory*/",
+        "varargSetterDocumentation" : "/**<p>The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p> </note>\n@param category The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionCategory*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "category",
           "variableType" : "String",
-          "documentation" : "<p>The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p> </note>",
+          "documentation" : "<p>The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p> </note>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11029,10 +11029,10 @@
         "c2jName" : "version",
         "c2jShape" : "Version",
         "deprecated" : false,
-        "documentation" : "<p>The version number of the custom action.</p>",
+        "documentation" : "<p>The version identifier of the custom action.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The version number of the custom action.</p>\n@param version The version number of the custom action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The version number of the custom action.</p>\n@return The version number of the custom action.*/",
+        "fluentSetterDocumentation" : "/**<p>The version identifier of the custom action.</p>\n@param version The version identifier of the custom action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The version identifier of the custom action.</p>\n@return The version identifier of the custom action.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -11057,7 +11057,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Version",
-        "setterDocumentation" : "/**<p>The version number of the custom action.</p>\n@param version The version number of the custom action.*/",
+        "setterDocumentation" : "/**<p>The version identifier of the custom action.</p>\n@param version The version identifier of the custom action.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "version",
@@ -11067,12 +11067,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The version number of the custom action.</p>\n@param version The version number of the custom action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The version identifier of the custom action.</p>\n@param version The version identifier of the custom action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "version",
           "variableType" : "String",
-          "documentation" : "<p>The version number of the custom action.</p>",
+          "documentation" : "<p>The version identifier of the custom action.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11358,10 +11358,10 @@
           "c2jName" : "category",
           "c2jShape" : "ActionCategory",
           "deprecated" : false,
-          "documentation" : "<p>The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p> </note>",
+          "documentation" : "<p>The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p> </note>",
           "enumType" : "ActionCategory",
-          "fluentSetterDocumentation" : "/**<p>The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p> </note>\n@param category The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionCategory*/",
-          "getterDocumentation" : "/**<p>The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p> </note>\n@return The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p>\n@see ActionCategory*/",
+          "fluentSetterDocumentation" : "/**<p>The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p> </note>\n@param category The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionCategory*/",
+          "getterDocumentation" : "/**<p>The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p> </note>\n@return The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p>\n@see ActionCategory*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -11386,7 +11386,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Category",
-          "setterDocumentation" : "/**<p>The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p> </note>\n@param category The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p>\n@see ActionCategory*/",
+          "setterDocumentation" : "/**<p>The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p> </note>\n@param category The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p>\n@see ActionCategory*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "category",
@@ -11396,12 +11396,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p> </note>\n@param category The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionCategory*/",
+          "varargSetterDocumentation" : "/**<p>The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p> </note>\n@param category The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ActionCategory*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "category",
             "variableType" : "String",
-            "documentation" : "<p>The category of the custom action, such as a source action or a build action.</p> <note> <p>Although Source is listed as a valid value, it is not currently functional. This value is reserved for future use.</p> </note>",
+            "documentation" : "<p>The category of the custom action, such as a build action or a test action.</p> <note> <p>Although Source and Approval are listed as valid values, they are not currently functional. These values are reserved for future use.</p> </note>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11743,10 +11743,10 @@
           "c2jName" : "version",
           "c2jShape" : "Version",
           "deprecated" : false,
-          "documentation" : "<p>The version number of the custom action.</p>",
+          "documentation" : "<p>The version identifier of the custom action.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The version number of the custom action.</p>\n@param version The version number of the custom action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The version number of the custom action.</p>\n@return The version number of the custom action.*/",
+          "fluentSetterDocumentation" : "/**<p>The version identifier of the custom action.</p>\n@param version The version identifier of the custom action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The version identifier of the custom action.</p>\n@return The version identifier of the custom action.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -11771,7 +11771,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Version",
-          "setterDocumentation" : "/**<p>The version number of the custom action.</p>\n@param version The version number of the custom action.*/",
+          "setterDocumentation" : "/**<p>The version identifier of the custom action.</p>\n@param version The version identifier of the custom action.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "version",
@@ -11781,12 +11781,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The version number of the custom action.</p>\n@param version The version number of the custom action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The version identifier of the custom action.</p>\n@param version The version identifier of the custom action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "version",
             "variableType" : "String",
-            "documentation" : "<p>The version number of the custom action.</p>",
+            "documentation" : "<p>The version identifier of the custom action.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

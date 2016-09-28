@@ -130,7 +130,7 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * You can use this value to allow the operations permitted by the grant only when a specified encryption context is
      * present. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a> in the
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
@@ -1048,7 +1048,7 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * You can use this value to allow the operations permitted by the grant only when a specified encryption context is
      * present. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a> in the
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -1057,8 +1057,8 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        You can use this value to allow the operations permitted by the grant only when a specified encryption
      *        context is present. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a> in
-     *        the <i>AWS Key Management Service Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>
+     *        in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public void setConstraints(GrantConstraints constraints) {
@@ -1072,7 +1072,7 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * You can use this value to allow the operations permitted by the grant only when a specified encryption context is
      * present. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a> in the
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -1080,8 +1080,8 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         You can use this value to allow the operations permitted by the grant only when a specified encryption
      *         context is present. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>
-     *         in the <i>AWS Key Management Service Developer Guide</i>.
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *         Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public GrantConstraints getConstraints() {
@@ -1095,7 +1095,7 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * You can use this value to allow the operations permitted by the grant only when a specified encryption context is
      * present. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a> in the
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -1104,8 +1104,8 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        You can use this value to allow the operations permitted by the grant only when a specified encryption
      *        context is present. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a> in
-     *        the <i>AWS Key Management Service Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>
+     *        in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -114,6 +114,13 @@ public class Stack implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Output> outputs;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that is associated with the
+     * stack. During a stack operation, AWS CloudFormation uses this role's credentials to make calls on your behalf.
+     * </p>
+     */
+    private String roleARN;
+    /**
+     * <p>
      * A list of <code>Tag</code>s that specify information about the stack.
      * </p>
      */
@@ -944,6 +951,55 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that is associated with the
+     * stack. During a stack operation, AWS CloudFormation uses this role's credentials to make calls on your behalf.
+     * </p>
+     * 
+     * @param roleARN
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that is associated with
+     *        the stack. During a stack operation, AWS CloudFormation uses this role's credentials to make calls on your
+     *        behalf.
+     */
+
+    public void setRoleARN(String roleARN) {
+        this.roleARN = roleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that is associated with the
+     * stack. During a stack operation, AWS CloudFormation uses this role's credentials to make calls on your behalf.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that is associated
+     *         with the stack. During a stack operation, AWS CloudFormation uses this role's credentials to make calls
+     *         on your behalf.
+     */
+
+    public String getRoleARN() {
+        return this.roleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that is associated with the
+     * stack. During a stack operation, AWS CloudFormation uses this role's credentials to make calls on your behalf.
+     * </p>
+     * 
+     * @param roleARN
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that is associated with
+     *        the stack. During a stack operation, AWS CloudFormation uses this role's credentials to make calls on your
+     *        behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withRoleARN(String roleARN) {
+        setRoleARN(roleARN);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of <code>Tag</code>s that specify information about the stack.
      * </p>
      * 
@@ -1052,6 +1108,8 @@ public class Stack implements Serializable, Cloneable {
             sb.append("Capabilities: " + getCapabilities() + ",");
         if (getOutputs() != null)
             sb.append("Outputs: " + getOutputs() + ",");
+        if (getRoleARN() != null)
+            sb.append("RoleARN: " + getRoleARN() + ",");
         if (getTags() != null)
             sb.append("Tags: " + getTags());
         sb.append("}");
@@ -1120,6 +1178,10 @@ public class Stack implements Serializable, Cloneable {
             return false;
         if (other.getOutputs() != null && other.getOutputs().equals(this.getOutputs()) == false)
             return false;
+        if (other.getRoleARN() == null ^ this.getRoleARN() == null)
+            return false;
+        if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1145,6 +1207,7 @@ public class Stack implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode());
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
+        hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

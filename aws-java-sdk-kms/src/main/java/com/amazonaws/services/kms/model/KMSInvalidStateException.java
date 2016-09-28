@@ -17,9 +17,9 @@ package com.amazonaws.services.kms.model;
  * The request was rejected because the state of the specified resource is not valid for this request.
  * </p>
  * <p>
- * For more information about how key state affects the use of a customer master key (CMK), see <a
- * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
- * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+ * For more information about how key state affects the use of a CMK, see <a
+ * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer
+ * Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
  * </p>
  */
 public class KMSInvalidStateException extends com.amazonaws.services.kms.model.AWSKMSException {

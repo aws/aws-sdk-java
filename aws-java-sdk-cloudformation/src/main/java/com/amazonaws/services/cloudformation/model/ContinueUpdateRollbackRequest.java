@@ -28,6 +28,20 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String stackName;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to roll back the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation always uses this role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it.
+     * Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     */
+    private String roleARN;
 
     /**
      * <p>
@@ -70,6 +84,94 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to roll back the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation always uses this role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it.
+     * Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @param roleARN
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     *        assumes to roll back the stack. AWS CloudFormation uses the role's credentials to make calls on your
+     *        behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long as users
+     *        have permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have
+     *        permission to pass it. Ensure that the role grants least privilege.</p>
+     *        <p>
+     *        If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *        stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *        user credentials.
+     */
+
+    public void setRoleARN(String roleARN) {
+        this.roleARN = roleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to roll back the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation always uses this role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it.
+     * Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS
+     *         CloudFormation assumes to roll back the stack. AWS CloudFormation uses the role's credentials to make
+     *         calls on your behalf. AWS CloudFormation always uses this role for all future operations on the stack. As
+     *         long as users have permission to operate on the stack, AWS CloudFormation uses this role even if the
+     *         users don't have permission to pass it. Ensure that the role grants least privilege.</p>
+     *         <p>
+     *         If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *         stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *         user credentials.
+     */
+
+    public String getRoleARN() {
+        return this.roleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to roll back the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation always uses this role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it.
+     * Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @param roleARN
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     *        assumes to roll back the stack. AWS CloudFormation uses the role's credentials to make calls on your
+     *        behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long as users
+     *        have permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have
+     *        permission to pass it. Ensure that the role grants least privilege.</p>
+     *        <p>
+     *        If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *        stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *        user credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContinueUpdateRollbackRequest withRoleARN(String roleARN) {
+        setRoleARN(roleARN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -81,7 +183,9 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName());
+            sb.append("StackName: " + getStackName() + ",");
+        if (getRoleARN() != null)
+            sb.append("RoleARN: " + getRoleARN());
         sb.append("}");
         return sb.toString();
     }
@@ -100,6 +204,10 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false)
             return false;
+        if (other.getRoleARN() == null ^ this.getRoleARN() == null)
+            return false;
+        if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
+            return false;
         return true;
     }
 
@@ -109,6 +217,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
+        hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         return hashCode;
     }
 

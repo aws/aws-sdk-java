@@ -28,9 +28,11 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.http.MockServerTestBase;
 import com.amazonaws.http.apache.client.impl.ApacheHttpClientFactory;
 import com.amazonaws.http.apache.client.impl.ConnectionManagerAwareHttpClient;
 import com.amazonaws.http.client.HttpClientFactory;
+import com.amazonaws.http.server.MockServer;
 import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.http.timers.client.DummySuccessfulResponseServerIntegrationTests;
 
@@ -39,12 +41,17 @@ import com.amazonaws.http.timers.client.DummySuccessfulResponseServerIntegration
  * a 200 OK will be returned. We'll take advantage of this returned status code to test whether
  * a request to the given fake service host is passed through the proxy or not.
  */
-public class SdkProxyRoutePlannerIntegrationTest extends DummySuccessfulResponseServerIntegrationTests {
+public class SdkProxyRoutePlannerIntegrationTest extends MockServerTestBase {
 
     private static final String FOO_FAKE_SERVICE_HOST_PREFIX = UUID.randomUUID().toString();
     private static final String FOO_FAKE_SERVICE_HOST = FOO_FAKE_SERVICE_HOST_PREFIX + ".com";
     private static final String BAR_FAKE_SERVICE_HOST = UUID.randomUUID().toString() + ".com";
     private static final String BAZ_FAKE_SERVICE_HOST = UUID.randomUUID().toString() + ".com";
+
+    @Override
+    protected MockServer buildMockServer() {
+        return new MockServer(MockServer.DummyResponseServerBehavior.build(200, "OK", "Hi"));
+    }
 
     @Test
     public void nonProxyHostsNull_fakeHost() {

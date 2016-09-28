@@ -15,28 +15,63 @@
 
 package com.amazonaws.services.lambda.invoke;
 
+import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.util.ValidationUtils;
 
 /**
  * Configuration for {@link LambdaInvokerFactory} to override default behavior.
+ *
+ * @deprecated Use {@link LambdaInvokerFactory#builder()} to configure invoker factory.
  */
+@Deprecated
 public class LambdaInvokerFactoryConfig {
 
-    private LambdaFunctionNameResolver lambdaFunctionNameResolver = new DefaultLambdaFunctionNameResolver();
+    private LambdaFunctionNameResolver lambdaFunctionNameResolver;
+    private final String functionAlias;
+    private final String functionVersion;
+
+    /**
+     * @deprecated Use {@link LambdaInvokerFactory#builder()} to configure invoker factory.
+     */
+    @Deprecated
+    public LambdaInvokerFactoryConfig() {
+        this(new DefaultLambdaFunctionNameResolver(), null, null);
+    }
+
+    @SdkProtectedApi
+    LambdaInvokerFactoryConfig(LambdaFunctionNameResolver lambdaFunctionNameResolver,
+                               String functionAlias,
+                               String functionVersion) {
+        this.lambdaFunctionNameResolver = lambdaFunctionNameResolver;
+        this.functionAlias = functionAlias;
+        this.functionVersion = functionVersion;
+    }
 
     public LambdaFunctionNameResolver getLambdaFunctionNameResolver() {
         return lambdaFunctionNameResolver;
     }
 
+    public String getFunctionAlias() {
+        return functionAlias;
+    }
+
+    public String getFunctionVersion() {
+        return functionVersion;
+    }
+
     /**
      * Sets a new Function name resolver to override the default behavior.
-     * 
-     * @param functionNameResolver
-     *            Implementation of {@link LambdaFunctionNameResolver}
+     *
+     * @param functionNameResolver Implementation of {@link LambdaFunctionNameResolver}
      * @return The current object for method chaining
+     * @deprecated Use {@link LambdaInvokerFactory#builder()} to configure invoker factory.
      */
-    public LambdaInvokerFactoryConfig withLambdaFunctionNameResolver(LambdaFunctionNameResolver functionNameResolver) {
-        this.lambdaFunctionNameResolver = ValidationUtils.assertNotNull(functionNameResolver, "functionNameResolver");
+    @Deprecated
+    public LambdaInvokerFactoryConfig withLambdaFunctionNameResolver(
+            LambdaFunctionNameResolver functionNameResolver) {
+        this.lambdaFunctionNameResolver = ValidationUtils
+                .assertNotNull(functionNameResolver, "functionNameResolver");
         return this;
     }
+
 }

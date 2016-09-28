@@ -137,6 +137,10 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             }
         }
 
+        if (createStackRequest.getRoleARN() != null) {
+            request.addParameter("RoleARN", StringUtils.fromString(createStackRequest.getRoleARN()));
+        }
+
         if (createStackRequest.getOnFailure() != null) {
             request.addParameter("OnFailure", StringUtils.fromString(createStackRequest.getOnFailure()));
         }

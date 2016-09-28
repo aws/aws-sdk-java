@@ -22,21 +22,18 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The
-     * current limit is 1024 bytes.
+     * The length of the byte string.
      * </p>
      */
     private Integer numberOfBytes;
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The
-     * current limit is 1024 bytes.
+     * The length of the byte string.
      * </p>
      * 
      * @param numberOfBytes
-     *        Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on.
-     *        The current limit is 1024 bytes.
+     *        The length of the byte string.
      */
 
     public void setNumberOfBytes(Integer numberOfBytes) {
@@ -45,12 +42,10 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The
-     * current limit is 1024 bytes.
+     * The length of the byte string.
      * </p>
      * 
-     * @return Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on.
-     *         The current limit is 1024 bytes.
+     * @return The length of the byte string.
      */
 
     public Integer getNumberOfBytes() {
@@ -59,13 +54,11 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The
-     * current limit is 1024 bytes.
+     * The length of the byte string.
      * </p>
      * 
      * @param numberOfBytes
-     *        Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on.
-     *        The current limit is 1024 bytes.
+     *        The length of the byte string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

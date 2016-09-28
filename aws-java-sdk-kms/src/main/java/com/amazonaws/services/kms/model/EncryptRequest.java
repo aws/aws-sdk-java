@@ -57,9 +57,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private java.nio.ByteBuffer plaintext;
     /**
      * <p>
-     * Name/value pair that specifies the encryption context to be used for authenticated encryption. If used here, the
+     * Name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the
      * same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> encryptionContext;
@@ -309,15 +309,16 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Name/value pair that specifies the encryption context to be used for authenticated encryption. If used here, the
+     * Name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the
      * same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
      * </p>
      * 
-     * @return Name/value pair that specifies the encryption context to be used for authenticated encryption. If used
+     * @return Name-value pair that specifies the encryption context to be used for authenticated encryption. If used
      *         here, the same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *         Context</a>.
      */
 
     public java.util.Map<String, String> getEncryptionContext() {
@@ -329,16 +330,17 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Name/value pair that specifies the encryption context to be used for authenticated encryption. If used here, the
+     * Name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the
      * same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
      * </p>
      * 
      * @param encryptionContext
-     *        Name/value pair that specifies the encryption context to be used for authenticated encryption. If used
+     *        Name-value pair that specifies the encryption context to be used for authenticated encryption. If used
      *        here, the same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *        Context</a>.
      */
 
     public void setEncryptionContext(java.util.Map<String, String> encryptionContext) {
@@ -347,16 +349,17 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Name/value pair that specifies the encryption context to be used for authenticated encryption. If used here, the
+     * Name-value pair that specifies the encryption context to be used for authenticated encryption. If used here, the
      * same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
      * </p>
      * 
      * @param encryptionContext
-     *        Name/value pair that specifies the encryption context to be used for authenticated encryption. If used
+     *        Name-value pair that specifies the encryption context to be used for authenticated encryption. If used
      *        here, the same value must be supplied to the <code>Decrypt</code> API or decryption will fail. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *        Context</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

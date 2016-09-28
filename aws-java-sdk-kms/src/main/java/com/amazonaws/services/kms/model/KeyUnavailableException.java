@@ -14,7 +14,7 @@ package com.amazonaws.services.kms.model;
 
 /**
  * <p>
- * The request was rejected because the key was not available. The request can be retried.
+ * The request was rejected because the specified CMK was not available. The request can be retried.
  * </p>
  */
 public class KeyUnavailableException extends com.amazonaws.services.kms.model.AWSKMSException {

@@ -22,28 +22,20 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Ciphertext that contains the wrapped data key. You must store the blob and encryption context so that the key can
-     * be used in a future decrypt operation.
-     * </p>
-     * <p>
-     * If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The encrypted data encryption key.
      * </p>
      */
     private java.nio.ByteBuffer ciphertextBlob;
     /**
      * <p>
-     * System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     * The identifier of the CMK under which the data encryption key was generated and encrypted.
      * </p>
      */
     private String keyId;
 
     /**
      * <p>
-     * Ciphertext that contains the wrapped data key. You must store the blob and encryption context so that the key can
-     * be used in a future decrypt operation.
-     * </p>
-     * <p>
-     * If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The encrypted data encryption key.
      * </p>
      * <p>
      * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
@@ -57,10 +49,7 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param ciphertextBlob
-     *        Ciphertext that contains the wrapped data key. You must store the blob and encryption context so that the
-     *        key can be used in a future decrypt operation.</p>
-     *        <p>
-     *        If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     *        The encrypted data encryption key.
      */
 
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
@@ -69,11 +58,7 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Ciphertext that contains the wrapped data key. You must store the blob and encryption context so that the key can
-     * be used in a future decrypt operation.
-     * </p>
-     * <p>
-     * If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The encrypted data encryption key.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -83,10 +68,7 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
      * {@code position}.
      * </p>
      * 
-     * @return Ciphertext that contains the wrapped data key. You must store the blob and encryption context so that the
-     *         key can be used in a future decrypt operation.</p>
-     *         <p>
-     *         If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * @return The encrypted data encryption key.
      */
 
     public java.nio.ByteBuffer getCiphertextBlob() {
@@ -95,18 +77,11 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Ciphertext that contains the wrapped data key. You must store the blob and encryption context so that the key can
-     * be used in a future decrypt operation.
-     * </p>
-     * <p>
-     * If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The encrypted data encryption key.
      * </p>
      * 
      * @param ciphertextBlob
-     *        Ciphertext that contains the wrapped data key. You must store the blob and encryption context so that the
-     *        key can be used in a future decrypt operation.</p>
-     *        <p>
-     *        If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     *        The encrypted data encryption key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +92,11 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     * The identifier of the CMK under which the data encryption key was generated and encrypted.
      * </p>
      * 
      * @param keyId
-     *        System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     *        The identifier of the CMK under which the data encryption key was generated and encrypted.
      */
 
     public void setKeyId(String keyId) {
@@ -130,10 +105,10 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     * The identifier of the CMK under which the data encryption key was generated and encrypted.
      * </p>
      * 
-     * @return System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     * @return The identifier of the CMK under which the data encryption key was generated and encrypted.
      */
 
     public String getKeyId() {
@@ -142,11 +117,11 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     * The identifier of the CMK under which the data encryption key was generated and encrypted.
      * </p>
      * 
      * @param keyId
-     *        System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     *        The identifier of the CMK under which the data encryption key was generated and encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -156,22 +156,32 @@ public class DynamoDBMapperConfig {
 
 
         /**
-         * @return the currently-configured consistent read behavior
+         * Returns the consistent read behavior. Currently
+         * this value is applied only in load and batch load operations of the
+         * DynamoDBMapper.
+         * @return the currently-configured consistent read behavior.
          */
         public ConsistentReads getConsistentReads() {
             return consistentReads;
         }
 
         /**
-         * @param value the new consistent read behavior
+         * Sets the consistent read behavior. Currently
+         * this value is applied only in load and batch load operations of the
+         * DynamoDBMapper.
+         * @param value the new consistent read behavior.
          */
         public void setConsistentReads(ConsistentReads value) {
             consistentReads = value;
         }
 
         /**
+         * Sets the consistent read behavior. Currently
+         * this value is applied only in load and batch load operations of the
+         * DynamoDBMapper.
          * @param value the new consistent read behavior
-         * @return this builder
+         * @return this builder.
+         *
          */
         public Builder withConsistentReads(ConsistentReads value) {
             setConsistentReads(value);

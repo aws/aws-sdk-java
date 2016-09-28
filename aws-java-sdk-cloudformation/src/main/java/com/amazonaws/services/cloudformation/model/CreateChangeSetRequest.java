@@ -121,6 +121,20 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     private com.amazonaws.internal.SdkInternalList<String> resourceTypes;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes when executing the change set. AWS CloudFormation uses the role's credentials to make calls on your
+     * behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long as users have
+     * permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to
+     * pass it. Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     */
+    private String roleARN;
+    /**
+     * <p>
      * The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS) topics that AWS
      * CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.
      * </p>
@@ -1051,6 +1065,94 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes when executing the change set. AWS CloudFormation uses the role's credentials to make calls on your
+     * behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long as users have
+     * permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to
+     * pass it. Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @param roleARN
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     *        assumes when executing the change set. AWS CloudFormation uses the role's credentials to make calls on
+     *        your behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long as
+     *        users have permission to operate on the stack, AWS CloudFormation uses this role even if the users don't
+     *        have permission to pass it. Ensure that the role grants least privilege.</p>
+     *        <p>
+     *        If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *        stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *        user credentials.
+     */
+
+    public void setRoleARN(String roleARN) {
+        this.roleARN = roleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes when executing the change set. AWS CloudFormation uses the role's credentials to make calls on your
+     * behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long as users have
+     * permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to
+     * pass it. Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS
+     *         CloudFormation assumes when executing the change set. AWS CloudFormation uses the role's credentials to
+     *         make calls on your behalf. AWS CloudFormation always uses this role for all future operations on the
+     *         stack. As long as users have permission to operate on the stack, AWS CloudFormation uses this role even
+     *         if the users don't have permission to pass it. Ensure that the role grants least privilege.</p>
+     *         <p>
+     *         If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *         stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *         user credentials.
+     */
+
+    public String getRoleARN() {
+        return this.roleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes when executing the change set. AWS CloudFormation uses the role's credentials to make calls on your
+     * behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long as users have
+     * permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to
+     * pass it. Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @param roleARN
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     *        assumes when executing the change set. AWS CloudFormation uses the role's credentials to make calls on
+     *        your behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long as
+     *        users have permission to operate on the stack, AWS CloudFormation uses this role even if the users don't
+     *        have permission to pass it. Ensure that the role grants least privilege.</p>
+     *        <p>
+     *        If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *        stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *        user credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChangeSetRequest withRoleARN(String roleARN) {
+        setRoleARN(roleARN);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS) topics that AWS
      * CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.
      * </p>
@@ -1405,6 +1507,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("Capabilities: " + getCapabilities() + ",");
         if (getResourceTypes() != null)
             sb.append("ResourceTypes: " + getResourceTypes() + ",");
+        if (getRoleARN() != null)
+            sb.append("RoleARN: " + getRoleARN() + ",");
         if (getNotificationARNs() != null)
             sb.append("NotificationARNs: " + getNotificationARNs() + ",");
         if (getTags() != null)
@@ -1457,6 +1561,10 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getResourceTypes() != null && other.getResourceTypes().equals(this.getResourceTypes()) == false)
             return false;
+        if (other.getRoleARN() == null ^ this.getRoleARN() == null)
+            return false;
+        if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
+            return false;
         if (other.getNotificationARNs() == null ^ this.getNotificationARNs() == null)
             return false;
         if (other.getNotificationARNs() != null && other.getNotificationARNs().equals(this.getNotificationARNs()) == false)
@@ -1492,6 +1600,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getResourceTypes() == null) ? 0 : getResourceTypes().hashCode());
+        hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         hashCode = prime * hashCode + ((getNotificationARNs() == null) ? 0 : getNotificationARNs().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getChangeSetName() == null) ? 0 : getChangeSetName().hashCode());

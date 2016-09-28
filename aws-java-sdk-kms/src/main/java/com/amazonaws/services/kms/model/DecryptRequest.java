@@ -30,7 +30,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here or the
      * decryption operation will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> encryptionContext;
@@ -107,12 +107,13 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here or the
      * decryption operation will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
      * </p>
      * 
      * @return The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here
      *         or the decryption operation will fail. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *         Context</a>.
      */
 
     public java.util.Map<String, String> getEncryptionContext() {
@@ -126,13 +127,14 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here or the
      * decryption operation will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
      * </p>
      * 
      * @param encryptionContext
      *        The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here or
      *        the decryption operation will fail. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *        Context</a>.
      */
 
     public void setEncryptionContext(java.util.Map<String, String> encryptionContext) {
@@ -143,13 +145,14 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here or the
      * decryption operation will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
      * </p>
      * 
      * @param encryptionContext
      *        The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here or
      *        the decryption operation will fail. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption Context</a>.
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *        Context</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

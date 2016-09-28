@@ -125,6 +125,10 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             }
         }
 
+        if (updateStackRequest.getRoleARN() != null) {
+            request.addParameter("RoleARN", StringUtils.fromString(updateStackRequest.getRoleARN()));
+        }
+
         if (updateStackRequest.getStackPolicyBody() != null) {
             request.addParameter("StackPolicyBody", StringUtils.fromString(updateStackRequest.getStackPolicyBody()));
         }

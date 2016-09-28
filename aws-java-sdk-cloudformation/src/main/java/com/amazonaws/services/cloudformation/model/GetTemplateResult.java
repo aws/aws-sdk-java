@@ -27,6 +27,9 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.)
      * </p>
+     * <p>
+     * AWS CloudFormation returns the same template that was used when the stack was created.
+     * </p>
      */
     private String templateBody;
 
@@ -36,11 +39,16 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.)
      * </p>
+     * <p>
+     * AWS CloudFormation returns the same template that was used when the stack was created.
+     * </p>
      * 
      * @param templateBody
      *        Structure containing the template body. (For more information, go to <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        Anatomy</a> in the AWS CloudFormation User Guide.)
+     *        Anatomy</a> in the AWS CloudFormation User Guide.)</p>
+     *        <p>
+     *        AWS CloudFormation returns the same template that was used when the stack was created.
      */
 
     public void setTemplateBody(String templateBody) {
@@ -53,10 +61,15 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.)
      * </p>
+     * <p>
+     * AWS CloudFormation returns the same template that was used when the stack was created.
+     * </p>
      * 
      * @return Structure containing the template body. (For more information, go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         Anatomy</a> in the AWS CloudFormation User Guide.)
+     *         Anatomy</a> in the AWS CloudFormation User Guide.)</p>
+     *         <p>
+     *         AWS CloudFormation returns the same template that was used when the stack was created.
      */
 
     public String getTemplateBody() {
@@ -69,11 +82,16 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.)
      * </p>
+     * <p>
+     * AWS CloudFormation returns the same template that was used when the stack was created.
+     * </p>
      * 
      * @param templateBody
      *        Structure containing the template body. (For more information, go to <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        Anatomy</a> in the AWS CloudFormation User Guide.)
+     *        Anatomy</a> in the AWS CloudFormation User Guide.)</p>
+     *        <p>
+     *        AWS CloudFormation returns the same template that was used when the stack was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

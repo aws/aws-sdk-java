@@ -152,6 +152,20 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<String> resourceTypes;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to create the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation always uses this role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it.
+     * Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     */
+    private String roleARN;
+    /**
+     * <p>
      * Determines what action will be taken if stack creation fails. This must be one of: DO_NOTHING, ROLLBACK, or
      * DELETE. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.
      * </p>
@@ -164,15 +178,15 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Structure containing the stack policy body. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
-     * Updates to Stack Resources</a> in the AWS CloudFormation User Guide. You can specify either the
+     * Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      */
     private String stackPolicyBody;
     /**
      * <p>
-     * Location of a file containing the stack policy. The URL must point to a policy (max size: 16KB) located in an S3
-     * bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+     * Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in
+     * an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      */
@@ -1318,6 +1332,94 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to create the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation always uses this role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it.
+     * Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @param roleARN
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     *        assumes to create the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf.
+     *        AWS CloudFormation always uses this role for all future operations on the stack. As long as users have
+     *        permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have
+     *        permission to pass it. Ensure that the role grants least privilege.</p>
+     *        <p>
+     *        If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *        stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *        user credentials.
+     */
+
+    public void setRoleARN(String roleARN) {
+        this.roleARN = roleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to create the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation always uses this role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it.
+     * Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS
+     *         CloudFormation assumes to create the stack. AWS CloudFormation uses the role's credentials to make calls
+     *         on your behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long
+     *         as users have permission to operate on the stack, AWS CloudFormation uses this role even if the users
+     *         don't have permission to pass it. Ensure that the role grants least privilege.</p>
+     *         <p>
+     *         If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *         stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *         user credentials.
+     */
+
+    public String getRoleARN() {
+        return this.roleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to create the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation always uses this role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it.
+     * Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @param roleARN
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     *        assumes to create the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf.
+     *        AWS CloudFormation always uses this role for all future operations on the stack. As long as users have
+     *        permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have
+     *        permission to pass it. Ensure that the role grants least privilege.</p>
+     *        <p>
+     *        If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *        stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *        user credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withRoleARN(String roleARN) {
+        setRoleARN(roleARN);
+        return this;
+    }
+
+    /**
+     * <p>
      * Determines what action will be taken if stack creation fails. This must be one of: DO_NOTHING, ROLLBACK, or
      * DELETE. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.
      * </p>
@@ -1433,14 +1535,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Structure containing the stack policy body. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
-     * Updates to Stack Resources</a> in the AWS CloudFormation User Guide. You can specify either the
+     * Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @param stackPolicyBody
      *        Structure containing the stack policy body. For more information, go to <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
-     *        Updates to Stack Resources</a> in the AWS CloudFormation User Guide. You can specify either the
+     *        Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the
      *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      */
 
@@ -1452,14 +1554,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Structure containing the stack policy body. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
-     * Updates to Stack Resources</a> in the AWS CloudFormation User Guide. You can specify either the
+     * Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @return Structure containing the stack policy body. For more information, go to <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User Guide. You can specify either the
-     *         <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
+     *         Prevent Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify
+     *         either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      */
 
     public String getStackPolicyBody() {
@@ -1470,14 +1572,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Structure containing the stack policy body. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
-     * Updates to Stack Resources</a> in the AWS CloudFormation User Guide. You can specify either the
+     * Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @param stackPolicyBody
      *        Structure containing the stack policy body. For more information, go to <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
-     *        Updates to Stack Resources</a> in the AWS CloudFormation User Guide. You can specify either the
+     *        Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the
      *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1489,15 +1591,15 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Location of a file containing the stack policy. The URL must point to a policy (max size: 16KB) located in an S3
-     * bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+     * Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in
+     * an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @param stackPolicyURL
-     *        Location of a file containing the stack policy. The URL must point to a policy (max size: 16KB) located in
-     *        an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or
-     *        the <code>StackPolicyURL</code> parameter, but not both.
+     *        Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB)
+     *        located in an S3 bucket in the same region as the stack. You can specify either the
+     *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      */
 
     public void setStackPolicyURL(String stackPolicyURL) {
@@ -1506,14 +1608,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Location of a file containing the stack policy. The URL must point to a policy (max size: 16KB) located in an S3
-     * bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+     * Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in
+     * an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
-     * @return Location of a file containing the stack policy. The URL must point to a policy (max size: 16KB) located
-     *         in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code>
-     *         or the <code>StackPolicyURL</code> parameter, but not both.
+     * @return Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB)
+     *         located in an S3 bucket in the same region as the stack. You can specify either the
+     *         <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      */
 
     public String getStackPolicyURL() {
@@ -1522,15 +1624,15 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Location of a file containing the stack policy. The URL must point to a policy (max size: 16KB) located in an S3
-     * bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+     * Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in
+     * an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @param stackPolicyURL
-     *        Location of a file containing the stack policy. The URL must point to a policy (max size: 16KB) located in
-     *        an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or
-     *        the <code>StackPolicyURL</code> parameter, but not both.
+     *        Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB)
+     *        located in an S3 bucket in the same region as the stack. You can specify either the
+     *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1649,6 +1751,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("Capabilities: " + getCapabilities() + ",");
         if (getResourceTypes() != null)
             sb.append("ResourceTypes: " + getResourceTypes() + ",");
+        if (getRoleARN() != null)
+            sb.append("RoleARN: " + getRoleARN() + ",");
         if (getOnFailure() != null)
             sb.append("OnFailure: " + getOnFailure() + ",");
         if (getStackPolicyBody() != null)
@@ -1707,6 +1811,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getResourceTypes() != null && other.getResourceTypes().equals(this.getResourceTypes()) == false)
             return false;
+        if (other.getRoleARN() == null ^ this.getRoleARN() == null)
+            return false;
+        if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
+            return false;
         if (other.getOnFailure() == null ^ this.getOnFailure() == null)
             return false;
         if (other.getOnFailure() != null && other.getOnFailure().equals(this.getOnFailure()) == false)
@@ -1740,6 +1848,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getNotificationARNs() == null) ? 0 : getNotificationARNs().hashCode());
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getResourceTypes() == null) ? 0 : getResourceTypes().hashCode());
+        hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         hashCode = prime * hashCode + ((getOnFailure() == null) ? 0 : getOnFailure().hashCode());
         hashCode = prime * hashCode + ((getStackPolicyBody() == null) ? 0 : getStackPolicyBody().hashCode());
         hashCode = prime * hashCode + ((getStackPolicyURL() == null) ? 0 : getStackPolicyURL().hashCode());

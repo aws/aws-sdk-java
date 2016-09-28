@@ -40,6 +40,17 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> retainResources;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to delete the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     */
+    private String roleARN;
 
     /**
      * <p>
@@ -199,6 +210,79 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to delete the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @param roleARN
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     *        assumes to delete the stack. AWS CloudFormation uses the role's credentials to make calls on your
+     *        behalf.</p>
+     *        <p>
+     *        If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *        stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *        user credentials.
+     */
+
+    public void setRoleARN(String roleARN) {
+        this.roleARN = roleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to delete the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS
+     *         CloudFormation assumes to delete the stack. AWS CloudFormation uses the role's credentials to make calls
+     *         on your behalf.</p>
+     *         <p>
+     *         If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *         stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *         user credentials.
+     */
+
+    public String getRoleARN() {
+        return this.roleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to delete the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @param roleARN
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     *        assumes to delete the stack. AWS CloudFormation uses the role's credentials to make calls on your
+     *        behalf.</p>
+     *        <p>
+     *        If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *        stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *        user credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteStackRequest withRoleARN(String roleARN) {
+        setRoleARN(roleARN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -212,7 +296,9 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getStackName() != null)
             sb.append("StackName: " + getStackName() + ",");
         if (getRetainResources() != null)
-            sb.append("RetainResources: " + getRetainResources());
+            sb.append("RetainResources: " + getRetainResources() + ",");
+        if (getRoleARN() != null)
+            sb.append("RoleARN: " + getRoleARN());
         sb.append("}");
         return sb.toString();
     }
@@ -235,6 +321,10 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getRetainResources() != null && other.getRetainResources().equals(this.getRetainResources()) == false)
             return false;
+        if (other.getRoleARN() == null ^ this.getRoleARN() == null)
+            return false;
+        if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
+            return false;
         return true;
     }
 
@@ -245,6 +335,7 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
         hashCode = prime * hashCode + ((getRetainResources() == null) ? 0 : getRetainResources().hashCode());
+        hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         return hashCode;
     }
 

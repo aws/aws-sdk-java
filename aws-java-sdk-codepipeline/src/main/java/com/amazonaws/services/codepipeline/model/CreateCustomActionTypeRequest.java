@@ -24,12 +24,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The category of the custom action, such as a source action or a build action.
+     * The category of the custom action, such as a build action or a test action.
      * </p>
      * <note>
      * <p>
-     * Although Source is listed as a valid value, it is not currently functional. This value is reserved for future
-     * use.
+     * Although Source and Approval are listed as valid values, they are not currently functional. These values are
+     * reserved for future use.
      * </p>
      * </note>
      */
@@ -42,7 +42,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     private String provider;
     /**
      * <p>
-     * The version number of the custom action.
+     * The version identifier of the custom action.
      * </p>
      */
     private String version;
@@ -70,20 +70,20 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The category of the custom action, such as a source action or a build action.
+     * The category of the custom action, such as a build action or a test action.
      * </p>
      * <note>
      * <p>
-     * Although Source is listed as a valid value, it is not currently functional. This value is reserved for future
-     * use.
+     * Although Source and Approval are listed as valid values, they are not currently functional. These values are
+     * reserved for future use.
      * </p>
      * </note>
      * 
      * @param category
-     *        The category of the custom action, such as a source action or a build action.</p> <note>
+     *        The category of the custom action, such as a build action or a test action.</p> <note>
      *        <p>
-     *        Although Source is listed as a valid value, it is not currently functional. This value is reserved for
-     *        future use.
+     *        Although Source and Approval are listed as valid values, they are not currently functional. These values
+     *        are reserved for future use.
      *        </p>
      * @see ActionCategory
      */
@@ -94,19 +94,19 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The category of the custom action, such as a source action or a build action.
+     * The category of the custom action, such as a build action or a test action.
      * </p>
      * <note>
      * <p>
-     * Although Source is listed as a valid value, it is not currently functional. This value is reserved for future
-     * use.
+     * Although Source and Approval are listed as valid values, they are not currently functional. These values are
+     * reserved for future use.
      * </p>
      * </note>
      * 
-     * @return The category of the custom action, such as a source action or a build action.</p> <note>
+     * @return The category of the custom action, such as a build action or a test action.</p> <note>
      *         <p>
-     *         Although Source is listed as a valid value, it is not currently functional. This value is reserved for
-     *         future use.
+     *         Although Source and Approval are listed as valid values, they are not currently functional. These values
+     *         are reserved for future use.
      *         </p>
      * @see ActionCategory
      */
@@ -117,20 +117,20 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The category of the custom action, such as a source action or a build action.
+     * The category of the custom action, such as a build action or a test action.
      * </p>
      * <note>
      * <p>
-     * Although Source is listed as a valid value, it is not currently functional. This value is reserved for future
-     * use.
+     * Although Source and Approval are listed as valid values, they are not currently functional. These values are
+     * reserved for future use.
      * </p>
      * </note>
      * 
      * @param category
-     *        The category of the custom action, such as a source action or a build action.</p> <note>
+     *        The category of the custom action, such as a build action or a test action.</p> <note>
      *        <p>
-     *        Although Source is listed as a valid value, it is not currently functional. This value is reserved for
-     *        future use.
+     *        Although Source and Approval are listed as valid values, they are not currently functional. These values
+     *        are reserved for future use.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCategory
@@ -143,20 +143,20 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The category of the custom action, such as a source action or a build action.
+     * The category of the custom action, such as a build action or a test action.
      * </p>
      * <note>
      * <p>
-     * Although Source is listed as a valid value, it is not currently functional. This value is reserved for future
-     * use.
+     * Although Source and Approval are listed as valid values, they are not currently functional. These values are
+     * reserved for future use.
      * </p>
      * </note>
      * 
      * @param category
-     *        The category of the custom action, such as a source action or a build action.</p> <note>
+     *        The category of the custom action, such as a build action or a test action.</p> <note>
      *        <p>
-     *        Although Source is listed as a valid value, it is not currently functional. This value is reserved for
-     *        future use.
+     *        Although Source and Approval are listed as valid values, they are not currently functional. These values
+     *        are reserved for future use.
      *        </p>
      * @see ActionCategory
      */
@@ -167,20 +167,20 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The category of the custom action, such as a source action or a build action.
+     * The category of the custom action, such as a build action or a test action.
      * </p>
      * <note>
      * <p>
-     * Although Source is listed as a valid value, it is not currently functional. This value is reserved for future
-     * use.
+     * Although Source and Approval are listed as valid values, they are not currently functional. These values are
+     * reserved for future use.
      * </p>
      * </note>
      * 
      * @param category
-     *        The category of the custom action, such as a source action or a build action.</p> <note>
+     *        The category of the custom action, such as a build action or a test action.</p> <note>
      *        <p>
-     *        Although Source is listed as a valid value, it is not currently functional. This value is reserved for
-     *        future use.
+     *        Although Source and Approval are listed as valid values, they are not currently functional. These values
+     *        are reserved for future use.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCategory
@@ -233,11 +233,11 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The version number of the custom action.
+     * The version identifier of the custom action.
      * </p>
      * 
      * @param version
-     *        The version number of the custom action.
+     *        The version identifier of the custom action.
      */
 
     public void setVersion(String version) {
@@ -246,10 +246,10 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The version number of the custom action.
+     * The version identifier of the custom action.
      * </p>
      * 
-     * @return The version number of the custom action.
+     * @return The version identifier of the custom action.
      */
 
     public String getVersion() {
@@ -258,11 +258,11 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The version number of the custom action.
+     * The version identifier of the custom action.
      * </p>
      * 
      * @param version
-     *        The version number of the custom action.
+     *        The version identifier of the custom action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

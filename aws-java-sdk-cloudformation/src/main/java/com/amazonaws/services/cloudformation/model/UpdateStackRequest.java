@@ -146,6 +146,20 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<String> resourceTypes;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to update the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation always uses this role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it.
+     * Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     */
+    private String roleARN;
+    /**
+     * <p>
      * Structure containing a new stack policy body. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.
      * </p>
@@ -1238,6 +1252,94 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to update the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation always uses this role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it.
+     * Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @param roleARN
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     *        assumes to update the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf.
+     *        AWS CloudFormation always uses this role for all future operations on the stack. As long as users have
+     *        permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have
+     *        permission to pass it. Ensure that the role grants least privilege.</p>
+     *        <p>
+     *        If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *        stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *        user credentials.
+     */
+
+    public void setRoleARN(String roleARN) {
+        this.roleARN = roleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to update the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation always uses this role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it.
+     * Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS
+     *         CloudFormation assumes to update the stack. AWS CloudFormation uses the role's credentials to make calls
+     *         on your behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long
+     *         as users have permission to operate on the stack, AWS CloudFormation uses this role even if the users
+     *         don't have permission to pass it. Ensure that the role grants least privilege.</p>
+     *         <p>
+     *         If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *         stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *         user credentials.
+     */
+
+    public String getRoleARN() {
+        return this.roleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     * assumes to update the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation always uses this role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it.
+     * Ensure that the role grants least privilege.
+     * </p>
+     * <p>
+     * If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If
+     * no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
+     * </p>
+     * 
+     * @param roleARN
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation
+     *        assumes to update the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf.
+     *        AWS CloudFormation always uses this role for all future operations on the stack. As long as users have
+     *        permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have
+     *        permission to pass it. Ensure that the role grants least privilege.</p>
+     *        <p>
+     *        If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the
+     *        stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your
+     *        user credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackRequest withRoleARN(String roleARN) {
+        setRoleARN(roleARN);
+        return this;
+    }
+
+    /**
+     * <p>
      * Structure containing a new stack policy body. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.
      * </p>
@@ -1607,6 +1709,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("Capabilities: " + getCapabilities() + ",");
         if (getResourceTypes() != null)
             sb.append("ResourceTypes: " + getResourceTypes() + ",");
+        if (getRoleARN() != null)
+            sb.append("RoleARN: " + getRoleARN() + ",");
         if (getStackPolicyBody() != null)
             sb.append("StackPolicyBody: " + getStackPolicyBody() + ",");
         if (getStackPolicyURL() != null)
@@ -1665,6 +1769,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getResourceTypes() != null && other.getResourceTypes().equals(this.getResourceTypes()) == false)
             return false;
+        if (other.getRoleARN() == null ^ this.getRoleARN() == null)
+            return false;
+        if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
+            return false;
         if (other.getStackPolicyBody() == null ^ this.getStackPolicyBody() == null)
             return false;
         if (other.getStackPolicyBody() != null && other.getStackPolicyBody().equals(this.getStackPolicyBody()) == false)
@@ -1698,6 +1806,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getResourceTypes() == null) ? 0 : getResourceTypes().hashCode());
+        hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         hashCode = prime * hashCode + ((getStackPolicyBody() == null) ? 0 : getStackPolicyBody().hashCode());
         hashCode = prime * hashCode + ((getStackPolicyURL() == null) ? 0 : getStackPolicyURL().hashCode());
         hashCode = prime * hashCode + ((getNotificationARNs() == null) ? 0 : getNotificationARNs().hashCode());

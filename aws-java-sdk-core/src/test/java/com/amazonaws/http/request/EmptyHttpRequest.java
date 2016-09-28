@@ -18,18 +18,18 @@
  */
 package com.amazonaws.http.request;
 
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.ReadLimitInfo;
+import com.amazonaws.Request;
+import com.amazonaws.handlers.HandlerContextKey;
+import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.util.AWSRequestMetrics;
+
 import java.io.InputStream;
 import java.net.URI;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
-import com.amazonaws.AmazonWebServiceRequest;
-import com.amazonaws.handlers.HandlerContextKey;
-import com.amazonaws.http.HttpMethodName;
-import com.amazonaws.Request;
-import com.amazonaws.ReadLimitInfo;
-import com.amazonaws.util.AWSRequestMetrics;
 
 public class EmptyHttpRequest implements Request<Object> {
 
@@ -188,4 +188,5 @@ public class EmptyHttpRequest implements Request<Object> {
     public <X> X getHandlerContext(HandlerContextKey<X> key) {
         return null;
     }
+
 }

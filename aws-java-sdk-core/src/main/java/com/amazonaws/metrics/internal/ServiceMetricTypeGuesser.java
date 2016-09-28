@@ -42,7 +42,7 @@ public enum ServiceMetricTypeGuesser {
     {
         if (!AwsSdkMetrics.isMetricsEnabled())
             return null;    // metric disabled
-        AmazonWebServiceRequest orig = req.getOriginalRequest();
+        Object orig = req.getOriginalRequestObject();
         if (orig.getClass().getName().startsWith("com.amazonaws.services.s3")) {
             return new SimpleThroughputMetricType(
                 "S3" + metricNameSuffix,

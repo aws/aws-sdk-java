@@ -19,35 +19,42 @@
 package com.amazonaws.util;
 
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.RequestConfig;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.internal.StaticCredentialsProvider;
+
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Test;
-import org.hamcrest.Matchers;
+
+import utils.model.EmptyAmazonWebServiceRequest;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class CredentialUtilsTest {
+
+    private static final AWSCredentialsProvider CLIENT_CREDENTIALS = new DefaultAWSCredentialsProviderChain();
 
     @Test
     public void request_credentials_takes_precendence_over_client_credentials() {
         final String awsAccessKeyId = "foo";
         final String awsSecretAccessKey = "bar";
         final AWSCredentials reqCredentials = new BasicAWSCredentials(awsAccessKeyId,
-                awsSecretAccessKey);
-        AmazonWebServiceRequest req = new AmazonWebServiceRequest() {
-            @Override
-            public AWSCredentials getRequestCredentials() {
-                return reqCredentials;
-            }
-        };
+                                                                      awsSecretAccessKey);
+        EmptyAmazonWebServiceRequest req = new EmptyAmazonWebServiceRequest();
+        req.setRequestCredentials(reqCredentials);
         AWSCredentialsProvider actual = CredentialUtils.getCredentialsProvider(req,
-                null);
+                                                                               null);
 
         Assert.assertThat(actual, Matchers.instanceOf(StaticCredentialsProvider
-                .class));
-        Assert.assertEquals(awsAccessKeyId, actual.getCredentials().getAWSAccessKeyId());
-        Assert.assertEquals(awsSecretAccessKey, actual.getCredentials().getAWSSecretKey());
+                                                              .class));
+        assertEquals(awsAccessKeyId, actual.getCredentials().getAWSAccessKeyId());
+        assertEquals(awsSecretAccessKey, actual.getCredentials().getAWSSecretKey());
     }
 
     @Test
@@ -58,10 +65,28 @@ public class CredentialUtilsTest {
                 (new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey));
 
         AWSCredentialsProvider actual = CredentialUtils
-                .getCredentialsProvider(null, base);
+                .getCredentialsProvider((AmazonWebServiceRequest) null, base);
         Assert.assertThat(actual, Matchers.instanceOf(StaticCredentialsProvider
-                .class));
-        Assert.assertEquals(awsAccessKeyId, actual.getCredentials().getAWSAccessKeyId());
-        Assert.assertEquals(awsSecretAccessKey, actual.getCredentials().getAWSSecretKey());
+                                                              .class));
+        assertEquals(awsAccessKeyId, actual.getCredentials().getAWSAccessKeyId());
+        assertEquals(awsSecretAccessKey, actual.getCredentials().getAWSSecretKey());
+    }
+
+    @Test
+    public void requestCredentialsInRequestConfig_TakesPrecedenceOverClientCredentials() {
+        AWSCredentialsProvider requestCredentials = mock(AWSCredentialsProvider.class);
+        RequestConfig requestConfig = mock(RequestConfig.class);
+        when(requestConfig.getCredentialsProvider()).thenReturn(requestCredentials);
+        AWSCredentialsProvider actual = CredentialUtils
+                .getCredentialsProvider(requestConfig, CLIENT_CREDENTIALS);
+        assertEquals(requestCredentials, actual);
+    }
+
+    @Test
+    public void requestCredentialsNotSetInRequestConfig_ReturnsClientCredentials() {
+        RequestConfig requestConfig = mock(RequestConfig.class);
+        AWSCredentialsProvider actual = CredentialUtils
+                .getCredentialsProvider(requestConfig, CLIENT_CREDENTIALS);
+        assertEquals(CLIENT_CREDENTIALS, actual);
     }
 }

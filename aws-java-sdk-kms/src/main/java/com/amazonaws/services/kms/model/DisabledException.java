@@ -14,7 +14,7 @@ package com.amazonaws.services.kms.model;
 
 /**
  * <p>
- * The request was rejected because the specified key was marked as disabled.
+ * The request was rejected because the specified CMK is not enabled.
  * </p>
  */
 public class DisabledException extends com.amazonaws.services.kms.model.AWSKMSException {

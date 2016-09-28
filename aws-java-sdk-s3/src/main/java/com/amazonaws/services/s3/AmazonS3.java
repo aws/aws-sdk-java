@@ -1893,12 +1893,14 @@ public interface AmazonS3 extends S3DirectSpi {
      * <p>
      * Be extremely careful when using this method; the returned Amazon S3
      * object contains a direct stream of data from the HTTP connection. The
-     * underlying HTTP connection cannot be closed until the user finishes
-     * reading the data and closes the stream. Therefore:
+     * underlying HTTP connection cannot be reused until the user finishes
+     * reading the data and closes the stream. Also note that if not all data
+     * is read from the stream then the SDK will abort the underlying connection,
+     * this may have a negative impact on performance. Therefore:
      * </p>
      * <ul>
-     * <li>Use the data from the input stream in Amazon S3 object as soon as
-     * possible</li>
+     * <li>Use the data from the input stream in Amazon S3 object as soon as possible</li>
+     * <li>Read all data from the stream (use {@link GetObjectRequest#setRange(long, long)} to request only the bytes you need)</li>
      * <li>Close the input stream in Amazon S3 object as soon as possible</li>
      * </ul>
      * If these rules are not followed, the client can run out of resources by
@@ -1952,20 +1954,21 @@ public interface AmazonS3 extends S3DirectSpi {
      * Returns <code>null</code> if the specified constraints weren't met.
      * </p>
      * <p>
-     * Callers should be very careful when using this method; the returned
-     * Amazon S3 object contains a direct stream of data from the HTTP connection.
-     * The underlying HTTP connection cannot be closed until the user
-     * finishes reading the data and closes the stream. Callers should
-     * therefore:
+     * Be extremely careful when using this method; the returned Amazon S3
+     * object contains a direct stream of data from the HTTP connection. The
+     * underlying HTTP connection cannot be reused until the user finishes
+     * reading the data and closes the stream. Also note that if not all data
+     * is read from the stream then the SDK will abort the underlying connection,
+     * this may have a negative impact on performance. Therefore:
      * </p>
      * <ul>
-     *  <li>Use the data from the input stream in Amazon S3 object as soon as possible,</li>
-     *  <li>Close the input stream in Amazon S3 object as soon as possible.</li>
+     * <li>Use the data from the input stream in Amazon S3 object as soon as possible</li>
+     * <li>Read all data from the stream (use {@link GetObjectRequest#setRange(long, long)} to request only the bytes you need)</li>
+     * <li>Close the input stream in Amazon S3 object as soon as possible</li>
      * </ul>
+     * If these rules are not followed, the client can run out of resources by
+     * allocating too many open, but unused, HTTP connections. </p>
      * <p>
-     * If callers do not follow those rules, then the client can run out of
-     * resources if allocating too many open, but unused, HTTP connections.
-     * </p>
      * <p>
      * To get an object from Amazon S3, the caller must have {@link Permission#Read}
      * access to the object.

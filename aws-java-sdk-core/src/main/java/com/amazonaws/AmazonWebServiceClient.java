@@ -26,8 +26,8 @@ import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.internal.DefaultServiceEndpointBuilder;
 import com.amazonaws.internal.auth.DefaultSignerProvider;
-import com.amazonaws.internal.auth.SignerProviderContext;
 import com.amazonaws.internal.auth.SignerProvider;
+import com.amazonaws.internal.auth.SignerProviderContext;
 import com.amazonaws.log.CommonsLogFactory;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
@@ -546,17 +546,18 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
-     * Returns the most specific request metric collector, starting from the
-     * request level, then client level, then finally the AWS SDK level.
+     * Returns the most specific request metric collector, starting from the request level, then
+     * client level, then finally the AWS SDK level.
      */
-    protected final RequestMetricCollector findRequestMetricCollector(Request<?> req) {
-        AmazonWebServiceRequest origReq = req.getOriginalRequest();
-        RequestMetricCollector mc = origReq.getRequestMetricCollector();
-        if (mc != null) {
-            return mc;
+    private final RequestMetricCollector findRequestMetricCollector(
+            RequestMetricCollector reqLevelMetricsCollector) {
+        if (reqLevelMetricsCollector != null) {
+            return reqLevelMetricsCollector;
+        } else if (getRequestMetricsCollector() != null) {
+            return getRequestMetricsCollector();
+        } else {
+            return AwsSdkMetrics.getRequestMetricCollector();
         }
-        mc = getRequestMetricsCollector();
-        return mc == null ? AwsSdkMetrics.getRequestMetricCollector() : mc;
     }
 
     /**
@@ -584,7 +585,8 @@ public abstract class AmazonWebServiceClient {
         if (request != null) {
             awsRequestMetrics.endEvent(Field.ClientExecuteTime);
             awsRequestMetrics.getTimingInfo().endTiming();
-            RequestMetricCollector c = findRequestMetricCollector(request);
+            RequestMetricCollector c = findRequestMetricCollector(
+                    request.getOriginalRequest().getRequestMetricCollector());
             c.collectMetrics(request, response);
             awsRequestMetrics.log();
         }

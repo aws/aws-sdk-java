@@ -21,39 +21,27 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Ciphertext that contains the encrypted data key. You must store the blob and enough information to reconstruct
-     * the encryption context so that the data encrypted by using the key can later be decrypted. You must provide both
-     * the ciphertext blob and the encryption context to the <a>Decrypt</a> API to recover the plaintext data key and
-     * decrypt the object.
-     * </p>
-     * <p>
-     * If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The encrypted data encryption key.
      * </p>
      */
     private java.nio.ByteBuffer ciphertextBlob;
     /**
      * <p>
-     * Plaintext that contains the data key. Use this for encryption and decryption and then remove it from memory as
+     * The data encryption key. Use this data key for local encryption and decryption, then remove it from memory as
      * soon as possible.
      * </p>
      */
     private java.nio.ByteBuffer plaintext;
     /**
      * <p>
-     * System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     * The identifier of the CMK under which the data encryption key was generated and encrypted.
      * </p>
      */
     private String keyId;
 
     /**
      * <p>
-     * Ciphertext that contains the encrypted data key. You must store the blob and enough information to reconstruct
-     * the encryption context so that the data encrypted by using the key can later be decrypted. You must provide both
-     * the ciphertext blob and the encryption context to the <a>Decrypt</a> API to recover the plaintext data key and
-     * decrypt the object.
-     * </p>
-     * <p>
-     * If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The encrypted data encryption key.
      * </p>
      * <p>
      * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
@@ -67,12 +55,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param ciphertextBlob
-     *        Ciphertext that contains the encrypted data key. You must store the blob and enough information to
-     *        reconstruct the encryption context so that the data encrypted by using the key can later be decrypted. You
-     *        must provide both the ciphertext blob and the encryption context to the <a>Decrypt</a> API to recover the
-     *        plaintext data key and decrypt the object.</p>
-     *        <p>
-     *        If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     *        The encrypted data encryption key.
      */
 
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
@@ -81,13 +64,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Ciphertext that contains the encrypted data key. You must store the blob and enough information to reconstruct
-     * the encryption context so that the data encrypted by using the key can later be decrypted. You must provide both
-     * the ciphertext blob and the encryption context to the <a>Decrypt</a> API to recover the plaintext data key and
-     * decrypt the object.
-     * </p>
-     * <p>
-     * If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The encrypted data encryption key.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -97,12 +74,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * {@code position}.
      * </p>
      * 
-     * @return Ciphertext that contains the encrypted data key. You must store the blob and enough information to
-     *         reconstruct the encryption context so that the data encrypted by using the key can later be decrypted.
-     *         You must provide both the ciphertext blob and the encryption context to the <a>Decrypt</a> API to recover
-     *         the plaintext data key and decrypt the object.</p>
-     *         <p>
-     *         If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * @return The encrypted data encryption key.
      */
 
     public java.nio.ByteBuffer getCiphertextBlob() {
@@ -111,22 +83,11 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Ciphertext that contains the encrypted data key. You must store the blob and enough information to reconstruct
-     * the encryption context so that the data encrypted by using the key can later be decrypted. You must provide both
-     * the ciphertext blob and the encryption context to the <a>Decrypt</a> API to recover the plaintext data key and
-     * decrypt the object.
-     * </p>
-     * <p>
-     * If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The encrypted data encryption key.
      * </p>
      * 
      * @param ciphertextBlob
-     *        Ciphertext that contains the encrypted data key. You must store the blob and enough information to
-     *        reconstruct the encryption context so that the data encrypted by using the key can later be decrypted. You
-     *        must provide both the ciphertext blob and the encryption context to the <a>Decrypt</a> API to recover the
-     *        plaintext data key and decrypt the object.</p>
-     *        <p>
-     *        If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     *        The encrypted data encryption key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,7 +98,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Plaintext that contains the data key. Use this for encryption and decryption and then remove it from memory as
+     * The data encryption key. Use this data key for local encryption and decryption, then remove it from memory as
      * soon as possible.
      * </p>
      * <p>
@@ -152,8 +113,8 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param plaintext
-     *        Plaintext that contains the data key. Use this for encryption and decryption and then remove it from
-     *        memory as soon as possible.
+     *        The data encryption key. Use this data key for local encryption and decryption, then remove it from memory
+     *        as soon as possible.
      */
 
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
@@ -162,7 +123,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Plaintext that contains the data key. Use this for encryption and decryption and then remove it from memory as
+     * The data encryption key. Use this data key for local encryption and decryption, then remove it from memory as
      * soon as possible.
      * </p>
      * <p>
@@ -173,7 +134,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * {@code position}.
      * </p>
      * 
-     * @return Plaintext that contains the data key. Use this for encryption and decryption and then remove it from
+     * @return The data encryption key. Use this data key for local encryption and decryption, then remove it from
      *         memory as soon as possible.
      */
 
@@ -183,13 +144,13 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Plaintext that contains the data key. Use this for encryption and decryption and then remove it from memory as
+     * The data encryption key. Use this data key for local encryption and decryption, then remove it from memory as
      * soon as possible.
      * </p>
      * 
      * @param plaintext
-     *        Plaintext that contains the data key. Use this for encryption and decryption and then remove it from
-     *        memory as soon as possible.
+     *        The data encryption key. Use this data key for local encryption and decryption, then remove it from memory
+     *        as soon as possible.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +161,11 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     * The identifier of the CMK under which the data encryption key was generated and encrypted.
      * </p>
      * 
      * @param keyId
-     *        System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     *        The identifier of the CMK under which the data encryption key was generated and encrypted.
      */
 
     public void setKeyId(String keyId) {
@@ -213,10 +174,10 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     * The identifier of the CMK under which the data encryption key was generated and encrypted.
      * </p>
      * 
-     * @return System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     * @return The identifier of the CMK under which the data encryption key was generated and encrypted.
      */
 
     public String getKeyId() {
@@ -225,11 +186,11 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     * The identifier of the CMK under which the data encryption key was generated and encrypted.
      * </p>
      * 
      * @param keyId
-     *        System generated unique identifier of the key to be used to decrypt the encrypted copy of the data key.
+     *        The identifier of the CMK under which the data encryption key was generated and encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

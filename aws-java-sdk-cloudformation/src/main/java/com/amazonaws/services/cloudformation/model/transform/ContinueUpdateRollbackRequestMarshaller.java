@@ -47,6 +47,10 @@ public class ContinueUpdateRollbackRequestMarshaller implements Marshaller<Reque
             request.addParameter("StackName", StringUtils.fromString(continueUpdateRollbackRequest.getStackName()));
         }
 
+        if (continueUpdateRollbackRequest.getRoleARN() != null) {
+            request.addParameter("RoleARN", StringUtils.fromString(continueUpdateRollbackRequest.getRoleARN()));
+        }
+
         return request;
     }
 

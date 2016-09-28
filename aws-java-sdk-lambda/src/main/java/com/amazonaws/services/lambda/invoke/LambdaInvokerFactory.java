@@ -14,19 +14,8 @@
  */
 package com.amazonaws.services.lambda.invoke;
 
-import java.io.IOException;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-import java.lang.reflect.Type;
-import java.nio.ByteBuffer;
-import java.util.List;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.services.lambda.AWSLambda;
+import com.amazonaws.services.lambda.AWSLambdaAsyncClientBuilder;
 import com.amazonaws.services.lambda.model.InvocationType;
 import com.amazonaws.services.lambda.model.InvokeRequest;
 import com.amazonaws.services.lambda.model.InvokeResult;
@@ -38,61 +27,164 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.lang.reflect.Type;
+import java.nio.ByteBuffer;
+import java.util.List;
+
 /**
  * A factory for objects that implement a user-supplied interface by invoking a remote Lambda
  * function.
  * <p>
- * <code>
+ * <pre class="brush: java">
  * public class Request {
  *     // Standard POJO stuff here modeling the input your Lambda function
  *     // expects.
  * }
- * 
+ *
  * public class Result {
  *     // More standard POJO stuff here modeling the output your Lambda
  *     // function produces.
  * }
- * 
+ *
  * public interface LambdaFunctions {
- * 
- * @LambdaFunction Result doSomeStuff(Request request); } LambdaFunctions functions =
- *                 LambdaInvokerFactory.build( LambdaFunctions.class, new AWSLambdaClient());
- *                 Request request = new Request(...); Result result =
- *                 functions.doSomeStuff(request); </code>
+ *
+ *     &#064;LambdaFunction
+ *     Result doSomeStuff(Request request);
+ * }
+ * LambdaFunctions functions = LambdaInvokerFactory.builder()
+ *                             .lambdaClient(AWSLambdaSyncClientBuilder.standard()
+ *                                  .withCredentials(new ProfileCredentialsProvider("myprofile"))
+ *                                  .build())
+ *                             .build(LambdaFunctions.class);
+ * Request request = new Request(...);
+ * Result result = functions.doSomeStuff(request);
+ * </pre>
  */
 public final class LambdaInvokerFactory {
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     /**
-     * Creates a new Lambda invoker implementing the given interface and wrapping the given
-     * {@code AWSLambda} client.
+     * Creates a new Lambda invoker implementing the given interface and wrapping the given {@code AWSLambda} client.
      *
-     * @param interfaceClass
-     *            the interface to implement
-     * @param awsLambda
-     *            the lambda client to use for making remote calls
+     * @param interfaceClass the interface to implement
+     * @param awsLambda      the lambda client to use for making remote calls
+     * @deprecated Use {@link LambdaInvokerFactory#builder()} to configure invoker factory.
      */
+    @Deprecated
     public static <T> T build(Class<T> interfaceClass, AWSLambda awsLambda) {
         return build(interfaceClass, awsLambda, new LambdaInvokerFactoryConfig());
     }
 
     /**
-     * Creates a new Lambda invoker implementing the given interface and wrapping the given
-     * {@code AWSLambda} client.
+     * Creates a new Lambda invoker implementing the given interface and wrapping the given {@code AWSLambda} client.
      *
-     * @param interfaceClass
-     *            the interface to implement
-     * @param awsLambda
-     *            the lambda client to use for making remote calls
-     * @param config
-     *            configuration for the LambdaInvokerFactory
+     * @param interfaceClass the interface to implement
+     * @param awsLambda      the lambda client to use for making remote calls
+     * @param config         configuration for the LambdaInvokerFactory
+     * @deprecated Use {@link LambdaInvokerFactory#builder()} to configure invoker factory.
      */
+    @Deprecated
     public static <T> T build(Class<T> interfaceClass, AWSLambda awsLambda, LambdaInvokerFactoryConfig config) {
-        Object proxy = Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[] { interfaceClass },
-                new LambdaInvocationHandler(interfaceClass, awsLambda, config));
+        final Object proxy = Proxy.newProxyInstance(interfaceClass.getClassLoader(),
+                                                    new Class<?>[]{interfaceClass},
+                                                    new LambdaInvocationHandler(interfaceClass, awsLambda, config));
 
         return interfaceClass.cast(proxy);
+    }
+
+    /**
+     * @return An instance of {@link Builder} to configure an invoker factory and build proxies for
+     * invoking remote lambda functions.
+     */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public static class Builder {
+
+        private LambdaFunctionNameResolver functionNameResolver;
+        private String functionAlias;
+        private String functionVersion;
+        private AWSLambda lambda;
+
+        /**
+         * Sets a new Function name resolver to override the default behavior.
+         *
+         * @param functionNameResolver Implementation of {@link LambdaFunctionNameResolver}
+         * @return The current object for method chaining.
+         */
+        public Builder lambdaFunctionNameResolver(
+                LambdaFunctionNameResolver functionNameResolver) {
+            this.functionNameResolver = functionNameResolver;
+            return this;
+        }
+
+        private LambdaFunctionNameResolver resolveFunctionNameResolver() {
+            return functionNameResolver == null ? new DefaultLambdaFunctionNameResolver() :
+                    functionNameResolver;
+        }
+
+        /**
+         * Sets the function alias to invoke. See <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">Versioning
+         * & Aliases</a> for more information on aliases.
+         *
+         * @return This current object for method chaining.
+         */
+        public Builder functionAlias(String functionAlias) {
+            this.functionAlias = functionAlias;
+            return this;
+        }
+
+        /**
+         * Sets the function version to invoke. See <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">Versioning
+         * & Aliases</a> for more information on function versions.
+         *
+         * @return This current object for method chaining.
+         */
+        public Builder functionVersion(String functionVersion) {
+            this.functionVersion = functionVersion;
+            return this;
+        }
+
+        /**
+         * Sets the client to use to call AWS Lambda. If not set a default client is used (see {@link
+         * AWSLambdaAsyncClientBuilder#defaultClient()}).
+         *
+         * @param lambda Client instance to use.
+         * @return This current object for method chaining.
+         */
+        public Builder lambdaClient(AWSLambda lambda) {
+            this.lambda = lambda;
+            return this;
+        }
+
+        private AWSLambda resolveLambdaClient() {
+            return lambda == null ? AWSLambdaAsyncClientBuilder.defaultClient() : lambda;
+        }
+
+        /**
+         * Build a remote proxy of the given interface to make calls to AWS Lambda.
+         *
+         * @param interfaceClass Interface class to proxy.
+         * @param <T>            Interface type.
+         * @return This current object for method chaining.
+         */
+        public <T> T build(Class<T> interfaceClass) {
+            return LambdaInvokerFactory.build(interfaceClass, resolveLambdaClient(), getConfiguration());
+        }
+
+        private LambdaInvokerFactoryConfig getConfiguration() {
+            return new LambdaInvokerFactoryConfig(resolveFunctionNameResolver(), functionAlias, functionVersion);
+        }
     }
 
     private LambdaInvokerFactory() {
@@ -105,7 +197,6 @@ public final class LambdaInvokerFactory {
         private final LambdaInvokerFactoryConfig config;
 
         public LambdaInvocationHandler(Class<?> interfaceClass, AWSLambda awsLambda, LambdaInvokerFactoryConfig config) {
-
             this.awsLambda = awsLambda;
             this.log = LogFactory.getLog(interfaceClass);
             this.config = config;
@@ -113,13 +204,14 @@ public final class LambdaInvokerFactory {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            if(method.getName().equals("toString")) return this.toString();
-            else {
-                LambdaFunction annotation = validateInterfaceMethod(method, args);
-                InvokeRequest invokeRequest = buildInvokeRequest(method, annotation, args == null ? null : args[0]);
-                InvokeResult invokeResult = awsLambda.invoke(invokeRequest);
-                return processInvokeResult(method, invokeResult);
+            if (method.getName().equals("toString")) {
+                return this.toString();
             }
+
+            LambdaFunction annotation = validateInterfaceMethod(method, args);
+            InvokeRequest invokeRequest = buildInvokeRequest(method, annotation, args == null ? null : args[0]);
+            InvokeResult invokeResult = awsLambda.invoke(invokeRequest);
+            return processInvokeResult(method, invokeResult);
         }
 
         /**
@@ -155,6 +247,9 @@ public final class LambdaInvokerFactory {
             String functionName = config.getLambdaFunctionNameResolver().getFunctionName(method, annotation, config);
 
             invokeRequest.setFunctionName(functionName);
+            if (hasQualifier()) {
+                invokeRequest.setQualifier(getQualifier());
+            }
             invokeRequest.setInvocationType(annotation.invocationType());
             invokeRequest.setLogType(annotation.logType());
 
@@ -174,6 +269,16 @@ public final class LambdaInvokerFactory {
 
             return invokeRequest;
         }
+
+        private boolean hasQualifier() {
+            return getQualifier() != null;
+        }
+
+        private String getQualifier() {
+            return config.getFunctionAlias() == null ? config.getFunctionVersion() :
+                    config.getFunctionAlias();
+        }
+
 
         /**
          * Process the result of invoking a remote function. If the response includes server-side

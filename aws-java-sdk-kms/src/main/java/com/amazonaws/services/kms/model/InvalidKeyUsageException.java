@@ -14,8 +14,7 @@ package com.amazonaws.services.kms.model;
 
 /**
  * <p>
- * The request was rejected because the specified KeySpec parameter is not valid. The currently supported value is
- * ENCRYPT/DECRYPT.
+ * The request was rejected because the specified <code>KeySpec</code> value is not valid.
  * </p>
  */
 public class InvalidKeyUsageException extends com.amazonaws.services.kms.model.AWSKMSException {

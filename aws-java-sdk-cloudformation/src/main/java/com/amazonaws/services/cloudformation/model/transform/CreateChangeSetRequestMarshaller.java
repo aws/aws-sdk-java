@@ -118,6 +118,10 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
             }
         }
 
+        if (createChangeSetRequest.getRoleARN() != null) {
+            request.addParameter("RoleARN", StringUtils.fromString(createChangeSetRequest.getRoleARN()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> notificationARNsList = (com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest
                 .getNotificationARNs();
         if (notificationARNsList.isEmpty() && !notificationARNsList.isAutoConstruct()) {

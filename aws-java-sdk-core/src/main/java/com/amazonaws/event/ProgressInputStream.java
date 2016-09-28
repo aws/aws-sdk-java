@@ -14,13 +14,14 @@
  */
 package com.amazonaws.event;
 
-import java.io.IOException;
-import java.io.InputStream;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.internal.SdkFilterInputStream;
 
 import org.apache.http.annotation.NotThreadSafe;
 
-import com.amazonaws.AmazonWebServiceRequest;
-import com.amazonaws.internal.SdkFilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Used for input stream progress tracking purposes.
@@ -28,17 +29,32 @@ import com.amazonaws.internal.SdkFilterInputStream;
 @NotThreadSafe
 public abstract class ProgressInputStream extends SdkFilterInputStream {
     /**
-     * Returns an input stream for request progress tracking purposes. If
-     * request/response progress tracking is not enabled, this method simply
-     * return the given input stream as is.
-     * 
+     * Returns an input stream for request progress tracking purposes. If request/response progress
+     * tracking is not enabled, this method simply return the given input stream as is.
+     *
      * @param is the request content input stream
+     * @deprecated
      */
+    @Deprecated
     public static InputStream inputStreamForRequest(InputStream is,
             AmazonWebServiceRequest req) {
         return req == null
              ? is
-             : new RequestProgressInputStream(is, req.getGeneralProgressListener());
+             : inputStreamForRequest(is, req.getGeneralProgressListener());
+    }
+
+    /**
+     * @param is               the request content input stream
+     * @param progressListener Optional progress listener
+     * @return If the progress listener is non null returns a new input stream decorated with
+     * progress reporting functionality. If progress listener is null it returns the same input
+     * stream.
+     */
+    @SdkInternalApi
+    public static InputStream inputStreamForRequest(InputStream is, ProgressListener progressListener) {
+        return progressListener == null
+                ? is
+                : new RequestProgressInputStream(is, progressListener);
     }
 
     /**
@@ -48,11 +64,25 @@ public abstract class ProgressInputStream extends SdkFilterInputStream {
      * 
      * @param is the response content input stream
      */
-    public static InputStream inputStreamForResponse(InputStream is,
-            AmazonWebServiceRequest req) {
+    public static InputStream inputStreamForResponse(InputStream is, AmazonWebServiceRequest req) {
         return req == null
              ? is
              : new ResponseProgressInputStream(is, req.getGeneralProgressListener());
+    }
+
+    /**
+     * Returns an input stream for response progress tracking purposes. If request/response progress tracking is not enabled, this
+     * method simply return the given input stream as is.
+     *
+     * @param is               the response content input stream
+     * @param progressListener Optional progress listener
+     * @return If the progress listener is non null returns a new input stream decorated with progress reporting functionality. If
+     * progress listener is null it returns the same input stream.
+     */
+    public static InputStream inputStreamForResponse(InputStream is, ProgressListener progressListener) {
+        return progressListener == null
+                ? is
+                : new ResponseProgressInputStream(is, progressListener);
     }
 
     /** The threshold of bytes between notifications. */

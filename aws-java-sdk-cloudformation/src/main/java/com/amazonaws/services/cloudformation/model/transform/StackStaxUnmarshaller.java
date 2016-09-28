@@ -110,6 +110,11 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("RoleARN", targetDepth)) {
+                    stack.setRoleARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Tags/member", targetDepth)) {
                     stack.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
