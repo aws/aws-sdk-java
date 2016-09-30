@@ -56,7 +56,7 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSCognitoIdentityProviderAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -80,7 +80,7 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSCognitoIdentityProviderAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

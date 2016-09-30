@@ -99,7 +99,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRoute53DomainsClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -122,7 +122,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRoute53DomainsClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

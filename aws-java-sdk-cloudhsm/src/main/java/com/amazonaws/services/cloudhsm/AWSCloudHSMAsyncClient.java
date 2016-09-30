@@ -47,7 +47,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSCloudHSMAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -71,7 +71,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSCloudHSMAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

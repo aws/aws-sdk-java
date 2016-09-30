@@ -127,7 +127,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSDirectoryServiceClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -150,7 +150,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSDirectoryServiceClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

@@ -171,7 +171,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCognitoIdentityProviderClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -194,7 +194,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCognitoIdentityProviderClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

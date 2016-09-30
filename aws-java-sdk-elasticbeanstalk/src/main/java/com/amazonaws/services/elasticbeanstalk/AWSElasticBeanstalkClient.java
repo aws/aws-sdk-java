@@ -100,7 +100,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSElasticBeanstalkClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -123,7 +123,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSElasticBeanstalkClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

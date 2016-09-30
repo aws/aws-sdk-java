@@ -143,7 +143,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSLogsClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -166,7 +166,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSLogsClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

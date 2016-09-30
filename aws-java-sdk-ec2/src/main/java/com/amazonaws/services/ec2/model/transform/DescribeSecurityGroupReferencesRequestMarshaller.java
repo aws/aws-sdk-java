@@ -41,7 +41,7 @@ public class DescribeSecurityGroupReferencesRequestMarshaller implements
         Request<DescribeSecurityGroupReferencesRequest> request = new DefaultRequest<DescribeSecurityGroupReferencesRequest>(
                 describeSecurityGroupReferencesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSecurityGroupReferences");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> groupIdList = (com.amazonaws.internal.SdkInternalList<String>) describeSecurityGroupReferencesRequest

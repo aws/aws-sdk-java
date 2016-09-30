@@ -122,7 +122,7 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
      * DefaultAWSCredentialsProviderChain}.
      */
     private AWSCredentialsProvider resolveCredentials() {
-        return (credentials == null) ? new DefaultAWSCredentialsProviderChain() : credentials;
+        return (credentials == null) ? DefaultAWSCredentialsProviderChain.getInstance() : credentials;
     }
 
     /**

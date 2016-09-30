@@ -154,7 +154,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRDSClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -177,7 +177,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRDSClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

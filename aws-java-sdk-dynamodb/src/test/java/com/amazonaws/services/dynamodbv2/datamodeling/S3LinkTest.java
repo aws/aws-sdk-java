@@ -92,11 +92,11 @@ public class S3LinkTest
     }
 
     @Test
-    public void testFromJason() {
+    public void testFromJson() {
         String json = "{\"s3\":{\"region\":\"ap-southeast-2\",\"bucket\":\"test-bucket\",\"key\":\"testKey\"}}";
         S3Link s3link = S3Link.fromJson(mapper.getS3ClientCache(), json);
         assertEquals("test-bucket", s3link.getBucketName());
-        assertEquals("ap-southeast-2", s3link.getS3Region().getFirstRegionId());
+        assertEquals("ap-southeast-2", s3link.getRegion());
         assertEquals("testKey", s3link.getKey());
     }
 
@@ -114,5 +114,37 @@ public class S3LinkTest
         assertEquals(json,
             "{\"s3\":{\"bucket\":\"bucket\",\"key\":\"key\",\"region\":\"us-gov-west-1\"}}",
             json);
+    }
+
+    @Test
+    public void testGetRegion_ReturnsUsEast1_WhenS3LinkCreated_WithNullRegion() {
+        S3Link s3Link = mapper.createS3Link("bucket", "key");
+
+        assertEquals("us-east-1", s3Link.getS3Region().toAWSRegion().getName());
+        assertEquals("us-east-1", s3Link.getRegion());
+    }
+
+    @Test
+    public void testGetRegion_ReturnsUsEast1_WhenS3LinkCreated_WithUsStandardRegion() {
+        S3Link s3Link = mapper.createS3Link(Region.US_Standard, "bucket", "key");
+
+        assertEquals("us-east-1", s3Link.getS3Region().toAWSRegion().getName());
+        assertEquals("us-east-1", s3Link.getRegion());
+    }
+
+    @Test
+    public void testGetRegion_ReturnsUsEast1_WhenS3LinkCreated_WithUsEast1Region() {
+        S3Link s3Link = mapper.createS3Link("us-east-1", "bucket", "key");
+
+        assertEquals("us-east-1", s3Link.getS3Region().toAWSRegion().getName());
+        assertEquals("us-east-1", s3Link.getRegion());
+    }
+
+    @Test
+    public void testGetRegion_WithNonUsStandardRegion() {
+        S3Link s3Link = mapper.createS3Link(Region.EU_Frankfurt, "bucket", "key");
+
+        assertEquals(Region.EU_Frankfurt, s3Link.getS3Region());
+        assertEquals(Region.EU_Frankfurt.toAWSRegion().getName(), s3Link.getRegion());
     }
 }

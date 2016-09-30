@@ -237,7 +237,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonGameLiftClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -260,7 +260,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonGameLiftClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

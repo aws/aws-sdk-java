@@ -90,7 +90,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCloudHSMClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -113,7 +113,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCloudHSMClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

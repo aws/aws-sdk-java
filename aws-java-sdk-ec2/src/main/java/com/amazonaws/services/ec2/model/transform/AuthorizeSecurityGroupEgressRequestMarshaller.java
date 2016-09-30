@@ -41,7 +41,7 @@ public class AuthorizeSecurityGroupEgressRequestMarshaller implements
         Request<AuthorizeSecurityGroupEgressRequest> request = new DefaultRequest<AuthorizeSecurityGroupEgressRequest>(authorizeSecurityGroupEgressRequest,
                 "AmazonEC2");
         request.addParameter("Action", "AuthorizeSecurityGroupEgress");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (authorizeSecurityGroupEgressRequest.getGroupId() != null) {

@@ -82,7 +82,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSLogsAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -106,7 +106,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSLogsAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

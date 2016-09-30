@@ -23,7 +23,8 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Reserved Instance offering.
+     * The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      * </p>
      */
     private String reservedInstancesOfferingId;
@@ -101,14 +102,29 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PricingDetail> pricingDetails;
+    /**
+     * <p>
+     * If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary value, with
+     * different configurations. If <code>standard</code>, it is not possible to perform an exchange.
+     * </p>
+     */
+    private String offeringClass;
+    /**
+     * <p>
+     * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * </p>
+     */
+    private String scope;
 
     /**
      * <p>
-     * The ID of the Reserved Instance offering.
+     * The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      * </p>
      * 
      * @param reservedInstancesOfferingId
-     *        The ID of the Reserved Instance offering.
+     *        The ID of the Reserved Instance offering. This is the offering ID used in
+     *        <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      */
 
     public void setReservedInstancesOfferingId(String reservedInstancesOfferingId) {
@@ -117,10 +133,12 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Reserved Instance offering.
+     * The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      * </p>
      * 
-     * @return The ID of the Reserved Instance offering.
+     * @return The ID of the Reserved Instance offering. This is the offering ID used in
+     *         <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      */
 
     public String getReservedInstancesOfferingId() {
@@ -129,11 +147,13 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Reserved Instance offering.
+     * The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      * </p>
      * 
      * @param reservedInstancesOfferingId
-     *        The ID of the Reserved Instance offering.
+     *        The ID of the Reserved Instance offering. This is the offering ID used in
+     *        <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -884,6 +904,163 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary value, with
+     * different configurations. If <code>standard</code>, it is not possible to perform an exchange.
+     * </p>
+     * 
+     * @param offeringClass
+     *        If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary
+     *        value, with different configurations. If <code>standard</code>, it is not possible to perform an exchange.
+     * @see OfferingClassType
+     */
+
+    public void setOfferingClass(String offeringClass) {
+        this.offeringClass = offeringClass;
+    }
+
+    /**
+     * <p>
+     * If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary value, with
+     * different configurations. If <code>standard</code>, it is not possible to perform an exchange.
+     * </p>
+     * 
+     * @return If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary
+     *         value, with different configurations. If <code>standard</code>, it is not possible to perform an
+     *         exchange.
+     * @see OfferingClassType
+     */
+
+    public String getOfferingClass() {
+        return this.offeringClass;
+    }
+
+    /**
+     * <p>
+     * If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary value, with
+     * different configurations. If <code>standard</code>, it is not possible to perform an exchange.
+     * </p>
+     * 
+     * @param offeringClass
+     *        If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary
+     *        value, with different configurations. If <code>standard</code>, it is not possible to perform an exchange.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OfferingClassType
+     */
+
+    public ReservedInstancesOffering withOfferingClass(String offeringClass) {
+        setOfferingClass(offeringClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary value, with
+     * different configurations. If <code>standard</code>, it is not possible to perform an exchange.
+     * </p>
+     * 
+     * @param offeringClass
+     *        If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary
+     *        value, with different configurations. If <code>standard</code>, it is not possible to perform an exchange.
+     * @see OfferingClassType
+     */
+
+    public void setOfferingClass(OfferingClassType offeringClass) {
+        this.offeringClass = offeringClass.toString();
+    }
+
+    /**
+     * <p>
+     * If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary value, with
+     * different configurations. If <code>standard</code>, it is not possible to perform an exchange.
+     * </p>
+     * 
+     * @param offeringClass
+     *        If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary
+     *        value, with different configurations. If <code>standard</code>, it is not possible to perform an exchange.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OfferingClassType
+     */
+
+    public ReservedInstancesOffering withOfferingClass(OfferingClassType offeringClass) {
+        setOfferingClass(offeringClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * </p>
+     * 
+     * @param scope
+     *        Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * @see Scope
+     */
+
+    public void setScope(String scope) {
+        this.scope = scope;
+    }
+
+    /**
+     * <p>
+     * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * </p>
+     * 
+     * @return Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * @see Scope
+     */
+
+    public String getScope() {
+        return this.scope;
+    }
+
+    /**
+     * <p>
+     * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * </p>
+     * 
+     * @param scope
+     *        Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Scope
+     */
+
+    public ReservedInstancesOffering withScope(String scope) {
+        setScope(scope);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * </p>
+     * 
+     * @param scope
+     *        Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * @see Scope
+     */
+
+    public void setScope(Scope scope) {
+        this.scope = scope.toString();
+    }
+
+    /**
+     * <p>
+     * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * </p>
+     * 
+     * @param scope
+     *        Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Scope
+     */
+
+    public ReservedInstancesOffering withScope(Scope scope) {
+        setScope(scope);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -919,7 +1096,11 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
         if (getMarketplace() != null)
             sb.append("Marketplace: " + getMarketplace() + ",");
         if (getPricingDetails() != null)
-            sb.append("PricingDetails: " + getPricingDetails());
+            sb.append("PricingDetails: " + getPricingDetails() + ",");
+        if (getOfferingClass() != null)
+            sb.append("OfferingClass: " + getOfferingClass() + ",");
+        if (getScope() != null)
+            sb.append("Scope: " + getScope());
         sb.append("}");
         return sb.toString();
     }
@@ -986,6 +1167,14 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
             return false;
         if (other.getPricingDetails() != null && other.getPricingDetails().equals(this.getPricingDetails()) == false)
             return false;
+        if (other.getOfferingClass() == null ^ this.getOfferingClass() == null)
+            return false;
+        if (other.getOfferingClass() != null && other.getOfferingClass().equals(this.getOfferingClass()) == false)
+            return false;
+        if (other.getScope() == null ^ this.getScope() == null)
+            return false;
+        if (other.getScope() != null && other.getScope().equals(this.getScope()) == false)
+            return false;
         return true;
     }
 
@@ -1007,6 +1196,8 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
         hashCode = prime * hashCode + ((getMarketplace() == null) ? 0 : getMarketplace().hashCode());
         hashCode = prime * hashCode + ((getPricingDetails() == null) ? 0 : getPricingDetails().hashCode());
+        hashCode = prime * hashCode + ((getOfferingClass() == null) ? 0 : getOfferingClass().hashCode());
+        hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         return hashCode;
     }
 

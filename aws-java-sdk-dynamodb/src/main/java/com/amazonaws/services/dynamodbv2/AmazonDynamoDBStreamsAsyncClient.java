@@ -79,7 +79,7 @@ public class AmazonDynamoDBStreamsAsyncClient extends AmazonDynamoDBStreamsClien
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonDynamoDBStreamsAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -103,7 +103,7 @@ public class AmazonDynamoDBStreamsAsyncClient extends AmazonDynamoDBStreamsClien
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonDynamoDBStreamsAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

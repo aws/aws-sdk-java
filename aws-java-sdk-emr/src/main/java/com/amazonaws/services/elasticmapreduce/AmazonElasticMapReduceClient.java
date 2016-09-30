@@ -97,7 +97,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticMapReduceClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -120,7 +120,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticMapReduceClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

@@ -41,7 +41,7 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements
         Request<DescribeReservedInstancesOfferingsRequest> request = new DefaultRequest<DescribeReservedInstancesOfferingsRequest>(
                 describeReservedInstancesOfferingsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstancesOfferings");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> reservedInstancesOfferingIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeReservedInstancesOfferingsRequest
@@ -126,6 +126,10 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements
 
         if (describeReservedInstancesOfferingsRequest.getMaxInstanceCount() != null) {
             request.addParameter("MaxInstanceCount", StringUtils.fromInteger(describeReservedInstancesOfferingsRequest.getMaxInstanceCount()));
+        }
+
+        if (describeReservedInstancesOfferingsRequest.getOfferingClass() != null) {
+            request.addParameter("OfferingClass", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getOfferingClass()));
         }
 
         return request;

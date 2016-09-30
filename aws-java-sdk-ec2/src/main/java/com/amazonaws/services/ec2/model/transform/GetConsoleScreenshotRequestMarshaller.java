@@ -39,7 +39,7 @@ public class GetConsoleScreenshotRequestMarshaller implements Marshaller<Request
 
         Request<GetConsoleScreenshotRequest> request = new DefaultRequest<GetConsoleScreenshotRequest>(getConsoleScreenshotRequest, "AmazonEC2");
         request.addParameter("Action", "GetConsoleScreenshot");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (getConsoleScreenshotRequest.getInstanceId() != null) {

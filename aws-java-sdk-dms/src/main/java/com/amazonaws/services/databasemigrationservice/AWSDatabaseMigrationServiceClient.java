@@ -126,7 +126,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSDatabaseMigrationServiceClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -149,7 +149,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSDatabaseMigrationServiceClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

@@ -240,7 +240,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCodeCommitClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -263,7 +263,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCodeCommitClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

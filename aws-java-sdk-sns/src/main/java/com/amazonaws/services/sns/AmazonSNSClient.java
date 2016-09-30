@@ -94,7 +94,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSNSClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -117,7 +117,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSNSClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

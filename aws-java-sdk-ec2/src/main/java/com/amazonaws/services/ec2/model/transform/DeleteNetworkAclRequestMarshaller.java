@@ -39,7 +39,7 @@ public class DeleteNetworkAclRequestMarshaller implements Marshaller<Request<Del
 
         Request<DeleteNetworkAclRequest> request = new DefaultRequest<DeleteNetworkAclRequest>(deleteNetworkAclRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteNetworkAcl");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (deleteNetworkAclRequest.getNetworkAclId() != null) {

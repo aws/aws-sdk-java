@@ -88,7 +88,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFrontClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -111,7 +111,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFrontClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

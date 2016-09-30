@@ -147,7 +147,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSLambdaClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -170,7 +170,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSLambdaClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

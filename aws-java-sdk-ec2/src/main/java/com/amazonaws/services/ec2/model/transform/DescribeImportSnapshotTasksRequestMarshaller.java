@@ -41,7 +41,7 @@ public class DescribeImportSnapshotTasksRequestMarshaller implements
         Request<DescribeImportSnapshotTasksRequest> request = new DefaultRequest<DescribeImportSnapshotTasksRequest>(describeImportSnapshotTasksRequest,
                 "AmazonEC2");
         request.addParameter("Action", "DescribeImportSnapshotTasks");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> importTaskIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImportSnapshotTasksRequest

@@ -151,7 +151,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticLoadBalancingClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -174,7 +174,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticLoadBalancingClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

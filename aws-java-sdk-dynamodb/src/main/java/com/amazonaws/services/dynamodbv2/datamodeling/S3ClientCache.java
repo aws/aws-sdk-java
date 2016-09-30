@@ -103,6 +103,9 @@ public class S3ClientCache {
      *             instantiated.
      */
     public AmazonS3 getClient(Region region) {
+        if (region == null) {
+            throw new IllegalArgumentException("S3 region must be specified");
+        }
         return getClient(region.toAWSRegion().getName());
     }
 

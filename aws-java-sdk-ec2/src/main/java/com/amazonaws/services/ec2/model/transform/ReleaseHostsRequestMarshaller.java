@@ -39,7 +39,7 @@ public class ReleaseHostsRequestMarshaller implements Marshaller<Request<Release
 
         Request<ReleaseHostsRequest> request = new DefaultRequest<ReleaseHostsRequest>(releaseHostsRequest, "AmazonEC2");
         request.addParameter("Action", "ReleaseHosts");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> hostIdsList = (com.amazonaws.internal.SdkInternalList<String>) releaseHostsRequest.getHostIds();

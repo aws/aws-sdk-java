@@ -39,7 +39,7 @@ public class RunScheduledInstancesRequestMarshaller implements Marshaller<Reques
 
         Request<RunScheduledInstancesRequest> request = new DefaultRequest<RunScheduledInstancesRequest>(runScheduledInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RunScheduledInstances");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         request.addParameter("ClientToken", IdempotentUtils.resolveString(runScheduledInstancesRequest.getClientToken()));

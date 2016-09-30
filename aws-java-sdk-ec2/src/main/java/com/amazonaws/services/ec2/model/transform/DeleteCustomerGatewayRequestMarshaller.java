@@ -39,7 +39,7 @@ public class DeleteCustomerGatewayRequestMarshaller implements Marshaller<Reques
 
         Request<DeleteCustomerGatewayRequest> request = new DefaultRequest<DeleteCustomerGatewayRequest>(deleteCustomerGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteCustomerGateway");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (deleteCustomerGatewayRequest.getCustomerGatewayId() != null) {

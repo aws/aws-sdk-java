@@ -58,7 +58,7 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient implem
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonCloudSearchAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -82,7 +82,7 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient implem
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonCloudSearchAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

@@ -84,7 +84,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonImportExportClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -107,7 +107,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonImportExportClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

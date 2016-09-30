@@ -134,7 +134,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonECRClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -157,7 +157,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonECRClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

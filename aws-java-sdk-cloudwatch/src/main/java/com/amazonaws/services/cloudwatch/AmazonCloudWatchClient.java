@@ -98,7 +98,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudWatchClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -121,7 +121,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudWatchClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

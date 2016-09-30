@@ -39,7 +39,7 @@ public class CreateNetworkAclEntryRequestMarshaller implements Marshaller<Reques
 
         Request<CreateNetworkAclEntryRequest> request = new DefaultRequest<CreateNetworkAclEntryRequest>(createNetworkAclEntryRequest, "AmazonEC2");
         request.addParameter("Action", "CreateNetworkAclEntry");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createNetworkAclEntryRequest.getNetworkAclId() != null) {

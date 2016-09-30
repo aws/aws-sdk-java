@@ -63,7 +63,7 @@ public class AWSMarketplaceMeteringAsyncClient extends AWSMarketplaceMeteringCli
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSMarketplaceMeteringAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -87,7 +87,7 @@ public class AWSMarketplaceMeteringAsyncClient extends AWSMarketplaceMeteringCli
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSMarketplaceMeteringAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

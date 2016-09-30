@@ -108,7 +108,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonWorkspacesClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -131,7 +131,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonWorkspacesClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

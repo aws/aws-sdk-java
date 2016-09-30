@@ -151,7 +151,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSIotClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -174,7 +174,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSIotClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

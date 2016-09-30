@@ -41,7 +41,7 @@ public class ModifyNetworkInterfaceAttributeRequestMarshaller implements
         Request<ModifyNetworkInterfaceAttributeRequest> request = new DefaultRequest<ModifyNetworkInterfaceAttributeRequest>(
                 modifyNetworkInterfaceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyNetworkInterfaceAttribute");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifyNetworkInterfaceAttributeRequest.getNetworkInterfaceId() != null) {

@@ -40,7 +40,7 @@ public class UnassignPrivateIpAddressesRequestMarshaller implements Marshaller<R
         Request<UnassignPrivateIpAddressesRequest> request = new DefaultRequest<UnassignPrivateIpAddressesRequest>(unassignPrivateIpAddressesRequest,
                 "AmazonEC2");
         request.addParameter("Action", "UnassignPrivateIpAddresses");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (unassignPrivateIpAddressesRequest.getNetworkInterfaceId() != null) {

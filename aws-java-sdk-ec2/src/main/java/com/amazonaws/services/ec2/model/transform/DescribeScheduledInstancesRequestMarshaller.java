@@ -40,7 +40,7 @@ public class DescribeScheduledInstancesRequestMarshaller implements Marshaller<R
         Request<DescribeScheduledInstancesRequest> request = new DefaultRequest<DescribeScheduledInstancesRequest>(describeScheduledInstancesRequest,
                 "AmazonEC2");
         request.addParameter("Action", "DescribeScheduledInstances");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> scheduledInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeScheduledInstancesRequest

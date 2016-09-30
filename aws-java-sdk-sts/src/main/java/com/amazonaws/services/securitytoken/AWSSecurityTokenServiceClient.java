@@ -134,7 +134,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSecurityTokenServiceClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -157,7 +157,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSecurityTokenServiceClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

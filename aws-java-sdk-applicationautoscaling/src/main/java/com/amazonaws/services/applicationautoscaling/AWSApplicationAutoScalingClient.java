@@ -186,7 +186,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSApplicationAutoScalingClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -209,7 +209,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSApplicationAutoScalingClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

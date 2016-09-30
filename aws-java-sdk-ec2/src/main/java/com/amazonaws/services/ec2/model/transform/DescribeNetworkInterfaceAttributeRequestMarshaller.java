@@ -41,7 +41,7 @@ public class DescribeNetworkInterfaceAttributeRequestMarshaller implements
         Request<DescribeNetworkInterfaceAttributeRequest> request = new DefaultRequest<DescribeNetworkInterfaceAttributeRequest>(
                 describeNetworkInterfaceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeNetworkInterfaceAttribute");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeNetworkInterfaceAttributeRequest.getNetworkInterfaceId() != null) {

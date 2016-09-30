@@ -83,7 +83,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRoute53Client() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -106,7 +106,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRoute53Client(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

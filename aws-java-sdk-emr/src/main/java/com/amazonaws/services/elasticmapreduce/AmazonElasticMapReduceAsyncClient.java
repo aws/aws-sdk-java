@@ -51,7 +51,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonElasticMapReduceAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -75,7 +75,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonElasticMapReduceAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

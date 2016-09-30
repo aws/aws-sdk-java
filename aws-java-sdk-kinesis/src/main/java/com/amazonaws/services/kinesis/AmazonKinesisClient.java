@@ -105,7 +105,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonKinesisClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -128,7 +128,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonKinesisClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

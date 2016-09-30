@@ -148,7 +148,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonIdentityManagementClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -171,7 +171,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonIdentityManagementClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

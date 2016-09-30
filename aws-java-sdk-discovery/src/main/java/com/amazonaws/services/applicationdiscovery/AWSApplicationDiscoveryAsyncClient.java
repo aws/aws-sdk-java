@@ -421,7 +421,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSApplicationDiscoveryAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -445,7 +445,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSApplicationDiscoveryAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

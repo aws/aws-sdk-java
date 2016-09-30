@@ -115,7 +115,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSElasticsearchClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -138,7 +138,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSElasticsearchClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

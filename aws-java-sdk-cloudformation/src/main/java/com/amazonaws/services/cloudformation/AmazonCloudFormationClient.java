@@ -103,7 +103,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFormationClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -126,7 +126,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFormationClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

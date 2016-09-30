@@ -84,7 +84,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSMarketplaceCommerceAnalyticsClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -107,7 +107,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSMarketplaceCommerceAnalyticsClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

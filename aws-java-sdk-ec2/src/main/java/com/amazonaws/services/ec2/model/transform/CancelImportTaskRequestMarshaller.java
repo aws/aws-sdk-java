@@ -39,7 +39,7 @@ public class CancelImportTaskRequestMarshaller implements Marshaller<Request<Can
 
         Request<CancelImportTaskRequest> request = new DefaultRequest<CancelImportTaskRequest>(cancelImportTaskRequest, "AmazonEC2");
         request.addParameter("Action", "CancelImportTask");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (cancelImportTaskRequest.getImportTaskId() != null) {

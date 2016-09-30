@@ -25,12 +25,13 @@ public class S3LinkIDTest {
 
     @Test
     public void testToFromJson() {
-        S3Link.ID id = new S3Link.ID(Region.AP_Tokyo, "bucket", "key");
+        String region = "ap-northeast-1";
+        S3Link.ID id = new S3Link.ID(region, "bucket", "key");
         String json = id.toJson();
         S3Link.ID twin = Jackson.fromJsonString(json, S3Link.ID.class);
         assertEquals("bucket", twin.getBucket());
         assertEquals("key", twin.getKey());
-        assertEquals(Region.AP_Tokyo.getFirstRegionId(), twin.getRegionId());
+        assertEquals(region, twin.getRegionId());
     }
 
     @Test

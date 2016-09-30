@@ -110,7 +110,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRedshiftClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -133,7 +133,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRedshiftClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

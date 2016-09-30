@@ -25,17 +25,17 @@ public class CreateReservedInstancesListingResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the Reserved Instance listing.
+     * Information about the Standard Reserved Instance listing.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ReservedInstancesListing> reservedInstancesListings;
 
     /**
      * <p>
-     * Information about the Reserved Instance listing.
+     * Information about the Standard Reserved Instance listing.
      * </p>
      * 
-     * @return Information about the Reserved Instance listing.
+     * @return Information about the Standard Reserved Instance listing.
      */
 
     public java.util.List<ReservedInstancesListing> getReservedInstancesListings() {
@@ -47,11 +47,11 @@ public class CreateReservedInstancesListingResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the Reserved Instance listing.
+     * Information about the Standard Reserved Instance listing.
      * </p>
      * 
      * @param reservedInstancesListings
-     *        Information about the Reserved Instance listing.
+     *        Information about the Standard Reserved Instance listing.
      */
 
     public void setReservedInstancesListings(java.util.Collection<ReservedInstancesListing> reservedInstancesListings) {
@@ -65,7 +65,7 @@ public class CreateReservedInstancesListingResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the Reserved Instance listing.
+     * Information about the Standard Reserved Instance listing.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class CreateReservedInstancesListingResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param reservedInstancesListings
-     *        Information about the Reserved Instance listing.
+     *        Information about the Standard Reserved Instance listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class CreateReservedInstancesListingResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the Reserved Instance listing.
+     * Information about the Standard Reserved Instance listing.
      * </p>
      * 
      * @param reservedInstancesListings
-     *        Information about the Reserved Instance listing.
+     *        Information about the Standard Reserved Instance listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

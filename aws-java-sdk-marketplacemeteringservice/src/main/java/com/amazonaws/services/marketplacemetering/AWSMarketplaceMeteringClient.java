@@ -118,7 +118,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSMarketplaceMeteringClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -141,7 +141,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSMarketplaceMeteringClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

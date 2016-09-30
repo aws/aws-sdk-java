@@ -36,6 +36,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public AcceptReservedInstancesExchangeQuoteResult acceptReservedInstancesExchangeQuote(AcceptReservedInstancesExchangeQuoteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AcceptVpcPeeringConnectionResult acceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1092,6 +1097,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public GetPasswordDataResult getPasswordData(GetPasswordDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetReservedInstancesExchangeQuoteResult getReservedInstancesExchangeQuote(GetReservedInstancesExchangeQuoteRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

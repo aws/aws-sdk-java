@@ -127,7 +127,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonECSClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -150,7 +150,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonECSClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

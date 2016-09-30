@@ -222,7 +222,7 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSCodePipelineAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -246,7 +246,7 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSCodePipelineAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

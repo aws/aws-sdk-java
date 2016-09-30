@@ -473,7 +473,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSApplicationDiscoveryClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -496,7 +496,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSApplicationDiscoveryClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

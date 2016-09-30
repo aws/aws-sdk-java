@@ -142,7 +142,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticFileSystemClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -165,7 +165,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticFileSystemClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

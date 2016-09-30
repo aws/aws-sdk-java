@@ -31,8 +31,12 @@ import com.amazonaws.services.dynamodbv2.model.UpdateItemRequest;
 import com.amazonaws.services.s3.model.Region;
 
 /**
- * Interface for DynamoDBMapper. See the standard implementation {@link DynamoDBMapper} for the
+ * Interface for DynamoDBMapper.
+ *
+ * <p>
+ * <b>Note:</b> Do not implement this interface. See the standard implementation {@link DynamoDBMapper} for the
  * usage.
+ * </p>
  *
  * @see DynamoDBMapper
  */
@@ -639,6 +643,15 @@ public interface IDynamoDBMapper {
      *             if the mapper has not been constructed with the necessary S3 AWS credentials.
      */
     S3Link createS3Link(Region s3region, String bucketName, String key);
+
+    /**
+     * Creates an S3Link with the specified region, bucket name and key. This method requires the
+     * mapper to have been initialized with the necessary credentials for accessing S3.
+     *
+     * @throws IllegalStateException
+     *             if the mapper has not been constructed with the necessary S3 AWS credentials.
+     */
+    S3Link createS3Link(String s3region, String bucketName, String key);
 
     /**
      * Parse the given POJO class and return the CreateTableRequest for the DynamoDB table it

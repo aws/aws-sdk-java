@@ -102,7 +102,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSDeviceFarmClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -125,7 +125,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSDeviceFarmClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

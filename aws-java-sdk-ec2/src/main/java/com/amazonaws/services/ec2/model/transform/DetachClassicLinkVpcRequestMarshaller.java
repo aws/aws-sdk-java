@@ -39,7 +39,7 @@ public class DetachClassicLinkVpcRequestMarshaller implements Marshaller<Request
 
         Request<DetachClassicLinkVpcRequest> request = new DefaultRequest<DetachClassicLinkVpcRequest>(detachClassicLinkVpcRequest, "AmazonEC2");
         request.addParameter("Action", "DetachClassicLinkVpc");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (detachClassicLinkVpcRequest.getInstanceId() != null) {

@@ -225,7 +225,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSOpsWorksClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -248,7 +248,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSOpsWorksClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

@@ -117,7 +117,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSServiceCatalogClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -140,7 +140,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSServiceCatalogClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

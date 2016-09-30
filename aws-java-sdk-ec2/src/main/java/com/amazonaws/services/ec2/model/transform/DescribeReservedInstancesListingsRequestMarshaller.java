@@ -41,7 +41,7 @@ public class DescribeReservedInstancesListingsRequestMarshaller implements
         Request<DescribeReservedInstancesListingsRequest> request = new DefaultRequest<DescribeReservedInstancesListingsRequest>(
                 describeReservedInstancesListingsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstancesListings");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeReservedInstancesListingsRequest.getReservedInstancesId() != null) {
@@ -60,7 +60,7 @@ public class DescribeReservedInstancesListingsRequestMarshaller implements
             for (Filter filtersListValue : filtersList) {
 
                 if (filtersListValue.getName() != null) {
-                    request.addParameter("Filters." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
                 }
 
                 com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
@@ -69,7 +69,7 @@ public class DescribeReservedInstancesListingsRequestMarshaller implements
 
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
-                            request.addParameter("Filters." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
                         }
                         valuesListIndex++;
                     }

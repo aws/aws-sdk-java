@@ -159,7 +159,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSStorageGatewayClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -182,7 +182,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSStorageGatewayClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

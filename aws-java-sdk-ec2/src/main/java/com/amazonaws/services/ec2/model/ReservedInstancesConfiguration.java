@@ -45,6 +45,12 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private String instanceType;
+    /**
+     * <p>
+     * Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+     * </p>
+     */
+    private String scope;
 
     /**
      * <p>
@@ -240,6 +246,79 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+     * </p>
+     * 
+     * @param scope
+     *        Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+     * @see Scope
+     */
+
+    public void setScope(String scope) {
+        this.scope = scope;
+    }
+
+    /**
+     * <p>
+     * Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+     * </p>
+     * 
+     * @return Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+     * @see Scope
+     */
+
+    public String getScope() {
+        return this.scope;
+    }
+
+    /**
+     * <p>
+     * Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+     * </p>
+     * 
+     * @param scope
+     *        Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Scope
+     */
+
+    public ReservedInstancesConfiguration withScope(String scope) {
+        setScope(scope);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+     * </p>
+     * 
+     * @param scope
+     *        Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+     * @see Scope
+     */
+
+    public void setScope(Scope scope) {
+        this.scope = scope.toString();
+    }
+
+    /**
+     * <p>
+     * Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+     * </p>
+     * 
+     * @param scope
+     *        Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Scope
+     */
+
+    public ReservedInstancesConfiguration withScope(Scope scope) {
+        setScope(scope);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -257,7 +336,9 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
         if (getInstanceCount() != null)
             sb.append("InstanceCount: " + getInstanceCount() + ",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType());
+            sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getScope() != null)
+            sb.append("Scope: " + getScope());
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +369,10 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
+        if (other.getScope() == null ^ this.getScope() == null)
+            return false;
+        if (other.getScope() != null && other.getScope().equals(this.getScope()) == false)
+            return false;
         return true;
     }
 
@@ -300,6 +385,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         return hashCode;
     }
 

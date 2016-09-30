@@ -45,7 +45,7 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonRoute53DomainsAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -69,7 +69,7 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonRoute53DomainsAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

@@ -28,6 +28,9 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
      * <p>
      * One or more instance IDs.
      * </p>
+     * <p>
+     * Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
 
@@ -43,7 +46,9 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
      * methods to initialize any additional object members.
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        One or more instance IDs.</p>
+     *        <p>
+     *        Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      */
     public TerminateInstancesRequest(java.util.List<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -53,8 +58,13 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
      * <p>
      * One or more instance IDs.
      * </p>
+     * <p>
+     * Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
+     * </p>
      * 
-     * @return One or more instance IDs.
+     * @return One or more instance IDs.</p>
+     *         <p>
+     *         Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -68,9 +78,14 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
      * <p>
      * One or more instance IDs.
      * </p>
+     * <p>
+     * Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
+     * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        One or more instance IDs.</p>
+     *        <p>
+     *        Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -87,13 +102,18 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
      * One or more instance IDs.
      * </p>
      * <p>
+     * Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInstanceIds(java.util.Collection)} or {@link #withInstanceIds(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        One or more instance IDs.</p>
+     *        <p>
+     *        Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,9 +131,14 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
      * <p>
      * One or more instance IDs.
      * </p>
+     * <p>
+     * Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
+     * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        One or more instance IDs.</p>
+     *        <p>
+     *        Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -128,7 +128,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonDynamoDBStreamsClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -151,7 +151,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonDynamoDBStreamsClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

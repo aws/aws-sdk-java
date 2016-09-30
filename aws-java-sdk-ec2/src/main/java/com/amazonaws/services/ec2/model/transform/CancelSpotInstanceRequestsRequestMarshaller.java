@@ -40,7 +40,7 @@ public class CancelSpotInstanceRequestsRequestMarshaller implements Marshaller<R
         Request<CancelSpotInstanceRequestsRequest> request = new DefaultRequest<CancelSpotInstanceRequestsRequest>(cancelSpotInstanceRequestsRequest,
                 "AmazonEC2");
         request.addParameter("Action", "CancelSpotInstanceRequests");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> spotInstanceRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) cancelSpotInstanceRequestsRequest

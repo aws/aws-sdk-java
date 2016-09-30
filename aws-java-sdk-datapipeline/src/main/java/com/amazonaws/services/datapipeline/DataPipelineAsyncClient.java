@@ -66,7 +66,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public DataPipelineAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -90,7 +90,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public DataPipelineAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

@@ -43,6 +43,14 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
      */
     private static final int ASYNC_REFRESH_INTERVAL_TIME_MINUTES = 1;
 
+    /**
+     * The default InstanceProfileCredentialsProvider that can be shared by
+     * multiple CredentialsProvider instance threads to shrink the amount of
+     * requests to EC2 metadata service.
+     */
+    private static final InstanceProfileCredentialsProvider INSTANCE
+        = new InstanceProfileCredentialsProvider();
+
     private final EC2CredentialsFetcher credentialsFetcher;
 
     /**
@@ -51,6 +59,10 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
      */
     private volatile ScheduledExecutorService executor;
 
+    /**
+     * @deprecated for the singleton method {@link #getInstance()}.
+     */
+    @Deprecated
     public InstanceProfileCredentialsProvider() {
         this(false);
     }
@@ -84,6 +96,14 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
                 }
             }, 0, ASYNC_REFRESH_INTERVAL_TIME_MINUTES, TimeUnit.MINUTES);
         }
+    }
+
+    /**
+     * Returns a singleton {@link InstanceProfileCredentialsProvider} that does not refresh credentials
+     * asynchronously. Use {@link #InstanceProfileCredentialsProvider(boolean)} for the feature.
+     */
+    public static InstanceProfileCredentialsProvider getInstance() {
+        return INSTANCE;
     }
 
     private void handleError(Throwable t) {

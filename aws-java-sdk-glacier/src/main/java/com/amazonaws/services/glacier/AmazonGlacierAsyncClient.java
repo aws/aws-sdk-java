@@ -86,7 +86,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonGlacierAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -110,7 +110,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonGlacierAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

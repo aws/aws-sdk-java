@@ -125,6 +125,15 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                     continue;
                 }
 
+                if (context.testExpression("offeringClass", targetDepth)) {
+                    reservedInstances.setOfferingClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("scope", targetDepth)) {
+                    reservedInstances.setScope(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedInstances;

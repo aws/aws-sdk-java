@@ -104,6 +104,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * </li>
      * <li>
      * <p>
+     * <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).
      * </p>
      * </li>
@@ -178,6 +183,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * </p>
      */
     private Integer maxInstanceCount;
+    /**
+     * <p>
+     * The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.
+     * </p>
+     */
+    private String offeringClass;
 
     /**
      * <p>
@@ -521,6 +532,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * </li>
      * <li>
      * <p>
+     * <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).
      * </p>
      * </li>
@@ -572,6 +588,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         <li>
      *         <p>
      *         <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or
+     *         <code>Region</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -640,6 +662,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * </li>
      * <li>
      * <p>
+     * <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).
      * </p>
      * </li>
@@ -692,6 +719,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        <li>
      *        <p>
      *        <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or
+     *        <code>Region</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -762,6 +795,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * </li>
      * <li>
      * <p>
+     * <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).
      * </p>
      * </li>
@@ -819,6 +857,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        <li>
      *        <p>
      *        <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or
+     *        <code>Region</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -891,6 +935,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * </li>
      * <li>
      * <p>
+     * <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).
      * </p>
      * </li>
@@ -943,6 +992,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        <li>
      *        <p>
      *        <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or
+     *        <code>Region</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1484,6 +1539,79 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.
+     * </p>
+     * 
+     * @param offeringClass
+     *        The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.
+     * @see OfferingClassType
+     */
+
+    public void setOfferingClass(String offeringClass) {
+        this.offeringClass = offeringClass;
+    }
+
+    /**
+     * <p>
+     * The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.
+     * </p>
+     * 
+     * @return The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.
+     * @see OfferingClassType
+     */
+
+    public String getOfferingClass() {
+        return this.offeringClass;
+    }
+
+    /**
+     * <p>
+     * The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.
+     * </p>
+     * 
+     * @param offeringClass
+     *        The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OfferingClassType
+     */
+
+    public DescribeReservedInstancesOfferingsRequest withOfferingClass(String offeringClass) {
+        setOfferingClass(offeringClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.
+     * </p>
+     * 
+     * @param offeringClass
+     *        The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.
+     * @see OfferingClassType
+     */
+
+    public void setOfferingClass(OfferingClassType offeringClass) {
+        this.offeringClass = offeringClass.toString();
+    }
+
+    /**
+     * <p>
+     * The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.
+     * </p>
+     * 
+     * @param offeringClass
+     *        The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OfferingClassType
+     */
+
+    public DescribeReservedInstancesOfferingsRequest withOfferingClass(OfferingClassType offeringClass) {
+        setOfferingClass(offeringClass);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1530,7 +1658,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         if (getMaxDuration() != null)
             sb.append("MaxDuration: " + getMaxDuration() + ",");
         if (getMaxInstanceCount() != null)
-            sb.append("MaxInstanceCount: " + getMaxInstanceCount());
+            sb.append("MaxInstanceCount: " + getMaxInstanceCount() + ",");
+        if (getOfferingClass() != null)
+            sb.append("OfferingClass: " + getOfferingClass());
         sb.append("}");
         return sb.toString();
     }
@@ -1597,6 +1727,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
             return false;
         if (other.getMaxInstanceCount() != null && other.getMaxInstanceCount().equals(this.getMaxInstanceCount()) == false)
             return false;
+        if (other.getOfferingClass() == null ^ this.getOfferingClass() == null)
+            return false;
+        if (other.getOfferingClass() != null && other.getOfferingClass().equals(this.getOfferingClass()) == false)
+            return false;
         return true;
     }
 
@@ -1618,6 +1752,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         hashCode = prime * hashCode + ((getMinDuration() == null) ? 0 : getMinDuration().hashCode());
         hashCode = prime * hashCode + ((getMaxDuration() == null) ? 0 : getMaxDuration().hashCode());
         hashCode = prime * hashCode + ((getMaxInstanceCount() == null) ? 0 : getMaxInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getOfferingClass() == null) ? 0 : getOfferingClass().hashCode());
         return hashCode;
     }
 

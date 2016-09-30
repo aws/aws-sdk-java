@@ -41,7 +41,7 @@ public class ModifyVpcPeeringConnectionOptionsRequestMarshaller implements
         Request<ModifyVpcPeeringConnectionOptionsRequest> request = new DefaultRequest<ModifyVpcPeeringConnectionOptionsRequest>(
                 modifyVpcPeeringConnectionOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyVpcPeeringConnectionOptions");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifyVpcPeeringConnectionOptionsRequest.getVpcPeeringConnectionId() != null) {

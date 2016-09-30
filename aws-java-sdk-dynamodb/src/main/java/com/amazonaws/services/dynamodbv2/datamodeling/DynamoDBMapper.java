@@ -2130,7 +2130,12 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
     @Override
     public S3Link createS3Link(Region s3region, String bucketName, String key) {
-        return s3Links.createS3Link(s3region, bucketName , key);
+        return s3Links.createS3Link(s3region, bucketName, key);
+    }
+
+    @Override
+    public S3Link createS3Link(String s3region, String bucketName, String key) {
+        return s3Links.createS3Link(s3region, bucketName, key);
     }
 
     @Override

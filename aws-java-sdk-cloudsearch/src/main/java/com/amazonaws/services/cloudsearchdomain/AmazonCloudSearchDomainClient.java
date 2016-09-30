@@ -100,7 +100,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudSearchDomainClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -123,7 +123,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudSearchDomainClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

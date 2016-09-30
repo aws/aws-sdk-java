@@ -53,7 +53,7 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSIotDataAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -77,7 +77,7 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSIotDataAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

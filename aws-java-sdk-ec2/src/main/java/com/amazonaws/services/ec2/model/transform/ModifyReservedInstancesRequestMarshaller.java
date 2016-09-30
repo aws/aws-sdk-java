@@ -39,7 +39,7 @@ public class ModifyReservedInstancesRequestMarshaller implements Marshaller<Requ
 
         Request<ModifyReservedInstancesRequest> request = new DefaultRequest<ModifyReservedInstancesRequest>(modifyReservedInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyReservedInstances");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifyReservedInstancesRequest.getClientToken() != null) {
@@ -84,6 +84,11 @@ public class ModifyReservedInstancesRequestMarshaller implements Marshaller<Requ
                 if (targetConfigurationsListValue.getInstanceType() != null) {
                     request.addParameter("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".InstanceType",
                             StringUtils.fromString(targetConfigurationsListValue.getInstanceType()));
+                }
+
+                if (targetConfigurationsListValue.getScope() != null) {
+                    request.addParameter("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".Scope",
+                            StringUtils.fromString(targetConfigurationsListValue.getScope()));
                 }
                 targetConfigurationsListIndex++;
             }

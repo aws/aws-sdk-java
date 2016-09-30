@@ -51,7 +51,8 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * The private IP address of the network interface. Applies only if creating a network interface when launching an
-     * instance.
+     * instance. You cannot specify this option if you're launching more than one instance in a <a>RunInstances</a>
+     * request.
      * </p>
      */
     private String privateIpAddress;
@@ -72,14 +73,16 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * One or more private IP addresses to assign to the network interface. Only one private IP address can be
-     * designated as primary.
+     * designated as primary. You cannot specify this option if you're launching more than one instance in a
+     * <a>RunInstances</a> request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification> privateIpAddresses;
     /**
      * <p>
      * The number of secondary private IP addresses. You can't specify this option and specify more than one private IP
-     * address using the private IP addresses option.
+     * address using the private IP addresses option. You cannot specify this option if you're launching more than one
+     * instance in a <a>RunInstances</a> request.
      * </p>
      */
     private Integer secondaryPrivateIpAddressCount;
@@ -274,12 +277,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * The private IP address of the network interface. Applies only if creating a network interface when launching an
-     * instance.
+     * instance. You cannot specify this option if you're launching more than one instance in a <a>RunInstances</a>
+     * request.
      * </p>
      * 
      * @param privateIpAddress
      *        The private IP address of the network interface. Applies only if creating a network interface when
-     *        launching an instance.
+     *        launching an instance. You cannot specify this option if you're launching more than one instance in a
+     *        <a>RunInstances</a> request.
      */
 
     public void setPrivateIpAddress(String privateIpAddress) {
@@ -289,11 +294,13 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * The private IP address of the network interface. Applies only if creating a network interface when launching an
-     * instance.
+     * instance. You cannot specify this option if you're launching more than one instance in a <a>RunInstances</a>
+     * request.
      * </p>
      * 
      * @return The private IP address of the network interface. Applies only if creating a network interface when
-     *         launching an instance.
+     *         launching an instance. You cannot specify this option if you're launching more than one instance in a
+     *         <a>RunInstances</a> request.
      */
 
     public String getPrivateIpAddress() {
@@ -303,12 +310,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * The private IP address of the network interface. Applies only if creating a network interface when launching an
-     * instance.
+     * instance. You cannot specify this option if you're launching more than one instance in a <a>RunInstances</a>
+     * request.
      * </p>
      * 
      * @param privateIpAddress
      *        The private IP address of the network interface. Applies only if creating a network interface when
-     *        launching an instance.
+     *        launching an instance. You cannot specify this option if you're launching more than one instance in a
+     *        <a>RunInstances</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -461,11 +470,13 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * One or more private IP addresses to assign to the network interface. Only one private IP address can be
-     * designated as primary.
+     * designated as primary. You cannot specify this option if you're launching more than one instance in a
+     * <a>RunInstances</a> request.
      * </p>
      * 
      * @return One or more private IP addresses to assign to the network interface. Only one private IP address can be
-     *         designated as primary.
+     *         designated as primary. You cannot specify this option if you're launching more than one instance in a
+     *         <a>RunInstances</a> request.
      */
 
     public java.util.List<PrivateIpAddressSpecification> getPrivateIpAddresses() {
@@ -478,12 +489,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * One or more private IP addresses to assign to the network interface. Only one private IP address can be
-     * designated as primary.
+     * designated as primary. You cannot specify this option if you're launching more than one instance in a
+     * <a>RunInstances</a> request.
      * </p>
      * 
      * @param privateIpAddresses
      *        One or more private IP addresses to assign to the network interface. Only one private IP address can be
-     *        designated as primary.
+     *        designated as primary. You cannot specify this option if you're launching more than one instance in a
+     *        <a>RunInstances</a> request.
      */
 
     public void setPrivateIpAddresses(java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
@@ -498,7 +511,8 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * One or more private IP addresses to assign to the network interface. Only one private IP address can be
-     * designated as primary.
+     * designated as primary. You cannot specify this option if you're launching more than one instance in a
+     * <a>RunInstances</a> request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -508,7 +522,8 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * 
      * @param privateIpAddresses
      *        One or more private IP addresses to assign to the network interface. Only one private IP address can be
-     *        designated as primary.
+     *        designated as primary. You cannot specify this option if you're launching more than one instance in a
+     *        <a>RunInstances</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -525,12 +540,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * One or more private IP addresses to assign to the network interface. Only one private IP address can be
-     * designated as primary.
+     * designated as primary. You cannot specify this option if you're launching more than one instance in a
+     * <a>RunInstances</a> request.
      * </p>
      * 
      * @param privateIpAddresses
      *        One or more private IP addresses to assign to the network interface. Only one private IP address can be
-     *        designated as primary.
+     *        designated as primary. You cannot specify this option if you're launching more than one instance in a
+     *        <a>RunInstances</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -542,12 +559,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * The number of secondary private IP addresses. You can't specify this option and specify more than one private IP
-     * address using the private IP addresses option.
+     * address using the private IP addresses option. You cannot specify this option if you're launching more than one
+     * instance in a <a>RunInstances</a> request.
      * </p>
      * 
      * @param secondaryPrivateIpAddressCount
      *        The number of secondary private IP addresses. You can't specify this option and specify more than one
-     *        private IP address using the private IP addresses option.
+     *        private IP address using the private IP addresses option. You cannot specify this option if you're
+     *        launching more than one instance in a <a>RunInstances</a> request.
      */
 
     public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
@@ -557,11 +576,13 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * The number of secondary private IP addresses. You can't specify this option and specify more than one private IP
-     * address using the private IP addresses option.
+     * address using the private IP addresses option. You cannot specify this option if you're launching more than one
+     * instance in a <a>RunInstances</a> request.
      * </p>
      * 
      * @return The number of secondary private IP addresses. You can't specify this option and specify more than one
-     *         private IP address using the private IP addresses option.
+     *         private IP address using the private IP addresses option. You cannot specify this option if you're
+     *         launching more than one instance in a <a>RunInstances</a> request.
      */
 
     public Integer getSecondaryPrivateIpAddressCount() {
@@ -571,12 +592,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * The number of secondary private IP addresses. You can't specify this option and specify more than one private IP
-     * address using the private IP addresses option.
+     * address using the private IP addresses option. You cannot specify this option if you're launching more than one
+     * instance in a <a>RunInstances</a> request.
      * </p>
      * 
      * @param secondaryPrivateIpAddressCount
      *        The number of secondary private IP addresses. You can't specify this option and specify more than one
-     *        private IP address using the private IP addresses option.
+     *        private IP address using the private IP addresses option. You cannot specify this option if you're
+     *        launching more than one instance in a <a>RunInstances</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -96,7 +96,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElastiCacheClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -119,7 +119,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElastiCacheClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

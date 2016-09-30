@@ -109,7 +109,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticTranscoderClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -132,7 +132,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticTranscoderClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

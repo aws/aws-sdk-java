@@ -39,34 +39,8 @@ public class DescribeConversionTasksRequestMarshaller implements Marshaller<Requ
 
         Request<DescribeConversionTasksRequest> request = new DefaultRequest<DescribeConversionTasksRequest>(describeConversionTasksRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeConversionTasks");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
-
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeConversionTasksRequest
-                .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
-            int filtersListIndex = 1;
-
-            for (Filter filtersListValue : filtersList) {
-
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
-                }
-
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
-                    int valuesListIndex = 1;
-
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
-                        }
-                        valuesListIndex++;
-                    }
-                }
-                filtersListIndex++;
-            }
-        }
 
         com.amazonaws.internal.SdkInternalList<String> conversionTaskIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeConversionTasksRequest
                 .getConversionTaskIds();

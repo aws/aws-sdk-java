@@ -41,7 +41,7 @@ public class DescribeStaleSecurityGroupsRequestMarshaller implements
         Request<DescribeStaleSecurityGroupsRequest> request = new DefaultRequest<DescribeStaleSecurityGroupsRequest>(describeStaleSecurityGroupsRequest,
                 "AmazonEC2");
         request.addParameter("Action", "DescribeStaleSecurityGroups");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeStaleSecurityGroupsRequest.getVpcId() != null) {

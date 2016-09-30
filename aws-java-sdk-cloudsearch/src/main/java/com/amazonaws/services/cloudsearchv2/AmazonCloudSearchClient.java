@@ -91,7 +91,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudSearchClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -114,7 +114,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudSearchClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

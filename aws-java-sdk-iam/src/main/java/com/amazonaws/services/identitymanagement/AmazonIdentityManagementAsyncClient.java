@@ -112,7 +112,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonIdentityManagementAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -136,7 +136,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonIdentityManagementAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

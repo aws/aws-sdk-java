@@ -68,7 +68,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonCognitoSyncAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -92,7 +92,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonCognitoSyncAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

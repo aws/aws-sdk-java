@@ -47,7 +47,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonMachineLearningAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -71,7 +71,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonMachineLearningAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

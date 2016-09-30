@@ -201,6 +201,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address.
      * </p>
      * <p>
+     * You cannot specify this option if you're launching more than one instance in the request.
+     * </p>
+     * <p>
      * Default: We select an IP address from the IP address range of the subnet.
      * </p>
      */
@@ -1584,6 +1587,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address.
      * </p>
      * <p>
+     * You cannot specify this option if you're launching more than one instance in the request.
+     * </p>
+     * <p>
      * Default: We select an IP address from the IP address range of the subnet.
      * </p>
      * 
@@ -1593,6 +1599,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        Only one private IP address can be designated as primary. Therefore, you can't specify this parameter if
      *        <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
      *        <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address.
+     *        </p>
+     *        <p>
+     *        You cannot specify this option if you're launching more than one instance in the request.
      *        </p>
      *        <p>
      *        Default: We select an IP address from the IP address range of the subnet.
@@ -1612,6 +1621,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address.
      * </p>
      * <p>
+     * You cannot specify this option if you're launching more than one instance in the request.
+     * </p>
+     * <p>
      * Default: We select an IP address from the IP address range of the subnet.
      * </p>
      * 
@@ -1620,6 +1632,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         Only one private IP address can be designated as primary. Therefore, you can't specify this parameter if
      *         <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
      *         <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address.
+     *         </p>
+     *         <p>
+     *         You cannot specify this option if you're launching more than one instance in the request.
      *         </p>
      *         <p>
      *         Default: We select an IP address from the IP address range of the subnet.
@@ -1639,6 +1654,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address.
      * </p>
      * <p>
+     * You cannot specify this option if you're launching more than one instance in the request.
+     * </p>
+     * <p>
      * Default: We select an IP address from the IP address range of the subnet.
      * </p>
      * 
@@ -1648,6 +1666,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        Only one private IP address can be designated as primary. Therefore, you can't specify this parameter if
      *        <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
      *        <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address.
+     *        </p>
+     *        <p>
+     *        You cannot specify this option if you're launching more than one instance in the request.
      *        </p>
      *        <p>
      *        Default: We select an IP address from the IP address range of the subnet.

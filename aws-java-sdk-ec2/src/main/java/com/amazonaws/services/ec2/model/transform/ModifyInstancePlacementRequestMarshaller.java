@@ -39,7 +39,7 @@ public class ModifyInstancePlacementRequestMarshaller implements Marshaller<Requ
 
         Request<ModifyInstancePlacementRequest> request = new DefaultRequest<ModifyInstancePlacementRequest>(modifyInstancePlacementRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyInstancePlacement");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifyInstancePlacementRequest.getInstanceId() != null) {

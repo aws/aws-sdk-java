@@ -193,7 +193,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonConfigClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -216,7 +216,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonConfigClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

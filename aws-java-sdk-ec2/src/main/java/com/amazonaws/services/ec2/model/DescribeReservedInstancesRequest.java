@@ -67,6 +67,11 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * <code>scope</code> - The scope of the Reserved Instance (<code>Region</code> or <code>Availability Zone</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>product-description</code> - The Reserved Instance product platform description. Instances that include
      * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
      * holders and are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
@@ -129,6 +134,12 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * </p>
      */
     private String offeringType;
+    /**
+     * <p>
+     * Describes whether the Reserved Instance is Standard or Convertible.
+     * </p>
+     */
+    private String offeringClass;
 
     /**
      * <p>
@@ -256,6 +267,11 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * <code>scope</code> - The scope of the Reserved Instance (<code>Region</code> or <code>Availability Zone</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>product-description</code> - The Reserved Instance product platform description. Instances that include
      * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
      * holders and are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
@@ -336,6 +352,12 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         <code>instance-type</code> - The instance type that is covered by the reservation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>scope</code> - The scope of the Reserved Instance (<code>Region</code> or
+     *         <code>Availability Zone</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -435,6 +457,11 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * <code>scope</code> - The scope of the Reserved Instance (<code>Region</code> or <code>Availability Zone</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>product-description</code> - The Reserved Instance product platform description. Instances that include
      * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
      * holders and are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
@@ -516,6 +543,12 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>instance-type</code> - The instance type that is covered by the reservation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scope</code> - The scope of the Reserved Instance (<code>Region</code> or
+     *        <code>Availability Zone</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -617,6 +650,11 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * <code>scope</code> - The scope of the Reserved Instance (<code>Region</code> or <code>Availability Zone</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>product-description</code> - The Reserved Instance product platform description. Instances that include
      * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
      * holders and are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
@@ -703,6 +741,12 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>instance-type</code> - The instance type that is covered by the reservation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scope</code> - The scope of the Reserved Instance (<code>Region</code> or
+     *        <code>Availability Zone</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -806,6 +850,11 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * <code>scope</code> - The scope of the Reserved Instance (<code>Region</code> or <code>Availability Zone</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>product-description</code> - The Reserved Instance product platform description. Instances that include
      * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
      * holders and are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
@@ -887,6 +936,12 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>instance-type</code> - The instance type that is covered by the reservation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scope</code> - The scope of the Reserved Instance (<code>Region</code> or
+     *        <code>Availability Zone</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1036,6 +1091,79 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Describes whether the Reserved Instance is Standard or Convertible.
+     * </p>
+     * 
+     * @param offeringClass
+     *        Describes whether the Reserved Instance is Standard or Convertible.
+     * @see OfferingClassType
+     */
+
+    public void setOfferingClass(String offeringClass) {
+        this.offeringClass = offeringClass;
+    }
+
+    /**
+     * <p>
+     * Describes whether the Reserved Instance is Standard or Convertible.
+     * </p>
+     * 
+     * @return Describes whether the Reserved Instance is Standard or Convertible.
+     * @see OfferingClassType
+     */
+
+    public String getOfferingClass() {
+        return this.offeringClass;
+    }
+
+    /**
+     * <p>
+     * Describes whether the Reserved Instance is Standard or Convertible.
+     * </p>
+     * 
+     * @param offeringClass
+     *        Describes whether the Reserved Instance is Standard or Convertible.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OfferingClassType
+     */
+
+    public DescribeReservedInstancesRequest withOfferingClass(String offeringClass) {
+        setOfferingClass(offeringClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether the Reserved Instance is Standard or Convertible.
+     * </p>
+     * 
+     * @param offeringClass
+     *        Describes whether the Reserved Instance is Standard or Convertible.
+     * @see OfferingClassType
+     */
+
+    public void setOfferingClass(OfferingClassType offeringClass) {
+        this.offeringClass = offeringClass.toString();
+    }
+
+    /**
+     * <p>
+     * Describes whether the Reserved Instance is Standard or Convertible.
+     * </p>
+     * 
+     * @param offeringClass
+     *        Describes whether the Reserved Instance is Standard or Convertible.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OfferingClassType
+     */
+
+    public DescribeReservedInstancesRequest withOfferingClass(OfferingClassType offeringClass) {
+        setOfferingClass(offeringClass);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1062,7 +1190,9 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
         if (getFilters() != null)
             sb.append("Filters: " + getFilters() + ",");
         if (getOfferingType() != null)
-            sb.append("OfferingType: " + getOfferingType());
+            sb.append("OfferingType: " + getOfferingType() + ",");
+        if (getOfferingClass() != null)
+            sb.append("OfferingClass: " + getOfferingClass());
         sb.append("}");
         return sb.toString();
     }
@@ -1089,6 +1219,10 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
             return false;
         if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false)
             return false;
+        if (other.getOfferingClass() == null ^ this.getOfferingClass() == null)
+            return false;
+        if (other.getOfferingClass() != null && other.getOfferingClass().equals(this.getOfferingClass()) == false)
+            return false;
         return true;
     }
 
@@ -1100,6 +1234,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getReservedInstancesIds() == null) ? 0 : getReservedInstancesIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
+        hashCode = prime * hashCode + ((getOfferingClass() == null) ? 0 : getOfferingClass().hashCode());
         return hashCode;
     }
 

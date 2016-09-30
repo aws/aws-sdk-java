@@ -119,7 +119,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSWAFClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -142,7 +142,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSWAFClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

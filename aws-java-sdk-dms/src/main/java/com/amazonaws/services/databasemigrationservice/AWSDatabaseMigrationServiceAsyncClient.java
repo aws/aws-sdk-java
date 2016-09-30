@@ -53,7 +53,7 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSDatabaseMigrationServiceAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -77,7 +77,7 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSDatabaseMigrationServiceAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

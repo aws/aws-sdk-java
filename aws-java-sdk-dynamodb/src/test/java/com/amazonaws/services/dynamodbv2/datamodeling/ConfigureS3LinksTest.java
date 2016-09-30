@@ -51,14 +51,15 @@ public class ConfigureS3LinksTest {
     }
 
     @Test
-    public void testExplicitRegionClass() {
+    public void testS3LinkWithStringRegion() {
         CorrectTestClass obj = new CorrectTestClass();
-        S3Link s3 = new S3Link(s3cc, Region.AP_Singapore, "nonexisting-test-bucketname2", "key");
+        S3Link s3 = new S3Link(s3cc, "ap-southeast-1", "nonexisting-test-bucketname2", "key");
         obj.setS3(s3);
 
         assertNotNull(obj.getS3());
         assertEquals("nonexisting-test-bucketname2", obj.getS3().getBucketName());
         assertSame(Region.AP_Singapore, obj.getS3().getS3Region());
+        assertSame("ap-southeast-1", obj.getS3().getRegion());
     }
 
     @DynamoDBTable(tableName="nonexisting-test-tablename")

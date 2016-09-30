@@ -56,7 +56,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSElasticsearchAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -80,7 +80,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSElasticsearchAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

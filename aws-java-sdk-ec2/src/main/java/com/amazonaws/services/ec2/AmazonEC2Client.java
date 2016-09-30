@@ -88,7 +88,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonEC2Client() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -111,7 +111,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonEC2Client(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**
@@ -229,6 +229,48 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/ec2/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/ec2/request.handler2s"));
+    }
+
+    /**
+     * <p>
+     * Purchases Convertible Reserved Instance offerings described in the <a>GetReservedInstancesExchangeQuote</a> call.
+     * </p>
+     * 
+     * @param acceptReservedInstancesExchangeQuoteRequest
+     *        Contains the parameters for accepting the quote.
+     * @return Result of the AcceptReservedInstancesExchangeQuote operation returned by the service.
+     * @sample AmazonEC2.AcceptReservedInstancesExchangeQuote
+     */
+    @Override
+    public AcceptReservedInstancesExchangeQuoteResult acceptReservedInstancesExchangeQuote(
+            AcceptReservedInstancesExchangeQuoteRequest acceptReservedInstancesExchangeQuoteRequest) {
+        ExecutionContext executionContext = createExecutionContext(acceptReservedInstancesExchangeQuoteRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptReservedInstancesExchangeQuoteRequest> request = null;
+        Response<AcceptReservedInstancesExchangeQuoteResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptReservedInstancesExchangeQuoteRequestMarshaller().marshall(super
+                        .beforeMarshalling(acceptReservedInstancesExchangeQuoteRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AcceptReservedInstancesExchangeQuoteResult> responseHandler = new StaxResponseHandler<AcceptReservedInstancesExchangeQuoteResult>(
+                    new AcceptReservedInstancesExchangeQuoteResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -2120,21 +2162,21 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a listing for Amazon EC2 Reserved Instances to be sold in the Reserved Instance Marketplace. You can
-     * submit one Reserved Instance listing at a time. To get a list of your Reserved Instances, you can use the
-     * <a>DescribeReservedInstances</a> operation.
+     * Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in the Reserved Instance Marketplace. You
+     * can submit one Standard Reserved Instance listing at a time. To get a list of your Standard Reserved Instances,
+     * you can use the <a>DescribeReservedInstances</a> operation.
      * </p>
      * <p>
-     * The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance capacity that they no
-     * longer need with buyers who want to purchase additional capacity. Reserved Instances bought and sold through the
-     * Reserved Instance Marketplace work like any other Reserved Instances.
+     * The Reserved Instance Marketplace matches sellers who want to resell Standard Reserved Instance capacity that
+     * they no longer need with buyers who want to purchase additional capacity. Reserved Instances bought and sold
+     * through the Reserved Instance Marketplace work like any other Reserved Instances.
      * </p>
      * <p>
-     * To sell your Reserved Instances, you must first register as a seller in the Reserved Instance Marketplace. After
-     * completing the registration process, you can create a Reserved Instance Marketplace listing of some or all of
-     * your Reserved Instances, and specify the upfront price to receive for them. Your Reserved Instance listings then
-     * become available for purchase. To view the details of your Reserved Instance listing, you can use the
-     * <a>DescribeReservedInstancesListings</a> operation.
+     * To sell your Standard Reserved Instances, you must first register as a seller in the Reserved Instance
+     * Marketplace. After completing the registration process, you can create a Reserved Instance Marketplace listing of
+     * some or all of your Standard Reserved Instances, and specify the upfront price to receive for them. Your Standard
+     * Reserved Instance listings then become available for purchase. To view the details of your Standard Reserved
+     * Instance listing, you can use the <a>DescribeReservedInstancesListings</a> operation.
      * </p>
      * <p>
      * For more information, see <a
@@ -6370,6 +6412,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Describes your Spot fleet requests.
      * </p>
+     * <p>
+     * Spot fleet requests are deleted 48 hours after they are canceled and their instances are terminated.
+     * </p>
      * 
      * @param describeSpotFleetRequestsRequest
      *        Contains the parameters for DescribeSpotFleetRequests.
@@ -6424,6 +6469,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * If the status of the Spot instance is <code>fulfilled</code>, the instance ID appears in the response and
      * contains the identifier of the instance. Alternatively, you can use <a>DescribeInstances</a> with a filter to
      * look for instances where the instance lifecycle is <code>spot</code>.
+     * </p>
+     * <p>
+     * Spot instance requests are deleted 4 hours after they are canceled and their instances are terminated.
      * </p>
      * 
      * @param describeSpotInstanceRequestsRequest
@@ -8066,6 +8114,48 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Returns details about the values and term of your specified Convertible Reserved Instances. When an offering ID
+     * is specified it returns information about whether the exchange is valid and can be performed.
+     * </p>
+     * 
+     * @param getReservedInstancesExchangeQuoteRequest
+     *        Contains the parameters for GetReservedInstanceExchangeQuote.
+     * @return Result of the GetReservedInstancesExchangeQuote operation returned by the service.
+     * @sample AmazonEC2.GetReservedInstancesExchangeQuote
+     */
+    @Override
+    public GetReservedInstancesExchangeQuoteResult getReservedInstancesExchangeQuote(
+            GetReservedInstancesExchangeQuoteRequest getReservedInstancesExchangeQuoteRequest) {
+        ExecutionContext executionContext = createExecutionContext(getReservedInstancesExchangeQuoteRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetReservedInstancesExchangeQuoteRequest> request = null;
+        Response<GetReservedInstancesExchangeQuoteResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetReservedInstancesExchangeQuoteRequestMarshaller().marshall(super.beforeMarshalling(getReservedInstancesExchangeQuoteRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetReservedInstancesExchangeQuoteResult> responseHandler = new StaxResponseHandler<GetReservedInstancesExchangeQuoteResult>(
+                    new GetReservedInstancesExchangeQuoteResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI). For more
      * information, see <a
      * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing a VM as an
@@ -8645,8 +8735,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Modifies the Availability Zone, instance count, instance type, or network platform (EC2-Classic or EC2-VPC) of
-     * your Reserved Instances. The Reserved Instances to be modified must be identical, except for Availability Zone,
-     * network platform, and instance type.
+     * your Standard Reserved Instances. The Reserved Instances to be modified must be identical, except for
+     * Availability Zone, network platform, and instance type.
      * </p>
      * <p>
      * For more information, see <a
@@ -9166,8 +9256,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Purchases a Reserved Instance for use with your account. With Reserved Instances, you obtain a capacity
-     * reservation for a certain instance configuration over a specified period of time and pay a lower hourly rate
+     * Purchases a Reserved Instance for use with your account. With Reserved Instances, you pay a lower hourly rate
      * compared to On-Demand instance pricing.
      * </p>
      * <p>
@@ -10472,6 +10561,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Shuts down one or more instances. This operation is idempotent; if you terminate an instance more than once, each
      * call succeeds.
+     * </p>
+     * <p>
+     * If you specify multiple instances and the request fails (for example, because of a single incorrect instance ID),
+     * none of the instances are terminated.
      * </p>
      * <p>
      * Terminated instances remain visible after termination (for approximately one hour).

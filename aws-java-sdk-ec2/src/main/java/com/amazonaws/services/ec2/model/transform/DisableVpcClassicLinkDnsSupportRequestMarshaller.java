@@ -41,7 +41,7 @@ public class DisableVpcClassicLinkDnsSupportRequestMarshaller implements
         Request<DisableVpcClassicLinkDnsSupportRequest> request = new DefaultRequest<DisableVpcClassicLinkDnsSupportRequest>(
                 disableVpcClassicLinkDnsSupportRequest, "AmazonEC2");
         request.addParameter("Action", "DisableVpcClassicLinkDnsSupport");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (disableVpcClassicLinkDnsSupportRequest.getVpcId() != null) {

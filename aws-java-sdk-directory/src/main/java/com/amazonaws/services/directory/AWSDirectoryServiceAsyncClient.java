@@ -51,7 +51,7 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSDirectoryServiceAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -75,7 +75,7 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSDirectoryServiceAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

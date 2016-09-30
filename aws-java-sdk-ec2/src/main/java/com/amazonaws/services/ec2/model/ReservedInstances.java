@@ -118,6 +118,18 @@ public class ReservedInstances implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RecurringCharge> recurringCharges;
+    /**
+     * <p>
+     * The offering class of the Reserved Instance.
+     * </p>
+     */
+    private String offeringClass;
+    /**
+     * <p>
+     * The scope of the Reserved Instance.
+     * </p>
+     */
+    private String scope;
 
     /**
      * <p>
@@ -1034,6 +1046,152 @@ public class ReservedInstances implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The offering class of the Reserved Instance.
+     * </p>
+     * 
+     * @param offeringClass
+     *        The offering class of the Reserved Instance.
+     * @see OfferingClassType
+     */
+
+    public void setOfferingClass(String offeringClass) {
+        this.offeringClass = offeringClass;
+    }
+
+    /**
+     * <p>
+     * The offering class of the Reserved Instance.
+     * </p>
+     * 
+     * @return The offering class of the Reserved Instance.
+     * @see OfferingClassType
+     */
+
+    public String getOfferingClass() {
+        return this.offeringClass;
+    }
+
+    /**
+     * <p>
+     * The offering class of the Reserved Instance.
+     * </p>
+     * 
+     * @param offeringClass
+     *        The offering class of the Reserved Instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OfferingClassType
+     */
+
+    public ReservedInstances withOfferingClass(String offeringClass) {
+        setOfferingClass(offeringClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The offering class of the Reserved Instance.
+     * </p>
+     * 
+     * @param offeringClass
+     *        The offering class of the Reserved Instance.
+     * @see OfferingClassType
+     */
+
+    public void setOfferingClass(OfferingClassType offeringClass) {
+        this.offeringClass = offeringClass.toString();
+    }
+
+    /**
+     * <p>
+     * The offering class of the Reserved Instance.
+     * </p>
+     * 
+     * @param offeringClass
+     *        The offering class of the Reserved Instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OfferingClassType
+     */
+
+    public ReservedInstances withOfferingClass(OfferingClassType offeringClass) {
+        setOfferingClass(offeringClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The scope of the Reserved Instance.
+     * </p>
+     * 
+     * @param scope
+     *        The scope of the Reserved Instance.
+     * @see Scope
+     */
+
+    public void setScope(String scope) {
+        this.scope = scope;
+    }
+
+    /**
+     * <p>
+     * The scope of the Reserved Instance.
+     * </p>
+     * 
+     * @return The scope of the Reserved Instance.
+     * @see Scope
+     */
+
+    public String getScope() {
+        return this.scope;
+    }
+
+    /**
+     * <p>
+     * The scope of the Reserved Instance.
+     * </p>
+     * 
+     * @param scope
+     *        The scope of the Reserved Instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Scope
+     */
+
+    public ReservedInstances withScope(String scope) {
+        setScope(scope);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The scope of the Reserved Instance.
+     * </p>
+     * 
+     * @param scope
+     *        The scope of the Reserved Instance.
+     * @see Scope
+     */
+
+    public void setScope(Scope scope) {
+        this.scope = scope.toString();
+    }
+
+    /**
+     * <p>
+     * The scope of the Reserved Instance.
+     * </p>
+     * 
+     * @param scope
+     *        The scope of the Reserved Instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Scope
+     */
+
+    public ReservedInstances withScope(Scope scope) {
+        setScope(scope);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1075,7 +1233,11 @@ public class ReservedInstances implements Serializable, Cloneable {
         if (getOfferingType() != null)
             sb.append("OfferingType: " + getOfferingType() + ",");
         if (getRecurringCharges() != null)
-            sb.append("RecurringCharges: " + getRecurringCharges());
+            sb.append("RecurringCharges: " + getRecurringCharges() + ",");
+        if (getOfferingClass() != null)
+            sb.append("OfferingClass: " + getOfferingClass() + ",");
+        if (getScope() != null)
+            sb.append("Scope: " + getScope());
         sb.append("}");
         return sb.toString();
     }
@@ -1154,6 +1316,14 @@ public class ReservedInstances implements Serializable, Cloneable {
             return false;
         if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false)
             return false;
+        if (other.getOfferingClass() == null ^ this.getOfferingClass() == null)
+            return false;
+        if (other.getOfferingClass() != null && other.getOfferingClass().equals(this.getOfferingClass()) == false)
+            return false;
+        if (other.getScope() == null ^ this.getScope() == null)
+            return false;
+        if (other.getScope() != null && other.getScope().equals(this.getScope()) == false)
+            return false;
         return true;
     }
 
@@ -1178,6 +1348,8 @@ public class ReservedInstances implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
         hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
         hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
+        hashCode = prime * hashCode + ((getOfferingClass() == null) ? 0 : getOfferingClass().hashCode());
+        hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         return hashCode;
     }
 

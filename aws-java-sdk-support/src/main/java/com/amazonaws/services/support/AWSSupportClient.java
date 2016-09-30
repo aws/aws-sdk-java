@@ -183,7 +183,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSupportClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -206,7 +206,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSupportClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

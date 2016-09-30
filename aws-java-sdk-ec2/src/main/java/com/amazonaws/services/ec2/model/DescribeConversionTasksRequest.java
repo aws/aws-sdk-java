@@ -27,89 +27,10 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more filters.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<Filter> filters;
-    /**
-     * <p>
      * One or more conversion task IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> conversionTaskIds;
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * 
-     * @return One or more filters.
-     */
-
-    public java.util.List<Filter> getFilters() {
-        if (filters == null) {
-            filters = new com.amazonaws.internal.SdkInternalList<Filter>();
-        }
-        return filters;
-    }
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * 
-     * @param filters
-     *        One or more filters.
-     */
-
-    public void setFilters(java.util.Collection<Filter> filters) {
-        if (filters == null) {
-            this.filters = null;
-            return;
-        }
-
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
-    }
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param filters
-     *        One or more filters.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeConversionTasksRequest withFilters(Filter... filters) {
-        if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
-        }
-        for (Filter ele : filters) {
-            this.filters.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * 
-     * @param filters
-     *        One or more filters.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeConversionTasksRequest withFilters(java.util.Collection<Filter> filters) {
-        setFilters(filters);
-        return this;
-    }
 
     /**
      * <p>
@@ -206,8 +127,6 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
         if (getConversionTaskIds() != null)
             sb.append("ConversionTaskIds: " + getConversionTaskIds());
         sb.append("}");
@@ -224,10 +143,6 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
         if (obj instanceof DescribeConversionTasksRequest == false)
             return false;
         DescribeConversionTasksRequest other = (DescribeConversionTasksRequest) obj;
-        if (other.getFilters() == null ^ this.getFilters() == null)
-            return false;
-        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
-            return false;
         if (other.getConversionTaskIds() == null ^ this.getConversionTaskIds() == null)
             return false;
         if (other.getConversionTaskIds() != null && other.getConversionTaskIds().equals(this.getConversionTaskIds()) == false)
@@ -240,7 +155,6 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getConversionTaskIds() == null) ? 0 : getConversionTaskIds().hashCode());
         return hashCode;
     }

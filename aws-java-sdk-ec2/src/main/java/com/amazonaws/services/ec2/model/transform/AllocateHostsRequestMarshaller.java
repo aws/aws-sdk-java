@@ -39,7 +39,7 @@ public class AllocateHostsRequestMarshaller implements Marshaller<Request<Alloca
 
         Request<AllocateHostsRequest> request = new DefaultRequest<AllocateHostsRequest>(allocateHostsRequest, "AmazonEC2");
         request.addParameter("Action", "AllocateHosts");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (allocateHostsRequest.getAutoPlacement() != null) {

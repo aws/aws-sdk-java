@@ -116,7 +116,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCertificateManagerClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -139,7 +139,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCertificateManagerClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

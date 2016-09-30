@@ -27,7 +27,7 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the active Reserved Instance.
+     * The ID of the active Standard Reserved Instance.
      * </p>
      */
     private String reservedInstancesId;
@@ -41,7 +41,8 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     private Integer instanceCount;
     /**
      * <p>
-     * A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance term.
+     * A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance
+     * term.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PriceScheduleSpecification> priceSchedules;
@@ -57,11 +58,11 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the active Reserved Instance.
+     * The ID of the active Standard Reserved Instance.
      * </p>
      * 
      * @param reservedInstancesId
-     *        The ID of the active Reserved Instance.
+     *        The ID of the active Standard Reserved Instance.
      */
 
     public void setReservedInstancesId(String reservedInstancesId) {
@@ -70,10 +71,10 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the active Reserved Instance.
+     * The ID of the active Standard Reserved Instance.
      * </p>
      * 
-     * @return The ID of the active Reserved Instance.
+     * @return The ID of the active Standard Reserved Instance.
      */
 
     public String getReservedInstancesId() {
@@ -82,11 +83,11 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the active Reserved Instance.
+     * The ID of the active Standard Reserved Instance.
      * </p>
      * 
      * @param reservedInstancesId
-     *        The ID of the active Reserved Instance.
+     *        The ID of the active Standard Reserved Instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,11 +150,12 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance term.
+     * A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance
+     * term.
      * </p>
      * 
-     * @return A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance
-     *         term.
+     * @return A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved
+     *         Instance term.
      */
 
     public java.util.List<PriceScheduleSpecification> getPriceSchedules() {
@@ -165,12 +167,13 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance term.
+     * A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance
+     * term.
      * </p>
      * 
      * @param priceSchedules
-     *        A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance
-     *        term.
+     *        A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved
+     *        Instance term.
      */
 
     public void setPriceSchedules(java.util.Collection<PriceScheduleSpecification> priceSchedules) {
@@ -184,7 +187,8 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance term.
+     * A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance
+     * term.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -193,8 +197,8 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * </p>
      * 
      * @param priceSchedules
-     *        A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance
-     *        term.
+     *        A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved
+     *        Instance term.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,12 +214,13 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance term.
+     * A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance
+     * term.
      * </p>
      * 
      * @param priceSchedules
-     *        A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance
-     *        term.
+     *        A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved
+     *        Instance term.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

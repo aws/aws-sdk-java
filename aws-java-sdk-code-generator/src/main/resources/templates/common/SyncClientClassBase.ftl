@@ -91,7 +91,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      * @see DefaultAWSCredentialsProviderChain
      */
     public ${metadata.syncClient}() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -115,7 +115,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      * @see DefaultAWSCredentialsProviderChain
      */
     public ${metadata.syncClient}(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

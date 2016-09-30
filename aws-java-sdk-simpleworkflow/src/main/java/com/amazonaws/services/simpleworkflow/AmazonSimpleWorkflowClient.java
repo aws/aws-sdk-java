@@ -122,7 +122,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleWorkflowClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -145,7 +145,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleWorkflowClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

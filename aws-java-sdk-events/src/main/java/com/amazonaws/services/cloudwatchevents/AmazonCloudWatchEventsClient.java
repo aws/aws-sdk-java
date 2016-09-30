@@ -112,7 +112,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudWatchEventsClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -135,7 +135,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudWatchEventsClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

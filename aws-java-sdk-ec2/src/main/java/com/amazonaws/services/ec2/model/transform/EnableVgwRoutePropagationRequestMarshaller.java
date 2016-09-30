@@ -39,7 +39,7 @@ public class EnableVgwRoutePropagationRequestMarshaller implements Marshaller<Re
 
         Request<EnableVgwRoutePropagationRequest> request = new DefaultRequest<EnableVgwRoutePropagationRequest>(enableVgwRoutePropagationRequest, "AmazonEC2");
         request.addParameter("Action", "EnableVgwRoutePropagation");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (enableVgwRoutePropagationRequest.getRouteTableId() != null) {

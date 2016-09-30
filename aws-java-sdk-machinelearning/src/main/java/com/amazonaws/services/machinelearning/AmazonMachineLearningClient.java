@@ -108,7 +108,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonMachineLearningClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -131,7 +131,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonMachineLearningClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

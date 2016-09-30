@@ -201,7 +201,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCloudTrailClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -224,7 +224,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCloudTrailClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

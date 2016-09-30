@@ -52,7 +52,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonEC2AsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -76,7 +76,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonEC2AsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 
@@ -212,6 +212,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
      */
     public java.util.concurrent.ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptReservedInstancesExchangeQuoteResult> acceptReservedInstancesExchangeQuoteAsync(
+            AcceptReservedInstancesExchangeQuoteRequest request) {
+
+        return acceptReservedInstancesExchangeQuoteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptReservedInstancesExchangeQuoteResult> acceptReservedInstancesExchangeQuoteAsync(
+            final AcceptReservedInstancesExchangeQuoteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AcceptReservedInstancesExchangeQuoteRequest, AcceptReservedInstancesExchangeQuoteResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AcceptReservedInstancesExchangeQuoteResult>() {
+            @Override
+            public AcceptReservedInstancesExchangeQuoteResult call() throws Exception {
+                AcceptReservedInstancesExchangeQuoteResult result;
+
+                try {
+                    result = acceptReservedInstancesExchangeQuote(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -6490,6 +6524,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = getPasswordData(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReservedInstancesExchangeQuoteResult> getReservedInstancesExchangeQuoteAsync(
+            GetReservedInstancesExchangeQuoteRequest request) {
+
+        return getReservedInstancesExchangeQuoteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReservedInstancesExchangeQuoteResult> getReservedInstancesExchangeQuoteAsync(
+            final GetReservedInstancesExchangeQuoteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetReservedInstancesExchangeQuoteRequest, GetReservedInstancesExchangeQuoteResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<GetReservedInstancesExchangeQuoteResult>() {
+            @Override
+            public GetReservedInstancesExchangeQuoteResult call() throws Exception {
+                GetReservedInstancesExchangeQuoteResult result;
+
+                try {
+                    result = getReservedInstancesExchangeQuote(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -41,7 +41,7 @@ public class PurchaseReservedInstancesOfferingRequestMarshaller implements
         Request<PurchaseReservedInstancesOfferingRequest> request = new DefaultRequest<PurchaseReservedInstancesOfferingRequest>(
                 purchaseReservedInstancesOfferingRequest, "AmazonEC2");
         request.addParameter("Action", "PurchaseReservedInstancesOffering");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (purchaseReservedInstancesOfferingRequest.getReservedInstancesOfferingId() != null) {

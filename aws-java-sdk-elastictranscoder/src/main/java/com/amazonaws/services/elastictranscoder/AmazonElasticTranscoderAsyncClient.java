@@ -50,7 +50,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonElasticTranscoderAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -74,7 +74,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonElasticTranscoderAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

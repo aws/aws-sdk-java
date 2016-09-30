@@ -240,7 +240,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSKMSClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -263,7 +263,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSKMSClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

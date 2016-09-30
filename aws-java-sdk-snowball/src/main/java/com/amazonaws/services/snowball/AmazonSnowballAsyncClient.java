@@ -22,7 +22,12 @@ import com.amazonaws.annotation.ThreadSafe;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * This is a test of the welcome page front matter.
+ * AWS Import/Export Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large
+ * amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball
+ * commands described here provide access to the same functionality that is available in the AWS Snowball Management
+ * Console, which enables you to create and manage jobs for Snowball. To transfer data locally with a Snowball
+ * appliance, you'll need to use the Snowball client or the Amazon S3 API adapter for Snowball. For more information,
+ * see the <a href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -49,7 +54,7 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonSnowballAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -73,7 +78,7 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonSnowballAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

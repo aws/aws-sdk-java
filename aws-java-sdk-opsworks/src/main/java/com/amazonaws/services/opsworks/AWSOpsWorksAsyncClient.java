@@ -182,7 +182,7 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements AWSOpsW
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSOpsWorksAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -206,7 +206,7 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements AWSOpsW
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSOpsWorksAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

@@ -118,7 +118,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonRDSAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -142,7 +142,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonRDSAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

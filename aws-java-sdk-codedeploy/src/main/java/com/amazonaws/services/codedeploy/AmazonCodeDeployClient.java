@@ -348,7 +348,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCodeDeployClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -371,7 +371,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCodeDeployClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

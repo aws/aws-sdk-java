@@ -39,7 +39,7 @@ public class DisassociateAddressRequestMarshaller implements Marshaller<Request<
 
         Request<DisassociateAddressRequest> request = new DefaultRequest<DisassociateAddressRequest>(disassociateAddressRequest, "AmazonEC2");
         request.addParameter("Action", "DisassociateAddress");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (disassociateAddressRequest.getPublicIp() != null) {

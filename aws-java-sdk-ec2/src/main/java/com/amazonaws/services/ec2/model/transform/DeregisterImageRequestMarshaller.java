@@ -39,7 +39,7 @@ public class DeregisterImageRequestMarshaller implements Marshaller<Request<Dere
 
         Request<DeregisterImageRequest> request = new DefaultRequest<DeregisterImageRequest>(deregisterImageRequest, "AmazonEC2");
         request.addParameter("Action", "DeregisterImage");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (deregisterImageRequest.getImageId() != null) {

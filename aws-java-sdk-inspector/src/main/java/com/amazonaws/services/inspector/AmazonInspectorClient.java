@@ -111,7 +111,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonInspectorClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -134,7 +134,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonInspectorClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

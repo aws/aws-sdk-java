@@ -150,7 +150,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSQSClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -173,7 +173,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSQSClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

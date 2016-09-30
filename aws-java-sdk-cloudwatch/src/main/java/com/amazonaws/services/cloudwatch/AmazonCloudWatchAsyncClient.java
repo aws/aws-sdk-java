@@ -62,7 +62,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonCloudWatchAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -86,7 +86,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AmazonCloudWatchAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

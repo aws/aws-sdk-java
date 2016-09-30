@@ -95,7 +95,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleEmailServiceClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -118,7 +118,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleEmailServiceClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

@@ -341,7 +341,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSimpleSystemsManagementClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -364,7 +364,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSimpleSystemsManagementClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

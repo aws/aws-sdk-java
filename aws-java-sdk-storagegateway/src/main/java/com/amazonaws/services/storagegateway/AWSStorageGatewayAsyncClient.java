@@ -119,7 +119,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSStorageGatewayAsyncClient() {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain());
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance());
     }
 
     /**
@@ -143,7 +143,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
      * @see java.util.concurrent.Executors#newFixedThreadPool(int)
      */
     public AWSStorageGatewayAsyncClient(com.amazonaws.ClientConfiguration clientConfiguration) {
-        this(new com.amazonaws.auth.DefaultAWSCredentialsProviderChain(), clientConfiguration, java.util.concurrent.Executors
+        this(com.amazonaws.auth.DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration, java.util.concurrent.Executors
                 .newFixedThreadPool(clientConfiguration.getMaxConnections()));
     }
 

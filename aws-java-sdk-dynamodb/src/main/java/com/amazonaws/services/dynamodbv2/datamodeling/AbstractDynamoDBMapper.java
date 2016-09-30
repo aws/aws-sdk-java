@@ -300,6 +300,11 @@ public class AbstractDynamoDBMapper implements IDynamoDBMapper {
     }
 
     @Override
+    public S3Link createS3Link(String s3region, String bucketName, String key) {
+        throw new UnsupportedOperationException("operation not supported in " + getClass());
+    }
+
+    @Override
     public CreateTableRequest generateCreateTableRequest(Class<?> clazz) {
         return generateCreateTableRequest(clazz, config);
     }

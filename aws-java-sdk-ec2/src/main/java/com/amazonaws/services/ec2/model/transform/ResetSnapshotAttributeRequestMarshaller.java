@@ -39,7 +39,7 @@ public class ResetSnapshotAttributeRequestMarshaller implements Marshaller<Reque
 
         Request<ResetSnapshotAttributeRequest> request = new DefaultRequest<ResetSnapshotAttributeRequest>(resetSnapshotAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ResetSnapshotAttribute");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (resetSnapshotAttributeRequest.getSnapshotId() != null) {

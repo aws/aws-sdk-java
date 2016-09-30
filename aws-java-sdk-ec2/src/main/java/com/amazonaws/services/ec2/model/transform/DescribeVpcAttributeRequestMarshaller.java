@@ -39,7 +39,7 @@ public class DescribeVpcAttributeRequestMarshaller implements Marshaller<Request
 
         Request<DescribeVpcAttributeRequest> request = new DefaultRequest<DescribeVpcAttributeRequest>(describeVpcAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpcAttribute");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeVpcAttributeRequest.getVpcId() != null) {

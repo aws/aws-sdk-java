@@ -40,7 +40,7 @@ public class PurchaseScheduledInstancesRequestMarshaller implements Marshaller<R
         Request<PurchaseScheduledInstancesRequest> request = new DefaultRequest<PurchaseScheduledInstancesRequest>(purchaseScheduledInstancesRequest,
                 "AmazonEC2");
         request.addParameter("Action", "PurchaseScheduledInstances");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         request.addParameter("ClientToken", IdempotentUtils.resolveString(purchaseScheduledInstancesRequest.getClientToken()));

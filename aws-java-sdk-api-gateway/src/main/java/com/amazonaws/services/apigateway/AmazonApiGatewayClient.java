@@ -108,7 +108,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonApiGatewayClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -131,7 +131,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonApiGatewayClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

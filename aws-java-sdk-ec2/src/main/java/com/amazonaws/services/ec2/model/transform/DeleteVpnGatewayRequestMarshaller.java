@@ -39,7 +39,7 @@ public class DeleteVpnGatewayRequestMarshaller implements Marshaller<Request<Del
 
         Request<DeleteVpnGatewayRequest> request = new DefaultRequest<DeleteVpnGatewayRequest>(deleteVpnGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVpnGateway");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (deleteVpnGatewayRequest.getVpnGatewayId() != null) {

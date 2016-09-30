@@ -39,7 +39,7 @@ public class DescribeNetworkInterfacesRequestMarshaller implements Marshaller<Re
 
         Request<DescribeNetworkInterfacesRequest> request = new DefaultRequest<DescribeNetworkInterfacesRequest>(describeNetworkInterfacesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeNetworkInterfaces");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> networkInterfaceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkInterfacesRequest

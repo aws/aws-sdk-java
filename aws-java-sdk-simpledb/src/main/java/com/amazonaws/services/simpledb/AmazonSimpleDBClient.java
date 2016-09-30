@@ -93,7 +93,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleDBClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -116,7 +116,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleDBClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

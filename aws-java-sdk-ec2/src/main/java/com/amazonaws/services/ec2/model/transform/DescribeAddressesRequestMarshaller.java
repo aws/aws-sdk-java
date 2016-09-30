@@ -39,7 +39,7 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
 
         Request<DescribeAddressesRequest> request = new DefaultRequest<DescribeAddressesRequest>(describeAddressesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeAddresses");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> publicIpsList = (com.amazonaws.internal.SdkInternalList<String>) describeAddressesRequest.getPublicIps();

@@ -325,7 +325,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCodePipelineClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -348,7 +348,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCodePipelineClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

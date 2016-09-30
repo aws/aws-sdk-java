@@ -108,7 +108,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonKinesisAnalyticsClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -131,7 +131,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonKinesisAnalyticsClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**

@@ -39,7 +39,7 @@ public class DescribeSpotFleetRequestsRequestMarshaller implements Marshaller<Re
 
         Request<DescribeSpotFleetRequestsRequest> request = new DefaultRequest<DescribeSpotFleetRequestsRequest>(describeSpotFleetRequestsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotFleetRequests");
-        request.addParameter("Version", "2016-04-01");
+        request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> spotFleetRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotFleetRequestsRequest

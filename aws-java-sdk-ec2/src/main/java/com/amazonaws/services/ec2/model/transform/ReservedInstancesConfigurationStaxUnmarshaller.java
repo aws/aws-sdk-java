@@ -64,6 +64,11 @@ public class ReservedInstancesConfigurationStaxUnmarshaller implements Unmarshal
                     reservedInstancesConfiguration.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("scope", targetDepth)) {
+                    reservedInstancesConfiguration.setScope(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedInstancesConfiguration;

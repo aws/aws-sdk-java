@@ -115,7 +115,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @see DefaultAWSCredentialsProviderChain
      */
     public DataPipelineClient() {
-        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
+        this(DefaultAWSCredentialsProviderChain.getInstance(), configFactory.getConfig());
     }
 
     /**
@@ -138,7 +138,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      * @see DefaultAWSCredentialsProviderChain
      */
     public DataPipelineClient(ClientConfiguration clientConfiguration) {
-        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+        this(DefaultAWSCredentialsProviderChain.getInstance(), clientConfiguration);
     }
 
     /**
