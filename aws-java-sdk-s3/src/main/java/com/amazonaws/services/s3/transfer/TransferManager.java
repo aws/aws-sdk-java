@@ -1207,8 +1207,7 @@ public class TransferManager {
             // MultipleFileTransferStateChangeListener
             GetObjectRequest req = new GetObjectRequest(summary.getBucketName(), summary.getKey())
                     .<GetObjectRequest>withGeneralProgressListener(
-                                            listener)
-                    .withRange(0L);
+                                            listener);
             downloads.add((DownloadImpl) doDownload(
                             req,
                             f,
