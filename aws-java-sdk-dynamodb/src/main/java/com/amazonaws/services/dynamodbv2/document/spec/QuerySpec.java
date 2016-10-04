@@ -30,6 +30,7 @@ import com.amazonaws.services.dynamodbv2.document.KeyAttribute;
 import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
 import com.amazonaws.services.dynamodbv2.document.QueryFilter;
 import com.amazonaws.services.dynamodbv2.document.RangeKeyCondition;
+import com.amazonaws.services.dynamodbv2.document.internal.InternalUtils;
 import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 import com.amazonaws.services.dynamodbv2.model.QueryRequest;
 import com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity;
@@ -183,6 +184,7 @@ public class QuerySpec extends AbstractCollectionSpec<QueryRequest> {
             this.nameMap = null;
         else
             this.nameMap = Collections.unmodifiableMap(new LinkedHashMap<String, String>(nameMap));
+        getRequest().withExpressionAttributeNames(this.nameMap);
         return this;
     }
     public Map<String, Object> getValueMap() {
@@ -198,6 +200,7 @@ public class QuerySpec extends AbstractCollectionSpec<QueryRequest> {
             this.valueMap = null;
         else
             this.valueMap = Collections.unmodifiableMap(new LinkedHashMap<String, Object>(valueMap));
+        getRequest().withExpressionAttributeValues(InternalUtils.fromSimpleMap(thisValueMap));
         return this;
     }
 
