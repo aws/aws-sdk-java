@@ -200,7 +200,7 @@ public class QuerySpec extends AbstractCollectionSpec<QueryRequest> {
             this.valueMap = null;
         else
             this.valueMap = Collections.unmodifiableMap(new LinkedHashMap<String, Object>(valueMap));
-        getRequest().withExpressionAttributeValues(InternalUtils.fromSimpleMap(thisValueMap));
+        getRequest().withExpressionAttributeValues(InternalUtils.fromSimpleMap(this.valueMap));
         return this;
     }
 
