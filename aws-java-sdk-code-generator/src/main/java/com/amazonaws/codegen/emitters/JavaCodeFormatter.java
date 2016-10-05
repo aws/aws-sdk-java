@@ -41,10 +41,9 @@ public class JavaCodeFormatter {
     static {
         DEFAULT_FORMATTER_OPTIONS = DefaultCodeFormatterConstants.getEclipseDefaultSettings();
 
-        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_6);
-        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM,
-                JavaCore.VERSION_1_6);
-        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_6);
+        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_8);
+        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM, JavaCore.VERSION_1_8);
+        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_8);
         DEFAULT_FORMATTER_OPTIONS.put(DefaultCodeFormatterConstants.FORMATTER_TAB_CHAR,
                 JavaCore.SPACE);
         DEFAULT_FORMATTER_OPTIONS.put(

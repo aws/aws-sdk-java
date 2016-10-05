@@ -24,6 +24,7 @@ import com.amazonaws.util.Base64;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -37,7 +38,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.lang.reflect.Type;
 import java.nio.ByteBuffer;
-import java.util.List;
 
 /**
  * A factory for objects that implement a user-supplied interface by invoking a remote Lambda
@@ -70,7 +70,9 @@ import java.util.List;
  */
 public final class LambdaInvokerFactory {
 
-    private static final ObjectMapper MAPPER = new ObjectMapper();
+    private static final ObjectMapper MAPPER = new ObjectMapper()
+            .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+            .enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 
     /**
      * Creates a new Lambda invoker implementing the given interface and wrapping the given {@code AWSLambda} client.
@@ -329,103 +331,95 @@ public final class LambdaInvokerFactory {
             }
         }
 
+        /**
+         * Unmarshall the exception from the response payload. The invoker factory supports unmarshalling into custom exceptions
+         * that are declared on the method signature (in the interface the invoker factory proxies).
+         *
+         * @param method       Method being proxied
+         * @param invokeResult Result from AWS Lambda.
+         * @return Exception to throw back to the caller. May either be a custom exception declared in the interface, a generic
+         * exception unmarshalled from the payload, or a very generic exception if we can't unmarshall the payload.
+         */
         private Throwable getExceptionFromPayload(Method method, InvokeResult invokeResult) {
-
-            Throwable throwable = null;
-
-            String message = "Unexpected error executing Lambda function";
-            String type = null;
-            List<String> stackTrace = null;
-
             try {
+                LambdaFunctionException error = getObjectFromPayload(LambdaFunctionException.class, invokeResult.getPayload());
+                error.setFunctionError(invokeResult.getFunctionError());
+                error.fillInStackTrace(method.getDeclaringClass());
 
-                LambdaFunctionError error = getObjectFromPayload(LambdaFunctionError.class, invokeResult.getPayload());
-
-                if (error != null) {
-                    message = error.getErrorMessage();
-                    type = error.getErrorType();
-                    stackTrace = error.getStackTrace();
-
-                    throwable = getCustomException(method, error);
-                }
-
+                return getExceptionToThrow(method, error);
             } catch (Exception ex) {
-                log.warn("Error parsing exception information from response " + "payload", ex);
+                log.warn("Error parsing exception information from response payload", ex);
+                return new LambdaFunctionException("Unexpected error executing Lambda function",
+                                                   invokeResult.getFunctionError());
             }
-
-            if (throwable == null) {
-                throwable = new LambdaFunctionException(message, "Handled".equals(invokeResult.getFunctionError()),
-                        type);
-            }
-
-            if (stackTrace != null) {
-                fillStackTrace(throwable, stackTrace, method.getDeclaringClass());
-            }
-
-            return throwable;
         }
 
-        private Throwable getCustomException(Method method, LambdaFunctionError error) {
-
-            String type = error.getErrorType();
-            Constructor<?> constructor = null;
-
-            if (type != null) {
-                for (Class<?> exceptionType : method.getExceptionTypes()) {
-                    if (exceptionType.getSimpleName().startsWith(type)) {
-                        constructor = findConstructor(exceptionType);
-                        if (constructor != null) {
-                            break;
-                        }
-                    }
-                }
-            }
+        /**
+         * Get the correct exception to throw back to the caller.
+         *
+         * @param method Interface method we are proxying
+         * @param error  Unmarshalled error payload
+         * @return A custom exception if the error matches any thrown by the interface method or the original {@link
+         * LambdaFunctionException} if none matches.
+         */
+        private Throwable getExceptionToThrow(Method method, LambdaFunctionException error) {
+            final String type = error.getType();
+            final Constructor<?> constructor = findConstructor(findCustomExceptionClass(method, type));
 
             if (constructor != null) {
                 try {
-
-                    return (Throwable) constructor.newInstance(error.getErrorMessage());
-
+                    final Throwable toReturn = (Throwable) constructor.newInstance(error.getMessage());
+                    toReturn.setStackTrace(error.getStackTrace());
+                    return toReturn;
                 } catch (Exception ex) {
                     log.warn("Error constructing custom exception", ex);
                 }
             }
+            return error;
+        }
 
+        /**
+         * Search the method throws clause to find an exception that matches the error type.
+         *
+         * @param method We only consider exception types that are explicitly declared in the interface for the proxied method.
+         * @param type   Error type returned by AWS Lambda.
+         * @return Custom exception class to create or null to use default exception.
+         */
+        private Class<?> findCustomExceptionClass(Method method, String type) {
+            if (type != null) {
+                for (Class<?> exceptionType : method.getExceptionTypes()) {
+                    if (exceptionType.getSimpleName().startsWith(type)) {
+                        return exceptionType;
+                    }
+                }
+            }
             return null;
         }
 
+        /**
+         * For custom exceptions we expect to find a accessible constructor that takes a String parameter (for the error message)
+         *
+         * @param type Exception class
+         * @return Applicable constructor or null if not found.
+         */
         private Constructor<?> findConstructor(Class<?> type) {
-
+            if (type == null) {
+                return null;
+            }
             for (Constructor<?> constructor : type.getConstructors()) {
                 Class<?>[] params = constructor.getParameterTypes();
-
                 if (params != null && params.length == 1 && String.class.equals(params[0])) {
-
                     return constructor;
                 }
             }
-
             return null;
         }
 
-        private void fillStackTrace(Throwable throwable, List<String> stackTrace, Class<?> interfaceClass) {
-
-            StackTraceElement[] elements = new StackTraceElement[stackTrace.size()];
-
-            for (int i = 0; i < stackTrace.size(); ++i) {
-                elements[i] = new StackTraceElement(interfaceClass.getName(), stackTrace.get(i).trim(), null, 0);
-            }
-
-            throwable.setStackTrace(elements);
-        }
-
         private <T> T getObjectFromPayload(Class<T> type, ByteBuffer payload) throws IOException {
-
             return type.cast(getObjectFromPayload((Type) type, payload));
         }
 
         private Object getObjectFromPayload(Type type, ByteBuffer payload) throws IOException {
-
             if (type == void.class || payload.remaining() == 0) {
                 return null;
             }

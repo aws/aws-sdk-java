@@ -20,8 +20,8 @@ import com.amazonaws.codegen.model.service.Output;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import static com.amazonaws.codegen.internal.Constants.EXCEPTION_CLASS_SUFFIX;
 import static com.amazonaws.codegen.internal.Constants.FAULT_CLASS_SUFFIX;
@@ -37,14 +37,13 @@ import static com.amazonaws.codegen.internal.Utils.unCapitialize;
  */
 public class DefaultNamingStrategy implements NamingStrategy {
 
-    private final static List<String> reservedKeywords = new ArrayList<String>() {{
+    private final static Set<String> reservedKeywords = new HashSet<String>() {{
         add("return");
         add("public");
         add("private");
         add("class");
         add("static");
         add("protected");
-        add("return");
         add("string");
         add("boolean");
         add("integer");

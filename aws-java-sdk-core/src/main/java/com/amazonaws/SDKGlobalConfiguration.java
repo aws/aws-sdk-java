@@ -212,6 +212,18 @@ public class SDKGlobalConfiguration {
     public static final String AWS_CBOR_DISABLE_SYSTEM_PROPERTY = "com.amazonaws.sdk.disableCbor";
 
     /**
+     * Environment variable to disable Ion binary protocol. This forces the request
+     * to be sent over the wire as Ion text.
+     */
+    public static final String AWS_ION_BINARY_DISABLE_ENV_VAR = "AWS_ION_BINARY_DISABLE";
+
+    /**
+     * System property to disable Ion binary protocol. This forces the request to be sent over the wire
+     * as Ion text
+     */
+    public static final String AWS_ION_BINARY_DISABLE_SYSTEM_PROPERTY = "com.amazonaws.sdk.disableIonBinary";
+
+    /**
      * @deprecated by {@link SDKGlobalTime#setGlobalTimeOffset(int)}
      */
     @Deprecated
@@ -238,6 +250,11 @@ public class SDKGlobalConfiguration {
     public static boolean isCborDisabled() {
         return isPropertyEnabled(System.getProperty(AWS_CBOR_DISABLE_SYSTEM_PROPERTY)) ||
                 isPropertyEnabled(System.getenv(AWS_CBOR_DISABLE_ENV_VAR));
+    }
+
+    public static boolean isIonBinaryDisabled() {
+        return isPropertyEnabled(System.getProperty(AWS_ION_BINARY_DISABLE_SYSTEM_PROPERTY)) ||
+                isPropertyEnabled(System.getenv(AWS_ION_BINARY_DISABLE_ENV_VAR));
     }
 
     private static boolean isPropertyEnabled(final String property) {

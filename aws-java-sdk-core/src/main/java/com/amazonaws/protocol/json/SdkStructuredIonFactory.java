@@ -45,9 +45,11 @@ import com.fasterxml.jackson.core.JsonFactory;
 import software.amazon.ion.IonSystem;
 import software.amazon.ion.system.IonBinaryWriterBuilder;
 import software.amazon.ion.system.IonSystemBuilder;
+import software.amazon.ion.system.IonTextWriterBuilder;
+import software.amazon.ion.system.IonWriterBuilder;
 
 @SdkInternalApi
-class SdkStructuredIonFactory {
+class SdkStructuredIonFactory extends SdkStructuredJsonFactoryImpl {
     private static final IonSystem ION_SYSTEM = IonSystemBuilder.standard().build();
     private static final JsonFactory JSON_FACTORY = new IonFactory(ION_SYSTEM);
     private static final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> UNMARSHALLERS = new ImmutableMapParameter.Builder<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>()
@@ -64,20 +66,28 @@ class SdkStructuredIonFactory {
             .put(Short.class, ShortIonUnmarshaller.getInstance())
             .put(String.class, StringIonUnmarshaller.getInstance())
             .build();
-    private static final IonBinaryWriterBuilder WRITER_BUILDER = IonBinaryWriterBuilder.standard().immutable();
+    private static final IonBinaryWriterBuilder BINARY_WRITER_BUILDER = IonBinaryWriterBuilder.standard().immutable();
+    private static final IonTextWriterBuilder TEXT_WRITER_BUILDER = IonTextWriterBuilder.standard().immutable();
 
-    public static final SdkStructuredJsonFactory SDK_ION_FACTORY = new SdkStructuredJsonFactoryImpl(
-            JSON_FACTORY, UNMARSHALLERS) {
-        @Override
-        protected StructuredJsonGenerator createWriter(JsonFactory jsonFactory, String contentType) {
-            return new SdkIonGenerator(WRITER_BUILDER, contentType);
-        }
+    public static final SdkStructuredIonFactory SDK_ION_BINARY_FACTORY = new SdkStructuredIonFactory(BINARY_WRITER_BUILDER);
+    public static final SdkStructuredIonFactory SDK_ION_TEXT_FACTORY = new SdkStructuredIonFactory(TEXT_WRITER_BUILDER);
 
-        @Override
-        protected ErrorCodeParser getErrorCodeParser(String customErrorCodeFieldName) {
-            return new CompositeErrorCodeParser(
-                    new IonErrorCodeParser(ION_SYSTEM),
-                    new JsonErrorCodeParser(customErrorCodeFieldName));
-        }
-    };
+    private final IonWriterBuilder builder;
+
+    private SdkStructuredIonFactory(IonWriterBuilder builder) {
+        super(JSON_FACTORY, UNMARSHALLERS);
+        this.builder = builder;
+    }
+
+    @Override
+    protected StructuredJsonGenerator createWriter(JsonFactory jsonFactory, String contentType) {
+        return SdkIonGenerator.create(builder, contentType);
+    }
+
+    @Override
+    protected ErrorCodeParser getErrorCodeParser(String customErrorCodeFieldName) {
+        return new CompositeErrorCodeParser(
+                new IonErrorCodeParser(ION_SYSTEM),
+                new JsonErrorCodeParser(customErrorCodeFieldName));
+    }
 }

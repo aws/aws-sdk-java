@@ -37,4 +37,29 @@ public class CollectionUtils {
         }
         return merged;
     }
+
+    /**
+     * Joins a collection of strings with the given separator into a single string.
+     *
+     * @param toJoin    Collection containing items to join.
+     * @param separator String to join items with.
+     * @return Empty string if collection is null or empty. Otherwise joins all strings in the collection with the separator.
+     */
+    public static String join(Collection<String> toJoin, String separator) {
+        if (toJoin == null || toJoin.isEmpty()) {
+            return "";
+        }
+
+        StringBuilder joinedString = new StringBuilder();
+        int currentIndex = 0;
+        for (String s : toJoin) {
+            if(s != null) {
+                joinedString.append(s);
+            }
+            if (currentIndex++ != toJoin.size() - 1) {
+                joinedString.append(separator);
+            }
+        }
+        return joinedString.toString();
+    }
 }

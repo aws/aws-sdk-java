@@ -490,7 +490,7 @@ public class IonRoundtripTest {
     @Test
     public void testRoundtrip() throws IOException
     {
-        SdkIonGenerator generator = new SdkIonGenerator(IonBinaryWriterBuilder.standard(), "foo");
+        SdkIonGenerator generator = SdkIonGenerator.create(IonBinaryWriterBuilder.standard(), "foo");
         data.generate(generator);
         IonParser parser = new IonParser(SYSTEM.newReader(generator.getBytes()), false);
         data.parse(parser);

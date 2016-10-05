@@ -23,9 +23,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 interface JsonContentTypeResolver {
 
     /**
-     * Content type resolver implementation for Ion enabled services.
+     * Content type resolver implementation for Ion-enabled services.
      */
-    JsonContentTypeResolver ION = new JsonContentTypeResolverImpl("application/x-amz-ion-");
+    JsonContentTypeResolver ION_BINARY = new JsonContentTypeResolverImpl("application/x-amz-ion-");
+
+    /**
+     * Content type resolver implementation for debugging Ion-enabled services.
+     */
+    JsonContentTypeResolver ION_TEXT = new JsonContentTypeResolverImpl("text/x-amz-ion-");
 
     /**
      * Content type resolver implementation for CBOR enabled services.

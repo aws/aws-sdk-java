@@ -22,21 +22,21 @@ import java.nio.ByteBuffer;
 import java.util.Date;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.BinaryUtils;
 import software.amazon.ion.IonType;
 import software.amazon.ion.IonWriter;
 import software.amazon.ion.Timestamp;
-import software.amazon.ion.system.IonBinaryWriterBuilder;
+import software.amazon.ion.system.IonWriterBuilder;
 
-class SdkIonGenerator implements StructuredJsonGenerator {
+@SdkInternalApi
+abstract class SdkIonGenerator implements StructuredJsonGenerator {
     private final String contentType;
-    private final ByteArrayOutputStream bytes;
-    private final IonWriter writer;
+    protected final IonWriter writer;
 
-    public SdkIonGenerator(IonBinaryWriterBuilder writerBuilder, String contentType) {
+    private SdkIonGenerator(IonWriter writer, String contentType) {
+        this.writer = writer;
         this.contentType = contentType;
-        this.bytes = new ByteArrayOutputStream();
-        this.writer = writerBuilder.build(bytes);
     }
 
     @Override
@@ -196,17 +196,35 @@ class SdkIonGenerator implements StructuredJsonGenerator {
     }
 
     @Override
-    public byte[] getBytes() {
-        try {
-            writer.finish();
-        } catch (IOException e) {
-            throw new AmazonClientException(e);
-        }
-        return bytes.toByteArray();
-    }
+    public abstract byte[] getBytes();
 
     @Override
     public String getContentType() {
         return contentType;
+    }
+
+    public static SdkIonGenerator create(IonWriterBuilder builder, String contentType) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        IonWriter writer = builder.build(bytes);
+        return new ByteArraySdkIonGenerator(bytes, writer, contentType);
+    }
+
+    private static class ByteArraySdkIonGenerator extends SdkIonGenerator {
+        private final ByteArrayOutputStream bytes;
+
+        public ByteArraySdkIonGenerator(ByteArrayOutputStream bytes, IonWriter writer, String contentType) {
+            super(writer, contentType);
+            this.bytes = bytes;
+        }
+
+        @Override
+        public byte[] getBytes() {
+            try {
+                writer.finish();
+            } catch (IOException e) {
+                throw new AmazonClientException(e);
+            }
+            return bytes.toByteArray();
+        }
     }
 }
