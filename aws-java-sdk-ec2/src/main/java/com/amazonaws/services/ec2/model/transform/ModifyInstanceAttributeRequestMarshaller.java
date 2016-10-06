@@ -54,19 +54,19 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
             request.addParameter("Value", StringUtils.fromString(modifyInstanceAttributeRequest.getValue()));
         }
 
-        com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMappingSpecification> blockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMappingSpecification>) modifyInstanceAttributeRequest
+        com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMappingSpecification> modifyInstanceAttributeRequestBlockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMappingSpecification>) modifyInstanceAttributeRequest
                 .getBlockDeviceMappings();
-        if (!blockDeviceMappingsList.isEmpty() || !blockDeviceMappingsList.isAutoConstruct()) {
+        if (!modifyInstanceAttributeRequestBlockDeviceMappingsList.isEmpty() || !modifyInstanceAttributeRequestBlockDeviceMappingsList.isAutoConstruct()) {
             int blockDeviceMappingsListIndex = 1;
 
-            for (InstanceBlockDeviceMappingSpecification blockDeviceMappingsListValue : blockDeviceMappingsList) {
+            for (InstanceBlockDeviceMappingSpecification modifyInstanceAttributeRequestBlockDeviceMappingsListValue : modifyInstanceAttributeRequestBlockDeviceMappingsList) {
 
-                if (blockDeviceMappingsListValue.getDeviceName() != null) {
+                if (modifyInstanceAttributeRequestBlockDeviceMappingsListValue.getDeviceName() != null) {
                     request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".DeviceName",
-                            StringUtils.fromString(blockDeviceMappingsListValue.getDeviceName()));
+                            StringUtils.fromString(modifyInstanceAttributeRequestBlockDeviceMappingsListValue.getDeviceName()));
                 }
 
-                EbsInstanceBlockDeviceSpecification ebs = blockDeviceMappingsListValue.getEbs();
+                EbsInstanceBlockDeviceSpecification ebs = modifyInstanceAttributeRequestBlockDeviceMappingsListValue.getEbs();
                 if (ebs != null) {
 
                     if (ebs.getVolumeId() != null) {
@@ -79,14 +79,14 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
                     }
                 }
 
-                if (blockDeviceMappingsListValue.getVirtualName() != null) {
+                if (modifyInstanceAttributeRequestBlockDeviceMappingsListValue.getVirtualName() != null) {
                     request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName",
-                            StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));
+                            StringUtils.fromString(modifyInstanceAttributeRequestBlockDeviceMappingsListValue.getVirtualName()));
                 }
 
-                if (blockDeviceMappingsListValue.getNoDevice() != null) {
+                if (modifyInstanceAttributeRequestBlockDeviceMappingsListValue.getNoDevice() != null) {
                     request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".NoDevice",
-                            StringUtils.fromString(blockDeviceMappingsListValue.getNoDevice()));
+                            StringUtils.fromString(modifyInstanceAttributeRequestBlockDeviceMappingsListValue.getNoDevice()));
                 }
                 blockDeviceMappingsListIndex++;
             }
@@ -121,13 +121,14 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
                     StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceInitiatedShutdownBehavior()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> groupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyInstanceAttributeRequest.getGroups();
-        if (!groupsList.isEmpty() || !groupsList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> modifyInstanceAttributeRequestGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyInstanceAttributeRequest
+                .getGroups();
+        if (!modifyInstanceAttributeRequestGroupsList.isEmpty() || !modifyInstanceAttributeRequestGroupsList.isAutoConstruct()) {
             int groupsListIndex = 1;
 
-            for (String groupsListValue : groupsList) {
-                if (groupsListValue != null) {
-                    request.addParameter("GroupId." + groupsListIndex, StringUtils.fromString(groupsListValue));
+            for (String modifyInstanceAttributeRequestGroupsListValue : modifyInstanceAttributeRequestGroupsList) {
+                if (modifyInstanceAttributeRequestGroupsListValue != null) {
+                    request.addParameter("GroupId." + groupsListIndex, StringUtils.fromString(modifyInstanceAttributeRequestGroupsListValue));
                 }
                 groupsListIndex++;
             }

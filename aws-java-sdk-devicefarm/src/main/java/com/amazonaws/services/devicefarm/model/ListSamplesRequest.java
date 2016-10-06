@@ -24,7 +24,7 @@ public class ListSamplesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The samples' ARNs.
+     * The Amazon Resource Name (ARN) of the project for which you want to list samples.
      * </p>
      */
     private String arn;
@@ -38,11 +38,11 @@ public class ListSamplesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The samples' ARNs.
+     * The Amazon Resource Name (ARN) of the project for which you want to list samples.
      * </p>
      * 
      * @param arn
-     *        The samples' ARNs.
+     *        The Amazon Resource Name (ARN) of the project for which you want to list samples.
      */
 
     public void setArn(String arn) {
@@ -51,10 +51,10 @@ public class ListSamplesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The samples' ARNs.
+     * The Amazon Resource Name (ARN) of the project for which you want to list samples.
      * </p>
      * 
-     * @return The samples' ARNs.
+     * @return The Amazon Resource Name (ARN) of the project for which you want to list samples.
      */
 
     public String getArn() {
@@ -63,11 +63,11 @@ public class ListSamplesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The samples' ARNs.
+     * The Amazon Resource Name (ARN) of the project for which you want to list samples.
      * </p>
      * 
      * @param arn
-     *        The samples' ARNs.
+     *        The Amazon Resource Name (ARN) of the project for which you want to list samples.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

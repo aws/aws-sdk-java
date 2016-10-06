@@ -948,7 +948,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about runs.
+     * Gets information about runs, given an AWS Device Farm project ARN.
      * </p>
      * 
      * @param listRunsRequest
@@ -960,7 +960,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about runs.
+     * Gets information about runs, given an AWS Device Farm project ARN.
      * </p>
      * 
      * @param listRunsRequest
@@ -977,7 +977,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about samples.
+     * Gets information about samples, given an AWS Device Farm project ARN
      * </p>
      * 
      * @param listSamplesRequest
@@ -989,7 +989,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about samples.
+     * Gets information about samples, given an AWS Device Farm project ARN
      * </p>
      * 
      * @param listSamplesRequest
@@ -1093,7 +1093,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about uploads.
+     * Gets information about uploads, given an AWS Device Farm project ARN.
      * </p>
      * 
      * @param listUploadsRequest
@@ -1105,7 +1105,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about uploads.
+     * Gets information about uploads, given an AWS Device Farm project ARN.
      * </p>
      * 
      * @param listUploadsRequest

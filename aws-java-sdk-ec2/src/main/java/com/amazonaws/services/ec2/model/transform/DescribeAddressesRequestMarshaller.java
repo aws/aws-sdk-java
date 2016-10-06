@@ -42,35 +42,38 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> publicIpsList = (com.amazonaws.internal.SdkInternalList<String>) describeAddressesRequest.getPublicIps();
-        if (!publicIpsList.isEmpty() || !publicIpsList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> describeAddressesRequestPublicIpsList = (com.amazonaws.internal.SdkInternalList<String>) describeAddressesRequest
+                .getPublicIps();
+        if (!describeAddressesRequestPublicIpsList.isEmpty() || !describeAddressesRequestPublicIpsList.isAutoConstruct()) {
             int publicIpsListIndex = 1;
 
-            for (String publicIpsListValue : publicIpsList) {
-                if (publicIpsListValue != null) {
-                    request.addParameter("PublicIp." + publicIpsListIndex, StringUtils.fromString(publicIpsListValue));
+            for (String describeAddressesRequestPublicIpsListValue : describeAddressesRequestPublicIpsList) {
+                if (describeAddressesRequestPublicIpsListValue != null) {
+                    request.addParameter("PublicIp." + publicIpsListIndex, StringUtils.fromString(describeAddressesRequestPublicIpsListValue));
                 }
                 publicIpsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeAddressesRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeAddressesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeAddressesRequest
+                .getFilters();
+        if (!describeAddressesRequestFiltersList.isEmpty() || !describeAddressesRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeAddressesRequestFiltersListValue : describeAddressesRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeAddressesRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeAddressesRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeAddressesRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }
@@ -79,14 +82,14 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> allocationIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeAddressesRequest
+        com.amazonaws.internal.SdkInternalList<String> describeAddressesRequestAllocationIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeAddressesRequest
                 .getAllocationIds();
-        if (!allocationIdsList.isEmpty() || !allocationIdsList.isAutoConstruct()) {
+        if (!describeAddressesRequestAllocationIdsList.isEmpty() || !describeAddressesRequestAllocationIdsList.isAutoConstruct()) {
             int allocationIdsListIndex = 1;
 
-            for (String allocationIdsListValue : allocationIdsList) {
-                if (allocationIdsListValue != null) {
-                    request.addParameter("AllocationId." + allocationIdsListIndex, StringUtils.fromString(allocationIdsListValue));
+            for (String describeAddressesRequestAllocationIdsListValue : describeAddressesRequestAllocationIdsList) {
+                if (describeAddressesRequestAllocationIdsListValue != null) {
+                    request.addParameter("AllocationId." + allocationIdsListIndex, StringUtils.fromString(describeAddressesRequestAllocationIdsListValue));
                 }
                 allocationIdsListIndex++;
             }

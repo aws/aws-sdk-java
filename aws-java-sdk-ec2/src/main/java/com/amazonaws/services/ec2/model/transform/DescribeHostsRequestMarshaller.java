@@ -42,13 +42,14 @@ public class DescribeHostsRequestMarshaller implements Marshaller<Request<Descri
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> hostIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeHostsRequest.getHostIds();
-        if (!hostIdsList.isEmpty() || !hostIdsList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> describeHostsRequestHostIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeHostsRequest
+                .getHostIds();
+        if (!describeHostsRequestHostIdsList.isEmpty() || !describeHostsRequestHostIdsList.isAutoConstruct()) {
             int hostIdsListIndex = 1;
 
-            for (String hostIdsListValue : hostIdsList) {
-                if (hostIdsListValue != null) {
-                    request.addParameter("HostId." + hostIdsListIndex, StringUtils.fromString(hostIdsListValue));
+            for (String describeHostsRequestHostIdsListValue : describeHostsRequestHostIdsList) {
+                if (describeHostsRequestHostIdsListValue != null) {
+                    request.addParameter("HostId." + hostIdsListIndex, StringUtils.fromString(describeHostsRequestHostIdsListValue));
                 }
                 hostIdsListIndex++;
             }
@@ -62,23 +63,25 @@ public class DescribeHostsRequestMarshaller implements Marshaller<Request<Descri
             request.addParameter("MaxResults", StringUtils.fromInteger(describeHostsRequest.getMaxResults()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeHostsRequest.getFilter();
-        if (!filterList.isEmpty() || !filterList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeHostsRequestFilterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeHostsRequest
+                .getFilter();
+        if (!describeHostsRequestFilterList.isEmpty() || !describeHostsRequestFilterList.isAutoConstruct()) {
             int filterListIndex = 1;
 
-            for (Filter filterListValue : filterList) {
+            for (Filter describeHostsRequestFilterListValue : describeHostsRequestFilterList) {
 
-                if (filterListValue.getName() != null) {
-                    request.addParameter("Filter." + filterListIndex + ".Name", StringUtils.fromString(filterListValue.getName()));
+                if (describeHostsRequestFilterListValue.getName() != null) {
+                    request.addParameter("Filter." + filterListIndex + ".Name", StringUtils.fromString(describeHostsRequestFilterListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filterListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeHostsRequestFilterListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filterListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filterListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

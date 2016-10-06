@@ -42,37 +42,40 @@ public class DescribeHostReservationsRequestMarshaller implements Marshaller<Req
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> hostReservationIdSetList = (com.amazonaws.internal.SdkInternalList<String>) describeHostReservationsRequest
+        com.amazonaws.internal.SdkInternalList<String> describeHostReservationsRequestHostReservationIdSetList = (com.amazonaws.internal.SdkInternalList<String>) describeHostReservationsRequest
                 .getHostReservationIdSet();
-        if (!hostReservationIdSetList.isEmpty() || !hostReservationIdSetList.isAutoConstruct()) {
+        if (!describeHostReservationsRequestHostReservationIdSetList.isEmpty() || !describeHostReservationsRequestHostReservationIdSetList.isAutoConstruct()) {
             int hostReservationIdSetListIndex = 1;
 
-            for (String hostReservationIdSetListValue : hostReservationIdSetList) {
-                if (hostReservationIdSetListValue != null) {
-                    request.addParameter("HostReservationIdSet." + hostReservationIdSetListIndex, StringUtils.fromString(hostReservationIdSetListValue));
+            for (String describeHostReservationsRequestHostReservationIdSetListValue : describeHostReservationsRequestHostReservationIdSetList) {
+                if (describeHostReservationsRequestHostReservationIdSetListValue != null) {
+                    request.addParameter("HostReservationIdSet." + hostReservationIdSetListIndex,
+                            StringUtils.fromString(describeHostReservationsRequestHostReservationIdSetListValue));
                 }
                 hostReservationIdSetListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeHostReservationsRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeHostReservationsRequestFilterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeHostReservationsRequest
                 .getFilter();
-        if (!filterList.isEmpty() || !filterList.isAutoConstruct()) {
+        if (!describeHostReservationsRequestFilterList.isEmpty() || !describeHostReservationsRequestFilterList.isAutoConstruct()) {
             int filterListIndex = 1;
 
-            for (Filter filterListValue : filterList) {
+            for (Filter describeHostReservationsRequestFilterListValue : describeHostReservationsRequestFilterList) {
 
-                if (filterListValue.getName() != null) {
-                    request.addParameter("Filter." + filterListIndex + ".Name", StringUtils.fromString(filterListValue.getName()));
+                if (describeHostReservationsRequestFilterListValue.getName() != null) {
+                    request.addParameter("Filter." + filterListIndex + ".Name",
+                            StringUtils.fromString(describeHostReservationsRequestFilterListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filterListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeHostReservationsRequestFilterListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filterListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filterListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

@@ -45,6 +45,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public AdminCreateUserResult adminCreateUser(AdminCreateUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AdminDeleteUserResult adminDeleteUser(AdminDeleteUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

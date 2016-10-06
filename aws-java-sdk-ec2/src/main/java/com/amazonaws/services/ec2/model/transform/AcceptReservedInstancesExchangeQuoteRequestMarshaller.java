@@ -44,34 +44,37 @@ public class AcceptReservedInstancesExchangeQuoteRequestMarshaller implements
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> reservedInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) acceptReservedInstancesExchangeQuoteRequest
+        com.amazonaws.internal.SdkInternalList<String> acceptReservedInstancesExchangeQuoteRequestReservedInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) acceptReservedInstancesExchangeQuoteRequest
                 .getReservedInstanceIds();
-        if (!reservedInstanceIdsList.isEmpty() || !reservedInstanceIdsList.isAutoConstruct()) {
+        if (!acceptReservedInstancesExchangeQuoteRequestReservedInstanceIdsList.isEmpty()
+                || !acceptReservedInstancesExchangeQuoteRequestReservedInstanceIdsList.isAutoConstruct()) {
             int reservedInstanceIdsListIndex = 1;
 
-            for (String reservedInstanceIdsListValue : reservedInstanceIdsList) {
-                if (reservedInstanceIdsListValue != null) {
-                    request.addParameter("ReservedInstanceId." + reservedInstanceIdsListIndex, StringUtils.fromString(reservedInstanceIdsListValue));
+            for (String acceptReservedInstancesExchangeQuoteRequestReservedInstanceIdsListValue : acceptReservedInstancesExchangeQuoteRequestReservedInstanceIdsList) {
+                if (acceptReservedInstancesExchangeQuoteRequestReservedInstanceIdsListValue != null) {
+                    request.addParameter("ReservedInstanceId." + reservedInstanceIdsListIndex,
+                            StringUtils.fromString(acceptReservedInstancesExchangeQuoteRequestReservedInstanceIdsListValue));
                 }
                 reservedInstanceIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<TargetConfigurationRequest> targetConfigurationsList = (com.amazonaws.internal.SdkInternalList<TargetConfigurationRequest>) acceptReservedInstancesExchangeQuoteRequest
+        com.amazonaws.internal.SdkInternalList<TargetConfigurationRequest> acceptReservedInstancesExchangeQuoteRequestTargetConfigurationsList = (com.amazonaws.internal.SdkInternalList<TargetConfigurationRequest>) acceptReservedInstancesExchangeQuoteRequest
                 .getTargetConfigurations();
-        if (!targetConfigurationsList.isEmpty() || !targetConfigurationsList.isAutoConstruct()) {
+        if (!acceptReservedInstancesExchangeQuoteRequestTargetConfigurationsList.isEmpty()
+                || !acceptReservedInstancesExchangeQuoteRequestTargetConfigurationsList.isAutoConstruct()) {
             int targetConfigurationsListIndex = 1;
 
-            for (TargetConfigurationRequest targetConfigurationsListValue : targetConfigurationsList) {
+            for (TargetConfigurationRequest acceptReservedInstancesExchangeQuoteRequestTargetConfigurationsListValue : acceptReservedInstancesExchangeQuoteRequestTargetConfigurationsList) {
 
-                if (targetConfigurationsListValue.getOfferingId() != null) {
+                if (acceptReservedInstancesExchangeQuoteRequestTargetConfigurationsListValue.getOfferingId() != null) {
                     request.addParameter("TargetConfiguration." + targetConfigurationsListIndex + ".OfferingId",
-                            StringUtils.fromString(targetConfigurationsListValue.getOfferingId()));
+                            StringUtils.fromString(acceptReservedInstancesExchangeQuoteRequestTargetConfigurationsListValue.getOfferingId()));
                 }
 
-                if (targetConfigurationsListValue.getInstanceCount() != null) {
+                if (acceptReservedInstancesExchangeQuoteRequestTargetConfigurationsListValue.getInstanceCount() != null) {
                     request.addParameter("TargetConfiguration." + targetConfigurationsListIndex + ".InstanceCount",
-                            StringUtils.fromInteger(targetConfigurationsListValue.getInstanceCount()));
+                            StringUtils.fromInteger(acceptReservedInstancesExchangeQuoteRequestTargetConfigurationsListValue.getInstanceCount()));
                 }
                 targetConfigurationsListIndex++;
             }

@@ -42,13 +42,14 @@ public class StopInstancesRequestMarshaller implements Marshaller<Request<StopIn
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) stopInstancesRequest.getInstanceIds();
-        if (!instanceIdsList.isEmpty() || !instanceIdsList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> stopInstancesRequestInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) stopInstancesRequest
+                .getInstanceIds();
+        if (!stopInstancesRequestInstanceIdsList.isEmpty() || !stopInstancesRequestInstanceIdsList.isAutoConstruct()) {
             int instanceIdsListIndex = 1;
 
-            for (String instanceIdsListValue : instanceIdsList) {
-                if (instanceIdsListValue != null) {
-                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
+            for (String stopInstancesRequestInstanceIdsListValue : stopInstancesRequestInstanceIdsList) {
+                if (stopInstancesRequestInstanceIdsListValue != null) {
+                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(stopInstancesRequestInstanceIdsListValue));
                 }
                 instanceIdsListIndex++;
             }

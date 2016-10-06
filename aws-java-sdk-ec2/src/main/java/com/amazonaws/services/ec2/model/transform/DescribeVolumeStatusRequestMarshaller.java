@@ -42,36 +42,38 @@ public class DescribeVolumeStatusRequestMarshaller implements Marshaller<Request
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> volumeIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVolumeStatusRequest
+        com.amazonaws.internal.SdkInternalList<String> describeVolumeStatusRequestVolumeIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVolumeStatusRequest
                 .getVolumeIds();
-        if (!volumeIdsList.isEmpty() || !volumeIdsList.isAutoConstruct()) {
+        if (!describeVolumeStatusRequestVolumeIdsList.isEmpty() || !describeVolumeStatusRequestVolumeIdsList.isAutoConstruct()) {
             int volumeIdsListIndex = 1;
 
-            for (String volumeIdsListValue : volumeIdsList) {
-                if (volumeIdsListValue != null) {
-                    request.addParameter("VolumeId." + volumeIdsListIndex, StringUtils.fromString(volumeIdsListValue));
+            for (String describeVolumeStatusRequestVolumeIdsListValue : describeVolumeStatusRequestVolumeIdsList) {
+                if (describeVolumeStatusRequestVolumeIdsListValue != null) {
+                    request.addParameter("VolumeId." + volumeIdsListIndex, StringUtils.fromString(describeVolumeStatusRequestVolumeIdsListValue));
                 }
                 volumeIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVolumeStatusRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeVolumeStatusRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVolumeStatusRequest
+                .getFilters();
+        if (!describeVolumeStatusRequestFiltersList.isEmpty() || !describeVolumeStatusRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeVolumeStatusRequestFiltersListValue : describeVolumeStatusRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeVolumeStatusRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeVolumeStatusRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeVolumeStatusRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

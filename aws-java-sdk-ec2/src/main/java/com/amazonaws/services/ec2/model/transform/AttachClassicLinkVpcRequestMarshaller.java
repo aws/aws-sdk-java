@@ -50,13 +50,14 @@ public class AttachClassicLinkVpcRequestMarshaller implements Marshaller<Request
             request.addParameter("VpcId", StringUtils.fromString(attachClassicLinkVpcRequest.getVpcId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> groupsList = (com.amazonaws.internal.SdkInternalList<String>) attachClassicLinkVpcRequest.getGroups();
-        if (!groupsList.isEmpty() || !groupsList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> attachClassicLinkVpcRequestGroupsList = (com.amazonaws.internal.SdkInternalList<String>) attachClassicLinkVpcRequest
+                .getGroups();
+        if (!attachClassicLinkVpcRequestGroupsList.isEmpty() || !attachClassicLinkVpcRequestGroupsList.isAutoConstruct()) {
             int groupsListIndex = 1;
 
-            for (String groupsListValue : groupsList) {
-                if (groupsListValue != null) {
-                    request.addParameter("SecurityGroupId." + groupsListIndex, StringUtils.fromString(groupsListValue));
+            for (String attachClassicLinkVpcRequestGroupsListValue : attachClassicLinkVpcRequestGroupsList) {
+                if (attachClassicLinkVpcRequestGroupsListValue != null) {
+                    request.addParameter("SecurityGroupId." + groupsListIndex, StringUtils.fromString(attachClassicLinkVpcRequestGroupsListValue));
                 }
                 groupsListIndex++;
             }

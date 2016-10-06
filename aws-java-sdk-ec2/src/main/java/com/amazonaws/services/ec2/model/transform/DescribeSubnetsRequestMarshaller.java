@@ -42,35 +42,38 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSubnetsRequest.getSubnetIds();
-        if (!subnetIdsList.isEmpty() || !subnetIdsList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> describeSubnetsRequestSubnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSubnetsRequest
+                .getSubnetIds();
+        if (!describeSubnetsRequestSubnetIdsList.isEmpty() || !describeSubnetsRequestSubnetIdsList.isAutoConstruct()) {
             int subnetIdsListIndex = 1;
 
-            for (String subnetIdsListValue : subnetIdsList) {
-                if (subnetIdsListValue != null) {
-                    request.addParameter("SubnetId." + subnetIdsListIndex, StringUtils.fromString(subnetIdsListValue));
+            for (String describeSubnetsRequestSubnetIdsListValue : describeSubnetsRequestSubnetIdsList) {
+                if (describeSubnetsRequestSubnetIdsListValue != null) {
+                    request.addParameter("SubnetId." + subnetIdsListIndex, StringUtils.fromString(describeSubnetsRequestSubnetIdsListValue));
                 }
                 subnetIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSubnetsRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeSubnetsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSubnetsRequest
+                .getFilters();
+        if (!describeSubnetsRequestFiltersList.isEmpty() || !describeSubnetsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeSubnetsRequestFiltersListValue : describeSubnetsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeSubnetsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeSubnetsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeSubnetsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

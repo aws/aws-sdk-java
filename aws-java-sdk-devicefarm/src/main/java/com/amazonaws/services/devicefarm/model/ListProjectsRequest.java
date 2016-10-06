@@ -24,7 +24,8 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The projects' ARNs.
+     * Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for
+     * the AWS account. You can also specify a project ARN.
      * </p>
      */
     private String arn;
@@ -38,11 +39,13 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The projects' ARNs.
+     * Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for
+     * the AWS account. You can also specify a project ARN.
      * </p>
      * 
      * @param arn
-     *        The projects' ARNs.
+     *        Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all
+     *        projects for the AWS account. You can also specify a project ARN.
      */
 
     public void setArn(String arn) {
@@ -51,10 +54,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The projects' ARNs.
+     * Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for
+     * the AWS account. You can also specify a project ARN.
      * </p>
      * 
-     * @return The projects' ARNs.
+     * @return Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all
+     *         projects for the AWS account. You can also specify a project ARN.
      */
 
     public String getArn() {
@@ -63,11 +68,13 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The projects' ARNs.
+     * Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for
+     * the AWS account. You can also specify a project ARN.
      * </p>
      * 
      * @param arn
-     *        The projects' ARNs.
+     *        Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all
+     *        projects for the AWS account. You can also specify a project ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

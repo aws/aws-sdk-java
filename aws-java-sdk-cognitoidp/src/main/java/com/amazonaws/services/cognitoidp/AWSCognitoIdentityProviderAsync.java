@@ -20,14 +20,14 @@ import com.amazonaws.services.cognitoidp.model.*;
  * receive notification when an asynchronous operation completes.
  * <p>
  * <p>
- * You can create a user pool in Amazon Cognito Identity to manage directories and users. You can authenticate a user to
- * obtain tokens related to user identity and access policies.
+ * Using the Amazon Cognito Your User Pools API, you can create a user pool to manage directories and users. You can
+ * authenticate a user to obtain tokens related to user identity and access policies.
  * </p>
  * <p>
- * This API reference provides information about user pools in Amazon Cognito Identity.
+ * This API reference provides information about user pools in Amazon Cognito Your User Pools.
  * </p>
  * <p>
- * For more information, see <a href="https://aws.amazon.com/cognito/">Amazon Cognito</a>.
+ * For more information, see the Amazon Cognito Documentation.
  * </p>
  */
 public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvider {
@@ -89,6 +89,45 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<AdminConfirmSignUpResult> adminConfirmSignUpAsync(AdminConfirmSignUpRequest adminConfirmSignUpRequest,
             com.amazonaws.handlers.AsyncHandler<AdminConfirmSignUpRequest, AdminConfirmSignUpResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message
+     * is based on a template that you configured in your call to CreateUserPool or UpdateUserPool. This template
+     * includes your custom sign-up instructions and placeholders for user name and temporary password.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminCreateUserRequest
+     *        Represents the request to create a user in the specified user pool.
+     * @return A Java Future containing the result of the AdminCreateUser operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminCreateUser
+     */
+    java.util.concurrent.Future<AdminCreateUserResult> adminCreateUserAsync(AdminCreateUserRequest adminCreateUserRequest);
+
+    /**
+     * <p>
+     * Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message
+     * is based on a template that you configured in your call to CreateUserPool or UpdateUserPool. This template
+     * includes your custom sign-up instructions and placeholders for user name and temporary password.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminCreateUserRequest
+     *        Represents the request to create a user in the specified user pool.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminCreateUser operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminCreateUser
+     */
+    java.util.concurrent.Future<AdminCreateUserResult> adminCreateUserAsync(AdminCreateUserRequest adminCreateUserRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminCreateUserRequest, AdminCreateUserResult> asyncHandler);
 
     /**
      * <p>

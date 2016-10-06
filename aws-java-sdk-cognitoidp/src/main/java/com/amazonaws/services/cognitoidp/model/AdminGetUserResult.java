@@ -56,11 +56,31 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * The user status. Can be one of the following:
      * </p>
      * <ul>
-     * <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     * <li>CONFIRMED - User has been confirmed.</li>
-     * <li>ARCHIVED - User is no longer active.</li>
-     * <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     * <li>UNKNOWN - User status is not known.</li>
+     * <li>
+     * <p>
+     * UNCONFIRMED - User has been created but not confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CONFIRMED - User has been confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARCHIVED - User is no longer active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COMPROMISED - User is disabled due to a potential security threat.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - User status is not known.
+     * </p>
+     * </li>
      * </ul>
      */
     private String userStatus;
@@ -318,21 +338,61 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * The user status. Can be one of the following:
      * </p>
      * <ul>
-     * <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     * <li>CONFIRMED - User has been confirmed.</li>
-     * <li>ARCHIVED - User is no longer active.</li>
-     * <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     * <li>UNKNOWN - User status is not known.</li>
+     * <li>
+     * <p>
+     * UNCONFIRMED - User has been created but not confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CONFIRMED - User has been confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARCHIVED - User is no longer active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COMPROMISED - User is disabled due to a potential security threat.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - User status is not known.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param userStatus
      *        The user status. Can be one of the following:</p>
      *        <ul>
-     *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     *        <li>CONFIRMED - User has been confirmed.</li>
-     *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     *        <li>UNKNOWN - User status is not known.</li>
+     *        <li>
+     *        <p>
+     *        UNCONFIRMED - User has been created but not confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONFIRMED - User has been confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARCHIVED - User is no longer active.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        COMPROMISED - User is disabled due to a potential security threat.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - User status is not known.
+     *        </p>
+     *        </li>
      * @see UserStatusType
      */
 
@@ -345,20 +405,60 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * The user status. Can be one of the following:
      * </p>
      * <ul>
-     * <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     * <li>CONFIRMED - User has been confirmed.</li>
-     * <li>ARCHIVED - User is no longer active.</li>
-     * <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     * <li>UNKNOWN - User status is not known.</li>
+     * <li>
+     * <p>
+     * UNCONFIRMED - User has been created but not confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CONFIRMED - User has been confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARCHIVED - User is no longer active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COMPROMISED - User is disabled due to a potential security threat.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - User status is not known.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The user status. Can be one of the following:</p>
      *         <ul>
-     *         <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     *         <li>CONFIRMED - User has been confirmed.</li>
-     *         <li>ARCHIVED - User is no longer active.</li>
-     *         <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     *         <li>UNKNOWN - User status is not known.</li>
+     *         <li>
+     *         <p>
+     *         UNCONFIRMED - User has been created but not confirmed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CONFIRMED - User has been confirmed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ARCHIVED - User is no longer active.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         COMPROMISED - User is disabled due to a potential security threat.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNKNOWN - User status is not known.
+     *         </p>
+     *         </li>
      * @see UserStatusType
      */
 
@@ -371,21 +471,61 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * The user status. Can be one of the following:
      * </p>
      * <ul>
-     * <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     * <li>CONFIRMED - User has been confirmed.</li>
-     * <li>ARCHIVED - User is no longer active.</li>
-     * <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     * <li>UNKNOWN - User status is not known.</li>
+     * <li>
+     * <p>
+     * UNCONFIRMED - User has been created but not confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CONFIRMED - User has been confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARCHIVED - User is no longer active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COMPROMISED - User is disabled due to a potential security threat.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - User status is not known.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param userStatus
      *        The user status. Can be one of the following:</p>
      *        <ul>
-     *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     *        <li>CONFIRMED - User has been confirmed.</li>
-     *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     *        <li>UNKNOWN - User status is not known.</li>
+     *        <li>
+     *        <p>
+     *        UNCONFIRMED - User has been created but not confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONFIRMED - User has been confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARCHIVED - User is no longer active.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        COMPROMISED - User is disabled due to a potential security threat.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - User status is not known.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserStatusType
      */
@@ -400,21 +540,61 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * The user status. Can be one of the following:
      * </p>
      * <ul>
-     * <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     * <li>CONFIRMED - User has been confirmed.</li>
-     * <li>ARCHIVED - User is no longer active.</li>
-     * <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     * <li>UNKNOWN - User status is not known.</li>
+     * <li>
+     * <p>
+     * UNCONFIRMED - User has been created but not confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CONFIRMED - User has been confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARCHIVED - User is no longer active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COMPROMISED - User is disabled due to a potential security threat.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - User status is not known.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param userStatus
      *        The user status. Can be one of the following:</p>
      *        <ul>
-     *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     *        <li>CONFIRMED - User has been confirmed.</li>
-     *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     *        <li>UNKNOWN - User status is not known.</li>
+     *        <li>
+     *        <p>
+     *        UNCONFIRMED - User has been created but not confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONFIRMED - User has been confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARCHIVED - User is no longer active.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        COMPROMISED - User is disabled due to a potential security threat.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - User status is not known.
+     *        </p>
+     *        </li>
      * @see UserStatusType
      */
 
@@ -427,21 +607,61 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * The user status. Can be one of the following:
      * </p>
      * <ul>
-     * <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     * <li>CONFIRMED - User has been confirmed.</li>
-     * <li>ARCHIVED - User is no longer active.</li>
-     * <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     * <li>UNKNOWN - User status is not known.</li>
+     * <li>
+     * <p>
+     * UNCONFIRMED - User has been created but not confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CONFIRMED - User has been confirmed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARCHIVED - User is no longer active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COMPROMISED - User is disabled due to a potential security threat.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - User status is not known.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param userStatus
      *        The user status. Can be one of the following:</p>
      *        <ul>
-     *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     *        <li>CONFIRMED - User has been confirmed.</li>
-     *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     *        <li>UNKNOWN - User status is not known.</li>
+     *        <li>
+     *        <p>
+     *        UNCONFIRMED - User has been created but not confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONFIRMED - User has been confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARCHIVED - User is no longer active.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        COMPROMISED - User is disabled due to a potential security threat.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - User status is not known.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserStatusType
      */

@@ -42,14 +42,15 @@ public class DescribeAccountAttributesRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAccountAttributesRequest
+        com.amazonaws.internal.SdkInternalList<String> describeAccountAttributesRequestAttributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAccountAttributesRequest
                 .getAttributeNames();
-        if (!attributeNamesList.isEmpty() || !attributeNamesList.isAutoConstruct()) {
+        if (!describeAccountAttributesRequestAttributeNamesList.isEmpty() || !describeAccountAttributesRequestAttributeNamesList.isAutoConstruct()) {
             int attributeNamesListIndex = 1;
 
-            for (String attributeNamesListValue : attributeNamesList) {
-                if (attributeNamesListValue != null) {
-                    request.addParameter("AttributeName." + attributeNamesListIndex, StringUtils.fromString(attributeNamesListValue));
+            for (String describeAccountAttributesRequestAttributeNamesListValue : describeAccountAttributesRequestAttributeNamesList) {
+                if (describeAccountAttributesRequestAttributeNamesListValue != null) {
+                    request.addParameter("AttributeName." + attributeNamesListIndex,
+                            StringUtils.fromString(describeAccountAttributesRequestAttributeNamesListValue));
                 }
                 attributeNamesListIndex++;
             }

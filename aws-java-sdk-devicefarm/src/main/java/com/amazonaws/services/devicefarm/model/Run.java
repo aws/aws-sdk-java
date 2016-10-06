@@ -283,7 +283,7 @@ public class Run implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
-     * not specified, the default value is <code>unmetered</code>.
+     * not specified, the default value is <code>metered</code>.
      * </p>
      */
     private String billingMethod;
@@ -2739,12 +2739,12 @@ public class Run implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
-     * not specified, the default value is <code>unmetered</code>.
+     * not specified, the default value is <code>metered</code>.
      * </p>
      * 
      * @param billingMethod
      *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *        parameter is not specified, the default value is <code>unmetered</code>.
+     *        parameter is not specified, the default value is <code>metered</code>.
      * @see BillingMethod
      */
 
@@ -2755,11 +2755,11 @@ public class Run implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
-     * not specified, the default value is <code>unmetered</code>.
+     * not specified, the default value is <code>metered</code>.
      * </p>
      * 
      * @return Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *         parameter is not specified, the default value is <code>unmetered</code>.
+     *         parameter is not specified, the default value is <code>metered</code>.
      * @see BillingMethod
      */
 
@@ -2770,12 +2770,12 @@ public class Run implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
-     * not specified, the default value is <code>unmetered</code>.
+     * not specified, the default value is <code>metered</code>.
      * </p>
      * 
      * @param billingMethod
      *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *        parameter is not specified, the default value is <code>unmetered</code>.
+     *        parameter is not specified, the default value is <code>metered</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingMethod
      */
@@ -2788,12 +2788,12 @@ public class Run implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
-     * not specified, the default value is <code>unmetered</code>.
+     * not specified, the default value is <code>metered</code>.
      * </p>
      * 
      * @param billingMethod
      *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *        parameter is not specified, the default value is <code>unmetered</code>.
+     *        parameter is not specified, the default value is <code>metered</code>.
      * @see BillingMethod
      */
 
@@ -2804,12 +2804,12 @@ public class Run implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
-     * not specified, the default value is <code>unmetered</code>.
+     * not specified, the default value is <code>metered</code>.
      * </p>
      * 
      * @param billingMethod
      *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *        parameter is not specified, the default value is <code>unmetered</code>.
+     *        parameter is not specified, the default value is <code>metered</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingMethod
      */

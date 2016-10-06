@@ -30,11 +30,23 @@ public class WafAction implements Serializable, Cloneable {
      * settings include the following:
      * </p>
      * <ul>
-     * <li><code>ALLOW</code>: AWS WAF allows requests</li>
-     * <li><code>BLOCK</code>: AWS WAF blocks requests</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the
-     * rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't
-     * specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</li>
+     * <li>
+     * <p>
+     * <code>ALLOW</code>: AWS WAF allows requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BLOCK</code>: AWS WAF blocks requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule.
+     * AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify
+     * <code>COUNT</code> for the default action for a <code>WebACL</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String type;
@@ -45,22 +57,46 @@ public class WafAction implements Serializable, Cloneable {
      * settings include the following:
      * </p>
      * <ul>
-     * <li><code>ALLOW</code>: AWS WAF allows requests</li>
-     * <li><code>BLOCK</code>: AWS WAF blocks requests</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the
-     * rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't
-     * specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</li>
+     * <li>
+     * <p>
+     * <code>ALLOW</code>: AWS WAF allows requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BLOCK</code>: AWS WAF blocks requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule.
+     * AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify
+     * <code>COUNT</code> for the default action for a <code>WebACL</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
      *        Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>.
      *        Valid settings include the following:</p>
      *        <ul>
-     *        <li><code>ALLOW</code>: AWS WAF allows requests</li>
-     *        <li><code>BLOCK</code>: AWS WAF blocks requests</li>
-     *        <li><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in
-     *        the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL.
-     *        You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW</code>: AWS WAF allows requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BLOCK</code>: AWS WAF blocks requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the
+     *        rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You
+     *        can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.
+     *        </p>
+     *        </li>
      * @see WafActionType
      */
 
@@ -74,21 +110,45 @@ public class WafAction implements Serializable, Cloneable {
      * settings include the following:
      * </p>
      * <ul>
-     * <li><code>ALLOW</code>: AWS WAF allows requests</li>
-     * <li><code>BLOCK</code>: AWS WAF blocks requests</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the
-     * rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't
-     * specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</li>
+     * <li>
+     * <p>
+     * <code>ALLOW</code>: AWS WAF allows requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BLOCK</code>: AWS WAF blocks requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule.
+     * AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify
+     * <code>COUNT</code> for the default action for a <code>WebACL</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>.
      *         Valid settings include the following:</p>
      *         <ul>
-     *         <li><code>ALLOW</code>: AWS WAF allows requests</li>
-     *         <li><code>BLOCK</code>: AWS WAF blocks requests</li>
-     *         <li><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in
-     *         the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL.
-     *         You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</li>
+     *         <li>
+     *         <p>
+     *         <code>ALLOW</code>: AWS WAF allows requests
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BLOCK</code>: AWS WAF blocks requests
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the
+     *         rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You
+     *         can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.
+     *         </p>
+     *         </li>
      * @see WafActionType
      */
 
@@ -102,22 +162,46 @@ public class WafAction implements Serializable, Cloneable {
      * settings include the following:
      * </p>
      * <ul>
-     * <li><code>ALLOW</code>: AWS WAF allows requests</li>
-     * <li><code>BLOCK</code>: AWS WAF blocks requests</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the
-     * rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't
-     * specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</li>
+     * <li>
+     * <p>
+     * <code>ALLOW</code>: AWS WAF allows requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BLOCK</code>: AWS WAF blocks requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule.
+     * AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify
+     * <code>COUNT</code> for the default action for a <code>WebACL</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
      *        Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>.
      *        Valid settings include the following:</p>
      *        <ul>
-     *        <li><code>ALLOW</code>: AWS WAF allows requests</li>
-     *        <li><code>BLOCK</code>: AWS WAF blocks requests</li>
-     *        <li><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in
-     *        the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL.
-     *        You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW</code>: AWS WAF allows requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BLOCK</code>: AWS WAF blocks requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the
+     *        rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You
+     *        can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WafActionType
      */
@@ -133,22 +217,46 @@ public class WafAction implements Serializable, Cloneable {
      * settings include the following:
      * </p>
      * <ul>
-     * <li><code>ALLOW</code>: AWS WAF allows requests</li>
-     * <li><code>BLOCK</code>: AWS WAF blocks requests</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the
-     * rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't
-     * specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</li>
+     * <li>
+     * <p>
+     * <code>ALLOW</code>: AWS WAF allows requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BLOCK</code>: AWS WAF blocks requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule.
+     * AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify
+     * <code>COUNT</code> for the default action for a <code>WebACL</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
      *        Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>.
      *        Valid settings include the following:</p>
      *        <ul>
-     *        <li><code>ALLOW</code>: AWS WAF allows requests</li>
-     *        <li><code>BLOCK</code>: AWS WAF blocks requests</li>
-     *        <li><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in
-     *        the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL.
-     *        You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW</code>: AWS WAF allows requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BLOCK</code>: AWS WAF blocks requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the
+     *        rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You
+     *        can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.
+     *        </p>
+     *        </li>
      * @see WafActionType
      */
 
@@ -162,22 +270,46 @@ public class WafAction implements Serializable, Cloneable {
      * settings include the following:
      * </p>
      * <ul>
-     * <li><code>ALLOW</code>: AWS WAF allows requests</li>
-     * <li><code>BLOCK</code>: AWS WAF blocks requests</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the
-     * rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't
-     * specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</li>
+     * <li>
+     * <p>
+     * <code>ALLOW</code>: AWS WAF allows requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BLOCK</code>: AWS WAF blocks requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule.
+     * AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify
+     * <code>COUNT</code> for the default action for a <code>WebACL</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
      *        Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>.
      *        Valid settings include the following:</p>
      *        <ul>
-     *        <li><code>ALLOW</code>: AWS WAF allows requests</li>
-     *        <li><code>BLOCK</code>: AWS WAF blocks requests</li>
-     *        <li><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in
-     *        the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL.
-     *        You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW</code>: AWS WAF allows requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BLOCK</code>: AWS WAF blocks requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the
+     *        rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You
+     *        can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WafActionType
      */

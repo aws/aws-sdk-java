@@ -42,37 +42,40 @@ public class DescribeVpnConnectionsRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> vpnConnectionIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnConnectionsRequest
+        com.amazonaws.internal.SdkInternalList<String> describeVpnConnectionsRequestVpnConnectionIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnConnectionsRequest
                 .getVpnConnectionIds();
-        if (!vpnConnectionIdsList.isEmpty() || !vpnConnectionIdsList.isAutoConstruct()) {
+        if (!describeVpnConnectionsRequestVpnConnectionIdsList.isEmpty() || !describeVpnConnectionsRequestVpnConnectionIdsList.isAutoConstruct()) {
             int vpnConnectionIdsListIndex = 1;
 
-            for (String vpnConnectionIdsListValue : vpnConnectionIdsList) {
-                if (vpnConnectionIdsListValue != null) {
-                    request.addParameter("VpnConnectionId." + vpnConnectionIdsListIndex, StringUtils.fromString(vpnConnectionIdsListValue));
+            for (String describeVpnConnectionsRequestVpnConnectionIdsListValue : describeVpnConnectionsRequestVpnConnectionIdsList) {
+                if (describeVpnConnectionsRequestVpnConnectionIdsListValue != null) {
+                    request.addParameter("VpnConnectionId." + vpnConnectionIdsListIndex,
+                            StringUtils.fromString(describeVpnConnectionsRequestVpnConnectionIdsListValue));
                 }
                 vpnConnectionIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpnConnectionsRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeVpnConnectionsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpnConnectionsRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeVpnConnectionsRequestFiltersList.isEmpty() || !describeVpnConnectionsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeVpnConnectionsRequestFiltersListValue : describeVpnConnectionsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeVpnConnectionsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeVpnConnectionsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnConnectionsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

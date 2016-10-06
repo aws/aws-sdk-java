@@ -15,11 +15,19 @@ package com.amazonaws.services.waf.model;
 /**
  * <p>
  * The operation failed because you tried to delete an object that is still in use. For example:
- * <ul>
- * <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</li>
- * <li>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+ * </p>
+ * </li>
+ * </ul>
  */
 public class WAFReferencedItemException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;

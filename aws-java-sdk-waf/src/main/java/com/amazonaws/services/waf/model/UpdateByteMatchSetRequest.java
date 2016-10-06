@@ -39,10 +39,22 @@ public class UpdateByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReq
      * <a>ByteMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li>
-     * <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
-     * <code>TargetString</code>, and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
+     * <code>TargetString</code>, and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.List<ByteMatchSetUpdate> updates;
@@ -139,19 +151,43 @@ public class UpdateByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReq
      * <a>ByteMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li>
-     * <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
-     * <code>TargetString</code>, and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
+     * <code>TargetString</code>, and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a
      *         <a>ByteMatchSet</a>. For more information, see the applicable data types:</p>
      *         <ul>
-     *         <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li>
-     *         <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
-     *         <code>TargetString</code>, and <code>TextTransformation</code></li>
-     *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *         <li>
+     *         <p>
+     *         <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
+     *         <code>TargetString</code>, and <code>TextTransformation</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<ByteMatchSetUpdate> getUpdates() {
@@ -164,20 +200,44 @@ public class UpdateByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReq
      * <a>ByteMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li>
-     * <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
-     * <code>TargetString</code>, and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
+     * <code>TargetString</code>, and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updates
      *        An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a
      *        <a>ByteMatchSet</a>. For more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li>
-     *        <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
-     *        <code>TargetString</code>, and <code>TextTransformation</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
+     *        <code>TargetString</code>, and <code>TextTransformation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      */
 
     public void setUpdates(java.util.Collection<ByteMatchSetUpdate> updates) {
@@ -195,10 +255,22 @@ public class UpdateByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReq
      * <a>ByteMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li>
-     * <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
-     * <code>TargetString</code>, and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
+     * <code>TargetString</code>, and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -210,10 +282,22 @@ public class UpdateByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReq
      *        An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a
      *        <a>ByteMatchSet</a>. For more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li>
-     *        <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
-     *        <code>TargetString</code>, and <code>TextTransformation</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
+     *        <code>TargetString</code>, and <code>TextTransformation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,20 +317,44 @@ public class UpdateByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReq
      * <a>ByteMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li>
-     * <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
-     * <code>TargetString</code>, and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
+     * <code>TargetString</code>, and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updates
      *        An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a
      *        <a>ByteMatchSet</a>. For more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li>
-     *        <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
-     *        <code>TargetString</code>, and <code>TextTransformation</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
+     *        <code>TargetString</code>, and <code>TextTransformation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

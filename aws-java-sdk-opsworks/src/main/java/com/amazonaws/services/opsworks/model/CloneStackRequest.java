@@ -263,7 +263,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     * configuration JSON values. The string should be in the following format and must escape characters such as '"':
+     * configuration JSON values. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -1912,7 +1912,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     * configuration JSON values. The string should be in the following format and must escape characters such as '"':
+     * configuration JSON values. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -1925,8 +1925,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param customJson
      *        A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     *        configuration JSON values. The string should be in the following format and must escape characters such as
-     *        '"':</p>
+     *        configuration JSON values. The string should be in the following format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
@@ -1943,7 +1942,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     * configuration JSON values. The string should be in the following format and must escape characters such as '"':
+     * configuration JSON values. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -1955,8 +1954,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @return A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     *         configuration JSON values. The string should be in the following format and must escape characters such
-     *         as '"':</p>
+     *         configuration JSON values. The string should be in the following format:</p>
      *         <p>
      *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *         </p>
@@ -1973,7 +1971,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     * configuration JSON values. The string should be in the following format and must escape characters such as '"':
+     * configuration JSON values. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -1986,8 +1984,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param customJson
      *        A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     *        configuration JSON values. The string should be in the following format and must escape characters such as
-     *        '"':</p>
+     *        configuration JSON values. The string should be in the following format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>

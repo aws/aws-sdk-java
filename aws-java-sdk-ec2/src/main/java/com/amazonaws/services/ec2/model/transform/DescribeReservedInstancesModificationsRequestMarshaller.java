@@ -45,15 +45,16 @@ public class DescribeReservedInstancesModificationsRequestMarshaller implements
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> reservedInstancesModificationIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeReservedInstancesModificationsRequest
+        com.amazonaws.internal.SdkInternalList<String> describeReservedInstancesModificationsRequestReservedInstancesModificationIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeReservedInstancesModificationsRequest
                 .getReservedInstancesModificationIds();
-        if (!reservedInstancesModificationIdsList.isEmpty() || !reservedInstancesModificationIdsList.isAutoConstruct()) {
+        if (!describeReservedInstancesModificationsRequestReservedInstancesModificationIdsList.isEmpty()
+                || !describeReservedInstancesModificationsRequestReservedInstancesModificationIdsList.isAutoConstruct()) {
             int reservedInstancesModificationIdsListIndex = 1;
 
-            for (String reservedInstancesModificationIdsListValue : reservedInstancesModificationIdsList) {
-                if (reservedInstancesModificationIdsListValue != null) {
+            for (String describeReservedInstancesModificationsRequestReservedInstancesModificationIdsListValue : describeReservedInstancesModificationsRequestReservedInstancesModificationIdsList) {
+                if (describeReservedInstancesModificationsRequestReservedInstancesModificationIdsListValue != null) {
                     request.addParameter("ReservedInstancesModificationId." + reservedInstancesModificationIdsListIndex,
-                            StringUtils.fromString(reservedInstancesModificationIdsListValue));
+                            StringUtils.fromString(describeReservedInstancesModificationsRequestReservedInstancesModificationIdsListValue));
                 }
                 reservedInstancesModificationIdsListIndex++;
             }
@@ -63,24 +64,26 @@ public class DescribeReservedInstancesModificationsRequestMarshaller implements
             request.addParameter("NextToken", StringUtils.fromString(describeReservedInstancesModificationsRequest.getNextToken()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeReservedInstancesModificationsRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeReservedInstancesModificationsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeReservedInstancesModificationsRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeReservedInstancesModificationsRequestFiltersList.isEmpty() || !describeReservedInstancesModificationsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeReservedInstancesModificationsRequestFiltersListValue : describeReservedInstancesModificationsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeReservedInstancesModificationsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeReservedInstancesModificationsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeReservedInstancesModificationsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

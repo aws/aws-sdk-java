@@ -42,35 +42,38 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> vpcIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcsRequest.getVpcIds();
-        if (!vpcIdsList.isEmpty() || !vpcIdsList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> describeVpcsRequestVpcIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcsRequest
+                .getVpcIds();
+        if (!describeVpcsRequestVpcIdsList.isEmpty() || !describeVpcsRequestVpcIdsList.isAutoConstruct()) {
             int vpcIdsListIndex = 1;
 
-            for (String vpcIdsListValue : vpcIdsList) {
-                if (vpcIdsListValue != null) {
-                    request.addParameter("VpcId." + vpcIdsListIndex, StringUtils.fromString(vpcIdsListValue));
+            for (String describeVpcsRequestVpcIdsListValue : describeVpcsRequestVpcIdsList) {
+                if (describeVpcsRequestVpcIdsListValue != null) {
+                    request.addParameter("VpcId." + vpcIdsListIndex, StringUtils.fromString(describeVpcsRequestVpcIdsListValue));
                 }
                 vpcIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpcsRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeVpcsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpcsRequest
+                .getFilters();
+        if (!describeVpcsRequestFiltersList.isEmpty() || !describeVpcsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeVpcsRequestFiltersListValue : describeVpcsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeVpcsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeVpcsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

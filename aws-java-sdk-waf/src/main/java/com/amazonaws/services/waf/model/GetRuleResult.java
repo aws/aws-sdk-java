@@ -25,10 +25,18 @@ public class GetRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * see the following topics:
      * </p>
      * <ul>
-     * <li><a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects,
-     * and <code>RuleId</code></li>
-     * <li><a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and
-     * <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and
+     * <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and
+     * <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private Rule rule;
@@ -39,20 +47,36 @@ public class GetRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * see the following topics:
      * </p>
      * <ul>
-     * <li><a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects,
-     * and <code>RuleId</code></li>
-     * <li><a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and
-     * <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and
+     * <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and
+     * <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param rule
      *        Information about the <a>Rule</a> that you specified in the <code>GetRule</code> request. For more
      *        information, see the following topics:</p>
      *        <ul>
-     *        <li><a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code>
-     *        objects, and <code>RuleId</code></li>
-     *        <li><a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>,
-     *        <code>Negated</code>, and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code>
+     *        objects, and <code>RuleId</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>,
+     *        and <code>Type</code>
+     *        </p>
+     *        </li>
      */
 
     public void setRule(Rule rule) {
@@ -65,19 +89,35 @@ public class GetRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * see the following topics:
      * </p>
      * <ul>
-     * <li><a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects,
-     * and <code>RuleId</code></li>
-     * <li><a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and
-     * <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and
+     * <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and
+     * <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Information about the <a>Rule</a> that you specified in the <code>GetRule</code> request. For more
      *         information, see the following topics:</p>
      *         <ul>
-     *         <li><a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code>
-     *         objects, and <code>RuleId</code></li>
-     *         <li><a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>,
-     *         <code>Negated</code>, and <code>Type</code></li>
+     *         <li>
+     *         <p>
+     *         <a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code>
+     *         objects, and <code>RuleId</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>,
+     *         and <code>Type</code>
+     *         </p>
+     *         </li>
      */
 
     public Rule getRule() {
@@ -90,20 +130,36 @@ public class GetRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * see the following topics:
      * </p>
      * <ul>
-     * <li><a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects,
-     * and <code>RuleId</code></li>
-     * <li><a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and
-     * <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and
+     * <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and
+     * <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param rule
      *        Information about the <a>Rule</a> that you specified in the <code>GetRule</code> request. For more
      *        information, see the following topics:</p>
      *        <ul>
-     *        <li><a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code>
-     *        objects, and <code>RuleId</code></li>
-     *        <li><a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>,
-     *        <code>Negated</code>, and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code>
+     *        objects, and <code>RuleId</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>,
+     *        and <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -29,8 +29,8 @@ public class IPSetUpdate implements Serializable, Cloneable {
     private String action;
     /**
      * <p>
-     * The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate
-     * from.
+     * The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web
+     * requests originate from.
      * </p>
      */
     private IPSetDescriptor iPSetDescriptor;
@@ -110,13 +110,13 @@ public class IPSetUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate
-     * from.
+     * The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web
+     * requests originate from.
      * </p>
      * 
      * @param iPSetDescriptor
-     *        The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests
-     *        originate from.
+     *        The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation)
+     *        that web requests originate from.
      */
 
     public void setIPSetDescriptor(IPSetDescriptor iPSetDescriptor) {
@@ -125,12 +125,12 @@ public class IPSetUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate
-     * from.
+     * The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web
+     * requests originate from.
      * </p>
      * 
-     * @return The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests
-     *         originate from.
+     * @return The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation)
+     *         that web requests originate from.
      */
 
     public IPSetDescriptor getIPSetDescriptor() {
@@ -139,13 +139,13 @@ public class IPSetUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate
-     * from.
+     * The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web
+     * requests originate from.
      * </p>
      * 
      * @param iPSetDescriptor
-     *        The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests
-     *        originate from.
+     *        The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation)
+     *        that web requests originate from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

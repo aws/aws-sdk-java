@@ -45,14 +45,14 @@ import com.amazonaws.services.cognitoidp.model.transform.*;
  * will not return until the service call completes.
  * <p>
  * <p>
- * You can create a user pool in Amazon Cognito Identity to manage directories and users. You can authenticate a user to
- * obtain tokens related to user identity and access policies.
+ * Using the Amazon Cognito Your User Pools API, you can create a user pool to manage directories and users. You can
+ * authenticate a user to obtain tokens related to user identity and access policies.
  * </p>
  * <p>
- * This API reference provides information about user pools in Amazon Cognito Identity.
+ * This API reference provides information about user pools in Amazon Cognito Your User Pools.
  * </p>
  * <p>
- * For more information, see <a href="https://aws.amazon.com/cognito/">Amazon Cognito</a>.
+ * For more information, see the Amazon Cognito Documentation.
  * </p>
  */
 @ThreadSafe
@@ -138,6 +138,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("AliasExistsException").withModeledClass(
                             com.amazonaws.services.cognitoidp.model.AliasExistsException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedUserStateException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.UnsupportedUserStateException.class))
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedException").withModeledClass(
                             com.amazonaws.services.cognitoidp.model.NotAuthorizedException.class))
@@ -423,6 +426,88 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<AdminConfirmSignUpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminConfirmSignUpResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message
+     * is based on a template that you configured in your call to CreateUserPool or UpdateUserPool. This template
+     * includes your custom sign-up instructions and placeholders for user name and temporary password.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminCreateUserRequest
+     *        Represents the request to create a user in the specified user pool.
+     * @return Result of the AdminCreateUser operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UsernameExistsException
+     *         This exception is thrown when Amazon Cognito encounters a user name that already exists in the user pool.
+     * @throws InvalidPasswordException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid password.
+     * @throws CodeDeliveryFailureException
+     *         This exception is thrown when a verification code fails to deliver successfully.
+     * @throws UnexpectedLambdaException
+     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
+     *         AWS Lambda service.
+     * @throws UserLambdaValidationException
+     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
+     *         the AWS Lambda service.
+     * @throws InvalidLambdaResponseException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
+     * @throws PreconditionNotMetException
+     *         This exception is thrown when a precondition is not met.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS configuration does not have permission to
+     *         publish using Amazon SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid for the role provided for SMS
+     *         configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b> or the external ID
+     *         provided in the role does not match what is provided in the SMS configuration for the user pool.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws UnsupportedUserStateException
+     *         The request failed because the user is in an unsupported state.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminCreateUser
+     */
+    @Override
+    public AdminCreateUserResult adminCreateUser(AdminCreateUserRequest adminCreateUserRequest) {
+        ExecutionContext executionContext = createExecutionContext(adminCreateUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminCreateUserRequest> request = null;
+        Response<AdminCreateUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminCreateUserRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminCreateUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminCreateUserResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminCreateUserResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1019,6 +1104,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * @throws UnexpectedLambdaException
      *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
      *         AWS Lambda service.
+     * @throws InvalidPasswordException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid password.
      * @throws UserLambdaValidationException
      *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
      *         the AWS Lambda service.
@@ -2505,6 +2592,10 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *         This exception gets thrown when a user is not authorized.
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.GlobalSignOut
@@ -2960,6 +3051,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * @throws UserLambdaValidationException
      *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
      *         the AWS Lambda service.
+     * @throws InvalidPasswordException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid password.
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws TooManyRequestsException

@@ -22,7 +22,7 @@ public class DescribePermissionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user's IAM ARN. For more information about IAM ARNs, see <a
+     * The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      */
@@ -36,12 +36,12 @@ public class DescribePermissionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user's IAM ARN. For more information about IAM ARNs, see <a
+     * The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param iamUserArn
-     *        The user's IAM ARN. For more information about IAM ARNs, see <a
+     *        The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
@@ -51,11 +51,11 @@ public class DescribePermissionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user's IAM ARN. For more information about IAM ARNs, see <a
+     * The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
-     * @return The user's IAM ARN. For more information about IAM ARNs, see <a
+     * @return The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
@@ -65,12 +65,12 @@ public class DescribePermissionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user's IAM ARN. For more information about IAM ARNs, see <a
+     * The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param iamUserArn
-     *        The user's IAM ARN. For more information about IAM ARNs, see <a
+     *        The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

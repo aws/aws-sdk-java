@@ -1054,6 +1054,9 @@ public interface AWSKMS {
      *         The system timed out while trying to fulfill the request. The request can be retried.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
+     * @throws InvalidMarkerException
+     *         The request was rejected because the marker that specifies where pagination should next begin is not
+     *         valid.
      * @sample AWSKMS.ListKeys
      */
     ListKeysResult listKeys(ListKeysRequest listKeysRequest);

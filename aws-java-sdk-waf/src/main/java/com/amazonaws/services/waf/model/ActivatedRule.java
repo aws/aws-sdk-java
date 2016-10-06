@@ -55,10 +55,22 @@ public class ActivatedRule implements Serializable, Cloneable {
      * <code>Rule</code>. Valid values for <code>Action</code> include the following:
      * </p>
      * <ul>
-     * <li><code>ALLOW</code>: CloudFront responds with the requested object.</li>
-     * <li><code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then
-     * continues to inspect the web request based on the remaining rules in the web ACL.</li>
+     * <li>
+     * <p>
+     * <code>ALLOW</code>: CloudFront responds with the requested object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then
+     * continues to inspect the web request based on the remaining rules in the web ACL.
+     * </p>
+     * </li>
      * </ul>
      */
     private WafAction action;
@@ -200,20 +212,44 @@ public class ActivatedRule implements Serializable, Cloneable {
      * <code>Rule</code>. Valid values for <code>Action</code> include the following:
      * </p>
      * <ul>
-     * <li><code>ALLOW</code>: CloudFront responds with the requested object.</li>
-     * <li><code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then
-     * continues to inspect the web request based on the remaining rules in the web ACL.</li>
+     * <li>
+     * <p>
+     * <code>ALLOW</code>: CloudFront responds with the requested object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then
+     * continues to inspect the web request based on the remaining rules in the web ACL.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param action
      *        Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the
      *        <code>Rule</code>. Valid values for <code>Action</code> include the following:</p>
      *        <ul>
-     *        <li><code>ALLOW</code>: CloudFront responds with the requested object.</li>
-     *        <li><code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-     *        <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and
-     *        then continues to inspect the web request based on the remaining rules in the web ACL.</li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW</code>: CloudFront responds with the requested object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and
+     *        then continues to inspect the web request based on the remaining rules in the web ACL.
+     *        </p>
+     *        </li>
      */
 
     public void setAction(WafAction action) {
@@ -226,19 +262,43 @@ public class ActivatedRule implements Serializable, Cloneable {
      * <code>Rule</code>. Valid values for <code>Action</code> include the following:
      * </p>
      * <ul>
-     * <li><code>ALLOW</code>: CloudFront responds with the requested object.</li>
-     * <li><code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then
-     * continues to inspect the web request based on the remaining rules in the web ACL.</li>
+     * <li>
+     * <p>
+     * <code>ALLOW</code>: CloudFront responds with the requested object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then
+     * continues to inspect the web request based on the remaining rules in the web ACL.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the
      *         <code>Rule</code>. Valid values for <code>Action</code> include the following:</p>
      *         <ul>
-     *         <li><code>ALLOW</code>: CloudFront responds with the requested object.</li>
-     *         <li><code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-     *         <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule
-     *         and then continues to inspect the web request based on the remaining rules in the web ACL.</li>
+     *         <li>
+     *         <p>
+     *         <code>ALLOW</code>: CloudFront responds with the requested object.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and
+     *         then continues to inspect the web request based on the remaining rules in the web ACL.
+     *         </p>
+     *         </li>
      */
 
     public WafAction getAction() {
@@ -251,20 +311,44 @@ public class ActivatedRule implements Serializable, Cloneable {
      * <code>Rule</code>. Valid values for <code>Action</code> include the following:
      * </p>
      * <ul>
-     * <li><code>ALLOW</code>: CloudFront responds with the requested object.</li>
-     * <li><code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then
-     * continues to inspect the web request based on the remaining rules in the web ACL.</li>
+     * <li>
+     * <p>
+     * <code>ALLOW</code>: CloudFront responds with the requested object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then
+     * continues to inspect the web request based on the remaining rules in the web ACL.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param action
      *        Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the
      *        <code>Rule</code>. Valid values for <code>Action</code> include the following:</p>
      *        <ul>
-     *        <li><code>ALLOW</code>: CloudFront responds with the requested object.</li>
-     *        <li><code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-     *        <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and
-     *        then continues to inspect the web request based on the remaining rules in the web ACL.</li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW</code>: CloudFront responds with the requested object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and
+     *        then continues to inspect the web request based on the remaining rules in the web ACL.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

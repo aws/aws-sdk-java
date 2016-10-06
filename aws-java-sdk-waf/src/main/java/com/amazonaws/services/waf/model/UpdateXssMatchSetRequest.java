@@ -41,9 +41,21 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
      * <a>XssMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code></li>
-     * <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.List<XssMatchSetUpdate> updates;
@@ -140,17 +152,41 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
      * <a>XssMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code></li>
-     * <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
      *         <a>XssMatchSet</a>. For more information, see the applicable data types:</p>
      *         <ul>
-     *         <li><a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code></li>
-     *         <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *         <li>
+     *         <p>
+     *         <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<XssMatchSetUpdate> getUpdates() {
@@ -163,18 +199,42 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
      * <a>XssMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code></li>
-     * <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updates
      *        An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
      *        <a>XssMatchSet</a>. For more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code></li>
-     *        <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      */
 
     public void setUpdates(java.util.Collection<XssMatchSetUpdate> updates) {
@@ -192,9 +252,21 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
      * <a>XssMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code></li>
-     * <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -206,9 +278,21 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
      *        An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
      *        <a>XssMatchSet</a>. For more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code></li>
-     *        <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,18 +312,42 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
      * <a>XssMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code></li>
-     * <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updates
      *        An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
      *        <a>XssMatchSet</a>. For more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code></li>
-     *        <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

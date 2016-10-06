@@ -48,14 +48,14 @@ public class GetHostReservationPurchasePreviewRequestMarshaller implements
             request.addParameter("OfferingId", StringUtils.fromString(getHostReservationPurchasePreviewRequest.getOfferingId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> hostIdSetList = (com.amazonaws.internal.SdkInternalList<String>) getHostReservationPurchasePreviewRequest
+        com.amazonaws.internal.SdkInternalList<String> getHostReservationPurchasePreviewRequestHostIdSetList = (com.amazonaws.internal.SdkInternalList<String>) getHostReservationPurchasePreviewRequest
                 .getHostIdSet();
-        if (!hostIdSetList.isEmpty() || !hostIdSetList.isAutoConstruct()) {
+        if (!getHostReservationPurchasePreviewRequestHostIdSetList.isEmpty() || !getHostReservationPurchasePreviewRequestHostIdSetList.isAutoConstruct()) {
             int hostIdSetListIndex = 1;
 
-            for (String hostIdSetListValue : hostIdSetList) {
-                if (hostIdSetListValue != null) {
-                    request.addParameter("HostIdSet." + hostIdSetListIndex, StringUtils.fromString(hostIdSetListValue));
+            for (String getHostReservationPurchasePreviewRequestHostIdSetListValue : getHostReservationPurchasePreviewRequestHostIdSetList) {
+                if (getHostReservationPurchasePreviewRequestHostIdSetListValue != null) {
+                    request.addParameter("HostIdSet." + hostIdSetListIndex, StringUtils.fromString(getHostReservationPurchasePreviewRequestHostIdSetListValue));
                 }
                 hostIdSetListIndex++;
             }

@@ -76,91 +76,93 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements
             request.addParameter("CidrIp", StringUtils.fromString(authorizeSecurityGroupIngressRequest.getCidrIp()));
         }
 
-        com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissionsList = (com.amazonaws.internal.SdkInternalList<IpPermission>) authorizeSecurityGroupIngressRequest
+        com.amazonaws.internal.SdkInternalList<IpPermission> authorizeSecurityGroupIngressRequestIpPermissionsList = (com.amazonaws.internal.SdkInternalList<IpPermission>) authorizeSecurityGroupIngressRequest
                 .getIpPermissions();
-        if (!ipPermissionsList.isEmpty() || !ipPermissionsList.isAutoConstruct()) {
+        if (!authorizeSecurityGroupIngressRequestIpPermissionsList.isEmpty() || !authorizeSecurityGroupIngressRequestIpPermissionsList.isAutoConstruct()) {
             int ipPermissionsListIndex = 1;
 
-            for (IpPermission ipPermissionsListValue : ipPermissionsList) {
+            for (IpPermission authorizeSecurityGroupIngressRequestIpPermissionsListValue : authorizeSecurityGroupIngressRequestIpPermissionsList) {
 
-                if (ipPermissionsListValue.getIpProtocol() != null) {
+                if (authorizeSecurityGroupIngressRequestIpPermissionsListValue.getIpProtocol() != null) {
                     request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpProtocol",
-                            StringUtils.fromString(ipPermissionsListValue.getIpProtocol()));
+                            StringUtils.fromString(authorizeSecurityGroupIngressRequestIpPermissionsListValue.getIpProtocol()));
                 }
 
-                if (ipPermissionsListValue.getFromPort() != null) {
-                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".FromPort", StringUtils.fromInteger(ipPermissionsListValue.getFromPort()));
+                if (authorizeSecurityGroupIngressRequestIpPermissionsListValue.getFromPort() != null) {
+                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".FromPort",
+                            StringUtils.fromInteger(authorizeSecurityGroupIngressRequestIpPermissionsListValue.getFromPort()));
                 }
 
-                if (ipPermissionsListValue.getToPort() != null) {
-                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".ToPort", StringUtils.fromInteger(ipPermissionsListValue.getToPort()));
+                if (authorizeSecurityGroupIngressRequestIpPermissionsListValue.getToPort() != null) {
+                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".ToPort",
+                            StringUtils.fromInteger(authorizeSecurityGroupIngressRequestIpPermissionsListValue.getToPort()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<UserIdGroupPair> userIdGroupPairsList = (com.amazonaws.internal.SdkInternalList<UserIdGroupPair>) ipPermissionsListValue
+                com.amazonaws.internal.SdkInternalList<UserIdGroupPair> ipPermissionUserIdGroupPairsList = (com.amazonaws.internal.SdkInternalList<UserIdGroupPair>) authorizeSecurityGroupIngressRequestIpPermissionsListValue
                         .getUserIdGroupPairs();
-                if (!userIdGroupPairsList.isEmpty() || !userIdGroupPairsList.isAutoConstruct()) {
+                if (!ipPermissionUserIdGroupPairsList.isEmpty() || !ipPermissionUserIdGroupPairsList.isAutoConstruct()) {
                     int userIdGroupPairsListIndex = 1;
 
-                    for (UserIdGroupPair userIdGroupPairsListValue : userIdGroupPairsList) {
+                    for (UserIdGroupPair ipPermissionUserIdGroupPairsListValue : ipPermissionUserIdGroupPairsList) {
 
-                        if (userIdGroupPairsListValue.getUserId() != null) {
+                        if (ipPermissionUserIdGroupPairsListValue.getUserId() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".UserId",
-                                    StringUtils.fromString(userIdGroupPairsListValue.getUserId()));
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getUserId()));
                         }
 
-                        if (userIdGroupPairsListValue.getGroupName() != null) {
+                        if (ipPermissionUserIdGroupPairsListValue.getGroupName() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupName",
-                                    StringUtils.fromString(userIdGroupPairsListValue.getGroupName()));
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupName()));
                         }
 
-                        if (userIdGroupPairsListValue.getGroupId() != null) {
+                        if (ipPermissionUserIdGroupPairsListValue.getGroupId() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupId",
-                                    StringUtils.fromString(userIdGroupPairsListValue.getGroupId()));
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupId()));
                         }
 
-                        if (userIdGroupPairsListValue.getVpcId() != null) {
+                        if (ipPermissionUserIdGroupPairsListValue.getVpcId() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcId",
-                                    StringUtils.fromString(userIdGroupPairsListValue.getVpcId()));
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcId()));
                         }
 
-                        if (userIdGroupPairsListValue.getVpcPeeringConnectionId() != null) {
+                        if (ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId() != null) {
                             request.addParameter(
                                     "IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcPeeringConnectionId",
-                                    StringUtils.fromString(userIdGroupPairsListValue.getVpcPeeringConnectionId()));
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId()));
                         }
 
-                        if (userIdGroupPairsListValue.getPeeringStatus() != null) {
+                        if (ipPermissionUserIdGroupPairsListValue.getPeeringStatus() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".PeeringStatus",
-                                    StringUtils.fromString(userIdGroupPairsListValue.getPeeringStatus()));
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getPeeringStatus()));
                         }
                         userIdGroupPairsListIndex++;
                     }
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> ipRangesList = (com.amazonaws.internal.SdkInternalList<String>) ipPermissionsListValue
+                com.amazonaws.internal.SdkInternalList<String> ipPermissionIpRangesList = (com.amazonaws.internal.SdkInternalList<String>) authorizeSecurityGroupIngressRequestIpPermissionsListValue
                         .getIpRanges();
-                if (!ipRangesList.isEmpty() || !ipRangesList.isAutoConstruct()) {
+                if (!ipPermissionIpRangesList.isEmpty() || !ipPermissionIpRangesList.isAutoConstruct()) {
                     int ipRangesListIndex = 1;
 
-                    for (String ipRangesListValue : ipRangesList) {
-                        if (ipRangesListValue != null) {
+                    for (String ipPermissionIpRangesListValue : ipPermissionIpRangesList) {
+                        if (ipPermissionIpRangesListValue != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipRangesListIndex + ".CidrIp",
-                                    StringUtils.fromString(ipRangesListValue));
+                                    StringUtils.fromString(ipPermissionIpRangesListValue));
                         }
                         ipRangesListIndex++;
                     }
                 }
 
-                com.amazonaws.internal.SdkInternalList<PrefixListId> prefixListIdsList = (com.amazonaws.internal.SdkInternalList<PrefixListId>) ipPermissionsListValue
+                com.amazonaws.internal.SdkInternalList<PrefixListId> ipPermissionPrefixListIdsList = (com.amazonaws.internal.SdkInternalList<PrefixListId>) authorizeSecurityGroupIngressRequestIpPermissionsListValue
                         .getPrefixListIds();
-                if (!prefixListIdsList.isEmpty() || !prefixListIdsList.isAutoConstruct()) {
+                if (!ipPermissionPrefixListIdsList.isEmpty() || !ipPermissionPrefixListIdsList.isAutoConstruct()) {
                     int prefixListIdsListIndex = 1;
 
-                    for (PrefixListId prefixListIdsListValue : prefixListIdsList) {
+                    for (PrefixListId ipPermissionPrefixListIdsListValue : ipPermissionPrefixListIdsList) {
 
-                        if (prefixListIdsListValue.getPrefixListId() != null) {
+                        if (ipPermissionPrefixListIdsListValue.getPrefixListId() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex + ".PrefixListId",
-                                    StringUtils.fromString(prefixListIdsListValue.getPrefixListId()));
+                                    StringUtils.fromString(ipPermissionPrefixListIdsListValue.getPrefixListId()));
                         }
                         prefixListIdsListIndex++;
                     }

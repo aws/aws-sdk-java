@@ -30,7 +30,10 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String projectArn;
     /**
      * <p>
-     * The upload's file name. The name should not contain the '/' character.
+     * The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file name
+     * needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs to end with
+     * the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file
+     * extension.
      * </p>
      */
     private String name;
@@ -178,11 +181,17 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The upload's file name. The name should not contain the '/' character.
+     * The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file name
+     * needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs to end with
+     * the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file
+     * extension.
      * </p>
      * 
      * @param name
-     *        The upload's file name. The name should not contain the '/' character.
+     *        The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file
+     *        name needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs
+     *        to end with the <code>.apk</code> extension. For all others, the file name must end with the
+     *        <code>.zip</code> file extension.
      */
 
     public void setName(String name) {
@@ -191,10 +200,16 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The upload's file name. The name should not contain the '/' character.
+     * The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file name
+     * needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs to end with
+     * the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file
+     * extension.
      * </p>
      * 
-     * @return The upload's file name. The name should not contain the '/' character.
+     * @return The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file
+     *         name needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs
+     *         to end with the <code>.apk</code> extension. For all others, the file name must end with the
+     *         <code>.zip</code> file extension.
      */
 
     public String getName() {
@@ -203,11 +218,17 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The upload's file name. The name should not contain the '/' character.
+     * The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file name
+     * needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs to end with
+     * the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file
+     * extension.
      * </p>
      * 
      * @param name
-     *        The upload's file name. The name should not contain the '/' character.
+     *        The upload's file name. The name should not contain the '/' character. If uploading an iOS app, the file
+     *        name needs to end with the <code>.ipa</code> extension. If uploading an Android app, the file name needs
+     *        to end with the <code>.apk</code> extension. For all others, the file name must end with the
+     *        <code>.zip</code> file extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -42,36 +42,38 @@ public class DescribeFlowLogsRequestMarshaller implements Marshaller<Request<Des
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> flowLogIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeFlowLogsRequest
+        com.amazonaws.internal.SdkInternalList<String> describeFlowLogsRequestFlowLogIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeFlowLogsRequest
                 .getFlowLogIds();
-        if (!flowLogIdsList.isEmpty() || !flowLogIdsList.isAutoConstruct()) {
+        if (!describeFlowLogsRequestFlowLogIdsList.isEmpty() || !describeFlowLogsRequestFlowLogIdsList.isAutoConstruct()) {
             int flowLogIdsListIndex = 1;
 
-            for (String flowLogIdsListValue : flowLogIdsList) {
-                if (flowLogIdsListValue != null) {
-                    request.addParameter("FlowLogId." + flowLogIdsListIndex, StringUtils.fromString(flowLogIdsListValue));
+            for (String describeFlowLogsRequestFlowLogIdsListValue : describeFlowLogsRequestFlowLogIdsList) {
+                if (describeFlowLogsRequestFlowLogIdsListValue != null) {
+                    request.addParameter("FlowLogId." + flowLogIdsListIndex, StringUtils.fromString(describeFlowLogsRequestFlowLogIdsListValue));
                 }
                 flowLogIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeFlowLogsRequest.getFilter();
-        if (!filterList.isEmpty() || !filterList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeFlowLogsRequestFilterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeFlowLogsRequest
+                .getFilter();
+        if (!describeFlowLogsRequestFilterList.isEmpty() || !describeFlowLogsRequestFilterList.isAutoConstruct()) {
             int filterListIndex = 1;
 
-            for (Filter filterListValue : filterList) {
+            for (Filter describeFlowLogsRequestFilterListValue : describeFlowLogsRequestFilterList) {
 
-                if (filterListValue.getName() != null) {
-                    request.addParameter("Filter." + filterListIndex + ".Name", StringUtils.fromString(filterListValue.getName()));
+                if (describeFlowLogsRequestFilterListValue.getName() != null) {
+                    request.addParameter("Filter." + filterListIndex + ".Name", StringUtils.fromString(describeFlowLogsRequestFilterListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filterListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeFlowLogsRequestFilterListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filterListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filterListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

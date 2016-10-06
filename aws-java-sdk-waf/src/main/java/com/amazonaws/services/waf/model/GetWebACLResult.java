@@ -25,12 +25,28 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of
-     * <code>Rule</code> objects, and <code>WebACLId</code></li>
-     * <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code></li>
-     * <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain
-     * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     * <li><code>Action</code>: Contains <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of
+     * <code>Rule</code> objects, and <code>WebACLId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>,
+     * <code>Priority</code>, and <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Action</code>: Contains <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private WebACL webACL;
@@ -41,24 +57,56 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of
-     * <code>Rule</code> objects, and <code>WebACLId</code></li>
-     * <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code></li>
-     * <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain
-     * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     * <li><code>Action</code>: Contains <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of
+     * <code>Rule</code> objects, and <code>WebACLId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>,
+     * <code>Priority</code>, and <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Action</code>: Contains <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param webACL
      *        Information about the <a>WebACL</a> that you specified in the <code>GetWebACL</code> request. For more
      *        information, see the following topics:</p>
      *        <ul>
-     *        <li><a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an
-     *        array of <code>Rule</code> objects, and <code>WebACLId</code></li>
-     *        <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code></li>
-     *        <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain
-     *        <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     *        <li><code>Action</code>: Contains <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array
+     *        of <code>Rule</code> objects, and <code>WebACLId</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain
+     *        <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Action</code>: Contains <code>Type</code>
+     *        </p>
+     *        </li>
      */
 
     public void setWebACL(WebACL webACL) {
@@ -71,23 +119,55 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of
-     * <code>Rule</code> objects, and <code>WebACLId</code></li>
-     * <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code></li>
-     * <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain
-     * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     * <li><code>Action</code>: Contains <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of
+     * <code>Rule</code> objects, and <code>WebACLId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>,
+     * <code>Priority</code>, and <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Action</code>: Contains <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Information about the <a>WebACL</a> that you specified in the <code>GetWebACL</code> request. For more
      *         information, see the following topics:</p>
      *         <ul>
-     *         <li><a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an
-     *         array of <code>Rule</code> objects, and <code>WebACLId</code></li>
-     *         <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code></li>
-     *         <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain
-     *         <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     *         <li><code>Action</code>: Contains <code>Type</code></li>
+     *         <li>
+     *         <p>
+     *         <a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array
+     *         of <code>Rule</code> objects, and <code>WebACLId</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain
+     *         <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Action</code>: Contains <code>Type</code>
+     *         </p>
+     *         </li>
      */
 
     public WebACL getWebACL() {
@@ -100,24 +180,56 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of
-     * <code>Rule</code> objects, and <code>WebACLId</code></li>
-     * <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code></li>
-     * <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain
-     * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     * <li><code>Action</code>: Contains <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of
+     * <code>Rule</code> objects, and <code>WebACLId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>,
+     * <code>Priority</code>, and <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Action</code>: Contains <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param webACL
      *        Information about the <a>WebACL</a> that you specified in the <code>GetWebACL</code> request. For more
      *        information, see the following topics:</p>
      *        <ul>
-     *        <li><a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an
-     *        array of <code>Rule</code> objects, and <code>WebACLId</code></li>
-     *        <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code></li>
-     *        <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain
-     *        <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     *        <li><code>Action</code>: Contains <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array
+     *        of <code>Rule</code> objects, and <code>WebACLId</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain
+     *        <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Action</code>: Contains <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,12 +25,23 @@ public class GetByteMatchSetResult extends com.amazonaws.AmazonWebServiceResult<
      * more information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and
-     * <code>Name</code></li>
-     * <li><code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
+     * <li>
+     * <p>
+     * <a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
      * <code>ByteMatchTuple</code> object contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>,
-     * <code>TargetString</code>, and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <code>TargetString</code>, and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private ByteMatchSet byteMatchSet;
@@ -41,24 +52,47 @@ public class GetByteMatchSetResult extends com.amazonaws.AmazonWebServiceResult<
      * more information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and
-     * <code>Name</code></li>
-     * <li><code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
+     * <li>
+     * <p>
+     * <a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
      * <code>ByteMatchTuple</code> object contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>,
-     * <code>TargetString</code>, and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <code>TargetString</code>, and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param byteMatchSet
      *        Information about the <a>ByteMatchSet</a> that you specified in the <code>GetByteMatchSet</code> request.
      *        For more information, see the following topics:</p>
      *        <ul>
-     *        <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and
-     *        <code>Name</code></li>
-     *        <li><code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
+     *        <li>
+     *        <p>
+     *        <a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and
+     *        <code>Name</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
      *        <code>ByteMatchTuple</code> object contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>,
-     *        <code>TargetString</code>, and <code>TextTransformation</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <code>TargetString</code>, and <code>TextTransformation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      */
 
     public void setByteMatchSet(ByteMatchSet byteMatchSet) {
@@ -71,23 +105,46 @@ public class GetByteMatchSetResult extends com.amazonaws.AmazonWebServiceResult<
      * more information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and
-     * <code>Name</code></li>
-     * <li><code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
+     * <li>
+     * <p>
+     * <a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
      * <code>ByteMatchTuple</code> object contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>,
-     * <code>TargetString</code>, and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <code>TargetString</code>, and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Information about the <a>ByteMatchSet</a> that you specified in the <code>GetByteMatchSet</code> request.
      *         For more information, see the following topics:</p>
      *         <ul>
-     *         <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and
-     *         <code>Name</code></li>
-     *         <li><code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
+     *         <li>
+     *         <p>
+     *         <a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and
+     *         <code>Name</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
      *         <code>ByteMatchTuple</code> object contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>,
-     *         <code>TargetString</code>, and <code>TextTransformation</code></li>
-     *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *         <code>TargetString</code>, and <code>TextTransformation</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *         </p>
+     *         </li>
      */
 
     public ByteMatchSet getByteMatchSet() {
@@ -100,24 +157,47 @@ public class GetByteMatchSetResult extends com.amazonaws.AmazonWebServiceResult<
      * more information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and
-     * <code>Name</code></li>
-     * <li><code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
+     * <li>
+     * <p>
+     * <a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
      * <code>ByteMatchTuple</code> object contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>,
-     * <code>TargetString</code>, and <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <code>TargetString</code>, and <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param byteMatchSet
      *        Information about the <a>ByteMatchSet</a> that you specified in the <code>GetByteMatchSet</code> request.
      *        For more information, see the following topics:</p>
      *        <ul>
-     *        <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and
-     *        <code>Name</code></li>
-     *        <li><code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
+     *        <li>
+     *        <p>
+     *        <a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and
+     *        <code>Name</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each
      *        <code>ByteMatchTuple</code> object contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>,
-     *        <code>TargetString</code>, and <code>TextTransformation</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <code>TargetString</code>, and <code>TextTransformation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

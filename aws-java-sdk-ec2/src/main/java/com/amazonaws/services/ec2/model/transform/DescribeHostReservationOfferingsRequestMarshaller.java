@@ -56,24 +56,26 @@ public class DescribeHostReservationOfferingsRequestMarshaller implements
             request.addParameter("MaxDuration", StringUtils.fromInteger(describeHostReservationOfferingsRequest.getMaxDuration()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeHostReservationOfferingsRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeHostReservationOfferingsRequestFilterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeHostReservationOfferingsRequest
                 .getFilter();
-        if (!filterList.isEmpty() || !filterList.isAutoConstruct()) {
+        if (!describeHostReservationOfferingsRequestFilterList.isEmpty() || !describeHostReservationOfferingsRequestFilterList.isAutoConstruct()) {
             int filterListIndex = 1;
 
-            for (Filter filterListValue : filterList) {
+            for (Filter describeHostReservationOfferingsRequestFilterListValue : describeHostReservationOfferingsRequestFilterList) {
 
-                if (filterListValue.getName() != null) {
-                    request.addParameter("Filter." + filterListIndex + ".Name", StringUtils.fromString(filterListValue.getName()));
+                if (describeHostReservationOfferingsRequestFilterListValue.getName() != null) {
+                    request.addParameter("Filter." + filterListIndex + ".Name",
+                            StringUtils.fromString(describeHostReservationOfferingsRequestFilterListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filterListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeHostReservationOfferingsRequestFilterListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filterListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filterListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

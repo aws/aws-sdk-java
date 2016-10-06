@@ -42,9 +42,21 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code></li>
-     * <li><a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     * <li><a>WafAction</a>: Contains <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>WafAction</a>: Contains <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.List<WebACLUpdate> updates;
@@ -146,9 +158,21 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code></li>
-     * <li><a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     * <li><a>WafAction</a>: Contains <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>WafAction</a>: Contains <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return An array of updates to make to the <a>WebACL</a>.</p>
@@ -157,9 +181,21 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <a>WebACL</a>. For more information, see the applicable data types:
      *         </p>
      *         <ul>
-     *         <li><a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code></li>
-     *         <li><a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     *         <li><a>WafAction</a>: Contains <code>Type</code></li>
+     *         <li>
+     *         <p>
+     *         <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>WafAction</a>: Contains <code>Type</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<WebACLUpdate> getUpdates() {
@@ -175,9 +211,21 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code></li>
-     * <li><a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     * <li><a>WafAction</a>: Contains <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>WafAction</a>: Contains <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updates
@@ -187,9 +235,21 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        For more information, see the applicable data types:
      *        </p>
      *        <ul>
-     *        <li><a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code></li>
-     *        <li><a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     *        <li><a>WafAction</a>: Contains <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>WafAction</a>: Contains <code>Type</code>
+     *        </p>
+     *        </li>
      */
 
     public void setUpdates(java.util.Collection<WebACLUpdate> updates) {
@@ -210,9 +270,21 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code></li>
-     * <li><a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     * <li><a>WafAction</a>: Contains <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>WafAction</a>: Contains <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -227,9 +299,21 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        For more information, see the applicable data types:
      *        </p>
      *        <ul>
-     *        <li><a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code></li>
-     *        <li><a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     *        <li><a>WafAction</a>: Contains <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>WafAction</a>: Contains <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,9 +336,21 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code></li>
-     * <li><a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     * <li><a>WafAction</a>: Contains <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>WafAction</a>: Contains <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updates
@@ -264,9 +360,21 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        For more information, see the applicable data types:
      *        </p>
      *        <ul>
-     *        <li><a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code></li>
-     *        <li><a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li>
-     *        <li><a>WafAction</a>: Contains <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>WafAction</a>: Contains <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

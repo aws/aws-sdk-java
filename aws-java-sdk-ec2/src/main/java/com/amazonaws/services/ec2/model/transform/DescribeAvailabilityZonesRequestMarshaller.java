@@ -42,37 +42,39 @@ public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> zoneNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAvailabilityZonesRequest
+        com.amazonaws.internal.SdkInternalList<String> describeAvailabilityZonesRequestZoneNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAvailabilityZonesRequest
                 .getZoneNames();
-        if (!zoneNamesList.isEmpty() || !zoneNamesList.isAutoConstruct()) {
+        if (!describeAvailabilityZonesRequestZoneNamesList.isEmpty() || !describeAvailabilityZonesRequestZoneNamesList.isAutoConstruct()) {
             int zoneNamesListIndex = 1;
 
-            for (String zoneNamesListValue : zoneNamesList) {
-                if (zoneNamesListValue != null) {
-                    request.addParameter("ZoneName." + zoneNamesListIndex, StringUtils.fromString(zoneNamesListValue));
+            for (String describeAvailabilityZonesRequestZoneNamesListValue : describeAvailabilityZonesRequestZoneNamesList) {
+                if (describeAvailabilityZonesRequestZoneNamesListValue != null) {
+                    request.addParameter("ZoneName." + zoneNamesListIndex, StringUtils.fromString(describeAvailabilityZonesRequestZoneNamesListValue));
                 }
                 zoneNamesListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeAvailabilityZonesRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeAvailabilityZonesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeAvailabilityZonesRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeAvailabilityZonesRequestFiltersList.isEmpty() || !describeAvailabilityZonesRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeAvailabilityZonesRequestFiltersListValue : describeAvailabilityZonesRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeAvailabilityZonesRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeAvailabilityZonesRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeAvailabilityZonesRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

@@ -110,10 +110,22 @@ public class UserPoolType implements Serializable, Cloneable {
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
-     * are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      */
     private String mfaConfiguration;
@@ -153,6 +165,12 @@ public class UserPoolType implements Serializable, Cloneable {
      * </p>
      */
     private String emailConfigurationFailure;
+    /**
+     * <p>
+     * The configuration for AdminCreateUser requests.
+     * </p>
+     */
+    private AdminCreateUserConfigType adminCreateUserConfig;
 
     /**
      * <p>
@@ -898,19 +916,43 @@ public class UserPoolType implements Serializable, Cloneable {
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
-     * are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
-     *        when you are initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     *        <li>
+     *        <p>
+     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *        you are initially creating a user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *        </p>
+     *        </li>
      * @see UserPoolMfaType
      */
 
@@ -923,18 +965,42 @@ public class UserPoolType implements Serializable, Cloneable {
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
-     * are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Can be one of the following values:</p>
      *         <ul>
-     *         <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     *         <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
-     *         when you are initially creating a user pool.</li>
-     *         <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     *         <li>
+     *         <p>
+     *         <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *         you are initially creating a user pool.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *         </p>
+     *         </li>
      * @see UserPoolMfaType
      */
 
@@ -947,19 +1013,43 @@ public class UserPoolType implements Serializable, Cloneable {
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
-     * are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
-     *        when you are initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     *        <li>
+     *        <p>
+     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *        you are initially creating a user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserPoolMfaType
      */
@@ -974,19 +1064,43 @@ public class UserPoolType implements Serializable, Cloneable {
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
-     * are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
-     *        when you are initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     *        <li>
+     *        <p>
+     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *        you are initially creating a user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *        </p>
+     *        </li>
      * @see UserPoolMfaType
      */
 
@@ -999,19 +1113,43 @@ public class UserPoolType implements Serializable, Cloneable {
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
-     * are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
-     *        when you are initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     *        <li>
+     *        <p>
+     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *        you are initially creating a user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserPoolMfaType
      */
@@ -1262,6 +1400,46 @@ public class UserPoolType implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The configuration for AdminCreateUser requests.
+     * </p>
+     * 
+     * @param adminCreateUserConfig
+     *        The configuration for AdminCreateUser requests.
+     */
+
+    public void setAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
+        this.adminCreateUserConfig = adminCreateUserConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for AdminCreateUser requests.
+     * </p>
+     * 
+     * @return The configuration for AdminCreateUser requests.
+     */
+
+    public AdminCreateUserConfigType getAdminCreateUserConfig() {
+        return this.adminCreateUserConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for AdminCreateUser requests.
+     * </p>
+     * 
+     * @param adminCreateUserConfig
+     *        The configuration for AdminCreateUser requests.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
+        setAdminCreateUserConfig(adminCreateUserConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1313,7 +1491,9 @@ public class UserPoolType implements Serializable, Cloneable {
         if (getSmsConfigurationFailure() != null)
             sb.append("SmsConfigurationFailure: " + getSmsConfigurationFailure() + ",");
         if (getEmailConfigurationFailure() != null)
-            sb.append("EmailConfigurationFailure: " + getEmailConfigurationFailure());
+            sb.append("EmailConfigurationFailure: " + getEmailConfigurationFailure() + ",");
+        if (getAdminCreateUserConfig() != null)
+            sb.append("AdminCreateUserConfig: " + getAdminCreateUserConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1412,6 +1592,10 @@ public class UserPoolType implements Serializable, Cloneable {
             return false;
         if (other.getEmailConfigurationFailure() != null && other.getEmailConfigurationFailure().equals(this.getEmailConfigurationFailure()) == false)
             return false;
+        if (other.getAdminCreateUserConfig() == null ^ this.getAdminCreateUserConfig() == null)
+            return false;
+        if (other.getAdminCreateUserConfig() != null && other.getAdminCreateUserConfig().equals(this.getAdminCreateUserConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1441,6 +1625,7 @@ public class UserPoolType implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSmsConfigurationFailure() == null) ? 0 : getSmsConfigurationFailure().hashCode());
         hashCode = prime * hashCode + ((getEmailConfigurationFailure() == null) ? 0 : getEmailConfigurationFailure().hashCode());
+        hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
         return hashCode;
     }
 

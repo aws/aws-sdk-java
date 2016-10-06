@@ -52,24 +52,26 @@ public class CreateReservedInstancesListingRequestMarshaller implements
             request.addParameter("InstanceCount", StringUtils.fromInteger(createReservedInstancesListingRequest.getInstanceCount()));
         }
 
-        com.amazonaws.internal.SdkInternalList<PriceScheduleSpecification> priceSchedulesList = (com.amazonaws.internal.SdkInternalList<PriceScheduleSpecification>) createReservedInstancesListingRequest
+        com.amazonaws.internal.SdkInternalList<PriceScheduleSpecification> createReservedInstancesListingRequestPriceSchedulesList = (com.amazonaws.internal.SdkInternalList<PriceScheduleSpecification>) createReservedInstancesListingRequest
                 .getPriceSchedules();
-        if (!priceSchedulesList.isEmpty() || !priceSchedulesList.isAutoConstruct()) {
+        if (!createReservedInstancesListingRequestPriceSchedulesList.isEmpty() || !createReservedInstancesListingRequestPriceSchedulesList.isAutoConstruct()) {
             int priceSchedulesListIndex = 1;
 
-            for (PriceScheduleSpecification priceSchedulesListValue : priceSchedulesList) {
+            for (PriceScheduleSpecification createReservedInstancesListingRequestPriceSchedulesListValue : createReservedInstancesListingRequestPriceSchedulesList) {
 
-                if (priceSchedulesListValue.getTerm() != null) {
-                    request.addParameter("PriceSchedules." + priceSchedulesListIndex + ".Term", StringUtils.fromLong(priceSchedulesListValue.getTerm()));
+                if (createReservedInstancesListingRequestPriceSchedulesListValue.getTerm() != null) {
+                    request.addParameter("PriceSchedules." + priceSchedulesListIndex + ".Term",
+                            StringUtils.fromLong(createReservedInstancesListingRequestPriceSchedulesListValue.getTerm()));
                 }
 
-                if (priceSchedulesListValue.getPrice() != null) {
-                    request.addParameter("PriceSchedules." + priceSchedulesListIndex + ".Price", StringUtils.fromDouble(priceSchedulesListValue.getPrice()));
+                if (createReservedInstancesListingRequestPriceSchedulesListValue.getPrice() != null) {
+                    request.addParameter("PriceSchedules." + priceSchedulesListIndex + ".Price",
+                            StringUtils.fromDouble(createReservedInstancesListingRequestPriceSchedulesListValue.getPrice()));
                 }
 
-                if (priceSchedulesListValue.getCurrencyCode() != null) {
+                if (createReservedInstancesListingRequestPriceSchedulesListValue.getCurrencyCode() != null) {
                     request.addParameter("PriceSchedules." + priceSchedulesListIndex + ".CurrencyCode",
-                            StringUtils.fromString(priceSchedulesListValue.getCurrencyCode()));
+                            StringUtils.fromString(createReservedInstancesListingRequestPriceSchedulesListValue.getCurrencyCode()));
                 }
                 priceSchedulesListIndex++;
             }

@@ -44,37 +44,41 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> spotInstanceRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotInstanceRequestsRequest
+        com.amazonaws.internal.SdkInternalList<String> describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotInstanceRequestsRequest
                 .getSpotInstanceRequestIds();
-        if (!spotInstanceRequestIdsList.isEmpty() || !spotInstanceRequestIdsList.isAutoConstruct()) {
+        if (!describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList.isEmpty()
+                || !describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList.isAutoConstruct()) {
             int spotInstanceRequestIdsListIndex = 1;
 
-            for (String spotInstanceRequestIdsListValue : spotInstanceRequestIdsList) {
-                if (spotInstanceRequestIdsListValue != null) {
-                    request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex, StringUtils.fromString(spotInstanceRequestIdsListValue));
+            for (String describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue : describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList) {
+                if (describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue != null) {
+                    request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex,
+                            StringUtils.fromString(describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue));
                 }
                 spotInstanceRequestIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSpotInstanceRequestsRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeSpotInstanceRequestsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSpotInstanceRequestsRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeSpotInstanceRequestsRequestFiltersList.isEmpty() || !describeSpotInstanceRequestsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeSpotInstanceRequestsRequestFiltersListValue : describeSpotInstanceRequestsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeSpotInstanceRequestsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeSpotInstanceRequestsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotInstanceRequestsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

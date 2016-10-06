@@ -42,14 +42,14 @@ public class ReportInstanceStatusRequestMarshaller implements Marshaller<Request
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> instancesList = (com.amazonaws.internal.SdkInternalList<String>) reportInstanceStatusRequest
+        com.amazonaws.internal.SdkInternalList<String> reportInstanceStatusRequestInstancesList = (com.amazonaws.internal.SdkInternalList<String>) reportInstanceStatusRequest
                 .getInstances();
-        if (!instancesList.isEmpty() || !instancesList.isAutoConstruct()) {
+        if (!reportInstanceStatusRequestInstancesList.isEmpty() || !reportInstanceStatusRequestInstancesList.isAutoConstruct()) {
             int instancesListIndex = 1;
 
-            for (String instancesListValue : instancesList) {
-                if (instancesListValue != null) {
-                    request.addParameter("InstanceId." + instancesListIndex, StringUtils.fromString(instancesListValue));
+            for (String reportInstanceStatusRequestInstancesListValue : reportInstanceStatusRequestInstancesList) {
+                if (reportInstanceStatusRequestInstancesListValue != null) {
+                    request.addParameter("InstanceId." + instancesListIndex, StringUtils.fromString(reportInstanceStatusRequestInstancesListValue));
                 }
                 instancesListIndex++;
             }
@@ -67,14 +67,14 @@ public class ReportInstanceStatusRequestMarshaller implements Marshaller<Request
             request.addParameter("EndTime", StringUtils.fromDate(reportInstanceStatusRequest.getEndTime()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> reasonCodesList = (com.amazonaws.internal.SdkInternalList<String>) reportInstanceStatusRequest
+        com.amazonaws.internal.SdkInternalList<String> reportInstanceStatusRequestReasonCodesList = (com.amazonaws.internal.SdkInternalList<String>) reportInstanceStatusRequest
                 .getReasonCodes();
-        if (!reasonCodesList.isEmpty() || !reasonCodesList.isAutoConstruct()) {
+        if (!reportInstanceStatusRequestReasonCodesList.isEmpty() || !reportInstanceStatusRequestReasonCodesList.isAutoConstruct()) {
             int reasonCodesListIndex = 1;
 
-            for (String reasonCodesListValue : reasonCodesList) {
-                if (reasonCodesListValue != null) {
-                    request.addParameter("ReasonCode." + reasonCodesListIndex, StringUtils.fromString(reasonCodesListValue));
+            for (String reportInstanceStatusRequestReasonCodesListValue : reportInstanceStatusRequestReasonCodesList) {
+                if (reportInstanceStatusRequestReasonCodesListValue != null) {
+                    request.addParameter("ReasonCode." + reasonCodesListIndex, StringUtils.fromString(reportInstanceStatusRequestReasonCodesListValue));
                 }
                 reasonCodesListIndex++;
             }

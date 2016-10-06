@@ -70,6 +70,19 @@ public class UserTypeJsonMarshaller {
                 jsonGenerator.writeFieldName("UserStatus").writeValue(userType.getUserStatus());
             }
 
+            java.util.List<MFAOptionType> mFAOptionsList = userType.getMFAOptions();
+            if (mFAOptionsList != null) {
+                jsonGenerator.writeFieldName("MFAOptions");
+                jsonGenerator.writeStartArray();
+                for (MFAOptionType mFAOptionsListValue : mFAOptionsList) {
+                    if (mFAOptionsListValue != null) {
+
+                        MFAOptionTypeJsonMarshaller.getInstance().marshall(mFAOptionsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);

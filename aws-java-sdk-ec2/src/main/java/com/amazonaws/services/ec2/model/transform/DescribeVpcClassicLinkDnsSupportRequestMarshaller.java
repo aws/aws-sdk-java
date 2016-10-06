@@ -44,14 +44,14 @@ public class DescribeVpcClassicLinkDnsSupportRequestMarshaller implements
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> vpcIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcClassicLinkDnsSupportRequest
+        com.amazonaws.internal.SdkInternalList<String> describeVpcClassicLinkDnsSupportRequestVpcIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcClassicLinkDnsSupportRequest
                 .getVpcIds();
-        if (!vpcIdsList.isEmpty() || !vpcIdsList.isAutoConstruct()) {
+        if (!describeVpcClassicLinkDnsSupportRequestVpcIdsList.isEmpty() || !describeVpcClassicLinkDnsSupportRequestVpcIdsList.isAutoConstruct()) {
             int vpcIdsListIndex = 1;
 
-            for (String vpcIdsListValue : vpcIdsList) {
-                if (vpcIdsListValue != null) {
-                    request.addParameter("VpcIds." + vpcIdsListIndex, StringUtils.fromString(vpcIdsListValue));
+            for (String describeVpcClassicLinkDnsSupportRequestVpcIdsListValue : describeVpcClassicLinkDnsSupportRequestVpcIdsList) {
+                if (describeVpcClassicLinkDnsSupportRequestVpcIdsListValue != null) {
+                    request.addParameter("VpcIds." + vpcIdsListIndex, StringUtils.fromString(describeVpcClassicLinkDnsSupportRequestVpcIdsListValue));
                 }
                 vpcIdsListIndex++;
             }

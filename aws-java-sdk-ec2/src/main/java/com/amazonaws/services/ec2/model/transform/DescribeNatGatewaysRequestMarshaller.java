@@ -42,36 +42,38 @@ public class DescribeNatGatewaysRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> natGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNatGatewaysRequest
+        com.amazonaws.internal.SdkInternalList<String> describeNatGatewaysRequestNatGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNatGatewaysRequest
                 .getNatGatewayIds();
-        if (!natGatewayIdsList.isEmpty() || !natGatewayIdsList.isAutoConstruct()) {
+        if (!describeNatGatewaysRequestNatGatewayIdsList.isEmpty() || !describeNatGatewaysRequestNatGatewayIdsList.isAutoConstruct()) {
             int natGatewayIdsListIndex = 1;
 
-            for (String natGatewayIdsListValue : natGatewayIdsList) {
-                if (natGatewayIdsListValue != null) {
-                    request.addParameter("NatGatewayId." + natGatewayIdsListIndex, StringUtils.fromString(natGatewayIdsListValue));
+            for (String describeNatGatewaysRequestNatGatewayIdsListValue : describeNatGatewaysRequestNatGatewayIdsList) {
+                if (describeNatGatewaysRequestNatGatewayIdsListValue != null) {
+                    request.addParameter("NatGatewayId." + natGatewayIdsListIndex, StringUtils.fromString(describeNatGatewaysRequestNatGatewayIdsListValue));
                 }
                 natGatewayIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeNatGatewaysRequest.getFilter();
-        if (!filterList.isEmpty() || !filterList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeNatGatewaysRequestFilterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeNatGatewaysRequest
+                .getFilter();
+        if (!describeNatGatewaysRequestFilterList.isEmpty() || !describeNatGatewaysRequestFilterList.isAutoConstruct()) {
             int filterListIndex = 1;
 
-            for (Filter filterListValue : filterList) {
+            for (Filter describeNatGatewaysRequestFilterListValue : describeNatGatewaysRequestFilterList) {
 
-                if (filterListValue.getName() != null) {
-                    request.addParameter("Filter." + filterListIndex + ".Name", StringUtils.fromString(filterListValue.getName()));
+                if (describeNatGatewaysRequestFilterListValue.getName() != null) {
+                    request.addParameter("Filter." + filterListIndex + ".Name", StringUtils.fromString(describeNatGatewaysRequestFilterListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filterListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeNatGatewaysRequestFilterListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filterListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filterListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

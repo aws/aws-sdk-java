@@ -39,9 +39,21 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li>
-     * <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.List<RuleUpdate> updates;
@@ -138,17 +150,41 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li>
-     * <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>.
      *         For more information, see the applicable data types:</p>
      *         <ul>
-     *         <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li>
-     *         <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
-     *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *         <li>
+     *         <p>
+     *         <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<RuleUpdate> getUpdates() {
@@ -161,18 +197,42 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li>
-     * <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updates
      *        An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>. For
      *        more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li>
-     *        <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      */
 
     public void setUpdates(java.util.Collection<RuleUpdate> updates) {
@@ -190,9 +250,21 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li>
-     * <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -204,9 +276,21 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>. For
      *        more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li>
-     *        <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,18 +310,42 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li>
-     * <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updates
      *        An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>. For
      *        more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li>
-     *        <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

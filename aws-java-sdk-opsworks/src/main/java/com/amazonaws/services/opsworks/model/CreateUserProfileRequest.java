@@ -22,7 +22,7 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The user's IAM ARN.
+     * The user's IAM ARN; this can also be a federated user's ARN.
      * </p>
      */
     private String iamUserArn;
@@ -51,11 +51,11 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The user's IAM ARN.
+     * The user's IAM ARN; this can also be a federated user's ARN.
      * </p>
      * 
      * @param iamUserArn
-     *        The user's IAM ARN.
+     *        The user's IAM ARN; this can also be a federated user's ARN.
      */
 
     public void setIamUserArn(String iamUserArn) {
@@ -64,10 +64,10 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The user's IAM ARN.
+     * The user's IAM ARN; this can also be a federated user's ARN.
      * </p>
      * 
-     * @return The user's IAM ARN.
+     * @return The user's IAM ARN; this can also be a federated user's ARN.
      */
 
     public String getIamUserArn() {
@@ -76,11 +76,11 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The user's IAM ARN.
+     * The user's IAM ARN; this can also be a federated user's ARN.
      * </p>
      * 
      * @param iamUserArn
-     *        The user's IAM ARN.
+     *        The user's IAM ARN; this can also be a federated user's ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -42,35 +42,38 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> keyNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeKeyPairsRequest.getKeyNames();
-        if (!keyNamesList.isEmpty() || !keyNamesList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> describeKeyPairsRequestKeyNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeKeyPairsRequest
+                .getKeyNames();
+        if (!describeKeyPairsRequestKeyNamesList.isEmpty() || !describeKeyPairsRequestKeyNamesList.isAutoConstruct()) {
             int keyNamesListIndex = 1;
 
-            for (String keyNamesListValue : keyNamesList) {
-                if (keyNamesListValue != null) {
-                    request.addParameter("KeyName." + keyNamesListIndex, StringUtils.fromString(keyNamesListValue));
+            for (String describeKeyPairsRequestKeyNamesListValue : describeKeyPairsRequestKeyNamesList) {
+                if (describeKeyPairsRequestKeyNamesListValue != null) {
+                    request.addParameter("KeyName." + keyNamesListIndex, StringUtils.fromString(describeKeyPairsRequestKeyNamesListValue));
                 }
                 keyNamesListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeKeyPairsRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeKeyPairsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeKeyPairsRequest
+                .getFilters();
+        if (!describeKeyPairsRequestFiltersList.isEmpty() || !describeKeyPairsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeKeyPairsRequestFiltersListValue : describeKeyPairsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeKeyPairsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeKeyPairsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeKeyPairsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

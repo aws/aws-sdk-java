@@ -97,8 +97,8 @@ public class Deployment implements Serializable, Cloneable {
     /**
      * <p>
      * A string that contains user-defined custom JSON. It can be used to override the corresponding default stack
-     * configuration attribute values for stack or to pass data to recipes. The string should be in the following format
-     * and must escape characters such as '"':
+     * configuration attribute values for stack or to pass data to recipes. The string should be in the following
+     * format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -605,8 +605,8 @@ public class Deployment implements Serializable, Cloneable {
     /**
      * <p>
      * A string that contains user-defined custom JSON. It can be used to override the corresponding default stack
-     * configuration attribute values for stack or to pass data to recipes. The string should be in the following format
-     * and must escape characters such as '"':
+     * configuration attribute values for stack or to pass data to recipes. The string should be in the following
+     * format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -620,7 +620,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param customJson
      *        A string that contains user-defined custom JSON. It can be used to override the corresponding default
      *        stack configuration attribute values for stack or to pass data to recipes. The string should be in the
-     *        following format and must escape characters such as '"':</p>
+     *        following format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
@@ -637,8 +637,8 @@ public class Deployment implements Serializable, Cloneable {
     /**
      * <p>
      * A string that contains user-defined custom JSON. It can be used to override the corresponding default stack
-     * configuration attribute values for stack or to pass data to recipes. The string should be in the following format
-     * and must escape characters such as '"':
+     * configuration attribute values for stack or to pass data to recipes. The string should be in the following
+     * format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -651,7 +651,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return A string that contains user-defined custom JSON. It can be used to override the corresponding default
      *         stack configuration attribute values for stack or to pass data to recipes. The string should be in the
-     *         following format and must escape characters such as '"':</p>
+     *         following format:</p>
      *         <p>
      *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *         </p>
@@ -668,8 +668,8 @@ public class Deployment implements Serializable, Cloneable {
     /**
      * <p>
      * A string that contains user-defined custom JSON. It can be used to override the corresponding default stack
-     * configuration attribute values for stack or to pass data to recipes. The string should be in the following format
-     * and must escape characters such as '"':
+     * configuration attribute values for stack or to pass data to recipes. The string should be in the following
+     * format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -683,7 +683,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param customJson
      *        A string that contains user-defined custom JSON. It can be used to override the corresponding default
      *        stack configuration attribute values for stack or to pass data to recipes. The string should be in the
-     *        following format and must escape characters such as '"':</p>
+     *        following format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>

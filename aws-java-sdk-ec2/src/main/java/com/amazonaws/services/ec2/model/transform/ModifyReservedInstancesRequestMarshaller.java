@@ -46,49 +46,50 @@ public class ModifyReservedInstancesRequestMarshaller implements Marshaller<Requ
             request.addParameter("ClientToken", StringUtils.fromString(modifyReservedInstancesRequest.getClientToken()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> reservedInstancesIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyReservedInstancesRequest
+        com.amazonaws.internal.SdkInternalList<String> modifyReservedInstancesRequestReservedInstancesIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyReservedInstancesRequest
                 .getReservedInstancesIds();
-        if (!reservedInstancesIdsList.isEmpty() || !reservedInstancesIdsList.isAutoConstruct()) {
+        if (!modifyReservedInstancesRequestReservedInstancesIdsList.isEmpty() || !modifyReservedInstancesRequestReservedInstancesIdsList.isAutoConstruct()) {
             int reservedInstancesIdsListIndex = 1;
 
-            for (String reservedInstancesIdsListValue : reservedInstancesIdsList) {
-                if (reservedInstancesIdsListValue != null) {
-                    request.addParameter("ReservedInstancesId." + reservedInstancesIdsListIndex, StringUtils.fromString(reservedInstancesIdsListValue));
+            for (String modifyReservedInstancesRequestReservedInstancesIdsListValue : modifyReservedInstancesRequestReservedInstancesIdsList) {
+                if (modifyReservedInstancesRequestReservedInstancesIdsListValue != null) {
+                    request.addParameter("ReservedInstancesId." + reservedInstancesIdsListIndex,
+                            StringUtils.fromString(modifyReservedInstancesRequestReservedInstancesIdsListValue));
                 }
                 reservedInstancesIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<ReservedInstancesConfiguration> targetConfigurationsList = (com.amazonaws.internal.SdkInternalList<ReservedInstancesConfiguration>) modifyReservedInstancesRequest
+        com.amazonaws.internal.SdkInternalList<ReservedInstancesConfiguration> modifyReservedInstancesRequestTargetConfigurationsList = (com.amazonaws.internal.SdkInternalList<ReservedInstancesConfiguration>) modifyReservedInstancesRequest
                 .getTargetConfigurations();
-        if (!targetConfigurationsList.isEmpty() || !targetConfigurationsList.isAutoConstruct()) {
+        if (!modifyReservedInstancesRequestTargetConfigurationsList.isEmpty() || !modifyReservedInstancesRequestTargetConfigurationsList.isAutoConstruct()) {
             int targetConfigurationsListIndex = 1;
 
-            for (ReservedInstancesConfiguration targetConfigurationsListValue : targetConfigurationsList) {
+            for (ReservedInstancesConfiguration modifyReservedInstancesRequestTargetConfigurationsListValue : modifyReservedInstancesRequestTargetConfigurationsList) {
 
-                if (targetConfigurationsListValue.getAvailabilityZone() != null) {
+                if (modifyReservedInstancesRequestTargetConfigurationsListValue.getAvailabilityZone() != null) {
                     request.addParameter("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".AvailabilityZone",
-                            StringUtils.fromString(targetConfigurationsListValue.getAvailabilityZone()));
+                            StringUtils.fromString(modifyReservedInstancesRequestTargetConfigurationsListValue.getAvailabilityZone()));
                 }
 
-                if (targetConfigurationsListValue.getPlatform() != null) {
+                if (modifyReservedInstancesRequestTargetConfigurationsListValue.getPlatform() != null) {
                     request.addParameter("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".Platform",
-                            StringUtils.fromString(targetConfigurationsListValue.getPlatform()));
+                            StringUtils.fromString(modifyReservedInstancesRequestTargetConfigurationsListValue.getPlatform()));
                 }
 
-                if (targetConfigurationsListValue.getInstanceCount() != null) {
+                if (modifyReservedInstancesRequestTargetConfigurationsListValue.getInstanceCount() != null) {
                     request.addParameter("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".InstanceCount",
-                            StringUtils.fromInteger(targetConfigurationsListValue.getInstanceCount()));
+                            StringUtils.fromInteger(modifyReservedInstancesRequestTargetConfigurationsListValue.getInstanceCount()));
                 }
 
-                if (targetConfigurationsListValue.getInstanceType() != null) {
+                if (modifyReservedInstancesRequestTargetConfigurationsListValue.getInstanceType() != null) {
                     request.addParameter("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".InstanceType",
-                            StringUtils.fromString(targetConfigurationsListValue.getInstanceType()));
+                            StringUtils.fromString(modifyReservedInstancesRequestTargetConfigurationsListValue.getInstanceType()));
                 }
 
-                if (targetConfigurationsListValue.getScope() != null) {
+                if (modifyReservedInstancesRequestTargetConfigurationsListValue.getScope() != null) {
                     request.addParameter("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".Scope",
-                            StringUtils.fromString(targetConfigurationsListValue.getScope()));
+                            StringUtils.fromString(modifyReservedInstancesRequestTargetConfigurationsListValue.getScope()));
                 }
                 targetConfigurationsListIndex++;
             }

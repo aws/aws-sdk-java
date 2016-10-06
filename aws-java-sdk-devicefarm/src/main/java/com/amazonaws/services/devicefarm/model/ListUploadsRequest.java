@@ -24,7 +24,7 @@ public class ListUploadsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The uploads' ARNs.
+     * The Amazon Resource Name (ARN) of the project for which you want to list uploads.
      * </p>
      */
     private String arn;
@@ -38,11 +38,11 @@ public class ListUploadsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The uploads' ARNs.
+     * The Amazon Resource Name (ARN) of the project for which you want to list uploads.
      * </p>
      * 
      * @param arn
-     *        The uploads' ARNs.
+     *        The Amazon Resource Name (ARN) of the project for which you want to list uploads.
      */
 
     public void setArn(String arn) {
@@ -51,10 +51,10 @@ public class ListUploadsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The uploads' ARNs.
+     * The Amazon Resource Name (ARN) of the project for which you want to list uploads.
      * </p>
      * 
-     * @return The uploads' ARNs.
+     * @return The Amazon Resource Name (ARN) of the project for which you want to list uploads.
      */
 
     public String getArn() {
@@ -63,11 +63,11 @@ public class ListUploadsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The uploads' ARNs.
+     * The Amazon Resource Name (ARN) of the project for which you want to list uploads.
      * </p>
      * 
      * @param arn
-     *        The uploads' ARNs.
+     *        The Amazon Resource Name (ARN) of the project for which you want to list uploads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

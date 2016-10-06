@@ -42,37 +42,39 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> groupNamesList = (com.amazonaws.internal.SdkInternalList<String>) describePlacementGroupsRequest
+        com.amazonaws.internal.SdkInternalList<String> describePlacementGroupsRequestGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) describePlacementGroupsRequest
                 .getGroupNames();
-        if (!groupNamesList.isEmpty() || !groupNamesList.isAutoConstruct()) {
+        if (!describePlacementGroupsRequestGroupNamesList.isEmpty() || !describePlacementGroupsRequestGroupNamesList.isAutoConstruct()) {
             int groupNamesListIndex = 1;
 
-            for (String groupNamesListValue : groupNamesList) {
-                if (groupNamesListValue != null) {
-                    request.addParameter("GroupName." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
+            for (String describePlacementGroupsRequestGroupNamesListValue : describePlacementGroupsRequestGroupNamesList) {
+                if (describePlacementGroupsRequestGroupNamesListValue != null) {
+                    request.addParameter("GroupName." + groupNamesListIndex, StringUtils.fromString(describePlacementGroupsRequestGroupNamesListValue));
                 }
                 groupNamesListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describePlacementGroupsRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describePlacementGroupsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describePlacementGroupsRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describePlacementGroupsRequestFiltersList.isEmpty() || !describePlacementGroupsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describePlacementGroupsRequestFiltersListValue : describePlacementGroupsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describePlacementGroupsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describePlacementGroupsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describePlacementGroupsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

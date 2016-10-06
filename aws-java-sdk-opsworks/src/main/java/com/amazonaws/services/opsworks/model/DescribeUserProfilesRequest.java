@@ -22,17 +22,17 @@ public class DescribeUserProfilesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of IAM user ARNs that identify the users to be described.
+     * An array of IAM or federated user ARNs that identify the users to be described.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> iamUserArns;
 
     /**
      * <p>
-     * An array of IAM user ARNs that identify the users to be described.
+     * An array of IAM or federated user ARNs that identify the users to be described.
      * </p>
      * 
-     * @return An array of IAM user ARNs that identify the users to be described.
+     * @return An array of IAM or federated user ARNs that identify the users to be described.
      */
 
     public java.util.List<String> getIamUserArns() {
@@ -44,11 +44,11 @@ public class DescribeUserProfilesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of IAM user ARNs that identify the users to be described.
+     * An array of IAM or federated user ARNs that identify the users to be described.
      * </p>
      * 
      * @param iamUserArns
-     *        An array of IAM user ARNs that identify the users to be described.
+     *        An array of IAM or federated user ARNs that identify the users to be described.
      */
 
     public void setIamUserArns(java.util.Collection<String> iamUserArns) {
@@ -62,7 +62,7 @@ public class DescribeUserProfilesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of IAM user ARNs that identify the users to be described.
+     * An array of IAM or federated user ARNs that identify the users to be described.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class DescribeUserProfilesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param iamUserArns
-     *        An array of IAM user ARNs that identify the users to be described.
+     *        An array of IAM or federated user ARNs that identify the users to be described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class DescribeUserProfilesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of IAM user ARNs that identify the users to be described.
+     * An array of IAM or federated user ARNs that identify the users to be described.
      * </p>
      * 
      * @param iamUserArns
-     *        An array of IAM user ARNs that identify the users to be described.
+     *        An array of IAM or federated user ARNs that identify the users to be described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

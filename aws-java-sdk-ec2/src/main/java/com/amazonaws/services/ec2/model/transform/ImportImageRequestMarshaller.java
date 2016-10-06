@@ -46,27 +46,29 @@ public class ImportImageRequestMarshaller implements Marshaller<Request<ImportIm
             request.addParameter("Description", StringUtils.fromString(importImageRequest.getDescription()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ImageDiskContainer> diskContainersList = (com.amazonaws.internal.SdkInternalList<ImageDiskContainer>) importImageRequest
+        com.amazonaws.internal.SdkInternalList<ImageDiskContainer> importImageRequestDiskContainersList = (com.amazonaws.internal.SdkInternalList<ImageDiskContainer>) importImageRequest
                 .getDiskContainers();
-        if (!diskContainersList.isEmpty() || !diskContainersList.isAutoConstruct()) {
+        if (!importImageRequestDiskContainersList.isEmpty() || !importImageRequestDiskContainersList.isAutoConstruct()) {
             int diskContainersListIndex = 1;
 
-            for (ImageDiskContainer diskContainersListValue : diskContainersList) {
+            for (ImageDiskContainer importImageRequestDiskContainersListValue : importImageRequestDiskContainersList) {
 
-                if (diskContainersListValue.getDescription() != null) {
+                if (importImageRequestDiskContainersListValue.getDescription() != null) {
                     request.addParameter("DiskContainer." + diskContainersListIndex + ".Description",
-                            StringUtils.fromString(diskContainersListValue.getDescription()));
+                            StringUtils.fromString(importImageRequestDiskContainersListValue.getDescription()));
                 }
 
-                if (diskContainersListValue.getFormat() != null) {
-                    request.addParameter("DiskContainer." + diskContainersListIndex + ".Format", StringUtils.fromString(diskContainersListValue.getFormat()));
+                if (importImageRequestDiskContainersListValue.getFormat() != null) {
+                    request.addParameter("DiskContainer." + diskContainersListIndex + ".Format",
+                            StringUtils.fromString(importImageRequestDiskContainersListValue.getFormat()));
                 }
 
-                if (diskContainersListValue.getUrl() != null) {
-                    request.addParameter("DiskContainer." + diskContainersListIndex + ".Url", StringUtils.fromString(diskContainersListValue.getUrl()));
+                if (importImageRequestDiskContainersListValue.getUrl() != null) {
+                    request.addParameter("DiskContainer." + diskContainersListIndex + ".Url",
+                            StringUtils.fromString(importImageRequestDiskContainersListValue.getUrl()));
                 }
 
-                UserBucket userBucket = diskContainersListValue.getUserBucket();
+                UserBucket userBucket = importImageRequestDiskContainersListValue.getUserBucket();
                 if (userBucket != null) {
 
                     if (userBucket.getS3Bucket() != null) {
@@ -79,14 +81,14 @@ public class ImportImageRequestMarshaller implements Marshaller<Request<ImportIm
                     }
                 }
 
-                if (diskContainersListValue.getDeviceName() != null) {
+                if (importImageRequestDiskContainersListValue.getDeviceName() != null) {
                     request.addParameter("DiskContainer." + diskContainersListIndex + ".DeviceName",
-                            StringUtils.fromString(diskContainersListValue.getDeviceName()));
+                            StringUtils.fromString(importImageRequestDiskContainersListValue.getDeviceName()));
                 }
 
-                if (diskContainersListValue.getSnapshotId() != null) {
+                if (importImageRequestDiskContainersListValue.getSnapshotId() != null) {
                     request.addParameter("DiskContainer." + diskContainersListIndex + ".SnapshotId",
-                            StringUtils.fromString(diskContainersListValue.getSnapshotId()));
+                            StringUtils.fromString(importImageRequestDiskContainersListValue.getSnapshotId()));
                 }
                 diskContainersListIndex++;
             }

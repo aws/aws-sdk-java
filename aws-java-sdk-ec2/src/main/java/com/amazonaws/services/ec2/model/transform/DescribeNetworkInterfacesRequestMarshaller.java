@@ -42,37 +42,40 @@ public class DescribeNetworkInterfacesRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> networkInterfaceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkInterfacesRequest
+        com.amazonaws.internal.SdkInternalList<String> describeNetworkInterfacesRequestNetworkInterfaceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkInterfacesRequest
                 .getNetworkInterfaceIds();
-        if (!networkInterfaceIdsList.isEmpty() || !networkInterfaceIdsList.isAutoConstruct()) {
+        if (!describeNetworkInterfacesRequestNetworkInterfaceIdsList.isEmpty() || !describeNetworkInterfacesRequestNetworkInterfaceIdsList.isAutoConstruct()) {
             int networkInterfaceIdsListIndex = 1;
 
-            for (String networkInterfaceIdsListValue : networkInterfaceIdsList) {
-                if (networkInterfaceIdsListValue != null) {
-                    request.addParameter("NetworkInterfaceId." + networkInterfaceIdsListIndex, StringUtils.fromString(networkInterfaceIdsListValue));
+            for (String describeNetworkInterfacesRequestNetworkInterfaceIdsListValue : describeNetworkInterfacesRequestNetworkInterfaceIdsList) {
+                if (describeNetworkInterfacesRequestNetworkInterfaceIdsListValue != null) {
+                    request.addParameter("NetworkInterfaceId." + networkInterfaceIdsListIndex,
+                            StringUtils.fromString(describeNetworkInterfacesRequestNetworkInterfaceIdsListValue));
                 }
                 networkInterfaceIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeNetworkInterfacesRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeNetworkInterfacesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeNetworkInterfacesRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeNetworkInterfacesRequestFiltersList.isEmpty() || !describeNetworkInterfacesRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeNetworkInterfacesRequestFiltersListValue : describeNetworkInterfacesRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeNetworkInterfacesRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeNetworkInterfacesRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkInterfacesRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

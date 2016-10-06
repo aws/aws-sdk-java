@@ -42,36 +42,38 @@ public class DescribeVpnGatewaysRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> vpnGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnGatewaysRequest
+        com.amazonaws.internal.SdkInternalList<String> describeVpnGatewaysRequestVpnGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnGatewaysRequest
                 .getVpnGatewayIds();
-        if (!vpnGatewayIdsList.isEmpty() || !vpnGatewayIdsList.isAutoConstruct()) {
+        if (!describeVpnGatewaysRequestVpnGatewayIdsList.isEmpty() || !describeVpnGatewaysRequestVpnGatewayIdsList.isAutoConstruct()) {
             int vpnGatewayIdsListIndex = 1;
 
-            for (String vpnGatewayIdsListValue : vpnGatewayIdsList) {
-                if (vpnGatewayIdsListValue != null) {
-                    request.addParameter("VpnGatewayId." + vpnGatewayIdsListIndex, StringUtils.fromString(vpnGatewayIdsListValue));
+            for (String describeVpnGatewaysRequestVpnGatewayIdsListValue : describeVpnGatewaysRequestVpnGatewayIdsList) {
+                if (describeVpnGatewaysRequestVpnGatewayIdsListValue != null) {
+                    request.addParameter("VpnGatewayId." + vpnGatewayIdsListIndex, StringUtils.fromString(describeVpnGatewaysRequestVpnGatewayIdsListValue));
                 }
                 vpnGatewayIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpnGatewaysRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeVpnGatewaysRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpnGatewaysRequest
+                .getFilters();
+        if (!describeVpnGatewaysRequestFiltersList.isEmpty() || !describeVpnGatewaysRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeVpnGatewaysRequestFiltersListValue : describeVpnGatewaysRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeVpnGatewaysRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeVpnGatewaysRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnGatewaysRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

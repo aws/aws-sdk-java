@@ -42,27 +42,27 @@ public class CreateDhcpOptionsRequestMarshaller implements Marshaller<Request<Cr
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<DhcpConfiguration> dhcpConfigurationsList = (com.amazonaws.internal.SdkInternalList<DhcpConfiguration>) createDhcpOptionsRequest
+        com.amazonaws.internal.SdkInternalList<DhcpConfiguration> createDhcpOptionsRequestDhcpConfigurationsList = (com.amazonaws.internal.SdkInternalList<DhcpConfiguration>) createDhcpOptionsRequest
                 .getDhcpConfigurations();
-        if (!dhcpConfigurationsList.isEmpty() || !dhcpConfigurationsList.isAutoConstruct()) {
+        if (!createDhcpOptionsRequestDhcpConfigurationsList.isEmpty() || !createDhcpOptionsRequestDhcpConfigurationsList.isAutoConstruct()) {
             int dhcpConfigurationsListIndex = 1;
 
-            for (DhcpConfiguration dhcpConfigurationsListValue : dhcpConfigurationsList) {
+            for (DhcpConfiguration createDhcpOptionsRequestDhcpConfigurationsListValue : createDhcpOptionsRequestDhcpConfigurationsList) {
 
-                if (dhcpConfigurationsListValue.getKey() != null) {
+                if (createDhcpOptionsRequestDhcpConfigurationsListValue.getKey() != null) {
                     request.addParameter("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Key",
-                            StringUtils.fromString(dhcpConfigurationsListValue.getKey()));
+                            StringUtils.fromString(createDhcpOptionsRequestDhcpConfigurationsListValue.getKey()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) dhcpConfigurationsListValue
+                com.amazonaws.internal.SdkInternalList<String> dhcpConfigurationValuesList = (com.amazonaws.internal.SdkInternalList<String>) createDhcpOptionsRequestDhcpConfigurationsListValue
                         .getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                if (!dhcpConfigurationValuesList.isEmpty() || !dhcpConfigurationValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
+                    for (String dhcpConfigurationValuesListValue : dhcpConfigurationValuesList) {
+                        if (dhcpConfigurationValuesListValue != null) {
                             request.addParameter("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Value." + valuesListIndex,
-                                    StringUtils.fromString(valuesListValue));
+                                    StringUtils.fromString(dhcpConfigurationValuesListValue));
                         }
                         valuesListIndex++;
                     }

@@ -1720,7 +1720,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Gets information about runs.
+     * Gets information about runs, given an AWS Device Farm project ARN.
      * </p>
      * 
      * @param listRunsRequest
@@ -1768,7 +1768,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Gets information about samples.
+     * Gets information about samples, given an AWS Device Farm project ARN
      * </p>
      * 
      * @param listSamplesRequest
@@ -1960,7 +1960,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Gets information about uploads.
+     * Gets information about uploads, given an AWS Device Farm project ARN.
      * </p>
      * 
      * @param listUploadsRequest

@@ -22,14 +22,14 @@ import com.amazonaws.annotation.ThreadSafe;
  * receive notification when an asynchronous operation completes.
  * <p>
  * <p>
- * You can create a user pool in Amazon Cognito Identity to manage directories and users. You can authenticate a user to
- * obtain tokens related to user identity and access policies.
+ * Using the Amazon Cognito Your User Pools API, you can create a user pool to manage directories and users. You can
+ * authenticate a user to obtain tokens related to user identity and access policies.
  * </p>
  * <p>
- * This API reference provides information about user pools in Amazon Cognito Identity.
+ * This API reference provides information about user pools in Amazon Cognito Your User Pools.
  * </p>
  * <p>
- * For more information, see <a href="https://aws.amazon.com/cognito/">Amazon Cognito</a>.
+ * For more information, see the Amazon Cognito Documentation.
  * </p>
  */
 @ThreadSafe
@@ -270,6 +270,38 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = adminConfirmSignUp(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminCreateUserResult> adminCreateUserAsync(AdminCreateUserRequest request) {
+
+        return adminCreateUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminCreateUserResult> adminCreateUserAsync(final AdminCreateUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminCreateUserRequest, AdminCreateUserResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AdminCreateUserResult>() {
+            @Override
+            public AdminCreateUserResult call() throws Exception {
+                AdminCreateUserResult result;
+
+                try {
+                    result = adminCreateUser(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -50,50 +50,54 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
             request.addParameter("EndTime", StringUtils.fromDate(describeSpotPriceHistoryRequest.getEndTime()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> instanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotPriceHistoryRequest
+        com.amazonaws.internal.SdkInternalList<String> describeSpotPriceHistoryRequestInstanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotPriceHistoryRequest
                 .getInstanceTypes();
-        if (!instanceTypesList.isEmpty() || !instanceTypesList.isAutoConstruct()) {
+        if (!describeSpotPriceHistoryRequestInstanceTypesList.isEmpty() || !describeSpotPriceHistoryRequestInstanceTypesList.isAutoConstruct()) {
             int instanceTypesListIndex = 1;
 
-            for (String instanceTypesListValue : instanceTypesList) {
-                if (instanceTypesListValue != null) {
-                    request.addParameter("InstanceType." + instanceTypesListIndex, StringUtils.fromString(instanceTypesListValue));
+            for (String describeSpotPriceHistoryRequestInstanceTypesListValue : describeSpotPriceHistoryRequestInstanceTypesList) {
+                if (describeSpotPriceHistoryRequestInstanceTypesListValue != null) {
+                    request.addParameter("InstanceType." + instanceTypesListIndex,
+                            StringUtils.fromString(describeSpotPriceHistoryRequestInstanceTypesListValue));
                 }
                 instanceTypesListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> productDescriptionsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotPriceHistoryRequest
+        com.amazonaws.internal.SdkInternalList<String> describeSpotPriceHistoryRequestProductDescriptionsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotPriceHistoryRequest
                 .getProductDescriptions();
-        if (!productDescriptionsList.isEmpty() || !productDescriptionsList.isAutoConstruct()) {
+        if (!describeSpotPriceHistoryRequestProductDescriptionsList.isEmpty() || !describeSpotPriceHistoryRequestProductDescriptionsList.isAutoConstruct()) {
             int productDescriptionsListIndex = 1;
 
-            for (String productDescriptionsListValue : productDescriptionsList) {
-                if (productDescriptionsListValue != null) {
-                    request.addParameter("ProductDescription." + productDescriptionsListIndex, StringUtils.fromString(productDescriptionsListValue));
+            for (String describeSpotPriceHistoryRequestProductDescriptionsListValue : describeSpotPriceHistoryRequestProductDescriptionsList) {
+                if (describeSpotPriceHistoryRequestProductDescriptionsListValue != null) {
+                    request.addParameter("ProductDescription." + productDescriptionsListIndex,
+                            StringUtils.fromString(describeSpotPriceHistoryRequestProductDescriptionsListValue));
                 }
                 productDescriptionsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSpotPriceHistoryRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeSpotPriceHistoryRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSpotPriceHistoryRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeSpotPriceHistoryRequestFiltersList.isEmpty() || !describeSpotPriceHistoryRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeSpotPriceHistoryRequestFiltersListValue : describeSpotPriceHistoryRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeSpotPriceHistoryRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeSpotPriceHistoryRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotPriceHistoryRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

@@ -54,33 +54,34 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
             request.addParameter("PrivateIpAddress", StringUtils.fromString(createNetworkInterfaceRequest.getPrivateIpAddress()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> groupsList = (com.amazonaws.internal.SdkInternalList<String>) createNetworkInterfaceRequest.getGroups();
-        if (!groupsList.isEmpty() || !groupsList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> createNetworkInterfaceRequestGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createNetworkInterfaceRequest
+                .getGroups();
+        if (!createNetworkInterfaceRequestGroupsList.isEmpty() || !createNetworkInterfaceRequestGroupsList.isAutoConstruct()) {
             int groupsListIndex = 1;
 
-            for (String groupsListValue : groupsList) {
-                if (groupsListValue != null) {
-                    request.addParameter("SecurityGroupId." + groupsListIndex, StringUtils.fromString(groupsListValue));
+            for (String createNetworkInterfaceRequestGroupsListValue : createNetworkInterfaceRequestGroupsList) {
+                if (createNetworkInterfaceRequestGroupsListValue != null) {
+                    request.addParameter("SecurityGroupId." + groupsListIndex, StringUtils.fromString(createNetworkInterfaceRequestGroupsListValue));
                 }
                 groupsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification> privateIpAddressesList = (com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification>) createNetworkInterfaceRequest
+        com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification> createNetworkInterfaceRequestPrivateIpAddressesList = (com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification>) createNetworkInterfaceRequest
                 .getPrivateIpAddresses();
-        if (!privateIpAddressesList.isEmpty() || !privateIpAddressesList.isAutoConstruct()) {
+        if (!createNetworkInterfaceRequestPrivateIpAddressesList.isEmpty() || !createNetworkInterfaceRequestPrivateIpAddressesList.isAutoConstruct()) {
             int privateIpAddressesListIndex = 1;
 
-            for (PrivateIpAddressSpecification privateIpAddressesListValue : privateIpAddressesList) {
+            for (PrivateIpAddressSpecification createNetworkInterfaceRequestPrivateIpAddressesListValue : createNetworkInterfaceRequestPrivateIpAddressesList) {
 
-                if (privateIpAddressesListValue.getPrivateIpAddress() != null) {
+                if (createNetworkInterfaceRequestPrivateIpAddressesListValue.getPrivateIpAddress() != null) {
                     request.addParameter("PrivateIpAddresses." + privateIpAddressesListIndex + ".PrivateIpAddress",
-                            StringUtils.fromString(privateIpAddressesListValue.getPrivateIpAddress()));
+                            StringUtils.fromString(createNetworkInterfaceRequestPrivateIpAddressesListValue.getPrivateIpAddress()));
                 }
 
-                if (privateIpAddressesListValue.getPrimary() != null) {
+                if (createNetworkInterfaceRequestPrivateIpAddressesListValue.getPrimary() != null) {
                     request.addParameter("PrivateIpAddresses." + privateIpAddressesListIndex + ".Primary",
-                            StringUtils.fromBoolean(privateIpAddressesListValue.getPrimary()));
+                            StringUtils.fromBoolean(createNetworkInterfaceRequestPrivateIpAddressesListValue.getPrimary()));
                 }
                 privateIpAddressesListIndex++;
             }

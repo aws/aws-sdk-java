@@ -42,36 +42,38 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> networkAclIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkAclsRequest
+        com.amazonaws.internal.SdkInternalList<String> describeNetworkAclsRequestNetworkAclIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkAclsRequest
                 .getNetworkAclIds();
-        if (!networkAclIdsList.isEmpty() || !networkAclIdsList.isAutoConstruct()) {
+        if (!describeNetworkAclsRequestNetworkAclIdsList.isEmpty() || !describeNetworkAclsRequestNetworkAclIdsList.isAutoConstruct()) {
             int networkAclIdsListIndex = 1;
 
-            for (String networkAclIdsListValue : networkAclIdsList) {
-                if (networkAclIdsListValue != null) {
-                    request.addParameter("NetworkAclId." + networkAclIdsListIndex, StringUtils.fromString(networkAclIdsListValue));
+            for (String describeNetworkAclsRequestNetworkAclIdsListValue : describeNetworkAclsRequestNetworkAclIdsList) {
+                if (describeNetworkAclsRequestNetworkAclIdsListValue != null) {
+                    request.addParameter("NetworkAclId." + networkAclIdsListIndex, StringUtils.fromString(describeNetworkAclsRequestNetworkAclIdsListValue));
                 }
                 networkAclIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeNetworkAclsRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeNetworkAclsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeNetworkAclsRequest
+                .getFilters();
+        if (!describeNetworkAclsRequestFiltersList.isEmpty() || !describeNetworkAclsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeNetworkAclsRequestFiltersListValue : describeNetworkAclsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeNetworkAclsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeNetworkAclsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkAclsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

@@ -29,8 +29,16 @@ public class HTTPRequest implements Serializable, Cloneable {
      * distribution, this is the value of one of the following fields in CloudFront access logs:
      * </p>
      * <ul>
-     * <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</li>
+     * <li>
+     * <p>
+     * <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
+     * </p>
+     * </li>
      * </ul>
      */
     private String clientIP;
@@ -75,17 +83,32 @@ public class HTTPRequest implements Serializable, Cloneable {
      * distribution, this is the value of one of the following fields in CloudFront access logs:
      * </p>
      * <ul>
-     * <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</li>
+     * <li>
+     * <p>
+     * <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param clientIP
      *        The IP address that the request originated from. If the <code>WebACL</code> is associated with a
      *        CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
      *        <ul>
-     *        <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     *        <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the
-     *        request</li>
+     *        <li>
+     *        <p>
+     *        <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
+     *        </p>
+     *        </li>
      */
 
     public void setClientIP(String clientIP) {
@@ -98,16 +121,31 @@ public class HTTPRequest implements Serializable, Cloneable {
      * distribution, this is the value of one of the following fields in CloudFront access logs:
      * </p>
      * <ul>
-     * <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</li>
+     * <li>
+     * <p>
+     * <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The IP address that the request originated from. If the <code>WebACL</code> is associated with a
      *         CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
      *         <ul>
-     *         <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     *         <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the
-     *         request</li>
+     *         <li>
+     *         <p>
+     *         <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
+     *         </p>
+     *         </li>
      */
 
     public String getClientIP() {
@@ -120,17 +158,32 @@ public class HTTPRequest implements Serializable, Cloneable {
      * distribution, this is the value of one of the following fields in CloudFront access logs:
      * </p>
      * <ul>
-     * <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</li>
+     * <li>
+     * <p>
+     * <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param clientIP
      *        The IP address that the request originated from. If the <code>WebACL</code> is associated with a
      *        CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
      *        <ul>
-     *        <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     *        <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the
-     *        request</li>
+     *        <li>
+     *        <p>
+     *        <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

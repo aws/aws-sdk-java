@@ -61,7 +61,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String emailVerificationMessage;
     /**
      * <p>
-     * The subject of the email verfication message
+     * The subject of the email verfication message.
      * </p>
      */
     private String emailVerificationSubject;
@@ -76,10 +76,22 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
-     * are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      */
     private String mfaConfiguration;
@@ -101,6 +113,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private SmsConfigurationType smsConfiguration;
+    /**
+     * <p>
+     * The configuration for AdminCreateUser requests.
+     * </p>
+     */
+    private AdminCreateUserConfigType adminCreateUserConfig;
 
     /**
      * <p>
@@ -412,11 +430,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The subject of the email verfication message
+     * The subject of the email verfication message.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        The subject of the email verfication message
+     *        The subject of the email verfication message.
      */
 
     public void setEmailVerificationSubject(String emailVerificationSubject) {
@@ -425,10 +443,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The subject of the email verfication message
+     * The subject of the email verfication message.
      * </p>
      * 
-     * @return The subject of the email verfication message
+     * @return The subject of the email verfication message.
      */
 
     public String getEmailVerificationSubject() {
@@ -437,11 +455,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The subject of the email verfication message
+     * The subject of the email verfication message.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        The subject of the email verfication message
+     *        The subject of the email verfication message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -495,19 +513,43 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
-     * are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
-     *        when you are initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     *        <li>
+     *        <p>
+     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *        you are initially creating a user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *        </p>
+     *        </li>
      * @see UserPoolMfaType
      */
 
@@ -520,18 +562,42 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
-     * are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Can be one of the following values:</p>
      *         <ul>
-     *         <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     *         <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
-     *         when you are initially creating a user pool.</li>
-     *         <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     *         <li>
+     *         <p>
+     *         <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *         you are initially creating a user pool.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *         </p>
+     *         </li>
      * @see UserPoolMfaType
      */
 
@@ -544,19 +610,43 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
-     * are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
-     *        when you are initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     *        <li>
+     *        <p>
+     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *        you are initially creating a user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserPoolMfaType
      */
@@ -571,19 +661,43 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
-     * are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
-     *        when you are initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     *        <li>
+     *        <p>
+     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *        you are initially creating a user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *        </p>
+     *        </li>
      * @see UserPoolMfaType
      */
 
@@ -596,19 +710,43 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * Can be one of the following values:
      * </p>
      * <ul>
-     * <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you
-     * are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     * <li>
+     * <p>
+     * <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
+     * initially creating a user pool.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mfaConfiguration
      *        Can be one of the following values:</p>
      *        <ul>
-     *        <li><code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</li>
-     *        <li><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required
-     *        when you are initially creating a user pool.</li>
-     *        <li><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</li>
+     *        <li>
+     *        <p>
+     *        <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
+     *        you are initially creating a user pool.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserPoolMfaType
      */
@@ -739,6 +877,46 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The configuration for AdminCreateUser requests.
+     * </p>
+     * 
+     * @param adminCreateUserConfig
+     *        The configuration for AdminCreateUser requests.
+     */
+
+    public void setAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
+        this.adminCreateUserConfig = adminCreateUserConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for AdminCreateUser requests.
+     * </p>
+     * 
+     * @return The configuration for AdminCreateUser requests.
+     */
+
+    public AdminCreateUserConfigType getAdminCreateUserConfig() {
+        return this.adminCreateUserConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for AdminCreateUser requests.
+     * </p>
+     * 
+     * @param adminCreateUserConfig
+     *        The configuration for AdminCreateUser requests.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
+        setAdminCreateUserConfig(adminCreateUserConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -772,7 +950,9 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getEmailConfiguration() != null)
             sb.append("EmailConfiguration: " + getEmailConfiguration() + ",");
         if (getSmsConfiguration() != null)
-            sb.append("SmsConfiguration: " + getSmsConfiguration());
+            sb.append("SmsConfiguration: " + getSmsConfiguration() + ",");
+        if (getAdminCreateUserConfig() != null)
+            sb.append("AdminCreateUserConfig: " + getAdminCreateUserConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -835,6 +1015,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getSmsConfiguration() != null && other.getSmsConfiguration().equals(this.getSmsConfiguration()) == false)
             return false;
+        if (other.getAdminCreateUserConfig() == null ^ this.getAdminCreateUserConfig() == null)
+            return false;
+        if (other.getAdminCreateUserConfig() != null && other.getAdminCreateUserConfig().equals(this.getAdminCreateUserConfig()) == false)
+            return false;
         return true;
     }
 
@@ -855,6 +1039,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEmailConfiguration() == null) ? 0 : getEmailConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
         return hashCode;
     }
 

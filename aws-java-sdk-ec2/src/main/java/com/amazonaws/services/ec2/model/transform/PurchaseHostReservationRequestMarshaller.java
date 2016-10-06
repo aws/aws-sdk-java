@@ -46,14 +46,14 @@ public class PurchaseHostReservationRequestMarshaller implements Marshaller<Requ
             request.addParameter("OfferingId", StringUtils.fromString(purchaseHostReservationRequest.getOfferingId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> hostIdSetList = (com.amazonaws.internal.SdkInternalList<String>) purchaseHostReservationRequest
+        com.amazonaws.internal.SdkInternalList<String> purchaseHostReservationRequestHostIdSetList = (com.amazonaws.internal.SdkInternalList<String>) purchaseHostReservationRequest
                 .getHostIdSet();
-        if (!hostIdSetList.isEmpty() || !hostIdSetList.isAutoConstruct()) {
+        if (!purchaseHostReservationRequestHostIdSetList.isEmpty() || !purchaseHostReservationRequestHostIdSetList.isAutoConstruct()) {
             int hostIdSetListIndex = 1;
 
-            for (String hostIdSetListValue : hostIdSetList) {
-                if (hostIdSetListValue != null) {
-                    request.addParameter("HostIdSet." + hostIdSetListIndex, StringUtils.fromString(hostIdSetListValue));
+            for (String purchaseHostReservationRequestHostIdSetListValue : purchaseHostReservationRequestHostIdSetList) {
+                if (purchaseHostReservationRequestHostIdSetListValue != null) {
+                    request.addParameter("HostIdSet." + hostIdSetListIndex, StringUtils.fromString(purchaseHostReservationRequestHostIdSetListValue));
                 }
                 hostIdSetListIndex++;
             }

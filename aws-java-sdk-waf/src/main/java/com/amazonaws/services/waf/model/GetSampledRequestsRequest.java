@@ -32,10 +32,18 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RuleId</code> is one of two values:
      * </p>
      * <ul>
-     * <li>The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to return
-     * a sample of requests.</li>
-     * <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests
-     * that didn't match any of the rules in the specified <code>WebACL</code>.</li>
+     * <li>
+     * <p>
+     * The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to return a
+     * sample of requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that
+     * didn't match any of the rules in the specified <code>WebACL</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String ruleId;
@@ -107,19 +115,35 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RuleId</code> is one of two values:
      * </p>
      * <ul>
-     * <li>The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to return
-     * a sample of requests.</li>
-     * <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests
-     * that didn't match any of the rules in the specified <code>WebACL</code>.</li>
+     * <li>
+     * <p>
+     * The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to return a
+     * sample of requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that
+     * didn't match any of the rules in the specified <code>WebACL</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param ruleId
-     *        RuleId</code> is one of two values:</p>
+     *        <code>RuleId</code> is one of two values:</p>
      *        <ul>
-     *        <li>The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to
-     *        return a sample of requests.</li>
-     *        <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the
+     *        <li>
+     *        <p>
+     *        The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to
+     *        return a sample of requests.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the
      *        requests that didn't match any of the rules in the specified <code>WebACL</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setRuleId(String ruleId) {
@@ -131,18 +155,34 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RuleId</code> is one of two values:
      * </p>
      * <ul>
-     * <li>The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to return
-     * a sample of requests.</li>
-     * <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests
-     * that didn't match any of the rules in the specified <code>WebACL</code>.</li>
+     * <li>
+     * <p>
+     * The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to return a
+     * sample of requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that
+     * didn't match any of the rules in the specified <code>WebACL</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return RuleId</code> is one of two values:</p>
+     * @return <code>RuleId</code> is one of two values:</p>
      *         <ul>
-     *         <li>The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code>
-     *         to return a sample of requests.</li>
-     *         <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the
+     *         <li>
+     *         <p>
+     *         The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to
+     *         return a sample of requests.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the
      *         requests that didn't match any of the rules in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getRuleId() {
@@ -154,19 +194,35 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RuleId</code> is one of two values:
      * </p>
      * <ul>
-     * <li>The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to return
-     * a sample of requests.</li>
-     * <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests
-     * that didn't match any of the rules in the specified <code>WebACL</code>.</li>
+     * <li>
+     * <p>
+     * The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to return a
+     * sample of requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that
+     * didn't match any of the rules in the specified <code>WebACL</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param ruleId
-     *        RuleId</code> is one of two values:</p>
+     *        <code>RuleId</code> is one of two values:</p>
      *        <ul>
-     *        <li>The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to
-     *        return a sample of requests.</li>
-     *        <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the
+     *        <li>
+     *        <p>
+     *        The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to
+     *        return a sample of requests.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the
      *        requests that didn't match any of the rules in the specified <code>WebACL</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

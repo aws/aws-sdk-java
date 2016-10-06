@@ -36,9 +36,21 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Allowed values include:
      * </p>
      * <ul>
-     * <li>FILE: The artifacts are files.</li>
-     * <li>LOG: The artifacts are logs.</li>
-     * <li>SCREENSHOT: The artifacts are screenshots.</li>
+     * <li>
+     * <p>
+     * FILE: The artifacts are files.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LOG: The artifacts are logs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SCREENSHOT: The artifacts are screenshots.
+     * </p>
+     * </li>
      * </ul>
      */
     private String type;
@@ -98,9 +110,21 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Allowed values include:
      * </p>
      * <ul>
-     * <li>FILE: The artifacts are files.</li>
-     * <li>LOG: The artifacts are logs.</li>
-     * <li>SCREENSHOT: The artifacts are screenshots.</li>
+     * <li>
+     * <p>
+     * FILE: The artifacts are files.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LOG: The artifacts are logs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SCREENSHOT: The artifacts are screenshots.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -109,9 +133,21 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Allowed values include:
      *        </p>
      *        <ul>
-     *        <li>FILE: The artifacts are files.</li>
-     *        <li>LOG: The artifacts are logs.</li>
-     *        <li>SCREENSHOT: The artifacts are screenshots.</li>
+     *        <li>
+     *        <p>
+     *        FILE: The artifacts are files.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LOG: The artifacts are logs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SCREENSHOT: The artifacts are screenshots.
+     *        </p>
+     *        </li>
      * @see ArtifactCategory
      */
 
@@ -127,9 +163,21 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Allowed values include:
      * </p>
      * <ul>
-     * <li>FILE: The artifacts are files.</li>
-     * <li>LOG: The artifacts are logs.</li>
-     * <li>SCREENSHOT: The artifacts are screenshots.</li>
+     * <li>
+     * <p>
+     * FILE: The artifacts are files.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LOG: The artifacts are logs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SCREENSHOT: The artifacts are screenshots.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The artifacts' type.</p>
@@ -137,9 +185,21 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         Allowed values include:
      *         </p>
      *         <ul>
-     *         <li>FILE: The artifacts are files.</li>
-     *         <li>LOG: The artifacts are logs.</li>
-     *         <li>SCREENSHOT: The artifacts are screenshots.</li>
+     *         <li>
+     *         <p>
+     *         FILE: The artifacts are files.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         LOG: The artifacts are logs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SCREENSHOT: The artifacts are screenshots.
+     *         </p>
+     *         </li>
      * @see ArtifactCategory
      */
 
@@ -155,9 +215,21 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Allowed values include:
      * </p>
      * <ul>
-     * <li>FILE: The artifacts are files.</li>
-     * <li>LOG: The artifacts are logs.</li>
-     * <li>SCREENSHOT: The artifacts are screenshots.</li>
+     * <li>
+     * <p>
+     * FILE: The artifacts are files.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LOG: The artifacts are logs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SCREENSHOT: The artifacts are screenshots.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -166,9 +238,21 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Allowed values include:
      *        </p>
      *        <ul>
-     *        <li>FILE: The artifacts are files.</li>
-     *        <li>LOG: The artifacts are logs.</li>
-     *        <li>SCREENSHOT: The artifacts are screenshots.</li>
+     *        <li>
+     *        <p>
+     *        FILE: The artifacts are files.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LOG: The artifacts are logs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SCREENSHOT: The artifacts are screenshots.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArtifactCategory
      */
@@ -186,9 +270,21 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Allowed values include:
      * </p>
      * <ul>
-     * <li>FILE: The artifacts are files.</li>
-     * <li>LOG: The artifacts are logs.</li>
-     * <li>SCREENSHOT: The artifacts are screenshots.</li>
+     * <li>
+     * <p>
+     * FILE: The artifacts are files.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LOG: The artifacts are logs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SCREENSHOT: The artifacts are screenshots.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -197,9 +293,21 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Allowed values include:
      *        </p>
      *        <ul>
-     *        <li>FILE: The artifacts are files.</li>
-     *        <li>LOG: The artifacts are logs.</li>
-     *        <li>SCREENSHOT: The artifacts are screenshots.</li>
+     *        <li>
+     *        <p>
+     *        FILE: The artifacts are files.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LOG: The artifacts are logs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SCREENSHOT: The artifacts are screenshots.
+     *        </p>
+     *        </li>
      * @see ArtifactCategory
      */
 
@@ -215,9 +323,21 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Allowed values include:
      * </p>
      * <ul>
-     * <li>FILE: The artifacts are files.</li>
-     * <li>LOG: The artifacts are logs.</li>
-     * <li>SCREENSHOT: The artifacts are screenshots.</li>
+     * <li>
+     * <p>
+     * FILE: The artifacts are files.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LOG: The artifacts are logs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SCREENSHOT: The artifacts are screenshots.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -226,9 +346,21 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Allowed values include:
      *        </p>
      *        <ul>
-     *        <li>FILE: The artifacts are files.</li>
-     *        <li>LOG: The artifacts are logs.</li>
-     *        <li>SCREENSHOT: The artifacts are screenshots.</li>
+     *        <li>
+     *        <p>
+     *        FILE: The artifacts are files.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LOG: The artifacts are logs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SCREENSHOT: The artifacts are screenshots.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArtifactCategory
      */

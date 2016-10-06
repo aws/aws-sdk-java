@@ -609,8 +609,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (clientOptions.isDualstackEnabled()) {
             if (getRegion() == null) {
                 throw new IllegalStateException("The dualstack mode of Amazon S3 cannot be used without specifiying a region");
-            } else if (clientOptions.isAccelerateModeEnabled()) {
-                throw new IllegalStateException("The dualstack mode of Amazon S3 cannot be used with accelerate mode");
             }
         }
     }
@@ -3923,7 +3921,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // request operation is accelerate mode supported, then the request will use the
         // s3-accelerate endpoint to performe the operations.
         if (clientOptions.isAccelerateModeEnabled() && !(originalRequest instanceof S3AccelerateUnsupported)) {
-            endpoint = RuntimeHttpUtils.toUri(Constants.S3_ACCELERATE_HOSTNAME, clientConfiguration);
+            if (clientOptions.isDualstackEnabled()) {
+                endpoint = RuntimeHttpUtils.toUri(Constants.S3_ACCELERATE_DUALSTACK_HOSTNAME, clientConfiguration);
+            } else {
+                endpoint = RuntimeHttpUtils.toUri(Constants.S3_ACCELERATE_HOSTNAME, clientConfiguration);
+            }
         }
 
         /** Validates the specified client options before creating the request */
@@ -3954,7 +3956,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     private ServiceEndpointBuilder getBuilder(URI endpoint, String protocol, boolean useDefaultBuilder) {
-        if(clientOptions.isDualstackEnabled()) {
+        if(clientOptions.isDualstackEnabled() && !clientOptions.isAccelerateModeEnabled()) {
             return new DualstackEndpointBuilder(getServiceNameIntern(), protocol, getRegion().toAWSRegion());
         } else {
             if(useDefaultBuilder) {

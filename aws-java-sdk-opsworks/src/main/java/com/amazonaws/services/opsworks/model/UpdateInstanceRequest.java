@@ -57,7 +57,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     private String hostname;
     /**
      * <p>
-     * The instance's operating system, which must be set to one of the following.
+     * The instance's operating system, which must be set to one of the following. You cannot update an instance that is
+     * using a custom AMI.
      * </p>
      * <ul>
      * <li>
@@ -90,11 +91,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * A custom AMI: <code>Custom</code>.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information on the supported operating systems, see <a
@@ -120,15 +116,10 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     private String os;
     /**
      * <p>
-     * A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating
-     * systems. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that
+     * the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance.
+     * UpdateInstance does not work on instances that are using custom AMIs.
      * </p>
-     * <note>
-     * <p>
-     * If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
-     * </p>
-     * </note>
      */
     private String amiId;
     /**
@@ -490,7 +481,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The instance's operating system, which must be set to one of the following.
+     * The instance's operating system, which must be set to one of the following. You cannot update an instance that is
+     * using a custom AMI.
      * </p>
      * <ul>
      * <li>
@@ -523,11 +515,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * A custom AMI: <code>Custom</code>.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information on the supported operating systems, see <a
@@ -551,7 +538,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </note>
      * 
      * @param os
-     *        The instance's operating system, which must be set to one of the following.</p>
+     *        The instance's operating system, which must be set to one of the following. You cannot update an instance
+     *        that is using a custom AMI.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -583,11 +571,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        A custom AMI: <code>Custom</code>.
-     *        </p>
-     *        </li>
      *        </ul>
      *        <p>
      *        For more information on the supported operating systems, see <a
@@ -616,7 +599,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The instance's operating system, which must be set to one of the following.
+     * The instance's operating system, which must be set to one of the following. You cannot update an instance that is
+     * using a custom AMI.
      * </p>
      * <ul>
      * <li>
@@ -649,11 +633,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * A custom AMI: <code>Custom</code>.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information on the supported operating systems, see <a
@@ -676,7 +655,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * </note>
      * 
-     * @return The instance's operating system, which must be set to one of the following.</p>
+     * @return The instance's operating system, which must be set to one of the following. You cannot update an instance
+     *         that is using a custom AMI.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -708,11 +688,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         A custom AMI: <code>Custom</code>.
-     *         </p>
-     *         </li>
      *         </ul>
      *         <p>
      *         For more information on the supported operating systems, see <a
@@ -741,7 +716,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The instance's operating system, which must be set to one of the following.
+     * The instance's operating system, which must be set to one of the following. You cannot update an instance that is
+     * using a custom AMI.
      * </p>
      * <ul>
      * <li>
@@ -774,11 +750,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * A custom AMI: <code>Custom</code>.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information on the supported operating systems, see <a
@@ -802,7 +773,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </note>
      * 
      * @param os
-     *        The instance's operating system, which must be set to one of the following.</p>
+     *        The instance's operating system, which must be set to one of the following. You cannot update an instance
+     *        that is using a custom AMI.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -832,11 +804,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
      *        <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
      *        <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        A custom AMI: <code>Custom</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -869,24 +836,15 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating
-     * systems. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that
+     * the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance.
+     * UpdateInstance does not work on instances that are using custom AMIs.
      * </p>
-     * <note>
-     * <p>
-     * If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
-     * </p>
-     * </note>
      * 
      * @param amiId
-     *        A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating
-     *        systems. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
-     *        </p> <note>
-     *        <p>
-     *        If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
-     *        </p>
+     *        The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI
+     *        ID that the instance is already using. You cannot apply a new AMI to an instance by running
+     *        UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs.
      */
 
     public void setAmiId(String amiId) {
@@ -895,23 +853,14 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating
-     * systems. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that
+     * the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance.
+     * UpdateInstance does not work on instances that are using custom AMIs.
      * </p>
-     * <note>
-     * <p>
-     * If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
-     * </p>
-     * </note>
      * 
-     * @return A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported
-     *         operating systems. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *         >Instances</a> </p> <note>
-     *         <p>
-     *         If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
-     *         </p>
+     * @return The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI
+     *         ID that the instance is already using. You cannot apply a new AMI to an instance by running
+     *         UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs.
      */
 
     public String getAmiId() {
@@ -920,24 +869,15 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating
-     * systems. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that
+     * the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance.
+     * UpdateInstance does not work on instances that are using custom AMIs.
      * </p>
-     * <note>
-     * <p>
-     * If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
-     * </p>
-     * </note>
      * 
      * @param amiId
-     *        A custom AMI ID to be used to create the instance. The AMI must be based on one of the supported operating
-     *        systems. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
-     *        </p> <note>
-     *        <p>
-     *        If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
-     *        </p>
+     *        The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI
+     *        ID that the instance is already using. You cannot apply a new AMI to an instance by running
+     *        UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

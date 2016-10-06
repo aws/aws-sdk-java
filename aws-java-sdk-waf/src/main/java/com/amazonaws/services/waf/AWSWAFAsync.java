@@ -39,13 +39,29 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>ByteMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateByteMatchSet</code> request.</li>
-     * <li>Submit a <code>CreateByteMatchSet</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <code>UpdateByteMatchSet</code> request.</li>
-     * <li>Submit an <a>UpdateByteMatchSet</a> request to specify the part of the request that you want AWS WAF to
-     * inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateByteMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateByteMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <code>UpdateByteMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateByteMatchSet</a> request to specify the part of the request that you want AWS WAF to inspect
+     * (for example, the header or the URI) and the value that you want AWS WAF to watch for.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -69,13 +85,29 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>ByteMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateByteMatchSet</code> request.</li>
-     * <li>Submit a <code>CreateByteMatchSet</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <code>UpdateByteMatchSet</code> request.</li>
-     * <li>Submit an <a>UpdateByteMatchSet</a> request to specify the part of the request that you want AWS WAF to
-     * inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateByteMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateByteMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <code>UpdateByteMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateByteMatchSet</a> request to specify the part of the request that you want AWS WAF to inspect
+     * (for example, the header or the URI) and the value that you want AWS WAF to watch for.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -104,12 +136,28 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure an <code>IPSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateIPSet</code> request.</li>
-     * <li>Submit a <code>CreateIPSet</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateIPSet</a> request.</li>
-     * <li>Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want AWS WAF to watch for.</li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateIPSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateIPSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateIPSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want AWS WAF to watch for.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -133,12 +181,28 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure an <code>IPSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateIPSet</code> request.</li>
-     * <li>Submit a <code>CreateIPSet</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateIPSet</a> request.</li>
-     * <li>Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want AWS WAF to watch for.</li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateIPSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateIPSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateIPSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want AWS WAF to watch for.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -164,8 +228,16 @@ public interface AWSWAFAsync extends AWSWAF {
      * you add the following to a <code>Rule</code>:
      * </p>
      * <ul>
-     * <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code></li>
-     * <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code> header</li>
+     * <li>
+     * <p>
+     * An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code> header
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want to blocks requests that
@@ -176,17 +248,41 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>Rule</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Create and update the predicates that you want to include in the <code>Rule</code>. For more information, see
-     * <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateRule</code> request.</li>
-     * <li>Submit a <code>CreateRule</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateRule</a> request.</li>
-     * <li>Submit an <code>UpdateRule</code> request to specify the predicates that you want to include in the
-     * <code>Rule</code>.</li>
-     * <li>Create and update a <code>WebACL</code> that contains the <code>Rule</code>. For more information, see
-     * <a>CreateWebACL</a>.</li>
+     * <li>
+     * <p>
+     * Create and update the predicates that you want to include in the <code>Rule</code>. For more information, see
+     * <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateRule</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRule</code> request to specify the predicates that you want to include in the
+     * <code>Rule</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update a <code>WebACL</code> that contains the <code>Rule</code>. For more information, see
+     * <a>CreateWebACL</a>.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -207,8 +303,16 @@ public interface AWSWAFAsync extends AWSWAF {
      * you add the following to a <code>Rule</code>:
      * </p>
      * <ul>
-     * <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code></li>
-     * <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code> header</li>
+     * <li>
+     * <p>
+     * An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code> header
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want to blocks requests that
@@ -219,17 +323,41 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>Rule</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Create and update the predicates that you want to include in the <code>Rule</code>. For more information, see
-     * <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateRule</code> request.</li>
-     * <li>Submit a <code>CreateRule</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateRule</a> request.</li>
-     * <li>Submit an <code>UpdateRule</code> request to specify the predicates that you want to include in the
-     * <code>Rule</code>.</li>
-     * <li>Create and update a <code>WebACL</code> that contains the <code>Rule</code>. For more information, see
-     * <a>CreateWebACL</a>.</li>
+     * <li>
+     * <p>
+     * Create and update the predicates that you want to include in the <code>Rule</code>. For more information, see
+     * <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateRule</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRule</code> request to specify the predicates that you want to include in the
+     * <code>Rule</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update a <code>WebACL</code> that contains the <code>Rule</code>. For more information, see
+     * <a>CreateWebACL</a>.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -259,13 +387,29 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>SizeConstraintSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateSizeConstraintSet</code> request.</li>
-     * <li>Submit a <code>CreateSizeConstraintSet</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <code>UpdateSizeConstraintSet</code> request.</li>
-     * <li>Submit an <a>UpdateSizeConstraintSet</a> request to specify the part of the request that you want AWS WAF to
-     * inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateSizeConstraintSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateSizeConstraintSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <code>UpdateSizeConstraintSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateSizeConstraintSet</a> request to specify the part of the request that you want AWS WAF to
+     * inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -290,13 +434,29 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>SizeConstraintSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateSizeConstraintSet</code> request.</li>
-     * <li>Submit a <code>CreateSizeConstraintSet</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <code>UpdateSizeConstraintSet</code> request.</li>
-     * <li>Submit an <a>UpdateSizeConstraintSet</a> request to specify the part of the request that you want AWS WAF to
-     * inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateSizeConstraintSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateSizeConstraintSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <code>UpdateSizeConstraintSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateSizeConstraintSet</a> request to specify the part of the request that you want AWS WAF to
+     * inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -324,13 +484,29 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>SqlInjectionMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateSqlInjectionMatchSet</code> request.</li>
-     * <li>Submit a <code>CreateSqlInjectionMatchSet</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateSqlInjectionMatchSet</a> request.</li>
-     * <li>Submit an <a>UpdateSqlInjectionMatchSet</a> request to specify the parts of web requests in which you want to
-     * allow, block, or count malicious SQL code.</li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateSqlInjectionMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateSqlInjectionMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateSqlInjectionMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateSqlInjectionMatchSet</a> request to specify the parts of web requests in which you want to
+     * allow, block, or count malicious SQL code.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -355,13 +531,29 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>SqlInjectionMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateSqlInjectionMatchSet</code> request.</li>
-     * <li>Submit a <code>CreateSqlInjectionMatchSet</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateSqlInjectionMatchSet</a> request.</li>
-     * <li>Submit an <a>UpdateSqlInjectionMatchSet</a> request to specify the parts of web requests in which you want to
-     * allow, block, or count malicious SQL code.</li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateSqlInjectionMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateSqlInjectionMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateSqlInjectionMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateSqlInjectionMatchSet</a> request to specify the parts of web requests in which you want to
+     * allow, block, or count malicious SQL code.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -396,20 +588,43 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>WebACL</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Create and update the <code>ByteMatchSet</code> objects and other predicates that you want to include in
+     * <li>
+     * <p>
+     * Create and update the <code>ByteMatchSet</code> objects and other predicates that you want to include in
      * <code>Rules</code>. For more information, see <a>CreateByteMatchSet</a>, <a>UpdateByteMatchSet</a>,
      * <a>CreateIPSet</a>, <a>UpdateIPSet</a>, <a>CreateSqlInjectionMatchSet</a>, and <a>UpdateSqlInjectionMatchSet</a>.
+     * </p>
      * </li>
-     * <li>Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>. For more
-     * information, see <a>CreateRule</a> and <a>UpdateRule</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateWebACL</code> request.</li>
-     * <li>Submit a <code>CreateWebACL</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateWebACL</a> request.</li>
-     * <li>Submit an <a>UpdateWebACL</a> request to specify the <code>Rules</code> that you want to include in the
+     * <li>
+     * <p>
+     * Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>. For more
+     * information, see <a>CreateRule</a> and <a>UpdateRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateWebACL</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateWebACL</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateWebACL</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateWebACL</a> request to specify the <code>Rules</code> that you want to include in the
      * <code>WebACL</code>, to specify the default action, and to associate the <code>WebACL</code> with a CloudFront
-     * distribution.</li>
+     * distribution.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API, see the <a
@@ -437,20 +652,43 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>WebACL</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Create and update the <code>ByteMatchSet</code> objects and other predicates that you want to include in
+     * <li>
+     * <p>
+     * Create and update the <code>ByteMatchSet</code> objects and other predicates that you want to include in
      * <code>Rules</code>. For more information, see <a>CreateByteMatchSet</a>, <a>UpdateByteMatchSet</a>,
      * <a>CreateIPSet</a>, <a>UpdateIPSet</a>, <a>CreateSqlInjectionMatchSet</a>, and <a>UpdateSqlInjectionMatchSet</a>.
+     * </p>
      * </li>
-     * <li>Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>. For more
-     * information, see <a>CreateRule</a> and <a>UpdateRule</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateWebACL</code> request.</li>
-     * <li>Submit a <code>CreateWebACL</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateWebACL</a> request.</li>
-     * <li>Submit an <a>UpdateWebACL</a> request to specify the <code>Rules</code> that you want to include in the
+     * <li>
+     * <p>
+     * Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>. For more
+     * information, see <a>CreateRule</a> and <a>UpdateRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateWebACL</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateWebACL</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateWebACL</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateWebACL</a> request to specify the <code>Rules</code> that you want to include in the
      * <code>WebACL</code>, to specify the default action, and to associate the <code>WebACL</code> with a CloudFront
-     * distribution.</li>
+     * distribution.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API, see the <a
@@ -478,13 +716,29 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure an <code>XssMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateXssMatchSet</code> request.</li>
-     * <li>Submit a <code>CreateXssMatchSet</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateXssMatchSet</a> request.</li>
-     * <li>Submit an <a>UpdateXssMatchSet</a> request to specify the parts of web requests in which you want to allow,
-     * block, or count cross-site scripting attacks.</li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateXssMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateXssMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateXssMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateXssMatchSet</a> request to specify the parts of web requests in which you want to allow,
+     * block, or count cross-site scripting attacks.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -508,13 +762,29 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure an <code>XssMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>CreateXssMatchSet</code> request.</li>
-     * <li>Submit a <code>CreateXssMatchSet</code> request.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateXssMatchSet</a> request.</li>
-     * <li>Submit an <a>UpdateXssMatchSet</a> request to specify the parts of web requests in which you want to allow,
-     * block, or count cross-site scripting attacks.</li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateXssMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateXssMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateXssMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateXssMatchSet</a> request to specify the parts of web requests in which you want to allow,
+     * block, or count cross-site scripting attacks.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -545,11 +815,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To permanently delete a <code>ByteMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>ByteMatchSet</code> to remove filters, if any. For more information, see
-     * <a>UpdateByteMatchSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteByteMatchSet</code> request.</li>
-     * <li>Submit a <code>DeleteByteMatchSet</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>ByteMatchSet</code> to remove filters, if any. For more information, see
+     * <a>UpdateByteMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteByteMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteByteMatchSet</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteByteMatchSetRequest
@@ -570,11 +852,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To permanently delete a <code>ByteMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>ByteMatchSet</code> to remove filters, if any. For more information, see
-     * <a>UpdateByteMatchSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteByteMatchSet</code> request.</li>
-     * <li>Submit a <code>DeleteByteMatchSet</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>ByteMatchSet</code> to remove filters, if any. For more information, see
+     * <a>UpdateByteMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteByteMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteByteMatchSet</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteByteMatchSetRequest
@@ -600,11 +894,22 @@ public interface AWSWAFAsync extends AWSWAF {
      * To permanently delete an <code>IPSet</code> from AWS WAF, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>IPSet</code> to remove IP address ranges, if any. For more information, see
-     * <a>UpdateIPSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteIPSet</code> request.</li>
-     * <li>Submit a <code>DeleteIPSet</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>IPSet</code> to remove IP address ranges, if any. For more information, see <a>UpdateIPSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteIPSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteIPSet</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteIPSetRequest
@@ -625,11 +930,22 @@ public interface AWSWAFAsync extends AWSWAF {
      * To permanently delete an <code>IPSet</code> from AWS WAF, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>IPSet</code> to remove IP address ranges, if any. For more information, see
-     * <a>UpdateIPSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteIPSet</code> request.</li>
-     * <li>Submit a <code>DeleteIPSet</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>IPSet</code> to remove IP address ranges, if any. For more information, see <a>UpdateIPSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteIPSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteIPSet</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteIPSetRequest
@@ -655,10 +971,22 @@ public interface AWSWAFAsync extends AWSWAF {
      * To permanently delete a <code>Rule</code> from AWS WAF, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>Rule</code> to remove predicates, if any. For more information, see <a>UpdateRule</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteRule</code> request.</li>
-     * <li>Submit a <code>DeleteRule</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>Rule</code> to remove predicates, if any. For more information, see <a>UpdateRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteRule</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteRuleRequest
@@ -679,10 +1007,22 @@ public interface AWSWAFAsync extends AWSWAF {
      * To permanently delete a <code>Rule</code> from AWS WAF, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>Rule</code> to remove predicates, if any. For more information, see <a>UpdateRule</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteRule</code> request.</li>
-     * <li>Submit a <code>DeleteRule</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>Rule</code> to remove predicates, if any. For more information, see <a>UpdateRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteRule</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteRuleRequest
@@ -708,11 +1048,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To permanently delete a <code>SizeConstraintSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>SizeConstraintSet</code> to remove filters, if any. For more information, see
-     * <a>UpdateSizeConstraintSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteSizeConstraintSet</code> request.</li>
-     * <li>Submit a <code>DeleteSizeConstraintSet</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>SizeConstraintSet</code> to remove filters, if any. For more information, see
+     * <a>UpdateSizeConstraintSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteSizeConstraintSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteSizeConstraintSet</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteSizeConstraintSetRequest
@@ -733,11 +1085,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To permanently delete a <code>SizeConstraintSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>SizeConstraintSet</code> to remove filters, if any. For more information, see
-     * <a>UpdateSizeConstraintSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteSizeConstraintSet</code> request.</li>
-     * <li>Submit a <code>DeleteSizeConstraintSet</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>SizeConstraintSet</code> to remove filters, if any. For more information, see
+     * <a>UpdateSizeConstraintSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteSizeConstraintSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteSizeConstraintSet</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteSizeConstraintSetRequest
@@ -763,11 +1127,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To permanently delete a <code>SqlInjectionMatchSet</code> from AWS WAF, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>SqlInjectionMatchSet</code> to remove filters, if any. For more information, see
-     * <a>UpdateSqlInjectionMatchSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteSqlInjectionMatchSet</code> request.</li>
-     * <li>Submit a <code>DeleteSqlInjectionMatchSet</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>SqlInjectionMatchSet</code> to remove filters, if any. For more information, see
+     * <a>UpdateSqlInjectionMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteSqlInjectionMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteSqlInjectionMatchSet</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteSqlInjectionMatchSetRequest
@@ -790,11 +1166,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To permanently delete a <code>SqlInjectionMatchSet</code> from AWS WAF, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>SqlInjectionMatchSet</code> to remove filters, if any. For more information, see
-     * <a>UpdateSqlInjectionMatchSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteSqlInjectionMatchSet</code> request.</li>
-     * <li>Submit a <code>DeleteSqlInjectionMatchSet</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>SqlInjectionMatchSet</code> to remove filters, if any. For more information, see
+     * <a>UpdateSqlInjectionMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteSqlInjectionMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteSqlInjectionMatchSet</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteSqlInjectionMatchSetRequest
@@ -819,11 +1207,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To delete a <code>WebACL</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>WebACL</code> to remove <code>Rules</code>, if any. For more information, see
-     * <a>UpdateWebACL</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteWebACL</code> request.</li>
-     * <li>Submit a <code>DeleteWebACL</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>WebACL</code> to remove <code>Rules</code>, if any. For more information, see
+     * <a>UpdateWebACL</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteWebACL</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteWebACL</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteWebACLRequest
@@ -841,11 +1241,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To delete a <code>WebACL</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>WebACL</code> to remove <code>Rules</code>, if any. For more information, see
-     * <a>UpdateWebACL</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteWebACL</code> request.</li>
-     * <li>Submit a <code>DeleteWebACL</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>WebACL</code> to remove <code>Rules</code>, if any. For more information, see
+     * <a>UpdateWebACL</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteWebACL</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteWebACL</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteWebACLRequest
@@ -871,11 +1283,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To permanently delete an <code>XssMatchSet</code> from AWS WAF, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>XssMatchSet</code> to remove filters, if any. For more information, see
-     * <a>UpdateXssMatchSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteXssMatchSet</code> request.</li>
-     * <li>Submit a <code>DeleteXssMatchSet</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>XssMatchSet</code> to remove filters, if any. For more information, see
+     * <a>UpdateXssMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteXssMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteXssMatchSet</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteXssMatchSetRequest
@@ -897,11 +1321,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To permanently delete an <code>XssMatchSet</code> from AWS WAF, perform the following steps:
      * </p>
      * <ol>
-     * <li>Update the <code>XssMatchSet</code> to remove filters, if any. For more information, see
-     * <a>UpdateXssMatchSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of a <code>DeleteXssMatchSet</code> request.</li>
-     * <li>Submit a <code>DeleteXssMatchSet</code> request.</li>
+     * <li>
+     * <p>
+     * Update the <code>XssMatchSet</code> to remove filters, if any. For more information, see
+     * <a>UpdateXssMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteXssMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteXssMatchSet</code> request.
+     * </p>
+     * </li>
      * </ol>
      * 
      * @param deleteXssMatchSetRequest
@@ -1002,10 +1438,22 @@ public interface AWSWAFAsync extends AWSWAF {
      * <code>ChangeTokenStatus</code> is one of the following values:
      * </p>
      * <ul>
-     * <li><code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>, but you
-     * haven't used it yet in a call to create, update, or delete an AWS WAF object.</li>
-     * <li><code>PENDING</code>: AWS WAF is propagating the create, update, or delete request to all AWS WAF servers.</li>
-     * <li><code>IN_SYNC</code>: Propagation is complete.</li>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>, but you haven't
+     * used it yet in a call to create, update, or delete an AWS WAF object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING</code>: AWS WAF is propagating the create, update, or delete request to all AWS WAF servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_SYNC</code>: Propagation is complete.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param getChangeTokenStatusRequest
@@ -1020,10 +1468,22 @@ public interface AWSWAFAsync extends AWSWAF {
      * <code>ChangeTokenStatus</code> is one of the following values:
      * </p>
      * <ul>
-     * <li><code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>, but you
-     * haven't used it yet in a call to create, update, or delete an AWS WAF object.</li>
-     * <li><code>PENDING</code>: AWS WAF is propagating the create, update, or delete request to all AWS WAF servers.</li>
-     * <li><code>IN_SYNC</code>: Propagation is complete.</li>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>, but you haven't
+     * used it yet in a call to create, update, or delete an AWS WAF object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING</code>: AWS WAF is propagating the create, update, or delete request to all AWS WAF servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_SYNC</code>: Propagation is complete.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param getChangeTokenStatusRequest
@@ -1449,16 +1909,36 @@ public interface AWSWAFAsync extends AWSWAF {
      * <code>ByteMatchTuple</code> object, you specify the following values:
      * </p>
      * <ul>
-     * <li>Whether to insert or delete the object from the array. If you want to change a
-     * <code>ByteMatchSetUpdate</code> object, you delete the existing object and add a new one.</li>
-     * <li>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the
-     * <code>User-Agent</code> header.</li>
-     * <li>The bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to look for. For
-     * more information, including how you specify the values for the AWS WAF API and the AWS CLI or SDKs, see
-     * <code>TargetString</code> in the <a>ByteMatchTuple</a> data type.</li>
-     * <li>Where to look, such as at the beginning or the end of a query string.</li>
-     * <li>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it
-     * for the specified string.</li>
+     * <li>
+     * <p>
+     * Whether to insert or delete the object from the array. If you want to change a <code>ByteMatchSetUpdate</code>
+     * object, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the
+     * <code>User-Agent</code> header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to look for. For more
+     * information, including how you specify the values for the AWS WAF API and the AWS CLI or SDKs, see
+     * <code>TargetString</code> in the <a>ByteMatchTuple</a> data type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Where to look, such as at the beginning or the end of a query string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for
+     * the specified string.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For example, you can add a <code>ByteMatchSetUpdate</code> object that matches web requests in which
@@ -1469,11 +1949,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>ByteMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Create a <code>ByteMatchSet.</code> For more information, see <a>CreateByteMatchSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of an <code>UpdateByteMatchSet</code> request.</li>
-     * <li>Submit an <code>UpdateByteMatchSet</code> request to specify the part of the request that you want AWS WAF to
-     * inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * <li>
+     * <p>
+     * Create a <code>ByteMatchSet.</code> For more information, see <a>CreateByteMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <code>UpdateByteMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateByteMatchSet</code> request to specify the part of the request that you want AWS WAF to
+     * inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -1492,16 +1984,36 @@ public interface AWSWAFAsync extends AWSWAF {
      * <code>ByteMatchTuple</code> object, you specify the following values:
      * </p>
      * <ul>
-     * <li>Whether to insert or delete the object from the array. If you want to change a
-     * <code>ByteMatchSetUpdate</code> object, you delete the existing object and add a new one.</li>
-     * <li>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the
-     * <code>User-Agent</code> header.</li>
-     * <li>The bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to look for. For
-     * more information, including how you specify the values for the AWS WAF API and the AWS CLI or SDKs, see
-     * <code>TargetString</code> in the <a>ByteMatchTuple</a> data type.</li>
-     * <li>Where to look, such as at the beginning or the end of a query string.</li>
-     * <li>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it
-     * for the specified string.</li>
+     * <li>
+     * <p>
+     * Whether to insert or delete the object from the array. If you want to change a <code>ByteMatchSetUpdate</code>
+     * object, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the
+     * <code>User-Agent</code> header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to look for. For more
+     * information, including how you specify the values for the AWS WAF API and the AWS CLI or SDKs, see
+     * <code>TargetString</code> in the <a>ByteMatchTuple</a> data type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Where to look, such as at the beginning or the end of a query string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for
+     * the specified string.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For example, you can add a <code>ByteMatchSetUpdate</code> object that matches web requests in which
@@ -1512,11 +2024,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>ByteMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Create a <code>ByteMatchSet.</code> For more information, see <a>CreateByteMatchSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of an <code>UpdateByteMatchSet</code> request.</li>
-     * <li>Submit an <code>UpdateByteMatchSet</code> request to specify the part of the request that you want AWS WAF to
-     * inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * <li>
+     * <p>
+     * Create a <code>ByteMatchSet.</code> For more information, see <a>CreateByteMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <code>UpdateByteMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateByteMatchSet</code> request to specify the part of the request that you want AWS WAF to
+     * inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -1540,18 +2064,55 @@ public interface AWSWAFAsync extends AWSWAF {
      * object, you specify the following values:
      * </p>
      * <ul>
-     * <li>Whether to insert or delete the object from the array. If you want to change an <code>IPSetDescriptor</code>
-     * object, you delete the existing object and add a new one.</li>
-     * <li>The IP address version, <code>IPv4</code>.</li>
-     * <li>The IP address in CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP addresses from
+     * <li>
+     * <p>
+     * Whether to insert or delete the object from the array. If you want to change an <code>IPSetDescriptor</code>
+     * object, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The IP address version, <code>IPv4</code> or <code>IPv6</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The IP address in CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP addresses from
      * <code>192.0.2.0</code> to <code>192.0.2.255</code>) or <code>192.0.2.44/32</code> (for the individual IP address
-     * <code>192.0.2.44</code>).</li>
+     * <code>192.0.2.44</code>).
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * AWS WAF supports /8, /16, /24, and /32 IP address ranges. For more information about CIDR notation, see the
-     * Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain
-     * Routing</a>.
+     * AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
+     * For more information about CIDR notation, see the Wikipedia entry <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
+     * <p>
+     * IPv6 addresses can be represented using any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 1111:0000:0000:0000:0000:0000:0000:0111/128
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1111:0:0:0:0:0:0:0111/128
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1111::0111/128
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1111::111/128
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * You use an <code>IPSet</code> to specify which web requests you want to allow or block based on the IP addresses
      * that the requests originated from. For example, if you're receiving a lot of requests from one or a small number
@@ -1562,10 +2123,22 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure an <code>IPSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Submit a <a>CreateIPSet</a> request.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of an <a>UpdateIPSet</a> request.</li>
-     * <li>Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want AWS WAF to watch for.</li>
+     * <li>
+     * <p>
+     * Submit a <a>CreateIPSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <a>UpdateIPSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want AWS WAF to watch for.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * When you update an <code>IPSet</code>, you specify the IP addresses that you want to add and/or the IP addresses
@@ -1589,18 +2162,55 @@ public interface AWSWAFAsync extends AWSWAF {
      * object, you specify the following values:
      * </p>
      * <ul>
-     * <li>Whether to insert or delete the object from the array. If you want to change an <code>IPSetDescriptor</code>
-     * object, you delete the existing object and add a new one.</li>
-     * <li>The IP address version, <code>IPv4</code>.</li>
-     * <li>The IP address in CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP addresses from
+     * <li>
+     * <p>
+     * Whether to insert or delete the object from the array. If you want to change an <code>IPSetDescriptor</code>
+     * object, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The IP address version, <code>IPv4</code> or <code>IPv6</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The IP address in CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP addresses from
      * <code>192.0.2.0</code> to <code>192.0.2.255</code>) or <code>192.0.2.44/32</code> (for the individual IP address
-     * <code>192.0.2.44</code>).</li>
+     * <code>192.0.2.44</code>).
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * AWS WAF supports /8, /16, /24, and /32 IP address ranges. For more information about CIDR notation, see the
-     * Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain
-     * Routing</a>.
+     * AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
+     * For more information about CIDR notation, see the Wikipedia entry <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
+     * <p>
+     * IPv6 addresses can be represented using any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 1111:0000:0000:0000:0000:0000:0000:0111/128
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1111:0:0:0:0:0:0:0111/128
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1111::0111/128
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1111::111/128
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * You use an <code>IPSet</code> to specify which web requests you want to allow or block based on the IP addresses
      * that the requests originated from. For example, if you're receiving a lot of requests from one or a small number
@@ -1611,10 +2221,22 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure an <code>IPSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Submit a <a>CreateIPSet</a> request.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of an <a>UpdateIPSet</a> request.</li>
-     * <li>Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want AWS WAF to watch for.</li>
+     * <li>
+     * <p>
+     * Submit a <a>CreateIPSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <a>UpdateIPSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want AWS WAF to watch for.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * When you update an <code>IPSet</code>, you specify the IP addresses that you want to add and/or the IP addresses
@@ -1646,8 +2268,16 @@ public interface AWSWAFAsync extends AWSWAF {
      * <code>Rule</code>:
      * </p>
      * <ul>
-     * <li>A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in the <code>User-Agent</code> header</li>
-     * <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44</code></li>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in the <code>User-Agent</code> header
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <code>IPSet</code> that matches the IP address <code>192.0.2.44</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want to block requests that
@@ -1658,12 +2288,32 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>Rule</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Create and update the predicates that you want to include in the <code>Rule</code>.</li>
-     * <li>Create the <code>Rule</code>. See <a>CreateRule</a>.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateRule</a> request.</li>
-     * <li>Submit an <code>UpdateRule</code> request to add predicates to the <code>Rule</code>.</li>
-     * <li>Create and update a <code>WebACL</code> that contains the <code>Rule</code>. See <a>CreateWebACL</a>.</li>
+     * <li>
+     * <p>
+     * Create and update the predicates that you want to include in the <code>Rule</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create the <code>Rule</code>. See <a>CreateRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateRule</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRule</code> request to add predicates to the <code>Rule</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update a <code>WebACL</code> that contains the <code>Rule</code>. See <a>CreateWebACL</a>.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * If you want to replace one <code>ByteMatchSet</code> or <code>IPSet</code> with another, you delete the existing
@@ -1689,8 +2339,16 @@ public interface AWSWAFAsync extends AWSWAF {
      * <code>Rule</code>:
      * </p>
      * <ul>
-     * <li>A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in the <code>User-Agent</code> header</li>
-     * <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44</code></li>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in the <code>User-Agent</code> header
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <code>IPSet</code> that matches the IP address <code>192.0.2.44</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want to block requests that
@@ -1701,12 +2359,32 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>Rule</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Create and update the predicates that you want to include in the <code>Rule</code>.</li>
-     * <li>Create the <code>Rule</code>. See <a>CreateRule</a>.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateRule</a> request.</li>
-     * <li>Submit an <code>UpdateRule</code> request to add predicates to the <code>Rule</code>.</li>
-     * <li>Create and update a <code>WebACL</code> that contains the <code>Rule</code>. See <a>CreateWebACL</a>.</li>
+     * <li>
+     * <p>
+     * Create and update the predicates that you want to include in the <code>Rule</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create the <code>Rule</code>. See <a>CreateRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateRule</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRule</code> request to add predicates to the <code>Rule</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update a <code>WebACL</code> that contains the <code>Rule</code>. See <a>CreateWebACL</a>.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * If you want to replace one <code>ByteMatchSet</code> or <code>IPSet</code> with another, you delete the existing
@@ -1734,17 +2412,37 @@ public interface AWSWAFAsync extends AWSWAF {
      * <code>SizeConstraint</code> object, you specify the following values:
      * </p>
      * <ul>
-     * <li>Whether to insert or delete the object from the array. If you want to change a
-     * <code>SizeConstraintSetUpdate</code> object, you delete the existing object and add a new one.</li>
-     * <li>The part of a web request that you want AWS WAF to evaluate, such as the length of a query string or the
-     * length of the <code>User-Agent</code> header.</li>
-     * <li>Whether to perform any transformations on the request, such as converting it to lowercase, before checking
-     * its length. Note that transformations of the request body are not supported because the AWS resource forwards
-     * only the first <code>8192</code> bytes of your request to AWS WAF.</li>
-     * <li>A <code>ComparisonOperator</code> used for evaluating the selected part of the request against the specified
-     * <code>Size</code>, such as equals, greater than, less than, and so on.</li>
-     * <li>The length, in bytes, that you want AWS WAF to watch for in selected part of the request. The length is
-     * computed after applying the transformation.</li>
+     * <li>
+     * <p>
+     * Whether to insert or delete the object from the array. If you want to change a
+     * <code>SizeConstraintSetUpdate</code> object, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The part of a web request that you want AWS WAF to evaluate, such as the length of a query string or the length
+     * of the <code>User-Agent</code> header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether to perform any transformations on the request, such as converting it to lowercase, before checking its
+     * length. Note that transformations of the request body are not supported because the AWS resource forwards only
+     * the first <code>8192</code> bytes of your request to AWS WAF.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>ComparisonOperator</code> used for evaluating the selected part of the request against the specified
+     * <code>Size</code>, such as equals, greater than, less than, and so on.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The length, in bytes, that you want AWS WAF to watch for in selected part of the request. The length is computed
+     * after applying the transformation.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For example, you can add a <code>SizeConstraintSetUpdate</code> object that matches web requests in which the
@@ -1755,11 +2453,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>SizeConstraintSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Create a <code>SizeConstraintSet.</code> For more information, see <a>CreateSizeConstraintSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of an <code>UpdateSizeConstraintSet</code> request.</li>
-     * <li>Submit an <code>UpdateSizeConstraintSet</code> request to specify the part of the request that you want AWS
-     * WAF to inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * <li>
+     * <p>
+     * Create a <code>SizeConstraintSet.</code> For more information, see <a>CreateSizeConstraintSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <code>UpdateSizeConstraintSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateSizeConstraintSet</code> request to specify the part of the request that you want AWS WAF
+     * to inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -1778,17 +2488,37 @@ public interface AWSWAFAsync extends AWSWAF {
      * <code>SizeConstraint</code> object, you specify the following values:
      * </p>
      * <ul>
-     * <li>Whether to insert or delete the object from the array. If you want to change a
-     * <code>SizeConstraintSetUpdate</code> object, you delete the existing object and add a new one.</li>
-     * <li>The part of a web request that you want AWS WAF to evaluate, such as the length of a query string or the
-     * length of the <code>User-Agent</code> header.</li>
-     * <li>Whether to perform any transformations on the request, such as converting it to lowercase, before checking
-     * its length. Note that transformations of the request body are not supported because the AWS resource forwards
-     * only the first <code>8192</code> bytes of your request to AWS WAF.</li>
-     * <li>A <code>ComparisonOperator</code> used for evaluating the selected part of the request against the specified
-     * <code>Size</code>, such as equals, greater than, less than, and so on.</li>
-     * <li>The length, in bytes, that you want AWS WAF to watch for in selected part of the request. The length is
-     * computed after applying the transformation.</li>
+     * <li>
+     * <p>
+     * Whether to insert or delete the object from the array. If you want to change a
+     * <code>SizeConstraintSetUpdate</code> object, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The part of a web request that you want AWS WAF to evaluate, such as the length of a query string or the length
+     * of the <code>User-Agent</code> header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether to perform any transformations on the request, such as converting it to lowercase, before checking its
+     * length. Note that transformations of the request body are not supported because the AWS resource forwards only
+     * the first <code>8192</code> bytes of your request to AWS WAF.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>ComparisonOperator</code> used for evaluating the selected part of the request against the specified
+     * <code>Size</code>, such as equals, greater than, less than, and so on.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The length, in bytes, that you want AWS WAF to watch for in selected part of the request. The length is computed
+     * after applying the transformation.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For example, you can add a <code>SizeConstraintSetUpdate</code> object that matches web requests in which the
@@ -1799,11 +2529,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>SizeConstraintSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Create a <code>SizeConstraintSet.</code> For more information, see <a>CreateSizeConstraintSet</a>.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of an <code>UpdateSizeConstraintSet</code> request.</li>
-     * <li>Submit an <code>UpdateSizeConstraintSet</code> request to specify the part of the request that you want AWS
-     * WAF to inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * <li>
+     * <p>
+     * Create a <code>SizeConstraintSet.</code> For more information, see <a>CreateSizeConstraintSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <code>UpdateSizeConstraintSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateSizeConstraintSet</code> request to specify the part of the request that you want AWS WAF
+     * to inspect (for example, the header or the URI) and the value that you want AWS WAF to watch for.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -1827,12 +2569,24 @@ public interface AWSWAFAsync extends AWSWAF {
      * <code>SqlInjectionMatchTuple</code> object, you specify the following values:
      * </p>
      * <ul>
-     * <li><code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
-     * <code>SqlInjectionMatchTuple</code>, you delete the existing object and add a new one.</li>
-     * <li><code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF
-     * to inspect a header, the name of the header.</li>
-     * <li><code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
-     * inspecting the request for snippets of malicious SQL code.</li>
+     * <li>
+     * <p>
+     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
+     * <code>SqlInjectionMatchTuple</code>, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
+     * inspect a header, the name of the header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
+     * inspecting the request for snippets of malicious SQL code.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests you want to allow, block,
@@ -1844,11 +2598,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>SqlInjectionMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Submit a <a>CreateSqlInjectionMatchSet</a> request.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of an <a>UpdateIPSet</a> request.</li>
-     * <li>Submit an <code>UpdateSqlInjectionMatchSet</code> request to specify the parts of web requests that you want
-     * AWS WAF to inspect for snippets of SQL code.</li>
+     * <li>
+     * <p>
+     * Submit a <a>CreateSqlInjectionMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <a>UpdateIPSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateSqlInjectionMatchSet</code> request to specify the parts of web requests that you want AWS
+     * WAF to inspect for snippets of SQL code.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -1869,12 +2635,24 @@ public interface AWSWAFAsync extends AWSWAF {
      * <code>SqlInjectionMatchTuple</code> object, you specify the following values:
      * </p>
      * <ul>
-     * <li><code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
-     * <code>SqlInjectionMatchTuple</code>, you delete the existing object and add a new one.</li>
-     * <li><code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF
-     * to inspect a header, the name of the header.</li>
-     * <li><code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
-     * inspecting the request for snippets of malicious SQL code.</li>
+     * <li>
+     * <p>
+     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
+     * <code>SqlInjectionMatchTuple</code>, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
+     * inspect a header, the name of the header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
+     * inspecting the request for snippets of malicious SQL code.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests you want to allow, block,
@@ -1886,11 +2664,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure a <code>SqlInjectionMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Submit a <a>CreateSqlInjectionMatchSet</a> request.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of an <a>UpdateIPSet</a> request.</li>
-     * <li>Submit an <code>UpdateSqlInjectionMatchSet</code> request to specify the parts of web requests that you want
-     * AWS WAF to inspect for snippets of SQL code.</li>
+     * <li>
+     * <p>
+     * Submit a <a>CreateSqlInjectionMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <a>UpdateIPSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateSqlInjectionMatchSet</code> request to specify the parts of web requests that you want AWS
+     * WAF to inspect for snippets of SQL code.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -1917,37 +2707,77 @@ public interface AWSWAFAsync extends AWSWAF {
      * following values:
      * </p>
      * <ul>
-     * <li>A default action for the <code>WebACL</code>, either <code>ALLOW</code> or <code>BLOCK</code>. AWS WAF
-     * performs the default action if a request doesn't match the criteria in any of the <code>Rules</code> in a
-     * <code>WebACL</code>.</li>
-     * <li>The <code>Rules</code> that you want to add and/or delete. If you want to replace one <code>Rule</code> with
-     * another, you delete the existing <code>Rule</code> and add the new one.</li>
-     * <li>For each <code>Rule</code>, whether you want AWS WAF to allow requests, block requests, or count requests
-     * that match the conditions in the <code>Rule</code>.</li>
-     * <li>The order in which you want AWS WAF to evaluate the <code>Rules</code> in a <code>WebACL</code>. If you add
-     * more than one <code>Rule</code> to a <code>WebACL</code>, AWS WAF evaluates each request against the
+     * <li>
+     * <p>
+     * A default action for the <code>WebACL</code>, either <code>ALLOW</code> or <code>BLOCK</code>. AWS WAF performs
+     * the default action if a request doesn't match the criteria in any of the <code>Rules</code> in a
+     * <code>WebACL</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Rules</code> that you want to add and/or delete. If you want to replace one <code>Rule</code> with
+     * another, you delete the existing <code>Rule</code> and add the new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each <code>Rule</code>, whether you want AWS WAF to allow requests, block requests, or count requests that
+     * match the conditions in the <code>Rule</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The order in which you want AWS WAF to evaluate the <code>Rules</code> in a <code>WebACL</code>. If you add more
+     * than one <code>Rule</code> to a <code>WebACL</code>, AWS WAF evaluates each request against the
      * <code>Rules</code> in order based on the value of <code>Priority</code>. (The <code>Rule</code> that has the
      * lowest value for <code>Priority</code> is evaluated first.) When a web request matches all of the predicates
      * (such as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes
      * the corresponding action, allow or block, and doesn't evaluate the request against the remaining
-     * <code>Rules</code> in the <code>WebACL</code>, if any.</li>
-     * <li>The CloudFront distribution that you want to associate with the <code>WebACL</code>.</li>
+     * <code>Rules</code> in the <code>WebACL</code>, if any.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The CloudFront distribution that you want to associate with the <code>WebACL</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To create and configure a <code>WebACL</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Create and update the predicates that you want to include in <code>Rules</code>. For more information, see
+     * <li>
+     * <p>
+     * Create and update the predicates that you want to include in <code>Rules</code>. For more information, see
      * <a>CreateByteMatchSet</a>, <a>UpdateByteMatchSet</a>, <a>CreateIPSet</a>, <a>UpdateIPSet</a>,
-     * <a>CreateSqlInjectionMatchSet</a>, and <a>UpdateSqlInjectionMatchSet</a>.</li>
-     * <li>Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>. For more
-     * information, see <a>CreateRule</a> and <a>UpdateRule</a>.</li>
-     * <li>Create a <code>WebACL</code>. See <a>CreateWebACL</a>.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateWebACL</a> request.</li>
-     * <li>Submit an <code>UpdateWebACL</code> request to specify the <code>Rules</code> that you want to include in the
+     * <a>CreateSqlInjectionMatchSet</a>, and <a>UpdateSqlInjectionMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>. For more
+     * information, see <a>CreateRule</a> and <a>UpdateRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a <code>WebACL</code>. See <a>CreateWebACL</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateWebACL</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateWebACL</code> request to specify the <code>Rules</code> that you want to include in the
      * <code>WebACL</code>, to specify the default action, and to associate the <code>WebACL</code> with a CloudFront
-     * distribution.</li>
+     * distribution.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -1967,37 +2797,77 @@ public interface AWSWAFAsync extends AWSWAF {
      * following values:
      * </p>
      * <ul>
-     * <li>A default action for the <code>WebACL</code>, either <code>ALLOW</code> or <code>BLOCK</code>. AWS WAF
-     * performs the default action if a request doesn't match the criteria in any of the <code>Rules</code> in a
-     * <code>WebACL</code>.</li>
-     * <li>The <code>Rules</code> that you want to add and/or delete. If you want to replace one <code>Rule</code> with
-     * another, you delete the existing <code>Rule</code> and add the new one.</li>
-     * <li>For each <code>Rule</code>, whether you want AWS WAF to allow requests, block requests, or count requests
-     * that match the conditions in the <code>Rule</code>.</li>
-     * <li>The order in which you want AWS WAF to evaluate the <code>Rules</code> in a <code>WebACL</code>. If you add
-     * more than one <code>Rule</code> to a <code>WebACL</code>, AWS WAF evaluates each request against the
+     * <li>
+     * <p>
+     * A default action for the <code>WebACL</code>, either <code>ALLOW</code> or <code>BLOCK</code>. AWS WAF performs
+     * the default action if a request doesn't match the criteria in any of the <code>Rules</code> in a
+     * <code>WebACL</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Rules</code> that you want to add and/or delete. If you want to replace one <code>Rule</code> with
+     * another, you delete the existing <code>Rule</code> and add the new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each <code>Rule</code>, whether you want AWS WAF to allow requests, block requests, or count requests that
+     * match the conditions in the <code>Rule</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The order in which you want AWS WAF to evaluate the <code>Rules</code> in a <code>WebACL</code>. If you add more
+     * than one <code>Rule</code> to a <code>WebACL</code>, AWS WAF evaluates each request against the
      * <code>Rules</code> in order based on the value of <code>Priority</code>. (The <code>Rule</code> that has the
      * lowest value for <code>Priority</code> is evaluated first.) When a web request matches all of the predicates
      * (such as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes
      * the corresponding action, allow or block, and doesn't evaluate the request against the remaining
-     * <code>Rules</code> in the <code>WebACL</code>, if any.</li>
-     * <li>The CloudFront distribution that you want to associate with the <code>WebACL</code>.</li>
+     * <code>Rules</code> in the <code>WebACL</code>, if any.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The CloudFront distribution that you want to associate with the <code>WebACL</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To create and configure a <code>WebACL</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Create and update the predicates that you want to include in <code>Rules</code>. For more information, see
+     * <li>
+     * <p>
+     * Create and update the predicates that you want to include in <code>Rules</code>. For more information, see
      * <a>CreateByteMatchSet</a>, <a>UpdateByteMatchSet</a>, <a>CreateIPSet</a>, <a>UpdateIPSet</a>,
-     * <a>CreateSqlInjectionMatchSet</a>, and <a>UpdateSqlInjectionMatchSet</a>.</li>
-     * <li>Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>. For more
-     * information, see <a>CreateRule</a> and <a>UpdateRule</a>.</li>
-     * <li>Create a <code>WebACL</code>. See <a>CreateWebACL</a>.</li>
-     * <li>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-     * parameter of an <a>UpdateWebACL</a> request.</li>
-     * <li>Submit an <code>UpdateWebACL</code> request to specify the <code>Rules</code> that you want to include in the
+     * <a>CreateSqlInjectionMatchSet</a>, and <a>UpdateSqlInjectionMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>. For more
+     * information, see <a>CreateRule</a> and <a>UpdateRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a <code>WebACL</code>. See <a>CreateWebACL</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateWebACL</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateWebACL</code> request to specify the <code>Rules</code> that you want to include in the
      * <code>WebACL</code>, to specify the default action, and to associate the <code>WebACL</code> with a CloudFront
-     * distribution.</li>
+     * distribution.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -2021,12 +2891,24 @@ public interface AWSWAFAsync extends AWSWAF {
      * <code>XssMatchTuple</code> object, you specify the following values:
      * </p>
      * <ul>
-     * <li><code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
-     * <code>XssMatchTuple</code>, you delete the existing object and add a new one.</li>
-     * <li><code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF
-     * to inspect a header, the name of the header.</li>
-     * <li><code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
-     * inspecting the request for cross-site scripting attacks.</li>
+     * <li>
+     * <p>
+     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
+     * <code>XssMatchTuple</code>, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
+     * inspect a header, the name of the header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
+     * inspecting the request for cross-site scripting attacks.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * You use <code>XssMatchSet</code> objects to specify which CloudFront requests you want to allow, block, or count.
@@ -2038,11 +2920,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure an <code>XssMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Submit a <a>CreateXssMatchSet</a> request.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of an <a>UpdateIPSet</a> request.</li>
-     * <li>Submit an <code>UpdateXssMatchSet</code> request to specify the parts of web requests that you want AWS WAF
-     * to inspect for cross-site scripting attacks.</li>
+     * <li>
+     * <p>
+     * Submit a <a>CreateXssMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <a>UpdateIPSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateXssMatchSet</code> request to specify the parts of web requests that you want AWS WAF to
+     * inspect for cross-site scripting attacks.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -2062,12 +2956,24 @@ public interface AWSWAFAsync extends AWSWAF {
      * <code>XssMatchTuple</code> object, you specify the following values:
      * </p>
      * <ul>
-     * <li><code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
-     * <code>XssMatchTuple</code>, you delete the existing object and add a new one.</li>
-     * <li><code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF
-     * to inspect a header, the name of the header.</li>
-     * <li><code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
-     * inspecting the request for cross-site scripting attacks.</li>
+     * <li>
+     * <p>
+     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
+     * <code>XssMatchTuple</code>, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
+     * inspect a header, the name of the header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
+     * inspecting the request for cross-site scripting attacks.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * You use <code>XssMatchSet</code> objects to specify which CloudFront requests you want to allow, block, or count.
@@ -2079,11 +2985,23 @@ public interface AWSWAFAsync extends AWSWAF {
      * To create and configure an <code>XssMatchSet</code>, perform the following steps:
      * </p>
      * <ol>
-     * <li>Submit a <a>CreateXssMatchSet</a> request.</li>
-     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter
-     * of an <a>UpdateIPSet</a> request.</li>
-     * <li>Submit an <code>UpdateXssMatchSet</code> request to specify the parts of web requests that you want AWS WAF
-     * to inspect for cross-site scripting attacks.</li>
+     * <li>
+     * <p>
+     * Submit a <a>CreateXssMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <a>UpdateIPSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateXssMatchSet</code> request to specify the parts of web requests that you want AWS WAF to
+     * inspect for cross-site scripting attacks.
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a

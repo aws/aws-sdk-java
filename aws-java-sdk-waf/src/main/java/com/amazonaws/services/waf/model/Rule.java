@@ -21,10 +21,18 @@ import java.io.Serializable;
  * following predicates:
  * </p>
  * <ul>
- * <li>An <code>IPSet</code> that causes AWS WAF to search for web requests that originate from the IP address
- * <code>192.0.2.44</code></li>
- * <li>A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which the value of the
- * <code>User-Agent</code> header is <code>BadBot</code>.</li>
+ * <li>
+ * <p>
+ * An <code>IPSet</code> that causes AWS WAF to search for web requests that originate from the IP address
+ * <code>192.0.2.44</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which the value of the
+ * <code>User-Agent</code> header is <code>BadBot</code>.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * To match the settings in this <code>Rule</code>, a request must originate from <code>192.0.2.44</code> AND include a

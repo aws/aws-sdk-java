@@ -101,6 +101,12 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private SmsConfigurationType smsConfiguration;
+    /**
+     * <p>
+     * The configuration for AdminCreateUser requests.
+     * </p>
+     */
+    private AdminCreateUserConfigType adminCreateUserConfig;
 
     /**
      * <p>
@@ -782,6 +788,46 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The configuration for AdminCreateUser requests.
+     * </p>
+     * 
+     * @param adminCreateUserConfig
+     *        The configuration for AdminCreateUser requests.
+     */
+
+    public void setAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
+        this.adminCreateUserConfig = adminCreateUserConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for AdminCreateUser requests.
+     * </p>
+     * 
+     * @return The configuration for AdminCreateUser requests.
+     */
+
+    public AdminCreateUserConfigType getAdminCreateUserConfig() {
+        return this.adminCreateUserConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for AdminCreateUser requests.
+     * </p>
+     * 
+     * @param adminCreateUserConfig
+     *        The configuration for AdminCreateUser requests.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserPoolRequest withAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
+        setAdminCreateUserConfig(adminCreateUserConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -817,7 +863,9 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getEmailConfiguration() != null)
             sb.append("EmailConfiguration: " + getEmailConfiguration() + ",");
         if (getSmsConfiguration() != null)
-            sb.append("SmsConfiguration: " + getSmsConfiguration());
+            sb.append("SmsConfiguration: " + getSmsConfiguration() + ",");
+        if (getAdminCreateUserConfig() != null)
+            sb.append("AdminCreateUserConfig: " + getAdminCreateUserConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -884,6 +932,10 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getSmsConfiguration() != null && other.getSmsConfiguration().equals(this.getSmsConfiguration()) == false)
             return false;
+        if (other.getAdminCreateUserConfig() == null ^ this.getAdminCreateUserConfig() == null)
+            return false;
+        if (other.getAdminCreateUserConfig() != null && other.getAdminCreateUserConfig().equals(this.getAdminCreateUserConfig()) == false)
+            return false;
         return true;
     }
 
@@ -905,6 +957,7 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEmailConfiguration() == null) ? 0 : getEmailConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
         return hashCode;
     }
 

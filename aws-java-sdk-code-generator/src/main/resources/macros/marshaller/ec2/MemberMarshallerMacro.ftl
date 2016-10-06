@@ -27,7 +27,7 @@
             <#local listMemberType = listModel.memberType/>
             <#local memberVariableName = member.name?uncap_first/>
             <#local listIndex = memberVariableName  + "ListIndex"/>
-            <#local listVariable = memberVariableName + "List"/>
+            <#local listVariable = shape.variable.variableName + memberVariableName?cap_first + "List"/>
             <#local loopVariable = listVariable + "Value"/>
 
             <#if customConfig.useAutoConstructList>

@@ -24,7 +24,7 @@ public class ListRunsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The runs' ARNs.
+     * The Amazon Resource Name (ARN) of the project for which you want to list runs.
      * </p>
      */
     private String arn;
@@ -38,11 +38,11 @@ public class ListRunsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The runs' ARNs.
+     * The Amazon Resource Name (ARN) of the project for which you want to list runs.
      * </p>
      * 
      * @param arn
-     *        The runs' ARNs.
+     *        The Amazon Resource Name (ARN) of the project for which you want to list runs.
      */
 
     public void setArn(String arn) {
@@ -51,10 +51,10 @@ public class ListRunsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The runs' ARNs.
+     * The Amazon Resource Name (ARN) of the project for which you want to list runs.
      * </p>
      * 
-     * @return The runs' ARNs.
+     * @return The Amazon Resource Name (ARN) of the project for which you want to list runs.
      */
 
     public String getArn() {
@@ -63,11 +63,11 @@ public class ListRunsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The runs' ARNs.
+     * The Amazon Resource Name (ARN) of the project for which you want to list runs.
      * </p>
      * 
      * @param arn
-     *        The runs' ARNs.
+     *        The Amazon Resource Name (ARN) of the project for which you want to list runs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

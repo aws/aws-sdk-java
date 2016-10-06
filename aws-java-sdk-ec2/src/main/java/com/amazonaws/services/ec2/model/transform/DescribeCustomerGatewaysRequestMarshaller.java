@@ -42,37 +42,40 @@ public class DescribeCustomerGatewaysRequestMarshaller implements Marshaller<Req
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> customerGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeCustomerGatewaysRequest
+        com.amazonaws.internal.SdkInternalList<String> describeCustomerGatewaysRequestCustomerGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeCustomerGatewaysRequest
                 .getCustomerGatewayIds();
-        if (!customerGatewayIdsList.isEmpty() || !customerGatewayIdsList.isAutoConstruct()) {
+        if (!describeCustomerGatewaysRequestCustomerGatewayIdsList.isEmpty() || !describeCustomerGatewaysRequestCustomerGatewayIdsList.isAutoConstruct()) {
             int customerGatewayIdsListIndex = 1;
 
-            for (String customerGatewayIdsListValue : customerGatewayIdsList) {
-                if (customerGatewayIdsListValue != null) {
-                    request.addParameter("CustomerGatewayId." + customerGatewayIdsListIndex, StringUtils.fromString(customerGatewayIdsListValue));
+            for (String describeCustomerGatewaysRequestCustomerGatewayIdsListValue : describeCustomerGatewaysRequestCustomerGatewayIdsList) {
+                if (describeCustomerGatewaysRequestCustomerGatewayIdsListValue != null) {
+                    request.addParameter("CustomerGatewayId." + customerGatewayIdsListIndex,
+                            StringUtils.fromString(describeCustomerGatewaysRequestCustomerGatewayIdsListValue));
                 }
                 customerGatewayIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeCustomerGatewaysRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeCustomerGatewaysRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeCustomerGatewaysRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeCustomerGatewaysRequestFiltersList.isEmpty() || !describeCustomerGatewaysRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeCustomerGatewaysRequestFiltersListValue : describeCustomerGatewaysRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeCustomerGatewaysRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeCustomerGatewaysRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeCustomerGatewaysRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

@@ -42,36 +42,38 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> regionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeRegionsRequest
+        com.amazonaws.internal.SdkInternalList<String> describeRegionsRequestRegionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeRegionsRequest
                 .getRegionNames();
-        if (!regionNamesList.isEmpty() || !regionNamesList.isAutoConstruct()) {
+        if (!describeRegionsRequestRegionNamesList.isEmpty() || !describeRegionsRequestRegionNamesList.isAutoConstruct()) {
             int regionNamesListIndex = 1;
 
-            for (String regionNamesListValue : regionNamesList) {
-                if (regionNamesListValue != null) {
-                    request.addParameter("RegionName." + regionNamesListIndex, StringUtils.fromString(regionNamesListValue));
+            for (String describeRegionsRequestRegionNamesListValue : describeRegionsRequestRegionNamesList) {
+                if (describeRegionsRequestRegionNamesListValue != null) {
+                    request.addParameter("RegionName." + regionNamesListIndex, StringUtils.fromString(describeRegionsRequestRegionNamesListValue));
                 }
                 regionNamesListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeRegionsRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeRegionsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeRegionsRequest
+                .getFilters();
+        if (!describeRegionsRequestFiltersList.isEmpty() || !describeRegionsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeRegionsRequestFiltersListValue : describeRegionsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeRegionsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeRegionsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeRegionsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

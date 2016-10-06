@@ -42,14 +42,15 @@ public class DescribeConversionTasksRequestMarshaller implements Marshaller<Requ
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> conversionTaskIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeConversionTasksRequest
+        com.amazonaws.internal.SdkInternalList<String> describeConversionTasksRequestConversionTaskIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeConversionTasksRequest
                 .getConversionTaskIds();
-        if (!conversionTaskIdsList.isEmpty() || !conversionTaskIdsList.isAutoConstruct()) {
+        if (!describeConversionTasksRequestConversionTaskIdsList.isEmpty() || !describeConversionTasksRequestConversionTaskIdsList.isAutoConstruct()) {
             int conversionTaskIdsListIndex = 1;
 
-            for (String conversionTaskIdsListValue : conversionTaskIdsList) {
-                if (conversionTaskIdsListValue != null) {
-                    request.addParameter("ConversionTaskId." + conversionTaskIdsListIndex, StringUtils.fromString(conversionTaskIdsListValue));
+            for (String describeConversionTasksRequestConversionTaskIdsListValue : describeConversionTasksRequestConversionTaskIdsList) {
+                if (describeConversionTasksRequestConversionTaskIdsListValue != null) {
+                    request.addParameter("ConversionTaskId." + conversionTaskIdsListIndex,
+                            StringUtils.fromString(describeConversionTasksRequestConversionTaskIdsListValue));
                 }
                 conversionTaskIdsListIndex++;
             }

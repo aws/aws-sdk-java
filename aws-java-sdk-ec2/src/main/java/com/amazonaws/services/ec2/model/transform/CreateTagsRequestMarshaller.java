@@ -42,30 +42,31 @@ public class CreateTagsRequestMarshaller implements Marshaller<Request<CreateTag
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> resourcesList = (com.amazonaws.internal.SdkInternalList<String>) createTagsRequest.getResources();
-        if (!resourcesList.isEmpty() || !resourcesList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> createTagsRequestResourcesList = (com.amazonaws.internal.SdkInternalList<String>) createTagsRequest
+                .getResources();
+        if (!createTagsRequestResourcesList.isEmpty() || !createTagsRequestResourcesList.isAutoConstruct()) {
             int resourcesListIndex = 1;
 
-            for (String resourcesListValue : resourcesList) {
-                if (resourcesListValue != null) {
-                    request.addParameter("ResourceId." + resourcesListIndex, StringUtils.fromString(resourcesListValue));
+            for (String createTagsRequestResourcesListValue : createTagsRequestResourcesList) {
+                if (createTagsRequestResourcesListValue != null) {
+                    request.addParameter("ResourceId." + resourcesListIndex, StringUtils.fromString(createTagsRequestResourcesListValue));
                 }
                 resourcesListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createTagsRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Tag> createTagsRequestTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createTagsRequest.getTags();
+        if (!createTagsRequestTagsList.isEmpty() || !createTagsRequestTagsList.isAutoConstruct()) {
             int tagsListIndex = 1;
 
-            for (Tag tagsListValue : tagsList) {
+            for (Tag createTagsRequestTagsListValue : createTagsRequestTagsList) {
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                if (createTagsRequestTagsListValue.getKey() != null) {
+                    request.addParameter("Tag." + tagsListIndex + ".Key", StringUtils.fromString(createTagsRequestTagsListValue.getKey()));
                 }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                if (createTagsRequestTagsListValue.getValue() != null) {
+                    request.addParameter("Tag." + tagsListIndex + ".Value", StringUtils.fromString(createTagsRequestTagsListValue.getValue()));
                 }
                 tagsListIndex++;
             }

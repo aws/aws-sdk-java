@@ -58,27 +58,27 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             request.addParameter("KeyName", StringUtils.fromString(runInstancesRequest.getKeyName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> securityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) runInstancesRequest
+        com.amazonaws.internal.SdkInternalList<String> runInstancesRequestSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) runInstancesRequest
                 .getSecurityGroups();
-        if (!securityGroupsList.isEmpty() || !securityGroupsList.isAutoConstruct()) {
+        if (!runInstancesRequestSecurityGroupsList.isEmpty() || !runInstancesRequestSecurityGroupsList.isAutoConstruct()) {
             int securityGroupsListIndex = 1;
 
-            for (String securityGroupsListValue : securityGroupsList) {
-                if (securityGroupsListValue != null) {
-                    request.addParameter("SecurityGroup." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
+            for (String runInstancesRequestSecurityGroupsListValue : runInstancesRequestSecurityGroupsList) {
+                if (runInstancesRequestSecurityGroupsListValue != null) {
+                    request.addParameter("SecurityGroup." + securityGroupsListIndex, StringUtils.fromString(runInstancesRequestSecurityGroupsListValue));
                 }
                 securityGroupsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> securityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) runInstancesRequest
+        com.amazonaws.internal.SdkInternalList<String> runInstancesRequestSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) runInstancesRequest
                 .getSecurityGroupIds();
-        if (!securityGroupIdsList.isEmpty() || !securityGroupIdsList.isAutoConstruct()) {
+        if (!runInstancesRequestSecurityGroupIdsList.isEmpty() || !runInstancesRequestSecurityGroupIdsList.isAutoConstruct()) {
             int securityGroupIdsListIndex = 1;
 
-            for (String securityGroupIdsListValue : securityGroupIdsList) {
-                if (securityGroupIdsListValue != null) {
-                    request.addParameter("SecurityGroupId." + securityGroupIdsListIndex, StringUtils.fromString(securityGroupIdsListValue));
+            for (String runInstancesRequestSecurityGroupIdsListValue : runInstancesRequestSecurityGroupIdsList) {
+                if (runInstancesRequestSecurityGroupIdsListValue != null) {
+                    request.addParameter("SecurityGroupId." + securityGroupIdsListIndex, StringUtils.fromString(runInstancesRequestSecurityGroupIdsListValue));
                 }
                 securityGroupIdsListIndex++;
             }
@@ -124,24 +124,24 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             request.addParameter("RamdiskId", StringUtils.fromString(runInstancesRequest.getRamdiskId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>) runInstancesRequest
+        com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> runInstancesRequestBlockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>) runInstancesRequest
                 .getBlockDeviceMappings();
-        if (!blockDeviceMappingsList.isEmpty() || !blockDeviceMappingsList.isAutoConstruct()) {
+        if (!runInstancesRequestBlockDeviceMappingsList.isEmpty() || !runInstancesRequestBlockDeviceMappingsList.isAutoConstruct()) {
             int blockDeviceMappingsListIndex = 1;
 
-            for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
+            for (BlockDeviceMapping runInstancesRequestBlockDeviceMappingsListValue : runInstancesRequestBlockDeviceMappingsList) {
 
-                if (blockDeviceMappingsListValue.getVirtualName() != null) {
+                if (runInstancesRequestBlockDeviceMappingsListValue.getVirtualName() != null) {
                     request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName",
-                            StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));
+                            StringUtils.fromString(runInstancesRequestBlockDeviceMappingsListValue.getVirtualName()));
                 }
 
-                if (blockDeviceMappingsListValue.getDeviceName() != null) {
+                if (runInstancesRequestBlockDeviceMappingsListValue.getDeviceName() != null) {
                     request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".DeviceName",
-                            StringUtils.fromString(blockDeviceMappingsListValue.getDeviceName()));
+                            StringUtils.fromString(runInstancesRequestBlockDeviceMappingsListValue.getDeviceName()));
                 }
 
-                EbsBlockDevice ebs = blockDeviceMappingsListValue.getEbs();
+                EbsBlockDevice ebs = runInstancesRequestBlockDeviceMappingsListValue.getEbs();
                 if (ebs != null) {
 
                     if (ebs.getSnapshotId() != null) {
@@ -174,9 +174,9 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     }
                 }
 
-                if (blockDeviceMappingsListValue.getNoDevice() != null) {
+                if (runInstancesRequestBlockDeviceMappingsListValue.getNoDevice() != null) {
                     request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".NoDevice",
-                            StringUtils.fromString(blockDeviceMappingsListValue.getNoDevice()));
+                            StringUtils.fromString(runInstancesRequestBlockDeviceMappingsListValue.getNoDevice()));
                 }
                 blockDeviceMappingsListIndex++;
             }
@@ -210,85 +210,87 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             request.addParameter("AdditionalInfo", StringUtils.fromString(runInstancesRequest.getAdditionalInfo()));
         }
 
-        com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfacesList = (com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>) runInstancesRequest
+        com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> runInstancesRequestNetworkInterfacesList = (com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>) runInstancesRequest
                 .getNetworkInterfaces();
-        if (!networkInterfacesList.isEmpty() || !networkInterfacesList.isAutoConstruct()) {
+        if (!runInstancesRequestNetworkInterfacesList.isEmpty() || !runInstancesRequestNetworkInterfacesList.isAutoConstruct()) {
             int networkInterfacesListIndex = 1;
 
-            for (InstanceNetworkInterfaceSpecification networkInterfacesListValue : networkInterfacesList) {
+            for (InstanceNetworkInterfaceSpecification runInstancesRequestNetworkInterfacesListValue : runInstancesRequestNetworkInterfacesList) {
 
-                if (networkInterfacesListValue.getNetworkInterfaceId() != null) {
+                if (runInstancesRequestNetworkInterfacesListValue.getNetworkInterfaceId() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".NetworkInterfaceId",
-                            StringUtils.fromString(networkInterfacesListValue.getNetworkInterfaceId()));
+                            StringUtils.fromString(runInstancesRequestNetworkInterfacesListValue.getNetworkInterfaceId()));
                 }
 
-                if (networkInterfacesListValue.getDeviceIndex() != null) {
+                if (runInstancesRequestNetworkInterfacesListValue.getDeviceIndex() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".DeviceIndex",
-                            StringUtils.fromInteger(networkInterfacesListValue.getDeviceIndex()));
+                            StringUtils.fromInteger(runInstancesRequestNetworkInterfacesListValue.getDeviceIndex()));
                 }
 
-                if (networkInterfacesListValue.getSubnetId() != null) {
+                if (runInstancesRequestNetworkInterfacesListValue.getSubnetId() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".SubnetId",
-                            StringUtils.fromString(networkInterfacesListValue.getSubnetId()));
+                            StringUtils.fromString(runInstancesRequestNetworkInterfacesListValue.getSubnetId()));
                 }
 
-                if (networkInterfacesListValue.getDescription() != null) {
+                if (runInstancesRequestNetworkInterfacesListValue.getDescription() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".Description",
-                            StringUtils.fromString(networkInterfacesListValue.getDescription()));
+                            StringUtils.fromString(runInstancesRequestNetworkInterfacesListValue.getDescription()));
                 }
 
-                if (networkInterfacesListValue.getPrivateIpAddress() != null) {
+                if (runInstancesRequestNetworkInterfacesListValue.getPrivateIpAddress() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddress",
-                            StringUtils.fromString(networkInterfacesListValue.getPrivateIpAddress()));
+                            StringUtils.fromString(runInstancesRequestNetworkInterfacesListValue.getPrivateIpAddress()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> groupsList = (com.amazonaws.internal.SdkInternalList<String>) networkInterfacesListValue
+                com.amazonaws.internal.SdkInternalList<String> instanceNetworkInterfaceSpecificationGroupsList = (com.amazonaws.internal.SdkInternalList<String>) runInstancesRequestNetworkInterfacesListValue
                         .getGroups();
-                if (!groupsList.isEmpty() || !groupsList.isAutoConstruct()) {
+                if (!instanceNetworkInterfaceSpecificationGroupsList.isEmpty() || !instanceNetworkInterfaceSpecificationGroupsList.isAutoConstruct()) {
                     int groupsListIndex = 1;
 
-                    for (String groupsListValue : groupsList) {
-                        if (groupsListValue != null) {
+                    for (String instanceNetworkInterfaceSpecificationGroupsListValue : instanceNetworkInterfaceSpecificationGroupsList) {
+                        if (instanceNetworkInterfaceSpecificationGroupsListValue != null) {
                             request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".SecurityGroupId." + groupsListIndex,
-                                    StringUtils.fromString(groupsListValue));
+                                    StringUtils.fromString(instanceNetworkInterfaceSpecificationGroupsListValue));
                         }
                         groupsListIndex++;
                     }
                 }
 
-                if (networkInterfacesListValue.getDeleteOnTermination() != null) {
+                if (runInstancesRequestNetworkInterfacesListValue.getDeleteOnTermination() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".DeleteOnTermination",
-                            StringUtils.fromBoolean(networkInterfacesListValue.getDeleteOnTermination()));
+                            StringUtils.fromBoolean(runInstancesRequestNetworkInterfacesListValue.getDeleteOnTermination()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification> privateIpAddressesList = (com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification>) networkInterfacesListValue
+                com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification> instanceNetworkInterfaceSpecificationPrivateIpAddressesList = (com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification>) runInstancesRequestNetworkInterfacesListValue
                         .getPrivateIpAddresses();
-                if (!privateIpAddressesList.isEmpty() || !privateIpAddressesList.isAutoConstruct()) {
+                if (!instanceNetworkInterfaceSpecificationPrivateIpAddressesList.isEmpty()
+                        || !instanceNetworkInterfaceSpecificationPrivateIpAddressesList.isAutoConstruct()) {
                     int privateIpAddressesListIndex = 1;
 
-                    for (PrivateIpAddressSpecification privateIpAddressesListValue : privateIpAddressesList) {
+                    for (PrivateIpAddressSpecification instanceNetworkInterfaceSpecificationPrivateIpAddressesListValue : instanceNetworkInterfaceSpecificationPrivateIpAddressesList) {
 
-                        if (privateIpAddressesListValue.getPrivateIpAddress() != null) {
+                        if (instanceNetworkInterfaceSpecificationPrivateIpAddressesListValue.getPrivateIpAddress() != null) {
                             request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex
-                                    + ".PrivateIpAddress", StringUtils.fromString(privateIpAddressesListValue.getPrivateIpAddress()));
+                                    + ".PrivateIpAddress",
+                                    StringUtils.fromString(instanceNetworkInterfaceSpecificationPrivateIpAddressesListValue.getPrivateIpAddress()));
                         }
 
-                        if (privateIpAddressesListValue.getPrimary() != null) {
+                        if (instanceNetworkInterfaceSpecificationPrivateIpAddressesListValue.getPrimary() != null) {
                             request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex
-                                    + ".Primary", StringUtils.fromBoolean(privateIpAddressesListValue.getPrimary()));
+                                    + ".Primary", StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationPrivateIpAddressesListValue.getPrimary()));
                         }
                         privateIpAddressesListIndex++;
                     }
                 }
 
-                if (networkInterfacesListValue.getSecondaryPrivateIpAddressCount() != null) {
+                if (runInstancesRequestNetworkInterfacesListValue.getSecondaryPrivateIpAddressCount() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".SecondaryPrivateIpAddressCount",
-                            StringUtils.fromInteger(networkInterfacesListValue.getSecondaryPrivateIpAddressCount()));
+                            StringUtils.fromInteger(runInstancesRequestNetworkInterfacesListValue.getSecondaryPrivateIpAddressCount()));
                 }
 
-                if (networkInterfacesListValue.getAssociatePublicIpAddress() != null) {
+                if (runInstancesRequestNetworkInterfacesListValue.getAssociatePublicIpAddress() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".AssociatePublicIpAddress",
-                            StringUtils.fromBoolean(networkInterfacesListValue.getAssociatePublicIpAddress()));
+                            StringUtils.fromBoolean(runInstancesRequestNetworkInterfacesListValue.getAssociatePublicIpAddress()));
                 }
                 networkInterfacesListIndex++;
             }

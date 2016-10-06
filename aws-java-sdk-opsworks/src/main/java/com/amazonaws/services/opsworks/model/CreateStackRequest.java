@@ -244,8 +244,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack
-     * configuration attribute values or to pass data to recipes. The string should be in the following escape
-     * characters such as '"':
+     * configuration attribute values or to pass data to recipes. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -1764,8 +1763,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack
-     * configuration attribute values or to pass data to recipes. The string should be in the following escape
-     * characters such as '"':
+     * configuration attribute values or to pass data to recipes. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -1779,7 +1777,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param customJson
      *        A string that contains user-defined, custom JSON. It can be used to override the corresponding default
      *        stack configuration attribute values or to pass data to recipes. The string should be in the following
-     *        escape characters such as '"':</p>
+     *        format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
@@ -1796,8 +1794,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack
-     * configuration attribute values or to pass data to recipes. The string should be in the following escape
-     * characters such as '"':
+     * configuration attribute values or to pass data to recipes. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -1810,7 +1807,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return A string that contains user-defined, custom JSON. It can be used to override the corresponding default
      *         stack configuration attribute values or to pass data to recipes. The string should be in the following
-     *         escape characters such as '"':</p>
+     *         format:</p>
      *         <p>
      *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *         </p>
@@ -1827,8 +1824,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack
-     * configuration attribute values or to pass data to recipes. The string should be in the following escape
-     * characters such as '"':
+     * configuration attribute values or to pass data to recipes. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -1842,7 +1838,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param customJson
      *        A string that contains user-defined, custom JSON. It can be used to override the corresponding default
      *        stack configuration attribute values or to pass data to recipes. The string should be in the following
-     *        escape characters such as '"':</p>
+     *        format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>

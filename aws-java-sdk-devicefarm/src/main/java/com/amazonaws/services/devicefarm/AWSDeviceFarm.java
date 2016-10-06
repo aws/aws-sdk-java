@@ -708,7 +708,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about runs.
+     * Gets information about runs, given an AWS Device Farm project ARN.
      * </p>
      * 
      * @param listRunsRequest
@@ -728,7 +728,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about samples.
+     * Gets information about samples, given an AWS Device Farm project ARN
      * </p>
      * 
      * @param listSamplesRequest
@@ -808,7 +808,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about uploads.
+     * Gets information about uploads, given an AWS Device Farm project ARN.
      * </p>
      * 
      * @param listUploadsRequest

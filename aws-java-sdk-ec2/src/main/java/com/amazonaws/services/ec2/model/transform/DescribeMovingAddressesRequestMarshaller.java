@@ -42,14 +42,14 @@ public class DescribeMovingAddressesRequestMarshaller implements Marshaller<Requ
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> publicIpsList = (com.amazonaws.internal.SdkInternalList<String>) describeMovingAddressesRequest
+        com.amazonaws.internal.SdkInternalList<String> describeMovingAddressesRequestPublicIpsList = (com.amazonaws.internal.SdkInternalList<String>) describeMovingAddressesRequest
                 .getPublicIps();
-        if (!publicIpsList.isEmpty() || !publicIpsList.isAutoConstruct()) {
+        if (!describeMovingAddressesRequestPublicIpsList.isEmpty() || !describeMovingAddressesRequestPublicIpsList.isAutoConstruct()) {
             int publicIpsListIndex = 1;
 
-            for (String publicIpsListValue : publicIpsList) {
-                if (publicIpsListValue != null) {
-                    request.addParameter("PublicIp." + publicIpsListIndex, StringUtils.fromString(publicIpsListValue));
+            for (String describeMovingAddressesRequestPublicIpsListValue : describeMovingAddressesRequestPublicIpsList) {
+                if (describeMovingAddressesRequestPublicIpsListValue != null) {
+                    request.addParameter("PublicIp." + publicIpsListIndex, StringUtils.fromString(describeMovingAddressesRequestPublicIpsListValue));
                 }
                 publicIpsListIndex++;
             }
@@ -59,24 +59,26 @@ public class DescribeMovingAddressesRequestMarshaller implements Marshaller<Requ
             request.addParameter("NextToken", StringUtils.fromString(describeMovingAddressesRequest.getNextToken()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeMovingAddressesRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeMovingAddressesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeMovingAddressesRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeMovingAddressesRequestFiltersList.isEmpty() || !describeMovingAddressesRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeMovingAddressesRequestFiltersListValue : describeMovingAddressesRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeMovingAddressesRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeMovingAddressesRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeMovingAddressesRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

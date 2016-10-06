@@ -42,14 +42,15 @@ public class CancelSpotFleetRequestsRequestMarshaller implements Marshaller<Requ
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> spotFleetRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) cancelSpotFleetRequestsRequest
+        com.amazonaws.internal.SdkInternalList<String> cancelSpotFleetRequestsRequestSpotFleetRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) cancelSpotFleetRequestsRequest
                 .getSpotFleetRequestIds();
-        if (!spotFleetRequestIdsList.isEmpty() || !spotFleetRequestIdsList.isAutoConstruct()) {
+        if (!cancelSpotFleetRequestsRequestSpotFleetRequestIdsList.isEmpty() || !cancelSpotFleetRequestsRequestSpotFleetRequestIdsList.isAutoConstruct()) {
             int spotFleetRequestIdsListIndex = 1;
 
-            for (String spotFleetRequestIdsListValue : spotFleetRequestIdsList) {
-                if (spotFleetRequestIdsListValue != null) {
-                    request.addParameter("SpotFleetRequestId." + spotFleetRequestIdsListIndex, StringUtils.fromString(spotFleetRequestIdsListValue));
+            for (String cancelSpotFleetRequestsRequestSpotFleetRequestIdsListValue : cancelSpotFleetRequestsRequestSpotFleetRequestIdsList) {
+                if (cancelSpotFleetRequestsRequestSpotFleetRequestIdsListValue != null) {
+                    request.addParameter("SpotFleetRequestId." + spotFleetRequestIdsListIndex,
+                            StringUtils.fromString(cancelSpotFleetRequestsRequestSpotFleetRequestIdsListValue));
                 }
                 spotFleetRequestIdsListIndex++;
             }

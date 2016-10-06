@@ -59,7 +59,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     * configuration JSON values. The string should be in the following format and must escape characters such as '"':
+     * configuration JSON values. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -384,7 +384,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     * configuration JSON values. The string should be in the following format and must escape characters such as '"':
+     * configuration JSON values. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -397,8 +397,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param customJson
      *        A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     *        configuration JSON values. The string should be in the following format and must escape characters such as
-     *        '"':</p>
+     *        configuration JSON values. The string should be in the following format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
@@ -415,7 +414,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     * configuration JSON values. The string should be in the following format and must escape characters such as '"':
+     * configuration JSON values. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -427,8 +426,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     *         configuration JSON values. The string should be in the following format and must escape characters such
-     *         as '"':</p>
+     *         configuration JSON values. The string should be in the following format:</p>
      *         <p>
      *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *         </p>
@@ -445,7 +443,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     * configuration JSON values. The string should be in the following format and must escape characters such as '"':
+     * configuration JSON values. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -458,8 +456,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param customJson
      *        A string that contains user-defined, custom JSON. It is used to override the corresponding default stack
-     *        configuration JSON values. The string should be in the following format and must escape characters such as
-     *        '"':</p>
+     *        configuration JSON values. The string should be in the following format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>

@@ -56,14 +56,14 @@ public class ModifyNetworkInterfaceAttributeRequestMarshaller implements
             request.addParameter("SourceDestCheck.Value", StringUtils.fromBoolean(modifyNetworkInterfaceAttributeRequest.getSourceDestCheck()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> groupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyNetworkInterfaceAttributeRequest
+        com.amazonaws.internal.SdkInternalList<String> modifyNetworkInterfaceAttributeRequestGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyNetworkInterfaceAttributeRequest
                 .getGroups();
-        if (!groupsList.isEmpty() || !groupsList.isAutoConstruct()) {
+        if (!modifyNetworkInterfaceAttributeRequestGroupsList.isEmpty() || !modifyNetworkInterfaceAttributeRequestGroupsList.isAutoConstruct()) {
             int groupsListIndex = 1;
 
-            for (String groupsListValue : groupsList) {
-                if (groupsListValue != null) {
-                    request.addParameter("SecurityGroupId." + groupsListIndex, StringUtils.fromString(groupsListValue));
+            for (String modifyNetworkInterfaceAttributeRequestGroupsListValue : modifyNetworkInterfaceAttributeRequestGroupsList) {
+                if (modifyNetworkInterfaceAttributeRequestGroupsListValue != null) {
+                    request.addParameter("SecurityGroupId." + groupsListIndex, StringUtils.fromString(modifyNetworkInterfaceAttributeRequestGroupsListValue));
                 }
                 groupsListIndex++;
             }

@@ -53,26 +53,29 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
                 request.addParameter("LaunchSpecification.Architecture", StringUtils.fromString(launchSpecification.getArchitecture()));
             }
 
-            com.amazonaws.internal.SdkInternalList<String> groupNamesList = (com.amazonaws.internal.SdkInternalList<String>) launchSpecification
+            com.amazonaws.internal.SdkInternalList<String> importInstanceLaunchSpecificationGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) launchSpecification
                     .getGroupNames();
-            if (!groupNamesList.isEmpty() || !groupNamesList.isAutoConstruct()) {
+            if (!importInstanceLaunchSpecificationGroupNamesList.isEmpty() || !importInstanceLaunchSpecificationGroupNamesList.isAutoConstruct()) {
                 int groupNamesListIndex = 1;
 
-                for (String groupNamesListValue : groupNamesList) {
-                    if (groupNamesListValue != null) {
-                        request.addParameter("LaunchSpecification.GroupName." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
+                for (String importInstanceLaunchSpecificationGroupNamesListValue : importInstanceLaunchSpecificationGroupNamesList) {
+                    if (importInstanceLaunchSpecificationGroupNamesListValue != null) {
+                        request.addParameter("LaunchSpecification.GroupName." + groupNamesListIndex,
+                                StringUtils.fromString(importInstanceLaunchSpecificationGroupNamesListValue));
                     }
                     groupNamesListIndex++;
                 }
             }
 
-            com.amazonaws.internal.SdkInternalList<String> groupIdsList = (com.amazonaws.internal.SdkInternalList<String>) launchSpecification.getGroupIds();
-            if (!groupIdsList.isEmpty() || !groupIdsList.isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> importInstanceLaunchSpecificationGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) launchSpecification
+                    .getGroupIds();
+            if (!importInstanceLaunchSpecificationGroupIdsList.isEmpty() || !importInstanceLaunchSpecificationGroupIdsList.isAutoConstruct()) {
                 int groupIdsListIndex = 1;
 
-                for (String groupIdsListValue : groupIdsList) {
-                    if (groupIdsListValue != null) {
-                        request.addParameter("LaunchSpecification.GroupId." + groupIdsListIndex, StringUtils.fromString(groupIdsListValue));
+                for (String importInstanceLaunchSpecificationGroupIdsListValue : importInstanceLaunchSpecificationGroupIdsList) {
+                    if (importInstanceLaunchSpecificationGroupIdsListValue != null) {
+                        request.addParameter("LaunchSpecification.GroupId." + groupIdsListIndex,
+                                StringUtils.fromString(importInstanceLaunchSpecificationGroupIdsListValue));
                     }
                     groupIdsListIndex++;
                 }
@@ -136,14 +139,14 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<DiskImage> diskImagesList = (com.amazonaws.internal.SdkInternalList<DiskImage>) importInstanceRequest
+        com.amazonaws.internal.SdkInternalList<DiskImage> importInstanceRequestDiskImagesList = (com.amazonaws.internal.SdkInternalList<DiskImage>) importInstanceRequest
                 .getDiskImages();
-        if (!diskImagesList.isEmpty() || !diskImagesList.isAutoConstruct()) {
+        if (!importInstanceRequestDiskImagesList.isEmpty() || !importInstanceRequestDiskImagesList.isAutoConstruct()) {
             int diskImagesListIndex = 1;
 
-            for (DiskImage diskImagesListValue : diskImagesList) {
+            for (DiskImage importInstanceRequestDiskImagesListValue : importInstanceRequestDiskImagesList) {
 
-                DiskImageDetail image = diskImagesListValue.getImage();
+                DiskImageDetail image = importInstanceRequestDiskImagesListValue.getImage();
                 if (image != null) {
 
                     if (image.getFormat() != null) {
@@ -160,11 +163,12 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
                     }
                 }
 
-                if (diskImagesListValue.getDescription() != null) {
-                    request.addParameter("DiskImage." + diskImagesListIndex + ".Description", StringUtils.fromString(diskImagesListValue.getDescription()));
+                if (importInstanceRequestDiskImagesListValue.getDescription() != null) {
+                    request.addParameter("DiskImage." + diskImagesListIndex + ".Description",
+                            StringUtils.fromString(importInstanceRequestDiskImagesListValue.getDescription()));
                 }
 
-                VolumeDetail volume = diskImagesListValue.getVolume();
+                VolumeDetail volume = importInstanceRequestDiskImagesListValue.getVolume();
                 if (volume != null) {
 
                     if (volume.getSize() != null) {

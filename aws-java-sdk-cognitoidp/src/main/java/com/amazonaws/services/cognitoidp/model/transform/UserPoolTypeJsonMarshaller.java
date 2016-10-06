@@ -137,6 +137,10 @@ public class UserPoolTypeJsonMarshaller {
             if (userPoolType.getEmailConfigurationFailure() != null) {
                 jsonGenerator.writeFieldName("EmailConfigurationFailure").writeValue(userPoolType.getEmailConfigurationFailure());
             }
+            if (userPoolType.getAdminCreateUserConfig() != null) {
+                jsonGenerator.writeFieldName("AdminCreateUserConfig");
+                AdminCreateUserConfigTypeJsonMarshaller.getInstance().marshall(userPoolType.getAdminCreateUserConfig(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

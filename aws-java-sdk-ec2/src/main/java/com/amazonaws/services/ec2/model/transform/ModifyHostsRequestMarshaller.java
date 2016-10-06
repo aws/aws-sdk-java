@@ -42,13 +42,14 @@ public class ModifyHostsRequestMarshaller implements Marshaller<Request<ModifyHo
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> hostIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyHostsRequest.getHostIds();
-        if (!hostIdsList.isEmpty() || !hostIdsList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> modifyHostsRequestHostIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyHostsRequest
+                .getHostIds();
+        if (!modifyHostsRequestHostIdsList.isEmpty() || !modifyHostsRequestHostIdsList.isAutoConstruct()) {
             int hostIdsListIndex = 1;
 
-            for (String hostIdsListValue : hostIdsList) {
-                if (hostIdsListValue != null) {
-                    request.addParameter("HostId." + hostIdsListIndex, StringUtils.fromString(hostIdsListValue));
+            for (String modifyHostsRequestHostIdsListValue : modifyHostsRequestHostIdsList) {
+                if (modifyHostsRequestHostIdsListValue != null) {
+                    request.addParameter("HostId." + hostIdsListIndex, StringUtils.fromString(modifyHostsRequestHostIdsListValue));
                 }
                 hostIdsListIndex++;
             }

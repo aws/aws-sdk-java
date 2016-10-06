@@ -43,14 +43,16 @@ public class DescribeScheduledInstancesRequestMarshaller implements Marshaller<R
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> scheduledInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeScheduledInstancesRequest
+        com.amazonaws.internal.SdkInternalList<String> describeScheduledInstancesRequestScheduledInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeScheduledInstancesRequest
                 .getScheduledInstanceIds();
-        if (!scheduledInstanceIdsList.isEmpty() || !scheduledInstanceIdsList.isAutoConstruct()) {
+        if (!describeScheduledInstancesRequestScheduledInstanceIdsList.isEmpty()
+                || !describeScheduledInstancesRequestScheduledInstanceIdsList.isAutoConstruct()) {
             int scheduledInstanceIdsListIndex = 1;
 
-            for (String scheduledInstanceIdsListValue : scheduledInstanceIdsList) {
-                if (scheduledInstanceIdsListValue != null) {
-                    request.addParameter("ScheduledInstanceId." + scheduledInstanceIdsListIndex, StringUtils.fromString(scheduledInstanceIdsListValue));
+            for (String describeScheduledInstancesRequestScheduledInstanceIdsListValue : describeScheduledInstancesRequestScheduledInstanceIdsList) {
+                if (describeScheduledInstancesRequestScheduledInstanceIdsListValue != null) {
+                    request.addParameter("ScheduledInstanceId." + scheduledInstanceIdsListIndex,
+                            StringUtils.fromString(describeScheduledInstancesRequestScheduledInstanceIdsListValue));
                 }
                 scheduledInstanceIdsListIndex++;
             }
@@ -76,24 +78,26 @@ public class DescribeScheduledInstancesRequestMarshaller implements Marshaller<R
             request.addParameter("MaxResults", StringUtils.fromInteger(describeScheduledInstancesRequest.getMaxResults()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeScheduledInstancesRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeScheduledInstancesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeScheduledInstancesRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeScheduledInstancesRequestFiltersList.isEmpty() || !describeScheduledInstancesRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeScheduledInstancesRequestFiltersListValue : describeScheduledInstancesRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeScheduledInstancesRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeScheduledInstancesRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeScheduledInstancesRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

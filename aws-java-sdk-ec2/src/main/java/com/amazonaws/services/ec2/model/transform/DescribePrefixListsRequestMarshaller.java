@@ -42,36 +42,38 @@ public class DescribePrefixListsRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> prefixListIdsList = (com.amazonaws.internal.SdkInternalList<String>) describePrefixListsRequest
+        com.amazonaws.internal.SdkInternalList<String> describePrefixListsRequestPrefixListIdsList = (com.amazonaws.internal.SdkInternalList<String>) describePrefixListsRequest
                 .getPrefixListIds();
-        if (!prefixListIdsList.isEmpty() || !prefixListIdsList.isAutoConstruct()) {
+        if (!describePrefixListsRequestPrefixListIdsList.isEmpty() || !describePrefixListsRequestPrefixListIdsList.isAutoConstruct()) {
             int prefixListIdsListIndex = 1;
 
-            for (String prefixListIdsListValue : prefixListIdsList) {
-                if (prefixListIdsListValue != null) {
-                    request.addParameter("PrefixListId." + prefixListIdsListIndex, StringUtils.fromString(prefixListIdsListValue));
+            for (String describePrefixListsRequestPrefixListIdsListValue : describePrefixListsRequestPrefixListIdsList) {
+                if (describePrefixListsRequestPrefixListIdsListValue != null) {
+                    request.addParameter("PrefixListId." + prefixListIdsListIndex, StringUtils.fromString(describePrefixListsRequestPrefixListIdsListValue));
                 }
                 prefixListIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describePrefixListsRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describePrefixListsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describePrefixListsRequest
+                .getFilters();
+        if (!describePrefixListsRequestFiltersList.isEmpty() || !describePrefixListsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describePrefixListsRequestFiltersListValue : describePrefixListsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describePrefixListsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describePrefixListsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describePrefixListsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

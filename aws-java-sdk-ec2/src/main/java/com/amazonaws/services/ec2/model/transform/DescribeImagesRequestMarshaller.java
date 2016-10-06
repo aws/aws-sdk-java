@@ -42,60 +42,64 @@ public class DescribeImagesRequestMarshaller implements Marshaller<Request<Descr
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> imageIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImagesRequest.getImageIds();
-        if (!imageIdsList.isEmpty() || !imageIdsList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> describeImagesRequestImageIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImagesRequest
+                .getImageIds();
+        if (!describeImagesRequestImageIdsList.isEmpty() || !describeImagesRequestImageIdsList.isAutoConstruct()) {
             int imageIdsListIndex = 1;
 
-            for (String imageIdsListValue : imageIdsList) {
-                if (imageIdsListValue != null) {
-                    request.addParameter("ImageId." + imageIdsListIndex, StringUtils.fromString(imageIdsListValue));
+            for (String describeImagesRequestImageIdsListValue : describeImagesRequestImageIdsList) {
+                if (describeImagesRequestImageIdsListValue != null) {
+                    request.addParameter("ImageId." + imageIdsListIndex, StringUtils.fromString(describeImagesRequestImageIdsListValue));
                 }
                 imageIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> ownersList = (com.amazonaws.internal.SdkInternalList<String>) describeImagesRequest.getOwners();
-        if (!ownersList.isEmpty() || !ownersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> describeImagesRequestOwnersList = (com.amazonaws.internal.SdkInternalList<String>) describeImagesRequest
+                .getOwners();
+        if (!describeImagesRequestOwnersList.isEmpty() || !describeImagesRequestOwnersList.isAutoConstruct()) {
             int ownersListIndex = 1;
 
-            for (String ownersListValue : ownersList) {
-                if (ownersListValue != null) {
-                    request.addParameter("Owner." + ownersListIndex, StringUtils.fromString(ownersListValue));
+            for (String describeImagesRequestOwnersListValue : describeImagesRequestOwnersList) {
+                if (describeImagesRequestOwnersListValue != null) {
+                    request.addParameter("Owner." + ownersListIndex, StringUtils.fromString(describeImagesRequestOwnersListValue));
                 }
                 ownersListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> executableUsersList = (com.amazonaws.internal.SdkInternalList<String>) describeImagesRequest
+        com.amazonaws.internal.SdkInternalList<String> describeImagesRequestExecutableUsersList = (com.amazonaws.internal.SdkInternalList<String>) describeImagesRequest
                 .getExecutableUsers();
-        if (!executableUsersList.isEmpty() || !executableUsersList.isAutoConstruct()) {
+        if (!describeImagesRequestExecutableUsersList.isEmpty() || !describeImagesRequestExecutableUsersList.isAutoConstruct()) {
             int executableUsersListIndex = 1;
 
-            for (String executableUsersListValue : executableUsersList) {
-                if (executableUsersListValue != null) {
-                    request.addParameter("ExecutableBy." + executableUsersListIndex, StringUtils.fromString(executableUsersListValue));
+            for (String describeImagesRequestExecutableUsersListValue : describeImagesRequestExecutableUsersList) {
+                if (describeImagesRequestExecutableUsersListValue != null) {
+                    request.addParameter("ExecutableBy." + executableUsersListIndex, StringUtils.fromString(describeImagesRequestExecutableUsersListValue));
                 }
                 executableUsersListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeImagesRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeImagesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeImagesRequest
+                .getFilters();
+        if (!describeImagesRequestFiltersList.isEmpty() || !describeImagesRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeImagesRequestFiltersListValue : describeImagesRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeImagesRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeImagesRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeImagesRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

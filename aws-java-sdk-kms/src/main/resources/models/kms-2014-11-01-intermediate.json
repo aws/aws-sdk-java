@@ -1139,6 +1139,9 @@
       }, {
         "exceptionName" : "KMSInternalException",
         "documentation" : "<p>The request was rejected because an internal exception occurred. The request can be retried.</p>"
+      }, {
+        "exceptionName" : "InvalidMarkerException",
+        "documentation" : "<p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {

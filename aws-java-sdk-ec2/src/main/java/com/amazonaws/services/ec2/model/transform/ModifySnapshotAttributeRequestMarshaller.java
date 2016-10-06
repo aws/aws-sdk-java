@@ -54,27 +54,27 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
             request.addParameter("OperationType", StringUtils.fromString(modifySnapshotAttributeRequest.getOperationType()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> userIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifySnapshotAttributeRequest
+        com.amazonaws.internal.SdkInternalList<String> modifySnapshotAttributeRequestUserIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifySnapshotAttributeRequest
                 .getUserIds();
-        if (!userIdsList.isEmpty() || !userIdsList.isAutoConstruct()) {
+        if (!modifySnapshotAttributeRequestUserIdsList.isEmpty() || !modifySnapshotAttributeRequestUserIdsList.isAutoConstruct()) {
             int userIdsListIndex = 1;
 
-            for (String userIdsListValue : userIdsList) {
-                if (userIdsListValue != null) {
-                    request.addParameter("UserId." + userIdsListIndex, StringUtils.fromString(userIdsListValue));
+            for (String modifySnapshotAttributeRequestUserIdsListValue : modifySnapshotAttributeRequestUserIdsList) {
+                if (modifySnapshotAttributeRequestUserIdsListValue != null) {
+                    request.addParameter("UserId." + userIdsListIndex, StringUtils.fromString(modifySnapshotAttributeRequestUserIdsListValue));
                 }
                 userIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> groupNamesList = (com.amazonaws.internal.SdkInternalList<String>) modifySnapshotAttributeRequest
+        com.amazonaws.internal.SdkInternalList<String> modifySnapshotAttributeRequestGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) modifySnapshotAttributeRequest
                 .getGroupNames();
-        if (!groupNamesList.isEmpty() || !groupNamesList.isAutoConstruct()) {
+        if (!modifySnapshotAttributeRequestGroupNamesList.isEmpty() || !modifySnapshotAttributeRequestGroupNamesList.isAutoConstruct()) {
             int groupNamesListIndex = 1;
 
-            for (String groupNamesListValue : groupNamesList) {
-                if (groupNamesListValue != null) {
-                    request.addParameter("UserGroup." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
+            for (String modifySnapshotAttributeRequestGroupNamesListValue : modifySnapshotAttributeRequestGroupNamesList) {
+                if (modifySnapshotAttributeRequestGroupNamesListValue != null) {
+                    request.addParameter("UserGroup." + groupNamesListIndex, StringUtils.fromString(modifySnapshotAttributeRequestGroupNamesListValue));
                 }
                 groupNamesListIndex++;
             }
@@ -83,38 +83,41 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
         CreateVolumePermissionModifications createVolumePermission = modifySnapshotAttributeRequest.getCreateVolumePermission();
         if (createVolumePermission != null) {
 
-            com.amazonaws.internal.SdkInternalList<CreateVolumePermission> addList = (com.amazonaws.internal.SdkInternalList<CreateVolumePermission>) createVolumePermission
+            com.amazonaws.internal.SdkInternalList<CreateVolumePermission> createVolumePermissionModificationsAddList = (com.amazonaws.internal.SdkInternalList<CreateVolumePermission>) createVolumePermission
                     .getAdd();
-            if (!addList.isEmpty() || !addList.isAutoConstruct()) {
+            if (!createVolumePermissionModificationsAddList.isEmpty() || !createVolumePermissionModificationsAddList.isAutoConstruct()) {
                 int addListIndex = 1;
 
-                for (CreateVolumePermission addListValue : addList) {
+                for (CreateVolumePermission createVolumePermissionModificationsAddListValue : createVolumePermissionModificationsAddList) {
 
-                    if (addListValue.getUserId() != null) {
-                        request.addParameter("CreateVolumePermission.Add." + addListIndex + ".UserId", StringUtils.fromString(addListValue.getUserId()));
+                    if (createVolumePermissionModificationsAddListValue.getUserId() != null) {
+                        request.addParameter("CreateVolumePermission.Add." + addListIndex + ".UserId",
+                                StringUtils.fromString(createVolumePermissionModificationsAddListValue.getUserId()));
                     }
 
-                    if (addListValue.getGroup() != null) {
-                        request.addParameter("CreateVolumePermission.Add." + addListIndex + ".Group", StringUtils.fromString(addListValue.getGroup()));
+                    if (createVolumePermissionModificationsAddListValue.getGroup() != null) {
+                        request.addParameter("CreateVolumePermission.Add." + addListIndex + ".Group",
+                                StringUtils.fromString(createVolumePermissionModificationsAddListValue.getGroup()));
                     }
                     addListIndex++;
                 }
             }
 
-            com.amazonaws.internal.SdkInternalList<CreateVolumePermission> removeList = (com.amazonaws.internal.SdkInternalList<CreateVolumePermission>) createVolumePermission
+            com.amazonaws.internal.SdkInternalList<CreateVolumePermission> createVolumePermissionModificationsRemoveList = (com.amazonaws.internal.SdkInternalList<CreateVolumePermission>) createVolumePermission
                     .getRemove();
-            if (!removeList.isEmpty() || !removeList.isAutoConstruct()) {
+            if (!createVolumePermissionModificationsRemoveList.isEmpty() || !createVolumePermissionModificationsRemoveList.isAutoConstruct()) {
                 int removeListIndex = 1;
 
-                for (CreateVolumePermission removeListValue : removeList) {
+                for (CreateVolumePermission createVolumePermissionModificationsRemoveListValue : createVolumePermissionModificationsRemoveList) {
 
-                    if (removeListValue.getUserId() != null) {
+                    if (createVolumePermissionModificationsRemoveListValue.getUserId() != null) {
                         request.addParameter("CreateVolumePermission.Remove." + removeListIndex + ".UserId",
-                                StringUtils.fromString(removeListValue.getUserId()));
+                                StringUtils.fromString(createVolumePermissionModificationsRemoveListValue.getUserId()));
                     }
 
-                    if (removeListValue.getGroup() != null) {
-                        request.addParameter("CreateVolumePermission.Remove." + removeListIndex + ".Group", StringUtils.fromString(removeListValue.getGroup()));
+                    if (createVolumePermissionModificationsRemoveListValue.getGroup() != null) {
+                        request.addParameter("CreateVolumePermission.Remove." + removeListIndex + ".Group",
+                                StringUtils.fromString(createVolumePermissionModificationsRemoveListValue.getGroup()));
                     }
                     removeListIndex++;
                 }

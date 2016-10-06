@@ -44,14 +44,15 @@ public class DescribeImportSnapshotTasksRequestMarshaller implements
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> importTaskIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImportSnapshotTasksRequest
+        com.amazonaws.internal.SdkInternalList<String> describeImportSnapshotTasksRequestImportTaskIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImportSnapshotTasksRequest
                 .getImportTaskIds();
-        if (!importTaskIdsList.isEmpty() || !importTaskIdsList.isAutoConstruct()) {
+        if (!describeImportSnapshotTasksRequestImportTaskIdsList.isEmpty() || !describeImportSnapshotTasksRequestImportTaskIdsList.isAutoConstruct()) {
             int importTaskIdsListIndex = 1;
 
-            for (String importTaskIdsListValue : importTaskIdsList) {
-                if (importTaskIdsListValue != null) {
-                    request.addParameter("ImportTaskId." + importTaskIdsListIndex, StringUtils.fromString(importTaskIdsListValue));
+            for (String describeImportSnapshotTasksRequestImportTaskIdsListValue : describeImportSnapshotTasksRequestImportTaskIdsList) {
+                if (describeImportSnapshotTasksRequestImportTaskIdsListValue != null) {
+                    request.addParameter("ImportTaskId." + importTaskIdsListIndex,
+                            StringUtils.fromString(describeImportSnapshotTasksRequestImportTaskIdsListValue));
                 }
                 importTaskIdsListIndex++;
             }
@@ -65,24 +66,26 @@ public class DescribeImportSnapshotTasksRequestMarshaller implements
             request.addParameter("MaxResults", StringUtils.fromInteger(describeImportSnapshotTasksRequest.getMaxResults()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeImportSnapshotTasksRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeImportSnapshotTasksRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeImportSnapshotTasksRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeImportSnapshotTasksRequestFiltersList.isEmpty() || !describeImportSnapshotTasksRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeImportSnapshotTasksRequestFiltersListValue : describeImportSnapshotTasksRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filters." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeImportSnapshotTasksRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filters." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeImportSnapshotTasksRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeImportSnapshotTasksRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filters." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filters." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

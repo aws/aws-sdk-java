@@ -44,14 +44,14 @@ public class DescribeSecurityGroupReferencesRequestMarshaller implements
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> groupIdList = (com.amazonaws.internal.SdkInternalList<String>) describeSecurityGroupReferencesRequest
+        com.amazonaws.internal.SdkInternalList<String> describeSecurityGroupReferencesRequestGroupIdList = (com.amazonaws.internal.SdkInternalList<String>) describeSecurityGroupReferencesRequest
                 .getGroupId();
-        if (!groupIdList.isEmpty() || !groupIdList.isAutoConstruct()) {
+        if (!describeSecurityGroupReferencesRequestGroupIdList.isEmpty() || !describeSecurityGroupReferencesRequestGroupIdList.isAutoConstruct()) {
             int groupIdListIndex = 1;
 
-            for (String groupIdListValue : groupIdList) {
-                if (groupIdListValue != null) {
-                    request.addParameter("GroupId." + groupIdListIndex, StringUtils.fromString(groupIdListValue));
+            for (String describeSecurityGroupReferencesRequestGroupIdListValue : describeSecurityGroupReferencesRequestGroupIdList) {
+                if (describeSecurityGroupReferencesRequestGroupIdListValue != null) {
+                    request.addParameter("GroupId." + groupIdListIndex, StringUtils.fromString(describeSecurityGroupReferencesRequestGroupIdListValue));
                 }
                 groupIdListIndex++;
             }

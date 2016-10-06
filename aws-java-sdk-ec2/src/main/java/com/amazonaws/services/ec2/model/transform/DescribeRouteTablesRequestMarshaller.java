@@ -42,36 +42,38 @@ public class DescribeRouteTablesRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> routeTableIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeRouteTablesRequest
+        com.amazonaws.internal.SdkInternalList<String> describeRouteTablesRequestRouteTableIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeRouteTablesRequest
                 .getRouteTableIds();
-        if (!routeTableIdsList.isEmpty() || !routeTableIdsList.isAutoConstruct()) {
+        if (!describeRouteTablesRequestRouteTableIdsList.isEmpty() || !describeRouteTablesRequestRouteTableIdsList.isAutoConstruct()) {
             int routeTableIdsListIndex = 1;
 
-            for (String routeTableIdsListValue : routeTableIdsList) {
-                if (routeTableIdsListValue != null) {
-                    request.addParameter("RouteTableId." + routeTableIdsListIndex, StringUtils.fromString(routeTableIdsListValue));
+            for (String describeRouteTablesRequestRouteTableIdsListValue : describeRouteTablesRequestRouteTableIdsList) {
+                if (describeRouteTablesRequestRouteTableIdsListValue != null) {
+                    request.addParameter("RouteTableId." + routeTableIdsListIndex, StringUtils.fromString(describeRouteTablesRequestRouteTableIdsListValue));
                 }
                 routeTableIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeRouteTablesRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeRouteTablesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeRouteTablesRequest
+                .getFilters();
+        if (!describeRouteTablesRequestFiltersList.isEmpty() || !describeRouteTablesRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeRouteTablesRequestFiltersListValue : describeRouteTablesRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeRouteTablesRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeRouteTablesRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeRouteTablesRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

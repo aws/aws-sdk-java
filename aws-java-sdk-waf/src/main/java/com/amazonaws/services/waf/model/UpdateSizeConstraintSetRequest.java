@@ -40,10 +40,22 @@ public class UpdateSizeConstraintSetRequest extends com.amazonaws.AmazonWebServi
      * <a>SizeConstraintSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code></li>
-     * <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
+     * <code>ComparisonOperator</code>, and <code>Size</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.List<SizeConstraintSetUpdate> updates;
@@ -146,19 +158,43 @@ public class UpdateSizeConstraintSetRequest extends com.amazonaws.AmazonWebServi
      * <a>SizeConstraintSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code></li>
-     * <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
+     * <code>ComparisonOperator</code>, and <code>Size</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a
      *         <a>SizeConstraintSet</a>. For more information, see the applicable data types:</p>
      *         <ul>
-     *         <li><a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code></li>
-     *         <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
-     *         <code>ComparisonOperator</code>, and <code>Size</code></li>
-     *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *         <li>
+     *         <p>
+     *         <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
+     *         <code>ComparisonOperator</code>, and <code>Size</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<SizeConstraintSetUpdate> getUpdates() {
@@ -171,20 +207,44 @@ public class UpdateSizeConstraintSetRequest extends com.amazonaws.AmazonWebServi
      * <a>SizeConstraintSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code></li>
-     * <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
+     * <code>ComparisonOperator</code>, and <code>Size</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updates
      *        An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a
      *        <a>SizeConstraintSet</a>. For more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code></li>
-     *        <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
-     *        <code>ComparisonOperator</code>, and <code>Size</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
+     *        <code>ComparisonOperator</code>, and <code>Size</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      */
 
     public void setUpdates(java.util.Collection<SizeConstraintSetUpdate> updates) {
@@ -202,10 +262,22 @@ public class UpdateSizeConstraintSetRequest extends com.amazonaws.AmazonWebServi
      * <a>SizeConstraintSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code></li>
-     * <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
+     * <code>ComparisonOperator</code>, and <code>Size</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -217,10 +289,22 @@ public class UpdateSizeConstraintSetRequest extends com.amazonaws.AmazonWebServi
      *        An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a
      *        <a>SizeConstraintSet</a>. For more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code></li>
-     *        <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
-     *        <code>ComparisonOperator</code>, and <code>Size</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
+     *        <code>ComparisonOperator</code>, and <code>Size</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,20 +324,44 @@ public class UpdateSizeConstraintSetRequest extends com.amazonaws.AmazonWebServi
      * <a>SizeConstraintSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
-     * <li><a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code></li>
-     * <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
+     * <code>ComparisonOperator</code>, and <code>Size</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updates
      *        An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a
      *        <a>SizeConstraintSet</a>. For more information, see the applicable data types:</p>
      *        <ul>
-     *        <li><a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code></li>
-     *        <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
-     *        <code>ComparisonOperator</code>, and <code>Size</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>,
+     *        <code>ComparisonOperator</code>, and <code>Size</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

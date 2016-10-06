@@ -44,37 +44,41 @@ public class DescribeVpcPeeringConnectionsRequestMarshaller implements
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> vpcPeeringConnectionIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcPeeringConnectionsRequest
+        com.amazonaws.internal.SdkInternalList<String> describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcPeeringConnectionsRequest
                 .getVpcPeeringConnectionIds();
-        if (!vpcPeeringConnectionIdsList.isEmpty() || !vpcPeeringConnectionIdsList.isAutoConstruct()) {
+        if (!describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList.isEmpty()
+                || !describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList.isAutoConstruct()) {
             int vpcPeeringConnectionIdsListIndex = 1;
 
-            for (String vpcPeeringConnectionIdsListValue : vpcPeeringConnectionIdsList) {
-                if (vpcPeeringConnectionIdsListValue != null) {
-                    request.addParameter("VpcPeeringConnectionId." + vpcPeeringConnectionIdsListIndex, StringUtils.fromString(vpcPeeringConnectionIdsListValue));
+            for (String describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsListValue : describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList) {
+                if (describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsListValue != null) {
+                    request.addParameter("VpcPeeringConnectionId." + vpcPeeringConnectionIdsListIndex,
+                            StringUtils.fromString(describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsListValue));
                 }
                 vpcPeeringConnectionIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpcPeeringConnectionsRequest
+        com.amazonaws.internal.SdkInternalList<Filter> describeVpcPeeringConnectionsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpcPeeringConnectionsRequest
                 .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeVpcPeeringConnectionsRequestFiltersList.isEmpty() || !describeVpcPeeringConnectionsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeVpcPeeringConnectionsRequestFiltersListValue : describeVpcPeeringConnectionsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeVpcPeeringConnectionsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeVpcPeeringConnectionsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcPeeringConnectionsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

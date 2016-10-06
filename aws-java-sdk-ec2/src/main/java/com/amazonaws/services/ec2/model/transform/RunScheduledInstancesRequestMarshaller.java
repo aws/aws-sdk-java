@@ -63,15 +63,16 @@ public class RunScheduledInstancesRequestMarshaller implements Marshaller<Reques
                 request.addParameter("LaunchSpecification.KeyName", StringUtils.fromString(launchSpecification.getKeyName()));
             }
 
-            com.amazonaws.internal.SdkInternalList<String> securityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) launchSpecification
+            com.amazonaws.internal.SdkInternalList<String> scheduledInstancesLaunchSpecificationSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) launchSpecification
                     .getSecurityGroupIds();
-            if (!securityGroupIdsList.isEmpty() || !securityGroupIdsList.isAutoConstruct()) {
+            if (!scheduledInstancesLaunchSpecificationSecurityGroupIdsList.isEmpty()
+                    || !scheduledInstancesLaunchSpecificationSecurityGroupIdsList.isAutoConstruct()) {
                 int securityGroupIdsListIndex = 1;
 
-                for (String securityGroupIdsListValue : securityGroupIdsList) {
-                    if (securityGroupIdsListValue != null) {
+                for (String scheduledInstancesLaunchSpecificationSecurityGroupIdsListValue : scheduledInstancesLaunchSpecificationSecurityGroupIdsList) {
+                    if (scheduledInstancesLaunchSpecificationSecurityGroupIdsListValue != null) {
                         request.addParameter("LaunchSpecification.SecurityGroupId." + securityGroupIdsListIndex,
-                                StringUtils.fromString(securityGroupIdsListValue));
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationSecurityGroupIdsListValue));
                     }
                     securityGroupIdsListIndex++;
                 }
@@ -105,29 +106,30 @@ public class RunScheduledInstancesRequestMarshaller implements Marshaller<Reques
                 request.addParameter("LaunchSpecification.RamdiskId", StringUtils.fromString(launchSpecification.getRamdiskId()));
             }
 
-            com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping> blockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping>) launchSpecification
+            com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping> scheduledInstancesLaunchSpecificationBlockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping>) launchSpecification
                     .getBlockDeviceMappings();
-            if (!blockDeviceMappingsList.isEmpty() || !blockDeviceMappingsList.isAutoConstruct()) {
+            if (!scheduledInstancesLaunchSpecificationBlockDeviceMappingsList.isEmpty()
+                    || !scheduledInstancesLaunchSpecificationBlockDeviceMappingsList.isAutoConstruct()) {
                 int blockDeviceMappingsListIndex = 1;
 
-                for (ScheduledInstancesBlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
+                for (ScheduledInstancesBlockDeviceMapping scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue : scheduledInstancesLaunchSpecificationBlockDeviceMappingsList) {
 
-                    if (blockDeviceMappingsListValue.getDeviceName() != null) {
+                    if (scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getDeviceName() != null) {
                         request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".DeviceName",
-                                StringUtils.fromString(blockDeviceMappingsListValue.getDeviceName()));
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getDeviceName()));
                     }
 
-                    if (blockDeviceMappingsListValue.getNoDevice() != null) {
+                    if (scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getNoDevice() != null) {
                         request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".NoDevice",
-                                StringUtils.fromString(blockDeviceMappingsListValue.getNoDevice()));
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getNoDevice()));
                     }
 
-                    if (blockDeviceMappingsListValue.getVirtualName() != null) {
+                    if (scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getVirtualName() != null) {
                         request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName",
-                                StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getVirtualName()));
                     }
 
-                    ScheduledInstancesEbs ebs = blockDeviceMappingsListValue.getEbs();
+                    ScheduledInstancesEbs ebs = scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getEbs();
                     if (ebs != null) {
 
                         if (ebs.getSnapshotId() != null) {
@@ -176,86 +178,89 @@ public class RunScheduledInstancesRequestMarshaller implements Marshaller<Reques
                 request.addParameter("LaunchSpecification.SubnetId", StringUtils.fromString(launchSpecification.getSubnetId()));
             }
 
-            com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface> networkInterfacesList = (com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface>) launchSpecification
+            com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface> scheduledInstancesLaunchSpecificationNetworkInterfacesList = (com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface>) launchSpecification
                     .getNetworkInterfaces();
-            if (!networkInterfacesList.isEmpty() || !networkInterfacesList.isAutoConstruct()) {
+            if (!scheduledInstancesLaunchSpecificationNetworkInterfacesList.isEmpty()
+                    || !scheduledInstancesLaunchSpecificationNetworkInterfacesList.isAutoConstruct()) {
                 int networkInterfacesListIndex = 1;
 
-                for (ScheduledInstancesNetworkInterface networkInterfacesListValue : networkInterfacesList) {
+                for (ScheduledInstancesNetworkInterface scheduledInstancesLaunchSpecificationNetworkInterfacesListValue : scheduledInstancesLaunchSpecificationNetworkInterfacesList) {
 
-                    if (networkInterfacesListValue.getNetworkInterfaceId() != null) {
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getNetworkInterfaceId() != null) {
                         request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".NetworkInterfaceId",
-                                StringUtils.fromString(networkInterfacesListValue.getNetworkInterfaceId()));
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getNetworkInterfaceId()));
                     }
 
-                    if (networkInterfacesListValue.getDeviceIndex() != null) {
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDeviceIndex() != null) {
                         request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".DeviceIndex",
-                                StringUtils.fromInteger(networkInterfacesListValue.getDeviceIndex()));
+                                StringUtils.fromInteger(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDeviceIndex()));
                     }
 
-                    if (networkInterfacesListValue.getSubnetId() != null) {
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getSubnetId() != null) {
                         request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".SubnetId",
-                                StringUtils.fromString(networkInterfacesListValue.getSubnetId()));
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getSubnetId()));
                     }
 
-                    if (networkInterfacesListValue.getDescription() != null) {
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDescription() != null) {
                         request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".Description",
-                                StringUtils.fromString(networkInterfacesListValue.getDescription()));
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDescription()));
                     }
 
-                    if (networkInterfacesListValue.getPrivateIpAddress() != null) {
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getPrivateIpAddress() != null) {
                         request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddress",
-                                StringUtils.fromString(networkInterfacesListValue.getPrivateIpAddress()));
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getPrivateIpAddress()));
                     }
 
-                    com.amazonaws.internal.SdkInternalList<ScheduledInstancesPrivateIpAddressConfig> privateIpAddressConfigsList = (com.amazonaws.internal.SdkInternalList<ScheduledInstancesPrivateIpAddressConfig>) networkInterfacesListValue
+                    com.amazonaws.internal.SdkInternalList<ScheduledInstancesPrivateIpAddressConfig> scheduledInstancesNetworkInterfacePrivateIpAddressConfigsList = (com.amazonaws.internal.SdkInternalList<ScheduledInstancesPrivateIpAddressConfig>) scheduledInstancesLaunchSpecificationNetworkInterfacesListValue
                             .getPrivateIpAddressConfigs();
-                    if (!privateIpAddressConfigsList.isEmpty() || !privateIpAddressConfigsList.isAutoConstruct()) {
+                    if (!scheduledInstancesNetworkInterfacePrivateIpAddressConfigsList.isEmpty()
+                            || !scheduledInstancesNetworkInterfacePrivateIpAddressConfigsList.isAutoConstruct()) {
                         int privateIpAddressConfigsListIndex = 1;
 
-                        for (ScheduledInstancesPrivateIpAddressConfig privateIpAddressConfigsListValue : privateIpAddressConfigsList) {
+                        for (ScheduledInstancesPrivateIpAddressConfig scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue : scheduledInstancesNetworkInterfacePrivateIpAddressConfigsList) {
 
-                            if (privateIpAddressConfigsListValue.getPrivateIpAddress() != null) {
+                            if (scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue.getPrivateIpAddress() != null) {
                                 request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddressConfig."
                                         + privateIpAddressConfigsListIndex + ".PrivateIpAddress",
-                                        StringUtils.fromString(privateIpAddressConfigsListValue.getPrivateIpAddress()));
+                                        StringUtils.fromString(scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue.getPrivateIpAddress()));
                             }
 
-                            if (privateIpAddressConfigsListValue.getPrimary() != null) {
+                            if (scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue.getPrimary() != null) {
                                 request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddressConfig."
-                                        + privateIpAddressConfigsListIndex + ".Primary", StringUtils.fromBoolean(privateIpAddressConfigsListValue.getPrimary()));
+                                        + privateIpAddressConfigsListIndex + ".Primary",
+                                        StringUtils.fromBoolean(scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue.getPrimary()));
                             }
                             privateIpAddressConfigsListIndex++;
                         }
                     }
 
-                    if (networkInterfacesListValue.getSecondaryPrivateIpAddressCount() != null) {
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getSecondaryPrivateIpAddressCount() != null) {
                         request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".SecondaryPrivateIpAddressCount",
-                                StringUtils.fromInteger(networkInterfacesListValue.getSecondaryPrivateIpAddressCount()));
+                                StringUtils.fromInteger(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getSecondaryPrivateIpAddressCount()));
                     }
 
-                    if (networkInterfacesListValue.getAssociatePublicIpAddress() != null) {
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getAssociatePublicIpAddress() != null) {
                         request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".AssociatePublicIpAddress",
-                                StringUtils.fromBoolean(networkInterfacesListValue.getAssociatePublicIpAddress()));
+                                StringUtils.fromBoolean(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getAssociatePublicIpAddress()));
                     }
 
-                    com.amazonaws.internal.SdkInternalList<String> groupsList = (com.amazonaws.internal.SdkInternalList<String>) networkInterfacesListValue
+                    com.amazonaws.internal.SdkInternalList<String> scheduledInstancesNetworkInterfaceGroupsList = (com.amazonaws.internal.SdkInternalList<String>) scheduledInstancesLaunchSpecificationNetworkInterfacesListValue
                             .getGroups();
-                    if (!groupsList.isEmpty() || !groupsList.isAutoConstruct()) {
+                    if (!scheduledInstancesNetworkInterfaceGroupsList.isEmpty() || !scheduledInstancesNetworkInterfaceGroupsList.isAutoConstruct()) {
                         int groupsListIndex = 1;
 
-                        for (String groupsListValue : groupsList) {
-                            if (groupsListValue != null) {
+                        for (String scheduledInstancesNetworkInterfaceGroupsListValue : scheduledInstancesNetworkInterfaceGroupsList) {
+                            if (scheduledInstancesNetworkInterfaceGroupsListValue != null) {
                                 request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".Group." + groupsListIndex,
-                                        StringUtils.fromString(groupsListValue));
+                                        StringUtils.fromString(scheduledInstancesNetworkInterfaceGroupsListValue));
                             }
                             groupsListIndex++;
                         }
                     }
 
-                    if (networkInterfacesListValue.getDeleteOnTermination() != null) {
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDeleteOnTermination() != null) {
                         request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".DeleteOnTermination",
-                                StringUtils.fromBoolean(networkInterfacesListValue.getDeleteOnTermination()));
+                                StringUtils.fromBoolean(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDeleteOnTermination()));
                     }
                     networkInterfacesListIndex++;
                 }

@@ -17,11 +17,27 @@ package com.amazonaws.services.waf.model;
  * The operation failed because you tried to delete an object that isn't empty. For example:
  * </p>
  * <ul>
- * <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li>
- * <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or
- * other predicates.</li>
- * <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li>
- * <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li>
+ * <li>
+ * <p>
+ * You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other
+ * predicates.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+ * </p>
+ * </li>
  * </ul>
  */
 public class WAFNonEmptyEntityException extends com.amazonaws.services.waf.model.AWSWAFException {

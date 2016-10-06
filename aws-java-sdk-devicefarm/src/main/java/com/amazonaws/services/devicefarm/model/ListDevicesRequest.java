@@ -24,7 +24,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The device types' ARNs.
+     * The Amazon Resource Name (ARN) of the project.
      * </p>
      */
     private String arn;
@@ -38,11 +38,11 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The device types' ARNs.
+     * The Amazon Resource Name (ARN) of the project.
      * </p>
      * 
      * @param arn
-     *        The device types' ARNs.
+     *        The Amazon Resource Name (ARN) of the project.
      */
 
     public void setArn(String arn) {
@@ -51,10 +51,10 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The device types' ARNs.
+     * The Amazon Resource Name (ARN) of the project.
      * </p>
      * 
-     * @return The device types' ARNs.
+     * @return The Amazon Resource Name (ARN) of the project.
      */
 
     public String getArn() {
@@ -63,11 +63,11 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The device types' ARNs.
+     * The Amazon Resource Name (ARN) of the project.
      * </p>
      * 
      * @param arn
-     *        The device types' ARNs.
+     *        The Amazon Resource Name (ARN) of the project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

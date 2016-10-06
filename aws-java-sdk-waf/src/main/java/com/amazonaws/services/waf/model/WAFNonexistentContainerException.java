@@ -18,13 +18,28 @@ package com.amazonaws.services.waf.model;
  * exist. For example:
  * </p>
  * <ul>
- * <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't
- * exist.</li>
- * <li>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code>
- * that doesn't exist.</li>
- * <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</li>
- * <li>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a
- * <code>ByteMatchSet</code> that doesn't exist.</li>
+ * <li>
+ * <p>
+ * You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that
+ * doesn't exist.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a
+ * <code>ByteMatchSet</code> that doesn't exist.
+ * </p>
+ * </li>
  * </ul>
  */
 public class WAFNonexistentContainerException extends com.amazonaws.services.waf.model.AWSWAFException {

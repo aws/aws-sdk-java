@@ -42,13 +42,14 @@ public class ReleaseHostsRequestMarshaller implements Marshaller<Request<Release
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> hostIdsList = (com.amazonaws.internal.SdkInternalList<String>) releaseHostsRequest.getHostIds();
-        if (!hostIdsList.isEmpty() || !hostIdsList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<String> releaseHostsRequestHostIdsList = (com.amazonaws.internal.SdkInternalList<String>) releaseHostsRequest
+                .getHostIds();
+        if (!releaseHostsRequestHostIdsList.isEmpty() || !releaseHostsRequestHostIdsList.isAutoConstruct()) {
             int hostIdsListIndex = 1;
 
-            for (String hostIdsListValue : hostIdsList) {
-                if (hostIdsListValue != null) {
-                    request.addParameter("HostId." + hostIdsListIndex, StringUtils.fromString(hostIdsListValue));
+            for (String releaseHostsRequestHostIdsListValue : releaseHostsRequestHostIdsList) {
+                if (releaseHostsRequestHostIdsListValue != null) {
+                    request.addParameter("HostId." + hostIdsListIndex, StringUtils.fromString(releaseHostsRequestHostIdsListValue));
                 }
                 hostIdsListIndex++;
             }

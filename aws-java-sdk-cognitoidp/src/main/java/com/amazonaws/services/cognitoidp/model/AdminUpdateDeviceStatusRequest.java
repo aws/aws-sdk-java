@@ -24,7 +24,7 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The user pool ID>
+     * The user pool ID&gt;
      * </p>
      */
     private String userPoolId;
@@ -49,11 +49,11 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The user pool ID>
+     * The user pool ID&gt;
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID>
+     *        The user pool ID&gt;
      */
 
     public void setUserPoolId(String userPoolId) {
@@ -62,10 +62,10 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The user pool ID>
+     * The user pool ID&gt;
      * </p>
      * 
-     * @return The user pool ID>
+     * @return The user pool ID&gt;
      */
 
     public String getUserPoolId() {
@@ -74,11 +74,11 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The user pool ID>
+     * The user pool ID&gt;
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID>
+     *        The user pool ID&gt;
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

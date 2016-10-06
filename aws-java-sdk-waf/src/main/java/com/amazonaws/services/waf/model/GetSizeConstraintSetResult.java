@@ -25,12 +25,24 @@ public class GetSizeConstraintSetResult extends com.amazonaws.AmazonWebServiceRe
      * request. For more information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
-     * <code>Name</code></li>
-     * <li><code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
+     * <li>
+     * <p>
+     * <a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
+     * <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
      * <code>SizeConstraint</code> object contains <a>FieldToMatch</a>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <code>ComparisonOperator</code>, and <code>Size</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private SizeConstraintSet sizeConstraintSet;
@@ -41,24 +53,48 @@ public class GetSizeConstraintSetResult extends com.amazonaws.AmazonWebServiceRe
      * request. For more information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
-     * <code>Name</code></li>
-     * <li><code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
+     * <li>
+     * <p>
+     * <a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
+     * <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
      * <code>SizeConstraint</code> object contains <a>FieldToMatch</a>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <code>ComparisonOperator</code>, and <code>Size</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sizeConstraintSet
      *        Information about the <a>SizeConstraintSet</a> that you specified in the <code>GetSizeConstraintSet</code>
      *        request. For more information, see the following topics:</p>
      *        <ul>
-     *        <li><a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
-     *        <code>Name</code></li>
-     *        <li><code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
+     *        <li>
+     *        <p>
+     *        <a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
+     *        <code>Name</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
      *        <code>SizeConstraint</code> object contains <a>FieldToMatch</a>, <code>TextTransformation</code>,
-     *        <code>ComparisonOperator</code>, and <code>Size</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <code>ComparisonOperator</code>, and <code>Size</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      */
 
     public void setSizeConstraintSet(SizeConstraintSet sizeConstraintSet) {
@@ -71,23 +107,47 @@ public class GetSizeConstraintSetResult extends com.amazonaws.AmazonWebServiceRe
      * request. For more information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
-     * <code>Name</code></li>
-     * <li><code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
+     * <li>
+     * <p>
+     * <a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
+     * <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
      * <code>SizeConstraint</code> object contains <a>FieldToMatch</a>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <code>ComparisonOperator</code>, and <code>Size</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Information about the <a>SizeConstraintSet</a> that you specified in the
      *         <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>
      *         <ul>
-     *         <li><a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>,
-     *         and <code>Name</code></li>
-     *         <li><code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
+     *         <li>
+     *         <p>
+     *         <a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
+     *         <code>Name</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
      *         <code>SizeConstraint</code> object contains <a>FieldToMatch</a>, <code>TextTransformation</code>,
-     *         <code>ComparisonOperator</code>, and <code>Size</code></li>
-     *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *         <code>ComparisonOperator</code>, and <code>Size</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *         </p>
+     *         </li>
      */
 
     public SizeConstraintSet getSizeConstraintSet() {
@@ -100,24 +160,48 @@ public class GetSizeConstraintSetResult extends com.amazonaws.AmazonWebServiceRe
      * request. For more information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
-     * <code>Name</code></li>
-     * <li><code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
+     * <li>
+     * <p>
+     * <a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
+     * <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
      * <code>SizeConstraint</code> object contains <a>FieldToMatch</a>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <code>ComparisonOperator</code>, and <code>Size</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sizeConstraintSet
      *        Information about the <a>SizeConstraintSet</a> that you specified in the <code>GetSizeConstraintSet</code>
      *        request. For more information, see the following topics:</p>
      *        <ul>
-     *        <li><a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
-     *        <code>Name</code></li>
-     *        <li><code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
+     *        <li>
+     *        <p>
+     *        <a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
+     *        <code>Name</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each
      *        <code>SizeConstraint</code> object contains <a>FieldToMatch</a>, <code>TextTransformation</code>,
-     *        <code>ComparisonOperator</code>, and <code>Size</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <code>ComparisonOperator</code>, and <code>Size</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

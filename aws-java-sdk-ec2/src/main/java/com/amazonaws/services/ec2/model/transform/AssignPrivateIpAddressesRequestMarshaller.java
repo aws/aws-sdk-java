@@ -46,14 +46,15 @@ public class AssignPrivateIpAddressesRequestMarshaller implements Marshaller<Req
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(assignPrivateIpAddressesRequest.getNetworkInterfaceId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> privateIpAddressesList = (com.amazonaws.internal.SdkInternalList<String>) assignPrivateIpAddressesRequest
+        com.amazonaws.internal.SdkInternalList<String> assignPrivateIpAddressesRequestPrivateIpAddressesList = (com.amazonaws.internal.SdkInternalList<String>) assignPrivateIpAddressesRequest
                 .getPrivateIpAddresses();
-        if (!privateIpAddressesList.isEmpty() || !privateIpAddressesList.isAutoConstruct()) {
+        if (!assignPrivateIpAddressesRequestPrivateIpAddressesList.isEmpty() || !assignPrivateIpAddressesRequestPrivateIpAddressesList.isAutoConstruct()) {
             int privateIpAddressesListIndex = 1;
 
-            for (String privateIpAddressesListValue : privateIpAddressesList) {
-                if (privateIpAddressesListValue != null) {
-                    request.addParameter("PrivateIpAddress." + privateIpAddressesListIndex, StringUtils.fromString(privateIpAddressesListValue));
+            for (String assignPrivateIpAddressesRequestPrivateIpAddressesListValue : assignPrivateIpAddressesRequestPrivateIpAddressesList) {
+                if (assignPrivateIpAddressesRequestPrivateIpAddressesListValue != null) {
+                    request.addParameter("PrivateIpAddress." + privateIpAddressesListIndex,
+                            StringUtils.fromString(assignPrivateIpAddressesRequestPrivateIpAddressesListValue));
                 }
                 privateIpAddressesListIndex++;
             }

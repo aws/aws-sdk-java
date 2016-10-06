@@ -490,7 +490,8 @@ public class ServiceUtils {
     }
 
     public static boolean isS3AccelerateEndpoint(String endpoint) {
-        return endpoint.endsWith(Constants.S3_ACCELERATE_HOSTNAME);
+        return endpoint.endsWith(Constants.S3_ACCELERATE_HOSTNAME) ||
+                endpoint.endsWith(Constants.S3_ACCELERATE_DUALSTACK_HOSTNAME);
     }
 
     /**

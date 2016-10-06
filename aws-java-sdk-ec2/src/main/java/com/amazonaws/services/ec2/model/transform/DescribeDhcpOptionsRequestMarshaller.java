@@ -42,36 +42,38 @@ public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> dhcpOptionsIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeDhcpOptionsRequest
+        com.amazonaws.internal.SdkInternalList<String> describeDhcpOptionsRequestDhcpOptionsIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeDhcpOptionsRequest
                 .getDhcpOptionsIds();
-        if (!dhcpOptionsIdsList.isEmpty() || !dhcpOptionsIdsList.isAutoConstruct()) {
+        if (!describeDhcpOptionsRequestDhcpOptionsIdsList.isEmpty() || !describeDhcpOptionsRequestDhcpOptionsIdsList.isAutoConstruct()) {
             int dhcpOptionsIdsListIndex = 1;
 
-            for (String dhcpOptionsIdsListValue : dhcpOptionsIdsList) {
-                if (dhcpOptionsIdsListValue != null) {
-                    request.addParameter("DhcpOptionsId." + dhcpOptionsIdsListIndex, StringUtils.fromString(dhcpOptionsIdsListValue));
+            for (String describeDhcpOptionsRequestDhcpOptionsIdsListValue : describeDhcpOptionsRequestDhcpOptionsIdsList) {
+                if (describeDhcpOptionsRequestDhcpOptionsIdsListValue != null) {
+                    request.addParameter("DhcpOptionsId." + dhcpOptionsIdsListIndex, StringUtils.fromString(describeDhcpOptionsRequestDhcpOptionsIdsListValue));
                 }
                 dhcpOptionsIdsListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeDhcpOptionsRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        com.amazonaws.internal.SdkInternalList<Filter> describeDhcpOptionsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeDhcpOptionsRequest
+                .getFilters();
+        if (!describeDhcpOptionsRequestFiltersList.isEmpty() || !describeDhcpOptionsRequestFiltersList.isAutoConstruct()) {
             int filtersListIndex = 1;
 
-            for (Filter filtersListValue : filtersList) {
+            for (Filter describeDhcpOptionsRequestFiltersListValue : describeDhcpOptionsRequestFiltersList) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                if (describeDhcpOptionsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeDhcpOptionsRequestFiltersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeDhcpOptionsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
                     int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
                         }
                         valuesListIndex++;
                     }

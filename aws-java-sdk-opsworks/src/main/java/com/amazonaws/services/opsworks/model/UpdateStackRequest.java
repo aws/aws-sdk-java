@@ -194,8 +194,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack
-     * configuration JSON values or to pass data to recipes. The string should be in the following format and escape
-     * characters such as '"':
+     * configuration JSON values or to pass data to recipes. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -1406,8 +1405,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack
-     * configuration JSON values or to pass data to recipes. The string should be in the following format and escape
-     * characters such as '"':
+     * configuration JSON values or to pass data to recipes. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -1420,8 +1418,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param customJson
      *        A string that contains user-defined, custom JSON. It can be used to override the corresponding default
-     *        stack configuration JSON values or to pass data to recipes. The string should be in the following format
-     *        and escape characters such as '"':</p>
+     *        stack configuration JSON values or to pass data to recipes. The string should be in the following
+     *        format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
@@ -1438,8 +1436,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack
-     * configuration JSON values or to pass data to recipes. The string should be in the following format and escape
-     * characters such as '"':
+     * configuration JSON values or to pass data to recipes. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -1451,8 +1448,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @return A string that contains user-defined, custom JSON. It can be used to override the corresponding default
-     *         stack configuration JSON values or to pass data to recipes. The string should be in the following format
-     *         and escape characters such as '"':</p>
+     *         stack configuration JSON values or to pass data to recipes. The string should be in the following
+     *         format:</p>
      *         <p>
      *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *         </p>
@@ -1469,8 +1466,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack
-     * configuration JSON values or to pass data to recipes. The string should be in the following format and escape
-     * characters such as '"':
+     * configuration JSON values or to pass data to recipes. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -1483,8 +1479,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param customJson
      *        A string that contains user-defined, custom JSON. It can be used to override the corresponding default
-     *        stack configuration JSON values or to pass data to recipes. The string should be in the following format
-     *        and escape characters such as '"':</p>
+     *        stack configuration JSON values or to pass data to recipes. The string should be in the following
+     *        format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>

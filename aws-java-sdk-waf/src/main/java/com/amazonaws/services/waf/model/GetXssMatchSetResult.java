@@ -27,11 +27,23 @@ public class GetXssMatchSetResult extends com.amazonaws.AmazonWebServiceResult<c
      * information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
-     * <code>XssMatchTuple</code> objects</li>
-     * <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
+     * <code>XssMatchTuple</code> objects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private XssMatchSet xssMatchSet;
@@ -42,22 +54,46 @@ public class GetXssMatchSetResult extends com.amazonaws.AmazonWebServiceResult<c
      * information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
-     * <code>XssMatchTuple</code> objects</li>
-     * <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
+     * <code>XssMatchTuple</code> objects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param xssMatchSet
      *        Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code> request.
      *        For more information, see the following topics:</p>
      *        <ul>
-     *        <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
-     *        <code>XssMatchTuple</code> objects</li>
-     *        <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
-     *        <code>TextTransformation</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
+     *        <code>XssMatchTuple</code> objects
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
+     *        <code>TextTransformation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      */
 
     public void setXssMatchSet(XssMatchSet xssMatchSet) {
@@ -70,21 +106,45 @@ public class GetXssMatchSetResult extends com.amazonaws.AmazonWebServiceResult<c
      * information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
-     * <code>XssMatchTuple</code> objects</li>
-     * <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
+     * <code>XssMatchTuple</code> objects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code> request.
      *         For more information, see the following topics:</p>
      *         <ul>
-     *         <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
-     *         <code>XssMatchTuple</code> objects</li>
-     *         <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
-     *         <code>TextTransformation</code></li>
-     *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *         <li>
+     *         <p>
+     *         <a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
+     *         <code>XssMatchTuple</code> objects
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
+     *         <code>TextTransformation</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *         </p>
+     *         </li>
      */
 
     public XssMatchSet getXssMatchSet() {
@@ -97,22 +157,46 @@ public class GetXssMatchSetResult extends com.amazonaws.AmazonWebServiceResult<c
      * information, see the following topics:
      * </p>
      * <ul>
-     * <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
-     * <code>XssMatchTuple</code> objects</li>
-     * <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li>
-     * <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     * <li>
+     * <p>
+     * <a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
+     * <code>XssMatchTuple</code> objects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param xssMatchSet
      *        Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code> request.
      *        For more information, see the following topics:</p>
      *        <ul>
-     *        <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
-     *        <code>XssMatchTuple</code> objects</li>
-     *        <li><a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
-     *        <code>TextTransformation</code></li>
-     *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li>
+     *        <li>
+     *        <p>
+     *        <a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
+     *        <code>XssMatchTuple</code> objects
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
+     *        <code>TextTransformation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

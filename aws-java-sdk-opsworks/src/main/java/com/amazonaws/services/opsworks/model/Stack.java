@@ -101,7 +101,7 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * A JSON object that contains user-defined attributes to be added to the stack configuration and deployment
      * attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or
-     * to pass data to recipes. The string should be in the following format and must escape characters such as '"':
+     * to pass data to recipes. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -702,7 +702,7 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * A JSON object that contains user-defined attributes to be added to the stack configuration and deployment
      * attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or
-     * to pass data to recipes. The string should be in the following format and must escape characters such as '"':
+     * to pass data to recipes. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -716,8 +716,7 @@ public class Stack implements Serializable, Cloneable {
      * @param customJson
      *        A JSON object that contains user-defined attributes to be added to the stack configuration and deployment
      *        attributes. You can use custom JSON to override the corresponding default stack configuration attribute
-     *        values or to pass data to recipes. The string should be in the following format and must escape characters
-     *        such as '"':</p>
+     *        values or to pass data to recipes. The string should be in the following format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
@@ -735,7 +734,7 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * A JSON object that contains user-defined attributes to be added to the stack configuration and deployment
      * attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or
-     * to pass data to recipes. The string should be in the following format and must escape characters such as '"':
+     * to pass data to recipes. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -748,8 +747,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return A JSON object that contains user-defined attributes to be added to the stack configuration and deployment
      *         attributes. You can use custom JSON to override the corresponding default stack configuration attribute
-     *         values or to pass data to recipes. The string should be in the following format and must escape
-     *         characters such as '"':</p>
+     *         values or to pass data to recipes. The string should be in the following format:</p>
      *         <p>
      *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *         </p>
@@ -767,7 +765,7 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * A JSON object that contains user-defined attributes to be added to the stack configuration and deployment
      * attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or
-     * to pass data to recipes. The string should be in the following format and must escape characters such as '"':
+     * to pass data to recipes. The string should be in the following format:
      * </p>
      * <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
@@ -781,8 +779,7 @@ public class Stack implements Serializable, Cloneable {
      * @param customJson
      *        A JSON object that contains user-defined attributes to be added to the stack configuration and deployment
      *        attributes. You can use custom JSON to override the corresponding default stack configuration attribute
-     *        values or to pass data to recipes. The string should be in the following format and must escape characters
-     *        such as '"':</p>
+     *        values or to pass data to recipes. The string should be in the following format:</p>
      *        <p>
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>

@@ -42,14 +42,14 @@ public class StartInstancesRequestMarshaller implements Marshaller<Request<Start
         request.addParameter("Version", "2016-09-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) startInstancesRequest
+        com.amazonaws.internal.SdkInternalList<String> startInstancesRequestInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) startInstancesRequest
                 .getInstanceIds();
-        if (!instanceIdsList.isEmpty() || !instanceIdsList.isAutoConstruct()) {
+        if (!startInstancesRequestInstanceIdsList.isEmpty() || !startInstancesRequestInstanceIdsList.isAutoConstruct()) {
             int instanceIdsListIndex = 1;
 
-            for (String instanceIdsListValue : instanceIdsList) {
-                if (instanceIdsListValue != null) {
-                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
+            for (String startInstancesRequestInstanceIdsListValue : startInstancesRequestInstanceIdsList) {
+                if (startInstancesRequestInstanceIdsListValue != null) {
+                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(startInstancesRequestInstanceIdsListValue));
                 }
                 instanceIdsListIndex++;
             }
