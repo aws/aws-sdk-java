@@ -103,7 +103,7 @@ public class PredefinedBackoffStrategies {
                                          AmazonClientException exception,
                                          int retriesAttempted) {
             return (retriesAttempted > MAX_RETRIES) ? maxBackoffTime :
-                    Math.min(((1 << retriesAttempted) * baseDelay), maxBackoffTime);
+                    Math.min(((1L << retriesAttempted) * baseDelay), maxBackoffTime);
         }
     }
 
