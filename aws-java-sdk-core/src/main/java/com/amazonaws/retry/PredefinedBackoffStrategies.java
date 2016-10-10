@@ -77,7 +77,7 @@ public class PredefinedBackoffStrategies {
             this.maxBackoffTime = ValidationUtils.assertIsPositive(maxBackoffTime, "Max backoff");
         }
 
-        @Override*5
+        @Override
         public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                         AmazonClientException exception,
                                         int retriesAttempted) {
