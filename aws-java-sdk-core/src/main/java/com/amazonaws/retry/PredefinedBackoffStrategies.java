@@ -43,6 +43,13 @@ public class PredefinedBackoffStrategies {
     /** Maximum retry limit.  Avoids integer overflow issues. **/
     private static final int MAX_RETRIES = 30;
 
+    private static final long exponentialDelayHelper(int retriesAttempted, int baseDelay, int maxBackoffTime) {
+      long potentialWait = (1L << retriesAttempted) * baseDelay;
+      return (retriesAttempted > MAX_RETRIES) ? maxBackoffTime :
+              (potentialWait < 0  ? maxBackoffTime :
+              Math.min(potentialWait, maxBackoffTime));
+    }
+
     public static class FullJitterBackoffStrategy implements RetryPolicy.BackoffStrategy {
 
         private final int baseDelay;
@@ -59,9 +66,8 @@ public class PredefinedBackoffStrategies {
         public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                          AmazonClientException exception,
                                          int retriesAttempted) {
-            int ceil = (retriesAttempted > MAX_RETRIES) ? maxBackoffTime :
-                    Math.min(baseDelay * (1 << retriesAttempted), maxBackoffTime);
-            return random.nextInt(ceil + 1);
+            long ceil =  exponentialDelayHelper(retriesAttempted, baseDelay, maxBackoffTime);
+            return random.nextLong() % (ceil + 1);
         }
     }
 
@@ -81,9 +87,8 @@ public class PredefinedBackoffStrategies {
         public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                         AmazonClientException exception,
                                         int retriesAttempted) {
-            int ceil = (retriesAttempted > MAX_RETRIES) ? maxBackoffTime
-                    : Math.min(maxBackoffTime, baseDelay * (1 << retriesAttempted));
-            return (ceil / 2) + random.nextInt((ceil / 2) + 1);
+            long ceil =  exponentialDelayHelper(retriesAttempted, baseDelay, maxBackoffTime);
+            return (ceil / 2) + (random.nextLong() % ((ceil / 2) + 1));
         }
     }
 
@@ -102,10 +107,7 @@ public class PredefinedBackoffStrategies {
         public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                          AmazonClientException exception,
                                          int retriesAttempted) {
-            long potentialWait = (1L << retriesAttempted) * baseDelay;
-            return (retriesAttempted > MAX_RETRIES) ? maxBackoffTime :
-                    (potentialWait < 0  ? maxBackoffTime :
-                    Math.min(potentialWait, maxBackoffTime));
+            return exponentialDelayHelper(retriesAttempted, baseDelay, maxBackoffTime);
         }
     }
 
