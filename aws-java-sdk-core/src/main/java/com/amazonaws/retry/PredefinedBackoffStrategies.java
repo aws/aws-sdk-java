@@ -43,13 +43,6 @@ public class PredefinedBackoffStrategies {
     /** Maximum retry limit.  Avoids integer overflow issues. **/
     private static final int MAX_RETRIES = 30;
 
-    private static final long exponentialDelayHelper(int retriesAttempted, int baseDelay, int maxBackoffTime) {
-      long potentialWait = (1L << retriesAttempted) * baseDelay;
-      return (retriesAttempted > MAX_RETRIES) ? maxBackoffTime :
-              (potentialWait < 0  ? maxBackoffTime :
-              Math.min(potentialWait, maxBackoffTime));
-    }
-
     public static class FullJitterBackoffStrategy implements RetryPolicy.BackoffStrategy {
 
         private final int baseDelay;
@@ -151,4 +144,10 @@ public class PredefinedBackoffStrategies {
         }
     }
 
+    private static final long exponentialDelayHelper(int retriesAttempted, int baseDelay, int maxBackoffTime) {
+      long potentialWait = (1L << retriesAttempted) * baseDelay;
+      return (retriesAttempted > MAX_RETRIES) ? maxBackoffTime :
+              (potentialWait < 0  ? maxBackoffTime :
+              Math.min(potentialWait, maxBackoffTime));
+    }
 }
