@@ -76,7 +76,7 @@ public abstract class AmazonWebServiceClient {
         boolean success = com.amazonaws.log.InternalLogFactory.configureFactory(
                             new CommonsLogFactory());
         if (log.isDebugEnabled())
-            log.debug("Internal logging succesfully configured to commons logger: "
+            log.debug("Internal logging successfully configured to commons logger: "
                     + success);
     }
 
