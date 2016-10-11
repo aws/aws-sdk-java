@@ -59,9 +59,8 @@ public class PredefinedBackoffStrategies {
         public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                          AmazonClientException exception,
                                          int retriesAttempted) {
-            int ceil = (retriesAttempted > MAX_RETRIES) ? maxBackoffTime :
-                    Math.min(baseDelay * (1 << retriesAttempted), maxBackoffTime);
-            return random.nextInt(ceil + 1);
+            long ceil =  calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
+            return random.nextLong() % (ceil + 1);
         }
     }
 
@@ -81,9 +80,8 @@ public class PredefinedBackoffStrategies {
         public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                         AmazonClientException exception,
                                         int retriesAttempted) {
-            int ceil = (retriesAttempted > MAX_RETRIES) ? maxBackoffTime
-                    : Math.min(maxBackoffTime, baseDelay * (1 << retriesAttempted));
-            return (ceil / 2) + random.nextInt((ceil / 2) + 1);
+            long ceil =  calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
+            return (ceil / 2) + (random.nextLong() % ((ceil / 2) + 1));
         }
     }
 
@@ -102,8 +100,7 @@ public class PredefinedBackoffStrategies {
         public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                          AmazonClientException exception,
                                          int retriesAttempted) {
-            return (retriesAttempted > MAX_RETRIES) ? maxBackoffTime :
-                    Math.min(((1 << retriesAttempted) * baseDelay), maxBackoffTime);
+            return calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
         }
     }
 
@@ -147,4 +144,10 @@ public class PredefinedBackoffStrategies {
         }
     }
 
+    private static final long calculateExponentialDelay(int retriesAttempted, int baseDelay, int maxBackoffTime) {
+      long potentialWait = (1L << retriesAttempted) * baseDelay;
+      return (retriesAttempted > MAX_RETRIES) ? maxBackoffTime :
+              (potentialWait < 0  ? maxBackoffTime :
+              Math.min(potentialWait, maxBackoffTime));
+    }
 }
