@@ -14,12 +14,12 @@
  */
 package com.amazonaws.retry;
 
+import java.util.Random;
+
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.util.ValidationUtils;
-
-import java.util.Random;
 
 /**
  * This class includes a set of pre-defined backoff policies.
@@ -59,8 +59,8 @@ public class PredefinedBackoffStrategies {
         public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                          AmazonClientException exception,
                                          int retriesAttempted) {
-            long ceil =  calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
-            return random.nextLong() % (ceil + 1);
+            int ceil =  (int)calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
+            return random.nextInt(ceil + 1);
         }
     }
 
@@ -80,8 +80,8 @@ public class PredefinedBackoffStrategies {
         public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                         AmazonClientException exception,
                                         int retriesAttempted) {
-            long ceil =  calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
-            return (ceil / 2) + (random.nextLong() % ((ceil / 2) + 1));
+            int ceil =  (int)calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
+            return (ceil / 2) + (long)random.nextInt((ceil / 2) + 1);
         }
     }
 
