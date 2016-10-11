@@ -203,13 +203,6 @@ final class DownloadCallable implements Callable<File> {
             File partFile = f.get();
             ServiceUtils.appendFile(partFile, dstfile);
             download.updatePersistableTransfer(++lastFullyMergedPartNumber);
-            try {
-                if (!partFile.delete()) {
-                    LOG.warn("The file " + partFile.getAbsolutePath() + " could not be deleted.");
-                }
-            } catch (SecurityException exception) {
-                LOG.warn("SecurityException denied delete access to file " + partFile.getAbsolutePath());
-            }
         }
     }
 
