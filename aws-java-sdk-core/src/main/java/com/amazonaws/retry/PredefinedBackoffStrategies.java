@@ -14,12 +14,12 @@
  */
 package com.amazonaws.retry;
 
-import java.util.Random;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.util.ValidationUtils;
+
+import java.util.Random;
 
 /**
  * This class includes a set of pre-defined backoff policies.
