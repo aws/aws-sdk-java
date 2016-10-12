@@ -56734,10 +56734,10 @@
         "output" : {
           "Application" : {
             "ApplicationName" : "my-app",
-            "ConfigurationTemplates" : [ ],
+            "Description" : "my application",
             "DateCreated" : "2015-02-12T18:32:21.181Z",
             "DateUpdated" : "2015-02-12T18:32:21.181Z",
-            "Description" : "my application"
+            "ConfigurationTemplates" : [ ]
           }
         },
         "title" : "To create a new application"
@@ -56751,26 +56751,26 @@
         "id" : "to-create-a-new-application-1456268895683",
         "input" : {
           "ApplicationName" : "my-app",
-          "AutoCreateApplication" : true,
+          "VersionLabel" : "v1",
           "Description" : "my-app-v1",
-          "Process" : true,
           "SourceBundle" : {
             "S3Bucket" : "my-bucket",
             "S3Key" : "sample.war"
           },
-          "VersionLabel" : "v1"
+          "AutoCreateApplication" : true,
+          "Process" : true
         },
         "output" : {
           "ApplicationVersion" : {
             "ApplicationName" : "my-app",
-            "DateCreated" : "2015-02-03T23:01:25.412Z",
-            "DateUpdated" : "2015-02-03T23:01:25.412Z",
             "Description" : "my-app-v1",
+            "VersionLabel" : "v1",
             "SourceBundle" : {
               "S3Bucket" : "my-bucket",
               "S3Key" : "sample.war"
             },
-            "VersionLabel" : "v1"
+            "DateCreated" : "2015-02-03T23:01:25.412Z",
+            "DateUpdated" : "2015-02-03T23:01:25.412Z"
           }
         },
         "title" : "To create a new application"
@@ -56784,15 +56784,15 @@
         "id" : "to-create-a-configuration-template-1456269283586",
         "input" : {
           "ApplicationName" : "my-app",
-          "EnvironmentId" : "e-rpqsewtp2j",
-          "TemplateName" : "my-app-v1"
+          "TemplateName" : "my-app-v1",
+          "EnvironmentId" : "e-rpqsewtp2j"
         },
         "output" : {
-          "ApplicationName" : "my-app",
-          "DateCreated" : "2015-08-12T18:40:39Z",
-          "DateUpdated" : "2015-08-12T18:40:39Z",
           "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8",
-          "TemplateName" : "my-app-v1"
+          "ApplicationName" : "my-app",
+          "TemplateName" : "my-app-v1",
+          "DateCreated" : "2015-08-12T18:40:39Z",
+          "DateUpdated" : "2015-08-12T18:40:39Z"
         },
         "title" : "To create a configuration template"
       } ],
@@ -56805,27 +56805,27 @@
         "id" : "to-create-a-new-environment-for-an-application-1456269380396",
         "input" : {
           "ApplicationName" : "my-app",
-          "CNAMEPrefix" : "my-app",
           "EnvironmentName" : "my-env",
-          "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8",
-          "VersionLabel" : "v1"
+          "CNAMEPrefix" : "my-app",
+          "VersionLabel" : "v1",
+          "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8"
         },
         "output" : {
+          "EnvironmentName" : "my-env",
+          "EnvironmentId" : "e-izqpassy4h",
           "ApplicationName" : "my-app",
+          "VersionLabel" : "v1",
+          "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8",
           "CNAME" : "my-app.elasticbeanstalk.com",
           "DateCreated" : "2015-02-03T23:04:54.479Z",
           "DateUpdated" : "2015-02-03T23:04:54.479Z",
-          "EnvironmentId" : "e-izqpassy4h",
-          "EnvironmentName" : "my-env",
-          "Health" : "Grey",
-          "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8",
           "Status" : "Launching",
+          "Health" : "Grey",
           "Tier" : {
             "Name" : "WebServer",
             "Type" : "Standard",
             "Version" : " "
-          },
-          "VersionLabel" : "v1"
+          }
         },
         "title" : "To create a new environment for an application"
       } ],
@@ -56864,8 +56864,8 @@
         "id" : "to-delete-an-application-version-1456269792956",
         "input" : {
           "ApplicationName" : "my-app",
-          "DeleteSourceBundle" : true,
-          "VersionLabel" : "22a0-stage-150819_182129"
+          "VersionLabel" : "22a0-stage-150819_182129",
+          "DeleteSourceBundle" : true
         },
         "output" : null,
         "title" : "To delete an application version"
@@ -56912,24 +56912,24 @@
         "output" : {
           "ApplicationVersions" : [ {
             "ApplicationName" : "my-app",
-            "DateCreated" : "2015-07-23T01:32:26.079Z",
-            "DateUpdated" : "2015-07-23T01:32:26.079Z",
             "Description" : "update cover page",
+            "VersionLabel" : "v2",
             "SourceBundle" : {
               "S3Bucket" : "elasticbeanstalk-us-west-2-015321684451",
               "S3Key" : "my-app/5026-stage-150723_224258.war"
             },
-            "VersionLabel" : "v2"
+            "DateCreated" : "2015-07-23T01:32:26.079Z",
+            "DateUpdated" : "2015-07-23T01:32:26.079Z"
           }, {
             "ApplicationName" : "my-app",
-            "DateCreated" : "2015-07-23T22:26:10.816Z",
-            "DateUpdated" : "2015-07-23T22:26:10.816Z",
             "Description" : "initial version",
+            "VersionLabel" : "v1",
             "SourceBundle" : {
               "S3Bucket" : "elasticbeanstalk-us-west-2-015321684451",
               "S3Key" : "my-app/5026-stage-150723_222618.war"
             },
-            "VersionLabel" : "v1"
+            "DateCreated" : "2015-07-23T22:26:10.816Z",
+            "DateUpdated" : "2015-07-23T22:26:10.816Z"
           } ]
         },
         "title" : "To view information about an application version"
@@ -56945,23 +56945,23 @@
         "output" : {
           "Applications" : [ {
             "ApplicationName" : "ruby",
-            "ConfigurationTemplates" : [ ],
             "DateCreated" : "2015-08-13T21:05:44.376Z",
             "DateUpdated" : "2015-08-13T21:05:44.376Z",
-            "Versions" : [ "Sample Application" ]
+            "Versions" : [ "Sample Application" ],
+            "ConfigurationTemplates" : [ ]
           }, {
             "ApplicationName" : "pythonsample",
-            "ConfigurationTemplates" : [ ],
+            "Description" : "Application created from the EB CLI using \"eb init\"",
             "DateCreated" : "2015-08-13T19:05:43.637Z",
             "DateUpdated" : "2015-08-13T19:05:43.637Z",
-            "Description" : "Application created from the EB CLI using \"eb init\"",
-            "Versions" : [ "Sample Application" ]
+            "Versions" : [ "Sample Application" ],
+            "ConfigurationTemplates" : [ ]
           }, {
             "ApplicationName" : "nodejs-example",
-            "ConfigurationTemplates" : [ ],
             "DateCreated" : "2015-08-06T17:50:02.486Z",
             "DateUpdated" : "2015-08-06T17:50:02.486Z",
-            "Versions" : [ "add elasticache", "First Release" ]
+            "Versions" : [ "add elasticache", "First Release" ],
+            "ConfigurationTemplates" : [ ]
           } ]
         },
         "title" : "To view a list of applications"
@@ -56979,22 +56979,22 @@
         },
         "output" : {
           "Options" : [ {
-            "ChangeSeverity" : "NoInterruption",
-            "DefaultValue" : "30",
-            "MaxValue" : 300,
-            "MinValue" : 5,
-            "Name" : "Interval",
             "Namespace" : "aws:elb:healthcheck",
-            "UserDefined" : false,
-            "ValueType" : "Scalar"
-          }, {
+            "Name" : "Interval",
+            "DefaultValue" : "30",
             "ChangeSeverity" : "NoInterruption",
-            "DefaultValue" : "2000000",
-            "MinValue" : 0,
-            "Name" : "LowerThreshold",
-            "Namespace" : "aws:autoscaling:trigger",
             "UserDefined" : false,
-            "ValueType" : "Scalar"
+            "ValueType" : "Scalar",
+            "MinValue" : 5,
+            "MaxValue" : 300
+          }, {
+            "Namespace" : "aws:autoscaling:trigger",
+            "Name" : "LowerThreshold",
+            "DefaultValue" : "2000000",
+            "ChangeSeverity" : "NoInterruption",
+            "UserDefined" : false,
+            "ValueType" : "Scalar",
+            "MinValue" : 0
           } ]
         },
         "title" : "To view configuration options for an environment"
@@ -57014,34 +57014,34 @@
         },
         "output" : {
           "ConfigurationSettings" : [ {
+            "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8",
             "ApplicationName" : "my-app",
-            "DateCreated" : "2015-08-13T19:16:25Z",
-            "DateUpdated" : "2015-08-13T23:30:07Z",
-            "DeploymentStatus" : "deployed",
             "Description" : "Environment created from the EB CLI using \"eb create\"",
             "EnvironmentName" : "my-env",
+            "DeploymentStatus" : "deployed",
+            "DateCreated" : "2015-08-13T19:16:25Z",
+            "DateUpdated" : "2015-08-13T23:30:07Z",
             "OptionSettings" : [ {
+              "ResourceName" : "AWSEBAutoScalingGroup",
               "Namespace" : "aws:autoscaling:asg",
               "OptionName" : "Availability Zones",
-              "ResourceName" : "AWSEBAutoScalingGroup",
               "Value" : "Any"
             }, {
+              "ResourceName" : "AWSEBAutoScalingGroup",
               "Namespace" : "aws:autoscaling:asg",
               "OptionName" : "Cooldown",
-              "ResourceName" : "AWSEBAutoScalingGroup",
               "Value" : "360"
             }, {
+              "ResourceName" : "AWSEBLoadBalancer",
               "Namespace" : "aws:elb:policies",
               "OptionName" : "ConnectionDrainingTimeout",
-              "ResourceName" : "AWSEBLoadBalancer",
               "Value" : "20"
             }, {
+              "ResourceName" : "AWSEBLoadBalancer",
               "Namespace" : "aws:elb:policies",
               "OptionName" : "ConnectionSettingIdleTimeout",
-              "ResourceName" : "AWSEBLoadBalancer",
               "Value" : "60"
-            } ],
-            "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8"
+            } ]
           } ]
         },
         "title" : "To view configurations settings for an environment"
@@ -57054,43 +57054,43 @@
         "description" : "The following operation retrieves overall health information for an environment named my-env:",
         "id" : "to-view-environment-health-1456277109510",
         "input" : {
-          "AttributeNames" : [ "All" ],
-          "EnvironmentName" : "my-env"
+          "EnvironmentName" : "my-env",
+          "AttributeNames" : [ "All" ]
         },
         "output" : {
+          "EnvironmentName" : "my-env",
+          "HealthStatus" : "Ok",
+          "Color" : "Green",
+          "Causes" : [ ],
           "ApplicationMetrics" : {
             "Duration" : 10,
-            "Latency" : {
-              "P10" : 0.001,
-              "P50" : 0.001,
-              "P75" : 0.002,
-              "P85" : 0.003,
-              "P90" : 0.003,
-              "P95" : 0.004,
-              "P99" : 0.004,
-              "P999" : 0.004
-            },
             "RequestCount" : 45,
             "StatusCodes" : {
               "Status2xx" : 45,
               "Status3xx" : 0,
               "Status4xx" : 0,
               "Status5xx" : 0
+            },
+            "Latency" : {
+              "P999" : 0.004,
+              "P99" : 0.004,
+              "P95" : 0.004,
+              "P90" : 0.003,
+              "P85" : 0.003,
+              "P75" : 0.002,
+              "P50" : 0.001,
+              "P10" : 0.001
             }
           },
-          "Causes" : [ ],
-          "Color" : "Green",
-          "EnvironmentName" : "my-env",
-          "HealthStatus" : "Ok",
           "InstancesHealth" : {
-            "Degraded" : 0,
-            "Info" : 0,
             "NoData" : 0,
-            "Ok" : 1,
-            "Pending" : 0,
-            "Severe" : 0,
             "Unknown" : 0,
-            "Warning" : 0
+            "Pending" : 0,
+            "Ok" : 1,
+            "Info" : 0,
+            "Warning" : 0,
+            "Degraded" : 0,
+            "Severe" : 0
           },
           "RefreshedAt" : "2015-08-20T21:09:18Z"
         },
@@ -57108,10 +57108,10 @@
         },
         "output" : {
           "EnvironmentResources" : {
+            "EnvironmentName" : "my-env",
             "AutoScalingGroups" : [ {
               "Name" : "awseb-e-qu3fyyjyjs-stack-AWSEBAutoScalingGroup-QSB2ZO88SXZT"
             } ],
-            "EnvironmentName" : "my-env",
             "Instances" : [ {
               "Id" : "i-0c91c786"
             } ],
@@ -57121,8 +57121,8 @@
             "LoadBalancers" : [ {
               "Name" : "awseb-e-q-AWSEBLoa-1EEPZ0K98BIF0"
             } ],
-            "Queues" : [ ],
-            "Triggers" : [ ]
+            "Triggers" : [ ],
+            "Queues" : [ ]
           }
         },
         "title" : "To view information about the AWS resources in your environment"
@@ -57139,23 +57139,23 @@
         },
         "output" : {
           "Environments" : [ {
-            "AbortableOperationInProgress" : false,
+            "EnvironmentName" : "my-env",
+            "EnvironmentId" : "e-rpqsewtp2j",
             "ApplicationName" : "my-app",
+            "VersionLabel" : "7f58-stage-150812_025409",
+            "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8",
+            "EndpointURL" : "awseb-e-w-AWSEBLoa-1483140XB0Q4L-109QXY8121.us-west-2.elb.amazonaws.com",
             "CNAME" : "my-env.elasticbeanstalk.com",
             "DateCreated" : "2015-08-07T20:48:49.599Z",
             "DateUpdated" : "2015-08-12T18:16:55.019Z",
-            "EndpointURL" : "awseb-e-w-AWSEBLoa-1483140XB0Q4L-109QXY8121.us-west-2.elb.amazonaws.com",
-            "EnvironmentId" : "e-rpqsewtp2j",
-            "EnvironmentName" : "my-env",
-            "Health" : "Green",
-            "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8",
             "Status" : "Ready",
+            "AbortableOperationInProgress" : false,
+            "Health" : "Green",
             "Tier" : {
               "Name" : "WebServer",
               "Type" : "Standard",
               "Version" : " "
-            },
-            "VersionLabel" : "7f58-stage-150812_025409"
+            }
           } ]
         },
         "title" : "To view information about an environment"
@@ -57172,30 +57172,30 @@
         },
         "output" : {
           "Events" : [ {
-            "ApplicationName" : "my-app",
-            "EnvironmentName" : "my-env",
             "EventDate" : "2015-08-20T07:06:53.535Z",
             "Message" : "Environment health has transitioned from Info to Ok.",
-            "Severity" : "INFO"
-          }, {
             "ApplicationName" : "my-app",
             "EnvironmentName" : "my-env",
+            "Severity" : "INFO"
+          }, {
             "EventDate" : "2015-08-20T07:06:02.049Z",
             "Message" : "Environment update completed successfully.",
+            "ApplicationName" : "my-app",
+            "EnvironmentName" : "my-env",
             "RequestId" : "b7f3960b-4709-11e5-ba1e-07e16200da41",
             "Severity" : "INFO"
           }, {
-            "ApplicationName" : "my-app",
-            "EnvironmentName" : "my-env",
             "EventDate" : "2015-08-13T19:16:27.561Z",
             "Message" : "Using elasticbeanstalk-us-west-2-012445113685 as Amazon S3 storage bucket for environment data.",
+            "ApplicationName" : "my-app",
+            "EnvironmentName" : "my-env",
             "RequestId" : "ca8dfbf6-41ef-11e5-988b-651aa638f46b",
             "Severity" : "INFO"
           }, {
-            "ApplicationName" : "my-app",
-            "EnvironmentName" : "my-env",
             "EventDate" : "2015-08-13T19:16:26.581Z",
             "Message" : "createEnvironment is starting.",
+            "ApplicationName" : "my-app",
+            "EnvironmentName" : "my-env",
             "RequestId" : "cdfba8f6-41ef-11e5-988b-65638f41aa6b",
             "Severity" : "INFO"
           } ]
@@ -57210,45 +57210,45 @@
         "description" : "The following operation retrieves health information for instances in an environment named my-env:",
         "id" : "to-view-environment-health-1456277424757",
         "input" : {
-          "AttributeNames" : [ "All" ],
-          "EnvironmentName" : "my-env"
+          "EnvironmentName" : "my-env",
+          "AttributeNames" : [ "All" ]
         },
         "output" : {
           "InstanceHealthList" : [ {
+            "InstanceId" : "i-08691cc7",
+            "HealthStatus" : "Ok",
+            "Color" : "Green",
+            "Causes" : [ ],
+            "LaunchedAt" : "2015-08-13T19:17:09Z",
             "ApplicationMetrics" : {
               "Duration" : 10,
-              "Latency" : {
-                "P10" : 0,
-                "P50" : 0.001,
-                "P75" : 0.002,
-                "P85" : 0.003,
-                "P90" : 0.004,
-                "P95" : 0.005,
-                "P99" : 0.006,
-                "P999" : 0.006
-              },
               "RequestCount" : 48,
               "StatusCodes" : {
                 "Status2xx" : 47,
                 "Status3xx" : 0,
                 "Status4xx" : 1,
                 "Status5xx" : 0
+              },
+              "Latency" : {
+                "P999" : 0.006,
+                "P99" : 0.006,
+                "P95" : 0.005,
+                "P90" : 0.004,
+                "P85" : 0.003,
+                "P75" : 0.002,
+                "P50" : 0.001,
+                "P10" : 0
               }
             },
-            "Causes" : [ ],
-            "Color" : "Green",
-            "HealthStatus" : "Ok",
-            "InstanceId" : "i-08691cc7",
-            "LaunchedAt" : "2015-08-13T19:17:09Z",
             "System" : {
               "CPUUtilization" : {
+                "User" : 1.5,
+                "Nice" : 0.1,
+                "System" : 0.3,
+                "Idle" : 97.8,
                 "IOWait" : 0.2,
                 "IRQ" : 0,
-                "Idle" : 97.8,
-                "Nice" : 0.1,
-                "SoftIRQ" : 0.1,
-                "System" : 0.3,
-                "User" : 1.5
+                "SoftIRQ" : 0.1
               },
               "LoadAverage" : [ 0, 0.02, 0.05 ]
             }
@@ -57266,11 +57266,11 @@
         "id" : "to-view-solution-stacks-1456277504811",
         "input" : null,
         "output" : {
+          "SolutionStacks" : [ "64bit Amazon Linux 2015.03 v2.0.0 running Node.js", "64bit Amazon Linux 2015.03 v2.0.0 running PHP 5.6", "64bit Amazon Linux 2015.03 v2.0.0 running PHP 5.5", "64bit Amazon Linux 2015.03 v2.0.0 running PHP 5.4", "64bit Amazon Linux 2015.03 v2.0.0 running Python 3.4", "64bit Amazon Linux 2015.03 v2.0.0 running Python 2.7", "64bit Amazon Linux 2015.03 v2.0.0 running Python", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 2.2 (Puma)", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 2.2 (Passenger Standalone)", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 2.1 (Puma)", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 2.1 (Passenger Standalone)", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 2.0 (Puma)", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 2.0 (Passenger Standalone)", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 1.9.3", "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8", "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 7 Java 7", "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 7 Java 6", "64bit Windows Server Core 2012 R2 running IIS 8.5", "64bit Windows Server 2012 R2 running IIS 8.5", "64bit Windows Server 2012 running IIS 8", "64bit Windows Server 2008 R2 running IIS 7.5", "64bit Amazon Linux 2015.03 v2.0.0 running Docker 1.6.2", "64bit Amazon Linux 2015.03 v2.0.0 running Multi-container Docker 1.6.2 (Generic)", "64bit Debian jessie v2.0.0 running GlassFish 4.1 Java 8 (Preconfigured - Docker)", "64bit Debian jessie v2.0.0 running GlassFish 4.0 Java 7 (Preconfigured - Docker)", "64bit Debian jessie v2.0.0 running Go 1.4 (Preconfigured - Docker)", "64bit Debian jessie v2.0.0 running Go 1.3 (Preconfigured - Docker)", "64bit Debian jessie v2.0.0 running Python 3.4 (Preconfigured - Docker)" ],
           "SolutionStackDetails" : [ {
-            "PermittedFileTypes" : [ "zip" ],
-            "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Node.js"
-          } ],
-          "SolutionStacks" : [ "64bit Amazon Linux 2015.03 v2.0.0 running Node.js", "64bit Amazon Linux 2015.03 v2.0.0 running PHP 5.6", "64bit Amazon Linux 2015.03 v2.0.0 running PHP 5.5", "64bit Amazon Linux 2015.03 v2.0.0 running PHP 5.4", "64bit Amazon Linux 2015.03 v2.0.0 running Python 3.4", "64bit Amazon Linux 2015.03 v2.0.0 running Python 2.7", "64bit Amazon Linux 2015.03 v2.0.0 running Python", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 2.2 (Puma)", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 2.2 (Passenger Standalone)", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 2.1 (Puma)", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 2.1 (Passenger Standalone)", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 2.0 (Puma)", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 2.0 (Passenger Standalone)", "64bit Amazon Linux 2015.03 v2.0.0 running Ruby 1.9.3", "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8", "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 7 Java 7", "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 7 Java 6", "64bit Windows Server Core 2012 R2 running IIS 8.5", "64bit Windows Server 2012 R2 running IIS 8.5", "64bit Windows Server 2012 running IIS 8", "64bit Windows Server 2008 R2 running IIS 7.5", "64bit Amazon Linux 2015.03 v2.0.0 running Docker 1.6.2", "64bit Amazon Linux 2015.03 v2.0.0 running Multi-container Docker 1.6.2 (Generic)", "64bit Debian jessie v2.0.0 running GlassFish 4.1 Java 8 (Preconfigured - Docker)", "64bit Debian jessie v2.0.0 running GlassFish 4.0 Java 7 (Preconfigured - Docker)", "64bit Debian jessie v2.0.0 running Go 1.4 (Preconfigured - Docker)", "64bit Debian jessie v2.0.0 running Go 1.3 (Preconfigured - Docker)", "64bit Debian jessie v2.0.0 running Python 3.4 (Preconfigured - Docker)" ]
+            "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Node.js",
+            "PermittedFileTypes" : [ "zip" ]
+          } ]
         },
         "title" : "To view solution stacks"
       } ],
@@ -57327,10 +57327,10 @@
         },
         "output" : {
           "EnvironmentInfo" : [ {
-            "Ec2InstanceId" : "i-09c1c867",
             "InfoType" : "tail",
-            "Message" : "https://elasticbeanstalk-us-west-2-0123456789012.s3.amazonaws.com/resources/environments/logs/tail/e-fyqyju3yjs/i-09c1c867/TailLogs-1440109397703.out?AWSAccessKeyId=AKGPT4J56IAJ2EUBL5CQ&Expires=1440195891&Signature=n%2BEalOV6A2HIOx4Rcfb7LT16bBM%3D",
-            "SampleTimestamp" : "2015-08-20T22:23:17.703Z"
+            "Ec2InstanceId" : "i-09c1c867",
+            "SampleTimestamp" : "2015-08-20T22:23:17.703Z",
+            "Message" : "https://elasticbeanstalk-us-west-2-0123456789012.s3.amazonaws.com/resources/environments/logs/tail/e-fyqyju3yjs/i-09c1c867/TailLogs-1440109397703.out?AWSAccessKeyId=AKGPT4J56IAJ2EUBL5CQ&Expires=1440195891&Signature=n%2BEalOV6A2HIOx4Rcfb7LT16bBM%3D"
           } ]
         },
         "title" : "To retrieve tailed logs"
@@ -57343,8 +57343,8 @@
         "description" : "The following operation swaps the assigned subdomains of two environments:",
         "id" : "to-swap-environment-cnames-1456277839438",
         "input" : {
-          "DestinationEnvironmentName" : "my-env-green",
-          "SourceEnvironmentName" : "my-env-blue"
+          "SourceEnvironmentName" : "my-env-blue",
+          "DestinationEnvironmentName" : "my-env-green"
         },
         "output" : null,
         "title" : "To swap environment CNAMES"
@@ -57360,17 +57360,17 @@
           "EnvironmentName" : "my-env"
         },
         "output" : {
-          "AbortableOperationInProgress" : false,
+          "EnvironmentName" : "my-env",
+          "EnvironmentId" : "e-fh2eravpns",
           "ApplicationName" : "my-app",
+          "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8",
+          "EndpointURL" : "awseb-e-f-AWSEBLoa-1I9XUMP4-8492WNUP202574.us-west-2.elb.amazonaws.com",
           "CNAME" : "my-env.elasticbeanstalk.com",
           "DateCreated" : "2015-08-12T18:52:53.622Z",
           "DateUpdated" : "2015-08-12T19:05:54.744Z",
-          "EndpointURL" : "awseb-e-f-AWSEBLoa-1I9XUMP4-8492WNUP202574.us-west-2.elb.amazonaws.com",
-          "EnvironmentId" : "e-fh2eravpns",
-          "EnvironmentName" : "my-env",
-          "Health" : "Grey",
-          "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8",
           "Status" : "Terminating",
+          "AbortableOperationInProgress" : false,
+          "Health" : "Grey",
           "Tier" : {
             "Name" : "WebServer",
             "Type" : "Standard",
@@ -57393,11 +57393,11 @@
         "output" : {
           "Application" : {
             "ApplicationName" : "my-app",
-            "ConfigurationTemplates" : [ ],
+            "Description" : "my Elastic Beanstalk application",
             "DateCreated" : "2015-08-13T19:15:50.449Z",
             "DateUpdated" : "2015-08-20T22:34:56.195Z",
-            "Description" : "my Elastic Beanstalk application",
-            "Versions" : [ "2fba-stage-150819_234450", "bf07-stage-150820_214945", "93f8", "fd7c-stage-150820_000431", "22a0-stage-150819_185942" ]
+            "Versions" : [ "2fba-stage-150819_234450", "bf07-stage-150820_214945", "93f8", "fd7c-stage-150820_000431", "22a0-stage-150819_185942" ],
+            "ConfigurationTemplates" : [ ]
           }
         },
         "title" : "To change an application's description"
@@ -57411,20 +57411,20 @@
         "id" : "to-change-an-application-versions-description-1456278019237",
         "input" : {
           "ApplicationName" : "my-app",
-          "Description" : "new description",
-          "VersionLabel" : "22a0-stage-150819_185942"
+          "VersionLabel" : "22a0-stage-150819_185942",
+          "Description" : "new description"
         },
         "output" : {
           "ApplicationVersion" : {
             "ApplicationName" : "my-app",
-            "DateCreated" : "2015-08-19T18:59:17.646Z",
-            "DateUpdated" : "2015-08-20T22:53:28.871Z",
             "Description" : "new description",
+            "VersionLabel" : "22a0-stage-150819_185942",
             "SourceBundle" : {
               "S3Bucket" : "elasticbeanstalk-us-west-2-0123456789012",
               "S3Key" : "my-app/22a0-stage-150819_185942.war"
             },
-            "VersionLabel" : "22a0-stage-150819_185942"
+            "DateCreated" : "2015-08-19T18:59:17.646Z",
+            "DateUpdated" : "2015-08-20T22:53:28.871Z"
           }
         },
         "title" : "To change an application version's description"
@@ -57438,18 +57438,18 @@
         "id" : "to-update-a-configuration-template-1456278075300",
         "input" : {
           "ApplicationName" : "my-app",
+          "TemplateName" : "my-template",
           "OptionsToRemove" : [ {
             "Namespace" : "aws:elasticbeanstalk:healthreporting:system",
             "OptionName" : "ConfigDocument"
-          } ],
-          "TemplateName" : "my-template"
+          } ]
         },
         "output" : {
-          "ApplicationName" : "my-app",
-          "DateCreated" : "2015-08-20T22:39:31Z",
-          "DateUpdated" : "2015-08-20T22:43:11Z",
           "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8",
-          "TemplateName" : "my-template"
+          "ApplicationName" : "my-app",
+          "TemplateName" : "my-template",
+          "DateCreated" : "2015-08-20T22:39:31Z",
+          "DateUpdated" : "2015-08-20T22:43:11Z"
         },
         "title" : "To update a configuration template"
       } ],
@@ -57465,22 +57465,22 @@
           "VersionLabel" : "v2"
         },
         "output" : {
+          "EnvironmentName" : "my-env",
+          "EnvironmentId" : "e-szqipays4h",
           "ApplicationName" : "my-app",
+          "VersionLabel" : "v2",
+          "SolutionStackName" : "64bit Amazon Linux running Tomcat 7",
+          "EndpointURL" : "awseb-e-i-AWSEBLoa-1RDLX6TC9VUAO-0123456789.us-west-2.elb.amazonaws.com",
           "CNAME" : "my-env.elasticbeanstalk.com",
           "DateCreated" : "2015-02-03T23:04:54.453Z",
           "DateUpdated" : "2015-02-03T23:12:29.119Z",
-          "EndpointURL" : "awseb-e-i-AWSEBLoa-1RDLX6TC9VUAO-0123456789.us-west-2.elb.amazonaws.com",
-          "EnvironmentId" : "e-szqipays4h",
-          "EnvironmentName" : "my-env",
-          "Health" : "Grey",
-          "SolutionStackName" : "64bit Amazon Linux running Tomcat 7",
           "Status" : "Updating",
+          "Health" : "Grey",
           "Tier" : {
             "Name" : "WebServer",
             "Type" : "Standard",
             "Version" : " "
-          },
-          "VersionLabel" : "v2"
+          }
         },
         "title" : "To update an environment to a new version"
       }, {
@@ -57511,23 +57511,23 @@
           } ]
         },
         "output" : {
-          "AbortableOperationInProgress" : true,
+          "EnvironmentName" : "my-env",
+          "EnvironmentId" : "e-wtp2rpqsej",
           "ApplicationName" : "my-app",
+          "VersionLabel" : "7f58-stage-150812_025409",
+          "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8",
+          "EndpointURL" : "awseb-e-w-AWSEBLoa-14XB83101Q4L-104QXY80921.sa-east-1.elb.amazonaws.com",
           "CNAME" : "my-env.elasticbeanstalk.com",
           "DateCreated" : "2015-08-07T20:48:49.599Z",
           "DateUpdated" : "2015-08-12T18:15:23.804Z",
-          "EndpointURL" : "awseb-e-w-AWSEBLoa-14XB83101Q4L-104QXY80921.sa-east-1.elb.amazonaws.com",
-          "EnvironmentId" : "e-wtp2rpqsej",
-          "EnvironmentName" : "my-env",
-          "Health" : "Grey",
-          "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8",
           "Status" : "Updating",
+          "AbortableOperationInProgress" : true,
+          "Health" : "Grey",
           "Tier" : {
             "Name" : "WebServer",
             "Type" : "Standard",
             "Version" : " "
-          },
-          "VersionLabel" : "7f58-stage-150812_025409"
+          }
         },
         "title" : "To configure option settings"
       } ],

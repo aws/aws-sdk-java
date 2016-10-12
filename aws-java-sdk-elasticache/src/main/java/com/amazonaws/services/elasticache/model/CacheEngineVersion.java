@@ -37,6 +37,10 @@ public class CacheEngineVersion implements Serializable, Cloneable {
      * <p>
      * The name of the cache parameter group family associated with this cache engine.
      * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
+     * </p>
      */
     private String cacheParameterGroupFamily;
     /**
@@ -136,9 +140,16 @@ public class CacheEngineVersion implements Serializable, Cloneable {
      * <p>
      * The name of the cache parameter group family associated with this cache engine.
      * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
+     * </p>
      * 
      * @param cacheParameterGroupFamily
-     *        The name of the cache parameter group family associated with this cache engine.
+     *        The name of the cache parameter group family associated with this cache engine.</p>
+     *        <p>
+     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *        <code>redis3.2</code>
      */
 
     public void setCacheParameterGroupFamily(String cacheParameterGroupFamily) {
@@ -149,8 +160,15 @@ public class CacheEngineVersion implements Serializable, Cloneable {
      * <p>
      * The name of the cache parameter group family associated with this cache engine.
      * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
+     * </p>
      * 
-     * @return The name of the cache parameter group family associated with this cache engine.
+     * @return The name of the cache parameter group family associated with this cache engine.</p>
+     *         <p>
+     *         Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *         <code>redis3.2</code>
      */
 
     public String getCacheParameterGroupFamily() {
@@ -161,9 +179,16 @@ public class CacheEngineVersion implements Serializable, Cloneable {
      * <p>
      * The name of the cache parameter group family associated with this cache engine.
      * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
+     * </p>
      * 
      * @param cacheParameterGroupFamily
-     *        The name of the cache parameter group family associated with this cache engine.
+     *        The name of the cache parameter group family associated with this cache engine.</p>
+     *        <p>
+     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *        <code>redis3.2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

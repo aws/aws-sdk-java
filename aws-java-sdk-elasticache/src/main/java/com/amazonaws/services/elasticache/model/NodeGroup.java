@@ -16,42 +16,56 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a collection of cache nodes in a replication group.
+ * Represents a collection of cache nodes in a replication group. One node in the node group is the read/write Primary
+ * node. All the other nodes are read-only Replica nodes.
  * </p>
  */
 public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the node group. A replication group contains only one node group; therefore, the node group ID
-     * is 0001.
+     * The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node
+     * group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15
+     * node groups numbered 0001 to 0015.
      * </p>
      */
     private String nodeGroupId;
     /**
      * <p>
-     * The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      * </p>
      */
     private String status;
-
+    /**
+     * <p>
+     * The endpoint of the primary node in this node group (shard).
+     * </p>
+     */
     private Endpoint primaryEndpoint;
     /**
      * <p>
-     * A list containing information about individual nodes within the node group.
+     * The keyspace for this node group (shard).
+     * </p>
+     */
+    private String slots;
+    /**
+     * <p>
+     * A list containing information about individual nodes within the node group (shard).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<NodeGroupMember> nodeGroupMembers;
 
     /**
      * <p>
-     * The identifier for the node group. A replication group contains only one node group; therefore, the node group ID
-     * is 0001.
+     * The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node
+     * group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15
+     * node groups numbered 0001 to 0015.
      * </p>
      * 
      * @param nodeGroupId
-     *        The identifier for the node group. A replication group contains only one node group; therefore, the node
-     *        group ID is 0001.
+     *        The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only
+     *        1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group
+     *        contains 1 to 15 node groups numbered 0001 to 0015.
      */
 
     public void setNodeGroupId(String nodeGroupId) {
@@ -60,12 +74,14 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the node group. A replication group contains only one node group; therefore, the node group ID
-     * is 0001.
+     * The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node
+     * group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15
+     * node groups numbered 0001 to 0015.
      * </p>
      * 
-     * @return The identifier for the node group. A replication group contains only one node group; therefore, the node
-     *         group ID is 0001.
+     * @return The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains
+     *         only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group
+     *         contains 1 to 15 node groups numbered 0001 to 0015.
      */
 
     public String getNodeGroupId() {
@@ -74,13 +90,15 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the node group. A replication group contains only one node group; therefore, the node group ID
-     * is 0001.
+     * The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node
+     * group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15
+     * node groups numbered 0001 to 0015.
      * </p>
      * 
      * @param nodeGroupId
-     *        The identifier for the node group. A replication group contains only one node group; therefore, the node
-     *        group ID is 0001.
+     *        The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only
+     *        1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group
+     *        contains 1 to 15 node groups numbered 0001 to 0015.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +109,11 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      * </p>
      * 
      * @param status
-     *        The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     *        The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      */
 
     public void setStatus(String status) {
@@ -104,10 +122,10 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      * </p>
      * 
-     * @return The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     * @return The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      */
 
     public String getStatus() {
@@ -116,11 +134,11 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      * </p>
      * 
      * @param status
-     *        The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     *        The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,7 +148,12 @@ public class NodeGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The endpoint of the primary node in this node group (shard).
+     * </p>
+     * 
      * @param primaryEndpoint
+     *        The endpoint of the primary node in this node group (shard).
      */
 
     public void setPrimaryEndpoint(Endpoint primaryEndpoint) {
@@ -138,7 +161,11 @@ public class NodeGroup implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The endpoint of the primary node in this node group (shard).
+     * </p>
+     * 
+     * @return The endpoint of the primary node in this node group (shard).
      */
 
     public Endpoint getPrimaryEndpoint() {
@@ -146,7 +173,12 @@ public class NodeGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The endpoint of the primary node in this node group (shard).
+     * </p>
+     * 
      * @param primaryEndpoint
+     *        The endpoint of the primary node in this node group (shard).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,10 +189,50 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list containing information about individual nodes within the node group.
+     * The keyspace for this node group (shard).
      * </p>
      * 
-     * @return A list containing information about individual nodes within the node group.
+     * @param slots
+     *        The keyspace for this node group (shard).
+     */
+
+    public void setSlots(String slots) {
+        this.slots = slots;
+    }
+
+    /**
+     * <p>
+     * The keyspace for this node group (shard).
+     * </p>
+     * 
+     * @return The keyspace for this node group (shard).
+     */
+
+    public String getSlots() {
+        return this.slots;
+    }
+
+    /**
+     * <p>
+     * The keyspace for this node group (shard).
+     * </p>
+     * 
+     * @param slots
+     *        The keyspace for this node group (shard).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeGroup withSlots(String slots) {
+        setSlots(slots);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list containing information about individual nodes within the node group (shard).
+     * </p>
+     * 
+     * @return A list containing information about individual nodes within the node group (shard).
      */
 
     public java.util.List<NodeGroupMember> getNodeGroupMembers() {
@@ -172,11 +244,11 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list containing information about individual nodes within the node group.
+     * A list containing information about individual nodes within the node group (shard).
      * </p>
      * 
      * @param nodeGroupMembers
-     *        A list containing information about individual nodes within the node group.
+     *        A list containing information about individual nodes within the node group (shard).
      */
 
     public void setNodeGroupMembers(java.util.Collection<NodeGroupMember> nodeGroupMembers) {
@@ -190,7 +262,7 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list containing information about individual nodes within the node group.
+     * A list containing information about individual nodes within the node group (shard).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -199,7 +271,7 @@ public class NodeGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param nodeGroupMembers
-     *        A list containing information about individual nodes within the node group.
+     *        A list containing information about individual nodes within the node group (shard).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,11 +287,11 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list containing information about individual nodes within the node group.
+     * A list containing information about individual nodes within the node group (shard).
      * </p>
      * 
      * @param nodeGroupMembers
-     *        A list containing information about individual nodes within the node group.
+     *        A list containing information about individual nodes within the node group (shard).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,6 +317,8 @@ public class NodeGroup implements Serializable, Cloneable {
             sb.append("Status: " + getStatus() + ",");
         if (getPrimaryEndpoint() != null)
             sb.append("PrimaryEndpoint: " + getPrimaryEndpoint() + ",");
+        if (getSlots() != null)
+            sb.append("Slots: " + getSlots() + ",");
         if (getNodeGroupMembers() != null)
             sb.append("NodeGroupMembers: " + getNodeGroupMembers());
         sb.append("}");
@@ -273,6 +347,10 @@ public class NodeGroup implements Serializable, Cloneable {
             return false;
         if (other.getPrimaryEndpoint() != null && other.getPrimaryEndpoint().equals(this.getPrimaryEndpoint()) == false)
             return false;
+        if (other.getSlots() == null ^ this.getSlots() == null)
+            return false;
+        if (other.getSlots() != null && other.getSlots().equals(this.getSlots()) == false)
+            return false;
         if (other.getNodeGroupMembers() == null ^ this.getNodeGroupMembers() == null)
             return false;
         if (other.getNodeGroupMembers() != null && other.getNodeGroupMembers().equals(this.getNodeGroupMembers()) == false)
@@ -288,6 +366,7 @@ public class NodeGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNodeGroupId() == null) ? 0 : getNodeGroupId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getPrimaryEndpoint() == null) ? 0 : getPrimaryEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getSlots() == null) ? 0 : getSlots().hashCode());
         hashCode = prime * hashCode + ((getNodeGroupMembers() == null) ? 0 : getNodeGroupMembers().hashCode());
         return hashCode;
     }

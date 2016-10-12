@@ -21,6 +21,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.D
 import com.amazonaws.services.dynamodbv2.pojos.AutoKeyAndVal;
 import com.amazonaws.services.dynamodbv2.pojos.Currency;
 import com.amazonaws.services.dynamodbv2.pojos.DateRange;
+import com.amazonaws.services.dynamodbv2.pojos.KeyAndVal;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
 import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
@@ -1094,6 +1095,44 @@ public class StandardModelFactoriesTest {
         assertEquals("firstUnit", model.field("firstUnit").name());
         assertEquals("secondAmount", model.field("secondAmount").name());
         assertEquals("secondUnit", model.field("secondUnit").name());
+    }
+
+    /**
+     * Test mappings.
+     */
+    @Test
+    public void testTableAndDocument() {
+        models.getTable(TableAndDocument.class);
+    }
+    @DynamoDBDocument @DynamoDBTable(tableName="")
+    public static class TableAndDocument extends AutoKeyAndVal<String> {
+        public String getVal() { return super.getVal(); }
+        public void setVal(final String val) { super.setVal(val); }
+    }
+
+    /**
+     * Test mappings.
+     */
+    @Test
+    public void testInheritedWithNoTable() {
+        final Object obj = new KeyAndVal<String,String>() {
+            @DynamoDBHashKey(attributeName="hk")
+            public String getKey() { return super.getKey(); }
+            public void setKey(String key) { super.setKey(key); }
+            @DynamoDBAttribute(attributeName="value")
+            public String getVal() { return super.getVal(); }
+            public void setVal(String val) { super.setVal(val); }
+        };
+        final DynamoDBMapperTableModel<Object> model = getTable(obj);
+
+        final DynamoDBMapperFieldModel<Object,Object> key = model.field("hk");
+        assertNotNull(key);
+        assertEquals(KeyType.HASH, key.keyType());
+        assertEquals(DynamoDBAttributeType.S, key.attributeType());
+
+        final DynamoDBMapperFieldModel<Object,Object> val = model.field("value");
+        assertNotNull(val);
+        assertEquals(DynamoDBAttributeType.S, val.attributeType());
     }
 
     /**

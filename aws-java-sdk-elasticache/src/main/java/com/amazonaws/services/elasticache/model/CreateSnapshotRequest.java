@@ -17,14 +17,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>CreateSnapshot</i> action.
+ * Represents the input of a <code>CreateSnapshot</code> operation.
  * </p>
  */
 public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
+     * The identifier of an existing replication group. The snapshot is created from this replication group.
+     * </p>
+     */
+    private String replicationGroupId;
+    /**
+     * <p>
+     * The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
      * </p>
      */
     private String cacheClusterId;
@@ -37,11 +43,51 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
+     * The identifier of an existing replication group. The snapshot is created from this replication group.
+     * </p>
+     * 
+     * @param replicationGroupId
+     *        The identifier of an existing replication group. The snapshot is created from this replication group.
+     */
+
+    public void setReplicationGroupId(String replicationGroupId) {
+        this.replicationGroupId = replicationGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier of an existing replication group. The snapshot is created from this replication group.
+     * </p>
+     * 
+     * @return The identifier of an existing replication group. The snapshot is created from this replication group.
+     */
+
+    public String getReplicationGroupId() {
+        return this.replicationGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier of an existing replication group. The snapshot is created from this replication group.
+     * </p>
+     * 
+     * @param replicationGroupId
+     *        The identifier of an existing replication group. The snapshot is created from this replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSnapshotRequest withReplicationGroupId(String replicationGroupId) {
+        setReplicationGroupId(replicationGroupId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
      * </p>
      * 
      * @param cacheClusterId
-     *        The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
+     *        The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
      */
 
     public void setCacheClusterId(String cacheClusterId) {
@@ -50,10 +96,10 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
+     * The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
      * </p>
      * 
-     * @return The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
+     * @return The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
      */
 
     public String getCacheClusterId() {
@@ -62,11 +108,11 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
+     * The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
      * </p>
      * 
      * @param cacheClusterId
-     *        The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
+     *        The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,6 +172,8 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getReplicationGroupId() != null)
+            sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
         if (getCacheClusterId() != null)
             sb.append("CacheClusterId: " + getCacheClusterId() + ",");
         if (getSnapshotName() != null)
@@ -144,6 +192,10 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof CreateSnapshotRequest == false)
             return false;
         CreateSnapshotRequest other = (CreateSnapshotRequest) obj;
+        if (other.getReplicationGroupId() == null ^ this.getReplicationGroupId() == null)
+            return false;
+        if (other.getReplicationGroupId() != null && other.getReplicationGroupId().equals(this.getReplicationGroupId()) == false)
+            return false;
         if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null)
             return false;
         if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false)
@@ -160,6 +212,7 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getReplicationGroupId() == null) ? 0 : getReplicationGroupId().hashCode());
         hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode());
         hashCode = prime * hashCode + ((getSnapshotName() == null) ? 0 : getSnapshotName().hashCode());
         return hashCode;

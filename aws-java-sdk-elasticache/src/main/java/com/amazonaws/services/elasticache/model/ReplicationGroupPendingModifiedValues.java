@@ -16,21 +16,21 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The settings to be applied to the replication group, either immediately or during the next maintenance window.
+ * The settings to be applied to the Redis replication group, either immediately or during the next maintenance window.
  * </p>
  */
 public class ReplicationGroupPendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was specified), or
-     * during the next maintenance window.
+     * The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified), or during
+     * the next maintenance window.
      * </p>
      */
     private String primaryClusterId;
     /**
      * <p>
-     * Indicates the status of Multi-AZ for this replication group.
+     * Indicates the status of Multi-AZ for this Redis replication group.
      * </p>
      * <note>
      * <p>
@@ -44,7 +44,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
@@ -54,13 +57,13 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was specified), or
-     * during the next maintenance window.
+     * The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified), or during
+     * the next maintenance window.
      * </p>
      * 
      * @param primaryClusterId
-     *        The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was
-     *        specified), or during the next maintenance window.
+     *        The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified), or
+     *        during the next maintenance window.
      */
 
     public void setPrimaryClusterId(String primaryClusterId) {
@@ -69,12 +72,12 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was specified), or
-     * during the next maintenance window.
+     * The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified), or during
+     * the next maintenance window.
      * </p>
      * 
-     * @return The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was
-     *         specified), or during the next maintenance window.
+     * @return The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified),
+     *         or during the next maintenance window.
      */
 
     public String getPrimaryClusterId() {
@@ -83,13 +86,13 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was specified), or
-     * during the next maintenance window.
+     * The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified), or during
+     * the next maintenance window.
      * </p>
      * 
      * @param primaryClusterId
-     *        The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code> was
-     *        specified), or during the next maintenance window.
+     *        The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified), or
+     *        during the next maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,7 +103,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ for this replication group.
+     * Indicates the status of Multi-AZ for this Redis replication group.
      * </p>
      * <note>
      * <p>
@@ -114,14 +117,17 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
      * </note>
      * 
      * @param automaticFailoverStatus
-     *        Indicates the status of Multi-AZ for this replication group.</p> <note>
+     *        Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
      *        <p>
      *        ElastiCache Multi-AZ replication groups are not supported on:
      *        </p>
@@ -133,7 +139,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      *        </li>
      *        <li>
      *        <p>
-     *        T1 and T2 cache node types.
+     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
      *        </p>
      *        </li>
      *        </ul>
@@ -146,7 +155,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ for this replication group.
+     * Indicates the status of Multi-AZ for this Redis replication group.
      * </p>
      * <note>
      * <p>
@@ -160,13 +169,16 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
      * </note>
      * 
-     * @return Indicates the status of Multi-AZ for this replication group.</p> <note>
+     * @return Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
      *         <p>
      *         ElastiCache Multi-AZ replication groups are not supported on:
      *         </p>
@@ -178,7 +190,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      *         </li>
      *         <li>
      *         <p>
-     *         T1 and T2 cache node types.
+     *         Redis (cluster mode disabled):T1 and T2 cache node types.
+     *         </p>
+     *         <p>
+     *         Redis (cluster mode enabled): T1 node types.
      *         </p>
      *         </li>
      *         </ul>
@@ -191,7 +206,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ for this replication group.
+     * Indicates the status of Multi-AZ for this Redis replication group.
      * </p>
      * <note>
      * <p>
@@ -205,14 +220,17 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
      * </note>
      * 
      * @param automaticFailoverStatus
-     *        Indicates the status of Multi-AZ for this replication group.</p> <note>
+     *        Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
      *        <p>
      *        ElastiCache Multi-AZ replication groups are not supported on:
      *        </p>
@@ -224,7 +242,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      *        </li>
      *        <li>
      *        <p>
-     *        T1 and T2 cache node types.
+     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
      *        </p>
      *        </li>
      *        </ul>
@@ -239,7 +260,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ for this replication group.
+     * Indicates the status of Multi-AZ for this Redis replication group.
      * </p>
      * <note>
      * <p>
@@ -253,14 +274,17 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
      * </note>
      * 
      * @param automaticFailoverStatus
-     *        Indicates the status of Multi-AZ for this replication group.</p> <note>
+     *        Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
      *        <p>
      *        ElastiCache Multi-AZ replication groups are not supported on:
      *        </p>
@@ -272,7 +296,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      *        </li>
      *        <li>
      *        <p>
-     *        T1 and T2 cache node types.
+     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
      *        </p>
      *        </li>
      *        </ul>
@@ -285,7 +312,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ for this replication group.
+     * Indicates the status of Multi-AZ for this Redis replication group.
      * </p>
      * <note>
      * <p>
@@ -299,14 +326,17 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
      * </note>
      * 
      * @param automaticFailoverStatus
-     *        Indicates the status of Multi-AZ for this replication group.</p> <note>
+     *        Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
      *        <p>
      *        ElastiCache Multi-AZ replication groups are not supported on:
      *        </p>
@@ -318,7 +348,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      *        </li>
      *        <li>
      *        <p>
-     *        T1 and T2 cache node types.
+     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
      *        </p>
      *        </li>
      *        </ul>

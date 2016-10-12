@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The status of the cache parameter group.
+ * Status of the cache parameter group.
  * </p>
  */
 public class CacheParameterGroupStatus implements Serializable, Cloneable {

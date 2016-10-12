@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>PurchaseReservedCacheNodesOffering</i> action.
+ * Represents the input of a <code>PurchaseReservedCacheNodesOffering</code> operation.
  * </p>
  */
 public class PurchaseReservedCacheNodesOfferingRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {

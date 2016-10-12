@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>CreateCacheSubnetGroup</i> action.
+ * Represents the input of a <code>CreateCacheSubnetGroup</code> operation.
  * </p>
  */
 public class CreateCacheSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {

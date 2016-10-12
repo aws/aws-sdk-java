@@ -1046,6 +1046,20 @@ public class TransferManager {
         long totalBytesToDownload = lastByte - startingByte + 1;
         transferProgress.setTotalBytesToTransfer(totalBytesToDownload);
 
+        // Range information is needed for auto retry of downloads so a retry
+        // request can start at the last downloaded location in the range.
+        //
+        // For obvious reasons, setting a Range header only makes sense if the
+        // object actually has content because it's inclusive, otherwise S3
+        // responds with 4xx
+        //
+        // In addition, we only set the range if the download was *NOT*
+        // determined to be parallelizable above. One of the conditions for
+        // parallel downloads is that getRange() returns null so preserve that.
+        if (totalBytesToDownload > 0 && !isDownloadParallel) {
+            getObjectRequest.withRange(startingByte, lastByte);
+        }
+
         long fileLength = -1;
 
         if (resumeExistingDownload) {

@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>ModifyCacheSubnetGroup</i> action.
+ * Represents the input of a <code>ModifyCacheSubnetGroup</code> operation.
  * </p>
  */
 public class ModifyCacheSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -36,7 +36,7 @@ public class ModifyCacheSubnetGroupRequest extends com.amazonaws.AmazonWebServic
     private String cacheSubnetGroupName;
     /**
      * <p>
-     * A description for the cache subnet group.
+     * A description of the cache subnet group.
      * </p>
      */
     private String cacheSubnetGroupDescription;
@@ -122,11 +122,11 @@ public class ModifyCacheSubnetGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A description for the cache subnet group.
+     * A description of the cache subnet group.
      * </p>
      * 
      * @param cacheSubnetGroupDescription
-     *        A description for the cache subnet group.
+     *        A description of the cache subnet group.
      */
 
     public void setCacheSubnetGroupDescription(String cacheSubnetGroupDescription) {
@@ -135,10 +135,10 @@ public class ModifyCacheSubnetGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A description for the cache subnet group.
+     * A description of the cache subnet group.
      * </p>
      * 
-     * @return A description for the cache subnet group.
+     * @return A description of the cache subnet group.
      */
 
     public String getCacheSubnetGroupDescription() {
@@ -147,11 +147,11 @@ public class ModifyCacheSubnetGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A description for the cache subnet group.
+     * A description of the cache subnet group.
      * </p>
      * 
      * @param cacheSubnetGroupDescription
-     *        A description for the cache subnet group.
+     *        A description of the cache subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

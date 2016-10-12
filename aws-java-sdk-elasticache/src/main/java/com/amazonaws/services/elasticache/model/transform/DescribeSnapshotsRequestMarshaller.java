@@ -42,6 +42,10 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
         request.addParameter("Version", "2015-02-02");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (describeSnapshotsRequest.getReplicationGroupId() != null) {
+            request.addParameter("ReplicationGroupId", StringUtils.fromString(describeSnapshotsRequest.getReplicationGroupId()));
+        }
+
         if (describeSnapshotsRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(describeSnapshotsRequest.getCacheClusterId()));
         }
@@ -60,6 +64,10 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
 
         if (describeSnapshotsRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeSnapshotsRequest.getMaxRecords()));
+        }
+
+        if (describeSnapshotsRequest.getShowNodeGroupConfig() != null) {
+            request.addParameter("ShowNodeGroupConfig", StringUtils.fromBoolean(describeSnapshotsRequest.getShowNodeGroupConfig()));
         }
 
         return request;

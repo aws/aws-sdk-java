@@ -45,8 +45,23 @@ public class NodeSnapshotStaxUnmarshaller implements Unmarshaller<NodeSnapshot, 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("CacheClusterId", targetDepth)) {
+                    nodeSnapshot.setCacheClusterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("NodeGroupId", targetDepth)) {
+                    nodeSnapshot.setNodeGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("CacheNodeId", targetDepth)) {
                     nodeSnapshot.setCacheNodeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("NodeGroupConfiguration", targetDepth)) {
+                    nodeSnapshot.setNodeGroupConfiguration(NodeGroupConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains all of the attributes of a specific replication group.
+ * Contains all of the attributes of a specific Redis replication group.
  * </p>
  */
 public class ReplicationGroup implements Serializable, Cloneable {
@@ -35,7 +35,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      * </p>
      */
     private String status;
@@ -80,13 +80,51 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
      * </note>
      */
     private String automaticFailover;
+    /**
+     * <p>
+     * The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     * replication group.
+     * </p>
+     */
+    private Endpoint configurationEndpoint;
+    /**
+     * <p>
+     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
+     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     * days before being deleted.
+     * </p>
+     * <important>
+     * <p>
+     * If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
+     * </p>
+     * </important>
+     */
+    private Integer snapshotRetentionLimit;
+    /**
+     * <p>
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).
+     * </p>
+     * <p>
+     * Example: <code>05:00-09:00</code>
+     * </p>
+     * <p>
+     * If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
+     * </p>
+     * <p>
+     * <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
+     * </p>
+     */
+    private String snapshotWindow;
 
     /**
      * <p>
@@ -170,11 +208,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      * </p>
      * 
      * @param status
-     *        The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     *        The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      */
 
     public void setStatus(String status) {
@@ -183,10 +221,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      * </p>
      * 
-     * @return The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     * @return The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      */
 
     public String getStatus() {
@@ -195,11 +233,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      * </p>
      * 
      * @param status
-     *        The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+     *        The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,7 +494,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
@@ -475,7 +516,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        T1 and T2 cache node types.
+     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
      *        </p>
      *        </li>
      *        </ul>
@@ -502,7 +546,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
@@ -520,7 +567,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         T1 and T2 cache node types.
+     *         Redis (cluster mode disabled):T1 and T2 cache node types.
+     *         </p>
+     *         <p>
+     *         Redis (cluster mode enabled): T1 node types.
      *         </p>
      *         </li>
      *         </ul>
@@ -547,7 +597,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
@@ -566,7 +619,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        T1 and T2 cache node types.
+     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
      *        </p>
      *        </li>
      *        </ul>
@@ -595,7 +651,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
@@ -614,7 +673,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        T1 and T2 cache node types.
+     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
      *        </p>
      *        </li>
      *        </ul>
@@ -641,7 +703,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
@@ -660,7 +725,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        T1 and T2 cache node types.
+     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
      *        </p>
      *        </li>
      *        </ul>
@@ -670,6 +738,222 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     public ReplicationGroup withAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
         setAutomaticFailover(automaticFailover);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     * replication group.
+     * </p>
+     * 
+     * @param configurationEndpoint
+     *        The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     *        replication group.
+     */
+
+    public void setConfigurationEndpoint(Endpoint configurationEndpoint) {
+        this.configurationEndpoint = configurationEndpoint;
+    }
+
+    /**
+     * <p>
+     * The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     * replication group.
+     * </p>
+     * 
+     * @return The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     *         replication group.
+     */
+
+    public Endpoint getConfigurationEndpoint() {
+        return this.configurationEndpoint;
+    }
+
+    /**
+     * <p>
+     * The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     * replication group.
+     * </p>
+     * 
+     * @param configurationEndpoint
+     *        The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     *        replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withConfigurationEndpoint(Endpoint configurationEndpoint) {
+        setConfigurationEndpoint(configurationEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
+     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     * days before being deleted.
+     * </p>
+     * <important>
+     * <p>
+     * If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
+     * </p>
+     * </important>
+     * 
+     * @param snapshotRetentionLimit
+     *        The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
+     *        For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     *        retained for 5 days before being deleted.</p> <important>
+     *        <p>
+     *        If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
+     *        </p>
+     */
+
+    public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
+        this.snapshotRetentionLimit = snapshotRetentionLimit;
+    }
+
+    /**
+     * <p>
+     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
+     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     * days before being deleted.
+     * </p>
+     * <important>
+     * <p>
+     * If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
+     * </p>
+     * </important>
+     * 
+     * @return The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
+     *         For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     *         retained for 5 days before being deleted.</p> <important>
+     *         <p>
+     *         If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
+     *         </p>
+     */
+
+    public Integer getSnapshotRetentionLimit() {
+        return this.snapshotRetentionLimit;
+    }
+
+    /**
+     * <p>
+     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
+     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     * days before being deleted.
+     * </p>
+     * <important>
+     * <p>
+     * If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
+     * </p>
+     * </important>
+     * 
+     * @param snapshotRetentionLimit
+     *        The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
+     *        For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     *        retained for 5 days before being deleted.</p> <important>
+     *        <p>
+     *        If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
+        setSnapshotRetentionLimit(snapshotRetentionLimit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).
+     * </p>
+     * <p>
+     * Example: <code>05:00-09:00</code>
+     * </p>
+     * <p>
+     * If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
+     * </p>
+     * <p>
+     * <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
+     * </p>
+     * 
+     * @param snapshotWindow
+     *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group
+     *        (shard).</p>
+     *        <p>
+     *        Example: <code>05:00-09:00</code>
+     *        </p>
+     *        <p>
+     *        If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
+     *        </p>
+     *        <p>
+     *        <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
+     */
+
+    public void setSnapshotWindow(String snapshotWindow) {
+        this.snapshotWindow = snapshotWindow;
+    }
+
+    /**
+     * <p>
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).
+     * </p>
+     * <p>
+     * Example: <code>05:00-09:00</code>
+     * </p>
+     * <p>
+     * If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
+     * </p>
+     * <p>
+     * <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
+     * </p>
+     * 
+     * @return The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group
+     *         (shard).</p>
+     *         <p>
+     *         Example: <code>05:00-09:00</code>
+     *         </p>
+     *         <p>
+     *         If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
+     *         </p>
+     *         <p>
+     *         <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
+     */
+
+    public String getSnapshotWindow() {
+        return this.snapshotWindow;
+    }
+
+    /**
+     * <p>
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).
+     * </p>
+     * <p>
+     * Example: <code>05:00-09:00</code>
+     * </p>
+     * <p>
+     * If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
+     * </p>
+     * <p>
+     * <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
+     * </p>
+     * 
+     * @param snapshotWindow
+     *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group
+     *        (shard).</p>
+     *        <p>
+     *        Example: <code>05:00-09:00</code>
+     *        </p>
+     *        <p>
+     *        If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
+     *        </p>
+     *        <p>
+     *        <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withSnapshotWindow(String snapshotWindow) {
+        setSnapshotWindow(snapshotWindow);
         return this;
     }
 
@@ -699,7 +983,13 @@ public class ReplicationGroup implements Serializable, Cloneable {
         if (getSnapshottingClusterId() != null)
             sb.append("SnapshottingClusterId: " + getSnapshottingClusterId() + ",");
         if (getAutomaticFailover() != null)
-            sb.append("AutomaticFailover: " + getAutomaticFailover());
+            sb.append("AutomaticFailover: " + getAutomaticFailover() + ",");
+        if (getConfigurationEndpoint() != null)
+            sb.append("ConfigurationEndpoint: " + getConfigurationEndpoint() + ",");
+        if (getSnapshotRetentionLimit() != null)
+            sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
+        if (getSnapshotWindow() != null)
+            sb.append("SnapshotWindow: " + getSnapshotWindow());
         sb.append("}");
         return sb.toString();
     }
@@ -746,6 +1036,18 @@ public class ReplicationGroup implements Serializable, Cloneable {
             return false;
         if (other.getAutomaticFailover() != null && other.getAutomaticFailover().equals(this.getAutomaticFailover()) == false)
             return false;
+        if (other.getConfigurationEndpoint() == null ^ this.getConfigurationEndpoint() == null)
+            return false;
+        if (other.getConfigurationEndpoint() != null && other.getConfigurationEndpoint().equals(this.getConfigurationEndpoint()) == false)
+            return false;
+        if (other.getSnapshotRetentionLimit() == null ^ this.getSnapshotRetentionLimit() == null)
+            return false;
+        if (other.getSnapshotRetentionLimit() != null && other.getSnapshotRetentionLimit().equals(this.getSnapshotRetentionLimit()) == false)
+            return false;
+        if (other.getSnapshotWindow() == null ^ this.getSnapshotWindow() == null)
+            return false;
+        if (other.getSnapshotWindow() != null && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false)
+            return false;
         return true;
     }
 
@@ -762,6 +1064,9 @@ public class ReplicationGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNodeGroups() == null) ? 0 : getNodeGroups().hashCode());
         hashCode = prime * hashCode + ((getSnapshottingClusterId() == null) ? 0 : getSnapshottingClusterId().hashCode());
         hashCode = prime * hashCode + ((getAutomaticFailover() == null) ? 0 : getAutomaticFailover().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationEndpoint() == null) ? 0 : getConfigurationEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());
         return hashCode;
     }
 

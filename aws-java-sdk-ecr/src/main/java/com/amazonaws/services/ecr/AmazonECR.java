@@ -249,6 +249,33 @@ public interface AmazonECR {
 
     /**
      * <p>
+     * Returns metadata about the images in a repository, including image size and creation date.
+     * </p>
+     * <note>
+     * <p>
+     * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
+     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * </p>
+     * </note>
+     * 
+     * @param describeImagesRequest
+     * @return Result of the DescribeImages operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws ImageNotFoundException
+     *         The image requested does not exist in the specified repository.
+     * @sample AmazonECR.DescribeImages
+     */
+    DescribeImagesResult describeImages(DescribeImagesRequest describeImagesRequest);
+
+    /**
+     * <p>
      * Describes image repositories in a registry.
      * </p>
      * 

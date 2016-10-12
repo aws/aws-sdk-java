@@ -29009,22 +29009,22 @@
         "description" : "This example specifies the health check settings used to evaluate the health of your backend EC2 instances.",
         "id" : "elb-configure-health-check-1",
         "input" : {
+          "LoadBalancerName" : "my-load-balancer",
           "HealthCheck" : {
-            "HealthyThreshold" : 2,
-            "Interval" : 30,
             "Target" : "HTTP:80/png",
+            "Interval" : 30,
             "Timeout" : 3,
-            "UnhealthyThreshold" : 2
-          },
-          "LoadBalancerName" : "my-load-balancer"
+            "UnhealthyThreshold" : 2,
+            "HealthyThreshold" : 2
+          }
         },
         "output" : {
           "HealthCheck" : {
-            "HealthyThreshold" : 2,
-            "Interval" : 30,
             "Target" : "HTTP:80/png",
+            "Interval" : 30,
             "Timeout" : 3,
-            "UnhealthyThreshold" : 2
+            "UnhealthyThreshold" : 2,
+            "HealthyThreshold" : 2
           }
         },
         "title" : "To specify the health check settings for your backend EC2 instances"
@@ -29037,9 +29037,9 @@
         "description" : "This example generates a stickiness policy that follows the sticky session lifetimes of the application-generated cookie.",
         "id" : "elb-create-app-cookie-stickiness-policy-1",
         "input" : {
-          "CookieName" : "my-app-cookie",
           "LoadBalancerName" : "my-load-balancer",
-          "PolicyName" : "my-app-cookie-policy"
+          "PolicyName" : "my-app-cookie-policy",
+          "CookieName" : "my-app-cookie"
         },
         "output" : null,
         "title" : "To generate a stickiness policy for your load balancer"
@@ -29052,9 +29052,9 @@
         "description" : "This example generates a stickiness policy with sticky session lifetimes controlled by the specified expiration period.",
         "id" : "elb-create-lb-cookie-stickiness-policy-1",
         "input" : {
-          "CookieExpirationPeriod" : 60,
           "LoadBalancerName" : "my-load-balancer",
-          "PolicyName" : "my-duration-cookie-policy"
+          "PolicyName" : "my-duration-cookie-policy",
+          "CookieExpirationPeriod" : 60
         },
         "output" : null,
         "title" : "To generate a duration-based stickiness policy for your load balancer"
@@ -29067,15 +29067,15 @@
         "description" : "This example creates a load balancer with an HTTP listener in a VPC.",
         "id" : "elb-create-load-balancer-1",
         "input" : {
-          "Listeners" : [ {
-            "InstancePort" : 80,
-            "InstanceProtocol" : "HTTP",
-            "LoadBalancerPort" : 80,
-            "Protocol" : "HTTP"
-          } ],
           "LoadBalancerName" : "my-load-balancer",
-          "SecurityGroups" : [ "sg-a61988c3" ],
-          "Subnets" : [ "subnet-15aaab61" ]
+          "Listeners" : [ {
+            "Protocol" : "HTTP",
+            "LoadBalancerPort" : 80,
+            "InstanceProtocol" : "HTTP",
+            "InstancePort" : 80
+          } ],
+          "Subnets" : [ "subnet-15aaab61" ],
+          "SecurityGroups" : [ "sg-a61988c3" ]
         },
         "output" : {
           "DNSName" : "my-load-balancer-1234567890.us-west-2.elb.amazonaws.com"
@@ -29089,14 +29089,14 @@
         "description" : "This example creates a load balancer with an HTTP listener in EC2-Classic.",
         "id" : "elb-create-load-balancer-2",
         "input" : {
-          "AvailabilityZones" : [ "us-west-2a" ],
+          "LoadBalancerName" : "my-load-balancer",
           "Listeners" : [ {
-            "InstancePort" : 80,
-            "InstanceProtocol" : "HTTP",
+            "Protocol" : "HTTP",
             "LoadBalancerPort" : 80,
-            "Protocol" : "HTTP"
+            "InstanceProtocol" : "HTTP",
+            "InstancePort" : 80
           } ],
-          "LoadBalancerName" : "my-load-balancer"
+          "AvailabilityZones" : [ "us-west-2a" ]
         },
         "output" : {
           "DNSName" : "my-load-balancer-123456789.us-west-2.elb.amazonaws.com"
@@ -29110,21 +29110,21 @@
         "description" : "This example creates a load balancer with an HTTPS listener in a VPC.",
         "id" : "elb-create-load-balancer-3",
         "input" : {
+          "LoadBalancerName" : "my-load-balancer",
           "Listeners" : [ {
-            "InstancePort" : 80,
-            "InstanceProtocol" : "HTTP",
+            "Protocol" : "HTTP",
             "LoadBalancerPort" : 80,
-            "Protocol" : "HTTP"
-          }, {
-            "InstancePort" : 80,
             "InstanceProtocol" : "HTTP",
-            "LoadBalancerPort" : 443,
+            "InstancePort" : 80
+          }, {
             "Protocol" : "HTTPS",
+            "LoadBalancerPort" : 443,
+            "InstanceProtocol" : "HTTP",
+            "InstancePort" : 80,
             "SSLCertificateId" : "arn:aws:iam::123456789012:server-certificate/my-server-cert"
           } ],
-          "LoadBalancerName" : "my-load-balancer",
-          "SecurityGroups" : [ "sg-a61988c3" ],
-          "Subnets" : [ "subnet-15aaab61" ]
+          "Subnets" : [ "subnet-15aaab61" ],
+          "SecurityGroups" : [ "sg-a61988c3" ]
         },
         "output" : {
           "DNSName" : "my-load-balancer-1234567890.us-west-2.elb.amazonaws.com"
@@ -29138,20 +29138,20 @@
         "description" : "This example creates a load balancer with an HTTPS listener in EC2-Classic.",
         "id" : "elb-create-load-balancer-4",
         "input" : {
-          "AvailabilityZones" : [ "us-west-2a" ],
+          "LoadBalancerName" : "my-load-balancer",
           "Listeners" : [ {
-            "InstancePort" : 80,
-            "InstanceProtocol" : "HTTP",
+            "Protocol" : "HTTP",
             "LoadBalancerPort" : 80,
-            "Protocol" : "HTTP"
-          }, {
-            "InstancePort" : 80,
             "InstanceProtocol" : "HTTP",
-            "LoadBalancerPort" : 443,
+            "InstancePort" : 80
+          }, {
             "Protocol" : "HTTPS",
+            "LoadBalancerPort" : 443,
+            "InstanceProtocol" : "HTTP",
+            "InstancePort" : 80,
             "SSLCertificateId" : "arn:aws:iam::123456789012:server-certificate/my-server-cert"
           } ],
-          "LoadBalancerName" : "my-load-balancer"
+          "AvailabilityZones" : [ "us-west-2a" ]
         },
         "output" : {
           "DNSName" : "my-load-balancer-123456789.us-west-2.elb.amazonaws.com"
@@ -29165,16 +29165,16 @@
         "description" : "This example creates an internal load balancer with an HTTP listener in a VPC.",
         "id" : "elb-create-load-balancer-5",
         "input" : {
-          "Listeners" : [ {
-            "InstancePort" : 80,
-            "InstanceProtocol" : "HTTP",
-            "LoadBalancerPort" : 80,
-            "Protocol" : "HTTP"
-          } ],
           "LoadBalancerName" : "my-load-balancer",
-          "Scheme" : "internal",
+          "Listeners" : [ {
+            "Protocol" : "HTTP",
+            "LoadBalancerPort" : 80,
+            "InstanceProtocol" : "HTTP",
+            "InstancePort" : 80
+          } ],
+          "Subnets" : [ "subnet-15aaab61" ],
           "SecurityGroups" : [ "sg-a61988c3" ],
-          "Subnets" : [ "subnet-15aaab61" ]
+          "Scheme" : "internal"
         },
         "output" : {
           "DNSName" : "internal-my-load-balancer-123456789.us-west-2.elb.amazonaws.com"
@@ -29189,13 +29189,13 @@
         "description" : "This example creates a listener for your load balancer at port 80 using the HTTP protocol.",
         "id" : "elb-create-load-balancer-listeners-1",
         "input" : {
+          "LoadBalancerName" : "my-load-balancer",
           "Listeners" : [ {
-            "InstancePort" : 80,
-            "InstanceProtocol" : "HTTP",
+            "Protocol" : "HTTP",
             "LoadBalancerPort" : 80,
-            "Protocol" : "HTTP"
-          } ],
-          "LoadBalancerName" : "my-load-balancer"
+            "InstanceProtocol" : "HTTP",
+            "InstancePort" : 80
+          } ]
         },
         "output" : null,
         "title" : "To create an HTTP listener for a load balancer"
@@ -29207,14 +29207,14 @@
         "description" : "This example creates a listener for your load balancer at port 443 using the HTTPS protocol.",
         "id" : "elb-create-load-balancer-listeners-2",
         "input" : {
+          "LoadBalancerName" : "my-load-balancer",
           "Listeners" : [ {
-            "InstancePort" : 80,
-            "InstanceProtocol" : "HTTP",
-            "LoadBalancerPort" : 443,
             "Protocol" : "HTTPS",
+            "LoadBalancerPort" : 443,
+            "InstanceProtocol" : "HTTP",
+            "InstancePort" : 80,
             "SSLCertificateId" : "arn:aws:iam::123456789012:server-certificate/my-server-cert"
-          } ],
-          "LoadBalancerName" : "my-load-balancer"
+          } ]
         },
         "output" : null,
         "title" : "To create an HTTPS listener for a load balancer"
@@ -29228,12 +29228,12 @@
         "id" : "elb-create-load-balancer-policy-1",
         "input" : {
           "LoadBalancerName" : "my-load-balancer",
+          "PolicyName" : "my-ProxyProtocol-policy",
+          "PolicyTypeName" : "ProxyProtocolPolicyType",
           "PolicyAttributes" : [ {
             "AttributeName" : "ProxyProtocol",
             "AttributeValue" : "true"
-          } ],
-          "PolicyName" : "my-ProxyProtocol-policy",
-          "PolicyTypeName" : "ProxyProtocolPolicyType"
+          } ]
         },
         "output" : null,
         "title" : "To create a policy that enables Proxy Protocol on a load balancer"
@@ -29246,12 +29246,12 @@
         "id" : "elb-create-load-balancer-policy-2",
         "input" : {
           "LoadBalancerName" : "my-load-balancer",
+          "PolicyName" : "my-PublicKey-policy",
+          "PolicyTypeName" : "PublicKeyPolicyType",
           "PolicyAttributes" : [ {
             "AttributeName" : "PublicKey",
             "AttributeValue" : "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwAYUjnfyEyXr1pxjhFWBpMlggUcqoi3kl+dS74kj//c6x7ROtusUaeQCTgIUkayttRDWchuqo1pHC1u+n5xxXnBBe2ejbb2WRsKIQ5rXEeixsjFpFsojpSQKkzhVGI6mJVZBJDVKSHmswnwLBdofLhzvllpovBPTHe+o4haAWvDBALJU0pkSI1FecPHcs2hwxf14zHoXy1e2k36A64nXW43wtfx5qcVSIxtCEOjnYRg7RPvybaGfQ+v6Iaxb/+7J5kEvZhTFQId+bSiJImF1FSUT1W1xwzBZPUbcUkkXDj45vC2s3Z8E+Lk7a3uZhvsQHLZnrfuWjBWGWvZ/MhZYgEXAMPLE"
-          } ],
-          "PolicyName" : "my-PublicKey-policy",
-          "PolicyTypeName" : "PublicKeyPolicyType"
+          } ]
         },
         "output" : null,
         "title" : "To create a public key policy"
@@ -29264,12 +29264,12 @@
         "id" : "elb-create-load-balancer-policy-3",
         "input" : {
           "LoadBalancerName" : "my-load-balancer",
+          "PolicyName" : "my-authentication-policy",
+          "PolicyTypeName" : "BackendServerAuthenticationPolicyType",
           "PolicyAttributes" : [ {
             "AttributeName" : "PublicKeyPolicyName",
             "AttributeValue" : "my-PublicKey-policy"
-          } ],
-          "PolicyName" : "my-authentication-policy",
-          "PolicyTypeName" : "BackendServerAuthenticationPolicyType"
+          } ]
         },
         "output" : null,
         "title" : "To create a backend server authentication policy"
@@ -29323,10 +29323,10 @@
         "description" : "This example deregisters the specified instance from the specified load balancer.",
         "id" : "elb-deregister-instances-from-load-balancer-1",
         "input" : {
+          "LoadBalancerName" : "my-load-balancer",
           "Instances" : [ {
             "InstanceId" : "i-d6f6fae3"
-          } ],
-          "LoadBalancerName" : "my-load-balancer"
+          } ]
         },
         "output" : {
           "Instances" : [ {
@@ -29349,15 +29349,15 @@
         },
         "output" : {
           "InstanceStates" : [ {
-            "Description" : "N/A",
             "InstanceId" : "i-207d9717",
+            "State" : "InService",
             "ReasonCode" : "N/A",
-            "State" : "InService"
+            "Description" : "N/A"
           }, {
-            "Description" : "N/A",
             "InstanceId" : "i-afefb49b",
+            "State" : "InService",
             "ReasonCode" : "N/A",
-            "State" : "InService"
+            "Description" : "N/A"
           } ]
         },
         "title" : "To describe the health of the instances for a load balancer"
@@ -29374,6 +29374,9 @@
         },
         "output" : {
           "LoadBalancerAttributes" : {
+            "CrossZoneLoadBalancing" : {
+              "Enabled" : false
+            },
             "AccessLog" : {
               "Enabled" : false
             },
@@ -29383,9 +29386,6 @@
             },
             "ConnectionSettings" : {
               "IdleTimeout" : 60
-            },
-            "CrossZoneLoadBalancing" : {
-              "Enabled" : false
             }
           }
         },
@@ -29404,12 +29404,12 @@
         },
         "output" : {
           "PolicyDescriptions" : [ {
+            "PolicyName" : "my-authentication-policy",
+            "PolicyTypeName" : "BackendServerAuthenticationPolicyType",
             "PolicyAttributeDescriptions" : [ {
               "AttributeName" : "PublicKeyPolicyName",
               "AttributeValue" : "my-PublicKey-policy"
-            } ],
-            "PolicyName" : "my-authentication-policy",
-            "PolicyTypeName" : "BackendServerAuthenticationPolicyType"
+            } ]
           } ]
         },
         "title" : "To describe a policy associated with a load balancer"
@@ -29426,13 +29426,13 @@
         },
         "output" : {
           "PolicyTypeDescriptions" : [ {
+            "PolicyTypeName" : "ProxyProtocolPolicyType",
             "Description" : "Policy that controls whether to include the IP address and port of the originating request for TCP messages. This policy operates on TCP listeners only.",
             "PolicyAttributeTypeDescriptions" : [ {
               "AttributeName" : "ProxyProtocol",
               "AttributeType" : "Boolean",
               "Cardinality" : "ONE"
-            } ],
-            "PolicyTypeName" : "ProxyProtocolPolicyType"
+            } ]
           } ]
         },
         "title" : "To describe a load balancer policy type defined by Elastic Load Balancing"
@@ -29449,62 +29449,62 @@
         },
         "output" : {
           "LoadBalancerDescriptions" : [ {
-            "AvailabilityZones" : [ "us-west-2a" ],
+            "LoadBalancerName" : "my-load-balancer",
+            "DNSName" : "my-load-balancer-1234567890.us-west-2.elb.amazonaws.com",
+            "CanonicalHostedZoneName" : "my-load-balancer-1234567890.us-west-2.elb.amazonaws.com",
+            "CanonicalHostedZoneNameID" : "Z3DZXE0EXAMPLE",
+            "ListenerDescriptions" : [ {
+              "Listener" : {
+                "Protocol" : "HTTP",
+                "LoadBalancerPort" : 80,
+                "InstanceProtocol" : "HTTP",
+                "InstancePort" : 80
+              },
+              "PolicyNames" : [ ]
+            }, {
+              "Listener" : {
+                "Protocol" : "HTTPS",
+                "LoadBalancerPort" : 443,
+                "InstanceProtocol" : "HTTPS",
+                "InstancePort" : 443,
+                "SSLCertificateId" : "arn:aws:iam::123456789012:server-certificate/my-server-cert"
+              },
+              "PolicyNames" : [ "ELBSecurityPolicy-2015-03" ]
+            } ],
+            "Policies" : {
+              "AppCookieStickinessPolicies" : [ ],
+              "LBCookieStickinessPolicies" : [ {
+                "PolicyName" : "my-duration-cookie-policy",
+                "CookieExpirationPeriod" : 60
+              } ],
+              "OtherPolicies" : [ "my-PublicKey-policy", "my-authentication-policy", "my-SSLNegotiation-policy", "my-ProxyProtocol-policy", "ELBSecurityPolicy-2015-03" ]
+            },
             "BackendServerDescriptions" : [ {
               "InstancePort" : 80,
               "PolicyNames" : [ "my-ProxyProtocol-policy" ]
             } ],
-            "CanonicalHostedZoneName" : "my-load-balancer-1234567890.us-west-2.elb.amazonaws.com",
-            "CanonicalHostedZoneNameID" : "Z3DZXE0EXAMPLE",
-            "CreatedTime" : "2015-03-19T03:24:02.650Z",
-            "DNSName" : "my-load-balancer-1234567890.us-west-2.elb.amazonaws.com",
-            "HealthCheck" : {
-              "HealthyThreshold" : 2,
-              "Interval" : 30,
-              "Target" : "HTTP:80/png",
-              "Timeout" : 3,
-              "UnhealthyThreshold" : 2
-            },
+            "AvailabilityZones" : [ "us-west-2a" ],
+            "Subnets" : [ "subnet-15aaab61" ],
+            "VPCId" : "vpc-a01106c2",
             "Instances" : [ {
               "InstanceId" : "i-207d9717"
             }, {
               "InstanceId" : "i-afefb49b"
             } ],
-            "ListenerDescriptions" : [ {
-              "Listener" : {
-                "InstancePort" : 80,
-                "InstanceProtocol" : "HTTP",
-                "LoadBalancerPort" : 80,
-                "Protocol" : "HTTP"
-              },
-              "PolicyNames" : [ ]
-            }, {
-              "Listener" : {
-                "InstancePort" : 443,
-                "InstanceProtocol" : "HTTPS",
-                "LoadBalancerPort" : 443,
-                "Protocol" : "HTTPS",
-                "SSLCertificateId" : "arn:aws:iam::123456789012:server-certificate/my-server-cert"
-              },
-              "PolicyNames" : [ "ELBSecurityPolicy-2015-03" ]
-            } ],
-            "LoadBalancerName" : "my-load-balancer",
-            "Policies" : {
-              "AppCookieStickinessPolicies" : [ ],
-              "LBCookieStickinessPolicies" : [ {
-                "CookieExpirationPeriod" : 60,
-                "PolicyName" : "my-duration-cookie-policy"
-              } ],
-              "OtherPolicies" : [ "my-PublicKey-policy", "my-authentication-policy", "my-SSLNegotiation-policy", "my-ProxyProtocol-policy", "ELBSecurityPolicy-2015-03" ]
+            "HealthCheck" : {
+              "Target" : "HTTP:80/png",
+              "Interval" : 30,
+              "Timeout" : 3,
+              "UnhealthyThreshold" : 2,
+              "HealthyThreshold" : 2
             },
-            "Scheme" : "internet-facing",
-            "SecurityGroups" : [ "sg-a61988c3" ],
             "SourceSecurityGroup" : {
-              "GroupName" : "my-elb-sg",
-              "OwnerAlias" : "123456789012"
+              "OwnerAlias" : "123456789012",
+              "GroupName" : "my-elb-sg"
             },
-            "Subnets" : [ "subnet-15aaab61" ],
-            "VPCId" : "vpc-a01106c2"
+            "SecurityGroups" : [ "sg-a61988c3" ],
+            "CreatedTime" : "2015-03-19T03:24:02.650Z",
+            "Scheme" : "internet-facing"
           } ]
         },
         "title" : "To describe one of your load balancers"
@@ -29557,8 +29557,8 @@
         "description" : "This example removes the specified Availability Zone from the set of Availability Zones for the specified load balancer.",
         "id" : "elb-disable-availability-zones-for-load-balancer-1",
         "input" : {
-          "AvailabilityZones" : [ "us-west-2a" ],
-          "LoadBalancerName" : "my-load-balancer"
+          "LoadBalancerName" : "my-load-balancer",
+          "AvailabilityZones" : [ "us-west-2a" ]
         },
         "output" : {
           "AvailabilityZones" : [ "us-west-2b" ]
@@ -29573,8 +29573,8 @@
         "description" : "This example adds the specified Availability Zone to the specified load balancer.",
         "id" : "elb-enable-availability-zones-for-load-balancer-1",
         "input" : {
-          "AvailabilityZones" : [ "us-west-2b" ],
-          "LoadBalancerName" : "my-load-balancer"
+          "LoadBalancerName" : "my-load-balancer",
+          "AvailabilityZones" : [ "us-west-2b" ]
         },
         "output" : {
           "AvailabilityZones" : [ "us-west-2a", "us-west-2b" ]
@@ -29589,20 +29589,20 @@
         "description" : "This example enables cross-zone load balancing for the specified load balancer.",
         "id" : "elb-modify-load-balancer-attributes-1",
         "input" : {
+          "LoadBalancerName" : "my-load-balancer",
           "LoadBalancerAttributes" : {
             "CrossZoneLoadBalancing" : {
               "Enabled" : true
             }
-          },
-          "LoadBalancerName" : "my-load-balancer"
+          }
         },
         "output" : {
+          "LoadBalancerName" : "my-load-balancer",
           "LoadBalancerAttributes" : {
             "CrossZoneLoadBalancing" : {
               "Enabled" : true
             }
-          },
-          "LoadBalancerName" : "my-load-balancer"
+          }
         },
         "title" : "To enable cross-zone load balancing"
       }, {
@@ -29613,22 +29613,22 @@
         "description" : "This example enables connection draining for the specified load balancer.",
         "id" : "elb-modify-load-balancer-attributes-2",
         "input" : {
+          "LoadBalancerName" : "my-load-balancer",
           "LoadBalancerAttributes" : {
             "ConnectionDraining" : {
               "Enabled" : true,
               "Timeout" : 300
             }
-          },
-          "LoadBalancerName" : "my-load-balancer"
+          }
         },
         "output" : {
+          "LoadBalancerName" : "my-load-balancer",
           "LoadBalancerAttributes" : {
             "ConnectionDraining" : {
               "Enabled" : true,
               "Timeout" : 300
             }
-          },
-          "LoadBalancerName" : "my-load-balancer"
+          }
         },
         "title" : "To enable connection draining"
       } ],
@@ -29640,10 +29640,10 @@
         "description" : "This example registers the specified instance with the specified load balancer.",
         "id" : "elb-register-instances-with-load-balancer-1",
         "input" : {
+          "LoadBalancerName" : "my-load-balancer",
           "Instances" : [ {
             "InstanceId" : "i-d6f6fae3"
-          } ],
-          "LoadBalancerName" : "my-load-balancer"
+          } ]
         },
         "output" : {
           "Instances" : [ {
@@ -29695,8 +29695,8 @@
         "description" : "This example replaces the policies that are currently associated with the specified port.",
         "id" : "elb-set-load-balancer-policies-for-backend-server-1",
         "input" : {
-          "InstancePort" : 80,
           "LoadBalancerName" : "my-load-balancer",
+          "InstancePort" : 80,
           "PolicyNames" : [ "my-ProxyProtocol-policy" ]
         },
         "output" : null,

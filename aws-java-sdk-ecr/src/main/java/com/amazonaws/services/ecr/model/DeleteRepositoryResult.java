@@ -19,10 +19,20 @@ import java.io.Serializable;
  */
 public class DeleteRepositoryResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The repository that was deleted.
+     * </p>
+     */
     private Repository repository;
 
     /**
+     * <p>
+     * The repository that was deleted.
+     * </p>
+     * 
      * @param repository
+     *        The repository that was deleted.
      */
 
     public void setRepository(Repository repository) {
@@ -30,7 +40,11 @@ public class DeleteRepositoryResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * @return
+     * <p>
+     * The repository that was deleted.
+     * </p>
+     * 
+     * @return The repository that was deleted.
      */
 
     public Repository getRepository() {
@@ -38,7 +52,12 @@ public class DeleteRepositoryResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The repository that was deleted.
+     * </p>
+     * 
      * @param repository
+     *        The repository that was deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

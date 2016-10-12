@@ -30871,8 +30871,8 @@
         "description" : "The following example creates a receipt rule set by cloning an existing one:",
         "id" : "clonereceiptruleset-1469055039770",
         "input" : {
-          "OriginalRuleSetName" : "RuleSetToClone",
-          "RuleSetName" : "RuleSetToCreate"
+          "RuleSetName" : "RuleSetToCreate",
+          "OriginalRuleSetName" : "RuleSetToClone"
         },
         "output" : null,
         "title" : "CloneReceiptRuleSet"
@@ -30886,11 +30886,11 @@
         "id" : "createreceiptfilter-1469122681253",
         "input" : {
           "Filter" : {
+            "Name" : "MyFilter",
             "IpFilter" : {
-              "Cidr" : "1.2.3.4/24",
-              "Policy" : "Allow"
-            },
-            "Name" : "MyFilter"
+              "Policy" : "Allow",
+              "Cidr" : "1.2.3.4/24"
+            }
           }
         },
         "output" : null,
@@ -30904,20 +30904,20 @@
         "description" : "The following example creates a new receipt rule:",
         "id" : "createreceiptrule-1469122946515",
         "input" : {
+          "RuleSetName" : "MyRuleSet",
           "After" : "",
           "Rule" : {
+            "Name" : "MyRule",
+            "Enabled" : true,
+            "TlsPolicy" : "Optional",
             "Actions" : [ {
               "S3Action" : {
                 "BucketName" : "MyBucket",
                 "ObjectKeyPrefix" : "email"
               }
             } ],
-            "Enabled" : true,
-            "Name" : "MyRule",
-            "ScanEnabled" : true,
-            "TlsPolicy" : "Optional"
-          },
-          "RuleSetName" : "MyRuleSet"
+            "ScanEnabled" : true
+          }
         },
         "output" : null,
         "title" : "CreateReceiptRule"
@@ -30983,8 +30983,8 @@
         "description" : "The following example deletes a receipt rule:",
         "id" : "deletereceiptrule-1469055563599",
         "input" : {
-          "RuleName" : "MyRule",
-          "RuleSetName" : "MyRuleSet"
+          "RuleSetName" : "MyRuleSet",
+          "RuleName" : "MyRule"
         },
         "output" : null,
         "title" : "DeleteReceiptRule"
@@ -31025,20 +31025,20 @@
         "input" : { },
         "output" : {
           "Metadata" : {
-            "CreatedTimestamp" : "2016-07-15T16:25:59.607Z",
-            "Name" : "default-rule-set"
+            "Name" : "default-rule-set",
+            "CreatedTimestamp" : "2016-07-15T16:25:59.607Z"
           },
           "Rules" : [ {
+            "Name" : "MyRule",
+            "Enabled" : true,
+            "TlsPolicy" : "Optional",
             "Actions" : [ {
               "S3Action" : {
                 "BucketName" : "MyBucket",
                 "ObjectKeyPrefix" : "email"
               }
             } ],
-            "Enabled" : true,
-            "Name" : "MyRule",
-            "ScanEnabled" : true,
-            "TlsPolicy" : "Optional"
+            "ScanEnabled" : true
           } ]
         },
         "title" : "DescribeActiveReceiptRuleSet"
@@ -31051,21 +31051,21 @@
         "description" : "The following example returns the details of a receipt rule:",
         "id" : "describereceiptrule-1469055813118",
         "input" : {
-          "RuleName" : "MyRule",
-          "RuleSetName" : "MyRuleSet"
+          "RuleSetName" : "MyRuleSet",
+          "RuleName" : "MyRule"
         },
         "output" : {
           "Rule" : {
+            "Name" : "MyRule",
+            "Enabled" : true,
+            "TlsPolicy" : "Optional",
             "Actions" : [ {
               "S3Action" : {
                 "BucketName" : "MyBucket",
                 "ObjectKeyPrefix" : "email"
               }
             } ],
-            "Enabled" : true,
-            "Name" : "MyRule",
-            "ScanEnabled" : true,
-            "TlsPolicy" : "Optional"
+            "ScanEnabled" : true
           }
         },
         "title" : "DescribeReceiptRule"
@@ -31082,20 +31082,20 @@
         },
         "output" : {
           "Metadata" : {
-            "CreatedTimestamp" : "2016-07-15T16:25:59.607Z",
-            "Name" : "MyRuleSet"
+            "Name" : "MyRuleSet",
+            "CreatedTimestamp" : "2016-07-15T16:25:59.607Z"
           },
           "Rules" : [ {
+            "Name" : "MyRule",
+            "Enabled" : true,
+            "TlsPolicy" : "Optional",
             "Actions" : [ {
               "S3Action" : {
                 "BucketName" : "MyBucket",
                 "ObjectKeyPrefix" : "email"
               }
             } ],
-            "Enabled" : true,
-            "Name" : "MyRule",
-            "ScanEnabled" : true,
-            "TlsPolicy" : "Optional"
+            "ScanEnabled" : true
           } ]
         },
         "title" : "DescribeReceiptRuleSet"
@@ -31232,23 +31232,23 @@
         "input" : null,
         "output" : {
           "SendDataPoints" : [ {
-            "Bounces" : 0,
-            "Complaints" : 0,
+            "Timestamp" : "2016-07-13T22:43:00Z",
             "DeliveryAttempts" : 5,
-            "Rejects" : 0,
-            "Timestamp" : "2016-07-13T22:43:00Z"
-          }, {
             "Bounces" : 0,
             "Complaints" : 0,
+            "Rejects" : 0
+          }, {
+            "Timestamp" : "2016-07-13T23:13:00Z",
             "DeliveryAttempts" : 3,
-            "Rejects" : 0,
-            "Timestamp" : "2016-07-13T23:13:00Z"
-          }, {
             "Bounces" : 0,
             "Complaints" : 0,
+            "Rejects" : 0
+          }, {
+            "Timestamp" : "2016-07-13T21:13:00Z",
             "DeliveryAttempts" : 1,
-            "Rejects" : 0,
-            "Timestamp" : "2016-07-13T21:13:00Z"
+            "Bounces" : 0,
+            "Complaints" : 0,
+            "Rejects" : 0
           } ]
         },
         "title" : "GetSendStatistics"
@@ -31262,8 +31262,8 @@
         "id" : "listidentities-1469048638493",
         "input" : {
           "IdentityType" : "EmailAddress",
-          "MaxItems" : 123,
-          "NextToken" : ""
+          "NextToken" : "",
+          "MaxItems" : 123
         },
         "output" : {
           "Identities" : [ "user@example.com" ],
@@ -31296,11 +31296,11 @@
         "input" : null,
         "output" : {
           "Filters" : [ {
+            "Name" : "MyFilter",
             "IpFilter" : {
-              "Cidr" : "1.2.3.4/24",
-              "Policy" : "Block"
-            },
-            "Name" : "MyFilter"
+              "Policy" : "Block",
+              "Cidr" : "1.2.3.4/24"
+            }
           } ]
         },
         "title" : "ListReceiptFilters"
@@ -31316,11 +31316,11 @@
           "NextToken" : ""
         },
         "output" : {
-          "NextToken" : "",
           "RuleSets" : [ {
-            "CreatedTimestamp" : "2016-07-15T16:25:59.607Z",
-            "Name" : "MyRuleSet"
-          } ]
+            "Name" : "MyRuleSet",
+            "CreatedTimestamp" : "2016-07-15T16:25:59.607Z"
+          } ],
+          "NextToken" : ""
         },
         "title" : "ListReceiptRuleSets"
       } ],
@@ -31346,8 +31346,8 @@
         "id" : "putidentitypolicy-1469124560016",
         "input" : {
           "Identity" : "example.com",
-          "Policy" : "{\"Version\":\"2008-10-17\",\"Statement\":[{\"Sid\":\"stmt1469123904194\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::123456789012:root\"},\"Action\":[\"ses:SendEmail\",\"ses:SendRawEmail\"],\"Resource\":\"arn:aws:ses:us-east-1:EXAMPLE65304:identity/example.com\"}]}",
-          "PolicyName" : "MyPolicy"
+          "PolicyName" : "MyPolicy",
+          "Policy" : "{\"Version\":\"2008-10-17\",\"Statement\":[{\"Sid\":\"stmt1469123904194\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::123456789012:root\"},\"Action\":[\"ses:SendEmail\",\"ses:SendRawEmail\"],\"Resource\":\"arn:aws:ses:us-east-1:EXAMPLE65304:identity/example.com\"}]}"
         },
         "output" : null,
         "title" : "PutIdentityPolicy"
@@ -31360,8 +31360,8 @@
         "description" : "The following example reorders the receipt rules within a receipt rule set:",
         "id" : "reorderreceiptruleset-1469058156806",
         "input" : {
-          "RuleNames" : [ "MyRule", "MyOtherRule" ],
-          "RuleSetName" : "MyRuleSet"
+          "RuleSetName" : "MyRuleSet",
+          "RuleNames" : [ "MyRule", "MyOtherRule" ]
         },
         "output" : null,
         "title" : "ReorderReceiptRuleSet"
@@ -31374,32 +31374,32 @@
         "description" : "The following example sends a formatted email:",
         "id" : "sendemail-1469049656296",
         "input" : {
+          "Source" : "sender@example.com",
           "Destination" : {
-            "BccAddresses" : [ ],
+            "ToAddresses" : [ "recipient1@example.com", "recipient2@example.com" ],
             "CcAddresses" : [ "recipient3@example.com" ],
-            "ToAddresses" : [ "recipient1@example.com", "recipient2@example.com" ]
+            "BccAddresses" : [ ]
           },
           "Message" : {
-            "Body" : {
-              "Html" : {
-                "Charset" : "UTF-8",
-                "Data" : "This message body contains HTML formatting. It can, for example, contain links like this one: <a class=\"ulink\" href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide\" target=\"_blank\">Amazon SES Developer Guide</a>."
-              },
-              "Text" : {
-                "Charset" : "UTF-8",
-                "Data" : "This is the message body in text format."
-              }
-            },
             "Subject" : {
-              "Charset" : "UTF-8",
-              "Data" : "Test email"
+              "Data" : "Test email",
+              "Charset" : "UTF-8"
+            },
+            "Body" : {
+              "Text" : {
+                "Data" : "This is the message body in text format.",
+                "Charset" : "UTF-8"
+              },
+              "Html" : {
+                "Data" : "This message body contains HTML formatting. It can, for example, contain links like this one: <a class=\"ulink\" href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide\" target=\"_blank\">Amazon SES Developer Guide</a>.",
+                "Charset" : "UTF-8"
+              }
             }
           },
           "ReplyToAddresses" : [ ],
           "ReturnPath" : "",
-          "ReturnPathArn" : "",
-          "Source" : "sender@example.com",
-          "SourceArn" : ""
+          "SourceArn" : "",
+          "ReturnPathArn" : ""
         },
         "output" : {
           "MessageId" : "EXAMPLE78603177f-7a5433e7-8edb-42ae-af10-f0181f34d6ee-000000"
@@ -31414,14 +31414,14 @@
         "description" : "The following example sends an email with an attachment:",
         "id" : "sendrawemail-1469118548649",
         "input" : {
+          "Source" : "",
           "Destinations" : [ ],
-          "FromArn" : "",
           "RawMessage" : {
             "Data" : "From: sender@example.com\\nTo: recipient@example.com\\nSubject: Test email (contains an attachment)\\nMIME-Version: 1.0\\nContent-type: Multipart/Mixed; boundary=\"NextPart\"\\n\\n--NextPart\\nContent-Type: text/plain\\n\\nThis is the message body.\\n\\n--NextPart\\nContent-Type: text/plain;\\nContent-Disposition: attachment; filename=\"attachment.txt\"\\n\\nThis is the text in the attachment.\\n\\n--NextPart--"
           },
-          "ReturnPathArn" : "",
-          "Source" : "",
-          "SourceArn" : ""
+          "FromArn" : "",
+          "SourceArn" : "",
+          "ReturnPathArn" : ""
         },
         "output" : {
           "MessageId" : "EXAMPLEf3f73d99b-c63fb06f-d263-41f8-a0fb-d0dc67d56c07-000000"
@@ -31449,8 +31449,8 @@
         "description" : "The following example configures Amazon SES to Easy DKIM-sign the email sent from an identity:",
         "id" : "setidentitydkimenabled-1469057485202",
         "input" : {
-          "DkimEnabled" : true,
-          "Identity" : "user@example.com"
+          "Identity" : "user@example.com",
+          "DkimEnabled" : true
         },
         "output" : null,
         "title" : "SetIdentityDkimEnabled"
@@ -31463,8 +31463,8 @@
         "description" : "The following example configures Amazon SES to forward an identity's bounces and complaints via email:",
         "id" : "setidentityfeedbackforwardingenabled-1469056811329",
         "input" : {
-          "ForwardingEnabled" : true,
-          "Identity" : "user@example.com"
+          "Identity" : "user@example.com",
+          "ForwardingEnabled" : true
         },
         "output" : null,
         "title" : "SetIdentityFeedbackForwardingEnabled"
@@ -31477,9 +31477,9 @@
         "description" : "The following example configures Amazon SES to include the original email headers in the Amazon SNS bounce notifications for an identity:",
         "id" : "setidentityheadersinnotificationsenabled-1469057295001",
         "input" : {
-          "Enabled" : true,
           "Identity" : "user@example.com",
-          "NotificationType" : "Bounce"
+          "NotificationType" : "Bounce",
+          "Enabled" : true
         },
         "output" : null,
         "title" : "SetIdentityHeadersInNotificationsEnabled"
@@ -31492,9 +31492,9 @@
         "description" : "The following example configures Amazon SES to use a custom MAIL FROM domain for an identity:",
         "id" : "setidentitymailfromdomain-1469057693908",
         "input" : {
-          "BehaviorOnMXFailure" : "UseDefaultValue",
           "Identity" : "user@example.com",
-          "MailFromDomain" : "bounces.example.com"
+          "MailFromDomain" : "bounces.example.com",
+          "BehaviorOnMXFailure" : "UseDefaultValue"
         },
         "output" : null,
         "title" : "SetIdentityMailFromDomain"
@@ -31522,9 +31522,9 @@
         "description" : "The following example sets the position of a receipt rule in a receipt rule set:",
         "id" : "setreceiptruleposition-1469058530550",
         "input" : {
-          "After" : "PutRuleAfterThisRule",
+          "RuleSetName" : "MyRuleSet",
           "RuleName" : "RuleToReposition",
-          "RuleSetName" : "MyRuleSet"
+          "After" : "PutRuleAfterThisRule"
         },
         "output" : null,
         "title" : "SetReceiptRulePosition"
@@ -31537,19 +31537,19 @@
         "description" : "The following example updates a receipt rule to use an Amazon S3 action:",
         "id" : "updatereceiptrule-1469051756940",
         "input" : {
+          "RuleSetName" : "MyRuleSet",
           "Rule" : {
+            "Name" : "MyRule",
+            "Enabled" : true,
+            "TlsPolicy" : "Optional",
             "Actions" : [ {
               "S3Action" : {
                 "BucketName" : "MyBucket",
                 "ObjectKeyPrefix" : "email"
               }
             } ],
-            "Enabled" : true,
-            "Name" : "MyRule",
-            "ScanEnabled" : true,
-            "TlsPolicy" : "Optional"
-          },
-          "RuleSetName" : "MyRuleSet"
+            "ScanEnabled" : true
+          }
         },
         "output" : null,
         "title" : "UpdateReceiptRule"

@@ -72,9 +72,8 @@ public class Parameter implements Serializable, Cloneable {
     private String minimumEngineVersion;
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot for the
-     * change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
-     * information, see <a
+     * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
+     * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
      * Cluster</a>.
      * </p>
@@ -423,17 +422,16 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot for the
-     * change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
-     * information, see <a
+     * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
+     * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
      * Cluster</a>.
      * </p>
      * 
      * @param changeType
-     *        ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot
-     *        for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot.
-     *        For more information, see <a
+     *        Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
+     *        be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     *        information, see <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
      *        Cluster</a>.
      * @see ChangeType
@@ -445,16 +443,15 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot for the
-     * change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
-     * information, see <a
+     * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
+     * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
      * Cluster</a>.
      * </p>
      * 
-     * @return ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot
-     *         for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot.
-     *         For more information, see <a
+     * @return Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
+     *         be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
      *         Cluster</a>.
      * @see ChangeType
@@ -466,17 +463,16 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot for the
-     * change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
-     * information, see <a
+     * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
+     * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
      * Cluster</a>.
      * </p>
      * 
      * @param changeType
-     *        ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot
-     *        for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot.
-     *        For more information, see <a
+     *        Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
+     *        be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     *        information, see <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
      *        Cluster</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -490,17 +486,16 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot for the
-     * change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
-     * information, see <a
+     * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
+     * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
      * Cluster</a>.
      * </p>
      * 
      * @param changeType
-     *        ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot
-     *        for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot.
-     *        For more information, see <a
+     *        Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
+     *        be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     *        information, see <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
      *        Cluster</a>.
      * @see ChangeType
@@ -512,17 +507,16 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot for the
-     * change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
-     * information, see <a
+     * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
+     * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
      * Cluster</a>.
      * </p>
      * 
      * @param changeType
-     *        ChangeType indicates whether a change to the parameter will be applied immediately or requires a reboot
-     *        for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot.
-     *        For more information, see <a
+     *        Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
+     *        be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
+     *        information, see <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
      *        Cluster</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

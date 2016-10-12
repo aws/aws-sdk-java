@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>PurchaseReservedCacheNodesOffering</i> action.
+ * Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.
  * </p>
  */
 public class ReservedCacheNode implements Serializable, Cloneable {
@@ -50,7 +50,8 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -91,26 +92,28 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      */
@@ -267,7 +270,8 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -308,26 +312,28 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
@@ -345,7 +351,8 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     *        <code>cache.m3.2xlarge</code>
+     *        <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *        <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      *        </p>
      *        </li>
      *        <li>
@@ -387,27 +394,28 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     *        All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis backup/restore is not supported for t2 instances.
+     *        Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
+     *        Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     *        Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of cache node types and specifications, see <a
+     *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     *        either <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Redis</a>.
      */
 
@@ -432,7 +440,8 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -473,26 +482,28 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
@@ -510,7 +521,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         <p>
      *         Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      *         <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>,
+     *         <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
+     *         <code>cache.m4.10xlarge</code>
      *         </p>
      *         </li>
      *         <li>
@@ -552,27 +565,28 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     *         All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Redis backup/restore is not supported for t2 instances.
+     *         Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
+     *         Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     *         Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For a complete listing of cache node types and specifications, see <a
+     *         For a complete listing of node types and specifications, see <a
      *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *         <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     *         either <a href=
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      *         >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      *         >Cache Node Type-Specific Parameters for Redis</a>.
      */
 
@@ -597,7 +611,8 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -638,26 +653,28 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
@@ -675,7 +692,8 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     *        <code>cache.m3.2xlarge</code>
+     *        <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *        <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      *        </p>
      *        </li>
      *        <li>
@@ -717,27 +735,28 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     *        All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis backup/restore is not supported for t2 instances.
+     *        Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
+     *        Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     *        Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of cache node types and specifications, see <a
+     *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     *        either <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Redis</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -16,8 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output from the <i>AddTagsToResource</i>, <i>ListTagsOnResource</i>, and <i>RemoveTagsFromResource</i>
- * actions.
+ * Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsOnResource</code>, and
+ * <code>RemoveTagsFromResource</code> operations.
  * </p>
  */
 public class RemoveTagsFromResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>DeleteCacheParameterGroup</i> action.
+ * Represents the input of a <code>DeleteCacheParameterGroup</code> operation.
  * </p>
  */
 public class DeleteCacheParameterGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {

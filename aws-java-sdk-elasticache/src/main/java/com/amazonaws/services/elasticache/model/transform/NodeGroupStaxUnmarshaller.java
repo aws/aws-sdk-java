@@ -60,6 +60,11 @@ public class NodeGroupStaxUnmarshaller implements Unmarshaller<NodeGroup, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("Slots", targetDepth)) {
+                    nodeGroup.setSlots(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("NodeGroupMembers/NodeGroupMember", targetDepth)) {
                     nodeGroup.withNodeGroupMembers(NodeGroupMemberStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

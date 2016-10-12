@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A group of settings that will be applied to the cache cluster in the future, or that are currently being applied.
+ * A group of settings that are applied to the cache cluster in the future, or that are currently being applied.
  * </p>
  */
 public class PendingModifiedValues implements Serializable, Cloneable {
@@ -40,13 +40,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> cacheNodeIdsToRemove;
     /**
      * <p>
-     * The new cache engine version that the cache cluster will run.
+     * The new cache engine version that the cache cluster runs.
      * </p>
      */
     private String engineVersion;
     /**
      * <p>
-     * The cache node type that this cache cluster or replication group will be scaled to.
+     * The cache node type that this cache cluster or replication group is scaled to.
      * </p>
      */
     private String cacheNodeType;
@@ -195,11 +195,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new cache engine version that the cache cluster will run.
+     * The new cache engine version that the cache cluster runs.
      * </p>
      * 
      * @param engineVersion
-     *        The new cache engine version that the cache cluster will run.
+     *        The new cache engine version that the cache cluster runs.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -208,10 +208,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new cache engine version that the cache cluster will run.
+     * The new cache engine version that the cache cluster runs.
      * </p>
      * 
-     * @return The new cache engine version that the cache cluster will run.
+     * @return The new cache engine version that the cache cluster runs.
      */
 
     public String getEngineVersion() {
@@ -220,11 +220,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new cache engine version that the cache cluster will run.
+     * The new cache engine version that the cache cluster runs.
      * </p>
      * 
      * @param engineVersion
-     *        The new cache engine version that the cache cluster will run.
+     *        The new cache engine version that the cache cluster runs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +235,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache node type that this cache cluster or replication group will be scaled to.
+     * The cache node type that this cache cluster or replication group is scaled to.
      * </p>
      * 
      * @param cacheNodeType
-     *        The cache node type that this cache cluster or replication group will be scaled to.
+     *        The cache node type that this cache cluster or replication group is scaled to.
      */
 
     public void setCacheNodeType(String cacheNodeType) {
@@ -248,10 +248,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache node type that this cache cluster or replication group will be scaled to.
+     * The cache node type that this cache cluster or replication group is scaled to.
      * </p>
      * 
-     * @return The cache node type that this cache cluster or replication group will be scaled to.
+     * @return The cache node type that this cache cluster or replication group is scaled to.
      */
 
     public String getCacheNodeType() {
@@ -260,11 +260,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache node type that this cache cluster or replication group will be scaled to.
+     * The cache node type that this cache cluster or replication group is scaled to.
      * </p>
      * 
      * @param cacheNodeType
-     *        The cache node type that this cache cluster or replication group will be scaled to.
+     *        The cache node type that this cache cluster or replication group is scaled to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

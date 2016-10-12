@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>DescribeCacheParameters</i> action.
+ * Represents the input of a <code>DescribeCacheParameters</code> operation.
  * </p>
  */
 public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -39,7 +39,7 @@ public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServi
     private String source;
     /**
      * <p>
-     * The maximum number of brecords to include in the response. If more records exist than the specified
+     * The maximum number of records to include in the response. If more records exist than the specified
      * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
      * retrieved.
      * </p>
@@ -53,9 +53,9 @@ public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServi
     private Integer maxRecords;
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
@@ -175,7 +175,7 @@ public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of brecords to include in the response. If more records exist than the specified
+     * The maximum number of records to include in the response. If more records exist than the specified
      * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
      * retrieved.
      * </p>
@@ -187,7 +187,7 @@ public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of brecords to include in the response. If more records exist than the specified
+     *        The maximum number of records to include in the response. If more records exist than the specified
      *        <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
      *        retrieved.</p>
      *        <p>
@@ -203,7 +203,7 @@ public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of brecords to include in the response. If more records exist than the specified
+     * The maximum number of records to include in the response. If more records exist than the specified
      * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
      * retrieved.
      * </p>
@@ -214,7 +214,7 @@ public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServi
      * Constraints: minimum 20; maximum 100.
      * </p>
      * 
-     * @return The maximum number of brecords to include in the response. If more records exist than the specified
+     * @return The maximum number of records to include in the response. If more records exist than the specified
      *         <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
      *         retrieved.</p>
      *         <p>
@@ -230,7 +230,7 @@ public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of brecords to include in the response. If more records exist than the specified
+     * The maximum number of records to include in the response. If more records exist than the specified
      * <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
      * retrieved.
      * </p>
@@ -242,7 +242,7 @@ public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of brecords to include in the response. If more records exist than the specified
+     *        The maximum number of records to include in the response. If more records exist than the specified
      *        <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be
      *        retrieved.</p>
      *        <p>
@@ -260,15 +260,15 @@ public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
      *        An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *        value specified by <i>MaxRecords</i>.
+     *        operation. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -277,14 +277,14 @@ public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @return An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *         action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *         value specified by <i>MaxRecords</i>.
+     *         operation. If this parameter is specified, the response includes only records beyond the marker, up to
+     *         the value specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -293,15 +293,15 @@ public class DescribeCacheParametersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
      *        An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *        value specified by <i>MaxRecords</i>.
+     *        operation. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <code>MaxRecords</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

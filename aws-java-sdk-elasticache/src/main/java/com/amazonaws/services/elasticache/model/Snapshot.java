@@ -16,18 +16,30 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a copy of an entire cache cluster as of the time when the snapshot was taken.
+ * Represents a copy of an entire Redis cache cluster as of the time when the snapshot was taken.
  * </p>
  */
 public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of a snapshot. For an automatic snapshot, the name is system-generated; for a manual snapshot, this is
+     * The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is
      * the user-provided name.
      * </p>
      */
     private String snapshotName;
+    /**
+     * <p>
+     * The unique identifier of the source replication group.
+     * </p>
+     */
+    private String replicationGroupId;
+    /**
+     * <p>
+     * A description of the source replication group.
+     * </p>
+     */
+    private String replicationGroupDescription;
     /**
      * <p>
      * The user-supplied identifier of the source cache cluster.
@@ -65,7 +77,8 @@ public class Snapshot implements Serializable, Cloneable {
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -106,33 +119,35 @@ public class Snapshot implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      */
     private String cacheNodeType;
     /**
      * <p>
-     * The name of the cache engine (<i>memcached</i> or <i>redis</i>) used by the source cache cluster.
+     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by the source cache cluster.
      * </p>
      */
     private String engine;
@@ -166,9 +181,11 @@ public class Snapshot implements Serializable, Cloneable {
     private java.util.Date cacheClusterCreateTime;
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -208,7 +225,7 @@ public class Snapshot implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      */
     private String preferredMaintenanceWindow;
@@ -250,12 +267,12 @@ public class Snapshot implements Serializable, Cloneable {
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * For an automatic snapshot, the number of days for which ElastiCache will retain the snapshot before deleting it.
+     * For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting it.
      * </p>
      * <p>
-     * For manual snapshots, this field reflects the <i>SnapshotRetentionLimit</i> for the source cache cluster when the
-     * snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be deleted
-     * using the <i>DeleteSnapshot</i> action.
+     * For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the source cache cluster
+     * when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be
+     * deleted using the <code>DeleteSnapshot</code> operation.
      * </p>
      * <p>
      * <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
@@ -270,6 +287,39 @@ public class Snapshot implements Serializable, Cloneable {
     private String snapshotWindow;
     /**
      * <p>
+     * The number of node groups (shards) in this snapshot. When restoring from a snapshot, the number of node groups
+     * (shards) in the snapshot and in the restored replication group must be the same.
+     * </p>
+     */
+    private Integer numNodeGroups;
+    /**
+     * <p>
+     * Indicates the status of Multi-AZ for the source replication group.
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     */
+    private String automaticFailover;
+    /**
+     * <p>
      * A list of the cache nodes in the source cache cluster.
      * </p>
      */
@@ -277,12 +327,12 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of a snapshot. For an automatic snapshot, the name is system-generated; for a manual snapshot, this is
+     * The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is
      * the user-provided name.
      * </p>
      * 
      * @param snapshotName
-     *        The name of a snapshot. For an automatic snapshot, the name is system-generated; for a manual snapshot,
+     *        The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot,
      *        this is the user-provided name.
      */
 
@@ -292,11 +342,11 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of a snapshot. For an automatic snapshot, the name is system-generated; for a manual snapshot, this is
+     * The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is
      * the user-provided name.
      * </p>
      * 
-     * @return The name of a snapshot. For an automatic snapshot, the name is system-generated; for a manual snapshot,
+     * @return The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot,
      *         this is the user-provided name.
      */
 
@@ -306,18 +356,98 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of a snapshot. For an automatic snapshot, the name is system-generated; for a manual snapshot, this is
+     * The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is
      * the user-provided name.
      * </p>
      * 
      * @param snapshotName
-     *        The name of a snapshot. For an automatic snapshot, the name is system-generated; for a manual snapshot,
+     *        The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot,
      *        this is the user-provided name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Snapshot withSnapshotName(String snapshotName) {
         setSnapshotName(snapshotName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the source replication group.
+     * </p>
+     * 
+     * @param replicationGroupId
+     *        The unique identifier of the source replication group.
+     */
+
+    public void setReplicationGroupId(String replicationGroupId) {
+        this.replicationGroupId = replicationGroupId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the source replication group.
+     * </p>
+     * 
+     * @return The unique identifier of the source replication group.
+     */
+
+    public String getReplicationGroupId() {
+        return this.replicationGroupId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the source replication group.
+     * </p>
+     * 
+     * @param replicationGroupId
+     *        The unique identifier of the source replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withReplicationGroupId(String replicationGroupId) {
+        setReplicationGroupId(replicationGroupId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description of the source replication group.
+     * </p>
+     * 
+     * @param replicationGroupDescription
+     *        A description of the source replication group.
+     */
+
+    public void setReplicationGroupDescription(String replicationGroupDescription) {
+        this.replicationGroupDescription = replicationGroupDescription;
+    }
+
+    /**
+     * <p>
+     * A description of the source replication group.
+     * </p>
+     * 
+     * @return A description of the source replication group.
+     */
+
+    public String getReplicationGroupDescription() {
+        return this.replicationGroupDescription;
+    }
+
+    /**
+     * <p>
+     * A description of the source replication group.
+     * </p>
+     * 
+     * @param replicationGroupDescription
+     *        A description of the source replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withReplicationGroupDescription(String replicationGroupDescription) {
+        setReplicationGroupDescription(replicationGroupDescription);
         return this;
     }
 
@@ -470,7 +600,8 @@ public class Snapshot implements Serializable, Cloneable {
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -511,26 +642,28 @@ public class Snapshot implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
@@ -548,7 +681,8 @@ public class Snapshot implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     *        <code>cache.m3.2xlarge</code>
+     *        <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *        <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      *        </p>
      *        </li>
      *        <li>
@@ -590,27 +724,28 @@ public class Snapshot implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     *        All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis backup/restore is not supported for t2 instances.
+     *        Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
+     *        Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     *        Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of cache node types and specifications, see <a
+     *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     *        either <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Redis</a>.
      */
 
@@ -635,7 +770,8 @@ public class Snapshot implements Serializable, Cloneable {
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -676,26 +812,28 @@ public class Snapshot implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
@@ -713,7 +851,9 @@ public class Snapshot implements Serializable, Cloneable {
      *         <p>
      *         Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      *         <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>,
+     *         <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
+     *         <code>cache.m4.10xlarge</code>
      *         </p>
      *         </li>
      *         <li>
@@ -755,27 +895,28 @@ public class Snapshot implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     *         All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Redis backup/restore is not supported for t2 instances.
+     *         Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
+     *         Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     *         Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For a complete listing of cache node types and specifications, see <a
+     *         For a complete listing of node types and specifications, see <a
      *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *         <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     *         either <a href=
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      *         >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      *         >Cache Node Type-Specific Parameters for Redis</a>.
      */
 
@@ -800,7 +941,8 @@ public class Snapshot implements Serializable, Cloneable {
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -841,26 +983,28 @@ public class Snapshot implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
@@ -878,7 +1022,8 @@ public class Snapshot implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     *        <code>cache.m3.2xlarge</code>
+     *        <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *        <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      *        </p>
      *        </li>
      *        <li>
@@ -920,27 +1065,28 @@ public class Snapshot implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     *        All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis backup/restore is not supported for t2 instances.
+     *        Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
+     *        Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     *        Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of cache node types and specifications, see <a
+     *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     *        either <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Redis</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -952,11 +1098,12 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache engine (<i>memcached</i> or <i>redis</i>) used by the source cache cluster.
+     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by the source cache cluster.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine (<i>memcached</i> or <i>redis</i>) used by the source cache cluster.
+     *        The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by the source cache
+     *        cluster.
      */
 
     public void setEngine(String engine) {
@@ -965,10 +1112,11 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache engine (<i>memcached</i> or <i>redis</i>) used by the source cache cluster.
+     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by the source cache cluster.
      * </p>
      * 
-     * @return The name of the cache engine (<i>memcached</i> or <i>redis</i>) used by the source cache cluster.
+     * @return The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by the source cache
+     *         cluster.
      */
 
     public String getEngine() {
@@ -977,11 +1125,12 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache engine (<i>memcached</i> or <i>redis</i>) used by the source cache cluster.
+     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by the source cache cluster.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine (<i>memcached</i> or <i>redis</i>) used by the source cache cluster.
+     *        The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by the source cache
+     *        cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1173,9 +1322,11 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -1215,13 +1366,16 @@ public class Snapshot implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
-     *        specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     *        is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period.</p>
+     *        <p>
+     *        Valid values for <code>ddd</code> are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1260,7 +1414,7 @@ public class Snapshot implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        Example: <code>sun:05:00-sun:09:00</code>
+     *        Example: <code>sun:23:00-mon:01:30</code>
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -1269,9 +1423,11 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -1311,12 +1467,15 @@ public class Snapshot implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
-     * @return Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
-     *         specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
-     *         window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     * @return Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
+     *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
+     *         minute period.</p>
+     *         <p>
+     *         Valid values for <code>ddd</code> are:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1355,7 +1514,7 @@ public class Snapshot implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         Example: <code>sun:05:00-sun:09:00</code>
+     *         Example: <code>sun:23:00-mon:01:30</code>
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -1364,9 +1523,11 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -1406,13 +1567,16 @@ public class Snapshot implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
-     *        specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     *        is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period.</p>
+     *        <p>
+     *        Valid values for <code>ddd</code> are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1451,7 +1615,7 @@ public class Snapshot implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        Example: <code>sun:05:00-sun:09:00</code>
+     *        Example: <code>sun:23:00-mon:01:30</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1720,24 +1884,24 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an automatic snapshot, the number of days for which ElastiCache will retain the snapshot before deleting it.
+     * For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting it.
      * </p>
      * <p>
-     * For manual snapshots, this field reflects the <i>SnapshotRetentionLimit</i> for the source cache cluster when the
-     * snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be deleted
-     * using the <i>DeleteSnapshot</i> action.
+     * For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the source cache cluster
+     * when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be
+     * deleted using the <code>DeleteSnapshot</code> operation.
      * </p>
      * <p>
      * <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      * </p>
      * 
      * @param snapshotRetentionLimit
-     *        For an automatic snapshot, the number of days for which ElastiCache will retain the snapshot before
-     *        deleting it.</p>
+     *        For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting
+     *        it.</p>
      *        <p>
-     *        For manual snapshots, this field reflects the <i>SnapshotRetentionLimit</i> for the source cache cluster
-     *        when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can
-     *        only be deleted using the <i>DeleteSnapshot</i> action.
+     *        For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the source cache
+     *        cluster when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire,
+     *        and can only be deleted using the <code>DeleteSnapshot</code> operation.
      *        </p>
      *        <p>
      *        <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
@@ -1749,23 +1913,23 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an automatic snapshot, the number of days for which ElastiCache will retain the snapshot before deleting it.
+     * For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting it.
      * </p>
      * <p>
-     * For manual snapshots, this field reflects the <i>SnapshotRetentionLimit</i> for the source cache cluster when the
-     * snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be deleted
-     * using the <i>DeleteSnapshot</i> action.
+     * For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the source cache cluster
+     * when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be
+     * deleted using the <code>DeleteSnapshot</code> operation.
      * </p>
      * <p>
      * <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      * </p>
      * 
-     * @return For an automatic snapshot, the number of days for which ElastiCache will retain the snapshot before
-     *         deleting it.</p>
+     * @return For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting
+     *         it.</p>
      *         <p>
-     *         For manual snapshots, this field reflects the <i>SnapshotRetentionLimit</i> for the source cache cluster
-     *         when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can
-     *         only be deleted using the <i>DeleteSnapshot</i> action.
+     *         For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the source cache
+     *         cluster when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire,
+     *         and can only be deleted using the <code>DeleteSnapshot</code> operation.
      *         </p>
      *         <p>
      *         <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
@@ -1777,24 +1941,24 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For an automatic snapshot, the number of days for which ElastiCache will retain the snapshot before deleting it.
+     * For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting it.
      * </p>
      * <p>
-     * For manual snapshots, this field reflects the <i>SnapshotRetentionLimit</i> for the source cache cluster when the
-     * snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be deleted
-     * using the <i>DeleteSnapshot</i> action.
+     * For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the source cache cluster
+     * when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be
+     * deleted using the <code>DeleteSnapshot</code> operation.
      * </p>
      * <p>
      * <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      * </p>
      * 
      * @param snapshotRetentionLimit
-     *        For an automatic snapshot, the number of days for which ElastiCache will retain the snapshot before
-     *        deleting it.</p>
+     *        For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting
+     *        it.</p>
      *        <p>
-     *        For manual snapshots, this field reflects the <i>SnapshotRetentionLimit</i> for the source cache cluster
-     *        when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can
-     *        only be deleted using the <i>DeleteSnapshot</i> action.
+     *        For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the source cache
+     *        cluster when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire,
+     *        and can only be deleted using the <code>DeleteSnapshot</code> operation.
      *        </p>
      *        <p>
      *        <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
@@ -1843,6 +2007,315 @@ public class Snapshot implements Serializable, Cloneable {
 
     public Snapshot withSnapshotWindow(String snapshotWindow) {
         setSnapshotWindow(snapshotWindow);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of node groups (shards) in this snapshot. When restoring from a snapshot, the number of node groups
+     * (shards) in the snapshot and in the restored replication group must be the same.
+     * </p>
+     * 
+     * @param numNodeGroups
+     *        The number of node groups (shards) in this snapshot. When restoring from a snapshot, the number of node
+     *        groups (shards) in the snapshot and in the restored replication group must be the same.
+     */
+
+    public void setNumNodeGroups(Integer numNodeGroups) {
+        this.numNodeGroups = numNodeGroups;
+    }
+
+    /**
+     * <p>
+     * The number of node groups (shards) in this snapshot. When restoring from a snapshot, the number of node groups
+     * (shards) in the snapshot and in the restored replication group must be the same.
+     * </p>
+     * 
+     * @return The number of node groups (shards) in this snapshot. When restoring from a snapshot, the number of node
+     *         groups (shards) in the snapshot and in the restored replication group must be the same.
+     */
+
+    public Integer getNumNodeGroups() {
+        return this.numNodeGroups;
+    }
+
+    /**
+     * <p>
+     * The number of node groups (shards) in this snapshot. When restoring from a snapshot, the number of node groups
+     * (shards) in the snapshot and in the restored replication group must be the same.
+     * </p>
+     * 
+     * @param numNodeGroups
+     *        The number of node groups (shards) in this snapshot. When restoring from a snapshot, the number of node
+     *        groups (shards) in the snapshot and in the restored replication group must be the same.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withNumNodeGroups(Integer numNodeGroups) {
+        setNumNodeGroups(numNodeGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the status of Multi-AZ for the source replication group.
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param automaticFailover
+     *        Indicates the status of Multi-AZ for the source replication group.</p> <note>
+     *        <p>
+     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
+     *        </p>
+     *        </li>
+     *        </ul>
+     * @see AutomaticFailoverStatus
+     */
+
+    public void setAutomaticFailover(String automaticFailover) {
+        this.automaticFailover = automaticFailover;
+    }
+
+    /**
+     * <p>
+     * Indicates the status of Multi-AZ for the source replication group.
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @return Indicates the status of Multi-AZ for the source replication group.</p> <note>
+     *         <p>
+     *         ElastiCache Multi-AZ replication groups are not supported on:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Redis versions earlier than 2.8.6.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Redis (cluster mode disabled):T1 and T2 cache node types.
+     *         </p>
+     *         <p>
+     *         Redis (cluster mode enabled): T1 node types.
+     *         </p>
+     *         </li>
+     *         </ul>
+     * @see AutomaticFailoverStatus
+     */
+
+    public String getAutomaticFailover() {
+        return this.automaticFailover;
+    }
+
+    /**
+     * <p>
+     * Indicates the status of Multi-AZ for the source replication group.
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param automaticFailover
+     *        Indicates the status of Multi-AZ for the source replication group.</p> <note>
+     *        <p>
+     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
+     *        </p>
+     *        </li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutomaticFailoverStatus
+     */
+
+    public Snapshot withAutomaticFailover(String automaticFailover) {
+        setAutomaticFailover(automaticFailover);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the status of Multi-AZ for the source replication group.
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param automaticFailover
+     *        Indicates the status of Multi-AZ for the source replication group.</p> <note>
+     *        <p>
+     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
+     *        </p>
+     *        </li>
+     *        </ul>
+     * @see AutomaticFailoverStatus
+     */
+
+    public void setAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
+        this.automaticFailover = automaticFailover.toString();
+    }
+
+    /**
+     * <p>
+     * Indicates the status of Multi-AZ for the source replication group.
+     * </p>
+     * <note>
+     * <p>
+     * ElastiCache Multi-AZ replication groups are not supported on:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Redis versions earlier than 2.8.6.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T1 node types.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param automaticFailover
+     *        Indicates the status of Multi-AZ for the source replication group.</p> <note>
+     *        <p>
+     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Redis versions earlier than 2.8.6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
+     *        </p>
+     *        </li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutomaticFailoverStatus
+     */
+
+    public Snapshot withAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
+        setAutomaticFailover(automaticFailover);
         return this;
     }
 
@@ -1932,6 +2405,10 @@ public class Snapshot implements Serializable, Cloneable {
         sb.append("{");
         if (getSnapshotName() != null)
             sb.append("SnapshotName: " + getSnapshotName() + ",");
+        if (getReplicationGroupId() != null)
+            sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
+        if (getReplicationGroupDescription() != null)
+            sb.append("ReplicationGroupDescription: " + getReplicationGroupDescription() + ",");
         if (getCacheClusterId() != null)
             sb.append("CacheClusterId: " + getCacheClusterId() + ",");
         if (getSnapshotStatus() != null)
@@ -1968,6 +2445,10 @@ public class Snapshot implements Serializable, Cloneable {
             sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
         if (getSnapshotWindow() != null)
             sb.append("SnapshotWindow: " + getSnapshotWindow() + ",");
+        if (getNumNodeGroups() != null)
+            sb.append("NumNodeGroups: " + getNumNodeGroups() + ",");
+        if (getAutomaticFailover() != null)
+            sb.append("AutomaticFailover: " + getAutomaticFailover() + ",");
         if (getNodeSnapshots() != null)
             sb.append("NodeSnapshots: " + getNodeSnapshots());
         sb.append("}");
@@ -1987,6 +2468,14 @@ public class Snapshot implements Serializable, Cloneable {
         if (other.getSnapshotName() == null ^ this.getSnapshotName() == null)
             return false;
         if (other.getSnapshotName() != null && other.getSnapshotName().equals(this.getSnapshotName()) == false)
+            return false;
+        if (other.getReplicationGroupId() == null ^ this.getReplicationGroupId() == null)
+            return false;
+        if (other.getReplicationGroupId() != null && other.getReplicationGroupId().equals(this.getReplicationGroupId()) == false)
+            return false;
+        if (other.getReplicationGroupDescription() == null ^ this.getReplicationGroupDescription() == null)
+            return false;
+        if (other.getReplicationGroupDescription() != null && other.getReplicationGroupDescription().equals(this.getReplicationGroupDescription()) == false)
             return false;
         if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null)
             return false;
@@ -2060,6 +2549,14 @@ public class Snapshot implements Serializable, Cloneable {
             return false;
         if (other.getSnapshotWindow() != null && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false)
             return false;
+        if (other.getNumNodeGroups() == null ^ this.getNumNodeGroups() == null)
+            return false;
+        if (other.getNumNodeGroups() != null && other.getNumNodeGroups().equals(this.getNumNodeGroups()) == false)
+            return false;
+        if (other.getAutomaticFailover() == null ^ this.getAutomaticFailover() == null)
+            return false;
+        if (other.getAutomaticFailover() != null && other.getAutomaticFailover().equals(this.getAutomaticFailover()) == false)
+            return false;
         if (other.getNodeSnapshots() == null ^ this.getNodeSnapshots() == null)
             return false;
         if (other.getNodeSnapshots() != null && other.getNodeSnapshots().equals(this.getNodeSnapshots()) == false)
@@ -2073,6 +2570,8 @@ public class Snapshot implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSnapshotName() == null) ? 0 : getSnapshotName().hashCode());
+        hashCode = prime * hashCode + ((getReplicationGroupId() == null) ? 0 : getReplicationGroupId().hashCode());
+        hashCode = prime * hashCode + ((getReplicationGroupDescription() == null) ? 0 : getReplicationGroupDescription().hashCode());
         hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode());
         hashCode = prime * hashCode + ((getSnapshotStatus() == null) ? 0 : getSnapshotStatus().hashCode());
         hashCode = prime * hashCode + ((getSnapshotSource() == null) ? 0 : getSnapshotSource().hashCode());
@@ -2091,6 +2590,8 @@ public class Snapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());
+        hashCode = prime * hashCode + ((getNumNodeGroups() == null) ? 0 : getNumNodeGroups().hashCode());
+        hashCode = prime * hashCode + ((getAutomaticFailover() == null) ? 0 : getAutomaticFailover().hashCode());
         hashCode = prime * hashCode + ((getNodeSnapshots() == null) ? 0 : getNodeSnapshots().hashCode());
         return hashCode;
     }

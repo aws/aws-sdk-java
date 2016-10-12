@@ -18,9 +18,9 @@
  * cloud.
  * </p>
  * <p>
- * With ElastiCache, customers gain all of the benefits of a high-performance, in-memory cache with far less of the
- * administrative burden of launching and managing a distributed cache. The service makes setup, scaling, and cluster
- * failure handling much simpler than in a self-managed cache deployment.
+ * With ElastiCache, customers get all of the benefits of a high-performance, in-memory cache with less of the
+ * administrative burden involved in launching and managing a distributed cache. The service makes setup, scaling, and
+ * cluster failure handling much simpler than in a self-managed cache deployment.
  * </p>
  * <p>
  * In addition, through integration with Amazon CloudWatch, customers get enhanced visibility into the key performance

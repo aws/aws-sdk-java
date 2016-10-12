@@ -339,18 +339,13 @@ public class ServiceUtils {
      * @param file
      * @throws AmazonClientException when creation of parent directory failed.
      *
-     * @return true if the parent directory was created, false if the directory already existed
      */
-    public static boolean createParentDirectoryIfNecessary(final File file) {
+    public static void createParentDirectoryIfNecessary(final File file) {
         final File parentDirectory = file.getParentFile();
-        if (parentDirectory == null || parentDirectory.exists()) {
-            return false;
+        if (parentDirectory == null || parentDirectory.mkdirs() || parentDirectory.exists()) {
+            return;
         }
-        if (parentDirectory.mkdirs()) {
-            return true;
-        } else {
-            throw new AmazonClientException("Unable to create directory in the path: " + parentDirectory.getAbsolutePath());
-        }
+        throw new AmazonClientException("Unable to create directory in the path: " + parentDirectory.getAbsolutePath());
     }
 
     /**

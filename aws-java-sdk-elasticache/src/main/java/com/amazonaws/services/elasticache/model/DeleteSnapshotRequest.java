@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>DeleteSnapshot</i> action.
+ * Represents the input of a <code>DeleteSnapshot</code> operation.
  * </p>
  */
 public class DeleteSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {

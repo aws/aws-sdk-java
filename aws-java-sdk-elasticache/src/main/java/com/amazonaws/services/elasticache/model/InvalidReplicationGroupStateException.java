@@ -14,7 +14,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * The requested replication group is not in the <i>available</i> state.
+ * The requested replication group is not in the <code>available</code> state.
  * </p>
  */
 public class InvalidReplicationGroupStateException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {

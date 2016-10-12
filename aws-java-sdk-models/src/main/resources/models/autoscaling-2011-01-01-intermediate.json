@@ -54172,8 +54172,8 @@
         "description" : "This example attaches the specified instance to the specified Auto Scaling group.",
         "id" : "autoscaling-attach-instances-1",
         "input" : {
-          "AutoScalingGroupName" : "my-auto-scaling-group",
-          "InstanceIds" : [ "i-93633f9b" ]
+          "InstanceIds" : [ "i-93633f9b" ],
+          "AutoScalingGroupName" : "my-auto-scaling-group"
         },
         "output" : null,
         "title" : "To attach an instance to an Auto Scaling group"
@@ -54214,10 +54214,10 @@
         "description" : "This example notifies Auto Scaling that the specified lifecycle action is complete so that it can finish launching or terminating the instance.",
         "id" : "autoscaling-complete-lifecycle-action-1",
         "input" : {
+          "LifecycleHookName" : "my-lifecycle-hook",
           "AutoScalingGroupName" : "my-auto-scaling-group",
-          "LifecycleActionResult" : "CONTINUE",
           "LifecycleActionToken" : "bcd2f1b8-9a78-44d3-8a7a-4dd07d7cf635",
-          "LifecycleHookName" : "my-lifecycle-hook"
+          "LifecycleActionResult" : "CONTINUE"
         },
         "output" : null,
         "title" : "To complete the lifecycle action"
@@ -54232,8 +54232,8 @@
         "input" : {
           "AutoScalingGroupName" : "my-auto-scaling-group",
           "LaunchConfigurationName" : "my-launch-config",
-          "MaxSize" : 3,
           "MinSize" : 1,
+          "MaxSize" : 3,
           "VPCZoneIdentifier" : "subnet-4176792c"
         },
         "output" : null,
@@ -54247,13 +54247,13 @@
         "id" : "autoscaling-create-auto-scaling-group-2",
         "input" : {
           "AutoScalingGroupName" : "my-auto-scaling-group",
-          "AvailabilityZones" : [ "us-west-2c" ],
-          "HealthCheckGracePeriod" : 120,
-          "HealthCheckType" : "ELB",
           "LaunchConfigurationName" : "my-launch-config",
-          "LoadBalancerNames" : [ "my-load-balancer" ],
+          "MinSize" : 1,
           "MaxSize" : 3,
-          "MinSize" : 1
+          "AvailabilityZones" : [ "us-west-2c" ],
+          "LoadBalancerNames" : [ "my-load-balancer" ],
+          "HealthCheckType" : "ELB",
+          "HealthCheckGracePeriod" : 120
         },
         "output" : null,
         "title" : "To create an Auto Scaling group with an attached load balancer"
@@ -54266,12 +54266,12 @@
         "id" : "autoscaling-create-auto-scaling-group-3",
         "input" : {
           "AutoScalingGroupName" : "my-auto-scaling-group",
-          "HealthCheckGracePeriod" : 120,
-          "HealthCheckType" : "ELB",
           "LaunchConfigurationName" : "my-launch-config",
-          "MaxSize" : 3,
           "MinSize" : 1,
+          "MaxSize" : 3,
           "TargetGroupARNs" : [ "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067" ],
+          "HealthCheckType" : "ELB",
+          "HealthCheckGracePeriod" : 120,
           "VPCZoneIdentifier" : "subnet-4176792c, subnet-65ea5f08"
         },
         "output" : null,
@@ -54285,11 +54285,11 @@
         "description" : "This example creates a launch configuration.",
         "id" : "autoscaling-create-launch-configuration-1",
         "input" : {
-          "IamInstanceProfile" : "my-iam-role",
-          "ImageId" : "ami-12345678",
-          "InstanceType" : "m3.medium",
           "LaunchConfigurationName" : "my-launch-config",
-          "SecurityGroups" : [ "sg-eb2af88e" ]
+          "ImageId" : "ami-12345678",
+          "SecurityGroups" : [ "sg-eb2af88e" ],
+          "InstanceType" : "m3.medium",
+          "IamInstanceProfile" : "my-iam-role"
         },
         "output" : null,
         "title" : "To create a launch configuration"
@@ -54303,17 +54303,17 @@
         "id" : "autoscaling-create-or-update-tags-1",
         "input" : {
           "Tags" : [ {
+            "ResourceId" : "my-auto-scaling-group",
+            "ResourceType" : "auto-scaling-group",
             "Key" : "Role",
-            "PropagateAtLaunch" : true,
-            "ResourceId" : "my-auto-scaling-group",
-            "ResourceType" : "auto-scaling-group",
-            "Value" : "WebServer"
+            "Value" : "WebServer",
+            "PropagateAtLaunch" : true
           }, {
-            "Key" : "Dept",
-            "PropagateAtLaunch" : true,
             "ResourceId" : "my-auto-scaling-group",
             "ResourceType" : "auto-scaling-group",
-            "Value" : "Research"
+            "Key" : "Dept",
+            "Value" : "Research",
+            "PropagateAtLaunch" : true
           } ]
         },
         "output" : null,
@@ -54366,8 +54366,8 @@
         "description" : "This example deletes the specified lifecycle hook.",
         "id" : "autoscaling-delete-lifecycle-hook-1",
         "input" : {
-          "AutoScalingGroupName" : "my-auto-scaling-group",
-          "LifecycleHookName" : "my-lifecycle-hook"
+          "LifecycleHookName" : "my-lifecycle-hook",
+          "AutoScalingGroupName" : "my-auto-scaling-group"
         },
         "output" : null,
         "title" : "To delete a lifecycle hook"
@@ -54423,9 +54423,9 @@
         "id" : "autoscaling-delete-tags-1",
         "input" : {
           "Tags" : [ {
-            "Key" : "Dept",
             "ResourceId" : "my-auto-scaling-group",
             "ResourceType" : "auto-scaling-group",
+            "Key" : "Dept",
             "Value" : "Research"
           } ]
         },
@@ -54479,31 +54479,31 @@
         },
         "output" : {
           "AutoScalingGroups" : [ {
-            "AutoScalingGroupARN" : "arn:aws:autoscaling:us-west-2:123456789012:autoScalingGroup:930d940e-891e-4781-a11a-7b0acd480f03:autoScalingGroupName/my-auto-scaling-group",
             "AutoScalingGroupName" : "my-auto-scaling-group",
-            "AvailabilityZones" : [ "us-west-2c" ],
-            "CreatedTime" : "2013-08-19T20:53:25.584Z",
-            "DefaultCooldown" : 300,
-            "DesiredCapacity" : 1,
-            "EnabledMetrics" : [ ],
-            "HealthCheckGracePeriod" : 300,
-            "HealthCheckType" : "EC2",
-            "Instances" : [ {
-              "AvailabilityZone" : "us-west-2c",
-              "HealthStatus" : "Healthy",
-              "InstanceId" : "i-4ba0837f",
-              "LaunchConfigurationName" : "my-launch-config",
-              "LifecycleState" : "InService"
-            } ],
+            "AutoScalingGroupARN" : "arn:aws:autoscaling:us-west-2:123456789012:autoScalingGroup:930d940e-891e-4781-a11a-7b0acd480f03:autoScalingGroupName/my-auto-scaling-group",
             "LaunchConfigurationName" : "my-launch-config",
-            "LoadBalancerNames" : [ ],
-            "MaxSize" : 1,
             "MinSize" : 0,
-            "NewInstancesProtectedFromScaleIn" : false,
+            "MaxSize" : 1,
+            "DesiredCapacity" : 1,
+            "DefaultCooldown" : 300,
+            "AvailabilityZones" : [ "us-west-2c" ],
+            "LoadBalancerNames" : [ ],
+            "HealthCheckType" : "EC2",
+            "HealthCheckGracePeriod" : 300,
+            "Instances" : [ {
+              "InstanceId" : "i-4ba0837f",
+              "AvailabilityZone" : "us-west-2c",
+              "LifecycleState" : "InService",
+              "HealthStatus" : "Healthy",
+              "LaunchConfigurationName" : "my-launch-config"
+            } ],
+            "CreatedTime" : "2013-08-19T20:53:25.584Z",
             "SuspendedProcesses" : [ ],
+            "VPCZoneIdentifier" : "subnet-12345678",
+            "EnabledMetrics" : [ ],
             "Tags" : [ ],
             "TerminationPolicies" : [ "Default" ],
-            "VPCZoneIdentifier" : "subnet-12345678"
+            "NewInstancesProtectedFromScaleIn" : false
           } ]
         },
         "title" : "To describe an Auto Scaling group"
@@ -54520,12 +54520,12 @@
         },
         "output" : {
           "AutoScalingInstances" : [ {
+            "InstanceId" : "i-4ba0837f",
             "AutoScalingGroupName" : "my-auto-scaling-group",
             "AvailabilityZone" : "us-west-2c",
-            "HealthStatus" : "HEALTHY",
-            "InstanceId" : "i-4ba0837f",
-            "LaunchConfigurationName" : "my-launch-config",
             "LifecycleState" : "InService",
+            "HealthStatus" : "HEALTHY",
+            "LaunchConfigurationName" : "my-launch-config",
             "ProtectedFromScaleIn" : false
           } ]
         },
@@ -54556,18 +54556,18 @@
         },
         "output" : {
           "LaunchConfigurations" : [ {
-            "AssociatePublicIpAddress" : true,
-            "BlockDeviceMappings" : [ ],
-            "CreatedTime" : "2014-05-07T17:39:28.599Z",
-            "EbsOptimized" : false,
+            "LaunchConfigurationName" : "my-launch-config",
+            "LaunchConfigurationARN" : "arn:aws:autoscaling:us-west-2:123456789012:launchConfiguration:98d3b196-4cf9-4e88-8ca1-8547c24ced8b:launchConfigurationName/my-launch-config",
             "ImageId" : "ami-043a5034",
+            "SecurityGroups" : [ "sg-67ef0308" ],
+            "InstanceType" : "t1.micro",
+            "BlockDeviceMappings" : [ ],
             "InstanceMonitoring" : {
               "Enabled" : true
             },
-            "InstanceType" : "t1.micro",
-            "LaunchConfigurationARN" : "arn:aws:autoscaling:us-west-2:123456789012:launchConfiguration:98d3b196-4cf9-4e88-8ca1-8547c24ced8b:launchConfigurationName/my-launch-config",
-            "LaunchConfigurationName" : "my-launch-config",
-            "SecurityGroups" : [ "sg-67ef0308" ]
+            "CreatedTime" : "2014-05-07T17:39:28.599Z",
+            "EbsOptimized" : false,
+            "AssociatePublicIpAddress" : true
           } ]
         },
         "title" : "To describe Auto Scaling launch configurations"
@@ -54597,14 +54597,14 @@
         },
         "output" : {
           "LifecycleHooks" : [ {
-            "AutoScalingGroupName" : "my-auto-scaling-group",
-            "DefaultResult" : "ABANDON",
-            "GlobalTimeout" : 172800,
-            "HeartbeatTimeout" : 3600,
             "LifecycleHookName" : "my-lifecycle-hook",
+            "AutoScalingGroupName" : "my-auto-scaling-group",
             "LifecycleTransition" : "autoscaling:EC2_INSTANCE_LAUNCHING",
             "NotificationTargetARN" : "arn:aws:sns:us-west-2:123456789012:my-sns-topic",
-            "RoleARN" : "arn:aws:iam::123456789012:role/my-auto-scaling-role"
+            "RoleARN" : "arn:aws:iam::123456789012:role/my-auto-scaling-role",
+            "HeartbeatTimeout" : 3600,
+            "GlobalTimeout" : 172800,
+            "DefaultResult" : "ABANDON"
           } ]
         },
         "title" : "To describe your lifecycle hooks"
@@ -54654,9 +54654,6 @@
         "id" : "autoscaling-describe-metric-collection-types-1",
         "input" : null,
         "output" : {
-          "Granularities" : [ {
-            "Granularity" : "1Minute"
-          } ],
           "Metrics" : [ {
             "Metric" : "GroupMinSize"
           }, {
@@ -54673,6 +54670,9 @@
             "Metric" : "GroupStandbyInstances"
           }, {
             "Metric" : "GroupTotalInstances"
+          } ],
+          "Granularities" : [ {
+            "Granularity" : "1Minute"
           } ]
         },
         "title" : "To describe the Auto Scaling metric collection types"
@@ -54690,12 +54690,12 @@
         "output" : {
           "NotificationConfigurations" : [ {
             "AutoScalingGroupName" : "my-auto-scaling-group",
-            "NotificationType" : "autoscaling:TEST_NOTIFICATION",
-            "TopicARN" : "arn:aws:sns:us-west-2:123456789012:my-sns-topic-2"
+            "TopicARN" : "arn:aws:sns:us-west-2:123456789012:my-sns-topic-2",
+            "NotificationType" : "autoscaling:TEST_NOTIFICATION"
           }, {
             "AutoScalingGroupName" : "my-auto-scaling-group",
-            "NotificationType" : "autoscaling:TEST_NOTIFICATION",
-            "TopicARN" : "arn:aws:sns:us-west-2:123456789012:my-sns-topic"
+            "TopicARN" : "arn:aws:sns:us-west-2:123456789012:my-sns-topic",
+            "NotificationType" : "autoscaling:TEST_NOTIFICATION"
           } ]
         },
         "title" : "To describe Auto Scaling notification configurations"
@@ -54712,21 +54712,21 @@
         },
         "output" : {
           "ScalingPolicies" : [ {
-            "AdjustmentType" : "ChangeInCapacity",
-            "Alarms" : [ ],
             "AutoScalingGroupName" : "my-auto-scaling-group",
-            "PolicyARN" : "arn:aws:autoscaling:us-west-2:123456789012:scalingPolicy:2233f3d7-6290-403b-b632-93c553560106:autoScalingGroupName/my-auto-scaling-group:policyName/ScaleIn",
             "PolicyName" : "ScaleIn",
-            "ScalingAdjustment" : -1
+            "PolicyARN" : "arn:aws:autoscaling:us-west-2:123456789012:scalingPolicy:2233f3d7-6290-403b-b632-93c553560106:autoScalingGroupName/my-auto-scaling-group:policyName/ScaleIn",
+            "AdjustmentType" : "ChangeInCapacity",
+            "ScalingAdjustment" : -1,
+            "Alarms" : [ ]
           }, {
-            "AdjustmentType" : "PercentChangeInCapacity",
-            "Alarms" : [ ],
             "AutoScalingGroupName" : "my-auto-scaling-group",
-            "Cooldown" : 60,
-            "MinAdjustmentStep" : 2,
-            "PolicyARN" : "arn:aws:autoscaling:us-west-2:123456789012:scalingPolicy:2b435159-cf77-4e89-8c0e-d63b497baad7:autoScalingGroupName/my-auto-scaling-group:policyName/ScalePercentChange",
             "PolicyName" : "ScalePercentChange",
-            "ScalingAdjustment" : 25
+            "PolicyARN" : "arn:aws:autoscaling:us-west-2:123456789012:scalingPolicy:2b435159-cf77-4e89-8c0e-d63b497baad7:autoScalingGroupName/my-auto-scaling-group:policyName/ScalePercentChange",
+            "AdjustmentType" : "PercentChangeInCapacity",
+            "MinAdjustmentStep" : 2,
+            "ScalingAdjustment" : 25,
+            "Cooldown" : 60,
+            "Alarms" : [ ]
           } ]
         },
         "title" : "To describe Auto Scaling policies"
@@ -54745,13 +54745,13 @@
           "Activities" : [ {
             "ActivityId" : "f9f2d65b-f1f2-43e7-b46d-d86756459699",
             "AutoScalingGroupName" : "my-auto-scaling-group",
-            "Cause" : "At 2013-08-19T20:53:25Z a user request created an AutoScalingGroup changing the desired capacity from 0 to 1.  At 2013-08-19T20:53:29Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 0 to 1.",
             "Description" : "Launching a new EC2 instance: i-4ba0837f",
-            "Details" : "details",
-            "EndTime" : "2013-08-19T20:54:02Z",
-            "Progress" : 100,
+            "Cause" : "At 2013-08-19T20:53:25Z a user request created an AutoScalingGroup changing the desired capacity from 0 to 1.  At 2013-08-19T20:53:29Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 0 to 1.",
             "StartTime" : "2013-08-19T20:53:29.930Z",
-            "StatusCode" : "Successful"
+            "EndTime" : "2013-08-19T20:54:02Z",
+            "StatusCode" : "Successful",
+            "Progress" : 100,
+            "Details" : "details"
           } ]
         },
         "title" : "To describe the scaling activities for an Auto Scaling group"
@@ -54798,14 +54798,14 @@
         "output" : {
           "ScheduledUpdateGroupActions" : [ {
             "AutoScalingGroupName" : "my-auto-scaling-group",
-            "DesiredCapacity" : 4,
-            "MaxSize" : 6,
-            "MinSize" : 2,
-            "Recurrence" : "30 0 1 12 0",
-            "ScheduledActionARN" : "arn:aws:autoscaling:us-west-2:123456789012:scheduledUpdateGroupAction:8e86b655-b2e6-4410-8f29-b4f094d6871c:autoScalingGroupName/my-auto-scaling-group:scheduledActionName/my-scheduled-action",
             "ScheduledActionName" : "my-scheduled-action",
+            "ScheduledActionARN" : "arn:aws:autoscaling:us-west-2:123456789012:scheduledUpdateGroupAction:8e86b655-b2e6-4410-8f29-b4f094d6871c:autoScalingGroupName/my-auto-scaling-group:scheduledActionName/my-scheduled-action",
+            "Time" : "2016-12-01T00:30:00Z",
             "StartTime" : "2016-12-01T00:30:00Z",
-            "Time" : "2016-12-01T00:30:00Z"
+            "Recurrence" : "30 0 1 12 0",
+            "MinSize" : 2,
+            "MaxSize" : 6,
+            "DesiredCapacity" : 4
           } ]
         },
         "title" : "To describe scheduled actions"
@@ -54825,17 +54825,17 @@
         },
         "output" : {
           "Tags" : [ {
+            "ResourceId" : "my-auto-scaling-group",
+            "ResourceType" : "auto-scaling-group",
             "Key" : "Dept",
-            "PropagateAtLaunch" : true,
-            "ResourceId" : "my-auto-scaling-group",
-            "ResourceType" : "auto-scaling-group",
-            "Value" : "Research"
+            "Value" : "Research",
+            "PropagateAtLaunch" : true
           }, {
-            "Key" : "Role",
-            "PropagateAtLaunch" : true,
             "ResourceId" : "my-auto-scaling-group",
             "ResourceType" : "auto-scaling-group",
-            "Value" : "WebServer"
+            "Key" : "Role",
+            "Value" : "WebServer",
+            "PropagateAtLaunch" : true
           } ]
         },
         "title" : "To describe tags"
@@ -54861,20 +54861,20 @@
         "description" : "This example detaches the specified instance from the specified Auto Scaling group.",
         "id" : "autoscaling-detach-instances-1",
         "input" : {
-          "AutoScalingGroupName" : "my-auto-scaling-group",
           "InstanceIds" : [ "i-93633f9b" ],
+          "AutoScalingGroupName" : "my-auto-scaling-group",
           "ShouldDecrementDesiredCapacity" : true
         },
         "output" : {
           "Activities" : [ {
             "ActivityId" : "5091cb52-547a-47ce-a236-c9ccbc2cb2c9",
             "AutoScalingGroupName" : "my-auto-scaling-group",
-            "Cause" : "At 2015-04-12T15:02:16Z instance i-93633f9b was detached in response to a user request, shrinking the capacity from 2 to 1.",
             "Description" : "Detaching EC2 instance: i-93633f9b",
-            "Details" : "details",
-            "Progress" : 50,
+            "Cause" : "At 2015-04-12T15:02:16Z instance i-93633f9b was detached in response to a user request, shrinking the capacity from 2 to 1.",
             "StartTime" : "2015-04-12T15:02:16.179Z",
-            "StatusCode" : "InProgress"
+            "StatusCode" : "InProgress",
+            "Progress" : 50,
+            "Details" : "details"
           } ]
         },
         "title" : "To detach an instance from an Auto Scaling group"
@@ -54943,20 +54943,20 @@
         "description" : "This example puts the specified instance into standby mode.",
         "id" : "autoscaling-enter-standby-1",
         "input" : {
-          "AutoScalingGroupName" : "my-auto-scaling-group",
           "InstanceIds" : [ "i-93633f9b" ],
+          "AutoScalingGroupName" : "my-auto-scaling-group",
           "ShouldDecrementDesiredCapacity" : true
         },
         "output" : {
           "Activities" : [ {
             "ActivityId" : "ffa056b4-6ed3-41ba-ae7c-249dfae6eba1",
             "AutoScalingGroupName" : "my-auto-scaling-group",
-            "Cause" : "At 2015-04-12T15:10:23Z instance i-93633f9b was moved to standby in response to a user request, shrinking the capacity from 2 to 1.",
             "Description" : "Moving EC2 instance to Standby: i-93633f9b",
-            "Details" : "details",
-            "Progress" : 50,
+            "Cause" : "At 2015-04-12T15:10:23Z instance i-93633f9b was moved to standby in response to a user request, shrinking the capacity from 2 to 1.",
             "StartTime" : "2015-04-12T15:10:23.640Z",
-            "StatusCode" : "InProgress"
+            "StatusCode" : "InProgress",
+            "Progress" : 50,
+            "Details" : "details"
           } ]
         },
         "title" : "To move instances into standby mode"
@@ -54970,8 +54970,8 @@
         "id" : "autoscaling-execute-policy-1",
         "input" : {
           "AutoScalingGroupName" : "my-auto-scaling-group",
-          "HonorCooldown" : true,
-          "PolicyName" : "ScaleIn"
+          "PolicyName" : "ScaleIn",
+          "HonorCooldown" : true
         },
         "output" : null,
         "title" : "To execute an Auto Scaling policy"
@@ -54984,19 +54984,19 @@
         "description" : "This example moves the specified instance out of standby mode.",
         "id" : "autoscaling-exit-standby-1",
         "input" : {
-          "AutoScalingGroupName" : "my-auto-scaling-group",
-          "InstanceIds" : [ "i-93633f9b" ]
+          "InstanceIds" : [ "i-93633f9b" ],
+          "AutoScalingGroupName" : "my-auto-scaling-group"
         },
         "output" : {
           "Activities" : [ {
             "ActivityId" : "142928e1-a2dc-453a-9b24-b85ad6735928",
             "AutoScalingGroupName" : "my-auto-scaling-group",
-            "Cause" : "At 2015-04-12T15:14:29Z instance i-93633f9b was moved out of standby in response to a user request, increasing the capacity from 1 to 2.",
             "Description" : "Moving EC2 instance out of Standby: i-93633f9b",
-            "Details" : "details",
-            "Progress" : 30,
+            "Cause" : "At 2015-04-12T15:14:29Z instance i-93633f9b was moved out of standby in response to a user request, increasing the capacity from 1 to 2.",
             "StartTime" : "2015-04-12T15:14:29.886Z",
-            "StatusCode" : "PreInService"
+            "StatusCode" : "PreInService",
+            "Progress" : 30,
+            "Details" : "details"
           } ]
         },
         "title" : "To move instances out of standby mode"
@@ -55009,11 +55009,11 @@
         "description" : "This example creates a lifecycle hook.",
         "id" : "autoscaling-put-lifecycle-hook-1",
         "input" : {
-          "AutoScalingGroupName" : "my-auto-scaling-group",
           "LifecycleHookName" : "my-lifecycle-hook",
+          "AutoScalingGroupName" : "my-auto-scaling-group",
           "LifecycleTransition" : "autoscaling:EC2_INSTANCE_LAUNCHING",
-          "NotificationTargetARN" : "arn:aws:sns:us-west-2:123456789012:my-sns-topic --role-arn",
-          "RoleARN" : "arn:aws:iam::123456789012:role/my-auto-scaling-role"
+          "RoleARN" : "arn:aws:iam::123456789012:role/my-auto-scaling-role",
+          "NotificationTargetARN" : "arn:aws:sns:us-west-2:123456789012:my-sns-topic --role-arn"
         },
         "output" : null,
         "title" : "To create a lifecycle hook"
@@ -55027,8 +55027,8 @@
         "id" : "autoscaling-put-notification-configuration-1",
         "input" : {
           "AutoScalingGroupName" : "my-auto-scaling-group",
-          "NotificationTypes" : [ "autoscaling:TEST_NOTIFICATION" ],
-          "TopicARN" : "arn:aws:sns:us-west-2:123456789012:my-sns-topic"
+          "TopicARN" : "arn:aws:sns:us-west-2:123456789012:my-sns-topic",
+          "NotificationTypes" : [ "autoscaling:TEST_NOTIFICATION" ]
         },
         "output" : null,
         "title" : "To add an Auto Scaling notification"
@@ -55041,9 +55041,9 @@
         "description" : "This example adds the specified policy to the specified Auto Scaling group.",
         "id" : "autoscaling-put-scaling-policy-1",
         "input" : {
-          "AdjustmentType" : "ChangeInCapacity",
           "AutoScalingGroupName" : "my-auto-scaling-group",
           "PolicyName" : "ScaleIn",
+          "AdjustmentType" : "ChangeInCapacity",
           "ScalingAdjustment" : -1
         },
         "output" : {
@@ -55060,12 +55060,12 @@
         "id" : "autoscaling-put-scheduled-update-group-action-1",
         "input" : {
           "AutoScalingGroupName" : "my-auto-scaling-group",
-          "DesiredCapacity" : 4,
-          "EndTime" : "2014-05-12T08:00:00Z",
-          "MaxSize" : 6,
-          "MinSize" : 2,
           "ScheduledActionName" : "my-scheduled-action",
-          "StartTime" : "2014-05-12T08:00:00Z"
+          "StartTime" : "2014-05-12T08:00:00Z",
+          "EndTime" : "2014-05-12T08:00:00Z",
+          "MinSize" : 2,
+          "MaxSize" : 6,
+          "DesiredCapacity" : 4
         },
         "output" : null,
         "title" : "To add a scheduled action to an Auto Scaling group"
@@ -55078,9 +55078,9 @@
         "description" : "This example records a lifecycle action heartbeat to keep the instance in a pending state.",
         "id" : "autoscaling-record-lifecycle-action-heartbeat-1",
         "input" : {
+          "LifecycleHookName" : "my-lifecycle-hook",
           "AutoScalingGroupName" : "my-auto-scaling-group",
-          "LifecycleActionToken" : "bcd2f1b8-9a78-44d3-8a7a-4dd07d7cf635",
-          "LifecycleHookName" : "my-lifecycle-hook"
+          "LifecycleActionToken" : "bcd2f1b8-9a78-44d3-8a7a-4dd07d7cf635"
         },
         "output" : null,
         "title" : "To record a lifecycle action heartbeat"
@@ -55122,8 +55122,8 @@
         "description" : "This example sets the health status of the specified instance to Unhealthy.",
         "id" : "autoscaling-set-instance-health-1",
         "input" : {
-          "HealthStatus" : "Unhealthy",
-          "InstanceId" : "i-93633f9b"
+          "InstanceId" : "i-93633f9b",
+          "HealthStatus" : "Unhealthy"
         },
         "output" : null,
         "title" : "To set the health status of an instance"
@@ -55136,8 +55136,8 @@
         "description" : "This example enables instance protection for the specified instance.",
         "id" : "autoscaling-set-instance-protection-1",
         "input" : {
-          "AutoScalingGroupName" : "my-auto-scaling-group",
           "InstanceIds" : [ "i-93633f9b" ],
+          "AutoScalingGroupName" : "my-auto-scaling-group",
           "ProtectedFromScaleIn" : true
         },
         "output" : null,
@@ -55150,8 +55150,8 @@
         "description" : "This example disables instance protection for the specified instance.",
         "id" : "autoscaling-set-instance-protection-2",
         "input" : {
-          "AutoScalingGroupName" : "my-auto-scaling-group",
           "InstanceIds" : [ "i-93633f9b" ],
+          "AutoScalingGroupName" : "my-auto-scaling-group",
           "ProtectedFromScaleIn" : false
         },
         "output" : null,
@@ -55207,8 +55207,8 @@
         "id" : "autoscaling-update-auto-scaling-group-2",
         "input" : {
           "AutoScalingGroupName" : "my-auto-scaling-group",
-          "MaxSize" : 3,
-          "MinSize" : 1
+          "MinSize" : 1,
+          "MaxSize" : 3
         },
         "output" : null,
         "title" : "To update the minimum and maximum size"

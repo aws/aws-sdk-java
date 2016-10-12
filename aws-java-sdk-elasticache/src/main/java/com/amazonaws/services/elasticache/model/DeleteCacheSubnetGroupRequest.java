@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>DeleteCacheSubnetGroup</i> action.
+ * Represents the input of a <code>DeleteCacheSubnetGroup</code> operation.
  * </p>
  */
 public class DeleteCacheSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {

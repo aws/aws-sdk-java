@@ -260,6 +260,47 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
+     * Returns metadata about the images in a repository, including image size and creation date.
+     * </p>
+     * <note>
+     * <p>
+     * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
+     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * </p>
+     * </note>
+     * 
+     * @param describeImagesRequest
+     * @return A Java Future containing the result of the DescribeImages operation returned by the service.
+     * @sample AmazonECRAsync.DescribeImages
+     */
+    java.util.concurrent.Future<DescribeImagesResult> describeImagesAsync(DescribeImagesRequest describeImagesRequest);
+
+    /**
+     * <p>
+     * Returns metadata about the images in a repository, including image size and creation date.
+     * </p>
+     * <note>
+     * <p>
+     * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
+     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * </p>
+     * </note>
+     * 
+     * @param describeImagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeImages operation returned by the service.
+     * @sample AmazonECRAsyncHandler.DescribeImages
+     */
+    java.util.concurrent.Future<DescribeImagesResult> describeImagesAsync(DescribeImagesRequest describeImagesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeImagesRequest, DescribeImagesResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes image repositories in a registry.
      * </p>
      * 

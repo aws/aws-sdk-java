@@ -42141,13 +42141,13 @@
         },
         "output" : {
           "cluster" : {
-            "activeServicesCount" : 0,
             "clusterArn" : "arn:aws:ecs:us-east-1:012345678910:cluster/my_cluster",
             "clusterName" : "my_cluster",
-            "pendingTasksCount" : 0,
+            "status" : "ACTIVE",
             "registeredContainerInstancesCount" : 0,
             "runningTasksCount" : 0,
-            "status" : "ACTIVE"
+            "pendingTasksCount" : 0,
+            "activeServicesCount" : 0
           }
         },
         "title" : "To create a new cluster"
@@ -42160,46 +42160,46 @@
         "description" : "This example creates a service in your default region called ``ecs-simple-service``. The service uses the ``hello_world`` task definition and it maintains 10 copies of that task.",
         "id" : "to-create-a-new-service-1472512584282",
         "input" : {
-          "desiredCount" : 10,
           "serviceName" : "ecs-simple-service",
-          "taskDefinition" : "hello_world"
+          "taskDefinition" : "hello_world",
+          "desiredCount" : 10
         },
         "output" : {
           "service" : {
+            "serviceArn" : "arn:aws:ecs:us-east-1:012345678910:service/ecs-simple-service",
+            "serviceName" : "ecs-simple-service",
             "clusterArn" : "arn:aws:ecs:us-east-1:012345678910:cluster/default",
-            "createdAt" : "2016-08-29T16:13:47.298Z",
+            "loadBalancers" : [ ],
+            "status" : "ACTIVE",
+            "desiredCount" : 10,
+            "runningCount" : 0,
+            "pendingCount" : 0,
+            "taskDefinition" : "arn:aws:ecs:us-east-1:012345678910:task-definition/hello_world:6",
             "deploymentConfiguration" : {
               "maximumPercent" : 200,
               "minimumHealthyPercent" : 100
             },
             "deployments" : [ {
-              "createdAt" : "2016-08-29T16:13:47.298Z",
-              "desiredCount" : 10,
               "id" : "ecs-svc/9223370564342348388",
-              "pendingCount" : 0,
-              "runningCount" : 0,
               "status" : "PRIMARY",
               "taskDefinition" : "arn:aws:ecs:us-east-1:012345678910:task-definition/hello_world:6",
-              "updatedAt" : "2016-08-29T16:13:47.298Z"
-            }, {
-              "createdAt" : "2016-08-29T15:52:44.481Z",
-              "desiredCount" : 0,
-              "id" : "ecs-svc/9223370564343611322",
+              "desiredCount" : 10,
               "pendingCount" : 0,
               "runningCount" : 0,
+              "createdAt" : "2016-08-29T16:13:47.298Z",
+              "updatedAt" : "2016-08-29T16:13:47.298Z"
+            }, {
+              "id" : "ecs-svc/9223370564343611322",
               "status" : "ACTIVE",
               "taskDefinition" : "arn:aws:ecs:us-east-1:012345678910:task-definition/hello_world:6",
+              "desiredCount" : 0,
+              "pendingCount" : 0,
+              "runningCount" : 0,
+              "createdAt" : "2016-08-29T15:52:44.481Z",
               "updatedAt" : "2016-08-29T16:11:38.941Z"
             } ],
-            "desiredCount" : 10,
             "events" : [ ],
-            "loadBalancers" : [ ],
-            "pendingCount" : 0,
-            "runningCount" : 0,
-            "serviceArn" : "arn:aws:ecs:us-east-1:012345678910:service/ecs-simple-service",
-            "serviceName" : "ecs-simple-service",
-            "status" : "ACTIVE",
-            "taskDefinition" : "arn:aws:ecs:us-east-1:012345678910:task-definition/hello_world:6"
+            "createdAt" : "2016-08-29T16:13:47.298Z"
           }
         },
         "title" : "To create a new service"
@@ -42211,48 +42211,48 @@
         "description" : "This example creates a service in your default region called ``ecs-simple-service-elb``. The service uses the ``ecs-demo`` task definition and it maintains 10 copies of that task. You must reference an existing load balancer in the same region by its name.",
         "id" : "to-create-a-new-service-behind-a-load-balancer-1472512484823",
         "input" : {
-          "desiredCount" : 10,
-          "loadBalancers" : [ {
-            "containerName" : "simple-app",
-            "containerPort" : 80,
-            "loadBalancerName" : "EC2Contai-EcsElast-15DCDAURT3ZO2"
-          } ],
-          "role" : "ecsServiceRole",
           "serviceName" : "ecs-simple-service-elb",
-          "taskDefinition" : "console-sample-app-static"
+          "taskDefinition" : "console-sample-app-static",
+          "loadBalancers" : [ {
+            "loadBalancerName" : "EC2Contai-EcsElast-15DCDAURT3ZO2",
+            "containerName" : "simple-app",
+            "containerPort" : 80
+          } ],
+          "desiredCount" : 10,
+          "role" : "ecsServiceRole"
         },
         "output" : {
           "service" : {
+            "serviceArn" : "arn:aws:ecs:us-east-1:012345678910:service/ecs-simple-service-elb",
+            "serviceName" : "ecs-simple-service-elb",
             "clusterArn" : "arn:aws:ecs:us-east-1:012345678910:cluster/default",
-            "createdAt" : "2016-08-29T16:02:54.884Z",
+            "loadBalancers" : [ {
+              "loadBalancerName" : "EC2Contai-EcsElast-15DCDAURT3ZO2",
+              "containerName" : "simple-app",
+              "containerPort" : 80
+            } ],
+            "status" : "ACTIVE",
+            "desiredCount" : 10,
+            "runningCount" : 0,
+            "pendingCount" : 0,
+            "taskDefinition" : "arn:aws:ecs:us-east-1:012345678910:task-definition/console-sample-app-static:6",
             "deploymentConfiguration" : {
               "maximumPercent" : 200,
               "minimumHealthyPercent" : 100
             },
             "deployments" : [ {
-              "createdAt" : "2016-08-29T16:02:54.884Z",
-              "desiredCount" : 10,
               "id" : "ecs-svc/9223370564343000923",
-              "pendingCount" : 0,
-              "runningCount" : 0,
               "status" : "PRIMARY",
               "taskDefinition" : "arn:aws:ecs:us-east-1:012345678910:task-definition/console-sample-app-static:6",
+              "desiredCount" : 10,
+              "pendingCount" : 0,
+              "runningCount" : 0,
+              "createdAt" : "2016-08-29T16:02:54.884Z",
               "updatedAt" : "2016-08-29T16:02:54.884Z"
             } ],
-            "desiredCount" : 10,
-            "events" : [ ],
-            "loadBalancers" : [ {
-              "containerName" : "simple-app",
-              "containerPort" : 80,
-              "loadBalancerName" : "EC2Contai-EcsElast-15DCDAURT3ZO2"
-            } ],
-            "pendingCount" : 0,
             "roleArn" : "arn:aws:iam::012345678910:role/ecsServiceRole",
-            "runningCount" : 0,
-            "serviceArn" : "arn:aws:ecs:us-east-1:012345678910:service/ecs-simple-service-elb",
-            "serviceName" : "ecs-simple-service-elb",
-            "status" : "ACTIVE",
-            "taskDefinition" : "arn:aws:ecs:us-east-1:012345678910:task-definition/console-sample-app-static:6"
+            "events" : [ ],
+            "createdAt" : "2016-08-29T16:02:54.884Z"
           }
         },
         "title" : "To create a new service behind a load balancer"
@@ -42269,13 +42269,13 @@
         },
         "output" : {
           "cluster" : {
-            "activeServicesCount" : 0,
             "clusterArn" : "arn:aws:ecs:us-east-1:012345678910:cluster/my_cluster",
             "clusterName" : "my_cluster",
-            "pendingTasksCount" : 0,
+            "status" : "INACTIVE",
             "registeredContainerInstancesCount" : 0,
             "runningTasksCount" : 0,
-            "status" : "INACTIVE"
+            "pendingTasksCount" : 0,
+            "activeServicesCount" : 0
           }
         },
         "title" : "To delete an empty cluster"
@@ -42341,52 +42341,52 @@
         },
         "output" : {
           "containerInstances" : [ {
-            "agentConnected" : true,
             "containerInstanceArn" : "arn:aws:ecs:us-east-1:012345678910:container-instance/f2756532-8f13-4d53-87c9-aed50dc94cd7",
             "ec2InstanceId" : "i-807f3249",
-            "pendingTasksCount" : 0,
-            "registeredResources" : [ {
-              "name" : "CPU",
-              "type" : "INTEGER",
-              "doubleValue" : 0.0,
-              "integerValue" : 2048,
-              "longValue" : 0
-            }, {
-              "name" : "MEMORY",
-              "type" : "INTEGER",
-              "doubleValue" : 0.0,
-              "integerValue" : 3768,
-              "longValue" : 0
-            }, {
-              "name" : "PORTS",
-              "type" : "STRINGSET",
-              "doubleValue" : 0.0,
-              "integerValue" : 0,
-              "longValue" : 0,
-              "stringSetValue" : [ "2376", "22", "51678", "2375" ]
-            } ],
             "remainingResources" : [ {
               "name" : "CPU",
               "type" : "INTEGER",
               "doubleValue" : 0.0,
-              "integerValue" : 1948,
-              "longValue" : 0
+              "longValue" : 0,
+              "integerValue" : 1948
             }, {
               "name" : "MEMORY",
               "type" : "INTEGER",
               "doubleValue" : 0.0,
-              "integerValue" : 3668,
-              "longValue" : 0
+              "longValue" : 0,
+              "integerValue" : 3668
             }, {
               "name" : "PORTS",
               "type" : "STRINGSET",
               "doubleValue" : 0.0,
-              "integerValue" : 0,
               "longValue" : 0,
+              "integerValue" : 0,
               "stringSetValue" : [ "2376", "22", "80", "51678", "2375" ]
             } ],
+            "registeredResources" : [ {
+              "name" : "CPU",
+              "type" : "INTEGER",
+              "doubleValue" : 0.0,
+              "longValue" : 0,
+              "integerValue" : 2048
+            }, {
+              "name" : "MEMORY",
+              "type" : "INTEGER",
+              "doubleValue" : 0.0,
+              "longValue" : 0,
+              "integerValue" : 3768
+            }, {
+              "name" : "PORTS",
+              "type" : "STRINGSET",
+              "doubleValue" : 0.0,
+              "longValue" : 0,
+              "integerValue" : 0,
+              "stringSetValue" : [ "2376", "22", "51678", "2375" ]
+            } ],
+            "status" : "ACTIVE",
+            "agentConnected" : true,
             "runningTasksCount" : 1,
-            "status" : "ACTIVE"
+            "pendingTasksCount" : 0
           } ],
           "failures" : [ ]
         },
@@ -42405,38 +42405,38 @@
           "services" : [ "ecs-simple-service" ]
         },
         "output" : {
-          "failures" : [ ],
           "services" : [ {
+            "serviceArn" : "arn:aws:ecs:us-east-1:012345678910:service/ecs-simple-service",
+            "serviceName" : "ecs-simple-service",
             "clusterArn" : "arn:aws:ecs:us-east-1:012345678910:cluster/default",
-            "createdAt" : "2016-08-29T16:25:52.130Z",
+            "loadBalancers" : [ ],
+            "status" : "ACTIVE",
+            "desiredCount" : 1,
+            "runningCount" : 0,
+            "pendingCount" : 0,
+            "taskDefinition" : "arn:aws:ecs:us-east-1:012345678910:task-definition/hello_world:6",
             "deploymentConfiguration" : {
               "maximumPercent" : 200,
               "minimumHealthyPercent" : 100
             },
             "deployments" : [ {
-              "createdAt" : "2016-08-29T16:25:52.130Z",
-              "desiredCount" : 1,
               "id" : "ecs-svc/9223370564341623665",
-              "pendingCount" : 0,
-              "runningCount" : 0,
               "status" : "PRIMARY",
               "taskDefinition" : "arn:aws:ecs:us-east-1:012345678910:task-definition/hello_world:6",
+              "desiredCount" : 1,
+              "pendingCount" : 0,
+              "runningCount" : 0,
+              "createdAt" : "2016-08-29T16:25:52.130Z",
               "updatedAt" : "2016-08-29T16:25:52.130Z"
             } ],
-            "desiredCount" : 1,
             "events" : [ {
-              "createdAt" : "2016-08-29T16:25:58.520Z",
               "id" : "38c285e5-d335-4b68-8b15-e46dedc8e88d",
+              "createdAt" : "2016-08-29T16:25:58.520Z",
               "message" : "(service ecs-simple-service) was unable to place a task because no container instance met all of its requirements. The closest matching (container-instance 3f4de1c5-ffdd-4954-af7e-75b4be0c8841) is already using a port required by your task. For more information, see the Troubleshooting section of the Amazon ECS Developer Guide."
             } ],
-            "loadBalancers" : [ ],
-            "pendingCount" : 0,
-            "runningCount" : 0,
-            "serviceArn" : "arn:aws:ecs:us-east-1:012345678910:service/ecs-simple-service",
-            "serviceName" : "ecs-simple-service",
-            "status" : "ACTIVE",
-            "taskDefinition" : "arn:aws:ecs:us-east-1:012345678910:task-definition/hello_world:6"
-          } ]
+            "createdAt" : "2016-08-29T16:25:52.130Z"
+          } ],
+          "failures" : [ ]
         },
         "title" : "To describe a service"
       } ],
@@ -42452,37 +42452,37 @@
         },
         "output" : {
           "taskDefinition" : {
+            "taskDefinitionArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:task-definition/hello_world:8",
             "containerDefinitions" : [ {
               "name" : "wordpress",
-              "cpu" : 10,
-              "environment" : [ ],
-              "essential" : true,
               "image" : "wordpress",
-              "links" : [ "mysql" ],
+              "cpu" : 10,
               "memory" : 500,
-              "mountPoints" : [ ],
+              "links" : [ "mysql" ],
               "portMappings" : [ {
                 "containerPort" : 80,
                 "hostPort" : 80
               } ],
+              "essential" : true,
+              "environment" : [ ],
+              "mountPoints" : [ ],
               "volumesFrom" : [ ]
             }, {
               "name" : "mysql",
+              "image" : "mysql",
               "cpu" : 10,
+              "memory" : 500,
+              "portMappings" : [ ],
+              "essential" : true,
               "environment" : [ {
                 "name" : "MYSQL_ROOT_PASSWORD",
                 "value" : "password"
               } ],
-              "essential" : true,
-              "image" : "mysql",
-              "memory" : 500,
               "mountPoints" : [ ],
-              "portMappings" : [ ],
               "volumesFrom" : [ ]
             } ],
             "family" : "hello_world",
             "revision" : 8,
-            "taskDefinitionArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:task-definition/hello_world:8",
             "volumes" : [ ]
           }
         },
@@ -42499,32 +42499,32 @@
           "tasks" : [ "c5cba4eb-5dad-405e-96db-71ef8eefe6a8" ]
         },
         "output" : {
-          "failures" : [ ],
           "tasks" : [ {
+            "taskArn" : "arn:aws:ecs:<region>:<aws_account_id>:task/c5cba4eb-5dad-405e-96db-71ef8eefe6a8",
             "clusterArn" : "arn:aws:ecs:<region>:<aws_account_id>:cluster/default",
+            "taskDefinitionArn" : "arn:aws:ecs:<region>:<aws_account_id>:task-definition/amazon-ecs-sample:1",
             "containerInstanceArn" : "arn:aws:ecs:<region>:<aws_account_id>:container-instance/18f9eda5-27d7-4c19-b133-45adc516e8fb",
-            "containers" : [ {
-              "name" : "ecs-demo",
-              "containerArn" : "arn:aws:ecs:<region>:<aws_account_id>:container/7c01765b-c588-45b3-8290-4ba38bd6c5a6",
-              "lastStatus" : "RUNNING",
-              "networkBindings" : [ {
-                "bindIP" : "0.0.0.0",
-                "containerPort" : 80,
-                "hostPort" : 80
-              } ],
-              "taskArn" : "arn:aws:ecs:<region>:<aws_account_id>:task/c5cba4eb-5dad-405e-96db-71ef8eefe6a8"
-            } ],
-            "desiredStatus" : "RUNNING",
-            "lastStatus" : "RUNNING",
             "overrides" : {
               "containerOverrides" : [ {
                 "name" : "ecs-demo"
               } ]
             },
-            "startedBy" : "ecs-svc/9223370608528463088",
-            "taskArn" : "arn:aws:ecs:<region>:<aws_account_id>:task/c5cba4eb-5dad-405e-96db-71ef8eefe6a8",
-            "taskDefinitionArn" : "arn:aws:ecs:<region>:<aws_account_id>:task-definition/amazon-ecs-sample:1"
-          } ]
+            "lastStatus" : "RUNNING",
+            "desiredStatus" : "RUNNING",
+            "containers" : [ {
+              "containerArn" : "arn:aws:ecs:<region>:<aws_account_id>:container/7c01765b-c588-45b3-8290-4ba38bd6c5a6",
+              "taskArn" : "arn:aws:ecs:<region>:<aws_account_id>:task/c5cba4eb-5dad-405e-96db-71ef8eefe6a8",
+              "name" : "ecs-demo",
+              "lastStatus" : "RUNNING",
+              "networkBindings" : [ {
+                "bindIP" : "0.0.0.0",
+                "containerPort" : 80,
+                "hostPort" : 80
+              } ]
+            } ],
+            "startedBy" : "ecs-svc/9223370608528463088"
+          } ],
+          "failures" : [ ]
         },
         "title" : "To describe a task"
       } ],
@@ -42661,35 +42661,35 @@
         "description" : "This example registers a task definition to the specified family.",
         "id" : "to-register-a-task-definition-1470764550877",
         "input" : {
-          "containerDefinitions" : [ {
-            "name" : "sleep",
-            "command" : [ "sleep", "360" ],
-            "cpu" : 10,
-            "essential" : true,
-            "image" : "busybox",
-            "memory" : 10
-          } ],
           "family" : "sleep360",
           "taskRoleArn" : "",
+          "containerDefinitions" : [ {
+            "name" : "sleep",
+            "image" : "busybox",
+            "cpu" : 10,
+            "memory" : 10,
+            "essential" : true,
+            "command" : [ "sleep", "360" ]
+          } ],
           "volumes" : [ ]
         },
         "output" : {
           "taskDefinition" : {
+            "taskDefinitionArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:task-definition/sleep360:19",
             "containerDefinitions" : [ {
               "name" : "sleep",
-              "command" : [ "sleep", "360" ],
-              "cpu" : 10,
-              "environment" : [ ],
-              "essential" : true,
               "image" : "busybox",
+              "cpu" : 10,
               "memory" : 10,
-              "mountPoints" : [ ],
               "portMappings" : [ ],
+              "essential" : true,
+              "command" : [ "sleep", "360" ],
+              "environment" : [ ],
+              "mountPoints" : [ ],
               "volumesFrom" : [ ]
             } ],
             "family" : "sleep360",
             "revision" : 1,
-            "taskDefinitionArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:task-definition/sleep360:19",
             "volumes" : [ ]
           }
         },
@@ -42708,22 +42708,22 @@
         },
         "output" : {
           "tasks" : [ {
+            "taskArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:task/a9f21ea7-c9f5-44b1-b8e6-b31f50ed33c0",
+            "taskDefinitionArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:task-definition/sleep360:1",
             "containerInstanceArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:container-instance/ffe3d344-77e2-476c-a4d0-bf560ad50acb",
-            "containers" : [ {
-              "name" : "sleep",
-              "containerArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:container/58591c8e-be29-4ddf-95aa-ee459d4c59fd",
-              "lastStatus" : "PENDING",
-              "taskArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:task/a9f21ea7-c9f5-44b1-b8e6-b31f50ed33c0"
-            } ],
-            "desiredStatus" : "RUNNING",
-            "lastStatus" : "PENDING",
             "overrides" : {
               "containerOverrides" : [ {
                 "name" : "sleep"
               } ]
             },
-            "taskArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:task/a9f21ea7-c9f5-44b1-b8e6-b31f50ed33c0",
-            "taskDefinitionArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:task-definition/sleep360:1"
+            "lastStatus" : "PENDING",
+            "desiredStatus" : "RUNNING",
+            "containers" : [ {
+              "containerArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:container/58591c8e-be29-4ddf-95aa-ee459d4c59fd",
+              "taskArn" : "arn:aws:ecs:us-east-1:<aws_account_id>:task/a9f21ea7-c9f5-44b1-b8e6-b31f50ed33c0",
+              "name" : "sleep",
+              "lastStatus" : "PENDING"
+            } ]
           } ]
         },
         "title" : "To run a task on your default cluster"
@@ -42749,8 +42749,8 @@
         "description" : "This example updates the desired count of the my-http-service service to 10.",
         "id" : "9581d6c5-02e3-4140-8cc1-5a4301586633",
         "input" : {
-          "desiredCount" : 10,
-          "service" : "my-http-service"
+          "service" : "my-http-service",
+          "desiredCount" : 10
         },
         "output" : { },
         "title" : "To change the number of tasks in a service"

@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>RevokeCacheSecurityGroupIngress</i> action.
+ * Represents the input of a <code>RevokeCacheSecurityGroupIngress</code> operation.
  * </p>
  */
 public class RevokeCacheSecurityGroupIngressRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {

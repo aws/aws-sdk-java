@@ -14,7 +14,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * The current state of the snapshot does not allow the requested action to occur.
+ * The current state of the snapshot does not allow the requested operation to occur.
  * </p>
  */
 public class InvalidSnapshotStateException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {

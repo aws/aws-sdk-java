@@ -44012,9 +44012,9 @@
         "description" : "The following example creates a new device pool named MyDevicePool inside an existing project.",
         "id" : "createdevicepool-example-1470862210860",
         "input" : {
+          "projectArn" : "arn:aws:devicefarm:us-west-2:123456789101:project:EXAMPLE-GUID-123-456",
           "name" : "MyDevicePool",
           "description" : "My Android devices",
-          "projectArn" : "arn:aws:devicefarm:us-west-2:123456789101:project:EXAMPLE-GUID-123-456",
           "rules" : [ ]
         },
         "output" : {
@@ -44036,8 +44036,8 @@
         },
         "output" : {
           "project" : {
-            "name" : "MyProject",
             "arn" : "arn:aws:devicefarm:us-west-2:183774035805:project:5e01a8c7-c861-4c0a-b1d5-12345EXAMPLE",
+            "name" : "MyProject",
             "created" : "1472660939.152"
           }
         },
@@ -44054,12 +44054,12 @@
         "description" : "The following example creates a remote access session named MySession.",
         "id" : "to-create-a-remote-access-session-1470970668274",
         "input" : {
+          "projectArn" : "arn:aws:devicefarm:us-west-2:123456789101:project:EXAMPLE-GUID-123-456",
+          "deviceArn" : "arn:aws:devicefarm:us-west-2::device:123EXAMPLE",
           "name" : "MySession",
           "configuration" : {
             "billingMethod" : "METERED"
-          },
-          "deviceArn" : "arn:aws:devicefarm:us-west-2::device:123EXAMPLE",
-          "projectArn" : "arn:aws:devicefarm:us-west-2:123456789101:project:EXAMPLE-GUID-123-456"
+          }
         },
         "output" : {
           "remoteAccessSession" : { }
@@ -44076,16 +44076,16 @@
         "description" : "The following example creates a new Appium Python test package upload inside an existing project.",
         "id" : "createupload-example-1470864711775",
         "input" : {
+          "projectArn" : "arn:aws:devicefarm:us-west-2:123456789101:project:EXAMPLE-GUID-123-456",
           "name" : "MyAppiumPythonUpload",
-          "type" : "APPIUM_PYTHON_TEST_PACKAGE",
-          "projectArn" : "arn:aws:devicefarm:us-west-2:123456789101:project:EXAMPLE-GUID-123-456"
+          "type" : "APPIUM_PYTHON_TEST_PACKAGE"
         },
         "output" : {
           "upload" : {
-            "name" : "MyAppiumPythonUpload",
-            "type" : "APPIUM_PYTHON_TEST_PACKAGE",
             "arn" : "arn:aws:devicefarm:us-west-2:183774035805:upload:5e01a8c7-c861-4c0a-b1d5-5ec6e6c6dd23/b5340a65-3da7-4da6-a26e-12345EXAMPLE",
+            "name" : "MyAppiumPythonUpload",
             "created" : "1472661404.186",
+            "type" : "APPIUM_PYTHON_TEST_PACKAGE",
             "status" : "INITIALIZED",
             "url" : "https://prod-us-west-2-uploads.s3-us-west-2.amazonaws.com/arn%3Aaws%3Adevicefarm%3Aus-west-2%3A183774035805%3Aproject%3A5e01a8c7-c861-4c0a-b1d5-12345EXAMPLE/uploads/arn%3Aaws%3Adevicefarm%3Aus-west-2%3A183774035805%3Aupload%3A5e01a8c7-c861-4c0a-b1d5-5ec6e6c6dd23/b5340a65-3da7-4da6-a26e-12345EXAMPLE/MyAppiumPythonUpload?AWSAccessKeyId=1234567891011EXAMPLE&Expires=1472747804&Signature=1234567891011EXAMPLE"
           }
@@ -44198,25 +44198,25 @@
         },
         "output" : {
           "device" : {
-            "name" : "LG G2 (Sprint)",
             "arn" : "arn:aws:devicefarm:us-west-2::device:A0E6E6E1059E45918208DF75B2B7EF6C",
-            "cpu" : {
-              "architecture" : "armeabi-v7a",
-              "clock" : 2265.6,
-              "frequency" : "MHz"
-            },
-            "formFactor" : "PHONE",
-            "heapSize" : 256000000,
-            "image" : "75B2B7EF6C12345EXAMPLE",
+            "name" : "LG G2 (Sprint)",
             "manufacturer" : "LG",
-            "memory" : 16000000000,
             "model" : "G2 (Sprint)",
-            "os" : "4.2.2",
+            "formFactor" : "PHONE",
             "platform" : "ANDROID",
+            "os" : "4.2.2",
+            "cpu" : {
+              "frequency" : "MHz",
+              "architecture" : "armeabi-v7a",
+              "clock" : 2265.6
+            },
             "resolution" : {
-              "height" : 1920,
-              "width" : 1080
-            }
+              "width" : 1080,
+              "height" : 1920
+            },
+            "heapSize" : 256000000,
+            "memory" : 16000000000,
+            "image" : "75B2B7EF6C12345EXAMPLE"
           }
         },
         "title" : "To get information about a device"
@@ -44248,8 +44248,8 @@
         "description" : "The following example returns information about the compatibility of a specific device pool, given its ARN.",
         "id" : "getdevicepoolcompatibility-example-1470925003466",
         "input" : {
-          "appArn" : "arn:aws:devicefarm:us-west-2::app:123-456-EXAMPLE-GUID",
           "devicePoolArn" : "arn:aws:devicefarm:us-west-2::devicepool:123-456-EXAMPLE-GUID",
+          "appArn" : "arn:aws:devicefarm:us-west-2::app:123-456-EXAMPLE-GUID",
           "testType" : "APPIUM_PYTHON"
         },
         "output" : {
@@ -44328,8 +44328,8 @@
         },
         "output" : {
           "project" : {
-            "name" : "My Project",
             "arn" : "arn:aws:devicefarm:us-west-2:123456789101:project:5e01a8c7-c861-4c0a-b1d5-12345EXAMPLE",
+            "name" : "My Project",
             "created" : "1472660939.152"
           }
         },
@@ -44366,30 +44366,30 @@
         },
         "output" : {
           "run" : {
+            "arn" : "arn:aws:devicefarm:us-west-2:123456789101:run:5e01a8c7-c861-4c0a-b1d5-5ec6e6c6dd23/0fcac17b-6122-44d7-ae5a-12345EXAMPLE",
             "name" : "My Test Run",
             "type" : "BUILTIN_EXPLORER",
-            "arn" : "arn:aws:devicefarm:us-west-2:123456789101:run:5e01a8c7-c861-4c0a-b1d5-5ec6e6c6dd23/0fcac17b-6122-44d7-ae5a-12345EXAMPLE",
-            "billingMethod" : "METERED",
-            "completedJobs" : 0,
-            "counters" : {
-              "errored" : 0,
-              "failed" : 0,
-              "passed" : 0,
-              "skipped" : 0,
-              "stopped" : 0,
-              "total" : 0,
-              "warned" : 0
-            },
-            "created" : "1472667509.852",
-            "deviceMinutes" : {
-              "metered" : 0.0,
-              "total" : 0.0,
-              "unmetered" : 0.0
-            },
             "platform" : "ANDROID",
-            "result" : "PENDING",
+            "created" : "1472667509.852",
             "status" : "RUNNING",
-            "totalJobs" : 3
+            "result" : "PENDING",
+            "counters" : {
+              "total" : 0,
+              "passed" : 0,
+              "failed" : 0,
+              "warned" : 0,
+              "errored" : 0,
+              "stopped" : 0,
+              "skipped" : 0
+            },
+            "totalJobs" : 3,
+            "completedJobs" : 0,
+            "billingMethod" : "METERED",
+            "deviceMinutes" : {
+              "total" : 0.0,
+              "metered" : 0.0,
+              "unmetered" : 0.0
+            }
           }
         },
         "title" : "To get information about a test run"
@@ -44455,8 +44455,8 @@
         "description" : "The following example installs a specific app to a device in a specific remote access session.",
         "id" : "to-install-to-a-remote-access-session-1471634453818",
         "input" : {
-          "appArn" : "arn:aws:devicefarm:us-west-2:123456789101:app:EXAMPLE-GUID-123-456",
-          "remoteAccessSessionArn" : "arn:aws:devicefarm:us-west-2:123456789101:session:EXAMPLE-GUID-123-456"
+          "remoteAccessSessionArn" : "arn:aws:devicefarm:us-west-2:123456789101:session:EXAMPLE-GUID-123-456",
+          "appArn" : "arn:aws:devicefarm:us-west-2:123456789101:app:EXAMPLE-GUID-123-456"
         },
         "output" : {
           "appUpload" : { }
@@ -44473,8 +44473,8 @@
         "description" : "The following example lists screenshot artifacts for a specific run.",
         "id" : "to-list-artifacts-for-a-resource-1471635409527",
         "input" : {
-          "type" : "SCREENSHOT",
-          "arn" : "arn:aws:devicefarm:us-west-2:123456789101:run:EXAMPLE-GUID-123-456"
+          "arn" : "arn:aws:devicefarm:us-west-2:123456789101:run:EXAMPLE-GUID-123-456",
+          "type" : "SCREENSHOT"
         },
         "output" : null,
         "title" : "To list artifacts for a resource"
@@ -44489,27 +44489,27 @@
         "description" : "The following example returns information about the private device pools in a specific project.",
         "id" : "to-get-information-about-device-pools-1471635745170",
         "input" : {
-          "type" : "PRIVATE",
-          "arn" : "arn:aws:devicefarm:us-west-2:123456789101:project:EXAMPLE-GUID-123-456"
+          "arn" : "arn:aws:devicefarm:us-west-2:123456789101:project:EXAMPLE-GUID-123-456",
+          "type" : "PRIVATE"
         },
         "output" : {
           "devicePools" : [ {
-            "name" : "Top Devices",
             "arn" : "arn:aws:devicefarm:us-west-2::devicepool:082d10e5-d7d7-48a5-ba5c-12345EXAMPLE",
+            "name" : "Top Devices",
             "description" : "Top devices",
             "rules" : [ {
-              "value" : "[\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\"]",
               "attribute" : "ARN",
-              "operator" : "IN"
+              "operator" : "IN",
+              "value" : "[\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\"]"
             } ]
           }, {
-            "name" : "My Android Device Pool",
             "arn" : "arn:aws:devicefarm:us-west-2:123456789101:devicepool:5e01a8c7-c861-4c0a-b1d5-5ec6e6c6dd23/bf96e75a-28f6-4e61-b6a7-12345EXAMPLE",
+            "name" : "My Android Device Pool",
             "description" : "Samsung Galaxy Android devices",
             "rules" : [ {
-              "value" : "[\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\"]",
               "attribute" : "ARN",
-              "operator" : "IN"
+              "operator" : "IN",
+              "value" : "[\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\",\"arn:aws:devicefarm:us-west-2::device:123456789EXAMPLE\"]"
             } ]
           } ]
         },
@@ -44559,77 +44559,77 @@
         },
         "output" : {
           "offeringTransactions" : [ {
+            "offeringStatus" : {
+              "type" : "RENEW",
+              "offering" : {
+                "id" : "D68B3C05-1BA6-4360-BC69-12345EXAMPLE",
+                "description" : "Android Remote Access Unmetered Device Slot",
+                "type" : "RECURRING",
+                "platform" : "ANDROID"
+              },
+              "quantity" : 0,
+              "effectiveOn" : "1472688000"
+            },
+            "transactionId" : "03728003-d1ea-4851-abd6-12345EXAMPLE",
+            "createdOn" : "1470021420",
             "cost" : {
               "amount" : 0,
               "currencyCode" : "USD"
-            },
-            "createdOn" : "1470021420",
+            }
+          }, {
             "offeringStatus" : {
-              "type" : "RENEW",
-              "effectiveOn" : "1472688000",
+              "type" : "PURCHASE",
               "offering" : {
-                "type" : "RECURRING",
-                "description" : "Android Remote Access Unmetered Device Slot",
                 "id" : "D68B3C05-1BA6-4360-BC69-12345EXAMPLE",
+                "description" : "Android Remote Access Unmetered Device Slot",
+                "type" : "RECURRING",
                 "platform" : "ANDROID"
               },
-              "quantity" : 0
+              "quantity" : 1,
+              "effectiveOn" : "1470021420"
             },
-            "transactionId" : "03728003-d1ea-4851-abd6-12345EXAMPLE"
-          }, {
+            "transactionId" : "56820b6e-06bd-473a-8ff8-12345EXAMPLE",
+            "createdOn" : "1470021420",
             "cost" : {
               "amount" : 250,
               "currencyCode" : "USD"
-            },
-            "createdOn" : "1470021420",
+            }
+          }, {
             "offeringStatus" : {
               "type" : "PURCHASE",
-              "effectiveOn" : "1470021420",
               "offering" : {
+                "id" : "8980F81C-00D7-469D-8EC6-12345EXAMPLE",
+                "description" : "Android Unmetered Device Slot",
                 "type" : "RECURRING",
-                "description" : "Android Remote Access Unmetered Device Slot",
-                "id" : "D68B3C05-1BA6-4360-BC69-12345EXAMPLE",
                 "platform" : "ANDROID"
               },
-              "quantity" : 1
+              "quantity" : 1,
+              "effectiveOn" : "1465538520"
             },
-            "transactionId" : "56820b6e-06bd-473a-8ff8-12345EXAMPLE"
-          }, {
+            "transactionId" : "953ae2c6-d760-4a04-9597-12345EXAMPLE",
+            "createdOn" : "1465538520",
             "cost" : {
               "amount" : 175,
               "currencyCode" : "USD"
-            },
-            "createdOn" : "1465538520",
+            }
+          }, {
             "offeringStatus" : {
               "type" : "PURCHASE",
-              "effectiveOn" : "1465538520",
               "offering" : {
+                "id" : "A53D4D73-A6F6-4B82-A0B0-12345EXAMPLE",
+                "description" : "iOS Unmetered Device Slot",
                 "type" : "RECURRING",
-                "description" : "Android Unmetered Device Slot",
-                "id" : "8980F81C-00D7-469D-8EC6-12345EXAMPLE",
-                "platform" : "ANDROID"
+                "platform" : "IOS"
               },
-              "quantity" : 1
+              "quantity" : 1,
+              "effectiveOn" : "1459344300"
             },
-            "transactionId" : "953ae2c6-d760-4a04-9597-12345EXAMPLE"
-          }, {
+            "transactionId" : "2baf9021-ae3e-47f5-ab52-12345EXAMPLE",
+            "createdOn" : "1459344300",
             "cost" : {
               "amount" : 8.07,
               "currencyCode" : "USD"
-            },
-            "createdOn" : "1459344300",
-            "offeringStatus" : {
-              "type" : "PURCHASE",
-              "effectiveOn" : "1459344300",
-              "offering" : {
-                "type" : "RECURRING",
-                "description" : "iOS Unmetered Device Slot",
-                "id" : "A53D4D73-A6F6-4B82-A0B0-12345EXAMPLE",
-                "platform" : "IOS"
-              },
-              "quantity" : 1
-            },
-            "transactionId" : "2baf9021-ae3e-47f5-ab52-12345EXAMPLE"
+            }
           } ]
         },
         "title" : "To get information about device offering transactions"
@@ -44648,9 +44648,9 @@
         },
         "output" : {
           "offerings" : [ {
-            "type" : "RECURRING",
-            "description" : "iOS Unmetered Device Slot",
             "id" : "A53D4D73-A6F6-4B82-A0B0-12345EXAMPLE",
+            "description" : "iOS Unmetered Device Slot",
+            "type" : "RECURRING",
             "platform" : "IOS",
             "recurringCharges" : [ {
               "cost" : {
@@ -44660,9 +44660,9 @@
               "frequency" : "MONTHLY"
             } ]
           }, {
-            "type" : "RECURRING",
-            "description" : "Android Unmetered Device Slot",
             "id" : "8980F81C-00D7-469D-8EC6-12345EXAMPLE",
+            "description" : "Android Unmetered Device Slot",
+            "type" : "RECURRING",
             "platform" : "ANDROID",
             "recurringCharges" : [ {
               "cost" : {
@@ -44672,9 +44672,9 @@
               "frequency" : "MONTHLY"
             } ]
           }, {
-            "type" : "RECURRING",
-            "description" : "Android Remote Access Unmetered Device Slot",
             "id" : "D68B3C05-1BA6-4360-BC69-12345EXAMPLE",
+            "description" : "Android Remote Access Unmetered Device Slot",
+            "type" : "RECURRING",
             "platform" : "ANDROID",
             "recurringCharges" : [ {
               "cost" : {
@@ -44684,9 +44684,9 @@
               "frequency" : "MONTHLY"
             } ]
           }, {
-            "type" : "RECURRING",
-            "description" : "iOS Remote Access Unmetered Device Slot",
             "id" : "552B4DAD-A6C9-45C4-94FB-12345EXAMPLE",
+            "description" : "iOS Remote Access Unmetered Device Slot",
+            "type" : "RECURRING",
             "platform" : "IOS",
             "recurringCharges" : [ {
               "cost" : {
@@ -44714,12 +44714,12 @@
         },
         "output" : {
           "projects" : [ {
-            "name" : "My Test Project",
             "arn" : "arn:aws:devicefarm:us-west-2:183774035805:project:7ad300ed-8183-41a7-bf94-12345EXAMPLE",
+            "name" : "My Test Project",
             "created" : "1453163262.105"
           }, {
-            "name" : "Hello World",
             "arn" : "arn:aws:devicefarm:us-west-2:183774035805:project:d6b087d9-56db-4e44-b9ec-12345EXAMPLE",
+            "name" : "Hello World",
             "created" : "1470350112.439"
           } ]
         },
@@ -44760,30 +44760,30 @@
         },
         "output" : {
           "runs" : [ {
+            "arn" : "arn:aws:devicefarm:us-west-2:123456789101:run:5e01a8c7-c861-4c0a-b1d5-5ec6e6c6dd23/0fcac17b-6122-44d7-ae5a-12345EXAMPLE",
             "name" : "My Test Run",
             "type" : "BUILTIN_EXPLORER",
-            "arn" : "arn:aws:devicefarm:us-west-2:123456789101:run:5e01a8c7-c861-4c0a-b1d5-5ec6e6c6dd23/0fcac17b-6122-44d7-ae5a-12345EXAMPLE",
-            "billingMethod" : "METERED",
-            "completedJobs" : 0,
-            "counters" : {
-              "errored" : 0,
-              "failed" : 0,
-              "passed" : 0,
-              "skipped" : 0,
-              "stopped" : 0,
-              "total" : 0,
-              "warned" : 0
-            },
-            "created" : "1472667509.852",
-            "deviceMinutes" : {
-              "metered" : 0.0,
-              "total" : 0.0,
-              "unmetered" : 0.0
-            },
             "platform" : "ANDROID",
-            "result" : "PENDING",
+            "created" : "1472667509.852",
             "status" : "RUNNING",
-            "totalJobs" : 3
+            "result" : "PENDING",
+            "counters" : {
+              "total" : 0,
+              "passed" : 0,
+              "failed" : 0,
+              "warned" : 0,
+              "errored" : 0,
+              "stopped" : 0,
+              "skipped" : 0
+            },
+            "totalJobs" : 3,
+            "completedJobs" : 0,
+            "billingMethod" : "METERED",
+            "deviceMinutes" : {
+              "total" : 0.0,
+              "metered" : 0.0,
+              "unmetered" : 0.0
+            }
           } ]
         },
         "title" : "To get information about a test run"
@@ -44898,23 +44898,23 @@
         },
         "output" : {
           "offeringTransaction" : {
+            "offeringStatus" : {
+              "type" : "PURCHASE",
+              "offering" : {
+                "id" : "D68B3C05-1BA6-4360-BC69-12345EXAMPLE",
+                "description" : "Android Remote Access Unmetered Device Slot",
+                "type" : "RECURRING",
+                "platform" : "ANDROID"
+              },
+              "quantity" : 1,
+              "effectiveOn" : "1472648340"
+            },
+            "transactionId" : "d30614ed-1b03-404c-9893-12345EXAMPLE",
+            "createdOn" : "1472648340",
             "cost" : {
               "amount" : 8.07,
               "currencyCode" : "USD"
-            },
-            "createdOn" : "1472648340",
-            "offeringStatus" : {
-              "type" : "PURCHASE",
-              "effectiveOn" : "1472648340",
-              "offering" : {
-                "type" : "RECURRING",
-                "description" : "Android Remote Access Unmetered Device Slot",
-                "id" : "D68B3C05-1BA6-4360-BC69-12345EXAMPLE",
-                "platform" : "ANDROID"
-              },
-              "quantity" : 1
-            },
-            "transactionId" : "d30614ed-1b03-404c-9893-12345EXAMPLE"
+            }
           }
         },
         "title" : "To purchase a device slot offering"
@@ -44934,23 +44934,23 @@
         },
         "output" : {
           "offeringTransaction" : {
+            "offeringStatus" : {
+              "type" : "RENEW",
+              "offering" : {
+                "id" : "D68B3C05-1BA6-4360-BC69-12345EXAMPLE",
+                "description" : "Android Remote Access Unmetered Device Slot",
+                "type" : "RECURRING",
+                "platform" : "ANDROID"
+              },
+              "quantity" : 1,
+              "effectiveOn" : "1472688000"
+            },
+            "transactionId" : "e90f1405-8c35-4561-be43-12345EXAMPLE",
+            "createdOn" : "1472648880",
             "cost" : {
               "amount" : 250,
               "currencyCode" : "USD"
-            },
-            "createdOn" : "1472648880",
-            "offeringStatus" : {
-              "type" : "RENEW",
-              "effectiveOn" : "1472688000",
-              "offering" : {
-                "type" : "RECURRING",
-                "description" : "Android Remote Access Unmetered Device Slot",
-                "id" : "D68B3C05-1BA6-4360-BC69-12345EXAMPLE",
-                "platform" : "ANDROID"
-              },
-              "quantity" : 1
-            },
-            "transactionId" : "e90f1405-8c35-4561-be43-12345EXAMPLE"
+            }
           }
         },
         "title" : "To renew a device slot offering"
@@ -44967,9 +44967,9 @@
         "description" : "The following example schedules a test run named MyRun.",
         "id" : "to-schedule-a-test-run-1472652429636",
         "input" : {
-          "name" : "MyRun",
-          "devicePoolArn" : "arn:aws:devicefarm:us-west-2:123456789101:pool:EXAMPLE-GUID-123-456",
           "projectArn" : "arn:aws:devicefarm:us-west-2:123456789101:project:EXAMPLE-GUID-123-456",
+          "devicePoolArn" : "arn:aws:devicefarm:us-west-2:123456789101:pool:EXAMPLE-GUID-123-456",
+          "name" : "MyRun",
           "test" : {
             "type" : "APPIUM_JAVA_JUNIT",
             "testPackageArn" : "arn:aws:devicefarm:us-west-2:123456789101:test:EXAMPLE-GUID-123-456"
@@ -45009,13 +45009,13 @@
         "description" : "The following example updates the specified device pool with a new name and description. It also enables remote access of devices in the device pool.",
         "id" : "to-update-a-device-pool-1472653887677",
         "input" : {
-          "name" : "NewName",
           "arn" : "arn:aws:devicefarm:us-west-2::devicepool:082d10e5-d7d7-48a5-ba5c-12345EXAMPLE",
+          "name" : "NewName",
           "description" : "NewDescription",
           "rules" : [ {
-            "value" : "True",
             "attribute" : "REMOTE_ACCESS_ENABLED",
-            "operator" : "EQUALS"
+            "operator" : "EQUALS",
+            "value" : "True"
           } ]
         },
         "output" : {
@@ -45033,13 +45033,13 @@
         "description" : "The following example updates the specified project with a new name.",
         "id" : "to-update-a-device-pool-1472653887677",
         "input" : {
-          "name" : "NewName",
-          "arn" : "arn:aws:devicefarm:us-west-2:183774035805:project:8f75187d-101e-4625-accc-12345EXAMPLE"
+          "arn" : "arn:aws:devicefarm:us-west-2:183774035805:project:8f75187d-101e-4625-accc-12345EXAMPLE",
+          "name" : "NewName"
         },
         "output" : {
           "project" : {
-            "name" : "NewName",
             "arn" : "arn:aws:devicefarm:us-west-2:183774035805:project:8f75187d-101e-4625-accc-12345EXAMPLE",
+            "name" : "NewName",
             "created" : "1448400709.927"
           }
         },

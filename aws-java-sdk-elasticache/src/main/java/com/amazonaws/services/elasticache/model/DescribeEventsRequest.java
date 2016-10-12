@@ -17,25 +17,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>DescribeEvents</i> action.
+ * Represents the input of a <code>DescribeEvents</code> operation.
  * </p>
  */
 public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the event source for which events will be returned. If not specified, then all sources are
-     * included in the response.
+     * The identifier of the event source for which events are returned. If not specified, all sources are included in
+     * the response.
      * </p>
      */
     private String sourceIdentifier;
     /**
      * <p>
      * The event source to retrieve events for. If no value is specified, all events are returned.
-     * </p>
-     * <p>
-     * Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code> |
-     * <code>cache-security-group</code> | <code>cache-subnet-group</code>
      * </p>
      */
     private String sourceType;
@@ -73,22 +69,22 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer maxRecords;
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
 
     /**
      * <p>
-     * The identifier of the event source for which events will be returned. If not specified, then all sources are
-     * included in the response.
+     * The identifier of the event source for which events are returned. If not specified, all sources are included in
+     * the response.
      * </p>
      * 
      * @param sourceIdentifier
-     *        The identifier of the event source for which events will be returned. If not specified, then all sources
-     *        are included in the response.
+     *        The identifier of the event source for which events are returned. If not specified, all sources are
+     *        included in the response.
      */
 
     public void setSourceIdentifier(String sourceIdentifier) {
@@ -97,12 +93,12 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the event source for which events will be returned. If not specified, then all sources are
-     * included in the response.
+     * The identifier of the event source for which events are returned. If not specified, all sources are included in
+     * the response.
      * </p>
      * 
-     * @return The identifier of the event source for which events will be returned. If not specified, then all sources
-     *         are included in the response.
+     * @return The identifier of the event source for which events are returned. If not specified, all sources are
+     *         included in the response.
      */
 
     public String getSourceIdentifier() {
@@ -111,13 +107,13 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the event source for which events will be returned. If not specified, then all sources are
-     * included in the response.
+     * The identifier of the event source for which events are returned. If not specified, all sources are included in
+     * the response.
      * </p>
      * 
      * @param sourceIdentifier
-     *        The identifier of the event source for which events will be returned. If not specified, then all sources
-     *        are included in the response.
+     *        The identifier of the event source for which events are returned. If not specified, all sources are
+     *        included in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,16 +126,9 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The event source to retrieve events for. If no value is specified, all events are returned.
      * </p>
-     * <p>
-     * Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code> |
-     * <code>cache-security-group</code> | <code>cache-subnet-group</code>
-     * </p>
      * 
      * @param sourceType
-     *        The event source to retrieve events for. If no value is specified, all events are returned.</p>
-     *        <p>
-     *        Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code> |
-     *        <code>cache-security-group</code> | <code>cache-subnet-group</code>
+     *        The event source to retrieve events for. If no value is specified, all events are returned.
      * @see SourceType
      */
 
@@ -151,15 +140,8 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The event source to retrieve events for. If no value is specified, all events are returned.
      * </p>
-     * <p>
-     * Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code> |
-     * <code>cache-security-group</code> | <code>cache-subnet-group</code>
-     * </p>
      * 
-     * @return The event source to retrieve events for. If no value is specified, all events are returned.</p>
-     *         <p>
-     *         Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code> |
-     *         <code>cache-security-group</code> | <code>cache-subnet-group</code>
+     * @return The event source to retrieve events for. If no value is specified, all events are returned.
      * @see SourceType
      */
 
@@ -171,16 +153,9 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The event source to retrieve events for. If no value is specified, all events are returned.
      * </p>
-     * <p>
-     * Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code> |
-     * <code>cache-security-group</code> | <code>cache-subnet-group</code>
-     * </p>
      * 
      * @param sourceType
-     *        The event source to retrieve events for. If no value is specified, all events are returned.</p>
-     *        <p>
-     *        Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code> |
-     *        <code>cache-security-group</code> | <code>cache-subnet-group</code>
+     *        The event source to retrieve events for. If no value is specified, all events are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
@@ -194,16 +169,9 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The event source to retrieve events for. If no value is specified, all events are returned.
      * </p>
-     * <p>
-     * Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code> |
-     * <code>cache-security-group</code> | <code>cache-subnet-group</code>
-     * </p>
      * 
      * @param sourceType
-     *        The event source to retrieve events for. If no value is specified, all events are returned.</p>
-     *        <p>
-     *        Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code> |
-     *        <code>cache-security-group</code> | <code>cache-subnet-group</code>
+     *        The event source to retrieve events for. If no value is specified, all events are returned.
      * @see SourceType
      */
 
@@ -215,16 +183,9 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The event source to retrieve events for. If no value is specified, all events are returned.
      * </p>
-     * <p>
-     * Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code> |
-     * <code>cache-security-group</code> | <code>cache-subnet-group</code>
-     * </p>
      * 
      * @param sourceType
-     *        The event source to retrieve events for. If no value is specified, all events are returned.</p>
-     *        <p>
-     *        Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code> |
-     *        <code>cache-security-group</code> | <code>cache-subnet-group</code>
+     *        The event source to retrieve events for. If no value is specified, all events are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
@@ -441,15 +402,15 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
      *        An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *        value specified by <i>MaxRecords</i>.
+     *        operation. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -458,14 +419,14 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @return An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *         action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *         value specified by <i>MaxRecords</i>.
+     *         operation. If this parameter is specified, the response includes only records beyond the marker, up to
+     *         the value specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -474,15 +435,15 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
      *        An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *        value specified by <i>MaxRecords</i>.
+     *        operation. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <code>MaxRecords</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

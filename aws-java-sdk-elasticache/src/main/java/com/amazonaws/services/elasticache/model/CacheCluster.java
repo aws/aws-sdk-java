@@ -53,7 +53,8 @@ public class CacheCluster implements Serializable, Cloneable {
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -94,33 +95,35 @@ public class CacheCluster implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      */
     private String cacheNodeType;
     /**
      * <p>
-     * The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be used for this cache cluster.
+     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache cluster.
      * </p>
      */
     private String engine;
@@ -132,9 +135,10 @@ public class CacheCluster implements Serializable, Cloneable {
     private String engineVersion;
     /**
      * <p>
-     * The current state of this cache cluster, one of the following values: <i>available</i>, <i>creating</i>,
-     * <i>deleted</i>, <i>deleting</i>, <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache cluster
-     * nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
+     * The current state of this cache cluster, one of the following values: <code>available</code>,
+     * <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
+     * <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
+     * <code>snapshotting</code>.
      * </p>
      */
     private String cacheClusterStatus;
@@ -163,9 +167,11 @@ public class CacheCluster implements Serializable, Cloneable {
     private java.util.Date cacheClusterCreateTime;
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -205,7 +211,7 @@ public class CacheCluster implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      */
     private String preferredMaintenanceWindow;
@@ -254,9 +260,9 @@ public class CacheCluster implements Serializable, Cloneable {
     private String replicationGroupId;
     /**
      * <p>
-     * The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For
-     * example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for
-     * 5 days before being deleted.
+     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
+     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     * days before being deleted.
      * </p>
      * <important>
      * <p>
@@ -267,7 +273,7 @@ public class CacheCluster implements Serializable, Cloneable {
     private Integer snapshotRetentionLimit;
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.
      * </p>
      * <p>
      * Example: <code>05:00-09:00</code>
@@ -404,7 +410,8 @@ public class CacheCluster implements Serializable, Cloneable {
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -445,26 +452,28 @@ public class CacheCluster implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
@@ -482,7 +491,8 @@ public class CacheCluster implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     *        <code>cache.m3.2xlarge</code>
+     *        <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *        <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      *        </p>
      *        </li>
      *        <li>
@@ -524,27 +534,28 @@ public class CacheCluster implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     *        All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis backup/restore is not supported for t2 instances.
+     *        Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
+     *        Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     *        Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of cache node types and specifications, see <a
+     *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     *        either <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Redis</a>.
      */
 
@@ -569,7 +580,8 @@ public class CacheCluster implements Serializable, Cloneable {
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -610,26 +622,28 @@ public class CacheCluster implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
@@ -647,7 +661,9 @@ public class CacheCluster implements Serializable, Cloneable {
      *         <p>
      *         Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      *         <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>,
+     *         <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
+     *         <code>cache.m4.10xlarge</code>
      *         </p>
      *         </li>
      *         <li>
@@ -689,27 +705,28 @@ public class CacheCluster implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     *         All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Redis backup/restore is not supported for t2 instances.
+     *         Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
+     *         Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     *         Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For a complete listing of cache node types and specifications, see <a
+     *         For a complete listing of node types and specifications, see <a
      *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *         <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     *         either <a href=
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      *         >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      *         >Cache Node Type-Specific Parameters for Redis</a>.
      */
 
@@ -734,7 +751,8 @@ public class CacheCluster implements Serializable, Cloneable {
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -775,26 +793,28 @@ public class CacheCluster implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
@@ -812,7 +832,8 @@ public class CacheCluster implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     *        <code>cache.m3.2xlarge</code>
+     *        <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *        <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      *        </p>
      *        </li>
      *        <li>
@@ -854,27 +875,28 @@ public class CacheCluster implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     *        All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis backup/restore is not supported for t2 instances.
+     *        Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
+     *        Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     *        Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of cache node types and specifications, see <a
+     *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     *        either <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Redis</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -886,11 +908,12 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be used for this cache cluster.
+     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache cluster.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be used for this cache cluster.
+     *        The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache
+     *        cluster.
      */
 
     public void setEngine(String engine) {
@@ -899,10 +922,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be used for this cache cluster.
+     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache cluster.
      * </p>
      * 
-     * @return The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be used for this cache cluster.
+     * @return The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache
+     *         cluster.
      */
 
     public String getEngine() {
@@ -911,11 +935,12 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be used for this cache cluster.
+     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache cluster.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be used for this cache cluster.
+     *        The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache
+     *        cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -966,15 +991,17 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this cache cluster, one of the following values: <i>available</i>, <i>creating</i>,
-     * <i>deleted</i>, <i>deleting</i>, <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache cluster
-     * nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
+     * The current state of this cache cluster, one of the following values: <code>available</code>,
+     * <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
+     * <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
+     * <code>snapshotting</code>.
      * </p>
      * 
      * @param cacheClusterStatus
-     *        The current state of this cache cluster, one of the following values: <i>available</i>, <i>creating</i>,
-     *        <i>deleted</i>, <i>deleting</i>, <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache cluster
-     *        nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
+     *        The current state of this cache cluster, one of the following values: <code>available</code>,
+     *        <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
+     *        <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
+     *        <code>snapshotting</code>.
      */
 
     public void setCacheClusterStatus(String cacheClusterStatus) {
@@ -983,14 +1010,16 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this cache cluster, one of the following values: <i>available</i>, <i>creating</i>,
-     * <i>deleted</i>, <i>deleting</i>, <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache cluster
-     * nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
+     * The current state of this cache cluster, one of the following values: <code>available</code>,
+     * <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
+     * <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
+     * <code>snapshotting</code>.
      * </p>
      * 
-     * @return The current state of this cache cluster, one of the following values: <i>available</i>, <i>creating</i>,
-     *         <i>deleted</i>, <i>deleting</i>, <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache
-     *         cluster nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
+     * @return The current state of this cache cluster, one of the following values: <code>available</code>,
+     *         <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
+     *         <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
+     *         <code>snapshotting</code>.
      */
 
     public String getCacheClusterStatus() {
@@ -999,15 +1028,17 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this cache cluster, one of the following values: <i>available</i>, <i>creating</i>,
-     * <i>deleted</i>, <i>deleting</i>, <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache cluster
-     * nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
+     * The current state of this cache cluster, one of the following values: <code>available</code>,
+     * <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
+     * <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
+     * <code>snapshotting</code>.
      * </p>
      * 
      * @param cacheClusterStatus
-     *        The current state of this cache cluster, one of the following values: <i>available</i>, <i>creating</i>,
-     *        <i>deleted</i>, <i>deleting</i>, <i>incompatible-network</i>, <i>modifying</i>, <i>rebooting cache cluster
-     *        nodes</i>, <i>restore-failed</i>, or <i>snapshotting</i>.
+     *        The current state of this cache cluster, one of the following values: <code>available</code>,
+     *        <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
+     *        <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
+     *        <code>snapshotting</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1165,9 +1196,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -1207,13 +1240,16 @@ public class CacheCluster implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
-     *        specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     *        is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period.</p>
+     *        <p>
+     *        Valid values for <code>ddd</code> are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1252,7 +1288,7 @@ public class CacheCluster implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        Example: <code>sun:05:00-sun:09:00</code>
+     *        Example: <code>sun:23:00-mon:01:30</code>
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -1261,9 +1297,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -1303,12 +1341,15 @@ public class CacheCluster implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
-     * @return Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
-     *         specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
-     *         window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     * @return Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
+     *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
+     *         minute period.</p>
+     *         <p>
+     *         Valid values for <code>ddd</code> are:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1347,7 +1388,7 @@ public class CacheCluster implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         Example: <code>sun:05:00-sun:09:00</code>
+     *         Example: <code>sun:23:00-mon:01:30</code>
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -1356,9 +1397,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -1398,13 +1441,16 @@ public class CacheCluster implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
-     *        specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     *        is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period.</p>
+     *        <p>
+     *        Valid values for <code>ddd</code> are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1443,7 +1489,7 @@ public class CacheCluster implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        Example: <code>sun:05:00-sun:09:00</code>
+     *        Example: <code>sun:23:00-mon:01:30</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1889,9 +1935,9 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For
-     * example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for
-     * 5 days before being deleted.
+     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
+     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     * days before being deleted.
      * </p>
      * <important>
      * <p>
@@ -1900,9 +1946,9 @@ public class CacheCluster implements Serializable, Cloneable {
      * </important>
      * 
      * @param snapshotRetentionLimit
-     *        The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting
-     *        them. For example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
-     *        will be retained for 5 days before being deleted.</p> <important>
+     *        The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
+     *        For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     *        retained for 5 days before being deleted.</p> <important>
      *        <p>
      *        If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      *        </p>
@@ -1914,9 +1960,9 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For
-     * example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for
-     * 5 days before being deleted.
+     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
+     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     * days before being deleted.
      * </p>
      * <important>
      * <p>
@@ -1924,9 +1970,9 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * </important>
      * 
-     * @return The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting
-     *         them. For example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
-     *         will be retained for 5 days before being deleted.</p> <important>
+     * @return The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
+     *         For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     *         retained for 5 days before being deleted.</p> <important>
      *         <p>
      *         If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      *         </p>
@@ -1938,9 +1984,9 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For
-     * example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for
-     * 5 days before being deleted.
+     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
+     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     * days before being deleted.
      * </p>
      * <important>
      * <p>
@@ -1949,9 +1995,9 @@ public class CacheCluster implements Serializable, Cloneable {
      * </important>
      * 
      * @param snapshotRetentionLimit
-     *        The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting
-     *        them. For example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
-     *        will be retained for 5 days before being deleted.</p> <important>
+     *        The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
+     *        For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     *        retained for 5 days before being deleted.</p> <important>
      *        <p>
      *        If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      *        </p>
@@ -1965,14 +2011,14 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.
      * </p>
      * <p>
      * Example: <code>05:00-09:00</code>
      * </p>
      * 
      * @param snapshotWindow
-     *        The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache
+     *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache
      *        cluster.</p>
      *        <p>
      *        Example: <code>05:00-09:00</code>
@@ -1984,13 +2030,13 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.
      * </p>
      * <p>
      * Example: <code>05:00-09:00</code>
      * </p>
      * 
-     * @return The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache
+     * @return The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache
      *         cluster.</p>
      *         <p>
      *         Example: <code>05:00-09:00</code>
@@ -2002,14 +2048,14 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.
      * </p>
      * <p>
      * Example: <code>05:00-09:00</code>
      * </p>
      * 
      * @param snapshotWindow
-     *        The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache
+     *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache
      *        cluster.</p>
      *        <p>
      *        Example: <code>05:00-09:00</code>

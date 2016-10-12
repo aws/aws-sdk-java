@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>DescribeReplicationGroups</i> action.
+ * Represents the output of a <code>DescribeReplicationGroups</code> operation.
  * </p>
  */
 public class DescribeReplicationGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

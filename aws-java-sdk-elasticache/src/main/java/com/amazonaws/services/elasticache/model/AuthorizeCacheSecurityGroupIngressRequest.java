@@ -17,14 +17,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of an <i>AuthorizeCacheSecurityGroupIngress</i> action.
+ * Represents the input of an AuthorizeCacheSecurityGroupIngress operation.
  * </p>
  */
 public class AuthorizeCacheSecurityGroupIngressRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache security group which will allow network ingress.
+     * The cache security group that allows network ingress.
      * </p>
      */
     private String cacheSecurityGroupName;
@@ -54,7 +54,7 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends com.amazonaws.Ama
      * (with...) methods to initialize any additional object members.
      * 
      * @param cacheSecurityGroupName
-     *        The cache security group which will allow network ingress.
+     *        The cache security group that allows network ingress.
      * @param eC2SecurityGroupName
      *        The Amazon EC2 security group to be authorized for ingress to the cache security group.
      * @param eC2SecurityGroupOwnerId
@@ -69,11 +69,11 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The cache security group which will allow network ingress.
+     * The cache security group that allows network ingress.
      * </p>
      * 
      * @param cacheSecurityGroupName
-     *        The cache security group which will allow network ingress.
+     *        The cache security group that allows network ingress.
      */
 
     public void setCacheSecurityGroupName(String cacheSecurityGroupName) {
@@ -82,10 +82,10 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The cache security group which will allow network ingress.
+     * The cache security group that allows network ingress.
      * </p>
      * 
-     * @return The cache security group which will allow network ingress.
+     * @return The cache security group that allows network ingress.
      */
 
     public String getCacheSecurityGroupName() {
@@ -94,11 +94,11 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The cache security group which will allow network ingress.
+     * The cache security group that allows network ingress.
      * </p>
      * 
      * @param cacheSecurityGroupName
-     *        The cache security group which will allow network ingress.
+     *        The cache security group that allows network ingress.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

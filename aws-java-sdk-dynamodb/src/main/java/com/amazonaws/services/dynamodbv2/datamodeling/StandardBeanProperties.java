@@ -191,7 +191,14 @@ final class StandardBeanProperties {
      * {@link Map} of {@link Bean}
      */
     static final class BeanMap<T,V> extends LinkedHashMap<String,Bean<T,V>> {
+        private final Class<T> clazz;
+
         BeanMap(Class<T> clazz, boolean inherited) {
+            this.clazz = clazz;
+            putAll(clazz, inherited);
+        }
+
+        private void putAll(Class<T> clazz, boolean inherited) {
             for (final Method method : clazz.getMethods()) {
                 if (canMap(method, inherited)) {
                     final FieldMap<V> annotations = StandardAnnotationMaps.<V>of(method, null);
@@ -242,7 +249,8 @@ final class StandardBeanProperties {
                 return false;
             } else if (method.getDeclaringClass() == Object.class) {
                 return false;
-            } else if (!inherited && StandardAnnotationMaps.of(method.getDeclaringClass()).attributeType() != DynamoDBAttributeType.M) {
+            } else if (!inherited && method.getDeclaringClass() != this.clazz &&
+                StandardAnnotationMaps.of(method.getDeclaringClass()).attributeType() == null) {
                 return false;
             } else {
                 return true;

@@ -23,10 +23,28 @@ public class NodeSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A unique identifier for the source cache cluster.
+     * </p>
+     */
+    private String cacheClusterId;
+    /**
+     * <p>
+     * A unique identifier for the source node group (shard).
+     * </p>
+     */
+    private String nodeGroupId;
+    /**
+     * <p>
      * The cache node identifier for the node in the source cache cluster.
      * </p>
      */
     private String cacheNodeId;
+    /**
+     * <p>
+     * The configuration for the source node group (shard).
+     * </p>
+     */
+    private NodeGroupConfiguration nodeGroupConfiguration;
     /**
      * <p>
      * The size of the cache on the source cache node.
@@ -45,6 +63,86 @@ public class NodeSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date snapshotCreateTime;
+
+    /**
+     * <p>
+     * A unique identifier for the source cache cluster.
+     * </p>
+     * 
+     * @param cacheClusterId
+     *        A unique identifier for the source cache cluster.
+     */
+
+    public void setCacheClusterId(String cacheClusterId) {
+        this.cacheClusterId = cacheClusterId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the source cache cluster.
+     * </p>
+     * 
+     * @return A unique identifier for the source cache cluster.
+     */
+
+    public String getCacheClusterId() {
+        return this.cacheClusterId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the source cache cluster.
+     * </p>
+     * 
+     * @param cacheClusterId
+     *        A unique identifier for the source cache cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeSnapshot withCacheClusterId(String cacheClusterId) {
+        setCacheClusterId(cacheClusterId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the source node group (shard).
+     * </p>
+     * 
+     * @param nodeGroupId
+     *        A unique identifier for the source node group (shard).
+     */
+
+    public void setNodeGroupId(String nodeGroupId) {
+        this.nodeGroupId = nodeGroupId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the source node group (shard).
+     * </p>
+     * 
+     * @return A unique identifier for the source node group (shard).
+     */
+
+    public String getNodeGroupId() {
+        return this.nodeGroupId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the source node group (shard).
+     * </p>
+     * 
+     * @param nodeGroupId
+     *        A unique identifier for the source node group (shard).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeSnapshot withNodeGroupId(String nodeGroupId) {
+        setNodeGroupId(nodeGroupId);
+        return this;
+    }
 
     /**
      * <p>
@@ -83,6 +181,46 @@ public class NodeSnapshot implements Serializable, Cloneable {
 
     public NodeSnapshot withCacheNodeId(String cacheNodeId) {
         setCacheNodeId(cacheNodeId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for the source node group (shard).
+     * </p>
+     * 
+     * @param nodeGroupConfiguration
+     *        The configuration for the source node group (shard).
+     */
+
+    public void setNodeGroupConfiguration(NodeGroupConfiguration nodeGroupConfiguration) {
+        this.nodeGroupConfiguration = nodeGroupConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for the source node group (shard).
+     * </p>
+     * 
+     * @return The configuration for the source node group (shard).
+     */
+
+    public NodeGroupConfiguration getNodeGroupConfiguration() {
+        return this.nodeGroupConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for the source node group (shard).
+     * </p>
+     * 
+     * @param nodeGroupConfiguration
+     *        The configuration for the source node group (shard).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeSnapshot withNodeGroupConfiguration(NodeGroupConfiguration nodeGroupConfiguration) {
+        setNodeGroupConfiguration(nodeGroupConfiguration);
         return this;
     }
 
@@ -217,8 +355,14 @@ public class NodeSnapshot implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCacheClusterId() != null)
+            sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+        if (getNodeGroupId() != null)
+            sb.append("NodeGroupId: " + getNodeGroupId() + ",");
         if (getCacheNodeId() != null)
             sb.append("CacheNodeId: " + getCacheNodeId() + ",");
+        if (getNodeGroupConfiguration() != null)
+            sb.append("NodeGroupConfiguration: " + getNodeGroupConfiguration() + ",");
         if (getCacheSize() != null)
             sb.append("CacheSize: " + getCacheSize() + ",");
         if (getCacheNodeCreateTime() != null)
@@ -239,9 +383,21 @@ public class NodeSnapshot implements Serializable, Cloneable {
         if (obj instanceof NodeSnapshot == false)
             return false;
         NodeSnapshot other = (NodeSnapshot) obj;
+        if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null)
+            return false;
+        if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false)
+            return false;
+        if (other.getNodeGroupId() == null ^ this.getNodeGroupId() == null)
+            return false;
+        if (other.getNodeGroupId() != null && other.getNodeGroupId().equals(this.getNodeGroupId()) == false)
+            return false;
         if (other.getCacheNodeId() == null ^ this.getCacheNodeId() == null)
             return false;
         if (other.getCacheNodeId() != null && other.getCacheNodeId().equals(this.getCacheNodeId()) == false)
+            return false;
+        if (other.getNodeGroupConfiguration() == null ^ this.getNodeGroupConfiguration() == null)
+            return false;
+        if (other.getNodeGroupConfiguration() != null && other.getNodeGroupConfiguration().equals(this.getNodeGroupConfiguration()) == false)
             return false;
         if (other.getCacheSize() == null ^ this.getCacheSize() == null)
             return false;
@@ -263,7 +419,10 @@ public class NodeSnapshot implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode());
+        hashCode = prime * hashCode + ((getNodeGroupId() == null) ? 0 : getNodeGroupId().hashCode());
         hashCode = prime * hashCode + ((getCacheNodeId() == null) ? 0 : getCacheNodeId().hashCode());
+        hashCode = prime * hashCode + ((getNodeGroupConfiguration() == null) ? 0 : getNodeGroupConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCacheSize() == null) ? 0 : getCacheSize().hashCode());
         hashCode = prime * hashCode + ((getCacheNodeCreateTime() == null) ? 0 : getCacheNodeCreateTime().hashCode());
         hashCode = prime * hashCode + ((getSnapshotCreateTime() == null) ? 0 : getSnapshotCreateTime().hashCode());

@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a single node within a node group.
+ * Represents a single node within a node group (shard).
  * </p>
  */
 public class NodeGroupMember implements Serializable, Cloneable {
@@ -43,7 +43,7 @@ public class NodeGroupMember implements Serializable, Cloneable {
     private String preferredAvailabilityZone;
     /**
      * <p>
-     * The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
+     * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
      * </p>
      */
     private String currentRole;
@@ -196,11 +196,11 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
+     * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
      * </p>
      * 
      * @param currentRole
-     *        The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
+     *        The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
      */
 
     public void setCurrentRole(String currentRole) {
@@ -209,10 +209,10 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
+     * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
      * </p>
      * 
-     * @return The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
+     * @return The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
      */
 
     public String getCurrentRole() {
@@ -221,11 +221,11 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
+     * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
      * </p>
      * 
      * @param currentRole
-     *        The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
+     *        The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

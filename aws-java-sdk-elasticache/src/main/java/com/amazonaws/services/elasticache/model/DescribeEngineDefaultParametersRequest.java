@@ -17,15 +17,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>DescribeEngineDefaultParameters</i> action.
+ * Represents the input of a <code>DescribeEngineDefaultParameters</code> operation.
  * </p>
  */
 public class DescribeEngineDefaultParametersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
-     * | <code>redis2.8</code>
+     * The name of the cache parameter group family.
+     * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
      * </p>
      */
     private String cacheParameterGroupFamily;
@@ -45,9 +48,9 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
     private Integer maxRecords;
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
@@ -64,8 +67,10 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * (with...) methods to initialize any additional object members.
      * 
      * @param cacheParameterGroupFamily
-     *        The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> |
-     *        <code>redis2.6</code> | <code>redis2.8</code>
+     *        The name of the cache parameter group family.</p>
+     *        <p>
+     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *        <code>redis3.2</code>
      */
     public DescribeEngineDefaultParametersRequest(String cacheParameterGroupFamily) {
         setCacheParameterGroupFamily(cacheParameterGroupFamily);
@@ -73,13 +78,18 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
-     * | <code>redis2.8</code>
+     * The name of the cache parameter group family.
+     * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
      * </p>
      * 
      * @param cacheParameterGroupFamily
-     *        The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> |
-     *        <code>redis2.6</code> | <code>redis2.8</code>
+     *        The name of the cache parameter group family.</p>
+     *        <p>
+     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *        <code>redis3.2</code>
      */
 
     public void setCacheParameterGroupFamily(String cacheParameterGroupFamily) {
@@ -88,12 +98,17 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
-     * | <code>redis2.8</code>
+     * The name of the cache parameter group family.
+     * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
      * </p>
      * 
-     * @return The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> |
-     *         <code>redis2.6</code> | <code>redis2.8</code>
+     * @return The name of the cache parameter group family.</p>
+     *         <p>
+     *         Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *         <code>redis3.2</code>
      */
 
     public String getCacheParameterGroupFamily() {
@@ -102,13 +117,18 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
-     * | <code>redis2.8</code>
+     * The name of the cache parameter group family.
+     * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
      * </p>
      * 
      * @param cacheParameterGroupFamily
-     *        The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> |
-     *        <code>redis2.6</code> | <code>redis2.8</code>
+     *        The name of the cache parameter group family.</p>
+     *        <p>
+     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *        <code>redis3.2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,15 +224,15 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
      *        An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *        value specified by <i>MaxRecords</i>.
+     *        operation. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -221,14 +241,14 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @return An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *         action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *         value specified by <i>MaxRecords</i>.
+     *         operation. If this parameter is specified, the response includes only records beyond the marker, up to
+     *         the value specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -237,15 +257,15 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
      *        An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *        value specified by <i>MaxRecords</i>.
+     *        operation. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <code>MaxRecords</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

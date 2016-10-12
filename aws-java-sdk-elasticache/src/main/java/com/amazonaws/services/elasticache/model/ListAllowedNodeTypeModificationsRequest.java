@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The input parameters for the <i>ListAllowedNodeTypeModifications</i> action.
+ * The input parameters for the <code>ListAllowedNodeTypeModifications</code> operation.
  * </p>
  */
 public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -25,12 +25,12 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
-     * id to identify the current node type of this cluster and from that to to create a list of node types you can
-     * scale up to.
+     * id to identify the current node type of this cluster and from that to create a list of node types you can scale
+     * up to.
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      */
@@ -43,7 +43,7 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      */
@@ -52,21 +52,22 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
-     * id to identify the current node type of this cluster and from that to to create a list of node types you can
-     * scale up to.
+     * id to identify the current node type of this cluster and from that to create a list of node types you can scale
+     * up to.
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      * 
      * @param cacheClusterId
      *        The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the
-     *        cluster id to identify the current node type of this cluster and from that to to create a list of node
-     *        types you can scale up to.</p> <important>
+     *        cluster id to identify the current node type of this cluster and from that to create a list of node types
+     *        you can scale up to.</p> <important>
      *        <p>
-     *        You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     *        You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>
+     *        .
      *        </p>
      */
 
@@ -77,20 +78,21 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
-     * id to identify the current node type of this cluster and from that to to create a list of node types you can
-     * scale up to.
+     * id to identify the current node type of this cluster and from that to create a list of node types you can scale
+     * up to.
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      * 
      * @return The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the
-     *         cluster id to identify the current node type of this cluster and from that to to create a list of node
-     *         types you can scale up to.</p> <important>
+     *         cluster id to identify the current node type of this cluster and from that to create a list of node types
+     *         you can scale up to.</p> <important>
      *         <p>
-     *         You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     *         You must provide a value for either the <code>CacheClusterId</code> or the
+     *         <code>ReplicationGroupId</code>.
      *         </p>
      */
 
@@ -101,21 +103,22 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
-     * id to identify the current node type of this cluster and from that to to create a list of node types you can
-     * scale up to.
+     * id to identify the current node type of this cluster and from that to create a list of node types you can scale
+     * up to.
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      * 
      * @param cacheClusterId
      *        The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the
-     *        cluster id to identify the current node type of this cluster and from that to to create a list of node
-     *        types you can scale up to.</p> <important>
+     *        cluster id to identify the current node type of this cluster and from that to create a list of node types
+     *        you can scale up to.</p> <important>
      *        <p>
-     *        You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     *        You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>
+     *        .
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -133,7 +136,7 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      * 
@@ -142,7 +145,8 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
      *        group id to identify the current node type being used by this replication group, and from that to create a
      *        list of node types you can scale up to.</p> <important>
      *        <p>
-     *        You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     *        You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>
+     *        .
      *        </p>
      */
 
@@ -158,7 +162,7 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      * 
@@ -166,7 +170,8 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
      *         replication group id to identify the current node type being used by this replication group, and from
      *         that to create a list of node types you can scale up to.</p> <important>
      *         <p>
-     *         You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     *         You must provide a value for either the <code>CacheClusterId</code> or the
+     *         <code>ReplicationGroupId</code>.
      *         </p>
      */
 
@@ -182,7 +187,7 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
      * </p>
      * <important>
      * <p>
-     * You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     * You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
      * </p>
      * </important>
      * 
@@ -191,7 +196,8 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
      *        group id to identify the current node type being used by this replication group, and from that to create a
      *        list of node types you can scale up to.</p> <important>
      *        <p>
-     *        You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+     *        You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>
+     *        .
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -121,6 +121,14 @@ public abstract class AbstractTransfer implements Transfer {
      */
     public AmazonClientException waitForException() throws InterruptedException {
         try {
+
+            /**
+             * Do not remove the while loop. We need this as the future returned by
+             * monitor.getFuture() is set two times during the upload and copy operations.
+             */
+            while (!monitor.isDone()) {
+                monitor.getFuture().get();
+            }
             monitor.getFuture().get();
             return null;
         } catch (ExecutionException e) {

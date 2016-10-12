@@ -344,6 +344,45 @@
       },
       "syncReturnType" : "DeleteRepositoryPolicyResult"
     },
+    "DescribeImages" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DescribeImagesResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeImagesResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeImagesRequest, DescribeImagesResult>",
+      "asyncReturnType" : "DescribeImagesResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Returns metadata about the images in a repository, including image size and creation date.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>",
+      "exceptions" : [ {
+        "exceptionName" : "ServerException",
+        "documentation" : "<p>These errors are usually caused by a server-side issue.</p>"
+      }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>The specified parameter is invalid. Review the available parameters for the API request.</p>"
+      }, {
+        "exceptionName" : "RepositoryNotFoundException",
+        "documentation" : "<p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>"
+      }, {
+        "exceptionName" : "ImageNotFoundException",
+        "documentation" : "<p>The image requested does not exist in the specified repository.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "DescribeImagesRequest",
+        "variableName" : "describeImagesRequest",
+        "variableType" : "DescribeImagesRequest",
+        "documentation" : "",
+        "simpleType" : "DescribeImagesRequest",
+        "variableSetterType" : "DescribeImagesRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "describeImages",
+      "operationName" : "DescribeImages",
+      "returnType" : {
+        "returnType" : "DescribeImagesResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DescribeImagesResult"
+    },
     "DescribeRepositories" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeRepositoriesResult>",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeRepositoriesResult>",
@@ -5270,10 +5309,10 @@
         "c2jName" : "repository",
         "c2jShape" : "Repository",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The repository that was created.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param repository \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The repository that was created.</p>\n@param repository The repository that was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The repository that was created.</p>\n@return The repository that was created.*/",
         "getterModel" : {
           "returnType" : "Repository",
           "documentation" : null
@@ -5298,7 +5337,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Repository",
-        "setterDocumentation" : "/**\n@param repository */",
+        "setterDocumentation" : "/**<p>The repository that was created.</p>\n@param repository The repository that was created.*/",
         "setterModel" : {
           "variableDeclarationType" : "Repository",
           "variableName" : "repository",
@@ -5308,12 +5347,12 @@
           "variableSetterType" : "Repository"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param repository \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The repository that was created.</p>\n@param repository The repository that was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Repository",
           "variableName" : "repository",
           "variableType" : "Repository",
-          "documentation" : "",
+          "documentation" : "<p>The repository that was created.</p>",
           "simpleType" : "Repository",
           "variableSetterType" : "Repository"
         },
@@ -5324,10 +5363,10 @@
           "c2jName" : "repository",
           "c2jShape" : "Repository",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The repository that was created.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param repository \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The repository that was created.</p>\n@param repository The repository that was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The repository that was created.</p>\n@return The repository that was created.*/",
           "getterModel" : {
             "returnType" : "Repository",
             "documentation" : null
@@ -5352,7 +5391,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Repository",
-          "setterDocumentation" : "/**\n@param repository */",
+          "setterDocumentation" : "/**<p>The repository that was created.</p>\n@param repository The repository that was created.*/",
           "setterModel" : {
             "variableDeclarationType" : "Repository",
             "variableName" : "repository",
@@ -5362,12 +5401,12 @@
             "variableSetterType" : "Repository"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param repository \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The repository that was created.</p>\n@param repository The repository that was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Repository",
             "variableName" : "repository",
             "variableType" : "Repository",
-            "documentation" : "",
+            "documentation" : "<p>The repository that was created.</p>",
             "simpleType" : "Repository",
             "variableSetterType" : "Repository"
           },
@@ -6367,10 +6406,10 @@
         "c2jName" : "repository",
         "c2jShape" : "Repository",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The repository that was deleted.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param repository \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The repository that was deleted.</p>\n@param repository The repository that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The repository that was deleted.</p>\n@return The repository that was deleted.*/",
         "getterModel" : {
           "returnType" : "Repository",
           "documentation" : null
@@ -6395,7 +6434,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Repository",
-        "setterDocumentation" : "/**\n@param repository */",
+        "setterDocumentation" : "/**<p>The repository that was deleted.</p>\n@param repository The repository that was deleted.*/",
         "setterModel" : {
           "variableDeclarationType" : "Repository",
           "variableName" : "repository",
@@ -6405,12 +6444,12 @@
           "variableSetterType" : "Repository"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param repository \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The repository that was deleted.</p>\n@param repository The repository that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Repository",
           "variableName" : "repository",
           "variableType" : "Repository",
-          "documentation" : "",
+          "documentation" : "<p>The repository that was deleted.</p>",
           "simpleType" : "Repository",
           "variableSetterType" : "Repository"
         },
@@ -6421,10 +6460,10 @@
           "c2jName" : "repository",
           "c2jShape" : "Repository",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The repository that was deleted.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param repository \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The repository that was deleted.</p>\n@param repository The repository that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The repository that was deleted.</p>\n@return The repository that was deleted.*/",
           "getterModel" : {
             "returnType" : "Repository",
             "documentation" : null
@@ -6449,7 +6488,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Repository",
-          "setterDocumentation" : "/**\n@param repository */",
+          "setterDocumentation" : "/**<p>The repository that was deleted.</p>\n@param repository The repository that was deleted.*/",
           "setterModel" : {
             "variableDeclarationType" : "Repository",
             "variableName" : "repository",
@@ -6459,12 +6498,12 @@
             "variableSetterType" : "Repository"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param repository \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The repository that was deleted.</p>\n@param repository The repository that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Repository",
             "variableName" : "repository",
             "variableType" : "Repository",
-            "documentation" : "",
+            "documentation" : "<p>The repository that was deleted.</p>",
             "simpleType" : "Repository",
             "variableSetterType" : "Repository"
           },
@@ -6484,6 +6523,1331 @@
         "documentation" : null,
         "simpleType" : "DeleteRepositoryResult",
         "variableSetterType" : "DeleteRepositoryResult"
+      },
+      "wrapper" : false
+    },
+    "DescribeImagesFilter" : {
+      "c2jName" : "DescribeImagesFilter",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>An object representing a filter on a <a>DescribeImages</a> operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "tagStatus",
+        "c2jShape" : "TagStatus",
+        "deprecated" : false,
+        "documentation" : "<p>The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>",
+        "enumType" : "TagStatus",
+        "fluentSetterDocumentation" : "/**<p>The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>\n@param tagStatus The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TagStatus*/",
+        "getterDocumentation" : "/**<p>The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>\n@return The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.\n@see TagStatus*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "tagStatus",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "tagStatus",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "TagStatus",
+        "setterDocumentation" : "/**<p>The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>\n@param tagStatus The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.\n@see TagStatus*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "tagStatus",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>\n@param tagStatus The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TagStatus*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "tagStatus",
+          "variableType" : "String",
+          "documentation" : "<p>The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "TagStatus" : {
+          "c2jName" : "tagStatus",
+          "c2jShape" : "TagStatus",
+          "deprecated" : false,
+          "documentation" : "<p>The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>",
+          "enumType" : "TagStatus",
+          "fluentSetterDocumentation" : "/**<p>The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>\n@param tagStatus The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TagStatus*/",
+          "getterDocumentation" : "/**<p>The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>\n@return The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.\n@see TagStatus*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "tagStatus",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "tagStatus",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "TagStatus",
+          "setterDocumentation" : "/**<p>The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>\n@param tagStatus The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.\n@see TagStatus*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "tagStatus",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>\n@param tagStatus The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TagStatus*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "tagStatus",
+            "variableType" : "String",
+            "documentation" : "<p>The tag status with which to filter your <a>DescribeImages</a> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "DescribeImagesFilter",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "DescribeImagesFilter",
+        "variableName" : "describeImagesFilter",
+        "variableType" : "DescribeImagesFilter",
+        "documentation" : null,
+        "simpleType" : "DescribeImagesFilter",
+        "variableSetterType" : "DescribeImagesFilter"
+      },
+      "wrapper" : false
+    },
+    "DescribeImagesRequest" : {
+      "c2jName" : "DescribeImagesRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DescribeImages",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "AmazonEC2ContainerRegistry_V20150921.DescribeImages",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "registryId",
+        "c2jShape" : "RegistryId",
+        "deprecated" : false,
+        "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@return The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "registryId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "registryId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "RegistryId",
+        "setterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "registryId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "registryId",
+          "variableType" : "String",
+          "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "repositoryName",
+        "c2jShape" : "RepositoryName",
+        "deprecated" : false,
+        "documentation" : "<p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>\n@param repositoryName A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>\n@return A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "repositoryName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "repositoryName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "RepositoryName",
+        "setterDocumentation" : "/**<p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>\n@param repositoryName A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "repositoryName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>\n@param repositoryName A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "repositoryName",
+          "variableType" : "String",
+          "documentation" : "<p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "imageIds",
+        "c2jShape" : "ImageIdentifierList",
+        "deprecated" : false,
+        "documentation" : "<p>The list of image IDs for the requested repository.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The list of image IDs for the requested repository.</p>\n@param imageIds The list of image IDs for the requested repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The list of image IDs for the requested repository.</p>\n@return The list of image IDs for the requested repository.*/",
+        "getterModel" : {
+          "returnType" : "java.util.List<ImageIdentifier>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "imageIds",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "imageIds",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "ImageIdentifier",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "ImageIdentifier",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterModel" : {
+              "variableDeclarationType" : "ImageIdentifier",
+              "variableName" : "member",
+              "variableType" : "ImageIdentifier",
+              "documentation" : "",
+              "simpleType" : "ImageIdentifier",
+              "variableSetterType" : "ImageIdentifier"
+            },
+            "simple" : false,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "ImageIdentifier",
+              "variableName" : "member",
+              "variableType" : "ImageIdentifier",
+              "documentation" : "",
+              "simpleType" : "ImageIdentifier",
+              "variableSetterType" : "ImageIdentifier"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "ImageIdentifier",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "ImageIdentifier",
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+          "templateType" : "java.util.List<ImageIdentifier>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ImageIds",
+        "setterDocumentation" : "/**<p>The list of image IDs for the requested repository.</p>\n@param imageIds The list of image IDs for the requested repository.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.List<ImageIdentifier>",
+          "variableName" : "imageIds",
+          "variableType" : "java.util.List<ImageIdentifier>",
+          "documentation" : "",
+          "simpleType" : "List<ImageIdentifier>",
+          "variableSetterType" : "java.util.Collection<ImageIdentifier>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The list of image IDs for the requested repository.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setImageIds(java.util.Collection)} or {@link #withImageIds(java.util.Collection)} if you want to override the existing values.</p>\n@param imageIds The list of image IDs for the requested repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.List<ImageIdentifier>",
+          "variableName" : "imageIds",
+          "variableType" : "java.util.List<ImageIdentifier>",
+          "documentation" : "<p>The list of image IDs for the requested repository.</p>",
+          "simpleType" : "List<ImageIdentifier>",
+          "variableSetterType" : "java.util.Collection<ImageIdentifier>"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "nextToken",
+        "c2jShape" : "NextToken",
+        "deprecated" : false,
+        "documentation" : "<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>\n@return The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "nextToken",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "nextToken",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "NextToken",
+        "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "maxResults",
+        "c2jShape" : "MaxResults",
+        "deprecated" : false,
+        "documentation" : "<p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>\n@param maxResults The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>\n@return The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.*/",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "maxResults",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "maxResults",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "MaxResults",
+        "setterDocumentation" : "/**<p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>\n@param maxResults The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "maxResults",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>\n@param maxResults The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "maxResults",
+          "variableType" : "Integer",
+          "documentation" : "<p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "filter",
+        "c2jShape" : "DescribeImagesFilter",
+        "deprecated" : false,
+        "documentation" : "<p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>\n@param filter The filter key and value with which to filter your <code>DescribeImages</code> results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>\n@return The filter key and value with which to filter your <code>DescribeImages</code> results.*/",
+        "getterModel" : {
+          "returnType" : "DescribeImagesFilter",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "filter",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "filter",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Filter",
+        "setterDocumentation" : "/**<p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>\n@param filter The filter key and value with which to filter your <code>DescribeImages</code> results.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "DescribeImagesFilter",
+          "variableName" : "filter",
+          "variableType" : "DescribeImagesFilter",
+          "documentation" : "",
+          "simpleType" : "DescribeImagesFilter",
+          "variableSetterType" : "DescribeImagesFilter"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>\n@param filter The filter key and value with which to filter your <code>DescribeImages</code> results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "DescribeImagesFilter",
+          "variableName" : "filter",
+          "variableType" : "DescribeImagesFilter",
+          "documentation" : "<p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>",
+          "simpleType" : "DescribeImagesFilter",
+          "variableSetterType" : "DescribeImagesFilter"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Filter" : {
+          "c2jName" : "filter",
+          "c2jShape" : "DescribeImagesFilter",
+          "deprecated" : false,
+          "documentation" : "<p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>\n@param filter The filter key and value with which to filter your <code>DescribeImages</code> results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>\n@return The filter key and value with which to filter your <code>DescribeImages</code> results.*/",
+          "getterModel" : {
+            "returnType" : "DescribeImagesFilter",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "filter",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "filter",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Filter",
+          "setterDocumentation" : "/**<p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>\n@param filter The filter key and value with which to filter your <code>DescribeImages</code> results.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "DescribeImagesFilter",
+            "variableName" : "filter",
+            "variableType" : "DescribeImagesFilter",
+            "documentation" : "",
+            "simpleType" : "DescribeImagesFilter",
+            "variableSetterType" : "DescribeImagesFilter"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>\n@param filter The filter key and value with which to filter your <code>DescribeImages</code> results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "DescribeImagesFilter",
+            "variableName" : "filter",
+            "variableType" : "DescribeImagesFilter",
+            "documentation" : "<p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>",
+            "simpleType" : "DescribeImagesFilter",
+            "variableSetterType" : "DescribeImagesFilter"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ImageIds" : {
+          "c2jName" : "imageIds",
+          "c2jShape" : "ImageIdentifierList",
+          "deprecated" : false,
+          "documentation" : "<p>The list of image IDs for the requested repository.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The list of image IDs for the requested repository.</p>\n@param imageIds The list of image IDs for the requested repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The list of image IDs for the requested repository.</p>\n@return The list of image IDs for the requested repository.*/",
+          "getterModel" : {
+            "returnType" : "java.util.List<ImageIdentifier>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "imageIds",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "imageIds",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "ImageIdentifier",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "ImageIdentifier",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterModel" : {
+                "variableDeclarationType" : "ImageIdentifier",
+                "variableName" : "member",
+                "variableType" : "ImageIdentifier",
+                "documentation" : "",
+                "simpleType" : "ImageIdentifier",
+                "variableSetterType" : "ImageIdentifier"
+              },
+              "simple" : false,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "ImageIdentifier",
+                "variableName" : "member",
+                "variableType" : "ImageIdentifier",
+                "documentation" : "",
+                "simpleType" : "ImageIdentifier",
+                "variableSetterType" : "ImageIdentifier"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "ImageIdentifier",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "ImageIdentifier",
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+            "templateType" : "java.util.List<ImageIdentifier>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ImageIds",
+          "setterDocumentation" : "/**<p>The list of image IDs for the requested repository.</p>\n@param imageIds The list of image IDs for the requested repository.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.List<ImageIdentifier>",
+            "variableName" : "imageIds",
+            "variableType" : "java.util.List<ImageIdentifier>",
+            "documentation" : "",
+            "simpleType" : "List<ImageIdentifier>",
+            "variableSetterType" : "java.util.Collection<ImageIdentifier>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The list of image IDs for the requested repository.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setImageIds(java.util.Collection)} or {@link #withImageIds(java.util.Collection)} if you want to override the existing values.</p>\n@param imageIds The list of image IDs for the requested repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.List<ImageIdentifier>",
+            "variableName" : "imageIds",
+            "variableType" : "java.util.List<ImageIdentifier>",
+            "documentation" : "<p>The list of image IDs for the requested repository.</p>",
+            "simpleType" : "List<ImageIdentifier>",
+            "variableSetterType" : "java.util.Collection<ImageIdentifier>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "MaxResults" : {
+          "c2jName" : "maxResults",
+          "c2jShape" : "MaxResults",
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>\n@param maxResults The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>\n@return The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.*/",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "maxResults",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "maxResults",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "MaxResults",
+          "setterDocumentation" : "/**<p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>\n@param maxResults The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "maxResults",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>\n@param maxResults The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "maxResults",
+            "variableType" : "Integer",
+            "documentation" : "<p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "NextToken" : {
+          "c2jName" : "nextToken",
+          "c2jShape" : "NextToken",
+          "deprecated" : false,
+          "documentation" : "<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>\n@return The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "nextToken",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "nextToken",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "NextToken",
+          "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "RegistryId" : {
+          "c2jName" : "registryId",
+          "c2jShape" : "RegistryId",
+          "deprecated" : false,
+          "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@return The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "registryId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "registryId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "RegistryId",
+          "setterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "registryId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "registryId",
+            "variableType" : "String",
+            "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "RepositoryName" : {
+          "c2jName" : "repositoryName",
+          "c2jShape" : "RepositoryName",
+          "deprecated" : false,
+          "documentation" : "<p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>\n@param repositoryName A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>\n@return A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "repositoryName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "repositoryName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "RepositoryName",
+          "setterDocumentation" : "/**<p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>\n@param repositoryName A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "repositoryName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>\n@param repositoryName A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "repositoryName",
+            "variableType" : "String",
+            "documentation" : "<p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "repositoryName" ],
+      "shapeName" : "DescribeImagesRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "DescribeImagesRequest",
+        "variableName" : "describeImagesRequest",
+        "variableType" : "DescribeImagesRequest",
+        "documentation" : null,
+        "simpleType" : "DescribeImagesRequest",
+        "variableSetterType" : "DescribeImagesRequest"
+      },
+      "wrapper" : false
+    },
+    "DescribeImagesResult" : {
+      "c2jName" : "DescribeImagesResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "imageDetails",
+        "c2jShape" : "ImageDetailList",
+        "deprecated" : false,
+        "documentation" : "<p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>\n@param imageDetails A list of <a>ImageDetail</a> objects that contain data about the image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>\n@return A list of <a>ImageDetail</a> objects that contain data about the image.*/",
+        "getterModel" : {
+          "returnType" : "java.util.List<ImageDetail>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "imageDetails",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "imageDetails",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "ImageDetail",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "ImageDetail",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterModel" : {
+              "variableDeclarationType" : "ImageDetail",
+              "variableName" : "member",
+              "variableType" : "ImageDetail",
+              "documentation" : "",
+              "simpleType" : "ImageDetail",
+              "variableSetterType" : "ImageDetail"
+            },
+            "simple" : false,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "ImageDetail",
+              "variableName" : "member",
+              "variableType" : "ImageDetail",
+              "documentation" : "",
+              "simpleType" : "ImageDetail",
+              "variableSetterType" : "ImageDetail"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "ImageDetail",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "ImageDetail",
+          "templateImplType" : "java.util.ArrayList<ImageDetail>",
+          "templateType" : "java.util.List<ImageDetail>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ImageDetails",
+        "setterDocumentation" : "/**<p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>\n@param imageDetails A list of <a>ImageDetail</a> objects that contain data about the image.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.List<ImageDetail>",
+          "variableName" : "imageDetails",
+          "variableType" : "java.util.List<ImageDetail>",
+          "documentation" : "",
+          "simpleType" : "List<ImageDetail>",
+          "variableSetterType" : "java.util.Collection<ImageDetail>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setImageDetails(java.util.Collection)} or {@link #withImageDetails(java.util.Collection)} if you want to override the existing values.</p>\n@param imageDetails A list of <a>ImageDetail</a> objects that contain data about the image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.List<ImageDetail>",
+          "variableName" : "imageDetails",
+          "variableType" : "java.util.List<ImageDetail>",
+          "documentation" : "<p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>",
+          "simpleType" : "List<ImageDetail>",
+          "variableSetterType" : "java.util.Collection<ImageDetail>"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "nextToken",
+        "c2jShape" : "NextToken",
+        "deprecated" : false,
+        "documentation" : "<p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@return The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "nextToken",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "nextToken",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "NextToken",
+        "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "<p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ImageDetails" : {
+          "c2jName" : "imageDetails",
+          "c2jShape" : "ImageDetailList",
+          "deprecated" : false,
+          "documentation" : "<p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>\n@param imageDetails A list of <a>ImageDetail</a> objects that contain data about the image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>\n@return A list of <a>ImageDetail</a> objects that contain data about the image.*/",
+          "getterModel" : {
+            "returnType" : "java.util.List<ImageDetail>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "imageDetails",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "imageDetails",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "ImageDetail",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "ImageDetail",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterModel" : {
+                "variableDeclarationType" : "ImageDetail",
+                "variableName" : "member",
+                "variableType" : "ImageDetail",
+                "documentation" : "",
+                "simpleType" : "ImageDetail",
+                "variableSetterType" : "ImageDetail"
+              },
+              "simple" : false,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "ImageDetail",
+                "variableName" : "member",
+                "variableType" : "ImageDetail",
+                "documentation" : "",
+                "simpleType" : "ImageDetail",
+                "variableSetterType" : "ImageDetail"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "ImageDetail",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "ImageDetail",
+            "templateImplType" : "java.util.ArrayList<ImageDetail>",
+            "templateType" : "java.util.List<ImageDetail>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ImageDetails",
+          "setterDocumentation" : "/**<p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>\n@param imageDetails A list of <a>ImageDetail</a> objects that contain data about the image.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.List<ImageDetail>",
+            "variableName" : "imageDetails",
+            "variableType" : "java.util.List<ImageDetail>",
+            "documentation" : "",
+            "simpleType" : "List<ImageDetail>",
+            "variableSetterType" : "java.util.Collection<ImageDetail>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setImageDetails(java.util.Collection)} or {@link #withImageDetails(java.util.Collection)} if you want to override the existing values.</p>\n@param imageDetails A list of <a>ImageDetail</a> objects that contain data about the image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.List<ImageDetail>",
+            "variableName" : "imageDetails",
+            "variableType" : "java.util.List<ImageDetail>",
+            "documentation" : "<p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>",
+            "simpleType" : "List<ImageDetail>",
+            "variableSetterType" : "java.util.Collection<ImageDetail>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "NextToken" : {
+          "c2jName" : "nextToken",
+          "c2jShape" : "NextToken",
+          "deprecated" : false,
+          "documentation" : "<p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@return The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "nextToken",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "nextToken",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "NextToken",
+          "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "<p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "DescribeImagesResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "DescribeImagesResult",
+        "variableName" : "describeImagesResult",
+        "variableType" : "DescribeImagesResult",
+        "documentation" : null,
+        "simpleType" : "DescribeImagesResult",
+        "variableSetterType" : "DescribeImagesResult"
       },
       "wrapper" : false
     },
@@ -9737,6 +11101,806 @@
       },
       "wrapper" : false
     },
+    "ImageDetail" : {
+      "c2jName" : "ImageDetail",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>An object that describes an image returned by a <a>DescribeImages</a> operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "registryId",
+        "c2jShape" : "RegistryId",
+        "deprecated" : false,
+        "documentation" : "<p>The AWS account ID associated with the registry to which this image belongs.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The AWS account ID associated with the registry to which this image belongs.</p>\n@param registryId The AWS account ID associated with the registry to which this image belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The AWS account ID associated with the registry to which this image belongs.</p>\n@return The AWS account ID associated with the registry to which this image belongs.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "registryId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "registryId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "RegistryId",
+        "setterDocumentation" : "/**<p>The AWS account ID associated with the registry to which this image belongs.</p>\n@param registryId The AWS account ID associated with the registry to which this image belongs.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "registryId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The AWS account ID associated with the registry to which this image belongs.</p>\n@param registryId The AWS account ID associated with the registry to which this image belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "registryId",
+          "variableType" : "String",
+          "documentation" : "<p>The AWS account ID associated with the registry to which this image belongs.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "repositoryName",
+        "c2jShape" : "RepositoryName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the repository to which this image belongs.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the repository to which this image belongs.</p>\n@param repositoryName The name of the repository to which this image belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The name of the repository to which this image belongs.</p>\n@return The name of the repository to which this image belongs.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "repositoryName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "repositoryName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "RepositoryName",
+        "setterDocumentation" : "/**<p>The name of the repository to which this image belongs.</p>\n@param repositoryName The name of the repository to which this image belongs.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "repositoryName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The name of the repository to which this image belongs.</p>\n@param repositoryName The name of the repository to which this image belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "repositoryName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the repository to which this image belongs.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "imageDigest",
+        "c2jShape" : "ImageDigest",
+        "deprecated" : false,
+        "documentation" : "<p>The <code>sha256</code> digest of the image manifest.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The <code>sha256</code> digest of the image manifest.</p>\n@param imageDigest The <code>sha256</code> digest of the image manifest.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The <code>sha256</code> digest of the image manifest.</p>\n@return The <code>sha256</code> digest of the image manifest.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "imageDigest",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "imageDigest",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ImageDigest",
+        "setterDocumentation" : "/**<p>The <code>sha256</code> digest of the image manifest.</p>\n@param imageDigest The <code>sha256</code> digest of the image manifest.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "imageDigest",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The <code>sha256</code> digest of the image manifest.</p>\n@param imageDigest The <code>sha256</code> digest of the image manifest.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "imageDigest",
+          "variableType" : "String",
+          "documentation" : "<p>The <code>sha256</code> digest of the image manifest.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "imageTags",
+        "c2jShape" : "ImageTagList",
+        "deprecated" : false,
+        "documentation" : "<p>The list of tags associated with this image.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The list of tags associated with this image.</p>\n@param imageTags The list of tags associated with this image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The list of tags associated with this image.</p>\n@return The list of tags associated with this image.*/",
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "imageTags",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "imageTags",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "ImageTag",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterModel" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "simple" : true,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "String",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ImageTags",
+        "setterDocumentation" : "/**<p>The list of tags associated with this image.</p>\n@param imageTags The list of tags associated with this image.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.List<String>",
+          "variableName" : "imageTags",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The list of tags associated with this image.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setImageTags(java.util.Collection)} or {@link #withImageTags(java.util.Collection)} if you want to override the existing values.</p>\n@param imageTags The list of tags associated with this image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.List<String>",
+          "variableName" : "imageTags",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "<p>The list of tags associated with this image.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "imageSizeInBytes",
+        "c2jShape" : "ImageSizeInBytes",
+        "deprecated" : false,
+        "documentation" : "<p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>\n@param imageSizeInBytes The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>\n@return The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p>*/",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "imageSizeInBytes",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "imageSizeInBytes",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ImageSizeInBytes",
+        "setterDocumentation" : "/**<p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>\n@param imageSizeInBytes The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p>*/",
+        "setterModel" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "imageSizeInBytes",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>\n@param imageSizeInBytes The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "imageSizeInBytes",
+          "variableType" : "Long",
+          "documentation" : "<p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "imagePushedAt",
+        "c2jShape" : "PushTimestamp",
+        "deprecated" : false,
+        "documentation" : "<p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>\n@param imagePushedAt The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>\n@return The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.*/",
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "imagePushedAt",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "imagePushedAt",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ImagePushedAt",
+        "setterDocumentation" : "/**<p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>\n@param imagePushedAt The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "imagePushedAt",
+          "variableType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>\n@param imagePushedAt The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "imagePushedAt",
+          "variableType" : "java.util.Date",
+          "documentation" : "<p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ImageDigest" : {
+          "c2jName" : "imageDigest",
+          "c2jShape" : "ImageDigest",
+          "deprecated" : false,
+          "documentation" : "<p>The <code>sha256</code> digest of the image manifest.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The <code>sha256</code> digest of the image manifest.</p>\n@param imageDigest The <code>sha256</code> digest of the image manifest.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The <code>sha256</code> digest of the image manifest.</p>\n@return The <code>sha256</code> digest of the image manifest.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "imageDigest",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "imageDigest",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ImageDigest",
+          "setterDocumentation" : "/**<p>The <code>sha256</code> digest of the image manifest.</p>\n@param imageDigest The <code>sha256</code> digest of the image manifest.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "imageDigest",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The <code>sha256</code> digest of the image manifest.</p>\n@param imageDigest The <code>sha256</code> digest of the image manifest.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "imageDigest",
+            "variableType" : "String",
+            "documentation" : "<p>The <code>sha256</code> digest of the image manifest.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ImagePushedAt" : {
+          "c2jName" : "imagePushedAt",
+          "c2jShape" : "PushTimestamp",
+          "deprecated" : false,
+          "documentation" : "<p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>\n@param imagePushedAt The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>\n@return The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.*/",
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "imagePushedAt",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "imagePushedAt",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ImagePushedAt",
+          "setterDocumentation" : "/**<p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>\n@param imagePushedAt The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "imagePushedAt",
+            "variableType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>\n@param imagePushedAt The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "imagePushedAt",
+            "variableType" : "java.util.Date",
+            "documentation" : "<p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ImageSizeInBytes" : {
+          "c2jName" : "imageSizeInBytes",
+          "c2jShape" : "ImageSizeInBytes",
+          "deprecated" : false,
+          "documentation" : "<p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>\n@param imageSizeInBytes The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>\n@return The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p>*/",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "imageSizeInBytes",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "imageSizeInBytes",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ImageSizeInBytes",
+          "setterDocumentation" : "/**<p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>\n@param imageSizeInBytes The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p>*/",
+          "setterModel" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "imageSizeInBytes",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>\n@param imageSizeInBytes The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "imageSizeInBytes",
+            "variableType" : "Long",
+            "documentation" : "<p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ImageTags" : {
+          "c2jName" : "imageTags",
+          "c2jShape" : "ImageTagList",
+          "deprecated" : false,
+          "documentation" : "<p>The list of tags associated with this image.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The list of tags associated with this image.</p>\n@param imageTags The list of tags associated with this image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The list of tags associated with this image.</p>\n@return The list of tags associated with this image.*/",
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "imageTags",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "imageTags",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "ImageTag",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterModel" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "simple" : true,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "String",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ImageTags",
+          "setterDocumentation" : "/**<p>The list of tags associated with this image.</p>\n@param imageTags The list of tags associated with this image.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.List<String>",
+            "variableName" : "imageTags",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The list of tags associated with this image.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setImageTags(java.util.Collection)} or {@link #withImageTags(java.util.Collection)} if you want to override the existing values.</p>\n@param imageTags The list of tags associated with this image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.List<String>",
+            "variableName" : "imageTags",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "<p>The list of tags associated with this image.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "RegistryId" : {
+          "c2jName" : "registryId",
+          "c2jShape" : "RegistryId",
+          "deprecated" : false,
+          "documentation" : "<p>The AWS account ID associated with the registry to which this image belongs.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The AWS account ID associated with the registry to which this image belongs.</p>\n@param registryId The AWS account ID associated with the registry to which this image belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The AWS account ID associated with the registry to which this image belongs.</p>\n@return The AWS account ID associated with the registry to which this image belongs.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "registryId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "registryId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "RegistryId",
+          "setterDocumentation" : "/**<p>The AWS account ID associated with the registry to which this image belongs.</p>\n@param registryId The AWS account ID associated with the registry to which this image belongs.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "registryId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The AWS account ID associated with the registry to which this image belongs.</p>\n@param registryId The AWS account ID associated with the registry to which this image belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "registryId",
+            "variableType" : "String",
+            "documentation" : "<p>The AWS account ID associated with the registry to which this image belongs.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "RepositoryName" : {
+          "c2jName" : "repositoryName",
+          "c2jShape" : "RepositoryName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository to which this image belongs.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the repository to which this image belongs.</p>\n@param repositoryName The name of the repository to which this image belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The name of the repository to which this image belongs.</p>\n@return The name of the repository to which this image belongs.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "repositoryName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "repositoryName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "RepositoryName",
+          "setterDocumentation" : "/**<p>The name of the repository to which this image belongs.</p>\n@param repositoryName The name of the repository to which this image belongs.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "repositoryName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The name of the repository to which this image belongs.</p>\n@param repositoryName The name of the repository to which this image belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "repositoryName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the repository to which this image belongs.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "ImageDetail",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "ImageDetail",
+        "variableName" : "imageDetail",
+        "variableType" : "ImageDetail",
+        "documentation" : null,
+        "simpleType" : "ImageDetail",
+        "variableSetterType" : "ImageDetail"
+      },
+      "wrapper" : false
+    },
     "ImageFailure" : {
       "c2jName" : "ImageFailure",
       "customization" : {
@@ -10381,6 +12545,38 @@
         "documentation" : null,
         "simpleType" : "ImageIdentifier",
         "variableSetterType" : "ImageIdentifier"
+      },
+      "wrapper" : false
+    },
+    "ImageNotFoundException" : {
+      "c2jName" : "ImageNotFoundException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The image requested does not exist in the specified repository.</p>",
+      "enums" : null,
+      "errorCode" : "ImageNotFoundException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "ImageNotFoundException",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "ImageNotFoundException",
+        "variableName" : "imageNotFoundException",
+        "variableType" : "ImageNotFoundException",
+        "documentation" : null,
+        "simpleType" : "ImageNotFoundException",
+        "variableSetterType" : "ImageNotFoundException"
       },
       "wrapper" : false
     },
@@ -14148,8 +16344,113 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "createdAt",
+        "c2jShape" : "CreationTimestamp",
+        "deprecated" : false,
+        "documentation" : "<p>The date and time, in JavaScript date/time format, when the repository was created.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The date and time, in JavaScript date/time format, when the repository was created.</p>\n@param createdAt The date and time, in JavaScript date/time format, when the repository was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The date and time, in JavaScript date/time format, when the repository was created.</p>\n@return The date and time, in JavaScript date/time format, when the repository was created.*/",
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "createdAt",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "createdAt",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "CreatedAt",
+        "setterDocumentation" : "/**<p>The date and time, in JavaScript date/time format, when the repository was created.</p>\n@param createdAt The date and time, in JavaScript date/time format, when the repository was created.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "createdAt",
+          "variableType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The date and time, in JavaScript date/time format, when the repository was created.</p>\n@param createdAt The date and time, in JavaScript date/time format, when the repository was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "createdAt",
+          "variableType" : "java.util.Date",
+          "documentation" : "<p>The date and time, in JavaScript date/time format, when the repository was created.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "CreatedAt" : {
+          "c2jName" : "createdAt",
+          "c2jShape" : "CreationTimestamp",
+          "deprecated" : false,
+          "documentation" : "<p>The date and time, in JavaScript date/time format, when the repository was created.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The date and time, in JavaScript date/time format, when the repository was created.</p>\n@param createdAt The date and time, in JavaScript date/time format, when the repository was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The date and time, in JavaScript date/time format, when the repository was created.</p>\n@return The date and time, in JavaScript date/time format, when the repository was created.*/",
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "createdAt",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "createdAt",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "CreatedAt",
+          "setterDocumentation" : "/**<p>The date and time, in JavaScript date/time format, when the repository was created.</p>\n@param createdAt The date and time, in JavaScript date/time format, when the repository was created.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "createdAt",
+            "variableType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The date and time, in JavaScript date/time format, when the repository was created.</p>\n@param createdAt The date and time, in JavaScript date/time format, when the repository was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "createdAt",
+            "variableType" : "java.util.Date",
+            "documentation" : "<p>The date and time, in JavaScript date/time format, when the repository was created.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "RegistryId" : {
           "c2jName" : "registryId",
           "c2jShape" : "RegistryId",
@@ -16561,17 +18862,17 @@
         "description" : "This example deletes images with the tags precise and trusty in a repository called ubuntu in the default registry for an account.",
         "id" : "batchdeleteimages-example-1470860541707",
         "input" : {
+          "repositoryName" : "ubuntu",
           "imageIds" : [ {
             "imageTag" : "precise"
-          } ],
-          "repositoryName" : "ubuntu"
+          } ]
         },
         "output" : {
-          "failures" : [ ],
           "imageIds" : [ {
             "imageDigest" : "sha256:examplee6d1e504117a17000003d3753086354a38375961f2e665416ef4b1b2f",
             "imageTag" : "precise"
-          } ]
+          } ],
+          "failures" : [ ]
         },
         "title" : "To delete multiple images"
       } ],
@@ -16585,22 +18886,22 @@
         "description" : "This example obtains information for an image with a specified image digest ID from the repository named ubuntu in the current account.",
         "id" : "batchgetimage-example-1470862771437",
         "input" : {
+          "repositoryName" : "ubuntu",
           "imageIds" : [ {
             "imageTag" : "precise"
-          } ],
-          "repositoryName" : "ubuntu"
+          } ]
         },
         "output" : {
-          "failures" : [ ],
           "images" : [ {
+            "registryId" : "244698725403",
+            "repositoryName" : "ubuntu",
             "imageId" : {
               "imageDigest" : "sha256:example76bdff6d83a09ba2a818f0d00000063724a9ac3ba5019c56f74ebf42a",
               "imageTag" : "precise"
             },
-            "imageManifest" : "{\n \"schemaVersion\": 1,\n \"name\": \"ubuntu\",\n \"tag\": \"precise\",\n...",
-            "registryId" : "244698725403",
-            "repositoryName" : "ubuntu"
-          } ]
+            "imageManifest" : "{\n \"schemaVersion\": 1,\n \"name\": \"ubuntu\",\n \"tag\": \"precise\",\n..."
+          } ],
+          "failures" : [ ]
         },
         "title" : "To obtain multiple images in a single request"
       } ],
@@ -16618,8 +18919,8 @@
         },
         "output" : {
           "repository" : {
-            "registryId" : "012345678901",
             "repositoryArn" : "arn:aws:ecr:us-west-2:012345678901:repository/project-a/nginx-web-app",
+            "registryId" : "012345678901",
             "repositoryName" : "project-a/nginx-web-app"
           }
         },
@@ -16635,13 +18936,13 @@
         "description" : "This example force deletes a repository named ubuntu in the default registry for an account. The force parameter is required if the repository contains images.",
         "id" : "deleterepository-example-1470863805703",
         "input" : {
-          "force" : true,
-          "repositoryName" : "ubuntu"
+          "repositoryName" : "ubuntu",
+          "force" : true
         },
         "output" : {
           "repository" : {
-            "registryId" : "012345678901",
             "repositoryArn" : "arn:aws:ecr:us-west-2:012345678901:repository/ubuntu",
+            "registryId" : "012345678901",
             "repositoryName" : "ubuntu"
           }
         },
@@ -16658,9 +18959,9 @@
           "repositoryName" : "ubuntu"
         },
         "output" : {
-          "policyText" : "{ ... }",
           "registryId" : "012345678901",
-          "repositoryName" : "ubuntu"
+          "repositoryName" : "ubuntu",
+          "policyText" : "{ ... }"
         },
         "title" : "To delete the policy associated with a repository"
       } ],
@@ -16674,12 +18975,12 @@
         "input" : { },
         "output" : {
           "repositories" : [ {
-            "registryId" : "012345678910",
             "repositoryArn" : "arn:aws:ecr:us-west-2:012345678910:repository/ubuntu",
+            "registryId" : "012345678910",
             "repositoryName" : "ubuntu"
           }, {
-            "registryId" : "012345678910",
             "repositoryArn" : "arn:aws:ecr:us-west-2:012345678910:repository/test",
+            "registryId" : "012345678910",
             "repositoryName" : "test"
           } ]
         },
@@ -16713,9 +19014,9 @@
           "repositoryName" : "ubuntu"
         },
         "output" : {
-          "policyText" : "{\n  \"Version\" : \"2008-10-17\",\n  \"Statement\" : [ {\n    \"Sid\" : \"new statement\",\n    \"Effect\" : \"Allow\",\n    \"Principal\" : {\n     \"AWS\" : \"arn:aws:iam::012345678901:role/CodeDeployDemo\"\n    },\n\"Action\" : [ \"ecr:GetDownloadUrlForLayer\", \"ecr:BatchGetImage\", \"ecr:BatchCheckLayerAvailability\" ]\n } ]\n}",
           "registryId" : "012345678901",
-          "repositoryName" : "ubuntu"
+          "repositoryName" : "ubuntu",
+          "policyText" : "{\n  \"Version\" : \"2008-10-17\",\n  \"Statement\" : [ {\n    \"Sid\" : \"new statement\",\n    \"Effect\" : \"Allow\",\n    \"Principal\" : {\n     \"AWS\" : \"arn:aws:iam::012345678901:role/CodeDeployDemo\"\n    },\n\"Action\" : [ \"ecr:GetDownloadUrlForLayer\", \"ecr:BatchGetImage\", \"ecr:BatchCheckLayerAvailability\" ]\n } ]\n}"
         },
         "title" : "To get the current policy for a repository"
       } ],

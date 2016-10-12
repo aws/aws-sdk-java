@@ -16,17 +16,17 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of one of the following actions:
+ * Represents the output of one of the following operations:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <i>ModifyCacheParameterGroup</i>
+ * <code>ModifyCacheParameterGroup</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <i>ResetCacheParameterGroup</i>
+ * <code>ResetCacheParameterGroup</code>
  * </p>
  * </li>
  * </ul>

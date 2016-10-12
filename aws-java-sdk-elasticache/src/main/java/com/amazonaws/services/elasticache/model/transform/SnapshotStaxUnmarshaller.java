@@ -50,6 +50,16 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("ReplicationGroupId", targetDepth)) {
+                    snapshot.setReplicationGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ReplicationGroupDescription", targetDepth)) {
+                    snapshot.setReplicationGroupDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("CacheClusterId", targetDepth)) {
                     snapshot.setCacheClusterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -137,6 +147,16 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
 
                 if (context.testExpression("SnapshotWindow", targetDepth)) {
                     snapshot.setSnapshotWindow(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("NumNodeGroups", targetDepth)) {
+                    snapshot.setNumNodeGroups(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AutomaticFailover", targetDepth)) {
+                    snapshot.setAutomaticFailover(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

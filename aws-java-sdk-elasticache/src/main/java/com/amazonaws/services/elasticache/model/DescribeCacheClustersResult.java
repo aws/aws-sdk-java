@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>DescribeCacheClusters</i> action.
+ * Represents the output of a <code>DescribeCacheClusters</code> operation.
  * </p>
  */
 public class DescribeCacheClustersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

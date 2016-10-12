@@ -20,7 +20,8 @@ public enum SourceType {
     CacheCluster("cache-cluster"),
     CacheParameterGroup("cache-parameter-group"),
     CacheSecurityGroup("cache-security-group"),
-    CacheSubnetGroup("cache-subnet-group");
+    CacheSubnetGroup("cache-subnet-group"),
+    ReplicationGroup("replication-group");
 
     private String value;
 

@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>CreateReplicationGroup</i> action.
+ * Represents the input of a <code>CreateReplicationGroup</code> operation.
  * </p>
  */
 public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -56,22 +56,26 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String replicationGroupDescription;
     /**
      * <p>
-     * The identifier of the cache cluster that will serve as the primary for this replication group. This cache cluster
-     * must already exist and have a status of <i>available</i>.
+     * The identifier of the cache cluster that serves as the primary for this replication group. This cache cluster
+     * must already exist and have a status of <code>available</code>.
      * </p>
      * <p>
-     * This parameter is not required if <i>NumCacheClusters</i> is specified.
+     * This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
+     * <code>ReplicasPerNodeGroup</code> is specified.
      * </p>
      */
     private String primaryClusterId;
     /**
      * <p>
-     * Specifies whether a read-only replica will be automatically promoted to read/write primary if the existing
-     * primary fails.
+     * Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary
+     * fails.
      * </p>
      * <p>
      * If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
      * for this replication group.
+     * </p>
+     * <p>
+     * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      * </p>
      * <p>
      * Default: false
@@ -88,7 +92,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 and T2 node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T2 node types.
      * </p>
      * </li>
      * </ul>
@@ -97,47 +104,78 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private Boolean automaticFailoverEnabled;
     /**
      * <p>
-     * The number of cache clusters this replication group will initially have.
+     * The number of clusters this replication group initially has.
      * </p>
      * <p>
-     * If <i>Multi-AZ</i> is <code>enabled</code>, the value of this parameter must be at least 2.
+     * This parameter is not used if there is more than one node group (shard). You should use
+     * <code>ReplicasPerNodeGroup</code> instead.
      * </p>
      * <p>
-     * The maximum permitted value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to exceed
-     * this limit, please fill out the ElastiCache Limit Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request"
-     * >http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
+     * If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     * </p>
+     * <p>
+     * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need to
+     * exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
+     * >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      * </p>
      */
     private Integer numCacheClusters;
     /**
      * <p>
-     * A list of EC2 availability zones in which the replication group's cache clusters will be created. The order of
-     * the availability zones in the list is not important.
+     * A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of the
+     * Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in
+     * the first AZ in the list.
+     * </p>
+     * <p>
+     * This parameter is not used if there is more than one node group (shard). You should use
+     * <code>NodeGroupConfiguration</code> instead.
      * </p>
      * <note>
      * <p>
      * If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache clusters in
-     * availability zones associated with the subnets in the selected subnet group.
+     * Availability Zones associated with the subnets in the selected subnet group.
      * </p>
      * <p>
-     * The number of availability zones listed must equal the value of <i>NumCacheClusters</i>.
+     * The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
      * </p>
      * </note>
      * <p>
-     * Default: system chosen availability zones.
-     * </p>
-     * <p>
-     * Example: One Redis cache cluster in each of three availability zones.
-     * </p>
-     * <p>
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
+     * Default: system chosen Availability Zones.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> preferredCacheClusterAZs;
     /**
      * <p>
-     * The compute and memory capacity of the nodes in the node group.
+     * An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled)
+     * replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.
+     * </p>
+     * <p>
+     * Default: 1
+     * </p>
+     */
+    private Integer numNodeGroups;
+    /**
+     * <p>
+     * An optional parameter that specifies the number of replica nodes in each node group (shard). Valid values are 0
+     * to 5.
+     * </p>
+     */
+    private Integer replicasPerNodeGroup;
+    /**
+     * <p>
+     * A list of node group (shard) configuration options. Each node group (shard) configuration has the following:
+     * Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.
+     * </p>
+     * <p>
+     * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
+     * use this parameter to configure one node group (shard) or you can omit this parameter.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration> nodeGroupConfiguration;
+    /**
+     * <p>
+     * The compute and memory capacity of the nodes in the node group (shard).
      * </p>
      * <p>
      * Valid node types are as follows:
@@ -152,7 +190,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -193,26 +232,28 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      */
@@ -221,15 +262,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the cache engine to be used for the cache clusters in this replication group.
      * </p>
-     * <p>
-     * Default: redis
-     * </p>
      */
     private String engine;
     /**
      * <p>
      * The version number of the cache engine to be used for the cache clusters in this replication group. To view the
-     * supported cache engine versions, use the <i>DescribeCacheEngineVersions</i> action.
+     * supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
@@ -245,12 +283,38 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The name of the parameter group to associate with this replication group. If this argument is omitted, the
      * default cache parameter group for the specified engine is used.
      * </p>
+     * <p>
+     * If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter
+     * group, we recommend that you specify the parameter group by name.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a Redis (cluster mode disabled) replication group, use
+     * <code>CacheParameterGroupName=default.redis3.2</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a Redis (cluster mode enabled) replication group, use
+     * <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String cacheParameterGroupName;
     /**
      * <p>
      * The name of the cache subnet group to be used for the replication group.
      * </p>
+     * <important>
+     * <p>
+     * If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start
+     * creating a cluster. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     * Groups</a>.
+     * </p>
+     * </important>
      */
     private String cacheSubnetGroupName;
     /**
@@ -264,7 +328,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * One or more Amazon VPC security groups associated with this replication group.
      * </p>
      * <p>
-     * Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (VPC).
+     * Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon
+     * VPC).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
@@ -277,9 +342,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB
-     * snapshot file stored in Amazon S3. The snapshot file will be used to populate the node group. The Amazon S3
-     * object name in the ARN cannot contain any commas.
+     * A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3.
+     * The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN cannot
+     * contain any commas. The list must match the number of node groups (shards) in the replication group, which means
+     * you cannot repartition.
      * </p>
      * <note>
      * <p>
@@ -293,8 +359,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> snapshotArns;
     /**
      * <p>
-     * The name of a snapshot from which to restore data into the new node group. The snapshot status changes to
-     * <code>restoring</code> while the new node group is being created.
+     * The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to
+     * <code>restoring</code> while the new replication group is being created.
      * </p>
      * <note>
      * <p>
@@ -308,6 +374,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
      * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
      * period. Valid values for <code>ddd</code> are:
+     * </p>
+     * <p>
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -347,20 +420,20 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      */
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * The port number on which each member of the replication group will accept connections.
+     * The port number on which each member of the replication group accepts connections.
      * </p>
      */
     private Integer port;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications will
-     * be sent.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are
+     * sent.
      * </p>
      * <note>
      * <p>
@@ -377,9 +450,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * The number of days for which ElastiCache will retain automatic snapshots before deleting them. For example, if
-     * you set <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken today will be retained for 5
-     * days before being deleted.
+     * The number of days for which ElastiCache retains automatic snapshots before deleting them. For example, if you
+     * set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being
+     * deleted.
      * </p>
      * <note>
      * <p>
@@ -393,13 +466,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private Integer snapshotRetentionLimit;
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your node group.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).
      * </p>
      * <p>
      * Example: <code>05:00-09:00</code>
      * </p>
      * <p>
-     * If you do not specify this parameter, then ElastiCache will automatically choose an appropriate time range.
+     * If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
      * </p>
      * <note>
      * <p>
@@ -608,18 +681,20 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the cache cluster that will serve as the primary for this replication group. This cache cluster
-     * must already exist and have a status of <i>available</i>.
+     * The identifier of the cache cluster that serves as the primary for this replication group. This cache cluster
+     * must already exist and have a status of <code>available</code>.
      * </p>
      * <p>
-     * This parameter is not required if <i>NumCacheClusters</i> is specified.
+     * This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
+     * <code>ReplicasPerNodeGroup</code> is specified.
      * </p>
      * 
      * @param primaryClusterId
-     *        The identifier of the cache cluster that will serve as the primary for this replication group. This cache
-     *        cluster must already exist and have a status of <i>available</i>.</p>
+     *        The identifier of the cache cluster that serves as the primary for this replication group. This cache
+     *        cluster must already exist and have a status of <code>available</code>.</p>
      *        <p>
-     *        This parameter is not required if <i>NumCacheClusters</i> is specified.
+     *        This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
+     *        <code>ReplicasPerNodeGroup</code> is specified.
      */
 
     public void setPrimaryClusterId(String primaryClusterId) {
@@ -628,17 +703,19 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the cache cluster that will serve as the primary for this replication group. This cache cluster
-     * must already exist and have a status of <i>available</i>.
+     * The identifier of the cache cluster that serves as the primary for this replication group. This cache cluster
+     * must already exist and have a status of <code>available</code>.
      * </p>
      * <p>
-     * This parameter is not required if <i>NumCacheClusters</i> is specified.
+     * This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
+     * <code>ReplicasPerNodeGroup</code> is specified.
      * </p>
      * 
-     * @return The identifier of the cache cluster that will serve as the primary for this replication group. This cache
-     *         cluster must already exist and have a status of <i>available</i>.</p>
+     * @return The identifier of the cache cluster that serves as the primary for this replication group. This cache
+     *         cluster must already exist and have a status of <code>available</code>.</p>
      *         <p>
-     *         This parameter is not required if <i>NumCacheClusters</i> is specified.
+     *         This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
+     *         <code>ReplicasPerNodeGroup</code> is specified.
      */
 
     public String getPrimaryClusterId() {
@@ -647,18 +724,20 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the cache cluster that will serve as the primary for this replication group. This cache cluster
-     * must already exist and have a status of <i>available</i>.
+     * The identifier of the cache cluster that serves as the primary for this replication group. This cache cluster
+     * must already exist and have a status of <code>available</code>.
      * </p>
      * <p>
-     * This parameter is not required if <i>NumCacheClusters</i> is specified.
+     * This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
+     * <code>ReplicasPerNodeGroup</code> is specified.
      * </p>
      * 
      * @param primaryClusterId
-     *        The identifier of the cache cluster that will serve as the primary for this replication group. This cache
-     *        cluster must already exist and have a status of <i>available</i>.</p>
+     *        The identifier of the cache cluster that serves as the primary for this replication group. This cache
+     *        cluster must already exist and have a status of <code>available</code>.</p>
      *        <p>
-     *        This parameter is not required if <i>NumCacheClusters</i> is specified.
+     *        This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
+     *        <code>ReplicasPerNodeGroup</code> is specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -669,12 +748,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies whether a read-only replica will be automatically promoted to read/write primary if the existing
-     * primary fails.
+     * Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary
+     * fails.
      * </p>
      * <p>
      * If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
      * for this replication group.
+     * </p>
+     * <p>
+     * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      * </p>
      * <p>
      * Default: false
@@ -691,18 +773,24 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 and T2 node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T2 node types.
      * </p>
      * </li>
      * </ul>
      * </note>
      * 
      * @param automaticFailoverEnabled
-     *        Specifies whether a read-only replica will be automatically promoted to read/write primary if the existing
+     *        Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
      *        primary fails.</p>
      *        <p>
      *        If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is
      *        disabled for this replication group.
+     *        </p>
+     *        <p>
+     *        <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      *        </p>
      *        <p>
      *        Default: false
@@ -719,7 +807,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        T1 and T2 cache node types.
+     *        Redis (cluster mode disabled): T1 and T2 node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T2 node types.
      *        </p>
      *        </li>
      *        </ul>
@@ -731,12 +822,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies whether a read-only replica will be automatically promoted to read/write primary if the existing
-     * primary fails.
+     * Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary
+     * fails.
      * </p>
      * <p>
      * If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
      * for this replication group.
+     * </p>
+     * <p>
+     * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      * </p>
      * <p>
      * Default: false
@@ -753,17 +847,24 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 and T2 node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T2 node types.
      * </p>
      * </li>
      * </ul>
      * </note>
      * 
-     * @return Specifies whether a read-only replica will be automatically promoted to read/write primary if the
-     *         existing primary fails.</p>
+     * @return Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
+     *         primary fails.</p>
      *         <p>
      *         If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is
      *         disabled for this replication group.
+     *         </p>
+     *         <p>
+     *         <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication
+     *         groups.
      *         </p>
      *         <p>
      *         Default: false
@@ -780,7 +881,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         T1 and T2 cache node types.
+     *         Redis (cluster mode disabled): T1 and T2 node types.
+     *         </p>
+     *         <p>
+     *         Redis (cluster mode enabled): T2 node types.
      *         </p>
      *         </li>
      *         </ul>
@@ -792,12 +896,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies whether a read-only replica will be automatically promoted to read/write primary if the existing
-     * primary fails.
+     * Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary
+     * fails.
      * </p>
      * <p>
      * If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
      * for this replication group.
+     * </p>
+     * <p>
+     * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      * </p>
      * <p>
      * Default: false
@@ -814,18 +921,24 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 and T2 node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T2 node types.
      * </p>
      * </li>
      * </ul>
      * </note>
      * 
      * @param automaticFailoverEnabled
-     *        Specifies whether a read-only replica will be automatically promoted to read/write primary if the existing
+     *        Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
      *        primary fails.</p>
      *        <p>
      *        If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is
      *        disabled for this replication group.
+     *        </p>
+     *        <p>
+     *        <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      *        </p>
      *        <p>
      *        Default: false
@@ -842,7 +955,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        T1 and T2 cache node types.
+     *        Redis (cluster mode disabled): T1 and T2 node types.
+     *        </p>
+     *        <p>
+     *        Redis (cluster mode enabled): T2 node types.
      *        </p>
      *        </li>
      *        </ul>
@@ -856,12 +972,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies whether a read-only replica will be automatically promoted to read/write primary if the existing
-     * primary fails.
+     * Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary
+     * fails.
      * </p>
      * <p>
      * If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
      * for this replication group.
+     * </p>
+     * <p>
+     * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.
      * </p>
      * <p>
      * Default: false
@@ -878,17 +997,24 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 and T2 node types.
+     * </p>
+     * <p>
+     * Redis (cluster mode enabled): T2 node types.
      * </p>
      * </li>
      * </ul>
      * </note>
      * 
-     * @return Specifies whether a read-only replica will be automatically promoted to read/write primary if the
-     *         existing primary fails.</p>
+     * @return Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
+     *         primary fails.</p>
      *         <p>
      *         If <code>true</code>, Multi-AZ is enabled for this replication group. If <code>false</code>, Multi-AZ is
      *         disabled for this replication group.
+     *         </p>
+     *         <p>
+     *         <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication
+     *         groups.
      *         </p>
      *         <p>
      *         Default: false
@@ -905,7 +1031,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         T1 and T2 cache node types.
+     *         Redis (cluster mode disabled): T1 and T2 node types.
+     *         </p>
+     *         <p>
+     *         Redis (cluster mode enabled): T2 node types.
      *         </p>
      *         </li>
      *         </ul>
@@ -917,28 +1046,36 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of cache clusters this replication group will initially have.
+     * The number of clusters this replication group initially has.
      * </p>
      * <p>
-     * If <i>Multi-AZ</i> is <code>enabled</code>, the value of this parameter must be at least 2.
+     * This parameter is not used if there is more than one node group (shard). You should use
+     * <code>ReplicasPerNodeGroup</code> instead.
      * </p>
      * <p>
-     * The maximum permitted value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to exceed
-     * this limit, please fill out the ElastiCache Limit Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request"
-     * >http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
+     * If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     * </p>
+     * <p>
+     * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need to
+     * exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
+     * >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      * </p>
      * 
      * @param numCacheClusters
-     *        The number of cache clusters this replication group will initially have.</p>
+     *        The number of clusters this replication group initially has.</p>
      *        <p>
-     *        If <i>Multi-AZ</i> is <code>enabled</code>, the value of this parameter must be at least 2.
+     *        This parameter is not used if there is more than one node group (shard). You should use
+     *        <code>ReplicasPerNodeGroup</code> instead.
      *        </p>
      *        <p>
-     *        The maximum permitted value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
-     *        exceed this limit, please fill out the ElastiCache Limit Increase Request form at <a
-     *        href="http://aws.amazon.com/contact-us/elasticache-node-limit-request"
-     *        >http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
+     *        If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     *        </p>
+     *        <p>
+     *        The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need
+     *        to exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
+     *        href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
+     *        >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      */
 
     public void setNumCacheClusters(Integer numCacheClusters) {
@@ -947,27 +1084,35 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of cache clusters this replication group will initially have.
+     * The number of clusters this replication group initially has.
      * </p>
      * <p>
-     * If <i>Multi-AZ</i> is <code>enabled</code>, the value of this parameter must be at least 2.
+     * This parameter is not used if there is more than one node group (shard). You should use
+     * <code>ReplicasPerNodeGroup</code> instead.
      * </p>
      * <p>
-     * The maximum permitted value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to exceed
-     * this limit, please fill out the ElastiCache Limit Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request"
-     * >http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
+     * If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     * </p>
+     * <p>
+     * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need to
+     * exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
+     * >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      * </p>
      * 
-     * @return The number of cache clusters this replication group will initially have.</p>
+     * @return The number of clusters this replication group initially has.</p>
      *         <p>
-     *         If <i>Multi-AZ</i> is <code>enabled</code>, the value of this parameter must be at least 2.
+     *         This parameter is not used if there is more than one node group (shard). You should use
+     *         <code>ReplicasPerNodeGroup</code> instead.
      *         </p>
      *         <p>
-     *         The maximum permitted value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
-     *         exceed this limit, please fill out the ElastiCache Limit Increase Request form at <a
-     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request"
-     *         >http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
+     *         If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     *         </p>
+     *         <p>
+     *         The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need
+     *         to exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
+     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
+     *         >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      */
 
     public Integer getNumCacheClusters() {
@@ -976,28 +1121,36 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of cache clusters this replication group will initially have.
+     * The number of clusters this replication group initially has.
      * </p>
      * <p>
-     * If <i>Multi-AZ</i> is <code>enabled</code>, the value of this parameter must be at least 2.
+     * This parameter is not used if there is more than one node group (shard). You should use
+     * <code>ReplicasPerNodeGroup</code> instead.
      * </p>
      * <p>
-     * The maximum permitted value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to exceed
-     * this limit, please fill out the ElastiCache Limit Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request"
-     * >http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
+     * If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     * </p>
+     * <p>
+     * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need to
+     * exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
+     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
+     * >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      * </p>
      * 
      * @param numCacheClusters
-     *        The number of cache clusters this replication group will initially have.</p>
+     *        The number of clusters this replication group initially has.</p>
      *        <p>
-     *        If <i>Multi-AZ</i> is <code>enabled</code>, the value of this parameter must be at least 2.
+     *        This parameter is not used if there is more than one node group (shard). You should use
+     *        <code>ReplicasPerNodeGroup</code> instead.
      *        </p>
      *        <p>
-     *        The maximum permitted value for <i>NumCacheClusters</i> is 6 (primary plus 5 replicas). If you need to
-     *        exceed this limit, please fill out the ElastiCache Limit Increase Request form at <a
-     *        href="http://aws.amazon.com/contact-us/elasticache-node-limit-request"
-     *        >http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.
+     *        If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     *        </p>
+     *        <p>
+     *        The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need
+     *        to exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
+     *        href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
+     *        >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1008,46 +1161,45 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of EC2 availability zones in which the replication group's cache clusters will be created. The order of
-     * the availability zones in the list is not important.
+     * A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of the
+     * Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in
+     * the first AZ in the list.
+     * </p>
+     * <p>
+     * This parameter is not used if there is more than one node group (shard). You should use
+     * <code>NodeGroupConfiguration</code> instead.
      * </p>
      * <note>
      * <p>
      * If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache clusters in
-     * availability zones associated with the subnets in the selected subnet group.
+     * Availability Zones associated with the subnets in the selected subnet group.
      * </p>
      * <p>
-     * The number of availability zones listed must equal the value of <i>NumCacheClusters</i>.
+     * The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
      * </p>
      * </note>
      * <p>
-     * Default: system chosen availability zones.
-     * </p>
-     * <p>
-     * Example: One Redis cache cluster in each of three availability zones.
-     * </p>
-     * <p>
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
+     * Default: system chosen Availability Zones.
      * </p>
      * 
-     * @return A list of EC2 availability zones in which the replication group's cache clusters will be created. The
-     *         order of the availability zones in the list is not important.</p> <note>
+     * @return A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order
+     *         of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster
+     *         is created in the first AZ in the list.</p>
+     *         <p>
+     *         This parameter is not used if there is more than one node group (shard). You should use
+     *         <code>NodeGroupConfiguration</code> instead.
+     *         </p>
+     *         <note>
      *         <p>
      *         If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache
-     *         clusters in availability zones associated with the subnets in the selected subnet group.
+     *         clusters in Availability Zones associated with the subnets in the selected subnet group.
      *         </p>
      *         <p>
-     *         The number of availability zones listed must equal the value of <i>NumCacheClusters</i>.
+     *         The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
      *         </p>
      *         </note>
      *         <p>
-     *         Default: system chosen availability zones.
-     *         </p>
-     *         <p>
-     *         Example: One Redis cache cluster in each of three availability zones.
-     *         </p>
-     *         <p>
-     *         <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
+     *         Default: system chosen Availability Zones.
      */
 
     public java.util.List<String> getPreferredCacheClusterAZs() {
@@ -1059,47 +1211,46 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of EC2 availability zones in which the replication group's cache clusters will be created. The order of
-     * the availability zones in the list is not important.
+     * A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of the
+     * Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in
+     * the first AZ in the list.
+     * </p>
+     * <p>
+     * This parameter is not used if there is more than one node group (shard). You should use
+     * <code>NodeGroupConfiguration</code> instead.
      * </p>
      * <note>
      * <p>
      * If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache clusters in
-     * availability zones associated with the subnets in the selected subnet group.
+     * Availability Zones associated with the subnets in the selected subnet group.
      * </p>
      * <p>
-     * The number of availability zones listed must equal the value of <i>NumCacheClusters</i>.
+     * The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
      * </p>
      * </note>
      * <p>
-     * Default: system chosen availability zones.
-     * </p>
-     * <p>
-     * Example: One Redis cache cluster in each of three availability zones.
-     * </p>
-     * <p>
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
+     * Default: system chosen Availability Zones.
      * </p>
      * 
      * @param preferredCacheClusterAZs
-     *        A list of EC2 availability zones in which the replication group's cache clusters will be created. The
-     *        order of the availability zones in the list is not important.</p> <note>
+     *        A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of
+     *        the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is
+     *        created in the first AZ in the list.</p>
+     *        <p>
+     *        This parameter is not used if there is more than one node group (shard). You should use
+     *        <code>NodeGroupConfiguration</code> instead.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache
-     *        clusters in availability zones associated with the subnets in the selected subnet group.
+     *        clusters in Availability Zones associated with the subnets in the selected subnet group.
      *        </p>
      *        <p>
-     *        The number of availability zones listed must equal the value of <i>NumCacheClusters</i>.
+     *        The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
      *        </p>
      *        </note>
      *        <p>
-     *        Default: system chosen availability zones.
-     *        </p>
-     *        <p>
-     *        Example: One Redis cache cluster in each of three availability zones.
-     *        </p>
-     *        <p>
-     *        <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
+     *        Default: system chosen Availability Zones.
      */
 
     public void setPreferredCacheClusterAZs(java.util.Collection<String> preferredCacheClusterAZs) {
@@ -1113,26 +1264,25 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of EC2 availability zones in which the replication group's cache clusters will be created. The order of
-     * the availability zones in the list is not important.
+     * A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of the
+     * Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in
+     * the first AZ in the list.
+     * </p>
+     * <p>
+     * This parameter is not used if there is more than one node group (shard). You should use
+     * <code>NodeGroupConfiguration</code> instead.
      * </p>
      * <note>
      * <p>
      * If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache clusters in
-     * availability zones associated with the subnets in the selected subnet group.
+     * Availability Zones associated with the subnets in the selected subnet group.
      * </p>
      * <p>
-     * The number of availability zones listed must equal the value of <i>NumCacheClusters</i>.
+     * The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
      * </p>
      * </note>
      * <p>
-     * Default: system chosen availability zones.
-     * </p>
-     * <p>
-     * Example: One Redis cache cluster in each of three availability zones.
-     * </p>
-     * <p>
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
+     * Default: system chosen Availability Zones.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1141,24 +1291,24 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param preferredCacheClusterAZs
-     *        A list of EC2 availability zones in which the replication group's cache clusters will be created. The
-     *        order of the availability zones in the list is not important.</p> <note>
+     *        A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of
+     *        the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is
+     *        created in the first AZ in the list.</p>
+     *        <p>
+     *        This parameter is not used if there is more than one node group (shard). You should use
+     *        <code>NodeGroupConfiguration</code> instead.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache
-     *        clusters in availability zones associated with the subnets in the selected subnet group.
+     *        clusters in Availability Zones associated with the subnets in the selected subnet group.
      *        </p>
      *        <p>
-     *        The number of availability zones listed must equal the value of <i>NumCacheClusters</i>.
+     *        The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
      *        </p>
      *        </note>
      *        <p>
-     *        Default: system chosen availability zones.
-     *        </p>
-     *        <p>
-     *        Example: One Redis cache cluster in each of three availability zones.
-     *        </p>
-     *        <p>
-     *        <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
+     *        Default: system chosen Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1174,47 +1324,46 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of EC2 availability zones in which the replication group's cache clusters will be created. The order of
-     * the availability zones in the list is not important.
+     * A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of the
+     * Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in
+     * the first AZ in the list.
+     * </p>
+     * <p>
+     * This parameter is not used if there is more than one node group (shard). You should use
+     * <code>NodeGroupConfiguration</code> instead.
      * </p>
      * <note>
      * <p>
      * If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache clusters in
-     * availability zones associated with the subnets in the selected subnet group.
+     * Availability Zones associated with the subnets in the selected subnet group.
      * </p>
      * <p>
-     * The number of availability zones listed must equal the value of <i>NumCacheClusters</i>.
+     * The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
      * </p>
      * </note>
      * <p>
-     * Default: system chosen availability zones.
-     * </p>
-     * <p>
-     * Example: One Redis cache cluster in each of three availability zones.
-     * </p>
-     * <p>
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
+     * Default: system chosen Availability Zones.
      * </p>
      * 
      * @param preferredCacheClusterAZs
-     *        A list of EC2 availability zones in which the replication group's cache clusters will be created. The
-     *        order of the availability zones in the list is not important.</p> <note>
+     *        A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of
+     *        the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is
+     *        created in the first AZ in the list.</p>
+     *        <p>
+     *        This parameter is not used if there is more than one node group (shard). You should use
+     *        <code>NodeGroupConfiguration</code> instead.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache
-     *        clusters in availability zones associated with the subnets in the selected subnet group.
+     *        clusters in Availability Zones associated with the subnets in the selected subnet group.
      *        </p>
      *        <p>
-     *        The number of availability zones listed must equal the value of <i>NumCacheClusters</i>.
+     *        The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
      *        </p>
      *        </note>
      *        <p>
-     *        Default: system chosen availability zones.
-     *        </p>
-     *        <p>
-     *        Example: One Redis cache cluster in each of three availability zones.
-     *        </p>
-     *        <p>
-     *        <code>PreferredAvailabilityZones.member.1=us-west-2a PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c</code>
+     *        Default: system chosen Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1225,7 +1374,226 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The compute and memory capacity of the nodes in the node group.
+     * An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled)
+     * replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.
+     * </p>
+     * <p>
+     * Default: 1
+     * </p>
+     * 
+     * @param numNodeGroups
+     *        An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode
+     *        enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to
+     *        1.</p>
+     *        <p>
+     *        Default: 1
+     */
+
+    public void setNumNodeGroups(Integer numNodeGroups) {
+        this.numNodeGroups = numNodeGroups;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled)
+     * replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.
+     * </p>
+     * <p>
+     * Default: 1
+     * </p>
+     * 
+     * @return An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode
+     *         enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to
+     *         1.</p>
+     *         <p>
+     *         Default: 1
+     */
+
+    public Integer getNumNodeGroups() {
+        return this.numNodeGroups;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled)
+     * replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.
+     * </p>
+     * <p>
+     * Default: 1
+     * </p>
+     * 
+     * @param numNodeGroups
+     *        An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode
+     *        enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to
+     *        1.</p>
+     *        <p>
+     *        Default: 1
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupRequest withNumNodeGroups(Integer numNodeGroups) {
+        setNumNodeGroups(numNodeGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that specifies the number of replica nodes in each node group (shard). Valid values are 0
+     * to 5.
+     * </p>
+     * 
+     * @param replicasPerNodeGroup
+     *        An optional parameter that specifies the number of replica nodes in each node group (shard). Valid values
+     *        are 0 to 5.
+     */
+
+    public void setReplicasPerNodeGroup(Integer replicasPerNodeGroup) {
+        this.replicasPerNodeGroup = replicasPerNodeGroup;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that specifies the number of replica nodes in each node group (shard). Valid values are 0
+     * to 5.
+     * </p>
+     * 
+     * @return An optional parameter that specifies the number of replica nodes in each node group (shard). Valid values
+     *         are 0 to 5.
+     */
+
+    public Integer getReplicasPerNodeGroup() {
+        return this.replicasPerNodeGroup;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that specifies the number of replica nodes in each node group (shard). Valid values are 0
+     * to 5.
+     * </p>
+     * 
+     * @param replicasPerNodeGroup
+     *        An optional parameter that specifies the number of replica nodes in each node group (shard). Valid values
+     *        are 0 to 5.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupRequest withReplicasPerNodeGroup(Integer replicasPerNodeGroup) {
+        setReplicasPerNodeGroup(replicasPerNodeGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of node group (shard) configuration options. Each node group (shard) configuration has the following:
+     * Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.
+     * </p>
+     * <p>
+     * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
+     * use this parameter to configure one node group (shard) or you can omit this parameter.
+     * </p>
+     * 
+     * @return A list of node group (shard) configuration options. Each node group (shard) configuration has the
+     *         following: Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.</p>
+     *         <p>
+     *         If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group,
+     *         you can use this parameter to configure one node group (shard) or you can omit this parameter.
+     */
+
+    public java.util.List<NodeGroupConfiguration> getNodeGroupConfiguration() {
+        if (nodeGroupConfiguration == null) {
+            nodeGroupConfiguration = new com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration>();
+        }
+        return nodeGroupConfiguration;
+    }
+
+    /**
+     * <p>
+     * A list of node group (shard) configuration options. Each node group (shard) configuration has the following:
+     * Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.
+     * </p>
+     * <p>
+     * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
+     * use this parameter to configure one node group (shard) or you can omit this parameter.
+     * </p>
+     * 
+     * @param nodeGroupConfiguration
+     *        A list of node group (shard) configuration options. Each node group (shard) configuration has the
+     *        following: Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.</p>
+     *        <p>
+     *        If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group,
+     *        you can use this parameter to configure one node group (shard) or you can omit this parameter.
+     */
+
+    public void setNodeGroupConfiguration(java.util.Collection<NodeGroupConfiguration> nodeGroupConfiguration) {
+        if (nodeGroupConfiguration == null) {
+            this.nodeGroupConfiguration = null;
+            return;
+        }
+
+        this.nodeGroupConfiguration = new com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration>(nodeGroupConfiguration);
+    }
+
+    /**
+     * <p>
+     * A list of node group (shard) configuration options. Each node group (shard) configuration has the following:
+     * Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.
+     * </p>
+     * <p>
+     * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
+     * use this parameter to configure one node group (shard) or you can omit this parameter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNodeGroupConfiguration(java.util.Collection)} or
+     * {@link #withNodeGroupConfiguration(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param nodeGroupConfiguration
+     *        A list of node group (shard) configuration options. Each node group (shard) configuration has the
+     *        following: Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.</p>
+     *        <p>
+     *        If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group,
+     *        you can use this parameter to configure one node group (shard) or you can omit this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupRequest withNodeGroupConfiguration(NodeGroupConfiguration... nodeGroupConfiguration) {
+        if (this.nodeGroupConfiguration == null) {
+            setNodeGroupConfiguration(new com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration>(nodeGroupConfiguration.length));
+        }
+        for (NodeGroupConfiguration ele : nodeGroupConfiguration) {
+            this.nodeGroupConfiguration.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of node group (shard) configuration options. Each node group (shard) configuration has the following:
+     * Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.
+     * </p>
+     * <p>
+     * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
+     * use this parameter to configure one node group (shard) or you can omit this parameter.
+     * </p>
+     * 
+     * @param nodeGroupConfiguration
+     *        A list of node group (shard) configuration options. Each node group (shard) configuration has the
+     *        following: Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.</p>
+     *        <p>
+     *        If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group,
+     *        you can use this parameter to configure one node group (shard) or you can omit this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupRequest withNodeGroupConfiguration(java.util.Collection<NodeGroupConfiguration> nodeGroupConfiguration) {
+        setNodeGroupConfiguration(nodeGroupConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The compute and memory capacity of the nodes in the node group (shard).
      * </p>
      * <p>
      * Valid node types are as follows:
@@ -1240,7 +1608,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -1281,31 +1650,33 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
      * @param cacheNodeType
-     *        The compute and memory capacity of the nodes in the node group.</p>
+     *        The compute and memory capacity of the nodes in the node group (shard).</p>
      *        <p>
      *        Valid node types are as follows:
      *        </p>
@@ -1318,7 +1689,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     *        <code>cache.m3.2xlarge</code>
+     *        <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *        <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1360,27 +1732,28 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     *        All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis backup/restore is not supported for t2 instances.
+     *        Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
+     *        Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     *        Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of cache node types and specifications, see <a
+     *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     *        either <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Redis</a>.
      */
 
@@ -1390,7 +1763,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The compute and memory capacity of the nodes in the node group.
+     * The compute and memory capacity of the nodes in the node group (shard).
      * </p>
      * <p>
      * Valid node types are as follows:
@@ -1405,7 +1778,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -1446,30 +1820,32 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
-     * @return The compute and memory capacity of the nodes in the node group.</p>
+     * @return The compute and memory capacity of the nodes in the node group (shard).</p>
      *         <p>
      *         Valid node types are as follows:
      *         </p>
@@ -1483,7 +1859,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      *         <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>,
+     *         <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
+     *         <code>cache.m4.10xlarge</code>
      *         </p>
      *         </li>
      *         <li>
@@ -1525,27 +1903,28 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     *         All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Redis backup/restore is not supported for t2 instances.
+     *         Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
+     *         Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     *         Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For a complete listing of cache node types and specifications, see <a
+     *         For a complete listing of node types and specifications, see <a
      *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *         <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     *         either <a href=
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      *         >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      *         >Cache Node Type-Specific Parameters for Redis</a>.
      */
 
@@ -1555,7 +1934,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The compute and memory capacity of the nodes in the node group.
+     * The compute and memory capacity of the nodes in the node group (shard).
      * </p>
      * <p>
      * Valid node types are as follows:
@@ -1570,7 +1949,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
      * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>
+     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
@@ -1611,31 +1991,33 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for t2 instances.
+     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
+     * supported on Redis (cluster mode enabled) T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of cache node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     * For a complete listing of node types and specifications, see <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
      * @param cacheNodeType
-     *        The compute and memory capacity of the nodes in the node group.</p>
+     *        The compute and memory capacity of the nodes in the node group (shard).</p>
      *        <p>
      *        Valid node types are as follows:
      *        </p>
@@ -1648,7 +2030,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     *        <code>cache.m3.2xlarge</code>
+     *        <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *        <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1690,27 +2073,28 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+     *        All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis backup/restore is not supported for t2 instances.
+     *        Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
+     *        Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+     *        Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of cache node types and specifications, see <a
+     *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific"
+     *        either <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific"
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
      *        >Cache Node Type-Specific Parameters for Redis</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1724,14 +2108,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the cache engine to be used for the cache clusters in this replication group.
      * </p>
-     * <p>
-     * Default: redis
-     * </p>
      * 
      * @param engine
-     *        The name of the cache engine to be used for the cache clusters in this replication group.</p>
-     *        <p>
-     *        Default: redis
+     *        The name of the cache engine to be used for the cache clusters in this replication group.
      */
 
     public void setEngine(String engine) {
@@ -1742,13 +2121,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the cache engine to be used for the cache clusters in this replication group.
      * </p>
-     * <p>
-     * Default: redis
-     * </p>
      * 
-     * @return The name of the cache engine to be used for the cache clusters in this replication group.</p>
-     *         <p>
-     *         Default: redis
+     * @return The name of the cache engine to be used for the cache clusters in this replication group.
      */
 
     public String getEngine() {
@@ -1759,14 +2133,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the cache engine to be used for the cache clusters in this replication group.
      * </p>
-     * <p>
-     * Default: redis
-     * </p>
      * 
      * @param engine
-     *        The name of the cache engine to be used for the cache clusters in this replication group.</p>
-     *        <p>
-     *        Default: redis
+     *        The name of the cache engine to be used for the cache clusters in this replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1778,7 +2147,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The version number of the cache engine to be used for the cache clusters in this replication group. To view the
-     * supported cache engine versions, use the <i>DescribeCacheEngineVersions</i> action.
+     * supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
@@ -1790,7 +2159,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param engineVersion
      *        The version number of the cache engine to be used for the cache clusters in this replication group. To
-     *        view the supported cache engine versions, use the <i>DescribeCacheEngineVersions</i> action.</p>
+     *        view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
      *        <p>
      *        <b>Important:</b> You can upgrade to a newer engine version (see <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
@@ -1806,7 +2175,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The version number of the cache engine to be used for the cache clusters in this replication group. To view the
-     * supported cache engine versions, use the <i>DescribeCacheEngineVersions</i> action.
+     * supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
@@ -1817,7 +2186,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @return The version number of the cache engine to be used for the cache clusters in this replication group. To
-     *         view the supported cache engine versions, use the <i>DescribeCacheEngineVersions</i> action.</p>
+     *         view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
      *         <p>
      *         <b>Important:</b> You can upgrade to a newer engine version (see <a href=
      *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
@@ -1833,7 +2202,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The version number of the cache engine to be used for the cache clusters in this replication group. To view the
-     * supported cache engine versions, use the <i>DescribeCacheEngineVersions</i> action.
+     * supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
@@ -1845,7 +2214,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param engineVersion
      *        The version number of the cache engine to be used for the cache clusters in this replication group. To
-     *        view the supported cache engine versions, use the <i>DescribeCacheEngineVersions</i> action.</p>
+     *        view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
      *        <p>
      *        <b>Important:</b> You can upgrade to a newer engine version (see <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
@@ -1865,10 +2234,45 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The name of the parameter group to associate with this replication group. If this argument is omitted, the
      * default cache parameter group for the specified engine is used.
      * </p>
+     * <p>
+     * If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter
+     * group, we recommend that you specify the parameter group by name.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a Redis (cluster mode disabled) replication group, use
+     * <code>CacheParameterGroupName=default.redis3.2</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a Redis (cluster mode enabled) replication group, use
+     * <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cacheParameterGroupName
      *        The name of the parameter group to associate with this replication group. If this argument is omitted, the
-     *        default cache parameter group for the specified engine is used.
+     *        default cache parameter group for the specified engine is used.</p>
+     *        <p>
+     *        If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default
+     *        parameter group, we recommend that you specify the parameter group by name.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To create a Redis (cluster mode disabled) replication group, use
+     *        <code>CacheParameterGroupName=default.redis3.2</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a Redis (cluster mode enabled) replication group, use
+     *        <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setCacheParameterGroupName(String cacheParameterGroupName) {
@@ -1880,9 +2284,44 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The name of the parameter group to associate with this replication group. If this argument is omitted, the
      * default cache parameter group for the specified engine is used.
      * </p>
+     * <p>
+     * If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter
+     * group, we recommend that you specify the parameter group by name.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a Redis (cluster mode disabled) replication group, use
+     * <code>CacheParameterGroupName=default.redis3.2</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a Redis (cluster mode enabled) replication group, use
+     * <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The name of the parameter group to associate with this replication group. If this argument is omitted,
-     *         the default cache parameter group for the specified engine is used.
+     *         the default cache parameter group for the specified engine is used.</p>
+     *         <p>
+     *         If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default
+     *         parameter group, we recommend that you specify the parameter group by name.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To create a Redis (cluster mode disabled) replication group, use
+     *         <code>CacheParameterGroupName=default.redis3.2</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create a Redis (cluster mode enabled) replication group, use
+     *         <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getCacheParameterGroupName() {
@@ -1894,10 +2333,45 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The name of the parameter group to associate with this replication group. If this argument is omitted, the
      * default cache parameter group for the specified engine is used.
      * </p>
+     * <p>
+     * If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter
+     * group, we recommend that you specify the parameter group by name.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a Redis (cluster mode disabled) replication group, use
+     * <code>CacheParameterGroupName=default.redis3.2</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a Redis (cluster mode enabled) replication group, use
+     * <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cacheParameterGroupName
      *        The name of the parameter group to associate with this replication group. If this argument is omitted, the
-     *        default cache parameter group for the specified engine is used.
+     *        default cache parameter group for the specified engine is used.</p>
+     *        <p>
+     *        If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default
+     *        parameter group, we recommend that you specify the parameter group by name.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To create a Redis (cluster mode disabled) replication group, use
+     *        <code>CacheParameterGroupName=default.redis3.2</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a Redis (cluster mode enabled) replication group, use
+     *        <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1910,9 +2384,23 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the cache subnet group to be used for the replication group.
      * </p>
+     * <important>
+     * <p>
+     * If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start
+     * creating a cluster. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     * Groups</a>.
+     * </p>
+     * </important>
      * 
      * @param cacheSubnetGroupName
-     *        The name of the cache subnet group to be used for the replication group.
+     *        The name of the cache subnet group to be used for the replication group.</p> <important>
+     *        <p>
+     *        If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you
+     *        start creating a cluster. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     *        Groups</a>.
+     *        </p>
      */
 
     public void setCacheSubnetGroupName(String cacheSubnetGroupName) {
@@ -1923,8 +2411,22 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the cache subnet group to be used for the replication group.
      * </p>
+     * <important>
+     * <p>
+     * If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start
+     * creating a cluster. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     * Groups</a>.
+     * </p>
+     * </important>
      * 
-     * @return The name of the cache subnet group to be used for the replication group.
+     * @return The name of the cache subnet group to be used for the replication group.</p> <important>
+     *         <p>
+     *         If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you
+     *         start creating a cluster. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     *         Groups</a>.
+     *         </p>
      */
 
     public String getCacheSubnetGroupName() {
@@ -1935,9 +2437,23 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the cache subnet group to be used for the replication group.
      * </p>
+     * <important>
+     * <p>
+     * If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start
+     * creating a cluster. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     * Groups</a>.
+     * </p>
+     * </important>
      * 
      * @param cacheSubnetGroupName
-     *        The name of the cache subnet group to be used for the replication group.
+     *        The name of the cache subnet group to be used for the replication group.</p> <important>
+     *        <p>
+     *        If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you
+     *        start creating a cluster. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     *        Groups</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2024,13 +2540,14 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * One or more Amazon VPC security groups associated with this replication group.
      * </p>
      * <p>
-     * Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (VPC).
+     * Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon
+     * VPC).
      * </p>
      * 
      * @return One or more Amazon VPC security groups associated with this replication group.</p>
      *         <p>
      *         Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud
-     *         (VPC).
+     *         (Amazon VPC).
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -2045,14 +2562,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * One or more Amazon VPC security groups associated with this replication group.
      * </p>
      * <p>
-     * Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (VPC).
+     * Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon
+     * VPC).
      * </p>
      * 
      * @param securityGroupIds
      *        One or more Amazon VPC security groups associated with this replication group.</p>
      *        <p>
      *        Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud
-     *        (VPC).
+     *        (Amazon VPC).
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -2069,7 +2587,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * One or more Amazon VPC security groups associated with this replication group.
      * </p>
      * <p>
-     * Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (VPC).
+     * Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon
+     * VPC).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2081,7 +2600,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        One or more Amazon VPC security groups associated with this replication group.</p>
      *        <p>
      *        Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud
-     *        (VPC).
+     *        (Amazon VPC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2100,14 +2619,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * One or more Amazon VPC security groups associated with this replication group.
      * </p>
      * <p>
-     * Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (VPC).
+     * Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon
+     * VPC).
      * </p>
      * 
      * @param securityGroupIds
      *        One or more Amazon VPC security groups associated with this replication group.</p>
      *        <p>
      *        Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud
-     *        (VPC).
+     *        (Amazon VPC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2199,9 +2719,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB
-     * snapshot file stored in Amazon S3. The snapshot file will be used to populate the node group. The Amazon S3
-     * object name in the ARN cannot contain any commas.
+     * A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3.
+     * The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN cannot
+     * contain any commas. The list must match the number of node groups (shards) in the replication group, which means
+     * you cannot repartition.
      * </p>
      * <note>
      * <p>
@@ -2212,9 +2733,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      * </p>
      * 
-     * @return A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis
-     *         RDB snapshot file stored in Amazon S3. The snapshot file will be used to populate the node group. The
-     *         Amazon S3 object name in the ARN cannot contain any commas.</p> <note>
+     * @return A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in
+     *         Amazon S3. The snapshot files are used to populate the replication group. The Amazon S3 object name in
+     *         the ARN cannot contain any commas. The list must match the number of node groups (shards) in the
+     *         replication group, which means you cannot repartition.</p> <note>
      *         <p>
      *         This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *         </p>
@@ -2232,9 +2754,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB
-     * snapshot file stored in Amazon S3. The snapshot file will be used to populate the node group. The Amazon S3
-     * object name in the ARN cannot contain any commas.
+     * A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3.
+     * The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN cannot
+     * contain any commas. The list must match the number of node groups (shards) in the replication group, which means
+     * you cannot repartition.
      * </p>
      * <note>
      * <p>
@@ -2246,9 +2769,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param snapshotArns
-     *        A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB
-     *        snapshot file stored in Amazon S3. The snapshot file will be used to populate the node group. The Amazon
-     *        S3 object name in the ARN cannot contain any commas.</p> <note>
+     *        A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon
+     *        S3. The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN
+     *        cannot contain any commas. The list must match the number of node groups (shards) in the replication
+     *        group, which means you cannot repartition.</p> <note>
      *        <p>
      *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *        </p>
@@ -2268,9 +2792,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB
-     * snapshot file stored in Amazon S3. The snapshot file will be used to populate the node group. The Amazon S3
-     * object name in the ARN cannot contain any commas.
+     * A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3.
+     * The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN cannot
+     * contain any commas. The list must match the number of node groups (shards) in the replication group, which means
+     * you cannot repartition.
      * </p>
      * <note>
      * <p>
@@ -2287,9 +2812,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param snapshotArns
-     *        A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB
-     *        snapshot file stored in Amazon S3. The snapshot file will be used to populate the node group. The Amazon
-     *        S3 object name in the ARN cannot contain any commas.</p> <note>
+     *        A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon
+     *        S3. The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN
+     *        cannot contain any commas. The list must match the number of node groups (shards) in the replication
+     *        group, which means you cannot repartition.</p> <note>
      *        <p>
      *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *        </p>
@@ -2311,9 +2837,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB
-     * snapshot file stored in Amazon S3. The snapshot file will be used to populate the node group. The Amazon S3
-     * object name in the ARN cannot contain any commas.
+     * A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3.
+     * The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN cannot
+     * contain any commas. The list must match the number of node groups (shards) in the replication group, which means
+     * you cannot repartition.
      * </p>
      * <note>
      * <p>
@@ -2325,9 +2852,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param snapshotArns
-     *        A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB
-     *        snapshot file stored in Amazon S3. The snapshot file will be used to populate the node group. The Amazon
-     *        S3 object name in the ARN cannot contain any commas.</p> <note>
+     *        A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon
+     *        S3. The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN
+     *        cannot contain any commas. The list must match the number of node groups (shards) in the replication
+     *        group, which means you cannot repartition.</p> <note>
      *        <p>
      *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *        </p>
@@ -2344,8 +2872,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of a snapshot from which to restore data into the new node group. The snapshot status changes to
-     * <code>restoring</code> while the new node group is being created.
+     * The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to
+     * <code>restoring</code> while the new replication group is being created.
      * </p>
      * <note>
      * <p>
@@ -2354,8 +2882,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @param snapshotName
-     *        The name of a snapshot from which to restore data into the new node group. The snapshot status changes to
-     *        <code>restoring</code> while the new node group is being created.</p> <note>
+     *        The name of a snapshot from which to restore data into the new replication group. The snapshot status
+     *        changes to <code>restoring</code> while the new replication group is being created.</p> <note>
      *        <p>
      *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *        </p>
@@ -2367,8 +2895,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of a snapshot from which to restore data into the new node group. The snapshot status changes to
-     * <code>restoring</code> while the new node group is being created.
+     * The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to
+     * <code>restoring</code> while the new replication group is being created.
      * </p>
      * <note>
      * <p>
@@ -2376,8 +2904,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * 
-     * @return The name of a snapshot from which to restore data into the new node group. The snapshot status changes to
-     *         <code>restoring</code> while the new node group is being created.</p> <note>
+     * @return The name of a snapshot from which to restore data into the new replication group. The snapshot status
+     *         changes to <code>restoring</code> while the new replication group is being created.</p> <note>
      *         <p>
      *         This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *         </p>
@@ -2389,8 +2917,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of a snapshot from which to restore data into the new node group. The snapshot status changes to
-     * <code>restoring</code> while the new node group is being created.
+     * The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to
+     * <code>restoring</code> while the new replication group is being created.
      * </p>
      * <note>
      * <p>
@@ -2399,8 +2927,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @param snapshotName
-     *        The name of a snapshot from which to restore data into the new node group. The snapshot status changes to
-     *        <code>restoring</code> while the new node group is being created.</p> <note>
+     *        The name of a snapshot from which to restore data into the new replication group. The snapshot status
+     *        changes to <code>restoring</code> while the new replication group is being created.</p> <note>
      *        <p>
      *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *        </p>
@@ -2417,6 +2945,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
      * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
      * period. Valid values for <code>ddd</code> are:
+     * </p>
+     * <p>
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -2456,13 +2991,21 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @param preferredMaintenanceWindow
      *        Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
      *        specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
      *        is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     *        <p>
+     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period.
+     *        </p>
+     *        <p>
+     *        Valid values for <code>ddd</code> are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2501,7 +3044,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        </ul>
      *        <p>
-     *        Example: <code>sun:05:00-sun:09:00</code>
+     *        Example: <code>sun:23:00-mon:01:30</code>
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -2513,6 +3056,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
      * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
      * period. Valid values for <code>ddd</code> are:
+     * </p>
+     * <p>
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -2552,12 +3102,20 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @return Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
      *         specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
      *         window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     *         <p>
+     *         Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
+     *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
+     *         minute period.
+     *         </p>
+     *         <p>
+     *         Valid values for <code>ddd</code> are:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -2596,7 +3154,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         </ul>
      *         <p>
-     *         Example: <code>sun:05:00-sun:09:00</code>
+     *         Example: <code>sun:23:00-mon:01:30</code>
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -2608,6 +3166,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
      * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
      * period. Valid values for <code>ddd</code> are:
+     * </p>
+     * <p>
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -2647,13 +3212,21 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @param preferredMaintenanceWindow
      *        Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
      *        specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
      *        is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     *        <p>
+     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period.
+     *        </p>
+     *        <p>
+     *        Valid values for <code>ddd</code> are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2692,7 +3265,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        </ul>
      *        <p>
-     *        Example: <code>sun:05:00-sun:09:00</code>
+     *        Example: <code>sun:23:00-mon:01:30</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2703,11 +3276,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The port number on which each member of the replication group will accept connections.
+     * The port number on which each member of the replication group accepts connections.
      * </p>
      * 
      * @param port
-     *        The port number on which each member of the replication group will accept connections.
+     *        The port number on which each member of the replication group accepts connections.
      */
 
     public void setPort(Integer port) {
@@ -2716,10 +3289,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The port number on which each member of the replication group will accept connections.
+     * The port number on which each member of the replication group accepts connections.
      * </p>
      * 
-     * @return The port number on which each member of the replication group will accept connections.
+     * @return The port number on which each member of the replication group accepts connections.
      */
 
     public Integer getPort() {
@@ -2728,11 +3301,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The port number on which each member of the replication group will accept connections.
+     * The port number on which each member of the replication group accepts connections.
      * </p>
      * 
      * @param port
-     *        The port number on which each member of the replication group will accept connections.
+     *        The port number on which each member of the replication group accepts connections.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2743,8 +3316,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications will
-     * be sent.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are
+     * sent.
      * </p>
      * <note>
      * <p>
@@ -2754,7 +3327,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param notificationTopicArn
      *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which
-     *        notifications will be sent.</p> <note>
+     *        notifications are sent.</p> <note>
      *        <p>
      *        The Amazon SNS topic owner must be the same as the cache cluster owner.
      *        </p>
@@ -2766,8 +3339,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications will
-     * be sent.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are
+     * sent.
      * </p>
      * <note>
      * <p>
@@ -2776,7 +3349,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which
-     *         notifications will be sent.</p> <note>
+     *         notifications are sent.</p> <note>
      *         <p>
      *         The Amazon SNS topic owner must be the same as the cache cluster owner.
      *         </p>
@@ -2788,8 +3361,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications will
-     * be sent.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are
+     * sent.
      * </p>
      * <note>
      * <p>
@@ -2799,7 +3372,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param notificationTopicArn
      *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which
-     *        notifications will be sent.</p> <note>
+     *        notifications are sent.</p> <note>
      *        <p>
      *        The Amazon SNS topic owner must be the same as the cache cluster owner.
      *        </p>
@@ -2865,9 +3438,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of days for which ElastiCache will retain automatic snapshots before deleting them. For example, if
-     * you set <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken today will be retained for 5
-     * days before being deleted.
+     * The number of days for which ElastiCache retains automatic snapshots before deleting them. For example, if you
+     * set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being
+     * deleted.
      * </p>
      * <note>
      * <p>
@@ -2879,9 +3452,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param snapshotRetentionLimit
-     *        The number of days for which ElastiCache will retain automatic snapshots before deleting them. For
-     *        example, if you set <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken today will be
-     *        retained for 5 days before being deleted.</p> <note>
+     *        The number of days for which ElastiCache retains automatic snapshots before deleting them. For example, if
+     *        you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
+     *        before being deleted.</p> <note>
      *        <p>
      *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *        </p>
@@ -2896,9 +3469,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of days for which ElastiCache will retain automatic snapshots before deleting them. For example, if
-     * you set <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken today will be retained for 5
-     * days before being deleted.
+     * The number of days for which ElastiCache retains automatic snapshots before deleting them. For example, if you
+     * set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being
+     * deleted.
      * </p>
      * <note>
      * <p>
@@ -2909,9 +3482,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
      * 
-     * @return The number of days for which ElastiCache will retain automatic snapshots before deleting them. For
-     *         example, if you set <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken today will
-     *         be retained for 5 days before being deleted.</p> <note>
+     * @return The number of days for which ElastiCache retains automatic snapshots before deleting them. For example,
+     *         if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     *         days before being deleted.</p> <note>
      *         <p>
      *         This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *         </p>
@@ -2926,9 +3499,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of days for which ElastiCache will retain automatic snapshots before deleting them. For example, if
-     * you set <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken today will be retained for 5
-     * days before being deleted.
+     * The number of days for which ElastiCache retains automatic snapshots before deleting them. For example, if you
+     * set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being
+     * deleted.
      * </p>
      * <note>
      * <p>
@@ -2940,9 +3513,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param snapshotRetentionLimit
-     *        The number of days for which ElastiCache will retain automatic snapshots before deleting them. For
-     *        example, if you set <code>SnapshotRetentionLimit</code> to 5, then a snapshot that was taken today will be
-     *        retained for 5 days before being deleted.</p> <note>
+     *        The number of days for which ElastiCache retains automatic snapshots before deleting them. For example, if
+     *        you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
+     *        before being deleted.</p> <note>
      *        <p>
      *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *        </p>
@@ -2959,13 +3532,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your node group.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).
      * </p>
      * <p>
      * Example: <code>05:00-09:00</code>
      * </p>
      * <p>
-     * If you do not specify this parameter, then ElastiCache will automatically choose an appropriate time range.
+     * If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
      * </p>
      * <note>
      * <p>
@@ -2974,14 +3547,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @param snapshotWindow
-     *        The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your node
-     *        group.</p>
+     *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group
+     *        (shard).</p>
      *        <p>
      *        Example: <code>05:00-09:00</code>
      *        </p>
      *        <p>
-     *        If you do not specify this parameter, then ElastiCache will automatically choose an appropriate time
-     *        range.
+     *        If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
      *        </p>
      *        <note>
      *        <p>
@@ -2995,13 +3567,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your node group.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).
      * </p>
      * <p>
      * Example: <code>05:00-09:00</code>
      * </p>
      * <p>
-     * If you do not specify this parameter, then ElastiCache will automatically choose an appropriate time range.
+     * If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
      * </p>
      * <note>
      * <p>
@@ -3009,14 +3581,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * 
-     * @return The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your node
-     *         group.</p>
+     * @return The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group
+     *         (shard).</p>
      *         <p>
      *         Example: <code>05:00-09:00</code>
      *         </p>
      *         <p>
-     *         If you do not specify this parameter, then ElastiCache will automatically choose an appropriate time
-     *         range.
+     *         If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
      *         </p>
      *         <note>
      *         <p>
@@ -3030,13 +3601,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your node group.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).
      * </p>
      * <p>
      * Example: <code>05:00-09:00</code>
      * </p>
      * <p>
-     * If you do not specify this parameter, then ElastiCache will automatically choose an appropriate time range.
+     * If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
      * </p>
      * <note>
      * <p>
@@ -3045,14 +3616,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @param snapshotWindow
-     *        The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your node
-     *        group.</p>
+     *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group
+     *        (shard).</p>
      *        <p>
      *        Example: <code>05:00-09:00</code>
      *        </p>
      *        <p>
-     *        If you do not specify this parameter, then ElastiCache will automatically choose an appropriate time
-     *        range.
+     *        If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
      *        </p>
      *        <note>
      *        <p>
@@ -3089,6 +3659,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("NumCacheClusters: " + getNumCacheClusters() + ",");
         if (getPreferredCacheClusterAZs() != null)
             sb.append("PreferredCacheClusterAZs: " + getPreferredCacheClusterAZs() + ",");
+        if (getNumNodeGroups() != null)
+            sb.append("NumNodeGroups: " + getNumNodeGroups() + ",");
+        if (getReplicasPerNodeGroup() != null)
+            sb.append("ReplicasPerNodeGroup: " + getReplicasPerNodeGroup() + ",");
+        if (getNodeGroupConfiguration() != null)
+            sb.append("NodeGroupConfiguration: " + getNodeGroupConfiguration() + ",");
         if (getCacheNodeType() != null)
             sb.append("CacheNodeType: " + getCacheNodeType() + ",");
         if (getEngine() != null)
@@ -3158,6 +3734,18 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getPreferredCacheClusterAZs() == null ^ this.getPreferredCacheClusterAZs() == null)
             return false;
         if (other.getPreferredCacheClusterAZs() != null && other.getPreferredCacheClusterAZs().equals(this.getPreferredCacheClusterAZs()) == false)
+            return false;
+        if (other.getNumNodeGroups() == null ^ this.getNumNodeGroups() == null)
+            return false;
+        if (other.getNumNodeGroups() != null && other.getNumNodeGroups().equals(this.getNumNodeGroups()) == false)
+            return false;
+        if (other.getReplicasPerNodeGroup() == null ^ this.getReplicasPerNodeGroup() == null)
+            return false;
+        if (other.getReplicasPerNodeGroup() != null && other.getReplicasPerNodeGroup().equals(this.getReplicasPerNodeGroup()) == false)
+            return false;
+        if (other.getNodeGroupConfiguration() == null ^ this.getNodeGroupConfiguration() == null)
+            return false;
+        if (other.getNodeGroupConfiguration() != null && other.getNodeGroupConfiguration().equals(this.getNodeGroupConfiguration()) == false)
             return false;
         if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null)
             return false;
@@ -3237,6 +3825,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getAutomaticFailoverEnabled() == null) ? 0 : getAutomaticFailoverEnabled().hashCode());
         hashCode = prime * hashCode + ((getNumCacheClusters() == null) ? 0 : getNumCacheClusters().hashCode());
         hashCode = prime * hashCode + ((getPreferredCacheClusterAZs() == null) ? 0 : getPreferredCacheClusterAZs().hashCode());
+        hashCode = prime * hashCode + ((getNumNodeGroups() == null) ? 0 : getNumNodeGroups().hashCode());
+        hashCode = prime * hashCode + ((getReplicasPerNodeGroup() == null) ? 0 : getReplicasPerNodeGroup().hashCode());
+        hashCode = prime * hashCode + ((getNodeGroupConfiguration() == null) ? 0 : getNodeGroupConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode());
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());

@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The input parameters for the <i>ListTagsForResource</i> action.
+ * The input parameters for the <code>ListTagsForResource</code> operation.
  * </p>
  */
 public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -29,7 +29,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
      * </p>
      * <p>
-     * For more information on ARNs, go to <a
+     * For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a>.
      * </p>
@@ -43,7 +43,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
      * </p>
      * <p>
-     * For more information on ARNs, go to <a
+     * For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a>.
      * </p>
@@ -53,7 +53,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      *        <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      *        <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      *        <p>
-     *        For more information on ARNs, go to <a
+     *        For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      */
@@ -69,7 +69,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
      * </p>
      * <p>
-     * For more information on ARNs, go to <a
+     * For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a>.
      * </p>
@@ -78,7 +78,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      *         <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      *         <p>
-     *         For more information on ARNs, go to <a
+     *         For more information about ARNs, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a>.
      */
@@ -94,7 +94,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
      * </p>
      * <p>
-     * For more information on ARNs, go to <a
+     * For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a>.
      * </p>
@@ -104,7 +104,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      *        <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      *        <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      *        <p>
-     *        For more information on ARNs, go to <a
+     *        For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

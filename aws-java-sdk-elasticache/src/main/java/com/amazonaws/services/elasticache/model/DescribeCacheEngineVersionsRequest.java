@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>DescribeCacheEngineVersions</i> action.
+ * Represents the input of a <code>DescribeCacheEngineVersions</code> operation.
  * </p>
  */
 public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -40,6 +40,10 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The name of a specific cache parameter group family to return details for.
+     * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
      * </p>
      * <p>
      * Constraints:
@@ -79,15 +83,15 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
     private Integer maxRecords;
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * If <i>true</i>, specifies that only the default version of the specified engine or engine and major version
+     * If <code>true</code>, specifies that only the default version of the specified engine or engine and major version
      * combination is to be returned.
      * </p>
      */
@@ -193,6 +197,10 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * The name of a specific cache parameter group family to return details for.
      * </p>
      * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
+     * </p>
+     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -215,6 +223,10 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * 
      * @param cacheParameterGroupFamily
      *        The name of a specific cache parameter group family to return details for.</p>
+     *        <p>
+     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *        <code>redis3.2</code>
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -245,6 +257,10 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * The name of a specific cache parameter group family to return details for.
      * </p>
      * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
+     * </p>
+     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -266,6 +282,10 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * 
      * @return The name of a specific cache parameter group family to return details for.</p>
+     *         <p>
+     *         Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *         <code>redis3.2</code>
+     *         </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -296,6 +316,10 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * The name of a specific cache parameter group family to return details for.
      * </p>
      * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
+     * </p>
+     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -318,6 +342,10 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * 
      * @param cacheParameterGroupFamily
      *        The name of a specific cache parameter group family to return details for.</p>
+     *        <p>
+     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *        <code>redis3.2</code>
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -432,15 +460,15 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
      *        An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *        value specified by <i>MaxRecords</i>.
+     *        operation. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -449,14 +477,14 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @return An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *         action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *         value specified by <i>MaxRecords</i>.
+     *         operation. If this parameter is specified, the response includes only records beyond the marker, up to
+     *         the value specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -465,15 +493,15 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
      *        An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *        value specified by <i>MaxRecords</i>.
+     *        operation. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <code>MaxRecords</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,12 +512,12 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If <i>true</i>, specifies that only the default version of the specified engine or engine and major version
+     * If <code>true</code>, specifies that only the default version of the specified engine or engine and major version
      * combination is to be returned.
      * </p>
      * 
      * @param defaultOnly
-     *        If <i>true</i>, specifies that only the default version of the specified engine or engine and major
+     *        If <code>true</code>, specifies that only the default version of the specified engine or engine and major
      *        version combination is to be returned.
      */
 
@@ -499,11 +527,11 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If <i>true</i>, specifies that only the default version of the specified engine or engine and major version
+     * If <code>true</code>, specifies that only the default version of the specified engine or engine and major version
      * combination is to be returned.
      * </p>
      * 
-     * @return If <i>true</i>, specifies that only the default version of the specified engine or engine and major
+     * @return If <code>true</code>, specifies that only the default version of the specified engine or engine and major
      *         version combination is to be returned.
      */
 
@@ -513,12 +541,12 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If <i>true</i>, specifies that only the default version of the specified engine or engine and major version
+     * If <code>true</code>, specifies that only the default version of the specified engine or engine and major version
      * combination is to be returned.
      * </p>
      * 
      * @param defaultOnly
-     *        If <i>true</i>, specifies that only the default version of the specified engine or engine and major
+     *        If <code>true</code>, specifies that only the default version of the specified engine or engine and major
      *        version combination is to be returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -530,11 +558,11 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If <i>true</i>, specifies that only the default version of the specified engine or engine and major version
+     * If <code>true</code>, specifies that only the default version of the specified engine or engine and major version
      * combination is to be returned.
      * </p>
      * 
-     * @return If <i>true</i>, specifies that only the default version of the specified engine or engine and major
+     * @return If <code>true</code>, specifies that only the default version of the specified engine or engine and major
      *         version combination is to be returned.
      */
 

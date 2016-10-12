@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>DeleteCacheCluster</i> action.
+ * Represents the input of a <code>DeleteCacheCluster</code> operation.
  * </p>
  */
 public class DeleteCacheClusterRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {

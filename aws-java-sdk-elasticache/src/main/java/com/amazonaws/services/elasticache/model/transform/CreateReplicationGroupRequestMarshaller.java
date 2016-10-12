@@ -76,6 +76,54 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             }
         }
 
+        if (createReplicationGroupRequest.getNumNodeGroups() != null) {
+            request.addParameter("NumNodeGroups", StringUtils.fromInteger(createReplicationGroupRequest.getNumNodeGroups()));
+        }
+
+        if (createReplicationGroupRequest.getReplicasPerNodeGroup() != null) {
+            request.addParameter("ReplicasPerNodeGroup", StringUtils.fromInteger(createReplicationGroupRequest.getReplicasPerNodeGroup()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration> nodeGroupConfigurationList = (com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration>) createReplicationGroupRequest
+                .getNodeGroupConfiguration();
+        if (!nodeGroupConfigurationList.isEmpty() || !nodeGroupConfigurationList.isAutoConstruct()) {
+            int nodeGroupConfigurationListIndex = 1;
+
+            for (NodeGroupConfiguration nodeGroupConfigurationListValue : nodeGroupConfigurationList) {
+
+                if (nodeGroupConfigurationListValue.getSlots() != null) {
+                    request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".Slots",
+                            StringUtils.fromString(nodeGroupConfigurationListValue.getSlots()));
+                }
+
+                if (nodeGroupConfigurationListValue.getReplicaCount() != null) {
+                    request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".ReplicaCount",
+                            StringUtils.fromInteger(nodeGroupConfigurationListValue.getReplicaCount()));
+                }
+
+                if (nodeGroupConfigurationListValue.getPrimaryAvailabilityZone() != null) {
+                    request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".PrimaryAvailabilityZone",
+                            StringUtils.fromString(nodeGroupConfigurationListValue.getPrimaryAvailabilityZone()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<String> replicaAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue
+                        .getReplicaAvailabilityZones();
+                if (!replicaAvailabilityZonesList.isEmpty() || !replicaAvailabilityZonesList.isAutoConstruct()) {
+                    int replicaAvailabilityZonesListIndex = 1;
+
+                    for (String replicaAvailabilityZonesListValue : replicaAvailabilityZonesList) {
+                        if (replicaAvailabilityZonesListValue != null) {
+                            request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex
+                                    + ".ReplicaAvailabilityZones.AvailabilityZone." + replicaAvailabilityZonesListIndex,
+                                    StringUtils.fromString(replicaAvailabilityZonesListValue));
+                        }
+                        replicaAvailabilityZonesListIndex++;
+                    }
+                }
+                nodeGroupConfigurationListIndex++;
+            }
+        }
+
         if (createReplicationGroupRequest.getCacheNodeType() != null) {
             request.addParameter("CacheNodeType", StringUtils.fromString(createReplicationGroupRequest.getCacheNodeType()));
         }

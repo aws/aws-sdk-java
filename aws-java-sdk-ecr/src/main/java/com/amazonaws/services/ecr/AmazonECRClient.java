@@ -90,6 +90,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                     new JsonErrorShapeMetadata().withErrorCode("EmptyUploadException").withModeledClass(
                             com.amazonaws.services.ecr.model.EmptyUploadException.class))
             .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("ImageNotFoundException").withModeledClass(
+                            com.amazonaws.services.ecr.model.ImageNotFoundException.class))
+            .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("LayersNotFoundException").withModeledClass(
                             com.amazonaws.services.ecr.model.LayersNotFoundException.class))
             .addErrorMetadata(
@@ -629,6 +632,61 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
             HttpResponseHandler<AmazonWebServiceResponse<DeleteRepositoryPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteRepositoryPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns metadata about the images in a repository, including image size and creation date.
+     * </p>
+     * <note>
+     * <p>
+     * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
+     * registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may
+     * return a larger image size than the image sizes returned by <a>DescribeImages</a>.
+     * </p>
+     * </note>
+     * 
+     * @param describeImagesRequest
+     * @return Result of the DescribeImages operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws ImageNotFoundException
+     *         The image requested does not exist in the specified repository.
+     * @sample AmazonECR.DescribeImages
+     */
+    @Override
+    public DescribeImagesResult describeImages(DescribeImagesRequest describeImagesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeImagesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeImagesRequest> request = null;
+        Response<DescribeImagesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeImagesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeImagesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeImagesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeImagesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

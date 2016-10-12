@@ -42,6 +42,10 @@ public class CreateSnapshotRequestMarshaller implements Marshaller<Request<Creat
         request.addParameter("Version", "2015-02-02");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (createSnapshotRequest.getReplicationGroupId() != null) {
+            request.addParameter("ReplicationGroupId", StringUtils.fromString(createSnapshotRequest.getReplicationGroupId()));
+        }
+
         if (createSnapshotRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(createSnapshotRequest.getCacheClusterId()));
         }

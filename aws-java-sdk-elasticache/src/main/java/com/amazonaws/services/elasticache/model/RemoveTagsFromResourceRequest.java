@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>RemoveTagsFromResource</i> action.
+ * Represents the input of a <code>RemoveTagsFromResource</code> operation.
  * </p>
  */
 public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -29,7 +29,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
      * </p>
      * <p>
-     * For more information on ARNs, go to <a
+     * For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a>.
      * </p>
@@ -37,9 +37,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
     private String resourceName;
     /**
      * <p>
-     * A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example,
-     * <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from
-     * the resource named by the <i>ResourceName</i> parameter.
+     * A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tagKeys;
@@ -51,7 +49,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
      * </p>
      * <p>
-     * For more information on ARNs, go to <a
+     * For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a>.
      * </p>
@@ -61,7 +59,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      *        <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      *        <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      *        <p>
-     *        For more information on ARNs, go to <a
+     *        For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      */
@@ -77,7 +75,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
      * </p>
      * <p>
-     * For more information on ARNs, go to <a
+     * For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a>.
      * </p>
@@ -86,7 +84,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      *         <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      *         <p>
-     *         For more information on ARNs, go to <a
+     *         For more information about ARNs, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a>.
      */
@@ -102,7 +100,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
      * </p>
      * <p>
-     * For more information on ARNs, go to <a
+     * For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a>.
      * </p>
@@ -112,7 +110,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      *        <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      *        <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      *        <p>
-     *        For more information on ARNs, go to <a
+     *        For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -125,14 +123,10 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example,
-     * <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from
-     * the resource named by the <i>ResourceName</i> parameter.
+     * A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.
      * </p>
      * 
-     * @return A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For
-     *         example, <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name
-     *         <code>Region</code> from the resource named by the <i>ResourceName</i> parameter.
+     * @return A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -144,15 +138,11 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example,
-     * <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from
-     * the resource named by the <i>ResourceName</i> parameter.
+     * A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.
      * </p>
      * 
      * @param tagKeys
-     *        A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example,
-     *        <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code>
-     *        from the resource named by the <i>ResourceName</i> parameter.
+     *        A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -166,9 +156,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example,
-     * <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from
-     * the resource named by the <i>ResourceName</i> parameter.
+     * A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -177,9 +165,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param tagKeys
-     *        A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example,
-     *        <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code>
-     *        from the resource named by the <i>ResourceName</i> parameter.
+     *        A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,15 +181,11 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example,
-     * <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code> from
-     * the resource named by the <i>ResourceName</i> parameter.
+     * A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.
      * </p>
      * 
      * @param tagKeys
-     *        A list of <code>TagKeys</code> identifying the tags you want removed from the named resource. For example,
-     *        <code>TagKeys.member.1=Region</code> removes the cost allocation tag with the key name <code>Region</code>
-     *        from the resource named by the <i>ResourceName</i> parameter.
+     *        A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

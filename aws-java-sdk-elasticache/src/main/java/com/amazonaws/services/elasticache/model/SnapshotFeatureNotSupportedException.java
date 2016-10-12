@@ -14,12 +14,12 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * You attempted one of the following actions:
+ * You attempted one of the following operations:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Creating a snapshot of a Redis cache cluster running on a <i>t1.micro</i> cache node.
+ * Creating a snapshot of a Redis cache cluster running on a <code>cache.t1.micro</code> cache node.
  * </p>
  * </li>
  * <li>

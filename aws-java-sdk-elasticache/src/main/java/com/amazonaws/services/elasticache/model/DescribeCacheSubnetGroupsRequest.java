@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>DescribeCacheSubnetGroups</i> action.
+ * Represents the input of a <code>DescribeCacheSubnetGroups</code> operation.
  * </p>
  */
 public class DescribeCacheSubnetGroupsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -44,9 +44,9 @@ public class DescribeCacheSubnetGroupsRequest extends com.amazonaws.AmazonWebSer
     private Integer maxRecords;
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      */
     private String marker;
@@ -178,15 +178,15 @@ public class DescribeCacheSubnetGroupsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
      *        An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *        value specified by <i>MaxRecords</i>.
+     *        operation. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <code>MaxRecords</code>.
      */
 
     public void setMarker(String marker) {
@@ -195,14 +195,14 @@ public class DescribeCacheSubnetGroupsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @return An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *         action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *         value specified by <i>MaxRecords</i>.
+     *         operation. If this parameter is specified, the response includes only records beyond the marker, up to
+     *         the value specified by <code>MaxRecords</code>.
      */
 
     public String getMarker() {
@@ -211,15 +211,15 @@ public class DescribeCacheSubnetGroupsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An optional marker returned from a prior request. Use this marker for pagination of results from this action. If
-     * this parameter is specified, the response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+     * If this parameter is specified, the response includes only records beyond the marker, up to the value specified
+     * by <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
      *        An optional marker returned from a prior request. Use this marker for pagination of results from this
-     *        action. If this parameter is specified, the response includes only records beyond the marker, up to the
-     *        value specified by <i>MaxRecords</i>.
+     *        operation. If this parameter is specified, the response includes only records beyond the marker, up to the
+     *        value specified by <code>MaxRecords</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -14,7 +14,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * The current state of the cache parameter group does not allow the requested action to occur.
+ * The current state of the cache parameter group does not allow the requested operation to occur.
  * </p>
  */
 public class InvalidCacheParameterGroupStateException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {

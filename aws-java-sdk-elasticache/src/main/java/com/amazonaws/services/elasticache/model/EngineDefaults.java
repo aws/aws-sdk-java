@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a <i>DescribeEngineDefaultParameters</i> action.
+ * Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.
  * </p>
  */
 public class EngineDefaults implements Serializable, Cloneable {
@@ -24,6 +24,10 @@ public class EngineDefaults implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the name of the cache parameter group family to which the engine default parameters apply.
+     * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
      * </p>
      */
     private String cacheParameterGroupFamily;
@@ -51,9 +55,16 @@ public class EngineDefaults implements Serializable, Cloneable {
      * <p>
      * Specifies the name of the cache parameter group family to which the engine default parameters apply.
      * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
+     * </p>
      * 
      * @param cacheParameterGroupFamily
-     *        Specifies the name of the cache parameter group family to which the engine default parameters apply.
+     *        Specifies the name of the cache parameter group family to which the engine default parameters apply.</p>
+     *        <p>
+     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *        <code>redis3.2</code>
      */
 
     public void setCacheParameterGroupFamily(String cacheParameterGroupFamily) {
@@ -64,8 +75,15 @@ public class EngineDefaults implements Serializable, Cloneable {
      * <p>
      * Specifies the name of the cache parameter group family to which the engine default parameters apply.
      * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
+     * </p>
      * 
-     * @return Specifies the name of the cache parameter group family to which the engine default parameters apply.
+     * @return Specifies the name of the cache parameter group family to which the engine default parameters apply.</p>
+     *         <p>
+     *         Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *         <code>redis3.2</code>
      */
 
     public String getCacheParameterGroupFamily() {
@@ -76,9 +94,16 @@ public class EngineDefaults implements Serializable, Cloneable {
      * <p>
      * Specifies the name of the cache parameter group family to which the engine default parameters apply.
      * </p>
+     * <p>
+     * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code>
+     * </p>
      * 
      * @param cacheParameterGroupFamily
-     *        Specifies the name of the cache parameter group family to which the engine default parameters apply.
+     *        Specifies the name of the cache parameter group family to which the engine default parameters apply.</p>
+     *        <p>
+     *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     *        <code>redis3.2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

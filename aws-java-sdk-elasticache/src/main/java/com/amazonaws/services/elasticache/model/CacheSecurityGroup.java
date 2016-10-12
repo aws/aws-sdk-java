@@ -16,22 +16,22 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of one of the following actions:
+ * Represents the output of one of the following operations:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <i>AuthorizeCacheSecurityGroupIngress</i>
+ * <code>AuthorizeCacheSecurityGroupIngress</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <i>CreateCacheSecurityGroup</i>
+ * <code>CreateCacheSecurityGroup</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <i>RevokeCacheSecurityGroupIngress</i>
+ * <code>RevokeCacheSecurityGroupIngress</code>
  * </p>
  * </li>
  * </ul>

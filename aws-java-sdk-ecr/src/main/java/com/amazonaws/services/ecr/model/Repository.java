@@ -48,6 +48,12 @@ public class Repository implements Serializable, Cloneable {
      * </p>
      */
     private String repositoryUri;
+    /**
+     * <p>
+     * The date and time, in JavaScript date/time format, when the repository was created.
+     * </p>
+     */
+    private java.util.Date createdAt;
 
     /**
      * <p>
@@ -231,6 +237,46 @@ public class Repository implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date and time, in JavaScript date/time format, when the repository was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The date and time, in JavaScript date/time format, when the repository was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The date and time, in JavaScript date/time format, when the repository was created.
+     * </p>
+     * 
+     * @return The date and time, in JavaScript date/time format, when the repository was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The date and time, in JavaScript date/time format, when the repository was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The date and time, in JavaScript date/time format, when the repository was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Repository withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -248,7 +294,9 @@ public class Repository implements Serializable, Cloneable {
         if (getRepositoryName() != null)
             sb.append("RepositoryName: " + getRepositoryName() + ",");
         if (getRepositoryUri() != null)
-            sb.append("RepositoryUri: " + getRepositoryUri());
+            sb.append("RepositoryUri: " + getRepositoryUri() + ",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: " + getCreatedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -279,6 +327,10 @@ public class Repository implements Serializable, Cloneable {
             return false;
         if (other.getRepositoryUri() != null && other.getRepositoryUri().equals(this.getRepositoryUri()) == false)
             return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
         return true;
     }
 
@@ -291,6 +343,7 @@ public class Repository implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
         hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
         hashCode = prime * hashCode + ((getRepositoryUri() == null) ? 0 : getRepositoryUri().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         return hashCode;
     }
 

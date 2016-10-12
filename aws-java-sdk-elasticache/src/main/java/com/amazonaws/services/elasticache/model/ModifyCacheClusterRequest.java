@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>ModifyCacheCluster</i> action.
+ * Represents the input of a <code>ModifyCacheCluster</code> operation.
  * </p>
  */
 public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -32,9 +32,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The number of cache nodes that the cache cluster should have. If the value for <code>NumCacheNodes</code> is
      * greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which
-     * may be zero), then more nodes will be added. If the value is less than the number of existing cache nodes, then
-     * nodes will be removed. If the value is equal to the number of current cache nodes, then any pending add or remove
-     * requests are canceled.
+     * may be zero), more nodes are added. If the value is less than the number of existing cache nodes, nodes are
+     * removed. If the value is equal to the number of current cache nodes, any pending add or remove requests are
+     * canceled.
      * </p>
      * <p>
      * If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs
@@ -46,21 +46,21 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * Adding or removing Memcached cache nodes can be applied immediately or as a pending action. See
-     * <code>ApplyImmediately</code>.
+     * Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see
+     * <code>ApplyImmediately</code>).
      * </p>
      * <p>
-     * A pending action to modify the number of cache nodes in a cluster during its maintenance window, whether by
+     * A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by
      * adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest
-     * request to add or remove nodes to the cluster overrides any previous pending actions to modify the number of
-     * cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending action to
-     * remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending action to remove 3 nodes
-     * and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible
-     * cache node placement, a request to add nodes does not automatically override a previous pending action to add
-     * nodes. The customer can modify the previous pending action to add more nodes or explicitly cancel the pending
-     * request and retry the new request. To cancel pending actions to modify the number of cache nodes in a cluster,
-     * use the <code>ModifyCacheCluster</code> request and set <i>NumCacheNodes</i> equal to the number of cache nodes
-     * currently in the cache cluster.
+     * request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of
+     * cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation
+     * to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3
+     * nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with
+     * flexible cache node placement, a request to add nodes does not automatically override a previous pending
+     * operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly
+     * cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache
+     * nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to
+     * the number of cache nodes currently in the cache cluster.
      * </p>
      * </note>
      */
@@ -68,9 +68,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This parameter is
-     * only valid when <i>NumCacheNodes</i> is less than the existing number of cache nodes. The number of cache node
-     * IDs supplied in this parameter must match the difference between the existing number of cache nodes in the
-     * cluster or pending cache nodes, whichever is greater, and the value of <i>NumCacheNodes</i> in the request.
+     * only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes. The number of cache
+     * node IDs supplied in this parameter must match the difference between the existing number of cache nodes in the
+     * cluster or pending cache nodes, whichever is greater, and the value of <code>NumCacheNodes</code> in the request.
      * </p>
      * <p>
      * For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
@@ -96,9 +96,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Availability Zone.
      * </p>
      * <p>
-     * Only newly created nodes will be located in different Availability Zones. For instructions on how to move
-     * existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section
-     * of <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
+     * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -106,12 +106,12 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     private String aZMode;
     /**
      * <p>
-     * The list of Availability Zones where the new Memcached cache nodes will be created.
+     * The list of Availability Zones where the new Memcached cache nodes are created.
      * </p>
      * <p>
-     * This parameter is only valid when <i>NumCacheNodes</i> in the request is greater than the sum of the number of
-     * active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability
-     * Zones supplied in this list must match the cache nodes being added in this request.
+     * This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the number
+     * of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of
+     * Availability Zones supplied in this list must match the cache nodes being added in this request.
      * </p>
      * <p>
      * This option is only supported on Memcached clusters.
@@ -135,8 +135,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <b>Scenario 3:</b> You want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to cancel all
-     * pending actions.
+     * <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all
+     * pending operations.
      * </p>
      * </li>
      * </ul>
@@ -249,12 +249,6 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * </li>
      * </ul>
-     * <p>
-     * Example:
-     * </p>
-     * <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> newAvailabilityZones;
     /**
@@ -263,7 +257,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * soon as possible.
      * </p>
      * <p>
-     * This parameter can be used only with clusters that are created outside of an Amazon Virtual Private Cloud (VPC).
+     * You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
@@ -275,15 +270,17 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Specifies the VPC Security Groups associated with the cache cluster.
      * </p>
      * <p>
-     * This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (VPC).
+     * This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -323,13 +320,13 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      */
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.
      * </p>
      * <note>
      * <p>
@@ -341,14 +338,15 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the cache parameter group to apply to this cache cluster. This change is asynchronously applied as
-     * soon as possible for parameters when the <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this
-     * request.
+     * soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as
+     * <code>true</code> for this request.
      * </p>
      */
     private String cacheParameterGroupName;
     /**
      * <p>
-     * The status of the Amazon SNS notification topic. Notifications are sent only if the status is <i>active</i>.
+     * The status of the Amazon SNS notification topic. Notifications are sent only if the status is <code>active</code>
+     * .
      * </p>
      * <p>
      * Valid values: <code>active</code> | <code>inactive</code>
@@ -358,11 +356,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be
-     * applied, asynchronously and as soon as possible, regardless of the <i>PreferredMaintenanceWindow</i> setting for
-     * the cache cluster.
+     * applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
+     * setting for the cache cluster.
      * </p>
      * <p>
-     * If <code>false</code>, then changes to the cache cluster are applied on the next maintenance reboot, or the next
+     * If <code>false</code>, changes to the cache cluster are applied on the next maintenance reboot, or the next
      * failure reboot, whichever occurs first.
      * </p>
      * <important>
@@ -400,27 +398,26 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For
-     * example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for
-     * 5 days before being deleted.
+     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
+     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     * days before being deleted.
      * </p>
      * <note>
      * <p>
-     * If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
+     * If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
      * </p>
      * </note>
      */
     private Integer snapshotRetentionLimit;
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.
      * </p>
      */
     private String snapshotWindow;
     /**
      * <p>
-     * A valid cache node type that you want to scale this cache cluster to. The value of this parameter must be one of
-     * the <i>ScaleUpModifications</i> values returned by the <code>ListAllowedCacheNodeTypeModification</code> action.
+     * A valid cache node type that you want to scale this cache cluster up to.
      * </p>
      */
     private String cacheNodeType;
@@ -487,9 +484,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The number of cache nodes that the cache cluster should have. If the value for <code>NumCacheNodes</code> is
      * greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which
-     * may be zero), then more nodes will be added. If the value is less than the number of existing cache nodes, then
-     * nodes will be removed. If the value is equal to the number of current cache nodes, then any pending add or remove
-     * requests are canceled.
+     * may be zero), more nodes are added. If the value is less than the number of existing cache nodes, nodes are
+     * removed. If the value is equal to the number of current cache nodes, any pending add or remove requests are
+     * canceled.
      * </p>
      * <p>
      * If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs
@@ -501,30 +498,30 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * Adding or removing Memcached cache nodes can be applied immediately or as a pending action. See
-     * <code>ApplyImmediately</code>.
+     * Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see
+     * <code>ApplyImmediately</code>).
      * </p>
      * <p>
-     * A pending action to modify the number of cache nodes in a cluster during its maintenance window, whether by
+     * A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by
      * adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest
-     * request to add or remove nodes to the cluster overrides any previous pending actions to modify the number of
-     * cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending action to
-     * remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending action to remove 3 nodes
-     * and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible
-     * cache node placement, a request to add nodes does not automatically override a previous pending action to add
-     * nodes. The customer can modify the previous pending action to add more nodes or explicitly cancel the pending
-     * request and retry the new request. To cancel pending actions to modify the number of cache nodes in a cluster,
-     * use the <code>ModifyCacheCluster</code> request and set <i>NumCacheNodes</i> equal to the number of cache nodes
-     * currently in the cache cluster.
+     * request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of
+     * cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation
+     * to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3
+     * nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with
+     * flexible cache node placement, a request to add nodes does not automatically override a previous pending
+     * operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly
+     * cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache
+     * nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to
+     * the number of cache nodes currently in the cache cluster.
      * </p>
      * </note>
      * 
      * @param numCacheNodes
      *        The number of cache nodes that the cache cluster should have. If the value for <code>NumCacheNodes</code>
      *        is greater than the sum of the number of current cache nodes and the number of cache nodes pending
-     *        creation (which may be zero), then more nodes will be added. If the value is less than the number of
-     *        existing cache nodes, then nodes will be removed. If the value is equal to the number of current cache
-     *        nodes, then any pending add or remove requests are canceled.</p>
+     *        creation (which may be zero), more nodes are added. If the value is less than the number of existing cache
+     *        nodes, nodes are removed. If the value is equal to the number of current cache nodes, any pending add or
+     *        remove requests are canceled.</p>
      *        <p>
      *        If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide
      *        the IDs of the specific cache nodes to remove.
@@ -535,21 +532,22 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <note>
      *        <p>
-     *        Adding or removing Memcached cache nodes can be applied immediately or as a pending action. See
-     *        <code>ApplyImmediately</code>.
+     *        Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see
+     *        <code>ApplyImmediately</code>).
      *        </p>
      *        <p>
-     *        A pending action to modify the number of cache nodes in a cluster during its maintenance window, whether
-     *        by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's
-     *        latest request to add or remove nodes to the cluster overrides any previous pending actions to modify the
-     *        number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous
-     *        pending action to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending
-     *        action to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different
-     *        Availability Zones with flexible cache node placement, a request to add nodes does not automatically
-     *        override a previous pending action to add nodes. The customer can modify the previous pending action to
-     *        add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending
-     *        actions to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request
-     *        and set <i>NumCacheNodes</i> equal to the number of cache nodes currently in the cache cluster.
+     *        A pending operation to modify the number of cache nodes in a cluster during its maintenance window,
+     *        whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The
+     *        customer's latest request to add or remove nodes to the cluster overrides any previous pending operations
+     *        to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would
+     *        override a previous pending operation to remove 3 nodes. Similarly, a request to add 2 nodes would
+     *        override a previous pending operation to remove 3 nodes and vice versa. As Memcached cache nodes may now
+     *        be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes
+     *        does not automatically override a previous pending operation to add nodes. The customer can modify the
+     *        previous pending operation to add more nodes or explicitly cancel the pending request and retry the new
+     *        request. To cancel pending operations to modify the number of cache nodes in a cluster, use the
+     *        <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to the number of cache
+     *        nodes currently in the cache cluster.
      *        </p>
      */
 
@@ -561,9 +559,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The number of cache nodes that the cache cluster should have. If the value for <code>NumCacheNodes</code> is
      * greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which
-     * may be zero), then more nodes will be added. If the value is less than the number of existing cache nodes, then
-     * nodes will be removed. If the value is equal to the number of current cache nodes, then any pending add or remove
-     * requests are canceled.
+     * may be zero), more nodes are added. If the value is less than the number of existing cache nodes, nodes are
+     * removed. If the value is equal to the number of current cache nodes, any pending add or remove requests are
+     * canceled.
      * </p>
      * <p>
      * If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs
@@ -575,29 +573,29 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * Adding or removing Memcached cache nodes can be applied immediately or as a pending action. See
-     * <code>ApplyImmediately</code>.
+     * Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see
+     * <code>ApplyImmediately</code>).
      * </p>
      * <p>
-     * A pending action to modify the number of cache nodes in a cluster during its maintenance window, whether by
+     * A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by
      * adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest
-     * request to add or remove nodes to the cluster overrides any previous pending actions to modify the number of
-     * cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending action to
-     * remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending action to remove 3 nodes
-     * and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible
-     * cache node placement, a request to add nodes does not automatically override a previous pending action to add
-     * nodes. The customer can modify the previous pending action to add more nodes or explicitly cancel the pending
-     * request and retry the new request. To cancel pending actions to modify the number of cache nodes in a cluster,
-     * use the <code>ModifyCacheCluster</code> request and set <i>NumCacheNodes</i> equal to the number of cache nodes
-     * currently in the cache cluster.
+     * request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of
+     * cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation
+     * to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3
+     * nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with
+     * flexible cache node placement, a request to add nodes does not automatically override a previous pending
+     * operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly
+     * cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache
+     * nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to
+     * the number of cache nodes currently in the cache cluster.
      * </p>
      * </note>
      * 
      * @return The number of cache nodes that the cache cluster should have. If the value for <code>NumCacheNodes</code>
      *         is greater than the sum of the number of current cache nodes and the number of cache nodes pending
-     *         creation (which may be zero), then more nodes will be added. If the value is less than the number of
-     *         existing cache nodes, then nodes will be removed. If the value is equal to the number of current cache
-     *         nodes, then any pending add or remove requests are canceled.</p>
+     *         creation (which may be zero), more nodes are added. If the value is less than the number of existing
+     *         cache nodes, nodes are removed. If the value is equal to the number of current cache nodes, any pending
+     *         add or remove requests are canceled.</p>
      *         <p>
      *         If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide
      *         the IDs of the specific cache nodes to remove.
@@ -608,21 +606,22 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         </p>
      *         <note>
      *         <p>
-     *         Adding or removing Memcached cache nodes can be applied immediately or as a pending action. See
-     *         <code>ApplyImmediately</code>.
+     *         Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see
+     *         <code>ApplyImmediately</code>).
      *         </p>
      *         <p>
-     *         A pending action to modify the number of cache nodes in a cluster during its maintenance window, whether
-     *         by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's
-     *         latest request to add or remove nodes to the cluster overrides any previous pending actions to modify the
-     *         number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous
-     *         pending action to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending
-     *         action to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different
-     *         Availability Zones with flexible cache node placement, a request to add nodes does not automatically
-     *         override a previous pending action to add nodes. The customer can modify the previous pending action to
-     *         add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending
-     *         actions to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request
-     *         and set <i>NumCacheNodes</i> equal to the number of cache nodes currently in the cache cluster.
+     *         A pending operation to modify the number of cache nodes in a cluster during its maintenance window,
+     *         whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The
+     *         customer's latest request to add or remove nodes to the cluster overrides any previous pending operations
+     *         to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would
+     *         override a previous pending operation to remove 3 nodes. Similarly, a request to add 2 nodes would
+     *         override a previous pending operation to remove 3 nodes and vice versa. As Memcached cache nodes may now
+     *         be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes
+     *         does not automatically override a previous pending operation to add nodes. The customer can modify the
+     *         previous pending operation to add more nodes or explicitly cancel the pending request and retry the new
+     *         request. To cancel pending operations to modify the number of cache nodes in a cluster, use the
+     *         <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to the number of cache
+     *         nodes currently in the cache cluster.
      *         </p>
      */
 
@@ -634,9 +633,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The number of cache nodes that the cache cluster should have. If the value for <code>NumCacheNodes</code> is
      * greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which
-     * may be zero), then more nodes will be added. If the value is less than the number of existing cache nodes, then
-     * nodes will be removed. If the value is equal to the number of current cache nodes, then any pending add or remove
-     * requests are canceled.
+     * may be zero), more nodes are added. If the value is less than the number of existing cache nodes, nodes are
+     * removed. If the value is equal to the number of current cache nodes, any pending add or remove requests are
+     * canceled.
      * </p>
      * <p>
      * If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs
@@ -648,30 +647,30 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * Adding or removing Memcached cache nodes can be applied immediately or as a pending action. See
-     * <code>ApplyImmediately</code>.
+     * Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see
+     * <code>ApplyImmediately</code>).
      * </p>
      * <p>
-     * A pending action to modify the number of cache nodes in a cluster during its maintenance window, whether by
+     * A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by
      * adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest
-     * request to add or remove nodes to the cluster overrides any previous pending actions to modify the number of
-     * cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending action to
-     * remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending action to remove 3 nodes
-     * and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible
-     * cache node placement, a request to add nodes does not automatically override a previous pending action to add
-     * nodes. The customer can modify the previous pending action to add more nodes or explicitly cancel the pending
-     * request and retry the new request. To cancel pending actions to modify the number of cache nodes in a cluster,
-     * use the <code>ModifyCacheCluster</code> request and set <i>NumCacheNodes</i> equal to the number of cache nodes
-     * currently in the cache cluster.
+     * request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of
+     * cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation
+     * to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3
+     * nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with
+     * flexible cache node placement, a request to add nodes does not automatically override a previous pending
+     * operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly
+     * cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache
+     * nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to
+     * the number of cache nodes currently in the cache cluster.
      * </p>
      * </note>
      * 
      * @param numCacheNodes
      *        The number of cache nodes that the cache cluster should have. If the value for <code>NumCacheNodes</code>
      *        is greater than the sum of the number of current cache nodes and the number of cache nodes pending
-     *        creation (which may be zero), then more nodes will be added. If the value is less than the number of
-     *        existing cache nodes, then nodes will be removed. If the value is equal to the number of current cache
-     *        nodes, then any pending add or remove requests are canceled.</p>
+     *        creation (which may be zero), more nodes are added. If the value is less than the number of existing cache
+     *        nodes, nodes are removed. If the value is equal to the number of current cache nodes, any pending add or
+     *        remove requests are canceled.</p>
      *        <p>
      *        If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide
      *        the IDs of the specific cache nodes to remove.
@@ -682,21 +681,22 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <note>
      *        <p>
-     *        Adding or removing Memcached cache nodes can be applied immediately or as a pending action. See
-     *        <code>ApplyImmediately</code>.
+     *        Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see
+     *        <code>ApplyImmediately</code>).
      *        </p>
      *        <p>
-     *        A pending action to modify the number of cache nodes in a cluster during its maintenance window, whether
-     *        by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's
-     *        latest request to add or remove nodes to the cluster overrides any previous pending actions to modify the
-     *        number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous
-     *        pending action to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending
-     *        action to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different
-     *        Availability Zones with flexible cache node placement, a request to add nodes does not automatically
-     *        override a previous pending action to add nodes. The customer can modify the previous pending action to
-     *        add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending
-     *        actions to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request
-     *        and set <i>NumCacheNodes</i> equal to the number of cache nodes currently in the cache cluster.
+     *        A pending operation to modify the number of cache nodes in a cluster during its maintenance window,
+     *        whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The
+     *        customer's latest request to add or remove nodes to the cluster overrides any previous pending operations
+     *        to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would
+     *        override a previous pending operation to remove 3 nodes. Similarly, a request to add 2 nodes would
+     *        override a previous pending operation to remove 3 nodes and vice versa. As Memcached cache nodes may now
+     *        be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes
+     *        does not automatically override a previous pending operation to add nodes. The customer can modify the
+     *        previous pending operation to add more nodes or explicitly cancel the pending request and retry the new
+     *        request. To cancel pending operations to modify the number of cache nodes in a cluster, use the
+     *        <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to the number of cache
+     *        nodes currently in the cache cluster.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -709,9 +709,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This parameter is
-     * only valid when <i>NumCacheNodes</i> is less than the existing number of cache nodes. The number of cache node
-     * IDs supplied in this parameter must match the difference between the existing number of cache nodes in the
-     * cluster or pending cache nodes, whichever is greater, and the value of <i>NumCacheNodes</i> in the request.
+     * only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes. The number of cache
+     * node IDs supplied in this parameter must match the difference between the existing number of cache nodes in the
+     * cluster or pending cache nodes, whichever is greater, and the value of <code>NumCacheNodes</code> in the request.
      * </p>
      * <p>
      * For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
@@ -719,10 +719,10 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @return A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This
-     *         parameter is only valid when <i>NumCacheNodes</i> is less than the existing number of cache nodes. The
-     *         number of cache node IDs supplied in this parameter must match the difference between the existing number
-     *         of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of
-     *         <i>NumCacheNodes</i> in the request.</p>
+     *         parameter is only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes.
+     *         The number of cache node IDs supplied in this parameter must match the difference between the existing
+     *         number of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of
+     *         <code>NumCacheNodes</code> in the request.</p>
      *         <p>
      *         For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in
      *         this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
@@ -738,9 +738,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This parameter is
-     * only valid when <i>NumCacheNodes</i> is less than the existing number of cache nodes. The number of cache node
-     * IDs supplied in this parameter must match the difference between the existing number of cache nodes in the
-     * cluster or pending cache nodes, whichever is greater, and the value of <i>NumCacheNodes</i> in the request.
+     * only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes. The number of cache
+     * node IDs supplied in this parameter must match the difference between the existing number of cache nodes in the
+     * cluster or pending cache nodes, whichever is greater, and the value of <code>NumCacheNodes</code> in the request.
      * </p>
      * <p>
      * For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
@@ -749,10 +749,10 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param cacheNodeIdsToRemove
      *        A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This
-     *        parameter is only valid when <i>NumCacheNodes</i> is less than the existing number of cache nodes. The
-     *        number of cache node IDs supplied in this parameter must match the difference between the existing number
-     *        of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of
-     *        <i>NumCacheNodes</i> in the request.</p>
+     *        parameter is only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes.
+     *        The number of cache node IDs supplied in this parameter must match the difference between the existing
+     *        number of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of
+     *        <code>NumCacheNodes</code> in the request.</p>
      *        <p>
      *        For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in
      *        this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
@@ -770,9 +770,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This parameter is
-     * only valid when <i>NumCacheNodes</i> is less than the existing number of cache nodes. The number of cache node
-     * IDs supplied in this parameter must match the difference between the existing number of cache nodes in the
-     * cluster or pending cache nodes, whichever is greater, and the value of <i>NumCacheNodes</i> in the request.
+     * only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes. The number of cache
+     * node IDs supplied in this parameter must match the difference between the existing number of cache nodes in the
+     * cluster or pending cache nodes, whichever is greater, and the value of <code>NumCacheNodes</code> in the request.
      * </p>
      * <p>
      * For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
@@ -786,10 +786,10 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param cacheNodeIdsToRemove
      *        A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This
-     *        parameter is only valid when <i>NumCacheNodes</i> is less than the existing number of cache nodes. The
-     *        number of cache node IDs supplied in this parameter must match the difference between the existing number
-     *        of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of
-     *        <i>NumCacheNodes</i> in the request.</p>
+     *        parameter is only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes.
+     *        The number of cache node IDs supplied in this parameter must match the difference between the existing
+     *        number of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of
+     *        <code>NumCacheNodes</code> in the request.</p>
      *        <p>
      *        For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in
      *        this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
@@ -809,9 +809,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This parameter is
-     * only valid when <i>NumCacheNodes</i> is less than the existing number of cache nodes. The number of cache node
-     * IDs supplied in this parameter must match the difference between the existing number of cache nodes in the
-     * cluster or pending cache nodes, whichever is greater, and the value of <i>NumCacheNodes</i> in the request.
+     * only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes. The number of cache
+     * node IDs supplied in this parameter must match the difference between the existing number of cache nodes in the
+     * cluster or pending cache nodes, whichever is greater, and the value of <code>NumCacheNodes</code> in the request.
      * </p>
      * <p>
      * For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
@@ -820,10 +820,10 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param cacheNodeIdsToRemove
      *        A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This
-     *        parameter is only valid when <i>NumCacheNodes</i> is less than the existing number of cache nodes. The
-     *        number of cache node IDs supplied in this parameter must match the difference between the existing number
-     *        of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of
-     *        <i>NumCacheNodes</i> in the request.</p>
+     *        parameter is only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes.
+     *        The number of cache node IDs supplied in this parameter must match the difference between the existing
+     *        number of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of
+     *        <code>NumCacheNodes</code> in the request.</p>
      *        <p>
      *        For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in
      *        this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
@@ -853,9 +853,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Availability Zone.
      * </p>
      * <p>
-     * Only newly created nodes will be located in different Availability Zones. For instructions on how to move
-     * existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section
-     * of <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
+     * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -876,7 +876,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        their current Availability Zone.
      *        </p>
      *        <p>
-     *        Only newly created nodes will be located in different Availability Zones. For instructions on how to move
+     *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
@@ -907,9 +907,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Availability Zone.
      * </p>
      * <p>
-     * Only newly created nodes will be located in different Availability Zones. For instructions on how to move
-     * existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section
-     * of <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
+     * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -929,7 +929,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         their current Availability Zone.
      *         </p>
      *         <p>
-     *         Only newly created nodes will be located in different Availability Zones. For instructions on how to move
+     *         Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *         existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *         section of <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
@@ -960,9 +960,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Availability Zone.
      * </p>
      * <p>
-     * Only newly created nodes will be located in different Availability Zones. For instructions on how to move
-     * existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section
-     * of <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
+     * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -983,7 +983,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        their current Availability Zone.
      *        </p>
      *        <p>
-     *        Only newly created nodes will be located in different Availability Zones. For instructions on how to move
+     *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
@@ -1016,9 +1016,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Availability Zone.
      * </p>
      * <p>
-     * Only newly created nodes will be located in different Availability Zones. For instructions on how to move
-     * existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section
-     * of <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
+     * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -1039,7 +1039,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        their current Availability Zone.
      *        </p>
      *        <p>
-     *        Only newly created nodes will be located in different Availability Zones. For instructions on how to move
+     *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
@@ -1070,9 +1070,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Availability Zone.
      * </p>
      * <p>
-     * Only newly created nodes will be located in different Availability Zones. For instructions on how to move
-     * existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section
-     * of <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
+     * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -1093,7 +1093,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        their current Availability Zone.
      *        </p>
      *        <p>
-     *        Only newly created nodes will be located in different Availability Zones. For instructions on how to move
+     *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
@@ -1110,12 +1110,12 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of Availability Zones where the new Memcached cache nodes will be created.
+     * The list of Availability Zones where the new Memcached cache nodes are created.
      * </p>
      * <p>
-     * This parameter is only valid when <i>NumCacheNodes</i> in the request is greater than the sum of the number of
-     * active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability
-     * Zones supplied in this list must match the cache nodes being added in this request.
+     * This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the number
+     * of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of
+     * Availability Zones supplied in this list must match the cache nodes being added in this request.
      * </p>
      * <p>
      * This option is only supported on Memcached clusters.
@@ -1139,8 +1139,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <b>Scenario 3:</b> You want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to cancel all
-     * pending actions.
+     * <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all
+     * pending operations.
      * </p>
      * </li>
      * </ul>
@@ -1253,17 +1253,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * </li>
      * </ul>
-     * <p>
-     * Example:
-     * </p>
-     * <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
      * 
-     * @return The list of Availability Zones where the new Memcached cache nodes will be created.</p>
+     * @return The list of Availability Zones where the new Memcached cache nodes are created.</p>
      *         <p>
-     *         This parameter is only valid when <i>NumCacheNodes</i> in the request is greater than the sum of the
-     *         number of active cache nodes and the number of cache nodes pending creation (which may be zero). The
+     *         This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of
+     *         the number of active cache nodes and the number of cache nodes pending creation (which may be zero). The
      *         number of Availability Zones supplied in this list must match the cache nodes being added in this
      *         request.
      *         </p>
@@ -1289,8 +1283,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Scenario 3:</b> You want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to cancel
-     *         all pending actions.
+     *         <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
+     *         cancel all pending operations.
      *         </p>
      *         </li>
      *         </ul>
@@ -1403,12 +1397,6 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         </important></li>
      *         </ul>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         Example:
-     *         </p>
-     *         <p>
-     *         <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      */
 
     public java.util.List<String> getNewAvailabilityZones() {
@@ -1420,12 +1408,12 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of Availability Zones where the new Memcached cache nodes will be created.
+     * The list of Availability Zones where the new Memcached cache nodes are created.
      * </p>
      * <p>
-     * This parameter is only valid when <i>NumCacheNodes</i> in the request is greater than the sum of the number of
-     * active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability
-     * Zones supplied in this list must match the cache nodes being added in this request.
+     * This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the number
+     * of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of
+     * Availability Zones supplied in this list must match the cache nodes being added in this request.
      * </p>
      * <p>
      * This option is only supported on Memcached clusters.
@@ -1449,8 +1437,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <b>Scenario 3:</b> You want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to cancel all
-     * pending actions.
+     * <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all
+     * pending operations.
      * </p>
      * </li>
      * </ul>
@@ -1563,17 +1551,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * </li>
      * </ul>
-     * <p>
-     * Example:
-     * </p>
-     * <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
      * 
      * @param newAvailabilityZones
-     *        The list of Availability Zones where the new Memcached cache nodes will be created.</p>
+     *        The list of Availability Zones where the new Memcached cache nodes are created.</p>
      *        <p>
-     *        This parameter is only valid when <i>NumCacheNodes</i> in the request is greater than the sum of the
+     *        This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the
      *        number of active cache nodes and the number of cache nodes pending creation (which may be zero). The
      *        number of Availability Zones supplied in this list must match the cache nodes being added in this request.
      *        </p>
@@ -1599,8 +1581,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Scenario 3:</b> You want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to cancel
-     *        all pending actions.
+     *        <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
+     *        cancel all pending operations.
      *        </p>
      *        </li>
      *        </ul>
@@ -1713,12 +1695,6 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </important></li>
      *        </ul>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Example:
-     *        </p>
-     *        <p>
-     *        <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      */
 
     public void setNewAvailabilityZones(java.util.Collection<String> newAvailabilityZones) {
@@ -1732,12 +1708,12 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of Availability Zones where the new Memcached cache nodes will be created.
+     * The list of Availability Zones where the new Memcached cache nodes are created.
      * </p>
      * <p>
-     * This parameter is only valid when <i>NumCacheNodes</i> in the request is greater than the sum of the number of
-     * active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability
-     * Zones supplied in this list must match the cache nodes being added in this request.
+     * This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the number
+     * of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of
+     * Availability Zones supplied in this list must match the cache nodes being added in this request.
      * </p>
      * <p>
      * This option is only supported on Memcached clusters.
@@ -1761,8 +1737,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <b>Scenario 3:</b> You want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to cancel all
-     * pending actions.
+     * <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all
+     * pending operations.
      * </p>
      * </li>
      * </ul>
@@ -1876,21 +1852,15 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * Example:
-     * </p>
-     * <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNewAvailabilityZones(java.util.Collection)} or {@link #withNewAvailabilityZones(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param newAvailabilityZones
-     *        The list of Availability Zones where the new Memcached cache nodes will be created.</p>
+     *        The list of Availability Zones where the new Memcached cache nodes are created.</p>
      *        <p>
-     *        This parameter is only valid when <i>NumCacheNodes</i> in the request is greater than the sum of the
+     *        This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the
      *        number of active cache nodes and the number of cache nodes pending creation (which may be zero). The
      *        number of Availability Zones supplied in this list must match the cache nodes being added in this request.
      *        </p>
@@ -1916,8 +1886,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Scenario 3:</b> You want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to cancel
-     *        all pending actions.
+     *        <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
+     *        cancel all pending operations.
      *        </p>
      *        </li>
      *        </ul>
@@ -2030,12 +2000,6 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </important></li>
      *        </ul>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Example:
-     *        </p>
-     *        <p>
-     *        <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2051,12 +2015,12 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of Availability Zones where the new Memcached cache nodes will be created.
+     * The list of Availability Zones where the new Memcached cache nodes are created.
      * </p>
      * <p>
-     * This parameter is only valid when <i>NumCacheNodes</i> in the request is greater than the sum of the number of
-     * active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability
-     * Zones supplied in this list must match the cache nodes being added in this request.
+     * This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the number
+     * of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of
+     * Availability Zones supplied in this list must match the cache nodes being added in this request.
      * </p>
      * <p>
      * This option is only supported on Memcached clusters.
@@ -2080,8 +2044,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <b>Scenario 3:</b> You want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to cancel all
-     * pending actions.
+     * <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all
+     * pending operations.
      * </p>
      * </li>
      * </ul>
@@ -2194,17 +2158,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * </li>
      * </ul>
-     * <p>
-     * Example:
-     * </p>
-     * <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
      * 
      * @param newAvailabilityZones
-     *        The list of Availability Zones where the new Memcached cache nodes will be created.</p>
+     *        The list of Availability Zones where the new Memcached cache nodes are created.</p>
      *        <p>
-     *        This parameter is only valid when <i>NumCacheNodes</i> in the request is greater than the sum of the
+     *        This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the
      *        number of active cache nodes and the number of cache nodes pending creation (which may be zero). The
      *        number of Availability Zones supplied in this list must match the cache nodes being added in this request.
      *        </p>
@@ -2230,8 +2188,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Scenario 3:</b> You want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to cancel
-     *        all pending actions.
+     *        <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
+     *        cancel all pending operations.
      *        </p>
      *        </li>
      *        </ul>
@@ -2344,12 +2302,6 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </important></li>
      *        </ul>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Example:
-     *        </p>
-     *        <p>
-     *        <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2364,7 +2316,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * soon as possible.
      * </p>
      * <p>
-     * This parameter can be used only with clusters that are created outside of an Amazon Virtual Private Cloud (VPC).
+     * You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
@@ -2373,8 +2326,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * @return A list of cache security group names to authorize on this cache cluster. This change is asynchronously
      *         applied as soon as possible.</p>
      *         <p>
-     *         This parameter can be used only with clusters that are created outside of an Amazon Virtual Private Cloud
-     *         (VPC).
+     *         You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud
+     *         (Amazon VPC).
      *         </p>
      *         <p>
      *         Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
@@ -2393,7 +2346,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * soon as possible.
      * </p>
      * <p>
-     * This parameter can be used only with clusters that are created outside of an Amazon Virtual Private Cloud (VPC).
+     * You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
@@ -2403,8 +2357,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        A list of cache security group names to authorize on this cache cluster. This change is asynchronously
      *        applied as soon as possible.</p>
      *        <p>
-     *        This parameter can be used only with clusters that are created outside of an Amazon Virtual Private Cloud
-     *        (VPC).
+     *        You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud
+     *        (Amazon VPC).
      *        </p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
@@ -2425,7 +2379,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * soon as possible.
      * </p>
      * <p>
-     * This parameter can be used only with clusters that are created outside of an Amazon Virtual Private Cloud (VPC).
+     * You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
@@ -2440,8 +2395,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        A list of cache security group names to authorize on this cache cluster. This change is asynchronously
      *        applied as soon as possible.</p>
      *        <p>
-     *        This parameter can be used only with clusters that are created outside of an Amazon Virtual Private Cloud
-     *        (VPC).
+     *        You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud
+     *        (Amazon VPC).
      *        </p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
@@ -2464,7 +2419,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * soon as possible.
      * </p>
      * <p>
-     * This parameter can be used only with clusters that are created outside of an Amazon Virtual Private Cloud (VPC).
+     * You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon
+     * VPC).
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
@@ -2474,8 +2430,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        A list of cache security group names to authorize on this cache cluster. This change is asynchronously
      *        applied as soon as possible.</p>
      *        <p>
-     *        This parameter can be used only with clusters that are created outside of an Amazon Virtual Private Cloud
-     *        (VPC).
+     *        You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud
+     *        (Amazon VPC).
      *        </p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
@@ -2492,12 +2448,13 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Specifies the VPC Security Groups associated with the cache cluster.
      * </p>
      * <p>
-     * This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (VPC).
+     * This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * 
      * @return Specifies the VPC Security Groups associated with the cache cluster.</p>
      *         <p>
-     *         This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (VPC).
+     *         This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon
+     *         VPC).
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -2512,13 +2469,14 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Specifies the VPC Security Groups associated with the cache cluster.
      * </p>
      * <p>
-     * This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (VPC).
+     * This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * 
      * @param securityGroupIds
      *        Specifies the VPC Security Groups associated with the cache cluster.</p>
      *        <p>
-     *        This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (VPC).
+     *        This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon
+     *        VPC).
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -2535,7 +2493,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Specifies the VPC Security Groups associated with the cache cluster.
      * </p>
      * <p>
-     * This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (VPC).
+     * This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2546,7 +2504,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * @param securityGroupIds
      *        Specifies the VPC Security Groups associated with the cache cluster.</p>
      *        <p>
-     *        This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (VPC).
+     *        This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon
+     *        VPC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2565,13 +2524,14 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Specifies the VPC Security Groups associated with the cache cluster.
      * </p>
      * <p>
-     * This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (VPC).
+     * This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).
      * </p>
      * 
      * @param securityGroupIds
      *        Specifies the VPC Security Groups associated with the cache cluster.</p>
      *        <p>
-     *        This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (VPC).
+     *        This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon
+     *        VPC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2582,9 +2542,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -2624,13 +2586,16 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
-     *        specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     *        is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period.</p>
+     *        <p>
+     *        Valid values for <code>ddd</code> are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2669,7 +2634,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        Example: <code>sun:05:00-sun:09:00</code>
+     *        Example: <code>sun:23:00-mon:01:30</code>
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -2678,9 +2643,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -2720,12 +2687,15 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
-     * @return Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
-     *         specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
-     *         window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     * @return Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
+     *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
+     *         minute period.</p>
+     *         <p>
+     *         Valid values for <code>ddd</code> are:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -2764,7 +2734,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         </ul>
      *         <p>
-     *         Example: <code>sun:05:00-sun:09:00</code>
+     *         Example: <code>sun:23:00-mon:01:30</code>
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -2773,9 +2743,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <ul>
      * <li>
@@ -2815,13 +2787,16 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * Example: <code>sun:05:00-sun:09:00</code>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
-     *        specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     *        is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period.</p>
+     *        <p>
+     *        Valid values for <code>ddd</code> are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2860,7 +2835,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        Example: <code>sun:05:00-sun:09:00</code>
+     *        Example: <code>sun:23:00-mon:01:30</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2871,7 +2846,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.
      * </p>
      * <note>
      * <p>
@@ -2880,7 +2855,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      * 
      * @param notificationTopicArn
-     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
      *        <p>
      *        The Amazon SNS topic owner must be same as the cache cluster owner.
      *        </p>
@@ -2892,7 +2867,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.
      * </p>
      * <note>
      * <p>
@@ -2900,7 +2875,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
+     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
      *         <p>
      *         The Amazon SNS topic owner must be same as the cache cluster owner.
      *         </p>
@@ -2912,7 +2887,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.
      * </p>
      * <note>
      * <p>
@@ -2921,7 +2896,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      * 
      * @param notificationTopicArn
-     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
      *        <p>
      *        The Amazon SNS topic owner must be same as the cache cluster owner.
      *        </p>
@@ -2936,14 +2911,14 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the cache parameter group to apply to this cache cluster. This change is asynchronously applied as
-     * soon as possible for parameters when the <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this
-     * request.
+     * soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as
+     * <code>true</code> for this request.
      * </p>
      * 
      * @param cacheParameterGroupName
      *        The name of the cache parameter group to apply to this cache cluster. This change is asynchronously
-     *        applied as soon as possible for parameters when the <i>ApplyImmediately</i> parameter is specified as
-     *        <i>true</i> for this request.
+     *        applied as soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified
+     *        as <code>true</code> for this request.
      */
 
     public void setCacheParameterGroupName(String cacheParameterGroupName) {
@@ -2953,13 +2928,13 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the cache parameter group to apply to this cache cluster. This change is asynchronously applied as
-     * soon as possible for parameters when the <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this
-     * request.
+     * soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as
+     * <code>true</code> for this request.
      * </p>
      * 
      * @return The name of the cache parameter group to apply to this cache cluster. This change is asynchronously
-     *         applied as soon as possible for parameters when the <i>ApplyImmediately</i> parameter is specified as
-     *         <i>true</i> for this request.
+     *         applied as soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified
+     *         as <code>true</code> for this request.
      */
 
     public String getCacheParameterGroupName() {
@@ -2969,14 +2944,14 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the cache parameter group to apply to this cache cluster. This change is asynchronously applied as
-     * soon as possible for parameters when the <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this
-     * request.
+     * soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as
+     * <code>true</code> for this request.
      * </p>
      * 
      * @param cacheParameterGroupName
      *        The name of the cache parameter group to apply to this cache cluster. This change is asynchronously
-     *        applied as soon as possible for parameters when the <i>ApplyImmediately</i> parameter is specified as
-     *        <i>true</i> for this request.
+     *        applied as soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified
+     *        as <code>true</code> for this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2987,7 +2962,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The status of the Amazon SNS notification topic. Notifications are sent only if the status is <i>active</i>.
+     * The status of the Amazon SNS notification topic. Notifications are sent only if the status is <code>active</code>
+     * .
      * </p>
      * <p>
      * Valid values: <code>active</code> | <code>inactive</code>
@@ -2995,7 +2971,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param notificationTopicStatus
      *        The status of the Amazon SNS notification topic. Notifications are sent only if the status is
-     *        <i>active</i>.</p>
+     *        <code>active</code>.</p>
      *        <p>
      *        Valid values: <code>active</code> | <code>inactive</code>
      */
@@ -3006,14 +2982,15 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The status of the Amazon SNS notification topic. Notifications are sent only if the status is <i>active</i>.
+     * The status of the Amazon SNS notification topic. Notifications are sent only if the status is <code>active</code>
+     * .
      * </p>
      * <p>
      * Valid values: <code>active</code> | <code>inactive</code>
      * </p>
      * 
      * @return The status of the Amazon SNS notification topic. Notifications are sent only if the status is
-     *         <i>active</i>.</p>
+     *         <code>active</code>.</p>
      *         <p>
      *         Valid values: <code>active</code> | <code>inactive</code>
      */
@@ -3024,7 +3001,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The status of the Amazon SNS notification topic. Notifications are sent only if the status is <i>active</i>.
+     * The status of the Amazon SNS notification topic. Notifications are sent only if the status is <code>active</code>
+     * .
      * </p>
      * <p>
      * Valid values: <code>active</code> | <code>inactive</code>
@@ -3032,7 +3010,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param notificationTopicStatus
      *        The status of the Amazon SNS notification topic. Notifications are sent only if the status is
-     *        <i>active</i>.</p>
+     *        <code>active</code>.</p>
      *        <p>
      *        Valid values: <code>active</code> | <code>inactive</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3046,11 +3024,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be
-     * applied, asynchronously and as soon as possible, regardless of the <i>PreferredMaintenanceWindow</i> setting for
-     * the cache cluster.
+     * applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
+     * setting for the cache cluster.
      * </p>
      * <p>
-     * If <code>false</code>, then changes to the cache cluster are applied on the next maintenance reboot, or the next
+     * If <code>false</code>, changes to the cache cluster are applied on the next maintenance reboot, or the next
      * failure reboot, whichever occurs first.
      * </p>
      * <important>
@@ -3069,10 +3047,10 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * @param applyImmediately
      *        If <code>true</code>, this parameter causes the modifications in this request and any pending
      *        modifications to be applied, asynchronously and as soon as possible, regardless of the
-     *        <i>PreferredMaintenanceWindow</i> setting for the cache cluster.</p>
+     *        <code>PreferredMaintenanceWindow</code> setting for the cache cluster.</p>
      *        <p>
-     *        If <code>false</code>, then changes to the cache cluster are applied on the next maintenance reboot, or
-     *        the next failure reboot, whichever occurs first.
+     *        If <code>false</code>, changes to the cache cluster are applied on the next maintenance reboot, or the
+     *        next failure reboot, whichever occurs first.
      *        </p>
      *        <important>
      *        <p>
@@ -3094,11 +3072,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be
-     * applied, asynchronously and as soon as possible, regardless of the <i>PreferredMaintenanceWindow</i> setting for
-     * the cache cluster.
+     * applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
+     * setting for the cache cluster.
      * </p>
      * <p>
-     * If <code>false</code>, then changes to the cache cluster are applied on the next maintenance reboot, or the next
+     * If <code>false</code>, changes to the cache cluster are applied on the next maintenance reboot, or the next
      * failure reboot, whichever occurs first.
      * </p>
      * <important>
@@ -3116,10 +3094,10 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @return If <code>true</code>, this parameter causes the modifications in this request and any pending
      *         modifications to be applied, asynchronously and as soon as possible, regardless of the
-     *         <i>PreferredMaintenanceWindow</i> setting for the cache cluster.</p>
+     *         <code>PreferredMaintenanceWindow</code> setting for the cache cluster.</p>
      *         <p>
-     *         If <code>false</code>, then changes to the cache cluster are applied on the next maintenance reboot, or
-     *         the next failure reboot, whichever occurs first.
+     *         If <code>false</code>, changes to the cache cluster are applied on the next maintenance reboot, or the
+     *         next failure reboot, whichever occurs first.
      *         </p>
      *         <important>
      *         <p>
@@ -3141,11 +3119,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be
-     * applied, asynchronously and as soon as possible, regardless of the <i>PreferredMaintenanceWindow</i> setting for
-     * the cache cluster.
+     * applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
+     * setting for the cache cluster.
      * </p>
      * <p>
-     * If <code>false</code>, then changes to the cache cluster are applied on the next maintenance reboot, or the next
+     * If <code>false</code>, changes to the cache cluster are applied on the next maintenance reboot, or the next
      * failure reboot, whichever occurs first.
      * </p>
      * <important>
@@ -3164,10 +3142,10 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * @param applyImmediately
      *        If <code>true</code>, this parameter causes the modifications in this request and any pending
      *        modifications to be applied, asynchronously and as soon as possible, regardless of the
-     *        <i>PreferredMaintenanceWindow</i> setting for the cache cluster.</p>
+     *        <code>PreferredMaintenanceWindow</code> setting for the cache cluster.</p>
      *        <p>
-     *        If <code>false</code>, then changes to the cache cluster are applied on the next maintenance reboot, or
-     *        the next failure reboot, whichever occurs first.
+     *        If <code>false</code>, changes to the cache cluster are applied on the next maintenance reboot, or the
+     *        next failure reboot, whichever occurs first.
      *        </p>
      *        <important>
      *        <p>
@@ -3191,11 +3169,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be
-     * applied, asynchronously and as soon as possible, regardless of the <i>PreferredMaintenanceWindow</i> setting for
-     * the cache cluster.
+     * applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
+     * setting for the cache cluster.
      * </p>
      * <p>
-     * If <code>false</code>, then changes to the cache cluster are applied on the next maintenance reboot, or the next
+     * If <code>false</code>, changes to the cache cluster are applied on the next maintenance reboot, or the next
      * failure reboot, whichever occurs first.
      * </p>
      * <important>
@@ -3213,10 +3191,10 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @return If <code>true</code>, this parameter causes the modifications in this request and any pending
      *         modifications to be applied, asynchronously and as soon as possible, regardless of the
-     *         <i>PreferredMaintenanceWindow</i> setting for the cache cluster.</p>
+     *         <code>PreferredMaintenanceWindow</code> setting for the cache cluster.</p>
      *         <p>
-     *         If <code>false</code>, then changes to the cache cluster are applied on the next maintenance reboot, or
-     *         the next failure reboot, whichever occurs first.
+     *         If <code>false</code>, changes to the cache cluster are applied on the next maintenance reboot, or the
+     *         next failure reboot, whichever occurs first.
      *         </p>
      *         <important>
      *         <p>
@@ -3368,22 +3346,22 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For
-     * example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for
-     * 5 days before being deleted.
+     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
+     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     * days before being deleted.
      * </p>
      * <note>
      * <p>
-     * If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
+     * If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
      * </p>
      * </note>
      * 
      * @param snapshotRetentionLimit
-     *        The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting
-     *        them. For example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
-     *        will be retained for 5 days before being deleted.</p> <note>
+     *        The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
+     *        For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     *        retained for 5 days before being deleted.</p> <note>
      *        <p>
-     *        If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
+     *        If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
      *        </p>
      */
 
@@ -3393,21 +3371,21 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For
-     * example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for
-     * 5 days before being deleted.
+     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
+     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     * days before being deleted.
      * </p>
      * <note>
      * <p>
-     * If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
+     * If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
      * </p>
      * </note>
      * 
-     * @return The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting
-     *         them. For example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
-     *         will be retained for 5 days before being deleted.</p> <note>
+     * @return The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
+     *         For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     *         retained for 5 days before being deleted.</p> <note>
      *         <p>
-     *         If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
+     *         If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
      *         </p>
      */
 
@@ -3417,22 +3395,22 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For
-     * example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for
-     * 5 days before being deleted.
+     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
+     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
+     * days before being deleted.
      * </p>
      * <note>
      * <p>
-     * If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
+     * If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
      * </p>
      * </note>
      * 
      * @param snapshotRetentionLimit
-     *        The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting
-     *        them. For example, if you set <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today
-     *        will be retained for 5 days before being deleted.</p> <note>
+     *        The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
+     *        For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     *        retained for 5 days before being deleted.</p> <note>
      *        <p>
-     *        If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
+     *        If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3444,11 +3422,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.
      * </p>
      * 
      * @param snapshotWindow
-     *        The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache
+     *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache
      *        cluster.
      */
 
@@ -3458,10 +3436,10 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.
      * </p>
      * 
-     * @return The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache
+     * @return The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache
      *         cluster.
      */
 
@@ -3471,11 +3449,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.
      * </p>
      * 
      * @param snapshotWindow
-     *        The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache
+     *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache
      *        cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3487,14 +3465,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A valid cache node type that you want to scale this cache cluster to. The value of this parameter must be one of
-     * the <i>ScaleUpModifications</i> values returned by the <code>ListAllowedCacheNodeTypeModification</code> action.
+     * A valid cache node type that you want to scale this cache cluster up to.
      * </p>
      * 
      * @param cacheNodeType
-     *        A valid cache node type that you want to scale this cache cluster to. The value of this parameter must be
-     *        one of the <i>ScaleUpModifications</i> values returned by the
-     *        <code>ListAllowedCacheNodeTypeModification</code> action.
+     *        A valid cache node type that you want to scale this cache cluster up to.
      */
 
     public void setCacheNodeType(String cacheNodeType) {
@@ -3503,13 +3478,10 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A valid cache node type that you want to scale this cache cluster to. The value of this parameter must be one of
-     * the <i>ScaleUpModifications</i> values returned by the <code>ListAllowedCacheNodeTypeModification</code> action.
+     * A valid cache node type that you want to scale this cache cluster up to.
      * </p>
      * 
-     * @return A valid cache node type that you want to scale this cache cluster to. The value of this parameter must be
-     *         one of the <i>ScaleUpModifications</i> values returned by the
-     *         <code>ListAllowedCacheNodeTypeModification</code> action.
+     * @return A valid cache node type that you want to scale this cache cluster up to.
      */
 
     public String getCacheNodeType() {
@@ -3518,14 +3490,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A valid cache node type that you want to scale this cache cluster to. The value of this parameter must be one of
-     * the <i>ScaleUpModifications</i> values returned by the <code>ListAllowedCacheNodeTypeModification</code> action.
+     * A valid cache node type that you want to scale this cache cluster up to.
      * </p>
      * 
      * @param cacheNodeType
-     *        A valid cache node type that you want to scale this cache cluster to. The value of this parameter must be
-     *        one of the <i>ScaleUpModifications</i> values returned by the
-     *        <code>ListAllowedCacheNodeTypeModification</code> action.
+     *        A valid cache node type that you want to scale this cache cluster up to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
