@@ -47,10 +47,18 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * Indicates whether the associated AWS resources should shut down when the environment is terminated:
      * </p>
      * <ul>
-     * <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling
-     * group and LoadBalancer, are terminated.</li>
-     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
-     * resources continue to operate.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group
+     * and LoadBalancer, are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
+     * resources continue to operate.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
@@ -198,10 +206,18 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * Indicates whether the associated AWS resources should shut down when the environment is terminated:
      * </p>
      * <ul>
-     * <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling
-     * group and LoadBalancer, are terminated.</li>
-     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
-     * resources continue to operate.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group
+     * and LoadBalancer, are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
+     * resources continue to operate.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
@@ -215,12 +231,20 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param terminateResources
-     *        Indicates whether the associated AWS resources should shut down when the environment is terminated: </p>
+     *        Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
      *        <ul>
-     *        <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto
-     *        Scaling group and LoadBalancer, are terminated.</li>
-     *        <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the
-     *        AWS resources continue to operate.</li>
+     *        <li>
+     *        <p>
+     *        <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling
+     *        group and LoadBalancer, are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
+     *        resources continue to operate.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
@@ -242,10 +266,18 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * Indicates whether the associated AWS resources should shut down when the environment is terminated:
      * </p>
      * <ul>
-     * <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling
-     * group and LoadBalancer, are terminated.</li>
-     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
-     * resources continue to operate.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group
+     * and LoadBalancer, are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
+     * resources continue to operate.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
@@ -258,12 +290,20 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the associated AWS resources should shut down when the environment is terminated: </p>
+     * @return Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
      *         <ul>
-     *         <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto
-     *         Scaling group and LoadBalancer, are terminated.</li>
-     *         <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but
-     *         the AWS resources continue to operate.</li>
+     *         <li>
+     *         <p>
+     *         <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto
+     *         Scaling group and LoadBalancer, are terminated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the
+     *         AWS resources continue to operate.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
@@ -285,10 +325,18 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * Indicates whether the associated AWS resources should shut down when the environment is terminated:
      * </p>
      * <ul>
-     * <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling
-     * group and LoadBalancer, are terminated.</li>
-     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
-     * resources continue to operate.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group
+     * and LoadBalancer, are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
+     * resources continue to operate.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
@@ -302,12 +350,20 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param terminateResources
-     *        Indicates whether the associated AWS resources should shut down when the environment is terminated: </p>
+     *        Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
      *        <ul>
-     *        <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto
-     *        Scaling group and LoadBalancer, are terminated.</li>
-     *        <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the
-     *        AWS resources continue to operate.</li>
+     *        <li>
+     *        <p>
+     *        <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling
+     *        group and LoadBalancer, are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
+     *        resources continue to operate.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
@@ -331,10 +387,18 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * Indicates whether the associated AWS resources should shut down when the environment is terminated:
      * </p>
      * <ul>
-     * <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling
-     * group and LoadBalancer, are terminated.</li>
-     * <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
-     * resources continue to operate.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group
+     * and LoadBalancer, are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS
+     * resources continue to operate.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
@@ -347,12 +411,20 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the associated AWS resources should shut down when the environment is terminated: </p>
+     * @return Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
      *         <ul>
-     *         <li> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto
-     *         Scaling group and LoadBalancer, are terminated.</li>
-     *         <li> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but
-     *         the AWS resources continue to operate.</li>
+     *         <li>
+     *         <p>
+     *         <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto
+     *         Scaling group and LoadBalancer, are terminated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the
+     *         AWS resources continue to operate.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS

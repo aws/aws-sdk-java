@@ -26,8 +26,16 @@ public class CheckDNSAvailabilityResult extends com.amazonaws.AmazonWebServiceRe
      * Indicates if the specified CNAME is available:
      * </p>
      * <ul>
-     * <li> <code>true</code> : The CNAME is available.</li>
-     * <li> <code>false</code> : The CNAME is not available.</li>
+     * <li>
+     * <p>
+     * <code>true</code> : The CNAME is available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code> : The CNAME is not available.
+     * </p>
+     * </li>
      * </ul>
      */
     private Boolean available;
@@ -43,15 +51,31 @@ public class CheckDNSAvailabilityResult extends com.amazonaws.AmazonWebServiceRe
      * Indicates if the specified CNAME is available:
      * </p>
      * <ul>
-     * <li> <code>true</code> : The CNAME is available.</li>
-     * <li> <code>false</code> : The CNAME is not available.</li>
+     * <li>
+     * <p>
+     * <code>true</code> : The CNAME is available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code> : The CNAME is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param available
-     *        Indicates if the specified CNAME is available: </p>
+     *        Indicates if the specified CNAME is available:</p>
      *        <ul>
-     *        <li> <code>true</code> : The CNAME is available.</li>
-     *        <li> <code>false</code> : The CNAME is not available.</li>
+     *        <li>
+     *        <p>
+     *        <code>true</code> : The CNAME is available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code> : The CNAME is not available.
+     *        </p>
+     *        </li>
      */
 
     public void setAvailable(Boolean available) {
@@ -63,14 +87,30 @@ public class CheckDNSAvailabilityResult extends com.amazonaws.AmazonWebServiceRe
      * Indicates if the specified CNAME is available:
      * </p>
      * <ul>
-     * <li> <code>true</code> : The CNAME is available.</li>
-     * <li> <code>false</code> : The CNAME is not available.</li>
+     * <li>
+     * <p>
+     * <code>true</code> : The CNAME is available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code> : The CNAME is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return Indicates if the specified CNAME is available: </p>
+     * @return Indicates if the specified CNAME is available:</p>
      *         <ul>
-     *         <li> <code>true</code> : The CNAME is available.</li>
-     *         <li> <code>false</code> : The CNAME is not available.</li>
+     *         <li>
+     *         <p>
+     *         <code>true</code> : The CNAME is available.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code> : The CNAME is not available.
+     *         </p>
+     *         </li>
      */
 
     public Boolean getAvailable() {
@@ -82,15 +122,31 @@ public class CheckDNSAvailabilityResult extends com.amazonaws.AmazonWebServiceRe
      * Indicates if the specified CNAME is available:
      * </p>
      * <ul>
-     * <li> <code>true</code> : The CNAME is available.</li>
-     * <li> <code>false</code> : The CNAME is not available.</li>
+     * <li>
+     * <p>
+     * <code>true</code> : The CNAME is available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code> : The CNAME is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param available
-     *        Indicates if the specified CNAME is available: </p>
+     *        Indicates if the specified CNAME is available:</p>
      *        <ul>
-     *        <li> <code>true</code> : The CNAME is available.</li>
-     *        <li> <code>false</code> : The CNAME is not available.</li>
+     *        <li>
+     *        <p>
+     *        <code>true</code> : The CNAME is available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code> : The CNAME is not available.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,14 +160,30 @@ public class CheckDNSAvailabilityResult extends com.amazonaws.AmazonWebServiceRe
      * Indicates if the specified CNAME is available:
      * </p>
      * <ul>
-     * <li> <code>true</code> : The CNAME is available.</li>
-     * <li> <code>false</code> : The CNAME is not available.</li>
+     * <li>
+     * <p>
+     * <code>true</code> : The CNAME is available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code> : The CNAME is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return Indicates if the specified CNAME is available: </p>
+     * @return Indicates if the specified CNAME is available:</p>
      *         <ul>
-     *         <li> <code>true</code> : The CNAME is available.</li>
-     *         <li> <code>false</code> : The CNAME is not available.</li>
+     *         <li>
+     *         <p>
+     *         <code>true</code> : The CNAME is available.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code> : The CNAME is not available.
+     *         </p>
+     *         </li>
      */
 
     public Boolean isAvailable() {

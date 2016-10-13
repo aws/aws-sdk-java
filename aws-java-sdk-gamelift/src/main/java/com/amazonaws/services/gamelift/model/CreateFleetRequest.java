@@ -73,7 +73,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
      * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
-     * supports the following EC2 instance types. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
+     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
      */
@@ -94,9 +94,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      */
     private String newGameSessionProtectionPolicy;
@@ -113,6 +121,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private RuntimeConfiguration runtimeConfiguration;
+    /**
+     * <p>
+     * Policy that limits the number of game sessions an individual player can create over a span of time for this
+     * fleet.
+     * </p>
+     */
+    private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
 
     /**
      * <p>
@@ -469,7 +484,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
      * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
-     * supports the following EC2 instance types. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
+     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
      * 
@@ -477,7 +492,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
      *        capacity. GameLift supports the following EC2 instance types. See <a
-     *        href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
+     *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
 
@@ -489,15 +504,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
      * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
-     * supports the following EC2 instance types. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
+     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
      * 
      * @return Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *         computing resources of each instance in the fleet, including CPU, memory, storage, and networking
      *         capacity. GameLift supports the following EC2 instance types. See <a
-     *         href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed
-     *         descriptions.
+     *         href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
 
@@ -509,7 +523,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
      * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
-     * supports the following EC2 instance types. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
+     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
      * 
@@ -517,7 +531,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
      *        capacity. GameLift supports the following EC2 instance types. See <a
-     *        href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
+     *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
      */
@@ -531,7 +545,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
      * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
-     * supports the following EC2 instance types. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
+     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
      * 
@@ -539,7 +553,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
      *        capacity. GameLift supports the following EC2 instance types. See <a
-     *        href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
+     *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
 
@@ -551,7 +565,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
      * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
-     * supports the following EC2 instance types. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
+     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
      * 
@@ -559,7 +573,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
      *        capacity. GameLift supports the following EC2 instance types. See <a
-     *        href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
+     *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
      */
@@ -667,9 +681,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
@@ -678,9 +700,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        UpdateFleetAttributes, but this change will only affect sessions created after the policy change. You can
      *        also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *        terminated during a scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @see ProtectionPolicy
      */
 
@@ -696,9 +726,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Game session protection policy to apply to all instances in this fleet. If this parameter is not set,
@@ -706,9 +744,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         UpdateFleetAttributes, but this change will only affect sessions created after the policy change. You can
      *         also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *         <ul>
-     *         <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *         <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *         terminated during a scale-down event.</li>
+     *         <li>
+     *         <p>
+     *         <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *         during a scale-down event.
+     *         </p>
+     *         </li>
      * @see ProtectionPolicy
      */
 
@@ -724,9 +770,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
@@ -735,9 +789,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        UpdateFleetAttributes, but this change will only affect sessions created after the policy change. You can
      *        also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *        terminated during a scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
@@ -755,9 +817,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
@@ -766,9 +836,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        UpdateFleetAttributes, but this change will only affect sessions created after the policy change. You can
      *        also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *        terminated during a scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @see ProtectionPolicy
      */
 
@@ -784,9 +862,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
@@ -795,9 +881,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        UpdateFleetAttributes, but this change will only affect sessions created after the policy change. You can
      *        also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *        terminated during a scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
@@ -890,6 +984,52 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Policy that limits the number of game sessions an individual player can create over a span of time for this
+     * fleet.
+     * </p>
+     * 
+     * @param resourceCreationLimitPolicy
+     *        Policy that limits the number of game sessions an individual player can create over a span of time for
+     *        this fleet.
+     */
+
+    public void setResourceCreationLimitPolicy(ResourceCreationLimitPolicy resourceCreationLimitPolicy) {
+        this.resourceCreationLimitPolicy = resourceCreationLimitPolicy;
+    }
+
+    /**
+     * <p>
+     * Policy that limits the number of game sessions an individual player can create over a span of time for this
+     * fleet.
+     * </p>
+     * 
+     * @return Policy that limits the number of game sessions an individual player can create over a span of time for
+     *         this fleet.
+     */
+
+    public ResourceCreationLimitPolicy getResourceCreationLimitPolicy() {
+        return this.resourceCreationLimitPolicy;
+    }
+
+    /**
+     * <p>
+     * Policy that limits the number of game sessions an individual player can create over a span of time for this
+     * fleet.
+     * </p>
+     * 
+     * @param resourceCreationLimitPolicy
+     *        Policy that limits the number of game sessions an individual player can create over a span of time for
+     *        this fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withResourceCreationLimitPolicy(ResourceCreationLimitPolicy resourceCreationLimitPolicy) {
+        setResourceCreationLimitPolicy(resourceCreationLimitPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -919,7 +1059,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getNewGameSessionProtectionPolicy() != null)
             sb.append("NewGameSessionProtectionPolicy: " + getNewGameSessionProtectionPolicy() + ",");
         if (getRuntimeConfiguration() != null)
-            sb.append("RuntimeConfiguration: " + getRuntimeConfiguration());
+            sb.append("RuntimeConfiguration: " + getRuntimeConfiguration() + ",");
+        if (getResourceCreationLimitPolicy() != null)
+            sb.append("ResourceCreationLimitPolicy: " + getResourceCreationLimitPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -975,6 +1117,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getRuntimeConfiguration() != null && other.getRuntimeConfiguration().equals(this.getRuntimeConfiguration()) == false)
             return false;
+        if (other.getResourceCreationLimitPolicy() == null ^ this.getResourceCreationLimitPolicy() == null)
+            return false;
+        if (other.getResourceCreationLimitPolicy() != null && other.getResourceCreationLimitPolicy().equals(this.getResourceCreationLimitPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -993,6 +1139,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getEC2InboundPermissions() == null) ? 0 : getEC2InboundPermissions().hashCode());
         hashCode = prime * hashCode + ((getNewGameSessionProtectionPolicy() == null) ? 0 : getNewGameSessionProtectionPolicy().hashCode());
         hashCode = prime * hashCode + ((getRuntimeConfiguration() == null) ? 0 : getRuntimeConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getResourceCreationLimitPolicy() == null) ? 0 : getResourceCreationLimitPolicy().hashCode());
         return hashCode;
     }
 

@@ -30,7 +30,7 @@ import java.io.Serializable;
  * <p>
  * A GameLift instance is limited to 50 processes running simultaneously. To calculate the total number of processes
  * specified in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each
- * <code><a>ServerProcess</a></code> object in the runtime configuration.
+ * <code> <a>ServerProcess</a> </code> object in the runtime configuration.
  * </p>
  */
 public class RuntimeConfiguration implements Serializable, Cloneable {

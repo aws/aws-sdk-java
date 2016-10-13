@@ -18,6 +18,7 @@ package com.amazonaws.services.certificatemanager.model;
 public enum KeyAlgorithm {
 
     RSA_2048("RSA_2048"),
+    RSA_1024("RSA_1024"),
     EC_prime256v1("EC_prime256v1");
 
     private String value;

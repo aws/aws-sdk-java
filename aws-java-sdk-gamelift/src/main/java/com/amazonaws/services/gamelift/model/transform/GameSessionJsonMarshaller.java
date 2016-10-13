@@ -87,6 +87,9 @@ public class GameSessionJsonMarshaller {
             if (gameSession.getPlayerSessionCreationPolicy() != null) {
                 jsonGenerator.writeFieldName("PlayerSessionCreationPolicy").writeValue(gameSession.getPlayerSessionCreationPolicy());
             }
+            if (gameSession.getCreatorId() != null) {
+                jsonGenerator.writeFieldName("CreatorId").writeValue(gameSession.getCreatorId());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

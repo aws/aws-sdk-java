@@ -20,7 +20,8 @@ public enum GameSessionStatus {
     ACTIVE("ACTIVE"),
     ACTIVATING("ACTIVATING"),
     TERMINATED("TERMINATED"),
-    TERMINATING("TERMINATING");
+    TERMINATING("TERMINATING"),
+    ERROR("ERROR");
 
     private String value;
 

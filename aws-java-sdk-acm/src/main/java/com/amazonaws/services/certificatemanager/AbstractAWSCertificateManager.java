@@ -55,6 +55,11 @@ public class AbstractAWSCertificateManager implements AWSCertificateManager {
     }
 
     @Override
+    public ImportCertificateResult importCertificate(ImportCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListCertificatesResult listCertificates(ListCertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

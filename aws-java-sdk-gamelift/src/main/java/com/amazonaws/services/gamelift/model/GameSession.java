@@ -23,7 +23,10 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a game session.
+     * Unique identifier for a game session. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID
+     * string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     * auto-generated string.
      * </p>
      */
     private String gameSessionId;
@@ -98,14 +101,27 @@ public class GameSession implements Serializable, Cloneable {
      * </p>
      */
     private String playerSessionCreationPolicy;
+    /**
+     * <p>
+     * Player ID of the person or entity that created the game session. This ID is used to enforce a resource protection
+     * policy (if one exists) that limits the number of concurrent active game sessions one player can have.
+     * </p>
+     */
+    private String creatorId;
 
     /**
      * <p>
-     * Unique identifier for a game session.
+     * Unique identifier for a game session. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID
+     * string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     * auto-generated string.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session.
+     *        Unique identifier for a game session. Game session ID format is as follows:
+     *        "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of
+     *        &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     *        auto-generated string.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -114,10 +130,16 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a game session.
+     * Unique identifier for a game session. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID
+     * string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     * auto-generated string.
      * </p>
      * 
-     * @return Unique identifier for a game session.
+     * @return Unique identifier for a game session. Game session ID format is as follows:
+     *         "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of
+     *         &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created)
+     *         an auto-generated string.
      */
 
     public String getGameSessionId() {
@@ -126,11 +148,17 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a game session.
+     * Unique identifier for a game session. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID
+     * string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     * auto-generated string.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session.
+     *        Unique identifier for a game session. Game session ID format is as follows:
+     *        "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of
+     *        &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     *        auto-generated string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -710,6 +738,55 @@ public class GameSession implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Player ID of the person or entity that created the game session. This ID is used to enforce a resource protection
+     * policy (if one exists) that limits the number of concurrent active game sessions one player can have.
+     * </p>
+     * 
+     * @param creatorId
+     *        Player ID of the person or entity that created the game session. This ID is used to enforce a resource
+     *        protection policy (if one exists) that limits the number of concurrent active game sessions one player can
+     *        have.
+     */
+
+    public void setCreatorId(String creatorId) {
+        this.creatorId = creatorId;
+    }
+
+    /**
+     * <p>
+     * Player ID of the person or entity that created the game session. This ID is used to enforce a resource protection
+     * policy (if one exists) that limits the number of concurrent active game sessions one player can have.
+     * </p>
+     * 
+     * @return Player ID of the person or entity that created the game session. This ID is used to enforce a resource
+     *         protection policy (if one exists) that limits the number of concurrent active game sessions one player
+     *         can have.
+     */
+
+    public String getCreatorId() {
+        return this.creatorId;
+    }
+
+    /**
+     * <p>
+     * Player ID of the person or entity that created the game session. This ID is used to enforce a resource protection
+     * policy (if one exists) that limits the number of concurrent active game sessions one player can have.
+     * </p>
+     * 
+     * @param creatorId
+     *        Player ID of the person or entity that created the game session. This ID is used to enforce a resource
+     *        protection policy (if one exists) that limits the number of concurrent active game sessions one player can
+     *        have.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GameSession withCreatorId(String creatorId) {
+        setCreatorId(creatorId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -743,7 +820,9 @@ public class GameSession implements Serializable, Cloneable {
         if (getPort() != null)
             sb.append("Port: " + getPort() + ",");
         if (getPlayerSessionCreationPolicy() != null)
-            sb.append("PlayerSessionCreationPolicy: " + getPlayerSessionCreationPolicy());
+            sb.append("PlayerSessionCreationPolicy: " + getPlayerSessionCreationPolicy() + ",");
+        if (getCreatorId() != null)
+            sb.append("CreatorId: " + getCreatorId());
         sb.append("}");
         return sb.toString();
     }
@@ -806,6 +885,10 @@ public class GameSession implements Serializable, Cloneable {
             return false;
         if (other.getPlayerSessionCreationPolicy() != null && other.getPlayerSessionCreationPolicy().equals(this.getPlayerSessionCreationPolicy()) == false)
             return false;
+        if (other.getCreatorId() == null ^ this.getCreatorId() == null)
+            return false;
+        if (other.getCreatorId() != null && other.getCreatorId().equals(this.getCreatorId()) == false)
+            return false;
         return true;
     }
 
@@ -826,6 +909,7 @@ public class GameSession implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getPlayerSessionCreationPolicy() == null) ? 0 : getPlayerSessionCreationPolicy().hashCode());
+        hashCode = prime * hashCode + ((getCreatorId() == null) ? 0 : getCreatorId().hashCode());
         return hashCode;
     }
 

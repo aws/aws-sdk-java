@@ -123,7 +123,7 @@ public class ValidateConfigurationSettingsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param templateName
-     *        The name of the configuration template to validate the settings against. </p>
+     *        The name of the configuration template to validate the settings against.</p>
      *        <p>
      *        Condition: You cannot specify both this and an environment name.
      */
@@ -140,7 +140,7 @@ public class ValidateConfigurationSettingsRequest extends com.amazonaws.AmazonWe
      * Condition: You cannot specify both this and an environment name.
      * </p>
      * 
-     * @return The name of the configuration template to validate the settings against. </p>
+     * @return The name of the configuration template to validate the settings against.</p>
      *         <p>
      *         Condition: You cannot specify both this and an environment name.
      */
@@ -158,7 +158,7 @@ public class ValidateConfigurationSettingsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param templateName
-     *        The name of the configuration template to validate the settings against. </p>
+     *        The name of the configuration template to validate the settings against.</p>
      *        <p>
      *        Condition: You cannot specify both this and an environment name.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -178,7 +178,7 @@ public class ValidateConfigurationSettingsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param environmentName
-     *        The name of the environment to validate the settings against. </p>
+     *        The name of the environment to validate the settings against.</p>
      *        <p>
      *        Condition: You cannot specify both this and a configuration template name.
      */
@@ -195,7 +195,7 @@ public class ValidateConfigurationSettingsRequest extends com.amazonaws.AmazonWe
      * Condition: You cannot specify both this and a configuration template name.
      * </p>
      * 
-     * @return The name of the environment to validate the settings against. </p>
+     * @return The name of the environment to validate the settings against.</p>
      *         <p>
      *         Condition: You cannot specify both this and a configuration template name.
      */
@@ -213,7 +213,7 @@ public class ValidateConfigurationSettingsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param environmentName
-     *        The name of the environment to validate the settings against. </p>
+     *        The name of the environment to validate the settings against.</p>
      *        <p>
      *        Condition: You cannot specify both this and a configuration template name.
      * @return Returns a reference to this object so that method calls can be chained together.

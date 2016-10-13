@@ -59,7 +59,7 @@ public class UpdateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * methods to initialize any additional object members.
      * 
      * @param applicationName
-     *        The name of the application associated with this version. </p>
+     *        The name of the application associated with this version.</p>
      *        <p>
      *        If no application is found with this name, <code>UpdateApplication</code> returns an
      *        <code>InvalidParameterValue</code> error.
@@ -85,7 +85,7 @@ public class UpdateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param applicationName
-     *        The name of the application associated with this version. </p>
+     *        The name of the application associated with this version.</p>
      *        <p>
      *        If no application is found with this name, <code>UpdateApplication</code> returns an
      *        <code>InvalidParameterValue</code> error.
@@ -104,7 +104,7 @@ public class UpdateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * <code>InvalidParameterValue</code> error.
      * </p>
      * 
-     * @return The name of the application associated with this version. </p>
+     * @return The name of the application associated with this version.</p>
      *         <p>
      *         If no application is found with this name, <code>UpdateApplication</code> returns an
      *         <code>InvalidParameterValue</code> error.
@@ -124,7 +124,7 @@ public class UpdateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param applicationName
-     *        The name of the application associated with this version. </p>
+     *        The name of the application associated with this version.</p>
      *        <p>
      *        If no application is found with this name, <code>UpdateApplication</code> returns an
      *        <code>InvalidParameterValue</code> error.

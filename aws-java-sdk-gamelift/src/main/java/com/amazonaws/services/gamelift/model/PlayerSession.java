@@ -35,7 +35,7 @@ public class PlayerSession implements Serializable, Cloneable {
     private String playerId;
     /**
      * <p>
-     * Unique identifier for a game session.
+     * Unique identifier for the game session that the player session is connected to.
      * </p>
      */
     private String gameSessionId;
@@ -67,12 +67,28 @@ public class PlayerSession implements Serializable, Cloneable {
      * Possible player session statuses include the following:
      * </p>
      * <ul>
-     * <li><b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
-     * server process and/or been validated.</li>
-     * <li><b>ACTIVE</b> – The player has been validated by the server process and is currently connected.</li>
-     * <li><b>COMPLETED</b> – The player connection has been dropped.</li>
-     * <li><b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     * validated within the time-out limit (60 seconds).</li>
+     * <li>
+     * <p>
+     * <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
+     * server process and/or been validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPLETED</b> – The player connection has been dropped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not validated
+     * within the time-out limit (60 seconds).
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -172,11 +188,11 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a game session.
+     * Unique identifier for the game session that the player session is connected to.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session.
+     *        Unique identifier for the game session that the player session is connected to.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -185,10 +201,10 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a game session.
+     * Unique identifier for the game session that the player session is connected to.
      * </p>
      * 
-     * @return Unique identifier for a game session.
+     * @return Unique identifier for the game session that the player session is connected to.
      */
 
     public String getGameSessionId() {
@@ -197,11 +213,11 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a game session.
+     * Unique identifier for the game session that the player session is connected to.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session.
+     *        Unique identifier for the game session that the player session is connected to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,12 +366,28 @@ public class PlayerSession implements Serializable, Cloneable {
      * Possible player session statuses include the following:
      * </p>
      * <ul>
-     * <li><b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
-     * server process and/or been validated.</li>
-     * <li><b>ACTIVE</b> – The player has been validated by the server process and is currently connected.</li>
-     * <li><b>COMPLETED</b> – The player connection has been dropped.</li>
-     * <li><b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     * validated within the time-out limit (60 seconds).</li>
+     * <li>
+     * <p>
+     * <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
+     * server process and/or been validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPLETED</b> – The player connection has been dropped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not validated
+     * within the time-out limit (60 seconds).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -364,12 +396,28 @@ public class PlayerSession implements Serializable, Cloneable {
      *        Possible player session statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>RESERVED</b> – The player session request has been received, but the player has not yet connected
-     *        to the server process and/or been validated.</li>
-     *        <li><b>ACTIVE</b> – The player has been validated by the server process and is currently connected.</li>
-     *        <li><b>COMPLETED</b> – The player connection has been dropped.</li>
-     *        <li><b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     *        validated within the time-out limit (60 seconds).</li>
+     *        <li>
+     *        <p>
+     *        <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to
+     *        the server process and/or been validated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPLETED</b> – The player connection has been dropped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
+     *        validated within the time-out limit (60 seconds).
+     *        </p>
+     *        </li>
      * @see PlayerSessionStatus
      */
 
@@ -385,12 +433,28 @@ public class PlayerSession implements Serializable, Cloneable {
      * Possible player session statuses include the following:
      * </p>
      * <ul>
-     * <li><b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
-     * server process and/or been validated.</li>
-     * <li><b>ACTIVE</b> – The player has been validated by the server process and is currently connected.</li>
-     * <li><b>COMPLETED</b> – The player connection has been dropped.</li>
-     * <li><b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     * validated within the time-out limit (60 seconds).</li>
+     * <li>
+     * <p>
+     * <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
+     * server process and/or been validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPLETED</b> – The player connection has been dropped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not validated
+     * within the time-out limit (60 seconds).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Current status of the player session.</p>
@@ -398,12 +462,28 @@ public class PlayerSession implements Serializable, Cloneable {
      *         Possible player session statuses include the following:
      *         </p>
      *         <ul>
-     *         <li><b>RESERVED</b> – The player session request has been received, but the player has not yet connected
-     *         to the server process and/or been validated.</li>
-     *         <li><b>ACTIVE</b> – The player has been validated by the server process and is currently connected.</li>
-     *         <li><b>COMPLETED</b> – The player connection has been dropped.</li>
-     *         <li><b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was
-     *         not validated within the time-out limit (60 seconds).</li>
+     *         <li>
+     *         <p>
+     *         <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to
+     *         the server process and/or been validated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>COMPLETED</b> – The player connection has been dropped.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
+     *         validated within the time-out limit (60 seconds).
+     *         </p>
+     *         </li>
      * @see PlayerSessionStatus
      */
 
@@ -419,12 +499,28 @@ public class PlayerSession implements Serializable, Cloneable {
      * Possible player session statuses include the following:
      * </p>
      * <ul>
-     * <li><b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
-     * server process and/or been validated.</li>
-     * <li><b>ACTIVE</b> – The player has been validated by the server process and is currently connected.</li>
-     * <li><b>COMPLETED</b> – The player connection has been dropped.</li>
-     * <li><b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     * validated within the time-out limit (60 seconds).</li>
+     * <li>
+     * <p>
+     * <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
+     * server process and/or been validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPLETED</b> – The player connection has been dropped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not validated
+     * within the time-out limit (60 seconds).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -433,12 +529,28 @@ public class PlayerSession implements Serializable, Cloneable {
      *        Possible player session statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>RESERVED</b> – The player session request has been received, but the player has not yet connected
-     *        to the server process and/or been validated.</li>
-     *        <li><b>ACTIVE</b> – The player has been validated by the server process and is currently connected.</li>
-     *        <li><b>COMPLETED</b> – The player connection has been dropped.</li>
-     *        <li><b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     *        validated within the time-out limit (60 seconds).</li>
+     *        <li>
+     *        <p>
+     *        <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to
+     *        the server process and/or been validated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPLETED</b> – The player connection has been dropped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
+     *        validated within the time-out limit (60 seconds).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlayerSessionStatus
      */
@@ -456,12 +568,28 @@ public class PlayerSession implements Serializable, Cloneable {
      * Possible player session statuses include the following:
      * </p>
      * <ul>
-     * <li><b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
-     * server process and/or been validated.</li>
-     * <li><b>ACTIVE</b> – The player has been validated by the server process and is currently connected.</li>
-     * <li><b>COMPLETED</b> – The player connection has been dropped.</li>
-     * <li><b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     * validated within the time-out limit (60 seconds).</li>
+     * <li>
+     * <p>
+     * <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
+     * server process and/or been validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPLETED</b> – The player connection has been dropped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not validated
+     * within the time-out limit (60 seconds).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -470,12 +598,28 @@ public class PlayerSession implements Serializable, Cloneable {
      *        Possible player session statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>RESERVED</b> – The player session request has been received, but the player has not yet connected
-     *        to the server process and/or been validated.</li>
-     *        <li><b>ACTIVE</b> – The player has been validated by the server process and is currently connected.</li>
-     *        <li><b>COMPLETED</b> – The player connection has been dropped.</li>
-     *        <li><b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     *        validated within the time-out limit (60 seconds).</li>
+     *        <li>
+     *        <p>
+     *        <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to
+     *        the server process and/or been validated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPLETED</b> – The player connection has been dropped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
+     *        validated within the time-out limit (60 seconds).
+     *        </p>
+     *        </li>
      * @see PlayerSessionStatus
      */
 
@@ -491,12 +635,28 @@ public class PlayerSession implements Serializable, Cloneable {
      * Possible player session statuses include the following:
      * </p>
      * <ul>
-     * <li><b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
-     * server process and/or been validated.</li>
-     * <li><b>ACTIVE</b> – The player has been validated by the server process and is currently connected.</li>
-     * <li><b>COMPLETED</b> – The player connection has been dropped.</li>
-     * <li><b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     * validated within the time-out limit (60 seconds).</li>
+     * <li>
+     * <p>
+     * <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
+     * server process and/or been validated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPLETED</b> – The player connection has been dropped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not validated
+     * within the time-out limit (60 seconds).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -505,12 +665,28 @@ public class PlayerSession implements Serializable, Cloneable {
      *        Possible player session statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>RESERVED</b> – The player session request has been received, but the player has not yet connected
-     *        to the server process and/or been validated.</li>
-     *        <li><b>ACTIVE</b> – The player has been validated by the server process and is currently connected.</li>
-     *        <li><b>COMPLETED</b> – The player connection has been dropped.</li>
-     *        <li><b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     *        validated within the time-out limit (60 seconds).</li>
+     *        <li>
+     *        <p>
+     *        <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to
+     *        the server process and/or been validated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPLETED</b> – The player connection has been dropped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
+     *        validated within the time-out limit (60 seconds).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlayerSessionStatus
      */

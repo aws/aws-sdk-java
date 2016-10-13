@@ -335,7 +335,7 @@ public class UpdateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * Constraint: You can remove only <code>UserDefined</code> configuration options.
      * </p>
      * 
-     * @return A list of configuration options to remove from the configuration set. </p>
+     * @return A list of configuration options to remove from the configuration set.</p>
      *         <p>
      *         Constraint: You can remove only <code>UserDefined</code> configuration options.
      */
@@ -356,7 +356,7 @@ public class UpdateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param optionsToRemove
-     *        A list of configuration options to remove from the configuration set. </p>
+     *        A list of configuration options to remove from the configuration set.</p>
      *        <p>
      *        Constraint: You can remove only <code>UserDefined</code> configuration options.
      */
@@ -384,7 +384,7 @@ public class UpdateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param optionsToRemove
-     *        A list of configuration options to remove from the configuration set. </p>
+     *        A list of configuration options to remove from the configuration set.</p>
      *        <p>
      *        Constraint: You can remove only <code>UserDefined</code> configuration options.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -409,7 +409,7 @@ public class UpdateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param optionsToRemove
-     *        A list of configuration options to remove from the configuration set. </p>
+     *        A list of configuration options to remove from the configuration set.</p>
      *        <p>
      *        Constraint: You can remove only <code>UserDefined</code> configuration options.
      * @return Returns a reference to this object so that method calls can be chained together.

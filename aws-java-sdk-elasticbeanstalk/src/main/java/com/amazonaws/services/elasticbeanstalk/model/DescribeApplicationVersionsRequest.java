@@ -35,6 +35,18 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> versionLabels;
+    /**
+     * <p>
+     * Specify a maximum number of application versions to paginate in the request.
+     * </p>
+     */
+    private Integer maxRecords;
+    /**
+     * <p>
+     * Specify a next token to retrieve the next page in a paginated request.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -160,6 +172,86 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Specify a maximum number of application versions to paginate in the request.
+     * </p>
+     * 
+     * @param maxRecords
+     *        Specify a maximum number of application versions to paginate in the request.
+     */
+
+    public void setMaxRecords(Integer maxRecords) {
+        this.maxRecords = maxRecords;
+    }
+
+    /**
+     * <p>
+     * Specify a maximum number of application versions to paginate in the request.
+     * </p>
+     * 
+     * @return Specify a maximum number of application versions to paginate in the request.
+     */
+
+    public Integer getMaxRecords() {
+        return this.maxRecords;
+    }
+
+    /**
+     * <p>
+     * Specify a maximum number of application versions to paginate in the request.
+     * </p>
+     * 
+     * @param maxRecords
+     *        Specify a maximum number of application versions to paginate in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationVersionsRequest withMaxRecords(Integer maxRecords) {
+        setMaxRecords(maxRecords);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify a next token to retrieve the next page in a paginated request.
+     * </p>
+     * 
+     * @param nextToken
+     *        Specify a next token to retrieve the next page in a paginated request.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * Specify a next token to retrieve the next page in a paginated request.
+     * </p>
+     * 
+     * @return Specify a next token to retrieve the next page in a paginated request.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * Specify a next token to retrieve the next page in a paginated request.
+     * </p>
+     * 
+     * @param nextToken
+     *        Specify a next token to retrieve the next page in a paginated request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationVersionsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -173,7 +265,11 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
         if (getApplicationName() != null)
             sb.append("ApplicationName: " + getApplicationName() + ",");
         if (getVersionLabels() != null)
-            sb.append("VersionLabels: " + getVersionLabels());
+            sb.append("VersionLabels: " + getVersionLabels() + ",");
+        if (getMaxRecords() != null)
+            sb.append("MaxRecords: " + getMaxRecords() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -196,6 +292,14 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getVersionLabels() != null && other.getVersionLabels().equals(this.getVersionLabels()) == false)
             return false;
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
+            return false;
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -206,6 +310,8 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getVersionLabels() == null) ? 0 : getVersionLabels().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

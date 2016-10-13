@@ -78,7 +78,7 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param sourceEnvironmentId
-     *        The ID of the source environment. </p>
+     *        The ID of the source environment.</p>
      *        <p>
      *        Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
      *        <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
@@ -99,7 +99,7 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
      * <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.
      * </p>
      * 
-     * @return The ID of the source environment. </p>
+     * @return The ID of the source environment.</p>
      *         <p>
      *         Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
      *         <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
@@ -121,7 +121,7 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param sourceEnvironmentId
-     *        The ID of the source environment. </p>
+     *        The ID of the source environment.</p>
      *        <p>
      *        Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
      *        <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
@@ -145,7 +145,7 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param sourceEnvironmentName
-     *        The name of the source environment. </p>
+     *        The name of the source environment.</p>
      *        <p>
      *        Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
      *        <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
@@ -166,7 +166,7 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
      * <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.
      * </p>
      * 
-     * @return The name of the source environment. </p>
+     * @return The name of the source environment.</p>
      *         <p>
      *         Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
      *         <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
@@ -188,7 +188,7 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param sourceEnvironmentName
-     *        The name of the source environment. </p>
+     *        The name of the source environment.</p>
      *        <p>
      *        Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
      *        <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
@@ -212,7 +212,7 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param destinationEnvironmentId
-     *        The ID of the destination environment. </p>
+     *        The ID of the destination environment.</p>
      *        <p>
      *        Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
      *        <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
@@ -233,7 +233,7 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
      * <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.
      * </p>
      * 
-     * @return The ID of the destination environment. </p>
+     * @return The ID of the destination environment.</p>
      *         <p>
      *         Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
      *         <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
@@ -255,7 +255,7 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param destinationEnvironmentId
-     *        The ID of the destination environment. </p>
+     *        The ID of the destination environment.</p>
      *        <p>
      *        Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
      *        <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
@@ -279,7 +279,7 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param destinationEnvironmentName
-     *        The name of the destination environment. </p>
+     *        The name of the destination environment.</p>
      *        <p>
      *        Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
      *        <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
@@ -300,7 +300,7 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
      * <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
      * </p>
      * 
-     * @return The name of the destination environment. </p>
+     * @return The name of the destination environment.</p>
      *         <p>
      *         Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
      *         <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the
@@ -322,7 +322,7 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param destinationEnvironmentName
-     *        The name of the destination environment. </p>
+     *        The name of the destination environment.</p>
      *        <p>
      *        Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the
      *        <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the

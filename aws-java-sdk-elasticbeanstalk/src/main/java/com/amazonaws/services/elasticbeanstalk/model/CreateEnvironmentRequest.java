@@ -144,7 +144,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * methods to initialize any additional object members.
      * 
      * @param applicationName
-     *        The name of the application that contains the version to be deployed. </p>
+     *        The name of the application that contains the version to be deployed.</p>
      *        <p>
      *        If no application is found with this name, <code>CreateEnvironment</code> returns an
      *        <code>InvalidParameterValue</code> error.
@@ -175,7 +175,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param applicationName
-     *        The name of the application that contains the version to be deployed. </p>
+     *        The name of the application that contains the version to be deployed.</p>
      *        <p>
      *        If no application is found with this name, <code>CreateEnvironment</code> returns an
      *        <code>InvalidParameterValue</code> error.
@@ -194,7 +194,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>InvalidParameterValue</code> error.
      * </p>
      * 
-     * @return The name of the application that contains the version to be deployed. </p>
+     * @return The name of the application that contains the version to be deployed.</p>
      *         <p>
      *         If no application is found with this name, <code>CreateEnvironment</code> returns an
      *         <code>InvalidParameterValue</code> error.
@@ -214,7 +214,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param applicationName
-     *        The name of the application that contains the version to be deployed. </p>
+     *        The name of the application that contains the version to be deployed.</p>
      *        <p>
      *        If no application is found with this name, <code>CreateEnvironment</code> returns an
      *        <code>InvalidParameterValue</code> error.
@@ -241,7 +241,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param environmentName
-     *        A unique name for the deployment environment. Used in the application URL. </p>
+     *        A unique name for the deployment environment. Used in the application URL.</p>
      *        <p>
      *        Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and
      *        hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified
@@ -270,7 +270,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * part of the visible URL for your application.
      * </p>
      * 
-     * @return A unique name for the deployment environment. Used in the application URL. </p>
+     * @return A unique name for the deployment environment. Used in the application URL.</p>
      *         <p>
      *         Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and
      *         hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified
@@ -300,7 +300,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param environmentName
-     *        A unique name for the deployment environment. Used in the application URL. </p>
+     *        A unique name for the deployment environment. Used in the application URL.</p>
      *        <p>
      *        Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and
      *        hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified
@@ -745,7 +745,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param solutionStackName
      *        This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk sets the
-     *        configuration values to the default values associated with the specified solution stack. </p>
+     *        configuration values to the default values associated with the specified solution stack.</p>
      *        <p>
      *        Condition: You must specify either this or a <code>TemplateName</code>, but not both. If you specify both,
      *        AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify
@@ -768,7 +768,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @return This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk sets the
-     *         configuration values to the default values associated with the specified solution stack. </p>
+     *         configuration values to the default values associated with the specified solution stack.</p>
      *         <p>
      *         Condition: You must specify either this or a <code>TemplateName</code>, but not both. If you specify
      *         both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not
@@ -792,7 +792,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param solutionStackName
      *        This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk sets the
-     *        configuration values to the default values associated with the specified solution stack. </p>
+     *        configuration values to the default values associated with the specified solution stack.</p>
      *        <p>
      *        Condition: You must specify either this or a <code>TemplateName</code>, but not both. If you specify both,
      *        AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify

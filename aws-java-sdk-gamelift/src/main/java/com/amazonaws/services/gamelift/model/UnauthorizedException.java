@@ -14,7 +14,7 @@ package com.amazonaws.services.gamelift.model;
 
 /**
  * <p>
- * The client failed authentication. Clients should not retry such requests
+ * The client failed authentication. Clients should not retry such requests.
  * </p>
  */
 public class UnauthorizedException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {

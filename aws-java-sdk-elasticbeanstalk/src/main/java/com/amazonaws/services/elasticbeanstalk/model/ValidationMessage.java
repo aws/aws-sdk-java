@@ -32,8 +32,16 @@ public class ValidationMessage implements Serializable, Cloneable {
      * An indication of the severity of this message:
      * </p>
      * <ul>
-     * <li> <code>error</code>: This message indicates that this is not a valid setting for an option.</li>
-     * <li> <code>warning</code>: This message is providing information you should take into account.</li>
+     * <li>
+     * <p>
+     * <code>error</code>: This message indicates that this is not a valid setting for an option.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>warning</code>: This message is providing information you should take into account.
+     * </p>
+     * </li>
      * </ul>
      */
     private String severity;
@@ -87,15 +95,31 @@ public class ValidationMessage implements Serializable, Cloneable {
      * An indication of the severity of this message:
      * </p>
      * <ul>
-     * <li> <code>error</code>: This message indicates that this is not a valid setting for an option.</li>
-     * <li> <code>warning</code>: This message is providing information you should take into account.</li>
+     * <li>
+     * <p>
+     * <code>error</code>: This message indicates that this is not a valid setting for an option.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>warning</code>: This message is providing information you should take into account.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param severity
-     *        An indication of the severity of this message: </p>
+     *        An indication of the severity of this message:</p>
      *        <ul>
-     *        <li> <code>error</code>: This message indicates that this is not a valid setting for an option.</li>
-     *        <li> <code>warning</code>: This message is providing information you should take into account.</li>
+     *        <li>
+     *        <p>
+     *        <code>error</code>: This message indicates that this is not a valid setting for an option.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>warning</code>: This message is providing information you should take into account.
+     *        </p>
+     *        </li>
      * @see ValidationSeverity
      */
 
@@ -108,14 +132,30 @@ public class ValidationMessage implements Serializable, Cloneable {
      * An indication of the severity of this message:
      * </p>
      * <ul>
-     * <li> <code>error</code>: This message indicates that this is not a valid setting for an option.</li>
-     * <li> <code>warning</code>: This message is providing information you should take into account.</li>
+     * <li>
+     * <p>
+     * <code>error</code>: This message indicates that this is not a valid setting for an option.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>warning</code>: This message is providing information you should take into account.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return An indication of the severity of this message: </p>
+     * @return An indication of the severity of this message:</p>
      *         <ul>
-     *         <li> <code>error</code>: This message indicates that this is not a valid setting for an option.</li>
-     *         <li> <code>warning</code>: This message is providing information you should take into account.</li>
+     *         <li>
+     *         <p>
+     *         <code>error</code>: This message indicates that this is not a valid setting for an option.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>warning</code>: This message is providing information you should take into account.
+     *         </p>
+     *         </li>
      * @see ValidationSeverity
      */
 
@@ -128,15 +168,31 @@ public class ValidationMessage implements Serializable, Cloneable {
      * An indication of the severity of this message:
      * </p>
      * <ul>
-     * <li> <code>error</code>: This message indicates that this is not a valid setting for an option.</li>
-     * <li> <code>warning</code>: This message is providing information you should take into account.</li>
+     * <li>
+     * <p>
+     * <code>error</code>: This message indicates that this is not a valid setting for an option.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>warning</code>: This message is providing information you should take into account.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param severity
-     *        An indication of the severity of this message: </p>
+     *        An indication of the severity of this message:</p>
      *        <ul>
-     *        <li> <code>error</code>: This message indicates that this is not a valid setting for an option.</li>
-     *        <li> <code>warning</code>: This message is providing information you should take into account.</li>
+     *        <li>
+     *        <p>
+     *        <code>error</code>: This message indicates that this is not a valid setting for an option.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>warning</code>: This message is providing information you should take into account.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ValidationSeverity
      */
@@ -151,15 +207,31 @@ public class ValidationMessage implements Serializable, Cloneable {
      * An indication of the severity of this message:
      * </p>
      * <ul>
-     * <li> <code>error</code>: This message indicates that this is not a valid setting for an option.</li>
-     * <li> <code>warning</code>: This message is providing information you should take into account.</li>
+     * <li>
+     * <p>
+     * <code>error</code>: This message indicates that this is not a valid setting for an option.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>warning</code>: This message is providing information you should take into account.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param severity
-     *        An indication of the severity of this message: </p>
+     *        An indication of the severity of this message:</p>
      *        <ul>
-     *        <li> <code>error</code>: This message indicates that this is not a valid setting for an option.</li>
-     *        <li> <code>warning</code>: This message is providing information you should take into account.</li>
+     *        <li>
+     *        <p>
+     *        <code>error</code>: This message indicates that this is not a valid setting for an option.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>warning</code>: This message is providing information you should take into account.
+     *        </p>
+     *        </li>
      * @see ValidationSeverity
      */
 
@@ -172,15 +244,31 @@ public class ValidationMessage implements Serializable, Cloneable {
      * An indication of the severity of this message:
      * </p>
      * <ul>
-     * <li> <code>error</code>: This message indicates that this is not a valid setting for an option.</li>
-     * <li> <code>warning</code>: This message is providing information you should take into account.</li>
+     * <li>
+     * <p>
+     * <code>error</code>: This message indicates that this is not a valid setting for an option.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>warning</code>: This message is providing information you should take into account.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param severity
-     *        An indication of the severity of this message: </p>
+     *        An indication of the severity of this message:</p>
      *        <ul>
-     *        <li> <code>error</code>: This message indicates that this is not a valid setting for an option.</li>
-     *        <li> <code>warning</code>: This message is providing information you should take into account.</li>
+     *        <li>
+     *        <p>
+     *        <code>error</code>: This message indicates that this is not a valid setting for an option.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>warning</code>: This message is providing information you should take into account.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ValidationSeverity
      */

@@ -71,6 +71,10 @@ public class UpdateFleetAttributesRequestMarshaller implements Marshaller<Reques
             if (updateFleetAttributesRequest.getNewGameSessionProtectionPolicy() != null) {
                 jsonGenerator.writeFieldName("NewGameSessionProtectionPolicy").writeValue(updateFleetAttributesRequest.getNewGameSessionProtectionPolicy());
             }
+            if (updateFleetAttributesRequest.getResourceCreationLimitPolicy() != null) {
+                jsonGenerator.writeFieldName("ResourceCreationLimitPolicy");
+                ResourceCreationLimitPolicyJsonMarshaller.getInstance().marshall(updateFleetAttributesRequest.getResourceCreationLimitPolicy(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
 

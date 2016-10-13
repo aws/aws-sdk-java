@@ -55,6 +55,22 @@ public class CreateApplicationVersionRequestMarshaller implements Marshaller<Req
             request.addParameter("Description", StringUtils.fromString(createApplicationVersionRequest.getDescription()));
         }
 
+        SourceBuildInformation sourceBuildInformation = createApplicationVersionRequest.getSourceBuildInformation();
+        if (sourceBuildInformation != null) {
+
+            if (sourceBuildInformation.getSourceType() != null) {
+                request.addParameter("SourceBuildInformation.SourceType", StringUtils.fromString(sourceBuildInformation.getSourceType()));
+            }
+
+            if (sourceBuildInformation.getSourceRepository() != null) {
+                request.addParameter("SourceBuildInformation.SourceRepository", StringUtils.fromString(sourceBuildInformation.getSourceRepository()));
+            }
+
+            if (sourceBuildInformation.getSourceLocation() != null) {
+                request.addParameter("SourceBuildInformation.SourceLocation", StringUtils.fromString(sourceBuildInformation.getSourceLocation()));
+            }
+        }
+
         S3Location sourceBundle = createApplicationVersionRequest.getSourceBundle();
         if (sourceBundle != null) {
 

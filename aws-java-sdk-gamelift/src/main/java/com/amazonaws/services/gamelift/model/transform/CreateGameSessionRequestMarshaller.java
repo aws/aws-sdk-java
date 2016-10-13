@@ -84,6 +84,12 @@ public class CreateGameSessionRequestMarshaller implements Marshaller<Request<Cr
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (createGameSessionRequest.getCreatorId() != null) {
+                jsonGenerator.writeFieldName("CreatorId").writeValue(createGameSessionRequest.getCreatorId());
+            }
+            if (createGameSessionRequest.getGameSessionId() != null) {
+                jsonGenerator.writeFieldName("GameSessionId").writeValue(createGameSessionRequest.getGameSessionId());
+            }
 
             jsonGenerator.writeEndObject();
 

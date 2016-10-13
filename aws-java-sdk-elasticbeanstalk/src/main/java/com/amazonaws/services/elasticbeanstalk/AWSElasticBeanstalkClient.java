@@ -55,7 +55,7 @@ import com.amazonaws.services.elasticbeanstalk.model.transform.*;
  * href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"
  * >http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software
  * Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to
- * access the API, go to <a href="https://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+ * access the API, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
  * <p>
  * <b>Endpoints</b>
@@ -486,9 +486,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * <p>
      * Creates an application version for the specified application.
      * </p>
-     * <note>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot
-     * change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt
-     * to launch an environment from the application version. </note>
+     * <note>
+     * <p>
+     * Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that
+     * Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an
+     * environment from the application version.
+     * </p>
+     * </note>
      * 
      * @param createApplicationVersionRequest
      * @return Result of the CreateApplicationVersion operation returned by the service.
@@ -541,9 +545,21 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * Related Topics
      * </p>
      * <ul>
-     * <li><a>DescribeConfigurationOptions</a></li>
-     * <li><a>DescribeConfigurationSettings</a></li>
-     * <li><a>ListAvailableSolutionStacks</a></li>
+     * <li>
+     * <p>
+     * <a>DescribeConfigurationOptions</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeConfigurationSettings</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListAvailableSolutionStacks</a>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param createConfigurationTemplateRequest
@@ -688,7 +704,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * Deletes the specified application along with all associated versions and configurations. The application versions
      * will not be deleted from your Amazon S3 bucket.
      * </p>
-     * <note>You cannot delete an application that has a running environment. </note>
+     * <note>
+     * <p>
+     * You cannot delete an application that has a running environment.
+     * </p>
+     * </note>
      * 
      * @param deleteApplicationRequest
      *        Request to delete an application.
@@ -732,7 +752,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * <p>
      * Deletes the specified version from the specified application.
      * </p>
-     * <note>You cannot delete an application version that is associated with a running environment.</note>
+     * <note>
+     * <p>
+     * You cannot delete an application version that is associated with a running environment.
+     * </p>
+     * </note>
      * 
      * @param deleteApplicationVersionRequest
      *        Request to delete an application version.
@@ -783,8 +807,12 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * <p>
      * Deletes the specified configuration template.
      * </p>
-     * <note>When you launch an environment using a configuration template, the environment gets a copy of the template.
-     * You can delete or modify the environment's copy of the template without affecting the running environment.</note>
+     * <note>
+     * <p>
+     * When you launch an environment using a configuration template, the environment gets a copy of the template. You
+     * can delete or modify the environment's copy of the template without affecting the running environment.
+     * </p>
+     * </note>
      * 
      * @param deleteConfigurationTemplateRequest
      *        Request to delete a configuration template.
@@ -1018,7 +1046,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * Related Topics
      * </p>
      * <ul>
-     * <li><a>DeleteEnvironmentConfiguration</a></li>
+     * <li>
+     * <p>
+     * <a>DeleteEnvironmentConfiguration</a>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param describeConfigurationSettingsRequest
@@ -1283,7 +1315,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * <p>
      * Returns list of event descriptions matching criteria up to the last 6 weeks.
      * </p>
-     * <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>
+     * <note>
+     * <p>
+     * This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+     * </p>
+     * </note>
      * 
      * @param describeEventsRequest
      *        Request to retrieve a list of events for an environment.
@@ -1477,7 +1513,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * Related Topics
      * </p>
      * <ul>
-     * <li><a>RetrieveEnvironmentInfo</a></li>
+     * <li>
+     * <p>
+     * <a>RetrieveEnvironmentInfo</a>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param requestEnvironmentInfoRequest
@@ -1562,7 +1602,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * Related Topics
      * </p>
      * <ul>
-     * <li><a>RequestEnvironmentInfo</a></li>
+     * <li>
+     * <p>
+     * <a>RequestEnvironmentInfo</a>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param retrieveEnvironmentInfoRequest
@@ -1691,8 +1735,12 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * <p>
      * Updates the specified application to have the specified properties.
      * </p>
-     * <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To
-     * clear these properties, specify an empty string. </note>
+     * <note>
+     * <p>
+     * If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear
+     * these properties, specify an empty string.
+     * </p>
+     * </note>
      * 
      * @param updateApplicationRequest
      *        Request to update an application.
@@ -1733,8 +1781,12 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * <p>
      * Updates the specified application version to have the specified properties.
      * </p>
-     * <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To
-     * clear properties, specify an empty string. </note>
+     * <note>
+     * <p>
+     * If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear
+     * properties, specify an empty string.
+     * </p>
+     * </note>
      * 
      * @param updateApplicationVersionRequest
      * @return Result of the UpdateApplicationVersion operation returned by the service.
@@ -1774,13 +1826,21 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * <p>
      * Updates the specified configuration template to have the specified properties or configuration option values.
      * </p>
-     * <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To
-     * clear such properties, specify an empty string. </note>
+     * <note>
+     * <p>
+     * If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear
+     * such properties, specify an empty string.
+     * </p>
+     * </note>
      * <p>
      * Related Topics
      * </p>
      * <ul>
-     * <li><a>DescribeConfigurationOptions</a></li>
+     * <li>
+     * <p>
+     * <a>DescribeConfigurationOptions</a>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updateConfigurationTemplateRequest

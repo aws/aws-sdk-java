@@ -26,28 +26,29 @@ public class CertificateDetail implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String certificateArn;
     /**
      * <p>
-     * The fully qualified domain name (FQDN) for the certificate, such as www.example.com or example.com.
+     * The fully qualified domain name for the certificate, such as www.example.com or example.com.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * One or more domain names (subject alternative names) included in the certificate request. After the certificate
-     * is issued, this list includes the domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and additional domain names that can
-     * be used to connect to the website.
+     * One or more domain names (subject alternative names) included in the certificate. This list contains the domain
+     * names that are bound to the public key that is contained in the certificate. The subject alternative names
+     * include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect
+     * to the website.
      * </p>
      */
     private java.util.List<String> subjectAlternativeNames;
     /**
      * <p>
-     * Contains information about the email address or addresses used for domain validation.
+     * Contains information about the email address or addresses used for domain validation. This field exists only when
+     * the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      */
     private java.util.List<DomainValidation> domainValidationOptions;
@@ -59,28 +60,37 @@ public class CertificateDetail implements Serializable, Cloneable {
     private String serial;
     /**
      * <p>
-     * The X.500 distinguished name of the entity associated with the public key contained in the certificate.
+     * The name of the entity that is associated with the public key contained in the certificate.
      * </p>
      */
     private String subject;
     /**
      * <p>
-     * The X.500 distinguished name of the CA that issued and signed the certificate.
+     * The name of the certificate authority that issued and signed the certificate.
      * </p>
      */
     private String issuer;
     /**
      * <p>
-     * The time at which the certificate was requested.
+     * The time at which the certificate was requested. This value exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The time at which the certificate was issued.
+     * The time at which the certificate was issued. This value exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.
      * </p>
      */
     private java.util.Date issuedAt;
+    /**
+     * <p>
+     * The date and time at which the certificate was imported. This value exists only when the certificate type is
+     * <code>IMPORTED</code>.
+     * </p>
+     */
+    private java.util.Date importedAt;
     /**
      * <p>
      * The status of the certificate.
@@ -115,45 +125,56 @@ public class CertificateDetail implements Serializable, Cloneable {
     private java.util.Date notAfter;
     /**
      * <p>
-     * The algorithm used to generate the key pair (the public and private key). Currently the only supported value is
-     * <code>RSA_2048</code>.
+     * The algorithm that was used to generate the key pair (the public and private key).
      * </p>
      */
     private String keyAlgorithm;
     /**
      * <p>
-     * The algorithm used to generate a signature. Currently the only supported value is <code>SHA256WITHRSA</code>.
+     * The algorithm that was used to sign the certificate.
      * </p>
      */
     private String signatureAlgorithm;
     /**
      * <p>
-     * A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS
+     * A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS
      * resources.
      * </p>
      */
     private java.util.List<String> inUseBy;
     /**
      * <p>
-     * The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is
+     * The reason the certificate request failed. This value exists only when the certificate status is
      * <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      */
     private String failureReason;
+    /**
+     * <p>
+     * The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For
+     * certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
+     * provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+     * imported certificates. For more information about the differences between certificates that you import and those
+     * that ACM provides, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * <i>AWS Certificate Manager User Guide</i>.
+     * </p>
+     */
+    private String type;
 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param certificateArn
      *        The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -164,12 +185,12 @@ public class CertificateDetail implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a>.
+     *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
     public String getCertificateArn() {
@@ -180,13 +201,13 @@ public class CertificateDetail implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param certificateArn
      *        The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,11 +218,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The fully qualified domain name (FQDN) for the certificate, such as www.example.com or example.com.
+     * The fully qualified domain name for the certificate, such as www.example.com or example.com.
      * </p>
      * 
      * @param domainName
-     *        The fully qualified domain name (FQDN) for the certificate, such as www.example.com or example.com.
+     *        The fully qualified domain name for the certificate, such as www.example.com or example.com.
      */
 
     public void setDomainName(String domainName) {
@@ -210,10 +231,10 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The fully qualified domain name (FQDN) for the certificate, such as www.example.com or example.com.
+     * The fully qualified domain name for the certificate, such as www.example.com or example.com.
      * </p>
      * 
-     * @return The fully qualified domain name (FQDN) for the certificate, such as www.example.com or example.com.
+     * @return The fully qualified domain name for the certificate, such as www.example.com or example.com.
      */
 
     public String getDomainName() {
@@ -222,11 +243,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The fully qualified domain name (FQDN) for the certificate, such as www.example.com or example.com.
+     * The fully qualified domain name for the certificate, such as www.example.com or example.com.
      * </p>
      * 
      * @param domainName
-     *        The fully qualified domain name (FQDN) for the certificate, such as www.example.com or example.com.
+     *        The fully qualified domain name for the certificate, such as www.example.com or example.com.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,16 +258,16 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more domain names (subject alternative names) included in the certificate request. After the certificate
-     * is issued, this list includes the domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and additional domain names that can
-     * be used to connect to the website.
+     * One or more domain names (subject alternative names) included in the certificate. This list contains the domain
+     * names that are bound to the public key that is contained in the certificate. The subject alternative names
+     * include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect
+     * to the website.
      * </p>
      * 
-     * @return One or more domain names (subject alternative names) included in the certificate request. After the
-     *         certificate is issued, this list includes the domain names bound to the public key contained in the
-     *         certificate. The subject alternative names include the canonical domain name (CN) of the certificate and
-     *         additional domain names that can be used to connect to the website.
+     * @return One or more domain names (subject alternative names) included in the certificate. This list contains the
+     *         domain names that are bound to the public key that is contained in the certificate. The subject
+     *         alternative names include the canonical domain name (CN) of the certificate and additional domain names
+     *         that can be used to connect to the website.
      */
 
     public java.util.List<String> getSubjectAlternativeNames() {
@@ -255,17 +276,17 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more domain names (subject alternative names) included in the certificate request. After the certificate
-     * is issued, this list includes the domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and additional domain names that can
-     * be used to connect to the website.
+     * One or more domain names (subject alternative names) included in the certificate. This list contains the domain
+     * names that are bound to the public key that is contained in the certificate. The subject alternative names
+     * include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect
+     * to the website.
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        One or more domain names (subject alternative names) included in the certificate request. After the
-     *        certificate is issued, this list includes the domain names bound to the public key contained in the
-     *        certificate. The subject alternative names include the canonical domain name (CN) of the certificate and
-     *        additional domain names that can be used to connect to the website.
+     *        One or more domain names (subject alternative names) included in the certificate. This list contains the
+     *        domain names that are bound to the public key that is contained in the certificate. The subject
+     *        alternative names include the canonical domain name (CN) of the certificate and additional domain names
+     *        that can be used to connect to the website.
      */
 
     public void setSubjectAlternativeNames(java.util.Collection<String> subjectAlternativeNames) {
@@ -279,10 +300,10 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more domain names (subject alternative names) included in the certificate request. After the certificate
-     * is issued, this list includes the domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and additional domain names that can
-     * be used to connect to the website.
+     * One or more domain names (subject alternative names) included in the certificate. This list contains the domain
+     * names that are bound to the public key that is contained in the certificate. The subject alternative names
+     * include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect
+     * to the website.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -291,10 +312,10 @@ public class CertificateDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        One or more domain names (subject alternative names) included in the certificate request. After the
-     *        certificate is issued, this list includes the domain names bound to the public key contained in the
-     *        certificate. The subject alternative names include the canonical domain name (CN) of the certificate and
-     *        additional domain names that can be used to connect to the website.
+     *        One or more domain names (subject alternative names) included in the certificate. This list contains the
+     *        domain names that are bound to the public key that is contained in the certificate. The subject
+     *        alternative names include the canonical domain name (CN) of the certificate and additional domain names
+     *        that can be used to connect to the website.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,17 +331,17 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more domain names (subject alternative names) included in the certificate request. After the certificate
-     * is issued, this list includes the domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and additional domain names that can
-     * be used to connect to the website.
+     * One or more domain names (subject alternative names) included in the certificate. This list contains the domain
+     * names that are bound to the public key that is contained in the certificate. The subject alternative names
+     * include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect
+     * to the website.
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        One or more domain names (subject alternative names) included in the certificate request. After the
-     *        certificate is issued, this list includes the domain names bound to the public key contained in the
-     *        certificate. The subject alternative names include the canonical domain name (CN) of the certificate and
-     *        additional domain names that can be used to connect to the website.
+     *        One or more domain names (subject alternative names) included in the certificate. This list contains the
+     *        domain names that are bound to the public key that is contained in the certificate. The subject
+     *        alternative names include the canonical domain name (CN) of the certificate and additional domain names
+     *        that can be used to connect to the website.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,10 +352,12 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains information about the email address or addresses used for domain validation.
+     * Contains information about the email address or addresses used for domain validation. This field exists only when
+     * the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * 
-     * @return Contains information about the email address or addresses used for domain validation.
+     * @return Contains information about the email address or addresses used for domain validation. This field exists
+     *         only when the certificate type is <code>AMAZON_ISSUED</code>.
      */
 
     public java.util.List<DomainValidation> getDomainValidationOptions() {
@@ -343,11 +366,13 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains information about the email address or addresses used for domain validation.
+     * Contains information about the email address or addresses used for domain validation. This field exists only when
+     * the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * 
      * @param domainValidationOptions
-     *        Contains information about the email address or addresses used for domain validation.
+     *        Contains information about the email address or addresses used for domain validation. This field exists
+     *        only when the certificate type is <code>AMAZON_ISSUED</code>.
      */
 
     public void setDomainValidationOptions(java.util.Collection<DomainValidation> domainValidationOptions) {
@@ -361,7 +386,8 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains information about the email address or addresses used for domain validation.
+     * Contains information about the email address or addresses used for domain validation. This field exists only when
+     * the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -370,7 +396,8 @@ public class CertificateDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param domainValidationOptions
-     *        Contains information about the email address or addresses used for domain validation.
+     *        Contains information about the email address or addresses used for domain validation. This field exists
+     *        only when the certificate type is <code>AMAZON_ISSUED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,11 +413,13 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains information about the email address or addresses used for domain validation.
+     * Contains information about the email address or addresses used for domain validation. This field exists only when
+     * the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * 
      * @param domainValidationOptions
-     *        Contains information about the email address or addresses used for domain validation.
+     *        Contains information about the email address or addresses used for domain validation. This field exists
+     *        only when the certificate type is <code>AMAZON_ISSUED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,11 +470,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The X.500 distinguished name of the entity associated with the public key contained in the certificate.
+     * The name of the entity that is associated with the public key contained in the certificate.
      * </p>
      * 
      * @param subject
-     *        The X.500 distinguished name of the entity associated with the public key contained in the certificate.
+     *        The name of the entity that is associated with the public key contained in the certificate.
      */
 
     public void setSubject(String subject) {
@@ -454,10 +483,10 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The X.500 distinguished name of the entity associated with the public key contained in the certificate.
+     * The name of the entity that is associated with the public key contained in the certificate.
      * </p>
      * 
-     * @return The X.500 distinguished name of the entity associated with the public key contained in the certificate.
+     * @return The name of the entity that is associated with the public key contained in the certificate.
      */
 
     public String getSubject() {
@@ -466,11 +495,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The X.500 distinguished name of the entity associated with the public key contained in the certificate.
+     * The name of the entity that is associated with the public key contained in the certificate.
      * </p>
      * 
      * @param subject
-     *        The X.500 distinguished name of the entity associated with the public key contained in the certificate.
+     *        The name of the entity that is associated with the public key contained in the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -481,11 +510,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The X.500 distinguished name of the CA that issued and signed the certificate.
+     * The name of the certificate authority that issued and signed the certificate.
      * </p>
      * 
      * @param issuer
-     *        The X.500 distinguished name of the CA that issued and signed the certificate.
+     *        The name of the certificate authority that issued and signed the certificate.
      */
 
     public void setIssuer(String issuer) {
@@ -494,10 +523,10 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The X.500 distinguished name of the CA that issued and signed the certificate.
+     * The name of the certificate authority that issued and signed the certificate.
      * </p>
      * 
-     * @return The X.500 distinguished name of the CA that issued and signed the certificate.
+     * @return The name of the certificate authority that issued and signed the certificate.
      */
 
     public String getIssuer() {
@@ -506,11 +535,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The X.500 distinguished name of the CA that issued and signed the certificate.
+     * The name of the certificate authority that issued and signed the certificate.
      * </p>
      * 
      * @param issuer
-     *        The X.500 distinguished name of the CA that issued and signed the certificate.
+     *        The name of the certificate authority that issued and signed the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -521,11 +550,13 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the certificate was requested.
+     * The time at which the certificate was requested. This value exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.
      * </p>
      * 
      * @param createdAt
-     *        The time at which the certificate was requested.
+     *        The time at which the certificate was requested. This value exists only when the certificate type is
+     *        <code>AMAZON_ISSUED</code>.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -534,10 +565,12 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the certificate was requested.
+     * The time at which the certificate was requested. This value exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.
      * </p>
      * 
-     * @return The time at which the certificate was requested.
+     * @return The time at which the certificate was requested. This value exists only when the certificate type is
+     *         <code>AMAZON_ISSUED</code>.
      */
 
     public java.util.Date getCreatedAt() {
@@ -546,11 +579,13 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the certificate was requested.
+     * The time at which the certificate was requested. This value exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.
      * </p>
      * 
      * @param createdAt
-     *        The time at which the certificate was requested.
+     *        The time at which the certificate was requested. This value exists only when the certificate type is
+     *        <code>AMAZON_ISSUED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -561,11 +596,13 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the certificate was issued.
+     * The time at which the certificate was issued. This value exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.
      * </p>
      * 
      * @param issuedAt
-     *        The time at which the certificate was issued.
+     *        The time at which the certificate was issued. This value exists only when the certificate type is
+     *        <code>AMAZON_ISSUED</code>.
      */
 
     public void setIssuedAt(java.util.Date issuedAt) {
@@ -574,10 +611,12 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the certificate was issued.
+     * The time at which the certificate was issued. This value exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.
      * </p>
      * 
-     * @return The time at which the certificate was issued.
+     * @return The time at which the certificate was issued. This value exists only when the certificate type is
+     *         <code>AMAZON_ISSUED</code>.
      */
 
     public java.util.Date getIssuedAt() {
@@ -586,16 +625,64 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the certificate was issued.
+     * The time at which the certificate was issued. This value exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.
      * </p>
      * 
      * @param issuedAt
-     *        The time at which the certificate was issued.
+     *        The time at which the certificate was issued. This value exists only when the certificate type is
+     *        <code>AMAZON_ISSUED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CertificateDetail withIssuedAt(java.util.Date issuedAt) {
         setIssuedAt(issuedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time at which the certificate was imported. This value exists only when the certificate type is
+     * <code>IMPORTED</code>.
+     * </p>
+     * 
+     * @param importedAt
+     *        The date and time at which the certificate was imported. This value exists only when the certificate type
+     *        is <code>IMPORTED</code>.
+     */
+
+    public void setImportedAt(java.util.Date importedAt) {
+        this.importedAt = importedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time at which the certificate was imported. This value exists only when the certificate type is
+     * <code>IMPORTED</code>.
+     * </p>
+     * 
+     * @return The date and time at which the certificate was imported. This value exists only when the certificate type
+     *         is <code>IMPORTED</code>.
+     */
+
+    public java.util.Date getImportedAt() {
+        return this.importedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time at which the certificate was imported. This value exists only when the certificate type is
+     * <code>IMPORTED</code>.
+     * </p>
+     * 
+     * @param importedAt
+     *        The date and time at which the certificate was imported. This value exists only when the certificate type
+     *        is <code>IMPORTED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateDetail withImportedAt(java.util.Date importedAt) {
+        setImportedAt(importedAt);
         return this;
     }
 
@@ -883,13 +970,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The algorithm used to generate the key pair (the public and private key). Currently the only supported value is
-     * <code>RSA_2048</code>.
+     * The algorithm that was used to generate the key pair (the public and private key).
      * </p>
      * 
      * @param keyAlgorithm
-     *        The algorithm used to generate the key pair (the public and private key). Currently the only supported
-     *        value is <code>RSA_2048</code>.
+     *        The algorithm that was used to generate the key pair (the public and private key).
      * @see KeyAlgorithm
      */
 
@@ -899,12 +984,10 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The algorithm used to generate the key pair (the public and private key). Currently the only supported value is
-     * <code>RSA_2048</code>.
+     * The algorithm that was used to generate the key pair (the public and private key).
      * </p>
      * 
-     * @return The algorithm used to generate the key pair (the public and private key). Currently the only supported
-     *         value is <code>RSA_2048</code>.
+     * @return The algorithm that was used to generate the key pair (the public and private key).
      * @see KeyAlgorithm
      */
 
@@ -914,13 +997,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The algorithm used to generate the key pair (the public and private key). Currently the only supported value is
-     * <code>RSA_2048</code>.
+     * The algorithm that was used to generate the key pair (the public and private key).
      * </p>
      * 
      * @param keyAlgorithm
-     *        The algorithm used to generate the key pair (the public and private key). Currently the only supported
-     *        value is <code>RSA_2048</code>.
+     *        The algorithm that was used to generate the key pair (the public and private key).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyAlgorithm
      */
@@ -932,13 +1013,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The algorithm used to generate the key pair (the public and private key). Currently the only supported value is
-     * <code>RSA_2048</code>.
+     * The algorithm that was used to generate the key pair (the public and private key).
      * </p>
      * 
      * @param keyAlgorithm
-     *        The algorithm used to generate the key pair (the public and private key). Currently the only supported
-     *        value is <code>RSA_2048</code>.
+     *        The algorithm that was used to generate the key pair (the public and private key).
      * @see KeyAlgorithm
      */
 
@@ -948,13 +1027,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The algorithm used to generate the key pair (the public and private key). Currently the only supported value is
-     * <code>RSA_2048</code>.
+     * The algorithm that was used to generate the key pair (the public and private key).
      * </p>
      * 
      * @param keyAlgorithm
-     *        The algorithm used to generate the key pair (the public and private key). Currently the only supported
-     *        value is <code>RSA_2048</code>.
+     *        The algorithm that was used to generate the key pair (the public and private key).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyAlgorithm
      */
@@ -966,12 +1043,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The algorithm used to generate a signature. Currently the only supported value is <code>SHA256WITHRSA</code>.
+     * The algorithm that was used to sign the certificate.
      * </p>
      * 
      * @param signatureAlgorithm
-     *        The algorithm used to generate a signature. Currently the only supported value is
-     *        <code>SHA256WITHRSA</code>.
+     *        The algorithm that was used to sign the certificate.
      */
 
     public void setSignatureAlgorithm(String signatureAlgorithm) {
@@ -980,11 +1056,10 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The algorithm used to generate a signature. Currently the only supported value is <code>SHA256WITHRSA</code>.
+     * The algorithm that was used to sign the certificate.
      * </p>
      * 
-     * @return The algorithm used to generate a signature. Currently the only supported value is
-     *         <code>SHA256WITHRSA</code>.
+     * @return The algorithm that was used to sign the certificate.
      */
 
     public String getSignatureAlgorithm() {
@@ -993,12 +1068,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The algorithm used to generate a signature. Currently the only supported value is <code>SHA256WITHRSA</code>.
+     * The algorithm that was used to sign the certificate.
      * </p>
      * 
      * @param signatureAlgorithm
-     *        The algorithm used to generate a signature. Currently the only supported value is
-     *        <code>SHA256WITHRSA</code>.
+     *        The algorithm that was used to sign the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1009,11 +1083,11 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS
+     * A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS
      * resources.
      * </p>
      * 
-     * @return A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by
+     * @return A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by
      *         multiple AWS resources.
      */
 
@@ -1023,13 +1097,13 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS
+     * A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS
      * resources.
      * </p>
      * 
      * @param inUseBy
-     *        A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by
-     *        multiple AWS resources.
+     *        A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple
+     *        AWS resources.
      */
 
     public void setInUseBy(java.util.Collection<String> inUseBy) {
@@ -1043,7 +1117,7 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS
+     * A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS
      * resources.
      * </p>
      * <p>
@@ -1053,8 +1127,8 @@ public class CertificateDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param inUseBy
-     *        A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by
-     *        multiple AWS resources.
+     *        A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple
+     *        AWS resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1070,13 +1144,13 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS
+     * A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS
      * resources.
      * </p>
      * 
      * @param inUseBy
-     *        A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by
-     *        multiple AWS resources.
+     *        A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple
+     *        AWS resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1087,15 +1161,15 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is
+     * The reason the certificate request failed. This value exists only when the certificate status is
      * <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param failureReason
-     *        The reason the certificate request failed. This value exists only when the structure's <code>Status</code>
-     *        is <code>FAILED</code>. For more information, see <a
+     *        The reason the certificate request failed. This value exists only when the certificate status is
+     *        <code>FAILED</code>. For more information, see <a
      *        href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
      *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * @see FailureReason
@@ -1107,14 +1181,14 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is
+     * The reason the certificate request failed. This value exists only when the certificate status is
      * <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
-     * @return The reason the certificate request failed. This value exists only when the structure's
-     *         <code>Status</code> is <code>FAILED</code>. For more information, see <a
+     * @return The reason the certificate request failed. This value exists only when the certificate status is
+     *         <code>FAILED</code>. For more information, see <a
      *         href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
      *         >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * @see FailureReason
@@ -1126,15 +1200,15 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is
+     * The reason the certificate request failed. This value exists only when the certificate status is
      * <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param failureReason
-     *        The reason the certificate request failed. This value exists only when the structure's <code>Status</code>
-     *        is <code>FAILED</code>. For more information, see <a
+     *        The reason the certificate request failed. This value exists only when the certificate status is
+     *        <code>FAILED</code>. For more information, see <a
      *        href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
      *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1148,15 +1222,15 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is
+     * The reason the certificate request failed. This value exists only when the certificate status is
      * <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param failureReason
-     *        The reason the certificate request failed. This value exists only when the structure's <code>Status</code>
-     *        is <code>FAILED</code>. For more information, see <a
+     *        The reason the certificate request failed. This value exists only when the certificate status is
+     *        <code>FAILED</code>. For more information, see <a
      *        href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
      *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * @see FailureReason
@@ -1168,15 +1242,15 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is
+     * The reason the certificate request failed. This value exists only when the certificate status is
      * <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param failureReason
-     *        The reason the certificate request failed. This value exists only when the structure's <code>Status</code>
-     *        is <code>FAILED</code>. For more information, see <a
+     *        The reason the certificate request failed. This value exists only when the certificate status is
+     *        <code>FAILED</code>. For more information, see <a
      *        href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
      *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1185,6 +1259,139 @@ public class CertificateDetail implements Serializable, Cloneable {
 
     public CertificateDetail withFailureReason(FailureReason failureReason) {
         setFailureReason(failureReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For
+     * certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
+     * provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+     * imported certificates. For more information about the differences between certificates that you import and those
+     * that ACM provides, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * <i>AWS Certificate Manager User Guide</i>.
+     * </p>
+     * 
+     * @param type
+     *        The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>.
+     *        For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM
+     *        does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     *        renewal</a> for imported certificates. For more information about the differences between certificates
+     *        that you import and those that ACM provides, see <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
+     *        in the <i>AWS Certificate Manager User Guide</i>.
+     * @see CertificateType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For
+     * certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
+     * provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+     * imported certificates. For more information about the differences between certificates that you import and those
+     * that ACM provides, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * <i>AWS Certificate Manager User Guide</i>.
+     * </p>
+     * 
+     * @return The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>
+     *         . For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>.
+     *         ACM does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     *         renewal</a> for imported certificates. For more information about the differences between certificates
+     *         that you import and those that ACM provides, see <a
+     *         href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
+     *         in the <i>AWS Certificate Manager User Guide</i>.
+     * @see CertificateType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For
+     * certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
+     * provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+     * imported certificates. For more information about the differences between certificates that you import and those
+     * that ACM provides, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * <i>AWS Certificate Manager User Guide</i>.
+     * </p>
+     * 
+     * @param type
+     *        The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>.
+     *        For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM
+     *        does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     *        renewal</a> for imported certificates. For more information about the differences between certificates
+     *        that you import and those that ACM provides, see <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
+     *        in the <i>AWS Certificate Manager User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateType
+     */
+
+    public CertificateDetail withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For
+     * certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
+     * provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+     * imported certificates. For more information about the differences between certificates that you import and those
+     * that ACM provides, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * <i>AWS Certificate Manager User Guide</i>.
+     * </p>
+     * 
+     * @param type
+     *        The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>.
+     *        For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM
+     *        does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     *        renewal</a> for imported certificates. For more information about the differences between certificates
+     *        that you import and those that ACM provides, see <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
+     *        in the <i>AWS Certificate Manager User Guide</i>.
+     * @see CertificateType
+     */
+
+    public void setType(CertificateType type) {
+        this.type = type.toString();
+    }
+
+    /**
+     * <p>
+     * The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For
+     * certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
+     * provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+     * imported certificates. For more information about the differences between certificates that you import and those
+     * that ACM provides, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * <i>AWS Certificate Manager User Guide</i>.
+     * </p>
+     * 
+     * @param type
+     *        The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>.
+     *        For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM
+     *        does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     *        renewal</a> for imported certificates. For more information about the differences between certificates
+     *        that you import and those that ACM provides, see <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
+     *        in the <i>AWS Certificate Manager User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateType
+     */
+
+    public CertificateDetail withType(CertificateType type) {
+        setType(type);
         return this;
     }
 
@@ -1217,6 +1424,8 @@ public class CertificateDetail implements Serializable, Cloneable {
             sb.append("CreatedAt: " + getCreatedAt() + ",");
         if (getIssuedAt() != null)
             sb.append("IssuedAt: " + getIssuedAt() + ",");
+        if (getImportedAt() != null)
+            sb.append("ImportedAt: " + getImportedAt() + ",");
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
         if (getRevokedAt() != null)
@@ -1234,7 +1443,9 @@ public class CertificateDetail implements Serializable, Cloneable {
         if (getInUseBy() != null)
             sb.append("InUseBy: " + getInUseBy() + ",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: " + getFailureReason());
+            sb.append("FailureReason: " + getFailureReason() + ",");
+        if (getType() != null)
+            sb.append("Type: " + getType());
         sb.append("}");
         return sb.toString();
     }
@@ -1285,6 +1496,10 @@ public class CertificateDetail implements Serializable, Cloneable {
             return false;
         if (other.getIssuedAt() != null && other.getIssuedAt().equals(this.getIssuedAt()) == false)
             return false;
+        if (other.getImportedAt() == null ^ this.getImportedAt() == null)
+            return false;
+        if (other.getImportedAt() != null && other.getImportedAt().equals(this.getImportedAt()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -1321,6 +1536,10 @@ public class CertificateDetail implements Serializable, Cloneable {
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -1338,6 +1557,7 @@ public class CertificateDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIssuer() == null) ? 0 : getIssuer().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getIssuedAt() == null) ? 0 : getIssuedAt().hashCode());
+        hashCode = prime * hashCode + ((getImportedAt() == null) ? 0 : getImportedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getRevokedAt() == null) ? 0 : getRevokedAt().hashCode());
         hashCode = prime * hashCode + ((getRevocationReason() == null) ? 0 : getRevocationReason().hashCode());
@@ -1347,6 +1567,7 @@ public class CertificateDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSignatureAlgorithm() == null) ? 0 : getSignatureAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getInUseBy() == null) ? 0 : getInUseBy().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

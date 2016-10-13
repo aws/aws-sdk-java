@@ -20,23 +20,38 @@
  * </p>
  * <p>
  * This reference describes the low-level service API for GameLift. You can call this API directly or use the <a
- * href="https://aws.amazon.com/tools/#sdk">AWS SDK</a> for your preferred language. The AWS SDK includes a set of
+ * href="http://aws.amazon.com/tools/#sdk">AWS SDK</a> for your preferred language. The AWS SDK includes a set of
  * high-level GameLift actions multiplayer game sessions. Alternatively, you can use the <a
- * href="https://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool, which includes commands for GameLift.
+ * href="http://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool, which includes commands for GameLift.
  * For administrative actions, you can also use the Amazon GameLift console.
  * </p>
  * <p>
  * <b>More Resources</b>
  * </p>
  * <ul>
- * <li><a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>: Learn
- * more about GameLift features and how to use them</li>
- * <li><a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and GameLift Tutorials</a>: Get started fast
- * with walkthroughs and sample projects</li>
- * <li><a href="https://aws.amazon.com/blogs/gamedev/">GameDev Blog</a>: Stay up to date with new features and
- * techniques</li>
- * <li><a href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev Forums</a>: Connect with
- * the GameDev community</li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>: Learn more
+ * about GameLift features and how to use them
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and GameLift Tutorials</a>: Get started fast with
+ * walkthroughs and sample projects
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a>: Stay up to date with new features and techniques
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev Forums</a>: Connect with the
+ * GameDev community
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Manage Games and Players Through GameLift</b>
@@ -46,25 +61,70 @@
  * sessions.
  * </p>
  * <ul>
- * <li><b>Game sessions</b>
+ * <li>
+ * <p>
+ * <b>Game sessions:</b>
+ * </p>
  * <ul>
- * <li><a>CreateGameSession</a></li>
- * <li><a>DescribeGameSessions</a></li>
- * <li><a>DescribeGameSessionDetails</a></li>
- * <li><a>UpdateGameSession</a></li>
- * <li><a>SearchGameSessions</a></li>
+ * <li>
+ * <p>
+ * <a>CreateGameSession</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessions</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessionDetails</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateGameSession</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>SearchGameSessions</a>
+ * </p>
+ * </li>
  * </ul>
  * </li>
- * <li><b>Player sessions</b>
+ * <li>
+ * <p>
+ * <b>Player sessions:</b>
+ * </p>
  * <ul>
- * <li><a>CreatePlayerSession</a></li>
- * <li><a>CreatePlayerSessions</a></li>
- * <li><a>DescribePlayerSessions</a></li>
+ * <li>
+ * <p>
+ * <a>CreatePlayerSession</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreatePlayerSessions</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribePlayerSessions</a>
+ * </p>
+ * </li>
  * </ul>
  * </li>
- * <li><b>Other actions:</b>
+ * <li>
+ * <p>
+ * <b>Other actions:</b>
+ * </p>
  * <ul>
- * <li><a>GetGameSessionLogUrl</a></li>
+ * <li>
+ * <p>
+ * <a>GetGameSessionLogUrl</a>
+ * </p>
+ * </li>
  * </ul>
  * </li>
  * </ul>
@@ -72,63 +132,197 @@
  * <b>Set Up and Manage Game Servers</b>
  * </p>
  * <p>
- * Use these administrative actions to configure GameLift to host your game servers. When setting up GameLift, you'll
+ * Use these administrative actions to configure GameLift to host your game servers. When setting up GameLift, you will
  * need to (1) configure a build for your game and upload build files, and (2) set up one or more fleets to host game
  * sessions. Once you've created and activated a fleet, you can assign aliases to it, scale capacity, track performance
  * and utilization, etc.
  * </p>
  * <ul>
- * <li><b>Manage your builds:</b>
+ * <li>
+ * <p>
+ * <b>Game builds:</b>
+ * </p>
  * <ul>
- * <li><a>ListBuilds</a></li>
- * <li><a>CreateBuild</a></li>
- * <li><a>DescribeBuild</a></li>
- * <li><a>UpdateBuild</a></li>
- * <li><a>DeleteBuild</a></li>
- * <li><a>RequestUploadCredentials</a></li>
+ * <li>
+ * <p>
+ * <a>ListBuilds</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateBuild</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeBuild</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateBuild</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteBuild</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>RequestUploadCredentials</a>
+ * </p>
+ * </li>
  * </ul>
  * </li>
- * <li><b>Manage your fleets:</b>
+ * <li>
+ * <p>
+ * <b>Fleets:</b>
+ * </p>
  * <ul>
- * <li><a>ListFleets</a></li>
- * <li><a>CreateFleet</a></li>
- * <li>Describe fleets:
+ * <li>
+ * <p>
+ * <a>ListFleets</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateFleet</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Describe fleets:
+ * </p>
  * <ul>
- * <li><a>DescribeFleetAttributes</a></li>
- * <li><a>DescribeFleetCapacity</a></li>
- * <li><a>DescribeFleetPortSettings</a></li>
- * <li><a>DescribeFleetUtilization</a></li>
- * <li><a>DescribeEC2InstanceLimits</a></li>
- * <li><a>DescribeFleetEvents</a></li>
- * <li><a>DescribeRuntimeConfiguration</a></li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetAttributes</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetCapacity</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetPortSettings</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetUtilization</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeEC2InstanceLimits</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetEvents</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeRuntimeConfiguration</a>
+ * </p>
+ * </li>
  * </ul>
  * </li>
- * <li>Update fleets:
+ * <li>
+ * <p>
+ * Update fleets:
+ * </p>
  * <ul>
- * <li><a>UpdateFleetAttributes</a></li>
- * <li><a>UpdateFleetCapacity</a></li>
- * <li><a>UpdateFleetPortSettings</a></li>
- * <li><a>UpdateRuntimeConfiguration</a></li>
+ * <li>
+ * <p>
+ * <a>UpdateFleetAttributes</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateFleetCapacity</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateFleetPortSettings</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateRuntimeConfiguration</a>
+ * </p>
+ * </li>
  * </ul>
  * </li>
- * <li><a>DeleteFleet</a></li>
+ * <li>
+ * <p>
+ * <a>DeleteFleet</a>
+ * </p>
+ * </li>
  * </ul>
  * </li>
- * <li><b>Manage fleet aliases:</b>
+ * <li>
+ * <p>
+ * <b>Manage fleet aliases:</b>
+ * </p>
  * <ul>
- * <li><a>ListAliases</a></li>
- * <li><a>CreateAlias</a></li>
- * <li><a>DescribeAlias</a></li>
- * <li><a>UpdateAlias</a></li>
- * <li><a>DeleteAlias</a></li>
- * <li><a>ResolveAlias</a></li>
+ * <li>
+ * <p>
+ * <a>ListAliases</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateAlias</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeAlias</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateAlias</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteAlias</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ResolveAlias</a>
+ * </p>
+ * </li>
  * </ul>
  * </li>
- * <li><b>Manage autoscaling:</b>
+ * <li>
+ * <p>
+ * <b>Manage autoscaling:</b>
+ * </p>
  * <ul>
- * <li><a>PutScalingPolicy</a></li>
- * <li><a>DescribeScalingPolicies</a></li>
- * <li><a>DeleteScalingPolicy</a></li>
+ * <li>
+ * <p>
+ * <a>PutScalingPolicy</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeScalingPolicies</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteScalingPolicy</a>
+ * </p>
+ * </li>
  * </ul>
  * </li>
  * </ul>

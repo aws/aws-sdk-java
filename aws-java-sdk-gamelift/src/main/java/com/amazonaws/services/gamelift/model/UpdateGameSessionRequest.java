@@ -24,7 +24,10 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want to update.
+     * Unique identifier for the game session to update. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID
+     * string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     * auto-generated string.
      * </p>
      */
     private String gameSessionId;
@@ -51,20 +54,34 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * Game session protection policy to apply to this game session only.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      */
     private String protectionPolicy;
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want to update.
+     * Unique identifier for the game session to update. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID
+     * string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     * auto-generated string.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session. Specify the game session you want to update.
+     *        Unique identifier for the game session to update. Game session ID format is as follows:
+     *        "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of
+     *        &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     *        auto-generated string.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -73,10 +90,16 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want to update.
+     * Unique identifier for the game session to update. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID
+     * string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     * auto-generated string.
      * </p>
      * 
-     * @return Unique identifier for a game session. Specify the game session you want to update.
+     * @return Unique identifier for the game session to update. Game session ID format is as follows:
+     *         "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of
+     *         &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created)
+     *         an auto-generated string.
      */
 
     public String getGameSessionId() {
@@ -85,11 +108,17 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want to update.
+     * Unique identifier for the game session to update. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID
+     * string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     * auto-generated string.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session. Specify the game session you want to update.
+     *        Unique identifier for the game session to update. Game session ID format is as follows:
+     *        "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of
+     *        &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     *        auto-generated string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,17 +285,33 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * Game session protection policy to apply to this game session only.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param protectionPolicy
      *        Game session protection policy to apply to this game session only.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *        terminated during a scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @see ProtectionPolicy
      */
 
@@ -279,16 +324,32 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * Game session protection policy to apply to this game session only.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Game session protection policy to apply to this game session only.</p>
      *         <ul>
-     *         <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *         <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *         terminated during a scale-down event.</li>
+     *         <li>
+     *         <p>
+     *         <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *         during a scale-down event.
+     *         </p>
+     *         </li>
      * @see ProtectionPolicy
      */
 
@@ -301,17 +362,33 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * Game session protection policy to apply to this game session only.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param protectionPolicy
      *        Game session protection policy to apply to this game session only.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *        terminated during a scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
@@ -326,17 +403,33 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * Game session protection policy to apply to this game session only.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param protectionPolicy
      *        Game session protection policy to apply to this game session only.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *        terminated during a scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @see ProtectionPolicy
      */
 
@@ -349,17 +442,33 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * Game session protection policy to apply to this game session only.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param protectionPolicy
      *        Game session protection policy to apply to this game session only.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *        terminated during a scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */

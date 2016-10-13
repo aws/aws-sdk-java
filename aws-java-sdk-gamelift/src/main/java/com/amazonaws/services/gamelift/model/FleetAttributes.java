@@ -61,13 +61,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Possible fleet statuses include the following:
      * </p>
      * <ul>
-     * <li><b>NEW</b> – A new fleet has been defined and desired instances is set to 1.</li>
-     * <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     * instances with the game build and starting server processes.</li>
-     * <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     * <li><b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.</li>
-     * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     * <li>
+     * <p>
+     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
+     * with the game build and starting server processes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TERMINATED</b> – The fleet no longer exists.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -81,7 +105,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04 (or AWS
      * SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      */
     private String serverLaunchPath;
@@ -89,7 +113,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server
      * launch parameters for fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      */
     private String serverLaunchParameters;
@@ -110,9 +134,17 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      */
     private String newGameSessionProtectionPolicy;
@@ -123,6 +155,12 @@ public class FleetAttributes implements Serializable, Cloneable {
      * </p>
      */
     private String operatingSystem;
+    /**
+     * <p>
+     * Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     * </p>
+     */
+    private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
 
     /**
      * <p>
@@ -344,13 +382,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Possible fleet statuses include the following:
      * </p>
      * <ul>
-     * <li><b>NEW</b> – A new fleet has been defined and desired instances is set to 1.</li>
-     * <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     * instances with the game build and starting server processes.</li>
-     * <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     * <li><b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.</li>
-     * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     * <li>
+     * <p>
+     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
+     * with the game build and starting server processes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TERMINATED</b> – The fleet no longer exists.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -359,13 +421,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        Possible fleet statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>NEW</b> – A new fleet has been defined and desired instances is set to 1.</li>
-     *        <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     *        instances with the game build and starting server processes.</li>
-     *        <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     *        <li><b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.</li>
-     *        <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     *        <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     *        <li>
+     *        <p>
+     *        <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
+     *        instances with the game build and starting server processes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>TERMINATED</b> – The fleet no longer exists.
+     *        </p>
+     *        </li>
      * @see FleetStatus
      */
 
@@ -381,13 +467,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Possible fleet statuses include the following:
      * </p>
      * <ul>
-     * <li><b>NEW</b> – A new fleet has been defined and desired instances is set to 1.</li>
-     * <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     * instances with the game build and starting server processes.</li>
-     * <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     * <li><b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.</li>
-     * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     * <li>
+     * <p>
+     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
+     * with the game build and starting server processes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TERMINATED</b> – The fleet no longer exists.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Current status of the fleet.</p>
@@ -395,13 +505,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      *         Possible fleet statuses include the following:
      *         </p>
      *         <ul>
-     *         <li><b>NEW</b> – A new fleet has been defined and desired instances is set to 1.</li>
-     *         <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating
-     *         new instances with the game build and starting server processes.</li>
-     *         <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     *         <li><b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.</li>
-     *         <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     *         <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     *         <li>
+     *         <p>
+     *         <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
+     *         instances with the game build and starting server processes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>TERMINATED</b> – The fleet no longer exists.
+     *         </p>
+     *         </li>
      * @see FleetStatus
      */
 
@@ -417,13 +551,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Possible fleet statuses include the following:
      * </p>
      * <ul>
-     * <li><b>NEW</b> – A new fleet has been defined and desired instances is set to 1.</li>
-     * <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     * instances with the game build and starting server processes.</li>
-     * <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     * <li><b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.</li>
-     * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     * <li>
+     * <p>
+     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
+     * with the game build and starting server processes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TERMINATED</b> – The fleet no longer exists.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -432,13 +590,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        Possible fleet statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>NEW</b> – A new fleet has been defined and desired instances is set to 1.</li>
-     *        <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     *        instances with the game build and starting server processes.</li>
-     *        <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     *        <li><b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.</li>
-     *        <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     *        <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     *        <li>
+     *        <p>
+     *        <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
+     *        instances with the game build and starting server processes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>TERMINATED</b> – The fleet no longer exists.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetStatus
      */
@@ -456,13 +638,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Possible fleet statuses include the following:
      * </p>
      * <ul>
-     * <li><b>NEW</b> – A new fleet has been defined and desired instances is set to 1.</li>
-     * <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     * instances with the game build and starting server processes.</li>
-     * <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     * <li><b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.</li>
-     * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     * <li>
+     * <p>
+     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
+     * with the game build and starting server processes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TERMINATED</b> – The fleet no longer exists.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -471,13 +677,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        Possible fleet statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>NEW</b> – A new fleet has been defined and desired instances is set to 1.</li>
-     *        <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     *        instances with the game build and starting server processes.</li>
-     *        <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     *        <li><b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.</li>
-     *        <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     *        <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     *        <li>
+     *        <p>
+     *        <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
+     *        instances with the game build and starting server processes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>TERMINATED</b> – The fleet no longer exists.
+     *        </p>
+     *        </li>
      * @see FleetStatus
      */
 
@@ -493,13 +723,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Possible fleet statuses include the following:
      * </p>
      * <ul>
-     * <li><b>NEW</b> – A new fleet has been defined and desired instances is set to 1.</li>
-     * <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     * instances with the game build and starting server processes.</li>
-     * <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     * <li><b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.</li>
-     * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     * <li>
+     * <p>
+     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
+     * with the game build and starting server processes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>TERMINATED</b> – The fleet no longer exists.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -508,13 +762,37 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        Possible fleet statuses include the following:
      *        </p>
      *        <ul>
-     *        <li><b>NEW</b> – A new fleet has been defined and desired instances is set to 1.</li>
-     *        <li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     *        instances with the game build and starting server processes.</li>
-     *        <li><b>ACTIVE</b> – Hosts can now accept game sessions.</li>
-     *        <li><b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.</li>
-     *        <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
-     *        <li><b>TERMINATED</b> – The fleet no longer exists.</li>
+     *        <li>
+     *        <p>
+     *        <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
+     *        instances with the game build and starting server processes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>TERMINATED</b> – The fleet no longer exists.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetStatus
      */
@@ -568,13 +846,13 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04 (or AWS
      * SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      * 
      * @param serverLaunchPath
      *        Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04
      *        (or AWS SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the
-     *        fleet's <code><a>RuntimeConfiguration</a></code>.
+     *        fleet's <code> <a>RuntimeConfiguration</a> </code>.
      */
 
     public void setServerLaunchPath(String serverLaunchPath) {
@@ -585,12 +863,12 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04 (or AWS
      * SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      * 
      * @return Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04
      *         (or AWS SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the
-     *         fleet's <code><a>RuntimeConfiguration</a></code>.
+     *         fleet's <code> <a>RuntimeConfiguration</a> </code>.
      */
 
     public String getServerLaunchPath() {
@@ -601,13 +879,13 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04 (or AWS
      * SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      * 
      * @param serverLaunchPath
      *        Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04
      *        (or AWS SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the
-     *        fleet's <code><a>RuntimeConfiguration</a></code>.
+     *        fleet's <code> <a>RuntimeConfiguration</a> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -620,13 +898,13 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server
      * launch parameters for fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      * 
      * @param serverLaunchParameters
      *        Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
      *        Server launch parameters for fleets created after this date are specified in the fleet's
-     *        <code><a>RuntimeConfiguration</a></code>.
+     *        <code> <a>RuntimeConfiguration</a> </code>.
      */
 
     public void setServerLaunchParameters(String serverLaunchParameters) {
@@ -637,12 +915,12 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server
      * launch parameters for fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      * 
      * @return Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
      *         Server launch parameters for fleets created after this date are specified in the fleet's
-     *         <code><a>RuntimeConfiguration</a></code>.
+     *         <code> <a>RuntimeConfiguration</a> </code>.
      */
 
     public String getServerLaunchParameters() {
@@ -653,13 +931,13 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server
      * launch parameters for fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.
+     * <code> <a>RuntimeConfiguration</a> </code>.
      * </p>
      * 
      * @param serverLaunchParameters
      *        Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
      *        Server launch parameters for fleets created after this date are specified in the fleet's
-     *        <code><a>RuntimeConfiguration</a></code>.
+     *        <code> <a>RuntimeConfiguration</a> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -791,17 +1069,33 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
      *        Type of game session protection to set for all new instances started in the fleet.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *        terminated during a scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @see ProtectionPolicy
      */
 
@@ -814,16 +1108,32 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Type of game session protection to set for all new instances started in the fleet.</p>
      *         <ul>
-     *         <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *         <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *         terminated during a scale-down event.</li>
+     *         <li>
+     *         <p>
+     *         <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *         during a scale-down event.
+     *         </p>
+     *         </li>
      * @see ProtectionPolicy
      */
 
@@ -836,17 +1146,33 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
      *        Type of game session protection to set for all new instances started in the fleet.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *        terminated during a scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
@@ -861,17 +1187,33 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
      *        Type of game session protection to set for all new instances started in the fleet.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *        terminated during a scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @see ProtectionPolicy
      */
 
@@ -884,17 +1226,33 @@ public class FleetAttributes implements Serializable, Cloneable {
      * Type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
-     * <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     * <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-     * during a scale-down event.</li>
+     * <li>
+     * <p>
+     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
      *        Type of game session protection to set for all new instances started in the fleet.</p>
      *        <ul>
-     *        <li><b>NoProtection</b> – The game session can be terminated during a scale-down event.</li>
-     *        <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be
-     *        terminated during a scale-down event.</li>
+     *        <li>
+     *        <p>
+     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        during a scale-down event.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtectionPolicy
      */
@@ -988,6 +1346,46 @@ public class FleetAttributes implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     * </p>
+     * 
+     * @param resourceCreationLimitPolicy
+     *        Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     */
+
+    public void setResourceCreationLimitPolicy(ResourceCreationLimitPolicy resourceCreationLimitPolicy) {
+        this.resourceCreationLimitPolicy = resourceCreationLimitPolicy;
+    }
+
+    /**
+     * <p>
+     * Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     * </p>
+     * 
+     * @return Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     */
+
+    public ResourceCreationLimitPolicy getResourceCreationLimitPolicy() {
+        return this.resourceCreationLimitPolicy;
+    }
+
+    /**
+     * <p>
+     * Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     * </p>
+     * 
+     * @param resourceCreationLimitPolicy
+     *        Fleet policy to limit the number of game sessions an individual player can create over a span of time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetAttributes withResourceCreationLimitPolicy(ResourceCreationLimitPolicy resourceCreationLimitPolicy) {
+        setResourceCreationLimitPolicy(resourceCreationLimitPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1021,7 +1419,9 @@ public class FleetAttributes implements Serializable, Cloneable {
         if (getNewGameSessionProtectionPolicy() != null)
             sb.append("NewGameSessionProtectionPolicy: " + getNewGameSessionProtectionPolicy() + ",");
         if (getOperatingSystem() != null)
-            sb.append("OperatingSystem: " + getOperatingSystem());
+            sb.append("OperatingSystem: " + getOperatingSystem() + ",");
+        if (getResourceCreationLimitPolicy() != null)
+            sb.append("ResourceCreationLimitPolicy: " + getResourceCreationLimitPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -1085,6 +1485,10 @@ public class FleetAttributes implements Serializable, Cloneable {
             return false;
         if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
             return false;
+        if (other.getResourceCreationLimitPolicy() == null ^ this.getResourceCreationLimitPolicy() == null)
+            return false;
+        if (other.getResourceCreationLimitPolicy() != null && other.getResourceCreationLimitPolicy().equals(this.getResourceCreationLimitPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -1105,6 +1509,7 @@ public class FleetAttributes implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLogPaths() == null) ? 0 : getLogPaths().hashCode());
         hashCode = prime * hashCode + ((getNewGameSessionProtectionPolicy() == null) ? 0 : getNewGameSessionProtectionPolicy().hashCode());
         hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
+        hashCode = prime * hashCode + ((getResourceCreationLimitPolicy() == null) ? 0 : getResourceCreationLimitPolicy().hashCode());
         return hashCode;
     }
 

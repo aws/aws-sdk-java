@@ -109,6 +109,10 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
                 jsonGenerator.writeFieldName("RuntimeConfiguration");
                 RuntimeConfigurationJsonMarshaller.getInstance().marshall(createFleetRequest.getRuntimeConfiguration(), jsonGenerator);
             }
+            if (createFleetRequest.getResourceCreationLimitPolicy() != null) {
+                jsonGenerator.writeFieldName("ResourceCreationLimitPolicy");
+                ResourceCreationLimitPolicyJsonMarshaller.getInstance().marshall(createFleetRequest.getResourceCreationLimitPolicy(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
 

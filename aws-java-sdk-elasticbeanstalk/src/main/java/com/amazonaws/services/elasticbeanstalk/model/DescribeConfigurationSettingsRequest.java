@@ -120,7 +120,7 @@ public class DescribeConfigurationSettingsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param templateName
-     *        The name of the configuration template to describe. </p>
+     *        The name of the configuration template to describe.</p>
      *        <p>
      *        Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify
      *        both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not
@@ -141,7 +141,7 @@ public class DescribeConfigurationSettingsRequest extends com.amazonaws.AmazonWe
      * Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.
      * </p>
      * 
-     * @return The name of the configuration template to describe. </p>
+     * @return The name of the configuration template to describe.</p>
      *         <p>
      *         Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify
      *         both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not
@@ -163,7 +163,7 @@ public class DescribeConfigurationSettingsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param templateName
-     *        The name of the configuration template to describe. </p>
+     *        The name of the configuration template to describe.</p>
      *        <p>
      *        Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify
      *        both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not
@@ -187,7 +187,7 @@ public class DescribeConfigurationSettingsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param environmentName
-     *        The name of the environment to describe. </p>
+     *        The name of the environment to describe.</p>
      *        <p>
      *        Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic
      *        Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS
@@ -208,7 +208,7 @@ public class DescribeConfigurationSettingsRequest extends com.amazonaws.AmazonWe
      * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
-     * @return The name of the environment to describe. </p>
+     * @return The name of the environment to describe.</p>
      *         <p>
      *         Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic
      *         Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS
@@ -230,7 +230,7 @@ public class DescribeConfigurationSettingsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param environmentName
-     *        The name of the environment to describe. </p>
+     *        The name of the environment to describe.</p>
      *        <p>
      *        Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic
      *        Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS

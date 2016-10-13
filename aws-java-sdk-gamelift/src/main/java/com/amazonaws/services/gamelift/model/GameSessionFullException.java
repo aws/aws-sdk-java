@@ -14,8 +14,8 @@ package com.amazonaws.services.gamelift.model;
 
 /**
  * <p>
- * The game instance is currently full and cannot allow the requested player(s) to join. This exception occurs in
- * response to a <a>CreatePlayerSession</a> request.
+ * The game instance is currently full and cannot allow the requested player(s) to join. Clients can retry such requests
+ * immediately or after a waiting period.
  * </p>
  */
 public class GameSessionFullException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {

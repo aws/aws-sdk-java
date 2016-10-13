@@ -84,6 +84,10 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                     context.nextToken();
                     certificateDetail.setIssuedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("ImportedAt", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setImportedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     certificateDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
@@ -119,6 +123,10 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
                     certificateDetail.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Type", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

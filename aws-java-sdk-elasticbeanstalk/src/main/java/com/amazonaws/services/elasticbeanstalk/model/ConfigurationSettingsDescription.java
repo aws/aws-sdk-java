@@ -57,12 +57,28 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
      * indicates the deployment status of this configuration set:
      * </p>
      * <ul>
-     * <li> <code>null</code>: This configuration is not associated with a running environment.</li>
-     * <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is
-     * in the process of deploying.</li>
-     * <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
-     * environment.</li>
-     * <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     * <li>
+     * <p>
+     * <code>null</code>: This configuration is not associated with a running environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in
+     * the process of deploying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     * environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>: This is a draft configuration that failed to successfully deploy.
+     * </p>
+     * </li>
      * </ul>
      */
     private String deploymentStatus;
@@ -291,24 +307,56 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
      * indicates the deployment status of this configuration set:
      * </p>
      * <ul>
-     * <li> <code>null</code>: This configuration is not associated with a running environment.</li>
-     * <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is
-     * in the process of deploying.</li>
-     * <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
-     * environment.</li>
-     * <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     * <li>
+     * <p>
+     * <code>null</code>: This configuration is not associated with a running environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in
+     * the process of deploying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     * environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>: This is a draft configuration that failed to successfully deploy.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param deploymentStatus
      *        If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
      *        indicates the deployment status of this configuration set: </p>
      *        <ul>
-     *        <li> <code>null</code>: This configuration is not associated with a running environment.</li>
-     *        <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment
-     *        but is in the process of deploying.</li>
-     *        <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
-     *        environment.</li>
-     *        <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     *        <li>
+     *        <p>
+     *        <code>null</code>: This configuration is not associated with a running environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but
+     *        is in the process of deploying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     *        environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code>: This is a draft configuration that failed to successfully deploy.
+     *        </p>
+     *        </li>
      * @see ConfigurationDeploymentStatus
      */
 
@@ -322,23 +370,55 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
      * indicates the deployment status of this configuration set:
      * </p>
      * <ul>
-     * <li> <code>null</code>: This configuration is not associated with a running environment.</li>
-     * <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is
-     * in the process of deploying.</li>
-     * <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
-     * environment.</li>
-     * <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     * <li>
+     * <p>
+     * <code>null</code>: This configuration is not associated with a running environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in
+     * the process of deploying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     * environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>: This is a draft configuration that failed to successfully deploy.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
      *         indicates the deployment status of this configuration set: </p>
      *         <ul>
-     *         <li> <code>null</code>: This configuration is not associated with a running environment.</li>
-     *         <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated
-     *         environment but is in the process of deploying.</li>
-     *         <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
-     *         environment.</li>
-     *         <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     *         <li>
+     *         <p>
+     *         <code>null</code>: This configuration is not associated with a running environment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>pending</code>: This is a draft configuration that is not deployed to the associated environment
+     *         but is in the process of deploying.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     *         environment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>failed</code>: This is a draft configuration that failed to successfully deploy.
+     *         </p>
+     *         </li>
      * @see ConfigurationDeploymentStatus
      */
 
@@ -352,24 +432,56 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
      * indicates the deployment status of this configuration set:
      * </p>
      * <ul>
-     * <li> <code>null</code>: This configuration is not associated with a running environment.</li>
-     * <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is
-     * in the process of deploying.</li>
-     * <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
-     * environment.</li>
-     * <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     * <li>
+     * <p>
+     * <code>null</code>: This configuration is not associated with a running environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in
+     * the process of deploying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     * environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>: This is a draft configuration that failed to successfully deploy.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param deploymentStatus
      *        If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
      *        indicates the deployment status of this configuration set: </p>
      *        <ul>
-     *        <li> <code>null</code>: This configuration is not associated with a running environment.</li>
-     *        <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment
-     *        but is in the process of deploying.</li>
-     *        <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
-     *        environment.</li>
-     *        <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     *        <li>
+     *        <p>
+     *        <code>null</code>: This configuration is not associated with a running environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but
+     *        is in the process of deploying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     *        environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code>: This is a draft configuration that failed to successfully deploy.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationDeploymentStatus
      */
@@ -385,24 +497,56 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
      * indicates the deployment status of this configuration set:
      * </p>
      * <ul>
-     * <li> <code>null</code>: This configuration is not associated with a running environment.</li>
-     * <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is
-     * in the process of deploying.</li>
-     * <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
-     * environment.</li>
-     * <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     * <li>
+     * <p>
+     * <code>null</code>: This configuration is not associated with a running environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in
+     * the process of deploying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     * environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>: This is a draft configuration that failed to successfully deploy.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param deploymentStatus
      *        If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
      *        indicates the deployment status of this configuration set: </p>
      *        <ul>
-     *        <li> <code>null</code>: This configuration is not associated with a running environment.</li>
-     *        <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment
-     *        but is in the process of deploying.</li>
-     *        <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
-     *        environment.</li>
-     *        <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     *        <li>
+     *        <p>
+     *        <code>null</code>: This configuration is not associated with a running environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but
+     *        is in the process of deploying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     *        environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code>: This is a draft configuration that failed to successfully deploy.
+     *        </p>
+     *        </li>
      * @see ConfigurationDeploymentStatus
      */
 
@@ -416,24 +560,56 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
      * indicates the deployment status of this configuration set:
      * </p>
      * <ul>
-     * <li> <code>null</code>: This configuration is not associated with a running environment.</li>
-     * <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is
-     * in the process of deploying.</li>
-     * <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
-     * environment.</li>
-     * <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     * <li>
+     * <p>
+     * <code>null</code>: This configuration is not associated with a running environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in
+     * the process of deploying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     * environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>failed</code>: This is a draft configuration that failed to successfully deploy.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param deploymentStatus
      *        If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter
      *        indicates the deployment status of this configuration set: </p>
      *        <ul>
-     *        <li> <code>null</code>: This configuration is not associated with a running environment.</li>
-     *        <li> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment
-     *        but is in the process of deploying.</li>
-     *        <li> <code>deployed</code>: This is the configuration that is currently deployed to the associated running
-     *        environment.</li>
-     *        <li> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</li>
+     *        <li>
+     *        <p>
+     *        <code>null</code>: This configuration is not associated with a running environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but
+     *        is in the process of deploying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deployed</code>: This is the configuration that is currently deployed to the associated running
+     *        environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>failed</code>: This is a draft configuration that failed to successfully deploy.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationDeploymentStatus
      */

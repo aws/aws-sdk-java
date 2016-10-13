@@ -113,7 +113,7 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param description
-     *        A new description for the application. </p>
+     *        A new description for the application.</p>
      *        <p>
      *        Default: If not specified, AWS Elastic Beanstalk does not update the description.
      */
@@ -130,7 +130,7 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * Default: If not specified, AWS Elastic Beanstalk does not update the description.
      * </p>
      * 
-     * @return A new description for the application. </p>
+     * @return A new description for the application.</p>
      *         <p>
      *         Default: If not specified, AWS Elastic Beanstalk does not update the description.
      */
@@ -148,7 +148,7 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param description
-     *        A new description for the application. </p>
+     *        A new description for the application.</p>
      *        <p>
      *        Default: If not specified, AWS Elastic Beanstalk does not update the description.
      * @return Returns a reference to this object so that method calls can be chained together.

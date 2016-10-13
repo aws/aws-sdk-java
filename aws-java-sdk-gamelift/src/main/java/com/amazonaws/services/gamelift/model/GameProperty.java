@@ -23,12 +23,26 @@ import java.io.Serializable;
  */
 public class GameProperty implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * TBD
+     * </p>
+     */
     private String key;
-
+    /**
+     * <p>
+     * TBD
+     * </p>
+     */
     private String value;
 
     /**
+     * <p>
+     * TBD
+     * </p>
+     * 
      * @param key
+     *        TBD
      */
 
     public void setKey(String key) {
@@ -36,7 +50,11 @@ public class GameProperty implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * TBD
+     * </p>
+     * 
+     * @return TBD
      */
 
     public String getKey() {
@@ -44,7 +62,12 @@ public class GameProperty implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * TBD
+     * </p>
+     * 
      * @param key
+     *        TBD
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +77,12 @@ public class GameProperty implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * TBD
+     * </p>
+     * 
      * @param value
+     *        TBD
      */
 
     public void setValue(String value) {
@@ -62,7 +90,11 @@ public class GameProperty implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * TBD
+     * </p>
+     * 
+     * @return TBD
      */
 
     public String getValue() {
@@ -70,7 +102,12 @@ public class GameProperty implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * TBD
+     * </p>
+     * 
      * @param value
+     *        TBD
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

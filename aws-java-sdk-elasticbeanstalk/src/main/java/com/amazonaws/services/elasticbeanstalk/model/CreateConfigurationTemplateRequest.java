@@ -274,7 +274,7 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * @param solutionStackName
      *        The name of the solution stack used by this configuration. The solution stack specifies the operating
      *        system, architecture, and application server for a configuration template. It determines the set of
-     *        configuration options as well as the possible and default values. </p>
+     *        configuration options as well as the possible and default values.</p>
      *        <p>
      *        Use <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks.
      *        </p>
@@ -311,7 +311,7 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * 
      * @return The name of the solution stack used by this configuration. The solution stack specifies the operating
      *         system, architecture, and application server for a configuration template. It determines the set of
-     *         configuration options as well as the possible and default values. </p>
+     *         configuration options as well as the possible and default values.</p>
      *         <p>
      *         Use <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks.
      *         </p>
@@ -349,7 +349,7 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * @param solutionStackName
      *        The name of the solution stack used by this configuration. The solution stack specifies the operating
      *        system, architecture, and application server for a configuration template. It determines the set of
-     *        configuration options as well as the possible and default values. </p>
+     *        configuration options as well as the possible and default values.</p>
      *        <p>
      *        Use <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks.
      *        </p>
@@ -388,7 +388,7 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * 
      * @param sourceConfiguration
      *        If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration
-     *        template to create a new configuration. </p>
+     *        template to create a new configuration.</p>
      *        <p>
      *        Values specified in the <code>OptionSettings</code> parameter of this call overrides any values obtained
      *        from the <code>SourceConfiguration</code>.
@@ -425,7 +425,7 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @return If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration
-     *         template to create a new configuration. </p>
+     *         template to create a new configuration.</p>
      *         <p>
      *         Values specified in the <code>OptionSettings</code> parameter of this call overrides any values obtained
      *         from the <code>SourceConfiguration</code>.
@@ -463,7 +463,7 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * 
      * @param sourceConfiguration
      *        If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration
-     *        template to create a new configuration. </p>
+     *        template to create a new configuration.</p>
      *        <p>
      *        Values specified in the <code>OptionSettings</code> parameter of this call overrides any values obtained
      *        from the <code>SourceConfiguration</code>.

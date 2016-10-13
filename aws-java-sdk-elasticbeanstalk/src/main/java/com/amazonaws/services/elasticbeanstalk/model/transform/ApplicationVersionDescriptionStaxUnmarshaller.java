@@ -60,6 +60,11 @@ public class ApplicationVersionDescriptionStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
+                if (context.testExpression("SourceBuildInformation", targetDepth)) {
+                    applicationVersionDescription.setSourceBuildInformation(SourceBuildInformationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("SourceBundle", targetDepth)) {
                     applicationVersionDescription.setSourceBundle(S3LocationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -86,6 +86,10 @@ public class FleetAttributesJsonMarshaller {
             if (fleetAttributes.getOperatingSystem() != null) {
                 jsonGenerator.writeFieldName("OperatingSystem").writeValue(fleetAttributes.getOperatingSystem());
             }
+            if (fleetAttributes.getResourceCreationLimitPolicy() != null) {
+                jsonGenerator.writeFieldName("ResourceCreationLimitPolicy");
+                ResourceCreationLimitPolicyJsonMarshaller.getInstance().marshall(fleetAttributes.getResourceCreationLimitPolicy(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

@@ -39,9 +39,17 @@ public class DeleteApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Indicates whether to delete the associated source bundle from Amazon S3:
      * </p>
      * <ul>
-     * <li> <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time of
-     * creation.</li>
-     * <li> <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time of
+     * creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -155,20 +163,36 @@ public class DeleteApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Indicates whether to delete the associated source bundle from Amazon S3:
      * </p>
      * <ul>
-     * <li> <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time of
-     * creation.</li>
-     * <li> <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time of
+     * creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param deleteSourceBundle
-     *        Indicates whether to delete the associated source bundle from Amazon S3: </p>
+     *        Indicates whether to delete the associated source bundle from Amazon S3:</p>
      *        <ul>
-     *        <li> <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at
-     *        time of creation.</li>
-     *        <li> <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.</li>
+     *        <li>
+     *        <p>
+     *        <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time
+     *        of creation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -183,19 +207,35 @@ public class DeleteApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Indicates whether to delete the associated source bundle from Amazon S3:
      * </p>
      * <ul>
-     * <li> <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time of
-     * creation.</li>
-     * <li> <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time of
+     * creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Indicates whether to delete the associated source bundle from Amazon S3: </p>
+     * @return Indicates whether to delete the associated source bundle from Amazon S3:</p>
      *         <ul>
-     *         <li> <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at
-     *         time of creation.</li>
-     *         <li> <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.</li>
+     *         <li>
+     *         <p>
+     *         <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time
+     *         of creation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -210,20 +250,36 @@ public class DeleteApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Indicates whether to delete the associated source bundle from Amazon S3:
      * </p>
      * <ul>
-     * <li> <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time of
-     * creation.</li>
-     * <li> <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time of
+     * creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param deleteSourceBundle
-     *        Indicates whether to delete the associated source bundle from Amazon S3: </p>
+     *        Indicates whether to delete the associated source bundle from Amazon S3:</p>
      *        <ul>
-     *        <li> <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at
-     *        time of creation.</li>
-     *        <li> <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.</li>
+     *        <li>
+     *        <p>
+     *        <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time
+     *        of creation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -240,19 +296,35 @@ public class DeleteApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Indicates whether to delete the associated source bundle from Amazon S3:
      * </p>
      * <ul>
-     * <li> <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time of
-     * creation.</li>
-     * <li> <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time of
+     * creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Indicates whether to delete the associated source bundle from Amazon S3: </p>
+     * @return Indicates whether to delete the associated source bundle from Amazon S3:</p>
      *         <ul>
-     *         <li> <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at
-     *         time of creation.</li>
-     *         <li> <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.</li>
+     *         <li>
+     *         <p>
+     *         <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time
+     *         of creation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>

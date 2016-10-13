@@ -39,9 +39,21 @@ public class Deployment implements Serializable, Cloneable {
      * The status of the deployment:
      * </p>
      * <ul>
-     * <li> <code>In Progress</code> : The deployment is in progress.</li>
-     * <li> <code>Deployed</code> : The deployment succeeded.</li>
-     * <li> <code>Failed</code> : The deployment failed.</li>
+     * <li>
+     * <p>
+     * <code>In Progress</code> : The deployment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deployed</code> : The deployment succeeded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> : The deployment failed.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -146,17 +158,41 @@ public class Deployment implements Serializable, Cloneable {
      * The status of the deployment:
      * </p>
      * <ul>
-     * <li> <code>In Progress</code> : The deployment is in progress.</li>
-     * <li> <code>Deployed</code> : The deployment succeeded.</li>
-     * <li> <code>Failed</code> : The deployment failed.</li>
+     * <li>
+     * <p>
+     * <code>In Progress</code> : The deployment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deployed</code> : The deployment succeeded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> : The deployment failed.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The status of the deployment:</p>
      *        <ul>
-     *        <li> <code>In Progress</code> : The deployment is in progress.</li>
-     *        <li> <code>Deployed</code> : The deployment succeeded.</li>
-     *        <li> <code>Failed</code> : The deployment failed.</li>
+     *        <li>
+     *        <p>
+     *        <code>In Progress</code> : The deployment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deployed</code> : The deployment succeeded.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> : The deployment failed.
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -168,16 +204,40 @@ public class Deployment implements Serializable, Cloneable {
      * The status of the deployment:
      * </p>
      * <ul>
-     * <li> <code>In Progress</code> : The deployment is in progress.</li>
-     * <li> <code>Deployed</code> : The deployment succeeded.</li>
-     * <li> <code>Failed</code> : The deployment failed.</li>
+     * <li>
+     * <p>
+     * <code>In Progress</code> : The deployment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deployed</code> : The deployment succeeded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> : The deployment failed.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The status of the deployment:</p>
      *         <ul>
-     *         <li> <code>In Progress</code> : The deployment is in progress.</li>
-     *         <li> <code>Deployed</code> : The deployment succeeded.</li>
-     *         <li> <code>Failed</code> : The deployment failed.</li>
+     *         <li>
+     *         <p>
+     *         <code>In Progress</code> : The deployment is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Deployed</code> : The deployment succeeded.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Failed</code> : The deployment failed.
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -189,17 +249,41 @@ public class Deployment implements Serializable, Cloneable {
      * The status of the deployment:
      * </p>
      * <ul>
-     * <li> <code>In Progress</code> : The deployment is in progress.</li>
-     * <li> <code>Deployed</code> : The deployment succeeded.</li>
-     * <li> <code>Failed</code> : The deployment failed.</li>
+     * <li>
+     * <p>
+     * <code>In Progress</code> : The deployment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deployed</code> : The deployment succeeded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> : The deployment failed.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The status of the deployment:</p>
      *        <ul>
-     *        <li> <code>In Progress</code> : The deployment is in progress.</li>
-     *        <li> <code>Deployed</code> : The deployment succeeded.</li>
-     *        <li> <code>Failed</code> : The deployment failed.</li>
+     *        <li>
+     *        <p>
+     *        <code>In Progress</code> : The deployment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deployed</code> : The deployment succeeded.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> : The deployment failed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

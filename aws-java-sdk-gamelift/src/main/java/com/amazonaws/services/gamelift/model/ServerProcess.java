@@ -19,7 +19,7 @@ import java.io.Serializable;
  * A set of instructions for launching server processes on each instance in a fleet. Each instruction set identifies the
  * location of the server executable, optional launch parameters, and the number of server processes with this
  * configuration to maintain concurrently on the instance. Server process configurations make up a fleet's
- * <code><a>RuntimeConfiguration</a></code>.
+ * <code> <a>RuntimeConfiguration</a> </code>.
  * </p>
  */
 public class ServerProcess implements Serializable, Cloneable {

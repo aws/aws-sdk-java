@@ -15,7 +15,7 @@ package com.amazonaws.services.gamelift.model;
 /**
  * <p>
  * The requested operation would cause a conflict with the current state of a resource associated with the request
- * and/or the game instance. Clients should not retry such requests without resolving the conflict.
+ * and/or the game instance. Resolve the conflict before retrying.
  * </p>
  */
 public class InvalidGameSessionStatusException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {

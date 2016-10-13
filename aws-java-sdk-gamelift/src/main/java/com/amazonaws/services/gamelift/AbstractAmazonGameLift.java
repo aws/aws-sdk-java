@@ -135,6 +135,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public DescribeInstancesResult describeInstances(DescribeInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribePlayerSessionsResult describePlayerSessions(DescribePlayerSessionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

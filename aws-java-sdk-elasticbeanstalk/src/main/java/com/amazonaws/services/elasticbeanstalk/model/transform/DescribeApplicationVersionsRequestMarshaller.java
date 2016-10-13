@@ -61,6 +61,14 @@ public class DescribeApplicationVersionsRequestMarshaller implements
             }
         }
 
+        if (describeApplicationVersionsRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeApplicationVersionsRequest.getMaxRecords()));
+        }
+
+        if (describeApplicationVersionsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeApplicationVersionsRequest.getNextToken()));
+        }
+
         return request;
     }
 

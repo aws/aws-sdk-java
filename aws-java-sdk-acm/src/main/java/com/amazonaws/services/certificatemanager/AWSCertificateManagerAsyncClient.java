@@ -23,12 +23,12 @@ import com.amazonaws.annotation.ThreadSafe;
  * <p>
  * <fullname>AWS Certificate Manager</fullname>
  * <p>
- * Welcome to the AWS Certificate Manager (ACM) Command Reference. This guide provides descriptions, syntax, and usage
- * examples for each ACM command. You can use AWS Certificate Manager to request ACM Certificates for your AWS-based
- * websites and applications. For general information about using ACM and for more information about using the console,
- * see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager User
- * Guide</a>. For more information about using the ACM API, see the <a
- * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html">AWS Certificate Manager API Reference</a>.
+ * Welcome to the AWS Certificate Manager (ACM) API documentation.
+ * </p>
+ * <p>
+ * You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications. For general information
+ * about using ACM, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/"> <i>AWS Certificate Manager User
+ * Guide</i> </a>.
  * </p>
  */
 @ThreadSafe
@@ -332,6 +332,38 @@ public class AWSCertificateManagerAsyncClient extends AWSCertificateManagerClien
 
                 try {
                     result = getCertificate(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(ImportCertificateRequest request) {
+
+        return importCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(final ImportCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportCertificateRequest, ImportCertificateResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportCertificateResult>() {
+            @Override
+            public ImportCertificateResult call() throws Exception {
+                ImportCertificateResult result;
+
+                try {
+                    result = importCertificate(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -14,7 +14,7 @@ package com.amazonaws.services.gamelift.model;
 
 /**
  * <p>
- * A service resource associated with the request could not be found. Clients should not retry such requests
+ * A service resource associated with the request could not be found. Clients should not retry such requests.
  * </p>
  */
 public class NotFoundException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {

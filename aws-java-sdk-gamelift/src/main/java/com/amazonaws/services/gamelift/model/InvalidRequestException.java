@@ -14,7 +14,7 @@ package com.amazonaws.services.gamelift.model;
 
 /**
  * <p>
- * One or more parameters specified as part of the request are invalid. Correct the invalid parameters before retrying.
+ * One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.
  * </p>
  */
 public class InvalidRequestException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {

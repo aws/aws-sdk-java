@@ -15,7 +15,7 @@ package com.amazonaws.services.gamelift.model;
 /**
  * <p>
  * The service encountered an unrecoverable internal failure while processing the request. Clients can retry such
- * requests, either immediately or after a back-off period.
+ * requests immediately or after a waiting period.
  * </p>
  */
 public class InternalServiceException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {

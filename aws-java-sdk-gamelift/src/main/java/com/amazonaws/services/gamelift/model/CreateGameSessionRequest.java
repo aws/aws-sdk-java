@@ -53,6 +53,25 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.List<GameProperty> gameProperties;
+    /**
+     * <p>
+     * Player ID identifying the person or entity creating the game session. This ID is used to enforce a resource
+     * protection policy (if one exists) that limits the number of concurrent active game sessions one player can have.
+     * </p>
+     */
+    private String creatorId;
+    /**
+     * <p>
+     * Custom string to include in the game session ID, with a maximum length of 48 characters. If this parameter is
+     * set, GameLift creates a game session ID in the following format:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;custom ID string&gt;". For example, this
+     * full game session ID:
+     * "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session" includes the
+     * custom ID string "my-game-session". If this parameter is not set, GameLift creates a game session ID in the same
+     * format with an auto-generated ID string.
+     * </p>
+     */
+    private String gameSessionId;
 
     /**
      * <p>
@@ -296,6 +315,131 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Player ID identifying the person or entity creating the game session. This ID is used to enforce a resource
+     * protection policy (if one exists) that limits the number of concurrent active game sessions one player can have.
+     * </p>
+     * 
+     * @param creatorId
+     *        Player ID identifying the person or entity creating the game session. This ID is used to enforce a
+     *        resource protection policy (if one exists) that limits the number of concurrent active game sessions one
+     *        player can have.
+     */
+
+    public void setCreatorId(String creatorId) {
+        this.creatorId = creatorId;
+    }
+
+    /**
+     * <p>
+     * Player ID identifying the person or entity creating the game session. This ID is used to enforce a resource
+     * protection policy (if one exists) that limits the number of concurrent active game sessions one player can have.
+     * </p>
+     * 
+     * @return Player ID identifying the person or entity creating the game session. This ID is used to enforce a
+     *         resource protection policy (if one exists) that limits the number of concurrent active game sessions one
+     *         player can have.
+     */
+
+    public String getCreatorId() {
+        return this.creatorId;
+    }
+
+    /**
+     * <p>
+     * Player ID identifying the person or entity creating the game session. This ID is used to enforce a resource
+     * protection policy (if one exists) that limits the number of concurrent active game sessions one player can have.
+     * </p>
+     * 
+     * @param creatorId
+     *        Player ID identifying the person or entity creating the game session. This ID is used to enforce a
+     *        resource protection policy (if one exists) that limits the number of concurrent active game sessions one
+     *        player can have.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGameSessionRequest withCreatorId(String creatorId) {
+        setCreatorId(creatorId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Custom string to include in the game session ID, with a maximum length of 48 characters. If this parameter is
+     * set, GameLift creates a game session ID in the following format:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;custom ID string&gt;". For example, this
+     * full game session ID:
+     * "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session" includes the
+     * custom ID string "my-game-session". If this parameter is not set, GameLift creates a game session ID in the same
+     * format with an auto-generated ID string.
+     * </p>
+     * 
+     * @param gameSessionId
+     *        Custom string to include in the game session ID, with a maximum length of 48 characters. If this parameter
+     *        is set, GameLift creates a game session ID in the following format:
+     *        "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;custom ID string&gt;". For
+     *        example, this full game session ID:
+     *        "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session"
+     *        includes the custom ID string "my-game-session". If this parameter is not set, GameLift creates a game
+     *        session ID in the same format with an auto-generated ID string.
+     */
+
+    public void setGameSessionId(String gameSessionId) {
+        this.gameSessionId = gameSessionId;
+    }
+
+    /**
+     * <p>
+     * Custom string to include in the game session ID, with a maximum length of 48 characters. If this parameter is
+     * set, GameLift creates a game session ID in the following format:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;custom ID string&gt;". For example, this
+     * full game session ID:
+     * "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session" includes the
+     * custom ID string "my-game-session". If this parameter is not set, GameLift creates a game session ID in the same
+     * format with an auto-generated ID string.
+     * </p>
+     * 
+     * @return Custom string to include in the game session ID, with a maximum length of 48 characters. If this
+     *         parameter is set, GameLift creates a game session ID in the following format:
+     *         "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;custom ID string&gt;". For
+     *         example, this full game session ID:
+     *         "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session"
+     *         includes the custom ID string "my-game-session". If this parameter is not set, GameLift creates a game
+     *         session ID in the same format with an auto-generated ID string.
+     */
+
+    public String getGameSessionId() {
+        return this.gameSessionId;
+    }
+
+    /**
+     * <p>
+     * Custom string to include in the game session ID, with a maximum length of 48 characters. If this parameter is
+     * set, GameLift creates a game session ID in the following format:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;custom ID string&gt;". For example, this
+     * full game session ID:
+     * "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session" includes the
+     * custom ID string "my-game-session". If this parameter is not set, GameLift creates a game session ID in the same
+     * format with an auto-generated ID string.
+     * </p>
+     * 
+     * @param gameSessionId
+     *        Custom string to include in the game session ID, with a maximum length of 48 characters. If this parameter
+     *        is set, GameLift creates a game session ID in the following format:
+     *        "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;custom ID string&gt;". For
+     *        example, this full game session ID:
+     *        "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session"
+     *        includes the custom ID string "my-game-session". If this parameter is not set, GameLift creates a game
+     *        session ID in the same format with an auto-generated ID string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGameSessionRequest withGameSessionId(String gameSessionId) {
+        setGameSessionId(gameSessionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -315,7 +459,11 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
         if (getGameProperties() != null)
-            sb.append("GameProperties: " + getGameProperties());
+            sb.append("GameProperties: " + getGameProperties() + ",");
+        if (getCreatorId() != null)
+            sb.append("CreatorId: " + getCreatorId() + ",");
+        if (getGameSessionId() != null)
+            sb.append("GameSessionId: " + getGameSessionId());
         sb.append("}");
         return sb.toString();
     }
@@ -350,6 +498,14 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getGameProperties() != null && other.getGameProperties().equals(this.getGameProperties()) == false)
             return false;
+        if (other.getCreatorId() == null ^ this.getCreatorId() == null)
+            return false;
+        if (other.getCreatorId() != null && other.getCreatorId().equals(this.getCreatorId()) == false)
+            return false;
+        if (other.getGameSessionId() == null ^ this.getGameSessionId() == null)
+            return false;
+        if (other.getGameSessionId() != null && other.getGameSessionId().equals(this.getGameSessionId()) == false)
+            return false;
         return true;
     }
 
@@ -363,6 +519,8 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getMaximumPlayerSessionCount() == null) ? 0 : getMaximumPlayerSessionCount().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getGameProperties() == null) ? 0 : getGameProperties().hashCode());
+        hashCode = prime * hashCode + ((getCreatorId() == null) ? 0 : getCreatorId().hashCode());
+        hashCode = prime * hashCode + ((getGameSessionId() == null) ? 0 : getGameSessionId().hashCode());
         return hashCode;
     }
 

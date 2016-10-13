@@ -14,8 +14,8 @@ package com.amazonaws.services.gamelift.model;
 
 /**
  * <p>
- * The specified fleet has no available instances to fulfill a request to create a new game session. Such requests
- * should only be retried once the fleet capacity has been increased.
+ * The specified fleet has no available instances to fulfill a <code>CreateGameSession</code> request. Clients can retry
+ * such requests immediately or after a waiting period.
  * </p>
  */
 public class FleetCapacityExceededException extends com.amazonaws.services.gamelift.model.AmazonGameLiftException {

@@ -31,7 +31,7 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * AWS credentials required when uploading a game build to the storage location. These credentials have a limited
      * lifespan and are valid only for the build they were issued for. If you need to get fresh credentials, call
-     * <code><a>RequestUploadCredentials</a></code>.
+     * <code> <a>RequestUploadCredentials</a> </code>.
      * </p>
      */
     private Credentials uploadCredentials;
@@ -86,13 +86,13 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * AWS credentials required when uploading a game build to the storage location. These credentials have a limited
      * lifespan and are valid only for the build they were issued for. If you need to get fresh credentials, call
-     * <code><a>RequestUploadCredentials</a></code>.
+     * <code> <a>RequestUploadCredentials</a> </code>.
      * </p>
      * 
      * @param uploadCredentials
      *        AWS credentials required when uploading a game build to the storage location. These credentials have a
      *        limited lifespan and are valid only for the build they were issued for. If you need to get fresh
-     *        credentials, call <code><a>RequestUploadCredentials</a></code>.
+     *        credentials, call <code> <a>RequestUploadCredentials</a> </code>.
      */
 
     public void setUploadCredentials(Credentials uploadCredentials) {
@@ -103,12 +103,12 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * AWS credentials required when uploading a game build to the storage location. These credentials have a limited
      * lifespan and are valid only for the build they were issued for. If you need to get fresh credentials, call
-     * <code><a>RequestUploadCredentials</a></code>.
+     * <code> <a>RequestUploadCredentials</a> </code>.
      * </p>
      * 
      * @return AWS credentials required when uploading a game build to the storage location. These credentials have a
      *         limited lifespan and are valid only for the build they were issued for. If you need to get fresh
-     *         credentials, call <code><a>RequestUploadCredentials</a></code>.
+     *         credentials, call <code> <a>RequestUploadCredentials</a> </code>.
      */
 
     public Credentials getUploadCredentials() {
@@ -119,13 +119,13 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * AWS credentials required when uploading a game build to the storage location. These credentials have a limited
      * lifespan and are valid only for the build they were issued for. If you need to get fresh credentials, call
-     * <code><a>RequestUploadCredentials</a></code>.
+     * <code> <a>RequestUploadCredentials</a> </code>.
      * </p>
      * 
      * @param uploadCredentials
      *        AWS credentials required when uploading a game build to the storage location. These credentials have a
      *        limited lifespan and are valid only for the build they were issued for. If you need to get fresh
-     *        credentials, call <code><a>RequestUploadCredentials</a></code>.
+     *        credentials, call <code> <a>RequestUploadCredentials</a> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

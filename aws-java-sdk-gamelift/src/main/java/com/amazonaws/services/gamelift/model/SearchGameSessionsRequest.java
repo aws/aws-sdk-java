@@ -43,16 +43,28 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * A filter expression can contain one or multiple conditions. Each condition consists of the following:
      * </p>
      * <ul>
-     * <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     * <li>
+     * <p>
+     * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     * <li><b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&amp;lt;&amp;gt;</code>,
-     * <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;lt;=</code>, <code>&amp;gt;=</code>.</li>
-     * <li><b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings.
-     * String values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean and
-     * string values can only be used with the comparators <code>=</code> and <code>&amp;lt;&amp;gt;</code>. For
-     * example, the following filter expression searches on <code>gameSessionName</code>: "
-     * <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.</li>
+     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     * <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings. String
+     * values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean and string
+     * values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following
+     * filter expression searches on <code>gameSessionName</code>: "
+     * <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>, <code>OR</code>,
@@ -63,16 +75,36 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * Session search evaluates conditions from left to right using the following precedence rules:
      * </p>
      * <ol>
-     * <li> <code>=</code>, <code>&amp;lt;&amp;gt;</code>, <code>&amp;lt;</code>, <code>&amp;gt;</code>,
-     * <code>&amp;lt;=</code>, <code>&amp;gt;=</code></li>
-     * <li>Parentheses</li>
-     * <li>NOT</li>
-     * <li>AND</li>
-     * <li>OR</li>
+     * <li>
+     * <p>
+     * <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
+     * <code>&gt;=</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parentheses
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NOT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AND
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OR
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For example, this filter expression retrieves game sessions hosting at least ten players that have an open player
-     * slot: <code>"maximumSessions&amp;gt;=10 AND hasAvailablePlayerSessions=true"</code>.
+     * slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>.
      * </p>
      */
     private String filterExpression;
@@ -82,10 +114,18 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * random order. A sort expression consists of the following elements:
      * </p>
      * <ul>
-     * <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     * <li>
+     * <p>
+     * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     * <li><b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</li>
+     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For example, this sort expression returns the oldest active sessions first:
@@ -202,16 +242,28 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * A filter expression can contain one or multiple conditions. Each condition consists of the following:
      * </p>
      * <ul>
-     * <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     * <li>
+     * <p>
+     * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     * <li><b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&amp;lt;&amp;gt;</code>,
-     * <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;lt;=</code>, <code>&amp;gt;=</code>.</li>
-     * <li><b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings.
-     * String values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean and
-     * string values can only be used with the comparators <code>=</code> and <code>&amp;lt;&amp;gt;</code>. For
-     * example, the following filter expression searches on <code>gameSessionName</code>: "
-     * <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.</li>
+     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     * <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings. String
+     * values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean and string
+     * values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following
+     * filter expression searches on <code>gameSessionName</code>: "
+     * <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>, <code>OR</code>,
@@ -222,36 +274,67 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * Session search evaluates conditions from left to right using the following precedence rules:
      * </p>
      * <ol>
-     * <li> <code>=</code>, <code>&amp;lt;&amp;gt;</code>, <code>&amp;lt;</code>, <code>&amp;gt;</code>,
-     * <code>&amp;lt;=</code>, <code>&amp;gt;=</code></li>
-     * <li>Parentheses</li>
-     * <li>NOT</li>
-     * <li>AND</li>
-     * <li>OR</li>
+     * <li>
+     * <p>
+     * <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
+     * <code>&gt;=</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parentheses
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NOT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AND
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OR
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For example, this filter expression retrieves game sessions hosting at least ten players that have an open player
-     * slot: <code>"maximumSessions&amp;gt;=10 AND hasAvailablePlayerSessions=true"</code>.
+     * slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>.
      * </p>
      * 
      * @param filterExpression
      *        String containing the search criteria for the session search. If no filter expression is included, the
-     *        request returns results for all game sessions in the fleet that are in ACTIVE status. </p>
+     *        request returns results for all game sessions in the fleet that are in ACTIVE status.</p>
      *        <p>
      *        A filter expression can contain one or multiple conditions. Each condition consists of the following:
      *        </p>
      *        <ul>
-     *        <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     *        <li>
+     *        <p>
+     *        <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      *        <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     *        <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     *        <li><b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&amp;lt;&amp;gt;</code>,
-     *        <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;lt;=</code>, <code>&amp;gt;=</code>.</li>
-     *        <li><b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or
-     *        strings. String values are case sensitive, enclosed in single quotes. Special characters must be escaped.
-     *        Boolean and string values can only be used with the comparators <code>=</code> and
-     *        <code>&amp;lt;&amp;gt;</code>. For example, the following filter expression searches on
-     *        <code>gameSessionName</code>: "
-     *        <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.</li>
+     *        <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     *        <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings.
+     *        String values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean
+     *        and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For
+     *        example, the following filter expression searches on <code>gameSessionName</code>: "
+     *        <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>,
@@ -262,16 +345,36 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      *        Session search evaluates conditions from left to right using the following precedence rules:
      *        </p>
      *        <ol>
-     *        <li> <code>=</code>, <code>&amp;lt;&amp;gt;</code>, <code>&amp;lt;</code>, <code>&amp;gt;</code>,
-     *        <code>&amp;lt;=</code>, <code>&amp;gt;=</code></li>
-     *        <li>Parentheses</li>
-     *        <li>NOT</li>
-     *        <li>AND</li>
-     *        <li>OR</li>
+     *        <li>
+     *        <p>
+     *        <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
+     *        <code>&gt;=</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Parentheses
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NOT
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AND
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OR
+     *        </p>
+     *        </li>
      *        </ol>
      *        <p>
      *        For example, this filter expression retrieves game sessions hosting at least ten players that have an open
-     *        player slot: <code>"maximumSessions&amp;gt;=10 AND hasAvailablePlayerSessions=true"</code>.
+     *        player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>.
      */
 
     public void setFilterExpression(String filterExpression) {
@@ -287,16 +390,28 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * A filter expression can contain one or multiple conditions. Each condition consists of the following:
      * </p>
      * <ul>
-     * <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     * <li>
+     * <p>
+     * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     * <li><b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&amp;lt;&amp;gt;</code>,
-     * <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;lt;=</code>, <code>&amp;gt;=</code>.</li>
-     * <li><b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings.
-     * String values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean and
-     * string values can only be used with the comparators <code>=</code> and <code>&amp;lt;&amp;gt;</code>. For
-     * example, the following filter expression searches on <code>gameSessionName</code>: "
-     * <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.</li>
+     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     * <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings. String
+     * values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean and string
+     * values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following
+     * filter expression searches on <code>gameSessionName</code>: "
+     * <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>, <code>OR</code>,
@@ -307,35 +422,66 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * Session search evaluates conditions from left to right using the following precedence rules:
      * </p>
      * <ol>
-     * <li> <code>=</code>, <code>&amp;lt;&amp;gt;</code>, <code>&amp;lt;</code>, <code>&amp;gt;</code>,
-     * <code>&amp;lt;=</code>, <code>&amp;gt;=</code></li>
-     * <li>Parentheses</li>
-     * <li>NOT</li>
-     * <li>AND</li>
-     * <li>OR</li>
+     * <li>
+     * <p>
+     * <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
+     * <code>&gt;=</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parentheses
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NOT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AND
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OR
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For example, this filter expression retrieves game sessions hosting at least ten players that have an open player
-     * slot: <code>"maximumSessions&amp;gt;=10 AND hasAvailablePlayerSessions=true"</code>.
+     * slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>.
      * </p>
      * 
      * @return String containing the search criteria for the session search. If no filter expression is included, the
-     *         request returns results for all game sessions in the fleet that are in ACTIVE status. </p>
+     *         request returns results for all game sessions in the fleet that are in ACTIVE status.</p>
      *         <p>
      *         A filter expression can contain one or multiple conditions. Each condition consists of the following:
      *         </p>
      *         <ul>
-     *         <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     *         <li>
+     *         <p>
+     *         <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      *         <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     *         <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     *         <li><b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&amp;lt;&amp;gt;</code>,
-     *         <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;lt;=</code>, <code>&amp;gt;=</code>.</li>
-     *         <li><b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or
-     *         strings. String values are case sensitive, enclosed in single quotes. Special characters must be escaped.
-     *         Boolean and string values can only be used with the comparators <code>=</code> and
-     *         <code>&amp;lt;&amp;gt;</code>. For example, the following filter expression searches on
-     *         <code>gameSessionName</code>: "
-     *         <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.</li>
+     *         <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     *         <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings.
+     *         String values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean
+     *         and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For
+     *         example, the following filter expression searches on <code>gameSessionName</code>: "
+     *         <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>,
@@ -346,16 +492,36 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      *         Session search evaluates conditions from left to right using the following precedence rules:
      *         </p>
      *         <ol>
-     *         <li> <code>=</code>, <code>&amp;lt;&amp;gt;</code>, <code>&amp;lt;</code>, <code>&amp;gt;</code>,
-     *         <code>&amp;lt;=</code>, <code>&amp;gt;=</code></li>
-     *         <li>Parentheses</li>
-     *         <li>NOT</li>
-     *         <li>AND</li>
-     *         <li>OR</li>
+     *         <li>
+     *         <p>
+     *         <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
+     *         <code>&gt;=</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Parentheses
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NOT
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AND
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OR
+     *         </p>
+     *         </li>
      *         </ol>
      *         <p>
      *         For example, this filter expression retrieves game sessions hosting at least ten players that have an
-     *         open player slot: <code>"maximumSessions&amp;gt;=10 AND hasAvailablePlayerSessions=true"</code>.
+     *         open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>.
      */
 
     public String getFilterExpression() {
@@ -371,16 +537,28 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * A filter expression can contain one or multiple conditions. Each condition consists of the following:
      * </p>
      * <ul>
-     * <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     * <li>
+     * <p>
+     * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     * <li><b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&amp;lt;&amp;gt;</code>,
-     * <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;lt;=</code>, <code>&amp;gt;=</code>.</li>
-     * <li><b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings.
-     * String values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean and
-     * string values can only be used with the comparators <code>=</code> and <code>&amp;lt;&amp;gt;</code>. For
-     * example, the following filter expression searches on <code>gameSessionName</code>: "
-     * <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.</li>
+     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     * <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings. String
+     * values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean and string
+     * values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following
+     * filter expression searches on <code>gameSessionName</code>: "
+     * <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>, <code>OR</code>,
@@ -391,36 +569,67 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * Session search evaluates conditions from left to right using the following precedence rules:
      * </p>
      * <ol>
-     * <li> <code>=</code>, <code>&amp;lt;&amp;gt;</code>, <code>&amp;lt;</code>, <code>&amp;gt;</code>,
-     * <code>&amp;lt;=</code>, <code>&amp;gt;=</code></li>
-     * <li>Parentheses</li>
-     * <li>NOT</li>
-     * <li>AND</li>
-     * <li>OR</li>
+     * <li>
+     * <p>
+     * <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
+     * <code>&gt;=</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parentheses
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NOT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AND
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OR
+     * </p>
+     * </li>
      * </ol>
      * <p>
      * For example, this filter expression retrieves game sessions hosting at least ten players that have an open player
-     * slot: <code>"maximumSessions&amp;gt;=10 AND hasAvailablePlayerSessions=true"</code>.
+     * slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>.
      * </p>
      * 
      * @param filterExpression
      *        String containing the search criteria for the session search. If no filter expression is included, the
-     *        request returns results for all game sessions in the fleet that are in ACTIVE status. </p>
+     *        request returns results for all game sessions in the fleet that are in ACTIVE status.</p>
      *        <p>
      *        A filter expression can contain one or multiple conditions. Each condition consists of the following:
      *        </p>
      *        <ul>
-     *        <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     *        <li>
+     *        <p>
+     *        <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      *        <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     *        <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     *        <li><b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&amp;lt;&amp;gt;</code>,
-     *        <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;lt;=</code>, <code>&amp;gt;=</code>.</li>
-     *        <li><b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or
-     *        strings. String values are case sensitive, enclosed in single quotes. Special characters must be escaped.
-     *        Boolean and string values can only be used with the comparators <code>=</code> and
-     *        <code>&amp;lt;&amp;gt;</code>. For example, the following filter expression searches on
-     *        <code>gameSessionName</code>: "
-     *        <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.</li>
+     *        <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>,
+     *        <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false) or strings.
+     *        String values are case sensitive, enclosed in single quotes. Special characters must be escaped. Boolean
+     *        and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For
+     *        example, the following filter expression searches on <code>gameSessionName</code>: "
+     *        <code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>,
@@ -431,16 +640,36 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      *        Session search evaluates conditions from left to right using the following precedence rules:
      *        </p>
      *        <ol>
-     *        <li> <code>=</code>, <code>&amp;lt;&amp;gt;</code>, <code>&amp;lt;</code>, <code>&amp;gt;</code>,
-     *        <code>&amp;lt;=</code>, <code>&amp;gt;=</code></li>
-     *        <li>Parentheses</li>
-     *        <li>NOT</li>
-     *        <li>AND</li>
-     *        <li>OR</li>
+     *        <li>
+     *        <p>
+     *        <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
+     *        <code>&gt;=</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Parentheses
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NOT
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AND
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OR
+     *        </p>
+     *        </li>
      *        </ol>
      *        <p>
      *        For example, this filter expression retrieves game sessions hosting at least ten players that have an open
-     *        player slot: <code>"maximumSessions&amp;gt;=10 AND hasAvailablePlayerSessions=true"</code>.
+     *        player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,10 +684,18 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * random order. A sort expression consists of the following elements:
      * </p>
      * <ul>
-     * <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     * <li>
+     * <p>
+     * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     * <li><b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</li>
+     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For example, this sort expression returns the oldest active sessions first:
@@ -468,12 +705,19 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param sortExpression
      *        Instructions on how to sort the search results. If no sort expression is included, the request returns
-     *        results in random order. A sort expression consists of the following elements: </p>
+     *        results in random order. A sort expression consists of the following elements:</p>
      *        <ul>
-     *        <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     *        <li>
+     *        <p>
+     *        <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      *        <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     *        <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     *        <li><b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).
+     *        <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).
+     *        </p>
      *        </li>
      *        </ul>
      *        <p>
@@ -492,10 +736,18 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * random order. A sort expression consists of the following elements:
      * </p>
      * <ul>
-     * <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     * <li>
+     * <p>
+     * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     * <li><b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</li>
+     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For example, this sort expression returns the oldest active sessions first:
@@ -504,13 +756,20 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @return Instructions on how to sort the search results. If no sort expression is included, the request returns
-     *         results in random order. A sort expression consists of the following elements: </p>
+     *         results in random order. A sort expression consists of the following elements:</p>
      *         <ul>
-     *         <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     *         <li>
+     *         <p>
+     *         <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      *         <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     *         <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     *         <li><b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code>
-     *         (descending).</li>
+     *         <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For example, this sort expression returns the oldest active sessions first:
@@ -528,10 +787,18 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * random order. A sort expression consists of the following elements:
      * </p>
      * <ul>
-     * <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     * <li>
+     * <p>
+     * <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      * <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     * <li><b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</li>
+     * <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For example, this sort expression returns the oldest active sessions first:
@@ -541,12 +808,19 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param sortExpression
      *        Instructions on how to sort the search results. If no sort expression is included, the request returns
-     *        results in random order. A sort expression consists of the following elements: </p>
+     *        results in random order. A sort expression consists of the following elements:</p>
      *        <ul>
-     *        <li><b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
+     *        <li>
+     *        <p>
+     *        <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
      *        <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-     *        <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.</li>
-     *        <li><b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).
+     *        <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).
+     *        </p>
      *        </li>
      *        </ul>
      *        <p>

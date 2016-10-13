@@ -87,6 +87,9 @@ public class CertificateDetailJsonMarshaller {
             if (certificateDetail.getIssuedAt() != null) {
                 jsonGenerator.writeFieldName("IssuedAt").writeValue(certificateDetail.getIssuedAt());
             }
+            if (certificateDetail.getImportedAt() != null) {
+                jsonGenerator.writeFieldName("ImportedAt").writeValue(certificateDetail.getImportedAt());
+            }
             if (certificateDetail.getStatus() != null) {
                 jsonGenerator.writeFieldName("Status").writeValue(certificateDetail.getStatus());
             }
@@ -122,6 +125,9 @@ public class CertificateDetailJsonMarshaller {
             }
             if (certificateDetail.getFailureReason() != null) {
                 jsonGenerator.writeFieldName("FailureReason").writeValue(certificateDetail.getFailureReason());
+            }
+            if (certificateDetail.getType() != null) {
+                jsonGenerator.writeFieldName("Type").writeValue(certificateDetail.getType());
             }
 
             jsonGenerator.writeEndObject();

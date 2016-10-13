@@ -63,6 +63,8 @@ public enum GameliftActions implements Action {
     DescribeGameSessionDetails("gamelift:DescribeGameSessionDetails"),
     /** Action for the DescribeGameSessions operation. */
     DescribeGameSessions("gamelift:DescribeGameSessions"),
+    /** Action for the DescribeInstances operation. */
+    DescribeInstances("gamelift:DescribeInstances"),
     /** Action for the DescribePlayerSessions operation. */
     DescribePlayerSessions("gamelift:DescribePlayerSessions"),
     /** Action for the DescribeRuntimeConfiguration operation. */

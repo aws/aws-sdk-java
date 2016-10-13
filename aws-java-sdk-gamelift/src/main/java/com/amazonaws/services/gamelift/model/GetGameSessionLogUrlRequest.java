@@ -24,18 +24,27 @@ public class GetGameSessionLogUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want to get logs for.
+     * Unique identifier for the game session to get logs for. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID
+     * string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     * auto-generated string.
      * </p>
      */
     private String gameSessionId;
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want to get logs for.
+     * Unique identifier for the game session to get logs for. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID
+     * string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     * auto-generated string.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session. Specify the game session you want to get logs for.
+     *        Unique identifier for the game session to get logs for. Game session ID format is as follows:
+     *        "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of
+     *        &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     *        auto-generated string.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -44,10 +53,16 @@ public class GetGameSessionLogUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want to get logs for.
+     * Unique identifier for the game session to get logs for. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID
+     * string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     * auto-generated string.
      * </p>
      * 
-     * @return Unique identifier for a game session. Specify the game session you want to get logs for.
+     * @return Unique identifier for the game session to get logs for. Game session ID format is as follows:
+     *         "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of
+     *         &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created)
+     *         an auto-generated string.
      */
 
     public String getGameSessionId() {
@@ -56,11 +71,17 @@ public class GetGameSessionLogUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify the game session you want to get logs for.
+     * Unique identifier for the game session to get logs for. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID
+     * string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     * auto-generated string.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session. Specify the game session you want to get logs for.
+     *        Unique identifier for the game session to get logs for. Game session ID format is as follows:
+     *        "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of
+     *        &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created) an
+     *        auto-generated string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -93,12 +93,32 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * The current operational status of the environment:
      * </p>
      * <ul>
-     * <li> <code>Launching</code>: Environment is in the process of initial deployment.</li>
-     * <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or application
-     * version.</li>
-     * <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</li>
-     * <li> <code>Terminating</code>: Environment is in the shut-down process.</li>
-     * <li> <code>Terminated</code>: Environment is not running.</li>
+     * <li>
+     * <p>
+     * <code>Launching</code>: Environment is in the process of initial deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Updating</code>: Environment is in the process of updating its configuration settings or application
+     * version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminating</code>: Environment is in the shut-down process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminated</code>: Environment is not running.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -121,14 +141,30 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * environment:
      * </p>
      * <ul>
-     * <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures
-     * occur for an environment.</li>
-     * <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
-     * environment.</li>
-     * <li> <code>Green</code>: Indicates the environment is healthy and fully functional.</li>
-     * <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
-     * checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.</li>
+     * <li>
+     * <p>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures
+     * occur for an environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
+     * environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Green</code>: Indicates the environment is healthy and fully functional.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
+     * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
+     * <code>RestartEnvironement</code> request.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: <code>Grey</code>
@@ -613,24 +649,64 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * The current operational status of the environment:
      * </p>
      * <ul>
-     * <li> <code>Launching</code>: Environment is in the process of initial deployment.</li>
-     * <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or application
-     * version.</li>
-     * <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</li>
-     * <li> <code>Terminating</code>: Environment is in the shut-down process.</li>
-     * <li> <code>Terminated</code>: Environment is not running.</li>
+     * <li>
+     * <p>
+     * <code>Launching</code>: Environment is in the process of initial deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Updating</code>: Environment is in the process of updating its configuration settings or application
+     * version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminating</code>: Environment is in the shut-down process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminated</code>: Environment is not running.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
-     *        The current operational status of the environment: </p>
+     *        The current operational status of the environment:</p>
      *        <ul>
-     *        <li> <code>Launching</code>: Environment is in the process of initial deployment.</li>
-     *        <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or
-     *        application version.</li>
-     *        <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or
-     *        terminate.</li>
-     *        <li> <code>Terminating</code>: Environment is in the shut-down process.</li>
-     *        <li> <code>Terminated</code>: Environment is not running.</li>
+     *        <li>
+     *        <p>
+     *        <code>Launching</code>: Environment is in the process of initial deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Updating</code>: Environment is in the process of updating its configuration settings or application
+     *        version.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Ready</code>: Environment is available to have an action performed on it, such as update or
+     *        terminate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminating</code>: Environment is in the shut-down process.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminated</code>: Environment is not running.
+     *        </p>
+     *        </li>
      * @see EnvironmentStatus
      */
 
@@ -643,23 +719,63 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * The current operational status of the environment:
      * </p>
      * <ul>
-     * <li> <code>Launching</code>: Environment is in the process of initial deployment.</li>
-     * <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or application
-     * version.</li>
-     * <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</li>
-     * <li> <code>Terminating</code>: Environment is in the shut-down process.</li>
-     * <li> <code>Terminated</code>: Environment is not running.</li>
+     * <li>
+     * <p>
+     * <code>Launching</code>: Environment is in the process of initial deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Updating</code>: Environment is in the process of updating its configuration settings or application
+     * version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminating</code>: Environment is in the shut-down process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminated</code>: Environment is not running.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The current operational status of the environment: </p>
+     * @return The current operational status of the environment:</p>
      *         <ul>
-     *         <li> <code>Launching</code>: Environment is in the process of initial deployment.</li>
-     *         <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or
-     *         application version.</li>
-     *         <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or
-     *         terminate.</li>
-     *         <li> <code>Terminating</code>: Environment is in the shut-down process.</li>
-     *         <li> <code>Terminated</code>: Environment is not running.</li>
+     *         <li>
+     *         <p>
+     *         <code>Launching</code>: Environment is in the process of initial deployment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Updating</code>: Environment is in the process of updating its configuration settings or
+     *         application version.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Ready</code>: Environment is available to have an action performed on it, such as update or
+     *         terminate.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Terminating</code>: Environment is in the shut-down process.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Terminated</code>: Environment is not running.
+     *         </p>
+     *         </li>
      * @see EnvironmentStatus
      */
 
@@ -672,24 +788,64 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * The current operational status of the environment:
      * </p>
      * <ul>
-     * <li> <code>Launching</code>: Environment is in the process of initial deployment.</li>
-     * <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or application
-     * version.</li>
-     * <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</li>
-     * <li> <code>Terminating</code>: Environment is in the shut-down process.</li>
-     * <li> <code>Terminated</code>: Environment is not running.</li>
+     * <li>
+     * <p>
+     * <code>Launching</code>: Environment is in the process of initial deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Updating</code>: Environment is in the process of updating its configuration settings or application
+     * version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminating</code>: Environment is in the shut-down process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminated</code>: Environment is not running.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
-     *        The current operational status of the environment: </p>
+     *        The current operational status of the environment:</p>
      *        <ul>
-     *        <li> <code>Launching</code>: Environment is in the process of initial deployment.</li>
-     *        <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or
-     *        application version.</li>
-     *        <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or
-     *        terminate.</li>
-     *        <li> <code>Terminating</code>: Environment is in the shut-down process.</li>
-     *        <li> <code>Terminated</code>: Environment is not running.</li>
+     *        <li>
+     *        <p>
+     *        <code>Launching</code>: Environment is in the process of initial deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Updating</code>: Environment is in the process of updating its configuration settings or application
+     *        version.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Ready</code>: Environment is available to have an action performed on it, such as update or
+     *        terminate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminating</code>: Environment is in the shut-down process.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminated</code>: Environment is not running.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentStatus
      */
@@ -704,24 +860,64 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * The current operational status of the environment:
      * </p>
      * <ul>
-     * <li> <code>Launching</code>: Environment is in the process of initial deployment.</li>
-     * <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or application
-     * version.</li>
-     * <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</li>
-     * <li> <code>Terminating</code>: Environment is in the shut-down process.</li>
-     * <li> <code>Terminated</code>: Environment is not running.</li>
+     * <li>
+     * <p>
+     * <code>Launching</code>: Environment is in the process of initial deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Updating</code>: Environment is in the process of updating its configuration settings or application
+     * version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminating</code>: Environment is in the shut-down process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminated</code>: Environment is not running.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
-     *        The current operational status of the environment: </p>
+     *        The current operational status of the environment:</p>
      *        <ul>
-     *        <li> <code>Launching</code>: Environment is in the process of initial deployment.</li>
-     *        <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or
-     *        application version.</li>
-     *        <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or
-     *        terminate.</li>
-     *        <li> <code>Terminating</code>: Environment is in the shut-down process.</li>
-     *        <li> <code>Terminated</code>: Environment is not running.</li>
+     *        <li>
+     *        <p>
+     *        <code>Launching</code>: Environment is in the process of initial deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Updating</code>: Environment is in the process of updating its configuration settings or application
+     *        version.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Ready</code>: Environment is available to have an action performed on it, such as update or
+     *        terminate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminating</code>: Environment is in the shut-down process.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminated</code>: Environment is not running.
+     *        </p>
+     *        </li>
      * @see EnvironmentStatus
      */
 
@@ -734,24 +930,64 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * The current operational status of the environment:
      * </p>
      * <ul>
-     * <li> <code>Launching</code>: Environment is in the process of initial deployment.</li>
-     * <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or application
-     * version.</li>
-     * <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</li>
-     * <li> <code>Terminating</code>: Environment is in the shut-down process.</li>
-     * <li> <code>Terminated</code>: Environment is not running.</li>
+     * <li>
+     * <p>
+     * <code>Launching</code>: Environment is in the process of initial deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Updating</code>: Environment is in the process of updating its configuration settings or application
+     * version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminating</code>: Environment is in the shut-down process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Terminated</code>: Environment is not running.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
-     *        The current operational status of the environment: </p>
+     *        The current operational status of the environment:</p>
      *        <ul>
-     *        <li> <code>Launching</code>: Environment is in the process of initial deployment.</li>
-     *        <li> <code>Updating</code>: Environment is in the process of updating its configuration settings or
-     *        application version.</li>
-     *        <li> <code>Ready</code>: Environment is available to have an action performed on it, such as update or
-     *        terminate.</li>
-     *        <li> <code>Terminating</code>: Environment is in the shut-down process.</li>
-     *        <li> <code>Terminated</code>: Environment is not running.</li>
+     *        <li>
+     *        <p>
+     *        <code>Launching</code>: Environment is in the process of initial deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Updating</code>: Environment is in the process of updating its configuration settings or application
+     *        version.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Ready</code>: Environment is available to have an action performed on it, such as update or
+     *        terminate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminating</code>: Environment is in the shut-down process.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Terminated</code>: Environment is not running.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentStatus
      */
@@ -871,14 +1107,30 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * environment:
      * </p>
      * <ul>
-     * <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures
-     * occur for an environment.</li>
-     * <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
-     * environment.</li>
-     * <li> <code>Green</code>: Indicates the environment is healthy and fully functional.</li>
-     * <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
-     * checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.</li>
+     * <li>
+     * <p>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures
+     * occur for an environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
+     * environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Green</code>: Indicates the environment is healthy and fully functional.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
+     * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
+     * <code>RestartEnvironement</code> request.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: <code>Grey</code>
@@ -886,16 +1138,32 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param health
      *        Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a
-     *        running environment: </p>
+     *        running environment:</p>
      *        <ul>
-     *        <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive
-     *        failures occur for an environment.</li>
-     *        <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for
-     *        an environment.</li>
-     *        <li> <code>Green</code>: Indicates the environment is healthy and fully functional.</li>
-     *        <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and
-     *        health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.</li>
+     *        <li>
+     *        <p>
+     *        <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive
+     *        failures occur for an environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
+     *        environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Green</code>: Indicates the environment is healthy and fully functional.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
+     *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
+     *        <code>RestartEnvironement</code> request.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Default: <code>Grey</code>
@@ -912,30 +1180,62 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * environment:
      * </p>
      * <ul>
-     * <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures
-     * occur for an environment.</li>
-     * <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
-     * environment.</li>
-     * <li> <code>Green</code>: Indicates the environment is healthy and fully functional.</li>
-     * <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
-     * checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.</li>
+     * <li>
+     * <p>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures
+     * occur for an environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
+     * environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Green</code>: Indicates the environment is healthy and fully functional.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
+     * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
+     * <code>RestartEnvironement</code> request.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: <code>Grey</code>
      * </p>
      * 
      * @return Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a
-     *         running environment: </p>
+     *         running environment:</p>
      *         <ul>
-     *         <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive
-     *         failures occur for an environment.</li>
-     *         <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur
-     *         for an environment.</li>
-     *         <li> <code>Green</code>: Indicates the environment is healthy and fully functional.</li>
-     *         <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and
-     *         health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *         <code>RestartEnvironement</code> request.</li>
+     *         <li>
+     *         <p>
+     *         <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive
+     *         failures occur for an environment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
+     *         environment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Green</code>: Indicates the environment is healthy and fully functional.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
+     *         checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
+     *         <code>RestartEnvironement</code> request.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Default: <code>Grey</code>
@@ -952,14 +1252,30 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * environment:
      * </p>
      * <ul>
-     * <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures
-     * occur for an environment.</li>
-     * <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
-     * environment.</li>
-     * <li> <code>Green</code>: Indicates the environment is healthy and fully functional.</li>
-     * <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
-     * checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.</li>
+     * <li>
+     * <p>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures
+     * occur for an environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
+     * environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Green</code>: Indicates the environment is healthy and fully functional.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
+     * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
+     * <code>RestartEnvironement</code> request.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: <code>Grey</code>
@@ -967,16 +1283,32 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param health
      *        Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a
-     *        running environment: </p>
+     *        running environment:</p>
      *        <ul>
-     *        <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive
-     *        failures occur for an environment.</li>
-     *        <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for
-     *        an environment.</li>
-     *        <li> <code>Green</code>: Indicates the environment is healthy and fully functional.</li>
-     *        <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and
-     *        health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.</li>
+     *        <li>
+     *        <p>
+     *        <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive
+     *        failures occur for an environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
+     *        environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Green</code>: Indicates the environment is healthy and fully functional.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
+     *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
+     *        <code>RestartEnvironement</code> request.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Default: <code>Grey</code>
@@ -995,14 +1327,30 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * environment:
      * </p>
      * <ul>
-     * <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures
-     * occur for an environment.</li>
-     * <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
-     * environment.</li>
-     * <li> <code>Green</code>: Indicates the environment is healthy and fully functional.</li>
-     * <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
-     * checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.</li>
+     * <li>
+     * <p>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures
+     * occur for an environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
+     * environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Green</code>: Indicates the environment is healthy and fully functional.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
+     * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
+     * <code>RestartEnvironement</code> request.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: <code>Grey</code>
@@ -1010,16 +1358,32 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param health
      *        Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a
-     *        running environment: </p>
+     *        running environment:</p>
      *        <ul>
-     *        <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive
-     *        failures occur for an environment.</li>
-     *        <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for
-     *        an environment.</li>
-     *        <li> <code>Green</code>: Indicates the environment is healthy and fully functional.</li>
-     *        <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and
-     *        health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.</li>
+     *        <li>
+     *        <p>
+     *        <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive
+     *        failures occur for an environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
+     *        environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Green</code>: Indicates the environment is healthy and fully functional.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
+     *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
+     *        <code>RestartEnvironement</code> request.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Default: <code>Grey</code>
@@ -1036,14 +1400,30 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * environment:
      * </p>
      * <ul>
-     * <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures
-     * occur for an environment.</li>
-     * <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
-     * environment.</li>
-     * <li> <code>Green</code>: Indicates the environment is healthy and fully functional.</li>
-     * <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
-     * checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.</li>
+     * <li>
+     * <p>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures
+     * occur for an environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
+     * environment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Green</code>: Indicates the environment is healthy and fully functional.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
+     * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
+     * <code>RestartEnvironement</code> request.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: <code>Grey</code>
@@ -1051,16 +1431,32 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param health
      *        Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a
-     *        running environment: </p>
+     *        running environment:</p>
      *        <ul>
-     *        <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive
-     *        failures occur for an environment.</li>
-     *        <li> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for
-     *        an environment.</li>
-     *        <li> <code>Green</code>: Indicates the environment is healthy and fully functional.</li>
-     *        <li> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and
-     *        health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.</li>
+     *        <li>
+     *        <p>
+     *        <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive
+     *        failures occur for an environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an
+     *        environment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Green</code>: Indicates the environment is healthy and fully functional.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
+     *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
+     *        <code>RestartEnvironement</code> request.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Default: <code>Grey</code>

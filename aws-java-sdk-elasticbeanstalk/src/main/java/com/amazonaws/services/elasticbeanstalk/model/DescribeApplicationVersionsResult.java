@@ -27,6 +27,12 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ApplicationVersionDescription> applicationVersions;
+    /**
+     * <p>
+     * For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -102,6 +108,46 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     * </p>
+     * 
+     * @param nextToken
+     *        For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     * </p>
+     * 
+     * @return For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     * </p>
+     * 
+     * @param nextToken
+     *        For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeApplicationVersionsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -113,7 +159,9 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationVersions() != null)
-            sb.append("ApplicationVersions: " + getApplicationVersions());
+            sb.append("ApplicationVersions: " + getApplicationVersions() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -132,6 +180,10 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getApplicationVersions() != null && other.getApplicationVersions().equals(this.getApplicationVersions()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -141,6 +193,7 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationVersions() == null) ? 0 : getApplicationVersions().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

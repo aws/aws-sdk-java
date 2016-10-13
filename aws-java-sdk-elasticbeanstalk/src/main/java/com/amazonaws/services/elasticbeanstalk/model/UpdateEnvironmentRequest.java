@@ -412,7 +412,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param tier
-     *        This specifies the tier to use to update the environment. </p>
+     *        This specifies the tier to use to update the environment.</p>
      *        <p>
      *        Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns
      *        <code>InvalidParameterValue</code> error.
@@ -431,7 +431,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>InvalidParameterValue</code> error.
      * </p>
      * 
-     * @return This specifies the tier to use to update the environment. </p>
+     * @return This specifies the tier to use to update the environment.</p>
      *         <p>
      *         Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns
      *         <code>InvalidParameterValue</code> error.
@@ -451,7 +451,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param tier
-     *        This specifies the tier to use to update the environment. </p>
+     *        This specifies the tier to use to update the environment.</p>
      *        <p>
      *        Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns
      *        <code>InvalidParameterValue</code> error.

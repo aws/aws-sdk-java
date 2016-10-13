@@ -44,11 +44,23 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which action is required if the value for this configuration option changes:
      * </p>
      * <ul>
-     * <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</li>
-     * <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and
-     * recreated, and the environment is unavailable during the process.</li>
-     * <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
-     * application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</li>
+     * <li>
+     * <p>
+     * <code>NoInterruption</code> : There is no interruption to the environment or application availability.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and
+     * recreated, and the environment is unavailable during the process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
+     * application outage occurs when the application servers on the running Amazon EC2 instances are restarted.
+     * </p>
+     * </li>
      * </ul>
      */
     private String changeSeverity;
@@ -63,7 +75,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * this as an <code>Option to Remove</code> when updating configuration settings.
      * </p>
      * </li>
-     * <li> <code>false</code> : This configuration was not defined by the user.</li>
+     * <li>
+     * <p>
+     * <code>false</code> : This configuration was not defined by the user.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Constraint: You can remove only <code>UserDefined</code> options from a configuration.
@@ -79,11 +95,27 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * of the possible values:
      * </p>
      * <ul>
-     * <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
-     * unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</li>
-     * <li> <code>List</code> : Values for this option are multiple selections from the possible values.</li>
-     * <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</li>
-     * <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</li>
+     * <li>
+     * <p>
+     * <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted
+     * string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>List</code> : Values for this option are multiple selections from the possible values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String valueType;
@@ -243,22 +275,45 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which action is required if the value for this configuration option changes:
      * </p>
      * <ul>
-     * <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</li>
-     * <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and
-     * recreated, and the environment is unavailable during the process.</li>
-     * <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
-     * application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</li>
+     * <li>
+     * <p>
+     * <code>NoInterruption</code> : There is no interruption to the environment or application availability.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and
+     * recreated, and the environment is unavailable during the process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
+     * application outage occurs when the application servers on the running Amazon EC2 instances are restarted.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param changeSeverity
-     *        An indication of which action is required if the value for this configuration option changes: </p>
+     *        An indication of which action is required if the value for this configuration option changes:</p>
      *        <ul>
-     *        <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability.
+     *        <li>
+     *        <p>
+     *        <code>NoInterruption</code> : There is no interruption to the environment or application availability.
+     *        </p>
      *        </li>
-     *        <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted
-     *        and recreated, and the environment is unavailable during the process.</li>
-     *        <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
-     *        application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</li>
+     *        <li>
+     *        <p>
+     *        <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and
+     *        recreated, and the environment is unavailable during the process.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
+     *        application outage occurs when the application servers on the running Amazon EC2 instances are restarted.
+     *        </p>
+     *        </li>
      */
 
     public void setChangeSeverity(String changeSeverity) {
@@ -270,22 +325,44 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which action is required if the value for this configuration option changes:
      * </p>
      * <ul>
-     * <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</li>
-     * <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and
-     * recreated, and the environment is unavailable during the process.</li>
-     * <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
-     * application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</li>
+     * <li>
+     * <p>
+     * <code>NoInterruption</code> : There is no interruption to the environment or application availability.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and
+     * recreated, and the environment is unavailable during the process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
+     * application outage occurs when the application servers on the running Amazon EC2 instances are restarted.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return An indication of which action is required if the value for this configuration option changes: </p>
+     * @return An indication of which action is required if the value for this configuration option changes:</p>
      *         <ul>
-     *         <li> <code>NoInterruption</code> : There is no interruption to the environment or application
-     *         availability.</li>
-     *         <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are
-     *         deleted and recreated, and the environment is unavailable during the process.</li>
-     *         <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a
-     *         short application outage occurs when the application servers on the running Amazon EC2 instances are
-     *         restarted.</li>
+     *         <li>
+     *         <p>
+     *         <code>NoInterruption</code> : There is no interruption to the environment or application availability.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted
+     *         and recreated, and the environment is unavailable during the process.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
+     *         application outage occurs when the application servers on the running Amazon EC2 instances are restarted.
+     *         </p>
+     *         </li>
      */
 
     public String getChangeSeverity() {
@@ -297,22 +374,45 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * An indication of which action is required if the value for this configuration option changes:
      * </p>
      * <ul>
-     * <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</li>
-     * <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and
-     * recreated, and the environment is unavailable during the process.</li>
-     * <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
-     * application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</li>
+     * <li>
+     * <p>
+     * <code>NoInterruption</code> : There is no interruption to the environment or application availability.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and
+     * recreated, and the environment is unavailable during the process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
+     * application outage occurs when the application servers on the running Amazon EC2 instances are restarted.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param changeSeverity
-     *        An indication of which action is required if the value for this configuration option changes: </p>
+     *        An indication of which action is required if the value for this configuration option changes:</p>
      *        <ul>
-     *        <li> <code>NoInterruption</code> : There is no interruption to the environment or application availability.
+     *        <li>
+     *        <p>
+     *        <code>NoInterruption</code> : There is no interruption to the environment or application availability.
+     *        </p>
      *        </li>
-     *        <li> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted
-     *        and recreated, and the environment is unavailable during the process.</li>
-     *        <li> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
-     *        application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</li>
+     *        <li>
+     *        <p>
+     *        <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and
+     *        recreated, and the environment is unavailable during the process.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short
+     *        application outage occurs when the application servers on the running Amazon EC2 instances are restarted.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,7 +432,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * this as an <code>Option to Remove</code> when updating configuration settings.
      * </p>
      * </li>
-     * <li> <code>false</code> : This configuration was not defined by the user.</li>
+     * <li>
+     * <p>
+     * <code>false</code> : This configuration was not defined by the user.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Constraint: You can remove only <code>UserDefined</code> options from a configuration.
@@ -342,7 +446,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * </p>
      * 
      * @param userDefined
-     *        An indication of whether the user defined this configuration option: </p>
+     *        An indication of whether the user defined this configuration option:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -350,7 +454,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        if this as an <code>Option to Remove</code> when updating configuration settings.
      *        </p>
      *        </li>
-     *        <li> <code>false</code> : This configuration was not defined by the user.</li>
+     *        <li>
+     *        <p>
+     *        <code>false</code> : This configuration was not defined by the user.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Constraint: You can remove only <code>UserDefined</code> options from a configuration.
@@ -374,7 +482,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * this as an <code>Option to Remove</code> when updating configuration settings.
      * </p>
      * </li>
-     * <li> <code>false</code> : This configuration was not defined by the user.</li>
+     * <li>
+     * <p>
+     * <code>false</code> : This configuration was not defined by the user.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Constraint: You can remove only <code>UserDefined</code> options from a configuration.
@@ -383,7 +495,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return An indication of whether the user defined this configuration option: </p>
+     * @return An indication of whether the user defined this configuration option:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -391,7 +503,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *         specifying if this as an <code>Option to Remove</code> when updating configuration settings.
      *         </p>
      *         </li>
-     *         <li> <code>false</code> : This configuration was not defined by the user.</li>
+     *         <li>
+     *         <p>
+     *         <code>false</code> : This configuration was not defined by the user.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Constraint: You can remove only <code>UserDefined</code> options from a configuration.
@@ -415,7 +531,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * this as an <code>Option to Remove</code> when updating configuration settings.
      * </p>
      * </li>
-     * <li> <code>false</code> : This configuration was not defined by the user.</li>
+     * <li>
+     * <p>
+     * <code>false</code> : This configuration was not defined by the user.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Constraint: You can remove only <code>UserDefined</code> options from a configuration.
@@ -425,7 +545,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * </p>
      * 
      * @param userDefined
-     *        An indication of whether the user defined this configuration option: </p>
+     *        An indication of whether the user defined this configuration option:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -433,7 +553,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        if this as an <code>Option to Remove</code> when updating configuration settings.
      *        </p>
      *        </li>
-     *        <li> <code>false</code> : This configuration was not defined by the user.</li>
+     *        <li>
+     *        <p>
+     *        <code>false</code> : This configuration was not defined by the user.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Constraint: You can remove only <code>UserDefined</code> options from a configuration.
@@ -459,7 +583,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * this as an <code>Option to Remove</code> when updating configuration settings.
      * </p>
      * </li>
-     * <li> <code>false</code> : This configuration was not defined by the user.</li>
+     * <li>
+     * <p>
+     * <code>false</code> : This configuration was not defined by the user.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Constraint: You can remove only <code>UserDefined</code> options from a configuration.
@@ -468,7 +596,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return An indication of whether the user defined this configuration option: </p>
+     * @return An indication of whether the user defined this configuration option:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -476,7 +604,11 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *         specifying if this as an <code>Option to Remove</code> when updating configuration settings.
      *         </p>
      *         </li>
-     *         <li> <code>false</code> : This configuration was not defined by the user.</li>
+     *         <li>
+     *         <p>
+     *         <code>false</code> : This configuration was not defined by the user.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Constraint: You can remove only <code>UserDefined</code> options from a configuration.
@@ -495,22 +627,53 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * of the possible values:
      * </p>
      * <ul>
-     * <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
-     * unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</li>
-     * <li> <code>List</code> : Values for this option are multiple selections from the possible values.</li>
-     * <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</li>
-     * <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</li>
+     * <li>
+     * <p>
+     * <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted
+     * string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>List</code> : Values for this option are multiple selections from the possible values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param valueType
      *        An indication of which type of values this option has and whether it is allowable to select one or more
-     *        than one of the possible values: </p>
+     *        than one of the possible values:</p>
      *        <ul>
-     *        <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
-     *        unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</li>
-     *        <li> <code>List</code> : Values for this option are multiple selections from the possible values.</li>
-     *        <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</li>
-     *        <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     *        <li>
+     *        <p>
+     *        <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
+     *        unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>List</code> : Values for this option are multiple selections from the possible values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     *        </p>
      *        </li>
      * @see ConfigurationOptionValueType
      */
@@ -525,22 +688,53 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * of the possible values:
      * </p>
      * <ul>
-     * <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
-     * unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</li>
-     * <li> <code>List</code> : Values for this option are multiple selections from the possible values.</li>
-     * <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</li>
-     * <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</li>
+     * <li>
+     * <p>
+     * <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted
+     * string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>List</code> : Values for this option are multiple selections from the possible values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return An indication of which type of values this option has and whether it is allowable to select one or more
-     *         than one of the possible values: </p>
+     *         than one of the possible values:</p>
      *         <ul>
-     *         <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
-     *         unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</li>
-     *         <li> <code>List</code> : Values for this option are multiple selections from the possible values.</li>
-     *         <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</li>
-     *         <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>
-     *         .</li>
+     *         <li>
+     *         <p>
+     *         <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
+     *         unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>List</code> : Values for this option are multiple selections from the possible values.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     *         </p>
+     *         </li>
      * @see ConfigurationOptionValueType
      */
 
@@ -554,22 +748,53 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * of the possible values:
      * </p>
      * <ul>
-     * <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
-     * unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</li>
-     * <li> <code>List</code> : Values for this option are multiple selections from the possible values.</li>
-     * <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</li>
-     * <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</li>
+     * <li>
+     * <p>
+     * <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted
+     * string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>List</code> : Values for this option are multiple selections from the possible values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param valueType
      *        An indication of which type of values this option has and whether it is allowable to select one or more
-     *        than one of the possible values: </p>
+     *        than one of the possible values:</p>
      *        <ul>
-     *        <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
-     *        unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</li>
-     *        <li> <code>List</code> : Values for this option are multiple selections from the possible values.</li>
-     *        <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</li>
-     *        <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     *        <li>
+     *        <p>
+     *        <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
+     *        unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>List</code> : Values for this option are multiple selections from the possible values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationOptionValueType
@@ -586,22 +811,53 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * of the possible values:
      * </p>
      * <ul>
-     * <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
-     * unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</li>
-     * <li> <code>List</code> : Values for this option are multiple selections from the possible values.</li>
-     * <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</li>
-     * <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</li>
+     * <li>
+     * <p>
+     * <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted
+     * string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>List</code> : Values for this option are multiple selections from the possible values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param valueType
      *        An indication of which type of values this option has and whether it is allowable to select one or more
-     *        than one of the possible values: </p>
+     *        than one of the possible values:</p>
      *        <ul>
-     *        <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
-     *        unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</li>
-     *        <li> <code>List</code> : Values for this option are multiple selections from the possible values.</li>
-     *        <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</li>
-     *        <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     *        <li>
+     *        <p>
+     *        <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
+     *        unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>List</code> : Values for this option are multiple selections from the possible values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     *        </p>
      *        </li>
      * @see ConfigurationOptionValueType
      */
@@ -616,22 +872,53 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * of the possible values:
      * </p>
      * <ul>
-     * <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
-     * unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</li>
-     * <li> <code>List</code> : Values for this option are multiple selections from the possible values.</li>
-     * <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</li>
-     * <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</li>
+     * <li>
+     * <p>
+     * <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted
+     * string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>List</code> : Values for this option are multiple selections from the possible values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param valueType
      *        An indication of which type of values this option has and whether it is allowable to select one or more
-     *        than one of the possible values: </p>
+     *        than one of the possible values:</p>
      *        <ul>
-     *        <li> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
-     *        unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</li>
-     *        <li> <code>List</code> : Values for this option are multiple selections from the possible values.</li>
-     *        <li> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</li>
-     *        <li> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     *        <li>
+     *        <p>
+     *        <code>Scalar</code> : Values for this option are a single selection from the possible values, or an
+     *        unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>List</code> : Values for this option are multiple selections from the possible values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationOptionValueType

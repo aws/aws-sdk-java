@@ -77,6 +77,19 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     }
 
     @Override
+    public java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(ImportCertificateRequest request) {
+
+        return importCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(ImportCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportCertificateRequest, ImportCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(ListCertificatesRequest request) {
 
         return listCertificatesAsync(request, null);

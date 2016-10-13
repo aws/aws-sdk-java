@@ -43,6 +43,8 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String description;
+
+    private SourceBuildInformation sourceBuildInformation;
     /**
      * <p>
      * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
@@ -63,10 +65,18 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Determines how the system behaves if the specified application for this version does not already exist:
      * </p>
      * <ul>
-     * <li> <code>true</code> : Automatically creates the specified application for this release if it does not already
-     * exist.</li>
-     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
-     * release does not already exist.</li>
+     * <li>
+     * <p>
+     * <code>true</code> : Automatically creates the specified application for this release if it does not already
+     * exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release
+     * does not already exist.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -261,6 +271,32 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * @param sourceBuildInformation
+     */
+
+    public void setSourceBuildInformation(SourceBuildInformation sourceBuildInformation) {
+        this.sourceBuildInformation = sourceBuildInformation;
+    }
+
+    /**
+     * @return
+     */
+
+    public SourceBuildInformation getSourceBuildInformation() {
+        return this.sourceBuildInformation;
+    }
+
+    /**
+     * @param sourceBuildInformation
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationVersionRequest withSourceBuildInformation(SourceBuildInformation sourceBuildInformation) {
+        setSourceBuildInformation(sourceBuildInformation);
+        return this;
+    }
+
+    /**
      * <p>
      * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
@@ -275,7 +311,7 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param sourceBundle
-     *        The Amazon S3 bucket and key that identify the location of the source bundle for this version. </p>
+     *        The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p>
      *        <p>
      *        If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic
      *        Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
@@ -304,7 +340,7 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Beanstalk returns an <code>InvalidParameterCombination</code> error.
      * </p>
      * 
-     * @return The Amazon S3 bucket and key that identify the location of the source bundle for this version. </p>
+     * @return The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p>
      *         <p>
      *         If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic
      *         Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
@@ -334,7 +370,7 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param sourceBundle
-     *        The Amazon S3 bucket and key that identify the location of the source bundle for this version. </p>
+     *        The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p>
      *        <p>
      *        If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic
      *        Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
@@ -356,10 +392,18 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Determines how the system behaves if the specified application for this version does not already exist:
      * </p>
      * <ul>
-     * <li> <code>true</code> : Automatically creates the specified application for this release if it does not already
-     * exist.</li>
-     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
-     * release does not already exist.</li>
+     * <li>
+     * <p>
+     * <code>true</code> : Automatically creates the specified application for this release if it does not already
+     * exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release
+     * does not already exist.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -369,13 +413,21 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param autoCreateApplication
-     *        Determines how the system behaves if the specified application for this version does not already exist:
-     *        </p>
+     *        Determines how the system behaves if the specified application for this version does not already
+     *        exist:</p>
      *        <ul>
-     *        <li> <code>true</code> : Automatically creates the specified application for this release if it does not
-     *        already exist.</li>
-     *        <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for
-     *        this release does not already exist.</li>
+     *        <li>
+     *        <p>
+     *        <code>true</code> : Automatically creates the specified application for this release if it does not
+     *        already exist.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
+     *        release does not already exist.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Default: <code>false</code>
@@ -393,10 +445,18 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Determines how the system behaves if the specified application for this version does not already exist:
      * </p>
      * <ul>
-     * <li> <code>true</code> : Automatically creates the specified application for this release if it does not already
-     * exist.</li>
-     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
-     * release does not already exist.</li>
+     * <li>
+     * <p>
+     * <code>true</code> : Automatically creates the specified application for this release if it does not already
+     * exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release
+     * does not already exist.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -405,13 +465,21 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Determines how the system behaves if the specified application for this version does not already exist:
-     *         </p>
+     * @return Determines how the system behaves if the specified application for this version does not already
+     *         exist:</p>
      *         <ul>
-     *         <li> <code>true</code> : Automatically creates the specified application for this release if it does not
-     *         already exist.</li>
-     *         <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for
-     *         this release does not already exist.</li>
+     *         <li>
+     *         <p>
+     *         <code>true</code> : Automatically creates the specified application for this release if it does not
+     *         already exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
+     *         release does not already exist.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Default: <code>false</code>
@@ -429,10 +497,18 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Determines how the system behaves if the specified application for this version does not already exist:
      * </p>
      * <ul>
-     * <li> <code>true</code> : Automatically creates the specified application for this release if it does not already
-     * exist.</li>
-     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
-     * release does not already exist.</li>
+     * <li>
+     * <p>
+     * <code>true</code> : Automatically creates the specified application for this release if it does not already
+     * exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release
+     * does not already exist.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -442,13 +518,21 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param autoCreateApplication
-     *        Determines how the system behaves if the specified application for this version does not already exist:
-     *        </p>
+     *        Determines how the system behaves if the specified application for this version does not already
+     *        exist:</p>
      *        <ul>
-     *        <li> <code>true</code> : Automatically creates the specified application for this release if it does not
-     *        already exist.</li>
-     *        <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for
-     *        this release does not already exist.</li>
+     *        <li>
+     *        <p>
+     *        <code>true</code> : Automatically creates the specified application for this release if it does not
+     *        already exist.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
+     *        release does not already exist.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Default: <code>false</code>
@@ -468,10 +552,18 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Determines how the system behaves if the specified application for this version does not already exist:
      * </p>
      * <ul>
-     * <li> <code>true</code> : Automatically creates the specified application for this release if it does not already
-     * exist.</li>
-     * <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
-     * release does not already exist.</li>
+     * <li>
+     * <p>
+     * <code>true</code> : Automatically creates the specified application for this release if it does not already
+     * exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release
+     * does not already exist.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -480,13 +572,21 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Determines how the system behaves if the specified application for this version does not already exist:
-     *         </p>
+     * @return Determines how the system behaves if the specified application for this version does not already
+     *         exist:</p>
      *         <ul>
-     *         <li> <code>true</code> : Automatically creates the specified application for this release if it does not
-     *         already exist.</li>
-     *         <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for
-     *         this release does not already exist.</li>
+     *         <li>
+     *         <p>
+     *         <code>true</code> : Automatically creates the specified application for this release if it does not
+     *         already exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
+     *         release does not already exist.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Default: <code>false</code>
@@ -580,6 +680,8 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
             sb.append("VersionLabel: " + getVersionLabel() + ",");
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
+        if (getSourceBuildInformation() != null)
+            sb.append("SourceBuildInformation: " + getSourceBuildInformation() + ",");
         if (getSourceBundle() != null)
             sb.append("SourceBundle: " + getSourceBundle() + ",");
         if (getAutoCreateApplication() != null)
@@ -612,6 +714,10 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getSourceBuildInformation() == null ^ this.getSourceBuildInformation() == null)
+            return false;
+        if (other.getSourceBuildInformation() != null && other.getSourceBuildInformation().equals(this.getSourceBuildInformation()) == false)
+            return false;
         if (other.getSourceBundle() == null ^ this.getSourceBundle() == null)
             return false;
         if (other.getSourceBundle() != null && other.getSourceBundle().equals(this.getSourceBundle()) == false)
@@ -635,6 +741,7 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSourceBuildInformation() == null) ? 0 : getSourceBuildInformation().hashCode());
         hashCode = prime * hashCode + ((getSourceBundle() == null) ? 0 : getSourceBundle().hashCode());
         hashCode = prime * hashCode + ((getAutoCreateApplication() == null) ? 0 : getAutoCreateApplication().hashCode());
         hashCode = prime * hashCode + ((getProcess() == null) ? 0 : getProcess().hashCode());

@@ -39,6 +39,8 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * </p>
      */
     private String versionLabel;
+
+    private SourceBuildInformation sourceBuildInformation;
     /**
      * <p>
      * The location where the source bundle is located for this version.
@@ -181,6 +183,32 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     public ApplicationVersionDescription withVersionLabel(String versionLabel) {
         setVersionLabel(versionLabel);
+        return this;
+    }
+
+    /**
+     * @param sourceBuildInformation
+     */
+
+    public void setSourceBuildInformation(SourceBuildInformation sourceBuildInformation) {
+        this.sourceBuildInformation = sourceBuildInformation;
+    }
+
+    /**
+     * @return
+     */
+
+    public SourceBuildInformation getSourceBuildInformation() {
+        return this.sourceBuildInformation;
+    }
+
+    /**
+     * @param sourceBuildInformation
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationVersionDescription withSourceBuildInformation(SourceBuildInformation sourceBuildInformation) {
+        setSourceBuildInformation(sourceBuildInformation);
         return this;
     }
 
@@ -394,6 +422,8 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
             sb.append("Description: " + getDescription() + ",");
         if (getVersionLabel() != null)
             sb.append("VersionLabel: " + getVersionLabel() + ",");
+        if (getSourceBuildInformation() != null)
+            sb.append("SourceBuildInformation: " + getSourceBuildInformation() + ",");
         if (getSourceBundle() != null)
             sb.append("SourceBundle: " + getSourceBundle() + ",");
         if (getDateCreated() != null)
@@ -428,6 +458,10 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
             return false;
         if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false)
             return false;
+        if (other.getSourceBuildInformation() == null ^ this.getSourceBuildInformation() == null)
+            return false;
+        if (other.getSourceBuildInformation() != null && other.getSourceBuildInformation().equals(this.getSourceBuildInformation()) == false)
+            return false;
         if (other.getSourceBundle() == null ^ this.getSourceBundle() == null)
             return false;
         if (other.getSourceBundle() != null && other.getSourceBundle().equals(this.getSourceBundle()) == false)
@@ -455,6 +489,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
+        hashCode = prime * hashCode + ((getSourceBuildInformation() == null) ? 0 : getSourceBuildInformation().hashCode());
         hashCode = prime * hashCode + ((getSourceBundle() == null) ? 0 : getSourceBundle().hashCode());
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
         hashCode = prime * hashCode + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode());

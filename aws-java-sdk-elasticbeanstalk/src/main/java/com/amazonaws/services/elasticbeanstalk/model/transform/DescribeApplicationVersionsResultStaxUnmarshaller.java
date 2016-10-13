@@ -50,6 +50,10 @@ public class DescribeApplicationVersionsResultStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("NextToken", targetDepth)) {
+                    describeApplicationVersionsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeApplicationVersionsResult;

@@ -51,7 +51,7 @@ public class RebuildEnvironmentRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param environmentId
-     *        The ID of the environment to rebuild. </p>
+     *        The ID of the environment to rebuild.</p>
      *        <p>
      *        Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS
      *        Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
@@ -70,7 +70,7 @@ public class RebuildEnvironmentRequest extends com.amazonaws.AmazonWebServiceReq
      * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
-     * @return The ID of the environment to rebuild. </p>
+     * @return The ID of the environment to rebuild.</p>
      *         <p>
      *         Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS
      *         Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
@@ -90,7 +90,7 @@ public class RebuildEnvironmentRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param environmentId
-     *        The ID of the environment to rebuild. </p>
+     *        The ID of the environment to rebuild.</p>
      *        <p>
      *        Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS
      *        Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
@@ -112,7 +112,7 @@ public class RebuildEnvironmentRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param environmentName
-     *        The name of the environment to rebuild. </p>
+     *        The name of the environment to rebuild.</p>
      *        <p>
      *        Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS
      *        Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
@@ -131,7 +131,7 @@ public class RebuildEnvironmentRequest extends com.amazonaws.AmazonWebServiceReq
      * Beanstalk returns <code>MissingRequiredParameter</code> error.
      * </p>
      * 
-     * @return The name of the environment to rebuild. </p>
+     * @return The name of the environment to rebuild.</p>
      *         <p>
      *         Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS
      *         Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
@@ -151,7 +151,7 @@ public class RebuildEnvironmentRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param environmentName
-     *        The name of the environment to rebuild. </p>
+     *        The name of the environment to rebuild.</p>
      *        <p>
      *        Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS
      *        Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.
