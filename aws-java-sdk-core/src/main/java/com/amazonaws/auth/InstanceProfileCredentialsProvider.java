@@ -94,7 +94,7 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
      *            until after a call has been made to {@link #getCredentials()} - ensures that
      *            {@link EC2CredentialsFetcher#getCredentials()} is only hit when this CredentialProvider is actually required
      */
-    public InstanceProfileCredentialsProvider(boolean refreshCredentialsAsync, boolean eagerlyRefreshCredentialsAsync) {
+    public InstanceProfileCredentialsProvider(boolean refreshCredentialsAsync, final boolean eagerlyRefreshCredentialsAsync) {
         credentialsFetcher = new EC2CredentialsFetcher(new InstanceMetadataCredentialsEndpointProvider());
 
         if (refreshCredentialsAsync) {
