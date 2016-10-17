@@ -15,24 +15,61 @@ package com.amazonaws.services.route53.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A complex type that contains settings for a traffic policy.
+ * </p>
  */
 public class TrafficPolicy implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID that Amazon Route 53 assigned to a traffic policy when you created it.
+     * </p>
+     */
     private String id;
-
+    /**
+     * <p>
+     * The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of
+     * <code>Version</code> is always 1.
+     * </p>
+     */
     private Integer version;
-
+    /**
+     * <p>
+     * The name that you specified when you created the traffic policy.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a
+     * traffic policy instance.
+     * </p>
+     */
     private String type;
-
+    /**
+     * <p>
+     * The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy
+     * in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/api-reference/api-policies-traffic-policy-document-format.html"
+     * >Traffic Policy Document Format</a>.
+     * </p>
+     */
     private String document;
-
+    /**
+     * <p>
+     * The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.
+     * </p>
+     */
     private String comment;
 
     /**
+     * <p>
+     * The ID that Amazon Route 53 assigned to a traffic policy when you created it.
+     * </p>
+     * 
      * @param id
+     *        The ID that Amazon Route 53 assigned to a traffic policy when you created it.
      */
 
     public void setId(String id) {
@@ -40,7 +77,11 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID that Amazon Route 53 assigned to a traffic policy when you created it.
+     * </p>
+     * 
+     * @return The ID that Amazon Route 53 assigned to a traffic policy when you created it.
      */
 
     public String getId() {
@@ -48,7 +89,12 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID that Amazon Route 53 assigned to a traffic policy when you created it.
+     * </p>
+     * 
      * @param id
+     *        The ID that Amazon Route 53 assigned to a traffic policy when you created it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +104,14 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of
+     * <code>Version</code> is always 1.
+     * </p>
+     * 
      * @param version
+     *        The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value
+     *        of <code>Version</code> is always 1.
      */
 
     public void setVersion(Integer version) {
@@ -66,7 +119,13 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of
+     * <code>Version</code> is always 1.
+     * </p>
+     * 
+     * @return The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value
+     *         of <code>Version</code> is always 1.
      */
 
     public Integer getVersion() {
@@ -74,7 +133,14 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of
+     * <code>Version</code> is always 1.
+     * </p>
+     * 
      * @param version
+     *        The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value
+     *        of <code>Version</code> is always 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +150,12 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name that you specified when you created the traffic policy.
+     * </p>
+     * 
      * @param name
+     *        The name that you specified when you created the traffic policy.
      */
 
     public void setName(String name) {
@@ -92,7 +163,11 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The name that you specified when you created the traffic policy.
+     * </p>
+     * 
+     * @return The name that you specified when you created the traffic policy.
      */
 
     public String getName() {
@@ -100,7 +175,12 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name that you specified when you created the traffic policy.
+     * </p>
+     * 
      * @param name
+     *        The name that you specified when you created the traffic policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +190,14 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a
+     * traffic policy instance.
+     * </p>
+     * 
      * @param type
+     *        The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to
+     *        create a traffic policy instance.
      * @see RRType
      */
 
@@ -119,7 +206,13 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a
+     * traffic policy instance.
+     * </p>
+     * 
+     * @return The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to
+     *         create a traffic policy instance.
      * @see RRType
      */
 
@@ -128,7 +221,14 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a
+     * traffic policy instance.
+     * </p>
+     * 
      * @param type
+     *        The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to
+     *        create a traffic policy instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
@@ -139,7 +239,14 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a
+     * traffic policy instance.
+     * </p>
+     * 
      * @param type
+     *        The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to
+     *        create a traffic policy instance.
      * @see RRType
      */
 
@@ -148,7 +255,14 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a
+     * traffic policy instance.
+     * </p>
+     * 
      * @param type
+     *        The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to
+     *        create a traffic policy instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
@@ -159,7 +273,19 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy
+     * in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/api-reference/api-policies-traffic-policy-document-format.html"
+     * >Traffic Policy Document Format</a>.
+     * </p>
+     * 
      * @param document
+     *        The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic
+     *        policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/Route53/latest/api-reference/api-policies-traffic-policy-document-format.html"
+     *        >Traffic Policy Document Format</a>.
      */
 
     public void setDocument(String document) {
@@ -167,7 +293,18 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy
+     * in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/api-reference/api-policies-traffic-policy-document-format.html"
+     * >Traffic Policy Document Format</a>.
+     * </p>
+     * 
+     * @return The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic
+     *         policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see
+     *         <a href=
+     *         "http://docs.aws.amazon.com/Route53/latest/api-reference/api-policies-traffic-policy-document-format.html"
+     *         >Traffic Policy Document Format</a>.
      */
 
     public String getDocument() {
@@ -175,7 +312,19 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy
+     * in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/api-reference/api-policies-traffic-policy-document-format.html"
+     * >Traffic Policy Document Format</a>.
+     * </p>
+     * 
      * @param document
+     *        The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic
+     *        policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/Route53/latest/api-reference/api-policies-traffic-policy-document-format.html"
+     *        >Traffic Policy Document Format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,7 +334,12 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.
+     * </p>
+     * 
      * @param comment
+     *        The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.
      */
 
     public void setComment(String comment) {
@@ -193,7 +347,11 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.
+     * </p>
+     * 
+     * @return The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.
      */
 
     public String getComment() {
@@ -201,7 +359,12 @@ public class TrafficPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.
+     * </p>
+     * 
      * @param comment
+     *        The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

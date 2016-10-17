@@ -39,7 +39,11 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private DelegationSet delegationSet;
-
+    /**
+     * <p>
+     * A complex type that contains information about an Amazon VPC that you associated with this hosted zone.
+     * </p>
+     */
     private VPC vPC;
     /**
      * <p>
@@ -169,7 +173,12 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * A complex type that contains information about an Amazon VPC that you associated with this hosted zone.
+     * </p>
+     * 
      * @param vPC
+     *        A complex type that contains information about an Amazon VPC that you associated with this hosted zone.
      */
 
     public void setVPC(VPC vPC) {
@@ -177,7 +186,11 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * @return
+     * <p>
+     * A complex type that contains information about an Amazon VPC that you associated with this hosted zone.
+     * </p>
+     * 
+     * @return A complex type that contains information about an Amazon VPC that you associated with this hosted zone.
      */
 
     public VPC getVPC() {
@@ -185,7 +198,12 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * A complex type that contains information about an Amazon VPC that you associated with this hosted zone.
+     * </p>
+     * 
      * @param vPC
+     *        A complex type that contains information about an Amazon VPC that you associated with this hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1661,8 +1661,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     }
 
     /**
-     * Removes all the entries added into ScanFilter. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into ScanFilter.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScanRequest clearScanFilterEntries() {
@@ -2147,8 +2148,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     }
 
     /**
-     * Removes all the entries added into ExclusiveStartKey. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into ExclusiveStartKey.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScanRequest clearExclusiveStartKeyEntries() {
@@ -3148,8 +3150,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     }
 
     /**
-     * Removes all the entries added into ExpressionAttributeNames. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into ExpressionAttributeNames.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScanRequest clearExpressionAttributeNamesEntries() {
@@ -3352,8 +3355,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     }
 
     /**
-     * Removes all the entries added into ExpressionAttributeValues. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into ExpressionAttributeValues.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScanRequest clearExpressionAttributeValuesEntries() {

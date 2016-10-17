@@ -57,6 +57,18 @@ public enum Region {
     US_Standard((String[])null),
 
     /**
+     * The US-East-2 (Ohio) Region. This region
+     * uses Amazon S3 servers located in Ohio.
+     * <p>
+     * When using buckets in this region, set the client
+     * endpoint to <code>s3.us-east-2.amazonaws.com</code> on all requests to these buckets
+     * to reduce any latency experienced after the first hour of
+     * creating a bucket in this region.
+     * </p>
+     */
+    US_East_2("us-east-2"),
+
+    /**
      * The US-West (Northern California) Amazon S3 Region. This region uses Amazon S3
      * servers located in Northern California.
      * <p>

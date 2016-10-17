@@ -23,10 +23,20 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class DeleteHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the health check that you want to delete.
+     * </p>
+     */
     private String healthCheckId;
 
     /**
+     * <p>
+     * The ID of the health check that you want to delete.
+     * </p>
+     * 
      * @param healthCheckId
+     *        The ID of the health check that you want to delete.
      */
 
     public void setHealthCheckId(String healthCheckId) {
@@ -34,7 +44,11 @@ public class DeleteHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the health check that you want to delete.
+     * </p>
+     * 
+     * @return The ID of the health check that you want to delete.
      */
 
     public String getHealthCheckId() {
@@ -42,7 +56,12 @@ public class DeleteHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The ID of the health check that you want to delete.
+     * </p>
+     * 
      * @param healthCheckId
+     *        The ID of the health check that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

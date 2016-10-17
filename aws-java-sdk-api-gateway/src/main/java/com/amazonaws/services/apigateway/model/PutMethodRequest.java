@@ -417,8 +417,9 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Removes all the entries added into RequestParameters. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into RequestParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutMethodRequest clearRequestParametersEntries() {
@@ -483,8 +484,9 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Removes all the entries added into RequestModels. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into RequestModels.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutMethodRequest clearRequestModelsEntries() {

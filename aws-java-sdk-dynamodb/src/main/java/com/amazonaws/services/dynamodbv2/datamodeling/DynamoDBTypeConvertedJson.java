@@ -19,6 +19,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
@@ -69,9 +70,8 @@ public @interface DynamoDBTypeConvertedJson {
     /**
      * JSON type converter.
      */
-    static final class Converter<T> implements DynamoDBTypeConverter<String,T> {
-        private static final ObjectMapper mapper = new ObjectMapper();
-        private static final ObjectWriter writer = mapper.writer();
+    final class Converter<T> implements DynamoDBTypeConverter<String,T> {
+        private static final ObjectMapper mapper = new ObjectMapper().disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
         private final Class<T> targetType;
 
         public Converter(Class<T> targetType, DynamoDBTypeConvertedJson annotation) {
@@ -81,7 +81,7 @@ public @interface DynamoDBTypeConvertedJson {
         @Override
         public final String convert(final T object) {
             try {
-                return writer.writeValueAsString(object);
+                return mapper.writeValueAsString(object);
             } catch (final Exception e) {
                 throw new DynamoDBMappingException("Unable to write object to JSON", e);
             }

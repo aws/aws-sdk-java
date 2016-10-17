@@ -13,7 +13,10 @@
 package com.amazonaws.services.route53.model;
 
 /**
- * 
+ * <p>
+ * The value of <code>HealthCheckVersion</code> in the request doesn't match the value of
+ * <code>HealthCheckVersion</code> in the health check.
+ * </p>
  */
 public class HealthCheckVersionMismatchException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;

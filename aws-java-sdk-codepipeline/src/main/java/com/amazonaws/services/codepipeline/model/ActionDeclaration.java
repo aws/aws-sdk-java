@@ -236,8 +236,9 @@ public class ActionDeclaration implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Configuration. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into Configuration.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ActionDeclaration clearConfigurationEntries() {

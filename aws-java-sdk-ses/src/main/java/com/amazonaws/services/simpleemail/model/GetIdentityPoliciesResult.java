@@ -82,8 +82,9 @@ public class GetIdentityPoliciesResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Removes all the entries added into Policies. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into Policies.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetIdentityPoliciesResult clearPoliciesEntries() {

@@ -27,7 +27,11 @@ public class CreateTrafficPolicyResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private TrafficPolicy trafficPolicy;
-
+    /**
+     * <p>
+     * A unique URL that represents a new traffic policy.
+     * </p>
+     */
     private String location;
 
     /**
@@ -71,7 +75,12 @@ public class CreateTrafficPolicyResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * A unique URL that represents a new traffic policy.
+     * </p>
+     * 
      * @param location
+     *        A unique URL that represents a new traffic policy.
      */
 
     public void setLocation(String location) {
@@ -79,7 +88,11 @@ public class CreateTrafficPolicyResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * @return
+     * <p>
+     * A unique URL that represents a new traffic policy.
+     * </p>
+     * 
+     * @return A unique URL that represents a new traffic policy.
      */
 
     public String getLocation() {
@@ -87,7 +100,12 @@ public class CreateTrafficPolicyResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * A unique URL that represents a new traffic policy.
+     * </p>
+     * 
      * @param location
+     *        A unique URL that represents a new traffic policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

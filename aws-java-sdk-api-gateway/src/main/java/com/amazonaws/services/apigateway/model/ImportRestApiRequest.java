@@ -154,8 +154,9 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Removes all the entries added into Parameters. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into Parameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImportRestApiRequest clearParametersEntries() {

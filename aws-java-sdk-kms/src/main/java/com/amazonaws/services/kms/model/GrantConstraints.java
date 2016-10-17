@@ -118,8 +118,9 @@ public class GrantConstraints implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into EncryptionContextSubset. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into EncryptionContextSubset.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GrantConstraints clearEncryptionContextSubsetEntries() {
@@ -197,8 +198,9 @@ public class GrantConstraints implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into EncryptionContextEquals. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into EncryptionContextEquals.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GrantConstraints clearEncryptionContextEqualsEntries() {

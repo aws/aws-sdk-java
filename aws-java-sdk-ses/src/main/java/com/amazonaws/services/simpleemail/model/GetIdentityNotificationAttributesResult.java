@@ -84,8 +84,9 @@ public class GetIdentityNotificationAttributesResult extends com.amazonaws.Amazo
     }
 
     /**
-     * Removes all the entries added into NotificationAttributes. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into NotificationAttributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetIdentityNotificationAttributesResult clearNotificationAttributesEntries() {

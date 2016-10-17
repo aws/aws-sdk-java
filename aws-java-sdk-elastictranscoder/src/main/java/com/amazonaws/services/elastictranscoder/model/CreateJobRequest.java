@@ -499,8 +499,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Removes all the entries added into UserMetadata. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into UserMetadata.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobRequest clearUserMetadataEntries() {

@@ -84,7 +84,12 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String maxItems;
-
+    /**
+     * <p>
+     * If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a
+     * reusable delegation set, specify the ID of that reusable delegation set.
+     * </p>
+     */
     private String delegationSetId;
 
     /**
@@ -222,7 +227,14 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a
+     * reusable delegation set, specify the ID of that reusable delegation set.
+     * </p>
+     * 
      * @param delegationSetId
+     *        If you're using reusable delegation sets and you want to list all of the hosted zones that are associated
+     *        with a reusable delegation set, specify the ID of that reusable delegation set.
      */
 
     public void setDelegationSetId(String delegationSetId) {
@@ -230,7 +242,13 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a
+     * reusable delegation set, specify the ID of that reusable delegation set.
+     * </p>
+     * 
+     * @return If you're using reusable delegation sets and you want to list all of the hosted zones that are associated
+     *         with a reusable delegation set, specify the ID of that reusable delegation set.
      */
 
     public String getDelegationSetId() {
@@ -238,7 +256,14 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a
+     * reusable delegation set, specify the ID of that reusable delegation set.
+     * </p>
+     * 
      * @param delegationSetId
+     *        If you're using reusable delegation sets and you want to list all of the hosted zones that are associated
+     *        with a reusable delegation set, specify the ID of that reusable delegation set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

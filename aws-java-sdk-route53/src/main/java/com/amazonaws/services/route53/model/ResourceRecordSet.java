@@ -509,7 +509,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </important>
      * <p>
-     * For more informaiton, see the following topics in the Amazon Route 53 Developer Guide:
+     * For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -527,7 +527,22 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </ul>
      */
     private String healthCheckId;
-
+    /**
+     * <p>
+     * When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
+     * <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53 created this
+     * resource record set for.
+     * </p>
+     * <important>
+     * <p>
+     * To delete the resource record set that is associated with a traffic policy instance, use
+     * <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set automatically. If
+     * you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route 53 doesn't
+     * automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no
+     * longer in use.
+     * </p>
+     * </important>
+     */
     private String trafficPolicyInstanceId;
 
     /**
@@ -4096,7 +4111,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </important>
      * <p>
-     * For more informaiton, see the following topics in the Amazon Route 53 Developer Guide:
+     * For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -4195,7 +4210,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </p>
      *        </important>
      *        <p>
-     *        For more informaiton, see the following topics in the Amazon Route 53 Developer Guide:
+     *        For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:
      *        </p>
      *        <ul>
      *        <li>
@@ -4299,7 +4314,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </important>
      * <p>
-     * For more informaiton, see the following topics in the Amazon Route 53 Developer Guide:
+     * For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -4398,7 +4413,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         </p>
      *         </important>
      *         <p>
-     *         For more informaiton, see the following topics in the Amazon Route 53 Developer Guide:
+     *         For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:
      *         </p>
      *         <ul>
      *         <li>
@@ -4503,7 +4518,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </important>
      * <p>
-     * For more informaiton, see the following topics in the Amazon Route 53 Developer Guide:
+     * For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -4602,7 +4617,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </p>
      *        </important>
      *        <p>
-     *        For more informaiton, see the following topics in the Amazon Route 53 Developer Guide:
+     *        For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:
      *        </p>
      *        <ul>
      *        <li>
@@ -4626,7 +4641,32 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
+     * <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53 created this
+     * resource record set for.
+     * </p>
+     * <important>
+     * <p>
+     * To delete the resource record set that is associated with a traffic policy instance, use
+     * <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set automatically. If
+     * you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route 53 doesn't
+     * automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no
+     * longer in use.
+     * </p>
+     * </important>
+     * 
      * @param trafficPolicyInstanceId
+     *        When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
+     *        <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53 created
+     *        this resource record set for.</p> <important>
+     *        <p>
+     *        To delete the resource record set that is associated with a traffic policy instance, use
+     *        <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set
+     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
+     *        Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
+     *        charged for it even though it's no longer in use.
+     *        </p>
      */
 
     public void setTrafficPolicyInstanceId(String trafficPolicyInstanceId) {
@@ -4634,7 +4674,31 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
+     * <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53 created this
+     * resource record set for.
+     * </p>
+     * <important>
+     * <p>
+     * To delete the resource record set that is associated with a traffic policy instance, use
+     * <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set automatically. If
+     * you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route 53 doesn't
+     * automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no
+     * longer in use.
+     * </p>
+     * </important>
+     * 
+     * @return When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
+     *         <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53
+     *         created this resource record set for.</p> <important>
+     *         <p>
+     *         To delete the resource record set that is associated with a traffic policy instance, use
+     *         <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set
+     *         automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
+     *         Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
+     *         charged for it even though it's no longer in use.
+     *         </p>
      */
 
     public String getTrafficPolicyInstanceId() {
@@ -4642,7 +4706,32 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
+     * <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53 created this
+     * resource record set for.
+     * </p>
+     * <important>
+     * <p>
+     * To delete the resource record set that is associated with a traffic policy instance, use
+     * <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set automatically. If
+     * you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route 53 doesn't
+     * automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no
+     * longer in use.
+     * </p>
+     * </important>
+     * 
      * @param trafficPolicyInstanceId
+     *        When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
+     *        <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53 created
+     *        this resource record set for.</p> <important>
+     *        <p>
+     *        To delete the resource record set that is associated with a traffic policy instance, use
+     *        <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set
+     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
+     *        Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
+     *        charged for it even though it's no longer in use.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

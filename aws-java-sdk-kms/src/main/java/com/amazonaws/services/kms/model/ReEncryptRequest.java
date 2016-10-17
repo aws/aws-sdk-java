@@ -194,8 +194,9 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Removes all the entries added into SourceEncryptionContext. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into SourceEncryptionContext.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReEncryptRequest clearSourceEncryptionContextEntries() {
@@ -436,8 +437,9 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Removes all the entries added into DestinationEncryptionContext. &lt;p> Returns a reference to this object so
-     * that method calls can be chained together.
+     * Removes all the entries added into DestinationEncryptionContext.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReEncryptRequest clearDestinationEncryptionContextEntries() {

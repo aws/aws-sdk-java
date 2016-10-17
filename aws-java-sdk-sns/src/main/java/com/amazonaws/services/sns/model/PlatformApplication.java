@@ -128,8 +128,9 @@ public class PlatformApplication implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Attributes. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into Attributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PlatformApplication clearAttributesEntries() {

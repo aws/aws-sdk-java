@@ -3589,8 +3589,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into DockerLabels. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into DockerLabels.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContainerDefinition clearDockerLabelsEntries() {

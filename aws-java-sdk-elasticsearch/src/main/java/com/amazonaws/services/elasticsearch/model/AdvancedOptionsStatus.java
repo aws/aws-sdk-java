@@ -99,8 +99,9 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Options. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Options.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdvancedOptionsStatus clearOptionsEntries() {

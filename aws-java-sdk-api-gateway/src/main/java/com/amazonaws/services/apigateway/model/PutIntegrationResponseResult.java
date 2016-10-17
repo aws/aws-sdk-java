@@ -271,8 +271,9 @@ public class PutIntegrationResponseResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Removes all the entries added into ResponseParameters. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into ResponseParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutIntegrationResponseResult clearResponseParametersEntries() {
@@ -337,8 +338,9 @@ public class PutIntegrationResponseResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Removes all the entries added into ResponseTemplates. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into ResponseTemplates.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutIntegrationResponseResult clearResponseTemplatesEntries() {

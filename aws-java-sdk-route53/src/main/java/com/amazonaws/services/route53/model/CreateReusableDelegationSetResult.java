@@ -27,7 +27,7 @@ public class CreateReusableDelegationSetResult extends com.amazonaws.AmazonWebSe
     private DelegationSet delegationSet;
     /**
      * <p>
-     * The unique URL representing the new reusbale delegation set.
+     * The unique URL representing the new reusable delegation set.
      * </p>
      */
     private String location;
@@ -74,11 +74,11 @@ public class CreateReusableDelegationSetResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The unique URL representing the new reusbale delegation set.
+     * The unique URL representing the new reusable delegation set.
      * </p>
      * 
      * @param location
-     *        The unique URL representing the new reusbale delegation set.
+     *        The unique URL representing the new reusable delegation set.
      */
 
     public void setLocation(String location) {
@@ -87,10 +87,10 @@ public class CreateReusableDelegationSetResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The unique URL representing the new reusbale delegation set.
+     * The unique URL representing the new reusable delegation set.
      * </p>
      * 
-     * @return The unique URL representing the new reusbale delegation set.
+     * @return The unique URL representing the new reusable delegation set.
      */
 
     public String getLocation() {
@@ -99,11 +99,11 @@ public class CreateReusableDelegationSetResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The unique URL representing the new reusbale delegation set.
+     * The unique URL representing the new reusable delegation set.
      * </p>
      * 
      * @param location
-     *        The unique URL representing the new reusbale delegation set.
+     *        The unique URL representing the new reusable delegation set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

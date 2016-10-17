@@ -231,8 +231,9 @@ public class TaskObject implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Objects. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Objects.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TaskObject clearObjectsEntries() {

@@ -131,8 +131,9 @@ public class AccountSettings implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into UnmeteredDevices. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into UnmeteredDevices.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AccountSettings clearUnmeteredDevicesEntries() {
@@ -191,8 +192,9 @@ public class AccountSettings implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into UnmeteredRemoteAccessDevices. &lt;p> Returns a reference to this object so
-     * that method calls can be chained together.
+     * Removes all the entries added into UnmeteredRemoteAccessDevices.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AccountSettings clearUnmeteredRemoteAccessDevicesEntries() {

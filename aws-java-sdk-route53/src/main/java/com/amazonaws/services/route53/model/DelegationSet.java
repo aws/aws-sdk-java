@@ -21,8 +21,20 @@ import java.io.Serializable;
  */
 public class DelegationSet implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID that Amazon Route 53 assigns to a reusable delegation set.
+     * </p>
+     */
     private String id;
-
+    /**
+     * <p>
+     * A unique string that identifies the request, and that allows you to retry failed
+     * <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use
+     * a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
+     * request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.
+     * </p>
+     */
     private String callerReference;
     /**
      * <p>
@@ -50,7 +62,12 @@ public class DelegationSet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID that Amazon Route 53 assigns to a reusable delegation set.
+     * </p>
+     * 
      * @param id
+     *        The ID that Amazon Route 53 assigns to a reusable delegation set.
      */
 
     public void setId(String id) {
@@ -58,7 +75,11 @@ public class DelegationSet implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID that Amazon Route 53 assigns to a reusable delegation set.
+     * </p>
+     * 
+     * @return The ID that Amazon Route 53 assigns to a reusable delegation set.
      */
 
     public String getId() {
@@ -66,7 +87,12 @@ public class DelegationSet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID that Amazon Route 53 assigns to a reusable delegation set.
+     * </p>
+     * 
      * @param id
+     *        The ID that Amazon Route 53 assigns to a reusable delegation set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,7 +102,19 @@ public class DelegationSet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A unique string that identifies the request, and that allows you to retry failed
+     * <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use
+     * a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
+     * request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.
+     * </p>
+     * 
      * @param callerReference
+     *        A unique string that identifies the request, and that allows you to retry failed
+     *        <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You
+     *        must use a unique <code>CallerReference</code> string every time you submit a
+     *        <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string,
+     *        for example, a date/time stamp.
      */
 
     public void setCallerReference(String callerReference) {
@@ -84,7 +122,18 @@ public class DelegationSet implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * A unique string that identifies the request, and that allows you to retry failed
+     * <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use
+     * a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
+     * request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.
+     * </p>
+     * 
+     * @return A unique string that identifies the request, and that allows you to retry failed
+     *         <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You
+     *         must use a unique <code>CallerReference</code> string every time you submit a
+     *         <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string,
+     *         for example, a date/time stamp.
      */
 
     public String getCallerReference() {
@@ -92,7 +141,19 @@ public class DelegationSet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A unique string that identifies the request, and that allows you to retry failed
+     * <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use
+     * a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
+     * request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.
+     * </p>
+     * 
      * @param callerReference
+     *        A unique string that identifies the request, and that allows you to retry failed
+     *        <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You
+     *        must use a unique <code>CallerReference</code> string every time you submit a
+     *        <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string,
+     *        for example, a date/time stamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

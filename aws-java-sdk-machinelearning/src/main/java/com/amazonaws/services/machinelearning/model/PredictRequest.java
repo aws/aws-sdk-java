@@ -111,8 +111,9 @@ public class PredictRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * Removes all the entries added into Record. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Record.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PredictRequest clearRecordEntries() {

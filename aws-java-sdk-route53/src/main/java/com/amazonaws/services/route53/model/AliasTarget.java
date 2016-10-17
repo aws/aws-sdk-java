@@ -66,8 +66,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region in which you created the environment. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> AWS Elastic Beanstalk</a>
-     * in the <i>Regions and Endpoints</i> chapter of the AWSk General Reference.
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
+     * in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -358,8 +358,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        Specify the hosted zone ID for the region in which you created the environment. The environment must have
      *        a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> AWS Elastic
-     *        Beanstalk</a> in the <i>Regions and Endpoints</i> chapter of the AWSk General Reference.
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
+     *        Beanstalk</a> in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -528,8 +528,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region in which you created the environment. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> AWS Elastic Beanstalk</a>
-     * in the <i>Regions and Endpoints</i> chapter of the AWSk General Reference.
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
+     * in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -599,8 +599,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        Specify the hosted zone ID for the region in which you created the environment. The environment must have
      *        a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> AWS Elastic
-     *        Beanstalk</a> in the <i>Regions and Endpoints</i> chapter of the AWSk General Reference.
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
+     *        Beanstalk</a> in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -676,8 +676,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region in which you created the environment. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> AWS Elastic Beanstalk</a>
-     * in the <i>Regions and Endpoints</i> chapter of the AWSk General Reference.
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
+     * in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -746,8 +746,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <p>
      *         Specify the hosted zone ID for the region in which you created the environment. The environment must have
      *         a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> AWS Elastic
-     *         Beanstalk</a> in the <i>Regions and Endpoints</i> chapter of the AWSk General Reference.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
+     *         Beanstalk</a> in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
      *         </p>
      *         </dd>
      *         <dt>ELB load balancer</dt>
@@ -823,8 +823,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region in which you created the environment. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> AWS Elastic Beanstalk</a>
-     * in the <i>Regions and Endpoints</i> chapter of the AWSk General Reference.
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
+     * in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -894,8 +894,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        Specify the hosted zone ID for the region in which you created the environment. The environment must have
      *        a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region"> AWS Elastic
-     *        Beanstalk</a> in the <i>Regions and Endpoints</i> chapter of the AWSk General Reference.
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
+     *        Beanstalk</a> in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>

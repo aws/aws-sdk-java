@@ -1149,8 +1149,9 @@ public class DeploymentCommand implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Args. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Args.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeploymentCommand clearArgsEntries() {

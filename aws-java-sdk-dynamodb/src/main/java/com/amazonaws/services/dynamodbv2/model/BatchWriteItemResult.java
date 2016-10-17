@@ -444,8 +444,9 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Removes all the entries added into UnprocessedItems. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into UnprocessedItems.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchWriteItemResult clearUnprocessedItemsEntries() {
@@ -642,8 +643,9 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Removes all the entries added into ItemCollectionMetrics. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into ItemCollectionMetrics.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchWriteItemResult clearItemCollectionMetricsEntries() {

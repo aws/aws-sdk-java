@@ -13,7 +13,11 @@
 package com.amazonaws.services.route53.model;
 
 /**
- * 
+ * <p>
+ * You specified an Amazon VPC that you're already using for another hosted zone, and the domain that you specified for
+ * one of the hosted zones is a subdomain of the domain that you specified for the other hosted zone. For example, you
+ * cannot use the same Amazon VPC for the hosted zones for example.com and test.example.com.
+ * </p>
  */
 public class ConflictingDomainExistsException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;

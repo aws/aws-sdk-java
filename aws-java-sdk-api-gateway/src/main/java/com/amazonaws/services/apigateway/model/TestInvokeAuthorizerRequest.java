@@ -204,8 +204,9 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Removes all the entries added into Headers. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Headers.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestInvokeAuthorizerRequest clearHeadersEntries() {
@@ -350,8 +351,9 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Removes all the entries added into StageVariables. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into StageVariables.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestInvokeAuthorizerRequest clearStageVariablesEntries() {
@@ -410,8 +412,9 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Removes all the entries added into AdditionalContext. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into AdditionalContext.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestInvokeAuthorizerRequest clearAdditionalContextEntries() {

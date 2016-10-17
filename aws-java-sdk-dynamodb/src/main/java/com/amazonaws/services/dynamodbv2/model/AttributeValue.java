@@ -514,8 +514,9 @@ public class AttributeValue implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into M. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into M.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeValue clearMEntries() {

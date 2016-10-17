@@ -427,8 +427,9 @@ public class GetMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * Removes all the entries added into RequestParameters. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into RequestParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetMethodResult clearRequestParametersEntries() {
@@ -493,8 +494,9 @@ public class GetMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * Removes all the entries added into RequestModels. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into RequestModels.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetMethodResult clearRequestModelsEntries() {
@@ -700,8 +702,9 @@ public class GetMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * Removes all the entries added into MethodResponses. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into MethodResponses.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetMethodResult clearMethodResponsesEntries() {

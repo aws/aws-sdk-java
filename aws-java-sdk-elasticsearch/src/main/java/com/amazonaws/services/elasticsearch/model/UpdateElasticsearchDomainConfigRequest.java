@@ -298,8 +298,9 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Removes all the entries added into AdvancedOptions. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into AdvancedOptions.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateElasticsearchDomainConfigRequest clearAdvancedOptionsEntries() {

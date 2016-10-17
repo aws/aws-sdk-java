@@ -82,8 +82,9 @@ public class GetAccountSummaryResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Removes all the entries added into SummaryMap. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into SummaryMap.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetAccountSummaryResult clearSummaryMapEntries() {

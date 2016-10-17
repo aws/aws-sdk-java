@@ -538,8 +538,9 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Removes all the entries added into RequestParameters. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into RequestParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutIntegrationRequest clearRequestParametersEntries() {
@@ -610,8 +611,9 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Removes all the entries added into RequestTemplates. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into RequestTemplates.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutIntegrationRequest clearRequestTemplatesEntries() {

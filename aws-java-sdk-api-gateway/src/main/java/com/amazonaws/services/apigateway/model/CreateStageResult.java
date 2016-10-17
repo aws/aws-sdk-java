@@ -493,8 +493,9 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Removes all the entries added into MethodSettings. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into MethodSettings.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateStageResult clearMethodSettingsEntries() {
@@ -559,8 +560,9 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Removes all the entries added into Variables. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into Variables.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateStageResult clearVariablesEntries() {

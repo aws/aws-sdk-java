@@ -186,8 +186,9 @@ public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Removes all the entries added into Headers. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Headers.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestInvokeMethodResult clearHeadersEntries() {

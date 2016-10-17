@@ -129,8 +129,9 @@ public class AddTagsToStreamRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Removes all the entries added into Tags. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AddTagsToStreamRequest clearTagsEntries() {

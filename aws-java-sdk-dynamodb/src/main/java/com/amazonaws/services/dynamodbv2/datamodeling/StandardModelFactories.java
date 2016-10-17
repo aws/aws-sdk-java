@@ -14,17 +14,6 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
-import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Scalar.BOOLEAN;
-import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Scalar.BYTE_BUFFER;
-import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Scalar.DEFAULT;
-import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Scalar.STRING;
-import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Vector.LIST;
-import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Vector.MAP;
-import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Vector.SET;
-import static com.amazonaws.services.dynamodbv2.model.ScalarAttributeType.B;
-import static com.amazonaws.services.dynamodbv2.model.ScalarAttributeType.N;
-import static com.amazonaws.services.dynamodbv2.model.ScalarAttributeType.S;
-
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.Reflect;
@@ -33,9 +22,10 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverter.Abst
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverter.DelegateConverter;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.Bean;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.Beans;
-import com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Scalar;
-import com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Vector;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.nio.ByteBuffer;
 import java.util.Collection;
@@ -46,8 +36,15 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Scalar.BOOLEAN;
+import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Scalar.DEFAULT;
+import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Scalar.STRING;
+import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Vector.LIST;
+import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Vector.MAP;
+import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Vector.SET;
+import static com.amazonaws.services.dynamodbv2.model.ScalarAttributeType.B;
+import static com.amazonaws.services.dynamodbv2.model.ScalarAttributeType.N;
+import static com.amazonaws.services.dynamodbv2.model.ScalarAttributeType.S;
 
 /**
  * Pre-defined strategies for mapping between Java types and DynamoDB types.
@@ -155,12 +152,14 @@ final class StandardModelFactories {
     private static final <T> RuleFactory<T> rulesOf(DynamoDBMapperConfig config, S3Link.Factory s3Links, DynamoDBMapperModelFactory models) {
         final boolean ver1 = (config.getConversionSchema() == ConversionSchemas.V1);
         final boolean ver2 = (config.getConversionSchema() == ConversionSchemas.V2);
+        final boolean v2Compatible = (config.getConversionSchema() == ConversionSchemas.V2_COMPATIBLE);
 
         final DynamoDBTypeConverterFactory.Builder scalars = config.getTypeConverterFactory().override();
         scalars.with(String.class, S3Link.class, s3Links);
 
         final Rules<T> factory = new Rules<T>(scalars.build());
         factory.add(factory.new NativeType(!ver1));
+        factory.add(factory.new V2CompatibleBool(v2Compatible));
         factory.add(factory.new NativeBool(ver2));
         factory.add(factory.new StringScalar(true));
         factory.add(factory.new NumberScalar(true));
@@ -437,6 +436,47 @@ final class StandardModelFactories {
                     return BOOLEAN.<Boolean>convert(o.getN());
                 }
                 return super.unconvert(o);
+            }
+        }
+
+        /**
+         * Native boolean conversion.
+         */
+        private class V2CompatibleBool extends AbstractRule<String, T> {
+            private V2CompatibleBool(boolean supported) {
+                super(DynamoDBAttributeType.N, supported);
+            }
+
+            @Override
+            public boolean isAssignableFrom(ConvertibleType<?> type) {
+                return super.isAssignableFrom(type) && type.is(BOOLEAN);
+            }
+
+            @Override
+            public DynamoDBTypeConverter<AttributeValue, T> newConverter(ConvertibleType<T> type) {
+                return joinAll(getConverter(String.class, type), type.<String>typeConverter());
+            }
+
+            /**
+             * For V2 Compatible schema we support loading booleans from a numeric attribute value (0/1) or the native boolean
+             * type.
+             */
+            @Override
+            public String get(AttributeValue o) {
+                if(o.getBOOL() != null) {
+                    // Handle native bools, transform to expected numeric representation.
+                    return o.getBOOL() ? "1" : "0";
+                }
+                return o.getN();
+            }
+
+            /**
+             * For the V2 compatible schema we save as a numeric attribute value unless overridden by {@link
+             * DynamoDBNativeBoolean} or {@link DynamoDBTyped}.
+             */
+            @Override
+            public void set(AttributeValue o, String value) {
+                o.setN(value);
             }
         }
 

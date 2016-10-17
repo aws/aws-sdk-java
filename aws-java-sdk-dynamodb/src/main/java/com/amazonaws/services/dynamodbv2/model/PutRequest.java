@@ -121,8 +121,9 @@ public class PutRequest implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Item. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Item.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutRequest clearItemEntries() {

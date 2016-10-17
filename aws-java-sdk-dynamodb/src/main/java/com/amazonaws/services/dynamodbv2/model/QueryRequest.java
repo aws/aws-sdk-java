@@ -2831,8 +2831,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     }
 
     /**
-     * Removes all the entries added into KeyConditions. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into KeyConditions.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryRequest clearKeyConditionsEntries() {
@@ -3321,8 +3322,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     }
 
     /**
-     * Removes all the entries added into QueryFilter. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into QueryFilter.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryRequest clearQueryFilterEntries() {
@@ -3923,8 +3925,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     }
 
     /**
-     * Removes all the entries added into ExclusiveStartKey. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into ExclusiveStartKey.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryRequest clearExclusiveStartKeyEntries() {
@@ -5394,8 +5397,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     }
 
     /**
-     * Removes all the entries added into ExpressionAttributeNames. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into ExpressionAttributeNames.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryRequest clearExpressionAttributeNamesEntries() {
@@ -5598,8 +5602,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     }
 
     /**
-     * Removes all the entries added into ExpressionAttributeValues. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into ExpressionAttributeValues.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryRequest clearExpressionAttributeValuesEntries() {

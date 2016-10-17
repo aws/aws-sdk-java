@@ -84,8 +84,9 @@ public class GetIdentityDkimAttributesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Removes all the entries added into DkimAttributes. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into DkimAttributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetIdentityDkimAttributesResult clearDkimAttributesEntries() {

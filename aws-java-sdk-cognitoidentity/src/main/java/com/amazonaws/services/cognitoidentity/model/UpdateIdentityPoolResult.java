@@ -229,8 +229,9 @@ public class UpdateIdentityPoolResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * Removes all the entries added into SupportedLoginProviders. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into SupportedLoginProviders.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateIdentityPoolResult clearSupportedLoginProvidersEntries() {

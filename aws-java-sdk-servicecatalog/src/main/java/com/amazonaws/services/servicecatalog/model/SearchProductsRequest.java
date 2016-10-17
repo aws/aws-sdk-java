@@ -237,8 +237,9 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Removes all the entries added into Filters. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Filters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SearchProductsRequest clearFiltersEntries() {

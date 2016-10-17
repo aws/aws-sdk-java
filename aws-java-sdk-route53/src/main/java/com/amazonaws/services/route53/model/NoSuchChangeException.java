@@ -13,7 +13,9 @@
 package com.amazonaws.services.route53.model;
 
 /**
- * 
+ * <p>
+ * A change with the specified change ID does not exist.
+ * </p>
  */
 public class NoSuchChangeException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;

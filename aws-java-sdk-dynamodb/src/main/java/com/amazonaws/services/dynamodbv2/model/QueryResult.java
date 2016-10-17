@@ -412,8 +412,9 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
     }
 
     /**
-     * Removes all the entries added into LastEvaluatedKey. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into LastEvaluatedKey.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryResult clearLastEvaluatedKeyEntries() {

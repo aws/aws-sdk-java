@@ -85,8 +85,9 @@ public class GetIdentityVerificationAttributesResult extends com.amazonaws.Amazo
     }
 
     /**
-     * Removes all the entries added into VerificationAttributes. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into VerificationAttributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetIdentityVerificationAttributesResult clearVerificationAttributesEntries() {

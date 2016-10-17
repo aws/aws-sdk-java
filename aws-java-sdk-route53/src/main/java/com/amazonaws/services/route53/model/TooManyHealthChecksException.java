@@ -13,7 +13,10 @@
 package com.amazonaws.services.route53.model;
 
 /**
- * 
+ * <p>
+ * You have reached the maximum number of active health checks for an AWS account. The default limit is 100. To request
+ * a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.
+ * </p>
  */
 public class TooManyHealthChecksException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;

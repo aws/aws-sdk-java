@@ -96,8 +96,9 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into ItemCollectionKey. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into ItemCollectionKey.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ItemCollectionMetrics clearItemCollectionKeyEntries() {

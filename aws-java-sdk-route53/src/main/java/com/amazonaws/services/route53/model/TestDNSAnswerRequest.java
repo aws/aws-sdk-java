@@ -70,20 +70,56 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.
+     * </p>
+     */
     private String hostedZoneId;
-
+    /**
+     * <p>
+     * The name of the resource record set that you want Amazon Route 53 to simulate a query for.
+     * </p>
+     */
     private String recordName;
-
+    /**
+     * <p>
+     * The type of the resource record set.
+     * </p>
+     */
     private String recordType;
-
+    /**
+     * <p>
+     * If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you
+     * omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East region.
+     * </p>
+     */
     private String resolverIP;
-
+    /**
+     * <p>
+     * If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in the
+     * applicable location.
+     * </p>
+     */
     private String eDNS0ClientSubnetIP;
-
+    /**
+     * <p>
+     * If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits
+     * of the IP address that you want the checking tool to include in the DNS query. For example, if you specify
+     * <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
+     * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default
+     * value is 24 bits.
+     * </p>
+     */
     private String eDNS0ClientSubnetMask;
 
     /**
+     * <p>
+     * The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.
+     * </p>
+     * 
      * @param hostedZoneId
+     *        The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -91,7 +127,11 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.
+     * </p>
+     * 
+     * @return The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.
      */
 
     public String getHostedZoneId() {
@@ -99,7 +139,12 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.
+     * </p>
+     * 
      * @param hostedZoneId
+     *        The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,7 +154,12 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The name of the resource record set that you want Amazon Route 53 to simulate a query for.
+     * </p>
+     * 
      * @param recordName
+     *        The name of the resource record set that you want Amazon Route 53 to simulate a query for.
      */
 
     public void setRecordName(String recordName) {
@@ -117,7 +167,11 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the resource record set that you want Amazon Route 53 to simulate a query for.
+     * </p>
+     * 
+     * @return The name of the resource record set that you want Amazon Route 53 to simulate a query for.
      */
 
     public String getRecordName() {
@@ -125,7 +179,12 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The name of the resource record set that you want Amazon Route 53 to simulate a query for.
+     * </p>
+     * 
      * @param recordName
+     *        The name of the resource record set that you want Amazon Route 53 to simulate a query for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,7 +194,12 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The type of the resource record set.
+     * </p>
+     * 
      * @param recordType
+     *        The type of the resource record set.
      * @see RRType
      */
 
@@ -144,7 +208,11 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The type of the resource record set.
+     * </p>
+     * 
+     * @return The type of the resource record set.
      * @see RRType
      */
 
@@ -153,7 +221,12 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The type of the resource record set.
+     * </p>
+     * 
      * @param recordType
+     *        The type of the resource record set.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
@@ -164,7 +237,12 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The type of the resource record set.
+     * </p>
+     * 
      * @param recordType
+     *        The type of the resource record set.
      * @see RRType
      */
 
@@ -173,7 +251,12 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The type of the resource record set.
+     * </p>
+     * 
      * @param recordType
+     *        The type of the resource record set.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
@@ -184,7 +267,15 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you
+     * omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East region.
+     * </p>
+     * 
      * @param resolverIP
+     *        If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver.
+     *        If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US
+     *        East region.
      */
 
     public void setResolverIP(String resolverIP) {
@@ -192,7 +283,14 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you
+     * omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East region.
+     * </p>
+     * 
+     * @return If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver.
+     *         If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US
+     *         East region.
      */
 
     public String getResolverIP() {
@@ -200,7 +298,15 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you
+     * omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East region.
+     * </p>
+     * 
      * @param resolverIP
+     *        If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver.
+     *        If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US
+     *        East region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,7 +316,14 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in the
+     * applicable location.
+     * </p>
+     * 
      * @param eDNS0ClientSubnetIP
+     *        If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in
+     *        the applicable location.
      */
 
     public void setEDNS0ClientSubnetIP(String eDNS0ClientSubnetIP) {
@@ -218,7 +331,13 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in the
+     * applicable location.
+     * </p>
+     * 
+     * @return If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in
+     *         the applicable location.
      */
 
     public String getEDNS0ClientSubnetIP() {
@@ -226,7 +345,14 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in the
+     * applicable location.
+     * </p>
+     * 
      * @param eDNS0ClientSubnetIP
+     *        If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in
+     *        the applicable location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,7 +362,20 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits
+     * of the IP address that you want the checking tool to include in the DNS query. For example, if you specify
+     * <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
+     * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default
+     * value is 24 bits.
+     * </p>
+     * 
      * @param eDNS0ClientSubnetMask
+     *        If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number
+     *        of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you
+     *        specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
+     *        <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The
+     *        default value is 24 bits.
      */
 
     public void setEDNS0ClientSubnetMask(String eDNS0ClientSubnetMask) {
@@ -244,7 +383,19 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits
+     * of the IP address that you want the checking tool to include in the DNS query. For example, if you specify
+     * <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
+     * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default
+     * value is 24 bits.
+     * </p>
+     * 
+     * @return If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number
+     *         of bits of the IP address that you want the checking tool to include in the DNS query. For example, if
+     *         you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
+     *         <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The
+     *         default value is 24 bits.
      */
 
     public String getEDNS0ClientSubnetMask() {
@@ -252,7 +403,20 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits
+     * of the IP address that you want the checking tool to include in the DNS query. For example, if you specify
+     * <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
+     * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default
+     * value is 24 bits.
+     * </p>
+     * 
      * @param eDNS0ClientSubnetMask
+     *        If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number
+     *        of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you
+     *        specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
+     *        <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The
+     *        default value is 24 bits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

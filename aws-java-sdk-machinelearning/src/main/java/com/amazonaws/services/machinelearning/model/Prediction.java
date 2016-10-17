@@ -173,8 +173,9 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into PredictedScores. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into PredictedScores.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Prediction clearPredictedScoresEntries() {
@@ -222,8 +223,9 @@ public class Prediction implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Details. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Details.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Prediction clearDetailsEntries() {

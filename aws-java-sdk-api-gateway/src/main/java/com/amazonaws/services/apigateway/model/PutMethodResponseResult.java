@@ -222,8 +222,9 @@ public class PutMethodResponseResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Removes all the entries added into ResponseParameters. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into ResponseParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutMethodResponseResult clearResponseParametersEntries() {
@@ -288,8 +289,9 @@ public class PutMethodResponseResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Removes all the entries added into ResponseModels. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into ResponseModels.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutMethodResponseResult clearResponseModelsEntries() {

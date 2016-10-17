@@ -143,8 +143,9 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Monday. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Monday.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WeeklyAutoScalingSchedule clearMondayEntries() {
@@ -206,8 +207,9 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Tuesday. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Tuesday.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WeeklyAutoScalingSchedule clearTuesdayEntries() {
@@ -269,8 +271,9 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Wednesday. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into Wednesday.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WeeklyAutoScalingSchedule clearWednesdayEntries() {
@@ -332,8 +335,9 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Thursday. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into Thursday.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WeeklyAutoScalingSchedule clearThursdayEntries() {
@@ -395,8 +399,9 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Friday. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Friday.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WeeklyAutoScalingSchedule clearFridayEntries() {
@@ -458,8 +463,9 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Saturday. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into Saturday.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WeeklyAutoScalingSchedule clearSaturdayEntries() {
@@ -521,8 +527,9 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Sunday. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Sunday.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WeeklyAutoScalingSchedule clearSundayEntries() {

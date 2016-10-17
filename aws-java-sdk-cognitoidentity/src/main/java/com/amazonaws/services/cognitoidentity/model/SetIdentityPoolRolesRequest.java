@@ -133,8 +133,9 @@ public class SetIdentityPoolRolesRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Removes all the entries added into Roles. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Roles.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetIdentityPoolRolesRequest clearRolesEntries() {

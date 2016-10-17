@@ -1076,8 +1076,9 @@ public class GetMLModelResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * Removes all the entries added into TrainingParameters. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into TrainingParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetMLModelResult clearTrainingParametersEntries() {

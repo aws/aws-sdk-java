@@ -265,7 +265,31 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     private com.amazonaws.internal.SdkInternalList<String> regions;
 
     private AlarmIdentifier alarmIdentifier;
-
+    /**
+     * <p>
+     * When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want
+     * Amazon Route 53 to assign to the health check:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time CloudWatch
+     * had sufficient data to determine the alarm state. For new health checks that have no last known status, the
+     * default status for the health check is healthy.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String insufficientDataHealthStatus;
 
     /**
@@ -1956,7 +1980,51 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want
+     * Amazon Route 53 to assign to the health check:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time CloudWatch
+     * had sufficient data to determine the alarm state. For new health checks that have no last known status, the
+     * default status for the health check is healthy.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param insufficientDataHealthStatus
+     *        When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you
+     *        want Amazon Route 53 to assign to the health check:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time
+     *        CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
+     *        status, the default status for the health check is healthy.
+     *        </p>
+     *        </li>
      * @see InsufficientDataHealthStatus
      */
 
@@ -1965,7 +2033,50 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want
+     * Amazon Route 53 to assign to the health check:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time CloudWatch
+     * had sufficient data to determine the alarm state. For new health checks that have no last known status, the
+     * default status for the health check is healthy.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you
+     *         want Amazon Route 53 to assign to the health check:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time
+     *         CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last
+     *         known status, the default status for the health check is healthy.
+     *         </p>
+     *         </li>
      * @see InsufficientDataHealthStatus
      */
 
@@ -1974,7 +2085,51 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want
+     * Amazon Route 53 to assign to the health check:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time CloudWatch
+     * had sufficient data to determine the alarm state. For new health checks that have no last known status, the
+     * default status for the health check is healthy.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param insufficientDataHealthStatus
+     *        When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you
+     *        want Amazon Route 53 to assign to the health check:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time
+     *        CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
+     *        status, the default status for the health check is healthy.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InsufficientDataHealthStatus
      */
@@ -1985,7 +2140,51 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want
+     * Amazon Route 53 to assign to the health check:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time CloudWatch
+     * had sufficient data to determine the alarm state. For new health checks that have no last known status, the
+     * default status for the health check is healthy.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param insufficientDataHealthStatus
+     *        When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you
+     *        want Amazon Route 53 to assign to the health check:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time
+     *        CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
+     *        status, the default status for the health check is healthy.
+     *        </p>
+     *        </li>
      * @see InsufficientDataHealthStatus
      */
 
@@ -1994,7 +2193,51 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want
+     * Amazon Route 53 to assign to the health check:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time CloudWatch
+     * had sufficient data to determine the alarm state. For new health checks that have no last known status, the
+     * default status for the health check is healthy.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param insufficientDataHealthStatus
+     *        When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you
+     *        want Amazon Route 53 to assign to the health check:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time
+     *        CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
+     *        status, the default status for the health check is healthy.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InsufficientDataHealthStatus
      */

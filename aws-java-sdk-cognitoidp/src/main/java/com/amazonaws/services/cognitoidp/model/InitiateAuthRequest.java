@@ -171,8 +171,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Removes all the entries added into AuthParameters. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into AuthParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InitiateAuthRequest clearAuthParametersEntries() {
@@ -231,8 +232,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Removes all the entries added into ClientMetadata. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into ClientMetadata.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InitiateAuthRequest clearClientMetadataEntries() {

@@ -298,8 +298,9 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Removes all the entries added into Authorization. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into Authorization.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestInvokeAuthorizerResult clearAuthorizationEntries() {
@@ -367,8 +368,9 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Removes all the entries added into Claims. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Claims.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestInvokeAuthorizerResult clearClaimsEntries() {

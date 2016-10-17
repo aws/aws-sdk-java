@@ -426,8 +426,9 @@ public class CreateResourceResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Removes all the entries added into ResourceMethods. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into ResourceMethods.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateResourceResult clearResourceMethodsEntries() {

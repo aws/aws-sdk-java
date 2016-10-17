@@ -520,8 +520,9 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Removes all the entries added into RequestParameters. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into RequestParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateIntegrationResult clearRequestParametersEntries() {
@@ -592,8 +593,9 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Removes all the entries added into RequestTemplates. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into RequestTemplates.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateIntegrationResult clearRequestTemplatesEntries() {
@@ -1048,8 +1050,9 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Removes all the entries added into IntegrationResponses. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into IntegrationResponses.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateIntegrationResult clearIntegrationResponsesEntries() {

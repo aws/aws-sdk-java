@@ -330,8 +330,9 @@ public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Removes all the entries added into Headers. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Headers.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestInvokeMethodRequest clearHeadersEntries() {
@@ -436,8 +437,9 @@ public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Removes all the entries added into StageVariables. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into StageVariables.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestInvokeMethodRequest clearStageVariablesEntries() {

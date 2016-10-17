@@ -15,30 +15,103 @@ package com.amazonaws.services.route53.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A complex type that contains settings for the new traffic policy instance.
+ * </p>
  */
 public class TrafficPolicyInstance implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID that Amazon Route 53 assigned to the new traffic policy instance.
+     * </p>
+     */
     private String id;
-
+    /**
+     * <p>
+     * The ID of the hosted zone that Amazon Route 53 created resource record sets in.
+     * </p>
+     */
     private String hostedZoneId;
-
+    /**
+     * <p>
+     * The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record
+     * sets that are associated with this traffic policy instance.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted
+     * zone.
+     * </p>
+     */
     private Long tTL;
-
+    /**
+     * <p>
+     * The value of <code>State</code> is one of the following values:
+     * </p>
+     * <dl>
+     * <dt>Applied</dt>
+     * <dd>
+     * <p>
+     * Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon Route 53
+     * edge locations.
+     * </p>
+     * </dd>
+     * <dt>Creating</dt>
+     * <dd>
+     * <p>
+     * Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that
+     * the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     * </p>
+     * </dd>
+     * <dt>Failed</dt>
+     * <dd>
+     * <p>
+     * Amazon Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
+     * <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.
+     * </p>
+     * </dd>
+     * </dl>
+     */
     private String state;
-
+    /**
+     * <p>
+     * If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code>
+     * is another value, <code>Message</code> is empty.
+     * </p>
+     */
     private String message;
-
+    /**
+     * <p>
+     * The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted
+     * zone.
+     * </p>
+     */
     private String trafficPolicyId;
-
+    /**
+     * <p>
+     * The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified
+     * hosted zone.
+     * </p>
+     */
     private Integer trafficPolicyVersion;
-
+    /**
+     * <p>
+     * The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic
+     * policy instance.
+     * </p>
+     */
     private String trafficPolicyType;
 
     /**
+     * <p>
+     * The ID that Amazon Route 53 assigned to the new traffic policy instance.
+     * </p>
+     * 
      * @param id
+     *        The ID that Amazon Route 53 assigned to the new traffic policy instance.
      */
 
     public void setId(String id) {
@@ -46,7 +119,11 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID that Amazon Route 53 assigned to the new traffic policy instance.
+     * </p>
+     * 
+     * @return The ID that Amazon Route 53 assigned to the new traffic policy instance.
      */
 
     public String getId() {
@@ -54,7 +131,12 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID that Amazon Route 53 assigned to the new traffic policy instance.
+     * </p>
+     * 
      * @param id
+     *        The ID that Amazon Route 53 assigned to the new traffic policy instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,7 +146,12 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the hosted zone that Amazon Route 53 created resource record sets in.
+     * </p>
+     * 
      * @param hostedZoneId
+     *        The ID of the hosted zone that Amazon Route 53 created resource record sets in.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -72,7 +159,11 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the hosted zone that Amazon Route 53 created resource record sets in.
+     * </p>
+     * 
+     * @return The ID of the hosted zone that Amazon Route 53 created resource record sets in.
      */
 
     public String getHostedZoneId() {
@@ -80,7 +171,12 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the hosted zone that Amazon Route 53 created resource record sets in.
+     * </p>
+     * 
      * @param hostedZoneId
+     *        The ID of the hosted zone that Amazon Route 53 created resource record sets in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,7 +186,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record
+     * sets that are associated with this traffic policy instance.
+     * </p>
+     * 
      * @param name
+     *        The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource
+     *        record sets that are associated with this traffic policy instance.
      */
 
     public void setName(String name) {
@@ -98,7 +201,13 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record
+     * sets that are associated with this traffic policy instance.
+     * </p>
+     * 
+     * @return The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the
+     *         resource record sets that are associated with this traffic policy instance.
      */
 
     public String getName() {
@@ -106,7 +215,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record
+     * sets that are associated with this traffic policy instance.
+     * </p>
+     * 
      * @param name
+     *        The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource
+     *        record sets that are associated with this traffic policy instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,7 +232,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted
+     * zone.
+     * </p>
+     * 
      * @param tTL
+     *        The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified
+     *        hosted zone.
      */
 
     public void setTTL(Long tTL) {
@@ -124,7 +247,13 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted
+     * zone.
+     * </p>
+     * 
+     * @return The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified
+     *         hosted zone.
      */
 
     public Long getTTL() {
@@ -132,7 +261,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted
+     * zone.
+     * </p>
+     * 
      * @param tTL
+     *        The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified
+     *        hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,7 +278,58 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The value of <code>State</code> is one of the following values:
+     * </p>
+     * <dl>
+     * <dt>Applied</dt>
+     * <dd>
+     * <p>
+     * Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon Route 53
+     * edge locations.
+     * </p>
+     * </dd>
+     * <dt>Creating</dt>
+     * <dd>
+     * <p>
+     * Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that
+     * the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     * </p>
+     * </dd>
+     * <dt>Failed</dt>
+     * <dd>
+     * <p>
+     * Amazon Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
+     * <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
      * @param state
+     *        The value of <code>State</code> is one of the following values:</p>
+     *        <dl>
+     *        <dt>Applied</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon
+     *        Route 53 edge locations.
+     *        </p>
+     *        </dd>
+     *        <dt>Creating</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm
+     *        that the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     *        </p>
+     *        </dd>
+     *        <dt>Failed</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon Route 53 wasn't able to create or update the resource record sets. When the value of
+     *        <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the
+     *        request to fail.
+     *        </p>
+     *        </dd>
      */
 
     public void setState(String state) {
@@ -150,7 +337,57 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The value of <code>State</code> is one of the following values:
+     * </p>
+     * <dl>
+     * <dt>Applied</dt>
+     * <dd>
+     * <p>
+     * Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon Route 53
+     * edge locations.
+     * </p>
+     * </dd>
+     * <dt>Creating</dt>
+     * <dd>
+     * <p>
+     * Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that
+     * the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     * </p>
+     * </dd>
+     * <dt>Failed</dt>
+     * <dd>
+     * <p>
+     * Amazon Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
+     * <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return The value of <code>State</code> is one of the following values:</p>
+     *         <dl>
+     *         <dt>Applied</dt>
+     *         <dd>
+     *         <p>
+     *         Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon
+     *         Route 53 edge locations.
+     *         </p>
+     *         </dd>
+     *         <dt>Creating</dt>
+     *         <dd>
+     *         <p>
+     *         Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to
+     *         confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     *         </p>
+     *         </dd>
+     *         <dt>Failed</dt>
+     *         <dd>
+     *         <p>
+     *         Amazon Route 53 wasn't able to create or update the resource record sets. When the value of
+     *         <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the
+     *         request to fail.
+     *         </p>
+     *         </dd>
      */
 
     public String getState() {
@@ -158,7 +395,58 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The value of <code>State</code> is one of the following values:
+     * </p>
+     * <dl>
+     * <dt>Applied</dt>
+     * <dd>
+     * <p>
+     * Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon Route 53
+     * edge locations.
+     * </p>
+     * </dd>
+     * <dt>Creating</dt>
+     * <dd>
+     * <p>
+     * Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that
+     * the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     * </p>
+     * </dd>
+     * <dt>Failed</dt>
+     * <dd>
+     * <p>
+     * Amazon Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is
+     * <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
      * @param state
+     *        The value of <code>State</code> is one of the following values:</p>
+     *        <dl>
+     *        <dt>Applied</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Amazon
+     *        Route 53 edge locations.
+     *        </p>
+     *        </dd>
+     *        <dt>Creating</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm
+     *        that the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+     *        </p>
+     *        </dd>
+     *        <dt>Failed</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon Route 53 wasn't able to create or update the resource record sets. When the value of
+     *        <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the
+     *        request to fail.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,7 +456,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code>
+     * is another value, <code>Message</code> is empty.
+     * </p>
+     * 
      * @param message
+     *        If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If
+     *        <code>State</code> is another value, <code>Message</code> is empty.
      */
 
     public void setMessage(String message) {
@@ -176,7 +471,13 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code>
+     * is another value, <code>Message</code> is empty.
+     * </p>
+     * 
+     * @return If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If
+     *         <code>State</code> is another value, <code>Message</code> is empty.
      */
 
     public String getMessage() {
@@ -184,7 +485,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code>
+     * is another value, <code>Message</code> is empty.
+     * </p>
+     * 
      * @param message
+     *        If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If
+     *        <code>State</code> is another value, <code>Message</code> is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,7 +502,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted
+     * zone.
+     * </p>
+     * 
      * @param trafficPolicyId
+     *        The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified
+     *        hosted zone.
      */
 
     public void setTrafficPolicyId(String trafficPolicyId) {
@@ -202,7 +517,13 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted
+     * zone.
+     * </p>
+     * 
+     * @return The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified
+     *         hosted zone.
      */
 
     public String getTrafficPolicyId() {
@@ -210,7 +531,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted
+     * zone.
+     * </p>
+     * 
      * @param trafficPolicyId
+     *        The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified
+     *        hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,7 +548,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified
+     * hosted zone.
+     * </p>
+     * 
      * @param trafficPolicyVersion
+     *        The version of the traffic policy that Amazon Route 53 used to create resource record sets in the
+     *        specified hosted zone.
      */
 
     public void setTrafficPolicyVersion(Integer trafficPolicyVersion) {
@@ -228,7 +563,13 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified
+     * hosted zone.
+     * </p>
+     * 
+     * @return The version of the traffic policy that Amazon Route 53 used to create resource record sets in the
+     *         specified hosted zone.
      */
 
     public Integer getTrafficPolicyVersion() {
@@ -236,7 +577,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified
+     * hosted zone.
+     * </p>
+     * 
      * @param trafficPolicyVersion
+     *        The version of the traffic policy that Amazon Route 53 used to create resource record sets in the
+     *        specified hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,7 +594,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic
+     * policy instance.
+     * </p>
+     * 
      * @param trafficPolicyType
+     *        The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this
+     *        traffic policy instance.
      * @see RRType
      */
 
@@ -255,7 +610,13 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic
+     * policy instance.
+     * </p>
+     * 
+     * @return The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this
+     *         traffic policy instance.
      * @see RRType
      */
 
@@ -264,7 +625,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic
+     * policy instance.
+     * </p>
+     * 
      * @param trafficPolicyType
+     *        The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this
+     *        traffic policy instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
@@ -275,7 +643,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic
+     * policy instance.
+     * </p>
+     * 
      * @param trafficPolicyType
+     *        The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this
+     *        traffic policy instance.
      * @see RRType
      */
 
@@ -284,7 +659,14 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic
+     * policy instance.
+     * </p>
+     * 
      * @param trafficPolicyType
+     *        The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this
+     *        traffic policy instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */

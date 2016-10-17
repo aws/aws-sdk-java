@@ -251,8 +251,9 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Removes all the entries added into ChallengeResponses. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into ChallengeResponses.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RespondToAuthChallengeRequest clearChallengeResponsesEntries() {

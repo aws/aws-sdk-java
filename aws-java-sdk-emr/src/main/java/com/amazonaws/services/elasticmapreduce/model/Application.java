@@ -288,8 +288,9 @@ public class Application implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into AdditionalInfo. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into AdditionalInfo.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Application clearAdditionalInfoEntries() {

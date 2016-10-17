@@ -887,8 +887,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * Removes all the entries added into Item. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Item.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutItemRequest clearItemEntries() {
@@ -2609,8 +2610,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * Removes all the entries added into Expected. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into Expected.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutItemRequest clearExpectedEntries() {
@@ -4092,8 +4094,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * Removes all the entries added into ExpressionAttributeNames. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into ExpressionAttributeNames.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutItemRequest clearExpressionAttributeNamesEntries() {
@@ -4296,8 +4299,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * Removes all the entries added into ExpressionAttributeValues. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into ExpressionAttributeValues.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutItemRequest clearExpressionAttributeValuesEntries() {

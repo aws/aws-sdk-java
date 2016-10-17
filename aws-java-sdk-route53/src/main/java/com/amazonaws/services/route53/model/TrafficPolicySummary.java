@@ -15,22 +15,52 @@ package com.amazonaws.services.route53.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A complex type that contains information about the latest version of one traffic policy that is associated with the
+ * current AWS account.
+ * </p>
  */
 public class TrafficPolicySummary implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID that Amazon Route 53 assigned to the traffic policy when you created it.
+     * </p>
+     */
     private String id;
-
+    /**
+     * <p>
+     * The name that you specified for the traffic policy when you created it.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a
+     * traffic policy instance.
+     * </p>
+     */
     private String type;
-
+    /**
+     * <p>
+     * The version number of the latest version of the traffic policy.
+     * </p>
+     */
     private Integer latestVersion;
-
+    /**
+     * <p>
+     * The number of traffic policies that are associated with the current AWS account.
+     * </p>
+     */
     private Integer trafficPolicyCount;
 
     /**
+     * <p>
+     * The ID that Amazon Route 53 assigned to the traffic policy when you created it.
+     * </p>
+     * 
      * @param id
+     *        The ID that Amazon Route 53 assigned to the traffic policy when you created it.
      */
 
     public void setId(String id) {
@@ -38,7 +68,11 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID that Amazon Route 53 assigned to the traffic policy when you created it.
+     * </p>
+     * 
+     * @return The ID that Amazon Route 53 assigned to the traffic policy when you created it.
      */
 
     public String getId() {
@@ -46,7 +80,12 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID that Amazon Route 53 assigned to the traffic policy when you created it.
+     * </p>
+     * 
      * @param id
+     *        The ID that Amazon Route 53 assigned to the traffic policy when you created it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +95,12 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name that you specified for the traffic policy when you created it.
+     * </p>
+     * 
      * @param name
+     *        The name that you specified for the traffic policy when you created it.
      */
 
     public void setName(String name) {
@@ -64,7 +108,11 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The name that you specified for the traffic policy when you created it.
+     * </p>
+     * 
+     * @return The name that you specified for the traffic policy when you created it.
      */
 
     public String getName() {
@@ -72,7 +120,12 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name that you specified for the traffic policy when you created it.
+     * </p>
+     * 
      * @param name
+     *        The name that you specified for the traffic policy when you created it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +135,14 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a
+     * traffic policy instance.
+     * </p>
+     * 
      * @param type
+     *        The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to
+     *        create a traffic policy instance.
      * @see RRType
      */
 
@@ -91,7 +151,13 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a
+     * traffic policy instance.
+     * </p>
+     * 
+     * @return The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to
+     *         create a traffic policy instance.
      * @see RRType
      */
 
@@ -100,7 +166,14 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a
+     * traffic policy instance.
+     * </p>
+     * 
      * @param type
+     *        The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to
+     *        create a traffic policy instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
@@ -111,7 +184,14 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a
+     * traffic policy instance.
+     * </p>
+     * 
      * @param type
+     *        The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to
+     *        create a traffic policy instance.
      * @see RRType
      */
 
@@ -120,7 +200,14 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a
+     * traffic policy instance.
+     * </p>
+     * 
      * @param type
+     *        The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to
+     *        create a traffic policy instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
@@ -131,7 +218,12 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The version number of the latest version of the traffic policy.
+     * </p>
+     * 
      * @param latestVersion
+     *        The version number of the latest version of the traffic policy.
      */
 
     public void setLatestVersion(Integer latestVersion) {
@@ -139,7 +231,11 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The version number of the latest version of the traffic policy.
+     * </p>
+     * 
+     * @return The version number of the latest version of the traffic policy.
      */
 
     public Integer getLatestVersion() {
@@ -147,7 +243,12 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The version number of the latest version of the traffic policy.
+     * </p>
+     * 
      * @param latestVersion
+     *        The version number of the latest version of the traffic policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,7 +258,12 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of traffic policies that are associated with the current AWS account.
+     * </p>
+     * 
      * @param trafficPolicyCount
+     *        The number of traffic policies that are associated with the current AWS account.
      */
 
     public void setTrafficPolicyCount(Integer trafficPolicyCount) {
@@ -165,7 +271,11 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The number of traffic policies that are associated with the current AWS account.
+     * </p>
+     * 
+     * @return The number of traffic policies that are associated with the current AWS account.
      */
 
     public Integer getTrafficPolicyCount() {
@@ -173,7 +283,12 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of traffic policies that are associated with the current AWS account.
+     * </p>
+     * 
      * @param trafficPolicyCount
+     *        The number of traffic policies that are associated with the current AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

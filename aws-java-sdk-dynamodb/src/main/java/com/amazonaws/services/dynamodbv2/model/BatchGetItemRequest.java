@@ -1420,8 +1420,9 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Removes all the entries added into RequestItems. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into RequestItems.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchGetItemRequest clearRequestItemsEntries() {

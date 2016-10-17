@@ -141,8 +141,9 @@ public class BatchGetItemResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * Removes all the entries added into Responses. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into Responses.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchGetItemResult clearResponsesEntries() {
@@ -366,8 +367,9 @@ public class BatchGetItemResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * Removes all the entries added into UnprocessedKeys. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into UnprocessedKeys.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchGetItemResult clearUnprocessedKeysEntries() {

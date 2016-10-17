@@ -24,7 +24,7 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Amazon Route 53 supports the following contintent codes:
+     * Amazon Route 53 supports the following continent codes:
      * </p>
      * <ul>
      * <li>
@@ -84,7 +84,7 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Amazon Route 53 supports the following contintent codes:
+     * Amazon Route 53 supports the following continent codes:
      * </p>
      * <ul>
      * <li>
@@ -125,7 +125,7 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param continentCode
-     *        Amazon Route 53 supports the following contintent codes:</p>
+     *        Amazon Route 53 supports the following continent codes:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -170,7 +170,7 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Amazon Route 53 supports the following contintent codes:
+     * Amazon Route 53 supports the following continent codes:
      * </p>
      * <ul>
      * <li>
@@ -210,7 +210,7 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * 
-     * @return Amazon Route 53 supports the following contintent codes:</p>
+     * @return Amazon Route 53 supports the following continent codes:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -255,7 +255,7 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Amazon Route 53 supports the following contintent codes:
+     * Amazon Route 53 supports the following continent codes:
      * </p>
      * <ul>
      * <li>
@@ -296,7 +296,7 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param continentCode
-     *        Amazon Route 53 supports the following contintent codes:</p>
+     *        Amazon Route 53 supports the following continent codes:</p>
      *        <ul>
      *        <li>
      *        <p>

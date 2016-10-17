@@ -420,8 +420,9 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Removes all the entries added into AdvancedOptions. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into AdvancedOptions.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateElasticsearchDomainRequest clearAdvancedOptionsEntries() {

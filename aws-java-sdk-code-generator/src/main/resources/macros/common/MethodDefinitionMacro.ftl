@@ -136,8 +136,8 @@
 
     /**
       * Removes all the entries added into ${member.name}.
-      * &lt;p>
-      * Returns a reference to this object so that method calls can be chained together.
+      *
+      * @return Returns a reference to this object so that method calls can be chained together.
       */
     ${deprecated}
     public ${shapeName} clear${member.name}Entries() {

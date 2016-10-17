@@ -92,8 +92,9 @@ public class GetOfferingStatusResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Removes all the entries added into Current. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Current.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetOfferingStatusResult clearCurrentEntries() {
@@ -152,8 +153,9 @@ public class GetOfferingStatusResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Removes all the entries added into NextPeriod. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into NextPeriod.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetOfferingStatusResult clearNextPeriodEntries() {

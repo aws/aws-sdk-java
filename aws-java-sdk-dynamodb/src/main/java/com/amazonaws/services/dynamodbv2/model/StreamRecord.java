@@ -184,8 +184,9 @@ public class StreamRecord implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Keys. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Keys.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StreamRecord clearKeysEntries() {
@@ -244,8 +245,9 @@ public class StreamRecord implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into NewImage. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into NewImage.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StreamRecord clearNewImageEntries() {
@@ -304,8 +306,9 @@ public class StreamRecord implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into OldImage. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into OldImage.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StreamRecord clearOldImageEntries() {

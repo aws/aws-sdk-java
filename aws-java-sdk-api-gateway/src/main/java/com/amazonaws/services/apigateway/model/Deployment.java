@@ -225,8 +225,9 @@ public class Deployment implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into ApiSummary. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into ApiSummary.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Deployment clearApiSummaryEntries() {

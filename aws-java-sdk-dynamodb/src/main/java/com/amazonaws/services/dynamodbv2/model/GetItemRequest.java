@@ -332,8 +332,9 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * Removes all the entries added into Key. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Key.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetItemRequest clearKeyEntries() {
@@ -1210,8 +1211,9 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * Removes all the entries added into ExpressionAttributeNames. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into ExpressionAttributeNames.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetItemRequest clearExpressionAttributeNamesEntries() {

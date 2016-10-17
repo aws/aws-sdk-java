@@ -153,8 +153,9 @@ public class DescribeAssessmentRunsResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Removes all the entries added into FailedItems. &lt;p> Returns a reference to this object so that method calls
-     * can be chained together.
+     * Removes all the entries added into FailedItems.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAssessmentRunsResult clearFailedItemsEntries() {

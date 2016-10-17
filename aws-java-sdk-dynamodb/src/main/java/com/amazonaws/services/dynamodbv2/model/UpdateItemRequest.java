@@ -1464,8 +1464,9 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Removes all the entries added into Key. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Key.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateItemRequest clearKeyEntries() {
@@ -2289,8 +2290,9 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Removes all the entries added into AttributeUpdates. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into AttributeUpdates.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateItemRequest clearAttributeUpdatesEntries() {
@@ -4011,8 +4013,9 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Removes all the entries added into Expected. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into Expected.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateItemRequest clearExpectedEntries() {
@@ -6375,8 +6378,9 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Removes all the entries added into ExpressionAttributeNames. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into ExpressionAttributeNames.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateItemRequest clearExpressionAttributeNamesEntries() {
@@ -6579,8 +6583,9 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Removes all the entries added into ExpressionAttributeValues. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into ExpressionAttributeValues.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateItemRequest clearExpressionAttributeValuesEntries() {

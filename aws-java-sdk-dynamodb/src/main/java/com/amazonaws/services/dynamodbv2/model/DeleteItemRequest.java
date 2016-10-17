@@ -760,8 +760,9 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Removes all the entries added into Key. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Key.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteItemRequest clearKeyEntries() {
@@ -2482,8 +2483,9 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Removes all the entries added into Expected. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into Expected.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteItemRequest clearExpectedEntries() {
@@ -3955,8 +3957,9 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Removes all the entries added into ExpressionAttributeNames. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into ExpressionAttributeNames.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteItemRequest clearExpressionAttributeNamesEntries() {
@@ -4159,8 +4162,9 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Removes all the entries added into ExpressionAttributeValues. &lt;p> Returns a reference to this object so that
-     * method calls can be chained together.
+     * Removes all the entries added into ExpressionAttributeValues.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteItemRequest clearExpressionAttributeValuesEntries() {

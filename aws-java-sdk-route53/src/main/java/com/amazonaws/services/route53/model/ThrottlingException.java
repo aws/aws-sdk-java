@@ -13,7 +13,8 @@
 package com.amazonaws.services.route53.model;
 
 /**
- * 
+ * <p>
+ * </p>
  */
 public class ThrottlingException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;

@@ -130,8 +130,9 @@ public class SetCognitoEventsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Removes all the entries added into Events. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Events.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetCognitoEventsRequest clearEventsEntries() {

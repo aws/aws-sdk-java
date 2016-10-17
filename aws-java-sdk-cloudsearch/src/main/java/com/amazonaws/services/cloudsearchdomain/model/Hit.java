@@ -140,8 +140,9 @@ public class Hit implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Fields. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Fields.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Hit clearFieldsEntries() {
@@ -203,8 +204,9 @@ public class Hit implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Exprs. &lt;p> Returns a reference to this object so that method calls can be
-     * chained together.
+     * Removes all the entries added into Exprs.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Hit clearExprsEntries() {
@@ -266,8 +268,9 @@ public class Hit implements Serializable, Cloneable {
     }
 
     /**
-     * Removes all the entries added into Highlights. &lt;p> Returns a reference to this object so that method calls can
-     * be chained together.
+     * Removes all the entries added into Highlights.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Hit clearHighlightsEntries() {

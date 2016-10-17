@@ -206,8 +206,9 @@ public class AdminRespondToAuthChallengeResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Removes all the entries added into ChallengeParameters. &lt;p> Returns a reference to this object so that method
-     * calls can be chained together.
+     * Removes all the entries added into ChallengeParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AdminRespondToAuthChallengeResult clearChallengeParametersEntries() {
