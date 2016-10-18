@@ -48,11 +48,12 @@ import com.amazonaws.util.DateUtils;
 // https://github.com/aws/aws-sdk-net/blob/master/sdk/src/Services/CloudFront/Custom/_bcl/AmazonCloudFrontCookieSigner.cs
 
 /**
- * Utility class for generating pre-signed Set-Cookie headers for serving private CloudFront
- * content. All dates must be in UTC. Use {@link Calendar} to set the timezone
- * specifically before converting to a {@link Date} object, or else use
- * {@link DateUtils} to turn a UTC date String into a Date object.
- *
+ * Utility class for generating pre-signed Set-Cookie headers for serving private CloudFront content.
+ * <p>
+ * All dates must be in UTC. You can use {@link Calendar} to set the timezone
+ * before converting to a {@link Date} object, or use {@link DateUtils} to turn
+ * a UTC date String into a Date object.
+ * <p>
  * <pre>
  * Protocol protocol = Protocol.https;
  * String distributionDomain = "d1b2c3a4g5h6.cloudfront.net";
@@ -64,21 +65,26 @@ import com.amazonaws.util.DateUtils;
  * String ipRange = "192.168.0.1/24";
  *
  * CookiesForCannedPolicy cookies = CloudFrontCookieSigner.getCookiesForCannedPolicy(
- *              protocol, distributionDomain, privateKeyFile,
- *              s3ObjectKey, keyPairId, activeFrom);
+ *              protocol, distributionDomain, privateKeyFile, s3ObjectKey,
+ *              keyPairId, expiresOn);
  *
  * HttpClient client = new DefaultHttpClient();
- * HttpGet httpGet = new HttpGet(SignerUtils.generateResourcePath(protocol, distributionDomain, resourcePath));
+ * HttpGet httpGet = new HttpGet(
+ *              SignerUtils.generateResourcePath(protocol, distributionDomain,
+ *              resourcePath));
  *
- * httpGet.addHeader("Cookie", cookies.getExpires().getKey() + "=" + cookies.getExpires().getValue());
- * httpGet.addHeader("Cookie", cookies.getSignature().getKey() + "=" + cookies.getSignature().getValue());
- * httpGet.addHeader("Cookie", cookies.getKeyPairId().getKey() + "=" + cookies.getKeyPairId().getValue());
+ * httpGet.addHeader("Cookie", cookies.getExpires().getKey() + "=" +
+ *     cookies.getExpires().getValue());
+ * httpGet.addHeader("Cookie", cookies.getSignature().getKey() + "=" +
+ *     cookies.getSignature().getValue());
+ * httpGet.addHeader("Cookie", cookies.getKeyPairId().getKey() + "=" +
+ *     cookies.getKeyPairId().getValue());
+ *
  * HttpResponse response = client.execute(httpGet);
  *
  * CookiesForCustomPolicy cookies2 = CloudFrontCookieSigner.getCookiesForCustomPolicy(
- *              protocol, distributionDomain, privateKeyFile,
- *              s3ObjectKey, keyPairId, activeFrom,
- *              expiresOn, ipRange);
+ *              protocol, distributionDomain, privateKeyFile, s3ObjectKey,
+ *              keyPairId, expiresOn, activeFrom, ipRange);
  * </pre>
  *
  * @see DateUtils
