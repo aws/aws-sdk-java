@@ -15,28 +15,47 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A complex type that contains Tag key and Tag value.
+ * <p>
+ * A complex type that contains <code>Tag</code> key and <code>Tag</code> value.
+ * </p>
  */
 public class Tag implements Serializable, Cloneable {
 
     /**
-     * A string that contains Tag key. The string length should be between 1 and 128 characters. Valid characters
-     * include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     * <p>
+     * A string that contains <code>Tag</code> key.
+     * </p>
+     * <p>
+     * The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>,
+     * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
+     * </p>
      */
     private String key;
     /**
-     * A string that contains an optional Tag value. The string length should be between 0 and 256 characters. Valid
-     * characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     * <p>
+     * A string that contains an optional <code>Tag</code> value.
+     * </p>
+     * <p>
+     * The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>,
+     * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
+     * </p>
      */
     private String value;
 
     /**
-     * A string that contains Tag key. The string length should be between 1 and 128 characters. Valid characters
-     * include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     * <p>
+     * A string that contains <code>Tag</code> key.
+     * </p>
+     * <p>
+     * The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>,
+     * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
+     * </p>
      * 
      * @param key
-     *        A string that contains Tag key. The string length should be between 1 and 128 characters. Valid characters
-     *        include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     *        A string that contains <code>Tag</code> key.</p>
+     *        <p>
+     *        The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>,
+     *        <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
      */
 
     public void setKey(String key) {
@@ -44,11 +63,18 @@ public class Tag implements Serializable, Cloneable {
     }
 
     /**
-     * A string that contains Tag key. The string length should be between 1 and 128 characters. Valid characters
-     * include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     * <p>
+     * A string that contains <code>Tag</code> key.
+     * </p>
+     * <p>
+     * The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>,
+     * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
+     * </p>
      * 
-     * @return A string that contains Tag key. The string length should be between 1 and 128 characters. Valid
-     *         characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     * @return A string that contains <code>Tag</code> key.</p>
+     *         <p>
+     *         The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>,
+     *         <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
      */
 
     public String getKey() {
@@ -56,12 +82,19 @@ public class Tag implements Serializable, Cloneable {
     }
 
     /**
-     * A string that contains Tag key. The string length should be between 1 and 128 characters. Valid characters
-     * include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     * <p>
+     * A string that contains <code>Tag</code> key.
+     * </p>
+     * <p>
+     * The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>,
+     * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
+     * </p>
      * 
      * @param key
-     *        A string that contains Tag key. The string length should be between 1 and 128 characters. Valid characters
-     *        include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     *        A string that contains <code>Tag</code> key.</p>
+     *        <p>
+     *        The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>,
+     *        <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,12 +104,19 @@ public class Tag implements Serializable, Cloneable {
     }
 
     /**
-     * A string that contains an optional Tag value. The string length should be between 0 and 256 characters. Valid
-     * characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     * <p>
+     * A string that contains an optional <code>Tag</code> value.
+     * </p>
+     * <p>
+     * The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>,
+     * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
+     * </p>
      * 
      * @param value
-     *        A string that contains an optional Tag value. The string length should be between 0 and 256 characters.
-     *        Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     *        A string that contains an optional <code>Tag</code> value.</p>
+     *        <p>
+     *        The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>,
+     *        <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
      */
 
     public void setValue(String value) {
@@ -84,11 +124,18 @@ public class Tag implements Serializable, Cloneable {
     }
 
     /**
-     * A string that contains an optional Tag value. The string length should be between 0 and 256 characters. Valid
-     * characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     * <p>
+     * A string that contains an optional <code>Tag</code> value.
+     * </p>
+     * <p>
+     * The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>,
+     * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
+     * </p>
      * 
-     * @return A string that contains an optional Tag value. The string length should be between 0 and 256 characters.
-     *         Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     * @return A string that contains an optional <code>Tag</code> value.</p>
+     *         <p>
+     *         The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>,
+     *         <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
      */
 
     public String getValue() {
@@ -96,12 +143,19 @@ public class Tag implements Serializable, Cloneable {
     }
 
     /**
-     * A string that contains an optional Tag value. The string length should be between 0 and 256 characters. Valid
-     * characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     * <p>
+     * A string that contains an optional <code>Tag</code> value.
+     * </p>
+     * <p>
+     * The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>,
+     * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
+     * </p>
      * 
      * @param value
-     *        A string that contains an optional Tag value. The string length should be between 0 and 256 characters.
-     *        Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.
+     *        A string that contains an optional <code>Tag</code> value.</p>
+     *        <p>
+     *        The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>,
+     *        <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

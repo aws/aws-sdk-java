@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
+ * <p>
  * The argument is invalid.
+ * </p>
  */
 public class InvalidArgumentException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

@@ -15,18 +15,26 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class ListDistributionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The DistributionList type. */
+    /**
+     * <p>
+     * The <code>DistributionList</code> type.
+     * </p>
+     */
     private DistributionList distributionList;
 
     /**
-     * The DistributionList type.
+     * <p>
+     * The <code>DistributionList</code> type.
+     * </p>
      * 
      * @param distributionList
-     *        The DistributionList type.
+     *        The <code>DistributionList</code> type.
      */
 
     public void setDistributionList(DistributionList distributionList) {
@@ -34,9 +42,11 @@ public class ListDistributionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * The DistributionList type.
+     * <p>
+     * The <code>DistributionList</code> type.
+     * </p>
      * 
-     * @return The DistributionList type.
+     * @return The <code>DistributionList</code> type.
      */
 
     public DistributionList getDistributionList() {
@@ -44,10 +54,12 @@ public class ListDistributionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * The DistributionList type.
+     * <p>
+     * The <code>DistributionList</code> type.
+     * </p>
      * 
      * @param distributionList
-     *        The DistributionList type.
+     *        The <code>DistributionList</code> type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

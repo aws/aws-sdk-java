@@ -36,6 +36,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public AddRoleToDBClusterResult addRoleToDBCluster(AddRoleToDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public EventSubscription addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -502,6 +507,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DBInstance rebootDBInstance(RebootDBInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveRoleFromDBClusterResult removeRoleFromDBCluster(RemoveRoleFromDBClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

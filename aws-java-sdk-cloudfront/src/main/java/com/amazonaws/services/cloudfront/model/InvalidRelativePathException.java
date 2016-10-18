@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
+ * <p>
  * The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+ * </p>
  */
 public class InvalidRelativePathException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

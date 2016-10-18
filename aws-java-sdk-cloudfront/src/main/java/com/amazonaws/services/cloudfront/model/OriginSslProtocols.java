@@ -15,25 +15,32 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A complex type that contains the list of SSL/TLS protocols that you want CloudFront to use when communicating with
- * your origin over HTTPS.
+ * <p>
+ * A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an
+ * HTTPS connection with your origin.
+ * </p>
  */
 public class OriginSslProtocols implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection
      * with this origin.
+     * </p>
      */
     private Integer quantity;
     /**
-     * A complex type that contains one SslProtocol element for each SSL/TLS protocol that you want to allow CloudFront
-     * to use when establishing an HTTPS connection with this origin.
+     * <p>
+     * A list that contains allowed SSL/TLS protocols for this distribution.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
+     * <p>
      * The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection
      * with this origin.
+     * </p>
      * 
      * @param quantity
      *        The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS
@@ -45,8 +52,10 @@ public class OriginSslProtocols implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection
      * with this origin.
+     * </p>
      * 
      * @return The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS
      *         connection with this origin.
@@ -57,8 +66,10 @@ public class OriginSslProtocols implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection
      * with this origin.
+     * </p>
      * 
      * @param quantity
      *        The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS
@@ -72,11 +83,11 @@ public class OriginSslProtocols implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one SslProtocol element for each SSL/TLS protocol that you want to allow CloudFront
-     * to use when establishing an HTTPS connection with this origin.
+     * <p>
+     * A list that contains allowed SSL/TLS protocols for this distribution.
+     * </p>
      * 
-     * @return A complex type that contains one SslProtocol element for each SSL/TLS protocol that you want to allow
-     *         CloudFront to use when establishing an HTTPS connection with this origin.
+     * @return A list that contains allowed SSL/TLS protocols for this distribution.
      * @see SslProtocol
      */
 
@@ -88,12 +99,12 @@ public class OriginSslProtocols implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one SslProtocol element for each SSL/TLS protocol that you want to allow CloudFront
-     * to use when establishing an HTTPS connection with this origin.
+     * <p>
+     * A list that contains allowed SSL/TLS protocols for this distribution.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains one SslProtocol element for each SSL/TLS protocol that you want to allow
-     *        CloudFront to use when establishing an HTTPS connection with this origin.
+     *        A list that contains allowed SSL/TLS protocols for this distribution.
      * @see SslProtocol
      */
 
@@ -107,8 +118,9 @@ public class OriginSslProtocols implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one SslProtocol element for each SSL/TLS protocol that you want to allow CloudFront
-     * to use when establishing an HTTPS connection with this origin.
+     * <p>
+     * A list that contains allowed SSL/TLS protocols for this distribution.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -116,8 +128,7 @@ public class OriginSslProtocols implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        A complex type that contains one SslProtocol element for each SSL/TLS protocol that you want to allow
-     *        CloudFront to use when establishing an HTTPS connection with this origin.
+     *        A list that contains allowed SSL/TLS protocols for this distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SslProtocol
      */
@@ -133,12 +144,12 @@ public class OriginSslProtocols implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one SslProtocol element for each SSL/TLS protocol that you want to allow CloudFront
-     * to use when establishing an HTTPS connection with this origin.
+     * <p>
+     * A list that contains allowed SSL/TLS protocols for this distribution.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains one SslProtocol element for each SSL/TLS protocol that you want to allow
-     *        CloudFront to use when establishing an HTTPS connection with this origin.
+     *        A list that contains allowed SSL/TLS protocols for this distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SslProtocol
      */
@@ -149,12 +160,12 @@ public class OriginSslProtocols implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one SslProtocol element for each SSL/TLS protocol that you want to allow CloudFront
-     * to use when establishing an HTTPS connection with this origin.
+     * <p>
+     * A list that contains allowed SSL/TLS protocols for this distribution.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains one SslProtocol element for each SSL/TLS protocol that you want to allow
-     *        CloudFront to use when establishing an HTTPS connection with this origin.
+     *        A list that contains allowed SSL/TLS protocols for this distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SslProtocol
      */

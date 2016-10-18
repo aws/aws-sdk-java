@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
- * The value of Quantity and the size of Items do not match.
+ * <p>
+ * The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+ * </p>
  */
 public class InconsistentQuantitiesException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

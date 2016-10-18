@@ -49,7 +49,7 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2016-09-07/distribution/{DistributionId}/invalidation";
+        String uriResourcePath = "/2016-09-29/distribution/{DistributionId}/invalidation";
 
         uriResourcePath = uriResourcePath.replace(
                 "{DistributionId}",
@@ -59,7 +59,7 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-09-07/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-09-29/");
 
             InvalidationBatch invalidationBatch = createInvalidationRequest.getInvalidationBatch();
             if (invalidationBatch != null) {

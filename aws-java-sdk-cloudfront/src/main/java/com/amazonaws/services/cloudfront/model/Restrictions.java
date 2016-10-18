@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A complex type that identifies ways in which you want to restrict distribution of your content.
+ * </p>
  */
 public class Restrictions implements Serializable, Cloneable {
 

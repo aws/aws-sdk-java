@@ -15,38 +15,60 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A streaming distribution list.
+ * </p>
  */
 public class StreamingDistributionList implements Serializable, Cloneable {
 
-    /** The value you provided for the Marker request parameter. */
+    /**
+     * <p>
+     * The value you provided for the <code>Marker</code> request parameter.
+     * </p>
+     */
     private String marker;
     /**
-     * If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     * parameter to continue listing your streaming distributions where they left off.
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for
+     * the <code>Marker</code> request parameter to continue listing your RTMP distributions where they left off.
+     * </p>
      */
     private String nextMarker;
-    /** The value you provided for the MaxItems request parameter. */
+    /**
+     * <p>
+     * The value you provided for the <code>MaxItems</code> request parameter.
+     * </p>
+     */
     private Integer maxItems;
     /**
+     * <p>
      * A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated,
-     * you can make a follow-up pagination request using the Marker request parameter to retrieve more distributions in
-     * the list.
+     * you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more
+     * distributions in the list.
+     * </p>
      */
     private Boolean isTruncated;
-    /** The number of streaming distributions that were created by the current AWS account. */
+    /**
+     * <p>
+     * The number of streaming distributions that were created by the current AWS account.
+     * </p>
+     */
     private Integer quantity;
     /**
-     * A complex type that contains one StreamingDistributionSummary element for each distribution that was created by
-     * the current AWS account.
+     * <p>
+     * A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution that was
+     * created by the current AWS account.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StreamingDistributionSummary> items;
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>
+     * The value you provided for the <code>Marker</code> request parameter.
+     * </p>
      * 
      * @param marker
-     *        The value you provided for the Marker request parameter.
+     *        The value you provided for the <code>Marker</code> request parameter.
      */
 
     public void setMarker(String marker) {
@@ -54,9 +76,11 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>
+     * The value you provided for the <code>Marker</code> request parameter.
+     * </p>
      * 
-     * @return The value you provided for the Marker request parameter.
+     * @return The value you provided for the <code>Marker</code> request parameter.
      */
 
     public String getMarker() {
@@ -64,10 +88,12 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>
+     * The value you provided for the <code>Marker</code> request parameter.
+     * </p>
      * 
      * @param marker
-     *        The value you provided for the Marker request parameter.
+     *        The value you provided for the <code>Marker</code> request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,12 +103,15 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     * parameter to continue listing your streaming distributions where they left off.
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for
+     * the <code>Marker</code> request parameter to continue listing your RTMP distributions where they left off.
+     * </p>
      * 
      * @param nextMarker
-     *        If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     *        parameter to continue listing your streaming distributions where they left off.
+     *        If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can
+     *        use for the <code>Marker</code> request parameter to continue listing your RTMP distributions where they
+     *        left off.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -90,11 +119,14 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     * parameter to continue listing your streaming distributions where they left off.
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for
+     * the <code>Marker</code> request parameter to continue listing your RTMP distributions where they left off.
+     * </p>
      * 
-     * @return If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     *         parameter to continue listing your streaming distributions where they left off.
+     * @return If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can
+     *         use for the <code>Marker</code> request parameter to continue listing your RTMP distributions where they
+     *         left off.
      */
 
     public String getNextMarker() {
@@ -102,12 +134,15 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     * parameter to continue listing your streaming distributions where they left off.
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for
+     * the <code>Marker</code> request parameter to continue listing your RTMP distributions where they left off.
+     * </p>
      * 
      * @param nextMarker
-     *        If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     *        parameter to continue listing your streaming distributions where they left off.
+     *        If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can
+     *        use for the <code>Marker</code> request parameter to continue listing your RTMP distributions where they
+     *        left off.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,10 +152,12 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
-     * The value you provided for the MaxItems request parameter.
+     * <p>
+     * The value you provided for the <code>MaxItems</code> request parameter.
+     * </p>
      * 
      * @param maxItems
-     *        The value you provided for the MaxItems request parameter.
+     *        The value you provided for the <code>MaxItems</code> request parameter.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -128,9 +165,11 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
-     * The value you provided for the MaxItems request parameter.
+     * <p>
+     * The value you provided for the <code>MaxItems</code> request parameter.
+     * </p>
      * 
-     * @return The value you provided for the MaxItems request parameter.
+     * @return The value you provided for the <code>MaxItems</code> request parameter.
      */
 
     public Integer getMaxItems() {
@@ -138,10 +177,12 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
-     * The value you provided for the MaxItems request parameter.
+     * <p>
+     * The value you provided for the <code>MaxItems</code> request parameter.
+     * </p>
      * 
      * @param maxItems
-     *        The value you provided for the MaxItems request parameter.
+     *        The value you provided for the <code>MaxItems</code> request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,14 +192,16 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated,
-     * you can make a follow-up pagination request using the Marker request parameter to retrieve more distributions in
-     * the list.
+     * you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more
+     * distributions in the list.
+     * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether more streaming distributions remain to be listed. If your results were
-     *        truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more
-     *        distributions in the list.
+     *        truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to
+     *        retrieve more distributions in the list.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -166,13 +209,15 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated,
-     * you can make a follow-up pagination request using the Marker request parameter to retrieve more distributions in
-     * the list.
+     * you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more
+     * distributions in the list.
+     * </p>
      * 
      * @return A flag that indicates whether more streaming distributions remain to be listed. If your results were
-     *         truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve
-     *         more distributions in the list.
+     *         truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to
+     *         retrieve more distributions in the list.
      */
 
     public Boolean getIsTruncated() {
@@ -180,14 +225,16 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated,
-     * you can make a follow-up pagination request using the Marker request parameter to retrieve more distributions in
-     * the list.
+     * you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more
+     * distributions in the list.
+     * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether more streaming distributions remain to be listed. If your results were
-     *        truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more
-     *        distributions in the list.
+     *        truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to
+     *        retrieve more distributions in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,13 +244,15 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A flag that indicates whether more streaming distributions remain to be listed. If your results were truncated,
-     * you can make a follow-up pagination request using the Marker request parameter to retrieve more distributions in
-     * the list.
+     * you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more
+     * distributions in the list.
+     * </p>
      * 
      * @return A flag that indicates whether more streaming distributions remain to be listed. If your results were
-     *         truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve
-     *         more distributions in the list.
+     *         truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to
+     *         retrieve more distributions in the list.
      */
 
     public Boolean isTruncated() {
@@ -211,7 +260,9 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of streaming distributions that were created by the current AWS account.
+     * </p>
      * 
      * @param quantity
      *        The number of streaming distributions that were created by the current AWS account.
@@ -222,7 +273,9 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of streaming distributions that were created by the current AWS account.
+     * </p>
      * 
      * @return The number of streaming distributions that were created by the current AWS account.
      */
@@ -232,7 +285,9 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of streaming distributions that were created by the current AWS account.
+     * </p>
      * 
      * @param quantity
      *        The number of streaming distributions that were created by the current AWS account.
@@ -245,11 +300,13 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one StreamingDistributionSummary element for each distribution that was created by
-     * the current AWS account.
+     * <p>
+     * A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution that was
+     * created by the current AWS account.
+     * </p>
      * 
-     * @return A complex type that contains one StreamingDistributionSummary element for each distribution that was
-     *         created by the current AWS account.
+     * @return A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution
+     *         that was created by the current AWS account.
      */
 
     public java.util.List<StreamingDistributionSummary> getItems() {
@@ -260,12 +317,14 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one StreamingDistributionSummary element for each distribution that was created by
-     * the current AWS account.
+     * <p>
+     * A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution that was
+     * created by the current AWS account.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains one StreamingDistributionSummary element for each distribution that was
-     *        created by the current AWS account.
+     *        A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution
+     *        that was created by the current AWS account.
      */
 
     public void setItems(java.util.Collection<StreamingDistributionSummary> items) {
@@ -278,8 +337,10 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one StreamingDistributionSummary element for each distribution that was created by
-     * the current AWS account.
+     * <p>
+     * A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution that was
+     * created by the current AWS account.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -287,8 +348,8 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        A complex type that contains one StreamingDistributionSummary element for each distribution that was
-     *        created by the current AWS account.
+     *        A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution
+     *        that was created by the current AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,12 +364,14 @@ public class StreamingDistributionList implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one StreamingDistributionSummary element for each distribution that was created by
-     * the current AWS account.
+     * <p>
+     * A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution that was
+     * created by the current AWS account.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains one StreamingDistributionSummary element for each distribution that was
-     *        created by the current AWS account.
+     *        A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution
+     *        that was created by the current AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

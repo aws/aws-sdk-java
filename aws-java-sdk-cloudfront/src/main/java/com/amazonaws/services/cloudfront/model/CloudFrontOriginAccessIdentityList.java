@@ -15,38 +15,74 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * The CloudFrontOriginAccessIdentityList type.
+ * <p>
+ * Lists the origin access identities for CloudFront.Send a <code>GET</code> request to the
+ * <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code> resource. The response includes a
+ * <code>CloudFrontOriginAccessIdentityList</code> element with zero or more
+ * <code>CloudFrontOriginAccessIdentitySummary</code> child elements. By default, your entire list of origin access
+ * identities is returned in one single page. If the list is long, you can paginate it using the <code>MaxItems</code>
+ * and <code>Marker</code> parameters.
+ * </p>
  */
 public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneable {
 
-    /** The value you provided for the Marker request parameter. */
+    /**
+     * <p>
+     * Use this when paginating results to indicate where to begin in your list of origin access identities. The results
+     * include identities in the list that occur after the marker. To get the next page of results, set the
+     * <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also
+     * the ID of the last identity on that page).
+     * </p>
+     */
     private String marker;
     /**
-     * If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     * parameter to continue listing your origin access identities where they left off.
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for
+     * the <code>Marker</code> request parameter to continue listing your origin access identities where they left off.
+     * </p>
      */
     private String nextMarker;
-    /** The value you provided for the MaxItems request parameter. */
+    /**
+     * <p>
+     * The maximum number of origin access identities you want in the response body.
+     * </p>
+     */
     private Integer maxItems;
     /**
+     * <p>
      * A flag that indicates whether more origin access identities remain to be listed. If your results were truncated,
-     * you can make a follow-up pagination request using the Marker request parameter to retrieve more items in the
-     * list.
+     * you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more
+     * items in the list.
+     * </p>
      */
     private Boolean isTruncated;
-    /** The number of CloudFront origin access identities that were created by the current AWS account. */
+    /**
+     * <p>
+     * The number of CloudFront origin access identities that were created by the current AWS account.
+     * </p>
+     */
     private Integer quantity;
     /**
-     * A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity
-     * that was created by the current AWS account.
+     * <p>
+     * A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
+     * access identity that was created by the current AWS account.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CloudFrontOriginAccessIdentitySummary> items;
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>
+     * Use this when paginating results to indicate where to begin in your list of origin access identities. The results
+     * include identities in the list that occur after the marker. To get the next page of results, set the
+     * <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also
+     * the ID of the last identity on that page).
+     * </p>
      * 
      * @param marker
-     *        The value you provided for the Marker request parameter.
+     *        Use this when paginating results to indicate where to begin in your list of origin access identities. The
+     *        results include identities in the list that occur after the marker. To get the next page of results, set
+     *        the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response
+     *        (which is also the ID of the last identity on that page).
      */
 
     public void setMarker(String marker) {
@@ -54,9 +90,17 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>
+     * Use this when paginating results to indicate where to begin in your list of origin access identities. The results
+     * include identities in the list that occur after the marker. To get the next page of results, set the
+     * <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also
+     * the ID of the last identity on that page).
+     * </p>
      * 
-     * @return The value you provided for the Marker request parameter.
+     * @return Use this when paginating results to indicate where to begin in your list of origin access identities. The
+     *         results include identities in the list that occur after the marker. To get the next page of results, set
+     *         the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response
+     *         (which is also the ID of the last identity on that page).
      */
 
     public String getMarker() {
@@ -64,10 +108,18 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
-     * The value you provided for the Marker request parameter.
+     * <p>
+     * Use this when paginating results to indicate where to begin in your list of origin access identities. The results
+     * include identities in the list that occur after the marker. To get the next page of results, set the
+     * <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also
+     * the ID of the last identity on that page).
+     * </p>
      * 
      * @param marker
-     *        The value you provided for the Marker request parameter.
+     *        Use this when paginating results to indicate where to begin in your list of origin access identities. The
+     *        results include identities in the list that occur after the marker. To get the next page of results, set
+     *        the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response
+     *        (which is also the ID of the last identity on that page).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,12 +129,15 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     * parameter to continue listing your origin access identities where they left off.
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for
+     * the <code>Marker</code> request parameter to continue listing your origin access identities where they left off.
+     * </p>
      * 
      * @param nextMarker
-     *        If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     *        parameter to continue listing your origin access identities where they left off.
+     *        If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can
+     *        use for the <code>Marker</code> request parameter to continue listing your origin access identities where
+     *        they left off.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -90,11 +145,14 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     * parameter to continue listing your origin access identities where they left off.
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for
+     * the <code>Marker</code> request parameter to continue listing your origin access identities where they left off.
+     * </p>
      * 
-     * @return If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     *         parameter to continue listing your origin access identities where they left off.
+     * @return If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can
+     *         use for the <code>Marker</code> request parameter to continue listing your origin access identities where
+     *         they left off.
      */
 
     public String getNextMarker() {
@@ -102,12 +160,15 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
-     * If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     * parameter to continue listing your origin access identities where they left off.
+     * <p>
+     * If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for
+     * the <code>Marker</code> request parameter to continue listing your origin access identities where they left off.
+     * </p>
      * 
      * @param nextMarker
-     *        If IsTruncated is true, this element is present and contains the value you can use for the Marker request
-     *        parameter to continue listing your origin access identities where they left off.
+     *        If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can
+     *        use for the <code>Marker</code> request parameter to continue listing your origin access identities where
+     *        they left off.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,10 +178,12 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
-     * The value you provided for the MaxItems request parameter.
+     * <p>
+     * The maximum number of origin access identities you want in the response body.
+     * </p>
      * 
      * @param maxItems
-     *        The value you provided for the MaxItems request parameter.
+     *        The maximum number of origin access identities you want in the response body.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -128,9 +191,11 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
-     * The value you provided for the MaxItems request parameter.
+     * <p>
+     * The maximum number of origin access identities you want in the response body.
+     * </p>
      * 
-     * @return The value you provided for the MaxItems request parameter.
+     * @return The maximum number of origin access identities you want in the response body.
      */
 
     public Integer getMaxItems() {
@@ -138,10 +203,12 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
-     * The value you provided for the MaxItems request parameter.
+     * <p>
+     * The maximum number of origin access identities you want in the response body.
+     * </p>
      * 
      * @param maxItems
-     *        The value you provided for the MaxItems request parameter.
+     *        The maximum number of origin access identities you want in the response body.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,14 +218,16 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
+     * <p>
      * A flag that indicates whether more origin access identities remain to be listed. If your results were truncated,
-     * you can make a follow-up pagination request using the Marker request parameter to retrieve more items in the
-     * list.
+     * you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more
+     * items in the list.
+     * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether more origin access identities remain to be listed. If your results were
-     *        truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more
-     *        items in the list.
+     *        truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to
+     *        retrieve more items in the list.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -166,13 +235,15 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
+     * <p>
      * A flag that indicates whether more origin access identities remain to be listed. If your results were truncated,
-     * you can make a follow-up pagination request using the Marker request parameter to retrieve more items in the
-     * list.
+     * you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more
+     * items in the list.
+     * </p>
      * 
      * @return A flag that indicates whether more origin access identities remain to be listed. If your results were
-     *         truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve
-     *         more items in the list.
+     *         truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to
+     *         retrieve more items in the list.
      */
 
     public Boolean getIsTruncated() {
@@ -180,14 +251,16 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
+     * <p>
      * A flag that indicates whether more origin access identities remain to be listed. If your results were truncated,
-     * you can make a follow-up pagination request using the Marker request parameter to retrieve more items in the
-     * list.
+     * you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more
+     * items in the list.
+     * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether more origin access identities remain to be listed. If your results were
-     *        truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve more
-     *        items in the list.
+     *        truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to
+     *        retrieve more items in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,13 +270,15 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
+     * <p>
      * A flag that indicates whether more origin access identities remain to be listed. If your results were truncated,
-     * you can make a follow-up pagination request using the Marker request parameter to retrieve more items in the
-     * list.
+     * you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more
+     * items in the list.
+     * </p>
      * 
      * @return A flag that indicates whether more origin access identities remain to be listed. If your results were
-     *         truncated, you can make a follow-up pagination request using the Marker request parameter to retrieve
-     *         more items in the list.
+     *         truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to
+     *         retrieve more items in the list.
      */
 
     public Boolean isTruncated() {
@@ -211,7 +286,9 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
+     * <p>
      * The number of CloudFront origin access identities that were created by the current AWS account.
+     * </p>
      * 
      * @param quantity
      *        The number of CloudFront origin access identities that were created by the current AWS account.
@@ -222,7 +299,9 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
+     * <p>
      * The number of CloudFront origin access identities that were created by the current AWS account.
+     * </p>
      * 
      * @return The number of CloudFront origin access identities that were created by the current AWS account.
      */
@@ -232,7 +311,9 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
+     * <p>
      * The number of CloudFront origin access identities that were created by the current AWS account.
+     * </p>
      * 
      * @param quantity
      *        The number of CloudFront origin access identities that were created by the current AWS account.
@@ -245,11 +326,13 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
-     * A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity
-     * that was created by the current AWS account.
+     * <p>
+     * A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
+     * access identity that was created by the current AWS account.
+     * </p>
      * 
-     * @return A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access
-     *         identity that was created by the current AWS account.
+     * @return A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each
+     *         origin access identity that was created by the current AWS account.
      */
 
     public java.util.List<CloudFrontOriginAccessIdentitySummary> getItems() {
@@ -260,12 +343,14 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
-     * A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity
-     * that was created by the current AWS account.
+     * <p>
+     * A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
+     * access identity that was created by the current AWS account.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access
-     *        identity that was created by the current AWS account.
+     *        A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each
+     *        origin access identity that was created by the current AWS account.
      */
 
     public void setItems(java.util.Collection<CloudFrontOriginAccessIdentitySummary> items) {
@@ -278,8 +363,10 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
-     * A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity
-     * that was created by the current AWS account.
+     * <p>
+     * A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
+     * access identity that was created by the current AWS account.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -287,8 +374,8 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
      * </p>
      * 
      * @param items
-     *        A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access
-     *        identity that was created by the current AWS account.
+     *        A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each
+     *        origin access identity that was created by the current AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,12 +390,14 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
     }
 
     /**
-     * A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity
-     * that was created by the current AWS account.
+     * <p>
+     * A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
+     * access identity that was created by the current AWS account.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access
-     *        identity that was created by the current AWS account.
+     *        A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each
+     *        origin access identity that was created by the current AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

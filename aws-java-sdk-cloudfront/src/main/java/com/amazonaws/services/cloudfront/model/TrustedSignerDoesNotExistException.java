@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
+ * <p>
  * One or more of your trusted signers do not exist.
+ * </p>
  */
 public class TrustedSignerDoesNotExistException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

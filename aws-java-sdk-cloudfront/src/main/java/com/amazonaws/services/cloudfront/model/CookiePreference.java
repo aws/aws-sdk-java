@@ -15,31 +15,61 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A complex type that specifies the cookie preferences associated with this cache behavior.
+ * <p>
+ * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones.
+ * For more information about forwarding cookies to the origin, see <a
+ * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
+ * Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+ * </p>
  */
 public class CookiePreference implements Serializable, Cloneable {
 
     /**
-     * Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with
-     * this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies
-     * regardless of how many your application uses.
+     * <p>
+     * Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies
+     * specified in the <code>WhitelistedNames</code> complex type.
+     * </p>
+     * <p>
+     * Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify
+     * none for the <code>Forward</code> element.
+     * </p>
      */
     private String forward;
     /**
-     * A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin
-     * that is associated with this cache behavior.
+     * <p>
+     * Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type that
+     * specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if
+     * you want to forward selected cookies, the names of those cookies.
+     * </p>
+     * <p>
+     * If you specify <code>all</code> or none for the value of <code>Forward</code>, omit <code>WhitelistedNames</code>
+     * . If you change the value of <code>Forward</code> from <code>whitelist</code> to all or none and you don't delete
+     * the <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.
+     * </p>
+     * <p>
+     * For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon CloudFront
+     * Limits</a> in the <i>AWS General Reference</i>.
+     * </p>
      */
     private CookieNames whitelistedNames;
 
     /**
-     * Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with
-     * this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies
-     * regardless of how many your application uses.
+     * <p>
+     * Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies
+     * specified in the <code>WhitelistedNames</code> complex type.
+     * </p>
+     * <p>
+     * Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify
+     * none for the <code>Forward</code> element.
+     * </p>
      * 
      * @param forward
-     *        Use this element to specify whether you want CloudFront to forward cookies to the origin that is
-     *        associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront
-     *        forwards all cookies regardless of how many your application uses.
+     *        Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of
+     *        cookies specified in the <code>WhitelistedNames</code> complex type.</p>
+     *        <p>
+     *        Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin,
+     *        specify none for the <code>Forward</code> element.
      * @see ItemSelection
      */
 
@@ -48,13 +78,20 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
-     * Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with
-     * this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies
-     * regardless of how many your application uses.
+     * <p>
+     * Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies
+     * specified in the <code>WhitelistedNames</code> complex type.
+     * </p>
+     * <p>
+     * Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify
+     * none for the <code>Forward</code> element.
+     * </p>
      * 
-     * @return Use this element to specify whether you want CloudFront to forward cookies to the origin that is
-     *         associated with this cache behavior. You can specify all, none or whitelist. If you choose All,
-     *         CloudFront forwards all cookies regardless of how many your application uses.
+     * @return Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of
+     *         cookies specified in the <code>WhitelistedNames</code> complex type.</p>
+     *         <p>
+     *         Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin,
+     *         specify none for the <code>Forward</code> element.
      * @see ItemSelection
      */
 
@@ -63,14 +100,21 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
-     * Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with
-     * this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies
-     * regardless of how many your application uses.
+     * <p>
+     * Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies
+     * specified in the <code>WhitelistedNames</code> complex type.
+     * </p>
+     * <p>
+     * Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify
+     * none for the <code>Forward</code> element.
+     * </p>
      * 
      * @param forward
-     *        Use this element to specify whether you want CloudFront to forward cookies to the origin that is
-     *        associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront
-     *        forwards all cookies regardless of how many your application uses.
+     *        Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of
+     *        cookies specified in the <code>WhitelistedNames</code> complex type.</p>
+     *        <p>
+     *        Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin,
+     *        specify none for the <code>Forward</code> element.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ItemSelection
      */
@@ -81,14 +125,21 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
-     * Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with
-     * this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies
-     * regardless of how many your application uses.
+     * <p>
+     * Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies
+     * specified in the <code>WhitelistedNames</code> complex type.
+     * </p>
+     * <p>
+     * Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify
+     * none for the <code>Forward</code> element.
+     * </p>
      * 
      * @param forward
-     *        Use this element to specify whether you want CloudFront to forward cookies to the origin that is
-     *        associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront
-     *        forwards all cookies regardless of how many your application uses.
+     *        Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of
+     *        cookies specified in the <code>WhitelistedNames</code> complex type.</p>
+     *        <p>
+     *        Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin,
+     *        specify none for the <code>Forward</code> element.
      * @see ItemSelection
      */
 
@@ -97,14 +148,21 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
-     * Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with
-     * this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies
-     * regardless of how many your application uses.
+     * <p>
+     * Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies
+     * specified in the <code>WhitelistedNames</code> complex type.
+     * </p>
+     * <p>
+     * Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify
+     * none for the <code>Forward</code> element.
+     * </p>
      * 
      * @param forward
-     *        Use this element to specify whether you want CloudFront to forward cookies to the origin that is
-     *        associated with this cache behavior. You can specify all, none or whitelist. If you choose All, CloudFront
-     *        forwards all cookies regardless of how many your application uses.
+     *        Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of
+     *        cookies specified in the <code>WhitelistedNames</code> complex type.</p>
+     *        <p>
+     *        Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin,
+     *        specify none for the <code>Forward</code> element.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ItemSelection
      */
@@ -115,12 +173,36 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin
-     * that is associated with this cache behavior.
+     * <p>
+     * Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type that
+     * specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if
+     * you want to forward selected cookies, the names of those cookies.
+     * </p>
+     * <p>
+     * If you specify <code>all</code> or none for the value of <code>Forward</code>, omit <code>WhitelistedNames</code>
+     * . If you change the value of <code>Forward</code> from <code>whitelist</code> to all or none and you don't delete
+     * the <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.
+     * </p>
+     * <p>
+     * For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon CloudFront
+     * Limits</a> in the <i>AWS General Reference</i>.
+     * </p>
      * 
      * @param whitelistedNames
-     *        A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your
-     *        origin that is associated with this cache behavior.
+     *        Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type that
+     *        specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior
+     *        and, if you want to forward selected cookies, the names of those cookies.</p>
+     *        <p>
+     *        If you specify <code>all</code> or none for the value of <code>Forward</code>, omit
+     *        <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code>
+     *        to all or none and you don't delete the <code>WhitelistedNames</code> element and its child elements,
+     *        CloudFront deletes them automatically.
+     *        </p>
+     *        <p>
+     *        For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
+     *        CloudFront Limits</a> in the <i>AWS General Reference</i>.
      */
 
     public void setWhitelistedNames(CookieNames whitelistedNames) {
@@ -128,11 +210,35 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin
-     * that is associated with this cache behavior.
+     * <p>
+     * Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type that
+     * specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if
+     * you want to forward selected cookies, the names of those cookies.
+     * </p>
+     * <p>
+     * If you specify <code>all</code> or none for the value of <code>Forward</code>, omit <code>WhitelistedNames</code>
+     * . If you change the value of <code>Forward</code> from <code>whitelist</code> to all or none and you don't delete
+     * the <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.
+     * </p>
+     * <p>
+     * For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon CloudFront
+     * Limits</a> in the <i>AWS General Reference</i>.
+     * </p>
      * 
-     * @return A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to
-     *         your origin that is associated with this cache behavior.
+     * @return Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type
+     *         that specifies how many different cookies you want CloudFront to forward to the origin for this cache
+     *         behavior and, if you want to forward selected cookies, the names of those cookies.</p>
+     *         <p>
+     *         If you specify <code>all</code> or none for the value of <code>Forward</code>, omit
+     *         <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from
+     *         <code>whitelist</code> to all or none and you don't delete the <code>WhitelistedNames</code> element and
+     *         its child elements, CloudFront deletes them automatically.
+     *         </p>
+     *         <p>
+     *         For the current limit on the number of cookie names that you can whitelist for each cache behavior, see
+     *         <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
+     *         CloudFront Limits</a> in the <i>AWS General Reference</i>.
      */
 
     public CookieNames getWhitelistedNames() {
@@ -140,12 +246,36 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin
-     * that is associated with this cache behavior.
+     * <p>
+     * Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type that
+     * specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if
+     * you want to forward selected cookies, the names of those cookies.
+     * </p>
+     * <p>
+     * If you specify <code>all</code> or none for the value of <code>Forward</code>, omit <code>WhitelistedNames</code>
+     * . If you change the value of <code>Forward</code> from <code>whitelist</code> to all or none and you don't delete
+     * the <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.
+     * </p>
+     * <p>
+     * For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon CloudFront
+     * Limits</a> in the <i>AWS General Reference</i>.
+     * </p>
      * 
      * @param whitelistedNames
-     *        A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your
-     *        origin that is associated with this cache behavior.
+     *        Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type that
+     *        specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior
+     *        and, if you want to forward selected cookies, the names of those cookies.</p>
+     *        <p>
+     *        If you specify <code>all</code> or none for the value of <code>Forward</code>, omit
+     *        <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code>
+     *        to all or none and you don't delete the <code>WhitelistedNames</code> element and its child elements,
+     *        CloudFront deletes them automatically.
+     *        </p>
+     *        <p>
+     *        For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
+     *        CloudFront Limits</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

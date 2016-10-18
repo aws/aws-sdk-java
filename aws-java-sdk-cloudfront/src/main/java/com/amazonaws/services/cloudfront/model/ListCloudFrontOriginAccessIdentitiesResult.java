@@ -15,19 +15,27 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class ListCloudFrontOriginAccessIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** The CloudFrontOriginAccessIdentityList type. */
+    /**
+     * <p>
+     * The <code>CloudFrontOriginAccessIdentityList</code> type.
+     * </p>
+     */
     private CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList;
 
     /**
-     * The CloudFrontOriginAccessIdentityList type.
+     * <p>
+     * The <code>CloudFrontOriginAccessIdentityList</code> type.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentityList
-     *        The CloudFrontOriginAccessIdentityList type.
+     *        The <code>CloudFrontOriginAccessIdentityList</code> type.
      */
 
     public void setCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList) {
@@ -35,9 +43,11 @@ public class ListCloudFrontOriginAccessIdentitiesResult extends com.amazonaws.Am
     }
 
     /**
-     * The CloudFrontOriginAccessIdentityList type.
+     * <p>
+     * The <code>CloudFrontOriginAccessIdentityList</code> type.
+     * </p>
      * 
-     * @return The CloudFrontOriginAccessIdentityList type.
+     * @return The <code>CloudFrontOriginAccessIdentityList</code> type.
      */
 
     public CloudFrontOriginAccessIdentityList getCloudFrontOriginAccessIdentityList() {
@@ -45,10 +55,12 @@ public class ListCloudFrontOriginAccessIdentitiesResult extends com.amazonaws.Am
     }
 
     /**
-     * The CloudFrontOriginAccessIdentityList type.
+     * <p>
+     * The <code>CloudFrontOriginAccessIdentityList</code> type.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentityList
-     *        The CloudFrontOriginAccessIdentityList type.
+     *        The <code>CloudFrontOriginAccessIdentityList</code> type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

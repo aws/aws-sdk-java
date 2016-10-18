@@ -16,17 +16,29 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to update an origin access identity.
+ * </p>
  */
 public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The identity's configuration information. */
+    /**
+     * <p>
+     * The identity's configuration information.
+     * </p>
+     */
     private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
-    /** The identity's id. */
+    /**
+     * <p>
+     * The identity's id.
+     * </p>
+     */
     private String id;
     /**
-     * The value of the ETag header you received when retrieving the identity's configuration. For example:
-     * E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For
+     * example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      */
     private String ifMatch;
 
@@ -46,8 +58,8 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
      * @param id
      *        The identity's id.
      * @param ifMatch
-     *        The value of the ETag header you received when retrieving the identity's configuration. For example:
-     *        E2QWRUHAPOMQZL.
+     *        The value of the <code>ETag</code> header that you received when retrieving the identity's configuration.
+     *        For example: <code>E2QWRUHAPOMQZL</code>.
      */
     public UpdateCloudFrontOriginAccessIdentityRequest(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig, String id, String ifMatch) {
         setCloudFrontOriginAccessIdentityConfig(cloudFrontOriginAccessIdentityConfig);
@@ -56,7 +68,9 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
+     * <p>
      * The identity's configuration information.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentityConfig
      *        The identity's configuration information.
@@ -67,7 +81,9 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
+     * <p>
      * The identity's configuration information.
+     * </p>
      * 
      * @return The identity's configuration information.
      */
@@ -77,7 +93,9 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
+     * <p>
      * The identity's configuration information.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentityConfig
      *        The identity's configuration information.
@@ -91,7 +109,9 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
+     * <p>
      * The identity's id.
+     * </p>
      * 
      * @param id
      *        The identity's id.
@@ -102,7 +122,9 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
+     * <p>
      * The identity's id.
+     * </p>
      * 
      * @return The identity's id.
      */
@@ -112,7 +134,9 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
+     * <p>
      * The identity's id.
+     * </p>
      * 
      * @param id
      *        The identity's id.
@@ -125,12 +149,14 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
-     * The value of the ETag header you received when retrieving the identity's configuration. For example:
-     * E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For
+     * example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param ifMatch
-     *        The value of the ETag header you received when retrieving the identity's configuration. For example:
-     *        E2QWRUHAPOMQZL.
+     *        The value of the <code>ETag</code> header that you received when retrieving the identity's configuration.
+     *        For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public void setIfMatch(String ifMatch) {
@@ -138,11 +164,13 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
-     * The value of the ETag header you received when retrieving the identity's configuration. For example:
-     * E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For
+     * example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
-     * @return The value of the ETag header you received when retrieving the identity's configuration. For example:
-     *         E2QWRUHAPOMQZL.
+     * @return The value of the <code>ETag</code> header that you received when retrieving the identity's configuration.
+     *         For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public String getIfMatch() {
@@ -150,12 +178,14 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
-     * The value of the ETag header you received when retrieving the identity's configuration. For example:
-     * E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For
+     * example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param ifMatch
-     *        The value of the ETag header you received when retrieving the identity's configuration. For example:
-     *        E2QWRUHAPOMQZL.
+     *        The value of the <code>ETag</code> header that you received when retrieving the identity's configuration.
+     *        For example: <code>E2QWRUHAPOMQZL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

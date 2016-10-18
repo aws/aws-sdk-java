@@ -16,17 +16,29 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to remove tags from a CloudFront resource.
+ * </p>
  */
 public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** An ARN of a CloudFront resource. */
+    /**
+     * <p>
+     * An ARN of a CloudFront resource.
+     * </p>
+     */
     private String resource;
-    /** A complex type that contains zero or more Tag key elements. */
+    /**
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> key elements.
+     * </p>
+     */
     private TagKeys tagKeys;
 
     /**
+     * <p>
      * An ARN of a CloudFront resource.
+     * </p>
      * 
      * @param resource
      *        An ARN of a CloudFront resource.
@@ -37,7 +49,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * An ARN of a CloudFront resource.
+     * </p>
      * 
      * @return An ARN of a CloudFront resource.
      */
@@ -47,7 +61,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * An ARN of a CloudFront resource.
+     * </p>
      * 
      * @param resource
      *        An ARN of a CloudFront resource.
@@ -60,10 +76,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * A complex type that contains zero or more Tag key elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> key elements.
+     * </p>
      * 
      * @param tagKeys
-     *        A complex type that contains zero or more Tag key elements.
+     *        A complex type that contains zero or more <code>Tag</code> key elements.
      */
 
     public void setTagKeys(TagKeys tagKeys) {
@@ -71,9 +89,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * A complex type that contains zero or more Tag key elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> key elements.
+     * </p>
      * 
-     * @return A complex type that contains zero or more Tag key elements.
+     * @return A complex type that contains zero or more <code>Tag</code> key elements.
      */
 
     public TagKeys getTagKeys() {
@@ -81,10 +101,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * A complex type that contains zero or more Tag key elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> key elements.
+     * </p>
      * 
      * @param tagKeys
-     *        A complex type that contains zero or more Tag key elements.
+     *        A complex type that contains zero or more <code>Tag</code> key elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

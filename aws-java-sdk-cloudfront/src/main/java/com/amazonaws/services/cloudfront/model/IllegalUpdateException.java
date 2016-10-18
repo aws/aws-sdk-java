@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
- * Origin and CallerReference cannot be updated.
+ * <p>
+ * Origin and <code>CallerReference</code> cannot be updated.
+ * </p>
  */
 public class IllegalUpdateException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

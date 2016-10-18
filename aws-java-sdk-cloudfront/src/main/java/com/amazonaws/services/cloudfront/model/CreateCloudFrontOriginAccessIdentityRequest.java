@@ -16,11 +16,17 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to create a new origin access identity.
+ * </p>
  */
 public class CreateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The origin access identity's configuration information. */
+    /**
+     * <p>
+     * The current configuration information for the identity.
+     * </p>
+     */
     private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
 
     /**
@@ -35,17 +41,19 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
      * setter (with...) methods to initialize any additional object members.
      * 
      * @param cloudFrontOriginAccessIdentityConfig
-     *        The origin access identity's configuration information.
+     *        The current configuration information for the identity.
      */
     public CreateCloudFrontOriginAccessIdentityRequest(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         setCloudFrontOriginAccessIdentityConfig(cloudFrontOriginAccessIdentityConfig);
     }
 
     /**
-     * The origin access identity's configuration information.
+     * <p>
+     * The current configuration information for the identity.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentityConfig
-     *        The origin access identity's configuration information.
+     *        The current configuration information for the identity.
      */
 
     public void setCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
@@ -53,9 +61,11 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
-     * The origin access identity's configuration information.
+     * <p>
+     * The current configuration information for the identity.
+     * </p>
      * 
-     * @return The origin access identity's configuration information.
+     * @return The current configuration information for the identity.
      */
 
     public CloudFrontOriginAccessIdentityConfig getCloudFrontOriginAccessIdentityConfig() {
@@ -63,10 +73,12 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
-     * The origin access identity's configuration information.
+     * <p>
+     * The current configuration information for the identity.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentityConfig
-     *        The origin access identity's configuration information.
+     *        The current configuration information for the identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

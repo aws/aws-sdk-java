@@ -15,22 +15,36 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class CreateStreamingDistributionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The streaming distribution's information. */
+    /**
+     * <p>
+     * The streaming distribution's information.
+     * </p>
+     */
     private StreamingDistribution streamingDistribution;
     /**
+     * <p>
      * The fully qualified URI of the new streaming distribution resource just created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8</code>.
+     * </p>
      */
     private String location;
-    /** The current version of the streaming distribution created. */
+    /**
+     * <p>
+     * The current version of the streaming distribution created.
+     * </p>
+     */
     private String eTag;
 
     /**
+     * <p>
      * The streaming distribution's information.
+     * </p>
      * 
      * @param streamingDistribution
      *        The streaming distribution's information.
@@ -41,7 +55,9 @@ public class CreateStreamingDistributionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
      * The streaming distribution's information.
+     * </p>
      * 
      * @return The streaming distribution's information.
      */
@@ -51,7 +67,9 @@ public class CreateStreamingDistributionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
      * The streaming distribution's information.
+     * </p>
      * 
      * @param streamingDistribution
      *        The streaming distribution's information.
@@ -64,12 +82,14 @@ public class CreateStreamingDistributionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
      * The fully qualified URI of the new streaming distribution resource just created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8</code>.
+     * </p>
      * 
      * @param location
      *        The fully qualified URI of the new streaming distribution resource just created. For example:
-     *        https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     *        <code>https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8</code>.
      */
 
     public void setLocation(String location) {
@@ -77,11 +97,13 @@ public class CreateStreamingDistributionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
      * The fully qualified URI of the new streaming distribution resource just created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8</code>.
+     * </p>
      * 
      * @return The fully qualified URI of the new streaming distribution resource just created. For example:
-     *         https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     *         <code>https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8</code>.
      */
 
     public String getLocation() {
@@ -89,12 +111,14 @@ public class CreateStreamingDistributionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
      * The fully qualified URI of the new streaming distribution resource just created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8</code>.
+     * </p>
      * 
      * @param location
      *        The fully qualified URI of the new streaming distribution resource just created. For example:
-     *        https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     *        <code>https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,7 +128,9 @@ public class CreateStreamingDistributionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
      * The current version of the streaming distribution created.
+     * </p>
      * 
      * @param eTag
      *        The current version of the streaming distribution created.
@@ -115,7 +141,9 @@ public class CreateStreamingDistributionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
      * The current version of the streaming distribution created.
+     * </p>
      * 
      * @return The current version of the streaming distribution created.
      */
@@ -125,7 +153,9 @@ public class CreateStreamingDistributionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
      * The current version of the streaming distribution created.
+     * </p>
      * 
      * @param eTag
      *        The current version of the streaming distribution created.

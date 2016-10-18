@@ -96,6 +96,37 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Associates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+     * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+     * </p>
+     * 
+     * @param addRoleToDBClusterRequest
+     * @return A Java Future containing the result of the AddRoleToDBCluster operation returned by the service.
+     * @sample AmazonRDSAsync.AddRoleToDBCluster
+     */
+    java.util.concurrent.Future<AddRoleToDBClusterResult> addRoleToDBClusterAsync(AddRoleToDBClusterRequest addRoleToDBClusterRequest);
+
+    /**
+     * <p>
+     * Associates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+     * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+     * </p>
+     * 
+     * @param addRoleToDBClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddRoleToDBCluster operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.AddRoleToDBCluster
+     */
+    java.util.concurrent.Future<AddRoleToDBClusterResult> addRoleToDBClusterAsync(AddRoleToDBClusterRequest addRoleToDBClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<AddRoleToDBClusterRequest, AddRoleToDBClusterResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds a source identifier to an existing RDS event notification subscription.
      * </p>
      * 
@@ -3228,6 +3259,37 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DBInstance> rebootDBInstanceAsync(RebootDBInstanceRequest rebootDBInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<RebootDBInstanceRequest, DBInstance> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+     * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+     * </p>
+     * 
+     * @param removeRoleFromDBClusterRequest
+     * @return A Java Future containing the result of the RemoveRoleFromDBCluster operation returned by the service.
+     * @sample AmazonRDSAsync.RemoveRoleFromDBCluster
+     */
+    java.util.concurrent.Future<RemoveRoleFromDBClusterResult> removeRoleFromDBClusterAsync(RemoveRoleFromDBClusterRequest removeRoleFromDBClusterRequest);
+
+    /**
+     * <p>
+     * Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+     * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+     * </p>
+     * 
+     * @param removeRoleFromDBClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveRoleFromDBCluster operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.RemoveRoleFromDBCluster
+     */
+    java.util.concurrent.Future<RemoveRoleFromDBClusterResult> removeRoleFromDBClusterAsync(RemoveRoleFromDBClusterRequest removeRoleFromDBClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveRoleFromDBClusterRequest, RemoveRoleFromDBClusterResult> asyncHandler);
 
     /**
      * <p>

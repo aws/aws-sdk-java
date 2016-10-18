@@ -13,7 +13,7 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
- * The specified tagging for a CloudFront resource is invalid. For more information, see the error text.
+ * 
  */
 public class InvalidTaggingException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

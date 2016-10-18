@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
- * The precondition given in one or more of the request-header fields evaluated to false.
+ * <p>
+ * The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+ * </p>
  */
 public class PreconditionFailedException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

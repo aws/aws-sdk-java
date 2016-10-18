@@ -51,6 +51,10 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
                     context.nextToken();
                     action.setDynamoDB(DynamoDBActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("dynamoDBv2", targetDepth)) {
+                    context.nextToken();
+                    action.setDynamoDBv2(DynamoDBv2ActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("lambda", targetDepth)) {
                     context.nextToken();
                     action.setLambda(LambdaActionJsonUnmarshaller.getInstance().unmarshall(context));

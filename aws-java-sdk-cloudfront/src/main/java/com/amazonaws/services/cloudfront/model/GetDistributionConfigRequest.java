@@ -16,11 +16,17 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to get a distribution configuration.
+ * </p>
  */
 public class GetDistributionConfigRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The distribution's id. */
+    /**
+     * <p>
+     * The distribution's ID.
+     * </p>
+     */
     private String id;
 
     /**
@@ -35,17 +41,19 @@ public class GetDistributionConfigRequest extends com.amazonaws.AmazonWebService
      * methods to initialize any additional object members.
      * 
      * @param id
-     *        The distribution's id.
+     *        The distribution's ID.
      */
     public GetDistributionConfigRequest(String id) {
         setId(id);
     }
 
     /**
-     * The distribution's id.
+     * <p>
+     * The distribution's ID.
+     * </p>
      * 
      * @param id
-     *        The distribution's id.
+     *        The distribution's ID.
      */
 
     public void setId(String id) {
@@ -53,9 +61,11 @@ public class GetDistributionConfigRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * The distribution's id.
+     * <p>
+     * The distribution's ID.
+     * </p>
      * 
-     * @return The distribution's id.
+     * @return The distribution's ID.
      */
 
     public String getId() {
@@ -63,10 +73,12 @@ public class GetDistributionConfigRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * The distribution's id.
+     * <p>
+     * The distribution's ID.
+     * </p>
      * 
      * @param id
-     *        The distribution's id.
+     *        The distribution's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

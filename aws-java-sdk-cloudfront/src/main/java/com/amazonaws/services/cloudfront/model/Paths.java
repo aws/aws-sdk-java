@@ -15,17 +15,32 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A complex type that contains information about the objects that you want to invalidate.
+ * <p>
+ * A complex type that contains information about the objects that you want to invalidate. For more information, see <a
+ * href=
+ * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
+ * >Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
+ * </p>
  */
 public class Paths implements Serializable, Cloneable {
 
-    /** The number of objects that you want to invalidate. */
+    /**
+     * <p>
+     * The number of objects that you want to invalidate.
+     * </p>
+     */
     private Integer quantity;
-    /** A complex type that contains a list of the objects that you want to invalidate. */
+    /**
+     * <p>
+     * A complex type that contains a list of the paths that you want to invalidate.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
+     * <p>
      * The number of objects that you want to invalidate.
+     * </p>
      * 
      * @param quantity
      *        The number of objects that you want to invalidate.
@@ -36,7 +51,9 @@ public class Paths implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of objects that you want to invalidate.
+     * </p>
      * 
      * @return The number of objects that you want to invalidate.
      */
@@ -46,7 +63,9 @@ public class Paths implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of objects that you want to invalidate.
+     * </p>
      * 
      * @param quantity
      *        The number of objects that you want to invalidate.
@@ -59,9 +78,11 @@ public class Paths implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains a list of the objects that you want to invalidate.
+     * <p>
+     * A complex type that contains a list of the paths that you want to invalidate.
+     * </p>
      * 
-     * @return A complex type that contains a list of the objects that you want to invalidate.
+     * @return A complex type that contains a list of the paths that you want to invalidate.
      */
 
     public java.util.List<String> getItems() {
@@ -72,10 +93,12 @@ public class Paths implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains a list of the objects that you want to invalidate.
+     * <p>
+     * A complex type that contains a list of the paths that you want to invalidate.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains a list of the objects that you want to invalidate.
+     *        A complex type that contains a list of the paths that you want to invalidate.
      */
 
     public void setItems(java.util.Collection<String> items) {
@@ -88,7 +111,9 @@ public class Paths implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains a list of the objects that you want to invalidate.
+     * <p>
+     * A complex type that contains a list of the paths that you want to invalidate.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -96,7 +121,7 @@ public class Paths implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        A complex type that contains a list of the objects that you want to invalidate.
+     *        A complex type that contains a list of the paths that you want to invalidate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,10 +136,12 @@ public class Paths implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains a list of the objects that you want to invalidate.
+     * <p>
+     * A complex type that contains a list of the paths that you want to invalidate.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains a list of the objects that you want to invalidate.
+     *        A complex type that contains a list of the paths that you want to invalidate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

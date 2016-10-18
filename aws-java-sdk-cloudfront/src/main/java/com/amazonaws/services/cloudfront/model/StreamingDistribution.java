@@ -15,43 +15,73 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A streaming distribution.
+ * </p>
  */
 public class StreamingDistribution implements Serializable, Cloneable {
 
-    /** The identifier for the streaming distribution. For example: EGTXBD79H29TRA8. */
-    private String id;
     /**
-     * The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     * arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account
-     * Id.
+     * <p>
+     * The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.
+     * </p>
      */
+    private String id;
+
     private String aRN;
     /**
-     * The current status of the streaming distribution. When the status is Deployed, the distribution's information is
-     * fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * The current status of the RTMP distribution. When the status is <code>Deployed</code>, the distribution's
+     * information is propagated to all CloudFront edge locations.
+     * </p>
      */
     private String status;
-    /** The date and time the distribution was last modified. */
+    /**
+     * <p>
+     * The date and time that the distribution was last modified.
+     * </p>
+     */
     private java.util.Date lastModifiedTime;
-    /** The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net. */
+    /**
+     * <p>
+     * The domain name that corresponds to the streaming distribution. For example:
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>.
+     * </p>
+     */
     private String domainName;
     /**
-     * CloudFront automatically adds this element to the response only if you've set up the distribution to serve
-     * private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted
-     * signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if
-     * the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted
-     * signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
+     * <p>
+     * A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex
+     * type for this distribution. These are the accounts that you want to allow to create signed URLs for private
+     * content.
+     * </p>
+     * <p>
+     * The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if
+     * the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the
+     * IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no
+     * <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      */
     private ActiveTrustedSigners activeTrustedSigners;
-    /** The current configuration information for the streaming distribution. */
+    /**
+     * <p>
+     * The current configuration information for the RTMP distribution.
+     * </p>
+     */
     private StreamingDistributionConfig streamingDistributionConfig;
 
     /**
-     * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     * <p>
+     * The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.
+     * </p>
      * 
      * @param id
-     *        The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     *        The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.
      */
 
     public void setId(String id) {
@@ -59,9 +89,11 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     * <p>
+     * The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.
+     * </p>
      * 
-     * @return The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     * @return The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.
      */
 
     public String getId() {
@@ -69,10 +101,12 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     * <p>
+     * The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.
+     * </p>
      * 
      * @param id
-     *        The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
+     *        The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,14 +116,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     * arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account
-     * Id.
-     * 
      * @param aRN
-     *        The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     *        arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS
-     *        account Id.
      */
 
     public void setARN(String aRN) {
@@ -97,13 +124,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     * arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account
-     * Id.
-     * 
-     * @return The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     *         arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS
-     *         account Id.
+     * @return
      */
 
     public String getARN() {
@@ -111,14 +132,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     * arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account
-     * Id.
-     * 
      * @param aRN
-     *        The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     *        arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS
-     *        account Id.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,12 +142,14 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The current status of the streaming distribution. When the status is Deployed, the distribution's information is
-     * fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * The current status of the RTMP distribution. When the status is <code>Deployed</code>, the distribution's
+     * information is propagated to all CloudFront edge locations.
+     * </p>
      * 
      * @param status
-     *        The current status of the streaming distribution. When the status is Deployed, the distribution's
-     *        information is fully propagated throughout the Amazon CloudFront system.
+     *        The current status of the RTMP distribution. When the status is <code>Deployed</code>, the distribution's
+     *        information is propagated to all CloudFront edge locations.
      */
 
     public void setStatus(String status) {
@@ -141,11 +157,13 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The current status of the streaming distribution. When the status is Deployed, the distribution's information is
-     * fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * The current status of the RTMP distribution. When the status is <code>Deployed</code>, the distribution's
+     * information is propagated to all CloudFront edge locations.
+     * </p>
      * 
-     * @return The current status of the streaming distribution. When the status is Deployed, the distribution's
-     *         information is fully propagated throughout the Amazon CloudFront system.
+     * @return The current status of the RTMP distribution. When the status is <code>Deployed</code>, the distribution's
+     *         information is propagated to all CloudFront edge locations.
      */
 
     public String getStatus() {
@@ -153,12 +171,14 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The current status of the streaming distribution. When the status is Deployed, the distribution's information is
-     * fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * The current status of the RTMP distribution. When the status is <code>Deployed</code>, the distribution's
+     * information is propagated to all CloudFront edge locations.
+     * </p>
      * 
      * @param status
-     *        The current status of the streaming distribution. When the status is Deployed, the distribution's
-     *        information is fully propagated throughout the Amazon CloudFront system.
+     *        The current status of the RTMP distribution. When the status is <code>Deployed</code>, the distribution's
+     *        information is propagated to all CloudFront edge locations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,10 +188,12 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>
+     * The date and time that the distribution was last modified.
+     * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time the distribution was last modified.
+     *        The date and time that the distribution was last modified.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -179,9 +201,11 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>
+     * The date and time that the distribution was last modified.
+     * </p>
      * 
-     * @return The date and time the distribution was last modified.
+     * @return The date and time that the distribution was last modified.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -189,10 +213,12 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The date and time the distribution was last modified.
+     * <p>
+     * The date and time that the distribution was last modified.
+     * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time the distribution was last modified.
+     *        The date and time that the distribution was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,10 +228,14 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
+     * <p>
+     * The domain name that corresponds to the streaming distribution. For example:
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>.
+     * </p>
      * 
      * @param domainName
-     *        The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
+     *        The domain name that corresponds to the streaming distribution. For example:
+     *        <code>s5c39gqb8ow64r.cloudfront.net</code>.
      */
 
     public void setDomainName(String domainName) {
@@ -213,9 +243,13 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
+     * <p>
+     * The domain name that corresponds to the streaming distribution. For example:
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>.
+     * </p>
      * 
-     * @return The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
+     * @return The domain name that corresponds to the streaming distribution. For example:
+     *         <code>s5c39gqb8ow64r.cloudfront.net</code>.
      */
 
     public String getDomainName() {
@@ -223,10 +257,14 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
+     * <p>
+     * The domain name that corresponds to the streaming distribution. For example:
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>.
+     * </p>
      * 
      * @param domainName
-     *        The domain name corresponding to the streaming distribution. For example: s5c39gqb8ow64r.cloudfront.net.
+     *        The domain name that corresponds to the streaming distribution. For example:
+     *        <code>s5c39gqb8ow64r.cloudfront.net</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,19 +274,38 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * CloudFront automatically adds this element to the response only if you've set up the distribution to serve
-     * private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted
-     * signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if
-     * the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted
-     * signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
+     * <p>
+     * A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex
+     * type for this distribution. These are the accounts that you want to allow to create signed URLs for private
+     * content.
+     * </p>
+     * <p>
+     * The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if
+     * the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the
+     * IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no
+     * <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @param activeTrustedSigners
-     *        CloudFront automatically adds this element to the response only if you've set up the distribution to serve
-     *        private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each
-     *        trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty
-     *        Self element if the signer is you). The Signer element also includes the IDs of any active key pairs
-     *        associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that
-     *        signer can't create working signed URLs.
+     *        A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code>
+     *        complex type for this distribution. These are the accounts that you want to allow to create signed URLs
+     *        for private content.</p>
+     *        <p>
+     *        The <code>Signer</code> complex type lists the AWS account number of the trusted signer or
+     *        <code>self</code> if the signer is the AWS account that created the distribution. The <code>Signer</code>
+     *        element also includes the IDs of any active CloudFront key pairs that are associated with the trusted
+     *        signer's AWS account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer
+     *        can't create signed URLs.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setActiveTrustedSigners(ActiveTrustedSigners activeTrustedSigners) {
@@ -256,18 +313,37 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * CloudFront automatically adds this element to the response only if you've set up the distribution to serve
-     * private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted
-     * signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if
-     * the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted
-     * signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
+     * <p>
+     * A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex
+     * type for this distribution. These are the accounts that you want to allow to create signed URLs for private
+     * content.
+     * </p>
+     * <p>
+     * The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if
+     * the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the
+     * IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no
+     * <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      * 
-     * @return CloudFront automatically adds this element to the response only if you've set up the distribution to
-     *         serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of
-     *         for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or
-     *         an empty Self element if the signer is you). The Signer element also includes the IDs of any active key
-     *         pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer,
-     *         that signer can't create working signed URLs.
+     * @return A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code>
+     *         complex type for this distribution. These are the accounts that you want to allow to create signed URLs
+     *         for private content.</p>
+     *         <p>
+     *         The <code>Signer</code> complex type lists the AWS account number of the trusted signer or
+     *         <code>self</code> if the signer is the AWS account that created the distribution. The <code>Signer</code>
+     *         element also includes the IDs of any active CloudFront key pairs that are associated with the trusted
+     *         signer's AWS account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer
+     *         can't create signed URLs.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *         Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public ActiveTrustedSigners getActiveTrustedSigners() {
@@ -275,19 +351,38 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * CloudFront automatically adds this element to the response only if you've set up the distribution to serve
-     * private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted
-     * signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if
-     * the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted
-     * signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
+     * <p>
+     * A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex
+     * type for this distribution. These are the accounts that you want to allow to create signed URLs for private
+     * content.
+     * </p>
+     * <p>
+     * The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if
+     * the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the
+     * IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no
+     * <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @param activeTrustedSigners
-     *        CloudFront automatically adds this element to the response only if you've set up the distribution to serve
-     *        private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each
-     *        trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty
-     *        Self element if the signer is you). The Signer element also includes the IDs of any active key pairs
-     *        associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that
-     *        signer can't create working signed URLs.
+     *        A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code>
+     *        complex type for this distribution. These are the accounts that you want to allow to create signed URLs
+     *        for private content.</p>
+     *        <p>
+     *        The <code>Signer</code> complex type lists the AWS account number of the trusted signer or
+     *        <code>self</code> if the signer is the AWS account that created the distribution. The <code>Signer</code>
+     *        element also includes the IDs of any active CloudFront key pairs that are associated with the trusted
+     *        signer's AWS account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer
+     *        can't create signed URLs.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,10 +392,12 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The current configuration information for the streaming distribution.
+     * <p>
+     * The current configuration information for the RTMP distribution.
+     * </p>
      * 
      * @param streamingDistributionConfig
-     *        The current configuration information for the streaming distribution.
+     *        The current configuration information for the RTMP distribution.
      */
 
     public void setStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig) {
@@ -308,9 +405,11 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The current configuration information for the streaming distribution.
+     * <p>
+     * The current configuration information for the RTMP distribution.
+     * </p>
      * 
-     * @return The current configuration information for the streaming distribution.
+     * @return The current configuration information for the RTMP distribution.
      */
 
     public StreamingDistributionConfig getStreamingDistributionConfig() {
@@ -318,10 +417,12 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * The current configuration information for the streaming distribution.
+     * <p>
+     * The current configuration information for the RTMP distribution.
+     * </p>
      * 
      * @param streamingDistributionConfig
-     *        The current configuration information for the streaming distribution.
+     *        The current configuration information for the RTMP distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

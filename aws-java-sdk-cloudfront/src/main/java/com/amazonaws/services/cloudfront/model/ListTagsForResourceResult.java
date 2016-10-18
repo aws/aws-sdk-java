@@ -15,18 +15,26 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** A complex type that contains zero or more Tag elements. */
+    /**
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
+     */
     private Tags tags;
 
     /**
-     * A complex type that contains zero or more Tag elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
      * 
      * @param tags
-     *        A complex type that contains zero or more Tag elements.
+     *        A complex type that contains zero or more <code>Tag</code> elements.
      */
 
     public void setTags(Tags tags) {
@@ -34,9 +42,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * A complex type that contains zero or more Tag elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
      * 
-     * @return A complex type that contains zero or more Tag elements.
+     * @return A complex type that contains zero or more <code>Tag</code> elements.
      */
 
     public Tags getTags() {
@@ -44,10 +54,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * A complex type that contains zero or more Tag elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
      * 
      * @param tags
-     *        A complex type that contains zero or more Tag elements.
+     *        A complex type that contains zero or more <code>Tag</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

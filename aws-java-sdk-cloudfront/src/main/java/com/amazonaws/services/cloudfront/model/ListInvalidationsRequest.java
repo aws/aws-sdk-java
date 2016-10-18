@@ -16,21 +16,33 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to list invalidations.
+ * </p>
  */
 public class ListInvalidationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The distribution's id. */
+    /**
+     * <p>
+     * The distribution's ID.
+     * </p>
+     */
     private String distributionId;
     /**
+     * <p>
      * Use this parameter when paginating results to indicate where to begin in your list of invalidation batches.
      * Because the results are returned in decreasing order from most recent to oldest, the most recent results are on
-     * the first page, the second page will contain earlier results, and so on. To get the next page of results, set the
-     * Marker to the value of the NextMarker from the current page's response. This value is the same as the ID of the
-     * last invalidation batch on that page.
+     * the first page, the second page will contain earlier results, and so on. To get the next page of results, set
+     * <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is
+     * the same as the ID of the last invalidation batch on that page.
+     * </p>
      */
     private String marker;
-    /** The maximum number of invalidation batches you want in the response body. */
+    /**
+     * <p>
+     * The maximum number of invalidation batches that you want in the response body.
+     * </p>
+     */
     private String maxItems;
 
     /**
@@ -45,17 +57,19 @@ public class ListInvalidationsRequest extends com.amazonaws.AmazonWebServiceRequ
      * methods to initialize any additional object members.
      * 
      * @param distributionId
-     *        The distribution's id.
+     *        The distribution's ID.
      */
     public ListInvalidationsRequest(String distributionId) {
         setDistributionId(distributionId);
     }
 
     /**
-     * The distribution's id.
+     * <p>
+     * The distribution's ID.
+     * </p>
      * 
      * @param distributionId
-     *        The distribution's id.
+     *        The distribution's ID.
      */
 
     public void setDistributionId(String distributionId) {
@@ -63,9 +77,11 @@ public class ListInvalidationsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The distribution's id.
+     * <p>
+     * The distribution's ID.
+     * </p>
      * 
-     * @return The distribution's id.
+     * @return The distribution's ID.
      */
 
     public String getDistributionId() {
@@ -73,10 +89,12 @@ public class ListInvalidationsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The distribution's id.
+     * <p>
+     * The distribution's ID.
+     * </p>
      * 
      * @param distributionId
-     *        The distribution's id.
+     *        The distribution's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,18 +104,20 @@ public class ListInvalidationsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
      * Use this parameter when paginating results to indicate where to begin in your list of invalidation batches.
      * Because the results are returned in decreasing order from most recent to oldest, the most recent results are on
-     * the first page, the second page will contain earlier results, and so on. To get the next page of results, set the
-     * Marker to the value of the NextMarker from the current page's response. This value is the same as the ID of the
-     * last invalidation batch on that page.
+     * the first page, the second page will contain earlier results, and so on. To get the next page of results, set
+     * <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is
+     * the same as the ID of the last invalidation batch on that page.
+     * </p>
      * 
      * @param marker
      *        Use this parameter when paginating results to indicate where to begin in your list of invalidation
      *        batches. Because the results are returned in decreasing order from most recent to oldest, the most recent
      *        results are on the first page, the second page will contain earlier results, and so on. To get the next
-     *        page of results, set the Marker to the value of the NextMarker from the current page's response. This
-     *        value is the same as the ID of the last invalidation batch on that page.
+     *        page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current
+     *        page's response. This value is the same as the ID of the last invalidation batch on that page.
      */
 
     public void setMarker(String marker) {
@@ -105,17 +125,19 @@ public class ListInvalidationsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
      * Use this parameter when paginating results to indicate where to begin in your list of invalidation batches.
      * Because the results are returned in decreasing order from most recent to oldest, the most recent results are on
-     * the first page, the second page will contain earlier results, and so on. To get the next page of results, set the
-     * Marker to the value of the NextMarker from the current page's response. This value is the same as the ID of the
-     * last invalidation batch on that page.
+     * the first page, the second page will contain earlier results, and so on. To get the next page of results, set
+     * <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is
+     * the same as the ID of the last invalidation batch on that page.
+     * </p>
      * 
      * @return Use this parameter when paginating results to indicate where to begin in your list of invalidation
      *         batches. Because the results are returned in decreasing order from most recent to oldest, the most recent
      *         results are on the first page, the second page will contain earlier results, and so on. To get the next
-     *         page of results, set the Marker to the value of the NextMarker from the current page's response. This
-     *         value is the same as the ID of the last invalidation batch on that page.
+     *         page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current
+     *         page's response. This value is the same as the ID of the last invalidation batch on that page.
      */
 
     public String getMarker() {
@@ -123,18 +145,20 @@ public class ListInvalidationsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
      * Use this parameter when paginating results to indicate where to begin in your list of invalidation batches.
      * Because the results are returned in decreasing order from most recent to oldest, the most recent results are on
-     * the first page, the second page will contain earlier results, and so on. To get the next page of results, set the
-     * Marker to the value of the NextMarker from the current page's response. This value is the same as the ID of the
-     * last invalidation batch on that page.
+     * the first page, the second page will contain earlier results, and so on. To get the next page of results, set
+     * <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is
+     * the same as the ID of the last invalidation batch on that page.
+     * </p>
      * 
      * @param marker
      *        Use this parameter when paginating results to indicate where to begin in your list of invalidation
      *        batches. Because the results are returned in decreasing order from most recent to oldest, the most recent
      *        results are on the first page, the second page will contain earlier results, and so on. To get the next
-     *        page of results, set the Marker to the value of the NextMarker from the current page's response. This
-     *        value is the same as the ID of the last invalidation batch on that page.
+     *        page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current
+     *        page's response. This value is the same as the ID of the last invalidation batch on that page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,10 +168,12 @@ public class ListInvalidationsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The maximum number of invalidation batches you want in the response body.
+     * <p>
+     * The maximum number of invalidation batches that you want in the response body.
+     * </p>
      * 
      * @param maxItems
-     *        The maximum number of invalidation batches you want in the response body.
+     *        The maximum number of invalidation batches that you want in the response body.
      */
 
     public void setMaxItems(String maxItems) {
@@ -155,9 +181,11 @@ public class ListInvalidationsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The maximum number of invalidation batches you want in the response body.
+     * <p>
+     * The maximum number of invalidation batches that you want in the response body.
+     * </p>
      * 
-     * @return The maximum number of invalidation batches you want in the response body.
+     * @return The maximum number of invalidation batches that you want in the response body.
      */
 
     public String getMaxItems() {
@@ -165,10 +193,12 @@ public class ListInvalidationsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The maximum number of invalidation batches you want in the response body.
+     * <p>
+     * The maximum number of invalidation batches that you want in the response body.
+     * </p>
      * 
      * @param maxItems
-     *        The maximum number of invalidation batches you want in the response body.
+     *        The maximum number of invalidation batches that you want in the response body.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

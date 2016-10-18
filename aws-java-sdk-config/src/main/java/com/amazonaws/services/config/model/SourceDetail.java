@@ -25,8 +25,6 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * </p>
-     * <p>
      * The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.
      * </p>
      */
@@ -61,14 +59,10 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * </p>
-     * <p>
      * The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.
      * </p>
      * 
      * @param eventSource
-     *        </p>
-     *        <p>
      *        The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.
      * @see EventSource
      */
@@ -79,14 +73,10 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * </p>
-     * <p>
      * The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.
      * </p>
      * 
-     * @return </p>
-     *         <p>
-     *         The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.
+     * @return The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.
      * @see EventSource
      */
 
@@ -96,14 +86,10 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * </p>
-     * <p>
      * The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.
      * </p>
      * 
      * @param eventSource
-     *        </p>
-     *        <p>
      *        The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventSource
@@ -116,14 +102,10 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * </p>
-     * <p>
      * The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.
      * </p>
      * 
      * @param eventSource
-     *        </p>
-     *        <p>
      *        The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.
      * @see EventSource
      */
@@ -134,14 +116,10 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * </p>
-     * <p>
      * The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.
      * </p>
      * 
      * @param eventSource
-     *        </p>
-     *        <p>
      *        The source of the event, such as an AWS service, that triggers AWS Config to evaluate your AWS resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventSource

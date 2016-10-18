@@ -16,13 +16,23 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to create an invalidation.
+ * </p>
  */
 public class CreateInvalidationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The distribution's id. */
+    /**
+     * <p>
+     * The distribution's id.
+     * </p>
+     */
     private String distributionId;
-    /** The batch information for the invalidation. */
+    /**
+     * <p>
+     * The batch information for the invalidation.
+     * </p>
+     */
     private InvalidationBatch invalidationBatch;
 
     /**
@@ -47,7 +57,9 @@ public class CreateInvalidationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The distribution's id.
+     * </p>
      * 
      * @param distributionId
      *        The distribution's id.
@@ -58,7 +70,9 @@ public class CreateInvalidationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The distribution's id.
+     * </p>
      * 
      * @return The distribution's id.
      */
@@ -68,7 +82,9 @@ public class CreateInvalidationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The distribution's id.
+     * </p>
      * 
      * @param distributionId
      *        The distribution's id.
@@ -81,7 +97,9 @@ public class CreateInvalidationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The batch information for the invalidation.
+     * </p>
      * 
      * @param invalidationBatch
      *        The batch information for the invalidation.
@@ -92,7 +110,9 @@ public class CreateInvalidationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The batch information for the invalidation.
+     * </p>
      * 
      * @return The batch information for the invalidation.
      */
@@ -102,7 +122,9 @@ public class CreateInvalidationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The batch information for the invalidation.
+     * </p>
      * 
      * @param invalidationBatch
      *        The batch information for the invalidation.

@@ -15,22 +15,36 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class CreateDistributionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The distribution's information. */
+    /**
+     * <p>
+     * The distribution's information.
+     * </p>
+     */
     private Distribution distribution;
     /**
+     * <p>
      * The fully qualified URI of the new distribution resource just created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+     * </p>
      */
     private String location;
-    /** The current version of the distribution created. */
+    /**
+     * <p>
+     * The current version of the distribution created.
+     * </p>
+     */
     private String eTag;
 
     /**
+     * <p>
      * The distribution's information.
+     * </p>
      * 
      * @param distribution
      *        The distribution's information.
@@ -41,7 +55,9 @@ public class CreateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The distribution's information.
+     * </p>
      * 
      * @return The distribution's information.
      */
@@ -51,7 +67,9 @@ public class CreateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The distribution's information.
+     * </p>
      * 
      * @param distribution
      *        The distribution's information.
@@ -64,12 +82,14 @@ public class CreateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The fully qualified URI of the new distribution resource just created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param location
      *        The fully qualified URI of the new distribution resource just created. For example:
-     *        https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     *        <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
      */
 
     public void setLocation(String location) {
@@ -77,11 +97,13 @@ public class CreateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The fully qualified URI of the new distribution resource just created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @return The fully qualified URI of the new distribution resource just created. For example:
-     *         https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     *         <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
      */
 
     public String getLocation() {
@@ -89,12 +111,14 @@ public class CreateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The fully qualified URI of the new distribution resource just created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param location
      *        The fully qualified URI of the new distribution resource just created. For example:
-     *        https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     *        <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,7 +128,9 @@ public class CreateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The current version of the distribution created.
+     * </p>
      * 
      * @param eTag
      *        The current version of the distribution created.
@@ -115,7 +141,9 @@ public class CreateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The current version of the distribution created.
+     * </p>
      * 
      * @return The current version of the distribution created.
      */
@@ -125,7 +153,9 @@ public class CreateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The current version of the distribution created.
+     * </p>
      * 
      * @param eTag
      *        The current version of the distribution created.

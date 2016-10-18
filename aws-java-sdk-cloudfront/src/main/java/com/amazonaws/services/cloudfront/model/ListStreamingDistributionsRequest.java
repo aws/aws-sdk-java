@@ -16,31 +16,32 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to list your streaming distributions.
+ * </p>
  */
 public class ListStreamingDistributionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Use this when paginating results to indicate where to begin in your list of streaming distributions. The results
-     * include distributions in the list that occur after the marker. To get the next page of results, set the Marker to
-     * the value of the NextMarker from the current page's response (which is also the ID of the last distribution on
-     * that page).
+     * <p>
+     * The value that you provided for the <code>Marker</code> request parameter.
+     * </p>
      */
     private String marker;
-    /** The maximum number of streaming distributions you want in the response body. */
+    /**
+     * <p>
+     * The value that you provided for the <code>MaxItems</code> request parameter.
+     * </p>
+     */
     private String maxItems;
 
     /**
-     * Use this when paginating results to indicate where to begin in your list of streaming distributions. The results
-     * include distributions in the list that occur after the marker. To get the next page of results, set the Marker to
-     * the value of the NextMarker from the current page's response (which is also the ID of the last distribution on
-     * that page).
+     * <p>
+     * The value that you provided for the <code>Marker</code> request parameter.
+     * </p>
      * 
      * @param marker
-     *        Use this when paginating results to indicate where to begin in your list of streaming distributions. The
-     *        results include distributions in the list that occur after the marker. To get the next page of results,
-     *        set the Marker to the value of the NextMarker from the current page's response (which is also the ID of
-     *        the last distribution on that page).
+     *        The value that you provided for the <code>Marker</code> request parameter.
      */
 
     public void setMarker(String marker) {
@@ -48,15 +49,11 @@ public class ListStreamingDistributionsRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Use this when paginating results to indicate where to begin in your list of streaming distributions. The results
-     * include distributions in the list that occur after the marker. To get the next page of results, set the Marker to
-     * the value of the NextMarker from the current page's response (which is also the ID of the last distribution on
-     * that page).
+     * <p>
+     * The value that you provided for the <code>Marker</code> request parameter.
+     * </p>
      * 
-     * @return Use this when paginating results to indicate where to begin in your list of streaming distributions. The
-     *         results include distributions in the list that occur after the marker. To get the next page of results,
-     *         set the Marker to the value of the NextMarker from the current page's response (which is also the ID of
-     *         the last distribution on that page).
+     * @return The value that you provided for the <code>Marker</code> request parameter.
      */
 
     public String getMarker() {
@@ -64,16 +61,12 @@ public class ListStreamingDistributionsRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Use this when paginating results to indicate where to begin in your list of streaming distributions. The results
-     * include distributions in the list that occur after the marker. To get the next page of results, set the Marker to
-     * the value of the NextMarker from the current page's response (which is also the ID of the last distribution on
-     * that page).
+     * <p>
+     * The value that you provided for the <code>Marker</code> request parameter.
+     * </p>
      * 
      * @param marker
-     *        Use this when paginating results to indicate where to begin in your list of streaming distributions. The
-     *        results include distributions in the list that occur after the marker. To get the next page of results,
-     *        set the Marker to the value of the NextMarker from the current page's response (which is also the ID of
-     *        the last distribution on that page).
+     *        The value that you provided for the <code>Marker</code> request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +76,12 @@ public class ListStreamingDistributionsRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * The maximum number of streaming distributions you want in the response body.
+     * <p>
+     * The value that you provided for the <code>MaxItems</code> request parameter.
+     * </p>
      * 
      * @param maxItems
-     *        The maximum number of streaming distributions you want in the response body.
+     *        The value that you provided for the <code>MaxItems</code> request parameter.
      */
 
     public void setMaxItems(String maxItems) {
@@ -94,9 +89,11 @@ public class ListStreamingDistributionsRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * The maximum number of streaming distributions you want in the response body.
+     * <p>
+     * The value that you provided for the <code>MaxItems</code> request parameter.
+     * </p>
      * 
-     * @return The maximum number of streaming distributions you want in the response body.
+     * @return The value that you provided for the <code>MaxItems</code> request parameter.
      */
 
     public String getMaxItems() {
@@ -104,10 +101,12 @@ public class ListStreamingDistributionsRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * The maximum number of streaming distributions you want in the response body.
+     * <p>
+     * The value that you provided for the <code>MaxItems</code> request parameter.
+     * </p>
      * 
      * @param maxItems
-     *        The maximum number of streaming distributions you want in the response body.
+     *        The value that you provided for the <code>MaxItems</code> request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

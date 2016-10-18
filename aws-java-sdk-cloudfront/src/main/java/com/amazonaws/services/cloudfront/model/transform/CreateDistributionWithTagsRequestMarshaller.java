@@ -50,7 +50,7 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2016-09-07/distribution?WithTags";
+        String uriResourcePath = "/2016-09-29/distribution?WithTags";
 
         uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
 
@@ -58,7 +58,7 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-09-07/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-09-29/");
 
             DistributionConfigWithTags distributionConfigWithTags = createDistributionWithTagsRequest.getDistributionConfigWithTags();
             if (distributionConfigWithTags != null) {
@@ -769,6 +769,10 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
 
                     if (distributionConfig.getHttpVersion() != null) {
                         xmlWriter.startElement("HttpVersion").value(distributionConfig.getHttpVersion()).endElement();
+                    }
+
+                    if (distributionConfig.getIsIPV6Enabled() != null) {
+                        xmlWriter.startElement("IsIPV6Enabled").value(distributionConfig.getIsIPV6Enabled()).endElement();
                     }
                     xmlWriter.endElement();
                 }

@@ -451,7 +451,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * 
      * @param maximumExecutionFrequency
      *        The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
-     *        <code>MaximumExecutionFrequency</code> when: </p>
+     *        <code>MaximumExecutionFrequency</code> when:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -495,7 +495,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * </p>
      * 
      * @return The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
-     *         <code>MaximumExecutionFrequency</code> when: </p>
+     *         <code>MaximumExecutionFrequency</code> when:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -540,7 +540,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * 
      * @param maximumExecutionFrequency
      *        The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
-     *        <code>MaximumExecutionFrequency</code> when: </p>
+     *        <code>MaximumExecutionFrequency</code> when:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -587,7 +587,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * 
      * @param maximumExecutionFrequency
      *        The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
-     *        <code>MaximumExecutionFrequency</code> when: </p>
+     *        <code>MaximumExecutionFrequency</code> when:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -632,7 +632,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * 
      * @param maximumExecutionFrequency
      *        The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
-     *        <code>MaximumExecutionFrequency</code> when: </p>
+     *        <code>MaximumExecutionFrequency</code> when:</p>
      *        <ul>
      *        <li>
      *        <p>

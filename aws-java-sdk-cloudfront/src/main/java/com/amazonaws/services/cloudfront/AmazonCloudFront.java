@@ -23,9 +23,9 @@ import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
  * <p>
  * <fullname>Amazon CloudFront</fullname>
  * <p>
- * Amazon CloudFront is a global content delivery network (CDN) service that accelerates delivery of your websites,
- * APIs, video content or other web assets. It integrates with other Amazon Web Services products to give developers and
- * businesses an easy way to accelerate content to end users with no minimum usage commitments.
+ * This is the <i>Amazon CloudFront API Reference</i>. This guide is for developers who need detailed information about
+ * the CloudFront API actions, data types, and errors. For detailed information about CloudFront features and their
+ * associated API calls, see the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  */
 public interface AmazonCloudFront {
@@ -84,15 +84,21 @@ public interface AmazonCloudFront {
     void setRegion(Region region);
 
     /**
-     * Create a new origin access identity.
+     * <p>
+     * Creates a new origin access identity. If you're using Amazon S3 for your origin, you can use an origin access
+     * identity to require users to access your content using a CloudFront URL instead of the Amazon S3 URL. For more
+     * information about how to use origin access identities, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @param createCloudFrontOriginAccessIdentityRequest
      *        The request to create a new origin access identity.
      * @return Result of the CreateCloudFrontOriginAccessIdentity operation returned by the service.
      * @throws CloudFrontOriginAccessIdentityAlreadyExistsException
-     *         If the CallerReference is a value you already sent in a previous request to create an identity but the
-     *         content of the CloudFrontOriginAccessIdentityConfig is different from the original request, CloudFront
-     *         returns a CloudFrontOriginAccessIdentityAlreadyExists error.
+     *         If the <code>CallerReference</code> is a value you already sent in a previous request to create an
+     *         identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the
+     *         original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.
      * @throws MissingBodyException
      *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws TooManyCloudFrontOriginAccessIdentitiesException
@@ -100,14 +106,17 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InconsistentQuantitiesException
-     *         The value of Quantity and the size of Items do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.CreateCloudFrontOriginAccessIdentity
      */
     CreateCloudFrontOriginAccessIdentityResult createCloudFrontOriginAccessIdentity(
             CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest);
 
     /**
-     * Create a new distribution.
+     * <p>
+     * Creates a new web distribution. Send a <code>GET</code> request to the
+     * <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.
+     * </p>
      * 
      * @param createDistributionRequest
      *        The request to create a new distribution.
@@ -144,30 +153,30 @@ public interface AmazonCloudFront {
      *         The argument is invalid.
      * @throws InvalidRequiredProtocolException
      *         This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request,
-     *         or omit the RequiredProtocols element from your distribution configuration.
+     *         or omit the <code>RequiredProtocols</code> element from your distribution configuration.
      * @throws NoSuchOriginException
-     *         No origin exists with the specified Origin Id.
+     *         No origin exists with the specified <code>Origin Id</code>.
      * @throws TooManyOriginsException
-     *         You cannot create anymore origins for the distribution.
+     *         You cannot create more origins for the distribution.
      * @throws TooManyCacheBehaviorsException
-     *         You cannot create anymore cache behaviors for the distribution.
+     *         You cannot create more cache behaviors for the distribution.
      * @throws TooManyCookieNamesInWhiteListException
      *         Your request contains more cookie names in the whitelist than are allowed per cache behavior.
      * @throws InvalidForwardCookiesException
-     *         Your request contains forward cookies option which doesn't match with the expectation for the whitelisted
-     *         list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie
-     *         names is missing when expected.
+     *         Your request contains forward cookies option which doesn't match with the expectation for the
+     *         <code>whitelisted</code> list of cookie names. Either list of cookie names has been specified when not
+     *         allowed or list of cookie names is missing when expected.
      * @throws TooManyHeadersInForwardedValuesException
      * @throws InvalidHeadersForS3OriginException
      * @throws InconsistentQuantitiesException
-     *         The value of Quantity and the size of Items do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @throws TooManyCertificatesException
-     *         You cannot create anymore custom ssl certificates.
+     *         You cannot create anymore custom SSL/TLS certificates.
      * @throws InvalidLocationCodeException
      * @throws InvalidGeoRestrictionParameterException
      * @throws InvalidProtocolSettingsException
      *         You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients that
-     *         Support Server Name Indication (SNI).
+     *         support Server Name Indication (SNI).
      * @throws InvalidTTLOrderException
      * @throws InvalidWebACLIdException
      * @throws TooManyOriginCustomHeadersException
@@ -178,10 +187,12 @@ public interface AmazonCloudFront {
     CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest);
 
     /**
+     * <p>
      * Create a new distribution with tags.
+     * </p>
      * 
      * @param createDistributionWithTagsRequest
-     *        The request to create a new distribution with tags
+     *        The request to create a new distribution with tags.
      * @return Result of the CreateDistributionWithTags operation returned by the service.
      * @throws CNAMEAlreadyExistsException
      * @throws DistributionAlreadyExistsException
@@ -215,35 +226,34 @@ public interface AmazonCloudFront {
      *         The argument is invalid.
      * @throws InvalidRequiredProtocolException
      *         This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request,
-     *         or omit the RequiredProtocols element from your distribution configuration.
+     *         or omit the <code>RequiredProtocols</code> element from your distribution configuration.
      * @throws NoSuchOriginException
-     *         No origin exists with the specified Origin Id.
+     *         No origin exists with the specified <code>Origin Id</code>.
      * @throws TooManyOriginsException
-     *         You cannot create anymore origins for the distribution.
+     *         You cannot create more origins for the distribution.
      * @throws TooManyCacheBehaviorsException
-     *         You cannot create anymore cache behaviors for the distribution.
+     *         You cannot create more cache behaviors for the distribution.
      * @throws TooManyCookieNamesInWhiteListException
      *         Your request contains more cookie names in the whitelist than are allowed per cache behavior.
      * @throws InvalidForwardCookiesException
-     *         Your request contains forward cookies option which doesn't match with the expectation for the whitelisted
-     *         list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie
-     *         names is missing when expected.
+     *         Your request contains forward cookies option which doesn't match with the expectation for the
+     *         <code>whitelisted</code> list of cookie names. Either list of cookie names has been specified when not
+     *         allowed or list of cookie names is missing when expected.
      * @throws TooManyHeadersInForwardedValuesException
      * @throws InvalidHeadersForS3OriginException
      * @throws InconsistentQuantitiesException
-     *         The value of Quantity and the size of Items do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @throws TooManyCertificatesException
-     *         You cannot create anymore custom ssl certificates.
+     *         You cannot create anymore custom SSL/TLS certificates.
      * @throws InvalidLocationCodeException
      * @throws InvalidGeoRestrictionParameterException
      * @throws InvalidProtocolSettingsException
      *         You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients that
-     *         Support Server Name Indication (SNI).
+     *         support Server Name Indication (SNI).
      * @throws InvalidTTLOrderException
      * @throws InvalidWebACLIdException
      * @throws TooManyOriginCustomHeadersException
      * @throws InvalidTaggingException
-     *         The specified tagging for a CloudFront resource is invalid. For more information, see the error text.
      * @throws TooManyQueryStringParametersException
      * @throws InvalidQueryStringParametersException
      * @sample AmazonCloudFront.CreateDistributionWithTags
@@ -251,7 +261,9 @@ public interface AmazonCloudFront {
     CreateDistributionWithTagsResult createDistributionWithTags(CreateDistributionWithTagsRequest createDistributionWithTagsRequest);
 
     /**
+     * <p>
      * Create a new invalidation.
+     * </p>
      * 
      * @param createInvalidationRequest
      *        The request to create an invalidation.
@@ -269,13 +281,43 @@ public interface AmazonCloudFront {
      *         You have exceeded the maximum number of allowable InProgress invalidation batch requests, or invalidation
      *         objects.
      * @throws InconsistentQuantitiesException
-     *         The value of Quantity and the size of Items do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.CreateInvalidation
      */
     CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest);
 
     /**
-     * Create a new streaming distribution.
+     * <p>
+     * Creates a new RMTP distribution. An RTMP distribution is similar to a web distribution, but an RTMP distribution
+     * streams media files using the Adobe Real-Time Messaging Protocol (RTMP) instead of serving files using HTTP.
+     * </p>
+     * <p>
+     * To create a new web distribution, submit a <code>POST</code> request to the <i>CloudFront API
+     * version</i>/distribution resource. The request body must include a document with a
+     * <i>StreamingDistributionConfig</i> element. The response echoes the <code>StreamingDistributionConfig</code>
+     * element and returns other information about the RTMP distribution.
+     * </p>
+     * <p>
+     * To get the status of your request, use the <i>GET StreamingDistribution</i> API action. When the value of
+     * <code>Enabled</code> is <code>true</code> and the value of <code>Status</code> is <code>Deployed</code>, your
+     * distribution is ready. A distribution usually deploys in less than 15 minutes.
+     * </p>
+     * <p>
+     * For more information about web distributions, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working with RTMP
+     * Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * Beginning with the 2012-05-05 version of the CloudFront API, we made substantial changes to the format of the XML
+     * document that you include in the request body when you create or update a web distribution or an RTMP
+     * distribution, and when you invalidate objects. With previous versions of the API, we discovered that it was too
+     * easy to accidentally delete one or more values for an element that accepts multiple values, for example, CNAMEs
+     * and trusted signers. Our changes for the 2012-05-05 release are intended to prevent these accidental deletions
+     * and to notify you when there's a mismatch between the number of values you say you're specifying in the
+     * <code>Quantity</code> element and the number of values specified.
+     * </p>
+     * </important>
      * 
      * @param createStreamingDistributionRequest
      *        The request to create a new streaming distribution.
@@ -300,13 +342,15 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InconsistentQuantitiesException
-     *         The value of Quantity and the size of Items do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.CreateStreamingDistribution
      */
     CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest);
 
     /**
+     * <p>
      * Create a new streaming distribution with tags.
+     * </p>
      * 
      * @param createStreamingDistributionWithTagsRequest
      *        The request to create a new streaming distribution with tags.
@@ -331,28 +375,29 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InconsistentQuantitiesException
-     *         The value of Quantity and the size of Items do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @throws InvalidTaggingException
-     *         The specified tagging for a CloudFront resource is invalid. For more information, see the error text.
      * @sample AmazonCloudFront.CreateStreamingDistributionWithTags
      */
     CreateStreamingDistributionWithTagsResult createStreamingDistributionWithTags(
             CreateStreamingDistributionWithTagsRequest createStreamingDistributionWithTagsRequest);
 
     /**
+     * <p>
      * Delete an origin access identity.
+     * </p>
      * 
      * @param deleteCloudFrontOriginAccessIdentityRequest
-     *        The request to delete a origin access identity.
+     *        Deletes a origin access identity.
      * @return Result of the DeleteCloudFrontOriginAccessIdentity operation returned by the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws InvalidIfMatchVersionException
-     *         The If-Match version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to false.
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @throws CloudFrontOriginAccessIdentityInUseException
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
      */
@@ -360,26 +405,151 @@ public interface AmazonCloudFront {
             DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * <p>
      * Delete a distribution.
+     * </p>
      * 
      * @param deleteDistributionRequest
-     *        The request to delete a distribution.
+     *        This action deletes a web distribution. To delete a web distribution using the CloudFront API, perform the
+     *        following steps.</p>
+     *        <p>
+     *        <b>To delete a web distribution using the CloudFront API:</b>
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        Disable the web distribution
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Submit a <code>GET Distribution Config</code> request to get the current configuration and the
+     *        <code>Etag</code> header for the distribution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Update the XML document that was returned in the response to your <code>GET Distribution Config</code>
+     *        request to change the value of <code>Enabled</code> to <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Submit a <code>PUT Distribution Config</code> request to update the configuration for your distribution.
+     *        In the request body, include the XML document that you updated in Step 3. Set the value of the HTTP
+     *        <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when
+     *        you submitted the <code>GET Distribution Config</code> request in Step 2.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Review the response to the <code>PUT Distribution Config</code> request to confirm that the distribution
+     *        was successfully disabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Submit a <code>GET Distribution</code> request to confirm that your changes have propagated. When
+     *        propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Submit a <code>DELETE Distribution</code> request. Set the value of the HTTP <code>If-Match</code> header
+     *        to the value of the <code>ETag</code> header that CloudFront returned when you submitted the
+     *        <code>GET Distribution Config</code> request in Step 6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Review the response to your <code>DELETE Distribution</code> request to confirm that the distribution was
+     *        successfully deleted.
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        For information about deleting a distribution using the CloudFront console, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html"
+     *        >Deleting a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Result of the DeleteDistribution operation returned by the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws DistributionNotDisabledException
      * @throws InvalidIfMatchVersionException
-     *         The If-Match version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to false.
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteDistribution
      */
     DeleteDistributionResult deleteDistribution(DeleteDistributionRequest deleteDistributionRequest);
 
     /**
-     * Delete a streaming distribution.
+     * <p>
+     * Delete a streaming distribution. To delete an RTMP distribution using the CloudFront API, perform the following
+     * steps.
+     * </p>
+     * <p>
+     * <b>To delete an RTMP distribution using the CloudFront API</b>:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Disable the RTMP distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>GET Streaming Distribution Config</code> request to get the current configuration and the
+     * <code>Etag</code> header for the distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Update the XML document that was returned in the response to your <code>GET Streaming Distribution Config</code>
+     * request to change the value of <code>Enabled</code> to <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration for your
+     * distribution. In the request body, include the XML document that you updated in Step 3. Then set the value of the
+     * HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you
+     * submitted the <code>GET Streaming Distribution Config</code> request in Step 2.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Review the response to the <code>PUT Streaming Distribution Config</code> request to confirm that the
+     * distribution was successfully disabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>GET Streaming Distribution Config</code> request to confirm that your changes have propagated.
+     * When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the HTTP <code>If-Match</code>
+     * header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the
+     * <code>GET Streaming Distribution Config</code> request in Step 2.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Review the response to your <code>DELETE Streaming Distribution</code> request to confirm that the distribution
+     * was successfully deleted.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For information about deleting a distribution using the CloudFront console, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a
+     * Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @param deleteStreamingDistributionRequest
      *        The request to delete a streaming distribution.
@@ -388,17 +558,19 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @throws StreamingDistributionNotDisabledException
      * @throws InvalidIfMatchVersionException
-     *         The If-Match version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to false.
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteStreamingDistribution
      */
     DeleteStreamingDistributionResult deleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
 
     /**
+     * <p>
      * Get the information about an origin access identity.
+     * </p>
      * 
      * @param getCloudFrontOriginAccessIdentityRequest
      *        The request to get an origin access identity's information.
@@ -412,10 +584,13 @@ public interface AmazonCloudFront {
     GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * <p>
      * Get the configuration information about an origin access identity.
+     * </p>
      * 
      * @param getCloudFrontOriginAccessIdentityConfigRequest
-     *        The request to get an origin access identity's configuration.
+     *        The origin access identity's configuration information. For more information, see
+     *        <a>CloudFrontOriginAccessIdentityConfigComplexType</a>.
      * @return Result of the GetCloudFrontOriginAccessIdentityConfig operation returned by the service.
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
@@ -427,7 +602,9 @@ public interface AmazonCloudFront {
             GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest);
 
     /**
+     * <p>
      * Get the information about a distribution.
+     * </p>
      * 
      * @param getDistributionRequest
      *        The request to get a distribution's information.
@@ -441,7 +618,9 @@ public interface AmazonCloudFront {
     GetDistributionResult getDistribution(GetDistributionRequest getDistributionRequest);
 
     /**
+     * <p>
      * Get the configuration information about a distribution.
+     * </p>
      * 
      * @param getDistributionConfigRequest
      *        The request to get a distribution configuration.
@@ -455,7 +634,9 @@ public interface AmazonCloudFront {
     GetDistributionConfigResult getDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest);
 
     /**
+     * <p>
      * Get the information about an invalidation.
+     * </p>
      * 
      * @param getInvalidationRequest
      *        The request to get an invalidation's information.
@@ -471,7 +652,9 @@ public interface AmazonCloudFront {
     GetInvalidationResult getInvalidation(GetInvalidationRequest getInvalidationRequest);
 
     /**
-     * Get the information about a streaming distribution.
+     * <p>
+     * Gets information about a specified RTMP distribution, including the distribution configuration.
+     * </p>
      * 
      * @param getStreamingDistributionRequest
      *        The request to get a streaming distribution's information.
@@ -485,7 +668,9 @@ public interface AmazonCloudFront {
     GetStreamingDistributionResult getStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest);
 
     /**
+     * <p>
      * Get the configuration information about a streaming distribution.
+     * </p>
      * 
      * @param getStreamingDistributionConfigRequest
      *        To request to get a streaming distribution configuration.
@@ -499,7 +684,9 @@ public interface AmazonCloudFront {
     GetStreamingDistributionConfigResult getStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest);
 
     /**
-     * List origin access identities.
+     * <p>
+     * Lists origin access identities.
+     * </p>
      * 
      * @param listCloudFrontOriginAccessIdentitiesRequest
      *        The request to list origin access identities.
@@ -512,7 +699,9 @@ public interface AmazonCloudFront {
             ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest);
 
     /**
+     * <p>
      * List distributions.
+     * </p>
      * 
      * @param listDistributionsRequest
      *        The request to list your distributions.
@@ -524,7 +713,9 @@ public interface AmazonCloudFront {
     ListDistributionsResult listDistributions(ListDistributionsRequest listDistributionsRequest);
 
     /**
+     * <p>
      * List the distributions that are associated with a specified AWS WAF web ACL.
+     * </p>
      * 
      * @param listDistributionsByWebACLIdRequest
      *        The request to list distributions that are associated with a specified AWS WAF web ACL.
@@ -537,7 +728,9 @@ public interface AmazonCloudFront {
     ListDistributionsByWebACLIdResult listDistributionsByWebACLId(ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest);
 
     /**
-     * List invalidation batches.
+     * <p>
+     * Lists invalidation batches.
+     * </p>
      * 
      * @param listInvalidationsRequest
      *        The request to list invalidations.
@@ -553,7 +746,9 @@ public interface AmazonCloudFront {
     ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest);
 
     /**
+     * <p>
      * List streaming distributions.
+     * </p>
      * 
      * @param listStreamingDistributionsRequest
      *        The request to list your streaming distributions.
@@ -565,7 +760,9 @@ public interface AmazonCloudFront {
     ListStreamingDistributionsResult listStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest);
 
     /**
+     * <p>
      * List tags for a CloudFront resource.
+     * </p>
      * 
      * @param listTagsForResourceRequest
      *        The request to list tags for a CloudFront resource.
@@ -575,15 +772,15 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidTaggingException
-     *         The specified tagging for a CloudFront resource is invalid. For more information, see the error text.
      * @throws NoSuchResourceException
-     *         The specified CloudFront resource does not exist.
      * @sample AmazonCloudFront.ListTagsForResource
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
+     * <p>
      * Add tags to a CloudFront resource.
+     * </p>
      * 
      * @param tagResourceRequest
      *        The request to add tags to a CloudFront resource.
@@ -593,15 +790,15 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidTaggingException
-     *         The specified tagging for a CloudFront resource is invalid. For more information, see the error text.
      * @throws NoSuchResourceException
-     *         The specified CloudFront resource does not exist.
      * @sample AmazonCloudFront.TagResource
      */
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
 
     /**
+     * <p>
      * Remove tags from a CloudFront resource.
+     * </p>
      * 
      * @param untagResourceRequest
      *        The request to remove tags from a CloudFront resource.
@@ -611,15 +808,15 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidTaggingException
-     *         The specified tagging for a CloudFront resource is invalid. For more information, see the error text.
      * @throws NoSuchResourceException
-     *         The specified CloudFront resource does not exist.
      * @sample AmazonCloudFront.UntagResource
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
+     * <p>
      * Update an origin access identity.
+     * </p>
      * 
      * @param updateCloudFrontOriginAccessIdentityRequest
      *        The request to update an origin access identity.
@@ -627,26 +824,28 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @throws IllegalUpdateException
-     *         Origin and CallerReference cannot be updated.
+     *         Origin and <code>CallerReference</code> cannot be updated.
      * @throws InvalidIfMatchVersionException
-     *         The If-Match version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
      * @throws MissingBodyException
      *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to false.
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InconsistentQuantitiesException
-     *         The value of Quantity and the size of Items do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity
      */
     UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentity(
             UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * <p>
      * Update a distribution.
+     * </p>
      * 
      * @param updateDistributionRequest
      *        The request to update a distribution.
@@ -655,15 +854,15 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @throws CNAMEAlreadyExistsException
      * @throws IllegalUpdateException
-     *         Origin and CallerReference cannot be updated.
+     *         Origin and <code>CallerReference</code> cannot be updated.
      * @throws InvalidIfMatchVersionException
-     *         The If-Match version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
      * @throws MissingBodyException
      *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to false.
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @throws TooManyDistributionCNAMEsException
      *         Your request contains more CNAMEs than are allowed per distribution.
      * @throws InvalidDefaultRootObjectException
@@ -684,25 +883,25 @@ public interface AmazonCloudFront {
      * @throws InvalidMinimumProtocolVersionException
      * @throws InvalidRequiredProtocolException
      *         This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request,
-     *         or omit the RequiredProtocols element from your distribution configuration.
+     *         or omit the <code>RequiredProtocols</code> element from your distribution configuration.
      * @throws NoSuchOriginException
-     *         No origin exists with the specified Origin Id.
+     *         No origin exists with the specified <code>Origin Id</code>.
      * @throws TooManyOriginsException
-     *         You cannot create anymore origins for the distribution.
+     *         You cannot create more origins for the distribution.
      * @throws TooManyCacheBehaviorsException
-     *         You cannot create anymore cache behaviors for the distribution.
+     *         You cannot create more cache behaviors for the distribution.
      * @throws TooManyCookieNamesInWhiteListException
      *         Your request contains more cookie names in the whitelist than are allowed per cache behavior.
      * @throws InvalidForwardCookiesException
-     *         Your request contains forward cookies option which doesn't match with the expectation for the whitelisted
-     *         list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie
-     *         names is missing when expected.
+     *         Your request contains forward cookies option which doesn't match with the expectation for the
+     *         <code>whitelisted</code> list of cookie names. Either list of cookie names has been specified when not
+     *         allowed or list of cookie names is missing when expected.
      * @throws TooManyHeadersInForwardedValuesException
      * @throws InvalidHeadersForS3OriginException
      * @throws InconsistentQuantitiesException
-     *         The value of Quantity and the size of Items do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @throws TooManyCertificatesException
-     *         You cannot create anymore custom ssl certificates.
+     *         You cannot create anymore custom SSL/TLS certificates.
      * @throws InvalidLocationCodeException
      * @throws InvalidGeoRestrictionParameterException
      * @throws InvalidTTLOrderException
@@ -715,7 +914,9 @@ public interface AmazonCloudFront {
     UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest);
 
     /**
+     * <p>
      * Update a streaming distribution.
+     * </p>
      * 
      * @param updateStreamingDistributionRequest
      *        The request to update a streaming distribution.
@@ -724,15 +925,15 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @throws CNAMEAlreadyExistsException
      * @throws IllegalUpdateException
-     *         Origin and CallerReference cannot be updated.
+     *         Origin and <code>CallerReference</code> cannot be updated.
      * @throws InvalidIfMatchVersionException
-     *         The If-Match version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
      * @throws MissingBodyException
      *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request-header fields evaluated to false.
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @throws TooManyStreamingDistributionCNAMEsException
      * @throws InvalidArgumentException
      *         The argument is invalid.
@@ -743,7 +944,7 @@ public interface AmazonCloudFront {
      * @throws TrustedSignerDoesNotExistException
      *         One or more of your trusted signers do not exist.
      * @throws InconsistentQuantitiesException
-     *         The value of Quantity and the size of Items do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.UpdateStreamingDistribution
      */
     UpdateStreamingDistributionResult updateStreamingDistribution(UpdateStreamingDistributionRequest updateStreamingDistributionRequest);

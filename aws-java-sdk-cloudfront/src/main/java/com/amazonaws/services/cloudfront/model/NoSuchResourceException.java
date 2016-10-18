@@ -13,7 +13,7 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
- * The specified CloudFront resource does not exist.
+ * 
  */
 public class NoSuchResourceException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

@@ -15,17 +15,29 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A complex type that contains information about origins for this distribution.
+ * </p>
  */
 public class Origins implements Serializable, Cloneable {
 
-    /** The number of origins for this distribution. */
+    /**
+     * <p>
+     * The number of origins for this distribution.
+     * </p>
+     */
     private Integer quantity;
-    /** A complex type that contains origins for this distribution. */
+    /**
+     * <p>
+     * A complex type that contains origins for this distribution.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Origin> items;
 
     /**
+     * <p>
      * The number of origins for this distribution.
+     * </p>
      * 
      * @param quantity
      *        The number of origins for this distribution.
@@ -36,7 +48,9 @@ public class Origins implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of origins for this distribution.
+     * </p>
      * 
      * @return The number of origins for this distribution.
      */
@@ -46,7 +60,9 @@ public class Origins implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of origins for this distribution.
+     * </p>
      * 
      * @param quantity
      *        The number of origins for this distribution.
@@ -59,7 +75,9 @@ public class Origins implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains origins for this distribution.
+     * </p>
      * 
      * @return A complex type that contains origins for this distribution.
      */
@@ -72,7 +90,9 @@ public class Origins implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains origins for this distribution.
+     * </p>
      * 
      * @param items
      *        A complex type that contains origins for this distribution.
@@ -88,7 +108,9 @@ public class Origins implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains origins for this distribution.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -111,7 +133,9 @@ public class Origins implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains origins for this distribution.
+     * </p>
      * 
      * @param items
      *        A complex type that contains origins for this distribution.

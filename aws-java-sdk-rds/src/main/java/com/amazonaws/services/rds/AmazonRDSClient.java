@@ -287,12 +287,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     private void init() {
         exceptionUnmarshallers.add(new OptionGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterRoleNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OptionGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterRoleQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBInstanceStateExceptionUnmarshaller());
@@ -322,6 +324,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new SubnetAlreadyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ProvisionedIopsNotAvailableInAZExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterSnapshotAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterRoleAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedDBInstanceAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidEventSubscriptionStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PointInTimeRestoreNotEnabledExceptionUnmarshaller());
@@ -346,8 +349,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new SNSTopicArnNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBSubnetGroupExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionAlreadyExistExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OptionGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBClusterSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSecurityGroupAlreadyExistsExceptionUnmarshaller());
@@ -368,6 +371,55 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/rds/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/rds/request.handler2s"));
+    }
+
+    /**
+     * <p>
+     * Associates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+     * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+     * </p>
+     * 
+     * @param addRoleToDBClusterRequest
+     * @return Result of the AddRoleToDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @throws DBClusterRoleAlreadyExistsException
+     *         The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws DBClusterRoleQuotaExceededException
+     *         You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.
+     * @sample AmazonRDS.AddRoleToDBCluster
+     */
+    @Override
+    public AddRoleToDBClusterResult addRoleToDBCluster(AddRoleToDBClusterRequest addRoleToDBClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(addRoleToDBClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddRoleToDBClusterRequest> request = null;
+        Response<AddRoleToDBClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddRoleToDBClusterRequestMarshaller().marshall(super.beforeMarshalling(addRoleToDBClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AddRoleToDBClusterResult> responseHandler = new StaxResponseHandler<AddRoleToDBClusterResult>(
+                    new AddRoleToDBClusterResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -624,6 +676,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         The DB cluster is not in a valid state.
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value is not a valid DB cluster snapshot state.
+     * @throws SnapshotQuotaExceededException
+     *         Request would result in user exceeding the allowed number of DB snapshots.
+     * @throws KMSKeyNotAccessibleException
+     *         Error accessing KMS key.
      * @sample AmazonRDS.CopyDBClusterSnapshot
      */
     @Override
@@ -4147,6 +4203,53 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+     * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+     * </p>
+     * 
+     * @param removeRoleFromDBClusterRequest
+     * @return Result of the RemoveRoleFromDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @throws DBClusterRoleNotFoundException
+     *         The specified IAM role Amazon Resource Name (ARN) is not associated with the specified DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @sample AmazonRDS.RemoveRoleFromDBCluster
+     */
+    @Override
+    public RemoveRoleFromDBClusterResult removeRoleFromDBCluster(RemoveRoleFromDBClusterRequest removeRoleFromDBClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeRoleFromDBClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveRoleFromDBClusterRequest> request = null;
+        Response<RemoveRoleFromDBClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveRoleFromDBClusterRequestMarshaller().marshall(super.beforeMarshalling(removeRoleFromDBClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RemoveRoleFromDBClusterResult> responseHandler = new StaxResponseHandler<RemoveRoleFromDBClusterResult>(
+                    new RemoveRoleFromDBClusterResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -15,21 +15,41 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A customer origin.
+ * </p>
  */
 public class CustomOriginConfig implements Serializable, Cloneable {
 
-    /** The HTTP port the custom origin listens on. */
+    /**
+     * <p>
+     * The HTTP port the custom origin listens on.
+     * </p>
+     */
     private Integer hTTPPort;
-    /** The HTTPS port the custom origin listens on. */
+    /**
+     * <p>
+     * The HTTPS port the custom origin listens on.
+     * </p>
+     */
     private Integer hTTPSPort;
-    /** The origin protocol policy to apply to your origin. */
+    /**
+     * <p>
+     * The origin protocol policy to apply to your origin.
+     * </p>
+     */
     private String originProtocolPolicy;
-    /** The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS. */
+    /**
+     * <p>
+     * The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
+     * </p>
+     */
     private OriginSslProtocols originSslProtocols;
 
     /**
+     * <p>
      * The HTTP port the custom origin listens on.
+     * </p>
      * 
      * @param hTTPPort
      *        The HTTP port the custom origin listens on.
@@ -40,7 +60,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The HTTP port the custom origin listens on.
+     * </p>
      * 
      * @return The HTTP port the custom origin listens on.
      */
@@ -50,7 +72,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The HTTP port the custom origin listens on.
+     * </p>
      * 
      * @param hTTPPort
      *        The HTTP port the custom origin listens on.
@@ -63,7 +87,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The HTTPS port the custom origin listens on.
+     * </p>
      * 
      * @param hTTPSPort
      *        The HTTPS port the custom origin listens on.
@@ -74,7 +100,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The HTTPS port the custom origin listens on.
+     * </p>
      * 
      * @return The HTTPS port the custom origin listens on.
      */
@@ -84,7 +112,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The HTTPS port the custom origin listens on.
+     * </p>
      * 
      * @param hTTPSPort
      *        The HTTPS port the custom origin listens on.
@@ -97,7 +127,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The origin protocol policy to apply to your origin.
+     * </p>
      * 
      * @param originProtocolPolicy
      *        The origin protocol policy to apply to your origin.
@@ -109,7 +141,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The origin protocol policy to apply to your origin.
+     * </p>
      * 
      * @return The origin protocol policy to apply to your origin.
      * @see OriginProtocolPolicy
@@ -120,7 +154,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The origin protocol policy to apply to your origin.
+     * </p>
      * 
      * @param originProtocolPolicy
      *        The origin protocol policy to apply to your origin.
@@ -134,7 +170,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The origin protocol policy to apply to your origin.
+     * </p>
      * 
      * @param originProtocolPolicy
      *        The origin protocol policy to apply to your origin.
@@ -146,7 +184,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The origin protocol policy to apply to your origin.
+     * </p>
      * 
      * @param originProtocolPolicy
      *        The origin protocol policy to apply to your origin.
@@ -160,7 +200,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
+     * </p>
      * 
      * @param originSslProtocols
      *        The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
@@ -171,7 +213,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
+     * </p>
      * 
      * @return The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
      */
@@ -181,7 +225,9 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.
+     * </p>
      * 
      * @param originSslProtocols
      *        The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS.

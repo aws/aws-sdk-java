@@ -16,15 +16,23 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to create a new streaming distribution with tags.
+ * </p>
  */
 public class CreateStreamingDistributionWithTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The streaming distribution's configuration information. */
+    /**
+     * <p>
+     * The streaming distribution's configuration information.
+     * </p>
+     */
     private StreamingDistributionConfigWithTags streamingDistributionConfigWithTags;
 
     /**
+     * <p>
      * The streaming distribution's configuration information.
+     * </p>
      * 
      * @param streamingDistributionConfigWithTags
      *        The streaming distribution's configuration information.
@@ -35,7 +43,9 @@ public class CreateStreamingDistributionWithTagsRequest extends com.amazonaws.Am
     }
 
     /**
+     * <p>
      * The streaming distribution's configuration information.
+     * </p>
      * 
      * @return The streaming distribution's configuration information.
      */
@@ -45,7 +55,9 @@ public class CreateStreamingDistributionWithTagsRequest extends com.amazonaws.Am
     }
 
     /**
+     * <p>
      * The streaming distribution's configuration information.
+     * </p>
      * 
      * @param streamingDistributionConfigWithTags
      *        The streaming distribution's configuration information.

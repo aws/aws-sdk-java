@@ -25,6 +25,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.HttpMethod;
+import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.S3DirectSpi;
 import com.amazonaws.services.s3.model.*;
@@ -33,6 +34,10 @@ import com.amazonaws.services.s3.waiters.AmazonS3Waiters;
 /**
  * <p>
  * Provides an interface for accessing the Amazon S3 web service.
+ * </p>
+ * <p>
+ *     <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly.
+ *     Extend from {@link AbstractAmazonS3} instead.
  * </p>
  * <p>
  * Amazon S3 provides storage for the Internet, and is designed to make
@@ -1430,7 +1435,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * returns an error.
      * </p>
      *
-     * @param getObjectRequest
+     * @param getObjectAclRequest
      *            the request object containing all the information needed for retrieving
      *            the object ACL.
      *
@@ -4523,7 +4528,7 @@ public interface AmazonS3 extends S3DirectSpi {
      *             request or handling the response.
      */
     public BucketAccelerateConfiguration getBucketAccelerateConfiguration(
-            String bucket) throws AmazonServiceException, AmazonClientException;
+            String bucketName) throws AmazonServiceException, AmazonClientException;
 
     /**
      * Retrieves the accelerate configuration for the given bucket.

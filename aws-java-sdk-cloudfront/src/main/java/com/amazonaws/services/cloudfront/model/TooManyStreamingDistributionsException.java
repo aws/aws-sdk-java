@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
+ * <p>
  * Processing your request would cause you to exceed the maximum number of streaming distributions allowed.
+ * </p>
  */
 public class TooManyStreamingDistributionsException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

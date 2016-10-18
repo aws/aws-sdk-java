@@ -16,39 +16,50 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to list distributions that are associated with a specified AWS WAF web ACL.
+ * </p>
  */
 public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions that
-     * satisfy the request, the response includes a NextMarker element. To get the next page of results, submit another
-     * request. For the value of Marker, specify the value of NextMarker from the last response. (For the first request,
-     * omit Marker.)
+     * <p>
+     * Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than
+     * <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code>
+     * element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify
+     * the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)
+     * </p>
      */
     private String marker;
     /**
+     * <p>
      * The maximum number of distributions that you want CloudFront to return in the response body. The maximum and
      * default values are both 100.
+     * </p>
      */
     private String maxItems;
     /**
-     * The Id of the AWS WAF web ACL for which you want to list the associated distributions. If you specify "null" for
-     * the Id, the request returns a list of the distributions that aren't associated with a web ACL.
+     * <p>
+     * The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null" for the
+     * ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     * </p>
      */
     private String webACLId;
 
     /**
-     * Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions that
-     * satisfy the request, the response includes a NextMarker element. To get the next page of results, submit another
-     * request. For the value of Marker, specify the value of NextMarker from the last response. (For the first request,
-     * omit Marker.)
+     * <p>
+     * Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than
+     * <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code>
+     * element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify
+     * the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)
+     * </p>
      * 
      * @param marker
-     *        Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions
-     *        that satisfy the request, the response includes a NextMarker element. To get the next page of results,
-     *        submit another request. For the value of Marker, specify the value of NextMarker from the last response.
-     *        (For the first request, omit Marker.)
+     *        Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than
+     *        <code>MaxItems</code> distributions that satisfy the request, the response includes a
+     *        <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of
+     *        <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first
+     *        request, omit <code>Marker</code>.)
      */
 
     public void setMarker(String marker) {
@@ -56,15 +67,18 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions that
-     * satisfy the request, the response includes a NextMarker element. To get the next page of results, submit another
-     * request. For the value of Marker, specify the value of NextMarker from the last response. (For the first request,
-     * omit Marker.)
+     * <p>
+     * Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than
+     * <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code>
+     * element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify
+     * the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)
+     * </p>
      * 
-     * @return Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions
-     *         that satisfy the request, the response includes a NextMarker element. To get the next page of results,
-     *         submit another request. For the value of Marker, specify the value of NextMarker from the last response.
-     *         (For the first request, omit Marker.)
+     * @return Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than
+     *         <code>MaxItems</code> distributions that satisfy the request, the response includes a
+     *         <code>NextMarker</code> element. To get the next page of results, submit another request. For the value
+     *         of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the
+     *         first request, omit <code>Marker</code>.)
      */
 
     public String getMarker() {
@@ -72,16 +86,19 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions that
-     * satisfy the request, the response includes a NextMarker element. To get the next page of results, submit another
-     * request. For the value of Marker, specify the value of NextMarker from the last response. (For the first request,
-     * omit Marker.)
+     * <p>
+     * Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than
+     * <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code>
+     * element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify
+     * the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)
+     * </p>
      * 
      * @param marker
-     *        Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions
-     *        that satisfy the request, the response includes a NextMarker element. To get the next page of results,
-     *        submit another request. For the value of Marker, specify the value of NextMarker from the last response.
-     *        (For the first request, omit Marker.)
+     *        Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than
+     *        <code>MaxItems</code> distributions that satisfy the request, the response includes a
+     *        <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of
+     *        <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first
+     *        request, omit <code>Marker</code>.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,8 +108,10 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
      * The maximum number of distributions that you want CloudFront to return in the response body. The maximum and
      * default values are both 100.
+     * </p>
      * 
      * @param maxItems
      *        The maximum number of distributions that you want CloudFront to return in the response body. The maximum
@@ -104,8 +123,10 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
      * The maximum number of distributions that you want CloudFront to return in the response body. The maximum and
      * default values are both 100.
+     * </p>
      * 
      * @return The maximum number of distributions that you want CloudFront to return in the response body. The maximum
      *         and default values are both 100.
@@ -116,8 +137,10 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
      * The maximum number of distributions that you want CloudFront to return in the response body. The maximum and
      * default values are both 100.
+     * </p>
      * 
      * @param maxItems
      *        The maximum number of distributions that you want CloudFront to return in the response body. The maximum
@@ -131,12 +154,14 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * The Id of the AWS WAF web ACL for which you want to list the associated distributions. If you specify "null" for
-     * the Id, the request returns a list of the distributions that aren't associated with a web ACL.
+     * <p>
+     * The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null" for the
+     * ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     * </p>
      * 
      * @param webACLId
-     *        The Id of the AWS WAF web ACL for which you want to list the associated distributions. If you specify
-     *        "null" for the Id, the request returns a list of the distributions that aren't associated with a web ACL.
+     *        The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null"
+     *        for the ID, the request returns a list of the distributions that aren't associated with a web ACL.
      */
 
     public void setWebACLId(String webACLId) {
@@ -144,11 +169,13 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * The Id of the AWS WAF web ACL for which you want to list the associated distributions. If you specify "null" for
-     * the Id, the request returns a list of the distributions that aren't associated with a web ACL.
+     * <p>
+     * The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null" for the
+     * ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     * </p>
      * 
-     * @return The Id of the AWS WAF web ACL for which you want to list the associated distributions. If you specify
-     *         "null" for the Id, the request returns a list of the distributions that aren't associated with a web ACL.
+     * @return The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null"
+     *         for the ID, the request returns a list of the distributions that aren't associated with a web ACL.
      */
 
     public String getWebACLId() {
@@ -156,12 +183,14 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * The Id of the AWS WAF web ACL for which you want to list the associated distributions. If you specify "null" for
-     * the Id, the request returns a list of the distributions that aren't associated with a web ACL.
+     * <p>
+     * The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null" for the
+     * ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     * </p>
      * 
      * @param webACLId
-     *        The Id of the AWS WAF web ACL for which you want to list the associated distributions. If you specify
-     *        "null" for the Id, the request returns a list of the distributions that aren't associated with a web ACL.
+     *        The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null"
+     *        for the ID, the request returns a list of the distributions that aren't associated with a web ACL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

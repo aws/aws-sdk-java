@@ -23,6 +23,8 @@ public enum RDSActions implements Action {
     /** Represents any action executed on Amazon RDS. */
     AllRDSActions("rds:*"),
 
+    /** Action for the AddRoleToDBCluster operation. */
+    AddRoleToDBCluster("rds:AddRoleToDBCluster"),
     /** Action for the AddSourceIdentifierToSubscription operation. */
     AddSourceIdentifierToSubscription("rds:AddSourceIdentifierToSubscription"),
     /** Action for the AddTagsToResource operation. */
@@ -171,6 +173,8 @@ public enum RDSActions implements Action {
     PurchaseReservedDBInstancesOffering("rds:PurchaseReservedDBInstancesOffering"),
     /** Action for the RebootDBInstance operation. */
     RebootDBInstance("rds:RebootDBInstance"),
+    /** Action for the RemoveRoleFromDBCluster operation. */
+    RemoveRoleFromDBCluster("rds:RemoveRoleFromDBCluster"),
     /** Action for the RemoveSourceIdentifierFromSubscription operation. */
     RemoveSourceIdentifierFromSubscription("rds:RemoveSourceIdentifierFromSubscription"),
     /** Action for the RemoveTagsFromResource operation. */

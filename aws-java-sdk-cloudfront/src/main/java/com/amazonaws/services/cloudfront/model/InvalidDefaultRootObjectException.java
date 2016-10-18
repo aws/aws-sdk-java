@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
+ * <p>
  * The default root object file name is too big or contains an invalid character.
+ * </p>
  */
 public class InvalidDefaultRootObjectException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

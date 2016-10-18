@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
+ * <p>
  * The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+ * </p>
  */
 public class InvalidOriginException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

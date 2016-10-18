@@ -16,13 +16,23 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to get an invalidation's information.
+ * </p>
  */
 public class GetInvalidationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The distribution's id. */
+    /**
+     * <p>
+     * The distribution's ID.
+     * </p>
+     */
     private String distributionId;
-    /** The invalidation's id. */
+    /**
+     * <p>
+     * The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
+     * </p>
+     */
     private String id;
 
     /**
@@ -37,9 +47,9 @@ public class GetInvalidationRequest extends com.amazonaws.AmazonWebServiceReques
      * to initialize any additional object members.
      * 
      * @param distributionId
-     *        The distribution's id.
+     *        The distribution's ID.
      * @param id
-     *        The invalidation's id.
+     *        The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
      */
     public GetInvalidationRequest(String distributionId, String id) {
         setDistributionId(distributionId);
@@ -47,10 +57,12 @@ public class GetInvalidationRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The distribution's id.
+     * <p>
+     * The distribution's ID.
+     * </p>
      * 
      * @param distributionId
-     *        The distribution's id.
+     *        The distribution's ID.
      */
 
     public void setDistributionId(String distributionId) {
@@ -58,9 +70,11 @@ public class GetInvalidationRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The distribution's id.
+     * <p>
+     * The distribution's ID.
+     * </p>
      * 
-     * @return The distribution's id.
+     * @return The distribution's ID.
      */
 
     public String getDistributionId() {
@@ -68,10 +82,12 @@ public class GetInvalidationRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The distribution's id.
+     * <p>
+     * The distribution's ID.
+     * </p>
      * 
      * @param distributionId
-     *        The distribution's id.
+     *        The distribution's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +97,12 @@ public class GetInvalidationRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The invalidation's id.
+     * <p>
+     * The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param id
-     *        The invalidation's id.
+     *        The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
      */
 
     public void setId(String id) {
@@ -92,9 +110,11 @@ public class GetInvalidationRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The invalidation's id.
+     * <p>
+     * The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
+     * </p>
      * 
-     * @return The invalidation's id.
+     * @return The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
      */
 
     public String getId() {
@@ -102,10 +122,12 @@ public class GetInvalidationRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The invalidation's id.
+     * <p>
+     * The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param id
-     *        The invalidation's id.
+     *        The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,60 +15,95 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A summary of the information for an Amazon CloudFront streaming distribution.
+ * </p>
  */
 public class StreamingDistributionSummary implements Serializable, Cloneable {
 
-    /** The identifier for the distribution. For example: EDFDVBD632BHDS5. */
+    /**
+     * <p>
+     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * </p>
+     */
     private String id;
     /**
+     * <p>
      * The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     * arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account
-     * Id.
+     * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
+     * <code>123456789012</code> is your AWS account ID.
+     * </p>
      */
     private String aRN;
     /**
-     * Indicates the current status of the distribution. When the status is Deployed, the distribution's information is
-     * fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * Indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's
+     * information is fully propagated throughout the Amazon CloudFront system.
+     * </p>
      */
     private String status;
-    /** The date and time the distribution was last modified. */
+    /**
+     * <p>
+     * The date and time the distribution was last modified.
+     * </p>
+     */
     private java.util.Date lastModifiedTime;
-    /** The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net. */
+    /**
+     * <p>
+     * The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * </p>
+     */
     private String domainName;
     /**
+     * <p>
      * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your
      * media files for distribution.
+     * </p>
      */
     private S3Origin s3Origin;
     /**
+     * <p>
      * A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming
      * distribution.
+     * </p>
      */
     private Aliases aliases;
     /**
+     * <p>
      * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private
      * content. If you want to require signed URLs in requests for objects in the target origin that match the
-     * PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and
-     * Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer
-     * Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for
-     * Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to
-     * true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you
-     * want to include in the updated distribution.
+     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
+     * the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs
+     * in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code>
+     * and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more
+     * trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change
+     * <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the
+     * updated distribution.
+     * </p>
      */
     private TrustedSigners trustedSigners;
-    /** The comment originally specified when this distribution was created. */
+    /**
+     * <p>
+     * The comment originally specified when this distribution was created.
+     * </p>
+     */
     private String comment;
 
     private String priceClass;
-    /** Whether the distribution is enabled to accept end user requests for content. */
+    /**
+     * <p>
+     * Whether the distribution is enabled to accept end user requests for content.
+     * </p>
+     */
     private Boolean enabled;
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>
+     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param id
-     *        The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     *        The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
      */
 
     public void setId(String id) {
@@ -76,9 +111,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>
+     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * </p>
      * 
-     * @return The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * @return The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
      */
 
     public String getId() {
@@ -86,10 +123,12 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>
+     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param id
-     *        The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     *        The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,14 +138,16 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     * arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account
-     * Id.
+     * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
+     * <code>123456789012</code> is your AWS account ID.
+     * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     *        arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS
-     *        account Id.
+     *        <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
+     *        <code>123456789012</code> is your AWS account ID.
      */
 
     public void setARN(String aRN) {
@@ -114,13 +155,15 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     * arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account
-     * Id.
+     * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
+     * <code>123456789012</code> is your AWS account ID.
+     * </p>
      * 
      * @return The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     *         arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS
-     *         account Id.
+     *         <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
+     *         <code>123456789012</code> is your AWS account ID.
      */
 
     public String getARN() {
@@ -128,14 +171,16 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     * arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account
-     * Id.
+     * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
+     * <code>123456789012</code> is your AWS account ID.
+     * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the streaming distribution. For example:
-     *        arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS
-     *        account Id.
+     *        <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
+     *        <code>123456789012</code> is your AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,12 +190,14 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates the current status of the distribution. When the status is Deployed, the distribution's information is
-     * fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * Indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's
+     * information is fully propagated throughout the Amazon CloudFront system.
+     * </p>
      * 
      * @param status
-     *        Indicates the current status of the distribution. When the status is Deployed, the distribution's
-     *        information is fully propagated throughout the Amazon CloudFront system.
+     *        Indicates the current status of the distribution. When the status is <code>Deployed</code>, the
+     *        distribution's information is fully propagated throughout the Amazon CloudFront system.
      */
 
     public void setStatus(String status) {
@@ -158,11 +205,13 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates the current status of the distribution. When the status is Deployed, the distribution's information is
-     * fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * Indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's
+     * information is fully propagated throughout the Amazon CloudFront system.
+     * </p>
      * 
-     * @return Indicates the current status of the distribution. When the status is Deployed, the distribution's
-     *         information is fully propagated throughout the Amazon CloudFront system.
+     * @return Indicates the current status of the distribution. When the status is <code>Deployed</code>, the
+     *         distribution's information is fully propagated throughout the Amazon CloudFront system.
      */
 
     public String getStatus() {
@@ -170,12 +219,14 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates the current status of the distribution. When the status is Deployed, the distribution's information is
-     * fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * Indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's
+     * information is fully propagated throughout the Amazon CloudFront system.
+     * </p>
      * 
      * @param status
-     *        Indicates the current status of the distribution. When the status is Deployed, the distribution's
-     *        information is fully propagated throughout the Amazon CloudFront system.
+     *        Indicates the current status of the distribution. When the status is <code>Deployed</code>, the
+     *        distribution's information is fully propagated throughout the Amazon CloudFront system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,7 +236,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the distribution was last modified.
+     * </p>
      * 
      * @param lastModifiedTime
      *        The date and time the distribution was last modified.
@@ -196,7 +249,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the distribution was last modified.
+     * </p>
      * 
      * @return The date and time the distribution was last modified.
      */
@@ -206,7 +261,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the distribution was last modified.
+     * </p>
      * 
      * @param lastModifiedTime
      *        The date and time the distribution was last modified.
@@ -219,10 +276,13 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     * <p>
+     * The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * </p>
      * 
      * @param domainName
-     *        The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     *        The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>
+     *        .
      */
 
     public void setDomainName(String domainName) {
@@ -230,9 +290,12 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     * <p>
+     * The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * </p>
      * 
-     * @return The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     * @return The domain name corresponding to the distribution. For example:
+     *         <code>d604721fxaaqy9.cloudfront.net</code>.
      */
 
     public String getDomainName() {
@@ -240,10 +303,13 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     * <p>
+     * The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * </p>
      * 
      * @param domainName
-     *        The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     *        The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,8 +319,10 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your
      * media files for distribution.
+     * </p>
      * 
      * @param s3Origin
      *        A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get
@@ -266,8 +334,10 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your
      * media files for distribution.
+     * </p>
      * 
      * @return A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get
      *         your media files for distribution.
@@ -278,8 +348,10 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your
      * media files for distribution.
+     * </p>
      * 
      * @param s3Origin
      *        A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get
@@ -293,8 +365,10 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming
      * distribution.
+     * </p>
      * 
      * @param aliases
      *        A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming
@@ -306,8 +380,10 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming
      * distribution.
+     * </p>
      * 
      * @return A complex type that contains information about CNAMEs (alternate domain names), if any, for this
      *         streaming distribution.
@@ -318,8 +394,10 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming
      * distribution.
+     * </p>
      * 
      * @param aliases
      *        A complex type that contains information about CNAMEs (alternate domain names), if any, for this streaming
@@ -333,24 +411,28 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private
      * content. If you want to require signed URLs in requests for objects in the target origin that match the
-     * PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and
-     * Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer
-     * Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for
-     * Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to
-     * true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you
-     * want to include in the updated distribution.
+     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
+     * the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs
+     * in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code>
+     * and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more
+     * trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change
+     * <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the
+     * updated distribution.
+     * </p>
      * 
      * @param trustedSigners
      *        A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for
      *        private content. If you want to require signed URLs in requests for objects in the target origin that
-     *        match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values
-     *        for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the
-     *        Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects that
-     *        match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one
-     *        or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable,
-     *        and specify all of the trusted signers that you want to include in the updated distribution.
+     *        match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
+     *        <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>
+     *        .If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
+     *        specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
+     *        <code>Items</code>. To add, change, or remove one or more trusted signers, change <code>Enabled</code> to
+     *        <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and
+     *        specify all of the trusted signers that you want to include in the updated distribution.
      */
 
     public void setTrustedSigners(TrustedSigners trustedSigners) {
@@ -358,23 +440,27 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private
      * content. If you want to require signed URLs in requests for objects in the target origin that match the
-     * PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and
-     * Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer
-     * Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for
-     * Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to
-     * true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you
-     * want to include in the updated distribution.
+     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
+     * the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs
+     * in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code>
+     * and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more
+     * trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change
+     * <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the
+     * updated distribution.
+     * </p>
      * 
      * @return A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for
      *         private content. If you want to require signed URLs in requests for objects in the target origin that
-     *         match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable
-     *         values for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in
-     *         the Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects
-     *         that match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or
-     *         remove one or more trusted signers, change Enabled to true (if it's currently false), change Quantity as
-     *         applicable, and specify all of the trusted signers that you want to include in the updated distribution.
+     *         match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
+     *         <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>
+     *         .If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
+     *         specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
+     *         <code>Items</code>. To add, change, or remove one or more trusted signers, change <code>Enabled</code> to
+     *         <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and
+     *         specify all of the trusted signers that you want to include in the updated distribution.
      */
 
     public TrustedSigners getTrustedSigners() {
@@ -382,24 +468,28 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private
      * content. If you want to require signed URLs in requests for objects in the target origin that match the
-     * PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and
-     * Items. For more information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer
-     * Guide. If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for
-     * Enabled and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to
-     * true (if it's currently false), change Quantity as applicable, and specify all of the trusted signers that you
-     * want to include in the updated distribution.
+     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
+     * the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs
+     * in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code>
+     * and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more
+     * trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change
+     * <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the
+     * updated distribution.
+     * </p>
      * 
      * @param trustedSigners
      *        A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for
      *        private content. If you want to require signed URLs in requests for objects in the target origin that
-     *        match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values
-     *        for Quantity and Items. For more information, go to Using a Signed URL to Serve Private Content in the
-     *        Amazon CloudFront Developer Guide. If you don't want to require signed URLs in requests for objects that
-     *        match PathPattern, specify false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one
-     *        or more trusted signers, change Enabled to true (if it's currently false), change Quantity as applicable,
-     *        and specify all of the trusted signers that you want to include in the updated distribution.
+     *        match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
+     *        <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>
+     *        .If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
+     *        specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
+     *        <code>Items</code>. To add, change, or remove one or more trusted signers, change <code>Enabled</code> to
+     *        <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and
+     *        specify all of the trusted signers that you want to include in the updated distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,7 +499,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The comment originally specified when this distribution was created.
+     * </p>
      * 
      * @param comment
      *        The comment originally specified when this distribution was created.
@@ -420,7 +512,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The comment originally specified when this distribution was created.
+     * </p>
      * 
      * @return The comment originally specified when this distribution was created.
      */
@@ -430,7 +524,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The comment originally specified when this distribution was created.
+     * </p>
      * 
      * @param comment
      *        The comment originally specified when this distribution was created.
@@ -492,7 +588,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Whether the distribution is enabled to accept end user requests for content.
+     * </p>
      * 
      * @param enabled
      *        Whether the distribution is enabled to accept end user requests for content.
@@ -503,7 +601,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Whether the distribution is enabled to accept end user requests for content.
+     * </p>
      * 
      * @return Whether the distribution is enabled to accept end user requests for content.
      */
@@ -513,7 +613,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Whether the distribution is enabled to accept end user requests for content.
+     * </p>
      * 
      * @param enabled
      *        Whether the distribution is enabled to accept end user requests for content.
@@ -526,7 +628,9 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Whether the distribution is enabled to accept end user requests for content.
+     * </p>
      * 
      * @return Whether the distribution is enabled to accept end user requests for content.
      */

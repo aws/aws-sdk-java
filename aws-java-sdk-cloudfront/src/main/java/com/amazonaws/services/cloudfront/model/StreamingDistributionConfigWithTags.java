@@ -15,17 +15,29 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A streaming distribution Configuration and a list of tags to be associated with the streaming distribution.
+ * </p>
  */
 public class StreamingDistributionConfigWithTags implements Serializable, Cloneable {
 
-    /** A streaming distribution Configuration. */
+    /**
+     * <p>
+     * A streaming distribution Configuration.
+     * </p>
+     */
     private StreamingDistributionConfig streamingDistributionConfig;
-    /** A complex type that contains zero or more Tag elements. */
+    /**
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
+     */
     private Tags tags;
 
     /**
+     * <p>
      * A streaming distribution Configuration.
+     * </p>
      * 
      * @param streamingDistributionConfig
      *        A streaming distribution Configuration.
@@ -36,7 +48,9 @@ public class StreamingDistributionConfigWithTags implements Serializable, Clonea
     }
 
     /**
+     * <p>
      * A streaming distribution Configuration.
+     * </p>
      * 
      * @return A streaming distribution Configuration.
      */
@@ -46,7 +60,9 @@ public class StreamingDistributionConfigWithTags implements Serializable, Clonea
     }
 
     /**
+     * <p>
      * A streaming distribution Configuration.
+     * </p>
      * 
      * @param streamingDistributionConfig
      *        A streaming distribution Configuration.
@@ -59,10 +75,12 @@ public class StreamingDistributionConfigWithTags implements Serializable, Clonea
     }
 
     /**
-     * A complex type that contains zero or more Tag elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
      * 
      * @param tags
-     *        A complex type that contains zero or more Tag elements.
+     *        A complex type that contains zero or more <code>Tag</code> elements.
      */
 
     public void setTags(Tags tags) {
@@ -70,9 +88,11 @@ public class StreamingDistributionConfigWithTags implements Serializable, Clonea
     }
 
     /**
-     * A complex type that contains zero or more Tag elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
      * 
-     * @return A complex type that contains zero or more Tag elements.
+     * @return A complex type that contains zero or more <code>Tag</code> elements.
      */
 
     public Tags getTags() {
@@ -80,10 +100,12 @@ public class StreamingDistributionConfigWithTags implements Serializable, Clonea
     }
 
     /**
-     * A complex type that contains zero or more Tag elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
      * 
      * @param tags
-     *        A complex type that contains zero or more Tag elements.
+     *        A complex type that contains zero or more <code>Tag</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

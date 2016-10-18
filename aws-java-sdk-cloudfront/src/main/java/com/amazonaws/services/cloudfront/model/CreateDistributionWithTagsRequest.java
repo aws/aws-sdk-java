@@ -16,15 +16,23 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * The request to create a new distribution with tags
+ * <p>
+ * The request to create a new distribution with tags.
+ * </p>
  */
 public class CreateDistributionWithTagsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The distribution's configuration information. */
+    /**
+     * <p>
+     * The distribution's configuration information.
+     * </p>
+     */
     private DistributionConfigWithTags distributionConfigWithTags;
 
     /**
+     * <p>
      * The distribution's configuration information.
+     * </p>
      * 
      * @param distributionConfigWithTags
      *        The distribution's configuration information.
@@ -35,7 +43,9 @@ public class CreateDistributionWithTagsRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
      * The distribution's configuration information.
+     * </p>
      * 
      * @return The distribution's configuration information.
      */
@@ -45,7 +55,9 @@ public class CreateDistributionWithTagsRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
      * The distribution's configuration information.
+     * </p>
      * 
      * @param distributionConfigWithTags
      *        The distribution's configuration information.

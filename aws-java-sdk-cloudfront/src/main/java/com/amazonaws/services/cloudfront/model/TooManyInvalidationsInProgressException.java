@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
+ * <p>
  * You have exceeded the maximum number of allowable InProgress invalidation batch requests, or invalidation objects.
+ * </p>
  */
 public class TooManyInvalidationsInProgressException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

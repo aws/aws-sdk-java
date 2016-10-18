@@ -15,23 +15,54 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A complex type that contains zero or more CustomErrorResponse elements.
+ * <p>
+ * A complex type that controls:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning
+ * the response to the viewer.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * How long CloudFront caches HTTP status codes in the 4xx and 5xx range.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For more information about custom error pages, see <a
+ * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error
+ * Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
+ * </p>
  */
 public class CustomErrorResponses implements Serializable, Cloneable {
 
-    /** The number of custom error responses for this distribution. */
+    /**
+     * <p>
+     * The number of HTTP status codes for which you want to specify a custom error page and/or a caching duration. If
+     * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
+     * </p>
+     */
     private Integer quantity;
     /**
-     * Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you
+     * want to specify a custom error page and/or a caching duration.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CustomErrorResponse> items;
 
     /**
-     * The number of custom error responses for this distribution.
+     * <p>
+     * The number of HTTP status codes for which you want to specify a custom error page and/or a caching duration. If
+     * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      * 
      * @param quantity
-     *        The number of custom error responses for this distribution.
+     *        The number of HTTP status codes for which you want to specify a custom error page and/or a caching
+     *        duration. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
      */
 
     public void setQuantity(Integer quantity) {
@@ -39,9 +70,13 @@ public class CustomErrorResponses implements Serializable, Cloneable {
     }
 
     /**
-     * The number of custom error responses for this distribution.
+     * <p>
+     * The number of HTTP status codes for which you want to specify a custom error page and/or a caching duration. If
+     * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      * 
-     * @return The number of custom error responses for this distribution.
+     * @return The number of HTTP status codes for which you want to specify a custom error page and/or a caching
+     *         duration. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
      */
 
     public Integer getQuantity() {
@@ -49,10 +84,14 @@ public class CustomErrorResponses implements Serializable, Cloneable {
     }
 
     /**
-     * The number of custom error responses for this distribution.
+     * <p>
+     * The number of HTTP status codes for which you want to specify a custom error page and/or a caching duration. If
+     * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      * 
      * @param quantity
-     *        The number of custom error responses for this distribution.
+     *        The number of HTTP status codes for which you want to specify a custom error page and/or a caching
+     *        duration. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,11 +101,13 @@ public class CustomErrorResponses implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you
+     * want to specify a custom error page and/or a caching duration.
+     * </p>
      * 
-     * @return Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0,
-     *         you can omit Items.
+     * @return A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for
+     *         which you want to specify a custom error page and/or a caching duration.
      */
 
     public java.util.List<CustomErrorResponse> getItems() {
@@ -77,12 +118,14 @@ public class CustomErrorResponses implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you
+     * want to specify a custom error page and/or a caching duration.
+     * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you
-     *        can omit Items.
+     *        A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for
+     *        which you want to specify a custom error page and/or a caching duration.
      */
 
     public void setItems(java.util.Collection<CustomErrorResponse> items) {
@@ -95,8 +138,10 @@ public class CustomErrorResponses implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you
+     * want to specify a custom error page and/or a caching duration.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -104,8 +149,8 @@ public class CustomErrorResponses implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you
-     *        can omit Items.
+     *        A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for
+     *        which you want to specify a custom error page and/or a caching duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,12 +165,14 @@ public class CustomErrorResponses implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you
+     * want to specify a custom error page and/or a caching duration.
+     * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you
-     *        can omit Items.
+     *        A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for
+     *        which you want to specify a custom error page and/or a caching duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,20 +15,42 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A complex type that contains information related to a Header
+ * <p>
+ * A complex type that contains <code>HeaderName</code> and <code>HeaderValue</code> elements, if any, for this
+ * distribution.
+ * </p>
  */
 public class OriginCustomHeader implements Serializable, Cloneable {
 
-    /** The header's name. */
+    /**
+     * <p>
+     * The name of a header that you want CloudFront to forward to your origin. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
+     * Custom Headers to Your Origin (Web Distributions Only)</a> in the <i>Amazon Amazon CloudFront Developer
+     * Guide</i>.
+     * </p>
+     */
     private String headerName;
-    /** The header's value. */
+    /**
+     * <p>
+     * The value for the header that you specified in the <code>HeaderName</code> field.
+     * </p>
+     */
     private String headerValue;
 
     /**
-     * The header's name.
+     * <p>
+     * The name of a header that you want CloudFront to forward to your origin. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
+     * Custom Headers to Your Origin (Web Distributions Only)</a> in the <i>Amazon Amazon CloudFront Developer
+     * Guide</i>.
+     * </p>
      * 
      * @param headerName
-     *        The header's name.
+     *        The name of a header that you want CloudFront to forward to your origin. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">
+     *        Forwarding Custom Headers to Your Origin (Web Distributions Only)</a> in the <i>Amazon Amazon CloudFront
+     *        Developer Guide</i>.
      */
 
     public void setHeaderName(String headerName) {
@@ -36,9 +58,17 @@ public class OriginCustomHeader implements Serializable, Cloneable {
     }
 
     /**
-     * The header's name.
+     * <p>
+     * The name of a header that you want CloudFront to forward to your origin. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
+     * Custom Headers to Your Origin (Web Distributions Only)</a> in the <i>Amazon Amazon CloudFront Developer
+     * Guide</i>.
+     * </p>
      * 
-     * @return The header's name.
+     * @return The name of a header that you want CloudFront to forward to your origin. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">
+     *         Forwarding Custom Headers to Your Origin (Web Distributions Only)</a> in the <i>Amazon Amazon CloudFront
+     *         Developer Guide</i>.
      */
 
     public String getHeaderName() {
@@ -46,10 +76,18 @@ public class OriginCustomHeader implements Serializable, Cloneable {
     }
 
     /**
-     * The header's name.
+     * <p>
+     * The name of a header that you want CloudFront to forward to your origin. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
+     * Custom Headers to Your Origin (Web Distributions Only)</a> in the <i>Amazon Amazon CloudFront Developer
+     * Guide</i>.
+     * </p>
      * 
      * @param headerName
-     *        The header's name.
+     *        The name of a header that you want CloudFront to forward to your origin. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">
+     *        Forwarding Custom Headers to Your Origin (Web Distributions Only)</a> in the <i>Amazon Amazon CloudFront
+     *        Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -59,10 +97,12 @@ public class OriginCustomHeader implements Serializable, Cloneable {
     }
 
     /**
-     * The header's value.
+     * <p>
+     * The value for the header that you specified in the <code>HeaderName</code> field.
+     * </p>
      * 
      * @param headerValue
-     *        The header's value.
+     *        The value for the header that you specified in the <code>HeaderName</code> field.
      */
 
     public void setHeaderValue(String headerValue) {
@@ -70,9 +110,11 @@ public class OriginCustomHeader implements Serializable, Cloneable {
     }
 
     /**
-     * The header's value.
+     * <p>
+     * The value for the header that you specified in the <code>HeaderName</code> field.
+     * </p>
      * 
-     * @return The header's value.
+     * @return The value for the header that you specified in the <code>HeaderName</code> field.
      */
 
     public String getHeaderValue() {
@@ -80,10 +122,12 @@ public class OriginCustomHeader implements Serializable, Cloneable {
     }
 
     /**
-     * The header's value.
+     * <p>
+     * The value for the header that you specified in the <code>HeaderName</code> field.
+     * </p>
      * 
      * @param headerValue
-     *        The header's value.
+     *        The value for the header that you specified in the <code>HeaderName</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

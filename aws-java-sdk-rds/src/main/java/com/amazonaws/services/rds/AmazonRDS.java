@@ -150,6 +150,27 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Associates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+     * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+     * </p>
+     * 
+     * @param addRoleToDBClusterRequest
+     * @return Result of the AddRoleToDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @throws DBClusterRoleAlreadyExistsException
+     *         The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws DBClusterRoleQuotaExceededException
+     *         You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.
+     * @sample AmazonRDS.AddRoleToDBCluster
+     */
+    AddRoleToDBClusterResult addRoleToDBCluster(AddRoleToDBClusterRequest addRoleToDBClusterRequest);
+
+    /**
+     * <p>
      * Adds a source identifier to an existing RDS event notification subscription.
      * </p>
      * 
@@ -264,6 +285,10 @@ public interface AmazonRDS {
      *         The DB cluster is not in a valid state.
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value is not a valid DB cluster snapshot state.
+     * @throws SnapshotQuotaExceededException
+     *         Request would result in user exceeding the allowed number of DB snapshots.
+     * @throws KMSKeyNotAccessibleException
+     *         Error accessing KMS key.
      * @sample AmazonRDS.CopyDBClusterSnapshot
      */
     DBClusterSnapshot copyDBClusterSnapshot(CopyDBClusterSnapshotRequest copyDBClusterSnapshotRequest);
@@ -1927,6 +1952,25 @@ public interface AmazonRDS {
      * @sample AmazonRDS.RebootDBInstance
      */
     DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest);
+
+    /**
+     * <p>
+     * Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+     * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+     * </p>
+     * 
+     * @param removeRoleFromDBClusterRequest
+     * @return Result of the RemoveRoleFromDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @throws DBClusterRoleNotFoundException
+     *         The specified IAM role Amazon Resource Name (ARN) is not associated with the specified DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @sample AmazonRDS.RemoveRoleFromDBCluster
+     */
+    RemoveRoleFromDBClusterResult removeRoleFromDBCluster(RemoveRoleFromDBClusterRequest removeRoleFromDBClusterRequest);
 
     /**
      * <p>

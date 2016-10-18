@@ -15,17 +15,29 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class UpdateDistributionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The distribution's information. */
+    /**
+     * <p>
+     * The distribution's information.
+     * </p>
+     */
     private Distribution distribution;
-    /** The current version of the configuration. For example: E2QWRUHAPOMQZL. */
+    /**
+     * <p>
+     * The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
+     */
     private String eTag;
 
     /**
+     * <p>
      * The distribution's information.
+     * </p>
      * 
      * @param distribution
      *        The distribution's information.
@@ -36,7 +48,9 @@ public class UpdateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The distribution's information.
+     * </p>
      * 
      * @return The distribution's information.
      */
@@ -46,7 +60,9 @@ public class UpdateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The distribution's information.
+     * </p>
      * 
      * @param distribution
      *        The distribution's information.
@@ -59,10 +75,12 @@ public class UpdateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * <p>
+     * The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param eTag
-     *        The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     *        The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public void setETag(String eTag) {
@@ -70,9 +88,11 @@ public class UpdateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * <p>
+     * The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
-     * @return The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * @return The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public String getETag() {
@@ -80,10 +100,12 @@ public class UpdateDistributionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * <p>
+     * The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param eTag
-     *        The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     *        The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

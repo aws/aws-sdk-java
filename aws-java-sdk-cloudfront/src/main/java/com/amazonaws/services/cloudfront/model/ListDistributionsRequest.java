@@ -16,34 +16,41 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to list your distributions.
+ * </p>
  */
 public class ListDistributionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions that
-     * satisfy the request, the response includes a NextMarker element. To get the next page of results, submit another
-     * request. For the value of Marker, specify the value of NextMarker from the last response. (For the first request,
-     * omit Marker.)
+     * <p>
+     * Use this when paginating results to indicate where to begin in your list of distributions. The results include
+     * distributions in the list that occur after the marker. To get the next page of results, set the
+     * <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also
+     * the ID of the last distribution on that page).
+     * </p>
      */
     private String marker;
     /**
-     * The maximum number of distributions that you want CloudFront to return in the response body. The maximum and
-     * default values are both 100.
+     * <p>
+     * The maximum number of distributions you want in the response body.
+     * </p>
      */
     private String maxItems;
 
     /**
-     * Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions that
-     * satisfy the request, the response includes a NextMarker element. To get the next page of results, submit another
-     * request. For the value of Marker, specify the value of NextMarker from the last response. (For the first request,
-     * omit Marker.)
+     * <p>
+     * Use this when paginating results to indicate where to begin in your list of distributions. The results include
+     * distributions in the list that occur after the marker. To get the next page of results, set the
+     * <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also
+     * the ID of the last distribution on that page).
+     * </p>
      * 
      * @param marker
-     *        Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions
-     *        that satisfy the request, the response includes a NextMarker element. To get the next page of results,
-     *        submit another request. For the value of Marker, specify the value of NextMarker from the last response.
-     *        (For the first request, omit Marker.)
+     *        Use this when paginating results to indicate where to begin in your list of distributions. The results
+     *        include distributions in the list that occur after the marker. To get the next page of results, set the
+     *        <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is
+     *        also the ID of the last distribution on that page).
      */
 
     public void setMarker(String marker) {
@@ -51,15 +58,17 @@ public class ListDistributionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions that
-     * satisfy the request, the response includes a NextMarker element. To get the next page of results, submit another
-     * request. For the value of Marker, specify the value of NextMarker from the last response. (For the first request,
-     * omit Marker.)
+     * <p>
+     * Use this when paginating results to indicate where to begin in your list of distributions. The results include
+     * distributions in the list that occur after the marker. To get the next page of results, set the
+     * <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also
+     * the ID of the last distribution on that page).
+     * </p>
      * 
-     * @return Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions
-     *         that satisfy the request, the response includes a NextMarker element. To get the next page of results,
-     *         submit another request. For the value of Marker, specify the value of NextMarker from the last response.
-     *         (For the first request, omit Marker.)
+     * @return Use this when paginating results to indicate where to begin in your list of distributions. The results
+     *         include distributions in the list that occur after the marker. To get the next page of results, set the
+     *         <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which
+     *         is also the ID of the last distribution on that page).
      */
 
     public String getMarker() {
@@ -67,16 +76,18 @@ public class ListDistributionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions that
-     * satisfy the request, the response includes a NextMarker element. To get the next page of results, submit another
-     * request. For the value of Marker, specify the value of NextMarker from the last response. (For the first request,
-     * omit Marker.)
+     * <p>
+     * Use this when paginating results to indicate where to begin in your list of distributions. The results include
+     * distributions in the list that occur after the marker. To get the next page of results, set the
+     * <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also
+     * the ID of the last distribution on that page).
+     * </p>
      * 
      * @param marker
-     *        Use Marker and MaxItems to control pagination of results. If you have more than MaxItems distributions
-     *        that satisfy the request, the response includes a NextMarker element. To get the next page of results,
-     *        submit another request. For the value of Marker, specify the value of NextMarker from the last response.
-     *        (For the first request, omit Marker.)
+     *        Use this when paginating results to indicate where to begin in your list of distributions. The results
+     *        include distributions in the list that occur after the marker. To get the next page of results, set the
+     *        <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is
+     *        also the ID of the last distribution on that page).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,12 +97,12 @@ public class ListDistributionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The maximum number of distributions that you want CloudFront to return in the response body. The maximum and
-     * default values are both 100.
+     * <p>
+     * The maximum number of distributions you want in the response body.
+     * </p>
      * 
      * @param maxItems
-     *        The maximum number of distributions that you want CloudFront to return in the response body. The maximum
-     *        and default values are both 100.
+     *        The maximum number of distributions you want in the response body.
      */
 
     public void setMaxItems(String maxItems) {
@@ -99,11 +110,11 @@ public class ListDistributionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The maximum number of distributions that you want CloudFront to return in the response body. The maximum and
-     * default values are both 100.
+     * <p>
+     * The maximum number of distributions you want in the response body.
+     * </p>
      * 
-     * @return The maximum number of distributions that you want CloudFront to return in the response body. The maximum
-     *         and default values are both 100.
+     * @return The maximum number of distributions you want in the response body.
      */
 
     public String getMaxItems() {
@@ -111,12 +122,12 @@ public class ListDistributionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The maximum number of distributions that you want CloudFront to return in the response body. The maximum and
-     * default values are both 100.
+     * <p>
+     * The maximum number of distributions you want in the response body.
+     * </p>
      * 
      * @param maxItems
-     *        The maximum number of distributions that you want CloudFront to return in the response body. The maximum
-     *        and default values are both 100.
+     *        The maximum number of distributions you want in the response body.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

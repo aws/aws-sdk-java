@@ -16,7 +16,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class DeleteEvaluationResultsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 

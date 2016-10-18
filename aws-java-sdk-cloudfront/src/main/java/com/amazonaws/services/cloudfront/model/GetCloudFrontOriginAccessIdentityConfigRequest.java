@@ -16,11 +16,18 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * The request to get an origin access identity's configuration.
+ * <p>
+ * The origin access identity's configuration information. For more information, see
+ * <a>CloudFrontOriginAccessIdentityConfigComplexType</a>.
+ * </p>
  */
 public class GetCloudFrontOriginAccessIdentityConfigRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The identity's id. */
+    /**
+     * <p>
+     * The identity's ID.
+     * </p>
+     */
     private String id;
 
     /**
@@ -35,17 +42,19 @@ public class GetCloudFrontOriginAccessIdentityConfigRequest extends com.amazonaw
      * setter (with...) methods to initialize any additional object members.
      * 
      * @param id
-     *        The identity's id.
+     *        The identity's ID.
      */
     public GetCloudFrontOriginAccessIdentityConfigRequest(String id) {
         setId(id);
     }
 
     /**
-     * The identity's id.
+     * <p>
+     * The identity's ID.
+     * </p>
      * 
      * @param id
-     *        The identity's id.
+     *        The identity's ID.
      */
 
     public void setId(String id) {
@@ -53,9 +62,11 @@ public class GetCloudFrontOriginAccessIdentityConfigRequest extends com.amazonaw
     }
 
     /**
-     * The identity's id.
+     * <p>
+     * The identity's ID.
+     * </p>
      * 
-     * @return The identity's id.
+     * @return The identity's ID.
      */
 
     public String getId() {
@@ -63,10 +74,12 @@ public class GetCloudFrontOriginAccessIdentityConfigRequest extends com.amazonaw
     }
 
     /**
-     * The identity's id.
+     * <p>
+     * The identity's ID.
+     * </p>
      * 
      * @param id
-     *        The identity's id.
+     *        The identity's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

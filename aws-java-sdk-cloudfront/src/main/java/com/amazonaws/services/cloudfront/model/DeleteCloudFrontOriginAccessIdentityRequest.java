@@ -16,13 +16,24 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * The request to delete a origin access identity.
+ * <p>
+ * Deletes a origin access identity.
+ * </p>
  */
 public class DeleteCloudFrontOriginAccessIdentityRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The origin access identity's id. */
+    /**
+     * <p>
+     * The origin access identity's ID.
+     * </p>
+     */
     private String id;
-    /** The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL. */
+    /**
+     * <p>
+     * The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code>
+     * request. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
+     */
     private String ifMatch;
 
     /**
@@ -37,9 +48,10 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
      * setter (with...) methods to initialize any additional object members.
      * 
      * @param id
-     *        The origin access identity's id.
+     *        The origin access identity's ID.
      * @param ifMatch
-     *        The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
+     *        The value of the <code>ETag</code> header you received from a previous <code>GET</code> or
+     *        <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.
      */
     public DeleteCloudFrontOriginAccessIdentityRequest(String id, String ifMatch) {
         setId(id);
@@ -47,10 +59,12 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
-     * The origin access identity's id.
+     * <p>
+     * The origin access identity's ID.
+     * </p>
      * 
      * @param id
-     *        The origin access identity's id.
+     *        The origin access identity's ID.
      */
 
     public void setId(String id) {
@@ -58,9 +72,11 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
-     * The origin access identity's id.
+     * <p>
+     * The origin access identity's ID.
+     * </p>
      * 
-     * @return The origin access identity's id.
+     * @return The origin access identity's ID.
      */
 
     public String getId() {
@@ -68,10 +84,12 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
-     * The origin access identity's id.
+     * <p>
+     * The origin access identity's ID.
+     * </p>
      * 
      * @param id
-     *        The origin access identity's id.
+     *        The origin access identity's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +99,14 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
-     * The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code>
+     * request. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param ifMatch
-     *        The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
+     *        The value of the <code>ETag</code> header you received from a previous <code>GET</code> or
+     *        <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public void setIfMatch(String ifMatch) {
@@ -92,10 +114,13 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
-     * The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code>
+     * request. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
-     * @return The value of the ETag header you received from a previous GET or PUT request. For example:
-     *         E2QWRUHAPOMQZL.
+     * @return The value of the <code>ETag</code> header you received from a previous <code>GET</code> or
+     *         <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public String getIfMatch() {
@@ -103,10 +128,14 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     }
 
     /**
-     * The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code>
+     * request. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param ifMatch
-     *        The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
+     *        The value of the <code>ETag</code> header you received from a previous <code>GET</code> or
+     *        <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

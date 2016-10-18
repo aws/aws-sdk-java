@@ -15,37 +15,68 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A distribution.
+ * <p>
+ * The distribution's information.
+ * </p>
  */
 public class Distribution implements Serializable, Cloneable {
 
-    /** The identifier for the distribution. For example: EDFDVBD632BHDS5. */
+    /**
+     * <p>
+     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * </p>
+     */
     private String id;
     /**
+     * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
-     * arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
      */
     private String aRN;
     /**
-     * This response element indicates the current status of the distribution. When the status is Deployed, the
-     * distribution's information is fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * This response element indicates the current status of the distribution. When the status is <code>Deployed</code>,
+     * the distribution's information is fully propagated to all CloudFront edge locations.
+     * </p>
      */
     private String status;
-    /** The date and time the distribution was last modified. */
+    /**
+     * <p>
+     * The date and time the distribution was last modified.
+     * </p>
+     */
     private java.util.Date lastModifiedTime;
-    /** The number of invalidation batches currently in progress. */
+    /**
+     * <p>
+     * The number of invalidation batches currently in progress.
+     * </p>
+     */
     private Integer inProgressInvalidationBatches;
-    /** The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net. */
+    /**
+     * <p>
+     * The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * </p>
+     */
     private String domainName;
     /**
+     * <p>
      * CloudFront automatically adds this element to the response only if you've set up the distribution to serve
      * private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted
-     * signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if
-     * the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted
-     * signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
+     * signer. The <code>Signer</code> child element lists the AWS account number of the trusted signer (or an empty
+     * <code>Self</code> element if the signer is you). The <code>Signer</code> element also includes the IDs of any
+     * active key pairs associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears
+     * for a <code>Signer</code>, that signer can't create working signed URLs.
+     * </p>
      */
     private ActiveTrustedSigners activeTrustedSigners;
-    /** The current configuration information for the distribution. */
+    /**
+     * <p>
+     * The current configuration information for the distribution. Send a <code>GET</code> request to the
+     * <code>/<i>CloudFront API version</i>/distribution ID/config</code> resource.
+     * </p>
+     */
     private DistributionConfig distributionConfig;
 
     /**
@@ -60,12 +91,14 @@ public class Distribution implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param id
-     *        The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     *        The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
      * @param status
-     *        This response element indicates the current status of the distribution. When the status is Deployed, the
-     *        distribution's information is fully propagated throughout the Amazon CloudFront system.
+     *        This response element indicates the current status of the distribution. When the status is
+     *        <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge
+     *        locations.
      * @param domainName
-     *        The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     *        The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>
+     *        .
      */
     public Distribution(String id, String status, String domainName) {
         setId(id);
@@ -74,10 +107,12 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>
+     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param id
-     *        The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     *        The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
      */
 
     public void setId(String id) {
@@ -85,9 +120,11 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>
+     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * </p>
      * 
-     * @return The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * @return The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
      */
 
     public String getId() {
@@ -95,10 +132,12 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>
+     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param id
-     *        The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     *        The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,12 +147,16 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
-     * arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the distribution. For example:
-     *        arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+     *        <code>123456789012</code> is your AWS account ID.
      */
 
     public void setARN(String aRN) {
@@ -121,11 +164,15 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
-     * arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
      * 
      * @return The ARN (Amazon Resource Name) for the distribution. For example:
-     *         arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     *         <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+     *         <code>123456789012</code> is your AWS account ID.
      */
 
     public String getARN() {
@@ -133,12 +180,16 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
-     * arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the distribution. For example:
-     *        arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+     *        <code>123456789012</code> is your AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,12 +199,15 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
-     * This response element indicates the current status of the distribution. When the status is Deployed, the
-     * distribution's information is fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * This response element indicates the current status of the distribution. When the status is <code>Deployed</code>,
+     * the distribution's information is fully propagated to all CloudFront edge locations.
+     * </p>
      * 
      * @param status
-     *        This response element indicates the current status of the distribution. When the status is Deployed, the
-     *        distribution's information is fully propagated throughout the Amazon CloudFront system.
+     *        This response element indicates the current status of the distribution. When the status is
+     *        <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge
+     *        locations.
      */
 
     public void setStatus(String status) {
@@ -161,11 +215,14 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
-     * This response element indicates the current status of the distribution. When the status is Deployed, the
-     * distribution's information is fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * This response element indicates the current status of the distribution. When the status is <code>Deployed</code>,
+     * the distribution's information is fully propagated to all CloudFront edge locations.
+     * </p>
      * 
-     * @return This response element indicates the current status of the distribution. When the status is Deployed, the
-     *         distribution's information is fully propagated throughout the Amazon CloudFront system.
+     * @return This response element indicates the current status of the distribution. When the status is
+     *         <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge
+     *         locations.
      */
 
     public String getStatus() {
@@ -173,12 +230,15 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
-     * This response element indicates the current status of the distribution. When the status is Deployed, the
-     * distribution's information is fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * This response element indicates the current status of the distribution. When the status is <code>Deployed</code>,
+     * the distribution's information is fully propagated to all CloudFront edge locations.
+     * </p>
      * 
      * @param status
-     *        This response element indicates the current status of the distribution. When the status is Deployed, the
-     *        distribution's information is fully propagated throughout the Amazon CloudFront system.
+     *        This response element indicates the current status of the distribution. When the status is
+     *        <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge
+     *        locations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,7 +248,9 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the distribution was last modified.
+     * </p>
      * 
      * @param lastModifiedTime
      *        The date and time the distribution was last modified.
@@ -199,7 +261,9 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the distribution was last modified.
+     * </p>
      * 
      * @return The date and time the distribution was last modified.
      */
@@ -209,7 +273,9 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the distribution was last modified.
+     * </p>
      * 
      * @param lastModifiedTime
      *        The date and time the distribution was last modified.
@@ -222,7 +288,9 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of invalidation batches currently in progress.
+     * </p>
      * 
      * @param inProgressInvalidationBatches
      *        The number of invalidation batches currently in progress.
@@ -233,7 +301,9 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of invalidation batches currently in progress.
+     * </p>
      * 
      * @return The number of invalidation batches currently in progress.
      */
@@ -243,7 +313,9 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of invalidation batches currently in progress.
+     * </p>
      * 
      * @param inProgressInvalidationBatches
      *        The number of invalidation batches currently in progress.
@@ -256,10 +328,13 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
-     * The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     * <p>
+     * The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * </p>
      * 
      * @param domainName
-     *        The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     *        The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>
+     *        .
      */
 
     public void setDomainName(String domainName) {
@@ -267,9 +342,12 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
-     * The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     * <p>
+     * The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * </p>
      * 
-     * @return The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     * @return The domain name corresponding to the distribution. For example:
+     *         <code>d604721fxaaqy9.cloudfront.net</code>.
      */
 
     public String getDomainName() {
@@ -277,10 +355,13 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
-     * The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     * <p>
+     * The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * </p>
      * 
      * @param domainName
-     *        The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     *        The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,19 +371,23 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * CloudFront automatically adds this element to the response only if you've set up the distribution to serve
      * private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted
-     * signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if
-     * the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted
-     * signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
+     * signer. The <code>Signer</code> child element lists the AWS account number of the trusted signer (or an empty
+     * <code>Self</code> element if the signer is you). The <code>Signer</code> element also includes the IDs of any
+     * active key pairs associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears
+     * for a <code>Signer</code>, that signer can't create working signed URLs.
+     * </p>
      * 
      * @param activeTrustedSigners
      *        CloudFront automatically adds this element to the response only if you've set up the distribution to serve
      *        private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each
-     *        trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty
-     *        Self element if the signer is you). The Signer element also includes the IDs of any active key pairs
-     *        associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that
-     *        signer can't create working signed URLs.
+     *        trusted signer. The <code>Signer</code> child element lists the AWS account number of the trusted signer
+     *        (or an empty <code>Self</code> element if the signer is you). The <code>Signer</code> element also
+     *        includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no
+     *        <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create working signed
+     *        URLs.
      */
 
     public void setActiveTrustedSigners(ActiveTrustedSigners activeTrustedSigners) {
@@ -310,18 +395,22 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * CloudFront automatically adds this element to the response only if you've set up the distribution to serve
      * private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted
-     * signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if
-     * the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted
-     * signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
+     * signer. The <code>Signer</code> child element lists the AWS account number of the trusted signer (or an empty
+     * <code>Self</code> element if the signer is you). The <code>Signer</code> element also includes the IDs of any
+     * active key pairs associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears
+     * for a <code>Signer</code>, that signer can't create working signed URLs.
+     * </p>
      * 
      * @return CloudFront automatically adds this element to the response only if you've set up the distribution to
      *         serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of
-     *         for each trusted signer. The Signer child element lists the AWS account number of the trusted signer (or
-     *         an empty Self element if the signer is you). The Signer element also includes the IDs of any active key
-     *         pairs associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer,
-     *         that signer can't create working signed URLs.
+     *         for each trusted signer. The <code>Signer</code> child element lists the AWS account number of the
+     *         trusted signer (or an empty <code>Self</code> element if the signer is you). The <code>Signer</code>
+     *         element also includes the IDs of any active key pairs associated with the trusted signer's AWS account.
+     *         If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create working
+     *         signed URLs.
      */
 
     public ActiveTrustedSigners getActiveTrustedSigners() {
@@ -329,19 +418,23 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * CloudFront automatically adds this element to the response only if you've set up the distribution to serve
      * private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted
-     * signer. The Signer child element lists the AWS account number of the trusted signer (or an empty Self element if
-     * the signer is you). The Signer element also includes the IDs of any active key pairs associated with the trusted
-     * signer's AWS account. If no KeyPairId element appears for a Signer, that signer can't create working signed URLs.
+     * signer. The <code>Signer</code> child element lists the AWS account number of the trusted signer (or an empty
+     * <code>Self</code> element if the signer is you). The <code>Signer</code> element also includes the IDs of any
+     * active key pairs associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears
+     * for a <code>Signer</code>, that signer can't create working signed URLs.
+     * </p>
      * 
      * @param activeTrustedSigners
      *        CloudFront automatically adds this element to the response only if you've set up the distribution to serve
      *        private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each
-     *        trusted signer. The Signer child element lists the AWS account number of the trusted signer (or an empty
-     *        Self element if the signer is you). The Signer element also includes the IDs of any active key pairs
-     *        associated with the trusted signer's AWS account. If no KeyPairId element appears for a Signer, that
-     *        signer can't create working signed URLs.
+     *        trusted signer. The <code>Signer</code> child element lists the AWS account number of the trusted signer
+     *        (or an empty <code>Self</code> element if the signer is you). The <code>Signer</code> element also
+     *        includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no
+     *        <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create working signed
+     *        URLs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,10 +444,14 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
-     * The current configuration information for the distribution.
+     * <p>
+     * The current configuration information for the distribution. Send a <code>GET</code> request to the
+     * <code>/<i>CloudFront API version</i>/distribution ID/config</code> resource.
+     * </p>
      * 
      * @param distributionConfig
-     *        The current configuration information for the distribution.
+     *        The current configuration information for the distribution. Send a <code>GET</code> request to the
+     *        <code>/<i>CloudFront API version</i>/distribution ID/config</code> resource.
      */
 
     public void setDistributionConfig(DistributionConfig distributionConfig) {
@@ -362,9 +459,13 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
-     * The current configuration information for the distribution.
+     * <p>
+     * The current configuration information for the distribution. Send a <code>GET</code> request to the
+     * <code>/<i>CloudFront API version</i>/distribution ID/config</code> resource.
+     * </p>
      * 
-     * @return The current configuration information for the distribution.
+     * @return The current configuration information for the distribution. Send a <code>GET</code> request to the
+     *         <code>/<i>CloudFront API version</i>/distribution ID/config</code> resource.
      */
 
     public DistributionConfig getDistributionConfig() {
@@ -372,10 +473,14 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
-     * The current configuration information for the distribution.
+     * <p>
+     * The current configuration information for the distribution. Send a <code>GET</code> request to the
+     * <code>/<i>CloudFront API version</i>/distribution ID/config</code> resource.
+     * </p>
      * 
      * @param distributionConfig
-     *        The current configuration information for the distribution.
+     *        The current configuration information for the distribution. Send a <code>GET</code> request to the
+     *        <code>/<i>CloudFront API version</i>/distribution ID/config</code> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

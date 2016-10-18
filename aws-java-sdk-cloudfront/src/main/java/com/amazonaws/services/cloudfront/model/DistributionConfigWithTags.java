@@ -15,20 +15,32 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A distribution Configuration and a list of tags to be associated with the distribution.
+ * </p>
  */
 public class DistributionConfigWithTags implements Serializable, Cloneable {
 
-    /** A distribution Configuration. */
+    /**
+     * <p>
+     * A distribution configuration.
+     * </p>
+     */
     private DistributionConfig distributionConfig;
-    /** A complex type that contains zero or more Tag elements. */
+    /**
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
+     */
     private Tags tags;
 
     /**
-     * A distribution Configuration.
+     * <p>
+     * A distribution configuration.
+     * </p>
      * 
      * @param distributionConfig
-     *        A distribution Configuration.
+     *        A distribution configuration.
      */
 
     public void setDistributionConfig(DistributionConfig distributionConfig) {
@@ -36,9 +48,11 @@ public class DistributionConfigWithTags implements Serializable, Cloneable {
     }
 
     /**
-     * A distribution Configuration.
+     * <p>
+     * A distribution configuration.
+     * </p>
      * 
-     * @return A distribution Configuration.
+     * @return A distribution configuration.
      */
 
     public DistributionConfig getDistributionConfig() {
@@ -46,10 +60,12 @@ public class DistributionConfigWithTags implements Serializable, Cloneable {
     }
 
     /**
-     * A distribution Configuration.
+     * <p>
+     * A distribution configuration.
+     * </p>
      * 
      * @param distributionConfig
-     *        A distribution Configuration.
+     *        A distribution configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -59,10 +75,12 @@ public class DistributionConfigWithTags implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains zero or more Tag elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
      * 
      * @param tags
-     *        A complex type that contains zero or more Tag elements.
+     *        A complex type that contains zero or more <code>Tag</code> elements.
      */
 
     public void setTags(Tags tags) {
@@ -70,9 +88,11 @@ public class DistributionConfigWithTags implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains zero or more Tag elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
      * 
-     * @return A complex type that contains zero or more Tag elements.
+     * @return A complex type that contains zero or more <code>Tag</code> elements.
      */
 
     public Tags getTags() {
@@ -80,10 +100,12 @@ public class DistributionConfigWithTags implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains zero or more Tag elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
      * 
      * @param tags
-     *        A complex type that contains zero or more Tag elements.
+     *        A complex type that contains zero or more <code>Tag</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

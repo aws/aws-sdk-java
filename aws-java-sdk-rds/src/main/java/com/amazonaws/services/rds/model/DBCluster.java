@@ -248,6 +248,14 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private String dBClusterArn;
+    /**
+     * <p>
+     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
+     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
+     * on your behalf.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DBClusterRole> associatedRoles;
 
     /**
      * <p>
@@ -1705,6 +1713,95 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
+     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
+     * on your behalf.
+     * </p>
+     * 
+     * @return Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB
+     *         cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
+     *         other AWS services on your behalf.
+     */
+
+    public java.util.List<DBClusterRole> getAssociatedRoles() {
+        if (associatedRoles == null) {
+            associatedRoles = new com.amazonaws.internal.SdkInternalList<DBClusterRole>();
+        }
+        return associatedRoles;
+    }
+
+    /**
+     * <p>
+     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
+     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
+     * on your behalf.
+     * </p>
+     * 
+     * @param associatedRoles
+     *        Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB
+     *        cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
+     *        other AWS services on your behalf.
+     */
+
+    public void setAssociatedRoles(java.util.Collection<DBClusterRole> associatedRoles) {
+        if (associatedRoles == null) {
+            this.associatedRoles = null;
+            return;
+        }
+
+        this.associatedRoles = new com.amazonaws.internal.SdkInternalList<DBClusterRole>(associatedRoles);
+    }
+
+    /**
+     * <p>
+     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
+     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
+     * on your behalf.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssociatedRoles(java.util.Collection)} or {@link #withAssociatedRoles(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param associatedRoles
+     *        Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB
+     *        cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
+     *        other AWS services on your behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withAssociatedRoles(DBClusterRole... associatedRoles) {
+        if (this.associatedRoles == null) {
+            setAssociatedRoles(new com.amazonaws.internal.SdkInternalList<DBClusterRole>(associatedRoles.length));
+        }
+        for (DBClusterRole ele : associatedRoles) {
+            this.associatedRoles.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
+     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
+     * on your behalf.
+     * </p>
+     * 
+     * @param associatedRoles
+     *        Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB
+     *        cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
+     *        other AWS services on your behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withAssociatedRoles(java.util.Collection<DBClusterRole> associatedRoles) {
+        setAssociatedRoles(associatedRoles);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1774,7 +1871,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getDbClusterResourceId() != null)
             sb.append("DbClusterResourceId: " + getDbClusterResourceId() + ",");
         if (getDBClusterArn() != null)
-            sb.append("DBClusterArn: " + getDBClusterArn());
+            sb.append("DBClusterArn: " + getDBClusterArn() + ",");
+        if (getAssociatedRoles() != null)
+            sb.append("AssociatedRoles: " + getAssociatedRoles());
         sb.append("}");
         return sb.toString();
     }
@@ -1910,6 +2009,10 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getDBClusterArn() != null && other.getDBClusterArn().equals(this.getDBClusterArn()) == false)
             return false;
+        if (other.getAssociatedRoles() == null ^ this.getAssociatedRoles() == null)
+            return false;
+        if (other.getAssociatedRoles() != null && other.getAssociatedRoles().equals(this.getAssociatedRoles()) == false)
+            return false;
         return true;
     }
 
@@ -1948,6 +2051,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getDbClusterResourceId() == null) ? 0 : getDbClusterResourceId().hashCode());
         hashCode = prime * hashCode + ((getDBClusterArn() == null) ? 0 : getDBClusterArn().hashCode());
+        hashCode = prime * hashCode + ((getAssociatedRoles() == null) ? 0 : getAssociatedRoles().hashCode());
         return hashCode;
     }
 

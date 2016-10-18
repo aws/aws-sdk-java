@@ -49,13 +49,13 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2016-09-07/distribution";
+        String uriResourcePath = "/2016-09-29/distribution";
 
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-09-07/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-09-29/");
 
             DistributionConfig distributionConfig = createDistributionRequest.getDistributionConfig();
             if (distributionConfig != null) {
@@ -762,6 +762,10 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
                 if (distributionConfig.getHttpVersion() != null) {
                     xmlWriter.startElement("HttpVersion").value(distributionConfig.getHttpVersion()).endElement();
+                }
+
+                if (distributionConfig.getIsIPV6Enabled() != null) {
+                    xmlWriter.startElement("IsIPV6Enabled").value(distributionConfig.getIsIPV6Enabled()).endElement();
                 }
                 xmlWriter.endElement();
             }

@@ -15,15 +15,23 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class ListInvalidationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Information about invalidation batches. */
+    /**
+     * <p>
+     * Information about invalidation batches.
+     * </p>
+     */
     private InvalidationList invalidationList;
 
     /**
+     * <p>
      * Information about invalidation batches.
+     * </p>
      * 
      * @param invalidationList
      *        Information about invalidation batches.
@@ -34,7 +42,9 @@ public class ListInvalidationsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
      * Information about invalidation batches.
+     * </p>
      * 
      * @return Information about invalidation batches.
      */
@@ -44,7 +54,9 @@ public class ListInvalidationsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
      * Information about invalidation batches.
+     * </p>
      * 
      * @param invalidationList
      *        Information about invalidation batches.

@@ -14,9 +14,6 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
-import java.util.List;
-import java.util.Map;
-
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.FailedBatch;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
@@ -30,15 +27,18 @@ import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
 import com.amazonaws.services.dynamodbv2.model.UpdateItemRequest;
 import com.amazonaws.services.s3.model.Region;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * Interface for DynamoDBMapper.
  *
  * <p>
- * <b>Note:</b> Do not implement this interface. See the standard implementation {@link DynamoDBMapper} for the
- * usage.
+ * <b>Note:</b> Do not implement this interface, extend from {@link AbstractDynamoDBMapper} instead.
  * </p>
  *
  * @see DynamoDBMapper
+ * @see AbstractDynamoDBMapper
  */
 public interface IDynamoDBMapper {
 

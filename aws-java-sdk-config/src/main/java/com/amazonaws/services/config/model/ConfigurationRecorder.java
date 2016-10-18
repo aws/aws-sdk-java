@@ -23,8 +23,8 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating
-     * the configuration recorder. You cannot change the assigned name.
+     * The name of the recorder. By default, AWS Config automatically assigns the name "default" when creating the
+     * configuration recorder. You cannot change the assigned name.
      * </p>
      */
     private String name;
@@ -43,13 +43,13 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating
-     * the configuration recorder. You cannot change the assigned name.
+     * The name of the recorder. By default, AWS Config automatically assigns the name "default" when creating the
+     * configuration recorder. You cannot change the assigned name.
      * </p>
      * 
      * @param name
-     *        The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when
-     *        creating the configuration recorder. You cannot change the assigned name.
+     *        The name of the recorder. By default, AWS Config automatically assigns the name "default" when creating
+     *        the configuration recorder. You cannot change the assigned name.
      */
 
     public void setName(String name) {
@@ -58,12 +58,12 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating
-     * the configuration recorder. You cannot change the assigned name.
+     * The name of the recorder. By default, AWS Config automatically assigns the name "default" when creating the
+     * configuration recorder. You cannot change the assigned name.
      * </p>
      * 
-     * @return The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when
-     *         creating the configuration recorder. You cannot change the assigned name.
+     * @return The name of the recorder. By default, AWS Config automatically assigns the name "default" when creating
+     *         the configuration recorder. You cannot change the assigned name.
      */
 
     public String getName() {
@@ -72,13 +72,13 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when creating
-     * the configuration recorder. You cannot change the assigned name.
+     * The name of the recorder. By default, AWS Config automatically assigns the name "default" when creating the
+     * configuration recorder. You cannot change the assigned name.
      * </p>
      * 
      * @param name
-     *        The name of the recorder. By default, AWS Config automatically assigns the name &quot;default&quot; when
-     *        creating the configuration recorder. You cannot change the assigned name.
+     *        The name of the recorder. By default, AWS Config automatically assigns the name "default" when creating
+     *        the configuration recorder. You cannot change the assigned name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

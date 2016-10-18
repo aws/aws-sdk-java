@@ -16,17 +16,29 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to update a distribution.
+ * </p>
  */
 public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The distribution's configuration information. */
+    /**
+     * <p>
+     * The distribution's configuration information.
+     * </p>
+     */
     private DistributionConfig distributionConfig;
-    /** The distribution's id. */
+    /**
+     * <p>
+     * The distribution's id.
+     * </p>
+     */
     private String id;
     /**
-     * The value of the ETag header you received when retrieving the distribution's configuration. For example:
-     * E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For
+     * example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      */
     private String ifMatch;
 
@@ -46,8 +58,8 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
      * @param id
      *        The distribution's id.
      * @param ifMatch
-     *        The value of the ETag header you received when retrieving the distribution's configuration. For example:
-     *        E2QWRUHAPOMQZL.
+     *        The value of the <code>ETag</code> header that you received when retrieving the distribution's
+     *        configuration. For example: <code>E2QWRUHAPOMQZL</code>.
      */
     public UpdateDistributionRequest(DistributionConfig distributionConfig, String id, String ifMatch) {
         setDistributionConfig(distributionConfig);
@@ -56,7 +68,9 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The distribution's configuration information.
+     * </p>
      * 
      * @param distributionConfig
      *        The distribution's configuration information.
@@ -67,7 +81,9 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The distribution's configuration information.
+     * </p>
      * 
      * @return The distribution's configuration information.
      */
@@ -77,7 +93,9 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The distribution's configuration information.
+     * </p>
      * 
      * @param distributionConfig
      *        The distribution's configuration information.
@@ -90,7 +108,9 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The distribution's id.
+     * </p>
      * 
      * @param id
      *        The distribution's id.
@@ -101,7 +121,9 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The distribution's id.
+     * </p>
      * 
      * @return The distribution's id.
      */
@@ -111,7 +133,9 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The distribution's id.
+     * </p>
      * 
      * @param id
      *        The distribution's id.
@@ -124,12 +148,14 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The value of the ETag header you received when retrieving the distribution's configuration. For example:
-     * E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For
+     * example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param ifMatch
-     *        The value of the ETag header you received when retrieving the distribution's configuration. For example:
-     *        E2QWRUHAPOMQZL.
+     *        The value of the <code>ETag</code> header that you received when retrieving the distribution's
+     *        configuration. For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public void setIfMatch(String ifMatch) {
@@ -137,11 +163,13 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The value of the ETag header you received when retrieving the distribution's configuration. For example:
-     * E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For
+     * example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
-     * @return The value of the ETag header you received when retrieving the distribution's configuration. For example:
-     *         E2QWRUHAPOMQZL.
+     * @return The value of the <code>ETag</code> header that you received when retrieving the distribution's
+     *         configuration. For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public String getIfMatch() {
@@ -149,12 +177,14 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The value of the ETag header you received when retrieving the distribution's configuration. For example:
-     * E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For
+     * example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param ifMatch
-     *        The value of the ETag header you received when retrieving the distribution's configuration. For example:
-     *        E2QWRUHAPOMQZL.
+     *        The value of the <code>ETag</code> header that you received when retrieving the distribution's
+     *        configuration. For example: <code>E2QWRUHAPOMQZL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

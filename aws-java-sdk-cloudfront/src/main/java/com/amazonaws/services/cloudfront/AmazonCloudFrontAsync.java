@@ -21,15 +21,21 @@ import com.amazonaws.services.cloudfront.model.*;
  * <p>
  * <fullname>Amazon CloudFront</fullname>
  * <p>
- * Amazon CloudFront is a global content delivery network (CDN) service that accelerates delivery of your websites,
- * APIs, video content or other web assets. It integrates with other Amazon Web Services products to give developers and
- * businesses an easy way to accelerate content to end users with no minimum usage commitments.
+ * This is the <i>Amazon CloudFront API Reference</i>. This guide is for developers who need detailed information about
+ * the CloudFront API actions, data types, and errors. For detailed information about CloudFront features and their
+ * associated API calls, see the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  */
 public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
-     * Create a new origin access identity.
+     * <p>
+     * Creates a new origin access identity. If you're using Amazon S3 for your origin, you can use an origin access
+     * identity to require users to access your content using a CloudFront URL instead of the Amazon S3 URL. For more
+     * information about how to use origin access identities, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @param createCloudFrontOriginAccessIdentityRequest
      *        The request to create a new origin access identity.
@@ -41,7 +47,13 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest);
 
     /**
-     * Create a new origin access identity.
+     * <p>
+     * Creates a new origin access identity. If you're using Amazon S3 for your origin, you can use an origin access
+     * identity to require users to access your content using a CloudFront URL instead of the Amazon S3 URL. For more
+     * information about how to use origin access identities, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @param createCloudFrontOriginAccessIdentityRequest
      *        The request to create a new origin access identity.
@@ -58,7 +70,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<CreateCloudFrontOriginAccessIdentityRequest, CreateCloudFrontOriginAccessIdentityResult> asyncHandler);
 
     /**
-     * Create a new distribution.
+     * <p>
+     * Creates a new web distribution. Send a <code>GET</code> request to the
+     * <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.
+     * </p>
      * 
      * @param createDistributionRequest
      *        The request to create a new distribution.
@@ -68,7 +83,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<CreateDistributionResult> createDistributionAsync(CreateDistributionRequest createDistributionRequest);
 
     /**
-     * Create a new distribution.
+     * <p>
+     * Creates a new web distribution. Send a <code>GET</code> request to the
+     * <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.
+     * </p>
      * 
      * @param createDistributionRequest
      *        The request to create a new distribution.
@@ -83,10 +101,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<CreateDistributionRequest, CreateDistributionResult> asyncHandler);
 
     /**
+     * <p>
      * Create a new distribution with tags.
+     * </p>
      * 
      * @param createDistributionWithTagsRequest
-     *        The request to create a new distribution with tags
+     *        The request to create a new distribution with tags.
      * @return A Java Future containing the result of the CreateDistributionWithTags operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateDistributionWithTags
      */
@@ -94,10 +114,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             CreateDistributionWithTagsRequest createDistributionWithTagsRequest);
 
     /**
+     * <p>
      * Create a new distribution with tags.
+     * </p>
      * 
      * @param createDistributionWithTagsRequest
-     *        The request to create a new distribution with tags
+     *        The request to create a new distribution with tags.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -110,7 +132,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<CreateDistributionWithTagsRequest, CreateDistributionWithTagsResult> asyncHandler);
 
     /**
+     * <p>
      * Create a new invalidation.
+     * </p>
      * 
      * @param createInvalidationRequest
      *        The request to create an invalidation.
@@ -120,7 +144,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<CreateInvalidationResult> createInvalidationAsync(CreateInvalidationRequest createInvalidationRequest);
 
     /**
+     * <p>
      * Create a new invalidation.
+     * </p>
      * 
      * @param createInvalidationRequest
      *        The request to create an invalidation.
@@ -135,7 +161,37 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<CreateInvalidationRequest, CreateInvalidationResult> asyncHandler);
 
     /**
-     * Create a new streaming distribution.
+     * <p>
+     * Creates a new RMTP distribution. An RTMP distribution is similar to a web distribution, but an RTMP distribution
+     * streams media files using the Adobe Real-Time Messaging Protocol (RTMP) instead of serving files using HTTP.
+     * </p>
+     * <p>
+     * To create a new web distribution, submit a <code>POST</code> request to the <i>CloudFront API
+     * version</i>/distribution resource. The request body must include a document with a
+     * <i>StreamingDistributionConfig</i> element. The response echoes the <code>StreamingDistributionConfig</code>
+     * element and returns other information about the RTMP distribution.
+     * </p>
+     * <p>
+     * To get the status of your request, use the <i>GET StreamingDistribution</i> API action. When the value of
+     * <code>Enabled</code> is <code>true</code> and the value of <code>Status</code> is <code>Deployed</code>, your
+     * distribution is ready. A distribution usually deploys in less than 15 minutes.
+     * </p>
+     * <p>
+     * For more information about web distributions, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working with RTMP
+     * Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * Beginning with the 2012-05-05 version of the CloudFront API, we made substantial changes to the format of the XML
+     * document that you include in the request body when you create or update a web distribution or an RTMP
+     * distribution, and when you invalidate objects. With previous versions of the API, we discovered that it was too
+     * easy to accidentally delete one or more values for an element that accepts multiple values, for example, CNAMEs
+     * and trusted signers. Our changes for the 2012-05-05 release are intended to prevent these accidental deletions
+     * and to notify you when there's a mismatch between the number of values you say you're specifying in the
+     * <code>Quantity</code> element and the number of values specified.
+     * </p>
+     * </important>
      * 
      * @param createStreamingDistributionRequest
      *        The request to create a new streaming distribution.
@@ -146,7 +202,37 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             CreateStreamingDistributionRequest createStreamingDistributionRequest);
 
     /**
-     * Create a new streaming distribution.
+     * <p>
+     * Creates a new RMTP distribution. An RTMP distribution is similar to a web distribution, but an RTMP distribution
+     * streams media files using the Adobe Real-Time Messaging Protocol (RTMP) instead of serving files using HTTP.
+     * </p>
+     * <p>
+     * To create a new web distribution, submit a <code>POST</code> request to the <i>CloudFront API
+     * version</i>/distribution resource. The request body must include a document with a
+     * <i>StreamingDistributionConfig</i> element. The response echoes the <code>StreamingDistributionConfig</code>
+     * element and returns other information about the RTMP distribution.
+     * </p>
+     * <p>
+     * To get the status of your request, use the <i>GET StreamingDistribution</i> API action. When the value of
+     * <code>Enabled</code> is <code>true</code> and the value of <code>Status</code> is <code>Deployed</code>, your
+     * distribution is ready. A distribution usually deploys in less than 15 minutes.
+     * </p>
+     * <p>
+     * For more information about web distributions, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working with RTMP
+     * Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * Beginning with the 2012-05-05 version of the CloudFront API, we made substantial changes to the format of the XML
+     * document that you include in the request body when you create or update a web distribution or an RTMP
+     * distribution, and when you invalidate objects. With previous versions of the API, we discovered that it was too
+     * easy to accidentally delete one or more values for an element that accepts multiple values, for example, CNAMEs
+     * and trusted signers. Our changes for the 2012-05-05 release are intended to prevent these accidental deletions
+     * and to notify you when there's a mismatch between the number of values you say you're specifying in the
+     * <code>Quantity</code> element and the number of values specified.
+     * </p>
+     * </important>
      * 
      * @param createStreamingDistributionRequest
      *        The request to create a new streaming distribution.
@@ -162,7 +248,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionRequest, CreateStreamingDistributionResult> asyncHandler);
 
     /**
+     * <p>
      * Create a new streaming distribution with tags.
+     * </p>
      * 
      * @param createStreamingDistributionWithTagsRequest
      *        The request to create a new streaming distribution with tags.
@@ -174,7 +262,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             CreateStreamingDistributionWithTagsRequest createStreamingDistributionWithTagsRequest);
 
     /**
+     * <p>
      * Create a new streaming distribution with tags.
+     * </p>
      * 
      * @param createStreamingDistributionWithTagsRequest
      *        The request to create a new streaming distribution with tags.
@@ -191,10 +281,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionWithTagsRequest, CreateStreamingDistributionWithTagsResult> asyncHandler);
 
     /**
+     * <p>
      * Delete an origin access identity.
+     * </p>
      * 
      * @param deleteCloudFrontOriginAccessIdentityRequest
-     *        The request to delete a origin access identity.
+     *        Deletes a origin access identity.
      * @return A Java Future containing the result of the DeleteCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.DeleteCloudFrontOriginAccessIdentity
@@ -203,10 +295,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * <p>
      * Delete an origin access identity.
+     * </p>
      * 
      * @param deleteCloudFrontOriginAccessIdentityRequest
-     *        The request to delete a origin access identity.
+     *        Deletes a origin access identity.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -220,20 +314,144 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<DeleteCloudFrontOriginAccessIdentityRequest, DeleteCloudFrontOriginAccessIdentityResult> asyncHandler);
 
     /**
+     * <p>
      * Delete a distribution.
+     * </p>
      * 
      * @param deleteDistributionRequest
-     *        The request to delete a distribution.
+     *        This action deletes a web distribution. To delete a web distribution using the CloudFront API, perform the
+     *        following steps.</p>
+     *        <p>
+     *        <b>To delete a web distribution using the CloudFront API:</b>
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        Disable the web distribution
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Submit a <code>GET Distribution Config</code> request to get the current configuration and the
+     *        <code>Etag</code> header for the distribution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Update the XML document that was returned in the response to your <code>GET Distribution Config</code>
+     *        request to change the value of <code>Enabled</code> to <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Submit a <code>PUT Distribution Config</code> request to update the configuration for your distribution.
+     *        In the request body, include the XML document that you updated in Step 3. Set the value of the HTTP
+     *        <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when
+     *        you submitted the <code>GET Distribution Config</code> request in Step 2.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Review the response to the <code>PUT Distribution Config</code> request to confirm that the distribution
+     *        was successfully disabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Submit a <code>GET Distribution</code> request to confirm that your changes have propagated. When
+     *        propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Submit a <code>DELETE Distribution</code> request. Set the value of the HTTP <code>If-Match</code> header
+     *        to the value of the <code>ETag</code> header that CloudFront returned when you submitted the
+     *        <code>GET Distribution Config</code> request in Step 6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Review the response to your <code>DELETE Distribution</code> request to confirm that the distribution was
+     *        successfully deleted.
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        For information about deleting a distribution using the CloudFront console, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html"
+     *        >Deleting a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return A Java Future containing the result of the DeleteDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.DeleteDistribution
      */
     java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest);
 
     /**
+     * <p>
      * Delete a distribution.
+     * </p>
      * 
      * @param deleteDistributionRequest
-     *        The request to delete a distribution.
+     *        This action deletes a web distribution. To delete a web distribution using the CloudFront API, perform the
+     *        following steps.</p>
+     *        <p>
+     *        <b>To delete a web distribution using the CloudFront API:</b>
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        Disable the web distribution
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Submit a <code>GET Distribution Config</code> request to get the current configuration and the
+     *        <code>Etag</code> header for the distribution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Update the XML document that was returned in the response to your <code>GET Distribution Config</code>
+     *        request to change the value of <code>Enabled</code> to <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Submit a <code>PUT Distribution Config</code> request to update the configuration for your distribution.
+     *        In the request body, include the XML document that you updated in Step 3. Set the value of the HTTP
+     *        <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when
+     *        you submitted the <code>GET Distribution Config</code> request in Step 2.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Review the response to the <code>PUT Distribution Config</code> request to confirm that the distribution
+     *        was successfully disabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Submit a <code>GET Distribution</code> request to confirm that your changes have propagated. When
+     *        propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Submit a <code>DELETE Distribution</code> request. Set the value of the HTTP <code>If-Match</code> header
+     *        to the value of the <code>ETag</code> header that CloudFront returned when you submitted the
+     *        <code>GET Distribution Config</code> request in Step 6.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Review the response to your <code>DELETE Distribution</code> request to confirm that the distribution was
+     *        successfully deleted.
+     *        </p>
+     *        </li>
+     *        </ol>
+     *        <p>
+     *        For information about deleting a distribution using the CloudFront console, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html"
+     *        >Deleting a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -245,7 +463,70 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, DeleteDistributionResult> asyncHandler);
 
     /**
-     * Delete a streaming distribution.
+     * <p>
+     * Delete a streaming distribution. To delete an RTMP distribution using the CloudFront API, perform the following
+     * steps.
+     * </p>
+     * <p>
+     * <b>To delete an RTMP distribution using the CloudFront API</b>:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Disable the RTMP distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>GET Streaming Distribution Config</code> request to get the current configuration and the
+     * <code>Etag</code> header for the distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Update the XML document that was returned in the response to your <code>GET Streaming Distribution Config</code>
+     * request to change the value of <code>Enabled</code> to <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration for your
+     * distribution. In the request body, include the XML document that you updated in Step 3. Then set the value of the
+     * HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you
+     * submitted the <code>GET Streaming Distribution Config</code> request in Step 2.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Review the response to the <code>PUT Streaming Distribution Config</code> request to confirm that the
+     * distribution was successfully disabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>GET Streaming Distribution Config</code> request to confirm that your changes have propagated.
+     * When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the HTTP <code>If-Match</code>
+     * header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the
+     * <code>GET Streaming Distribution Config</code> request in Step 2.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Review the response to your <code>DELETE Streaming Distribution</code> request to confirm that the distribution
+     * was successfully deleted.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For information about deleting a distribution using the CloudFront console, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a
+     * Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @param deleteStreamingDistributionRequest
      *        The request to delete a streaming distribution.
@@ -256,7 +537,70 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
 
     /**
-     * Delete a streaming distribution.
+     * <p>
+     * Delete a streaming distribution. To delete an RTMP distribution using the CloudFront API, perform the following
+     * steps.
+     * </p>
+     * <p>
+     * <b>To delete an RTMP distribution using the CloudFront API</b>:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Disable the RTMP distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>GET Streaming Distribution Config</code> request to get the current configuration and the
+     * <code>Etag</code> header for the distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Update the XML document that was returned in the response to your <code>GET Streaming Distribution Config</code>
+     * request to change the value of <code>Enabled</code> to <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration for your
+     * distribution. In the request body, include the XML document that you updated in Step 3. Then set the value of the
+     * HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you
+     * submitted the <code>GET Streaming Distribution Config</code> request in Step 2.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Review the response to the <code>PUT Streaming Distribution Config</code> request to confirm that the
+     * distribution was successfully disabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>GET Streaming Distribution Config</code> request to confirm that your changes have propagated.
+     * When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the HTTP <code>If-Match</code>
+     * header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the
+     * <code>GET Streaming Distribution Config</code> request in Step 2.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Review the response to your <code>DELETE Streaming Distribution</code> request to confirm that the distribution
+     * was successfully deleted.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For information about deleting a distribution using the CloudFront console, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a
+     * Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @param deleteStreamingDistributionRequest
      *        The request to delete a streaming distribution.
@@ -272,7 +616,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, DeleteStreamingDistributionResult> asyncHandler);
 
     /**
+     * <p>
      * Get the information about an origin access identity.
+     * </p>
      * 
      * @param getCloudFrontOriginAccessIdentityRequest
      *        The request to get an origin access identity's information.
@@ -284,7 +630,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * <p>
      * Get the information about an origin access identity.
+     * </p>
      * 
      * @param getCloudFrontOriginAccessIdentityRequest
      *        The request to get an origin access identity's information.
@@ -301,10 +649,13 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityRequest, GetCloudFrontOriginAccessIdentityResult> asyncHandler);
 
     /**
+     * <p>
      * Get the configuration information about an origin access identity.
+     * </p>
      * 
      * @param getCloudFrontOriginAccessIdentityConfigRequest
-     *        The request to get an origin access identity's configuration.
+     *        The origin access identity's configuration information. For more information, see
+     *        <a>CloudFrontOriginAccessIdentityConfigComplexType</a>.
      * @return A Java Future containing the result of the GetCloudFrontOriginAccessIdentityConfig operation returned by
      *         the service.
      * @sample AmazonCloudFrontAsync.GetCloudFrontOriginAccessIdentityConfig
@@ -313,10 +664,13 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest);
 
     /**
+     * <p>
      * Get the configuration information about an origin access identity.
+     * </p>
      * 
      * @param getCloudFrontOriginAccessIdentityConfigRequest
-     *        The request to get an origin access identity's configuration.
+     *        The origin access identity's configuration information. For more information, see
+     *        <a>CloudFrontOriginAccessIdentityConfigComplexType</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -330,7 +684,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityConfigRequest, GetCloudFrontOriginAccessIdentityConfigResult> asyncHandler);
 
     /**
+     * <p>
      * Get the information about a distribution.
+     * </p>
      * 
      * @param getDistributionRequest
      *        The request to get a distribution's information.
@@ -340,7 +696,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<GetDistributionResult> getDistributionAsync(GetDistributionRequest getDistributionRequest);
 
     /**
+     * <p>
      * Get the information about a distribution.
+     * </p>
      * 
      * @param getDistributionRequest
      *        The request to get a distribution's information.
@@ -355,7 +713,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetDistributionRequest, GetDistributionResult> asyncHandler);
 
     /**
+     * <p>
      * Get the configuration information about a distribution.
+     * </p>
      * 
      * @param getDistributionConfigRequest
      *        The request to get a distribution configuration.
@@ -365,7 +725,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<GetDistributionConfigResult> getDistributionConfigAsync(GetDistributionConfigRequest getDistributionConfigRequest);
 
     /**
+     * <p>
      * Get the configuration information about a distribution.
+     * </p>
      * 
      * @param getDistributionConfigRequest
      *        The request to get a distribution configuration.
@@ -380,7 +742,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetDistributionConfigRequest, GetDistributionConfigResult> asyncHandler);
 
     /**
+     * <p>
      * Get the information about an invalidation.
+     * </p>
      * 
      * @param getInvalidationRequest
      *        The request to get an invalidation's information.
@@ -390,7 +754,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<GetInvalidationResult> getInvalidationAsync(GetInvalidationRequest getInvalidationRequest);
 
     /**
+     * <p>
      * Get the information about an invalidation.
+     * </p>
      * 
      * @param getInvalidationRequest
      *        The request to get an invalidation's information.
@@ -405,7 +771,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetInvalidationRequest, GetInvalidationResult> asyncHandler);
 
     /**
-     * Get the information about a streaming distribution.
+     * <p>
+     * Gets information about a specified RTMP distribution, including the distribution configuration.
+     * </p>
      * 
      * @param getStreamingDistributionRequest
      *        The request to get a streaming distribution's information.
@@ -415,7 +783,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<GetStreamingDistributionResult> getStreamingDistributionAsync(GetStreamingDistributionRequest getStreamingDistributionRequest);
 
     /**
-     * Get the information about a streaming distribution.
+     * <p>
+     * Gets information about a specified RTMP distribution, including the distribution configuration.
+     * </p>
      * 
      * @param getStreamingDistributionRequest
      *        The request to get a streaming distribution's information.
@@ -430,7 +800,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionRequest, GetStreamingDistributionResult> asyncHandler);
 
     /**
+     * <p>
      * Get the configuration information about a streaming distribution.
+     * </p>
      * 
      * @param getStreamingDistributionConfigRequest
      *        To request to get a streaming distribution configuration.
@@ -442,7 +814,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest);
 
     /**
+     * <p>
      * Get the configuration information about a streaming distribution.
+     * </p>
      * 
      * @param getStreamingDistributionConfigRequest
      *        To request to get a streaming distribution configuration.
@@ -459,7 +833,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionConfigRequest, GetStreamingDistributionConfigResult> asyncHandler);
 
     /**
-     * List origin access identities.
+     * <p>
+     * Lists origin access identities.
+     * </p>
      * 
      * @param listCloudFrontOriginAccessIdentitiesRequest
      *        The request to list origin access identities.
@@ -471,7 +847,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest);
 
     /**
-     * List origin access identities.
+     * <p>
+     * Lists origin access identities.
+     * </p>
      * 
      * @param listCloudFrontOriginAccessIdentitiesRequest
      *        The request to list origin access identities.
@@ -488,7 +866,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<ListCloudFrontOriginAccessIdentitiesRequest, ListCloudFrontOriginAccessIdentitiesResult> asyncHandler);
 
     /**
+     * <p>
      * List distributions.
+     * </p>
      * 
      * @param listDistributionsRequest
      *        The request to list your distributions.
@@ -498,7 +878,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<ListDistributionsResult> listDistributionsAsync(ListDistributionsRequest listDistributionsRequest);
 
     /**
+     * <p>
      * List distributions.
+     * </p>
      * 
      * @param listDistributionsRequest
      *        The request to list your distributions.
@@ -513,7 +895,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<ListDistributionsRequest, ListDistributionsResult> asyncHandler);
 
     /**
+     * <p>
      * List the distributions that are associated with a specified AWS WAF web ACL.
+     * </p>
      * 
      * @param listDistributionsByWebACLIdRequest
      *        The request to list distributions that are associated with a specified AWS WAF web ACL.
@@ -524,7 +908,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest);
 
     /**
+     * <p>
      * List the distributions that are associated with a specified AWS WAF web ACL.
+     * </p>
      * 
      * @param listDistributionsByWebACLIdRequest
      *        The request to list distributions that are associated with a specified AWS WAF web ACL.
@@ -540,7 +926,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<ListDistributionsByWebACLIdRequest, ListDistributionsByWebACLIdResult> asyncHandler);
 
     /**
-     * List invalidation batches.
+     * <p>
+     * Lists invalidation batches.
+     * </p>
      * 
      * @param listInvalidationsRequest
      *        The request to list invalidations.
@@ -550,7 +938,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest);
 
     /**
-     * List invalidation batches.
+     * <p>
+     * Lists invalidation batches.
+     * </p>
      * 
      * @param listInvalidationsRequest
      *        The request to list invalidations.
@@ -565,7 +955,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult> asyncHandler);
 
     /**
+     * <p>
      * List streaming distributions.
+     * </p>
      * 
      * @param listStreamingDistributionsRequest
      *        The request to list your streaming distributions.
@@ -576,7 +968,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             ListStreamingDistributionsRequest listStreamingDistributionsRequest);
 
     /**
+     * <p>
      * List streaming distributions.
+     * </p>
      * 
      * @param listStreamingDistributionsRequest
      *        The request to list your streaming distributions.
@@ -592,7 +986,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<ListStreamingDistributionsRequest, ListStreamingDistributionsResult> asyncHandler);
 
     /**
+     * <p>
      * List tags for a CloudFront resource.
+     * </p>
      * 
      * @param listTagsForResourceRequest
      *        The request to list tags for a CloudFront resource.
@@ -602,7 +998,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
+     * <p>
      * List tags for a CloudFront resource.
+     * </p>
      * 
      * @param listTagsForResourceRequest
      *        The request to list tags for a CloudFront resource.
@@ -617,7 +1015,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
+     * <p>
      * Add tags to a CloudFront resource.
+     * </p>
      * 
      * @param tagResourceRequest
      *        The request to add tags to a CloudFront resource.
@@ -627,7 +1027,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
     /**
+     * <p>
      * Add tags to a CloudFront resource.
+     * </p>
      * 
      * @param tagResourceRequest
      *        The request to add tags to a CloudFront resource.
@@ -642,7 +1044,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
+     * <p>
      * Remove tags from a CloudFront resource.
+     * </p>
      * 
      * @param untagResourceRequest
      *        The request to remove tags from a CloudFront resource.
@@ -652,7 +1056,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
     /**
+     * <p>
      * Remove tags from a CloudFront resource.
+     * </p>
      * 
      * @param untagResourceRequest
      *        The request to remove tags from a CloudFront resource.
@@ -667,7 +1073,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
+     * <p>
      * Update an origin access identity.
+     * </p>
      * 
      * @param updateCloudFrontOriginAccessIdentityRequest
      *        The request to update an origin access identity.
@@ -679,7 +1087,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest);
 
     /**
+     * <p>
      * Update an origin access identity.
+     * </p>
      * 
      * @param updateCloudFrontOriginAccessIdentityRequest
      *        The request to update an origin access identity.
@@ -696,7 +1106,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<UpdateCloudFrontOriginAccessIdentityRequest, UpdateCloudFrontOriginAccessIdentityResult> asyncHandler);
 
     /**
+     * <p>
      * Update a distribution.
+     * </p>
      * 
      * @param updateDistributionRequest
      *        The request to update a distribution.
@@ -706,7 +1118,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(UpdateDistributionRequest updateDistributionRequest);
 
     /**
+     * <p>
      * Update a distribution.
+     * </p>
      * 
      * @param updateDistributionRequest
      *        The request to update a distribution.
@@ -721,7 +1135,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<UpdateDistributionRequest, UpdateDistributionResult> asyncHandler);
 
     /**
+     * <p>
      * Update a streaming distribution.
+     * </p>
      * 
      * @param updateStreamingDistributionRequest
      *        The request to update a streaming distribution.
@@ -732,7 +1148,9 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             UpdateStreamingDistributionRequest updateStreamingDistributionRequest);
 
     /**
+     * <p>
      * Update a streaming distribution.
+     * </p>
      * 
      * @param updateStreamingDistributionRequest
      *        The request to update a streaming distribution.

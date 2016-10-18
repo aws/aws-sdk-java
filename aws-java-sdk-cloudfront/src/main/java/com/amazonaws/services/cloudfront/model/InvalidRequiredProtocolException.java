@@ -13,8 +13,10 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
+ * <p>
  * This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request, or omit the
- * RequiredProtocols element from your distribution configuration.
+ * <code>RequiredProtocols</code> element from your distribution configuration.
+ * </p>
  */
 public class InvalidRequiredProtocolException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

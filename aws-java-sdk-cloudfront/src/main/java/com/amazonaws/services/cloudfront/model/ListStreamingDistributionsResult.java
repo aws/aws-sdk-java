@@ -15,18 +15,26 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class ListStreamingDistributionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The StreamingDistributionList type. */
+    /**
+     * <p>
+     * The <code>StreamingDistributionList</code> type.
+     * </p>
+     */
     private StreamingDistributionList streamingDistributionList;
 
     /**
-     * The StreamingDistributionList type.
+     * <p>
+     * The <code>StreamingDistributionList</code> type.
+     * </p>
      * 
      * @param streamingDistributionList
-     *        The StreamingDistributionList type.
+     *        The <code>StreamingDistributionList</code> type.
      */
 
     public void setStreamingDistributionList(StreamingDistributionList streamingDistributionList) {
@@ -34,9 +42,11 @@ public class ListStreamingDistributionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * The StreamingDistributionList type.
+     * <p>
+     * The <code>StreamingDistributionList</code> type.
+     * </p>
      * 
-     * @return The StreamingDistributionList type.
+     * @return The <code>StreamingDistributionList</code> type.
      */
 
     public StreamingDistributionList getStreamingDistributionList() {
@@ -44,10 +54,12 @@ public class ListStreamingDistributionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * The StreamingDistributionList type.
+     * <p>
+     * The <code>StreamingDistributionList</code> type.
+     * </p>
      * 
      * @param streamingDistributionList
-     *        The StreamingDistributionList type.
+     *        The <code>StreamingDistributionList</code> type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

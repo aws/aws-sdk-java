@@ -30,12 +30,14 @@ public class Source implements Serializable, Cloneable {
     private String owner;
     /**
      * <p>
-     * For AWS managed Config rules, a pre-defined identifier from a list. To reference the list, see <a
+     * For AWS Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code>
+     * is a managed rule. To reference a managed rule, see <a
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS
      * Managed Config Rules</a>.
      * </p>
      * <p>
-     * For custom Config rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function.
+     * For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
      * </p>
      */
     private String sourceIdentifier;
@@ -121,21 +123,24 @@ public class Source implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For AWS managed Config rules, a pre-defined identifier from a list. To reference the list, see <a
+     * For AWS Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code>
+     * is a managed rule. To reference a managed rule, see <a
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS
      * Managed Config Rules</a>.
      * </p>
      * <p>
-     * For custom Config rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function.
+     * For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
      * </p>
      * 
      * @param sourceIdentifier
-     *        For AWS managed Config rules, a pre-defined identifier from a list. To reference the list, see <a
+     *        For AWS Config managed rules, a predefined identifier from a list. For example,
+     *        <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a
      *        href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
      *        >Using AWS Managed Config Rules</a>.</p>
      *        <p>
-     *        For custom Config rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda
-     *        function.
+     *        For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function, such
+     *        as <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
      */
 
     public void setSourceIdentifier(String sourceIdentifier) {
@@ -144,20 +149,23 @@ public class Source implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For AWS managed Config rules, a pre-defined identifier from a list. To reference the list, see <a
+     * For AWS Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code>
+     * is a managed rule. To reference a managed rule, see <a
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS
      * Managed Config Rules</a>.
      * </p>
      * <p>
-     * For custom Config rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function.
+     * For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
      * </p>
      * 
-     * @return For AWS managed Config rules, a pre-defined identifier from a list. To reference the list, see <a
+     * @return For AWS Config managed rules, a predefined identifier from a list. For example,
+     *         <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a
      *         href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
      *         >Using AWS Managed Config Rules</a>.</p>
      *         <p>
-     *         For custom Config rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda
-     *         function.
+     *         For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function,
+     *         such as <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
      */
 
     public String getSourceIdentifier() {
@@ -166,21 +174,24 @@ public class Source implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For AWS managed Config rules, a pre-defined identifier from a list. To reference the list, see <a
+     * For AWS Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code>
+     * is a managed rule. To reference a managed rule, see <a
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS
      * Managed Config Rules</a>.
      * </p>
      * <p>
-     * For custom Config rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function.
+     * For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
      * </p>
      * 
      * @param sourceIdentifier
-     *        For AWS managed Config rules, a pre-defined identifier from a list. To reference the list, see <a
+     *        For AWS Config managed rules, a predefined identifier from a list. For example,
+     *        <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a
      *        href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
      *        >Using AWS Managed Config Rules</a>.</p>
      *        <p>
-     *        For custom Config rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda
-     *        function.
+     *        For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function, such
+     *        as <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

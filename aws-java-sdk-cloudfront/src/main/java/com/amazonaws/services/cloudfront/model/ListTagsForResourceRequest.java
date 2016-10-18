@@ -16,15 +16,23 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to list tags for a CloudFront resource.
+ * </p>
  */
 public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** An ARN of a CloudFront resource. */
+    /**
+     * <p>
+     * An ARN of a CloudFront resource.
+     * </p>
+     */
     private String resource;
 
     /**
+     * <p>
      * An ARN of a CloudFront resource.
+     * </p>
      * 
      * @param resource
      *        An ARN of a CloudFront resource.
@@ -35,7 +43,9 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * An ARN of a CloudFront resource.
+     * </p>
      * 
      * @return An ARN of a CloudFront resource.
      */
@@ -45,7 +55,9 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * An ARN of a CloudFront resource.
+     * </p>
      * 
      * @param resource
      *        An ARN of a CloudFront resource.

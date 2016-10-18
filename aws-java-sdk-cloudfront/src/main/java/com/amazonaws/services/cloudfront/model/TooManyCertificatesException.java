@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
- * You cannot create anymore custom ssl certificates.
+ * <p>
+ * You cannot create anymore custom SSL/TLS certificates.
+ * </p>
  */
 public class TooManyCertificatesException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

@@ -15,27 +15,50 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private
- * content. If you want to require signed URLs in requests for objects in the target origin that match the PathPattern
- * for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items. For more
- * information, go to Using a Signed URL to Serve Private Content in the Amazon CloudFront Developer Guide. If you don't
- * want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for
- * Quantity. Omit Items. To add, change, or remove one or more trusted signers, change Enabled to true (if it's
- * currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in
- * the updated distribution.
+ * content.
+ * </p>
+ * <p>
+ * If you want to require signed URLs in requests for objects in the target origin that match the
+ * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the
+ * applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
+ * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content
+ * through CloudFront</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.
+ * </p>
+ * <p>
+ * If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
+ * <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.
+ * </p>
+ * <p>
+ * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
+ * currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers
+ * that you want to include in the updated distribution.
+ * </p>
+ * <p>
+ * For more information about updating the distribution configuration, see <a>DistributionConfig</a> .
+ * </p>
  */
 public class TrustedSigners implements Serializable, Cloneable {
 
     /**
-     * Specifies whether you want to require end users to use signed URLs to access the files specified by PathPattern
-     * and TargetOriginId.
+     * <p>
+     * Specifies whether you want to require viewers to use signed URLs to access the files specified by
+     * <code>PathPattern</code> and <code>TargetOriginId</code>.
+     * </p>
      */
     private Boolean enabled;
-    /** The number of trusted signers for this cache behavior. */
+    /**
+     * <p>
+     * The number of trusted signers for this cache behavior.
+     * </p>
+     */
     private Integer quantity;
     /**
-     * Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit
-     * Items.
+     * <p>
+     * <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If <code>Quantity</code>
+     * is <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
@@ -51,20 +74,22 @@ public class TrustedSigners implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param items
-     *        Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can
-     *        omit Items.
+     *        <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If
+     *        <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
      */
     public TrustedSigners(java.util.List<String> items) {
         setItems(items);
     }
 
     /**
-     * Specifies whether you want to require end users to use signed URLs to access the files specified by PathPattern
-     * and TargetOriginId.
+     * <p>
+     * Specifies whether you want to require viewers to use signed URLs to access the files specified by
+     * <code>PathPattern</code> and <code>TargetOriginId</code>.
+     * </p>
      * 
      * @param enabled
-     *        Specifies whether you want to require end users to use signed URLs to access the files specified by
-     *        PathPattern and TargetOriginId.
+     *        Specifies whether you want to require viewers to use signed URLs to access the files specified by
+     *        <code>PathPattern</code> and <code>TargetOriginId</code>.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -72,11 +97,13 @@ public class TrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether you want to require end users to use signed URLs to access the files specified by PathPattern
-     * and TargetOriginId.
+     * <p>
+     * Specifies whether you want to require viewers to use signed URLs to access the files specified by
+     * <code>PathPattern</code> and <code>TargetOriginId</code>.
+     * </p>
      * 
-     * @return Specifies whether you want to require end users to use signed URLs to access the files specified by
-     *         PathPattern and TargetOriginId.
+     * @return Specifies whether you want to require viewers to use signed URLs to access the files specified by
+     *         <code>PathPattern</code> and <code>TargetOriginId</code>.
      */
 
     public Boolean getEnabled() {
@@ -84,12 +111,14 @@ public class TrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether you want to require end users to use signed URLs to access the files specified by PathPattern
-     * and TargetOriginId.
+     * <p>
+     * Specifies whether you want to require viewers to use signed URLs to access the files specified by
+     * <code>PathPattern</code> and <code>TargetOriginId</code>.
+     * </p>
      * 
      * @param enabled
-     *        Specifies whether you want to require end users to use signed URLs to access the files specified by
-     *        PathPattern and TargetOriginId.
+     *        Specifies whether you want to require viewers to use signed URLs to access the files specified by
+     *        <code>PathPattern</code> and <code>TargetOriginId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +128,13 @@ public class TrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether you want to require end users to use signed URLs to access the files specified by PathPattern
-     * and TargetOriginId.
+     * <p>
+     * Specifies whether you want to require viewers to use signed URLs to access the files specified by
+     * <code>PathPattern</code> and <code>TargetOriginId</code>.
+     * </p>
      * 
-     * @return Specifies whether you want to require end users to use signed URLs to access the files specified by
-     *         PathPattern and TargetOriginId.
+     * @return Specifies whether you want to require viewers to use signed URLs to access the files specified by
+     *         <code>PathPattern</code> and <code>TargetOriginId</code>.
      */
 
     public Boolean isEnabled() {
@@ -111,7 +142,9 @@ public class TrustedSigners implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of trusted signers for this cache behavior.
+     * </p>
      * 
      * @param quantity
      *        The number of trusted signers for this cache behavior.
@@ -122,7 +155,9 @@ public class TrustedSigners implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of trusted signers for this cache behavior.
+     * </p>
      * 
      * @return The number of trusted signers for this cache behavior.
      */
@@ -132,7 +167,9 @@ public class TrustedSigners implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of trusted signers for this cache behavior.
+     * </p>
      * 
      * @param quantity
      *        The number of trusted signers for this cache behavior.
@@ -145,11 +182,13 @@ public class TrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit
-     * Items.
+     * <p>
+     * <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If <code>Quantity</code>
+     * is <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      * 
-     * @return Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can
-     *         omit Items.
+     * @return <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If
+     *         <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
      */
 
     public java.util.List<String> getItems() {
@@ -160,12 +199,14 @@ public class TrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit
-     * Items.
+     * <p>
+     * <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If <code>Quantity</code>
+     * is <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can
-     *        omit Items.
+     *        <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If
+     *        <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
      */
 
     public void setItems(java.util.Collection<String> items) {
@@ -178,8 +219,10 @@ public class TrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit
-     * Items.
+     * <p>
+     * <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If <code>Quantity</code>
+     * is <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -187,8 +230,8 @@ public class TrustedSigners implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can
-     *        omit Items.
+     *        <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If
+     *        <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,12 +246,14 @@ public class TrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can omit
-     * Items.
+     * <p>
+     * <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If <code>Quantity</code>
+     * is <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains trusted signers for this cache behavior. If Quantity is 0, you can
-     *        omit Items.
+     *        <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If
+     *        <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

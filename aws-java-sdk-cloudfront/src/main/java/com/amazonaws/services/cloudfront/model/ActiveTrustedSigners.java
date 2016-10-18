@@ -15,23 +15,52 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A complex type that lists the AWS accounts, if any, that you included in the TrustedSigners complex type for the
- * default cache behavior or for any of the other cache behaviors for this distribution. These are accounts that you
- * want to allow to create signed URLs for private content.
+ * <p>
+ * A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex type
+ * for this distribution. These are the accounts that you want to allow to create signed URLs for private content.
+ * </p>
+ * <p>
+ * The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if the
+ * signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the IDs of any
+ * active CloudFront key pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code>
+ * element appears for a <code>Signer</code>, that signer can't create signed URLs.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content
+ * through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+ * </p>
  */
 public class ActiveTrustedSigners implements Serializable, Cloneable {
 
-    /** Each active trusted signer. */
+    /**
+     * <p>
+     * Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex type
+     * for this RTMP distribution have active CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
+     */
     private Boolean enabled;
     /**
-     * The number of unique trusted signers included in all cache behaviors. For example, if three cache behaviors all
-     * list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     * <p>
+     * A complex type that contains one <code>Signer</code> complex type for each trusted signer specified in the
+     * <code>TrustedSigners</code> complex type.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      */
     private Integer quantity;
     /**
-     * A complex type that contains one Signer complex type for each unique trusted signer that is specified in the
-     * TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other
-     * cache behaviors.
+     * <p>
+     * A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in
+     * the <code>TrustedSigners</code> complex type.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Signer> items;
 
@@ -47,19 +76,30 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param items
-     *        A complex type that contains one Signer complex type for each unique trusted signer that is specified in
-     *        the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the
-     *        other cache behaviors.
+     *        A complex type that contains one <code>Signer</code> complex type for each trusted signer that is
+     *        specified in the <code>TrustedSigners</code> complex type.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      */
     public ActiveTrustedSigners(java.util.List<Signer> items) {
         setItems(items);
     }
 
     /**
-     * Each active trusted signer.
+     * <p>
+     * Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex type
+     * for this RTMP distribution have active CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
      * @param enabled
-     *        Each active trusted signer.
+     *        Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex
+     *        type for this RTMP distribution have active CloudFront key pairs. If not, <code>Enabled</code> is
+     *        <code>false</code>.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -67,9 +107,19 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * Each active trusted signer.
+     * <p>
+     * Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex type
+     * for this RTMP distribution have active CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
-     * @return Each active trusted signer.
+     * @return Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex
+     *         type for this RTMP distribution have active CloudFront key pairs. If not, <code>Enabled</code> is
+     *         <code>false</code>.</p>
+     *         <p>
+     *         For more information, see <a>ActiveTrustedSigners</a>.
      */
 
     public Boolean getEnabled() {
@@ -77,10 +127,20 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * Each active trusted signer.
+     * <p>
+     * Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex type
+     * for this RTMP distribution have active CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
      * @param enabled
-     *        Each active trusted signer.
+     *        Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex
+     *        type for this RTMP distribution have active CloudFront key pairs. If not, <code>Enabled</code> is
+     *        <code>false</code>.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,9 +150,19 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * Each active trusted signer.
+     * <p>
+     * Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex type
+     * for this RTMP distribution have active CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
-     * @return Each active trusted signer.
+     * @return Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex
+     *         type for this RTMP distribution have active CloudFront key pairs. If not, <code>Enabled</code> is
+     *         <code>false</code>.</p>
+     *         <p>
+     *         For more information, see <a>ActiveTrustedSigners</a>.
      */
 
     public Boolean isEnabled() {
@@ -100,12 +170,19 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * The number of unique trusted signers included in all cache behaviors. For example, if three cache behaviors all
-     * list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     * <p>
+     * A complex type that contains one <code>Signer</code> complex type for each trusted signer specified in the
+     * <code>TrustedSigners</code> complex type.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
      * @param quantity
-     *        The number of unique trusted signers included in all cache behaviors. For example, if three cache
-     *        behaviors all list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     *        A complex type that contains one <code>Signer</code> complex type for each trusted signer specified in the
+     *        <code>TrustedSigners</code> complex type.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      */
 
     public void setQuantity(Integer quantity) {
@@ -113,11 +190,18 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * The number of unique trusted signers included in all cache behaviors. For example, if three cache behaviors all
-     * list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     * <p>
+     * A complex type that contains one <code>Signer</code> complex type for each trusted signer specified in the
+     * <code>TrustedSigners</code> complex type.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
-     * @return The number of unique trusted signers included in all cache behaviors. For example, if three cache
-     *         behaviors all list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     * @return A complex type that contains one <code>Signer</code> complex type for each trusted signer specified in
+     *         the <code>TrustedSigners</code> complex type.</p>
+     *         <p>
+     *         For more information, see <a>ActiveTrustedSigners</a>.
      */
 
     public Integer getQuantity() {
@@ -125,12 +209,19 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * The number of unique trusted signers included in all cache behaviors. For example, if three cache behaviors all
-     * list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     * <p>
+     * A complex type that contains one <code>Signer</code> complex type for each trusted signer specified in the
+     * <code>TrustedSigners</code> complex type.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
      * @param quantity
-     *        The number of unique trusted signers included in all cache behaviors. For example, if three cache
-     *        behaviors all list the same three AWS accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     *        A complex type that contains one <code>Signer</code> complex type for each trusted signer specified in the
+     *        <code>TrustedSigners</code> complex type.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,13 +231,18 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one Signer complex type for each unique trusted signer that is specified in the
-     * TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other
-     * cache behaviors.
+     * <p>
+     * A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in
+     * the <code>TrustedSigners</code> complex type.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
-     * @return A complex type that contains one Signer complex type for each unique trusted signer that is specified in
-     *         the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of
-     *         the other cache behaviors.
+     * @return A complex type that contains one <code>Signer</code> complex type for each trusted signer that is
+     *         specified in the <code>TrustedSigners</code> complex type.</p>
+     *         <p>
+     *         For more information, see <a>ActiveTrustedSigners</a>.
      */
 
     public java.util.List<Signer> getItems() {
@@ -157,14 +253,19 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one Signer complex type for each unique trusted signer that is specified in the
-     * TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other
-     * cache behaviors.
+     * <p>
+     * A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in
+     * the <code>TrustedSigners</code> complex type.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains one Signer complex type for each unique trusted signer that is specified in
-     *        the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the
-     *        other cache behaviors.
+     *        A complex type that contains one <code>Signer</code> complex type for each trusted signer that is
+     *        specified in the <code>TrustedSigners</code> complex type.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      */
 
     public void setItems(java.util.Collection<Signer> items) {
@@ -177,9 +278,13 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one Signer complex type for each unique trusted signer that is specified in the
-     * TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other
-     * cache behaviors.
+     * <p>
+     * A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in
+     * the <code>TrustedSigners</code> complex type.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -187,9 +292,10 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        A complex type that contains one Signer complex type for each unique trusted signer that is specified in
-     *        the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the
-     *        other cache behaviors.
+     *        A complex type that contains one <code>Signer</code> complex type for each trusted signer that is
+     *        specified in the <code>TrustedSigners</code> complex type.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,14 +310,19 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains one Signer complex type for each unique trusted signer that is specified in the
-     * TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the other
-     * cache behaviors.
+     * <p>
+     * A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in
+     * the <code>TrustedSigners</code> complex type.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains one Signer complex type for each unique trusted signer that is specified in
-     *        the TrustedSigners complex type, including trusted signers in the default cache behavior and in all of the
-     *        other cache behaviors.
+     *        A complex type that contains one <code>Signer</code> complex type for each trusted signer that is
+     *        specified in the <code>TrustedSigners</code> complex type.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

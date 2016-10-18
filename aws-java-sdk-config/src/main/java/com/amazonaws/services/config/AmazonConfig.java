@@ -200,9 +200,21 @@ public interface AmazonConfig {
      * specified.
      * </p>
      * <ul>
-     * <li>Notification of starting the delivery.</li>
-     * <li>Notification of delivery completed, if the delivery was successfully completed.</li>
-     * <li>Notification of delivery failure, if the delivery failed to complete.</li>
+     * <li>
+     * <p>
+     * Notification of starting the delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Notification of delivery completed, if the delivery was successfully completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Notification of delivery failure, if the delivery failed to complete.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param deliverConfigSnapshotRequest
@@ -233,15 +245,27 @@ public interface AmazonConfig {
      * result might indicate one of the following conditions:
      * </p>
      * <ul>
-     * <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the
+     * <li>
+     * <p>
+     * AWS Config has never invoked an evaluation for the rule. To check whether it has, use the
      * <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and
-     * <code>LastFailedInvocationTime</code>.</li>
-     * <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that
-     * you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the
-     * rule is a custom rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
-     * permission.</li>
-     * <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can
-     * occur if the resources were deleted or removed from the rule's scope.</li>
+     * <code>LastFailedInvocationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you
+     * assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule
+     * is a custom rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
+     * permission.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can
+     * occur if the resources were deleted or removed from the rule's scope.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param describeComplianceByConfigRuleRequest
@@ -276,15 +300,27 @@ public interface AmazonConfig {
      * result might indicate one of the following conditions about the rules that evaluate the resource:
      * </p>
      * <ul>
-     * <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the
+     * <li>
+     * <p>
+     * AWS Config has never invoked an evaluation for the rule. To check whether it has, use the
      * <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and
-     * <code>LastFailedInvocationTime</code>.</li>
-     * <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that
-     * you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the
-     * rule is a custom rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
-     * permission.</li>
-     * <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can
-     * occur if the resources were deleted or removed from the rule's scope.</li>
+     * <code>LastFailedInvocationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you
+     * assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule
+     * is a custom rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
+     * permission.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can
+     * occur if the resources were deleted or removed from the rule's scope.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param describeComplianceByResourceRequest
@@ -357,7 +393,7 @@ public interface AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per account.
+     * Currently, you can specify only one configuration recorder per region in your account.
      * </p>
      * </note>
      * 
@@ -380,12 +416,12 @@ public interface AmazonConfig {
 
     /**
      * <p>
-     * Returns the name of one or more specified configuration recorders. If the recorder name is not specified, this
-     * action returns the names of all the configuration recorders associated with the account.
+     * Returns the details for the specified configuration recorders. If the configuration recorder is not specified,
+     * this action returns the details for all configuration recorders associated with the account.
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per account.
+     * Currently, you can specify only one configuration recorder per region in your account.
      * </p>
      * </note>
      * 
@@ -412,7 +448,7 @@ public interface AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one delivery channel per account.
+     * Currently, you can specify only one delivery channel per region in your account.
      * </p>
      * </note>
      * 
@@ -439,7 +475,7 @@ public interface AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one delivery channel per account.
+     * Currently, you can specify only one delivery channel per region in your account.
      * </p>
      * </note>
      * 
@@ -636,7 +672,7 @@ public interface AmazonConfig {
      * Config for new rules.
      * </p>
      * <p>
-     * If you are updating a rule that you have added previously, specify the rule's <code>ConfigRuleName</code>,
+     * If you are updating a rule that you added previously, you can specify the rule by <code>ConfigRuleName</code>,
      * <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use in
      * this request.
      * </p>
@@ -648,7 +684,6 @@ public interface AmazonConfig {
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource
      * Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
      * </p>
-     * <p/>
      * 
      * @param putConfigRuleRequest
      * @return Result of the PutConfigRule operation returned by the service.
@@ -661,13 +696,19 @@ public interface AmazonConfig {
      *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request
      *         again later.
      * @throws InsufficientPermissionsException
-     *         Indicates one of the following errors:
-     *         </p>
+     *         Indicates one of the following errors:</p>
      *         <ul>
-     *         <li>The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform
-     *         the config:Put* action.</li>
-     *         <li>The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's
-     *         permissions.</li>
+     *         <li>
+     *         <p>
+     *         The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the
+     *         config:Put* action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.
+     *         </p>
+     *         </li>
      * @throws NoAvailableConfigurationRecorderException
      *         There are no configuration recorders available to provide the role needed to describe your resources.
      *         Create a configuration recorder.
@@ -685,7 +726,7 @@ public interface AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per account.
+     * Currently, you can specify only one configuration recorder per region in your account.
      * </p>
      * <p>
      * If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter specified, the default is
@@ -725,7 +766,7 @@ public interface AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * You can have only one delivery channel per AWS account.
+     * You can have only one delivery channel per region in your account.
      * </p>
      * </note>
      * 

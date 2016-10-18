@@ -15,35 +15,66 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your
- * custom origin. There are three choices: - CloudFront forwards only GET and HEAD requests. - CloudFront forwards only
- * GET, HEAD and OPTIONS requests. - CloudFront forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests. If
- * you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users
- * can't perform operations that you don't want them to. For example, you may not want users to have permission to
- * delete objects from your origin.
+ * custom origin. There are three choices:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so
+ * users can't perform operations that you don't want them to. For example, you might not want users to have permissions
+ * to delete objects from your origin.
+ * </p>
  */
 public class AllowedMethods implements Serializable, Cloneable {
 
     /**
-     * The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and
-     * HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and
-     * DELETE requests).
+     * <p>
+     * The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for
+     * <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and
+     * <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and
+     * <code>DELETE</code> requests).
+     * </p>
      */
     private Integer quantity;
-    /** A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin. */
+    /**
+     * <p>
+     * A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     private CachedMethods cachedMethods;
 
     /**
-     * The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and
-     * HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and
-     * DELETE requests).
+     * <p>
+     * The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for
+     * <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and
+     * <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and
+     * <code>DELETE</code> requests).
+     * </p>
      * 
      * @param quantity
-     *        The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET
-     *        and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH,
-     *        POST, and DELETE requests).
+     *        The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for
+     *        <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and
+     *        <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and
+     *        <code>DELETE</code> requests).
      */
 
     public void setQuantity(Integer quantity) {
@@ -51,13 +82,17 @@ public class AllowedMethods implements Serializable, Cloneable {
     }
 
     /**
-     * The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and
-     * HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and
-     * DELETE requests).
+     * <p>
+     * The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for
+     * <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and
+     * <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and
+     * <code>DELETE</code> requests).
+     * </p>
      * 
      * @return The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for
-     *         GET and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH,
-     *         POST, and DELETE requests).
+     *         <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and
+     *         <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and
+     *         <code>DELETE</code> requests).
      */
 
     public Integer getQuantity() {
@@ -65,14 +100,18 @@ public class AllowedMethods implements Serializable, Cloneable {
     }
 
     /**
-     * The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and
-     * HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and
-     * DELETE requests).
+     * <p>
+     * The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for
+     * <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and
+     * <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and
+     * <code>DELETE</code> requests).
+     * </p>
      * 
      * @param quantity
-     *        The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET
-     *        and HEAD requests), 3 (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH,
-     *        POST, and DELETE requests).
+     *        The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for
+     *        <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and
+     *        <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and
+     *        <code>DELETE</code> requests).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +121,9 @@ public class AllowedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
+     * </p>
      * 
      * @return A complex type that contains the HTTP methods that you want CloudFront to process and forward to your
      *         origin.
@@ -97,7 +138,9 @@ public class AllowedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
+     * </p>
      * 
      * @param items
      *        A complex type that contains the HTTP methods that you want CloudFront to process and forward to your
@@ -115,7 +158,9 @@ public class AllowedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -140,7 +185,9 @@ public class AllowedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
+     * </p>
      * 
      * @param items
      *        A complex type that contains the HTTP methods that you want CloudFront to process and forward to your
@@ -155,7 +202,9 @@ public class AllowedMethods implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.
+     * </p>
      * 
      * @param items
      *        A complex type that contains the HTTP methods that you want CloudFront to process and forward to your

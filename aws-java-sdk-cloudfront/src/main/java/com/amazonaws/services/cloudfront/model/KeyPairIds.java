@@ -15,20 +15,48 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
+ * <p>
+ * A complex type that lists the active CloudFront key pairs, if any, that are associated with
+ * <code>AwsAccountNumber</code>.
+ * </p>
+ * <p>
+ * For more information, see <a>ActiveTrustedSigners</a>.
+ * </p>
  */
 public class KeyPairIds implements Serializable, Cloneable {
 
-    /** The number of active CloudFront key pairs for AwsAccountNumber. */
+    /**
+     * <p>
+     * The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
+     */
     private Integer quantity;
-    /** A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber. */
+    /**
+     * <p>
+     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
+     * <code>AwsAccountNumber</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
-     * The number of active CloudFront key pairs for AwsAccountNumber.
+     * <p>
+     * The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
      * @param quantity
-     *        The number of active CloudFront key pairs for AwsAccountNumber.
+     *        The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      */
 
     public void setQuantity(Integer quantity) {
@@ -36,9 +64,16 @@ public class KeyPairIds implements Serializable, Cloneable {
     }
 
     /**
-     * The number of active CloudFront key pairs for AwsAccountNumber.
+     * <p>
+     * The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
-     * @return The number of active CloudFront key pairs for AwsAccountNumber.
+     * @return The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.</p>
+     *         <p>
+     *         For more information, see <a>ActiveTrustedSigners</a>.
      */
 
     public Integer getQuantity() {
@@ -46,10 +81,17 @@ public class KeyPairIds implements Serializable, Cloneable {
     }
 
     /**
-     * The number of active CloudFront key pairs for AwsAccountNumber.
+     * <p>
+     * The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
      * @param quantity
-     *        The number of active CloudFront key pairs for AwsAccountNumber.
+     *        The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -59,10 +101,18 @@ public class KeyPairIds implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
+     * <p>
+     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
+     * <code>AwsAccountNumber</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
      * @return A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     *         AwsAccountNumber.
+     *         <code>AwsAccountNumber</code>.</p>
+     *         <p>
+     *         For more information, see <a>ActiveTrustedSigners</a>.
      */
 
     public java.util.List<String> getItems() {
@@ -73,11 +123,19 @@ public class KeyPairIds implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
+     * <p>
+     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
+     * <code>AwsAccountNumber</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
      * @param items
      *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     *        AwsAccountNumber.
+     *        <code>AwsAccountNumber</code>.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      */
 
     public void setItems(java.util.Collection<String> items) {
@@ -90,7 +148,13 @@ public class KeyPairIds implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
+     * <p>
+     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
+     * <code>AwsAccountNumber</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -99,7 +163,9 @@ public class KeyPairIds implements Serializable, Cloneable {
      * 
      * @param items
      *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     *        AwsAccountNumber.
+     *        <code>AwsAccountNumber</code>.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,11 +180,19 @@ public class KeyPairIds implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
+     * <p>
+     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
+     * <code>AwsAccountNumber</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>ActiveTrustedSigners</a>.
+     * </p>
      * 
      * @param items
      *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     *        AwsAccountNumber.
+     *        <code>AwsAccountNumber</code>.</p>
+     *        <p>
+     *        For more information, see <a>ActiveTrustedSigners</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

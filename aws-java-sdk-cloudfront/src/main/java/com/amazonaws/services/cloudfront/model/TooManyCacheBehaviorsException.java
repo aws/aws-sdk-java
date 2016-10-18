@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
- * You cannot create anymore cache behaviors for the distribution.
+ * <p>
+ * You cannot create more cache behaviors for the distribution.
+ * </p>
  */
 public class TooManyCacheBehaviorsException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

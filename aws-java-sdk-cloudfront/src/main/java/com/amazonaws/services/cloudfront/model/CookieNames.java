@@ -15,24 +15,36 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin
- * that is associated with this cache behavior.
+ * <p>
+ * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones.
+ * For more information about forwarding cookies to the origin, see <a
+ * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
+ * Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+ * </p>
  */
 public class CookieNames implements Serializable, Cloneable {
 
-    /** The number of whitelisted cookies for this cache behavior. */
+    /**
+     * <p>
+     * The number of different cookies that you want CloudFront to forward to the origin for this cache behavior.
+     * </p>
+     */
     private Integer quantity;
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to forward to
+     * the origin for this cache behavior.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
-     * The number of whitelisted cookies for this cache behavior.
+     * <p>
+     * The number of different cookies that you want CloudFront to forward to the origin for this cache behavior.
+     * </p>
      * 
      * @param quantity
-     *        The number of whitelisted cookies for this cache behavior.
+     *        The number of different cookies that you want CloudFront to forward to the origin for this cache behavior.
      */
 
     public void setQuantity(Integer quantity) {
@@ -40,9 +52,12 @@ public class CookieNames implements Serializable, Cloneable {
     }
 
     /**
-     * The number of whitelisted cookies for this cache behavior.
+     * <p>
+     * The number of different cookies that you want CloudFront to forward to the origin for this cache behavior.
+     * </p>
      * 
-     * @return The number of whitelisted cookies for this cache behavior.
+     * @return The number of different cookies that you want CloudFront to forward to the origin for this cache
+     *         behavior.
      */
 
     public Integer getQuantity() {
@@ -50,10 +65,12 @@ public class CookieNames implements Serializable, Cloneable {
     }
 
     /**
-     * The number of whitelisted cookies for this cache behavior.
+     * <p>
+     * The number of different cookies that you want CloudFront to forward to the origin for this cache behavior.
+     * </p>
      * 
      * @param quantity
-     *        The number of whitelisted cookies for this cache behavior.
+     *        The number of different cookies that you want CloudFront to forward to the origin for this cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,11 +80,13 @@ public class CookieNames implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to forward to
+     * the origin for this cache behavior.
+     * </p>
      * 
-     * @return Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you
-     *         can omit Items.
+     * @return A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to
+     *         forward to the origin for this cache behavior.
      */
 
     public java.util.List<String> getItems() {
@@ -78,12 +97,14 @@ public class CookieNames implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to forward to
+     * the origin for this cache behavior.
+     * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you
-     *        can omit Items.
+     *        A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to
+     *        forward to the origin for this cache behavior.
      */
 
     public void setItems(java.util.Collection<String> items) {
@@ -96,8 +117,10 @@ public class CookieNames implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to forward to
+     * the origin for this cache behavior.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -105,8 +128,8 @@ public class CookieNames implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you
-     *        can omit Items.
+     *        A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to
+     *        forward to the origin for this cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,12 +144,14 @@ public class CookieNames implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to forward to
+     * the origin for this cache behavior.
+     * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you
-     *        can omit Items.
+     *        A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to
+     *        forward to the origin for this cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

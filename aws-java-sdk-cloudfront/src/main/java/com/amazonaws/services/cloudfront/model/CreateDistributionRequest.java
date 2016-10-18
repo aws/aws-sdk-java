@@ -16,11 +16,17 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to create a new distribution.
+ * </p>
  */
 public class CreateDistributionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The distribution's configuration information. */
+    /**
+     * <p>
+     * The distribution's configuration information.
+     * </p>
+     */
     private DistributionConfig distributionConfig;
 
     /**
@@ -42,7 +48,9 @@ public class CreateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The distribution's configuration information.
+     * </p>
      * 
      * @param distributionConfig
      *        The distribution's configuration information.
@@ -53,7 +61,9 @@ public class CreateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The distribution's configuration information.
+     * </p>
      * 
      * @return The distribution's configuration information.
      */
@@ -63,7 +73,9 @@ public class CreateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The distribution's configuration information.
+     * </p>
      * 
      * @param distributionConfig
      *        The distribution's configuration information.

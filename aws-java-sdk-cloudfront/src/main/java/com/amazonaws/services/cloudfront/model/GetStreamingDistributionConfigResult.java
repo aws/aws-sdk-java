@@ -15,18 +15,30 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class GetStreamingDistributionConfigResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** The streaming distribution's configuration information. */
+    /**
+     * <p>
+     * The streaming distribution's configuration information.
+     * </p>
+     */
     private StreamingDistributionConfig streamingDistributionConfig;
-    /** The current version of the configuration. For example: E2QWRUHAPOMQZL. */
+    /**
+     * <p>
+     * The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
+     */
     private String eTag;
 
     /**
+     * <p>
      * The streaming distribution's configuration information.
+     * </p>
      * 
      * @param streamingDistributionConfig
      *        The streaming distribution's configuration information.
@@ -37,7 +49,9 @@ public class GetStreamingDistributionConfigResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
      * The streaming distribution's configuration information.
+     * </p>
      * 
      * @return The streaming distribution's configuration information.
      */
@@ -47,7 +61,9 @@ public class GetStreamingDistributionConfigResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
      * The streaming distribution's configuration information.
+     * </p>
      * 
      * @param streamingDistributionConfig
      *        The streaming distribution's configuration information.
@@ -60,10 +76,12 @@ public class GetStreamingDistributionConfigResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * <p>
+     * The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param eTag
-     *        The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     *        The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public void setETag(String eTag) {
@@ -71,9 +89,11 @@ public class GetStreamingDistributionConfigResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * <p>
+     * The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
-     * @return The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * @return The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public String getETag() {
@@ -81,10 +101,12 @@ public class GetStreamingDistributionConfigResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     * <p>
+     * The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param eTag
-     *        The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     *        The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

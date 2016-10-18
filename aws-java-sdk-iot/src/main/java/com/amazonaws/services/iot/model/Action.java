@@ -29,6 +29,13 @@ public class Action implements Serializable, Cloneable {
     private DynamoDBAction dynamoDB;
     /**
      * <p>
+     * Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in
+     * an MQTT message payload into a separate DynamoDB column.
+     * </p>
+     */
+    private DynamoDBv2Action dynamoDBv2;
+    /**
+     * <p>
      * Invoke a Lambda function.
      * </p>
      */
@@ -125,6 +132,52 @@ public class Action implements Serializable, Cloneable {
 
     public Action withDynamoDB(DynamoDBAction dynamoDB) {
         setDynamoDB(dynamoDB);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in
+     * an MQTT message payload into a separate DynamoDB column.
+     * </p>
+     * 
+     * @param dynamoDBv2
+     *        Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each
+     *        attribute in an MQTT message payload into a separate DynamoDB column.
+     */
+
+    public void setDynamoDBv2(DynamoDBv2Action dynamoDBv2) {
+        this.dynamoDBv2 = dynamoDBv2;
+    }
+
+    /**
+     * <p>
+     * Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in
+     * an MQTT message payload into a separate DynamoDB column.
+     * </p>
+     * 
+     * @return Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each
+     *         attribute in an MQTT message payload into a separate DynamoDB column.
+     */
+
+    public DynamoDBv2Action getDynamoDBv2() {
+        return this.dynamoDBv2;
+    }
+
+    /**
+     * <p>
+     * Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in
+     * an MQTT message payload into a separate DynamoDB column.
+     * </p>
+     * 
+     * @param dynamoDBv2
+     *        Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each
+     *        attribute in an MQTT message payload into a separate DynamoDB column.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withDynamoDBv2(DynamoDBv2Action dynamoDBv2) {
+        setDynamoDBv2(dynamoDBv2);
         return this;
     }
 
@@ -541,6 +594,8 @@ public class Action implements Serializable, Cloneable {
         sb.append("{");
         if (getDynamoDB() != null)
             sb.append("DynamoDB: " + getDynamoDB() + ",");
+        if (getDynamoDBv2() != null)
+            sb.append("DynamoDBv2: " + getDynamoDBv2() + ",");
         if (getLambda() != null)
             sb.append("Lambda: " + getLambda() + ",");
         if (getSns() != null)
@@ -578,6 +633,10 @@ public class Action implements Serializable, Cloneable {
         if (other.getDynamoDB() == null ^ this.getDynamoDB() == null)
             return false;
         if (other.getDynamoDB() != null && other.getDynamoDB().equals(this.getDynamoDB()) == false)
+            return false;
+        if (other.getDynamoDBv2() == null ^ this.getDynamoDBv2() == null)
+            return false;
+        if (other.getDynamoDBv2() != null && other.getDynamoDBv2().equals(this.getDynamoDBv2()) == false)
             return false;
         if (other.getLambda() == null ^ this.getLambda() == null)
             return false;
@@ -628,6 +687,7 @@ public class Action implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDynamoDB() == null) ? 0 : getDynamoDB().hashCode());
+        hashCode = prime * hashCode + ((getDynamoDBv2() == null) ? 0 : getDynamoDBv2().hashCode());
         hashCode = prime * hashCode + ((getLambda() == null) ? 0 : getLambda().hashCode());
         hashCode = prime * hashCode + ((getSns() == null) ? 0 : getSns().hashCode());
         hashCode = prime * hashCode + ((getSqs() == null) ? 0 : getSqs().hashCode());

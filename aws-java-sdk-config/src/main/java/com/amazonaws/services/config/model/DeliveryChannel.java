@@ -23,10 +23,10 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the
-     * delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete
-     * your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel
-     * that has the desired name.
+     * The name of the delivery channel. By default, AWS Config assigns the name "default" when creating the delivery
+     * channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your
+     * current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that
+     * has the desired name.
      * </p>
      */
     private String name;
@@ -67,17 +67,17 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the
-     * delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete
-     * your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel
-     * that has the desired name.
+     * The name of the delivery channel. By default, AWS Config assigns the name "default" when creating the delivery
+     * channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your
+     * current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that
+     * has the desired name.
      * </p>
      * 
      * @param name
-     *        The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when
-     *        creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel
-     *        action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to
-     *        create a delivery channel that has the desired name.
+     *        The name of the delivery channel. By default, AWS Config assigns the name "default" when creating the
+     *        delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to
+     *        delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a
+     *        delivery channel that has the desired name.
      */
 
     public void setName(String name) {
@@ -86,16 +86,16 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the
-     * delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete
-     * your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel
-     * that has the desired name.
+     * The name of the delivery channel. By default, AWS Config assigns the name "default" when creating the delivery
+     * channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your
+     * current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that
+     * has the desired name.
      * </p>
      * 
-     * @return The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when
-     *         creating the delivery channel. To change the delivery channel name, you must use the
-     *         DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the
-     *         PutDeliveryChannel command to create a delivery channel that has the desired name.
+     * @return The name of the delivery channel. By default, AWS Config assigns the name "default" when creating the
+     *         delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to
+     *         delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a
+     *         delivery channel that has the desired name.
      */
 
     public String getName() {
@@ -104,17 +104,17 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the
-     * delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete
-     * your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel
-     * that has the desired name.
+     * The name of the delivery channel. By default, AWS Config assigns the name "default" when creating the delivery
+     * channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your
+     * current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that
+     * has the desired name.
      * </p>
      * 
      * @param name
-     *        The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when
-     *        creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel
-     *        action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to
-     *        create a delivery channel that has the desired name.
+     *        The name of the delivery channel. By default, AWS Config assigns the name "default" when creating the
+     *        delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to
+     *        delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a
+     *        delivery channel that has the desired name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

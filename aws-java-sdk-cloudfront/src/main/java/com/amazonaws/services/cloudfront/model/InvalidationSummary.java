@@ -15,19 +15,31 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * Summary of an invalidation request.
+ * <p>
+ * A summary of an invalidation request.
+ * </p>
  */
 public class InvalidationSummary implements Serializable, Cloneable {
 
-    /** The unique ID for an invalidation request. */
+    /**
+     * <p>
+     * The unique ID for an invalidation request.
+     * </p>
+     */
     private String id;
 
     private java.util.Date createTime;
-    /** The status of an invalidation request. */
+    /**
+     * <p>
+     * The status of an invalidation request.
+     * </p>
+     */
     private String status;
 
     /**
+     * <p>
      * The unique ID for an invalidation request.
+     * </p>
      * 
      * @param id
      *        The unique ID for an invalidation request.
@@ -38,7 +50,9 @@ public class InvalidationSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The unique ID for an invalidation request.
+     * </p>
      * 
      * @return The unique ID for an invalidation request.
      */
@@ -48,7 +62,9 @@ public class InvalidationSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The unique ID for an invalidation request.
+     * </p>
      * 
      * @param id
      *        The unique ID for an invalidation request.
@@ -87,7 +103,9 @@ public class InvalidationSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of an invalidation request.
+     * </p>
      * 
      * @param status
      *        The status of an invalidation request.
@@ -98,7 +116,9 @@ public class InvalidationSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of an invalidation request.
+     * </p>
      * 
      * @return The status of an invalidation request.
      */
@@ -108,7 +128,9 @@ public class InvalidationSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The status of an invalidation request.
+     * </p>
      * 
      * @param status
      *        The status of an invalidation request.

@@ -15,63 +15,123 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A summary of the information for an Amazon CloudFront distribution.
+ * <p>
+ * A summary of the information about a CloudFront distribution.
+ * </p>
  */
 public class DistributionSummary implements Serializable, Cloneable {
 
-    /** The identifier for the distribution. For example: EDFDVBD632BHDS5. */
+    /**
+     * <p>
+     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * </p>
+     */
     private String id;
     /**
+     * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
-     * arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
      */
     private String aRN;
     /**
-     * This response element indicates the current status of the distribution. When the status is Deployed, the
-     * distribution's information is fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information
+     * is propagated to all CloudFront edge locations.
+     * </p>
      */
     private String status;
-    /** The date and time the distribution was last modified. */
+    /**
+     * <p>
+     * The date and time the distribution was last modified.
+     * </p>
+     */
     private java.util.Date lastModifiedTime;
-    /** The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net. */
+    /**
+     * <p>
+     * The domain name that corresponds to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * </p>
+     */
     private String domainName;
-    /** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution. */
+    /**
+     * <p>
+     * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
+     * </p>
+     */
     private Aliases aliases;
-    /** A complex type that contains information about origins for this distribution. */
+    /**
+     * <p>
+     * A complex type that contains information about origins for this distribution.
+     * </p>
+     */
     private Origins origins;
     /**
-     * A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if
-     * files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default
-     * cache behavior.
+     * <p>
+     * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+     * element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
+     * elements. You must create exactly one default cache behavior.
+     * </p>
      */
     private DefaultCacheBehavior defaultCacheBehavior;
-    /** A complex type that contains zero or more CacheBehavior elements. */
+    /**
+     * <p>
+     * A complex type that contains zero or more <code>CacheBehavior</code> elements.
+     * </p>
+     */
     private CacheBehaviors cacheBehaviors;
-    /** A complex type that contains zero or more CustomErrorResponses elements. */
+    /**
+     * <p>
+     * A complex type that contains zero or more <code>CustomErrorResponses</code> elements.
+     * </p>
+     */
     private CustomErrorResponses customErrorResponses;
-    /** The comment originally specified when this distribution was created. */
+    /**
+     * <p>
+     * The comment originally specified when this distribution was created.
+     * </p>
+     */
     private String comment;
 
     private String priceClass;
-    /** Whether the distribution is enabled to accept end user requests for content. */
+    /**
+     * <p>
+     * Whether the distribution is enabled to accept user requests for content.
+     * </p>
+     */
     private Boolean enabled;
 
     private ViewerCertificate viewerCertificate;
 
     private Restrictions restrictions;
-    /** The Web ACL Id (if any) associated with the distribution. */
+    /**
+     * <p>
+     * The Web ACL Id (if any) associated with the distribution.
+     * </p>
+     */
     private String webACLId;
     /**
+     * <p>
      * Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value
-     * for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.
+     * for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     * automatically use an earlier version.
+     * </p>
      */
     private String httpVersion;
+    /**
+     * <p>
+     * Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.
+     * </p>
+     */
+    private Boolean isIPV6Enabled;
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>
+     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param id
-     *        The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     *        The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
      */
 
     public void setId(String id) {
@@ -79,9 +139,11 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>
+     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * </p>
      * 
-     * @return The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * @return The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
      */
 
     public String getId() {
@@ -89,10 +151,12 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     * <p>
+     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param id
-     *        The identifier for the distribution. For example: EDFDVBD632BHDS5.
+     *        The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,12 +166,16 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
-     * arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the distribution. For example:
-     *        arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+     *        <code>123456789012</code> is your AWS account ID.
      */
 
     public void setARN(String aRN) {
@@ -115,11 +183,15 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
-     * arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
      * 
      * @return The ARN (Amazon Resource Name) for the distribution. For example:
-     *         arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     *         <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+     *         <code>123456789012</code> is your AWS account ID.
      */
 
     public String getARN() {
@@ -127,12 +199,16 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
-     * arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the distribution. For example:
-     *        arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+     *        <code>123456789012</code> is your AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,12 +218,14 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * This response element indicates the current status of the distribution. When the status is Deployed, the
-     * distribution's information is fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information
+     * is propagated to all CloudFront edge locations.
+     * </p>
      * 
      * @param status
-     *        This response element indicates the current status of the distribution. When the status is Deployed, the
-     *        distribution's information is fully propagated throughout the Amazon CloudFront system.
+     *        The current status of the distribution. When the status is <code>Deployed</code>, the distribution's
+     *        information is propagated to all CloudFront edge locations.
      */
 
     public void setStatus(String status) {
@@ -155,11 +233,13 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * This response element indicates the current status of the distribution. When the status is Deployed, the
-     * distribution's information is fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information
+     * is propagated to all CloudFront edge locations.
+     * </p>
      * 
-     * @return This response element indicates the current status of the distribution. When the status is Deployed, the
-     *         distribution's information is fully propagated throughout the Amazon CloudFront system.
+     * @return The current status of the distribution. When the status is <code>Deployed</code>, the distribution's
+     *         information is propagated to all CloudFront edge locations.
      */
 
     public String getStatus() {
@@ -167,12 +247,14 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * This response element indicates the current status of the distribution. When the status is Deployed, the
-     * distribution's information is fully propagated throughout the Amazon CloudFront system.
+     * <p>
+     * The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information
+     * is propagated to all CloudFront edge locations.
+     * </p>
      * 
      * @param status
-     *        This response element indicates the current status of the distribution. When the status is Deployed, the
-     *        distribution's information is fully propagated throughout the Amazon CloudFront system.
+     *        The current status of the distribution. When the status is <code>Deployed</code>, the distribution's
+     *        information is propagated to all CloudFront edge locations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,7 +264,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the distribution was last modified.
+     * </p>
      * 
      * @param lastModifiedTime
      *        The date and time the distribution was last modified.
@@ -193,7 +277,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the distribution was last modified.
+     * </p>
      * 
      * @return The date and time the distribution was last modified.
      */
@@ -203,7 +289,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the distribution was last modified.
+     * </p>
      * 
      * @param lastModifiedTime
      *        The date and time the distribution was last modified.
@@ -216,10 +304,13 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     * <p>
+     * The domain name that corresponds to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * </p>
      * 
      * @param domainName
-     *        The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     *        The domain name that corresponds to the distribution. For example:
+     *        <code>d604721fxaaqy9.cloudfront.net</code>.
      */
 
     public void setDomainName(String domainName) {
@@ -227,9 +318,12 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     * <p>
+     * The domain name that corresponds to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * </p>
      * 
-     * @return The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     * @return The domain name that corresponds to the distribution. For example:
+     *         <code>d604721fxaaqy9.cloudfront.net</code>.
      */
 
     public String getDomainName() {
@@ -237,10 +331,13 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     * <p>
+     * The domain name that corresponds to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * </p>
      * 
      * @param domainName
-     *        The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
+     *        The domain name that corresponds to the distribution. For example:
+     *        <code>d604721fxaaqy9.cloudfront.net</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,7 +347,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
+     * </p>
      * 
      * @param aliases
      *        A complex type that contains information about CNAMEs (alternate domain names), if any, for this
@@ -262,7 +361,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
+     * </p>
      * 
      * @return A complex type that contains information about CNAMEs (alternate domain names), if any, for this
      *         distribution.
@@ -273,7 +374,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
+     * </p>
      * 
      * @param aliases
      *        A complex type that contains information about CNAMEs (alternate domain names), if any, for this
@@ -287,7 +390,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains information about origins for this distribution.
+     * </p>
      * 
      * @param origins
      *        A complex type that contains information about origins for this distribution.
@@ -298,7 +403,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains information about origins for this distribution.
+     * </p>
      * 
      * @return A complex type that contains information about origins for this distribution.
      */
@@ -308,7 +415,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A complex type that contains information about origins for this distribution.
+     * </p>
      * 
      * @param origins
      *        A complex type that contains information about origins for this distribution.
@@ -321,14 +430,16 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if
-     * files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default
-     * cache behavior.
+     * <p>
+     * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+     * element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
+     * elements. You must create exactly one default cache behavior.
+     * </p>
      * 
      * @param defaultCacheBehavior
-     *        A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or
-     *        if files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly
-     *        one default cache behavior.
+     *        A complex type that describes the default cache behavior if you do not specify a
+     *        <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code>
+     *        in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
      */
 
     public void setDefaultCacheBehavior(DefaultCacheBehavior defaultCacheBehavior) {
@@ -336,13 +447,15 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if
-     * files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default
-     * cache behavior.
+     * <p>
+     * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+     * element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
+     * elements. You must create exactly one default cache behavior.
+     * </p>
      * 
-     * @return A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or
-     *         if files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly
-     *         one default cache behavior.
+     * @return A complex type that describes the default cache behavior if you do not specify a
+     *         <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code>
+     *         in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
      */
 
     public DefaultCacheBehavior getDefaultCacheBehavior() {
@@ -350,14 +463,16 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if
-     * files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly one default
-     * cache behavior.
+     * <p>
+     * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+     * element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
+     * elements. You must create exactly one default cache behavior.
+     * </p>
      * 
      * @param defaultCacheBehavior
-     *        A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or
-     *        if files don't match any of the values of PathPattern in CacheBehavior elements.You must create exactly
-     *        one default cache behavior.
+     *        A complex type that describes the default cache behavior if you do not specify a
+     *        <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code>
+     *        in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,10 +482,12 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains zero or more CacheBehavior elements.
+     * <p>
+     * A complex type that contains zero or more <code>CacheBehavior</code> elements.
+     * </p>
      * 
      * @param cacheBehaviors
-     *        A complex type that contains zero or more CacheBehavior elements.
+     *        A complex type that contains zero or more <code>CacheBehavior</code> elements.
      */
 
     public void setCacheBehaviors(CacheBehaviors cacheBehaviors) {
@@ -378,9 +495,11 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains zero or more CacheBehavior elements.
+     * <p>
+     * A complex type that contains zero or more <code>CacheBehavior</code> elements.
+     * </p>
      * 
-     * @return A complex type that contains zero or more CacheBehavior elements.
+     * @return A complex type that contains zero or more <code>CacheBehavior</code> elements.
      */
 
     public CacheBehaviors getCacheBehaviors() {
@@ -388,10 +507,12 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains zero or more CacheBehavior elements.
+     * <p>
+     * A complex type that contains zero or more <code>CacheBehavior</code> elements.
+     * </p>
      * 
      * @param cacheBehaviors
-     *        A complex type that contains zero or more CacheBehavior elements.
+     *        A complex type that contains zero or more <code>CacheBehavior</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,10 +522,12 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains zero or more CustomErrorResponses elements.
+     * <p>
+     * A complex type that contains zero or more <code>CustomErrorResponses</code> elements.
+     * </p>
      * 
      * @param customErrorResponses
-     *        A complex type that contains zero or more CustomErrorResponses elements.
+     *        A complex type that contains zero or more <code>CustomErrorResponses</code> elements.
      */
 
     public void setCustomErrorResponses(CustomErrorResponses customErrorResponses) {
@@ -412,9 +535,11 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains zero or more CustomErrorResponses elements.
+     * <p>
+     * A complex type that contains zero or more <code>CustomErrorResponses</code> elements.
+     * </p>
      * 
-     * @return A complex type that contains zero or more CustomErrorResponses elements.
+     * @return A complex type that contains zero or more <code>CustomErrorResponses</code> elements.
      */
 
     public CustomErrorResponses getCustomErrorResponses() {
@@ -422,10 +547,12 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains zero or more CustomErrorResponses elements.
+     * <p>
+     * A complex type that contains zero or more <code>CustomErrorResponses</code> elements.
+     * </p>
      * 
      * @param customErrorResponses
-     *        A complex type that contains zero or more CustomErrorResponses elements.
+     *        A complex type that contains zero or more <code>CustomErrorResponses</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,7 +562,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The comment originally specified when this distribution was created.
+     * </p>
      * 
      * @param comment
      *        The comment originally specified when this distribution was created.
@@ -446,7 +575,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The comment originally specified when this distribution was created.
+     * </p>
      * 
      * @return The comment originally specified when this distribution was created.
      */
@@ -456,7 +587,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The comment originally specified when this distribution was created.
+     * </p>
      * 
      * @param comment
      *        The comment originally specified when this distribution was created.
@@ -518,10 +651,12 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Whether the distribution is enabled to accept end user requests for content.
+     * <p>
+     * Whether the distribution is enabled to accept user requests for content.
+     * </p>
      * 
      * @param enabled
-     *        Whether the distribution is enabled to accept end user requests for content.
+     *        Whether the distribution is enabled to accept user requests for content.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -529,9 +664,11 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Whether the distribution is enabled to accept end user requests for content.
+     * <p>
+     * Whether the distribution is enabled to accept user requests for content.
+     * </p>
      * 
-     * @return Whether the distribution is enabled to accept end user requests for content.
+     * @return Whether the distribution is enabled to accept user requests for content.
      */
 
     public Boolean getEnabled() {
@@ -539,10 +676,12 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Whether the distribution is enabled to accept end user requests for content.
+     * <p>
+     * Whether the distribution is enabled to accept user requests for content.
+     * </p>
      * 
      * @param enabled
-     *        Whether the distribution is enabled to accept end user requests for content.
+     *        Whether the distribution is enabled to accept user requests for content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -552,9 +691,11 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Whether the distribution is enabled to accept end user requests for content.
+     * <p>
+     * Whether the distribution is enabled to accept user requests for content.
+     * </p>
      * 
-     * @return Whether the distribution is enabled to accept end user requests for content.
+     * @return Whether the distribution is enabled to accept user requests for content.
      */
 
     public Boolean isEnabled() {
@@ -614,7 +755,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The Web ACL Id (if any) associated with the distribution.
+     * </p>
      * 
      * @param webACLId
      *        The Web ACL Id (if any) associated with the distribution.
@@ -625,7 +768,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The Web ACL Id (if any) associated with the distribution.
+     * </p>
      * 
      * @return The Web ACL Id (if any) associated with the distribution.
      */
@@ -635,7 +780,9 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The Web ACL Id (if any) associated with the distribution.
+     * </p>
      * 
      * @param webACLId
      *        The Web ACL Id (if any) associated with the distribution.
@@ -648,13 +795,16 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value
-     * for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.
+     * for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     * automatically use an earlier version.
+     * </p>
      * 
      * @param httpVersion
      *        Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default
-     *        value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an
-     *        earlier version.
+     *        value for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     *        automatically use an earlier version.
      * @see HttpVersion
      */
 
@@ -663,12 +813,15 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value
-     * for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.
+     * for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     * automatically use an earlier version.
+     * </p>
      * 
      * @return Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default
-     *         value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an
-     *         earlier version.
+     *         value for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code>
+     *         will automatically use an earlier version.
      * @see HttpVersion
      */
 
@@ -677,13 +830,16 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value
-     * for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.
+     * for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     * automatically use an earlier version.
+     * </p>
      * 
      * @param httpVersion
      *        Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default
-     *        value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an
-     *        earlier version.
+     *        value for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     *        automatically use an earlier version.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpVersion
      */
@@ -694,13 +850,16 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value
-     * for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.
+     * for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     * automatically use an earlier version.
+     * </p>
      * 
      * @param httpVersion
      *        Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default
-     *        value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an
-     *        earlier version.
+     *        value for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     *        automatically use an earlier version.
      * @see HttpVersion
      */
 
@@ -709,13 +868,16 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value
-     * for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an earlier version.
+     * for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     * automatically use an earlier version.
+     * </p>
      * 
      * @param httpVersion
      *        Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default
-     *        value for new web distributions is http2. Viewers that don't support HTTP/2 will automatically use an
-     *        earlier version.
+     *        value for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     *        automatically use an earlier version.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpVersion
      */
@@ -723,6 +885,58 @@ public class DistributionSummary implements Serializable, Cloneable {
     public DistributionSummary withHttpVersion(HttpVersion httpVersion) {
         setHttpVersion(httpVersion);
         return this;
+    }
+
+    /**
+     * <p>
+     * Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.
+     * </p>
+     * 
+     * @param isIPV6Enabled
+     *        Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.
+     */
+
+    public void setIsIPV6Enabled(Boolean isIPV6Enabled) {
+        this.isIPV6Enabled = isIPV6Enabled;
+    }
+
+    /**
+     * <p>
+     * Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.
+     * </p>
+     * 
+     * @return Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.
+     */
+
+    public Boolean getIsIPV6Enabled() {
+        return this.isIPV6Enabled;
+    }
+
+    /**
+     * <p>
+     * Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.
+     * </p>
+     * 
+     * @param isIPV6Enabled
+     *        Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DistributionSummary withIsIPV6Enabled(Boolean isIPV6Enabled) {
+        setIsIPV6Enabled(isIPV6Enabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.
+     * </p>
+     * 
+     * @return Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.
+     */
+
+    public Boolean isIPV6Enabled() {
+        return this.isIPV6Enabled;
     }
 
     /**
@@ -769,7 +983,9 @@ public class DistributionSummary implements Serializable, Cloneable {
         if (getWebACLId() != null)
             sb.append("WebACLId: " + getWebACLId() + ",");
         if (getHttpVersion() != null)
-            sb.append("HttpVersion: " + getHttpVersion());
+            sb.append("HttpVersion: " + getHttpVersion() + ",");
+        if (getIsIPV6Enabled() != null)
+            sb.append("IsIPV6Enabled: " + getIsIPV6Enabled());
         sb.append("}");
         return sb.toString();
     }
@@ -852,6 +1068,10 @@ public class DistributionSummary implements Serializable, Cloneable {
             return false;
         if (other.getHttpVersion() != null && other.getHttpVersion().equals(this.getHttpVersion()) == false)
             return false;
+        if (other.getIsIPV6Enabled() == null ^ this.getIsIPV6Enabled() == null)
+            return false;
+        if (other.getIsIPV6Enabled() != null && other.getIsIPV6Enabled().equals(this.getIsIPV6Enabled()) == false)
+            return false;
         return true;
     }
 
@@ -877,6 +1097,7 @@ public class DistributionSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRestrictions() == null) ? 0 : getRestrictions().hashCode());
         hashCode = prime * hashCode + ((getWebACLId() == null) ? 0 : getWebACLId().hashCode());
         hashCode = prime * hashCode + ((getHttpVersion() == null) ? 0 : getHttpVersion().hashCode());
+        hashCode = prime * hashCode + ((getIsIPV6Enabled() == null) ? 0 : getIsIPV6Enabled().hashCode());
         return hashCode;
     }
 

@@ -16,17 +16,29 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to add tags to a CloudFront resource.
+ * </p>
  */
 public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** An ARN of a CloudFront resource. */
+    /**
+     * <p>
+     * An ARN of a CloudFront resource.
+     * </p>
+     */
     private String resource;
-    /** A complex type that contains zero or more Tag elements. */
+    /**
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
+     */
     private Tags tags;
 
     /**
+     * <p>
      * An ARN of a CloudFront resource.
+     * </p>
      * 
      * @param resource
      *        An ARN of a CloudFront resource.
@@ -37,7 +49,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * An ARN of a CloudFront resource.
+     * </p>
      * 
      * @return An ARN of a CloudFront resource.
      */
@@ -47,7 +61,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * An ARN of a CloudFront resource.
+     * </p>
      * 
      * @param resource
      *        An ARN of a CloudFront resource.
@@ -60,10 +76,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * A complex type that contains zero or more Tag elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
      * 
      * @param tags
-     *        A complex type that contains zero or more Tag elements.
+     *        A complex type that contains zero or more <code>Tag</code> elements.
      */
 
     public void setTags(Tags tags) {
@@ -71,9 +89,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * A complex type that contains zero or more Tag elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
      * 
-     * @return A complex type that contains zero or more Tag elements.
+     * @return A complex type that contains zero or more <code>Tag</code> elements.
      */
 
     public Tags getTags() {
@@ -81,10 +101,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * A complex type that contains zero or more Tag elements.
+     * <p>
+     * A complex type that contains zero or more <code>Tag</code> elements.
+     * </p>
      * 
      * @param tags
-     *        A complex type that contains zero or more Tag elements.
+     *        A complex type that contains zero or more <code>Tag</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

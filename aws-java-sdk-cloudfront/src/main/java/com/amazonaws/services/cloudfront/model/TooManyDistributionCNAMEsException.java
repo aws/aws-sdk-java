@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
+ * <p>
  * Your request contains more CNAMEs than are allowed per distribution.
+ * </p>
  */
 public class TooManyDistributionCNAMEsException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

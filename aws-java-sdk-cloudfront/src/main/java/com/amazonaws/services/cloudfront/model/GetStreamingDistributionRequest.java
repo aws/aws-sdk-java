@@ -16,11 +16,17 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to get a streaming distribution's information.
+ * </p>
  */
 public class GetStreamingDistributionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The streaming distribution's id. */
+    /**
+     * <p>
+     * The streaming distribution's ID.
+     * </p>
+     */
     private String id;
 
     /**
@@ -35,17 +41,19 @@ public class GetStreamingDistributionRequest extends com.amazonaws.AmazonWebServ
      * methods to initialize any additional object members.
      * 
      * @param id
-     *        The streaming distribution's id.
+     *        The streaming distribution's ID.
      */
     public GetStreamingDistributionRequest(String id) {
         setId(id);
     }
 
     /**
-     * The streaming distribution's id.
+     * <p>
+     * The streaming distribution's ID.
+     * </p>
      * 
      * @param id
-     *        The streaming distribution's id.
+     *        The streaming distribution's ID.
      */
 
     public void setId(String id) {
@@ -53,9 +61,11 @@ public class GetStreamingDistributionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * The streaming distribution's id.
+     * <p>
+     * The streaming distribution's ID.
+     * </p>
      * 
-     * @return The streaming distribution's id.
+     * @return The streaming distribution's ID.
      */
 
     public String getId() {
@@ -63,10 +73,12 @@ public class GetStreamingDistributionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * The streaming distribution's id.
+     * <p>
+     * The streaming distribution's ID.
+     * </p>
      * 
      * @param id
-     *        The streaming distribution's id.
+     *        The streaming distribution's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,23 +15,37 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** The origin access identity's information. */
+    /**
+     * <p>
+     * The origin access identity's information.
+     * </p>
+     */
     private CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity;
     /**
+     * <p>
      * The fully qualified URI of the new origin access identity just created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+     * </p>
      */
     private String location;
-    /** The current version of the origin access identity created. */
+    /**
+     * <p>
+     * The current version of the origin access identity created.
+     * </p>
+     */
     private String eTag;
 
     /**
+     * <p>
      * The origin access identity's information.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentity
      *        The origin access identity's information.
@@ -42,7 +56,9 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
     }
 
     /**
+     * <p>
      * The origin access identity's information.
+     * </p>
      * 
      * @return The origin access identity's information.
      */
@@ -52,7 +68,9 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
     }
 
     /**
+     * <p>
      * The origin access identity's information.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentity
      *        The origin access identity's information.
@@ -65,12 +83,15 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
     }
 
     /**
+     * <p>
      * The fully qualified URI of the new origin access identity just created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+     * </p>
      * 
      * @param location
      *        The fully qualified URI of the new origin access identity just created. For example:
-     *        https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     *        <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>
+     *        .
      */
 
     public void setLocation(String location) {
@@ -78,11 +99,14 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
     }
 
     /**
+     * <p>
      * The fully qualified URI of the new origin access identity just created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+     * </p>
      * 
      * @return The fully qualified URI of the new origin access identity just created. For example:
-     *         https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     *         <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>
+     *         .
      */
 
     public String getLocation() {
@@ -90,12 +114,15 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
     }
 
     /**
+     * <p>
      * The fully qualified URI of the new origin access identity just created. For example:
-     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+     * </p>
      * 
      * @param location
      *        The fully qualified URI of the new origin access identity just created. For example:
-     *        https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     *        <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +132,9 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
     }
 
     /**
+     * <p>
      * The current version of the origin access identity created.
+     * </p>
      * 
      * @param eTag
      *        The current version of the origin access identity created.
@@ -116,7 +145,9 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
     }
 
     /**
+     * <p>
      * The current version of the origin access identity created.
+     * </p>
      * 
      * @return The current version of the origin access identity created.
      */
@@ -126,7 +157,9 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
     }
 
     /**
+     * <p>
      * The current version of the origin access identity created.
+     * </p>
      * 
      * @param eTag
      *        The current version of the origin access identity created.

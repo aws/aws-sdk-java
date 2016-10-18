@@ -15,20 +15,33 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A complex type that contains the list of Custom Headers for each origin.
+ * </p>
  */
 public class CustomHeaders implements Serializable, Cloneable {
 
-    /** The number of custom headers for this origin. */
+    /**
+     * <p>
+     * The number of custom headers, if any, for this distribution.
+     * </p>
+     */
     private Integer quantity;
-    /** A complex type that contains the custom headers for this Origin. */
+    /**
+     * <p>
+     * <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you
+     * want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<OriginCustomHeader> items;
 
     /**
-     * The number of custom headers for this origin.
+     * <p>
+     * The number of custom headers, if any, for this distribution.
+     * </p>
      * 
      * @param quantity
-     *        The number of custom headers for this origin.
+     *        The number of custom headers, if any, for this distribution.
      */
 
     public void setQuantity(Integer quantity) {
@@ -36,9 +49,11 @@ public class CustomHeaders implements Serializable, Cloneable {
     }
 
     /**
-     * The number of custom headers for this origin.
+     * <p>
+     * The number of custom headers, if any, for this distribution.
+     * </p>
      * 
-     * @return The number of custom headers for this origin.
+     * @return The number of custom headers, if any, for this distribution.
      */
 
     public Integer getQuantity() {
@@ -46,10 +61,12 @@ public class CustomHeaders implements Serializable, Cloneable {
     }
 
     /**
-     * The number of custom headers for this origin.
+     * <p>
+     * The number of custom headers, if any, for this distribution.
+     * </p>
      * 
      * @param quantity
-     *        The number of custom headers for this origin.
+     *        The number of custom headers, if any, for this distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -59,9 +76,14 @@ public class CustomHeaders implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains the custom headers for this Origin.
+     * <p>
+     * <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you
+     * want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.
+     * </p>
      * 
-     * @return A complex type that contains the custom headers for this Origin.
+     * @return <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header
+     *         that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>
+     *         .
      */
 
     public java.util.List<OriginCustomHeader> getItems() {
@@ -72,10 +94,14 @@ public class CustomHeaders implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains the custom headers for this Origin.
+     * <p>
+     * <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you
+     * want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains the custom headers for this Origin.
+     *        <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header
+     *        that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.
      */
 
     public void setItems(java.util.Collection<OriginCustomHeader> items) {
@@ -88,7 +114,10 @@ public class CustomHeaders implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains the custom headers for this Origin.
+     * <p>
+     * <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you
+     * want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -96,7 +125,8 @@ public class CustomHeaders implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        A complex type that contains the custom headers for this Origin.
+     *        <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header
+     *        that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,10 +141,14 @@ public class CustomHeaders implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains the custom headers for this Origin.
+     * <p>
+     * <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you
+     * want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains the custom headers for this Origin.
+     *        <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header
+     *        that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

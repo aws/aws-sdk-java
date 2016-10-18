@@ -15,14 +15,43 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media
  * files for distribution.
+ * </p>
  */
 public class S3Origin implements Serializable, Cloneable {
 
-    /** The DNS name of the S3 origin. */
+    /**
+     * <p>
+     * The DNS name of the Amazon S3 origin.
+     * </p>
+     */
     private String domainName;
-    /** Your S3 origin's origin access identity. */
+    /**
+     * <p>
+     * The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access identity to
+     * configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.
+     * </p>
+     * <p>
+     * If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify
+     * an empty <code>OriginAccessIdentity</code> element.
+     * </p>
+     * <p>
+     * To delete the origin access identity from an existing distribution, update the distribution configuration and
+     * include an empty <code>OriginAccessIdentity</code> element.
+     * </p>
+     * <p>
+     * To replace the origin access identity, update the distribution configuration and specify the new origin access
+     * identity.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
+     * CloudFront Developer Guide</i>.
+     * </p>
+     */
     private String originAccessIdentity;
 
     /**
@@ -37,7 +66,7 @@ public class S3Origin implements Serializable, Cloneable {
      * any additional object members.
      * 
      * @param domainName
-     *        The DNS name of the S3 origin.
+     *        The DNS name of the Amazon S3 origin.
      */
     public S3Origin(String domainName) {
         setDomainName(domainName);
@@ -48,9 +77,28 @@ public class S3Origin implements Serializable, Cloneable {
      * any additional object members.
      * 
      * @param domainName
-     *        The DNS name of the S3 origin.
+     *        The DNS name of the Amazon S3 origin.
      * @param originAccessIdentity
-     *        Your S3 origin's origin access identity.
+     *        The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access
+     *        identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket
+     *        through CloudFront.</p>
+     *        <p>
+     *        If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL,
+     *        specify an empty <code>OriginAccessIdentity</code> element.
+     *        </p>
+     *        <p>
+     *        To delete the origin access identity from an existing distribution, update the distribution configuration
+     *        and include an empty <code>OriginAccessIdentity</code> element.
+     *        </p>
+     *        <p>
+     *        To replace the origin access identity, update the distribution configuration and specify the new origin
+     *        access identity.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     *        >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
+     *        CloudFront Developer Guide</i>.
      */
     public S3Origin(String domainName, String originAccessIdentity) {
         setDomainName(domainName);
@@ -58,10 +106,12 @@ public class S3Origin implements Serializable, Cloneable {
     }
 
     /**
-     * The DNS name of the S3 origin.
+     * <p>
+     * The DNS name of the Amazon S3 origin.
+     * </p>
      * 
      * @param domainName
-     *        The DNS name of the S3 origin.
+     *        The DNS name of the Amazon S3 origin.
      */
 
     public void setDomainName(String domainName) {
@@ -69,9 +119,11 @@ public class S3Origin implements Serializable, Cloneable {
     }
 
     /**
-     * The DNS name of the S3 origin.
+     * <p>
+     * The DNS name of the Amazon S3 origin.
+     * </p>
      * 
-     * @return The DNS name of the S3 origin.
+     * @return The DNS name of the Amazon S3 origin.
      */
 
     public String getDomainName() {
@@ -79,10 +131,12 @@ public class S3Origin implements Serializable, Cloneable {
     }
 
     /**
-     * The DNS name of the S3 origin.
+     * <p>
+     * The DNS name of the Amazon S3 origin.
+     * </p>
      * 
      * @param domainName
-     *        The DNS name of the S3 origin.
+     *        The DNS name of the Amazon S3 origin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,10 +146,50 @@ public class S3Origin implements Serializable, Cloneable {
     }
 
     /**
-     * Your S3 origin's origin access identity.
+     * <p>
+     * The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access identity to
+     * configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.
+     * </p>
+     * <p>
+     * If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify
+     * an empty <code>OriginAccessIdentity</code> element.
+     * </p>
+     * <p>
+     * To delete the origin access identity from an existing distribution, update the distribution configuration and
+     * include an empty <code>OriginAccessIdentity</code> element.
+     * </p>
+     * <p>
+     * To replace the origin access identity, update the distribution configuration and specify the new origin access
+     * identity.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
+     * CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @param originAccessIdentity
-     *        Your S3 origin's origin access identity.
+     *        The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access
+     *        identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket
+     *        through CloudFront.</p>
+     *        <p>
+     *        If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL,
+     *        specify an empty <code>OriginAccessIdentity</code> element.
+     *        </p>
+     *        <p>
+     *        To delete the origin access identity from an existing distribution, update the distribution configuration
+     *        and include an empty <code>OriginAccessIdentity</code> element.
+     *        </p>
+     *        <p>
+     *        To replace the origin access identity, update the distribution configuration and specify the new origin
+     *        access identity.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     *        >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
+     *        CloudFront Developer Guide</i>.
      */
 
     public void setOriginAccessIdentity(String originAccessIdentity) {
@@ -103,9 +197,49 @@ public class S3Origin implements Serializable, Cloneable {
     }
 
     /**
-     * Your S3 origin's origin access identity.
+     * <p>
+     * The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access identity to
+     * configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.
+     * </p>
+     * <p>
+     * If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify
+     * an empty <code>OriginAccessIdentity</code> element.
+     * </p>
+     * <p>
+     * To delete the origin access identity from an existing distribution, update the distribution configuration and
+     * include an empty <code>OriginAccessIdentity</code> element.
+     * </p>
+     * <p>
+     * To replace the origin access identity, update the distribution configuration and specify the new origin access
+     * identity.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
+     * CloudFront Developer Guide</i>.
+     * </p>
      * 
-     * @return Your S3 origin's origin access identity.
+     * @return The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access
+     *         identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket
+     *         through CloudFront.</p>
+     *         <p>
+     *         If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL,
+     *         specify an empty <code>OriginAccessIdentity</code> element.
+     *         </p>
+     *         <p>
+     *         To delete the origin access identity from an existing distribution, update the distribution configuration
+     *         and include an empty <code>OriginAccessIdentity</code> element.
+     *         </p>
+     *         <p>
+     *         To replace the origin access identity, update the distribution configuration and specify the new origin
+     *         access identity.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     *         >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
+     *         CloudFront Developer Guide</i>.
      */
 
     public String getOriginAccessIdentity() {
@@ -113,10 +247,50 @@ public class S3Origin implements Serializable, Cloneable {
     }
 
     /**
-     * Your S3 origin's origin access identity.
+     * <p>
+     * The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access identity to
+     * configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.
+     * </p>
+     * <p>
+     * If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify
+     * an empty <code>OriginAccessIdentity</code> element.
+     * </p>
+     * <p>
+     * To delete the origin access identity from an existing distribution, update the distribution configuration and
+     * include an empty <code>OriginAccessIdentity</code> element.
+     * </p>
+     * <p>
+     * To replace the origin access identity, update the distribution configuration and specify the new origin access
+     * identity.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
+     * CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @param originAccessIdentity
-     *        Your S3 origin's origin access identity.
+     *        The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access
+     *        identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket
+     *        through CloudFront.</p>
+     *        <p>
+     *        If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL,
+     *        specify an empty <code>OriginAccessIdentity</code> element.
+     *        </p>
+     *        <p>
+     *        To delete the origin access identity from an existing distribution, update the distribution configuration
+     *        and include an empty <code>OriginAccessIdentity</code> element.
+     *        </p>
+     *        <p>
+     *        To replace the origin access identity, update the distribution configuration and specify the new origin
+     *        access identity.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     *        >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
+     *        CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

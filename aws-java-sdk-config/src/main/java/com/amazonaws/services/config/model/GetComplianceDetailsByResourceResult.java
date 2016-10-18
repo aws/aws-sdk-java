@@ -15,7 +15,7 @@ package com.amazonaws.services.config.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p/>
  */
 public class GetComplianceDetailsByResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {

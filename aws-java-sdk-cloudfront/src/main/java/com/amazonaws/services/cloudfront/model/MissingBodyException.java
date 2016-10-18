@@ -13,7 +13,9 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
+ * <p>
  * This operation requires a body. Ensure that the body is present and the Content-Type header is set.
+ * </p>
  */
 public class MissingBodyException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

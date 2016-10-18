@@ -15,30 +15,44 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A complex type that controls whether access logs are written for the distribution.
+ * </p>
  */
 public class LoggingConfig implements Serializable, Cloneable {
 
     /**
+     * <p>
      * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable
      * logging when you create a distribution or if you want to disable logging for an existing distribution, specify
-     * false for Enabled, and specify empty Bucket and Prefix elements. If you specify false for Enabled but you specify
-     * values for Bucket, prefix and IncludeCookies, the values are automatically deleted.
+     * <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code> and <code>Prefix</code>
+     * elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for
+     * <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the values are automatically deleted.
+     * </p>
      */
     private Boolean enabled;
     /**
-     * Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies. If you
-     * choose to include cookies in logs, CloudFront logs all cookies regardless of how you configure the cache
-     * behaviors for this distribution. If you do not want to include cookies when you create a distribution or if you
-     * want to disable include cookies for an existing distribution, specify false for IncludeCookies.
+     * <p>
+     * Specifies whether you want CloudFront to include cookies in access logs, specify <code>true</code> for
+     * <code>IncludeCookies</code>. If you choose to include cookies in logs, CloudFront logs all cookies regardless of
+     * how you configure the cache behaviors for this distribution. If you do not want to include cookies when you
+     * create a distribution or if you want to disable include cookies for an existing distribution, specify
+     * <code>false</code> for <code>IncludeCookies</code>.
+     * </p>
      */
     private Boolean includeCookies;
-    /** The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com. */
+    /**
+     * <p>
+     * The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.
+     * </p>
+     */
     private String bucket;
     /**
-     * An optional string that you want CloudFront to prefix to the access log filenames for this distribution, for
-     * example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must
-     * include an empty Prefix element in the Logging element.
+     * <p>
+     * An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this
+     * distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to specify
+     * a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.
+     * </p>
      */
     private String prefix;
 
@@ -54,11 +68,13 @@ public class LoggingConfig implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param bucket
-     *        The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
+     *        The Amazon S3 bucket to store the access logs in, for example,
+     *        <code>myawslogbucket.s3.amazonaws.com</code>.
      * @param prefix
-     *        An optional string that you want CloudFront to prefix to the access log filenames for this distribution,
-     *        for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still
-     *        must include an empty Prefix element in the Logging element.
+     *        An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this
+     *        distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to
+     *        specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     *        element.
      */
     public LoggingConfig(String bucket, String prefix) {
         setBucket(bucket);
@@ -66,17 +82,21 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable
      * logging when you create a distribution or if you want to disable logging for an existing distribution, specify
-     * false for Enabled, and specify empty Bucket and Prefix elements. If you specify false for Enabled but you specify
-     * values for Bucket, prefix and IncludeCookies, the values are automatically deleted.
+     * <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code> and <code>Prefix</code>
+     * elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for
+     * <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the values are automatically deleted.
+     * </p>
      * 
      * @param enabled
      *        Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to
      *        enable logging when you create a distribution or if you want to disable logging for an existing
-     *        distribution, specify false for Enabled, and specify empty Bucket and Prefix elements. If you specify
-     *        false for Enabled but you specify values for Bucket, prefix and IncludeCookies, the values are
-     *        automatically deleted.
+     *        distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code>
+     *        and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you
+     *        specify values for <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the values
+     *        are automatically deleted.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -84,16 +104,20 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable
      * logging when you create a distribution or if you want to disable logging for an existing distribution, specify
-     * false for Enabled, and specify empty Bucket and Prefix elements. If you specify false for Enabled but you specify
-     * values for Bucket, prefix and IncludeCookies, the values are automatically deleted.
+     * <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code> and <code>Prefix</code>
+     * elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for
+     * <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the values are automatically deleted.
+     * </p>
      * 
      * @return Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to
      *         enable logging when you create a distribution or if you want to disable logging for an existing
-     *         distribution, specify false for Enabled, and specify empty Bucket and Prefix elements. If you specify
-     *         false for Enabled but you specify values for Bucket, prefix and IncludeCookies, the values are
-     *         automatically deleted.
+     *         distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code>
+     *         and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you
+     *         specify values for <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the values
+     *         are automatically deleted.
      */
 
     public Boolean getEnabled() {
@@ -101,17 +125,21 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable
      * logging when you create a distribution or if you want to disable logging for an existing distribution, specify
-     * false for Enabled, and specify empty Bucket and Prefix elements. If you specify false for Enabled but you specify
-     * values for Bucket, prefix and IncludeCookies, the values are automatically deleted.
+     * <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code> and <code>Prefix</code>
+     * elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for
+     * <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the values are automatically deleted.
+     * </p>
      * 
      * @param enabled
      *        Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to
      *        enable logging when you create a distribution or if you want to disable logging for an existing
-     *        distribution, specify false for Enabled, and specify empty Bucket and Prefix elements. If you specify
-     *        false for Enabled but you specify values for Bucket, prefix and IncludeCookies, the values are
-     *        automatically deleted.
+     *        distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code>
+     *        and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you
+     *        specify values for <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the values
+     *        are automatically deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,16 +149,20 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable
      * logging when you create a distribution or if you want to disable logging for an existing distribution, specify
-     * false for Enabled, and specify empty Bucket and Prefix elements. If you specify false for Enabled but you specify
-     * values for Bucket, prefix and IncludeCookies, the values are automatically deleted.
+     * <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code> and <code>Prefix</code>
+     * elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for
+     * <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the values are automatically deleted.
+     * </p>
      * 
      * @return Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to
      *         enable logging when you create a distribution or if you want to disable logging for an existing
-     *         distribution, specify false for Enabled, and specify empty Bucket and Prefix elements. If you specify
-     *         false for Enabled but you specify values for Bucket, prefix and IncludeCookies, the values are
-     *         automatically deleted.
+     *         distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code>
+     *         and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you
+     *         specify values for <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the values
+     *         are automatically deleted.
      */
 
     public Boolean isEnabled() {
@@ -138,17 +170,20 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies. If you
-     * choose to include cookies in logs, CloudFront logs all cookies regardless of how you configure the cache
-     * behaviors for this distribution. If you do not want to include cookies when you create a distribution or if you
-     * want to disable include cookies for an existing distribution, specify false for IncludeCookies.
+     * <p>
+     * Specifies whether you want CloudFront to include cookies in access logs, specify <code>true</code> for
+     * <code>IncludeCookies</code>. If you choose to include cookies in logs, CloudFront logs all cookies regardless of
+     * how you configure the cache behaviors for this distribution. If you do not want to include cookies when you
+     * create a distribution or if you want to disable include cookies for an existing distribution, specify
+     * <code>false</code> for <code>IncludeCookies</code>.
+     * </p>
      * 
      * @param includeCookies
-     *        Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies.
-     *        If you choose to include cookies in logs, CloudFront logs all cookies regardless of how you configure the
-     *        cache behaviors for this distribution. If you do not want to include cookies when you create a
-     *        distribution or if you want to disable include cookies for an existing distribution, specify false for
-     *        IncludeCookies.
+     *        Specifies whether you want CloudFront to include cookies in access logs, specify <code>true</code> for
+     *        <code>IncludeCookies</code>. If you choose to include cookies in logs, CloudFront logs all cookies
+     *        regardless of how you configure the cache behaviors for this distribution. If you do not want to include
+     *        cookies when you create a distribution or if you want to disable include cookies for an existing
+     *        distribution, specify <code>false</code> for <code>IncludeCookies</code>.
      */
 
     public void setIncludeCookies(Boolean includeCookies) {
@@ -156,16 +191,19 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies. If you
-     * choose to include cookies in logs, CloudFront logs all cookies regardless of how you configure the cache
-     * behaviors for this distribution. If you do not want to include cookies when you create a distribution or if you
-     * want to disable include cookies for an existing distribution, specify false for IncludeCookies.
+     * <p>
+     * Specifies whether you want CloudFront to include cookies in access logs, specify <code>true</code> for
+     * <code>IncludeCookies</code>. If you choose to include cookies in logs, CloudFront logs all cookies regardless of
+     * how you configure the cache behaviors for this distribution. If you do not want to include cookies when you
+     * create a distribution or if you want to disable include cookies for an existing distribution, specify
+     * <code>false</code> for <code>IncludeCookies</code>.
+     * </p>
      * 
-     * @return Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies.
-     *         If you choose to include cookies in logs, CloudFront logs all cookies regardless of how you configure the
-     *         cache behaviors for this distribution. If you do not want to include cookies when you create a
-     *         distribution or if you want to disable include cookies for an existing distribution, specify false for
-     *         IncludeCookies.
+     * @return Specifies whether you want CloudFront to include cookies in access logs, specify <code>true</code> for
+     *         <code>IncludeCookies</code>. If you choose to include cookies in logs, CloudFront logs all cookies
+     *         regardless of how you configure the cache behaviors for this distribution. If you do not want to include
+     *         cookies when you create a distribution or if you want to disable include cookies for an existing
+     *         distribution, specify <code>false</code> for <code>IncludeCookies</code>.
      */
 
     public Boolean getIncludeCookies() {
@@ -173,17 +211,20 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies. If you
-     * choose to include cookies in logs, CloudFront logs all cookies regardless of how you configure the cache
-     * behaviors for this distribution. If you do not want to include cookies when you create a distribution or if you
-     * want to disable include cookies for an existing distribution, specify false for IncludeCookies.
+     * <p>
+     * Specifies whether you want CloudFront to include cookies in access logs, specify <code>true</code> for
+     * <code>IncludeCookies</code>. If you choose to include cookies in logs, CloudFront logs all cookies regardless of
+     * how you configure the cache behaviors for this distribution. If you do not want to include cookies when you
+     * create a distribution or if you want to disable include cookies for an existing distribution, specify
+     * <code>false</code> for <code>IncludeCookies</code>.
+     * </p>
      * 
      * @param includeCookies
-     *        Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies.
-     *        If you choose to include cookies in logs, CloudFront logs all cookies regardless of how you configure the
-     *        cache behaviors for this distribution. If you do not want to include cookies when you create a
-     *        distribution or if you want to disable include cookies for an existing distribution, specify false for
-     *        IncludeCookies.
+     *        Specifies whether you want CloudFront to include cookies in access logs, specify <code>true</code> for
+     *        <code>IncludeCookies</code>. If you choose to include cookies in logs, CloudFront logs all cookies
+     *        regardless of how you configure the cache behaviors for this distribution. If you do not want to include
+     *        cookies when you create a distribution or if you want to disable include cookies for an existing
+     *        distribution, specify <code>false</code> for <code>IncludeCookies</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,16 +234,19 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies. If you
-     * choose to include cookies in logs, CloudFront logs all cookies regardless of how you configure the cache
-     * behaviors for this distribution. If you do not want to include cookies when you create a distribution or if you
-     * want to disable include cookies for an existing distribution, specify false for IncludeCookies.
+     * <p>
+     * Specifies whether you want CloudFront to include cookies in access logs, specify <code>true</code> for
+     * <code>IncludeCookies</code>. If you choose to include cookies in logs, CloudFront logs all cookies regardless of
+     * how you configure the cache behaviors for this distribution. If you do not want to include cookies when you
+     * create a distribution or if you want to disable include cookies for an existing distribution, specify
+     * <code>false</code> for <code>IncludeCookies</code>.
+     * </p>
      * 
-     * @return Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies.
-     *         If you choose to include cookies in logs, CloudFront logs all cookies regardless of how you configure the
-     *         cache behaviors for this distribution. If you do not want to include cookies when you create a
-     *         distribution or if you want to disable include cookies for an existing distribution, specify false for
-     *         IncludeCookies.
+     * @return Specifies whether you want CloudFront to include cookies in access logs, specify <code>true</code> for
+     *         <code>IncludeCookies</code>. If you choose to include cookies in logs, CloudFront logs all cookies
+     *         regardless of how you configure the cache behaviors for this distribution. If you do not want to include
+     *         cookies when you create a distribution or if you want to disable include cookies for an existing
+     *         distribution, specify <code>false</code> for <code>IncludeCookies</code>.
      */
 
     public Boolean isIncludeCookies() {
@@ -210,10 +254,13 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
+     * <p>
+     * The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.
+     * </p>
      * 
      * @param bucket
-     *        The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
+     *        The Amazon S3 bucket to store the access logs in, for example,
+     *        <code>myawslogbucket.s3.amazonaws.com</code>.
      */
 
     public void setBucket(String bucket) {
@@ -221,9 +268,12 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
+     * <p>
+     * The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.
+     * </p>
      * 
-     * @return The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
+     * @return The Amazon S3 bucket to store the access logs in, for example,
+     *         <code>myawslogbucket.s3.amazonaws.com</code>.
      */
 
     public String getBucket() {
@@ -231,10 +281,13 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
+     * <p>
+     * The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.
+     * </p>
      * 
      * @param bucket
-     *        The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
+     *        The Amazon S3 bucket to store the access logs in, for example,
+     *        <code>myawslogbucket.s3.amazonaws.com</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,14 +297,17 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
-     * An optional string that you want CloudFront to prefix to the access log filenames for this distribution, for
-     * example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must
-     * include an empty Prefix element in the Logging element.
+     * <p>
+     * An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this
+     * distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to specify
+     * a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.
+     * </p>
      * 
      * @param prefix
-     *        An optional string that you want CloudFront to prefix to the access log filenames for this distribution,
-     *        for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still
-     *        must include an empty Prefix element in the Logging element.
+     *        An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this
+     *        distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to
+     *        specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     *        element.
      */
 
     public void setPrefix(String prefix) {
@@ -259,13 +315,16 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
-     * An optional string that you want CloudFront to prefix to the access log filenames for this distribution, for
-     * example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must
-     * include an empty Prefix element in the Logging element.
+     * <p>
+     * An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this
+     * distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to specify
+     * a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.
+     * </p>
      * 
-     * @return An optional string that you want CloudFront to prefix to the access log filenames for this distribution,
-     *         for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still
-     *         must include an empty Prefix element in the Logging element.
+     * @return An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this
+     *         distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to
+     *         specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     *         element.
      */
 
     public String getPrefix() {
@@ -273,14 +332,17 @@ public class LoggingConfig implements Serializable, Cloneable {
     }
 
     /**
-     * An optional string that you want CloudFront to prefix to the access log filenames for this distribution, for
-     * example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still must
-     * include an empty Prefix element in the Logging element.
+     * <p>
+     * An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this
+     * distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to specify
+     * a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.
+     * </p>
      * 
      * @param prefix
-     *        An optional string that you want CloudFront to prefix to the access log filenames for this distribution,
-     *        for example, myprefix/. If you want to enable logging, but you do not want to specify a prefix, you still
-     *        must include an empty Prefix element in the Logging element.
+     *        An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this
+     *        distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to
+     *        specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     *        element.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,18 +15,30 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class GetCloudFrontOriginAccessIdentityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** The origin access identity's information. */
+    /**
+     * <p>
+     * The origin access identity's information.
+     * </p>
+     */
     private CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity;
-    /** The current version of the origin access identity's information. For example: E2QWRUHAPOMQZL. */
+    /**
+     * <p>
+     * The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
+     */
     private String eTag;
 
     /**
+     * <p>
      * The origin access identity's information.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentity
      *        The origin access identity's information.
@@ -37,7 +49,9 @@ public class GetCloudFrontOriginAccessIdentityResult extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
      * The origin access identity's information.
+     * </p>
      * 
      * @return The origin access identity's information.
      */
@@ -47,7 +61,9 @@ public class GetCloudFrontOriginAccessIdentityResult extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
      * The origin access identity's information.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentity
      *        The origin access identity's information.
@@ -60,10 +76,12 @@ public class GetCloudFrontOriginAccessIdentityResult extends com.amazonaws.Amazo
     }
 
     /**
-     * The current version of the origin access identity's information. For example: E2QWRUHAPOMQZL.
+     * <p>
+     * The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param eTag
-     *        The current version of the origin access identity's information. For example: E2QWRUHAPOMQZL.
+     *        The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public void setETag(String eTag) {
@@ -71,9 +89,12 @@ public class GetCloudFrontOriginAccessIdentityResult extends com.amazonaws.Amazo
     }
 
     /**
-     * The current version of the origin access identity's information. For example: E2QWRUHAPOMQZL.
+     * <p>
+     * The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
-     * @return The current version of the origin access identity's information. For example: E2QWRUHAPOMQZL.
+     * @return The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>
+     *         .
      */
 
     public String getETag() {
@@ -81,10 +102,12 @@ public class GetCloudFrontOriginAccessIdentityResult extends com.amazonaws.Amazo
     }
 
     /**
-     * The current version of the origin access identity's information. For example: E2QWRUHAPOMQZL.
+     * <p>
+     * The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param eTag
-     *        The current version of the origin access identity's information. For example: E2QWRUHAPOMQZL.
+     *        The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,18 +15,30 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * CloudFront origin access identity.
+ * </p>
  */
 public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
 
-    /** The ID for the origin access identity. For example: E74FTE3AJFJ256A. */
+    /**
+     * <p>
+     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * </p>
+     */
     private String id;
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access
-     * identity read permission to an object in Amazon S3.
+     * <p>
+     * The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read
+     * permission to an object in Amazon S3.
+     * </p>
      */
     private String s3CanonicalUserId;
-    /** The current configuration information for the identity. */
+    /**
+     * <p>
+     * The current configuration information for the identity.
+     * </p>
+     */
     private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
 
     /**
@@ -41,10 +53,10 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
      * methods to initialize any additional object members.
      * 
      * @param id
-     *        The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
      * @param s3CanonicalUserId
-     *        The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin
-     *        access identity read permission to an object in Amazon S3.
+     *        The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access
+     *        identity read permission to an object in Amazon S3.
      */
     public CloudFrontOriginAccessIdentity(String id, String s3CanonicalUserId) {
         setId(id);
@@ -52,10 +64,12 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
     }
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>
+     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * </p>
      * 
      * @param id
-     *        The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
      */
 
     public void setId(String id) {
@@ -63,9 +77,11 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
     }
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>
+     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * </p>
      * 
-     * @return The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * @return The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
      */
 
     public String getId() {
@@ -73,10 +89,12 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
     }
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>
+     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * </p>
      * 
      * @param id
-     *        The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,12 +104,14 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access
-     * identity read permission to an object in Amazon S3.
+     * <p>
+     * The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read
+     * permission to an object in Amazon S3.
+     * </p>
      * 
      * @param s3CanonicalUserId
-     *        The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin
-     *        access identity read permission to an object in Amazon S3.
+     *        The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access
+     *        identity read permission to an object in Amazon S3.
      */
 
     public void setS3CanonicalUserId(String s3CanonicalUserId) {
@@ -99,11 +119,13 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access
-     * identity read permission to an object in Amazon S3.
+     * <p>
+     * The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read
+     * permission to an object in Amazon S3.
+     * </p>
      * 
-     * @return The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin
-     *         access identity read permission to an object in Amazon S3.
+     * @return The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access
+     *         identity read permission to an object in Amazon S3.
      */
 
     public String getS3CanonicalUserId() {
@@ -111,12 +133,14 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
     }
 
     /**
-     * The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access
-     * identity read permission to an object in Amazon S3.
+     * <p>
+     * The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read
+     * permission to an object in Amazon S3.
+     * </p>
      * 
      * @param s3CanonicalUserId
-     *        The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin
-     *        access identity read permission to an object in Amazon S3.
+     *        The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access
+     *        identity read permission to an object in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +150,9 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The current configuration information for the identity.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentityConfig
      *        The current configuration information for the identity.
@@ -137,7 +163,9 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The current configuration information for the identity.
+     * </p>
      * 
      * @return The current configuration information for the identity.
      */
@@ -147,7 +175,9 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The current configuration information for the identity.
+     * </p>
      * 
      * @param cloudFrontOriginAccessIdentityConfig
      *        The current configuration information for the identity.

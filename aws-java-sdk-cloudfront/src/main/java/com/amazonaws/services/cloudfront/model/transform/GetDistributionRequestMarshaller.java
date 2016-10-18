@@ -49,7 +49,7 @@ public class GetDistributionRequestMarshaller implements Marshaller<Request<GetD
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-09-07/distribution/{Id}";
+        String uriResourcePath = "/2016-09-29/distribution/{Id}";
 
         uriResourcePath = uriResourcePath.replace("{Id}",
                 (getDistributionRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getDistributionRequest.getId()), false) : "");

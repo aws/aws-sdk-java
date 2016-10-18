@@ -15,25 +15,39 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Summary of the information about a CloudFront origin access identity.
+ * </p>
  */
 public class CloudFrontOriginAccessIdentitySummary implements Serializable, Cloneable {
 
-    /** The ID for the origin access identity. For example: E74FTE3AJFJ256A. */
+    /**
+     * <p>
+     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * </p>
+     */
     private String id;
     /**
+     * <p>
      * The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access
      * identity read permission to an object in Amazon S3.
+     * </p>
      */
     private String s3CanonicalUserId;
-    /** The comment for this origin access identity, as originally specified when created. */
+    /**
+     * <p>
+     * The comment for this origin access identity, as originally specified when created.
+     * </p>
+     */
     private String comment;
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>
+     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * </p>
      * 
      * @param id
-     *        The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
      */
 
     public void setId(String id) {
@@ -41,9 +55,11 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable, Clon
     }
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>
+     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * </p>
      * 
-     * @return The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * @return The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
      */
 
     public String getId() {
@@ -51,10 +67,12 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable, Clon
     }
 
     /**
-     * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     * <p>
+     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * </p>
      * 
      * @param id
-     *        The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,8 +82,10 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable, Clon
     }
 
     /**
+     * <p>
      * The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access
      * identity read permission to an object in Amazon S3.
+     * </p>
      * 
      * @param s3CanonicalUserId
      *        The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin
@@ -77,8 +97,10 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable, Clon
     }
 
     /**
+     * <p>
      * The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access
      * identity read permission to an object in Amazon S3.
+     * </p>
      * 
      * @return The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin
      *         access identity read permission to an object in Amazon S3.
@@ -89,8 +111,10 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable, Clon
     }
 
     /**
+     * <p>
      * The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access
      * identity read permission to an object in Amazon S3.
+     * </p>
      * 
      * @param s3CanonicalUserId
      *        The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin
@@ -104,7 +128,9 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable, Clon
     }
 
     /**
+     * <p>
      * The comment for this origin access identity, as originally specified when created.
+     * </p>
      * 
      * @param comment
      *        The comment for this origin access identity, as originally specified when created.
@@ -115,7 +141,9 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable, Clon
     }
 
     /**
+     * <p>
      * The comment for this origin access identity, as originally specified when created.
+     * </p>
      * 
      * @return The comment for this origin access identity, as originally specified when created.
      */
@@ -125,7 +153,9 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable, Clon
     }
 
     /**
+     * <p>
      * The comment for this origin access identity, as originally specified when created.
+     * </p>
      * 
      * @param comment
      *        The comment for this origin access identity, as originally specified when created.

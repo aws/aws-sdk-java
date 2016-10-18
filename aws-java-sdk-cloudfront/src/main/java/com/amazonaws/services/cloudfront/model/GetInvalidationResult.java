@@ -15,18 +15,32 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class GetInvalidationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The invalidation's information. */
+    /**
+     * <p>
+     * The invalidation's information. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
+     * Complex Type</a>.
+     * </p>
+     */
     private Invalidation invalidation;
 
     /**
-     * The invalidation's information.
+     * <p>
+     * The invalidation's information. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
+     * Complex Type</a>.
+     * </p>
      * 
      * @param invalidation
-     *        The invalidation's information.
+     *        The invalidation's information. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html"
+     *        >Invalidation Complex Type</a>.
      */
 
     public void setInvalidation(Invalidation invalidation) {
@@ -34,9 +48,15 @@ public class GetInvalidationResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * The invalidation's information.
+     * <p>
+     * The invalidation's information. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
+     * Complex Type</a>.
+     * </p>
      * 
-     * @return The invalidation's information.
+     * @return The invalidation's information. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html"
+     *         >Invalidation Complex Type</a>.
      */
 
     public Invalidation getInvalidation() {
@@ -44,10 +64,16 @@ public class GetInvalidationResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * The invalidation's information.
+     * <p>
+     * The invalidation's information. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
+     * Complex Type</a>.
+     * </p>
      * 
      * @param invalidation
-     *        The invalidation's information.
+     *        The invalidation's information. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html"
+     *        >Invalidation Complex Type</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

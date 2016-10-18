@@ -15,20 +15,30 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A complex type that contains zero or more CacheBehavior elements.
+ * <p>
+ * A complex type that contains zero or more <code>CacheBehavior</code> elements.
+ * </p>
  */
 public class CacheBehaviors implements Serializable, Cloneable {
 
-    /** The number of cache behaviors for this distribution. */
+    /**
+     * <p>
+     * The number of cache behaviors for this distribution.
+     * </p>
+     */
     private Integer quantity;
     /**
-     * Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit
-     * Items.
+     * <p>
+     * Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is
+     * <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CacheBehavior> items;
 
     /**
+     * <p>
      * The number of cache behaviors for this distribution.
+     * </p>
      * 
      * @param quantity
      *        The number of cache behaviors for this distribution.
@@ -39,7 +49,9 @@ public class CacheBehaviors implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of cache behaviors for this distribution.
+     * </p>
      * 
      * @return The number of cache behaviors for this distribution.
      */
@@ -49,7 +61,9 @@ public class CacheBehaviors implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The number of cache behaviors for this distribution.
+     * </p>
      * 
      * @param quantity
      *        The number of cache behaviors for this distribution.
@@ -62,11 +76,13 @@ public class CacheBehaviors implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit
-     * Items.
+     * <p>
+     * Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is
+     * <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      * 
-     * @return Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can
-     *         omit Items.
+     * @return Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is
+     *         <code>0</code>, you can omit <code>Items</code>.
      */
 
     public java.util.List<CacheBehavior> getItems() {
@@ -77,12 +93,14 @@ public class CacheBehaviors implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit
-     * Items.
+     * <p>
+     * Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is
+     * <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can
-     *        omit Items.
+     *        Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is
+     *        <code>0</code>, you can omit <code>Items</code>.
      */
 
     public void setItems(java.util.Collection<CacheBehavior> items) {
@@ -95,8 +113,10 @@ public class CacheBehaviors implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit
-     * Items.
+     * <p>
+     * Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is
+     * <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -104,8 +124,8 @@ public class CacheBehaviors implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can
-     *        omit Items.
+     *        Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is
+     *        <code>0</code>, you can omit <code>Items</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,12 +140,14 @@ public class CacheBehaviors implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can omit
-     * Items.
+     * <p>
+     * Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is
+     * <code>0</code>, you can omit <code>Items</code>.
+     * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains cache behaviors for this distribution. If Quantity is 0, you can
-     *        omit Items.
+     *        Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is
+     *        <code>0</code>, you can omit <code>Items</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

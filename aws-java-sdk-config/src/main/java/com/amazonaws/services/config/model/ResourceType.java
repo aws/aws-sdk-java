@@ -42,7 +42,8 @@ public enum ResourceType {
     AWSRDSDBSecurityGroup("AWS::RDS::DBSecurityGroup"),
     AWSRDSDBSnapshot("AWS::RDS::DBSnapshot"),
     AWSRDSEventSubscription("AWS::RDS::EventSubscription"),
-    AWSElasticLoadBalancingV2LoadBalancer("AWS::ElasticLoadBalancingV2::LoadBalancer");
+    AWSElasticLoadBalancingV2LoadBalancer("AWS::ElasticLoadBalancingV2::LoadBalancer"),
+    AWSS3Bucket("AWS::S3::Bucket");
 
     private String value;
 

@@ -17,9 +17,17 @@ package com.amazonaws.services.config.model;
  * Indicates one of the following errors:
  * </p>
  * <ul>
- * <li>The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the
- * config:Put* action.</li>
- * <li>The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</li>
+ * <li>
+ * <p>
+ * The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the config:Put*
+ * action.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.
+ * </p>
+ * </li>
  * </ul>
  */
 public class InsufficientPermissionsException extends com.amazonaws.services.config.model.AmazonConfigException {

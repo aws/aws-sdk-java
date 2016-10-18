@@ -16,15 +16,23 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * The request to delete a streaming distribution.
+ * </p>
  */
 public class DeleteStreamingDistributionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The distribution id. */
+    /**
+     * <p>
+     * The distribution ID.
+     * </p>
+     */
     private String id;
     /**
-     * The value of the ETag header you received when you disabled the streaming distribution. For example:
-     * E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For
+     * example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      */
     private String ifMatch;
 
@@ -40,10 +48,10 @@ public class DeleteStreamingDistributionRequest extends com.amazonaws.AmazonWebS
      * (with...) methods to initialize any additional object members.
      * 
      * @param id
-     *        The distribution id.
+     *        The distribution ID.
      * @param ifMatch
-     *        The value of the ETag header you received when you disabled the streaming distribution. For example:
-     *        E2QWRUHAPOMQZL.
+     *        The value of the <code>ETag</code> header that you received when you disabled the streaming distribution.
+     *        For example: <code>E2QWRUHAPOMQZL</code>.
      */
     public DeleteStreamingDistributionRequest(String id, String ifMatch) {
         setId(id);
@@ -51,10 +59,12 @@ public class DeleteStreamingDistributionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * The distribution id.
+     * <p>
+     * The distribution ID.
+     * </p>
      * 
      * @param id
-     *        The distribution id.
+     *        The distribution ID.
      */
 
     public void setId(String id) {
@@ -62,9 +72,11 @@ public class DeleteStreamingDistributionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * The distribution id.
+     * <p>
+     * The distribution ID.
+     * </p>
      * 
-     * @return The distribution id.
+     * @return The distribution ID.
      */
 
     public String getId() {
@@ -72,10 +84,12 @@ public class DeleteStreamingDistributionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * The distribution id.
+     * <p>
+     * The distribution ID.
+     * </p>
      * 
      * @param id
-     *        The distribution id.
+     *        The distribution ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,12 +99,14 @@ public class DeleteStreamingDistributionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * The value of the ETag header you received when you disabled the streaming distribution. For example:
-     * E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For
+     * example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param ifMatch
-     *        The value of the ETag header you received when you disabled the streaming distribution. For example:
-     *        E2QWRUHAPOMQZL.
+     *        The value of the <code>ETag</code> header that you received when you disabled the streaming distribution.
+     *        For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public void setIfMatch(String ifMatch) {
@@ -98,11 +114,13 @@ public class DeleteStreamingDistributionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * The value of the ETag header you received when you disabled the streaming distribution. For example:
-     * E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For
+     * example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
-     * @return The value of the ETag header you received when you disabled the streaming distribution. For example:
-     *         E2QWRUHAPOMQZL.
+     * @return The value of the <code>ETag</code> header that you received when you disabled the streaming distribution.
+     *         For example: <code>E2QWRUHAPOMQZL</code>.
      */
 
     public String getIfMatch() {
@@ -110,12 +128,14 @@ public class DeleteStreamingDistributionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * The value of the ETag header you received when you disabled the streaming distribution. For example:
-     * E2QWRUHAPOMQZL.
+     * <p>
+     * The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For
+     * example: <code>E2QWRUHAPOMQZL</code>.
+     * </p>
      * 
      * @param ifMatch
-     *        The value of the ETag header you received when you disabled the streaming distribution. For example:
-     *        E2QWRUHAPOMQZL.
+     *        The value of the <code>ETag</code> header that you received when you disabled the streaming distribution.
+     *        For example: <code>E2QWRUHAPOMQZL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

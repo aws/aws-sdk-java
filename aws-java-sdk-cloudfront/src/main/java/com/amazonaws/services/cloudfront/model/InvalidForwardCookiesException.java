@@ -13,9 +13,11 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
- * Your request contains forward cookies option which doesn't match with the expectation for the whitelisted list of
- * cookie names. Either list of cookie names has been specified when not allowed or list of cookie names is missing when
- * expected.
+ * <p>
+ * Your request contains forward cookies option which doesn't match with the expectation for the
+ * <code>whitelisted</code> list of cookie names. Either list of cookie names has been specified when not allowed or
+ * list of cookie names is missing when expected.
+ * </p>
  */
 public class InvalidForwardCookiesException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;

@@ -15,20 +15,35 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The returned result of the corresponding request.
+ * </p>
  */
 public class CreateInvalidationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID. */
+    /**
+     * <p>
+     * The fully qualified URI of the distribution and invalidation batch request, including the
+     * <code>Invalidation ID</code>.
+     * </p>
+     */
     private String location;
-    /** The invalidation's information. */
+    /**
+     * <p>
+     * The invalidation's information.
+     * </p>
+     */
     private Invalidation invalidation;
 
     /**
-     * The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
+     * <p>
+     * The fully qualified URI of the distribution and invalidation batch request, including the
+     * <code>Invalidation ID</code>.
+     * </p>
      * 
      * @param location
-     *        The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
+     *        The fully qualified URI of the distribution and invalidation batch request, including the
+     *        <code>Invalidation ID</code>.
      */
 
     public void setLocation(String location) {
@@ -36,10 +51,13 @@ public class CreateInvalidationResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
+     * <p>
+     * The fully qualified URI of the distribution and invalidation batch request, including the
+     * <code>Invalidation ID</code>.
+     * </p>
      * 
-     * @return The fully qualified URI of the distribution and invalidation batch request, including the Invalidation
-     *         ID.
+     * @return The fully qualified URI of the distribution and invalidation batch request, including the
+     *         <code>Invalidation ID</code>.
      */
 
     public String getLocation() {
@@ -47,10 +65,14 @@ public class CreateInvalidationResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
+     * <p>
+     * The fully qualified URI of the distribution and invalidation batch request, including the
+     * <code>Invalidation ID</code>.
+     * </p>
      * 
      * @param location
-     *        The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
+     *        The fully qualified URI of the distribution and invalidation batch request, including the
+     *        <code>Invalidation ID</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +82,9 @@ public class CreateInvalidationResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The invalidation's information.
+     * </p>
      * 
      * @param invalidation
      *        The invalidation's information.
@@ -71,7 +95,9 @@ public class CreateInvalidationResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The invalidation's information.
+     * </p>
      * 
      * @return The invalidation's information.
      */
@@ -81,7 +107,9 @@ public class CreateInvalidationResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * The invalidation's information.
+     * </p>
      * 
      * @param invalidation
      *        The invalidation's information.

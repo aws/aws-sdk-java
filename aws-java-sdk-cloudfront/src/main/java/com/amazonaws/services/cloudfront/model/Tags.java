@@ -15,17 +15,25 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
- * A complex type that contains zero or more Tag elements.
+ * <p>
+ * A complex type that contains zero or more <code>Tag</code> elements.
+ * </p>
  */
 public class Tags implements Serializable, Cloneable {
 
-    /** A complex type that contains Tag elements */
+    /**
+     * <p>
+     * A complex type that contains <code>Tag</code> elements.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> items;
 
     /**
-     * A complex type that contains Tag elements
+     * <p>
+     * A complex type that contains <code>Tag</code> elements.
+     * </p>
      * 
-     * @return A complex type that contains Tag elements
+     * @return A complex type that contains <code>Tag</code> elements.
      */
 
     public java.util.List<Tag> getItems() {
@@ -36,10 +44,12 @@ public class Tags implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains Tag elements
+     * <p>
+     * A complex type that contains <code>Tag</code> elements.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains Tag elements
+     *        A complex type that contains <code>Tag</code> elements.
      */
 
     public void setItems(java.util.Collection<Tag> items) {
@@ -52,7 +62,9 @@ public class Tags implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains Tag elements
+     * <p>
+     * A complex type that contains <code>Tag</code> elements.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -60,7 +72,7 @@ public class Tags implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        A complex type that contains Tag elements
+     *        A complex type that contains <code>Tag</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,10 +87,12 @@ public class Tags implements Serializable, Cloneable {
     }
 
     /**
-     * A complex type that contains Tag elements
+     * <p>
+     * A complex type that contains <code>Tag</code> elements.
+     * </p>
      * 
      * @param items
-     *        A complex type that contains Tag elements
+     *        A complex type that contains <code>Tag</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

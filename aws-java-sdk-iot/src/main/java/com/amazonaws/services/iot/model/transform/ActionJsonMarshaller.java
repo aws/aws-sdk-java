@@ -45,6 +45,10 @@ public class ActionJsonMarshaller {
                 jsonGenerator.writeFieldName("dynamoDB");
                 DynamoDBActionJsonMarshaller.getInstance().marshall(action.getDynamoDB(), jsonGenerator);
             }
+            if (action.getDynamoDBv2() != null) {
+                jsonGenerator.writeFieldName("dynamoDBv2");
+                DynamoDBv2ActionJsonMarshaller.getInstance().marshall(action.getDynamoDBv2(), jsonGenerator);
+            }
             if (action.getLambda() != null) {
                 jsonGenerator.writeFieldName("lambda");
                 LambdaActionJsonMarshaller.getInstance().marshall(action.getLambda(), jsonGenerator);

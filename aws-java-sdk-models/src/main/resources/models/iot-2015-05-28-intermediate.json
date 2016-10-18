@@ -2963,6 +2963,58 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "dynamoDBv2",
+        "c2jShape" : "DynamoDBv2Action",
+        "deprecated" : false,
+        "documentation" : "<p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>\n@param dynamoDBv2 Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>\n@return Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.*/",
+        "getterModel" : {
+          "returnType" : "DynamoDBv2Action",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "dynamoDBv2",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "dynamoDBv2",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DynamoDBv2",
+        "setterDocumentation" : "/**<p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>\n@param dynamoDBv2 Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "DynamoDBv2Action",
+          "variableName" : "dynamoDBv2",
+          "variableType" : "DynamoDBv2Action",
+          "documentation" : "",
+          "simpleType" : "DynamoDBv2Action",
+          "variableSetterType" : "DynamoDBv2Action"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>\n@param dynamoDBv2 Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "DynamoDBv2Action",
+          "variableName" : "dynamoDBv2",
+          "variableType" : "DynamoDBv2Action",
+          "documentation" : "<p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>",
+          "simpleType" : "DynamoDBv2Action",
+          "variableSetterType" : "DynamoDBv2Action"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "lambda",
         "c2jShape" : "LambdaAction",
         "deprecated" : false,
@@ -3640,6 +3692,59 @@
             "documentation" : "<p>Write to a DynamoDB table.</p>",
             "simpleType" : "DynamoDBAction",
             "variableSetterType" : "DynamoDBAction"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DynamoDBv2" : {
+          "c2jName" : "dynamoDBv2",
+          "c2jShape" : "DynamoDBv2Action",
+          "deprecated" : false,
+          "documentation" : "<p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>\n@param dynamoDBv2 Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>\n@return Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.*/",
+          "getterModel" : {
+            "returnType" : "DynamoDBv2Action",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "dynamoDBv2",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "dynamoDBv2",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DynamoDBv2",
+          "setterDocumentation" : "/**<p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>\n@param dynamoDBv2 Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "DynamoDBv2Action",
+            "variableName" : "dynamoDBv2",
+            "variableType" : "DynamoDBv2Action",
+            "documentation" : "",
+            "simpleType" : "DynamoDBv2Action",
+            "variableSetterType" : "DynamoDBv2Action"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>\n@param dynamoDBv2 Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "DynamoDBv2Action",
+            "variableName" : "dynamoDBv2",
+            "variableType" : "DynamoDBv2Action",
+            "documentation" : "<p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>",
+            "simpleType" : "DynamoDBv2Action",
+            "variableSetterType" : "DynamoDBv2Action"
           },
           "xmlNameSpaceUri" : null
         },
@@ -19281,6 +19386,252 @@
       },
       "wrapper" : false
     },
+    "DynamoDBv2Action" : {
+      "c2jName" : "DynamoDBv2Action",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Describes an action to write to a DynamoDB table.</p> <p>This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "roleArn",
+        "c2jShape" : "AwsArn",
+        "deprecated" : false,
+        "documentation" : "<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>\n@param roleArn The ARN of the IAM role that grants access to the DynamoDB table.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>\n@return The ARN of the IAM role that grants access to the DynamoDB table.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "roleArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "roleArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "RoleArn",
+        "setterDocumentation" : "/**<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>\n@param roleArn The ARN of the IAM role that grants access to the DynamoDB table.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "roleArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>\n@param roleArn The ARN of the IAM role that grants access to the DynamoDB table.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "roleArn",
+          "variableType" : "String",
+          "documentation" : "<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "putItem",
+        "c2jShape" : "PutItemInput",
+        "deprecated" : false,
+        "documentation" : "<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>\n@param putItem Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>\n@return Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.*/",
+        "getterModel" : {
+          "returnType" : "PutItemInput",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "putItem",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "putItem",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "PutItem",
+        "setterDocumentation" : "/**<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>\n@param putItem Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "PutItemInput",
+          "variableName" : "putItem",
+          "variableType" : "PutItemInput",
+          "documentation" : "",
+          "simpleType" : "PutItemInput",
+          "variableSetterType" : "PutItemInput"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>\n@param putItem Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "PutItemInput",
+          "variableName" : "putItem",
+          "variableType" : "PutItemInput",
+          "documentation" : "<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>",
+          "simpleType" : "PutItemInput",
+          "variableSetterType" : "PutItemInput"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "PutItem" : {
+          "c2jName" : "putItem",
+          "c2jShape" : "PutItemInput",
+          "deprecated" : false,
+          "documentation" : "<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>\n@param putItem Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>\n@return Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.*/",
+          "getterModel" : {
+            "returnType" : "PutItemInput",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "putItem",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "putItem",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "PutItem",
+          "setterDocumentation" : "/**<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>\n@param putItem Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "PutItemInput",
+            "variableName" : "putItem",
+            "variableType" : "PutItemInput",
+            "documentation" : "",
+            "simpleType" : "PutItemInput",
+            "variableSetterType" : "PutItemInput"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>\n@param putItem Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "PutItemInput",
+            "variableName" : "putItem",
+            "variableType" : "PutItemInput",
+            "documentation" : "<p>Specifies the DynamoDB table to which the message data will be written. For example:</p> <p><code>{ \"dynamoDBv2\": { \"roleArn\": \"aws:iam:12341251:my-role\" \"putItem\": { \"tableName\": \"my-table\" } } }</code></p> <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>",
+            "simpleType" : "PutItemInput",
+            "variableSetterType" : "PutItemInput"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "RoleArn" : {
+          "c2jName" : "roleArn",
+          "c2jShape" : "AwsArn",
+          "deprecated" : false,
+          "documentation" : "<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>\n@param roleArn The ARN of the IAM role that grants access to the DynamoDB table.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>\n@return The ARN of the IAM role that grants access to the DynamoDB table.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "roleArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "roleArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "RoleArn",
+          "setterDocumentation" : "/**<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>\n@param roleArn The ARN of the IAM role that grants access to the DynamoDB table.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "roleArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>\n@param roleArn The ARN of the IAM role that grants access to the DynamoDB table.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "roleArn",
+            "variableType" : "String",
+            "documentation" : "<p>The ARN of the IAM role that grants access to the DynamoDB table.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "DynamoDBv2Action",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "DynamoDBv2Action",
+        "variableName" : "dynamoDBv2Action",
+        "variableType" : "DynamoDBv2Action",
+        "documentation" : null,
+        "simpleType" : "DynamoDBv2Action",
+        "variableSetterType" : "DynamoDBv2Action"
+      },
+      "wrapper" : false
+    },
     "DynamoKeyType" : {
       "c2jName" : "DynamoKeyType",
       "customization" : {
@@ -34732,6 +35083,147 @@
         "documentation" : null,
         "simpleType" : "PolicyVersion",
         "variableSetterType" : "PolicyVersion"
+      },
+      "wrapper" : false
+    },
+    "PutItemInput" : {
+      "c2jName" : "PutItemInput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "tableName",
+        "c2jShape" : "TableName",
+        "deprecated" : false,
+        "documentation" : "<p>The table where the message data will be written</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The table where the message data will be written</p>\n@param tableName The table where the message data will be written\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The table where the message data will be written</p>\n@return The table where the message data will be written*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "tableName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "tableName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "TableName",
+        "setterDocumentation" : "/**<p>The table where the message data will be written</p>\n@param tableName The table where the message data will be written*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "tableName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The table where the message data will be written</p>\n@param tableName The table where the message data will be written\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "tableName",
+          "variableType" : "String",
+          "documentation" : "<p>The table where the message data will be written</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "TableName" : {
+          "c2jName" : "tableName",
+          "c2jShape" : "TableName",
+          "deprecated" : false,
+          "documentation" : "<p>The table where the message data will be written</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The table where the message data will be written</p>\n@param tableName The table where the message data will be written\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The table where the message data will be written</p>\n@return The table where the message data will be written*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "tableName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "tableName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "TableName",
+          "setterDocumentation" : "/**<p>The table where the message data will be written</p>\n@param tableName The table where the message data will be written*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "tableName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The table where the message data will be written</p>\n@param tableName The table where the message data will be written\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "tableName",
+            "variableType" : "String",
+            "documentation" : "<p>The table where the message data will be written</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "tableName" ],
+      "shapeName" : "PutItemInput",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "PutItemInput",
+        "variableName" : "putItemInput",
+        "variableType" : "PutItemInput",
+        "documentation" : null,
+        "simpleType" : "PutItemInput",
+        "variableSetterType" : "PutItemInput"
       },
       "wrapper" : false
     },

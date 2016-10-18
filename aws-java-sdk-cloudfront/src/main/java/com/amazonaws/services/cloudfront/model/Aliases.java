@@ -15,23 +15,32 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
+ * </p>
  */
 public class Aliases implements Serializable, Cloneable {
 
-    /** The number of CNAMEs, if any, for this distribution. */
+    /**
+     * <p>
+     * The number of CNAME aliases, if any, that you want to associate with this distribution.
+     * </p>
+     */
     private Integer quantity;
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
-     * The number of CNAMEs, if any, for this distribution.
+     * <p>
+     * The number of CNAME aliases, if any, that you want to associate with this distribution.
+     * </p>
      * 
      * @param quantity
-     *        The number of CNAMEs, if any, for this distribution.
+     *        The number of CNAME aliases, if any, that you want to associate with this distribution.
      */
 
     public void setQuantity(Integer quantity) {
@@ -39,9 +48,11 @@ public class Aliases implements Serializable, Cloneable {
     }
 
     /**
-     * The number of CNAMEs, if any, for this distribution.
+     * <p>
+     * The number of CNAME aliases, if any, that you want to associate with this distribution.
+     * </p>
      * 
-     * @return The number of CNAMEs, if any, for this distribution.
+     * @return The number of CNAME aliases, if any, that you want to associate with this distribution.
      */
 
     public Integer getQuantity() {
@@ -49,10 +60,12 @@ public class Aliases implements Serializable, Cloneable {
     }
 
     /**
-     * The number of CNAMEs, if any, for this distribution.
+     * <p>
+     * The number of CNAME aliases, if any, that you want to associate with this distribution.
+     * </p>
      * 
      * @param quantity
-     *        The number of CNAMEs, if any, for this distribution.
+     *        The number of CNAME aliases, if any, that you want to associate with this distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,11 +75,12 @@ public class Aliases implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.
+     * </p>
      * 
-     * @return Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0,
-     *         you can omit Items.
+     * @return A complex type that contains the CNAME aliases, if any, that you want to associate with this
+     *         distribution.
      */
 
     public java.util.List<String> getItems() {
@@ -77,12 +91,12 @@ public class Aliases implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.
+     * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0,
-     *        you can omit Items.
+     *        A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.
      */
 
     public void setItems(java.util.Collection<String> items) {
@@ -95,8 +109,9 @@ public class Aliases implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
@@ -104,8 +119,7 @@ public class Aliases implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0,
-     *        you can omit Items.
+     *        A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,12 +134,12 @@ public class Aliases implements Serializable, Cloneable {
     }
 
     /**
-     * Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0, you can
-     * omit Items.
+     * <p>
+     * A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.
+     * </p>
      * 
      * @param items
-     *        Optional: A complex type that contains CNAME elements, if any, for this distribution. If Quantity is 0,
-     *        you can omit Items.
+     *        A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

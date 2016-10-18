@@ -15,24 +15,45 @@ package com.amazonaws.services.cloudfront.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * An invalidation.
+ * </p>
  */
 public class Invalidation implements Serializable, Cloneable {
 
-    /** The identifier for the invalidation request. For example: IDFDVBD632BHDS5. */
+    /**
+     * <p>
+     * The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.
+     * </p>
+     */
     private String id;
-    /** The status of the invalidation request. When the invalidation batch is finished, the status is Completed. */
+    /**
+     * <p>
+     * The status of the invalidation request. When the invalidation batch is finished, the status is
+     * <code>Completed</code>.
+     * </p>
+     */
     private String status;
-    /** The date and time the invalidation request was first made. */
+    /**
+     * <p>
+     * The date and time the invalidation request was first made.
+     * </p>
+     */
     private java.util.Date createTime;
-    /** The current invalidation information for the batch request. */
+    /**
+     * <p>
+     * The current invalidation information for the batch request.
+     * </p>
+     */
     private InvalidationBatch invalidationBatch;
 
     /**
-     * The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
+     * <p>
+     * The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param id
-     *        The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
+     *        The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.
      */
 
     public void setId(String id) {
@@ -40,9 +61,11 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
-     * The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
+     * <p>
+     * The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.
+     * </p>
      * 
-     * @return The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
+     * @return The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.
      */
 
     public String getId() {
@@ -50,10 +73,12 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
-     * The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
+     * <p>
+     * The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.
+     * </p>
      * 
      * @param id
-     *        The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
+     *        The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,10 +88,14 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
-     * The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
+     * <p>
+     * The status of the invalidation request. When the invalidation batch is finished, the status is
+     * <code>Completed</code>.
+     * </p>
      * 
      * @param status
-     *        The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
+     *        The status of the invalidation request. When the invalidation batch is finished, the status is
+     *        <code>Completed</code>.
      */
 
     public void setStatus(String status) {
@@ -74,9 +103,13 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
-     * The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
+     * <p>
+     * The status of the invalidation request. When the invalidation batch is finished, the status is
+     * <code>Completed</code>.
+     * </p>
      * 
-     * @return The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
+     * @return The status of the invalidation request. When the invalidation batch is finished, the status is
+     *         <code>Completed</code>.
      */
 
     public String getStatus() {
@@ -84,10 +117,14 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
-     * The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
+     * <p>
+     * The status of the invalidation request. When the invalidation batch is finished, the status is
+     * <code>Completed</code>.
+     * </p>
      * 
      * @param status
-     *        The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
+     *        The status of the invalidation request. When the invalidation batch is finished, the status is
+     *        <code>Completed</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,7 +134,9 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the invalidation request was first made.
+     * </p>
      * 
      * @param createTime
      *        The date and time the invalidation request was first made.
@@ -108,7 +147,9 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the invalidation request was first made.
+     * </p>
      * 
      * @return The date and time the invalidation request was first made.
      */
@@ -118,7 +159,9 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time the invalidation request was first made.
+     * </p>
      * 
      * @param createTime
      *        The date and time the invalidation request was first made.
@@ -131,7 +174,9 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The current invalidation information for the batch request.
+     * </p>
      * 
      * @param invalidationBatch
      *        The current invalidation information for the batch request.
@@ -142,7 +187,9 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The current invalidation information for the batch request.
+     * </p>
      * 
      * @return The current invalidation information for the batch request.
      */
@@ -152,7 +199,9 @@ public class Invalidation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The current invalidation information for the batch request.
+     * </p>
      * 
      * @param invalidationBatch
      *        The current invalidation information for the batch request.
