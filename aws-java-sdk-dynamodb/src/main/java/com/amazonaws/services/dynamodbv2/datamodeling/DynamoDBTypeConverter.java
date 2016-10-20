@@ -30,7 +30,7 @@ public interface DynamoDBTypeConverter<S extends Object, T extends Object> {
     S convert(T object);
 
     /**
-     * Turns an object of type S into an objext of type T.
+     * Turns an object of type S into an object of type T.
      */
     T unconvert(S object);
 
@@ -111,7 +111,7 @@ public interface DynamoDBTypeConverter<S extends Object, T extends Object> {
     }
 
     /**
-     * A converter which evaluates nullabiltiy before convert/unconvert.
+     * A converter which evaluates nullability before convert/unconvert.
      */
     public static class NullSafeConverter<S,T> extends DelegateConverter<S,T> {
         public NullSafeConverter(DynamoDBTypeConverter<S,T> delegate) {
