@@ -200,16 +200,9 @@ final class DownloadCallable implements Callable<File> {
         truncateDestinationFileIfNecessary();
 
         for (Future<File> f : futureFiles) {
-            File partFile = f.get();
-            ServiceUtils.appendFile(partFile, dstfile);
+            // The individual part file is deleted at the end of appendFile operation.
+            ServiceUtils.appendFile(f.get(), dstfile);
             download.updatePersistableTransfer(++lastFullyMergedPartNumber);
-            try {
-                if (!partFile.delete()) {
-                    LOG.warn("The file " + partFile.getAbsolutePath() + " could not be deleted.");
-                }
-            } catch (SecurityException exception) {
-                LOG.warn("SecurityException denied delete access to file " + partFile.getAbsolutePath());
-            }
         }
     }
 

@@ -1332,7 +1332,7 @@
       "asyncReturnType" : "UpdateIPSetResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Inserts or deletes <a>IPSetDescriptor</a> objects in an <code>IPSet</code>. For each <code>IPSetDescriptor</code> object, you specify the following values: </p> <ul> <li> <p>Whether to insert or delete the object from the array. If you want to change an <code>IPSetDescriptor</code> object, you delete the existing object and add a new one.</p> </li> <li> <p>The IP address version, <code>IPv4</code> or <code>IPv6</code>. </p> </li> <li> <p>The IP address in CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or <code>192.0.2.44/32</code> (for the individual IP address <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6. For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of the following formats:</p> <ul> <li> <p>1111:0000:0000:0000:0000:0000:0000:0111/128</p> </li> <li> <p>1111:0:0:0:0:0:0:0111/128</p> </li> <li> <p>1111::0111/128</p> </li> <li> <p>1111::111/128</p> </li> </ul> <p>You use an <code>IPSet</code> to specify which web requests you want to allow or block based on the IP addresses that the requests originated from. For example, if you're receiving a lot of requests from one or a small number of IP addresses and you want to block the requests, you can create an <code>IPSet</code> that specifies those IP addresses, and then configure AWS WAF to block the requests. </p> <p>To create and configure an <code>IPSet</code>, perform the following steps:</p> <ol> <li> <p>Submit a <a>CreateIPSet</a> request.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</p> </li> <li> <p>Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want AWS WAF to watch for.</p> </li> </ol> <p>When you update an <code>IPSet</code>, you specify the IP addresses that you want to add and/or the IP addresses that you want to delete. If you want to change an IP address, you delete the existing IP address and add the new one.</p> <p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/\">AWS WAF Developer Guide</a>.</p>",
+      "documentation" : "<p>Inserts or deletes <a>IPSetDescriptor</a> objects in an <code>IPSet</code>. For each <code>IPSetDescriptor</code> object, you specify the following values: </p> <ul> <li> <p>Whether to insert or delete the object from the array. If you want to change an <code>IPSetDescriptor</code> object, you delete the existing object and add a new one.</p> </li> <li> <p>The IP address version, <code>IPv4</code>. </p> </li> <li> <p>The IP address in CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or <code>192.0.2.44/32</code> (for the individual IP address <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports /8, /16, /24, and /32 IP address ranges. For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>You use an <code>IPSet</code> to specify which web requests you want to allow or block based on the IP addresses that the requests originated from. For example, if you're receiving a lot of requests from one or a small number of IP addresses and you want to block the requests, you can create an <code>IPSet</code> that specifies those IP addresses, and then configure AWS WAF to block the requests. </p> <p>To create and configure an <code>IPSet</code>, perform the following steps:</p> <ol> <li> <p>Submit a <a>CreateIPSet</a> request.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</p> </li> <li> <p>Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want AWS WAF to watch for.</p> </li> </ol> <p>When you update an <code>IPSet</code>, you specify the IP addresses that you want to add and/or the IP addresses that you want to delete. If you want to change an IP address, you delete the existing IP address and add the new one.</p> <p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/\">AWS WAF Developer Guide</a>.</p>",
       "exceptions" : [ {
         "exceptionName" : "WAFStaleDataException",
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>"
@@ -14805,7 +14805,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.</p> <p>To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for example, 192.0.2.0/31. To block a range of IP addresses, you can specify a <code>/128</code>, <code>/64</code>, <code>/56</code>, <code>/48</code>, <code>/32</code>, <code>/24</code>, <code>/16</code>, or <code>/8</code> CIDR. For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>. </p>",
+      "documentation" : "<p>Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for example, 192.0.2.0/31. To block a range of IP addresses, you can specify a <code>/24</code>, a <code>/16</code>, or a <code>/8</code> CIDR. For more information about CIDR notation, perform an Internet search on <code>cidr notation</code>.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -14921,10 +14921,10 @@
         "c2jName" : "IPSetDescriptors",
         "c2jShape" : "IPSetDescriptors",
         "deprecated" : false,
-        "documentation" : "<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>",
+        "documentation" : "<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n@param iPSetDescriptors The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n@return The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>*/",
+        "fluentSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n@param iPSetDescriptors The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n@return The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>*/",
         "getterModel" : {
           "returnType" : "java.util.List<IPSetDescriptor>",
           "documentation" : null
@@ -15016,7 +15016,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "IPSetDescriptors",
-        "setterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n@param iPSetDescriptors The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>*/",
+        "setterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n@param iPSetDescriptors The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>*/",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<IPSetDescriptor>",
           "variableName" : "iPSetDescriptors",
@@ -15026,12 +15026,12 @@
           "variableSetterType" : "java.util.Collection<IPSetDescriptor>"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIPSetDescriptors(java.util.Collection)} or {@link #withIPSetDescriptors(java.util.Collection)} if you want to override the existing values.</p>\n@param iPSetDescriptors The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIPSetDescriptors(java.util.Collection)} or {@link #withIPSetDescriptors(java.util.Collection)} if you want to override the existing values.</p>\n@param iPSetDescriptors The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<IPSetDescriptor>",
           "variableName" : "iPSetDescriptors",
           "variableType" : "java.util.List<IPSetDescriptor>",
-          "documentation" : "<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>",
+          "documentation" : "<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>",
           "simpleType" : "List<IPSetDescriptor>",
           "variableSetterType" : "java.util.Collection<IPSetDescriptor>"
         },
@@ -15042,10 +15042,10 @@
           "c2jName" : "IPSetDescriptors",
           "c2jShape" : "IPSetDescriptors",
           "deprecated" : false,
-          "documentation" : "<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>",
+          "documentation" : "<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n@param iPSetDescriptors The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n@return The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>*/",
+          "fluentSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n@param iPSetDescriptors The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n@return The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>*/",
           "getterModel" : {
             "returnType" : "java.util.List<IPSetDescriptor>",
             "documentation" : null
@@ -15137,7 +15137,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "IPSetDescriptors",
-          "setterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n@param iPSetDescriptors The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>*/",
+          "setterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n@param iPSetDescriptors The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>*/",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<IPSetDescriptor>",
             "variableName" : "iPSetDescriptors",
@@ -15147,12 +15147,12 @@
             "variableSetterType" : "java.util.Collection<IPSetDescriptor>"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIPSetDescriptors(java.util.Collection)} or {@link #withIPSetDescriptors(java.util.Collection)} if you want to override the existing values.</p>\n@param iPSetDescriptors The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIPSetDescriptors(java.util.Collection)} or {@link #withIPSetDescriptors(java.util.Collection)} if you want to override the existing values.</p>\n@param iPSetDescriptors The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<IPSetDescriptor>",
             "variableName" : "iPSetDescriptors",
             "variableType" : "java.util.List<IPSetDescriptor>",
-            "documentation" : "<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>",
+            "documentation" : "<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> </ul>",
             "simpleType" : "List<IPSetDescriptor>",
             "variableSetterType" : "java.util.Collection<IPSetDescriptor>"
           },
@@ -15290,7 +15290,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Specifies the IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR format) that web requests originate from.</p>",
+      "documentation" : "<p>Specifies the IP address type (<code>IPV4</code>) and the IP address range (in CIDR format) that web requests originate from.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -15302,10 +15302,10 @@
         "c2jName" : "Type",
         "c2jShape" : "IPSetDescriptorType",
         "deprecated" : false,
-        "documentation" : "<p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>",
+        "documentation" : "<p>Specify <code>IPV4</code>.</p>",
         "enumType" : "IPSetDescriptorType",
-        "fluentSetterDocumentation" : "/**<p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>\n@param type Specify <code>IPV4</code> or <code>IPV6</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IPSetDescriptorType*/",
-        "getterDocumentation" : "/**<p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>\n@return Specify <code>IPV4</code> or <code>IPV6</code>.\n@see IPSetDescriptorType*/",
+        "fluentSetterDocumentation" : "/**<p>Specify <code>IPV4</code>.</p>\n@param type Specify <code>IPV4</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IPSetDescriptorType*/",
+        "getterDocumentation" : "/**<p>Specify <code>IPV4</code>.</p>\n@return Specify <code>IPV4</code>.\n@see IPSetDescriptorType*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -15330,7 +15330,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Type",
-        "setterDocumentation" : "/**<p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>\n@param type Specify <code>IPV4</code> or <code>IPV6</code>.\n@see IPSetDescriptorType*/",
+        "setterDocumentation" : "/**<p>Specify <code>IPV4</code>.</p>\n@param type Specify <code>IPV4</code>.\n@see IPSetDescriptorType*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "type",
@@ -15340,12 +15340,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>\n@param type Specify <code>IPV4</code> or <code>IPV6</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IPSetDescriptorType*/",
+        "varargSetterDocumentation" : "/**<p>Specify <code>IPV4</code>.</p>\n@param type Specify <code>IPV4</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IPSetDescriptorType*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
-          "documentation" : "<p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>",
+          "documentation" : "<p>Specify <code>IPV4</code>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -15354,10 +15354,10 @@
         "c2jName" : "Value",
         "c2jShape" : "IPSetDescriptorValue",
         "deprecated" : false,
-        "documentation" : "<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>",
+        "documentation" : "<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>\n@param value Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>\n@return Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>*/",
+        "fluentSetterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p>\n@param value Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p>\n@return Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -15382,7 +15382,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Value",
-        "setterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>\n@param value Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>*/",
+        "setterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p>\n@param value Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "value",
@@ -15392,12 +15392,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>\n@param value Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p>\n@param value Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
-          "documentation" : "<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>",
+          "documentation" : "<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -15408,10 +15408,10 @@
           "c2jName" : "Type",
           "c2jShape" : "IPSetDescriptorType",
           "deprecated" : false,
-          "documentation" : "<p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>",
+          "documentation" : "<p>Specify <code>IPV4</code>.</p>",
           "enumType" : "IPSetDescriptorType",
-          "fluentSetterDocumentation" : "/**<p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>\n@param type Specify <code>IPV4</code> or <code>IPV6</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IPSetDescriptorType*/",
-          "getterDocumentation" : "/**<p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>\n@return Specify <code>IPV4</code> or <code>IPV6</code>.\n@see IPSetDescriptorType*/",
+          "fluentSetterDocumentation" : "/**<p>Specify <code>IPV4</code>.</p>\n@param type Specify <code>IPV4</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IPSetDescriptorType*/",
+          "getterDocumentation" : "/**<p>Specify <code>IPV4</code>.</p>\n@return Specify <code>IPV4</code>.\n@see IPSetDescriptorType*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -15436,7 +15436,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Type",
-          "setterDocumentation" : "/**<p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>\n@param type Specify <code>IPV4</code> or <code>IPV6</code>.\n@see IPSetDescriptorType*/",
+          "setterDocumentation" : "/**<p>Specify <code>IPV4</code>.</p>\n@param type Specify <code>IPV4</code>.\n@see IPSetDescriptorType*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "type",
@@ -15446,12 +15446,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>\n@param type Specify <code>IPV4</code> or <code>IPV6</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IPSetDescriptorType*/",
+          "varargSetterDocumentation" : "/**<p>Specify <code>IPV4</code>.</p>\n@param type Specify <code>IPV4</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IPSetDescriptorType*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
-            "documentation" : "<p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>",
+            "documentation" : "<p>Specify <code>IPV4</code>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -15461,10 +15461,10 @@
           "c2jName" : "Value",
           "c2jShape" : "IPSetDescriptorValue",
           "deprecated" : false,
-          "documentation" : "<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>",
+          "documentation" : "<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>\n@param value Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>\n@return Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>*/",
+          "fluentSetterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p>\n@param value Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p>\n@return Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -15489,7 +15489,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Value",
-          "setterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>\n@param value Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>*/",
+          "setterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p>\n@param value Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "value",
@@ -15499,12 +15499,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>\n@param value Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p>\n@param value Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
-            "documentation" : "<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>",
+            "documentation" : "<p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16, /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see the Wikipedia entry <a href=\"https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -15887,10 +15887,10 @@
         "c2jName" : "IPSetDescriptor",
         "c2jShape" : "IPSetDescriptor",
         "deprecated" : false,
-        "documentation" : "<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>",
+        "documentation" : "<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@param iPSetDescriptor The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@return The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.*/",
+        "fluentSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@param iPSetDescriptor The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@return The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.*/",
         "getterModel" : {
           "returnType" : "IPSetDescriptor",
           "documentation" : null
@@ -15915,7 +15915,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "IPSetDescriptor",
-        "setterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@param iPSetDescriptor The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.*/",
+        "setterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@param iPSetDescriptor The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.*/",
         "setterModel" : {
           "variableDeclarationType" : "IPSetDescriptor",
           "variableName" : "iPSetDescriptor",
@@ -15925,12 +15925,12 @@
           "variableSetterType" : "IPSetDescriptor"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@param iPSetDescriptor The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@param iPSetDescriptor The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "IPSetDescriptor",
           "variableName" : "iPSetDescriptor",
           "variableType" : "IPSetDescriptor",
-          "documentation" : "<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>",
+          "documentation" : "<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>",
           "simpleType" : "IPSetDescriptor",
           "variableSetterType" : "IPSetDescriptor"
         },
@@ -15994,10 +15994,10 @@
           "c2jName" : "IPSetDescriptor",
           "c2jShape" : "IPSetDescriptor",
           "deprecated" : false,
-          "documentation" : "<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>",
+          "documentation" : "<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@param iPSetDescriptor The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@return The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.*/",
+          "fluentSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@param iPSetDescriptor The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@return The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.*/",
           "getterModel" : {
             "returnType" : "IPSetDescriptor",
             "documentation" : null
@@ -16022,7 +16022,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "IPSetDescriptor",
-          "setterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@param iPSetDescriptor The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.*/",
+          "setterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@param iPSetDescriptor The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.*/",
           "setterModel" : {
             "variableDeclarationType" : "IPSetDescriptor",
             "variableName" : "iPSetDescriptor",
@@ -16032,12 +16032,12 @@
             "variableSetterType" : "IPSetDescriptor"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@param iPSetDescriptor The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>\n@param iPSetDescriptor The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "IPSetDescriptor",
             "variableName" : "iPSetDescriptor",
             "variableType" : "IPSetDescriptor",
-            "documentation" : "<p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>",
+            "documentation" : "<p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>",
             "simpleType" : "IPSetDescriptor",
             "variableSetterType" : "IPSetDescriptor"
           },
@@ -33348,7 +33348,839 @@
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
   "examples" : {
-    "examples" : { },
+    "examples" : {
+      "CreateByteMatchSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example creates a byte match set named ByteMatchNameExample.",
+        "id" : "createbytematchset-1473272359328",
+        "input" : {
+          "Name" : "ByteMatchNameExample",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "ByteMatchSet" : {
+            "ByteMatchSetId" : "exampleIDs3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "ByteMatchNameExample"
+          },
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To create a byte match set"
+      } ],
+      "CreateIPSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example creates an IP match set named MyIPSetFriendlyName.",
+        "id" : "createipset-1472501003122",
+        "input" : {
+          "Name" : "MyIPSetFriendlyName",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "IPSet" : {
+            "IPSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "MyIPSetFriendlyName",
+            "IPSetDescriptors" : [ {
+              "Type" : "IPV4",
+              "Value" : "192.0.2.44/32"
+            } ]
+          },
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To create an IP set"
+      } ],
+      "CreateRule" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example creates a rule named WAFByteHeaderRule.",
+        "id" : "createrule-1474072675555",
+        "input" : {
+          "Name" : "WAFByteHeaderRule",
+          "MetricName" : "WAFByteHeaderRule",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "Rule" : {
+            "RuleId" : "WAFRule-1-Example",
+            "Name" : "WAFByteHeaderRule",
+            "MetricName" : "WAFByteHeaderRule",
+            "Predicates" : [ {
+              "Negated" : false,
+              "Type" : "ByteMatch",
+              "DataId" : "MyByteMatchSetID"
+            } ]
+          },
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To create a rule"
+      } ],
+      "CreateSizeConstraintSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example creates size constraint set named MySampleSizeConstraintSet.",
+        "id" : "createsizeconstraint-1474299140754",
+        "input" : {
+          "Name" : "MySampleSizeConstraintSet",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "SizeConstraintSet" : {
+            "SizeConstraintSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "MySampleSizeConstraintSet",
+            "SizeConstraints" : [ {
+              "FieldToMatch" : {
+                "Type" : "QUERY_STRING"
+              },
+              "TextTransformation" : "NONE",
+              "ComparisonOperator" : "GT",
+              "Size" : 0
+            } ]
+          },
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To create a size constraint"
+      } ],
+      "CreateSqlInjectionMatchSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example creates a SQL injection match set named MySQLInjectionMatchSet.",
+        "id" : "createsqlinjectionmatchset-1474492796105",
+        "input" : {
+          "Name" : "MySQLInjectionMatchSet",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "SqlInjectionMatchSet" : {
+            "SqlInjectionMatchSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "MySQLInjectionMatchSet",
+            "SqlInjectionMatchTuples" : [ {
+              "FieldToMatch" : {
+                "Type" : "QUERY_STRING"
+              },
+              "TextTransformation" : "URL_DECODE"
+            } ]
+          },
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To create a SQL injection match set"
+      } ],
+      "CreateWebACL" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example creates a web ACL named CreateExample.",
+        "id" : "createwebacl-1472061481310",
+        "input" : {
+          "Name" : "CreateExample",
+          "MetricName" : "CreateExample",
+          "DefaultAction" : {
+            "Type" : "ALLOW"
+          },
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "WebACL" : {
+            "WebACLId" : "example-46da-4444-5555-example",
+            "Name" : "CreateExample",
+            "MetricName" : "CreateExample",
+            "DefaultAction" : {
+              "Type" : "ALLOW"
+            },
+            "Rules" : [ {
+              "Priority" : 1,
+              "RuleId" : "WAFRule-1-Example",
+              "Action" : {
+                "Type" : "ALLOW"
+              }
+            } ]
+          },
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To create a web ACL"
+      } ],
+      "CreateXssMatchSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example creates an XSS match set named MySampleXssMatchSet.",
+        "id" : "createxssmatchset-1474560868500",
+        "input" : {
+          "Name" : "MySampleXssMatchSet",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "XssMatchSet" : {
+            "XssMatchSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "MySampleXssMatchSet",
+            "XssMatchTuples" : [ {
+              "FieldToMatch" : {
+                "Type" : "QUERY_STRING"
+              },
+              "TextTransformation" : "URL_DECODE"
+            } ]
+          },
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To create an XSS match set"
+      } ],
+      "DeleteByteMatchSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes a byte match set with the ID exampleIDs3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "deletebytematchset-1473367566229",
+        "input" : {
+          "ByteMatchSetId" : "exampleIDs3t-46da-4fdb-b8d5-abc321j569j5",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To delete a byte match set"
+      } ],
+      "DeleteIPSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes an IP match set  with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "deleteipset-1472767434306",
+        "input" : {
+          "IPSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To delete an IP set"
+      } ],
+      "DeleteRule" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes a rule with the ID WAFRule-1-Example.",
+        "id" : "deleterule-1474073108749",
+        "input" : {
+          "RuleId" : "WAFRule-1-Example",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To delete a rule"
+      } ],
+      "DeleteSizeConstraintSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes a size constraint set  with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "deletesizeconstraintset-1474299857905",
+        "input" : {
+          "SizeConstraintSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To delete a size constraint set"
+      } ],
+      "DeleteSqlInjectionMatchSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes a SQL injection match set  with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "deletesqlinjectionmatchset-1474493373197",
+        "input" : {
+          "SqlInjectionMatchSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To delete a SQL injection match set"
+      } ],
+      "DeleteWebACL" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes a web ACL with the ID example-46da-4444-5555-example.",
+        "id" : "deletewebacl-1472767755931",
+        "input" : {
+          "WebACLId" : "example-46da-4444-5555-example",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To delete a web ACL"
+      } ],
+      "DeleteXssMatchSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes an XSS match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "deletexssmatchset-1474561302618",
+        "input" : {
+          "XssMatchSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To delete an XSS match set"
+      } ],
+      "GetByteMatchSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns the details of a byte match set with the ID exampleIDs3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "getbytematchset-1473273311532",
+        "input" : {
+          "ByteMatchSetId" : "exampleIDs3t-46da-4fdb-b8d5-abc321j569j5"
+        },
+        "output" : {
+          "ByteMatchSet" : {
+            "ByteMatchSetId" : "exampleIDs3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "ByteMatchNameExample",
+            "ByteMatchTuples" : [ {
+              "FieldToMatch" : {
+                "Type" : "HEADER",
+                "Data" : "referer"
+              },
+              "TargetString" : "badrefer1",
+              "TextTransformation" : "NONE",
+              "PositionalConstraint" : "CONTAINS"
+            } ]
+          }
+        },
+        "title" : "To get a byte match set"
+      } ],
+      "GetChangeToken" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns a change token to use for a create, update or delete operation.",
+        "id" : "get-change-token-example-1471635120794",
+        "input" : { },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To get a change token"
+      } ],
+      "GetChangeTokenStatus" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns the status of a change token with the ID abcd12f2-46da-4fdb-b8d5-fbd4c466928f.",
+        "id" : "getchangetokenstatus-1474658417107",
+        "input" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "output" : {
+          "ChangeTokenStatus" : "PENDING"
+        },
+        "title" : "To get the change token status"
+      } ],
+      "GetIPSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns the details of an IP match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "getipset-1474658688675",
+        "input" : {
+          "IPSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5"
+        },
+        "output" : {
+          "IPSet" : {
+            "IPSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "MyIPSetFriendlyName",
+            "IPSetDescriptors" : [ {
+              "Type" : "IPV4",
+              "Value" : "192.0.2.44/32"
+            } ]
+          }
+        },
+        "title" : "To get an IP set"
+      } ],
+      "GetRule" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns the details of a rule with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "getrule-1474659238790",
+        "input" : {
+          "RuleId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5"
+        },
+        "output" : {
+          "Rule" : {
+            "RuleId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "WAFByteHeaderRule",
+            "MetricName" : "WAFByteHeaderRule",
+            "Predicates" : [ {
+              "Negated" : false,
+              "Type" : "ByteMatch",
+              "DataId" : "MyByteMatchSetID"
+            } ]
+          }
+        },
+        "title" : "To get a rule"
+      } ],
+      "GetSampledRequests" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns detailed information about 100 requests --a sample-- that AWS WAF randomly selects from among the first 5,000 requests that your AWS resource received between the time period 2016-09-27T15:50Z to 2016-09-27T15:50Z.",
+        "id" : "getsampledrequests-1474927997195",
+        "input" : {
+          "WebAclId" : "createwebacl-1472061481310",
+          "RuleId" : "WAFRule-1-Example",
+          "TimeWindow" : {
+            "StartTime" : "2016-09-27T15:50Z",
+            "EndTime" : "2016-09-27T15:50Z"
+          },
+          "MaxItems" : 100
+        },
+        "output" : {
+          "SampledRequests" : [ {
+            "Request" : {
+              "ClientIP" : "192.0.2.44",
+              "Country" : "US",
+              "Method" : "HEAD",
+              "HTTPVersion" : "HTTP/1.1",
+              "Headers" : [ {
+                "Name" : "User-Agent",
+                "Value" : "BadBot "
+              } ]
+            },
+            "Weight" : 1,
+            "Timestamp" : "2016-09-27T14:55Z",
+            "Action" : "BLOCK"
+          } ],
+          "PopulationSize" : 50,
+          "TimeWindow" : {
+            "StartTime" : "2016-09-27T14:50Z",
+            "EndTime" : "2016-09-27T15:50Z"
+          }
+        },
+        "title" : "To get a sampled requests"
+      } ],
+      "GetSizeConstraintSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns the details of a size constraint match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "getsizeconstraintset-1475005422493",
+        "input" : {
+          "SizeConstraintSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5"
+        },
+        "output" : {
+          "SizeConstraintSet" : {
+            "SizeConstraintSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "MySampleSizeConstraintSet",
+            "SizeConstraints" : [ {
+              "FieldToMatch" : {
+                "Type" : "QUERY_STRING"
+              },
+              "TextTransformation" : "NONE",
+              "ComparisonOperator" : "GT",
+              "Size" : 0
+            } ]
+          }
+        },
+        "title" : "To get a size constraint set"
+      } ],
+      "GetSqlInjectionMatchSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns the details of a SQL injection match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "getsqlinjectionmatchset-1475005940137",
+        "input" : {
+          "SqlInjectionMatchSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5"
+        },
+        "output" : {
+          "SqlInjectionMatchSet" : {
+            "SqlInjectionMatchSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "MySQLInjectionMatchSet",
+            "SqlInjectionMatchTuples" : [ {
+              "FieldToMatch" : {
+                "Type" : "QUERY_STRING"
+              },
+              "TextTransformation" : "URL_DECODE"
+            } ]
+          }
+        },
+        "title" : "To get a SQL injection match set"
+      } ],
+      "GetWebACL" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns the details of a web ACL with the ID createwebacl-1472061481310.",
+        "id" : "getwebacl-1475006348525",
+        "input" : {
+          "WebACLId" : "createwebacl-1472061481310"
+        },
+        "output" : {
+          "WebACL" : {
+            "WebACLId" : "createwebacl-1472061481310",
+            "Name" : "CreateExample",
+            "MetricName" : "CreateExample",
+            "DefaultAction" : {
+              "Type" : "ALLOW"
+            },
+            "Rules" : [ {
+              "Priority" : 1,
+              "RuleId" : "WAFRule-1-Example",
+              "Action" : {
+                "Type" : "ALLOW"
+              }
+            } ]
+          }
+        },
+        "title" : "To get a web ACL"
+      } ],
+      "GetXssMatchSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns the details of an XSS match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "getxssmatchset-1475187879017",
+        "input" : {
+          "XssMatchSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5"
+        },
+        "output" : {
+          "XssMatchSet" : {
+            "XssMatchSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "MySampleXssMatchSet",
+            "XssMatchTuples" : [ {
+              "FieldToMatch" : {
+                "Type" : "QUERY_STRING"
+              },
+              "TextTransformation" : "URL_DECODE"
+            } ]
+          }
+        },
+        "title" : "To get an XSS match set"
+      } ],
+      "ListIPSets" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns an array of up to 100 IP match sets.",
+        "id" : "listipsets-1472235676229",
+        "input" : {
+          "Limit" : 100
+        },
+        "output" : {
+          "IPSets" : [ {
+            "IPSetId" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
+            "Name" : "MyIPSetFriendlyName"
+          } ]
+        },
+        "title" : "To list IP sets"
+      } ],
+      "ListRules" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns an array of up to 100 rules.",
+        "id" : "listrules-1475258406433",
+        "input" : {
+          "Limit" : 100
+        },
+        "output" : {
+          "Rules" : [ {
+            "RuleId" : "WAFRule-1-Example",
+            "Name" : "WAFByteHeaderRule"
+          } ]
+        },
+        "title" : "To list rules"
+      } ],
+      "ListSizeConstraintSets" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns an array of up to 100 size contraint match sets.",
+        "id" : "listsizeconstraintsets-1474300067597",
+        "input" : {
+          "Limit" : 100
+        },
+        "output" : {
+          "SizeConstraintSets" : [ {
+            "SizeConstraintSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "MySampleSizeConstraintSet"
+          } ]
+        },
+        "title" : "To list a size constraint sets"
+      } ],
+      "ListSqlInjectionMatchSets" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns an array of up to 100 SQL injection match sets.",
+        "id" : "listsqlinjectionmatchset-1474493560103",
+        "input" : {
+          "Limit" : 100
+        },
+        "output" : {
+          "SqlInjectionMatchSets" : [ {
+            "SqlInjectionMatchSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "MySQLInjectionMatchSet"
+          } ]
+        },
+        "title" : "To list SQL injection match sets"
+      } ],
+      "ListWebACLs" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns an array of up to 100 web ACLs.",
+        "id" : "listwebacls-1475258732691",
+        "input" : {
+          "Limit" : 100
+        },
+        "output" : {
+          "WebACLs" : [ {
+            "WebACLId" : "webacl-1472061481310",
+            "Name" : "WebACLexample"
+          } ]
+        },
+        "title" : "To list Web ACLs"
+      } ],
+      "ListXssMatchSets" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example returns an array of up to 100 XSS match sets.",
+        "id" : "listxssmatchsets-1474561481168",
+        "input" : {
+          "Limit" : 100
+        },
+        "output" : {
+          "XssMatchSets" : [ {
+            "XssMatchSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+            "Name" : "MySampleXssMatchSet"
+          } ]
+        },
+        "title" : "To list XSS match sets"
+      } ],
+      "UpdateByteMatchSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes a ByteMatchTuple object (filters) in an byte match set with the ID exampleIDs3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "updatebytematchset-1475259074558",
+        "input" : {
+          "ByteMatchSetId" : "exampleIDs3t-46da-4fdb-b8d5-abc321j569j5",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
+          "Updates" : [ {
+            "Action" : "DELETE",
+            "ByteMatchTuple" : {
+              "FieldToMatch" : {
+                "Type" : "HEADER",
+                "Data" : "referer"
+              },
+              "TargetString" : "badrefer1",
+              "TextTransformation" : "NONE",
+              "PositionalConstraint" : "CONTAINS"
+            }
+          } ]
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To update a byte match set"
+      } ],
+      "UpdateIPSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes an IPSetDescriptor object in an IP match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "updateipset-1475259733625",
+        "input" : {
+          "IPSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
+          "Updates" : [ {
+            "Action" : "DELETE",
+            "IPSetDescriptor" : {
+              "Type" : "IPV4",
+              "Value" : "192.0.2.44/32"
+            }
+          } ]
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To update an IP set"
+      } ],
+      "UpdateRule" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes a Predicate object in a rule with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "updaterule-1475260064720",
+        "input" : {
+          "RuleId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
+          "Updates" : [ {
+            "Action" : "DELETE",
+            "Predicate" : {
+              "Negated" : false,
+              "Type" : "ByteMatch",
+              "DataId" : "MyByteMatchSetID"
+            }
+          } ]
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To update a rule"
+      } ],
+      "UpdateSizeConstraintSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes a SizeConstraint object (filters) in a size constraint set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "updatesizeconstraintset-1475531697891",
+        "input" : {
+          "SizeConstraintSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
+          "Updates" : [ {
+            "Action" : "DELETE",
+            "SizeConstraint" : {
+              "FieldToMatch" : {
+                "Type" : "QUERY_STRING"
+              },
+              "TextTransformation" : "NONE",
+              "ComparisonOperator" : "GT",
+              "Size" : 0
+            }
+          } ]
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To update a size constraint set"
+      } ],
+      "UpdateSqlInjectionMatchSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes a SqlInjectionMatchTuple object (filters) in a SQL injection match set with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "updatesqlinjectionmatchset-1475532094686",
+        "input" : {
+          "SqlInjectionMatchSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
+          "Updates" : [ {
+            "Action" : "DELETE",
+            "SqlInjectionMatchTuple" : {
+              "FieldToMatch" : {
+                "Type" : "QUERY_STRING"
+              },
+              "TextTransformation" : "URL_DECODE"
+            }
+          } ]
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To update a SQL injection match set"
+      } ],
+      "UpdateWebACL" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes an ActivatedRule object in a WebACL with the ID webacl-1472061481310.",
+        "id" : "updatewebacl-1475533627385",
+        "input" : {
+          "WebACLId" : "webacl-1472061481310",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
+          "Updates" : [ {
+            "Action" : "DELETE",
+            "ActivatedRule" : {
+              "Priority" : 1,
+              "RuleId" : "WAFRule-1-Example",
+              "Action" : {
+                "Type" : "ALLOW"
+              }
+            }
+          } ],
+          "DefaultAction" : {
+            "Type" : "ALLOW"
+          }
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To update a Web ACL"
+      } ],
+      "UpdateXssMatchSet" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes an XssMatchTuple object (filters) in an XssMatchSet with the ID example1ds3t-46da-4fdb-b8d5-abc321j569j5.",
+        "id" : "updatexssmatchset-1475534098881",
+        "input" : {
+          "XssMatchSetId" : "example1ds3t-46da-4fdb-b8d5-abc321j569j5",
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f",
+          "Updates" : [ {
+            "Action" : "DELETE",
+            "XssMatchTuple" : {
+              "FieldToMatch" : {
+                "Type" : "QUERY_STRING"
+              },
+              "TextTransformation" : "URL_DECODE"
+            }
+          } ]
+        },
+        "output" : {
+          "ChangeToken" : "abcd12f2-46da-4fdb-b8d5-fbd4c466928f"
+        },
+        "title" : "To update an XSS match set"
+      } ]
+    },
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,

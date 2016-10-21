@@ -465,8 +465,12 @@ public class ServiceUtils {
             closeQuietly(in, LOG);
             FileLocks.unlock(sourceFile);
             FileLocks.unlock(destinationFile);
-            if (!sourceFile.delete()) {
-                LOG.warn("Failed to delete file " + sourceFile.getAbsolutePath());
+            try {
+                if (!sourceFile.delete()) {
+                    LOG.warn("Failed to delete file " + sourceFile.getAbsolutePath());
+                }
+            } catch (SecurityException exception) {
+                LOG.warn("Security manager denied delete access to file " + sourceFile.getAbsolutePath());
             }
         }
     }

@@ -81,14 +81,12 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
     private Integer sdkClientExecutionTimeout = null;
 
     /**
-     * Sets the optional credentials to use for this request, overriding the default credentials set
-     * at the client level.
+     * Sets the optional credentials to use for this request, overriding the default credentials set at the client level.
      *
-     * @param credentials
-     *            The optional AWS security credentials to use for this request, overriding the
-     *            default credentials set at the client level.
-     *
-     * @deprecated by {@link #setRequestCredentialsProvider(AWSCredentialsProvider)}
+     * @param credentials The optional AWS security credentials to use for this request, overriding the default credentials set at
+     *                    the client level.
+     * @deprecated by {@link #setRequestCredentialsProvider(AWSCredentialsProvider)}. If you must use {@link AWSCredentials} you
+     * can wrap it with a {@link com.amazonaws.auth.AWSStaticCredentialsProvider}.
      */
     @Deprecated
     public void setRequestCredentials(AWSCredentials credentials) {

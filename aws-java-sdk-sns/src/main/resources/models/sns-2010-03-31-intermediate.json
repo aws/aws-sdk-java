@@ -49,8 +49,8 @@
     },
     "authPolicyActions" : {
       "actionPrefix" : null,
-      "fileNamePrefix" : "SNS",
-      "skip" : false
+      "fileNamePrefix" : null,
+      "skip" : true
     },
     "calculateCRC32FromCompressedData" : false,
     "convenienceTypeOverloads" : [ ],

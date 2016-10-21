@@ -2072,7 +2072,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * <li>
      * <p>
-     * The IP address version, <code>IPv4</code> or <code>IPv6</code>.
+     * The IP address version, <code>IPv4</code>.
      * </p>
      * </li>
      * <li>
@@ -2084,35 +2084,10 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
-     * For more information about CIDR notation, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+     * AWS WAF supports /8, /16, /24, and /32 IP address ranges. For more information about CIDR notation, see the
+     * Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain
+     * Routing</a>.
      * </p>
-     * <p>
-     * IPv6 addresses can be represented using any of the following formats:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 1111:0000:0000:0000:0000:0000:0000:0111/128
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 1111:0:0:0:0:0:0:0111/128
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 1111::0111/128
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 1111::111/128
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * You use an <code>IPSet</code> to specify which web requests you want to allow or block based on the IP addresses
      * that the requests originated from. For example, if you're receiving a lot of requests from one or a small number
@@ -2170,7 +2145,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * <li>
      * <p>
-     * The IP address version, <code>IPv4</code> or <code>IPv6</code>.
+     * The IP address version, <code>IPv4</code>.
      * </p>
      * </li>
      * <li>
@@ -2182,35 +2157,10 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
-     * For more information about CIDR notation, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+     * AWS WAF supports /8, /16, /24, and /32 IP address ranges. For more information about CIDR notation, see the
+     * Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain
+     * Routing</a>.
      * </p>
-     * <p>
-     * IPv6 addresses can be represented using any of the following formats:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 1111:0000:0000:0000:0000:0000:0000:0111/128
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 1111:0:0:0:0:0:0:0111/128
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 1111::0111/128
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 1111::111/128
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * You use an <code>IPSet</code> to specify which web requests you want to allow or block based on the IP addresses
      * that the requests originated from. For example, if you're receiving a lot of requests from one or a small number

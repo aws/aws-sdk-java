@@ -37,6 +37,10 @@ public class RuntimeHttpUtils {
     private static final String COMMA = ", ";
     private static final String SPACE = " ";
 
+    private static final String AWS_EXECUTION_ENV_PREFIX = "exec-env/";
+    private static final String AWS_EXECUTION_ENV_NAME = "AWS_EXECUTION_ENV";
+
+
     /**
      * Fetches a file from the URI given and returns an input stream to it.
      *
@@ -97,17 +101,22 @@ public class RuntimeHttpUtils {
     }
 
     public static String getUserAgent(final ClientConfiguration config, final String userAgentMarker) {
-        String prefix = config != null ? config.getUserAgentPrefix() : "";
-        String suffix = config != null ? config.getUserAgentSuffix() : "";
+        String userDefinedPrefix = config != null ? config.getUserAgentPrefix() : "";
+        String userDefinedSuffix = config != null ? config.getUserAgentSuffix() : "";
+        String awsExecutionEnvironment = getEnvironmentVariable(AWS_EXECUTION_ENV_NAME);
 
-        StringBuilder userAgent = new StringBuilder(prefix.trim());
+        StringBuilder userAgent = new StringBuilder(userDefinedPrefix.trim());
 
-        if(!ClientConfiguration.DEFAULT_USER_AGENT.equals(prefix)) {
+        if(!ClientConfiguration.DEFAULT_USER_AGENT.equals(userDefinedPrefix)) {
             userAgent.append(COMMA).append(ClientConfiguration.DEFAULT_USER_AGENT);
         }
 
-        if(StringUtils.hasValue(suffix)) {
-            userAgent.append(COMMA).append(suffix.trim());
+        if(StringUtils.hasValue(userDefinedSuffix)) {
+            userAgent.append(COMMA).append(userDefinedSuffix.trim());
+        }
+
+        if(StringUtils.hasValue(awsExecutionEnvironment)) {
+            userAgent.append(SPACE).append(AWS_EXECUTION_ENV_PREFIX).append(awsExecutionEnvironment.trim());
         }
 
         if(StringUtils.hasValue(userAgentMarker)) {
@@ -115,6 +124,15 @@ public class RuntimeHttpUtils {
         }
 
         return userAgent.toString();
+    }
+
+    private static String getEnvironmentVariable(String environmentVariableName) {
+        try {
+            return System.getenv(environmentVariableName);
+        } catch (Exception e) {
+            // Return an empty string if unable to get environment variable
+            return "";
+        }
     }
 
     private static int getConnectionTimeout(final ClientConfiguration config) {

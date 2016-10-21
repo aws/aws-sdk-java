@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.46-SNAPSHOT</version>
+    <version>1.11.46</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -155,6 +155,12 @@
     </dependency>
     <dependency>
         <artifactId>aws-java-sdk-sns</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-budgets</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
         <version>${awsjavasdk.version}</version>
@@ -837,6 +843,10 @@
                               <group>
                                   <title>AWS Service Catalog</title>
                                   <packages>com.amazonaws.services.servicecatalog*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Budgets</title>
+                                  <packages>com.amazonaws.services.budgets*</packages>
                               </group>
                               <group>
                                   <title>Common</title>
