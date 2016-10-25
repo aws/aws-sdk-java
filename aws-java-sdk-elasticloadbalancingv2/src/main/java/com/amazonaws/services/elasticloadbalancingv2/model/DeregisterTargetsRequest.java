@@ -30,7 +30,8 @@ public class DeregisterTargetsRequest extends com.amazonaws.AmazonWebServiceRequ
     private String targetGroupArn;
     /**
      * <p>
-     * The targets.
+     * The targets. If you specified a port override when you registered a target, you must specify both the target ID
+     * and the port when you deregister it.
      * </p>
      */
     private java.util.List<TargetDescription> targets;
@@ -77,10 +78,12 @@ public class DeregisterTargetsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The targets.
+     * The targets. If you specified a port override when you registered a target, you must specify both the target ID
+     * and the port when you deregister it.
      * </p>
      * 
-     * @return The targets.
+     * @return The targets. If you specified a port override when you registered a target, you must specify both the
+     *         target ID and the port when you deregister it.
      */
 
     public java.util.List<TargetDescription> getTargets() {
@@ -89,11 +92,13 @@ public class DeregisterTargetsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The targets.
+     * The targets. If you specified a port override when you registered a target, you must specify both the target ID
+     * and the port when you deregister it.
      * </p>
      * 
      * @param targets
-     *        The targets.
+     *        The targets. If you specified a port override when you registered a target, you must specify both the
+     *        target ID and the port when you deregister it.
      */
 
     public void setTargets(java.util.Collection<TargetDescription> targets) {
@@ -107,7 +112,8 @@ public class DeregisterTargetsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The targets.
+     * The targets. If you specified a port override when you registered a target, you must specify both the target ID
+     * and the port when you deregister it.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -116,7 +122,8 @@ public class DeregisterTargetsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param targets
-     *        The targets.
+     *        The targets. If you specified a port override when you registered a target, you must specify both the
+     *        target ID and the port when you deregister it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +139,13 @@ public class DeregisterTargetsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The targets.
+     * The targets. If you specified a port override when you registered a target, you must specify both the target ID
+     * and the port when you deregister it.
      * </p>
      * 
      * @param targets
-     *        The targets.
+     *        The targets. If you specified a port override when you registered a target, you must specify both the
+     *        target ID and the port when you deregister it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

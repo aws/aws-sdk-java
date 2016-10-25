@@ -35,7 +35,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -74,7 +75,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -103,7 +105,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
+     *        <code>true</code> or <code>false</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -139,7 +142,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -167,7 +171,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     *         <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
+     *         <code>true</code> or <code>false</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -203,7 +208,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -232,7 +238,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
+     *        <code>true</code> or <code>false</code>.
      *        </p>
      *        </li>
      *        <li>

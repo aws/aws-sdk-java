@@ -33,7 +33,7 @@ import java.io.Serializable;
  * </ul>
  * <p>
  * For more information, see <a
- * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto Scaling
+ * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
  * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
  * </p>
  */
@@ -126,7 +126,8 @@ public class LifecycleHook implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
-     * <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
+     * <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or 100 times
+     * <code>HeartbeatTimeout</code>, whichever is smaller.
      * </p>
      */
     private Integer globalTimeout;
@@ -677,12 +678,14 @@ public class LifecycleHook implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
-     * <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
+     * <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or 100 times
+     * <code>HeartbeatTimeout</code>, whichever is smaller.
      * </p>
      * 
      * @param globalTimeout
      *        The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
-     *        <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
+     *        <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or 100 times
+     *        <code>HeartbeatTimeout</code>, whichever is smaller.
      */
 
     public void setGlobalTimeout(Integer globalTimeout) {
@@ -692,11 +695,13 @@ public class LifecycleHook implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
-     * <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
+     * <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or 100 times
+     * <code>HeartbeatTimeout</code>, whichever is smaller.
      * </p>
      * 
      * @return The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
-     *         <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
+     *         <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or 100 times
+     *         <code>HeartbeatTimeout</code>, whichever is smaller.
      */
 
     public Integer getGlobalTimeout() {
@@ -706,12 +711,14 @@ public class LifecycleHook implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
-     * <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
+     * <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or 100 times
+     * <code>HeartbeatTimeout</code>, whichever is smaller.
      * </p>
      * 
      * @param globalTimeout
      *        The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code> or
-     *        <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
+     *        <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or 100 times
+     *        <code>HeartbeatTimeout</code>, whichever is smaller.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

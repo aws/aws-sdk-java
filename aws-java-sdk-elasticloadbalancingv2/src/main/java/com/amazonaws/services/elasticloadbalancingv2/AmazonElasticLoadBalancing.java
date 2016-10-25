@@ -31,25 +31,25 @@ import com.amazonaws.services.elasticloadbalancingv2.model.*;
  * targets.
  * </p>
  * <p>
- * Elastic Load Balancing supports two types of load balancers: Classic load balancers and Application load balancers
- * (new). A Classic load balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or
- * the application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application load balancer makes
- * routing and load balancing decisions at the application layer (HTTP/HTTPS), supports path-based routing, and can
- * route requests to one or more ports on each EC2 instance or container instance in your virtual private cloud (VPC).
- * For more information, see the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
- * Load Balancing User Guide</a>.
+ * Elastic Load Balancing supports two types of load balancers: Classic Load Balancers and Application Load Balancers. A
+ * Classic Load Balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or the
+ * application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application Load Balancer makes routing
+ * and load balancing decisions at the application layer (HTTP/HTTPS), supports path-based routing, and can route
+ * requests to one or more ports on each EC2 instance or container instance in your virtual private cloud (VPC). For
+ * more information, see the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load
+ * Balancing User Guide</a>.
  * </p>
  * <p>
- * This reference covers the 2015-12-01 API, which supports Application load balancers. The 2012-06-01 API supports
- * Classic load balancers.
+ * This reference covers the 2015-12-01 API, which supports Application Load Balancers. The 2012-06-01 API supports
+ * Classic Load Balancers.
  * </p>
  * <p>
- * To get started with an Application load balancer, complete the following tasks:
+ * To get started, complete the following tasks:
  * </p>
  * <ol>
  * <li>
  * <p>
- * Create a load balancer using <a>CreateLoadBalancer</a>.
+ * Create an Application Load Balancer using <a>CreateLoadBalancer</a>.
  * </p>
  * </li>
  * <li>
@@ -74,7 +74,7 @@ import com.amazonaws.services.elasticloadbalancingv2.model.*;
  * </li>
  * </ol>
  * <p>
- * To delete an Application load balancer and its related resources, complete the following tasks:
+ * To delete an Application Load Balancer and its related resources, complete the following tasks:
  * </p>
  * <ol>
  * <li>
@@ -151,7 +151,7 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
-     * Adds the specified tags to the specified resource. You can tag your Application load balancers and your target
+     * Adds the specified tags to the specified resource. You can tag your Application Load Balancers and your target
      * groups.
      * </p>
      * <p>
@@ -180,7 +180,10 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
-     * Creates a listener for the specified Application load balancer.
+     * Creates a listener for the specified Application Load Balancer.
+     * </p>
+     * <p>
+     * You can create up to 10 listeners per load balancer.
      * </p>
      * <p>
      * To update a listener, use <a>ModifyListener</a>. When you are finished with a listener, you can delete it using
@@ -226,7 +229,7 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
-     * Creates an Application load balancer.
+     * Creates an Application Load Balancer.
      * </p>
      * <p>
      * To create listeners for your load balancer, use <a>CreateListener</a>. You can add security groups, subnets, and
@@ -242,6 +245,11 @@ public interface AmazonElasticLoadBalancing {
      * balancers for your account. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
      * Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html"
+     * >Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param createLoadBalancerRequest
@@ -274,9 +282,11 @@ public interface AmazonElasticLoadBalancing {
      * Creates a rule for the specified listener.
      * </p>
      * <p>
-     * A rule consists conditions and actions. Rules are evaluated in priority order, from the lowest value to the
-     * highest value. When the conditions for a rule are met, the specified actions are taken. If no rule's conditions
-     * are met, the default actions for the listener are taken.
+     * Each rule can have one action and one condition. Rules are evaluated in priority order, from the lowest value to
+     * the highest value. When the condition for a rule is met, the specified action is taken. If no conditions are met,
+     * the default action for the default rule is taken. For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules"
+     * >Listener Rules</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * <p>
      * To view your current rules, use <a>DescribeRules</a>. To update a rule, use <a>ModifyRule</a>. To set the
@@ -359,7 +369,7 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
-     * Deletes the specified load balancer and its attached listeners.
+     * Deletes the specified Application Load Balancer and its attached listeners.
      * </p>
      * <p>
      * You can't delete a load balancer if deletion protection is enabled. If the load balancer does not exist or has
@@ -435,8 +445,8 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
-     * Describes the specified listeners or the listeners for the specified load balancer. You must specify either a
-     * load balancer or one or more listeners.
+     * Describes the specified listeners or the listeners for the specified Application Load Balancer. You must specify
+     * either a load balancer or one or more listeners.
      * </p>
      * 
      * @param describeListenersRequest
@@ -452,7 +462,7 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
-     * Describes the attributes for the specified load balancer.
+     * Describes the attributes for the specified Application Load Balancer.
      * </p>
      * 
      * @param describeLoadBalancerAttributesRequest
@@ -466,7 +476,7 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
-     * Describes the specified Application load balancers or all of your Application load balancers.
+     * Describes the specified Application Load Balancers or all of your Application Load Balancers.
      * </p>
      * <p>
      * To describe the listeners for a load balancer, use <a>DescribeListeners</a>. To describe the attributes for a
@@ -633,7 +643,7 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
-     * Modifies the specified attributes of the specified load balancer.
+     * Modifies the specified attributes of the specified Application Load Balancer.
      * </p>
      * <p>
      * If any of the specified attributes can't be modified as requested, the call fails. Any existing attributes that
@@ -713,7 +723,12 @@ public interface AmazonElasticLoadBalancing {
      * Registers the specified targets with the specified target group.
      * </p>
      * <p>
-     * The target must be in the virtual private cloud (VPC) that you specified for the target group.
+     * By default, the load balancer routes requests to registered targets using the protocol and port number for the
+     * target group. Alternatively, you can override the port for a target when you register it.
+     * </p>
+     * <p>
+     * The target must be in the virtual private cloud (VPC) that you specified for the target group. If the target is
+     * an EC2 instance, it can't be in the <code>stopped</code> or <code>running</code> state when you register it.
      * </p>
      * <p>
      * To remove a target from a target group, use <a>DeregisterTargets</a>.

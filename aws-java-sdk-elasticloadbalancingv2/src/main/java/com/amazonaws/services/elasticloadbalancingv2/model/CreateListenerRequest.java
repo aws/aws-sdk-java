@@ -55,7 +55,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<Certificate> certificates;
     /**
      * <p>
-     * The default actions for the listener.
+     * The default action for the listener.
      * </p>
      */
     private java.util.List<Action> defaultActions;
@@ -331,10 +331,10 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default actions for the listener.
+     * The default action for the listener.
      * </p>
      * 
-     * @return The default actions for the listener.
+     * @return The default action for the listener.
      */
 
     public java.util.List<Action> getDefaultActions() {
@@ -343,11 +343,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default actions for the listener.
+     * The default action for the listener.
      * </p>
      * 
      * @param defaultActions
-     *        The default actions for the listener.
+     *        The default action for the listener.
      */
 
     public void setDefaultActions(java.util.Collection<Action> defaultActions) {
@@ -361,7 +361,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default actions for the listener.
+     * The default action for the listener.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -370,7 +370,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param defaultActions
-     *        The default actions for the listener.
+     *        The default action for the listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,11 +386,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default actions for the listener.
+     * The default action for the listener.
      * </p>
      * 
      * @param defaultActions
-     *        The default actions for the listener.
+     *        The default action for the listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

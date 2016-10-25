@@ -28,7 +28,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled.
+     * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled. The value is
+     * <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -46,7 +47,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled.
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     * <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -72,7 +74,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled.
+     * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled. The value is
+     * <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -90,7 +93,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled.
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     * <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -106,7 +110,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled.
+     *        <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled. The
+     *        value is <code>true</code> or <code>false</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -124,7 +129,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled.
+     *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     *        <code>true</code> or <code>false</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -146,7 +152,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled.
+     * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled. The value is
+     * <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -164,7 +171,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled.
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     * <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -179,7 +187,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled.
+     *         <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled. The
+     *         value is <code>true</code> or <code>false</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -197,7 +206,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled.
+     *         <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     *         <code>true</code> or <code>false</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -219,7 +229,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled.
+     * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled. The value is
+     * <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -237,7 +248,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled.
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     * <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -253,7 +265,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled.
+     *        <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon S3 are enabled. The
+     *        value is <code>true</code> or <code>false</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -271,7 +284,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled.
+     *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     *        <code>true</code> or <code>false</code>.
      *        </p>
      *        </li>
      *        <li>

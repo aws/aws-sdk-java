@@ -30,8 +30,37 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String listenerArn;
     /**
      * <p>
-     * The conditions.
+     * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
+     * characters:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A-Z, a-z, 0-9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * _ - . $ / ~ " ' @ : +
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * &amp; (using &amp;amp;)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * * (matches 0 or more characters)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ? (matches exactly 1 character)
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<RuleCondition> conditions;
     /**
@@ -42,7 +71,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer priority;
     /**
      * <p>
-     * The actions for the rule.
+     * An action. Each action has the type <code>forward</code> and specifies a target group.
      * </p>
      */
     private java.util.List<Action> actions;
@@ -89,10 +118,67 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions.
+     * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
+     * characters:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A-Z, a-z, 0-9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * _ - . $ / ~ " ' @ : +
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * &amp; (using &amp;amp;)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * * (matches 0 or more characters)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ? (matches exactly 1 character)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The conditions.
+     * @return A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A
+     *         path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the
+     *         following characters:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         A-Z, a-z, 0-9
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         _ - . $ / ~ " ' @ : +
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         &amp; (using &amp;amp;)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         (matches 0 or more characters)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ? (matches exactly 1 character)
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<RuleCondition> getConditions() {
@@ -101,11 +187,68 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions.
+     * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
+     * characters:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A-Z, a-z, 0-9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * _ - . $ / ~ " ' @ : +
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * &amp; (using &amp;amp;)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * * (matches 0 or more characters)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ? (matches exactly 1 character)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param conditions
-     *        The conditions.
+     *        A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
+     *        pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
+     *        characters:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A-Z, a-z, 0-9
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        _ - . $ / ~ " ' @ : +
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        &amp; (using &amp;amp;)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        (matches 0 or more characters)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ? (matches exactly 1 character)
+     *        </p>
+     *        </li>
      */
 
     public void setConditions(java.util.Collection<RuleCondition> conditions) {
@@ -119,8 +262,37 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions.
+     * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
+     * characters:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A-Z, a-z, 0-9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * _ - . $ / ~ " ' @ : +
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * &amp; (using &amp;amp;)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * * (matches 0 or more characters)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ? (matches exactly 1 character)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setConditions(java.util.Collection)} or {@link #withConditions(java.util.Collection)} if you want to
@@ -128,7 +300,35 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param conditions
-     *        The conditions.
+     *        A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
+     *        pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
+     *        characters:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A-Z, a-z, 0-9
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        _ - . $ / ~ " ' @ : +
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        &amp; (using &amp;amp;)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        (matches 0 or more characters)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ? (matches exactly 1 character)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +344,68 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions.
+     * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
+     * characters:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A-Z, a-z, 0-9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * _ - . $ / ~ " ' @ : +
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * &amp; (using &amp;amp;)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * * (matches 0 or more characters)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ? (matches exactly 1 character)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param conditions
-     *        The conditions.
+     *        A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
+     *        pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
+     *        characters:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A-Z, a-z, 0-9
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        _ - . $ / ~ " ' @ : +
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        &amp; (using &amp;amp;)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        (matches 0 or more characters)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ? (matches exactly 1 character)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,10 +456,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions for the rule.
+     * An action. Each action has the type <code>forward</code> and specifies a target group.
      * </p>
      * 
-     * @return The actions for the rule.
+     * @return An action. Each action has the type <code>forward</code> and specifies a target group.
      */
 
     public java.util.List<Action> getActions() {
@@ -211,11 +468,11 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions for the rule.
+     * An action. Each action has the type <code>forward</code> and specifies a target group.
      * </p>
      * 
      * @param actions
-     *        The actions for the rule.
+     *        An action. Each action has the type <code>forward</code> and specifies a target group.
      */
 
     public void setActions(java.util.Collection<Action> actions) {
@@ -229,7 +486,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions for the rule.
+     * An action. Each action has the type <code>forward</code> and specifies a target group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -238,7 +495,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param actions
-     *        The actions for the rule.
+     *        An action. Each action has the type <code>forward</code> and specifies a target group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,11 +511,11 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions for the rule.
+     * An action. Each action has the type <code>forward</code> and specifies a target group.
      * </p>
      * 
      * @param actions
-     *        The actions for the rule.
+     *        An action. Each action has the type <code>forward</code> and specifies a target group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

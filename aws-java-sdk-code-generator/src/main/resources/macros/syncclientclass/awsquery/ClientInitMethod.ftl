@@ -19,5 +19,6 @@
                 "/${serviceModelRoot.metadata.packagePath}/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/${serviceModelRoot.metadata.packagePath}/request.handler2s"));
+        requestHandler2s.addAll(chainFactory.getGlobalHandlers());
     }
 </#macro>

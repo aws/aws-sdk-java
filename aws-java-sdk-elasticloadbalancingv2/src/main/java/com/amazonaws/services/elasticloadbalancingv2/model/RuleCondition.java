@@ -23,13 +23,13 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the field. The possible value is <code>path-pattern</code>.
+     * The only possible value is <code>path-pattern</code>.
      * </p>
      */
     private String field;
     /**
      * <p>
-     * The values for the field.
+     * The path pattern. You can specify a single path pattern.
      * </p>
      * <p>
      * A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
@@ -48,7 +48,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * &amp;amp; (using &amp;amp;amp;)
+     * &amp; (using &amp;amp;)
      * </p>
      * </li>
      * <li>
@@ -67,11 +67,11 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the field. The possible value is <code>path-pattern</code>.
+     * The only possible value is <code>path-pattern</code>.
      * </p>
      * 
      * @param field
-     *        The name of the field. The possible value is <code>path-pattern</code>.
+     *        The only possible value is <code>path-pattern</code>.
      */
 
     public void setField(String field) {
@@ -80,10 +80,10 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the field. The possible value is <code>path-pattern</code>.
+     * The only possible value is <code>path-pattern</code>.
      * </p>
      * 
-     * @return The name of the field. The possible value is <code>path-pattern</code>.
+     * @return The only possible value is <code>path-pattern</code>.
      */
 
     public String getField() {
@@ -92,11 +92,11 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the field. The possible value is <code>path-pattern</code>.
+     * The only possible value is <code>path-pattern</code>.
      * </p>
      * 
      * @param field
-     *        The name of the field. The possible value is <code>path-pattern</code>.
+     *        The only possible value is <code>path-pattern</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,7 +107,7 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The values for the field.
+     * The path pattern. You can specify a single path pattern.
      * </p>
      * <p>
      * A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
@@ -126,7 +126,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * &amp;amp; (using &amp;amp;amp;)
+     * &amp; (using &amp;amp;)
      * </p>
      * </li>
      * <li>
@@ -141,7 +141,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The values for the field.</p>
+     * @return The path pattern. You can specify a single path pattern.</p>
      *         <p>
      *         A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the
      *         following characters:
@@ -159,7 +159,7 @@ public class RuleCondition implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         &amp;amp; (using &amp;amp;amp;)
+     *         &amp; (using &amp;amp;)
      *         </p>
      *         </li>
      *         <li>
@@ -180,7 +180,7 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The values for the field.
+     * The path pattern. You can specify a single path pattern.
      * </p>
      * <p>
      * A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
@@ -199,7 +199,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * &amp;amp; (using &amp;amp;amp;)
+     * &amp; (using &amp;amp;)
      * </p>
      * </li>
      * <li>
@@ -215,7 +215,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      * 
      * @param values
-     *        The values for the field.</p>
+     *        The path pattern. You can specify a single path pattern.</p>
      *        <p>
      *        A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the
      *        following characters:
@@ -233,7 +233,7 @@ public class RuleCondition implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        &amp;amp; (using &amp;amp;amp;)
+     *        &amp; (using &amp;amp;)
      *        </p>
      *        </li>
      *        <li>
@@ -259,7 +259,7 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The values for the field.
+     * The path pattern. You can specify a single path pattern.
      * </p>
      * <p>
      * A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
@@ -278,7 +278,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * &amp;amp; (using &amp;amp;amp;)
+     * &amp; (using &amp;amp;)
      * </p>
      * </li>
      * <li>
@@ -299,7 +299,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        The values for the field.</p>
+     *        The path pattern. You can specify a single path pattern.</p>
      *        <p>
      *        A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the
      *        following characters:
@@ -317,7 +317,7 @@ public class RuleCondition implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        &amp;amp; (using &amp;amp;amp;)
+     *        &amp; (using &amp;amp;)
      *        </p>
      *        </li>
      *        <li>
@@ -345,7 +345,7 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The values for the field.
+     * The path pattern. You can specify a single path pattern.
      * </p>
      * <p>
      * A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the following
@@ -364,7 +364,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * &amp;amp; (using &amp;amp;amp;)
+     * &amp; (using &amp;amp;)
      * </p>
      * </li>
      * <li>
@@ -380,7 +380,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      * 
      * @param values
-     *        The values for the field.</p>
+     *        The path pattern. You can specify a single path pattern.</p>
      *        <p>
      *        A path pattern is case sensitive, can be up to 255 characters in length, and can contain any of the
      *        following characters:
@@ -398,7 +398,7 @@ public class RuleCondition implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        &amp;amp; (using &amp;amp;amp;)
+     *        &amp; (using &amp;amp;)
      *        </p>
      *        </li>
      *        <li>

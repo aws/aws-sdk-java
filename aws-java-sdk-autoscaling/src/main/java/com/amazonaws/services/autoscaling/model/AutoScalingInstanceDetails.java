@@ -42,7 +42,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto Scaling
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
      * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
@@ -190,14 +190,14 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto Scaling
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
      * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param lifecycleState
      *        The lifecycle state for the instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-     *        Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
+     *        Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public void setLifecycleState(String lifecycleState) {
@@ -207,12 +207,12 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto Scaling
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
      * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The lifecycle state for the instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
      *         Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      */
 
@@ -223,14 +223,14 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto Scaling
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
      * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param lifecycleState
      *        The lifecycle state for the instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-     *        Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
+     *        Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

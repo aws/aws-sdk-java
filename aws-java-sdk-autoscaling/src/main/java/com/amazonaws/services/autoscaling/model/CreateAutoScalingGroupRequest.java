@@ -46,7 +46,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-asg-from-instance.html">Create an Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create an Auto
      * Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
@@ -76,9 +76,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * default is 300.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling Cooldowns</a> in
-     * the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
+     * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
     private Integer defaultCooldown;
@@ -95,8 +94,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Using a Load Balancer
-     * With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using a Load
+     * Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> loadBalancerNames;
@@ -112,7 +111,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * By default, health checks use Amazon EC2 instance status checks to determine the health of an instance. For more
-     * information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+     * information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
      * Checks</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
@@ -128,8 +127,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in the
-     * <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health Checks</a> in the <i>Auto
+     * Scaling User Guide</i>.
      * </p>
      */
     private Integer healthCheckGracePeriod;
@@ -151,8 +150,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching Auto Scaling
-     * Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
+     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
     private String vPCZoneIdentifier;
@@ -162,9 +161,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * order that they are listed.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
-     * >Controlling Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html">Controlling Which
+     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> terminationPolicies;
@@ -180,8 +179,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling Groups
-     * and Instances</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging Auto Scaling
+     * Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -281,7 +280,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-asg-from-instance.html">Create an Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create an Auto
      * Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -295,8 +294,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-asg-from-instance.html">Create
-     *        an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create an
+     *        Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public void setInstanceId(String instanceId) {
@@ -315,7 +314,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-asg-from-instance.html">Create an Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create an Auto
      * Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -328,8 +327,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-asg-from-instance.html">Create
-     *         an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
+     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create an
+     *         Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public String getInstanceId() {
@@ -348,7 +347,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-asg-from-instance.html">Create an Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create an Auto
      * Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -362,8 +361,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-asg-from-instance.html">Create
-     *        an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create an
+     *        Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,9 +503,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * default is 300.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling Cooldowns</a> in
-     * the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
+     * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param defaultCooldown
@@ -514,8 +512,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        start. The default is 300.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling
-     *        Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto Scaling Cooldowns</a> in
+     *        the <i>Auto Scaling User Guide</i>.
      */
 
     public void setDefaultCooldown(Integer defaultCooldown) {
@@ -528,17 +526,16 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * default is 300.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling Cooldowns</a> in
-     * the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
+     * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The amount of time, in seconds, after a scaling activity completes before another scaling activity can
      *         start. The default is 300.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling
-     *         Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
+     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto Scaling Cooldowns</a>
+     *         in the <i>Auto Scaling User Guide</i>.
      */
 
     public Integer getDefaultCooldown() {
@@ -551,9 +548,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * default is 300.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling Cooldowns</a> in
-     * the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
+     * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param defaultCooldown
@@ -561,8 +557,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        start. The default is 300.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto Scaling
-     *        Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto Scaling Cooldowns</a> in
+     *        the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -655,15 +651,15 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Using a Load Balancer
-     * With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using a Load
+     * Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return One or more Classic load balancers. To specify an Application load balancer, use
      *         <code>TargetGroupARNs</code> instead.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Using a Load
+     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using a Load
      *         Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      */
 
@@ -681,8 +677,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Using a Load Balancer
-     * With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using a Load
+     * Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param loadBalancerNames
@@ -690,7 +686,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        <code>TargetGroupARNs</code> instead.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Using a Load
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using a Load
      *        Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      */
 
@@ -710,8 +706,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Using a Load Balancer
-     * With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using a Load
+     * Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -724,7 +720,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        <code>TargetGroupARNs</code> instead.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Using a Load
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using a Load
      *        Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -746,8 +742,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Using a Load Balancer
-     * With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using a Load
+     * Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param loadBalancerNames
@@ -755,7 +751,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        <code>TargetGroupARNs</code> instead.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Using a Load
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using a Load
      *        Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -844,7 +840,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * By default, health checks use Amazon EC2 instance status checks to determine the health of an instance. For more
-     * information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+     * information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
      * Checks</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -853,8 +849,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        By default, health checks use Amazon EC2 instance status checks to determine the health of an instance.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in
-     *        the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health Checks</a> in the
+     *        <i>Auto Scaling User Guide</i>.
      */
 
     public void setHealthCheckType(String healthCheckType) {
@@ -867,7 +863,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * By default, health checks use Amazon EC2 instance status checks to determine the health of an instance. For more
-     * information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+     * information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
      * Checks</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -875,8 +871,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         By default, health checks use Amazon EC2 instance status checks to determine the health of an instance.
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in
-     *         the <i>Auto Scaling User Guide</i>.
+     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health Checks</a> in the
+     *         <i>Auto Scaling User Guide</i>.
      */
 
     public String getHealthCheckType() {
@@ -889,7 +885,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * By default, health checks use Amazon EC2 instance status checks to determine the health of an instance. For more
-     * information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+     * information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
      * Checks</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -898,8 +894,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        By default, health checks use Amazon EC2 instance status checks to determine the health of an instance.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in
-     *        the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health Checks</a> in the
+     *        <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -919,8 +915,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in the
-     * <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health Checks</a> in the <i>Auto
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @param healthCheckGracePeriod
@@ -932,8 +928,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in
-     *        the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health Checks</a> in the
+     *        <i>Auto Scaling User Guide</i>.
      */
 
     public void setHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
@@ -951,8 +947,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in the
-     * <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health Checks</a> in the <i>Auto
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @return The amount of time, in seconds, that Auto Scaling waits before checking the health status of an EC2
@@ -963,8 +959,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in
-     *         the <i>Auto Scaling User Guide</i>.
+     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health Checks</a> in the
+     *         <i>Auto Scaling User Guide</i>.
      */
 
     public Integer getHealthCheckGracePeriod() {
@@ -982,8 +978,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in the
-     * <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health Checks</a> in the <i>Auto
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @param healthCheckGracePeriod
@@ -995,8 +991,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health Checks</a> in
-     *        the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health Checks</a> in the
+     *        <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1067,8 +1063,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching Auto Scaling
-     * Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
+     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param vPCZoneIdentifier
@@ -1079,7 +1075,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching Auto Scaling
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling
      *        Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
      */
 
@@ -1097,8 +1093,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching Auto Scaling
-     * Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
+     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return A comma-separated list of subnet identifiers for your virtual private cloud (VPC).</p>
@@ -1108,8 +1104,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching Auto
-     *         Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling
+     *         Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public String getVPCZoneIdentifier() {
@@ -1126,8 +1122,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching Auto Scaling
-     * Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
+     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param vPCZoneIdentifier
@@ -1138,7 +1134,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching Auto Scaling
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling
      *        Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1154,18 +1150,17 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * order that they are listed.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
-     * >Controlling Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html">Controlling Which
+     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return One or more termination policies used to select the instance to terminate. These policies are executed in
      *         the order that they are listed.</p>
      *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
-     *         >Controlling Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User
-     *         Guide</i>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html">Controlling
+     *         Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public java.util.List<String> getTerminationPolicies() {
@@ -1181,19 +1176,18 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * order that they are listed.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
-     * >Controlling Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html">Controlling Which
+     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param terminationPolicies
      *        One or more termination policies used to select the instance to terminate. These policies are executed in
      *        the order that they are listed.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
-     *        >Controlling Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User
-     *        Guide</i>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html">Controlling
+     *        Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public void setTerminationPolicies(java.util.Collection<String> terminationPolicies) {
@@ -1211,9 +1205,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * order that they are listed.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
-     * >Controlling Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html">Controlling Which
+     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1225,10 +1219,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        One or more termination policies used to select the instance to terminate. These policies are executed in
      *        the order that they are listed.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
-     *        >Controlling Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User
-     *        Guide</i>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html">Controlling
+     *        Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1248,19 +1241,18 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * order that they are listed.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
-     * >Controlling Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html">Controlling Which
+     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param terminationPolicies
      *        One or more termination policies used to select the instance to terminate. These policies are executed in
      *        the order that they are listed.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
-     *        >Controlling Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User
-     *        Guide</i>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html">Controlling
+     *        Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1329,15 +1321,15 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling Groups
-     * and Instances</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging Auto Scaling
+     * Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return One or more tags.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling
-     *         Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
+     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging Auto
+     *         Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1353,16 +1345,16 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling Groups
-     * and Instances</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging Auto Scaling
+     * Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param tags
      *        One or more tags.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling
-     *        Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging Auto
+     *        Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1380,8 +1372,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling Groups
-     * and Instances</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging Auto Scaling
+     * Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1393,8 +1385,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        One or more tags.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling
-     *        Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging Auto
+     *        Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1414,16 +1406,16 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling Groups
-     * and Instances</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging Auto Scaling
+     * Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param tags
      *        One or more tags.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging Auto Scaling
-     *        Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging Auto
+     *        Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
