@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.s3.transfer.exception;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 /**
  * Failed to lock a file.
  */
-public class FileLockException extends AmazonClientException {
+public class FileLockException extends SdkClientException {
 
     private static final long serialVersionUID = 1L;
 

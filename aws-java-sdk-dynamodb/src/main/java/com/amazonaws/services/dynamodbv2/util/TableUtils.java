@@ -17,7 +17,7 @@ package com.amazonaws.services.dynamodbv2.util;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
@@ -45,7 +45,7 @@ public class TableUtils {
 	/**
 	 * Thrown by {@link TableUtils} when a table never reaches a desired state
 	 */
-	public static class TableNeverTransitionedToStateException extends AmazonClientException {
+	public static class TableNeverTransitionedToStateException extends SdkClientException {
 
 		private static final long serialVersionUID = 8920567021104846647L;
 
@@ -66,14 +66,14 @@ public class TableUtils {
 	/**
 	 * Waits up to 10 minutes for a specified DynamoDB table to resolve,
 	 * indicating that it exists. If the table doesn't return a result after
-	 * this time, an AmazonClientException is thrown.
+	 * this time, a SdkClientException is thrown.
 	 *
 	 * @param dynamo
 	 *            The DynamoDB client to use to make requests.
 	 * @param tableName
 	 *            The name of the table being resolved.
 	 *
-	 * @throws AmazonClientException
+	 * @throws SdkClientException
 	 *             If the specified table does not resolve before this method
 	 *             times out and stops polling.
 	 * @throws InterruptedException
@@ -88,7 +88,7 @@ public class TableUtils {
 	/**
 	 * Waits up to a specified amount of time for a specified DynamoDB table to
 	 * resolve, indicating that it exists. If the table doesn't return a result
-	 * after this time, an AmazonClientException is thrown.
+	 * after this time, a SdkClientException is thrown.
 	 *
 	 * @param dynamo
 	 *            The DynamoDB client to use to make requests.
@@ -99,7 +99,7 @@ public class TableUtils {
 	 * @param interval
 	 *            The poll interval in milliseconds.
 	 *
-	 * @throws AmazonClientException
+	 * @throws SdkClientException
 	 *             If the specified table does not resolve before this method
 	 *             times out and stops polling.
 	 * @throws InterruptedException
@@ -111,15 +111,15 @@ public class TableUtils {
 		TableDescription table = waitForTableDescription(dynamo, tableName, null, timeout, interval);
 
 		if (table == null) {
-			throw new AmazonClientException("Table " + tableName + " never returned a result");
+			throw new SdkClientException("Table " + tableName + " never returned a result");
 		}
 	}
 
 	/**
 	 * Waits up to 10 minutes for a specified DynamoDB table to move into the
 	 * <code>ACTIVE</code> state. If the table does not exist or does not
-	 * transition to the <code>ACTIVE</code> state after this time, then an
-	 * AmazonClientException is thrown.
+	 * transition to the <code>ACTIVE</code> state after this time, then
+	 * SdkClientException is thrown.
 	 *
 	 * @param dynamo
 	 *            The DynamoDB client to use to make requests.
@@ -143,7 +143,7 @@ public class TableUtils {
 	 * Waits up to a specified amount of time for a specified DynamoDB table to
 	 * move into the <code>ACTIVE</code> state. If the table does not exist or
 	 * does not transition to the <code>ACTIVE</code> state after this time,
-	 * then an AmazonClientException is thrown.
+	 * then a SdkClientException is thrown.
 	 *
 	 * @param dynamo
 	 *            The DynamoDB client to use to make requests.

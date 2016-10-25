@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
     public Request<UpdateEnvironmentRequest> marshall(UpdateEnvironmentRequest updateEnvironmentRequest) {
 
         if (updateEnvironmentRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<UpdateEnvironmentRequest> request = new DefaultRequest<UpdateEnvironmentRequest>(updateEnvironmentRequest, "AWSElasticBeanstalk");

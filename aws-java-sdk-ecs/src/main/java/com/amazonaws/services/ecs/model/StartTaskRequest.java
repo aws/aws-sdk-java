@@ -23,7 +23,7 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do not
-     * specify a cluster, the default cluster is assumed..
+     * specify a cluster, the default cluster is assumed.
      * </p>
      */
     private String cluster;
@@ -81,12 +81,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do not
-     * specify a cluster, the default cluster is assumed..
+     * specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do
-     *        not specify a cluster, the default cluster is assumed..
+     *        not specify a cluster, the default cluster is assumed.
      */
 
     public void setCluster(String cluster) {
@@ -96,11 +96,11 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do not
-     * specify a cluster, the default cluster is assumed..
+     * specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @return The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do
-     *         not specify a cluster, the default cluster is assumed..
+     *         not specify a cluster, the default cluster is assumed.
      */
 
     public String getCluster() {
@@ -110,12 +110,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do not
-     * specify a cluster, the default cluster is assumed..
+     * specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task. If you do
-     *        not specify a cluster, the default cluster is assumed..
+     *        not specify a cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

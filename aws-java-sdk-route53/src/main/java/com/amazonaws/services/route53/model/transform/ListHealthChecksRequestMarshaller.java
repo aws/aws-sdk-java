@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -42,7 +42,7 @@ public class ListHealthChecksRequestMarshaller implements Marshaller<Request<Lis
     public Request<ListHealthChecksRequest> marshall(ListHealthChecksRequest listHealthChecksRequest) {
 
         if (listHealthChecksRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ListHealthChecksRequest> request = new DefaultRequest<ListHealthChecksRequest>(listHealthChecksRequest, "AmazonRoute53");

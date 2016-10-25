@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -44,7 +44,7 @@ public class DescribeDocumentPermissionRequestMarshaller implements Marshaller<R
     public Request<DescribeDocumentPermissionRequest> marshall(DescribeDocumentPermissionRequest describeDocumentPermissionRequest) {
 
         if (describeDocumentPermissionRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DescribeDocumentPermissionRequest> request = new DefaultRequest<DescribeDocumentPermissionRequest>(describeDocumentPermissionRequest,
@@ -74,7 +74,7 @@ public class DescribeDocumentPermissionRequestMarshaller implements Marshaller<R
             request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

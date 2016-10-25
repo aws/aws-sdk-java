@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth.profile.internal;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.Immutable;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.AWSCredentials;
@@ -57,7 +57,7 @@ public class ProfileAssumeRoleCredentialsProvider implements AWSCredentialsProvi
 
     private AWSCredentialsProvider fromAssumeRole() {
         if (StringUtils.isNullOrEmpty(profile.getRoleSourceProfile())) {
-            throw new AmazonClientException(String.format(
+            throw new SdkClientException(String.format(
                     "Unable to load credentials from profile [%s]: Source profile name is not specified",
                     profile.getProfileName()));
         }
@@ -65,7 +65,7 @@ public class ProfileAssumeRoleCredentialsProvider implements AWSCredentialsProvi
         final BasicProfile sourceProfile = allProfiles
                 .getProfile(this.profile.getRoleSourceProfile());
         if (sourceProfile == null) {
-            throw new AmazonClientException(String.format(
+            throw new SdkClientException(String.format(
                     "Unable to load source profile [%s]: Source profile was not found [%s]",
                     profile.getProfileName(), profile.getRoleSourceProfile()));
         }

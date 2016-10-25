@@ -21,7 +21,7 @@ import java.util.Date;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.CredentialsEndpointProvider;
 import com.amazonaws.internal.EC2CredentialsUtils;
@@ -81,7 +81,7 @@ class EC2CredentialsFetcher {
         if (needsToLoadCredentials())
             fetchCredentials();
         if (expired()) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "The credentials received have been expired");
         }
         return credentials;
@@ -126,7 +126,7 @@ class EC2CredentialsFetcher {
             token = node.get(TOKEN);
 
             if (null == accessKey || null == secretKey) {
-                throw new AmazonClientException("Unable to load credentials.");
+                throw new SdkClientException("Unable to load credentials.");
             }
 
             if (null != token) {
@@ -177,7 +177,7 @@ class EC2CredentialsFetcher {
     private void handleError(String errorMessage, Exception e) {
         // If we don't have any valid credentials to fall back on, then throw an exception
         if (credentials == null || expired())
-            throw new AmazonClientException(errorMessage, e);
+            throw new SdkClientException(errorMessage, e);
 
         // Otherwise, just log the error and continuing using the current credentials
         LOG.debug(errorMessage, e);

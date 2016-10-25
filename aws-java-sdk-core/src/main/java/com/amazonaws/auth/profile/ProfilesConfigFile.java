@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth.profile;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.profile.internal.AllProfiles;
@@ -96,7 +96,7 @@ public class ProfilesConfigFile {
      * Loads the AWS credential profiles file from the default location (~/.aws/credentials) or from
      * an alternate location if <code>AWS_CREDENTIAL_PROFILES_FILE</code> is set.
      */
-    public ProfilesConfigFile() throws AmazonClientException {
+    public ProfilesConfigFile() throws SdkClientException {
         this(getCredentialProfilesFile());
     }
 
@@ -113,7 +113,7 @@ public class ProfilesConfigFile {
      * parameter to the constructor.
      */
     public ProfilesConfigFile(String filePath, ProfileCredentialsService credentialsService) throws
-                                                                                             AmazonClientException {
+            SdkClientException {
         this(new File(validateFilePath(filePath)), credentialsService);
     }
 
@@ -129,7 +129,7 @@ public class ProfilesConfigFile {
      * Loads the AWS credential profiles from the file. The reference to the file is specified as a
      * parameter to the constructor.
      */
-    public ProfilesConfigFile(File file) throws AmazonClientException {
+    public ProfilesConfigFile(File file) throws SdkClientException {
         this(file, STSProfileCredentialsServiceLoader.getInstance());
     }
 
@@ -138,7 +138,7 @@ public class ProfilesConfigFile {
      * parameter to the constructor.
      */
     public ProfilesConfigFile(File file, ProfileCredentialsService credentialsService) throws
-                                                                                       AmazonClientException {
+            SdkClientException {
         profileFile = ValidationUtils.assertNotNull(file, "profile file");
         profileCredentialsService = credentialsService;
         profileFileLastModified = file.lastModified();

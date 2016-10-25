@@ -210,6 +210,7 @@
     "packagePath" : "com/amazonaws/services/glacier",
     "protocol" : "rest-json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Glacier",
     "serviceName" : "Amazon Glacier",

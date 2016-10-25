@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class AddTagsRequestMarshaller implements Marshaller<Request<AddTagsReque
     public Request<AddTagsRequest> marshall(AddTagsRequest addTagsRequest) {
 
         if (addTagsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<AddTagsRequest> request = new DefaultRequest<AddTagsRequest>(addTagsRequest, "AmazonElasticLoadBalancing");

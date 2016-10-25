@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URL;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.services.s3.AmazonS3;
@@ -376,7 +376,7 @@ public class S3Link {
             }
         } catch (IOException ioe) {
             objectContent.abort();
-            throw new AmazonClientException("Unable to transfer content from Amazon S3 to the output stream", ioe);
+            throw new SdkClientException("Unable to transfer content from Amazon S3 to the output stream", ioe);
         } finally {
             try { objectContent.close(); } catch (IOException ioe) {}
         }

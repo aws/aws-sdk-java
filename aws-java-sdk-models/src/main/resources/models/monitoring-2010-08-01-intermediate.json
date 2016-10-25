@@ -65,6 +65,7 @@
     "packagePath" : "com/amazonaws/services/cloudwatch",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "CloudWatch",
     "serviceFullName" : "Amazon CloudWatch",
     "serviceName" : "CloudWatch",

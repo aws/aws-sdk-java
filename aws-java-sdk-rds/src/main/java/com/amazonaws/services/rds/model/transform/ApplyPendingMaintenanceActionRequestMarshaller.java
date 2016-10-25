@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -35,7 +35,7 @@ public class ApplyPendingMaintenanceActionRequestMarshaller implements
     public Request<ApplyPendingMaintenanceActionRequest> marshall(ApplyPendingMaintenanceActionRequest applyPendingMaintenanceActionRequest) {
 
         if (applyPendingMaintenanceActionRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ApplyPendingMaintenanceActionRequest> request = new DefaultRequest<ApplyPendingMaintenanceActionRequest>(applyPendingMaintenanceActionRequest,

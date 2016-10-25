@@ -15,9 +15,6 @@
 
 package com.amazonaws.codegen.customization.processors;
 
-import java.util.Map;
-import java.util.Map.Entry;
-
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 import com.amazonaws.codegen.model.service.ErrorMap;
@@ -27,6 +24,9 @@ import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.Output;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Shape;
+
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class RenameShapesProcessor implements CodegenCustomizationProcessor {
 

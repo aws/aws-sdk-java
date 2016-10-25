@@ -34,7 +34,7 @@ import java.util.Set;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -169,7 +169,7 @@ import com.amazonaws.util.VersionInfoUtils;
  * When using the save, load, and delete methods, {@link DynamoDBMapper} will
  * throw {@link DynamoDBMappingException}s to indicate that domain classes are
  * incorrectly annotated or otherwise incompatible with this class. Service
- * exceptions will always be propagated as {@link AmazonClientException}, and
+ * exceptions will always be propagated as {@link SdkClientException}, and
  * DynamoDB-specific subclasses such as {@link ConditionalCheckFailedException}
  * will be used when possible.
  * <p>
@@ -1055,7 +1055,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
             if (conditionalExpression != null) {
                 if (internalAssertions != null && !internalAssertions.isEmpty()) {
-                    throw new AmazonClientException(
+                    throw new SdkClientException(
                             "Condition Expressions cannot be used if a versioned attribute is present");
                 }
 
@@ -1374,7 +1374,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
         //We still need to throw Amazon Client Exception when none of the requested keys are processed
         if(noOfItemsInOriginalRequest == batchGetItemResult.getUnprocessedKeys().size()) {
-            throw new AmazonClientException("Batch Get Item request to server hasn't received any data. Please try again later");
+            throw new SdkClientException("Batch Get Item request to server hasn't received any data. Please try again later");
         }
         
     }
@@ -2273,7 +2273,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             Thread.sleep(delay);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            throw new AmazonClientException(e.getMessage(), e);
+            throw new SdkClientException(e.getMessage(), e);
         }
     }
 

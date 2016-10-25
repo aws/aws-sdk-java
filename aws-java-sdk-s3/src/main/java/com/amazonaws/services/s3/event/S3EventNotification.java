@@ -47,7 +47,7 @@ public class S3EventNotification {
      * <p>
      * The function will try its best to parse input JSON string as best as it can.
      * It will not fail even if the JSON string contains unknown properties.
-     * The function will throw AmazonClientException if the input JSON string is
+     * The function will throw SdkClientException if the input JSON string is
      * not valid JSON.
      * </p>
      * @param json

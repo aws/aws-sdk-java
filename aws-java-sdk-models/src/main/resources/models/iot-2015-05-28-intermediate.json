@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/iot",
     "protocol" : "rest-json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS IoT",
     "serviceName" : "AWS IoT",

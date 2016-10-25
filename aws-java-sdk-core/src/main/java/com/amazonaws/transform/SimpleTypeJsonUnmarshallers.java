@@ -18,7 +18,7 @@ import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.util.Date;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.DateUtils;
 
@@ -209,7 +209,7 @@ public class SimpleTypeJsonUnmarshallers {
 
             charString = charString.trim();
             if (charString.isEmpty() || charString.length() > 1)
-                throw new AmazonClientException("'" + charString
+                throw new SdkClientException("'" + charString
                         + "' cannot be converted to Character");
             return Character.valueOf(charString.charAt(0));
         }

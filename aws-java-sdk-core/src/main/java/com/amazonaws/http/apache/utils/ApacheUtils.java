@@ -14,7 +14,7 @@
  */
 package com.amazonaws.http.apache.utils;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.util.FakeIOException;
 import org.apache.http.HttpEntity;
@@ -30,8 +30,6 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.auth.BasicScheme;
 import org.apache.http.impl.client.BasicAuthCache;
 import org.apache.http.impl.client.BasicCredentialsProvider;
-import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -41,7 +39,7 @@ public class ApacheUtils {
 
     /**
      * Utility function for creating a new StringEntity and wrapping any errors
-     * as an AmazonClientException.
+     * as a SdkClientException.
      *
      * @param s The string contents of the returned HTTP entity.
      * @return A new StringEntity with the specified contents.
@@ -50,13 +48,13 @@ public class ApacheUtils {
         try {
             return new StringEntity(s);
         } catch (UnsupportedEncodingException e) {
-            throw new AmazonClientException("Unable to create HTTP entity: " + e.getMessage(), e);
+            throw new SdkClientException("Unable to create HTTP entity: " + e.getMessage(), e);
         }
     }
 
     /**
      * Utility function for creating a new BufferedEntity and wrapping any errors
-     * as an AmazonClientException.
+     * as a SdkClientException.
      *
      * @param entity The HTTP entity to wrap with a buffered HTTP entity.
      * @return A new BufferedHttpEntity wrapping the specified entity.
@@ -70,7 +68,7 @@ public class ApacheUtils {
             // Only for test simulation.
             throw e;
         } catch (IOException e) {
-            throw new AmazonClientException("Unable to create HTTP entity: " + e.getMessage(), e);
+            throw new SdkClientException("Unable to create HTTP entity: " + e.getMessage(), e);
         }
     }
 

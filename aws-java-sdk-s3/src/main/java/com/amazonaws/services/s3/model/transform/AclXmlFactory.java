@@ -14,7 +14,7 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.XmlWriter;
 import com.amazonaws.services.s3.model.AccessControlList;
@@ -41,10 +41,10 @@ public class AclXmlFactory {
      * @return an XML representation of the Access Control List object, suitable
      *         to send in a request to Amazon S3.
      */
-    public byte[] convertToXmlByteArray(AccessControlList acl) throws AmazonClientException {
+    public byte[] convertToXmlByteArray(AccessControlList acl) throws SdkClientException {
         Owner owner = acl.getOwner();
         if (owner == null) {
-            throw new AmazonClientException("Invalid AccessControlList: missing an S3Owner");
+            throw new SdkClientException("Invalid AccessControlList: missing an S3Owner");
         }
 
         XmlWriter xml = new XmlWriter();
@@ -81,10 +81,10 @@ public class AclXmlFactory {
      *
      * @return The given XmlWriter containing the specified grantee.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the specified grantee type isn't recognized.
      */
-    protected XmlWriter convertToXml(Grantee grantee, XmlWriter xml) throws AmazonClientException {
+    protected XmlWriter convertToXml(Grantee grantee, XmlWriter xml) throws SdkClientException {
         if (grantee instanceof CanonicalGrantee) {
             return convertToXml((CanonicalGrantee)grantee, xml);
         } else if (grantee instanceof EmailAddressGrantee) {
@@ -92,7 +92,7 @@ public class AclXmlFactory {
         } else if (grantee instanceof GroupGrantee) {
             return convertToXml((GroupGrantee)grantee, xml);
         } else {
-            throw new AmazonClientException("Unknown Grantee type: " + grantee.getClass().getName());
+            throw new SdkClientException("Unknown Grantee type: " + grantee.getClass().getName());
         }
     }
 

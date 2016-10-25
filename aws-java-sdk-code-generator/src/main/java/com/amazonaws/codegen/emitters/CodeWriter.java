@@ -15,20 +15,20 @@
 
 package com.amazonaws.codegen.emitters;
 
-import static com.amazonaws.codegen.internal.Constants.JAVA_FILE_NAME_SUFFIX;
-import static com.amazonaws.codegen.internal.Utils.closeQuietly;
+import com.amazonaws.codegen.internal.Utils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-import com.amazonaws.codegen.internal.Utils;
+import static com.amazonaws.codegen.internal.Constants.JAVA_FILE_NAME_SUFFIX;
+import static com.amazonaws.codegen.internal.Utils.closeQuietly;
 
 /**
  * Formats the generated code and write it to the underlying file. The caller should call the flush
  * method to write the contents to the file. This class is intended to be used only by the code
  * generation system and is not to be used for public use.
  */
-class CodeWriter extends StringWriter {
+public class CodeWriter extends StringWriter {
 
     private final JavaCodeFormatter formatter = new JavaCodeFormatter();
 
@@ -77,6 +77,7 @@ class CodeWriter extends StringWriter {
 
         this.dir = dir;
         this.file = file;
+        Utils.createDirectory(dir);
     }
 
     /**

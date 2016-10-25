@@ -19,7 +19,7 @@ import java.io.InputStream;
 
 import org.apache.http.annotation.NotThreadSafe;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.SdkFilterInputStream;
 
 /**
@@ -81,7 +81,7 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
     /**
      * {@inheritDoc}
      * 
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             if the data length read has exceeded the expected total, or
      *             if the total data length is not the same as the expected
      *             total.
@@ -98,7 +98,7 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
     /**
      * {@inheritDoc}
      * 
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             if the data length read has exceeded the expected total, or
      *             if the total data length is not the same as the expected
      *             total.
@@ -139,7 +139,7 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
      * @param eof
      *            true if end of stream has been encountered; false otherwise
      * 
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             if the data length read has exceeded the expected total, or
      *             if the total data length is not the same as the expected
      *             total.
@@ -147,12 +147,12 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
     private void checkLength(boolean eof) {
         if (eof) {
             if (dataLength != expectedLength) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Data read has a different length than the expected: "
                                 + diagnosticInfo());
             }
         } else if (dataLength > expectedLength) {
-            throw new AmazonClientException("More data read than expected: "
+            throw new SdkClientException("More data read than expected: "
                     + diagnosticInfo());
         }
     }
@@ -174,7 +174,7 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
     /**
      * {@inheritDoc}
      * 
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             if {@link #includeSkipped} is true and the data length
      *             skipped has exceeded the expected total.
      */

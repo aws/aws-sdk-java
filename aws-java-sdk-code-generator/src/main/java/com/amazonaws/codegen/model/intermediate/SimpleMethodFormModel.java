@@ -15,10 +15,10 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import com.amazonaws.codegen.internal.Utils;
+
 import java.util.Iterator;
 import java.util.List;
-
-import com.amazonaws.codegen.internal.Utils;
 
 public class SimpleMethodFormModel {
 

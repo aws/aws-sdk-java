@@ -14,10 +14,8 @@
  */
 package com.amazonaws.regions;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.ClientConfiguration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -249,7 +247,7 @@ public class RegionUtils {
      * given URI and parsing it.
      *
      * @param uri the uri of the XML file to parse
-     * @throws AmazonClientException on error
+     * @throws SdkClientException on error
      */
     @Deprecated
     public static synchronized void initializeFromURI(final URI uri) {
@@ -262,7 +260,7 @@ public class RegionUtils {
      *
      * @param uri    the uri of the XML file to parse
      * @param config configuration for the HTTP client to use to fetch the file
-     * @throws AmazonClientException on error
+     * @throws SdkClientException on error
      */
     @Deprecated
     public static synchronized void initializeFromURI(
@@ -273,7 +271,7 @@ public class RegionUtils {
             regionMetadata = loadMetadataFromURI(uri, config);
 
         } catch (IOException exception) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Error parsing region metadata from " + uri,
                     exception);
         }
@@ -283,14 +281,14 @@ public class RegionUtils {
      * Initializes the region metadata singleton from an XML file on disk.
      *
      * @param file the file to load from
-     * @throws AmazonClientException on error opening or reading from the file
+     * @throws SdkClientException on error opening or reading from the file
      */
     @Deprecated
     public static synchronized void initializeFromFile(final File file) {
         try {
             regionMetadata = loadMetadataFromFile(file);
         } catch (IOException exception) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Error parsing region metadata from " + file,
                     exception);
         }
@@ -301,7 +299,7 @@ public class RegionUtils {
      * resource of the classloader used to load the RegionUtils class.
      *
      * @param name the path of the resource, relative to the RegionUtils class
-     * @throws AmazonClientException on error
+     * @throws SdkClientException on error
      */
     @Deprecated
     public static synchronized void initializeFromResource(final String name) {
@@ -313,7 +311,7 @@ public class RegionUtils {
      *
      * @param clazz the class to use as a base for the resource
      * @param name  the path to the resource, relative to the given class
-     * @throws AmazonClientException on error
+     * @throws SdkClientException on error
      */
     @Deprecated
     public static synchronized void initializeFromResource(
@@ -323,7 +321,7 @@ public class RegionUtils {
         try {
             regionMetadata = loadMetadataFromResource(clazz, name);
         } catch (IOException exception) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Error parsing region metadata from resource " + name,
                     exception);
         }
@@ -334,7 +332,7 @@ public class RegionUtils {
      *
      * @param classLoader the class loader to use to load the resource
      * @param name        the path to the resource
-     * @throws AmazonClientException on error
+     * @throws SdkClientException on error
      */
     @Deprecated
     public static synchronized void initializeFromResource(
@@ -344,7 +342,7 @@ public class RegionUtils {
         try {
             regionMetadata = loadMetadataFromResource(classLoader, name);
         } catch (IOException exception) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Error parsing region metadata from resource " + name,
                     exception);
         }

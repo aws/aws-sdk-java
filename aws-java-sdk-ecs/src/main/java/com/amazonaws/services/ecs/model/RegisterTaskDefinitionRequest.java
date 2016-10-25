@@ -30,8 +30,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     private String family;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
-     * task are granted the permissions that are specified in this role.
+     * The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All
+     * containers in this task are granted the permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      */
     private String taskRoleArn;
@@ -122,13 +124,18 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
-     * task are granted the permissions that are specified in this role.
+     * The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All
+     * containers in this task are granted the permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
      * @param taskRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
-     *        this task are granted the permissions that are specified in this role.
+     *        The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume.
+     *        All containers in this task are granted the permissions that are specified in this role. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
+     *        Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      */
 
     public void setTaskRoleArn(String taskRoleArn) {
@@ -137,12 +144,17 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
-     * task are granted the permissions that are specified in this role.
+     * The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All
+     * containers in this task are granted the permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
-     *         this task are granted the permissions that are specified in this role.
+     * @return The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can
+     *         assume. All containers in this task are granted the permissions that are specified in this role. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
+     *         Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      */
 
     public String getTaskRoleArn() {
@@ -151,13 +163,18 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
-     * task are granted the permissions that are specified in this role.
+     * The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All
+     * containers in this task are granted the permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
      * @param taskRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
-     *        this task are granted the permissions that are specified in this role.
+     *        The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume.
+     *        All containers in this task are granted the permissions that are specified in this role. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
+     *        Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

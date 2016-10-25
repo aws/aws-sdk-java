@@ -15,10 +15,10 @@
 
 package com.amazonaws.codegen.model.config.customization;
 
+import com.amazonaws.codegen.model.service.Member;
+
 import java.util.List;
 import java.util.Map;
-
-import com.amazonaws.codegen.model.service.Member;
 
 /**
  * Use shapeModifiers customization to add/remove shape members or to modify the

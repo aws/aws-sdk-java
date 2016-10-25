@@ -76,6 +76,7 @@
     "packagePath" : "com/amazonaws/services/cloudsearchdomain",
     "protocol" : "rest-json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon CloudSearch Domain",
     "serviceName" : "Amazon CloudSearch Domain",

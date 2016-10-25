@@ -18,7 +18,7 @@ import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.util.Date;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
@@ -80,7 +80,7 @@ public class SimpleTypeCborUnmarshallers {
                 Object embedded = parser.getEmbeddedObject();
                 return new BigInteger((byte[]) embedded);
             } else {
-                throw new AmazonClientException("Invalid BigInteger Format.");
+                throw new SdkClientException("Invalid BigInteger Format.");
             }
         }
 
@@ -98,7 +98,7 @@ public class SimpleTypeCborUnmarshallers {
 
             JsonToken current = parser.getCurrentToken();
             if (current != JsonToken.START_ARRAY) {
-                throw new AmazonClientException("Invalid BigDecimal Format.");
+                throw new SdkClientException("Invalid BigDecimal Format.");
             }
             parser.nextToken();
             int exponent = parser.getIntValue();

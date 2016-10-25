@@ -18,7 +18,7 @@ import java.util.concurrent.Future;
 
 public class DownloadMonitor implements TransferMonitor {
 
-    private final Future<?> future;
+    private Future<?> future;
     private final DownloadImpl download;
 
     public DownloadMonitor(DownloadImpl download, Future<?> future) {
@@ -27,8 +27,12 @@ public class DownloadMonitor implements TransferMonitor {
     }
 
     @Override
-    public Future<?> getFuture() {
+    public synchronized Future<?> getFuture() {
         return future;
+    }
+
+    public synchronized void setFuture(Future<?> future) {
+        this.future = future;
     }
 
     @Override

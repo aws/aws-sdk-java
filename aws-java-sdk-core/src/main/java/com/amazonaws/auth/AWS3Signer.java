@@ -26,7 +26,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.UUID;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.SignableRequest;
 import com.amazonaws.log.InternalLogApi;
 import com.amazonaws.log.InternalLogFactory;
@@ -60,7 +60,7 @@ public class AWS3Signer extends AbstractAWSSigner {
      *            The request to sign.
      */
     @Override
-    public void sign(SignableRequest<?> request, AWSCredentials credentials) throws AmazonClientException {
+    public void sign(SignableRequest<?> request, AWSCredentials credentials) throws SdkClientException {
         // annonymous credentials, don't sign
         if ( credentials instanceof AnonymousAWSCredentials ) {
             return;
@@ -193,7 +193,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         return builder.toString();
     }
 
-    protected boolean shouldUseHttpsScheme(SignableRequest<?> request) throws AmazonClientException {
+    protected boolean shouldUseHttpsScheme(SignableRequest<?> request) throws SdkClientException {
         try {
             String protocol = StringUtils.lowerCase(request.getEndpoint().toURL().getProtocol());
             if (protocol.equals("http")) {
@@ -201,11 +201,11 @@ public class AWS3Signer extends AbstractAWSSigner {
             } else if (protocol.equals("https")) {
                 return true;
             } else {
-                throw new AmazonClientException("Unknown request endpoint protocol " +
+                throw new SdkClientException("Unknown request endpoint protocol " +
                         "encountered while signing request: " + protocol);
             }
         } catch (MalformedURLException e) {
-            throw new AmazonClientException("Unable to parse request endpoint during signing", e);
+            throw new SdkClientException("Unable to parse request endpoint during signing", e);
         }
     }
 

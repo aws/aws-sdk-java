@@ -41,7 +41,7 @@ import javax.net.ssl.SSLProtocolException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
@@ -136,7 +136,7 @@ public class ServiceUtils {
      *            The request to convert into a URL.
      * @return A new URL representing the specified request.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the request cannot be converted to a well formed URL.
      */
     public static URL convertRequestToUrl(Request<?> request) {
@@ -156,7 +156,7 @@ public class ServiceUtils {
      *            before appending to the endpoint.
      * @return A new URL representing the specified request.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the request cannot be converted to a well formed URL.
      */
     public static URL convertRequestToUrl(Request<?> request, boolean removeLeadingSlashInResourcePath) {
@@ -175,7 +175,7 @@ public class ServiceUtils {
      * @param urlEncode True if request resource path should be URL encoded
      * @return A new URL representing the specified request.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the request cannot be converted to a well formed URL.
      */
     public static URL convertRequestToUrl(Request<?> request, boolean removeLeadingSlashInResourcePath,
@@ -216,7 +216,7 @@ public class ServiceUtils {
         try {
             return new URL(url.toString());
         } catch (MalformedURLException e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to convert request to well formed URL: " + e.getMessage(), e);
         }
     }
@@ -305,7 +305,7 @@ public class ServiceUtils {
             }
         } catch (IOException e) {
             s3Object.getObjectContent().abort();
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to store object contents to disk: " + e.getMessage(), e);
         } finally {
             closeQuietly(outputStream, LOG);
@@ -327,7 +327,7 @@ public class ServiceUtils {
             }
 
             if (clientSideHash != null && serverSideHash != null && !Arrays.equals(clientSideHash, serverSideHash)) {
-                throw new AmazonClientException("Unable to verify integrity of data download.  " +
+                throw new SdkClientException("Unable to verify integrity of data download.  " +
                         "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
                         "The data stored in '" + dstfile.getAbsolutePath() + "' may be corrupt.");
             }
@@ -337,15 +337,14 @@ public class ServiceUtils {
     /**
      * Creates the parent directory for a file if it doesn't already exist.
      * @param file
-     * @throws AmazonClientException when creation of parent directory failed.
-     *
+     * @throws SdkClientException when creation of parent directory failed.
      */
     public static void createParentDirectoryIfNecessary(final File file) {
         final File parentDirectory = file.getParentFile();
         if (parentDirectory == null || parentDirectory.mkdirs() || parentDirectory.exists()) {
             return;
-        }
-        throw new AmazonClientException("Unable to create directory in the path: " + parentDirectory.getAbsolutePath());
+	}
+        throw new SdkClientException("Unable to create directory in the path: " + parentDirectory.getAbsolutePath());
     }
 
     /**
@@ -399,13 +398,13 @@ public class ServiceUtils {
                 ServiceUtils.downloadObjectToFile(s3Object, file,
                         retryableS3DownloadTask.needIntegrityCheck(),
                         appendData);
-            } catch (AmazonClientException ace) {
+            } catch (SdkClientException ace) {
                 if (!ace.isRetryable()) {
                     s3Object.getObjectContent().abort();
                     throw ace;
                 }
-                // Determine whether an immediate retry is needed according to the captured AmazonClientException.
-                // (There are three cases when downloadObjectToFile() throws AmazonClientException:
+                // Determine whether an immediate retry is needed according to the captured SdkClientException.
+                // (There are three cases when downloadObjectToFile() throws SdkClientException:
                 //        1) SocketException or SSLProtocolException when writing to disk (e.g. when user aborts the download)
                 //        2) Other IOException when writing to disk
                 //        3) MD5 hashes don't match
@@ -458,7 +457,7 @@ public class ServiceUtils {
                 out.write(buffer, 0, length);
             }
         } catch (IOException e) {
-            throw new AmazonClientException("Unable to append file " + sourceFile.getAbsolutePath()
+            throw new SdkClientException("Unable to append file " + sourceFile.getAbsolutePath()
                     + "to destination file " + destinationFile.getAbsolutePath() + "\n" + e.getMessage(), e);
         } finally {
             closeQuietly(out, LOG);

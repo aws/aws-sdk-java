@@ -72,6 +72,7 @@
     "packagePath" : "com/amazonaws/services/lambda",
     "protocol" : "rest-json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Lambda",
     "serviceName" : "AWS Lambda",

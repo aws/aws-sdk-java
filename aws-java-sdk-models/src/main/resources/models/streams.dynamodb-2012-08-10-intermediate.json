@@ -98,6 +98,7 @@
     "packagePath" : "com/amazonaws/services/dynamodbv2",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon DynamoDB Streams",
     "serviceName" : "Amazon DynamoDB Streams",

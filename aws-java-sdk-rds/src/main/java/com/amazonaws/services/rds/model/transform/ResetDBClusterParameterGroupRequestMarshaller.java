@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -35,7 +35,7 @@ public class ResetDBClusterParameterGroupRequestMarshaller implements
     public Request<ResetDBClusterParameterGroupRequest> marshall(ResetDBClusterParameterGroupRequest resetDBClusterParameterGroupRequest) {
 
         if (resetDBClusterParameterGroupRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ResetDBClusterParameterGroupRequest> request = new DefaultRequest<ResetDBClusterParameterGroupRequest>(resetDBClusterParameterGroupRequest,

@@ -17,7 +17,7 @@ package com.amazonaws.services.s3.model.transform;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.internal.XmlWriter;
@@ -212,7 +212,7 @@ public class BucketConfigurationXmlFactory {
 
     private void validateFilter(Filter filter) {
         if (filter.getS3KeyFilter() == null) {
-            throw new AmazonClientException("Cannot have a Filter without any criteria");
+            throw new SdkClientException("Cannot have a Filter without any criteria");
         }
     }
 
@@ -221,7 +221,7 @@ public class BucketConfigurationXmlFactory {
      */
     private void validateS3KeyFilter(S3KeyFilter s3KeyFilter) {
         if (CollectionUtils.isNullOrEmpty(s3KeyFilter.getFilterRules())) {
-            throw new AmazonClientException("Cannot have an S3KeyFilter without any filter rules");
+            throw new SdkClientException("Cannot have an S3KeyFilter without any filter rules");
         }
     }
 
@@ -370,7 +370,7 @@ public class BucketConfigurationXmlFactory {
           </Rule>
     </LifecycleConfiguration>
     */
-    public byte[] convertToXmlByteArray(BucketLifecycleConfiguration config) throws AmazonClientException {
+    public byte[] convertToXmlByteArray(BucketLifecycleConfiguration config) throws SdkClientException {
 
         XmlWriter xml = new XmlWriter();
         xml.start("LifecycleConfiguration");
@@ -401,7 +401,7 @@ public class BucketConfigurationXmlFactory {
              </CORSRule>
        </CORSConfiguration>
      */
-    public byte[] convertToXmlByteArray(BucketCrossOriginConfiguration config) throws AmazonClientException {
+    public byte[] convertToXmlByteArray(BucketCrossOriginConfiguration config) throws SdkClientException {
 
         XmlWriter xml = new XmlWriter();
         xml.start("CORSConfiguration", "xmlns", Constants.XML_NAMESPACE);
@@ -619,7 +619,7 @@ public class BucketConfigurationXmlFactory {
          </TagSet>
         </Tagging>
     */
-    public byte[] convertToXmlByteArray(BucketTaggingConfiguration config) throws AmazonClientException {
+    public byte[] convertToXmlByteArray(BucketTaggingConfiguration config) throws SdkClientException {
 
         XmlWriter xml = new XmlWriter();
         xml.start("Tagging");

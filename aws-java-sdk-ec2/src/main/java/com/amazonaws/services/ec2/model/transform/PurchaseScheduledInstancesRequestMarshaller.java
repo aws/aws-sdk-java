@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class PurchaseScheduledInstancesRequestMarshaller implements Marshaller<R
     public Request<PurchaseScheduledInstancesRequest> marshall(PurchaseScheduledInstancesRequest purchaseScheduledInstancesRequest) {
 
         if (purchaseScheduledInstancesRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<PurchaseScheduledInstancesRequest> request = new DefaultRequest<PurchaseScheduledInstancesRequest>(purchaseScheduledInstancesRequest,

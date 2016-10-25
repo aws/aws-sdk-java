@@ -142,6 +142,7 @@
     "packagePath" : "com/amazonaws/services/simpledb",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon SimpleDB",
     "serviceName" : "Amazon SimpleDB",

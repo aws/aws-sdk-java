@@ -10,7 +10,7 @@ package ${metadata.packageName}.model.transform;
 import java.util.Map;
 import java.util.List;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import ${metadata.packageName}.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
@@ -31,7 +31,7 @@ public class ${shapeName}JsonMarshaller {
     public void marshall(${shapeName} ${shape.variable.variableName}, StructuredJsonGenerator jsonGenerator) {
 
         if (${shape.variable.variableName} == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         <@RequiredParameterValidationInvocationMacro.content dataModel.customConfig shape/>
@@ -43,7 +43,7 @@ public class ${shapeName}JsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch(Throwable t) {
-            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

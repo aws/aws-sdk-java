@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/servicecatalog",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Service Catalog",
     "serviceName" : "AWS Service Catalog",

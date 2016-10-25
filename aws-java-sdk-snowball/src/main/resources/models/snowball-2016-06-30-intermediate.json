@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/snowball",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "Amazon Snowball",
     "serviceFullName" : "Amazon Import/Export Snowball",
     "serviceName" : "Amazon Snowball",

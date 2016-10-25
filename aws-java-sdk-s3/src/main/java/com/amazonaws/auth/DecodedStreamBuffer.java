@@ -17,7 +17,7 @@ package com.amazonaws.auth;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 class DecodedStreamBuffer {
     private static final Log log = LogFactory.getLog(DecodedStreamBuffer.class);
@@ -73,7 +73,7 @@ class DecodedStreamBuffer {
 
     public void startReadBuffer() {
         if (bufferSizeOverflow) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "The input stream is not repeatable since the buffer size "
                             + maxBufferSize + " has been exceeded.");
         }

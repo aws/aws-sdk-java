@@ -14,9 +14,9 @@
  */
 package com.amazonaws.http.timers.client;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
-public class ClientExecutionTimeoutException extends AmazonClientException {
+public class ClientExecutionTimeoutException extends SdkClientException {
 
     public ClientExecutionTimeoutException() {
         this("Client execution did not complete before the specified timeout configuration.");

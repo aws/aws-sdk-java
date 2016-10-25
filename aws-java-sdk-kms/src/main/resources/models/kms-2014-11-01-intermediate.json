@@ -71,6 +71,7 @@
     "packagePath" : "com/amazonaws/services/kms",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "KMS",
     "serviceFullName" : "AWS Key Management Service",
     "serviceName" : "KMS",

@@ -59,6 +59,7 @@
     "packagePath" : "com/amazonaws/services/datapipeline",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Data Pipeline",
     "serviceName" : "AWS Data Pipeline",

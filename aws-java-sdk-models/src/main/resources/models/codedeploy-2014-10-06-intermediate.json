@@ -80,6 +80,7 @@
     "packagePath" : "com/amazonaws/services/codedeploy",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "CodeDeploy",
     "serviceFullName" : "AWS CodeDeploy",
     "serviceName" : "CodeDeploy",

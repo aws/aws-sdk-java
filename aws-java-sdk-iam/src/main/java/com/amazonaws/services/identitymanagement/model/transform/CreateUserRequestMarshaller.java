@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class CreateUserRequestMarshaller implements Marshaller<Request<CreateUse
     public Request<CreateUserRequest> marshall(CreateUserRequest createUserRequest) {
 
         if (createUserRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<CreateUserRequest> request = new DefaultRequest<CreateUserRequest>(createUserRequest, "AmazonIdentityManagement");

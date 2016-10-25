@@ -17,7 +17,7 @@ package com.amazonaws.auth;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 /**
  * {@link AWSCredentialsProvider} implementation that loads AWS security
@@ -78,13 +78,13 @@ public class ClasspathPropertiesFileCredentialsProvider implements AWSCredential
     public AWSCredentials getCredentials() {
         InputStream inputStream = getClass().getResourceAsStream(credentialsFilePath);
         if (inputStream == null) {
-            throw new AmazonClientException("Unable to load AWS credentials from the " + credentialsFilePath + " file on the classpath");
+            throw new SdkClientException("Unable to load AWS credentials from the " + credentialsFilePath + " file on the classpath");
         }
 
         try {
             return new PropertiesCredentials(inputStream);
         } catch (IOException e) {
-            throw new AmazonClientException("Unable to load AWS credentials from the " + credentialsFilePath + " file on the classpath", e);
+            throw new SdkClientException("Unable to load AWS credentials from the " + credentialsFilePath + " file on the classpath", e);
         }
     }
 

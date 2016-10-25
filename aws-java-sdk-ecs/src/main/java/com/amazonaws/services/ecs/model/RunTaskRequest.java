@@ -23,7 +23,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not specify
-     * a cluster, the default cluster is assumed..
+     * a cluster, the default cluster is assumed.
      * </p>
      */
     private String cluster;
@@ -80,12 +80,12 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not specify
-     * a cluster, the default cluster is assumed..
+     * a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not
-     *        specify a cluster, the default cluster is assumed..
+     *        specify a cluster, the default cluster is assumed.
      */
 
     public void setCluster(String cluster) {
@@ -95,11 +95,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not specify
-     * a cluster, the default cluster is assumed..
+     * a cluster, the default cluster is assumed.
      * </p>
      * 
      * @return The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not
-     *         specify a cluster, the default cluster is assumed..
+     *         specify a cluster, the default cluster is assumed.
      */
 
     public String getCluster() {
@@ -109,12 +109,12 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not specify
-     * a cluster, the default cluster is assumed..
+     * a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task. If you do not
-     *        specify a cluster, the default cluster is assumed..
+     *        specify a cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

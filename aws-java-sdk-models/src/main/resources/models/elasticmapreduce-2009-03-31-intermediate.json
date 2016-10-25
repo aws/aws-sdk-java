@@ -153,6 +153,7 @@
     "packagePath" : "com/amazonaws/services/elasticmapreduce",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "Amazon EMR",
     "serviceFullName" : "Amazon Elastic MapReduce",
     "serviceName" : "Amazon EMR",

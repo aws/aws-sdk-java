@@ -16,7 +16,7 @@ package com.amazonaws.services.s3.internal.crypto;
 
 import org.apache.http.annotation.GuardedBy;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 class MultipartUploadCryptoContext extends MultipartUploadContext {
     private final ContentCryptoMaterial cekMaterial;
@@ -63,15 +63,15 @@ class MultipartUploadCryptoContext extends MultipartUploadContext {
      * 
      * @see #endPartUpload()
      * 
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             if parallel part upload is detected
      */
     void beginPartUpload(final int nextPartNumber)
-            throws AmazonClientException {
+            throws SdkClientException {
         if (nextPartNumber < 1)
             throw new IllegalArgumentException("part number must be at least 1");
         if (partUploadInProgress) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Parts are required to be uploaded in series");
         }
         synchronized (this) {
@@ -79,7 +79,7 @@ class MultipartUploadCryptoContext extends MultipartUploadContext {
                 partNumber = nextPartNumber;
                 partUploadInProgress = true;
             } else {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Parts are required to be uploaded in series (partNumber="
                                 + partNumber + ", nextPartNumber="
                                 + nextPartNumber + ")");

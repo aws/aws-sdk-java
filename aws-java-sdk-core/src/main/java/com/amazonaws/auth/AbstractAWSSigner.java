@@ -29,6 +29,7 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.ReadLimitInfo;
 import com.amazonaws.SDKGlobalTime;
 import com.amazonaws.SignableRequest;
@@ -57,7 +58,7 @@ public abstract class AbstractAWSSigner implements Signer {
                 try {
                     return MessageDigest.getInstance("SHA-256");
                 } catch (NoSuchAlgorithmException e) {
-                    throw new AmazonClientException(
+                    throw new SdkClientException(
                             "Unable to get SHA256 Function"
                                     + e.getMessage(), e);
                 }
@@ -71,7 +72,7 @@ public abstract class AbstractAWSSigner implements Signer {
      * Base64 encoded string.
      */
     protected String signAndBase64Encode(String data, String key,
-            SigningAlgorithm algorithm) throws AmazonClientException {
+            SigningAlgorithm algorithm) throws SdkClientException {
         return signAndBase64Encode(data.getBytes(UTF8), key, algorithm);
     }
 
@@ -80,24 +81,24 @@ public abstract class AbstractAWSSigner implements Signer {
      * returns the result as a Base64 encoded string.
      */
     protected String signAndBase64Encode(byte[] data, String key,
-            SigningAlgorithm algorithm) throws AmazonClientException {
+            SigningAlgorithm algorithm) throws SdkClientException {
         try {
             byte[] signature = sign(data, key.getBytes(UTF8), algorithm);
             return Base64.encodeAsString(signature);
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to calculate a request signature: "
                             + e.getMessage(), e);
         }
     }
 
     public byte[] sign(String stringData, byte[] key,
-            SigningAlgorithm algorithm) throws AmazonClientException {
+            SigningAlgorithm algorithm) throws SdkClientException {
         try {
             byte[] data = stringData.getBytes(UTF8);
             return sign(data, key, algorithm);
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to calculate a request signature: "
                             + e.getMessage(), e);
         }
@@ -107,20 +108,20 @@ public abstract class AbstractAWSSigner implements Signer {
         try {
             return mac.doFinal(stringData.getBytes(UTF8));
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to calculate a request signature: "
                             + e.getMessage(), e);
         }
     }
 
     protected byte[] sign(byte[] data, byte[] key,
-            SigningAlgorithm algorithm) throws AmazonClientException {
+            SigningAlgorithm algorithm) throws SdkClientException {
         try {
             Mac mac = algorithm.getMac();
             mac.init(new SecretKeySpec(key, algorithm.toString()));
             return mac.doFinal(data);
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to calculate a request signature: "
                             + e.getMessage(), e);
         }
@@ -135,26 +136,26 @@ public abstract class AbstractAWSSigner implements Signer {
      *
      * @return The hashed bytes from the specified string.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the hash cannot be computed.
      */
-    public byte[] hash(String text) throws AmazonClientException {
+    public byte[] hash(String text) throws SdkClientException {
         return AbstractAWSSigner.doHash(text);
     }
 
-    private static byte[] doHash(String text) throws AmazonClientException {
+    private static byte[] doHash(String text) throws SdkClientException {
         try {
             MessageDigest md = getMessageDigestInstance();
             md.update(text.getBytes(UTF8));
             return md.digest();
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to compute hash while signing request: "
                             + e.getMessage(), e);
         }
     }
 
-    protected byte[] hash(InputStream input) throws AmazonClientException {
+    protected byte[] hash(InputStream input) throws SdkClientException {
         try {
             MessageDigest md = getMessageDigestInstance();
             @SuppressWarnings("resource")
@@ -165,7 +166,7 @@ public abstract class AbstractAWSSigner implements Signer {
                 ;
             return digestInputStream.getMessageDigest().digest();
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to compute hash while signing request: "
                             + e.getMessage(), e);
         }
@@ -179,16 +180,16 @@ public abstract class AbstractAWSSigner implements Signer {
      *
      * @return The hashed bytes from the specified data.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the hash cannot be computed.
      */
-    public byte[] hash(byte[] data) throws AmazonClientException {
+    public byte[] hash(byte[] data) throws SdkClientException {
         try {
             MessageDigest md =  getMessageDigestInstance();
             md.update(data);
             return md.digest();
         } catch (Exception e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to compute hash while signing request: "
                             + e.getMessage(), e);
         }
@@ -326,7 +327,7 @@ public abstract class AbstractAWSSigner implements Signer {
 
             return byteArrayOutputStream.toByteArray();
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
+            throw new SdkClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
         }
     }
 
@@ -349,12 +350,12 @@ public abstract class AbstractAWSSigner implements Signer {
             if (is == null)
                 return new ByteArrayInputStream(new byte[0]);
             if (!is.markSupported())
-                throw new AmazonClientException("Unable to read request payload to sign request.");
+                throw new SdkClientException("Unable to read request payload to sign request.");
             return is;
         } catch (AmazonClientException e) {
             throw e;
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
+            throw new SdkClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
         }
     }
 

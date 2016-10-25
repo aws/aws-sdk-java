@@ -32,7 +32,7 @@ import java.util.Map;
  * Formats the generated java source code. Uses Eclipse JDT core plugin from the Eclipse SDK.
  */
 @SuppressWarnings("unchecked")
-public class JavaCodeFormatter {
+class JavaCodeFormatter {
 
     private final CodeFormatter codeFormatter;
 
@@ -70,8 +70,8 @@ public class JavaCodeFormatter {
     /**
      * Creates a JavaCodeFormatter using the default formatter options.
      */
-    public JavaCodeFormatter() {
-        this(new HashMap<String, Object>());
+    JavaCodeFormatter() {
+        this(new HashMap<>());
     }
 
     /**
@@ -80,21 +80,17 @@ public class JavaCodeFormatter {
      *
      * @param overrideOptions user provided options to apply on top of defaults
      */
-    public JavaCodeFormatter(final Map<String, Object> overrideOptions) {
-        Map formatterOptions = new HashMap<String, Object>(DEFAULT_FORMATTER_OPTIONS);
+    private JavaCodeFormatter(final Map<String, Object> overrideOptions) {
+        Map formatterOptions = new HashMap<>(DEFAULT_FORMATTER_OPTIONS);
         if (overrideOptions != null) {
             formatterOptions.putAll(overrideOptions);
         }
 
         this.codeFormatter = ToolFactory.createCodeFormatter(formatterOptions,
                 ToolFactory.M_FORMAT_EXISTING);
-        if (codeFormatter == null) {
-            throw new RuntimeException(
-                    "Unable to create code formatter to format the generated code.");
-        }
     }
 
-    public String format(String contents) {
+    String format(String contents) {
         final TextEdit edit = codeFormatter.format(
                 CodeFormatter.K_COMPILATION_UNIT
                         | CodeFormatter.F_INCLUDE_COMMENTS, contents, 0,

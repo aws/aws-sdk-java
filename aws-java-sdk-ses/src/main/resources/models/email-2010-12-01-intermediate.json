@@ -90,6 +90,7 @@
     "packagePath" : "com/amazonaws/services/simpleemail",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "Amazon SES",
     "serviceFullName" : "Amazon Simple Email Service",
     "serviceName" : "Amazon SES",

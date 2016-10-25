@@ -17,7 +17,7 @@ package com.amazonaws.services.s3.internal;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.SdkFilterInputStream;
 
 /**
@@ -77,7 +77,7 @@ public final class InputSubstream extends SdkFilterInputStream {
             if (skippedBytes == 0) {
                 count++;
                 if (count > MAX_SKIPS) {
-                    throw new AmazonClientException(
+                    throw new SdkClientException(
                             "Unable to position the currentPosition from "
                                     + currentPosition + " to "
                                     + requestedOffset);

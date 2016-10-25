@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -35,7 +35,7 @@ public class GetPlatformApplicationAttributesRequestMarshaller implements
     public Request<GetPlatformApplicationAttributesRequest> marshall(GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest) {
 
         if (getPlatformApplicationAttributesRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<GetPlatformApplicationAttributesRequest> request = new DefaultRequest<GetPlatformApplicationAttributesRequest>(

@@ -15,8 +15,29 @@
 
 package com.amazonaws.codegen;
 
+import com.amazonaws.jmespath.InvalidTypeException;
+import com.amazonaws.jmespath.JmesPathAndExpression;
+import com.amazonaws.jmespath.JmesPathContainsFunction;
+import com.amazonaws.jmespath.JmesPathExpression;
+import com.amazonaws.jmespath.JmesPathField;
+import com.amazonaws.jmespath.JmesPathFilter;
+import com.amazonaws.jmespath.JmesPathFlatten;
+import com.amazonaws.jmespath.JmesPathIdentity;
+import com.amazonaws.jmespath.JmesPathLengthFunction;
+import com.amazonaws.jmespath.JmesPathLiteral;
+import com.amazonaws.jmespath.JmesPathMultiSelectList;
+import com.amazonaws.jmespath.JmesPathNotExpression;
+import com.amazonaws.jmespath.JmesPathProjection;
+import com.amazonaws.jmespath.JmesPathSubExpression;
+import com.amazonaws.jmespath.JmesPathValueProjection;
+import com.amazonaws.jmespath.OpEquals;
+import com.amazonaws.jmespath.OpGreaterThan;
+import com.amazonaws.jmespath.OpGreaterThanOrEqualTo;
+import com.amazonaws.jmespath.OpLessThan;
+import com.amazonaws.jmespath.OpLessThanOrEqualTo;
+import com.amazonaws.jmespath.OpNotEquals;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.amazonaws.jmespath.*;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

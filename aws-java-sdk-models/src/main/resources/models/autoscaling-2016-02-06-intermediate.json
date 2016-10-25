@@ -51,6 +51,7 @@
     "packagePath" : "com/amazonaws/services/applicationautoscaling",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Application Auto Scaling",
     "serviceName" : "Application Auto Scaling",

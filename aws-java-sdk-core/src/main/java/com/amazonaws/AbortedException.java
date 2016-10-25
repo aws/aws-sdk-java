@@ -17,7 +17,7 @@ package com.amazonaws;
 /**
  * SDK operation aborted exception.
  */
-public class AbortedException extends AmazonClientException {
+public class AbortedException extends SdkClientException {
     private static final long serialVersionUID = 1L;
 
     public AbortedException(String message, Throwable t) {

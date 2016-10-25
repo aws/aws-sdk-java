@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth.profile;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.profile.internal.AbstractProfilesConfigFileScanner;
 import com.amazonaws.auth.profile.internal.Profile;
 import com.amazonaws.auth.profile.internal.ProfileKeyConstants;
@@ -62,7 +62,7 @@ public class ProfilesConfigFileWriter {
      */
     public static void dumpToFile(File destination, boolean overwrite, Profile... profiles) {
         if (destination.exists() && !overwrite) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "The destination file already exists. " +
                     "Set overwrite=true if you want to clobber the existing " +
                     "content and completely re-write the file.");
@@ -73,7 +73,7 @@ public class ProfilesConfigFileWriter {
             writer = new OutputStreamWriter(new FileOutputStream(destination, false), StringUtils.UTF8);
 
         } catch (IOException ioe) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to open the destination file.", ioe);
         }
 
@@ -180,7 +180,7 @@ public class ProfilesConfigFileWriter {
 
             } finally {
                 if (!stashed) {
-                    throw new AmazonClientException(
+                    throw new SdkClientException(
                             "Failed to stash the existing credentials file " +
                             "before applying the changes.");
                 }
@@ -227,14 +227,14 @@ public class ProfilesConfigFileWriter {
                     restored = stashLocation.renameTo(destination);
                 } finally {
                     if (!restored) {
-                        throw new AmazonClientException(
+                        throw new SdkClientException(
                                 "Unable to restore the original credentials file. " +
                                 "File content stashed in " + stashLocation.getAbsolutePath());
                     }
                 }
             }
 
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to modify the credentials file. " +
                     "(The original file has been restored.)",
                     e);
@@ -431,7 +431,7 @@ public class ProfilesConfigFileWriter {
             try {
                 writer.flush();
             } catch (IOException ioe) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Unable to write to the target file to persist the profile credentials.",
                         ioe);
             }
@@ -483,7 +483,7 @@ public class ProfilesConfigFileWriter {
             try {
                 writer.append(str);
             } catch (IOException ioe) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Unable to write to the target file to persist the profile credentials.",
                         ioe);
             }

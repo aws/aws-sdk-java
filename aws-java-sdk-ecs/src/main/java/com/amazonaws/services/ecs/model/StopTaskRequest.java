@@ -23,7 +23,7 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop. If you do not
-     * specify a cluster, the default cluster is assumed..
+     * specify a cluster, the default cluster is assumed.
      * </p>
      */
     private String cluster;
@@ -45,12 +45,12 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop. If you do not
-     * specify a cluster, the default cluster is assumed..
+     * specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop. If you do
-     *        not specify a cluster, the default cluster is assumed..
+     *        not specify a cluster, the default cluster is assumed.
      */
 
     public void setCluster(String cluster) {
@@ -60,11 +60,11 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop. If you do not
-     * specify a cluster, the default cluster is assumed..
+     * specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @return The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop. If you do
-     *         not specify a cluster, the default cluster is assumed..
+     *         not specify a cluster, the default cluster is assumed.
      */
 
     public String getCluster() {
@@ -74,12 +74,12 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop. If you do not
-     * specify a cluster, the default cluster is assumed..
+     * specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop. If you do
-     *        not specify a cluster, the default cluster is assumed..
+     *        not specify a cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

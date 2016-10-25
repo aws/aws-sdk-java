@@ -15,9 +15,9 @@
 
 package com.amazonaws.waiters;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
-public class WaiterTimedOutException extends AmazonClientException {
+public class WaiterTimedOutException extends SdkClientException {
 
     /**
      * Constructs a new WaiterTimedOutException with the specified error

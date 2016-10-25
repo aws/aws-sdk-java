@@ -23,7 +23,7 @@ import java.util.SortedMap;
 import java.util.TimeZone;
 import java.util.TreeMap;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.SignableRequest;
 
 /**
@@ -46,7 +46,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
      *            The credentials used to use to sign the request.
      */
     public void sign(SignableRequest<?> request, AWSCredentials credentials)
-            throws AmazonClientException {
+            throws SdkClientException {
         sign(request, SignatureVersion.V2, SigningAlgorithm.HmacSHA256, credentials);
     }
 
@@ -66,7 +66,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
      */
     public void sign(SignableRequest<?> request, SignatureVersion version,
             SigningAlgorithm algorithm, AWSCredentials credentials)
-            throws AmazonClientException {
+            throws SdkClientException {
         // annonymous credentials, don't sign
         if ( credentials instanceof AnonymousAWSCredentials ) {
             return;
@@ -90,7 +90,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
             request.addParameter("SignatureMethod", algorithm.toString());
             stringToSign = calculateStringToSignV2(request);
         } else {
-            throw new AmazonClientException("Invalid Signature Version specified");
+            throw new SdkClientException("Invalid Signature Version specified");
         }
 
         String signatureValue = signAndBase64Encode(stringToSign,
@@ -130,10 +130,10 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
      *
      * @return String to sign
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the string to sign cannot be calculated.
      */
-    private String calculateStringToSignV2(SignableRequest<?> request) throws AmazonClientException {
+    private String calculateStringToSignV2(SignableRequest<?> request) throws SdkClientException {
         URI endpoint = request.getEndpoint();
 
         StringBuilder data = new StringBuilder();

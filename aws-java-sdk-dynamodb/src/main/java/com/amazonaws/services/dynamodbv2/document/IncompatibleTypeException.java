@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.dynamodbv2.document;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 /**
  * Thrown upon incompatible type during data conversion.
  */
-public class IncompatibleTypeException extends AmazonClientException {
+public class IncompatibleTypeException extends SdkClientException {
     private static final long serialVersionUID = 1L;
 
     public IncompatibleTypeException(String message) {

@@ -15,7 +15,7 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 import java.util.Map;
 import java.util.List;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
@@ -35,7 +35,7 @@ public class InstanceGroupModifyConfigJsonMarshaller {
     public void marshall(InstanceGroupModifyConfig instanceGroupModifyConfig, StructuredJsonGenerator jsonGenerator) {
 
         if (instanceGroupModifyConfig == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -67,7 +67,7 @@ public class InstanceGroupModifyConfigJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

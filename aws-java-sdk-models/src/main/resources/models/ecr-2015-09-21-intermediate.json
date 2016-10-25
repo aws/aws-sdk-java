@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/ecr",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "Amazon ECR",
     "serviceFullName" : "Amazon EC2 Container Registry",
     "serviceName" : "Amazon ECR",

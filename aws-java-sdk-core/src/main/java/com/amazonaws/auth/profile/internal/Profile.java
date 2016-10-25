@@ -19,7 +19,6 @@ import java.util.Map;
 
 import org.apache.http.annotation.Immutable;
 
-import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSSessionCredentials;

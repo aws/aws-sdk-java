@@ -65,6 +65,7 @@
     "packagePath" : "com/amazonaws/services/directory",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "Directory Service",
     "serviceFullName" : "AWS Directory Service",
     "serviceName" : "Directory Service",

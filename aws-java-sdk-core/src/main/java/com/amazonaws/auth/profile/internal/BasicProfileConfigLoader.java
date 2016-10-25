@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth.profile.internal;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.StringUtils;
 
@@ -62,7 +62,7 @@ public class BasicProfileConfigLoader {
             fis = new FileInputStream(file);
             return loadProfiles(fis);
         } catch (IOException ioe) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to load AWS credential profiles file at: " + file.getAbsolutePath(),
                     ioe);
         } finally {
@@ -109,15 +109,15 @@ public class BasicProfileConfigLoader {
 
     /**
      * <p> Asserts that the specified parameter value is neither <code>empty</code> nor null, and if
-     * it is, throws an <code>AmazonClientException</code> with the specified error message. </p>
+     * it is, throws a <code>SdkClientException</code> with the specified error message. </p>
      *
      * @param parameterValue The parameter value being checked.
-     * @param errorMessage   The error message to include in the AmazonClientException if the
+     * @param errorMessage   The error message to include in the SdkClientException if the
      *                       specified parameter value is empty.
      */
     private void assertParameterNotEmpty(String parameterValue, String errorMessage) {
         if (StringUtils.isNullOrEmpty(parameterValue)) {
-            throw new AmazonClientException(errorMessage);
+            throw new SdkClientException(errorMessage);
         }
     }
 

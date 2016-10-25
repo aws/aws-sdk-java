@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
@@ -112,7 +112,7 @@ public class CompleteMultipartCopy implements Callable<CopyResult> {
             try {
                 partETags.add(future.get());
             } catch (Exception e) {
-                throw new AmazonClientException("Unable to copy part: "
+                throw new SdkClientException("Unable to copy part: "
                         + e.getCause().getMessage(), e.getCause());
             }
         }

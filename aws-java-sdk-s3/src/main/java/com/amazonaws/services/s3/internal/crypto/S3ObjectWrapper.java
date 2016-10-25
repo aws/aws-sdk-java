@@ -21,7 +21,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
@@ -121,13 +121,13 @@ class S3ObjectWrapper implements Closeable {
     /**
      * Converts and return the underlying S3 object as a json string.
      * 
-     * @throws AmazonClientException if failed in JSON conversion.
+     * @throws SdkClientException if failed in JSON conversion.
      */
     String toJsonString() {
         try {
             return from(s3obj.getObjectContent());
         } catch (Exception e) {
-            throw new AmazonClientException("Error parsing JSON: " + e.getMessage());
+            throw new SdkClientException("Error parsing JSON: " + e.getMessage());
         }
     }
 

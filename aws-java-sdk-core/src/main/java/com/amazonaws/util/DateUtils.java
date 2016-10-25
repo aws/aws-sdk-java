@@ -29,7 +29,7 @@ import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 import org.joda.time.tz.FixedDateTimeZone;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -244,7 +244,7 @@ public class DateUtils {
             return new Date(dateValue.scaleByPowerOfTen(
                     AWS_DATE_MILLI_SECOND_PRECISION).longValue());
         } catch (NumberFormatException nfe) {
-            throw new AmazonClientException("Unable to parse date : "
+            throw new SdkClientException("Unable to parse date : "
                     + dateString, nfe);
         }
     }

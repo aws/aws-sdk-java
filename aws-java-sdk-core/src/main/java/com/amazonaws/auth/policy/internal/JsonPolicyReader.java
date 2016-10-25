@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.policy.Action;
 import com.amazonaws.auth.policy.Condition;
 import com.amazonaws.auth.policy.Policy;
@@ -250,7 +250,7 @@ public class JsonPolicyReader {
                 return new Principal(PRINICIPAL_SCHEMA_FEDERATED, principalNode.asText());
             }
         }
-        throw new AmazonClientException("Schema " + schema + " is not a valid value for the principal.");
+        throw new SdkClientException("Schema " + schema + " is not a valid value for the principal.");
     }
 
     /**

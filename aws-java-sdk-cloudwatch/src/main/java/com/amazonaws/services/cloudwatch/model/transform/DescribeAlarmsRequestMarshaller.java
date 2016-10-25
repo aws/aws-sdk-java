@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class DescribeAlarmsRequestMarshaller implements Marshaller<Request<Descr
     public Request<DescribeAlarmsRequest> marshall(DescribeAlarmsRequest describeAlarmsRequest) {
 
         if (describeAlarmsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DescribeAlarmsRequest> request = new DefaultRequest<DescribeAlarmsRequest>(describeAlarmsRequest, "AmazonCloudWatch");

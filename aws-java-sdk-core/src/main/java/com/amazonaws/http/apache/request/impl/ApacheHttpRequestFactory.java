@@ -14,7 +14,7 @@
  */
 package com.amazonaws.http.apache.request.impl;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.RepeatableInputStreamRequestEntity;
@@ -128,7 +128,7 @@ public class ApacheHttpRequestFactory implements
             case PUT:
                 return wrapEntity(request, new HttpPut(uri), encodedParams);
             default:
-                throw new AmazonClientException("Unknown HTTP method name: " + request.getHttpMethod());
+                throw new SdkClientException("Unknown HTTP method name: " + request.getHttpMethod());
         }
     }
 

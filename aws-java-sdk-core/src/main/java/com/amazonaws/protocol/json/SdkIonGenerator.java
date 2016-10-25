@@ -21,8 +21,8 @@ import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.util.Date;
 
-import com.amazonaws.AmazonClientException;
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.util.BinaryUtils;
 import software.amazon.ion.IonType;
 import software.amazon.ion.IonWriter;
@@ -44,7 +44,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.stepIn(IonType.LIST);
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -54,7 +54,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.stepOut();
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -64,7 +64,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.stepIn(IonType.STRUCT);
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -74,7 +74,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.stepOut();
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -90,7 +90,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.writeString(val);
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -100,7 +100,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.writeBool(bool);
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -110,7 +110,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.writeInt(val);
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -120,7 +120,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.writeFloat(val);
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -130,7 +130,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.writeFloat(val);
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -140,7 +140,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.writeInt(val);
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -150,7 +150,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.writeInt(val);
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -160,7 +160,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.writeBlob(BinaryUtils.copyAllBytesFrom(bytes));
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -170,7 +170,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.writeTimestamp(Timestamp.forDateZ(date));
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -180,7 +180,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.writeDecimal(value);
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -190,7 +190,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
         try {
             writer.writeInt(value);
         } catch (IOException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
         return this;
     }
@@ -222,7 +222,7 @@ abstract class SdkIonGenerator implements StructuredJsonGenerator {
             try {
                 writer.finish();
             } catch (IOException e) {
-                throw new AmazonClientException(e);
+                throw new SdkClientException(e);
             }
             return bytes.toByteArray();
         }

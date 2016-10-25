@@ -295,7 +295,7 @@ public class DynamoDBQueryExpression <T> {
      * @param rangeKeyConditions a map from key name to condition
      * 	        NOTE: The current DynamoDB service only allows up to one
      *          range key condition per query. Providing more than one
-     *          range key condition will result in an AmazonClientException.
+     *          range key condition will result in a SdkClientException.
      */
     public void setRangeKeyConditions(Map<String, Condition> rangeKeyConditions) {
         this.rangeKeyConditions = rangeKeyConditions;
@@ -308,7 +308,7 @@ public class DynamoDBQueryExpression <T> {
      * @param rangeKeyConditions a map from key name to condition
      *         NOTE: The current DynamoDB service only allows up to one range
      *         key condition per query. Providing more than one range key
-     *         condition will result in an AmazonClientException.
+     *         condition will result in a SdkClientException.
      */
     public DynamoDBQueryExpression<T> withRangeKeyConditions(Map<String, Condition> rangeKeyConditions) {
         setRangeKeyConditions(rangeKeyConditions);

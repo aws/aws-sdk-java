@@ -71,6 +71,7 @@
     "packagePath" : "com/amazonaws/services/directconnect",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Direct Connect",
     "serviceName" : "AWS Direct Connect",

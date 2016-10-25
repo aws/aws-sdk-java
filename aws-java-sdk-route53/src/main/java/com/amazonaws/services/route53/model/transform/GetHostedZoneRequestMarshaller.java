@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -42,7 +42,7 @@ public class GetHostedZoneRequestMarshaller implements Marshaller<Request<GetHos
     public Request<GetHostedZoneRequest> marshall(GetHostedZoneRequest getHostedZoneRequest) {
 
         if (getHostedZoneRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<GetHostedZoneRequest> request = new DefaultRequest<GetHostedZoneRequest>(getHostedZoneRequest, "AmazonRoute53");

@@ -15,9 +15,9 @@
 
 package com.amazonaws.waiters;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
-public class WaiterUnrecoverableException extends AmazonClientException {
+public class WaiterUnrecoverableException extends SdkClientException {
 
     /**
      * Constructs a new WaiterUnrecoverableException with the specified error

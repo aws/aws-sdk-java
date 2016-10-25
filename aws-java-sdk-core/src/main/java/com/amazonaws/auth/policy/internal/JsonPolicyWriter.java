@@ -26,7 +26,7 @@ import java.util.Set;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.policy.Action;
 import com.amazonaws.auth.policy.Condition;
 import com.amazonaws.auth.policy.Policy;
@@ -60,7 +60,7 @@ public class JsonPolicyWriter {
         try {
             generator = Jackson.jsonGeneratorOf(writer);
         } catch (IOException ioe) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to instantiate JsonGenerator.", ioe);
         }
 

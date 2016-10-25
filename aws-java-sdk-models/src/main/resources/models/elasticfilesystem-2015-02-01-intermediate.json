@@ -59,6 +59,7 @@
     "packagePath" : "com/amazonaws/services/elasticfilesystem",
     "protocol" : "rest-json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "EFS",
     "serviceFullName" : "Amazon Elastic File System",
     "serviceName" : "EFS",

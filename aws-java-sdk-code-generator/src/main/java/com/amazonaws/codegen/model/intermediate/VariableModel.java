@@ -15,10 +15,10 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Collection;
 import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class VariableModel extends DocumentationModel {
 

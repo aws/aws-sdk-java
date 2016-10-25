@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth.profile.internal;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.Immutable;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.AWSCredentials;
@@ -52,12 +52,12 @@ public class ProfileStaticCredentialsProvider implements AWSCredentialsProvider 
 
     private AWSCredentials fromStaticCredentials() {
         if (StringUtils.isNullOrEmpty(profile.getAwsAccessIdKey())) {
-            throw new AmazonClientException(String.format(
+            throw new SdkClientException(String.format(
                     "Unable to load credentials into profile [%s]: AWS Access Key ID is not specified.",
                     profile.getProfileName()));
         }
         if (StringUtils.isNullOrEmpty(profile.getAwsSecretAccessKey())) {
-            throw new AmazonClientException(String.format(
+            throw new SdkClientException(String.format(
                     "Unable to load credentials into profile [%s]: AWS Secret Access Key is not specified.",
                     profile.getAwsSecretAccessKey()));
         }
@@ -67,7 +67,7 @@ public class ProfileStaticCredentialsProvider implements AWSCredentialsProvider 
                                            profile.getAwsSecretAccessKey());
         } else {
             if (profile.getAwsSessionToken().isEmpty()) {
-                throw new AmazonClientException(String.format(
+                throw new SdkClientException(String.format(
                         "Unable to load credentials into profile [%s]: AWS Session Token is empty.",
                         profile.getProfileName()));
             }

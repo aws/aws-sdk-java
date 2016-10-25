@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -52,7 +52,7 @@ public class ListPipelinesRequestMarshaller implements Marshaller<Request<ListPi
     public Request<ListPipelinesRequest> marshall(ListPipelinesRequest listPipelinesRequest) {
 
         if (listPipelinesRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ListPipelinesRequest> request = new DefaultRequest<ListPipelinesRequest>(listPipelinesRequest, "AmazonElasticTranscoder");

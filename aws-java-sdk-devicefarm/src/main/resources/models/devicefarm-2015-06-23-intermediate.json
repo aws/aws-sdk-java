@@ -51,6 +51,7 @@
     "packagePath" : "com/amazonaws/services/devicefarm",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Device Farm",
     "serviceName" : "AWS Device Farm",

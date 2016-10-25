@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/codecommit",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "CodeCommit",
     "serviceFullName" : "AWS CodeCommit",
     "serviceName" : "CodeCommit",

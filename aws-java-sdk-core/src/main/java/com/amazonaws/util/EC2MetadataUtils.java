@@ -25,10 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.amazonaws.AmazonClientException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.EC2CredentialsUtils;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -370,7 +371,7 @@ public class EC2MetadataUtils {
 
     private static List<String> getItems(String path, int tries, boolean slurp) {
         if (tries == 0)
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to contact EC2 metadata service.");
 
         List<String> items;

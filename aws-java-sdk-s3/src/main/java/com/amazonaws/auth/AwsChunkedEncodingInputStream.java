@@ -28,7 +28,7 @@ import javax.crypto.spec.SecretKeySpec;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.SdkInputStream;
 import com.amazonaws.util.BinaryUtils;
 
@@ -358,7 +358,7 @@ public final class AwsChunkedEncodingInputStream extends SdkInputStream {
                     trailer.length);
             return signedChunk;
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to sign the chunked data. " + e.getMessage(), e);
+            throw new SdkClientException("Unable to sign the chunked data. " + e.getMessage(), e);
         }
     }
 

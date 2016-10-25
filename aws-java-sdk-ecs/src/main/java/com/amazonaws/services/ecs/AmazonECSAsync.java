@@ -84,8 +84,8 @@ public interface AmazonECSAsync extends AmazonECS {
     /**
      * <p>
      * Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in
-     * a service drops below <code>desiredCount</code>, Amazon ECS spawns another instantiation of the task in the
-     * specified cluster. To update an existing service, see <a>UpdateService</a>.
+     * a service drops below <code>desiredCount</code>, Amazon ECS spawns another copy of the task in the specified
+     * cluster. To update an existing service, see <a>UpdateService</a>.
      * </p>
      * <p>
      * In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind
@@ -96,26 +96,30 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <p>
      * You can optionally specify a deployment configuration for your service. During a deployment (which is triggered
-     * by changing the task definition of a service with an <a>UpdateService</a> operation), the service scheduler uses
-     * the <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to determine the deployment
-     * strategy.
+     * by changing the task definition or the desired count of a service with an <a>UpdateService</a> operation), the
+     * service scheduler uses the <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to
+     * determine the deployment strategy.
      * </p>
      * <p>
-     * If the <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore the <code>desiredCount</code>
-     * temporarily during a deployment. For example, if your service has a <code>desiredCount</code> of four tasks, a
-     * <code>minimumHealthyPercent</code> of 50% allows the scheduler to stop two existing tasks before starting two new
-     * tasks. Tasks for services that <i>do not</i> use a load balancer are considered healthy if they are in the
-     * <code>RUNNING</code> state; tasks for services that <i>do</i> use a load balancer are considered healthy if they
-     * are in the <code>RUNNING</code> state and the container instance it is hosted on is reported as healthy by the
-     * load balancer. The default value for <code>minimumHealthyPercent</code> is 50% in the console and 100% for the
-     * AWS CLI, the AWS SDKs, and the APIs.
+     * The <code>minimumHealthyPercent</code> represents a lower limit on the number of your service's tasks that must
+     * remain in the <code>RUNNING</code> state during a deployment, as a percentage of the <code>desiredCount</code>
+     * (rounded up to the nearest integer). This parameter enables you to deploy without using additional cluster
+     * capacity. For example, if your service has a <code>desiredCount</code> of four tasks and a
+     * <code>minimumHealthyPercent</code> of 50%, the scheduler may stop two existing tasks to free up cluster capacity
+     * before starting two new tasks. Tasks for services that <i>do not</i> use a load balancer are considered healthy
+     * if they are in the <code>RUNNING</code> state; tasks for services that <i>do</i> use a load balancer are
+     * considered healthy if they are in the <code>RUNNING</code> state and the container instance it is hosted on is
+     * reported as healthy by the load balancer. The default value for <code>minimumHealthyPercent</code> is 50% in the
+     * console and 100% for the AWS CLI, the AWS SDKs, and the APIs.
      * </p>
      * <p>
-     * The <code>maximumPercent</code> parameter represents an upper limit on the number of running tasks during a
-     * deployment, which enables you to define the deployment batch size. For example, if your service has a
-     * <code>desiredCount</code> of four tasks, a <code>maximumPercent</code> value of 200% starts four new tasks before
-     * stopping the four older tasks (provided that the cluster resources required to do this are available). The
-     * default value for <code>maximumPercent</code> is 200%.
+     * The <code>maximumPercent</code> parameter represents an upper limit on the number of your service's tasks that
+     * are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment, as a percentage of the
+     * <code>desiredCount</code> (rounded down to the nearest integer). This parameter enables you to define the
+     * deployment batch size. For example, if your service has a <code>desiredCount</code> of four tasks and a
+     * <code>maximumPercent</code> value of 200%, the scheduler may start four new tasks before stopping the four older
+     * tasks (provided that the cluster resources required to do this are available). The default value for
+     * <code>maximumPercent</code> is 200%.
      * </p>
      * <p>
      * When the service scheduler launches new tasks, it attempts to balance them across the Availability Zones in your
@@ -152,8 +156,8 @@ public interface AmazonECSAsync extends AmazonECS {
     /**
      * <p>
      * Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in
-     * a service drops below <code>desiredCount</code>, Amazon ECS spawns another instantiation of the task in the
-     * specified cluster. To update an existing service, see <a>UpdateService</a>.
+     * a service drops below <code>desiredCount</code>, Amazon ECS spawns another copy of the task in the specified
+     * cluster. To update an existing service, see <a>UpdateService</a>.
      * </p>
      * <p>
      * In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind
@@ -164,26 +168,30 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <p>
      * You can optionally specify a deployment configuration for your service. During a deployment (which is triggered
-     * by changing the task definition of a service with an <a>UpdateService</a> operation), the service scheduler uses
-     * the <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to determine the deployment
-     * strategy.
+     * by changing the task definition or the desired count of a service with an <a>UpdateService</a> operation), the
+     * service scheduler uses the <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to
+     * determine the deployment strategy.
      * </p>
      * <p>
-     * If the <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore the <code>desiredCount</code>
-     * temporarily during a deployment. For example, if your service has a <code>desiredCount</code> of four tasks, a
-     * <code>minimumHealthyPercent</code> of 50% allows the scheduler to stop two existing tasks before starting two new
-     * tasks. Tasks for services that <i>do not</i> use a load balancer are considered healthy if they are in the
-     * <code>RUNNING</code> state; tasks for services that <i>do</i> use a load balancer are considered healthy if they
-     * are in the <code>RUNNING</code> state and the container instance it is hosted on is reported as healthy by the
-     * load balancer. The default value for <code>minimumHealthyPercent</code> is 50% in the console and 100% for the
-     * AWS CLI, the AWS SDKs, and the APIs.
+     * The <code>minimumHealthyPercent</code> represents a lower limit on the number of your service's tasks that must
+     * remain in the <code>RUNNING</code> state during a deployment, as a percentage of the <code>desiredCount</code>
+     * (rounded up to the nearest integer). This parameter enables you to deploy without using additional cluster
+     * capacity. For example, if your service has a <code>desiredCount</code> of four tasks and a
+     * <code>minimumHealthyPercent</code> of 50%, the scheduler may stop two existing tasks to free up cluster capacity
+     * before starting two new tasks. Tasks for services that <i>do not</i> use a load balancer are considered healthy
+     * if they are in the <code>RUNNING</code> state; tasks for services that <i>do</i> use a load balancer are
+     * considered healthy if they are in the <code>RUNNING</code> state and the container instance it is hosted on is
+     * reported as healthy by the load balancer. The default value for <code>minimumHealthyPercent</code> is 50% in the
+     * console and 100% for the AWS CLI, the AWS SDKs, and the APIs.
      * </p>
      * <p>
-     * The <code>maximumPercent</code> parameter represents an upper limit on the number of running tasks during a
-     * deployment, which enables you to define the deployment batch size. For example, if your service has a
-     * <code>desiredCount</code> of four tasks, a <code>maximumPercent</code> value of 200% starts four new tasks before
-     * stopping the four older tasks (provided that the cluster resources required to do this are available). The
-     * default value for <code>maximumPercent</code> is 200%.
+     * The <code>maximumPercent</code> parameter represents an upper limit on the number of your service's tasks that
+     * are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment, as a percentage of the
+     * <code>desiredCount</code> (rounded down to the nearest integer). This parameter enables you to define the
+     * deployment batch size. For example, if your service has a <code>desiredCount</code> of four tasks and a
+     * <code>maximumPercent</code> value of 200%, the scheduler may start four new tasks before stopping the four older
+     * tasks (provided that the cluster resources required to do this are available). The default value for
+     * <code>maximumPercent</code> is 200%.
      * </p>
      * <p>
      * When the service scheduler launches new tasks, it attempts to balance them across the Availability Zones in your
@@ -325,9 +333,9 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <note>
      * <p>
-     * If you terminate a running container instance with a connected Amazon ECS container agent, the agent
-     * automatically deregisters the instance from your cluster (stopped container instances or instances with
-     * disconnected agents are not automatically deregistered when terminated).
+     * If you terminate a running container instance, Amazon ECS automatically deregisters the instance from your
+     * cluster (stopped container instances or instances with disconnected agents are not automatically deregistered
+     * when terminated).
      * </p>
      * </note>
      * 
@@ -355,9 +363,9 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <note>
      * <p>
-     * If you terminate a running container instance with a connected Amazon ECS container agent, the agent
-     * automatically deregisters the instance from your cluster (stopped container instances or instances with
-     * disconnected agents are not automatically deregistered when terminated).
+     * If you terminate a running container instance, Amazon ECS automatically deregisters the instance from your
+     * cluster (stopped container instances or instances with disconnected agents are not automatically deregistered
+     * when terminated).
      * </p>
      * </note>
      * 

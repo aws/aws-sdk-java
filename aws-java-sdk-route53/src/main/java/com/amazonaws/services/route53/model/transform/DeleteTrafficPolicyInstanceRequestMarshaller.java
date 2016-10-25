@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -43,7 +43,7 @@ public class DeleteTrafficPolicyInstanceRequestMarshaller implements
     public Request<DeleteTrafficPolicyInstanceRequest> marshall(DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest) {
 
         if (deleteTrafficPolicyInstanceRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DeleteTrafficPolicyInstanceRequest> request = new DefaultRequest<DeleteTrafficPolicyInstanceRequest>(deleteTrafficPolicyInstanceRequest,

@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.fasterxml.jackson.core.Base64Variant;
 import com.fasterxml.jackson.core.JsonLocation;
 import com.fasterxml.jackson.core.JsonParseException;
@@ -269,7 +269,7 @@ final class IonParser extends JsonParser {
     public Number getNumberValue() throws IOException {
         NumberType numberType = getNumberType();
         if (numberType == null) {
-            throw new AmazonClientException(String.format("Unable to get number value for non-numeric token %s", reader.getType()));
+            throw new SdkClientException(String.format("Unable to get number value for non-numeric token %s", reader.getType()));
         }
         switch (numberType) {
             case BIG_DECIMAL:
@@ -279,7 +279,7 @@ final class IonParser extends JsonParser {
             case DOUBLE:
                 return reader.doubleValue();
             default:
-                throw new AmazonClientException(String.format("Unable to get number value for number type %s", numberType));
+                throw new SdkClientException(String.format("Unable to get number value for number type %s", numberType));
         }
     }
 
@@ -340,7 +340,7 @@ final class IonParser extends JsonParser {
             case TIMESTAMP:
                 return reader.timestampValue().dateValue();
             default:
-                throw new AmazonClientException(String.format("Cannot return embedded object for Ion type %s", currentType));
+                throw new SdkClientException(String.format("Cannot return embedded object for Ion type %s", currentType));
         }
     }
 
@@ -393,7 +393,7 @@ final class IonParser extends JsonParser {
             case TIMESTAMP:
                 return JsonToken.VALUE_EMBEDDED_OBJECT;
             default:
-                throw new AmazonClientException(String.format("Unhandled Ion type %s", currentType));
+                throw new SdkClientException(String.format("Unhandled Ion type %s", currentType));
         }
     }
 }

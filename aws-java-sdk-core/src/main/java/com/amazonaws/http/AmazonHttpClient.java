@@ -16,6 +16,7 @@ package com.amazonaws.http;
 
 import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.AmazonWebServiceRequest;
@@ -611,7 +612,7 @@ public class AmazonHttpClient {
          */
         private Response<Output> execute() {
             if (executionContext == null) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Internal SDK Error: No execution context parameter specified.");
             }
             try {
@@ -693,7 +694,7 @@ public class AmazonHttpClient {
          *
          * @return {@link ClientExecutionTimeoutException} if the {@link InterruptedException} was
          * caused by the {@link ClientExecutionTimer}. Otherwise re-interrupts the current thread
-         * and returns an {@link AmazonClientException} wrapping an {@link InterruptedException}
+         * and returns a {@link SdkClientException} wrapping an {@link InterruptedException}
          */
         private RuntimeException handleInterruptedException(InterruptedException e) {
             if (e instanceof SdkInterruptedException) {
@@ -952,19 +953,19 @@ public class AmazonHttpClient {
                 } catch (IOException ioe) {
                     captureExceptionMetrics(ioe);
                     awsRequestMetrics.addProperty(Field.AWSRequestID, null);
-                    AmazonClientException ace = new AmazonClientException(
+                    SdkClientException sdkClientException = new SdkClientException(
                             "Unable to execute HTTP request: " + ioe.getMessage(), ioe);
-                    boolean willRetry = shouldRetry(execOneParams, ace);
+                    boolean willRetry = shouldRetry(execOneParams, sdkClientException);
                     if (log.isTraceEnabled()) {
-                        log.trace(ace.getMessage() + (willRetry ? " Request will be retried." : ""), ioe);
+                        log.trace(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""), ioe);
                     } else if (log.isDebugEnabled()) {
-                        log.trace(ace.getMessage() + (willRetry ? " Request will be retried." : ""));
+                        log.trace(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""));
                     }
                     if (!willRetry) {
-                        throw lastReset(ace);
+                        throw lastReset(sdkClientException);
                     }
                     // Cache the retryable exception
-                    execOneParams.retriedException = ace;
+                    execOneParams.retriedException = sdkClientException;
                 } catch (RuntimeException e) {
                     throw lastReset(captureExceptionMetrics(e));
                 } catch (Error e) {
@@ -1323,7 +1324,7 @@ public class AmazonHttpClient {
          * @return True if the failed request should be retried.
          */
         private boolean shouldRetry(ExecOneRequestParams params,
-                                    AmazonClientException exception) {
+                                    SdkClientException exception) {
             final int retries = params.requestCount - 1;
             final RetryPolicy retryPolicy = config.getRetryPolicy();
             final HttpRequestBase method = params.apacheRequest;
@@ -1449,7 +1450,7 @@ public class AmazonHttpClient {
                         "Unable to unmarshall response (" + e.getMessage() + "). Response Code: "
                         + httpResponse.getStatusCode() + ", Response Text: " +
                         httpResponse.getStatusText();
-                throw new AmazonClientException(errorMessage, e);
+                throw new SdkClientException(errorMessage, e);
             }
         }
 
@@ -1520,7 +1521,7 @@ public class AmazonHttpClient {
                                           "). Response Code: "
                                           + (statusLine == null ? "None" : statusCode) +
                                           ", Response Text: " + reasonPhrase;
-                    throw new AmazonClientException(errorMessage, e);
+                    throw new SdkClientException(errorMessage, e);
                 }
             }
 
@@ -1590,7 +1591,7 @@ public class AmazonHttpClient {
          * @param retryPolicy       The retry policy configured in this httpClientSettings client.
          */
         private void doPauseBeforeRetry(AmazonWebServiceRequest originalRequest,
-                                        AmazonClientException previousException,
+                                        SdkClientException previousException,
                                         int requestCount,
                                         RetryPolicy retryPolicy,
                                         ExecOneRequestParams execOneParams) throws
@@ -1706,7 +1707,7 @@ public class AmazonHttpClient {
              * Last delay between retries
              */
             long lastBackoffDelay = 0;
-            AmazonClientException retriedException; // last retryable exception
+            SdkClientException retriedException; // last retryable exception
             HttpRequestBase apacheRequest;
             org.apache.http.HttpResponse apacheResponse;
             URI redirectedURI;

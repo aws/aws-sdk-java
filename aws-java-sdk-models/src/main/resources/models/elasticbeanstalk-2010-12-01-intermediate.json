@@ -135,6 +135,7 @@
     "packagePath" : "com/amazonaws/services/elasticbeanstalk",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "Elastic Beanstalk",
     "serviceFullName" : "AWS Elastic Beanstalk",
     "serviceName" : "Elastic Beanstalk",

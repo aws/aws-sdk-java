@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/elasticsearch",
     "protocol" : "rest-json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Elasticsearch Service",
     "serviceName" : "Amazon Elasticsearch Service",

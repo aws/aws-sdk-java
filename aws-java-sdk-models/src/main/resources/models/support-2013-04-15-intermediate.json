@@ -68,6 +68,7 @@
     "packagePath" : "com/amazonaws/services/support",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Support",
     "serviceName" : "AWS Support",

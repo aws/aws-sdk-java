@@ -15,7 +15,7 @@
 package com.amazonaws.regions;
 
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.auth.profile.internal.AllProfiles;
 import com.amazonaws.auth.profile.internal.AwsProfileNameLoader;
@@ -54,7 +54,7 @@ public class AwsProfileRegionProvider extends AwsRegionProvider {
     }
 
     @Override
-    public String getRegion() throws AmazonClientException {
+    public String getRegion() throws SdkClientException {
         File configFile = locationProvider.getLocation();
         if (configFile != null && configFile.exists()) {
             BasicProfile profile = loadProfile(configFile);

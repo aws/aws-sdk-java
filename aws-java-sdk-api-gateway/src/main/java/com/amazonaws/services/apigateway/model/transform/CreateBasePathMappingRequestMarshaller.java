@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -52,7 +52,7 @@ public class CreateBasePathMappingRequestMarshaller implements Marshaller<Reques
     public Request<CreateBasePathMappingRequest> marshall(CreateBasePathMappingRequest createBasePathMappingRequest) {
 
         if (createBasePathMappingRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<CreateBasePathMappingRequest> request = new DefaultRequest<CreateBasePathMappingRequest>(createBasePathMappingRequest, "AmazonApiGateway");
@@ -90,7 +90,7 @@ public class CreateBasePathMappingRequestMarshaller implements Marshaller<Reques
                 request.addHeader("Content-Type", protocolFactory.getContentType());
             }
         } catch (Throwable t) {
-            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

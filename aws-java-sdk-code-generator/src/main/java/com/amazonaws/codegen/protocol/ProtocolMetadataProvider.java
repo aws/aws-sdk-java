@@ -71,7 +71,8 @@ public interface ProtocolMetadataProvider {
     String getBaseExceptionFqcn();
 
     /**
-     * @return True if the protocol supports generation of an async client. False if not.
+     * @return The fully qualified class name of the base request class.
      */
-    boolean hasAsyncClient();
+    String getRequestBaseFqcn();
+
 }

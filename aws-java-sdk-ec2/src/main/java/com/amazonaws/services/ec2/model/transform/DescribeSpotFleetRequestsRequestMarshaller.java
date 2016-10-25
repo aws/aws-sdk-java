@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class DescribeSpotFleetRequestsRequestMarshaller implements Marshaller<Re
     public Request<DescribeSpotFleetRequestsRequest> marshall(DescribeSpotFleetRequestsRequest describeSpotFleetRequestsRequest) {
 
         if (describeSpotFleetRequestsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DescribeSpotFleetRequestsRequest> request = new DefaultRequest<DescribeSpotFleetRequestsRequest>(describeSpotFleetRequestsRequest, "AmazonEC2");

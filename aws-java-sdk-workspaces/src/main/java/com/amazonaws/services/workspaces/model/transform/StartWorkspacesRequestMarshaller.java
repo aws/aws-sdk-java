@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -44,7 +44,7 @@ public class StartWorkspacesRequestMarshaller implements Marshaller<Request<Star
     public Request<StartWorkspacesRequest> marshall(StartWorkspacesRequest startWorkspacesRequest) {
 
         if (startWorkspacesRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<StartWorkspacesRequest> request = new DefaultRequest<StartWorkspacesRequest>(startWorkspacesRequest, "AmazonWorkspaces");
@@ -80,7 +80,7 @@ public class StartWorkspacesRequestMarshaller implements Marshaller<Request<Star
             request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

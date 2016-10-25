@@ -42,7 +42,7 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
@@ -75,14 +75,14 @@ public class XmlResponsesSaxParser {
     /**
      * Constructs the XML SAX parser.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
-    public XmlResponsesSaxParser() throws AmazonClientException {
+    public XmlResponsesSaxParser() throws SdkClientException {
         // Ensure we can load the XML Reader.
         try {
             xr = XMLReaderFactory.createXMLReader();
         } catch (SAXException e) {
-            throw new AmazonClientException("Couldn't initialize a SAX driver to create an XMLReader", e);
+            throw new SdkClientException("Couldn't initialize a SAX driver to create an XMLReader", e);
         }
     }
 
@@ -96,7 +96,7 @@ public class XmlResponsesSaxParser {
      *
      * @throws IOException
      *             on error reading from the input stream (ie connection reset)
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             on error with malformed XML, etc
      */
     protected void parseXmlInputStream(DefaultHandler handler, InputStream inputStream)
@@ -124,7 +124,7 @@ public class XmlResponsesSaxParser {
                     log.error("Unable to close response InputStream up after XML parse failure", e);
                 }
             }
-            throw new AmazonClientException("Failed to parse XML document with handler "
+            throw new SdkClientException("Failed to parse XML document with handler "
                 + handler.getClass(), t);
         }
     }
@@ -182,7 +182,7 @@ public class XmlResponsesSaxParser {
                         log.error("Unable to close response InputStream after failure sanitizing XML document", e);
                     }
                 }
-                throw new AmazonClientException("Failed to sanitize XML document destined for handler "
+                throw new SdkClientException("Failed to sanitize XML document destined for handler "
                     + handler.getClass(), t);
             }
             return sanitizedInputStream;
@@ -262,7 +262,7 @@ public class XmlResponsesSaxParser {
      *            XML data input stream.
      * @return the XML handler object populated with data parsed from the XML
      *         stream.
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public ListBucketHandler parseListBucketObjectsResponse(InputStream inputStream, final boolean shouldSDKDecodeResponse)
             throws IOException {
@@ -279,7 +279,7 @@ public class XmlResponsesSaxParser {
      *            XML data input stream.
      * @return the XML handler object populated with data parsed from the XML
      *         stream.
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public ListObjectsV2Handler parseListObjectsV2Response(InputStream inputStream, final boolean shouldSDKDecodeResponse)
             throws IOException {
@@ -296,7 +296,7 @@ public class XmlResponsesSaxParser {
      *            XML data input stream.
      * @return the XML handler object populated with data parsed from the XML
      *         stream.
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public ListVersionsHandler parseListVersionsResponse(InputStream inputStream, final boolean shouldSDKDecodeResponse)
             throws IOException {
@@ -312,7 +312,7 @@ public class XmlResponsesSaxParser {
      *            XML data input stream.
      * @return the XML handler object populated with data parsed from the XML
      *         stream.
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public ListAllMyBucketsHandler parseListMyBucketsResponse(InputStream inputStream)
             throws IOException {
@@ -330,7 +330,7 @@ public class XmlResponsesSaxParser {
      * @return the XML handler object populated with data parsed from the XML
      *         stream.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public AccessControlListHandler parseAccessControlListResponse(InputStream inputStream)
             throws IOException {
@@ -348,7 +348,7 @@ public class XmlResponsesSaxParser {
      * @return the XML handler object populated with data parsed from the XML
      *         stream.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public BucketLoggingConfigurationHandler parseLoggingStatusResponse(InputStream inputStream)
             throws IOException {
@@ -463,7 +463,7 @@ public class XmlResponsesSaxParser {
      * @return true if the bucket's is configured as Requester Pays, false if it
      *         is configured as Owner pays.
      *
-     * @throws AmazonClientException
+     * @throws SdkClientException
      */
     public RequestPaymentConfigurationHandler parseRequestPaymentConfigurationResponse(InputStream inputStream)
             throws IOException {

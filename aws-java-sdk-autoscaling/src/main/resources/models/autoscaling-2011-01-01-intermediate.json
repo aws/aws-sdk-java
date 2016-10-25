@@ -107,6 +107,7 @@
     "packagePath" : "com/amazonaws/services/autoscaling",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Auto Scaling",
     "serviceName" : "Auto Scaling",

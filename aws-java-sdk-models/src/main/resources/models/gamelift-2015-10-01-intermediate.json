@@ -53,6 +53,7 @@
     "packagePath" : "com/amazonaws/services/gamelift",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon GameLift",
     "serviceName" : "Amazon GameLift",

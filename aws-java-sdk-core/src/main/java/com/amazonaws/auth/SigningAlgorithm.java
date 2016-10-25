@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 import javax.crypto.Mac;
 import java.security.NoSuchAlgorithmException;
@@ -34,7 +34,7 @@ public enum SigningAlgorithm {
                 try {
                     return Mac.getInstance(algorithmName);
                 } catch (NoSuchAlgorithmException e) {
-                    throw new AmazonClientException("Unable to fetch Mac instance for Algorithm "
+                    throw new SdkClientException("Unable to fetch Mac instance for Algorithm "
                             + algorithmName + e.getMessage(),e);
 
                 }

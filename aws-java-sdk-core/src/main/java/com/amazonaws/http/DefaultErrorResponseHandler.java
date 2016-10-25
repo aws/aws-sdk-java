@@ -14,7 +14,7 @@
  */
 package com.amazonaws.http;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.transform.Unmarshaller;
@@ -68,7 +68,7 @@ public class DefaultErrorResponseHandler implements HttpResponseHandler<AmazonSe
     public AmazonServiceException handle(HttpResponse errorResponse) throws Exception {
         AmazonServiceException ase = createAse(errorResponse);
         if (ase == null) {
-            throw new AmazonClientException("Unable to unmarshall error response from service");
+            throw new SdkClientException("Unable to unmarshall error response from service");
         }
         ase.setHttpHeaders(errorResponse.getHeaders());
         if (StringUtils.isNullOrEmpty(ase.getErrorCode())) {

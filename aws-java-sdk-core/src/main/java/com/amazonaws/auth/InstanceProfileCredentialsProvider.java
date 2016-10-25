@@ -21,10 +21,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import com.amazonaws.AmazonClientException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.CredentialsEndpointProvider;
 import com.amazonaws.internal.EC2CredentialsUtils;
 import com.amazonaws.util.EC2MetadataUtils;
@@ -137,7 +138,7 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
             String securityCredentialsList = EC2CredentialsUtils.getInstance().readResource(new URI(host + EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE));
             String[] securityCredentials = securityCredentialsList.trim().split("\n");
             if (securityCredentials.length == 0) {
-                throw new AmazonClientException("Unable to load credentials path");
+                throw new SdkClientException("Unable to load credentials path");
             }
 
             return new URI(host + EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE + securityCredentials[0]);

@@ -126,6 +126,7 @@
     "packagePath" : "com/amazonaws/services/inspector",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Inspector",
     "serviceName" : "Amazon Inspector",

@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
@@ -119,7 +119,7 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
             try {
                 partETags.add(future.get());
             } catch (Exception e) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Unable to complete multi-part upload. Individual part upload failed : "
                                 + e.getCause().getMessage(), e.getCause());
             }

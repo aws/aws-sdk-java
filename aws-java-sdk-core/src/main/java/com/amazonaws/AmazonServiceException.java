@@ -19,7 +19,7 @@ import com.amazonaws.util.StringUtils;
 import java.util.Map;
 
 /**
- * Extension of AmazonClientException that represents an error response returned
+ * Extension of SdkClientException that represents an error response returned
  * by an Amazon web service. Receiving an exception of this type indicates that
  * the caller's request was correctly transmitted to the service, but for some
  * reason, the service was not able to process it, and returned an error
@@ -31,7 +31,7 @@ import java.util.Map;
  * if the caller's request was invalid, or the service encountered an error on
  * the server side while processing it.
  */
-public class AmazonServiceException extends AmazonClientException {
+public class AmazonServiceException extends SdkClientException {
     private static final long serialVersionUID = 1L;
 
     /**

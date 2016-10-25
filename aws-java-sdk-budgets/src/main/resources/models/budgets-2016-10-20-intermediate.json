@@ -66,6 +66,7 @@
     "packagePath" : "com/amazonaws/services/budgets",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "AWSBudgets",
     "serviceFullName" : "AWS Budgets",
     "serviceName" : "AWSBudgets",

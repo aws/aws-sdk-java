@@ -38,7 +38,7 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.kms.AWSKMSClient;
 import com.amazonaws.services.kms.model.DecryptRequest;
@@ -260,13 +260,13 @@ final class ContentCryptoMaterial {
             // Do envelope decryption with private key from key pair
             kek = materials.getKeyPair().getPrivate();
             if (kek == null) {
-                throw new AmazonClientException("Key encrypting key not available");
+                throw new SdkClientException("Key encrypting key not available");
             }
         } else {
             // Do envelope decryption with symmetric key
             kek = materials.getSymmetricKey();
             if (kek == null) {
-                throw new AmazonClientException("Key encrypting key not available");
+                throw new SdkClientException("Key encrypting key not available");
             }
         }
 
@@ -362,13 +362,13 @@ final class ContentCryptoMaterial {
         if (b64key == null) {
             b64key = userMeta.get(Headers.CRYPTO_KEY);
             if (b64key == null)
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Content encrypting key not found.");
         }
         byte[] cekWrapped = Base64.decode(b64key);
         byte[] iv = Base64.decode(userMeta.get(Headers.CRYPTO_IV));
         if (cekWrapped == null || iv == null) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Content encrypting key or IV not found.");
         }
         // Material description
@@ -389,7 +389,7 @@ final class ContentCryptoMaterial {
                 : kekMaterialAccessor.getEncryptionMaterials(merged)
                 ;
             if (materials == null) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Unable to retrieve the client encryption materials");
             }
         }
@@ -410,7 +410,7 @@ final class ContentCryptoMaterial {
                 String s = userMeta.get(Headers.CRYPTO_TAG_LENGTH);
                 int tagLenActual = Integer.parseInt(s);
                 if (tagLenExpected != tagLenActual) {
-                    throw new AmazonClientException("Unsupported tag length: "
+                    throw new SdkClientException("Unsupported tag length: "
                             + tagLenActual + ", expected: " + tagLenExpected);
                 }
             }
@@ -478,13 +478,13 @@ final class ContentCryptoMaterial {
         if (b64key == null) {
             b64key = instFile.get(Headers.CRYPTO_KEY);
             if (b64key == null)
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Content encrypting key not found.");
         }
         byte[] cekWrapped = Base64.decode(b64key);
         byte[] iv = Base64.decode(instFile.get(Headers.CRYPTO_IV));
         if (cekWrapped == null || iv == null) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Necessary encryption info not found in the instruction file "
                             + instFile);
         }
@@ -505,7 +505,7 @@ final class ContentCryptoMaterial {
                 ? null
                 : kekMaterialAccessor.getEncryptionMaterials(merged);
             if (materials == null) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                     "Unable to retrieve the encryption materials that originally "
                             + "encrypted object corresponding to instruction file "
                             + instFile);
@@ -528,7 +528,7 @@ final class ContentCryptoMaterial {
                 String s = instFile.get(Headers.CRYPTO_TAG_LENGTH);
                 int tagLenActual = Integer.parseInt(s);
                 if (tagLenExpected != tagLenActual) {
-                    throw new AmazonClientException("Unsupported tag length: "
+                    throw new SdkClientException("Unsupported tag length: "
                             + tagLenActual + ", expected: " + tagLenExpected);
                 }
             }
@@ -642,7 +642,7 @@ final class ContentCryptoMaterial {
         }
         EncryptionMaterials newKEK = accessor.getEncryptionMaterials(newKEKMatDesc);
         if (newKEK == null) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                 "No material available with the description "
                     + newKEKMatDesc
                     + " from the encryption material provider");

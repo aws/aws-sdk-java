@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class RestoreDBClusterFromS3RequestMarshaller implements Marshaller<Reque
     public Request<RestoreDBClusterFromS3Request> marshall(RestoreDBClusterFromS3Request restoreDBClusterFromS3Request) {
 
         if (restoreDBClusterFromS3Request == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<RestoreDBClusterFromS3Request> request = new DefaultRequest<RestoreDBClusterFromS3Request>(restoreDBClusterFromS3Request, "AmazonRDS");

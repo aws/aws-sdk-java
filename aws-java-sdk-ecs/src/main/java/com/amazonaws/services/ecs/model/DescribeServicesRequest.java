@@ -29,7 +29,7 @@ public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceReque
     private String cluster;
     /**
      * <p>
-     * A list of services to describe.
+     * A list of services to describe. You may specify up to 10 services to describe in a single operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> services;
@@ -82,10 +82,10 @@ public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of services to describe.
+     * A list of services to describe. You may specify up to 10 services to describe in a single operation.
      * </p>
      * 
-     * @return A list of services to describe.
+     * @return A list of services to describe. You may specify up to 10 services to describe in a single operation.
      */
 
     public java.util.List<String> getServices() {
@@ -97,11 +97,11 @@ public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of services to describe.
+     * A list of services to describe. You may specify up to 10 services to describe in a single operation.
      * </p>
      * 
      * @param services
-     *        A list of services to describe.
+     *        A list of services to describe. You may specify up to 10 services to describe in a single operation.
      */
 
     public void setServices(java.util.Collection<String> services) {
@@ -115,7 +115,7 @@ public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of services to describe.
+     * A list of services to describe. You may specify up to 10 services to describe in a single operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -124,7 +124,7 @@ public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param services
-     *        A list of services to describe.
+     *        A list of services to describe. You may specify up to 10 services to describe in a single operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of services to describe.
+     * A list of services to describe. You may specify up to 10 services to describe in a single operation.
      * </p>
      * 
      * @param services
-     *        A list of services to describe.
+     *        A list of services to describe. You may specify up to 10 services to describe in a single operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

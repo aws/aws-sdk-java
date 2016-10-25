@@ -86,6 +86,7 @@
     "packagePath" : "com/amazonaws/services/config",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "Config Service",
     "serviceFullName" : "AWS Config",
     "serviceName" : "Config Service",

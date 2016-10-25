@@ -17,7 +17,7 @@ package com.amazonaws.auth;
 import static com.amazonaws.SDKGlobalConfiguration.ACCESS_KEY_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.SECRET_KEY_SYSTEM_PROPERTY;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.util.StringUtils;
 
 /**
@@ -38,7 +38,7 @@ public class SystemPropertiesCredentialsProvider implements AWSCredentialsProvid
         if (StringUtils.isNullOrEmpty(accessKey)
                 || StringUtils.isNullOrEmpty(secretKey)) {
 
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to load AWS credentials from Java system "
                     + "properties (" + ACCESS_KEY_SYSTEM_PROPERTY + " and "
                     + SECRET_KEY_SYSTEM_PROPERTY + ")");

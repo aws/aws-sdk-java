@@ -14,7 +14,7 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.internal.XmlWriter;
 import com.amazonaws.services.s3.model.DeleteObjectsRequest;
 import com.amazonaws.services.s3.model.DeleteObjectsRequest.KeyVersion;
@@ -32,7 +32,7 @@ public class MultiObjectDeleteXmlFactory {
      * @param rq
      *            The {@link DeleteObjectsRequest}
      */
-    public byte[] convertToXmlByteArray(DeleteObjectsRequest rq) throws AmazonClientException {
+    public byte[] convertToXmlByteArray(DeleteObjectsRequest rq) throws SdkClientException {
         
         XmlWriter xml = new XmlWriter();
         xml.start("Delete");

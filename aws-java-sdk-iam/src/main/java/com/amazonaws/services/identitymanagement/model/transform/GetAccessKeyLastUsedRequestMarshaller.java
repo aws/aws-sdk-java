@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class GetAccessKeyLastUsedRequestMarshaller implements Marshaller<Request
     public Request<GetAccessKeyLastUsedRequest> marshall(GetAccessKeyLastUsedRequest getAccessKeyLastUsedRequest) {
 
         if (getAccessKeyLastUsedRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<GetAccessKeyLastUsedRequest> request = new DefaultRequest<GetAccessKeyLastUsedRequest>(getAccessKeyLastUsedRequest, "AmazonIdentityManagement");

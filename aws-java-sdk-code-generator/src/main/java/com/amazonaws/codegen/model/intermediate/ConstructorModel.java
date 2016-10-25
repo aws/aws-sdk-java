@@ -15,12 +15,12 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import com.amazonaws.codegen.internal.Constants;
+import com.amazonaws.codegen.internal.DocumentationUtils;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
-import com.amazonaws.codegen.internal.Constants;
-import com.amazonaws.codegen.internal.DocumentationUtils;
 
 public class ConstructorModel extends DocumentationModel {
 

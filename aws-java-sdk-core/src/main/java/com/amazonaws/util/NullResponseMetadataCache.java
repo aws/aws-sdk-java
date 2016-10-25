@@ -15,7 +15,7 @@
  */
 package com.amazonaws.util;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.annotation.SdkInternalApi;
 
@@ -33,7 +33,7 @@ public class NullResponseMetadataCache implements MetadataCache {
 
     @Override
     public ResponseMetadata get(Object obj) {
-        throw new AmazonClientException("Response metadata caching is not enabled");
+        throw new SdkClientException("Response metadata caching is not enabled");
     }
 
 }

@@ -15,15 +15,15 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.amazonaws.codegen.model.intermediate.customization.ShapeCustomizationInfo;
 import com.amazonaws.util.StringUtils;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ShapeModel extends DocumentationModel {
 
@@ -80,6 +80,11 @@ public class ShapeModel extends DocumentationModel {
 
     public String getType() {
         return type;
+    }
+
+    @JsonIgnore
+    public ShapeType getShapeType() {
+        return ShapeType.fromValue(type);
     }
 
     @JsonIgnore

@@ -69,6 +69,7 @@
     "packagePath" : "com/amazonaws/services/securitytoken",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "AWS STS",
     "serviceFullName" : "AWS Security Token Service",
     "serviceName" : "AWS STS",

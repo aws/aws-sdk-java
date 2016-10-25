@@ -15,9 +15,10 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
-import static com.amazonaws.codegen.internal.Constants.SMOKE_TESTS_DIR_NAME;
 import com.amazonaws.codegen.protocol.ProtocolMetadataProvider;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import static com.amazonaws.codegen.internal.Constants.SMOKE_TESTS_DIR_NAME;
 
 
 public class Metadata {
@@ -406,8 +407,8 @@ public class Metadata {
         return protocolMetadataProvider.getUnmarshallerClassSuffix();
     }
 
-    public boolean hasAsyncClient() {
-        return protocolMetadataProvider.hasAsyncClient();
+    public String getRequestBaseFqcn() {
+        return protocolMetadataProvider.getRequestBaseFqcn();
     }
 
 }

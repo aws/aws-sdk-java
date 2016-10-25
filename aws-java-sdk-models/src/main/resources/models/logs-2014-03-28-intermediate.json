@@ -99,6 +99,7 @@
     "packagePath" : "com/amazonaws/services/logs",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon CloudWatch Logs",
     "serviceName" : "Amazon CloudWatch Logs",

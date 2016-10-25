@@ -15,9 +15,9 @@
 
 package com.amazonaws.codegen.model.service;
 
-import java.util.Map;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Map;
 
 public class ServiceModel {
 

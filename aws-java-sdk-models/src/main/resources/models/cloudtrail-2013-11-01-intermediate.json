@@ -65,6 +65,7 @@
     "packagePath" : "com/amazonaws/services/cloudtrail",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "CloudTrail",
     "serviceFullName" : "AWS CloudTrail",
     "serviceName" : "CloudTrail",

@@ -14,7 +14,7 @@
  */
 package com.amazonaws.regions;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 /**
  * Interface for providing AWS region information. Implementations are free to use any strategy for
@@ -25,6 +25,6 @@ public abstract class AwsRegionProvider {
     /**
      * @return Region name to use or null if region information is not available.
      */
-    public abstract String getRegion() throws AmazonClientException;
+    public abstract String getRegion() throws SdkClientException;
 
 }

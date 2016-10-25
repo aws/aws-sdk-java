@@ -15,15 +15,15 @@
 
 package com.amazonaws.codegen.customization.processors;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 import com.amazonaws.codegen.model.intermediate.MemberModel;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.service.ServiceModel;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 final public class SendEmptyAutoConstructedListAsEmptyListProcessor implements
         CodegenCustomizationProcessor {

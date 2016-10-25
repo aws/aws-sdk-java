@@ -19,7 +19,7 @@ import java.io.InputStream;
 import java.security.MessageDigest;
 import java.util.Arrays;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.SdkDigestInputStream;
 
 /**
@@ -76,7 +76,7 @@ public class DigestValidationInputStream extends SdkDigestInputStream {
         if (expectedHash != null && !digestValidated ) {
             digestValidated = true;
             if (!Arrays.equals(digest.digest(), expectedHash)) {
-                throw new AmazonClientException("Unable to verify integrity of data download.  "
+                throw new SdkClientException("Unable to verify integrity of data download.  "
                         + "Client calculated content hash didn't match hash calculated by Amazon S3.  "
                         + "The data may be corrupt.");
             }

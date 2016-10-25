@@ -14,7 +14,7 @@
  */
 package com.amazonaws.regions;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.AWSCredentialsProviderChain;
 
 import org.apache.commons.logging.Log;
@@ -40,7 +40,7 @@ public class AwsRegionProviderChain extends AwsRegionProvider {
     }
 
     @Override
-    public String getRegion() throws AmazonClientException {
+    public String getRegion() throws SdkClientException {
         for (AwsRegionProvider provider : providers) {
             try {
                 final String region = provider.getRegion();
@@ -53,6 +53,6 @@ public class AwsRegionProviderChain extends AwsRegionProvider {
                           ": " + e.getMessage());
             }
         }
-        throw new AmazonClientException("Unable to load region information from any provider in the chain");
+        throw new SdkClientException("Unable to load region information from any provider in the chain");
     }
 }

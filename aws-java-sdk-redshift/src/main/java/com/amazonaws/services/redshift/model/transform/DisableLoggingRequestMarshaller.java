@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class DisableLoggingRequestMarshaller implements Marshaller<Request<Disab
     public Request<DisableLoggingRequest> marshall(DisableLoggingRequest disableLoggingRequest) {
 
         if (disableLoggingRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DisableLoggingRequest> request = new DefaultRequest<DisableLoggingRequest>(disableLoggingRequest, "AmazonRedshift");

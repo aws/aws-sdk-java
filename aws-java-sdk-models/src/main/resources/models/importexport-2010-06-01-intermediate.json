@@ -59,6 +59,7 @@
     "packagePath" : "com/amazonaws/services/importexport",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Import/Export",
     "serviceName" : "AWS Import/Export",

@@ -15,10 +15,6 @@
 
 package com.amazonaws.codegen.customization.processors;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
 import com.amazonaws.codegen.model.config.customization.SimpleMethodFormsWrapper;
 import com.amazonaws.codegen.model.intermediate.ArgumentModel;
@@ -27,6 +23,10 @@ import com.amazonaws.codegen.model.intermediate.MemberModel;
 import com.amazonaws.codegen.model.intermediate.OperationModel;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.service.ServiceModel;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This processor adds the simple methods to each OperationModel from the customization config.

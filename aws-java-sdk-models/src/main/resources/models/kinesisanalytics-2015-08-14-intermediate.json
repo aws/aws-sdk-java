@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/kinesisanalytics",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "Kinesis Analytics",
     "serviceFullName" : "Amazon Kinesis Analytics",
     "serviceName" : "Kinesis Analytics",

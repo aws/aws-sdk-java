@@ -21,7 +21,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.util.ClassLoaderHelper;
 import com.amazonaws.util.StringUtils;
 
@@ -92,7 +92,7 @@ public class HandlerChainFactory {
                         throw new IllegalStateException();
                     }
                 } else {
-                    throw new AmazonClientException(
+                    throw new SdkClientException(
                         "Unable to instantiate request handler chain for client.  "
                                 + "Listed request handler ('"
                                 + requestHandlerClassName + "') "
@@ -101,7 +101,7 @@ public class HandlerChainFactory {
                 }
             }
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to instantiate request handler chain for client: "
+            throw new SdkClientException("Unable to instantiate request handler chain for client: "
                     + e.getMessage(), e);
         } finally {
             try {

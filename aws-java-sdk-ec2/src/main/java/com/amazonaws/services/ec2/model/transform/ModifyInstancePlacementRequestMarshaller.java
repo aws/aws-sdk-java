@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class ModifyInstancePlacementRequestMarshaller implements Marshaller<Requ
     public Request<ModifyInstancePlacementRequest> marshall(ModifyInstancePlacementRequest modifyInstancePlacementRequest) {
 
         if (modifyInstancePlacementRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ModifyInstancePlacementRequest> request = new DefaultRequest<ModifyInstancePlacementRequest>(modifyInstancePlacementRequest, "AmazonEC2");

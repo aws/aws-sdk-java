@@ -18,7 +18,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Date;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.CredentialsEndpointProvider;
 import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
@@ -72,7 +72,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
         public URI getCredentialsEndpoint() throws URISyntaxException {
             String path = System.getenv(ECS_CONTAINER_CREDENTIALS_PATH);
             if (path == null) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "The environment variable " + ECS_CONTAINER_CREDENTIALS_PATH + " is empty");
             }
 

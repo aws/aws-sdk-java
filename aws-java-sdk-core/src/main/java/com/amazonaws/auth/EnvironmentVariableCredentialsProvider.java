@@ -20,7 +20,7 @@ import static com.amazonaws.SDKGlobalConfiguration.ALTERNATE_SECRET_KEY_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.SECRET_KEY_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.AWS_SESSION_TOKEN_ENV_VAR;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.util.StringUtils;
 
 /**
@@ -49,7 +49,7 @@ public class EnvironmentVariableCredentialsProvider implements AWSCredentialsPro
         if (StringUtils.isNullOrEmpty(accessKey)
                 || StringUtils.isNullOrEmpty(secretKey)) {
 
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to load AWS credentials from environment variables " +
                     "(" + ACCESS_KEY_ENV_VAR + " (or " + ALTERNATE_ACCESS_KEY_ENV_VAR + ") and " +
                     SECRET_KEY_ENV_VAR + " (or " + ALTERNATE_SECRET_KEY_ENV_VAR + "))");

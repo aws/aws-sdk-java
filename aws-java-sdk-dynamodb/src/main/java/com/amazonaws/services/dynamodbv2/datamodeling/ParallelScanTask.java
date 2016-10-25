@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
@@ -103,7 +104,7 @@ public class ParallelScanTask {
         }
     }
 
-    public List<ScanResult> getNextBatchOfScanResults() throws AmazonClientException {
+    public List<ScanResult> getNextBatchOfScanResults() throws SdkClientException {
         /**
          * Kick-off all the parallel scan tasks.
          */
@@ -117,7 +118,7 @@ public class ParallelScanTask {
                 try {
                     segmentScanStates.wait();
                 } catch (InterruptedException ie) {
-                    throw new AmazonClientException("Parallel scan interrupted by other thread.", ie);
+                    throw new SdkClientException("Parallel scan interrupted by other thread.", ie);
                 }
             }
             /**
@@ -136,7 +137,7 @@ public class ParallelScanTask {
              * Assert: Should never see any task in state of "Scanning" when starting a new batch.
              */
             if (currentSegmentState == SegmentScanState.Scanning){
-                throw new AmazonClientException("Should never see a 'Scanning' state when starting parallel scans.");
+                throw new SdkClientException("Should never see a 'Scanning' state when starting parallel scans.");
             }
             /**
              * Skip any failed or completed segment, and clear the corresponding cached result.
@@ -166,7 +167,7 @@ public class ParallelScanTask {
                                 return scanNextPageOfSegment(currentSegment, false);
                             }
                             else {
-                                throw new AmazonClientException("Should not start a new future task");
+                                throw new SdkClientException("Should not start a new future task");
                             }
                         } catch (Exception e) {
                             synchronized (segmentScanStates) {
@@ -194,16 +195,16 @@ public class ParallelScanTask {
             if (currentSegmentState == SegmentScanState.Failed) {
                 try {
                     segmentScanFutureTasks.get(segment).get();
-                    throw new AmazonClientException("No Exception found in the failed scan task.");
+                    throw new SdkClientException("No Exception found in the failed scan task.");
                 } catch (ExecutionException ee) {
                     if ( ee.getCause() instanceof AmazonClientException) {
-                        throw (AmazonClientException) (ee.getCause());
+                        throw (SdkClientException) (ee.getCause());
                     } else {
-                        throw new AmazonClientException("Internal error during the scan on segment #" + segment + ".",
+                        throw new SdkClientException("Internal error during the scan on segment #" + segment + ".",
                                 ee.getCause());
                     }
                 } catch (Exception e) {
-                    throw new AmazonClientException("Error during the scan on segment #" + segment + ".", e);
+                    throw new SdkClientException("Error during the scan on segment #" + segment + ".", e);
                 }
             }
             /**
@@ -216,7 +217,7 @@ public class ParallelScanTask {
             }
             else if (currentSegmentState == SegmentScanState.Waiting
                     || currentSegmentState == SegmentScanState.Scanning){
-                throw new AmazonClientException("Should never see a 'Scanning' or 'Waiting' state when marshalling parallel scan results.");
+                throw new SdkClientException("Should never see a 'Scanning' or 'Waiting' state when marshalling parallel scan results.");
             }
         }
         return scanResults;

@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/cognitoidp",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Cognito Identity Provider",
     "serviceName" : "Amazon Cognito Identity Provider",

@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/kinesisfirehose",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "Firehose",
     "serviceFullName" : "Amazon Kinesis Firehose",
     "serviceName" : "Firehose",

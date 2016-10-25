@@ -17,7 +17,7 @@ package com.amazonaws.partitions;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.partitions.model.Partitions;
 import com.amazonaws.regions.RegionMetadata;
@@ -79,7 +79,7 @@ public class PartitionsLoader {
         } else {
             stream = classLoader.getResourceAsStream(PARTITIONS_RESOURCE_PATH);
             if (stream == null) {
-                throw new AmazonClientException("Unable to load parition metadata from " + PARTITIONS_RESOURCE_PATH);
+                throw new SdkClientException("Unable to load parition metadata from " + PARTITIONS_RESOURCE_PATH);
             }
             return new PartitionMetadataProvider(loadPartitionFromStream(stream, PARTITIONS_RESOURCE_PATH).getPartitions());
         }
@@ -92,7 +92,7 @@ public class PartitionsLoader {
             return mapper.readValue(stream, Partitions.class);
 
         } catch (IOException e) {
-            throw new AmazonClientException("Error while loading partitions " +
+            throw new SdkClientException("Error while loading partitions " +
                     "file from " + location, e);
         } finally {
             IOUtils.closeQuietly(stream, null);

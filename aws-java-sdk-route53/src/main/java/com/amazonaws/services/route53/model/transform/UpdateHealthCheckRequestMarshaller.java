@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -42,7 +42,7 @@ public class UpdateHealthCheckRequestMarshaller implements Marshaller<Request<Up
     public Request<UpdateHealthCheckRequest> marshall(UpdateHealthCheckRequest updateHealthCheckRequest) {
 
         if (updateHealthCheckRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<UpdateHealthCheckRequest> request = new DefaultRequest<UpdateHealthCheckRequest>(updateHealthCheckRequest, "AmazonRoute53");
@@ -156,7 +156,7 @@ public class UpdateHealthCheckRequestMarshaller implements Marshaller<Request<Up
                 request.addHeader("Content-Type", "application/xml");
             }
         } catch (Throwable t) {
-            throw new AmazonClientException("Unable to marshall request to XML: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to XML: " + t.getMessage(), t);
         }
 
         return request;

@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -44,7 +44,7 @@ public class ListKeysRequestMarshaller implements Marshaller<Request<ListKeysReq
     public Request<ListKeysRequest> marshall(ListKeysRequest listKeysRequest) {
 
         if (listKeysRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ListKeysRequest> request = new DefaultRequest<ListKeysRequest>(listKeysRequest, "AWSKMS");
@@ -73,7 +73,7 @@ public class ListKeysRequestMarshaller implements Marshaller<Request<ListKeysReq
             request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

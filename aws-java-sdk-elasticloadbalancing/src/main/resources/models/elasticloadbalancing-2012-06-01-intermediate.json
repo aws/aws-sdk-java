@@ -140,6 +140,7 @@
     "packagePath" : "com/amazonaws/services/elasticloadbalancing",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Elastic Load Balancing",
     "serviceName" : "Elastic Load Balancing",

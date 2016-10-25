@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -44,7 +44,7 @@ public class GetXssMatchSetRequestMarshaller implements Marshaller<Request<GetXs
     public Request<GetXssMatchSetRequest> marshall(GetXssMatchSetRequest getXssMatchSetRequest) {
 
         if (getXssMatchSetRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<GetXssMatchSetRequest> request = new DefaultRequest<GetXssMatchSetRequest>(getXssMatchSetRequest, "AWSWAF");
@@ -70,7 +70,7 @@ public class GetXssMatchSetRequestMarshaller implements Marshaller<Request<GetXs
             request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

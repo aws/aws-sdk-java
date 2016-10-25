@@ -14,7 +14,7 @@
  */
 package com.amazonaws.event;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 /**
  * Listener interface for transfer progress events.
@@ -103,11 +103,11 @@ public interface ProgressListener {
 
         /**
          * Throws the underlying exception, if any, as an
-         * {@link AmazonClientException}; or do nothing otherwise.
+         * {@link SdkClientException}; or do nothing otherwise.
          */
         public void throwExceptionIfAny() {
             if (cause != null)
-                throw new AmazonClientException(cause);
+                throw new SdkClientException(cause);
         }
 
         /**

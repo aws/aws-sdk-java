@@ -68,6 +68,7 @@
     "packagePath" : "com/amazonaws/services/machinelearning",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Machine Learning",
     "serviceName" : "Amazon Machine Learning",

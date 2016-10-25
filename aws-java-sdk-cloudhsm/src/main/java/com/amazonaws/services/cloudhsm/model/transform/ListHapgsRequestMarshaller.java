@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -44,7 +44,7 @@ public class ListHapgsRequestMarshaller implements Marshaller<Request<ListHapgsR
     public Request<ListHapgsRequest> marshall(ListHapgsRequest listHapgsRequest) {
 
         if (listHapgsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ListHapgsRequest> request = new DefaultRequest<ListHapgsRequest>(listHapgsRequest, "AWSCloudHSM");
@@ -70,7 +70,7 @@ public class ListHapgsRequestMarshaller implements Marshaller<Request<ListHapgsR
             request.addHeader("Content-Length", Integer.toString(content.length));
             request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
-            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

@@ -14,7 +14,7 @@
  */
 package com.amazonaws.regions;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.config.Builder;
@@ -67,7 +67,7 @@ public class LegacyRegionXmlMetadataBuilder implements Builder<RegionMetadata> {
      * {@link #REGIONS_FILE_OVERRIDE} property.
      * Returns null if no such property exists.
      *
-     * @throws AmazonClientException if any error occurs while loading the
+     * @throws SdkClientException if any error occurs while loading the
      *                               metadata file.
      */
     private RegionMetadata loadFromSystemProperty() {
@@ -79,7 +79,7 @@ public class LegacyRegionXmlMetadataBuilder implements Builder<RegionMetadata> {
                 return LegacyRegionXmlLoadUtils.load(new File
                         (overrideFilePath));
             } catch (IOException exception) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Error parsing region metadata from " + overrideFilePath,
                         exception);
             }
@@ -92,14 +92,14 @@ public class LegacyRegionXmlMetadataBuilder implements Builder<RegionMetadata> {
      * {@link #REGIONS_FILE_OVERRIDE} property.
      * Returns null if no such property exists.
      *
-     * @throws AmazonClientException if any error occurs while loading the
+     * @throws SdkClientException if any error occurs while loading the
      *                               metadata file.
      */
     private RegionMetadata loadFromStream(final InputStream stream) {
         try {
             return LegacyRegionXmlLoadUtils.load(stream);
         } catch (IOException exception) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Error parsing region metadata from input stream",
                     exception);
         }

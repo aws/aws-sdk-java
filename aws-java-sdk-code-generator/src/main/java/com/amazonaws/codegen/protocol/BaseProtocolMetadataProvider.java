@@ -69,10 +69,10 @@ public abstract class BaseProtocolMetadataProvider implements ProtocolMetadataPr
     }
 
     /**
-     * All AWS clients generate async variants of the service clients.
+     * @return The default base request class name for AWS clients.
      */
     @Override
-    public boolean hasAsyncClient() {
-        return true;
+    public String getRequestBaseFqcn() {
+        return "com.amazonaws.AmazonWebServiceRequest";
     }
 }

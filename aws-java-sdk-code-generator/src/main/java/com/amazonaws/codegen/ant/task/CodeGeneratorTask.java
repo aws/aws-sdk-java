@@ -16,11 +16,6 @@
 
 package com.amazonaws.codegen.ant.task;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
 import com.amazonaws.codegen.internal.Jackson;
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.BasicCodeGenConfig;
@@ -28,6 +23,11 @@ import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.ServiceExamples;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Waiters;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Ant task interface to generate the Java client code from a C2J model

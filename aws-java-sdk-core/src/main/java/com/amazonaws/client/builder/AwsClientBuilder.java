@@ -14,7 +14,7 @@
  */
 package com.amazonaws.client.builder;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.ClientConfigurationFactory;
@@ -320,7 +320,7 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
             if (region != null) {
                 client.setRegion(RegionUtils.getRegion(region));
             } else {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Unable to find a region via the region provider chain. " +
                         "Must provide an explicit region in the builder or setup environment to supply a region.");
             }

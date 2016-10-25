@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/certificatemanager",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "ACM",
     "serviceFullName" : "AWS Certificate Manager",
     "serviceName" : "ACM",

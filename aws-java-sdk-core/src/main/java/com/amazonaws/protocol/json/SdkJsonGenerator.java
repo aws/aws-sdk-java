@@ -14,7 +14,7 @@
  */
 package com.amazonaws.protocol.json;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
@@ -43,7 +43,7 @@ public class SdkJsonGenerator implements StructuredJsonGenerator {
     /**
      * Indicates an issue writing JSON content.
      */
-    public static class JsonGenerationException extends AmazonClientException {
+    public static class JsonGenerationException extends SdkClientException {
 
         public JsonGenerationException(Throwable t) {
             super(t);

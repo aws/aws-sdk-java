@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class DeleteAttributesRequestMarshaller implements Marshaller<Request<Del
     public Request<DeleteAttributesRequest> marshall(DeleteAttributesRequest deleteAttributesRequest) {
 
         if (deleteAttributesRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DeleteAttributesRequest> request = new DefaultRequest<DeleteAttributesRequest>(deleteAttributesRequest, "AmazonSimpleDB");

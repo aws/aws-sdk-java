@@ -51,6 +51,7 @@
     "packagePath" : "com/amazonaws/services/applicationdiscovery",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Application Discovery Service",
     "serviceName" : "AWS Application Discovery Service",

@@ -14,29 +14,31 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.annotation.SdkInternalApi;
+
 /**
  * Base exception class for any errors that occur while attempting to use an AWS
  * client from AWS SDK for Java to make service calls to Amazon Web Services.
- * 
- * Error responses from services will be handled as AmazonServiceExceptions. 
+ *
+ * Error responses from services will be handled as AmazonServiceExceptions.
  * This class is primarily for errors that occur when unable to get a response
  * from a service, or when the client is unable to parse the response from a
  * service. For example, if a caller tries to use a client to make a service
  * call, but no network connection is present, an AmazonClientException will be
  * thrown to indicate that the client wasn't able to successfully make the
  * service call, and no information from the service is available.
- * 
- * Note : If the SDK is able to parse the response; but doesn't recognize the 
+ *
+ * Note : If the SDK is able to parse the response; but doesn't recognize the
  * error code from the service, an AmazonServiceException is thrown
- * 
+ *
  * Callers should typically deal with exceptions through AmazonServiceException,
  * which represent error responses returned by services. AmazonServiceException
  * has much more information available for callers to appropriately deal with
  * different types of errors that can occur.
- * 
+ *
  * @see AmazonServiceException
  */
-public class AmazonClientException extends RuntimeException {
+public class AmazonClientException extends SdkBaseException {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -71,8 +73,9 @@ public class AmazonClientException extends RuntimeException {
      * Default is true, but subclass may override.
      *
      * This method is internal to the SDK. Users should not depend on this method to decide
-     * if an exception from an AWS service should be retried.
+     * if an exception from a service should be retried.
      */
+    @SdkInternalApi
     public boolean isRetryable() {
         return true;
     }

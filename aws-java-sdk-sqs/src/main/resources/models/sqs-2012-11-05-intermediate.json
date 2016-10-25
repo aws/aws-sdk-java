@@ -162,6 +162,7 @@
     "packagePath" : "com/amazonaws/services/sqs",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "Amazon SQS",
     "serviceFullName" : "Amazon Simple Queue Service",
     "serviceName" : "Amazon SQS",

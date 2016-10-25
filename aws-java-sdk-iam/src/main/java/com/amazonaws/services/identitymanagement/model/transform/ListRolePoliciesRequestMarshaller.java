@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class ListRolePoliciesRequestMarshaller implements Marshaller<Request<Lis
     public Request<ListRolePoliciesRequest> marshall(ListRolePoliciesRequest listRolePoliciesRequest) {
 
         if (listRolePoliciesRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ListRolePoliciesRequest> request = new DefaultRequest<ListRolePoliciesRequest>(listRolePoliciesRequest, "AmazonIdentityManagement");

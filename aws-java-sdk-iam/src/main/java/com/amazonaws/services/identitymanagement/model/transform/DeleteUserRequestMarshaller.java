@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class DeleteUserRequestMarshaller implements Marshaller<Request<DeleteUse
     public Request<DeleteUserRequest> marshall(DeleteUserRequest deleteUserRequest) {
 
         if (deleteUserRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DeleteUserRequest> request = new DefaultRequest<DeleteUserRequest>(deleteUserRequest, "AmazonIdentityManagement");

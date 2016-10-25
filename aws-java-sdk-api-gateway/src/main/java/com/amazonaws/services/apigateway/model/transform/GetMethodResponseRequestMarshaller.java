@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -52,7 +52,7 @@ public class GetMethodResponseRequestMarshaller implements Marshaller<Request<Ge
     public Request<GetMethodResponseRequest> marshall(GetMethodResponseRequest getMethodResponseRequest) {
 
         if (getMethodResponseRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<GetMethodResponseRequest> request = new DefaultRequest<GetMethodResponseRequest>(getMethodResponseRequest, "AmazonApiGateway");

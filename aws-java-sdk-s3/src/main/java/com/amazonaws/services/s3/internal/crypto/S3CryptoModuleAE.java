@@ -30,7 +30,7 @@ import java.io.OutputStream;
 import java.util.Collections;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.internal.SdkFilterInputStream;
@@ -192,7 +192,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         // Check if encrypted info is in an instruction file
         final S3ObjectWrapper ifile = fetchInstructionFile(id, instFileSuffix);
         if (ifile == null) {
-            throw new AmazonClientException("Instruction file with suffix "
+            throw new SdkClientException("Instruction file with suffix "
                     + instFileSuffix + " is not found for " + retrieved);
         }
         try {
@@ -200,7 +200,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
                 return decipherWithInstructionFile(req, desiredRange,
                         cryptoRange, new S3ObjectWrapper(retrieved, id), ifile);
             } else {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Invalid Instruction file with suffix "
                                 + instFileSuffix + " detected for " + retrieved);
             }
@@ -320,7 +320,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             s3object.setObjectContent(new S3ObjectInputStream(adjustedRangeContents, objectContent.getHttpRequest()));
             return s3object;
         } catch (IOException e) {
-            throw new AmazonClientException("Error adjusting output to desired byte range: " + e.getMessage());
+            throw new SdkClientException("Error adjusting output to desired byte range: " + e.getMessage());
         }
     }
 
@@ -343,7 +343,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
                 outputStream.write(buffer, 0, bytesRead);
             }
         } catch (IOException e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to store object contents to disk: " + e.getMessage(), e);
         } finally {
             closeQuietly(outputStream, log);

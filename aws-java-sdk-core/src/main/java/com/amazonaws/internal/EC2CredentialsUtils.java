@@ -22,7 +22,7 @@ import java.net.URI;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.retry.internal.CredentialsEndpointRetryParameters;
@@ -70,7 +70,7 @@ public final class EC2CredentialsUtils {
      * @throws IOException
      *             If any problems were encountered while connecting to the
      *             service for the requested resource path.
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the requested service is not found.
      */
     public String readResource(URI endpoint) throws IOException {
@@ -94,7 +94,7 @@ public final class EC2CredentialsUtils {
      * @throws IOException
      *             If any problems were encountered while connecting to the
      *             service for the requested resource path.
-     * @throws AmazonClientException
+     * @throws SdkClientException
      *             If the requested service is not found.
      */
     public String readResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy) throws IOException {
@@ -112,7 +112,7 @@ public final class EC2CredentialsUtils {
                     return IOUtils.toString(inputStream);
                 } else if (statusCode == HttpURLConnection.HTTP_NOT_FOUND) {
                     // This is to preserve existing behavior of EC2 Instance metadata service.
-                    throw new AmazonClientException("The requested metadata is not found at " + connection.getURL());
+                    throw new SdkClientException("The requested metadata is not found at " + connection.getURL());
                 } else {
                     if (!retryPolicy.shouldRetry(retriesAttempted++, CredentialsEndpointRetryParameters.builder().withStatusCode(statusCode).build())) {
                         inputStream = connection.getErrorStream();

@@ -14,9 +14,8 @@
  */
 package com.amazonaws.services.s3;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -547,7 +546,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
      */
     @Override
     public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest)
-            throws AmazonClientException, AmazonServiceException {
+            throws SdkClientException, AmazonServiceException {
         return crypto.uploadPartSecurely(uploadPartRequest);
     }
 
@@ -627,7 +626,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
 
         @Override
         public UploadPartResult uploadPart(UploadPartRequest req)
-                throws AmazonClientException, AmazonServiceException {
+                throws SdkClientException, AmazonServiceException {
             return AmazonS3EncryptionClient.super.uploadPart(req);
         }
 

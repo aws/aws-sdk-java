@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth.profile.internal.securitytoken;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -53,13 +53,13 @@ public class STSProfileCredentialsServiceProvider implements AWSCredentialsProvi
                 STS_CREDENTIALS_SERVICE = (ProfileCredentialsService) Class.forName(CLASS_NAME)
                         .newInstance();
             } catch (ClassNotFoundException ex) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "To use assume role profiles the aws-java-sdk-sts module must be on the class path.",
                         ex);
             } catch (InstantiationException ex) {
-                throw new AmazonClientException("Failed to instantiate " + CLASS_NAME, ex);
+                throw new SdkClientException("Failed to instantiate " + CLASS_NAME, ex);
             } catch (IllegalAccessException ex) {
-                throw new AmazonClientException("Failed to instantiate " + CLASS_NAME, ex);
+                throw new SdkClientException("Failed to instantiate " + CLASS_NAME, ex);
             }
         }
         return STS_CREDENTIALS_SERVICE;

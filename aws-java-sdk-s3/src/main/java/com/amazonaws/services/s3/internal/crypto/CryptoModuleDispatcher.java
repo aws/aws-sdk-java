@@ -21,7 +21,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.services.kms.AWSKMSClient;
@@ -126,7 +126,7 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
     @Override
     public CompleteMultipartUploadResult completeMultipartUploadSecurely(
             CompleteMultipartUploadRequest req)
-                    throws AmazonClientException, AmazonServiceException {
+                    throws SdkClientException, AmazonServiceException {
         return defaultCryptoMode == EncryptionOnly 
              ? eo.completeMultipartUploadSecurely(req)
              : ae.completeMultipartUploadSecurely(req)
@@ -144,7 +144,7 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
     @Override
     public InitiateMultipartUploadResult initiateMultipartUploadSecurely(
             InitiateMultipartUploadRequest req)
-                    throws AmazonClientException, AmazonServiceException {
+                    throws SdkClientException, AmazonServiceException {
         return defaultCryptoMode == EncryptionOnly 
              ? eo.initiateMultipartUploadSecurely(req)
              : ae.initiateMultipartUploadSecurely(req)
@@ -163,7 +163,7 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
      */
     @Override
     public UploadPartResult uploadPartSecurely(UploadPartRequest req)
-        throws AmazonClientException, AmazonServiceException {
+        throws SdkClientException, AmazonServiceException {
         return defaultCryptoMode == EncryptionOnly
              ? eo.uploadPartSecurely(req)
              : ae.uploadPartSecurely(req)

@@ -65,6 +65,7 @@
     "packagePath" : "com/amazonaws/services/workspaces",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon WorkSpaces",
     "serviceName" : "Amazon WorkSpaces",

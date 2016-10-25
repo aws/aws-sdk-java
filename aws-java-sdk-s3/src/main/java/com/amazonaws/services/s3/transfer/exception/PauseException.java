@@ -14,13 +14,13 @@
  */
 package com.amazonaws.services.s3.transfer.exception;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.transfer.PauseStatus;
 
 /**
  * Failed to complete a pause operation.
  */
-public class PauseException extends AmazonClientException {
+public class PauseException extends SdkClientException {
 
     private static final long serialVersionUID = 1L;
 

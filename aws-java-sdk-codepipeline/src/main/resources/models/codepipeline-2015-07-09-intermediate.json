@@ -51,6 +51,7 @@
     "packagePath" : "com/amazonaws/services/codepipeline",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "CodePipeline",
     "serviceFullName" : "AWS CodePipeline",
     "serviceName" : "CodePipeline",

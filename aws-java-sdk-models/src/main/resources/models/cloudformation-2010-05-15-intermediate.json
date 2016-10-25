@@ -83,6 +83,7 @@
     "packagePath" : "com/amazonaws/services/cloudformation",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS CloudFormation",
     "serviceName" : "AWS CloudFormation",

@@ -140,7 +140,10 @@
         }, {
           "location" : "/macros/marshaller/common/IdempotencyTokenMacro.ftl",
           "importAsNamespace" : "IdempotencyTokenMacro"
-        }
+        }, {
+         "location": "/macros/marshaller/common/DefaultRequestCreation.ftl",
+         "importAsNamespace": "DefaultRequestCreation"
+       }
     ]
   },
   "exceptionClass": {

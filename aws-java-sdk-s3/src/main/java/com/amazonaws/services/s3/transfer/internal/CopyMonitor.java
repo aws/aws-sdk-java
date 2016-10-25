@@ -23,7 +23,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
@@ -138,7 +138,7 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
         } catch (CancellationException e) {
             transfer.setState(TransferState.Canceled);
             publishProgress(listener, ProgressEventType.TRANSFER_CANCELED_EVENT);
-            throw new AmazonClientException("Upload canceled");
+            throw new SdkClientException("Upload canceled");
         } catch (Exception e) {
             transfer.setState(TransferState.Failed);
             publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);

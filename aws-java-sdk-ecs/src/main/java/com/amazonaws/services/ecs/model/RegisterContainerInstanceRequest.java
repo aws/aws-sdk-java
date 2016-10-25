@@ -23,7 +23,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container instance.
-     * If you do not specify a cluster, the default cluster is assumed..
+     * If you do not specify a cluster, the default cluster is assumed.
      * </p>
      */
     private String cluster;
@@ -71,12 +71,12 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container instance.
-     * If you do not specify a cluster, the default cluster is assumed..
+     * If you do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container
-     *        instance. If you do not specify a cluster, the default cluster is assumed..
+     *        instance. If you do not specify a cluster, the default cluster is assumed.
      */
 
     public void setCluster(String cluster) {
@@ -86,11 +86,11 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container instance.
-     * If you do not specify a cluster, the default cluster is assumed..
+     * If you do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @return The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container
-     *         instance. If you do not specify a cluster, the default cluster is assumed..
+     *         instance. If you do not specify a cluster, the default cluster is assumed.
      */
 
     public String getCluster() {
@@ -100,12 +100,12 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container instance.
-     * If you do not specify a cluster, the default cluster is assumed..
+     * If you do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container
-     *        instance. If you do not specify a cluster, the default cluster is assumed..
+     *        instance. If you do not specify a cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

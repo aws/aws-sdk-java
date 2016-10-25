@@ -38,9 +38,8 @@ public class RemoveExceptionMessagePropertyProcessor implements CodegenCustomiza
     @Override
     public void postprocess(IntermediateModel intermediateModel) {
 
-        for (ShapeModel shapeModel : intermediateModel
-                .getShapes().values()) {
-            if (ShapeType.Exception.getValue().equals(shapeModel.getType())) {
+        for (ShapeModel shapeModel : intermediateModel.getShapes().values()) {
+            if (ShapeType.Exception == shapeModel.getShapeType()) {
                 shapeModel.removeMemberByC2jName("message", IGNORE_CASE);
             }
         }

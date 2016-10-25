@@ -17,7 +17,7 @@ package com.amazonaws;
 /**
  * Stream reset failure.
  */
-public class ResetException extends AmazonClientException {
+public class ResetException extends SdkClientException {
     private static final long serialVersionUID = 1L;
     private String extraInfo;
 

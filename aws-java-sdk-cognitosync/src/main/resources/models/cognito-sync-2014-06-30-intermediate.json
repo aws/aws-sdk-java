@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/cognitosync",
     "protocol" : "rest-json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Cognito Sync",
     "serviceName" : "Amazon Cognito Sync",

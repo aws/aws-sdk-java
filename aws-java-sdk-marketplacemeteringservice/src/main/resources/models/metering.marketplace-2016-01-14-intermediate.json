@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/marketplacemetering",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWSMarketplace Metering",
     "serviceName" : "AWSMarketplace Metering",

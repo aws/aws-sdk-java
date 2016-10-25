@@ -83,6 +83,7 @@
     "packagePath" : "com/amazonaws/services/kinesis",
     "protocol" : "cbor",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "Kinesis",
     "serviceFullName" : "Amazon Kinesis",
     "serviceName" : "Kinesis",

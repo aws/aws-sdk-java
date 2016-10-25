@@ -15,12 +15,6 @@
 
 package com.amazonaws.codegen;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
 import com.amazonaws.codegen.model.intermediate.ExceptionModel;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 import com.amazonaws.codegen.model.intermediate.MemberModel;
@@ -28,6 +22,12 @@ import com.amazonaws.codegen.model.intermediate.OperationModel;
 import com.amazonaws.codegen.model.intermediate.ReturnTypeModel;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.intermediate.VariableModel;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Removes the un-used shapes from the intermediate model. This is done by

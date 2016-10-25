@@ -151,6 +151,8 @@
           }
         },
         "budgets": {
+          "partitionEndpoint": "aws-global",
+          "isRegionalized": false,
           "endpoints": {
             "aws-global": {
               "hostname": "budgets.amazonaws.com",
@@ -245,7 +247,8 @@
           "endpoints": {
             "us-east-1": {},
             "us-east-2": {},
-            "us-west-2": {}
+            "us-west-2": {},
+            "ap-southeast-1": {}
           }
         },
         "cognito-identity": {
@@ -763,8 +766,7 @@
         },
         "marketplacecommerceanalytics": {
           "endpoints": {
-            "us-east-1": {},
-            "us-east-2": {}
+            "us-east-1": {}
           }
         },
         "metering.marketplace": {
@@ -989,6 +991,13 @@
             "eu-west-1": {}
           }
         },
+        "sms": {
+          "endpoints": {
+            "us-east-1": {},
+            "eu-west-1": {},
+            "ap-southeast-2": {}
+          }
+        },
         "sns": {
           "defaults": {
             "protocols": [
@@ -1156,7 +1165,8 @@
             "ap-northeast-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
-            "eu-west-1": {}
+            "eu-west-1": {},
+            "eu-central-1": {}
           }
         }
       }

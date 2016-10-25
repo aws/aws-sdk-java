@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -42,7 +42,7 @@ public class UpdateHostedZoneCommentRequestMarshaller implements Marshaller<Requ
     public Request<UpdateHostedZoneCommentRequest> marshall(UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest) {
 
         if (updateHostedZoneCommentRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<UpdateHostedZoneCommentRequest> request = new DefaultRequest<UpdateHostedZoneCommentRequest>(updateHostedZoneCommentRequest, "AmazonRoute53");
@@ -77,7 +77,7 @@ public class UpdateHostedZoneCommentRequestMarshaller implements Marshaller<Requ
                 request.addHeader("Content-Type", "application/xml");
             }
         } catch (Throwable t) {
-            throw new AmazonClientException("Unable to marshall request to XML: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to XML: " + t.getMessage(), t);
         }
 
         return request;

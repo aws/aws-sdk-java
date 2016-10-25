@@ -26,7 +26,7 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 /**
  * Cryptographic scheme for content encrypt/decryption.
@@ -189,7 +189,7 @@ abstract class ContentCryptoScheme {
         } catch (Exception e) {
             throw e instanceof RuntimeException
                 ? (RuntimeException) e
-                : new AmazonClientException(
+                : new SdkClientException(
                     "Unable to build cipher: "
                         + e.getMessage()
                         + "\nMake sure you have the JCE unlimited strength policy files installed and "

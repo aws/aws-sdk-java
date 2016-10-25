@@ -22,7 +22,7 @@ import java.util.Date;
 import java.util.TreeMap;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
@@ -936,7 +936,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
             try {
                 range = new Long[] { Long.parseLong(tokens[1]), Long.parseLong(tokens[2]) };
             } catch (NumberFormatException nfe) {
-                throw new AmazonClientException(
+                throw new SdkClientException(
                         "Unable to parse content range. Header 'Content-Range' has corrupted data" + nfe.getMessage(),
                         nfe);
             }

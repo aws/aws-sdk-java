@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 import java.util.Date;
 import java.util.Stack;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 /**
  * Utility for creating easily creating XML documents, one element at a time.
@@ -167,7 +167,7 @@ public class XMLWriter {
         try {
             writer.append(s);
         } catch (IOException e) {
-            throw new AmazonClientException("Unable to write XML document", e);
+            throw new SdkClientException("Unable to write XML document", e);
         }
     }
     

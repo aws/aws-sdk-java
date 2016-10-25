@@ -49,8 +49,8 @@
  * myUpload.addProgressListener(myProgressListener);
  *
  * // Or you can block the current thread and wait for your transfer to
- * // to complete.  If the transfer fails, this method will throw an
- * // AmazonClientException or AmazonServiceException detailing the reason.
+ * // to complete.  If the transfer fails, this method will throw a
+ * // SdkClientException or AmazonServiceException detailing the reason.
  * myUpload.waitForCompletion();
  * </pre>
  *

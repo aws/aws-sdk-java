@@ -15,7 +15,7 @@ package com.amazonaws.services.kinesisanalytics.model.transform;
 import java.util.Map;
 import java.util.List;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.kinesisanalytics.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
@@ -35,7 +35,7 @@ public class InputSchemaUpdateJsonMarshaller {
     public void marshall(InputSchemaUpdate inputSchemaUpdate, StructuredJsonGenerator jsonGenerator) {
 
         if (inputSchemaUpdate == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
@@ -64,7 +64,7 @@ public class InputSchemaUpdateJsonMarshaller {
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
-            throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
     }
 

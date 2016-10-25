@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.ReadLimitInfo;
 import com.amazonaws.SignableRequest;
 import com.amazonaws.auth.internal.AWS4SignerRequestParams;
@@ -521,7 +521,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
         try {
             payloadStream.reset();
         } catch (IOException e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to reset stream after calculating AWS4 signature",
                     e);
         }
@@ -570,7 +570,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
                 : PRESIGN_URL_MAX_EXPIRATION_SECONDS;
 
         if (expirationInSeconds > PRESIGN_URL_MAX_EXPIRATION_SECONDS) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Requests that are pre-signed by SigV4 algorithm are valid for at most 7 days. "
                             + "The expiration date set on the current request ["
                             + AWS4SignerUtils.formatTimestamp(expirationDate

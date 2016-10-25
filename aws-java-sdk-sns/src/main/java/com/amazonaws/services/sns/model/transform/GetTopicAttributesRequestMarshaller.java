@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class GetTopicAttributesRequestMarshaller implements Marshaller<Request<G
     public Request<GetTopicAttributesRequest> marshall(GetTopicAttributesRequest getTopicAttributesRequest) {
 
         if (getTopicAttributesRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<GetTopicAttributesRequest> request = new DefaultRequest<GetTopicAttributesRequest>(getTopicAttributesRequest, "AmazonSNS");

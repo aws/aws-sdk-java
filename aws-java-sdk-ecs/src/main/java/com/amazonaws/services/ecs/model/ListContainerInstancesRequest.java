@@ -23,7 +23,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to list. If
-     * you do not specify a cluster, the default cluster is assumed..
+     * you do not specify a cluster, the default cluster is assumed.
      * </p>
      */
     private String cluster;
@@ -57,12 +57,12 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to list. If
-     * you do not specify a cluster, the default cluster is assumed..
+     * you do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to
-     *        list. If you do not specify a cluster, the default cluster is assumed..
+     *        list. If you do not specify a cluster, the default cluster is assumed.
      */
 
     public void setCluster(String cluster) {
@@ -72,11 +72,11 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to list. If
-     * you do not specify a cluster, the default cluster is assumed..
+     * you do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @return The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to
-     *         list. If you do not specify a cluster, the default cluster is assumed..
+     *         list. If you do not specify a cluster, the default cluster is assumed.
      */
 
     public String getCluster() {
@@ -86,12 +86,12 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to list. If
-     * you do not specify a cluster, the default cluster is assumed..
+     * you do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
      *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to
-     *        list. If you do not specify a cluster, the default cluster is assumed..
+     *        list. If you do not specify a cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

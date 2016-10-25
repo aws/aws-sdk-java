@@ -17,7 +17,7 @@ package com.amazonaws.internal.http;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.protocol.json.JsonContent;
@@ -46,7 +46,7 @@ public class IonErrorCodeParser implements ErrorCodeParser {
         try {
             IonType type = reader.next();
             if (type != IonType.STRUCT) {
-                throw new AmazonClientException(String.format("Can only get error codes from structs (saw %s), request id %s", type, getRequestId(response)));
+                throw new SdkClientException(String.format("Can only get error codes from structs (saw %s), request id %s", type, getRequestId(response)));
             }
 
             boolean errorCodeSeen = false;
@@ -55,7 +55,7 @@ public class IonErrorCodeParser implements ErrorCodeParser {
             for (String annotation : annotations) {
                 if (annotation.startsWith(TYPE_PREFIX)) {
                     if (errorCodeSeen) {
-                        throw new AmazonClientException(String.format("Multiple error code annotations found for request id %s", getRequestId(response)));
+                        throw new SdkClientException(String.format("Multiple error code annotations found for request id %s", getRequestId(response)));
                     } else {
                         errorCodeSeen = true;
                         errorCode = annotation.substring(TYPE_PREFIX.length());

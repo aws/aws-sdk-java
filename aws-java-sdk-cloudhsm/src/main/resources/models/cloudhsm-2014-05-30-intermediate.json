@@ -103,6 +103,7 @@
     "packagePath" : "com/amazonaws/services/cloudhsm",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "CloudHSM",
     "serviceFullName" : "Amazon CloudHSM",
     "serviceName" : "CloudHSM",

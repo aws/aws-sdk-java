@@ -62,6 +62,7 @@
     "packagePath" : "com/amazonaws/services/route53domains",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Route 53 Domains",
     "serviceName" : "Amazon Route 53 Domains",

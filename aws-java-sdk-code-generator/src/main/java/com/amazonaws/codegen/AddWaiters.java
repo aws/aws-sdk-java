@@ -18,13 +18,14 @@ package com.amazonaws.codegen;
 import com.amazonaws.codegen.model.intermediate.AcceptorModel;
 import com.amazonaws.codegen.model.intermediate.OperationModel;
 import com.amazonaws.codegen.model.intermediate.WaiterDefinitionModel;
-import com.amazonaws.codegen.model.service.*;
+import com.amazonaws.codegen.model.service.Acceptor;
+import com.amazonaws.codegen.model.service.WaiterDefinition;
+import com.amazonaws.codegen.model.service.Waiters;
 import com.amazonaws.jmespath.JmesPathExpression;
 import com.amazonaws.util.IOUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;

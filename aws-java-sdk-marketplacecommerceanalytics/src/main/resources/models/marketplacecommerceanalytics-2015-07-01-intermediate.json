@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/marketplacecommerceanalytics",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Marketplace Commerce Analytics",
     "serviceName" : "AWS Marketplace Commerce Analytics",

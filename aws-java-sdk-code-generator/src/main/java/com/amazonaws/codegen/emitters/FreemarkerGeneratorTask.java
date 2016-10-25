@@ -15,19 +15,18 @@
 
 package com.amazonaws.codegen.emitters;
 
-import static com.amazonaws.codegen.internal.Utils.closeQuietly;
+import freemarker.template.Template;
 
 import java.io.IOException;
 import java.io.Writer;
-import java.util.concurrent.Callable;
 
-import freemarker.template.Template;
+import static com.amazonaws.codegen.internal.Utils.closeQuietly;
 
 /**
  * Runs the template on the data model. By default the freemarker template calls the flush at the
  * end of template processing.
  */
-public class ClassGeneratorTask implements Callable<Void> {
+public class FreemarkerGeneratorTask implements GeneratorTask {
 
     private final Writer writer;
 
@@ -35,8 +34,9 @@ public class ClassGeneratorTask implements Callable<Void> {
 
     private final Object dataModel;
 
-    public ClassGeneratorTask(String outputDirectory, String fileName,
-            Template template, Object dataModel) throws IOException {
+
+    public FreemarkerGeneratorTask(String outputDirectory, String fileName,
+                                   Template template, Object dataModel) throws IOException {
         if (dataModel == null) {
             throw new IllegalArgumentException("Data model cannot be null");
         }
@@ -46,8 +46,8 @@ public class ClassGeneratorTask implements Callable<Void> {
         this.dataModel = dataModel;
     }
 
-    protected ClassGeneratorTask(Writer writer,
-            Template template, Object data) throws IOException {
+    public FreemarkerGeneratorTask(Writer writer,
+                                   Template template, Object data) throws IOException {
         if (data == null) {
             throw new IllegalArgumentException("Data model cannot be null");
         }

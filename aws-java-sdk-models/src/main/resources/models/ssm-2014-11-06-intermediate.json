@@ -59,6 +59,7 @@
     "packagePath" : "com/amazonaws/services/simplesystemsmanagement",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "Amazon SSM",
     "serviceFullName" : "Amazon Simple Systems Management Service",
     "serviceName" : "Amazon SSM",

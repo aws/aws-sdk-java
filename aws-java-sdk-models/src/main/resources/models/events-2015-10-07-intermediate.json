@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/cloudwatchevents",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon CloudWatch Events",
     "serviceName" : "Amazon CloudWatch Events",

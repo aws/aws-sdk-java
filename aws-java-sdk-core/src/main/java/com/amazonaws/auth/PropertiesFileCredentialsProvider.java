@@ -14,7 +14,7 @@
  */
 package com.amazonaws.auth;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 import java.io.File;
 import java.io.IOException;
@@ -56,7 +56,7 @@ public class PropertiesFileCredentialsProvider implements
         try {
             return new PropertiesCredentials(new File(this.credentialsFilePath));
         } catch (IOException e) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to load AWS credentials from the "
                             + credentialsFilePath + " file", e);
         }

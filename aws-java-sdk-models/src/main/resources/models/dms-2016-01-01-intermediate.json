@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/databasemigrationservice",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Database Migration Service",
     "serviceName" : "AWS Database Migration Service",

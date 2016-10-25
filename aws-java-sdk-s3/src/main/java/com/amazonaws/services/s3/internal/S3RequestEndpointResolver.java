@@ -14,7 +14,7 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.internal.ServiceEndpointBuilder;
 import com.amazonaws.regions.Region;
@@ -102,7 +102,7 @@ public class S3RequestEndpointResolver {
             final Region r = RegionUtils.getRegion(regionString);
 
             if (r == null) {
-                throw new AmazonClientException("Not able to determine region" +
+                throw new SdkClientException("Not able to determine region" +
                         " for " + regionString + ".Please upgrade to a newer " +
                         "version of the SDK");
             }

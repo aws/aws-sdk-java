@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/waf",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "WAF",
     "serviceFullName" : "AWS WAF",
     "serviceName" : "WAF",

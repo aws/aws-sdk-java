@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -42,7 +42,7 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
     public Request<ChangeResourceRecordSetsRequest> marshall(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) {
 
         if (changeResourceRecordSetsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ChangeResourceRecordSetsRequest> request = new DefaultRequest<ChangeResourceRecordSetsRequest>(changeResourceRecordSetsRequest, "AmazonRoute53");
@@ -192,7 +192,7 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                 request.addHeader("Content-Type", "application/xml");
             }
         } catch (Throwable t) {
-            throw new AmazonClientException("Unable to marshall request to XML: " + t.getMessage(), t);
+            throw new SdkClientException("Unable to marshall request to XML: " + t.getMessage(), t);
         }
 
         return request;

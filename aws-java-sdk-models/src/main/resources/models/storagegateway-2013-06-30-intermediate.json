@@ -81,6 +81,7 @@
     "packagePath" : "com/amazonaws/services/storagegateway",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Storage Gateway",
     "serviceName" : "AWS Storage Gateway",

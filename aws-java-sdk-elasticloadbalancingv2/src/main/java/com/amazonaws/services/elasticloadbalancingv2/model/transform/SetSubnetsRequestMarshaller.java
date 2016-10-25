@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class SetSubnetsRequestMarshaller implements Marshaller<Request<SetSubnet
     public Request<SetSubnetsRequest> marshall(SetSubnetsRequest setSubnetsRequest) {
 
         if (setSubnetsRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<SetSubnetsRequest> request = new DefaultRequest<SetSubnetsRequest>(setSubnetsRequest, "AmazonElasticLoadBalancing");

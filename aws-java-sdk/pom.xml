@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.47-SNAPSHOT</version>
+    <version>1.11.47</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk</artifactId>
@@ -29,6 +29,12 @@
     </dependency>
     <dependency>
         <artifactId>aws-java-sdk-servicecatalog</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-servermigration</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
         <version>${awsjavasdk.version}</version>

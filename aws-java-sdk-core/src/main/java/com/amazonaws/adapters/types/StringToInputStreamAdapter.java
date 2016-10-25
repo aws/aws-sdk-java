@@ -18,7 +18,7 @@ package com.amazonaws.adapters.types;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.util.StringInputStream;
 
@@ -33,7 +33,7 @@ public class StringToInputStreamAdapter implements TypeAdapter<String, InputStre
         try {
             return new StringInputStream(source);
         } catch (UnsupportedEncodingException e) {
-            throw new AmazonClientException(e);
+            throw new SdkClientException(e);
         }
     }
 }

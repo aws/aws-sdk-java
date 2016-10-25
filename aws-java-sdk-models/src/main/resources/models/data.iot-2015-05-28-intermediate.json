@@ -55,6 +55,7 @@
     "packagePath" : "com/amazonaws/services/iotdata",
     "protocol" : "rest-json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS IoT Data Plane",
     "serviceName" : "AWS IoT Data Plane",

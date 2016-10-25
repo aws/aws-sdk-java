@@ -14,11 +14,6 @@
  */
 package com.amazonaws.codegen;
 
-import static com.amazonaws.codegen.internal.Constants.RESPONSE_CLASS_SUFFIX;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.OperationModel;
 import com.amazonaws.codegen.model.intermediate.ReturnTypeModel;
@@ -30,6 +25,11 @@ import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.Output;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.naming.NamingStrategy;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.amazonaws.codegen.internal.Constants.RESPONSE_CLASS_SUFFIX;
 
 public class AddEmptyOutputShape implements IntermediateModelShapeProcessor {
 

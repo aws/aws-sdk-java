@@ -20,7 +20,7 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 
 /**
  * {@link AWSCredentialsProvider} implementation that chains together multiple
@@ -128,7 +128,7 @@ public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
             }
         }
 
-        throw new AmazonClientException("Unable to load AWS credentials from any provider in the chain");
+        throw new SdkClientException("Unable to load AWS credentials from any provider in the chain");
     }
 
     public void refresh() {

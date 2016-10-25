@@ -15,9 +15,9 @@
 
 package com.amazonaws.codegen.model.config.customization;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.List;
 
 public class SimpleMethodFormsWrapper {
 

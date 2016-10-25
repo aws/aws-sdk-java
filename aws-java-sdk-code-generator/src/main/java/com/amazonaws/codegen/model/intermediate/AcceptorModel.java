@@ -19,6 +19,7 @@ import com.amazonaws.codegen.JmesPathCodeGenVisitor;
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.jmespath.JmesPathExpression;
 import com.fasterxml.jackson.databind.JsonNode;
+
 import org.apache.commons.lang3.StringEscapeUtils;
 
 import java.math.BigDecimal;

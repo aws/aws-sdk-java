@@ -15,7 +15,22 @@
 
 package com.amazonaws.codegen;
 
-import com.amazonaws.jmespath.*;
+import com.amazonaws.jmespath.Comparator;
+import com.amazonaws.jmespath.InvalidTypeException;
+import com.amazonaws.jmespath.JmesPathAndExpression;
+import com.amazonaws.jmespath.JmesPathField;
+import com.amazonaws.jmespath.JmesPathFilter;
+import com.amazonaws.jmespath.JmesPathFlatten;
+import com.amazonaws.jmespath.JmesPathFunction;
+import com.amazonaws.jmespath.JmesPathIdentity;
+import com.amazonaws.jmespath.JmesPathLiteral;
+import com.amazonaws.jmespath.JmesPathMultiSelectList;
+import com.amazonaws.jmespath.JmesPathNotExpression;
+import com.amazonaws.jmespath.JmesPathProjection;
+import com.amazonaws.jmespath.JmesPathSubExpression;
+import com.amazonaws.jmespath.JmesPathValueProjection;
+import com.amazonaws.jmespath.JmesPathVisitor;
+
 import org.apache.commons.lang3.StringEscapeUtils;
 
 import java.util.stream.Collectors;

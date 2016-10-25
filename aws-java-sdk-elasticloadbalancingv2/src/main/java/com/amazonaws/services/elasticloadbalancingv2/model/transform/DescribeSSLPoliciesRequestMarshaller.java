@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
@@ -34,7 +34,7 @@ public class DescribeSSLPoliciesRequestMarshaller implements Marshaller<Request<
     public Request<DescribeSSLPoliciesRequest> marshall(DescribeSSLPoliciesRequest describeSSLPoliciesRequest) {
 
         if (describeSSLPoliciesRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DescribeSSLPoliciesRequest> request = new DefaultRequest<DescribeSSLPoliciesRequest>(describeSSLPoliciesRequest, "AmazonElasticLoadBalancing");

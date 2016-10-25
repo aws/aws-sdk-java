@@ -146,6 +146,7 @@
     "packagePath" : "com/amazonaws/services/cloudfront",
     "protocol" : "rest-xml",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
     "serviceAbbreviation" : "CloudFront",
     "serviceFullName" : "Amazon CloudFront",
     "serviceName" : "CloudFront",

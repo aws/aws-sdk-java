@@ -14,7 +14,7 @@
  */
 package com.amazonaws.profile.path;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 
 import java.io.File;
@@ -35,7 +35,7 @@ public abstract class AwsDirectoryBasePathProvider implements AwsProfileFileLoca
     private String getHomeDirectory() {
         String userHome = System.getProperty("user.home");
         if (userHome == null) {
-            throw new AmazonClientException(
+            throw new SdkClientException(
                     "Unable to load AWS profiles: " + "'user.home' System property is not set.");
         }
         return userHome;
