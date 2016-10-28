@@ -39,10 +39,8 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JsonNode> {
     private final String handledErrorCode;
 
     /**
-     * @param exceptionClass
-     *            Exception class this unmarshaller will attempt to deserialize error response into
-     * @param handledErrorCode
-     *            AWS error code that this unmarshaller handles. Pass null to handle all exceptions
+     * @param exceptionClass   Exception class this unmarshaller will attempt to deserialize error response into
+     * @param handledErrorCode AWS error code that this unmarshaller handles. Pass null to handle all exceptions
      */
     public JsonErrorUnmarshaller(Class<? extends AmazonServiceException> exceptionClass, String handledErrorCode) {
         super(exceptionClass);
@@ -55,8 +53,7 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JsonNode> {
     }
 
     /**
-     * @param actualErrorCode
-     *            Actual AWS error code found in the error response.
+     * @param actualErrorCode Actual AWS error code found in the error response.
      * @return True if the actualErrorCode can be handled by this unmarshaller, false otherwise
      */
     public boolean matchErrorCode(String actualErrorCode) {

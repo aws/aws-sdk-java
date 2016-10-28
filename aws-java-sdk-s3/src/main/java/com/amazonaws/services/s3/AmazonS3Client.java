@@ -216,6 +216,7 @@ import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.Base16;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.BinaryUtils;
+import com.amazonaws.util.CredentialUtils;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.LengthCheckInputStream;
@@ -2717,9 +2718,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             // If we have a signer which knows how to presign requests,
             // delegate directly to it.
             ((Presigner) signer).presignRequest(
-                request,
-                awsCredentialsProvider.getCredentials(),
-                req.getExpiration()
+                    request,
+                    CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider).getCredentials(),
+                    req.getExpiration()
             );
         } else {
             // Otherwise use the default presigning method, which is hardcoded
@@ -3418,14 +3419,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // See ServiceUtils#convertRequestToUrl(...)
         resourcePath = resourcePath.replaceAll("(?<=/)/", "%2F");
 
-        AWSCredentials credentials = awsCredentialsProvider.getCredentials();
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
         new S3QueryStringSigner(methodName.toString(), resourcePath, expiration)
-            .sign(request, credentials);
+            .sign(request, CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider).getCredentials());
 
         // The Amazon S3 DevPay token header is a special exception and can be safely moved
         // from the request's headers into the query string to ensure that it travels along
@@ -4018,10 +4013,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 request.addHeader(Headers.CONTENT_TYPE,
                     "application/octet-stream");
             }
-            AWSCredentials credentials = awsCredentialsProvider.getCredentials();
-            if (originalRequest.getRequestCredentials() != null) {
-                credentials = originalRequest.getRequestCredentials();
-            }
 
             // Update the bucketRegionCache if we can't find region for the request
             if (bucket != null && !(request.getOriginalRequest() instanceof CreateBucketRequest)
@@ -4039,7 +4030,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                         new S3V4AuthErrorRetryStrategy(buildDefaultEndpointResolver(getProtocol(request), bucket, key)));
             }
 
-            executionContext.setCredentialsProvider(new StaticCredentialsProvider(credentials));
+            executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
             response = client.execute(request, responseHandler,
                     errorResponseHandler, executionContext);

@@ -32,7 +32,7 @@ import java.util.Map;
  * Formats the generated java source code. Uses Eclipse JDT core plugin from the Eclipse SDK.
  */
 @SuppressWarnings("unchecked")
-class JavaCodeFormatter {
+public class JavaCodeFormatter {
 
     private final CodeFormatter codeFormatter;
 
@@ -62,7 +62,7 @@ class JavaCodeFormatter {
         // Formats custom file headers if provided
         DEFAULT_FORMATTER_OPTIONS
                 .put(DefaultCodeFormatterConstants.FORMATTER_COMMENT_FORMAT_HEADER,
-                     DefaultCodeFormatterConstants.TRUE);
+                        DefaultCodeFormatterConstants.TRUE);
         DEFAULT_FORMATTER_OPTIONS.put(DefaultCodeFormatterConstants.FORMATTER_LINE_SPLIT, "160");
         DEFAULT_FORMATTER_OPTIONS.put(DefaultCodeFormatterConstants.FORMATTER_COMMENT_LINE_LENGTH, "120");
     }
@@ -70,7 +70,7 @@ class JavaCodeFormatter {
     /**
      * Creates a JavaCodeFormatter using the default formatter options.
      */
-    JavaCodeFormatter() {
+    public JavaCodeFormatter() {
         this(new HashMap<>());
     }
 
@@ -80,7 +80,7 @@ class JavaCodeFormatter {
      *
      * @param overrideOptions user provided options to apply on top of defaults
      */
-    private JavaCodeFormatter(final Map<String, Object> overrideOptions) {
+    public JavaCodeFormatter(final Map<String, Object> overrideOptions) {
         Map formatterOptions = new HashMap<>(DEFAULT_FORMATTER_OPTIONS);
         if (overrideOptions != null) {
             formatterOptions.putAll(overrideOptions);
@@ -90,7 +90,7 @@ class JavaCodeFormatter {
                 ToolFactory.M_FORMAT_EXISTING);
     }
 
-    String format(String contents) {
+    public String format(String contents) {
         final TextEdit edit = codeFormatter.format(
                 CodeFormatter.K_COMPILATION_UNIT
                         | CodeFormatter.F_INCLUDE_COMMENTS, contents, 0,

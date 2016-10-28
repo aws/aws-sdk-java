@@ -40,7 +40,12 @@ public class PredefinedBackoffStrategies {
     /** Default base sleep time for DynamoDB. **/
     static final int DYNAMODB_DEFAULT_BASE_DELAY = 25;
 
-    /** Maximum retry limit.  Avoids integer overflow issues. **/
+    /**
+     *  Maximum retry limit. Avoids integer overflow issues.
+     *
+     *  NOTE: If the value is greater than 30, there can be integer overflow
+     *  issues during delay calculation.
+     *  **/
     private static final int MAX_RETRIES = 30;
 
     public static class FullJitterBackoffStrategy implements RetryPolicy.BackoffStrategy {
@@ -59,9 +64,8 @@ public class PredefinedBackoffStrategies {
         public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                          AmazonClientException exception,
                                          int retriesAttempted) {
-            int ceil = (retriesAttempted > MAX_RETRIES) ? maxBackoffTime :
-                    Math.min(baseDelay * (1 << retriesAttempted), maxBackoffTime);
-            return random.nextInt(ceil + 1);
+            int ceil = calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
+            return random.nextInt(ceil);
         }
     }
 
@@ -81,8 +85,7 @@ public class PredefinedBackoffStrategies {
         public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                         AmazonClientException exception,
                                         int retriesAttempted) {
-            int ceil = (retriesAttempted > MAX_RETRIES) ? maxBackoffTime
-                    : Math.min(maxBackoffTime, baseDelay * (1 << retriesAttempted));
+            int ceil = calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
             return (ceil / 2) + random.nextInt((ceil / 2) + 1);
         }
     }
@@ -102,9 +105,13 @@ public class PredefinedBackoffStrategies {
         public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                          AmazonClientException exception,
                                          int retriesAttempted) {
-            return (retriesAttempted > MAX_RETRIES) ? maxBackoffTime :
-                    Math.min(((1 << retriesAttempted) * baseDelay), maxBackoffTime);
+            return calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
         }
+    }
+
+    private static int calculateExponentialDelay(int retriesAttempted, int baseDelay, int maxBackoffTime) {
+        int retries = Math.min(retriesAttempted, MAX_RETRIES);
+        return (int) Math.min((1L << retries) * baseDelay, maxBackoffTime);
     }
 
     /** A private class that implements the default back-off strategy. **/

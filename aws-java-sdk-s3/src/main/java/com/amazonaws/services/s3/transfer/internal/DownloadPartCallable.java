@@ -46,7 +46,8 @@ public class DownloadPartCallable implements Callable<File> {
     }
 
     public File call() throws Exception {
-        partFile = File.createTempFile(destinationFile.getName(),
+        partFile = File.createTempFile(
+                destinationFile.getName() + "-tmp",
                 TEMP_FILE_MIDDLE_NAME + getPartRequest.getPartNumber().toString(),
                 new File(destinationFilePath.substring(0, destinationFilePath.lastIndexOf(File.separator))));
         try {

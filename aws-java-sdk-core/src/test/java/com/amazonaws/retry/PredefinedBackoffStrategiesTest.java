@@ -62,20 +62,56 @@ public class PredefinedBackoffStrategiesTest {
 
     @Test
     public void testHandleOverflow() {
-        int maxInt = Integer.MAX_VALUE - 1;
+        int maxInt = Integer.MAX_VALUE;
         RetryPolicy.BackoffStrategy fullJitter = new PredefinedBackoffStrategies.FullJitterBackoffStrategy(BASE_DELAY, maxInt);
         RetryPolicy.BackoffStrategy equalJitter = new PredefinedBackoffStrategies.EqualJitterBackoffStrategy(BASE_DELAY, maxInt);
         RetryPolicy.BackoffStrategy exponential = new PredefinedBackoffStrategies.ExponentialBackoffStrategy(BASE_DELAY, maxInt);
 
-        long fullJitterDelay = fullJitter.delayBeforeNextRetry(null, null, 31);
+        int maxRetries = 40;
+        for (int i = 0; i < maxRetries; i++) {
+            long fullJitterDelay = fullJitter.delayBeforeNextRetry(null, null, i);
+            Assert.assertTrue(fullJitterDelay >= 0);
+            Assert.assertTrue(fullJitterDelay <= maxInt);
+
+            long equalJitterDelay = equalJitter.delayBeforeNextRetry(null, null, i);
+            Assert.assertTrue(equalJitterDelay >= 0);
+            Assert.assertTrue(equalJitterDelay <= maxInt);
+
+            long exponentialJitterDelay = exponential.delayBeforeNextRetry(null, null, i);
+            Assert.assertTrue(exponentialJitterDelay >= 0);
+            Assert.assertTrue(exponentialJitterDelay <= maxInt);
+        }
+    }
+
+    @Test
+    public void testMinimumValuesReturnedByBackoffStrategies() {
+        int maxInt = Integer.MAX_VALUE;
+        int value = 1;
+        RetryPolicy.BackoffStrategy fullJitter = new PredefinedBackoffStrategies.FullJitterBackoffStrategy(value, value);
+        RetryPolicy.BackoffStrategy equalJitter = new PredefinedBackoffStrategies.EqualJitterBackoffStrategy(value, value);
+        RetryPolicy.BackoffStrategy exponential = new PredefinedBackoffStrategies.ExponentialBackoffStrategy(value, value);
+
+        long fullJitterDelay = fullJitter.delayBeforeNextRetry(null, null, 0);
         Assert.assertTrue(fullJitterDelay >= 0);
         Assert.assertTrue(fullJitterDelay <= maxInt);
 
-        long equalJitterDelay = equalJitter.delayBeforeNextRetry(null, null, 31);
+        long equalJitterDelay = equalJitter.delayBeforeNextRetry(null, null, 0);
         Assert.assertTrue(equalJitterDelay >= 0);
         Assert.assertTrue(equalJitterDelay <= maxInt);
 
-        Assert.assertEquals(exponential.delayBeforeNextRetry(null, null, 31), maxInt);
+        long exponentialJitterDelay = exponential.delayBeforeNextRetry(null, null, 0);
+        Assert.assertTrue(exponentialJitterDelay >= 0);
+        Assert.assertTrue(exponentialJitterDelay <= maxInt);
+    }
+
+    /*
+     * The max value that can be returned by ExponentialBackoffStrategy.delayBeforeNextRetry is Integer.MAX_VALUE
+     */
+    @Test
+    public void test_MaxValue_Returned_InExponentialBackoffDelay_IsEqualTo_IntegerMax() {
+        int maxInt = Integer.MAX_VALUE;
+        RetryPolicy.BackoffStrategy exponential = new PredefinedBackoffStrategies.ExponentialBackoffStrategy(maxInt, maxInt);
+        Assert.assertEquals(maxInt, exponential.delayBeforeNextRetry(null, null, 40));
     }
 
     private void expectInRange(RetryPolicy.BackoffStrategy strategy, int[] expectedLowerBound, int[] expectedUpperBound) {

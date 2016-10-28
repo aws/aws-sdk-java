@@ -5,18 +5,18 @@ jdk:
   - openjdk6
   - oraclejdk8
 env:
-  - MODULES_TO_SKIP=\!aws-java-sdk-osgi
-  - MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin
+  - MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS=-XX:MaxPermSize=256m
+  - MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin MAVEN_OPTS=-XX:MaxPermSize=256m
 matrix:
   exclude:
     - jdk: openjdk6
-      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi
+      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS=-XX:MaxPermSize=256m
     - jdk: openjdk7
-      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi
+      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS=-XX:MaxPermSize=256m
     - jdk: oraclejdk7
-      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi
+      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS=-XX:MaxPermSize=256m
     - jdk: oraclejdk8
-      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin
+      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin MAVEN_OPTS=-XX:MaxPermSize=256m
 
 notifications:
   email:

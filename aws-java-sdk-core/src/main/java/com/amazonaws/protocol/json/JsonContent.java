@@ -66,7 +66,7 @@ public class JsonContent {
 
     private static JsonNode parseJsonContent(byte[] rawJsonContent, ObjectMapper mapper) {
         if (rawJsonContent == null) {
-            return null;
+            return mapper.createObjectNode();
         }
         try {
             return mapper.readTree(rawJsonContent);
