@@ -61,7 +61,7 @@ public class PredefinedBackoffStrategiesTest {
         }
     }
 
-    @Test()
+    @Test
     public void testHandleOverflow() {
         testHandleOverflow(BASE_DELAY, 31);
         testHandleOverflow(BASE_DELAY_FOR_OVERFLOW_TEST, 28);
