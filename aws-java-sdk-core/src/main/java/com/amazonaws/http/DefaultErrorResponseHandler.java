@@ -79,7 +79,7 @@ public class DefaultErrorResponseHandler implements HttpResponseHandler<AmazonSe
 
     private AmazonServiceException createAse(HttpResponse errorResponse) throws Exception {
         // Try to parse the error response as XML
-        final Document document = parseContentAsXml(errorResponse.getContent());
+        final Document document = documentFromContent(errorResponse.getContent());
 
         /*
          * We need to select which exception unmarshaller is the correct one to
@@ -98,15 +98,31 @@ public class DefaultErrorResponseHandler implements HttpResponseHandler<AmazonSe
         return null;
     }
 
-    private Document parseContentAsXml(InputStream content) throws ParserConfigurationException,
-                                                                   SAXException, IOException {
+    private Document documentFromContent(InputStream content) throws ParserConfigurationException, SAXException, IOException {
         try {
-            return XpathUtils.documentFrom(IOUtils.toString(content));
+            return parseXml(contentToString(content));
         } catch (Exception e) {
-            log.info("Unable to parse HTTP response content.", e);
             // Generate an empty document to make the unmarshallers happy. Ultimately the default
             // unmarshaller will be called to unmarshall into the service base exception.
             return XpathUtils.documentFrom("<empty/>");
+        }
+    }
+
+    private String contentToString(InputStream content) throws Exception {
+        try {
+            return IOUtils.toString(content);
+        } catch (Exception e) {
+            log.info("Unable to read input stream to string", e);
+            throw e;
+        }
+    }
+
+    private Document parseXml(String xml) throws Exception {
+        try {
+            return XpathUtils.documentFrom(xml);
+        } catch (Exception e) {
+            log.info(String.format("Unable to parse HTTP response content to XML document '%s'", xml), e);
+            throw e;
         }
     }
 
