@@ -63,9 +63,8 @@ public class AmazonCloudFormationWaiters {
         return new WaiterBuilder<DescribeStacksRequest, DescribeStacksResult>()
                 .withSdkFunction(new DescribeStacksFunction(client))
                 .withAcceptors(new StackCreateComplete.IsCREATE_COMPLETEMatcher(), new StackCreateComplete.IsCREATE_FAILEDMatcher(),
-                        new StackCreateComplete.IsDELETE_COMPLETEMatcher(), new StackCreateComplete.IsDELETE_IN_PROGRESSMatcher(),
-                        new StackCreateComplete.IsDELETE_FAILEDMatcher(), new StackCreateComplete.IsROLLBACK_COMPLETEMatcher(),
-                        new StackCreateComplete.IsROLLBACK_FAILEDMatcher(), new StackCreateComplete.IsROLLBACK_IN_PROGRESSMatcher(),
+                        new StackCreateComplete.IsDELETE_COMPLETEMatcher(), new StackCreateComplete.IsDELETE_FAILEDMatcher(),
+                        new StackCreateComplete.IsROLLBACK_FAILEDMatcher(), new StackCreateComplete.IsROLLBACK_COMPLETEMatcher(),
                         new StackCreateComplete.IsValidationErrorMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(120), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();
@@ -81,14 +80,9 @@ public class AmazonCloudFormationWaiters {
         return new WaiterBuilder<DescribeStacksRequest, DescribeStacksResult>()
                 .withSdkFunction(new DescribeStacksFunction(client))
                 .withAcceptors(new StackDeleteComplete.IsDELETE_COMPLETEMatcher(), new StackDeleteComplete.IsValidationErrorMatcher(),
-                        new StackDeleteComplete.IsDELETE_FAILEDMatcher(), new StackDeleteComplete.IsCREATE_COMPLETEMatcher(),
-                        new StackDeleteComplete.IsCREATE_FAILEDMatcher(), new StackDeleteComplete.IsCREATE_IN_PROGRESSMatcher(),
-                        new StackDeleteComplete.IsROLLBACK_COMPLETEMatcher(), new StackDeleteComplete.IsROLLBACK_FAILEDMatcher(),
-                        new StackDeleteComplete.IsROLLBACK_IN_PROGRESSMatcher(), new StackDeleteComplete.IsUPDATE_COMPLETEMatcher(),
-                        new StackDeleteComplete.IsUPDATE_COMPLETE_CLEANUP_IN_PROGRESSMatcher(), new StackDeleteComplete.IsUPDATE_IN_PROGRESSMatcher(),
-                        new StackDeleteComplete.IsUPDATE_ROLLBACK_COMPLETEMatcher(),
-                        new StackDeleteComplete.IsUPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESSMatcher(),
-                        new StackDeleteComplete.IsUPDATE_ROLLBACK_FAILEDMatcher(), new StackDeleteComplete.IsUPDATE_ROLLBACK_IN_PROGRESSMatcher())
+                        new StackDeleteComplete.IsDELETE_FAILEDMatcher(), new StackDeleteComplete.IsCREATE_FAILEDMatcher(),
+                        new StackDeleteComplete.IsROLLBACK_FAILEDMatcher(), new StackDeleteComplete.IsUPDATE_ROLLBACK_FAILEDMatcher(),
+                        new StackDeleteComplete.IsUPDATE_ROLLBACK_IN_PROGRESSMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(120), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();
     }
@@ -103,9 +97,8 @@ public class AmazonCloudFormationWaiters {
         return new WaiterBuilder<DescribeStacksRequest, DescribeStacksResult>()
                 .withSdkFunction(new DescribeStacksFunction(client))
                 .withAcceptors(new StackUpdateComplete.IsUPDATE_COMPLETEMatcher(), new StackUpdateComplete.IsUPDATE_FAILEDMatcher(),
-                        new StackUpdateComplete.IsUPDATE_ROLLBACK_COMPLETEMatcher(), new StackUpdateComplete.IsUPDATE_ROLLBACK_FAILEDMatcher(),
-                        new StackUpdateComplete.IsUPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESSMatcher(),
-                        new StackUpdateComplete.IsUPDATE_ROLLBACK_IN_PROGRESSMatcher(), new StackUpdateComplete.IsValidationErrorMatcher())
+                        new StackUpdateComplete.IsUPDATE_ROLLBACK_FAILEDMatcher(), new StackUpdateComplete.IsUPDATE_ROLLBACK_COMPLETEMatcher(),
+                        new StackUpdateComplete.IsValidationErrorMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(120), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();
     }

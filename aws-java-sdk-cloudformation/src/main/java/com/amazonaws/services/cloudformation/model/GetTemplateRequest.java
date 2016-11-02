@@ -43,6 +43,31 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String stackName;
+    /**
+     * <p>
+     * Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you
+     * specify a name, you must also specify the <code>StackName</code>.
+     * </p>
+     */
+    private String changeSetName;
+    /**
+     * <p>
+     * The stage of the template that is returned. Valid values are <code>Original</code> and <code>Processed</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Original</code> - Use to return the specified pre-transform template.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Processed</code> - Use to return the template after all transforms have been processed.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String templateStage;
 
     /**
      * <p>
@@ -175,6 +200,245 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you
+     * specify a name, you must also specify the <code>StackName</code>.
+     * </p>
+     * 
+     * @param changeSetName
+     *        Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If
+     *        you specify a name, you must also specify the <code>StackName</code>.
+     */
+
+    public void setChangeSetName(String changeSetName) {
+        this.changeSetName = changeSetName;
+    }
+
+    /**
+     * <p>
+     * Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you
+     * specify a name, you must also specify the <code>StackName</code>.
+     * </p>
+     * 
+     * @return Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If
+     *         you specify a name, you must also specify the <code>StackName</code>.
+     */
+
+    public String getChangeSetName() {
+        return this.changeSetName;
+    }
+
+    /**
+     * <p>
+     * Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you
+     * specify a name, you must also specify the <code>StackName</code>.
+     * </p>
+     * 
+     * @param changeSetName
+     *        Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If
+     *        you specify a name, you must also specify the <code>StackName</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateRequest withChangeSetName(String changeSetName) {
+        setChangeSetName(changeSetName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stage of the template that is returned. Valid values are <code>Original</code> and <code>Processed</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Original</code> - Use to return the specified pre-transform template.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Processed</code> - Use to return the template after all transforms have been processed.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param templateStage
+     *        The stage of the template that is returned. Valid values are <code>Original</code> and
+     *        <code>Processed</code>:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Original</code> - Use to return the specified pre-transform template.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Processed</code> - Use to return the template after all transforms have been processed.
+     *        </p>
+     *        </li>
+     * @see TemplateStage
+     */
+
+    public void setTemplateStage(String templateStage) {
+        this.templateStage = templateStage;
+    }
+
+    /**
+     * <p>
+     * The stage of the template that is returned. Valid values are <code>Original</code> and <code>Processed</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Original</code> - Use to return the specified pre-transform template.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Processed</code> - Use to return the template after all transforms have been processed.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The stage of the template that is returned. Valid values are <code>Original</code> and
+     *         <code>Processed</code>:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Original</code> - Use to return the specified pre-transform template.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Processed</code> - Use to return the template after all transforms have been processed.
+     *         </p>
+     *         </li>
+     * @see TemplateStage
+     */
+
+    public String getTemplateStage() {
+        return this.templateStage;
+    }
+
+    /**
+     * <p>
+     * The stage of the template that is returned. Valid values are <code>Original</code> and <code>Processed</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Original</code> - Use to return the specified pre-transform template.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Processed</code> - Use to return the template after all transforms have been processed.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param templateStage
+     *        The stage of the template that is returned. Valid values are <code>Original</code> and
+     *        <code>Processed</code>:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Original</code> - Use to return the specified pre-transform template.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Processed</code> - Use to return the template after all transforms have been processed.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStage
+     */
+
+    public GetTemplateRequest withTemplateStage(String templateStage) {
+        setTemplateStage(templateStage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stage of the template that is returned. Valid values are <code>Original</code> and <code>Processed</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Original</code> - Use to return the specified pre-transform template.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Processed</code> - Use to return the template after all transforms have been processed.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param templateStage
+     *        The stage of the template that is returned. Valid values are <code>Original</code> and
+     *        <code>Processed</code>:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Original</code> - Use to return the specified pre-transform template.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Processed</code> - Use to return the template after all transforms have been processed.
+     *        </p>
+     *        </li>
+     * @see TemplateStage
+     */
+
+    public void setTemplateStage(TemplateStage templateStage) {
+        this.templateStage = templateStage.toString();
+    }
+
+    /**
+     * <p>
+     * The stage of the template that is returned. Valid values are <code>Original</code> and <code>Processed</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Original</code> - Use to return the specified pre-transform template.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Processed</code> - Use to return the template after all transforms have been processed.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param templateStage
+     *        The stage of the template that is returned. Valid values are <code>Original</code> and
+     *        <code>Processed</code>:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Original</code> - Use to return the specified pre-transform template.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Processed</code> - Use to return the template after all transforms have been processed.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStage
+     */
+
+    public GetTemplateRequest withTemplateStage(TemplateStage templateStage) {
+        setTemplateStage(templateStage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -186,7 +450,11 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName());
+            sb.append("StackName: " + getStackName() + ",");
+        if (getChangeSetName() != null)
+            sb.append("ChangeSetName: " + getChangeSetName() + ",");
+        if (getTemplateStage() != null)
+            sb.append("TemplateStage: " + getTemplateStage());
         sb.append("}");
         return sb.toString();
     }
@@ -205,6 +473,14 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false)
             return false;
+        if (other.getChangeSetName() == null ^ this.getChangeSetName() == null)
+            return false;
+        if (other.getChangeSetName() != null && other.getChangeSetName().equals(this.getChangeSetName()) == false)
+            return false;
+        if (other.getTemplateStage() == null ^ this.getTemplateStage() == null)
+            return false;
+        if (other.getTemplateStage() != null && other.getTemplateStage().equals(this.getTemplateStage()) == false)
+            return false;
         return true;
     }
 
@@ -214,6 +490,8 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
+        hashCode = prime * hashCode + ((getChangeSetName() == null) ? 0 : getChangeSetName().hashCode());
+        hashCode = prime * hashCode + ((getTemplateStage() == null) ? 0 : getTemplateStage().hashCode());
         return hashCode;
     }
 

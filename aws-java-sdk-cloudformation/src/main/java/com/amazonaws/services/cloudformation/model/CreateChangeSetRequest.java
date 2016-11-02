@@ -173,6 +173,25 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE</code> - Specify for a change set for a stack that does not yet exist. The stack has an expected
+     * unique ID, but no template or resources. It can include multiple change sets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE</code> - Specify for a change set for an existing stack.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String changeSetType;
 
     /**
      * <p>
@@ -1483,6 +1502,204 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE</code> - Specify for a change set for a stack that does not yet exist. The stack has an expected
+     * unique ID, but no template or resources. It can include multiple change sets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE</code> - Specify for a change set for an existing stack.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param changeSetType
+     *        The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE</code> - Specify for a change set for a stack that does not yet exist. The stack has an
+     *        expected unique ID, but no template or resources. It can include multiple change sets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE</code> - Specify for a change set for an existing stack.
+     *        </p>
+     *        </li>
+     * @see ChangeSetType
+     */
+
+    public void setChangeSetType(String changeSetType) {
+        this.changeSetType = changeSetType;
+    }
+
+    /**
+     * <p>
+     * The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE</code> - Specify for a change set for a stack that does not yet exist. The stack has an expected
+     * unique ID, but no template or resources. It can include multiple change sets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE</code> - Specify for a change set for an existing stack.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CREATE</code> - Specify for a change set for a stack that does not yet exist. The stack has an
+     *         expected unique ID, but no template or resources. It can include multiple change sets.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATE</code> - Specify for a change set for an existing stack.
+     *         </p>
+     *         </li>
+     * @see ChangeSetType
+     */
+
+    public String getChangeSetType() {
+        return this.changeSetType;
+    }
+
+    /**
+     * <p>
+     * The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE</code> - Specify for a change set for a stack that does not yet exist. The stack has an expected
+     * unique ID, but no template or resources. It can include multiple change sets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE</code> - Specify for a change set for an existing stack.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param changeSetType
+     *        The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE</code> - Specify for a change set for a stack that does not yet exist. The stack has an
+     *        expected unique ID, but no template or resources. It can include multiple change sets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE</code> - Specify for a change set for an existing stack.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ChangeSetType
+     */
+
+    public CreateChangeSetRequest withChangeSetType(String changeSetType) {
+        setChangeSetType(changeSetType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE</code> - Specify for a change set for a stack that does not yet exist. The stack has an expected
+     * unique ID, but no template or resources. It can include multiple change sets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE</code> - Specify for a change set for an existing stack.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param changeSetType
+     *        The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE</code> - Specify for a change set for a stack that does not yet exist. The stack has an
+     *        expected unique ID, but no template or resources. It can include multiple change sets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE</code> - Specify for a change set for an existing stack.
+     *        </p>
+     *        </li>
+     * @see ChangeSetType
+     */
+
+    public void setChangeSetType(ChangeSetType changeSetType) {
+        this.changeSetType = changeSetType.toString();
+    }
+
+    /**
+     * <p>
+     * The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE</code> - Specify for a change set for a stack that does not yet exist. The stack has an expected
+     * unique ID, but no template or resources. It can include multiple change sets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE</code> - Specify for a change set for an existing stack.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param changeSetType
+     *        The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE</code> - Specify for a change set for a stack that does not yet exist. The stack has an
+     *        expected unique ID, but no template or resources. It can include multiple change sets.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE</code> - Specify for a change set for an existing stack.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ChangeSetType
+     */
+
+    public CreateChangeSetRequest withChangeSetType(ChangeSetType changeSetType) {
+        setChangeSetType(changeSetType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1518,7 +1735,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
         if (getClientToken() != null)
             sb.append("ClientToken: " + getClientToken() + ",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: " + getDescription() + ",");
+        if (getChangeSetType() != null)
+            sb.append("ChangeSetType: " + getChangeSetType());
         sb.append("}");
         return sb.toString();
     }
@@ -1585,6 +1804,10 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getChangeSetType() == null ^ this.getChangeSetType() == null)
+            return false;
+        if (other.getChangeSetType() != null && other.getChangeSetType().equals(this.getChangeSetType()) == false)
+            return false;
         return true;
     }
 
@@ -1606,6 +1829,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getChangeSetName() == null) ? 0 : getChangeSetName().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getChangeSetType() == null) ? 0 : getChangeSetType().hashCode());
         return hashCode;
     }
 

@@ -26,32 +26,24 @@ import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 
 /**
- * GetTemplateRequest Marshaller
+ * ListExportsRequest Marshaller
  */
 
-public class GetTemplateRequestMarshaller implements Marshaller<Request<GetTemplateRequest>, GetTemplateRequest> {
+public class ListExportsRequestMarshaller implements Marshaller<Request<ListExportsRequest>, ListExportsRequest> {
 
-    public Request<GetTemplateRequest> marshall(GetTemplateRequest getTemplateRequest) {
+    public Request<ListExportsRequest> marshall(ListExportsRequest listExportsRequest) {
 
-        if (getTemplateRequest == null) {
+        if (listExportsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetTemplateRequest> request = new DefaultRequest<GetTemplateRequest>(getTemplateRequest, "AmazonCloudFormation");
-        request.addParameter("Action", "GetTemplate");
+        Request<ListExportsRequest> request = new DefaultRequest<ListExportsRequest>(listExportsRequest, "AmazonCloudFormation");
+        request.addParameter("Action", "ListExports");
         request.addParameter("Version", "2010-05-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (getTemplateRequest.getStackName() != null) {
-            request.addParameter("StackName", StringUtils.fromString(getTemplateRequest.getStackName()));
-        }
-
-        if (getTemplateRequest.getChangeSetName() != null) {
-            request.addParameter("ChangeSetName", StringUtils.fromString(getTemplateRequest.getChangeSetName()));
-        }
-
-        if (getTemplateRequest.getTemplateStage() != null) {
-            request.addParameter("TemplateStage", StringUtils.fromString(getTemplateRequest.getTemplateStage()));
+        if (listExportsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(listExportsRequest.getNextToken()));
         }
 
         return request;

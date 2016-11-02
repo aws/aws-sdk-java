@@ -35,6 +35,12 @@ public class Stack implements Serializable, Cloneable {
     private String stackName;
     /**
      * <p>
+     * The unique ID of the change set.
+     * </p>
+     */
+    private String changeSetId;
+    /**
+     * <p>
      * A user-defined description associated with the stack.
      * </p>
      */
@@ -203,6 +209,46 @@ public class Stack implements Serializable, Cloneable {
 
     public Stack withStackName(String stackName) {
         setStackName(stackName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the change set.
+     * </p>
+     * 
+     * @param changeSetId
+     *        The unique ID of the change set.
+     */
+
+    public void setChangeSetId(String changeSetId) {
+        this.changeSetId = changeSetId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the change set.
+     * </p>
+     * 
+     * @return The unique ID of the change set.
+     */
+
+    public String getChangeSetId() {
+        return this.changeSetId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the change set.
+     * </p>
+     * 
+     * @param changeSetId
+     *        The unique ID of the change set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withChangeSetId(String changeSetId) {
+        setChangeSetId(changeSetId);
         return this;
     }
 
@@ -1086,6 +1132,8 @@ public class Stack implements Serializable, Cloneable {
             sb.append("StackId: " + getStackId() + ",");
         if (getStackName() != null)
             sb.append("StackName: " + getStackName() + ",");
+        if (getChangeSetId() != null)
+            sb.append("ChangeSetId: " + getChangeSetId() + ",");
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getParameters() != null)
@@ -1133,6 +1181,10 @@ public class Stack implements Serializable, Cloneable {
         if (other.getStackName() == null ^ this.getStackName() == null)
             return false;
         if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false)
+            return false;
+        if (other.getChangeSetId() == null ^ this.getChangeSetId() == null)
+            return false;
+        if (other.getChangeSetId() != null && other.getChangeSetId().equals(this.getChangeSetId()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -1196,6 +1248,7 @@ public class Stack implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
+        hashCode = prime * hashCode + ((getChangeSetId() == null) ? 0 : getChangeSetId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());

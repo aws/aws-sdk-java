@@ -23,7 +23,9 @@ public enum HttpMethodName {
     PUT,
     DELETE,
     HEAD,
-    PATCH;
+    PATCH,
+    OPTIONS,
+    ;
 
     /**
      * @param value Raw string representing value of enum

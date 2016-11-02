@@ -27,6 +27,12 @@ public class CreateChangeSetResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * The unique ID of the stack.
+     * </p>
+     */
+    private String stackId;
 
     /**
      * <p>
@@ -69,6 +75,46 @@ public class CreateChangeSetResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The unique ID of the stack.
+     * </p>
+     * 
+     * @param stackId
+     *        The unique ID of the stack.
+     */
+
+    public void setStackId(String stackId) {
+        this.stackId = stackId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the stack.
+     * </p>
+     * 
+     * @return The unique ID of the stack.
+     */
+
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the stack.
+     * </p>
+     * 
+     * @param stackId
+     *        The unique ID of the stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChangeSetResult withStackId(String stackId) {
+        setStackId(stackId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -80,7 +126,9 @@ public class CreateChangeSetResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId());
+            sb.append("Id: " + getId() + ",");
+        if (getStackId() != null)
+            sb.append("StackId: " + getStackId());
         sb.append("}");
         return sb.toString();
     }
@@ -99,6 +147,10 @@ public class CreateChangeSetResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getStackId() == null ^ this.getStackId() == null)
+            return false;
+        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false)
+            return false;
         return true;
     }
 
@@ -108,6 +160,7 @@ public class CreateChangeSetResult extends com.amazonaws.AmazonWebServiceResult<
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
         return hashCode;
     }
 

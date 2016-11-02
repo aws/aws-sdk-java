@@ -71,6 +71,12 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String metadata;
+    /**
+     * <p>
+     * A list of the transforms that have been declared in the template.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> declaredTransforms;
 
     /**
      * <p>
@@ -562,6 +568,79 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * A list of the transforms that have been declared in the template.
+     * </p>
+     * 
+     * @return A list of the transforms that have been declared in the template.
+     */
+
+    public java.util.List<String> getDeclaredTransforms() {
+        if (declaredTransforms == null) {
+            declaredTransforms = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return declaredTransforms;
+    }
+
+    /**
+     * <p>
+     * A list of the transforms that have been declared in the template.
+     * </p>
+     * 
+     * @param declaredTransforms
+     *        A list of the transforms that have been declared in the template.
+     */
+
+    public void setDeclaredTransforms(java.util.Collection<String> declaredTransforms) {
+        if (declaredTransforms == null) {
+            this.declaredTransforms = null;
+            return;
+        }
+
+        this.declaredTransforms = new com.amazonaws.internal.SdkInternalList<String>(declaredTransforms);
+    }
+
+    /**
+     * <p>
+     * A list of the transforms that have been declared in the template.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeclaredTransforms(java.util.Collection)} or {@link #withDeclaredTransforms(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param declaredTransforms
+     *        A list of the transforms that have been declared in the template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateSummaryResult withDeclaredTransforms(String... declaredTransforms) {
+        if (this.declaredTransforms == null) {
+            setDeclaredTransforms(new com.amazonaws.internal.SdkInternalList<String>(declaredTransforms.length));
+        }
+        for (String ele : declaredTransforms) {
+            this.declaredTransforms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the transforms that have been declared in the template.
+     * </p>
+     * 
+     * @param declaredTransforms
+     *        A list of the transforms that have been declared in the template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateSummaryResult withDeclaredTransforms(java.util.Collection<String> declaredTransforms) {
+        setDeclaredTransforms(declaredTransforms);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -585,7 +664,9 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
         if (getVersion() != null)
             sb.append("Version: " + getVersion() + ",");
         if (getMetadata() != null)
-            sb.append("Metadata: " + getMetadata());
+            sb.append("Metadata: " + getMetadata() + ",");
+        if (getDeclaredTransforms() != null)
+            sb.append("DeclaredTransforms: " + getDeclaredTransforms());
         sb.append("}");
         return sb.toString();
     }
@@ -628,6 +709,10 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
             return false;
+        if (other.getDeclaredTransforms() == null ^ this.getDeclaredTransforms() == null)
+            return false;
+        if (other.getDeclaredTransforms() != null && other.getDeclaredTransforms().equals(this.getDeclaredTransforms()) == false)
+            return false;
         return true;
     }
 
@@ -643,6 +728,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getResourceTypes() == null) ? 0 : getResourceTypes().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getDeclaredTransforms() == null) ? 0 : getDeclaredTransforms().hashCode());
         return hashCode;
     }
 

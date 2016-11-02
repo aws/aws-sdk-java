@@ -52,6 +52,12 @@ public class ValidateTemplateResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String capabilitiesReason;
+    /**
+     * <p>
+     * A list of the transforms that have been declared in the template.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> declaredTransforms;
 
     /**
      * <p>
@@ -378,6 +384,79 @@ public class ValidateTemplateResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * A list of the transforms that have been declared in the template.
+     * </p>
+     * 
+     * @return A list of the transforms that have been declared in the template.
+     */
+
+    public java.util.List<String> getDeclaredTransforms() {
+        if (declaredTransforms == null) {
+            declaredTransforms = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return declaredTransforms;
+    }
+
+    /**
+     * <p>
+     * A list of the transforms that have been declared in the template.
+     * </p>
+     * 
+     * @param declaredTransforms
+     *        A list of the transforms that have been declared in the template.
+     */
+
+    public void setDeclaredTransforms(java.util.Collection<String> declaredTransforms) {
+        if (declaredTransforms == null) {
+            this.declaredTransforms = null;
+            return;
+        }
+
+        this.declaredTransforms = new com.amazonaws.internal.SdkInternalList<String>(declaredTransforms);
+    }
+
+    /**
+     * <p>
+     * A list of the transforms that have been declared in the template.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeclaredTransforms(java.util.Collection)} or {@link #withDeclaredTransforms(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param declaredTransforms
+     *        A list of the transforms that have been declared in the template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidateTemplateResult withDeclaredTransforms(String... declaredTransforms) {
+        if (this.declaredTransforms == null) {
+            setDeclaredTransforms(new com.amazonaws.internal.SdkInternalList<String>(declaredTransforms.length));
+        }
+        for (String ele : declaredTransforms) {
+            this.declaredTransforms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the transforms that have been declared in the template.
+     * </p>
+     * 
+     * @param declaredTransforms
+     *        A list of the transforms that have been declared in the template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidateTemplateResult withDeclaredTransforms(java.util.Collection<String> declaredTransforms) {
+        setDeclaredTransforms(declaredTransforms);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -395,7 +474,9 @@ public class ValidateTemplateResult extends com.amazonaws.AmazonWebServiceResult
         if (getCapabilities() != null)
             sb.append("Capabilities: " + getCapabilities() + ",");
         if (getCapabilitiesReason() != null)
-            sb.append("CapabilitiesReason: " + getCapabilitiesReason());
+            sb.append("CapabilitiesReason: " + getCapabilitiesReason() + ",");
+        if (getDeclaredTransforms() != null)
+            sb.append("DeclaredTransforms: " + getDeclaredTransforms());
         sb.append("}");
         return sb.toString();
     }
@@ -426,6 +507,10 @@ public class ValidateTemplateResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getCapabilitiesReason() != null && other.getCapabilitiesReason().equals(this.getCapabilitiesReason()) == false)
             return false;
+        if (other.getDeclaredTransforms() == null ^ this.getDeclaredTransforms() == null)
+            return false;
+        if (other.getDeclaredTransforms() != null && other.getDeclaredTransforms().equals(this.getDeclaredTransforms()) == false)
+            return false;
         return true;
     }
 
@@ -438,6 +523,7 @@ public class ValidateTemplateResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getCapabilitiesReason() == null) ? 0 : getCapabilitiesReason().hashCode());
+        hashCode = prime * hashCode + ((getDeclaredTransforms() == null) ? 0 : getDeclaredTransforms().hashCode());
         return hashCode;
     }
 

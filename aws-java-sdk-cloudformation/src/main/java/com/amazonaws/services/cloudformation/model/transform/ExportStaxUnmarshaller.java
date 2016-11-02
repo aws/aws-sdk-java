@@ -26,48 +26,52 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * GetTemplateResult StAX Unmarshaller
+ * Export StAX Unmarshaller
  */
-public class GetTemplateResultStaxUnmarshaller implements Unmarshaller<GetTemplateResult, StaxUnmarshallerContext> {
+public class ExportStaxUnmarshaller implements Unmarshaller<Export, StaxUnmarshallerContext> {
 
-    public GetTemplateResult unmarshall(StaxUnmarshallerContext context) throws Exception {
-        GetTemplateResult getTemplateResult = new GetTemplateResult();
+    public Export unmarshall(StaxUnmarshallerContext context) throws Exception {
+        Export export = new Export();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
         if (context.isStartOfDocument())
-            targetDepth += 2;
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
             if (xmlEvent.isEndDocument())
-                return getTemplateResult;
+                return export;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("TemplateBody", targetDepth)) {
-                    getTemplateResult.setTemplateBody(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ExportingStackId", targetDepth)) {
+                    export.setExportingStackId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("StagesAvailable/member", targetDepth)) {
-                    getTemplateResult.withStagesAvailable(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Name", targetDepth)) {
+                    export.setName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("Value", targetDepth)) {
+                    export.setValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return getTemplateResult;
+                    return export;
                 }
             }
         }
     }
 
-    private static GetTemplateResultStaxUnmarshaller instance;
+    private static ExportStaxUnmarshaller instance;
 
-    public static GetTemplateResultStaxUnmarshaller getInstance() {
+    public static ExportStaxUnmarshaller getInstance() {
         if (instance == null)
-            instance = new GetTemplateResultStaxUnmarshaller();
+            instance = new ExportStaxUnmarshaller();
         return instance;
     }
 }

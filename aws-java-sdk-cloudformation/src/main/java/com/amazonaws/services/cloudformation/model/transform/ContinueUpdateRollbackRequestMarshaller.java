@@ -51,6 +51,22 @@ public class ContinueUpdateRollbackRequestMarshaller implements Marshaller<Reque
             request.addParameter("RoleARN", StringUtils.fromString(continueUpdateRollbackRequest.getRoleARN()));
         }
 
+        com.amazonaws.internal.SdkInternalList<String> resourcesToSkipList = (com.amazonaws.internal.SdkInternalList<String>) continueUpdateRollbackRequest
+                .getResourcesToSkip();
+        if (resourcesToSkipList.isEmpty() && !resourcesToSkipList.isAutoConstruct()) {
+            request.addParameter("ResourcesToSkip", "");
+        }
+        if (!resourcesToSkipList.isEmpty() || !resourcesToSkipList.isAutoConstruct()) {
+            int resourcesToSkipListIndex = 1;
+
+            for (String resourcesToSkipListValue : resourcesToSkipList) {
+                if (resourcesToSkipListValue != null) {
+                    request.addParameter("ResourcesToSkip.member." + resourcesToSkipListIndex, StringUtils.fromString(resourcesToSkipListValue));
+                }
+                resourcesToSkipListIndex++;
+            }
+        }
+
         return request;
     }
 

@@ -56,6 +56,17 @@ public class AmazonHttpClientIntegrationTest extends WireMockTestBase {
         verify(getRequestedFor(urlPathEqualTo(OPERATION)).withHeader(HEADER, matching(REQUEST_HEADER_VALUE)));
     }
 
+    @Test
+    public void canHandleOptionsRequest() throws Exception {
+        Request<?> request = newRequest(OPERATION);
+        request.setHttpMethod(HttpMethodName.OPTIONS);
+
+        AmazonHttpClient sut = new AmazonHttpClient(new ClientConfiguration());
+        sut.execute(request, stringResponseHandler(), stubErrorHandler(), new ExecutionContext());
+
+        verify(optionsRequestedFor(urlPathEqualTo(OPERATION)));
+    }
+
     private AmazonHttpClient createClient(String headerName, String headerValue) {
         ClientConfiguration clientConfiguration = new ClientConfiguration().withHeader(headerName, headerValue);
         return new AmazonHttpClient(clientConfiguration);

@@ -55,6 +55,11 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("ChangeSetId", targetDepth)) {
+                    stack.setChangeSetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Description", targetDepth)) {
                     stack.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

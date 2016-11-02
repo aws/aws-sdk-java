@@ -170,6 +170,10 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("Description", StringUtils.fromString(createChangeSetRequest.getDescription()));
         }
 
+        if (createChangeSetRequest.getChangeSetType() != null) {
+            request.addParameter("ChangeSetType", StringUtils.fromString(createChangeSetRequest.getChangeSetType()));
+        }
+
         return request;
     }
 

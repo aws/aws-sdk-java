@@ -23,10 +23,10 @@ import com.amazonaws.annotation.ThreadSafe;
  * <p>
  * <fullname>AWS CloudFormation</fullname>
  * <p>
- * AWS CloudFormation enables you to create and manage AWS infrastructure deployments predictably and repeatedly. AWS
- * CloudFormation helps you leverage AWS products such as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling to build
- * highly-reliable, highly scalable, cost effective applications without worrying about creating and configuring the
- * underlying AWS infrastructure.
+ * AWS CloudFormation allows you to create and manage AWS infrastructure deployments predictably and repeatedly. You can
+ * use AWS CloudFormation to leverage AWS products, such as Amazon Elastic Compute Cloud, Amazon Elastic Block Store,
+ * Amazon Simple Notification Service, Elastic Load Balancing, and Auto Scaling to build highly-reliable, highly
+ * scalable, cost-effective applications without creating or configuring the underlying AWS infrastructure.
  * </p>
  * <p>
  * With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines
@@ -34,8 +34,8 @@ import com.amazonaws.annotation.ThreadSafe;
  * resources of the stack together and manages all dependencies between the resources for you.
  * </p>
  * <p>
- * For more information about this product, go to the <a href="http://aws.amazon.com/cloudformation/">CloudFormation
- * Product Page</a>.
+ * For more information about AWS CloudFormation, see the <a href="http://aws.amazon.com/cloudformation/">AWS
+ * CloudFormation Product Page</a>.
  * </p>
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific
@@ -859,6 +859,38 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
 
                 try {
                     result = listChangeSets(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest request) {
+
+        return listExportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportsResult> listExportsAsync(final ListExportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListExportsRequest, ListExportsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListExportsResult>() {
+            @Override
+            public ListExportsResult call() throws Exception {
+                ListExportsResult result;
+
+                try {
+                    result = listExports(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

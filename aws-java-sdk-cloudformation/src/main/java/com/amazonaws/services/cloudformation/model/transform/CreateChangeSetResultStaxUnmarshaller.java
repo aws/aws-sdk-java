@@ -49,6 +49,11 @@ public class CreateChangeSetResultStaxUnmarshaller implements Unmarshaller<Creat
                     createChangeSetResult.setId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("StackId", targetDepth)) {
+                    createChangeSetResult.setStackId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createChangeSetResult;

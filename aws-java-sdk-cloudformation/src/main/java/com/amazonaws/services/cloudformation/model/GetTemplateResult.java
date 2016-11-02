@@ -32,6 +32,14 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String templateBody;
+    /**
+     * <p>
+     * The available template type. For stacks, both the <code>Original</code> and <code>Processed</code> template types
+     * are always available. For change sets, the <code>Original</code> template is always available. After the
+     * transforms are processed, the <code>Processed</code> template becomes available.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> stagesAvailable;
 
     /**
      * <p>
@@ -101,6 +109,127 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The available template type. For stacks, both the <code>Original</code> and <code>Processed</code> template types
+     * are always available. For change sets, the <code>Original</code> template is always available. After the
+     * transforms are processed, the <code>Processed</code> template becomes available.
+     * </p>
+     * 
+     * @return The available template type. For stacks, both the <code>Original</code> and <code>Processed</code>
+     *         template types are always available. For change sets, the <code>Original</code> template is always
+     *         available. After the transforms are processed, the <code>Processed</code> template becomes available.
+     * @see TemplateStage
+     */
+
+    public java.util.List<String> getStagesAvailable() {
+        if (stagesAvailable == null) {
+            stagesAvailable = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return stagesAvailable;
+    }
+
+    /**
+     * <p>
+     * The available template type. For stacks, both the <code>Original</code> and <code>Processed</code> template types
+     * are always available. For change sets, the <code>Original</code> template is always available. After the
+     * transforms are processed, the <code>Processed</code> template becomes available.
+     * </p>
+     * 
+     * @param stagesAvailable
+     *        The available template type. For stacks, both the <code>Original</code> and <code>Processed</code>
+     *        template types are always available. For change sets, the <code>Original</code> template is always
+     *        available. After the transforms are processed, the <code>Processed</code> template becomes available.
+     * @see TemplateStage
+     */
+
+    public void setStagesAvailable(java.util.Collection<String> stagesAvailable) {
+        if (stagesAvailable == null) {
+            this.stagesAvailable = null;
+            return;
+        }
+
+        this.stagesAvailable = new com.amazonaws.internal.SdkInternalList<String>(stagesAvailable);
+    }
+
+    /**
+     * <p>
+     * The available template type. For stacks, both the <code>Original</code> and <code>Processed</code> template types
+     * are always available. For change sets, the <code>Original</code> template is always available. After the
+     * transforms are processed, the <code>Processed</code> template becomes available.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStagesAvailable(java.util.Collection)} or {@link #withStagesAvailable(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param stagesAvailable
+     *        The available template type. For stacks, both the <code>Original</code> and <code>Processed</code>
+     *        template types are always available. For change sets, the <code>Original</code> template is always
+     *        available. After the transforms are processed, the <code>Processed</code> template becomes available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStage
+     */
+
+    public GetTemplateResult withStagesAvailable(String... stagesAvailable) {
+        if (this.stagesAvailable == null) {
+            setStagesAvailable(new com.amazonaws.internal.SdkInternalList<String>(stagesAvailable.length));
+        }
+        for (String ele : stagesAvailable) {
+            this.stagesAvailable.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The available template type. For stacks, both the <code>Original</code> and <code>Processed</code> template types
+     * are always available. For change sets, the <code>Original</code> template is always available. After the
+     * transforms are processed, the <code>Processed</code> template becomes available.
+     * </p>
+     * 
+     * @param stagesAvailable
+     *        The available template type. For stacks, both the <code>Original</code> and <code>Processed</code>
+     *        template types are always available. For change sets, the <code>Original</code> template is always
+     *        available. After the transforms are processed, the <code>Processed</code> template becomes available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStage
+     */
+
+    public GetTemplateResult withStagesAvailable(java.util.Collection<String> stagesAvailable) {
+        setStagesAvailable(stagesAvailable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The available template type. For stacks, both the <code>Original</code> and <code>Processed</code> template types
+     * are always available. For change sets, the <code>Original</code> template is always available. After the
+     * transforms are processed, the <code>Processed</code> template becomes available.
+     * </p>
+     * 
+     * @param stagesAvailable
+     *        The available template type. For stacks, both the <code>Original</code> and <code>Processed</code>
+     *        template types are always available. For change sets, the <code>Original</code> template is always
+     *        available. After the transforms are processed, the <code>Processed</code> template becomes available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStage
+     */
+
+    public GetTemplateResult withStagesAvailable(TemplateStage... stagesAvailable) {
+        com.amazonaws.internal.SdkInternalList<String> stagesAvailableCopy = new com.amazonaws.internal.SdkInternalList<String>(stagesAvailable.length);
+        for (TemplateStage value : stagesAvailable) {
+            stagesAvailableCopy.add(value.toString());
+        }
+        if (getStagesAvailable() == null) {
+            setStagesAvailable(stagesAvailableCopy);
+        } else {
+            getStagesAvailable().addAll(stagesAvailableCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -112,7 +241,9 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTemplateBody() != null)
-            sb.append("TemplateBody: " + getTemplateBody());
+            sb.append("TemplateBody: " + getTemplateBody() + ",");
+        if (getStagesAvailable() != null)
+            sb.append("StagesAvailable: " + getStagesAvailable());
         sb.append("}");
         return sb.toString();
     }
@@ -131,6 +262,10 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getTemplateBody() != null && other.getTemplateBody().equals(this.getTemplateBody()) == false)
             return false;
+        if (other.getStagesAvailable() == null ^ this.getStagesAvailable() == null)
+            return false;
+        if (other.getStagesAvailable() != null && other.getStagesAvailable().equals(this.getStagesAvailable()) == false)
+            return false;
         return true;
     }
 
@@ -140,6 +275,7 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTemplateBody() == null) ? 0 : getTemplateBody().hashCode());
+        hashCode = prime * hashCode + ((getStagesAvailable() == null) ? 0 : getStagesAvailable().hashCode());
         return hashCode;
     }
 

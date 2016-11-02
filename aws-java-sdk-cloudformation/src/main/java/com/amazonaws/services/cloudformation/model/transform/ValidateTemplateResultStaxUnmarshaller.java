@@ -64,6 +64,12 @@ public class ValidateTemplateResultStaxUnmarshaller implements Unmarshaller<Vali
                     validateTemplateResult.setCapabilitiesReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("DeclaredTransforms/member", targetDepth)) {
+                    validateTemplateResult.withDeclaredTransforms(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return validateTemplateResult;
