@@ -137,10 +137,11 @@ public class ClientConfigurationMaxErrorRetryTest extends RetryPolicyTestBase {
         ExecutionContext context = new ExecutionContext(true);
 
         try {
-            testedClient.execute(getSampleRequestWithRepeatableContent(originalRequest),
-                                 new NullResponseHandler(),
-                                 errorResponseHandler,
-                                 context);
+            testedClient.requestExecutionBuilder()
+                    .request(getSampleRequestWithRepeatableContent(originalRequest))
+                    .errorResponseHandler(errorResponseHandler)
+                    .executionContext(context)
+                    .execute();
             Assert.fail("AmazonServiceException is expected.");
         } catch (AmazonServiceException ase) {}
 

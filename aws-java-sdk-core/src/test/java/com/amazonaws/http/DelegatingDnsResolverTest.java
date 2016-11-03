@@ -73,10 +73,7 @@ public class DelegatingDnsResolverTest {
         request.setHttpMethod(HttpMethodName.GET);
 
         try {
-            testedClient.execute(request,
-                    null,
-                    null,
-                    context);
+            testedClient.requestExecutionBuilder().request(request).executionContext(context).execute();
             Assert.fail("AmazonClientException is expected.");
         } catch (AmazonClientException ace) {
         }

@@ -528,6 +528,13 @@ public class AmazonHttpClient {
          */
         <Output> Response<Output> execute(HttpResponseHandler<Output> responseHandler);
 
+        /**
+         * Executes the request with the given configuration; not handling response.
+         *
+         * @return Void response
+         */
+        Response<Void> execute();
+
     }
 
     private class RequestExecutionBuilderImpl implements RequestExecutionBuilder {
@@ -535,7 +542,7 @@ public class AmazonHttpClient {
         private Request<?> request;
         private RequestConfig requestConfig;
         private HttpResponseHandler<AmazonServiceException> errorResponseHandler;
-        private ExecutionContext executionContext;
+        private ExecutionContext executionContext = new ExecutionContext();
 
         @Override
         public RequestExecutionBuilder request(Request<?> request) {
@@ -565,13 +572,19 @@ public class AmazonHttpClient {
 
         @Override
         public <Output> Response<Output> execute(HttpResponseHandler<Output> responseHandler) {
+            RequestConfig config = requestConfig != null ? requestConfig : new AmazonWebServiceRequestAdapter(request.getOriginalRequest());
             return new RequestExecutor<Output>(request,
-                                               requestConfig,
+                                               config,
                                                getNonNullResponseHandler(errorResponseHandler),
                                                getNonNullResponseHandler(responseHandler),
                                                executionContext,
                                                getRequestHandlers()
             ).execute();
+        }
+
+        @Override
+        public Response<Void> execute() {
+            return execute(null);
         }
 
         private List<RequestHandler2> getRequestHandlers() {

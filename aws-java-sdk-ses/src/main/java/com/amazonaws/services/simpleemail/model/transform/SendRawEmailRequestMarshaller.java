@@ -79,6 +79,27 @@ public class SendRawEmailRequestMarshaller implements Marshaller<Request<SendRaw
             request.addParameter("ReturnPathArn", StringUtils.fromString(sendRawEmailRequest.getReturnPathArn()));
         }
 
+        com.amazonaws.internal.SdkInternalList<MessageTag> tagsList = (com.amazonaws.internal.SdkInternalList<MessageTag>) sendRawEmailRequest.getTags();
+        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+            int tagsListIndex = 1;
+
+            for (MessageTag tagsListValue : tagsList) {
+
+                if (tagsListValue.getName() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Name", StringUtils.fromString(tagsListValue.getName()));
+                }
+
+                if (tagsListValue.getValue() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                }
+                tagsListIndex++;
+            }
+        }
+
+        if (sendRawEmailRequest.getConfigurationSetName() != null) {
+            request.addParameter("ConfigurationSetName", StringUtils.fromString(sendRawEmailRequest.getConfigurationSetName()));
+        }
+
         return request;
     }
 

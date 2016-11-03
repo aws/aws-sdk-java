@@ -29,6 +29,8 @@ import com.amazonaws.http.HttpResponseHandler;
 
 public class NullResponseHandler implements HttpResponseHandler<AmazonWebServiceResponse<Object>> {
 
+    private boolean needsConnectionLeftOpen;
+
     @Override
     public AmazonWebServiceResponse<Object> handle(HttpResponse response) throws Exception {
         return null;
@@ -36,12 +38,21 @@ public class NullResponseHandler implements HttpResponseHandler<AmazonWebService
 
     @Override
     public boolean needsConnectionLeftOpen() {
-        return false;
+        return needsConnectionLeftOpen;
     }
 
     public static void assertIsUnmarshallingException(AmazonClientException e) {
         assertThat(e.getCause(), instanceOf(RuntimeException.class));
         RuntimeException re = (RuntimeException) e.getCause();
         assertThat(re.getMessage(), containsString("Unable to unmarshall response"));
+    }
+
+    /**
+     * Enable streaming
+     * @return Object for method chaining
+     */
+    public NullResponseHandler leaveConnectionOpen() {
+        this.needsConnectionLeftOpen = true;
+        return this;
     }
 }

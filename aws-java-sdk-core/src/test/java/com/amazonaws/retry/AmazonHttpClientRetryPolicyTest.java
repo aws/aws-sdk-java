@@ -76,10 +76,11 @@ public class AmazonHttpClientRetryPolicyTest extends RetryPolicyTestBase {
         // throws the simulated ASE.
         AmazonServiceException expectedServiceException = null;
         try {
-            testedClient.execute(testedRepeatableRequest,
-                                 null,
-                                 errorResponseHandler,
-                                 context);
+            testedClient.requestExecutionBuilder()
+                    .request(testedRepeatableRequest)
+                    .errorResponseHandler(errorResponseHandler)
+                    .executionContext(context)
+                    .execute();
             Assert.fail("AmazonServiceException is expected.");
         } catch (AmazonServiceException ase) {
             // We should see the original service exception
@@ -124,10 +125,11 @@ public class AmazonHttpClientRetryPolicyTest extends RetryPolicyTestBase {
         // throws the an ACE containing the simulated IOException.
         AmazonClientException expectedClientException = null;
         try {
-            testedClient.execute(testedRepeatableRequest,
-                                 null,
-                                 errorResponseHandler,
-                                 context);
+            testedClient.requestExecutionBuilder()
+                    .request(testedRepeatableRequest)
+                    .errorResponseHandler(errorResponseHandler)
+                    .executionContext(context)
+                    .execute();
             Assert.fail("AmazonClientException is expected.");
         } catch (AmazonClientException ace) {
             Assert.assertTrue(simulatedIOException == ace.getCause());
@@ -172,10 +174,11 @@ public class AmazonHttpClientRetryPolicyTest extends RetryPolicyTestBase {
         // It should fail directly and throw the ASE, without consulting the
         // custom shouldRetry(..) method.
         try {
-            testedClient.execute(testedNonRepeatableRequest,
-                                 null,
-                                 errorResponseHandler,
-                                 context);
+            testedClient.requestExecutionBuilder()
+                    .request(testedNonRepeatableRequest)
+                    .errorResponseHandler(errorResponseHandler)
+                    .executionContext(context)
+                    .execute();
             Assert.fail("AmazonServiceException is expected.");
         } catch (AmazonServiceException ase) {
             Assert.assertEquals(random500StatusCode, ase.getStatusCode());
@@ -217,10 +220,11 @@ public class AmazonHttpClientRetryPolicyTest extends RetryPolicyTestBase {
         // IOException, without consulting the
         // custom shouldRetry(..) method.
         try {
-            testedClient.execute(testedRepeatableRequest,
-                                 null,
-                                 errorResponseHandler,
-                                 context);
+            testedClient.requestExecutionBuilder()
+                    .request(testedRepeatableRequest)
+                    .errorResponseHandler(errorResponseHandler)
+                    .executionContext(context)
+                    .execute();
             Assert.fail("AmazonClientException is expected.");
         } catch (AmazonClientException ace) {
             Assert.assertTrue(simulatedIOException == ace.getCause());
@@ -260,10 +264,11 @@ public class AmazonHttpClientRetryPolicyTest extends RetryPolicyTestBase {
         // It should fail directly and throw the simulated NPE, without
         // consulting the custom shouldRetry(..) method.
         try {
-            testedClient.execute(testedRepeatableRequest,
-                                 null,
-                                 errorResponseHandler,
-                                 context);
+            testedClient.requestExecutionBuilder()
+                    .request(testedRepeatableRequest)
+                    .errorResponseHandler(errorResponseHandler)
+                    .executionContext(context)
+                    .execute();
             Assert.fail("AmazonClientException is expected.");
         } catch (NullPointerException npe) {
             Assert.assertTrue(simulatedNPE == npe);

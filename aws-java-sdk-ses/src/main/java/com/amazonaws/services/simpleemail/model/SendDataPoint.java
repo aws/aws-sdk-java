@@ -30,7 +30,7 @@ public class SendDataPoint implements Serializable, Cloneable {
     private java.util.Date timestamp;
     /**
      * <p>
-     * Number of emails that have been enqueued for sending.
+     * Number of emails that have been sent.
      * </p>
      */
     private Long deliveryAttempts;
@@ -95,11 +95,11 @@ public class SendDataPoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of emails that have been enqueued for sending.
+     * Number of emails that have been sent.
      * </p>
      * 
      * @param deliveryAttempts
-     *        Number of emails that have been enqueued for sending.
+     *        Number of emails that have been sent.
      */
 
     public void setDeliveryAttempts(Long deliveryAttempts) {
@@ -108,10 +108,10 @@ public class SendDataPoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of emails that have been enqueued for sending.
+     * Number of emails that have been sent.
      * </p>
      * 
-     * @return Number of emails that have been enqueued for sending.
+     * @return Number of emails that have been sent.
      */
 
     public Long getDeliveryAttempts() {
@@ -120,11 +120,11 @@ public class SendDataPoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of emails that have been enqueued for sending.
+     * Number of emails that have been sent.
      * </p>
      * 
      * @param deliveryAttempts
-     *        Number of emails that have been enqueued for sending.
+     *        Number of emails that have been sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

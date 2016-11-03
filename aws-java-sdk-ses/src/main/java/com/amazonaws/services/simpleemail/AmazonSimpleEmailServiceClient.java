@@ -228,16 +228,23 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     }
 
     private void init() {
+        exceptionUnmarshallers.add(new InvalidFirehoseDestinationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ConfigurationSetDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidS3ConfigurationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new EventDestinationAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MessageRejectedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new RuleDoesNotExistExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidCloudWatchDestinationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidConfigurationSetExceptionUnmarshaller());
         exceptionUnmarshallers.add(new RuleSetDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSnsTopicExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new EventDestinationDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLambdaFunctionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CannotDeleteExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ConfigurationSetAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MailFromDomainNotVerifiedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException.class));
 
@@ -274,11 +281,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws RuleSetDoesNotExistException
      *         Indicates that the provided receipt rule set does not exist.
      * @throws AlreadyExistsException
-     *         Indicates that a resource could not be created due to a naming conflict.
+     *         Indicates that a resource could not be created because of a naming conflict.
      * @throws LimitExceededException
-     *         Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits,
-     *         see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-     *         Guide</a>.
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.CloneReceiptRuleSet
      */
     @Override
@@ -313,6 +320,139 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Creates a configuration set.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param createConfigurationSetRequest
+     *        Represents a request to create a configuration set. Configuration sets enable you to publish email sending
+     *        events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the CreateConfigurationSet operation returned by the service.
+     * @throws ConfigurationSetAlreadyExistsException
+     *         Indicates that the configuration set could not be created because of a naming conflict.
+     * @throws InvalidConfigurationSetException
+     *         Indicates that the configuration set is invalid. See the error message for details.
+     * @throws LimitExceededException
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
+     * @sample AmazonSimpleEmailService.CreateConfigurationSet
+     */
+    @Override
+    public CreateConfigurationSetResult createConfigurationSet(CreateConfigurationSetRequest createConfigurationSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(createConfigurationSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateConfigurationSetRequest> request = null;
+        Response<CreateConfigurationSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateConfigurationSetRequestMarshaller().marshall(super.beforeMarshalling(createConfigurationSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateConfigurationSetResult> responseHandler = new StaxResponseHandler<CreateConfigurationSetResult>(
+                    new CreateConfigurationSetResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a configuration set event destination.
+     * </p>
+     * <note>
+     * <p>
+     * When you create or update an event destination, you must provide one, and only one, destination. The destination
+     * can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+     * </p>
+     * </note>
+     * <p>
+     * An event destination is the AWS service to which Amazon SES publishes the email sending events associated with a
+     * configuration set. For information about using configuration sets, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param createConfigurationSetEventDestinationRequest
+     *        Represents a request to create a configuration set event destination. A configuration set event
+     *        destination, which can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an AWS service in
+     *        which Amazon SES publishes the email sending events associated with a configuration set. For information
+     *        about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the CreateConfigurationSetEventDestination operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @throws EventDestinationAlreadyExistsException
+     *         Indicates that the event destination could not be created because of a naming conflict.
+     * @throws InvalidCloudWatchDestinationException
+     *         Indicates that the Amazon CloudWatch destination is invalid. See the error message for details.
+     * @throws InvalidFirehoseDestinationException
+     *         Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.
+     * @throws LimitExceededException
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
+     * @sample AmazonSimpleEmailService.CreateConfigurationSetEventDestination
+     */
+    @Override
+    public CreateConfigurationSetEventDestinationResult createConfigurationSetEventDestination(
+            CreateConfigurationSetEventDestinationRequest createConfigurationSetEventDestinationRequest) {
+        ExecutionContext executionContext = createExecutionContext(createConfigurationSetEventDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateConfigurationSetEventDestinationRequest> request = null;
+        Response<CreateConfigurationSetEventDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateConfigurationSetEventDestinationRequestMarshaller().marshall(super
+                        .beforeMarshalling(createConfigurationSetEventDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<CreateConfigurationSetEventDestinationResult>(
+                    new CreateConfigurationSetEventDestinationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new IP address filter.
      * </p>
      * <p>
@@ -331,11 +471,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the CreateReceiptFilter operation returned by the service.
      * @throws LimitExceededException
-     *         Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits,
-     *         see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-     *         Guide</a>.
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
      * @throws AlreadyExistsException
-     *         Indicates that a resource could not be created due to a naming conflict.
+     *         Indicates that a resource could not be created because of a naming conflict.
      * @sample AmazonSimpleEmailService.CreateReceiptFilter
      */
     @Override
@@ -404,15 +544,15 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
      *         SES Developer Guide</a>.
      * @throws AlreadyExistsException
-     *         Indicates that a resource could not be created due to a naming conflict.
+     *         Indicates that a resource could not be created because of a naming conflict.
      * @throws RuleDoesNotExistException
      *         Indicates that the provided receipt rule does not exist.
      * @throws RuleSetDoesNotExistException
      *         Indicates that the provided receipt rule set does not exist.
      * @throws LimitExceededException
-     *         Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits,
-     *         see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-     *         Guide</a>.
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.CreateReceiptRule
      */
     @Override
@@ -465,11 +605,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Developer Guide</a>.
      * @return Result of the CreateReceiptRuleSet operation returned by the service.
      * @throws AlreadyExistsException
-     *         Indicates that a resource could not be created due to a naming conflict.
+     *         Indicates that a resource could not be created because of a naming conflict.
      * @throws LimitExceededException
-     *         Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits,
-     *         see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-     *         Guide</a>.
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.CreateReceiptRuleSet
      */
     @Override
@@ -492,6 +632,118 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateReceiptRuleSetResult> responseHandler = new StaxResponseHandler<CreateReceiptRuleSetResult>(
                     new CreateReceiptRuleSetResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a configuration set.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param deleteConfigurationSetRequest
+     *        Represents a request to delete a configuration set. Configuration sets enable you to publish email sending
+     *        events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the DeleteConfigurationSet operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @sample AmazonSimpleEmailService.DeleteConfigurationSet
+     */
+    @Override
+    public DeleteConfigurationSetResult deleteConfigurationSet(DeleteConfigurationSetRequest deleteConfigurationSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteConfigurationSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConfigurationSetRequest> request = null;
+        Response<DeleteConfigurationSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConfigurationSetRequestMarshaller().marshall(super.beforeMarshalling(deleteConfigurationSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteConfigurationSetResult> responseHandler = new StaxResponseHandler<DeleteConfigurationSetResult>(
+                    new DeleteConfigurationSetResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a configuration set event destination.
+     * </p>
+     * <p>
+     * Configuration set event destinations are associated with configuration sets, which enable you to publish email
+     * sending events. For information about using configuration sets, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param deleteConfigurationSetEventDestinationRequest
+     *        Represents a request to delete a configuration set event destination. Configuration set event destinations
+     *        are associated with configuration sets, which enable you to publish email sending events. For information
+     *        about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the DeleteConfigurationSetEventDestination operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @throws EventDestinationDoesNotExistException
+     *         Indicates that the event destination does not exist.
+     * @sample AmazonSimpleEmailService.DeleteConfigurationSetEventDestination
+     */
+    @Override
+    public DeleteConfigurationSetEventDestinationResult deleteConfigurationSetEventDestination(
+            DeleteConfigurationSetEventDestinationRequest deleteConfigurationSetEventDestinationRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteConfigurationSetEventDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConfigurationSetEventDestinationRequest> request = null;
+        Response<DeleteConfigurationSetEventDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConfigurationSetEventDestinationRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteConfigurationSetEventDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<DeleteConfigurationSetEventDestinationResult>(
+                    new DeleteConfigurationSetEventDestinationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -856,6 +1108,59 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DescribeActiveReceiptRuleSetResult> responseHandler = new StaxResponseHandler<DescribeActiveReceiptRuleSetResult>(
                     new DescribeActiveReceiptRuleSetResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the details of the specified configuration set.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param describeConfigurationSetRequest
+     *        Represents a request to return the details of a configuration set. Configuration sets enable you to
+     *        publish email sending events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the DescribeConfigurationSet operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @sample AmazonSimpleEmailService.DescribeConfigurationSet
+     */
+    @Override
+    public DescribeConfigurationSetResult describeConfigurationSet(DescribeConfigurationSetRequest describeConfigurationSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeConfigurationSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeConfigurationSetRequest> request = null;
+        Response<DescribeConfigurationSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeConfigurationSetRequestMarshaller().marshall(super.beforeMarshalling(describeConfigurationSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeConfigurationSetResult> responseHandler = new StaxResponseHandler<DescribeConfigurationSetResult>(
+                    new DescribeConfigurationSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1361,6 +1666,57 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Lists the configuration sets associated with your AWS account.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second and can return up to 50 configuration sets at a time.
+     * </p>
+     * 
+     * @param listConfigurationSetsRequest
+     *        Represents a request to list the configuration sets associated with your AWS account. Configuration sets
+     *        enable you to publish email sending events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the ListConfigurationSets operation returned by the service.
+     * @sample AmazonSimpleEmailService.ListConfigurationSets
+     */
+    @Override
+    public ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest listConfigurationSetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listConfigurationSetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListConfigurationSetsRequest> request = null;
+        Response<ListConfigurationSetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListConfigurationSetsRequestMarshaller().marshall(super.beforeMarshalling(listConfigurationSetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListConfigurationSetsResult> responseHandler = new StaxResponseHandler<ListConfigurationSetsResult>(
+                    new ListConfigurationSetsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list containing all of the identities (email addresses and domains) for your AWS account, regardless of
      * verification status.
      * </p>
@@ -1483,8 +1839,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * 
      * @param listReceiptFiltersRequest
-     *        : Represents a request to list the IP address filters that exist under your AWS account. You use IP
-     *        address filters when you receive email with Amazon SES. For more information, see the <a
+     *        Represents a request to list the IP address filters that exist under your AWS account. You use IP address
+     *        filters when you receive email with Amazon SES. For more information, see the <a
      *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES
      *        Developer Guide</a>.
      * @return Result of the ListReceiptFilters operation returned by the service.
@@ -1857,6 +2213,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         for an identity, see the <a
      *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer
      *         Guide</a>.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
      * @sample AmazonSimpleEmailService.SendEmail
      */
     @Override
@@ -1996,6 +2354,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         for an identity, see the <a
      *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer
      *         Guide</a>.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
      * @sample AmazonSimpleEmailService.SendRawEmail
      */
     @Override
@@ -2436,6 +2796,74 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Updates the event destination of a configuration set.
+     * </p>
+     * <note>
+     * <p>
+     * When you create or update an event destination, you must provide one, and only one, destination. The destination
+     * can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+     * </p>
+     * </note>
+     * <p>
+     * Event destinations are associated with configuration sets, which enable you to publish email sending events to
+     * Amazon CloudWatch or Amazon Kinesis Firehose. For information about using configuration sets, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetEventDestinationRequest
+     *        Represents a request to update the event destination of a configuration set. Configuration sets enable you
+     *        to publish email sending events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the UpdateConfigurationSetEventDestination operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @throws EventDestinationDoesNotExistException
+     *         Indicates that the event destination does not exist.
+     * @throws InvalidCloudWatchDestinationException
+     *         Indicates that the Amazon CloudWatch destination is invalid. See the error message for details.
+     * @throws InvalidFirehoseDestinationException
+     *         Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.
+     * @sample AmazonSimpleEmailService.UpdateConfigurationSetEventDestination
+     */
+    @Override
+    public UpdateConfigurationSetEventDestinationResult updateConfigurationSetEventDestination(
+            UpdateConfigurationSetEventDestinationRequest updateConfigurationSetEventDestinationRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateConfigurationSetEventDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConfigurationSetEventDestinationRequest> request = null;
+        Response<UpdateConfigurationSetEventDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConfigurationSetEventDestinationRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateConfigurationSetEventDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetEventDestinationResult>(
+                    new UpdateConfigurationSetEventDestinationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a receipt rule.
      * </p>
      * <p>
@@ -2474,9 +2902,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws RuleDoesNotExistException
      *         Indicates that the provided receipt rule does not exist.
      * @throws LimitExceededException
-     *         Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits,
-     *         see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-     *         Guide</a>.
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.UpdateReceiptRule
      */
     @Override

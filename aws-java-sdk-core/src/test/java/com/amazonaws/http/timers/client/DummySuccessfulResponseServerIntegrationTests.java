@@ -27,11 +27,9 @@ import com.amazonaws.http.apache.client.impl.SdkHttpClient;
 import com.amazonaws.http.request.RequestHandlerTestUtils;
 import com.amazonaws.http.request.SlowRequestHandler;
 import com.amazonaws.http.response.DummyResponseHandler;
-import com.amazonaws.http.response.NullErrorResponseHandler;
 import com.amazonaws.http.response.UnresponsiveResponseHandler;
 import com.amazonaws.http.server.MockServer;
 import com.amazonaws.http.settings.HttpClientSettings;
-import org.apache.http.client.HttpClient;
 import org.apache.http.pool.ConnPoolControl;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -70,8 +68,7 @@ public class DummySuccessfulResponseServerIntegrationTests extends MockServerTes
         httpClient = new AmazonHttpClient(
                 new ClientConfiguration().withClientExecutionTimeout(CLIENT_EXECUTION_TIMEOUT));
 
-        httpClient.execute(newGetRequest(), new UnresponsiveResponseHandler(), new NullErrorResponseHandler(),
-                new ExecutionContext());
+        requestBuilder().execute(new UnresponsiveResponseHandler());
     }
 
     @Test(timeout = TEST_TIMEOUT, expected = ClientExecutionTimeoutException.class)
@@ -83,8 +80,7 @@ public class DummySuccessfulResponseServerIntegrationTests extends MockServerTes
         List<RequestHandler2> requestHandlers = RequestHandlerTestUtils.buildRequestHandlerList(
                 new SlowRequestHandler().withAfterResponseWaitInSeconds(SLOW_REQUEST_HANDLER_TIMEOUT));
 
-        httpClient.execute(newGetRequest(), new DummyResponseHandler(), new NullErrorResponseHandler(),
-                new ExecutionContext(requestHandlers, false, null));
+        requestBuilder().executionContext(withHandlers(requestHandlers)).execute(new DummyResponseHandler());
     }
 
     @Test(timeout = TEST_TIMEOUT, expected = ClientExecutionTimeoutException.class)
@@ -96,8 +92,7 @@ public class DummySuccessfulResponseServerIntegrationTests extends MockServerTes
         List<RequestHandler2> requestHandlers = RequestHandlerTestUtils.buildRequestHandlerList(
                 new SlowRequestHandler().withBeforeRequestWaitInSeconds(SLOW_REQUEST_HANDLER_TIMEOUT));
 
-        httpClient.execute(newGetRequest(), new DummyResponseHandler(), new NullErrorResponseHandler(),
-                new ExecutionContext(requestHandlers, false, null));
+        requestBuilder().executionContext(withHandlers(requestHandlers)).execute(new DummyResponseHandler());
     }
 
     /**
@@ -117,8 +112,7 @@ public class DummySuccessfulResponseServerIntegrationTests extends MockServerTes
         List<RequestHandler2> requestHandlers = RequestHandlerTestUtils
                 .buildRequestHandlerList(new SlowRequestHandler().withAfterResponseWaitInSeconds(10));
         try {
-            httpClient.execute(newGetRequest(), new DummyResponseHandler().leaveConnectionOpen(),
-                    new NullErrorResponseHandler(), new ExecutionContext(requestHandlers, false, null));
+            requestBuilder().executionContext(withHandlers(requestHandlers)).execute(new DummyResponseHandler().leaveConnectionOpen());
             fail("Expected exception");
         } catch (AmazonClientException e) {
             assertThat(e.getCause(), instanceOf(InterruptedException.class));
@@ -127,6 +121,12 @@ public class DummySuccessfulResponseServerIntegrationTests extends MockServerTes
         @SuppressWarnings("deprecation")
         int leasedConnections = ((ConnPoolControl<?>) ((SdkHttpClient)rawHttpClient).getHttpClientConnectionManager()).getTotalStats().getLeased();
         assertEquals(0, leasedConnections);
+    }
+
+    private AmazonHttpClient.RequestExecutionBuilder requestBuilder() { return httpClient.requestExecutionBuilder().request(newGetRequest()); }
+
+    private ExecutionContext withHandlers(List<RequestHandler2> requestHandlers) {
+        return ExecutionContext.builder().withRequestHandler2s(requestHandlers).build();
     }
 
 }

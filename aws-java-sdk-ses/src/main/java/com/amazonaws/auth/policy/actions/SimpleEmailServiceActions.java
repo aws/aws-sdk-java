@@ -25,12 +25,20 @@ public enum SimpleEmailServiceActions implements Action {
 
     /** Action for the CloneReceiptRuleSet operation. */
     CloneReceiptRuleSet("ses:CloneReceiptRuleSet"),
+    /** Action for the CreateConfigurationSet operation. */
+    CreateConfigurationSet("ses:CreateConfigurationSet"),
+    /** Action for the CreateConfigurationSetEventDestination operation. */
+    CreateConfigurationSetEventDestination("ses:CreateConfigurationSetEventDestination"),
     /** Action for the CreateReceiptFilter operation. */
     CreateReceiptFilter("ses:CreateReceiptFilter"),
     /** Action for the CreateReceiptRule operation. */
     CreateReceiptRule("ses:CreateReceiptRule"),
     /** Action for the CreateReceiptRuleSet operation. */
     CreateReceiptRuleSet("ses:CreateReceiptRuleSet"),
+    /** Action for the DeleteConfigurationSet operation. */
+    DeleteConfigurationSet("ses:DeleteConfigurationSet"),
+    /** Action for the DeleteConfigurationSetEventDestination operation. */
+    DeleteConfigurationSetEventDestination("ses:DeleteConfigurationSetEventDestination"),
     /** Action for the DeleteIdentity operation. */
     DeleteIdentity("ses:DeleteIdentity"),
     /** Action for the DeleteIdentityPolicy operation. */
@@ -45,6 +53,8 @@ public enum SimpleEmailServiceActions implements Action {
     DeleteVerifiedEmailAddress("ses:DeleteVerifiedEmailAddress"),
     /** Action for the DescribeActiveReceiptRuleSet operation. */
     DescribeActiveReceiptRuleSet("ses:DescribeActiveReceiptRuleSet"),
+    /** Action for the DescribeConfigurationSet operation. */
+    DescribeConfigurationSet("ses:DescribeConfigurationSet"),
     /** Action for the DescribeReceiptRule operation. */
     DescribeReceiptRule("ses:DescribeReceiptRule"),
     /** Action for the DescribeReceiptRuleSet operation. */
@@ -63,6 +73,8 @@ public enum SimpleEmailServiceActions implements Action {
     GetSendQuota("ses:GetSendQuota"),
     /** Action for the GetSendStatistics operation. */
     GetSendStatistics("ses:GetSendStatistics"),
+    /** Action for the ListConfigurationSets operation. */
+    ListConfigurationSets("ses:ListConfigurationSets"),
     /** Action for the ListIdentities operation. */
     ListIdentities("ses:ListIdentities"),
     /** Action for the ListIdentityPolicies operation. */
@@ -97,6 +109,8 @@ public enum SimpleEmailServiceActions implements Action {
     SetIdentityNotificationTopic("ses:SetIdentityNotificationTopic"),
     /** Action for the SetReceiptRulePosition operation. */
     SetReceiptRulePosition("ses:SetReceiptRulePosition"),
+    /** Action for the UpdateConfigurationSetEventDestination operation. */
+    UpdateConfigurationSetEventDestination("ses:UpdateConfigurationSetEventDestination"),
     /** Action for the UpdateReceiptRule operation. */
     UpdateReceiptRule("ses:UpdateReceiptRule"),
     /** Action for the VerifyDomainDkim operation. */

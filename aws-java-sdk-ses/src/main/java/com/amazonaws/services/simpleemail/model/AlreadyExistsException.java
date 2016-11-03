@@ -14,7 +14,7 @@ package com.amazonaws.services.simpleemail.model;
 
 /**
  * <p>
- * Indicates that a resource could not be created due to a naming conflict.
+ * Indicates that a resource could not be created because of a naming conflict.
  * </p>
  */
 public class AlreadyExistsException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {

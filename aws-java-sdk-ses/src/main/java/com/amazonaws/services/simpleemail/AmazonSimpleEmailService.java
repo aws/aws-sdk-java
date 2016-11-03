@@ -113,14 +113,90 @@ public interface AmazonSimpleEmailService {
      * @throws RuleSetDoesNotExistException
      *         Indicates that the provided receipt rule set does not exist.
      * @throws AlreadyExistsException
-     *         Indicates that a resource could not be created due to a naming conflict.
+     *         Indicates that a resource could not be created because of a naming conflict.
      * @throws LimitExceededException
-     *         Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits,
-     *         see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-     *         Guide</a>.
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.CloneReceiptRuleSet
      */
     CloneReceiptRuleSetResult cloneReceiptRuleSet(CloneReceiptRuleSetRequest cloneReceiptRuleSetRequest);
+
+    /**
+     * <p>
+     * Creates a configuration set.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param createConfigurationSetRequest
+     *        Represents a request to create a configuration set. Configuration sets enable you to publish email sending
+     *        events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the CreateConfigurationSet operation returned by the service.
+     * @throws ConfigurationSetAlreadyExistsException
+     *         Indicates that the configuration set could not be created because of a naming conflict.
+     * @throws InvalidConfigurationSetException
+     *         Indicates that the configuration set is invalid. See the error message for details.
+     * @throws LimitExceededException
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
+     * @sample AmazonSimpleEmailService.CreateConfigurationSet
+     */
+    CreateConfigurationSetResult createConfigurationSet(CreateConfigurationSetRequest createConfigurationSetRequest);
+
+    /**
+     * <p>
+     * Creates a configuration set event destination.
+     * </p>
+     * <note>
+     * <p>
+     * When you create or update an event destination, you must provide one, and only one, destination. The destination
+     * can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+     * </p>
+     * </note>
+     * <p>
+     * An event destination is the AWS service to which Amazon SES publishes the email sending events associated with a
+     * configuration set. For information about using configuration sets, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param createConfigurationSetEventDestinationRequest
+     *        Represents a request to create a configuration set event destination. A configuration set event
+     *        destination, which can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an AWS service in
+     *        which Amazon SES publishes the email sending events associated with a configuration set. For information
+     *        about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the CreateConfigurationSetEventDestination operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @throws EventDestinationAlreadyExistsException
+     *         Indicates that the event destination could not be created because of a naming conflict.
+     * @throws InvalidCloudWatchDestinationException
+     *         Indicates that the Amazon CloudWatch destination is invalid. See the error message for details.
+     * @throws InvalidFirehoseDestinationException
+     *         Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.
+     * @throws LimitExceededException
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
+     * @sample AmazonSimpleEmailService.CreateConfigurationSetEventDestination
+     */
+    CreateConfigurationSetEventDestinationResult createConfigurationSetEventDestination(
+            CreateConfigurationSetEventDestinationRequest createConfigurationSetEventDestinationRequest);
 
     /**
      * <p>
@@ -142,11 +218,11 @@ public interface AmazonSimpleEmailService {
      *        Developer Guide</a>.
      * @return Result of the CreateReceiptFilter operation returned by the service.
      * @throws LimitExceededException
-     *         Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits,
-     *         see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-     *         Guide</a>.
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
      * @throws AlreadyExistsException
-     *         Indicates that a resource could not be created due to a naming conflict.
+     *         Indicates that a resource could not be created because of a naming conflict.
      * @sample AmazonSimpleEmailService.CreateReceiptFilter
      */
     CreateReceiptFilterResult createReceiptFilter(CreateReceiptFilterRequest createReceiptFilterRequest);
@@ -187,15 +263,15 @@ public interface AmazonSimpleEmailService {
      *         <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
      *         SES Developer Guide</a>.
      * @throws AlreadyExistsException
-     *         Indicates that a resource could not be created due to a naming conflict.
+     *         Indicates that a resource could not be created because of a naming conflict.
      * @throws RuleDoesNotExistException
      *         Indicates that the provided receipt rule does not exist.
      * @throws RuleSetDoesNotExistException
      *         Indicates that the provided receipt rule set does not exist.
      * @throws LimitExceededException
-     *         Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits,
-     *         see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-     *         Guide</a>.
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.CreateReceiptRule
      */
     CreateReceiptRuleResult createReceiptRule(CreateReceiptRuleRequest createReceiptRuleRequest);
@@ -220,14 +296,69 @@ public interface AmazonSimpleEmailService {
      *        Developer Guide</a>.
      * @return Result of the CreateReceiptRuleSet operation returned by the service.
      * @throws AlreadyExistsException
-     *         Indicates that a resource could not be created due to a naming conflict.
+     *         Indicates that a resource could not be created because of a naming conflict.
      * @throws LimitExceededException
-     *         Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits,
-     *         see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-     *         Guide</a>.
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.CreateReceiptRuleSet
      */
     CreateReceiptRuleSetResult createReceiptRuleSet(CreateReceiptRuleSetRequest createReceiptRuleSetRequest);
+
+    /**
+     * <p>
+     * Deletes a configuration set.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param deleteConfigurationSetRequest
+     *        Represents a request to delete a configuration set. Configuration sets enable you to publish email sending
+     *        events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the DeleteConfigurationSet operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @sample AmazonSimpleEmailService.DeleteConfigurationSet
+     */
+    DeleteConfigurationSetResult deleteConfigurationSet(DeleteConfigurationSetRequest deleteConfigurationSetRequest);
+
+    /**
+     * <p>
+     * Deletes a configuration set event destination.
+     * </p>
+     * <p>
+     * Configuration set event destinations are associated with configuration sets, which enable you to publish email
+     * sending events. For information about using configuration sets, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param deleteConfigurationSetEventDestinationRequest
+     *        Represents a request to delete a configuration set event destination. Configuration set event destinations
+     *        are associated with configuration sets, which enable you to publish email sending events. For information
+     *        about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the DeleteConfigurationSetEventDestination operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @throws EventDestinationDoesNotExistException
+     *         Indicates that the event destination does not exist.
+     * @sample AmazonSimpleEmailService.DeleteConfigurationSetEventDestination
+     */
+    DeleteConfigurationSetEventDestinationResult deleteConfigurationSetEventDestination(
+            DeleteConfigurationSetEventDestinationRequest deleteConfigurationSetEventDestinationRequest);
 
     /**
      * <p>
@@ -396,6 +527,31 @@ public interface AmazonSimpleEmailService {
      * @sample AmazonSimpleEmailService.DescribeActiveReceiptRuleSet
      */
     DescribeActiveReceiptRuleSetResult describeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest describeActiveReceiptRuleSetRequest);
+
+    /**
+     * <p>
+     * Returns the details of the specified configuration set.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param describeConfigurationSetRequest
+     *        Represents a request to return the details of a configuration set. Configuration sets enable you to
+     *        publish email sending events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the DescribeConfigurationSet operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @sample AmazonSimpleEmailService.DescribeConfigurationSet
+     */
+    DescribeConfigurationSetResult describeConfigurationSet(DescribeConfigurationSetRequest describeConfigurationSetRequest);
 
     /**
      * <p>
@@ -642,6 +798,29 @@ public interface AmazonSimpleEmailService {
 
     /**
      * <p>
+     * Lists the configuration sets associated with your AWS account.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second and can return up to 50 configuration sets at a time.
+     * </p>
+     * 
+     * @param listConfigurationSetsRequest
+     *        Represents a request to list the configuration sets associated with your AWS account. Configuration sets
+     *        enable you to publish email sending events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the ListConfigurationSets operation returned by the service.
+     * @sample AmazonSimpleEmailService.ListConfigurationSets
+     */
+    ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest listConfigurationSetsRequest);
+
+    /**
+     * <p>
      * Returns a list containing all of the identities (email addresses and domains) for your AWS account, regardless of
      * verification status.
      * </p>
@@ -710,8 +889,8 @@ public interface AmazonSimpleEmailService {
      * </p>
      * 
      * @param listReceiptFiltersRequest
-     *        : Represents a request to list the IP address filters that exist under your AWS account. You use IP
-     *        address filters when you receive email with Amazon SES. For more information, see the <a
+     *        Represents a request to list the IP address filters that exist under your AWS account. You use IP address
+     *        filters when you receive email with Amazon SES. For more information, see the <a
      *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES
      *        Developer Guide</a>.
      * @return Result of the ListReceiptFilters operation returned by the service.
@@ -919,6 +1098,8 @@ public interface AmazonSimpleEmailService {
      *         for an identity, see the <a
      *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer
      *         Guide</a>.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
      * @sample AmazonSimpleEmailService.SendEmail
      */
     SendEmailResult sendEmail(SendEmailRequest sendEmailRequest);
@@ -1031,6 +1212,8 @@ public interface AmazonSimpleEmailService {
      *         for an identity, see the <a
      *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer
      *         Guide</a>.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
      * @sample AmazonSimpleEmailService.SendRawEmail
      */
     SendRawEmailResult sendRawEmail(SendRawEmailRequest sendRawEmailRequest);
@@ -1246,6 +1429,45 @@ public interface AmazonSimpleEmailService {
 
     /**
      * <p>
+     * Updates the event destination of a configuration set.
+     * </p>
+     * <note>
+     * <p>
+     * When you create or update an event destination, you must provide one, and only one, destination. The destination
+     * can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+     * </p>
+     * </note>
+     * <p>
+     * Event destinations are associated with configuration sets, which enable you to publish email sending events to
+     * Amazon CloudWatch or Amazon Kinesis Firehose. For information about using configuration sets, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetEventDestinationRequest
+     *        Represents a request to update the event destination of a configuration set. Configuration sets enable you
+     *        to publish email sending events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the UpdateConfigurationSetEventDestination operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @throws EventDestinationDoesNotExistException
+     *         Indicates that the event destination does not exist.
+     * @throws InvalidCloudWatchDestinationException
+     *         Indicates that the Amazon CloudWatch destination is invalid. See the error message for details.
+     * @throws InvalidFirehoseDestinationException
+     *         Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.
+     * @sample AmazonSimpleEmailService.UpdateConfigurationSetEventDestination
+     */
+    UpdateConfigurationSetEventDestinationResult updateConfigurationSetEventDestination(
+            UpdateConfigurationSetEventDestinationRequest updateConfigurationSetEventDestinationRequest);
+
+    /**
+     * <p>
      * Updates a receipt rule.
      * </p>
      * <p>
@@ -1284,9 +1506,9 @@ public interface AmazonSimpleEmailService {
      * @throws RuleDoesNotExistException
      *         Indicates that the provided receipt rule does not exist.
      * @throws LimitExceededException
-     *         Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits,
-     *         see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-     *         Guide</a>.
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
      * @sample AmazonSimpleEmailService.UpdateReceiptRule
      */
     UpdateReceiptRuleResult updateReceiptRule(UpdateReceiptRuleRequest updateReceiptRuleRequest);

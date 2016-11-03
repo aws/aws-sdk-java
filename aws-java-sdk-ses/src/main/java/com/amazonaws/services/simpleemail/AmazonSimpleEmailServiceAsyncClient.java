@@ -256,6 +256,72 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
     }
 
     @Override
+    public java.util.concurrent.Future<CreateConfigurationSetResult> createConfigurationSetAsync(CreateConfigurationSetRequest request) {
+
+        return createConfigurationSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConfigurationSetResult> createConfigurationSetAsync(final CreateConfigurationSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConfigurationSetRequest, CreateConfigurationSetResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateConfigurationSetResult>() {
+            @Override
+            public CreateConfigurationSetResult call() throws Exception {
+                CreateConfigurationSetResult result;
+
+                try {
+                    result = createConfigurationSet(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConfigurationSetEventDestinationResult> createConfigurationSetEventDestinationAsync(
+            CreateConfigurationSetEventDestinationRequest request) {
+
+        return createConfigurationSetEventDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConfigurationSetEventDestinationResult> createConfigurationSetEventDestinationAsync(
+            final CreateConfigurationSetEventDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConfigurationSetEventDestinationRequest, CreateConfigurationSetEventDestinationResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateConfigurationSetEventDestinationResult>() {
+            @Override
+            public CreateConfigurationSetEventDestinationResult call() throws Exception {
+                CreateConfigurationSetEventDestinationResult result;
+
+                try {
+                    result = createConfigurationSetEventDestination(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReceiptFilterResult> createReceiptFilterAsync(CreateReceiptFilterRequest request) {
 
         return createReceiptFilterAsync(request, null);
@@ -336,6 +402,72 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
 
                 try {
                     result = createReceiptRuleSet(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfigurationSetResult> deleteConfigurationSetAsync(DeleteConfigurationSetRequest request) {
+
+        return deleteConfigurationSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfigurationSetResult> deleteConfigurationSetAsync(final DeleteConfigurationSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConfigurationSetRequest, DeleteConfigurationSetResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConfigurationSetResult>() {
+            @Override
+            public DeleteConfigurationSetResult call() throws Exception {
+                DeleteConfigurationSetResult result;
+
+                try {
+                    result = deleteConfigurationSet(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfigurationSetEventDestinationResult> deleteConfigurationSetEventDestinationAsync(
+            DeleteConfigurationSetEventDestinationRequest request) {
+
+        return deleteConfigurationSetEventDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfigurationSetEventDestinationResult> deleteConfigurationSetEventDestinationAsync(
+            final DeleteConfigurationSetEventDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConfigurationSetEventDestinationRequest, DeleteConfigurationSetEventDestinationResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConfigurationSetEventDestinationResult>() {
+            @Override
+            public DeleteConfigurationSetEventDestinationResult call() throws Exception {
+                DeleteConfigurationSetEventDestinationResult result;
+
+                try {
+                    result = deleteConfigurationSetEventDestination(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -560,6 +692,38 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
 
                 try {
                     result = describeActiveReceiptRuleSet(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConfigurationSetResult> describeConfigurationSetAsync(DescribeConfigurationSetRequest request) {
+
+        return describeConfigurationSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConfigurationSetResult> describeConfigurationSetAsync(final DescribeConfigurationSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeConfigurationSetRequest, DescribeConfigurationSetResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeConfigurationSetResult>() {
+            @Override
+            public DescribeConfigurationSetResult call() throws Exception {
+                DescribeConfigurationSetResult result;
+
+                try {
+                    result = describeConfigurationSet(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -911,6 +1075,38 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
             com.amazonaws.handlers.AsyncHandler<GetSendStatisticsRequest, GetSendStatisticsResult> asyncHandler) {
 
         return getSendStatisticsAsync(new GetSendStatisticsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest request) {
+
+        return listConfigurationSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(final ListConfigurationSetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListConfigurationSetsRequest, ListConfigurationSetsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListConfigurationSetsResult>() {
+            @Override
+            public ListConfigurationSetsResult call() throws Exception {
+                ListConfigurationSetsResult result;
+
+                try {
+                    result = listConfigurationSets(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -1490,6 +1686,40 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
 
                 try {
                     result = setReceiptRulePosition(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfigurationSetEventDestinationResult> updateConfigurationSetEventDestinationAsync(
+            UpdateConfigurationSetEventDestinationRequest request) {
+
+        return updateConfigurationSetEventDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfigurationSetEventDestinationResult> updateConfigurationSetEventDestinationAsync(
+            final UpdateConfigurationSetEventDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateConfigurationSetEventDestinationRequest, UpdateConfigurationSetEventDestinationResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateConfigurationSetEventDestinationResult>() {
+            @Override
+            public UpdateConfigurationSetEventDestinationResult call() throws Exception {
+                UpdateConfigurationSetEventDestinationResult result;
+
+                try {
+                    result = updateConfigurationSetEventDestination(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

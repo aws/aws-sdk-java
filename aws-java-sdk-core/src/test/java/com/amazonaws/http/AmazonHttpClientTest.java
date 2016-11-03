@@ -93,7 +93,7 @@ public class AmazonHttpClientTest {
 
         try {
 
-            client.execute(request, null, null, context);
+            client.requestExecutionBuilder().request(request).executionContext(context).execute();
             Assert.fail("No exception when request repeatedly fails!");
 
         } catch (AmazonClientException e) {
@@ -149,7 +149,7 @@ public class AmazonHttpClientTest {
 
         try {
 
-            client.execute(request, handler, null, context);
+            client.requestExecutionBuilder().request(request).executionContext(context).execute(handler);
             Assert.fail("No exception when request repeatedly fails!");
 
         } catch (AmazonClientException e) {
@@ -231,7 +231,7 @@ public class AmazonHttpClientTest {
 
         AmazonHttpClient client = new AmazonHttpClient(config, httpClient, null);
 
-        client.execute(request, handler, null, new ExecutionContext());
+        client.requestExecutionBuilder().request(request).execute(handler);
 
         String userAgent = capturedRequest.getValue().getFirstHeader("User-Agent").getValue();
         Assert.assertTrue(userAgent.startsWith(prefix));
@@ -274,7 +274,7 @@ public class AmazonHttpClientTest {
         mockFailure(contentLength);
 
         try {
-            client.execute(request, null, null, context);
+            client.requestExecutionBuilder().request(request).executionContext(context).execute();
             Assert.fail("Expected AmazonClientException");
         } catch (AmazonClientException e) {
         }

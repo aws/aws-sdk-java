@@ -114,6 +114,19 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String returnPathArn;
+    /**
+     * <p>
+     * A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendEmail</code>.
+     * Tags correspond to characteristics of the email that you define, so that you can publish email sending events.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<MessageTag> tags;
+    /**
+     * <p>
+     * The name of the configuration set to use when you send an email using <code>SendEmail</code>.
+     * </p>
+     */
+    private String configurationSetName;
 
     /**
      * Default constructor for SendEmailRequest object. Callers should use the setter or fluent setter (with...) methods
@@ -762,6 +775,131 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendEmail</code>.
+     * Tags correspond to characteristics of the email that you define, so that you can publish email sending events.
+     * </p>
+     * 
+     * @return A list of tags, in the form of name/value pairs, to apply to an email that you send using
+     *         <code>SendEmail</code>. Tags correspond to characteristics of the email that you define, so that you can
+     *         publish email sending events.
+     */
+
+    public java.util.List<MessageTag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<MessageTag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendEmail</code>.
+     * Tags correspond to characteristics of the email that you define, so that you can publish email sending events.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags, in the form of name/value pairs, to apply to an email that you send using
+     *        <code>SendEmail</code>. Tags correspond to characteristics of the email that you define, so that you can
+     *        publish email sending events.
+     */
+
+    public void setTags(java.util.Collection<MessageTag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<MessageTag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendEmail</code>.
+     * Tags correspond to characteristics of the email that you define, so that you can publish email sending events.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags, in the form of name/value pairs, to apply to an email that you send using
+     *        <code>SendEmail</code>. Tags correspond to characteristics of the email that you define, so that you can
+     *        publish email sending events.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendEmailRequest withTags(MessageTag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<MessageTag>(tags.length));
+        }
+        for (MessageTag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendEmail</code>.
+     * Tags correspond to characteristics of the email that you define, so that you can publish email sending events.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags, in the form of name/value pairs, to apply to an email that you send using
+     *        <code>SendEmail</code>. Tags correspond to characteristics of the email that you define, so that you can
+     *        publish email sending events.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendEmailRequest withTags(java.util.Collection<MessageTag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the configuration set to use when you send an email using <code>SendEmail</code>.
+     * </p>
+     * 
+     * @param configurationSetName
+     *        The name of the configuration set to use when you send an email using <code>SendEmail</code>.
+     */
+
+    public void setConfigurationSetName(String configurationSetName) {
+        this.configurationSetName = configurationSetName;
+    }
+
+    /**
+     * <p>
+     * The name of the configuration set to use when you send an email using <code>SendEmail</code>.
+     * </p>
+     * 
+     * @return The name of the configuration set to use when you send an email using <code>SendEmail</code>.
+     */
+
+    public String getConfigurationSetName() {
+        return this.configurationSetName;
+    }
+
+    /**
+     * <p>
+     * The name of the configuration set to use when you send an email using <code>SendEmail</code>.
+     * </p>
+     * 
+     * @param configurationSetName
+     *        The name of the configuration set to use when you send an email using <code>SendEmail</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendEmailRequest withConfigurationSetName(String configurationSetName) {
+        setConfigurationSetName(configurationSetName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -785,7 +923,11 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getSourceArn() != null)
             sb.append("SourceArn: " + getSourceArn() + ",");
         if (getReturnPathArn() != null)
-            sb.append("ReturnPathArn: " + getReturnPathArn());
+            sb.append("ReturnPathArn: " + getReturnPathArn() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags() + ",");
+        if (getConfigurationSetName() != null)
+            sb.append("ConfigurationSetName: " + getConfigurationSetName());
         sb.append("}");
         return sb.toString();
     }
@@ -828,6 +970,14 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getReturnPathArn() != null && other.getReturnPathArn().equals(this.getReturnPathArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getConfigurationSetName() == null ^ this.getConfigurationSetName() == null)
+            return false;
+        if (other.getConfigurationSetName() != null && other.getConfigurationSetName().equals(this.getConfigurationSetName()) == false)
+            return false;
         return true;
     }
 
@@ -843,6 +993,8 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getReturnPath() == null) ? 0 : getReturnPath().hashCode());
         hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
         hashCode = prime * hashCode + ((getReturnPathArn() == null) ? 0 : getReturnPathArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationSetName() == null) ? 0 : getConfigurationSetName().hashCode());
         return hashCode;
     }
 

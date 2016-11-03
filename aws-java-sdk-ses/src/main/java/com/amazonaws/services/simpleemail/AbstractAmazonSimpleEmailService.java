@@ -41,6 +41,16 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
     }
 
     @Override
+    public CreateConfigurationSetResult createConfigurationSet(CreateConfigurationSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateConfigurationSetEventDestinationResult createConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateReceiptFilterResult createReceiptFilter(CreateReceiptFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -52,6 +62,16 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
 
     @Override
     public CreateReceiptRuleSetResult createReceiptRuleSet(CreateReceiptRuleSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteConfigurationSetResult deleteConfigurationSet(DeleteConfigurationSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteConfigurationSetEventDestinationResult deleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -87,6 +107,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
 
     @Override
     public DescribeActiveReceiptRuleSetResult describeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeConfigurationSetResult describeConfigurationSet(DescribeConfigurationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,6 +168,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
     @Override
     public GetSendStatisticsResult getSendStatistics() {
         return getSendStatistics(new GetSendStatisticsRequest());
+    }
+
+    @Override
+    public ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -237,6 +267,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
 
     @Override
     public SetReceiptRulePositionResult setReceiptRulePosition(SetReceiptRulePositionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateConfigurationSetEventDestinationResult updateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

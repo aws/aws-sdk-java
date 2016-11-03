@@ -202,7 +202,7 @@ public class ExecutionContext {
         private boolean useRequestMetrics;
         private List<RequestHandler2> requestHandler2s;
         private AmazonWebServiceClient awsClient;
-        private SignerProvider signerProvider;
+        private SignerProvider signerProvider = new NoOpSignerProvider();
 
         private Builder() {}
 

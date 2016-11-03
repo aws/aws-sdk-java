@@ -29,7 +29,6 @@ import org.junit.Test;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
-import com.amazonaws.http.response.DummyResponseHandler;
 import com.github.tomakehurst.wiremock.verification.LoggedRequest;
 
 import utils.http.WireMockTestBase;
@@ -62,8 +61,7 @@ public class SdkTransactionIdInHeaderTest extends WireMockTestBase {
     private void executeRequest() throws Exception {
         AmazonHttpClient httpClient = new AmazonHttpClient(new ClientConfiguration());
         try {
-            httpClient.execute(newGetRequest(RESOURCE_PATH), new DummyResponseHandler(), stubErrorHandler(),
-                    new ExecutionContext());
+            httpClient.requestExecutionBuilder().request(newGetRequest(RESOURCE_PATH)).errorResponseHandler(stubErrorHandler()).execute();
             fail("Expected exception");
         } catch (AmazonServiceException expected) {
         }

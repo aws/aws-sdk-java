@@ -2680,8 +2680,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<GeneratePresignedUrlRequest> request = createRequest(
                 bucketName, key, req, httpMethod);
 
-        request.setResourcePath(SdkHttpUtils.urlEncode(request.getResourcePath(), true));
-
         if (req.isZeroByteContent())
             request.setContent(new ByteArrayInputStream(new byte[0]));
 
@@ -3301,7 +3299,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                      // If cache contains the region for the bucket, create an endpoint for the region and
                      // update the request with that endpoint.
                      resolveRequestEndpoint(request, bucketName, key, RuntimeHttpUtils.toUri(RegionUtils.getRegion(region).getServiceEndpoint(S3_SERVICE_NAME), clientConfiguration));
-                     request.setResourcePath(SdkHttpUtils.urlEncode(request.getResourcePath(), true));
 
                      final AWSS3V4Signer v4Signer = (AWSS3V4Signer) signer;
                      v4Signer.setServiceName(getServiceNameIntern());
@@ -4002,7 +3999,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Response<X> response = null;
         try {
             request.setTimeOffset(timeOffset);
-            request.setResourcePath(SdkHttpUtils.urlEncode(request.getResourcePath(), true));
             /*
              * The string we sign needs to include the exact headers that we
              * send with the request, but the client runtime layer adds the

@@ -19,8 +19,6 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.http.request.EmptyHttpRequest;
 import com.amazonaws.http.response.EmptyAWSResponseHandler;
-import com.amazonaws.http.response.NullErrorResponseHandler;
-import com.amazonaws.http.response.NullResponseHandler;
 import com.amazonaws.http.server.MockServer;
 import org.apache.http.conn.ConnectionPoolTimeoutException;
 import org.junit.AfterClass;
@@ -60,13 +58,12 @@ public class ConnectionPoolMaxConnectionsIntegrationTest {
         Request<?> request = new EmptyHttpRequest(localhostEndpoint, HttpMethodName.GET);
 
         // Block the first connection in the pool with this request.
-        httpClient.execute(request, new EmptyAWSResponseHandler(), new
-                NullErrorResponseHandler(), new ExecutionContext());
+        httpClient.requestExecutionBuilder().request(request).execute(new EmptyAWSResponseHandler());
 
         try {
             // A new connection will be leased here which would fail in
             // ConnectionPoolTimeoutException.
-            httpClient.execute(request, new NullResponseHandler(), new NullErrorResponseHandler(), new ExecutionContext());
+            httpClient.requestExecutionBuilder().request(request).execute();
             Assert.fail("Connection pool timeout exception is expected!");
         } catch (AmazonClientException e) {
             Assert.assertTrue(e.getCause() instanceof ConnectionPoolTimeoutException);

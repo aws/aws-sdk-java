@@ -53,10 +53,9 @@ public class AmazonHttpClientSslHandshakeTimeoutIntegrationTest extends Unrespon
         System.out.println("Sending request to localhost...");
 
         try {
-            httpClient.execute(new EmptyHttpRequest(server.getHttpsEndpoint(),
-                    HttpMethodName.GET), new NullResponseHandler(), new NullErrorResponseHandler(),
-                    new ExecutionContext());
-
+            httpClient.requestExecutionBuilder()
+                    .request(new EmptyHttpRequest(server.getHttpsEndpoint(), HttpMethodName.GET))
+                    .execute();
             fail("Client-side socket read timeout is expected!");
 
         } catch (AmazonClientException e) {

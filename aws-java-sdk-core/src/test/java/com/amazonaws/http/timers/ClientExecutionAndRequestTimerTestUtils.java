@@ -33,6 +33,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.amazonaws.http.apache.client.impl.ApacheHttpClientFactory;
 import com.amazonaws.http.apache.client.impl.ConnectionManagerAwareHttpClient;
+import com.amazonaws.http.response.ErrorDuringUnmarshallingResponseHandler;
 import com.amazonaws.http.settings.HttpClientSettings;
 import org.apache.http.HttpEntity;
 import org.apache.http.ProtocolVersion;
@@ -216,7 +217,10 @@ public class ClientExecutionAndRequestTimerTestUtils {
      * Execute the request with a dummy response handler and error response handler
      */
     public static void execute(AmazonHttpClient httpClient, Request<?> request) {
-        httpClient.execute(request, new NullResponseHandler(), new NullErrorResponseHandler(), new ExecutionContext());
+        httpClient.requestExecutionBuilder()
+                .request(request)
+                .errorResponseHandler(new NullErrorResponseHandler())
+                .execute(new ErrorDuringUnmarshallingResponseHandler());
     }
 
     public static void assertNumberOfRetries(HttpClient spyClient, int expectedNumberOfRequests) {

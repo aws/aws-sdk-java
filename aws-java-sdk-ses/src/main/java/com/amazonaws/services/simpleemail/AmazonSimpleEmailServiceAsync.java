@@ -90,6 +90,130 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
+     * Creates a configuration set.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param createConfigurationSetRequest
+     *        Represents a request to create a configuration set. Configuration sets enable you to publish email sending
+     *        events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return A Java Future containing the result of the CreateConfigurationSet operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsync.CreateConfigurationSet
+     */
+    java.util.concurrent.Future<CreateConfigurationSetResult> createConfigurationSetAsync(CreateConfigurationSetRequest createConfigurationSetRequest);
+
+    /**
+     * <p>
+     * Creates a configuration set.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param createConfigurationSetRequest
+     *        Represents a request to create a configuration set. Configuration sets enable you to publish email sending
+     *        events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateConfigurationSet operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.CreateConfigurationSet
+     */
+    java.util.concurrent.Future<CreateConfigurationSetResult> createConfigurationSetAsync(CreateConfigurationSetRequest createConfigurationSetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConfigurationSetRequest, CreateConfigurationSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a configuration set event destination.
+     * </p>
+     * <note>
+     * <p>
+     * When you create or update an event destination, you must provide one, and only one, destination. The destination
+     * can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+     * </p>
+     * </note>
+     * <p>
+     * An event destination is the AWS service to which Amazon SES publishes the email sending events associated with a
+     * configuration set. For information about using configuration sets, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param createConfigurationSetEventDestinationRequest
+     *        Represents a request to create a configuration set event destination. A configuration set event
+     *        destination, which can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an AWS service in
+     *        which Amazon SES publishes the email sending events associated with a configuration set. For information
+     *        about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return A Java Future containing the result of the CreateConfigurationSetEventDestination operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsync.CreateConfigurationSetEventDestination
+     */
+    java.util.concurrent.Future<CreateConfigurationSetEventDestinationResult> createConfigurationSetEventDestinationAsync(
+            CreateConfigurationSetEventDestinationRequest createConfigurationSetEventDestinationRequest);
+
+    /**
+     * <p>
+     * Creates a configuration set event destination.
+     * </p>
+     * <note>
+     * <p>
+     * When you create or update an event destination, you must provide one, and only one, destination. The destination
+     * can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+     * </p>
+     * </note>
+     * <p>
+     * An event destination is the AWS service to which Amazon SES publishes the email sending events associated with a
+     * configuration set. For information about using configuration sets, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param createConfigurationSetEventDestinationRequest
+     *        Represents a request to create a configuration set event destination. A configuration set event
+     *        destination, which can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an AWS service in
+     *        which Amazon SES publishes the email sending events associated with a configuration set. For information
+     *        about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateConfigurationSetEventDestination operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.CreateConfigurationSetEventDestination
+     */
+    java.util.concurrent.Future<CreateConfigurationSetEventDestinationResult> createConfigurationSetEventDestinationAsync(
+            CreateConfigurationSetEventDestinationRequest createConfigurationSetEventDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConfigurationSetEventDestinationRequest, CreateConfigurationSetEventDestinationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new IP address filter.
      * </p>
      * <p>
@@ -240,6 +364,116 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      */
     java.util.concurrent.Future<CreateReceiptRuleSetResult> createReceiptRuleSetAsync(CreateReceiptRuleSetRequest createReceiptRuleSetRequest,
             com.amazonaws.handlers.AsyncHandler<CreateReceiptRuleSetRequest, CreateReceiptRuleSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a configuration set.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param deleteConfigurationSetRequest
+     *        Represents a request to delete a configuration set. Configuration sets enable you to publish email sending
+     *        events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return A Java Future containing the result of the DeleteConfigurationSet operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsync.DeleteConfigurationSet
+     */
+    java.util.concurrent.Future<DeleteConfigurationSetResult> deleteConfigurationSetAsync(DeleteConfigurationSetRequest deleteConfigurationSetRequest);
+
+    /**
+     * <p>
+     * Deletes a configuration set.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param deleteConfigurationSetRequest
+     *        Represents a request to delete a configuration set. Configuration sets enable you to publish email sending
+     *        events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConfigurationSet operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.DeleteConfigurationSet
+     */
+    java.util.concurrent.Future<DeleteConfigurationSetResult> deleteConfigurationSetAsync(DeleteConfigurationSetRequest deleteConfigurationSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConfigurationSetRequest, DeleteConfigurationSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a configuration set event destination.
+     * </p>
+     * <p>
+     * Configuration set event destinations are associated with configuration sets, which enable you to publish email
+     * sending events. For information about using configuration sets, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param deleteConfigurationSetEventDestinationRequest
+     *        Represents a request to delete a configuration set event destination. Configuration set event destinations
+     *        are associated with configuration sets, which enable you to publish email sending events. For information
+     *        about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return A Java Future containing the result of the DeleteConfigurationSetEventDestination operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsync.DeleteConfigurationSetEventDestination
+     */
+    java.util.concurrent.Future<DeleteConfigurationSetEventDestinationResult> deleteConfigurationSetEventDestinationAsync(
+            DeleteConfigurationSetEventDestinationRequest deleteConfigurationSetEventDestinationRequest);
+
+    /**
+     * <p>
+     * Deletes a configuration set event destination.
+     * </p>
+     * <p>
+     * Configuration set event destinations are associated with configuration sets, which enable you to publish email
+     * sending events. For information about using configuration sets, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param deleteConfigurationSetEventDestinationRequest
+     *        Represents a request to delete a configuration set event destination. Configuration set event destinations
+     *        are associated with configuration sets, which enable you to publish email sending events. For information
+     *        about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConfigurationSetEventDestination operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.DeleteConfigurationSetEventDestination
+     */
+    java.util.concurrent.Future<DeleteConfigurationSetEventDestinationResult> deleteConfigurationSetEventDestinationAsync(
+            DeleteConfigurationSetEventDestinationRequest deleteConfigurationSetEventDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConfigurationSetEventDestinationRequest, DeleteConfigurationSetEventDestinationResult> asyncHandler);
 
     /**
      * <p>
@@ -609,6 +843,57 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     java.util.concurrent.Future<DescribeActiveReceiptRuleSetResult> describeActiveReceiptRuleSetAsync(
             DescribeActiveReceiptRuleSetRequest describeActiveReceiptRuleSetRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeActiveReceiptRuleSetRequest, DescribeActiveReceiptRuleSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the details of the specified configuration set.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param describeConfigurationSetRequest
+     *        Represents a request to return the details of a configuration set. Configuration sets enable you to
+     *        publish email sending events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return A Java Future containing the result of the DescribeConfigurationSet operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsync.DescribeConfigurationSet
+     */
+    java.util.concurrent.Future<DescribeConfigurationSetResult> describeConfigurationSetAsync(DescribeConfigurationSetRequest describeConfigurationSetRequest);
+
+    /**
+     * <p>
+     * Returns the details of the specified configuration set.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param describeConfigurationSetRequest
+     *        Represents a request to return the details of a configuration set. Configuration sets enable you to
+     *        publish email sending events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeConfigurationSet operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.DescribeConfigurationSet
+     */
+    java.util.concurrent.Future<DescribeConfigurationSetResult> describeConfigurationSetAsync(DescribeConfigurationSetRequest describeConfigurationSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConfigurationSetRequest, DescribeConfigurationSetResult> asyncHandler);
 
     /**
      * <p>
@@ -1144,6 +1429,57 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
+     * Lists the configuration sets associated with your AWS account.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second and can return up to 50 configuration sets at a time.
+     * </p>
+     * 
+     * @param listConfigurationSetsRequest
+     *        Represents a request to list the configuration sets associated with your AWS account. Configuration sets
+     *        enable you to publish email sending events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return A Java Future containing the result of the ListConfigurationSets operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsync.ListConfigurationSets
+     */
+    java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest listConfigurationSetsRequest);
+
+    /**
+     * <p>
+     * Lists the configuration sets associated with your AWS account.
+     * </p>
+     * <p>
+     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second and can return up to 50 configuration sets at a time.
+     * </p>
+     * 
+     * @param listConfigurationSetsRequest
+     *        Represents a request to list the configuration sets associated with your AWS account. Configuration sets
+     *        enable you to publish email sending events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListConfigurationSets operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.ListConfigurationSets
+     */
+    java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest listConfigurationSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListConfigurationSetsRequest, ListConfigurationSetsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list containing all of the identities (email addresses and domains) for your AWS account, regardless of
      * verification status.
      * </p>
@@ -1279,8 +1615,8 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param listReceiptFiltersRequest
-     *        : Represents a request to list the IP address filters that exist under your AWS account. You use IP
-     *        address filters when you receive email with Amazon SES. For more information, see the <a
+     *        Represents a request to list the IP address filters that exist under your AWS account. You use IP address
+     *        filters when you receive email with Amazon SES. For more information, see the <a
      *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES
      *        Developer Guide</a>.
      * @return A Java Future containing the result of the ListReceiptFilters operation returned by the service.
@@ -1302,8 +1638,8 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param listReceiptFiltersRequest
-     *        : Represents a request to list the IP address filters that exist under your AWS account. You use IP
-     *        address filters when you receive email with Amazon SES. For more information, see the <a
+     *        Represents a request to list the IP address filters that exist under your AWS account. You use IP address
+     *        filters when you receive email with Amazon SES. For more information, see the <a
      *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES
      *        Developer Guide</a>.
      * @param asyncHandler
@@ -2380,6 +2716,75 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      */
     java.util.concurrent.Future<SetReceiptRulePositionResult> setReceiptRulePositionAsync(SetReceiptRulePositionRequest setReceiptRulePositionRequest,
             com.amazonaws.handlers.AsyncHandler<SetReceiptRulePositionRequest, SetReceiptRulePositionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the event destination of a configuration set.
+     * </p>
+     * <note>
+     * <p>
+     * When you create or update an event destination, you must provide one, and only one, destination. The destination
+     * can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+     * </p>
+     * </note>
+     * <p>
+     * Event destinations are associated with configuration sets, which enable you to publish email sending events to
+     * Amazon CloudWatch or Amazon Kinesis Firehose. For information about using configuration sets, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetEventDestinationRequest
+     *        Represents a request to update the event destination of a configuration set. Configuration sets enable you
+     *        to publish email sending events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return A Java Future containing the result of the UpdateConfigurationSetEventDestination operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsync.UpdateConfigurationSetEventDestination
+     */
+    java.util.concurrent.Future<UpdateConfigurationSetEventDestinationResult> updateConfigurationSetEventDestinationAsync(
+            UpdateConfigurationSetEventDestinationRequest updateConfigurationSetEventDestinationRequest);
+
+    /**
+     * <p>
+     * Updates the event destination of a configuration set.
+     * </p>
+     * <note>
+     * <p>
+     * When you create or update an event destination, you must provide one, and only one, destination. The destination
+     * can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+     * </p>
+     * </note>
+     * <p>
+     * Event destinations are associated with configuration sets, which enable you to publish email sending events to
+     * Amazon CloudWatch or Amazon Kinesis Firehose. For information about using configuration sets, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetEventDestinationRequest
+     *        Represents a request to update the event destination of a configuration set. Configuration sets enable you
+     *        to publish email sending events. For information about using configuration sets, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     *        Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateConfigurationSetEventDestination operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.UpdateConfigurationSetEventDestination
+     */
+    java.util.concurrent.Future<UpdateConfigurationSetEventDestinationResult> updateConfigurationSetEventDestinationAsync(
+            UpdateConfigurationSetEventDestinationRequest updateConfigurationSetEventDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConfigurationSetEventDestinationRequest, UpdateConfigurationSetEventDestinationResult> asyncHandler);
 
     /**
      * <p>

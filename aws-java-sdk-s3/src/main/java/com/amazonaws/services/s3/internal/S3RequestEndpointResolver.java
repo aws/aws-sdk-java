@@ -19,6 +19,7 @@ import com.amazonaws.Request;
 import com.amazonaws.internal.ServiceEndpointBuilder;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.RegionUtils;
+import com.amazonaws.util.SdkHttpUtils;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -112,11 +113,11 @@ public class S3RequestEndpointResolver {
         final URI endpoint = endpointBuilder.getServiceEndpoint();
         if (shouldUseVirtualAddressing(endpoint)) {
             request.setEndpoint(convertToVirtualHostEndpoint(endpoint, bucketName));
-            request.setResourcePath(getHostStyleResourcePath());
+            request.setResourcePath(SdkHttpUtils.urlEncode(getHostStyleResourcePath(), true));
         } else {
             request.setEndpoint(endpoint);
             if (bucketName != null) {
-                request.setResourcePath(getPathStyleResourcePath());
+                request.setResourcePath(SdkHttpUtils.urlEncode(getPathStyleResourcePath(), true));
             }
         }
     }

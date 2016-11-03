@@ -14,7 +14,7 @@ package com.amazonaws.services.simpleemail.model;
 
 /**
  * <p>
- * Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits, see the <a
+ * Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.
  * </p>
  */

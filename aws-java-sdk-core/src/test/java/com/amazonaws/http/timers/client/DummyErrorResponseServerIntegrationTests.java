@@ -61,8 +61,7 @@ public class DummyErrorResponseServerIntegrationTests extends MockServerTestBase
         httpClient = new AmazonHttpClient(
                 new ClientConfiguration().withClientExecutionTimeout(CLIENT_EXECUTION_TIMEOUT));
 
-        httpClient.execute(newGetRequest(), new NullResponseHandler(), new UnresponsiveErrorResponseHandler(),
-                new ExecutionContext());
+        httpClient.requestExecutionBuilder().request(newGetRequest()).errorResponseHandler(new UnresponsiveErrorResponseHandler()).execute();
     }
 
     @Test(timeout = TEST_TIMEOUT, expected = ClientExecutionTimeoutException.class)
@@ -74,8 +73,11 @@ public class DummyErrorResponseServerIntegrationTests extends MockServerTestBase
         List<RequestHandler2> requestHandlers = RequestHandlerTestUtils.buildRequestHandlerList(
                 new SlowRequestHandler().withAfterErrorWaitInSeconds(SLOW_REQUEST_HANDLER_TIMEOUT));
 
-        httpClient.execute(newGetRequest(), new NullResponseHandler(), new NullErrorResponseHandler(),
-                new ExecutionContext(requestHandlers, false, null));
+        httpClient.requestExecutionBuilder()
+                .request(newGetRequest())
+                .errorResponseHandler(new NullErrorResponseHandler())
+                .executionContext(ExecutionContext.builder().withRequestHandler2s(requestHandlers).build())
+                .execute();
     }
 
 }

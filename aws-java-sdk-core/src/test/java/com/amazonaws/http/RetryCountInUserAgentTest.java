@@ -29,7 +29,6 @@ import org.junit.Test;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
-import com.amazonaws.http.response.DummyResponseHandler;
 import com.amazonaws.retry.RetryPolicy;
 
 import utils.http.WireMockTestBase;
@@ -47,7 +46,7 @@ public class RetryCountInUserAgentTest extends WireMockTestBase {
         BasicConfigurator.configure();
         stubFor(get(urlEqualTo(RESOURCE_PATH)).willReturn(aResponse().withStatus(500)));
 
-        executeRequest(false);
+        executeRequest();
 
         verify(1, getRequestedFor(urlEqualTo(RESOURCE_PATH)).withHeader(HEADER_SDK_RETRY_INFO, containing("0/0/")));
         verify(1, getRequestedFor(urlEqualTo(RESOURCE_PATH)).withHeader(HEADER_SDK_RETRY_INFO, containing("1/0/")));
@@ -60,7 +59,7 @@ public class RetryCountInUserAgentTest extends WireMockTestBase {
         BasicConfigurator.configure();
         stubFor(get(urlEqualTo(RESOURCE_PATH)).willReturn(aResponse().withStatus(500)));
 
-        executeRequest(true);
+        executeRequest();
 
         verify(1, getRequestedFor(urlEqualTo(RESOURCE_PATH)).withHeader(HEADER_SDK_RETRY_INFO, containing("0/0/500")));
         verify(1, getRequestedFor(urlEqualTo(RESOURCE_PATH)).withHeader(HEADER_SDK_RETRY_INFO, containing("1/0/495")));
@@ -68,13 +67,12 @@ public class RetryCountInUserAgentTest extends WireMockTestBase {
         verify(1, getRequestedFor(urlEqualTo(RESOURCE_PATH)).withHeader(HEADER_SDK_RETRY_INFO, containing("3/20/485")));
     }
 
-    private void executeRequest(final boolean retryThrottling) throws Exception {
+    private void executeRequest() throws Exception {
         AmazonHttpClient httpClient = new AmazonHttpClient(
                 new ClientConfiguration().withRetryPolicy(buildRetryPolicy())
                 .withThrottledRetries(true));
         try {
-            httpClient.execute(newGetRequest(RESOURCE_PATH), new DummyResponseHandler(), stubErrorHandler(),
-                    new ExecutionContext());
+            httpClient.requestExecutionBuilder().request(newGetRequest(RESOURCE_PATH)).errorResponseHandler(stubErrorHandler()).execute();
             fail("Expected exception");
         } catch (AmazonServiceException expected) {
         }

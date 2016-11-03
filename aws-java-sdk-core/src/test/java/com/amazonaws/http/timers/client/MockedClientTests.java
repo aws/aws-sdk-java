@@ -32,6 +32,7 @@ import static org.mockito.Mockito.doReturn;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 import com.amazonaws.http.apache.client.impl.ConnectionManagerAwareHttpClient;
+import com.amazonaws.http.response.ErrorDuringUnmarshallingResponseHandler;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.protocol.HttpContext;
 import org.junit.BeforeClass;
@@ -41,9 +42,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.TestPreConditions;
 import com.amazonaws.http.AmazonHttpClient;
-import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.response.HttpResponseProxy;
-import com.amazonaws.http.response.NullErrorResponseHandler;
 import com.amazonaws.http.response.NullResponseHandler;
 
 /**
@@ -119,13 +118,7 @@ public class MockedClientTests {
         httpClient = new AmazonHttpClient(config, rawHttpClient, null);
 
         try {
-            httpClient.execute(createMockGetRequest(), new NullResponseHandler() {
-                @Override
-                public boolean needsConnectionLeftOpen() {
-                    // Streaming operation
-                    return true;
-                }
-            }, new NullErrorResponseHandler(), new ExecutionContext());
+            httpClient.requestExecutionBuilder().request(createMockGetRequest()).execute(new ErrorDuringUnmarshallingResponseHandler().leaveConnectionOpen());
             fail("Exception expected");
         } catch (AmazonClientException e) {
         }
