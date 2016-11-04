@@ -712,6 +712,39 @@
       },
       "syncReturnType" : "DescribeLocationsResult"
     },
+    "DescribeTags" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DescribeTagsResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeTagsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult>",
+      "asyncReturnType" : "DescribeTagsResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Describes the tags associated with the specified Direct Connect resources.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "DirectConnectServerException",
+        "documentation" : "<p>A server-side error occurred during the API call. The error message will contain additional details about the cause.</p>"
+      }, {
+        "exceptionName" : "DirectConnectClientException",
+        "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "DescribeTagsRequest",
+        "variableName" : "describeTagsRequest",
+        "variableType" : "DescribeTagsRequest",
+        "documentation" : "<p>Container for the parameters to the DescribeTags operation.</p>",
+        "simpleType" : "DescribeTagsRequest",
+        "variableSetterType" : "DescribeTagsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "describeTags",
+      "operationName" : "DescribeTags",
+      "returnType" : {
+        "returnType" : "DescribeTagsResult",
+        "documentation" : "<p>The response received when DescribeTags is called.</p>"
+      },
+      "syncReturnType" : "DescribeTagsResult"
+    },
     "DescribeVirtualGateways" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeVirtualGatewaysResult>",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeVirtualGatewaysResult>",
@@ -777,6 +810,78 @@
         "documentation" : "<p>A structure containing a list of virtual interfaces.</p>"
       },
       "syncReturnType" : "DescribeVirtualInterfacesResult"
+    },
+    "TagResource" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<TagResourceResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<TagResourceResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult>",
+      "asyncReturnType" : "TagResourceResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Adds the specified tags to the specified Direct Connect resource. Each Direct Connect resource can have a maximum of 50 tags.</p> <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the Direct Connect resource, this action updates its value.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "DuplicateTagKeysException",
+        "documentation" : "<p>A tag key was specified more than once.</p>"
+      }, {
+        "exceptionName" : "TooManyTagsException",
+        "documentation" : "<p>You have reached the limit on the number of tags that can be assigned to a Direct Connect resource.</p>"
+      }, {
+        "exceptionName" : "DirectConnectServerException",
+        "documentation" : "<p>A server-side error occurred during the API call. The error message will contain additional details about the cause.</p>"
+      }, {
+        "exceptionName" : "DirectConnectClientException",
+        "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "TagResourceRequest",
+        "variableName" : "tagResourceRequest",
+        "variableType" : "TagResourceRequest",
+        "documentation" : "<p>Container for the parameters to the TagResource operation.</p>",
+        "simpleType" : "TagResourceRequest",
+        "variableSetterType" : "TagResourceRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "tagResource",
+      "operationName" : "TagResource",
+      "returnType" : {
+        "returnType" : "TagResourceResult",
+        "documentation" : "<p>The response received when TagResource is called.</p>"
+      },
+      "syncReturnType" : "TagResourceResult"
+    },
+    "UntagResource" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<UntagResourceResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<UntagResourceResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult>",
+      "asyncReturnType" : "UntagResourceResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Removes one or more tags from the specified Direct Connect resource.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "DirectConnectServerException",
+        "documentation" : "<p>A server-side error occurred during the API call. The error message will contain additional details about the cause.</p>"
+      }, {
+        "exceptionName" : "DirectConnectClientException",
+        "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "UntagResourceRequest",
+        "variableName" : "untagResourceRequest",
+        "variableType" : "UntagResourceRequest",
+        "documentation" : "<p>Container for the parameters to the UntagResource operation.</p>",
+        "simpleType" : "UntagResourceRequest",
+        "variableSetterType" : "UntagResourceRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "untagResource",
+      "operationName" : "UntagResource",
+      "returnType" : {
+        "returnType" : "UntagResourceResult",
+        "documentation" : "<p>The response received when UntagResource is called.</p>"
+      },
+      "syncReturnType" : "UntagResourceResult"
     }
   },
   "shapes" : {
@@ -19665,6 +19770,560 @@
       },
       "wrapper" : false
     },
+    "DescribeTagsRequest" : {
+      "c2jName" : "DescribeTagsRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Container for the parameters to the DescribeTags operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DescribeTags",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "OvertureService.DescribeTags",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "resourceArns",
+        "c2jShape" : "ResourceArnList",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>\n@param resourceArns The Amazon Resource Names (ARNs) of the Direct Connect resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>\n@return The Amazon Resource Names (ARNs) of the Direct Connect resources.*/",
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "resourceArns",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "resourceArns",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "ResourceArn",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterModel" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "simple" : true,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "String",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ResourceArns",
+        "setterDocumentation" : "/**<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>\n@param resourceArns The Amazon Resource Names (ARNs) of the Direct Connect resources.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "variableName" : "resourceArns",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceArns(java.util.Collection)} or {@link #withResourceArns(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceArns The Amazon Resource Names (ARNs) of the Direct Connect resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "variableName" : "resourceArns",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ResourceArns" : {
+          "c2jName" : "resourceArns",
+          "c2jShape" : "ResourceArnList",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>\n@param resourceArns The Amazon Resource Names (ARNs) of the Direct Connect resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>\n@return The Amazon Resource Names (ARNs) of the Direct Connect resources.*/",
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "resourceArns",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "resourceArns",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "ResourceArn",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterModel" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "simple" : true,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "String",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ResourceArns",
+          "setterDocumentation" : "/**<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>\n@param resourceArns The Amazon Resource Names (ARNs) of the Direct Connect resources.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "variableName" : "resourceArns",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceArns(java.util.Collection)} or {@link #withResourceArns(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceArns The Amazon Resource Names (ARNs) of the Direct Connect resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "variableName" : "resourceArns",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "resourceArns" ],
+      "shapeName" : "DescribeTagsRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "DescribeTagsRequest",
+        "variableName" : "describeTagsRequest",
+        "variableType" : "DescribeTagsRequest",
+        "documentation" : null,
+        "simpleType" : "DescribeTagsRequest",
+        "variableSetterType" : "DescribeTagsRequest"
+      },
+      "wrapper" : false
+    },
+    "DescribeTagsResult" : {
+      "c2jName" : "DescribeTagsResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The response received when DescribeTags is called.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "resourceTags",
+        "c2jShape" : "ResourceTagList",
+        "deprecated" : false,
+        "documentation" : "<p>Information about the tags.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Information about the tags.</p>\n@param resourceTags Information about the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Information about the tags.</p>\n@return Information about the tags.*/",
+        "getterModel" : {
+          "returnType" : "java.util.List<ResourceTag>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "resourceTags",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "resourceTags",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "ResourceTag",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "ResourceTag",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterModel" : {
+              "variableDeclarationType" : "ResourceTag",
+              "variableName" : "member",
+              "variableType" : "ResourceTag",
+              "documentation" : "",
+              "simpleType" : "ResourceTag",
+              "variableSetterType" : "ResourceTag"
+            },
+            "simple" : false,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "ResourceTag",
+              "variableName" : "member",
+              "variableType" : "ResourceTag",
+              "documentation" : "",
+              "simpleType" : "ResourceTag",
+              "variableSetterType" : "ResourceTag"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "ResourceTag",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "ResourceTag",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
+          "templateType" : "java.util.List<ResourceTag>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ResourceTags",
+        "setterDocumentation" : "/**<p>Information about the tags.</p>\n@param resourceTags Information about the tags.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
+          "variableName" : "resourceTags",
+          "variableType" : "java.util.List<ResourceTag>",
+          "documentation" : "",
+          "simpleType" : "List<ResourceTag>",
+          "variableSetterType" : "java.util.Collection<ResourceTag>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>Information about the tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTags(java.util.Collection)} or {@link #withResourceTags(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTags Information about the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
+          "variableName" : "resourceTags",
+          "variableType" : "java.util.List<ResourceTag>",
+          "documentation" : "<p>Information about the tags.</p>",
+          "simpleType" : "List<ResourceTag>",
+          "variableSetterType" : "java.util.Collection<ResourceTag>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ResourceTags" : {
+          "c2jName" : "resourceTags",
+          "c2jShape" : "ResourceTagList",
+          "deprecated" : false,
+          "documentation" : "<p>Information about the tags.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Information about the tags.</p>\n@param resourceTags Information about the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Information about the tags.</p>\n@return Information about the tags.*/",
+          "getterModel" : {
+            "returnType" : "java.util.List<ResourceTag>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "resourceTags",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "resourceTags",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "ResourceTag",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "ResourceTag",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterModel" : {
+                "variableDeclarationType" : "ResourceTag",
+                "variableName" : "member",
+                "variableType" : "ResourceTag",
+                "documentation" : "",
+                "simpleType" : "ResourceTag",
+                "variableSetterType" : "ResourceTag"
+              },
+              "simple" : false,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "ResourceTag",
+                "variableName" : "member",
+                "variableType" : "ResourceTag",
+                "documentation" : "",
+                "simpleType" : "ResourceTag",
+                "variableSetterType" : "ResourceTag"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "ResourceTag",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "ResourceTag",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
+            "templateType" : "java.util.List<ResourceTag>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ResourceTags",
+          "setterDocumentation" : "/**<p>Information about the tags.</p>\n@param resourceTags Information about the tags.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
+            "variableName" : "resourceTags",
+            "variableType" : "java.util.List<ResourceTag>",
+            "documentation" : "",
+            "simpleType" : "List<ResourceTag>",
+            "variableSetterType" : "java.util.Collection<ResourceTag>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>Information about the tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTags(java.util.Collection)} or {@link #withResourceTags(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTags Information about the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
+            "variableName" : "resourceTags",
+            "variableType" : "java.util.List<ResourceTag>",
+            "documentation" : "<p>Information about the tags.</p>",
+            "simpleType" : "List<ResourceTag>",
+            "variableSetterType" : "java.util.Collection<ResourceTag>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "DescribeTagsResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "DescribeTagsResult",
+        "variableName" : "describeTagsResult",
+        "variableType" : "DescribeTagsResult",
+        "documentation" : null,
+        "simpleType" : "DescribeTagsResult",
+        "variableSetterType" : "DescribeTagsResult"
+      },
+      "wrapper" : false
+    },
     "DescribeVirtualGatewaysRequest" : {
       "c2jName" : "DescribeVirtualGatewaysRequest",
       "customization" : {
@@ -20565,6 +21224,38 @@
         "documentation" : null,
         "simpleType" : "DirectConnectServerException",
         "variableSetterType" : "DirectConnectServerException"
+      },
+      "wrapper" : false
+    },
+    "DuplicateTagKeysException" : {
+      "c2jName" : "DuplicateTagKeysException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>A tag key was specified more than once.</p>",
+      "enums" : null,
+      "errorCode" : "DuplicateTagKeysException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "DuplicateTagKeysException",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "DuplicateTagKeysException",
+        "variableName" : "duplicateTagKeysException",
+        "variableType" : "DuplicateTagKeysException",
+        "documentation" : null,
+        "simpleType" : "DuplicateTagKeysException",
+        "variableSetterType" : "DuplicateTagKeysException"
       },
       "wrapper" : false
     },
@@ -25169,6 +25860,386 @@
       },
       "wrapper" : false
     },
+    "ResourceTag" : {
+      "c2jName" : "ResourceTag",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The tags associated with a Direct Connect resource.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "resourceArn",
+        "c2jShape" : "ResourceArn",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@return The Amazon Resource Name (ARN) of the Direct Connect resource.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "resourceArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "resourceArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ResourceArn",
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "resourceArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "resourceArn",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "tags",
+        "c2jShape" : "TagList",
+        "deprecated" : false,
+        "documentation" : "<p>The tags.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The tags.</p>\n@return The tags.*/",
+        "getterModel" : {
+          "returnType" : "java.util.List<Tag>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "tags",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "tags",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "Tag",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "Tag",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterModel" : {
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "simple" : false,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "Tag",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "Tag",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "templateType" : "java.util.List<Tag>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Tags",
+        "setterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "variableName" : "tags",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "variableName" : "tags",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "<p>The tags.</p>",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ResourceArn" : {
+          "c2jName" : "resourceArn",
+          "c2jShape" : "ResourceArn",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@return The Amazon Resource Name (ARN) of the Direct Connect resource.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "resourceArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "resourceArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ResourceArn",
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "resourceArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "resourceArn",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Tags" : {
+          "c2jName" : "tags",
+          "c2jShape" : "TagList",
+          "deprecated" : false,
+          "documentation" : "<p>The tags.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The tags.</p>\n@return The tags.*/",
+          "getterModel" : {
+            "returnType" : "java.util.List<Tag>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "tags",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "tags",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "Tag",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "Tag",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterModel" : {
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "simple" : false,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "Tag",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "Tag",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "templateType" : "java.util.List<Tag>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Tags",
+          "setterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "variableName" : "tags",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "variableName" : "tags",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "<p>The tags.</p>",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "ResourceTag",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "ResourceTag",
+        "variableName" : "resourceTag",
+        "variableType" : "ResourceTag",
+        "documentation" : null,
+        "simpleType" : "ResourceTag",
+        "variableSetterType" : "ResourceTag"
+      },
+      "wrapper" : false
+    },
     "RouteFilterPrefix" : {
       "c2jName" : "RouteFilterPrefix",
       "customization" : {
@@ -25307,6 +26378,1122 @@
         "documentation" : null,
         "simpleType" : "RouteFilterPrefix",
         "variableSetterType" : "RouteFilterPrefix"
+      },
+      "wrapper" : false
+    },
+    "Tag" : {
+      "c2jName" : "Tag",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Information about a tag.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "key",
+        "c2jShape" : "TagKey",
+        "deprecated" : false,
+        "documentation" : "<p>The key of the tag.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The key of the tag.</p>\n@return The key of the tag.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "key",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "key",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Key",
+        "setterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "key",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "key",
+          "variableType" : "String",
+          "documentation" : "<p>The key of the tag.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "value",
+        "c2jShape" : "TagValue",
+        "deprecated" : false,
+        "documentation" : "<p>The value of the tag.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The value of the tag.</p>\n@return The value of the tag.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "value",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "value",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Value",
+        "setterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "value",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "value",
+          "variableType" : "String",
+          "documentation" : "<p>The value of the tag.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Key" : {
+          "c2jName" : "key",
+          "c2jShape" : "TagKey",
+          "deprecated" : false,
+          "documentation" : "<p>The key of the tag.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The key of the tag.</p>\n@return The key of the tag.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "key",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "key",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Key",
+          "setterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "key",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "key",
+            "variableType" : "String",
+            "documentation" : "<p>The key of the tag.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Value" : {
+          "c2jName" : "value",
+          "c2jShape" : "TagValue",
+          "deprecated" : false,
+          "documentation" : "<p>The value of the tag.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The value of the tag.</p>\n@return The value of the tag.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "value",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "value",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Value",
+          "setterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "value",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "value",
+            "variableType" : "String",
+            "documentation" : "<p>The value of the tag.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "key" ],
+      "shapeName" : "Tag",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "Tag",
+        "variableName" : "tag",
+        "variableType" : "Tag",
+        "documentation" : null,
+        "simpleType" : "Tag",
+        "variableSetterType" : "Tag"
+      },
+      "wrapper" : false
+    },
+    "TagResourceRequest" : {
+      "c2jName" : "TagResourceRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Container for the parameters to the TagResource operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "TagResource",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "OvertureService.TagResource",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "resourceArn",
+        "c2jShape" : "ResourceArn",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>\n@return The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "resourceArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "resourceArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ResourceArn",
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "resourceArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "resourceArn",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "tags",
+        "c2jShape" : "TagList",
+        "deprecated" : false,
+        "documentation" : "<p>The list of tags to add.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The list of tags to add.</p>\n@param tags The list of tags to add.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The list of tags to add.</p>\n@return The list of tags to add.*/",
+        "getterModel" : {
+          "returnType" : "java.util.List<Tag>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "tags",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "tags",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "Tag",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "Tag",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterModel" : {
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "simple" : false,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "Tag",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "Tag",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "templateType" : "java.util.List<Tag>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Tags",
+        "setterDocumentation" : "/**<p>The list of tags to add.</p>\n@param tags The list of tags to add.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "variableName" : "tags",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The list of tags to add.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The list of tags to add.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "variableName" : "tags",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "<p>The list of tags to add.</p>",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ResourceArn" : {
+          "c2jName" : "resourceArn",
+          "c2jShape" : "ResourceArn",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>\n@return The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "resourceArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "resourceArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ResourceArn",
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "resourceArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "resourceArn",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Tags" : {
+          "c2jName" : "tags",
+          "c2jShape" : "TagList",
+          "deprecated" : false,
+          "documentation" : "<p>The list of tags to add.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The list of tags to add.</p>\n@param tags The list of tags to add.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The list of tags to add.</p>\n@return The list of tags to add.*/",
+          "getterModel" : {
+            "returnType" : "java.util.List<Tag>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "tags",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "tags",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "Tag",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "Tag",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterModel" : {
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "simple" : false,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "Tag",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "Tag",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "templateType" : "java.util.List<Tag>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Tags",
+          "setterDocumentation" : "/**<p>The list of tags to add.</p>\n@param tags The list of tags to add.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "variableName" : "tags",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The list of tags to add.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The list of tags to add.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "variableName" : "tags",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "<p>The list of tags to add.</p>",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "resourceArn", "tags" ],
+      "shapeName" : "TagResourceRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "TagResourceRequest",
+        "variableName" : "tagResourceRequest",
+        "variableType" : "TagResourceRequest",
+        "documentation" : null,
+        "simpleType" : "TagResourceRequest",
+        "variableSetterType" : "TagResourceRequest"
+      },
+      "wrapper" : false
+    },
+    "TagResourceResult" : {
+      "c2jName" : "TagResourceResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The response received when TagResource is called.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "TagResourceResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "TagResourceResult",
+        "variableName" : "tagResourceResult",
+        "variableType" : "TagResourceResult",
+        "documentation" : null,
+        "simpleType" : "TagResourceResult",
+        "variableSetterType" : "TagResourceResult"
+      },
+      "wrapper" : false
+    },
+    "TooManyTagsException" : {
+      "c2jName" : "TooManyTagsException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>You have reached the limit on the number of tags that can be assigned to a Direct Connect resource.</p>",
+      "enums" : null,
+      "errorCode" : "TooManyTagsException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "TooManyTagsException",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "TooManyTagsException",
+        "variableName" : "tooManyTagsException",
+        "variableType" : "TooManyTagsException",
+        "documentation" : null,
+        "simpleType" : "TooManyTagsException",
+        "variableSetterType" : "TooManyTagsException"
+      },
+      "wrapper" : false
+    },
+    "UntagResourceRequest" : {
+      "c2jName" : "UntagResourceRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Container for the parameters to the UntagResource operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "UntagResource",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "OvertureService.UntagResource",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "resourceArn",
+        "c2jShape" : "ResourceArn",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@return The Amazon Resource Name (ARN) of the Direct Connect resource.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "resourceArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "resourceArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ResourceArn",
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "resourceArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "resourceArn",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "tagKeys",
+        "c2jShape" : "TagKeyList",
+        "deprecated" : false,
+        "documentation" : "<p>The list of tag keys to remove.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The list of tag keys to remove.</p>\n@param tagKeys The list of tag keys to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The list of tag keys to remove.</p>\n@return The list of tag keys to remove.*/",
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "tagKeys",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "tagKeys",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "TagKey",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterModel" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "simple" : true,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "String",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "TagKeys",
+        "setterDocumentation" : "/**<p>The list of tag keys to remove.</p>\n@param tagKeys The list of tag keys to remove.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "variableName" : "tagKeys",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The list of tag keys to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The list of tag keys to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "variableName" : "tagKeys",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "<p>The list of tag keys to remove.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ResourceArn" : {
+          "c2jName" : "resourceArn",
+          "c2jShape" : "ResourceArn",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@return The Amazon Resource Name (ARN) of the Direct Connect resource.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "resourceArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "resourceArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ResourceArn",
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "resourceArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the Direct Connect resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "resourceArn",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "TagKeys" : {
+          "c2jName" : "tagKeys",
+          "c2jShape" : "TagKeyList",
+          "deprecated" : false,
+          "documentation" : "<p>The list of tag keys to remove.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The list of tag keys to remove.</p>\n@param tagKeys The list of tag keys to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The list of tag keys to remove.</p>\n@return The list of tag keys to remove.*/",
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "tagKeys",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "tagKeys",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "TagKey",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterModel" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "simple" : true,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "String",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "TagKeys",
+          "setterDocumentation" : "/**<p>The list of tag keys to remove.</p>\n@param tagKeys The list of tag keys to remove.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "variableName" : "tagKeys",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The list of tag keys to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The list of tag keys to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "variableName" : "tagKeys",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "<p>The list of tag keys to remove.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "resourceArn", "tagKeys" ],
+      "shapeName" : "UntagResourceRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "UntagResourceRequest",
+        "variableName" : "untagResourceRequest",
+        "variableType" : "UntagResourceRequest",
+        "documentation" : null,
+        "simpleType" : "UntagResourceRequest",
+        "variableSetterType" : "UntagResourceRequest"
+      },
+      "wrapper" : false
+    },
+    "UntagResourceResult" : {
+      "c2jName" : "UntagResourceResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The response received when UntagResource is called.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "UntagResourceResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "UntagResourceResult",
+        "variableName" : "untagResourceResult",
+        "variableType" : "UntagResourceResult",
+        "documentation" : null,
+        "simpleType" : "UntagResourceResult",
+        "variableSetterType" : "UntagResourceResult"
       },
       "wrapper" : false
     },

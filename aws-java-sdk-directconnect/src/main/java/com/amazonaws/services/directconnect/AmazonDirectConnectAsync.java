@@ -862,6 +862,35 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
+     * Describes the tags associated with the specified Direct Connect resources.
+     * </p>
+     * 
+     * @param describeTagsRequest
+     *        Container for the parameters to the DescribeTags operation.
+     * @return A Java Future containing the result of the DescribeTags operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DescribeTags
+     */
+    java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest);
+
+    /**
+     * <p>
+     * Describes the tags associated with the specified Direct Connect resources.
+     * </p>
+     * 
+     * @param describeTagsRequest
+     *        Container for the parameters to the DescribeTags operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTags operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DescribeTags
+     */
+    java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of virtual private gateways owned by the AWS account.
      * </p>
      * <p>
@@ -979,5 +1008,73 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      */
     java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds the specified tags to the specified Direct Connect resource. Each Direct Connect resource can have a maximum
+     * of 50 tags.
+     * </p>
+     * <p>
+     * Each tag consists of a key and an optional value. If a tag with the same key is already associated with the
+     * Direct Connect resource, this action updates its value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Container for the parameters to the TagResource operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonDirectConnectAsync.TagResource
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds the specified tags to the specified Direct Connect resource. Each Direct Connect resource can have a maximum
+     * of 50 tags.
+     * </p>
+     * <p>
+     * Each tag consists of a key and an optional value. If a tag with the same key is already associated with the
+     * Direct Connect resource, this action updates its value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Container for the parameters to the TagResource operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.TagResource
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified Direct Connect resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     *        Container for the parameters to the UntagResource operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonDirectConnectAsync.UntagResource
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified Direct Connect resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     *        Container for the parameters to the UntagResource operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.UntagResource
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

@@ -145,6 +145,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public DescribeTagsResult describeTags(DescribeTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeVirtualGatewaysResult describeVirtualGateways(DescribeVirtualGatewaysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -162,6 +167,16 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     @Override
     public DescribeVirtualInterfacesResult describeVirtualInterfaces() {
         return describeVirtualInterfaces(new DescribeVirtualInterfacesRequest());
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

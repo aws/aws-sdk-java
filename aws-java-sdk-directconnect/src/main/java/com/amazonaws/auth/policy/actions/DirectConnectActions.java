@@ -61,10 +61,16 @@ public enum DirectConnectActions implements Action {
     DescribeInterconnects("directconnect:DescribeInterconnects"),
     /** Action for the DescribeLocations operation. */
     DescribeLocations("directconnect:DescribeLocations"),
+    /** Action for the DescribeTags operation. */
+    DescribeTags("directconnect:DescribeTags"),
     /** Action for the DescribeVirtualGateways operation. */
     DescribeVirtualGateways("directconnect:DescribeVirtualGateways"),
     /** Action for the DescribeVirtualInterfaces operation. */
     DescribeVirtualInterfaces("directconnect:DescribeVirtualInterfaces"),
+    /** Action for the TagResource operation. */
+    TagResource("directconnect:TagResource"),
+    /** Action for the UntagResource operation. */
+    UntagResource("directconnect:UntagResource"),
 
     ;
 
