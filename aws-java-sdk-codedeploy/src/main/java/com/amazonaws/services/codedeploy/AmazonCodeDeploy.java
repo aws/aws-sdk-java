@@ -1118,4 +1118,5 @@ public interface AmazonCodeDeploy {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonCodeDeployWaiters waiters();
+
 }

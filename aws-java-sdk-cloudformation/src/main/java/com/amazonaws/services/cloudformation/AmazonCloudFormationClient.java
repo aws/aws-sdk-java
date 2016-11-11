@@ -22,6 +22,7 @@ import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
+import com.amazonaws.auth.presign.PresignerParams;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
@@ -64,7 +65,7 @@ import com.amazonaws.services.cloudformation.model.transform.*;
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific
  * AWS product, you can find the product's technical documentation at <a
- * href="http://docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.
+ * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.
  * </p>
  */
 @ThreadSafe
@@ -1128,9 +1129,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <code>Fn::ImportValue</code> </a> function.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-     * AWS CloudFormation Export Stack Output Values</a>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html"> AWS
+     * CloudFormation Export Stack Output Values</a>.
      * </p>
      * 
      * @param listExportsRequest
@@ -1487,6 +1488,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 
+    @Override
     public AmazonCloudFormationWaiters waiters() {
         if (waiters == null) {
             synchronized (this) {

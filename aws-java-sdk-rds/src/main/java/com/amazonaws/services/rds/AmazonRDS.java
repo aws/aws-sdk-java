@@ -2381,4 +2381,5 @@ public interface AmazonRDS {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonRDSWaiters waiters();
+
 }

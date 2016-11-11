@@ -14,7 +14,7 @@ package com.amazonaws.services.logs.model;
 
 /**
  * <p>
- * Returned if multiple requests to update the same resource were in conflict.
+ * Multiple requests to update the same resource were in conflict.
  * </p>
  */
 public class OperationAbortedException extends com.amazonaws.services.logs.model.AWSLogsException {

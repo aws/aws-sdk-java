@@ -184,4 +184,5 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     public AmazonCloudFrontWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

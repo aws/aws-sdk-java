@@ -19,14 +19,31 @@ import java.io.Serializable;
  */
 public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The events.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<OutputLogEvent> events;
-
+    /**
+     * <p>
+     * The token for the next set of items in the forward direction. The token expires after 24 hours.
+     * </p>
+     */
     private String nextForwardToken;
-
+    /**
+     * <p>
+     * The token for the next set of items in the backward direction. The token expires after 24 hours.
+     * </p>
+     */
     private String nextBackwardToken;
 
     /**
-     * @return
+     * <p>
+     * The events.
+     * </p>
+     * 
+     * @return The events.
      */
 
     public java.util.List<OutputLogEvent> getEvents() {
@@ -37,7 +54,12 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The events.
+     * </p>
+     * 
      * @param events
+     *        The events.
      */
 
     public void setEvents(java.util.Collection<OutputLogEvent> events) {
@@ -51,12 +73,16 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
+     * The events.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param events
+     *        The events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,7 +97,12 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The events.
+     * </p>
+     * 
      * @param events
+     *        The events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,7 +112,12 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The token for the next set of items in the forward direction. The token expires after 24 hours.
+     * </p>
+     * 
      * @param nextForwardToken
+     *        The token for the next set of items in the forward direction. The token expires after 24 hours.
      */
 
     public void setNextForwardToken(String nextForwardToken) {
@@ -89,7 +125,11 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * @return
+     * <p>
+     * The token for the next set of items in the forward direction. The token expires after 24 hours.
+     * </p>
+     * 
+     * @return The token for the next set of items in the forward direction. The token expires after 24 hours.
      */
 
     public String getNextForwardToken() {
@@ -97,7 +137,12 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The token for the next set of items in the forward direction. The token expires after 24 hours.
+     * </p>
+     * 
      * @param nextForwardToken
+     *        The token for the next set of items in the forward direction. The token expires after 24 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,7 +152,12 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The token for the next set of items in the backward direction. The token expires after 24 hours.
+     * </p>
+     * 
      * @param nextBackwardToken
+     *        The token for the next set of items in the backward direction. The token expires after 24 hours.
      */
 
     public void setNextBackwardToken(String nextBackwardToken) {
@@ -115,7 +165,11 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * @return
+     * <p>
+     * The token for the next set of items in the backward direction. The token expires after 24 hours.
+     * </p>
+     * 
+     * @return The token for the next set of items in the backward direction. The token expires after 24 hours.
      */
 
     public String getNextBackwardToken() {
@@ -123,7 +177,12 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The token for the next set of items in the backward direction. The token expires after 24 hours.
+     * </p>
+     * 
      * @param nextBackwardToken
+     *        The token for the next set of items in the backward direction. The token expires after 24 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

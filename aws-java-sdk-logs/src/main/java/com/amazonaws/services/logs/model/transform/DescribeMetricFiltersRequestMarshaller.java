@@ -71,6 +71,12 @@ public class DescribeMetricFiltersRequestMarshaller implements Marshaller<Reques
             if (describeMetricFiltersRequest.getLimit() != null) {
                 jsonGenerator.writeFieldName("limit").writeValue(describeMetricFiltersRequest.getLimit());
             }
+            if (describeMetricFiltersRequest.getMetricName() != null) {
+                jsonGenerator.writeFieldName("metricName").writeValue(describeMetricFiltersRequest.getMetricName());
+            }
+            if (describeMetricFiltersRequest.getMetricNamespace() != null) {
+                jsonGenerator.writeFieldName("metricNamespace").writeValue(describeMetricFiltersRequest.getMetricNamespace());
+            }
 
             jsonGenerator.writeEndObject();
 

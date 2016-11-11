@@ -22,18 +22,18 @@ public class DeleteDestinationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of destination to delete.
+     * The name of the destination.
      * </p>
      */
     private String destinationName;
 
     /**
      * <p>
-     * The name of destination to delete.
+     * The name of the destination.
      * </p>
      * 
      * @param destinationName
-     *        The name of destination to delete.
+     *        The name of the destination.
      */
 
     public void setDestinationName(String destinationName) {
@@ -42,10 +42,10 @@ public class DeleteDestinationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of destination to delete.
+     * The name of the destination.
      * </p>
      * 
-     * @return The name of destination to delete.
+     * @return The name of the destination.
      */
 
     public String getDestinationName() {
@@ -54,11 +54,11 @@ public class DeleteDestinationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of destination to delete.
+     * The name of the destination.
      * </p>
      * 
      * @param destinationName
-     *        The name of destination to delete.
+     *        The name of the destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

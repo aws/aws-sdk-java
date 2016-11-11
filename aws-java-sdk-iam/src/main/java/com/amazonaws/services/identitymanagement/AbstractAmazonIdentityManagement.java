@@ -724,4 +724,5 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     public AmazonIdentityManagementWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

@@ -13,7 +13,9 @@
 package com.amazonaws.services.logs.model;
 
 /**
- * 
+ * <p>
+ * The event was already logged.
+ * </p>
  */
 public class DataAlreadyAcceptedException extends com.amazonaws.services.logs.model.AWSLogsException {
     private static final long serialVersionUID = 1L;

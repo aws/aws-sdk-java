@@ -22,7 +22,7 @@ public class PutRetentionPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the log group to associate the retention policy with.
+     * The name of the log group.
      * </p>
      */
     private String logGroupName;
@@ -41,7 +41,7 @@ public class PutRetentionPolicyRequest extends com.amazonaws.AmazonWebServiceReq
      * methods to initialize any additional object members.
      * 
      * @param logGroupName
-     *        The name of the log group to associate the retention policy with.
+     *        The name of the log group.
      * @param retentionInDays
      */
     public PutRetentionPolicyRequest(String logGroupName, Integer retentionInDays) {
@@ -51,11 +51,11 @@ public class PutRetentionPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the log group to associate the retention policy with.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group to associate the retention policy with.
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -64,10 +64,10 @@ public class PutRetentionPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the log group to associate the retention policy with.
+     * The name of the log group.
      * </p>
      * 
-     * @return The name of the log group to associate the retention policy with.
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -76,11 +76,11 @@ public class PutRetentionPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the log group to associate the retention policy with.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group to associate the retention policy with.
+     *        The name of the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

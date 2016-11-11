@@ -19,12 +19,21 @@ import java.io.Serializable;
  */
 public class DescribeMetricFiltersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The metric filters.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<MetricFilter> metricFilters;
 
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The metric filters.
+     * </p>
+     * 
+     * @return The metric filters.
      */
 
     public java.util.List<MetricFilter> getMetricFilters() {
@@ -35,7 +44,12 @@ public class DescribeMetricFiltersResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The metric filters.
+     * </p>
+     * 
      * @param metricFilters
+     *        The metric filters.
      */
 
     public void setMetricFilters(java.util.Collection<MetricFilter> metricFilters) {
@@ -49,12 +63,16 @@ public class DescribeMetricFiltersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * The metric filters.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMetricFilters(java.util.Collection)} or {@link #withMetricFilters(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param metricFilters
+     *        The metric filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,7 +87,12 @@ public class DescribeMetricFiltersResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The metric filters.
+     * </p>
+     * 
      * @param metricFilters
+     *        The metric filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

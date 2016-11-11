@@ -14,7 +14,7 @@ package com.amazonaws.services.logs.model;
 
 /**
  * <p>
- * Returned if the specified resource does not exist.
+ * The specified resource does not exist.
  * </p>
  */
 public class ResourceNotFoundException extends com.amazonaws.services.logs.model.AWSLogsException {

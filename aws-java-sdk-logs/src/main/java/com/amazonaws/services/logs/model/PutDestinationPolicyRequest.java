@@ -28,7 +28,8 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     private String destinationName;
     /**
      * <p>
-     * An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.
+     * An IAM policy document that authorizes cross-account users to deliver their log events to the associated
+     * destination.
      * </p>
      */
     private String accessPolicy;
@@ -75,11 +76,12 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.
+     * An IAM policy document that authorizes cross-account users to deliver their log events to the associated
+     * destination.
      * </p>
      * 
      * @param accessPolicy
-     *        An IAM policy document that authorizes cross-account users to deliver their log events to associated
+     *        An IAM policy document that authorizes cross-account users to deliver their log events to the associated
      *        destination.
      */
 
@@ -89,10 +91,11 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.
+     * An IAM policy document that authorizes cross-account users to deliver their log events to the associated
+     * destination.
      * </p>
      * 
-     * @return An IAM policy document that authorizes cross-account users to deliver their log events to associated
+     * @return An IAM policy document that authorizes cross-account users to deliver their log events to the associated
      *         destination.
      */
 
@@ -102,11 +105,12 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An IAM policy document that authorizes cross-account users to deliver their log events to associated destination.
+     * An IAM policy document that authorizes cross-account users to deliver their log events to the associated
+     * destination.
      * </p>
      * 
      * @param accessPolicy
-     *        An IAM policy document that authorizes cross-account users to deliver their log events to associated
+     *        An IAM policy document that authorizes cross-account users to deliver their log events to the associated
      *        destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

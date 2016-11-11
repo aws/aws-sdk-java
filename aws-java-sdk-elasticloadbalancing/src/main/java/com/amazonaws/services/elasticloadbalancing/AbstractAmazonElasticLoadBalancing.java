@@ -204,4 +204,5 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
     public AmazonElasticLoadBalancingWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

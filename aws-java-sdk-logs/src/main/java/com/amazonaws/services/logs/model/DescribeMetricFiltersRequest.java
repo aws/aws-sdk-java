@@ -22,31 +22,40 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The log group name for which metric filters are to be listed.
+     * The name of the log group.
      * </p>
      */
     private String logGroupName;
     /**
      * <p>
-     * Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix
-     * filter is applied.
+     * The prefix to match.
      * </p>
      */
     private String filterNamePrefix;
     /**
      * <p>
-     * A string token used for pagination that points to the next page of results. It must be a value obtained from the
-     * response of the previous <code>DescribeMetricFilters</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't specify a value, the request would return up
-     * to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * </p>
      */
     private Integer limit;
+    /**
+     * <p>
+     * The name of the CloudWatch metric.
+     * </p>
+     */
+    private String metricName;
+    /**
+     * <p>
+     * The namespace of the CloudWatch metric.
+     * </p>
+     */
+    private String metricNamespace;
 
     /**
      * Default constructor for DescribeMetricFiltersRequest object. Callers should use the setter or fluent setter
@@ -60,7 +69,7 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
      * methods to initialize any additional object members.
      * 
      * @param logGroupName
-     *        The log group name for which metric filters are to be listed.
+     *        The name of the log group.
      */
     public DescribeMetricFiltersRequest(String logGroupName) {
         setLogGroupName(logGroupName);
@@ -68,11 +77,11 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The log group name for which metric filters are to be listed.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The log group name for which metric filters are to be listed.
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -81,10 +90,10 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The log group name for which metric filters are to be listed.
+     * The name of the log group.
      * </p>
      * 
-     * @return The log group name for which metric filters are to be listed.
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -93,11 +102,11 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The log group name for which metric filters are to be listed.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The log group name for which metric filters are to be listed.
+     *        The name of the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,13 +117,11 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix
-     * filter is applied.
+     * The prefix to match.
      * </p>
      * 
      * @param filterNamePrefix
-     *        Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no
-     *        prefix filter is applied.
+     *        The prefix to match.
      */
 
     public void setFilterNamePrefix(String filterNamePrefix) {
@@ -123,12 +130,10 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix
-     * filter is applied.
+     * The prefix to match.
      * </p>
      * 
-     * @return Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value,
-     *         no prefix filter is applied.
+     * @return The prefix to match.
      */
 
     public String getFilterNamePrefix() {
@@ -137,13 +142,11 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no prefix
-     * filter is applied.
+     * The prefix to match.
      * </p>
      * 
      * @param filterNamePrefix
-     *        Will only return metric filters that match the provided filterNamePrefix. If you don't specify a value, no
-     *        prefix filter is applied.
+     *        The prefix to match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,13 +157,11 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of results. It must be a value obtained from the
-     * response of the previous <code>DescribeMetricFilters</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        A string token used for pagination that points to the next page of results. It must be a value obtained
-     *        from the response of the previous <code>DescribeMetricFilters</code> request.
+     *        The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -169,12 +170,10 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of results. It must be a value obtained from the
-     * response of the previous <code>DescribeMetricFilters</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
-     * @return A string token used for pagination that points to the next page of results. It must be a value obtained
-     *         from the response of the previous <code>DescribeMetricFilters</code> request.
+     * @return The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public String getNextToken() {
@@ -183,13 +182,11 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A string token used for pagination that points to the next page of results. It must be a value obtained from the
-     * response of the previous <code>DescribeMetricFilters</code> request.
+     * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        A string token used for pagination that points to the next page of results. It must be a value obtained
-     *        from the response of the previous <code>DescribeMetricFilters</code> request.
+     *        The token for the next set of items to return. (You received this token from a previous call.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,13 +197,11 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't specify a value, the request would return up
-     * to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items returned in the response. If you don't specify a value, the request would
-     *        return up to 50 items.
+     *        The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      */
 
     public void setLimit(Integer limit) {
@@ -215,12 +210,10 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't specify a value, the request would return up
-     * to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * </p>
      * 
-     * @return The maximum number of items returned in the response. If you don't specify a value, the request would
-     *         return up to 50 items.
+     * @return The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      */
 
     public Integer getLimit() {
@@ -229,18 +222,96 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't specify a value, the request would return up
-     * to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items returned in the response. If you don't specify a value, the request would
-     *        return up to 50 items.
+     *        The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMetricFiltersRequest withLimit(Integer limit) {
         setLimit(limit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the CloudWatch metric.
+     * </p>
+     * 
+     * @param metricName
+     *        The name of the CloudWatch metric.
+     */
+
+    public void setMetricName(String metricName) {
+        this.metricName = metricName;
+    }
+
+    /**
+     * <p>
+     * The name of the CloudWatch metric.
+     * </p>
+     * 
+     * @return The name of the CloudWatch metric.
+     */
+
+    public String getMetricName() {
+        return this.metricName;
+    }
+
+    /**
+     * <p>
+     * The name of the CloudWatch metric.
+     * </p>
+     * 
+     * @param metricName
+     *        The name of the CloudWatch metric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeMetricFiltersRequest withMetricName(String metricName) {
+        setMetricName(metricName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The namespace of the CloudWatch metric.
+     * </p>
+     * 
+     * @param metricNamespace
+     *        The namespace of the CloudWatch metric.
+     */
+
+    public void setMetricNamespace(String metricNamespace) {
+        this.metricNamespace = metricNamespace;
+    }
+
+    /**
+     * <p>
+     * The namespace of the CloudWatch metric.
+     * </p>
+     * 
+     * @return The namespace of the CloudWatch metric.
+     */
+
+    public String getMetricNamespace() {
+        return this.metricNamespace;
+    }
+
+    /**
+     * <p>
+     * The namespace of the CloudWatch metric.
+     * </p>
+     * 
+     * @param metricNamespace
+     *        The namespace of the CloudWatch metric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeMetricFiltersRequest withMetricNamespace(String metricNamespace) {
+        setMetricNamespace(metricNamespace);
         return this;
     }
 
@@ -262,7 +333,11 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
         if (getNextToken() != null)
             sb.append("NextToken: " + getNextToken() + ",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: " + getLimit() + ",");
+        if (getMetricName() != null)
+            sb.append("MetricName: " + getMetricName() + ",");
+        if (getMetricNamespace() != null)
+            sb.append("MetricNamespace: " + getMetricNamespace());
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +368,14 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
+        if (other.getMetricName() == null ^ this.getMetricName() == null)
+            return false;
+        if (other.getMetricName() != null && other.getMetricName().equals(this.getMetricName()) == false)
+            return false;
+        if (other.getMetricNamespace() == null ^ this.getMetricNamespace() == null)
+            return false;
+        if (other.getMetricNamespace() != null && other.getMetricNamespace().equals(this.getMetricNamespace()) == false)
+            return false;
         return true;
     }
 
@@ -305,6 +388,8 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getFilterNamePrefix() == null) ? 0 : getFilterNamePrefix().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
+        hashCode = prime * hashCode + ((getMetricNamespace() == null) ? 0 : getMetricNamespace().hashCode());
         return hashCode;
     }
 

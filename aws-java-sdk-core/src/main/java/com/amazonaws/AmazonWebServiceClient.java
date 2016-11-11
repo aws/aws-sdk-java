@@ -179,7 +179,17 @@ public abstract class AmazonWebServiceClient {
      * as the information on the S3 bucket and key is not yet known.
      */
     @Deprecated
-    protected Signer getSigner() { return signerProvider.getSigner(SignerProviderContext.builder().build()); }
+    protected Signer getSigner() {
+        return signerProvider.getSigner(SignerProviderContext.builder().build());
+    }
+
+    /**
+     * @return Current SignerProvider instance.
+     */
+    @SdkProtectedApi
+    protected SignerProvider getSignerProvider() {
+        return signerProvider;
+    }
 
     /**
      * Overrides the default endpoint for this client. Callers can use this

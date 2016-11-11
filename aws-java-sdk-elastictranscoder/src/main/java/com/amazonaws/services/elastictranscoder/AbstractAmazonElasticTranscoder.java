@@ -144,4 +144,5 @@ public class AbstractAmazonElasticTranscoder implements AmazonElasticTranscoder 
     public AmazonElasticTranscoderWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

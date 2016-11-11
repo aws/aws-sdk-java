@@ -19,12 +19,21 @@ import java.io.Serializable;
  */
 public class DescribeDestinationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The destinations.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Destination> destinations;
 
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The destinations.
+     * </p>
+     * 
+     * @return The destinations.
      */
 
     public java.util.List<Destination> getDestinations() {
@@ -35,7 +44,12 @@ public class DescribeDestinationsResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The destinations.
+     * </p>
+     * 
      * @param destinations
+     *        The destinations.
      */
 
     public void setDestinations(java.util.Collection<Destination> destinations) {
@@ -49,12 +63,16 @@ public class DescribeDestinationsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The destinations.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDestinations(java.util.Collection)} or {@link #withDestinations(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param destinations
+     *        The destinations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,7 +87,12 @@ public class DescribeDestinationsResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The destinations.
+     * </p>
+     * 
      * @param destinations
+     *        The destinations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

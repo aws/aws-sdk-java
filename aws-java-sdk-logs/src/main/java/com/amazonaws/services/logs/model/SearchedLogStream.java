@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An object indicating the search status of a log stream in a <code>FilterLogEvents</code> request.
+ * Represents the search status of a log stream.
  * </p>
  */
 public class SearchedLogStream implements Serializable, Cloneable {
@@ -29,8 +29,7 @@ public class SearchedLogStream implements Serializable, Cloneable {
     private String logStreamName;
     /**
      * <p>
-     * Indicates whether all the events in this log stream were searched or more data exists to search by paginating
-     * further.
+     * Indicates whether all the events in this log stream were searched.
      * </p>
      */
     private Boolean searchedCompletely;
@@ -77,13 +76,11 @@ public class SearchedLogStream implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether all the events in this log stream were searched or more data exists to search by paginating
-     * further.
+     * Indicates whether all the events in this log stream were searched.
      * </p>
      * 
      * @param searchedCompletely
-     *        Indicates whether all the events in this log stream were searched or more data exists to search by
-     *        paginating further.
+     *        Indicates whether all the events in this log stream were searched.
      */
 
     public void setSearchedCompletely(Boolean searchedCompletely) {
@@ -92,12 +89,10 @@ public class SearchedLogStream implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether all the events in this log stream were searched or more data exists to search by paginating
-     * further.
+     * Indicates whether all the events in this log stream were searched.
      * </p>
      * 
-     * @return Indicates whether all the events in this log stream were searched or more data exists to search by
-     *         paginating further.
+     * @return Indicates whether all the events in this log stream were searched.
      */
 
     public Boolean getSearchedCompletely() {
@@ -106,13 +101,11 @@ public class SearchedLogStream implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether all the events in this log stream were searched or more data exists to search by paginating
-     * further.
+     * Indicates whether all the events in this log stream were searched.
      * </p>
      * 
      * @param searchedCompletely
-     *        Indicates whether all the events in this log stream were searched or more data exists to search by
-     *        paginating further.
+     *        Indicates whether all the events in this log stream were searched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,12 +116,10 @@ public class SearchedLogStream implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether all the events in this log stream were searched or more data exists to search by paginating
-     * further.
+     * Indicates whether all the events in this log stream were searched.
      * </p>
      * 
-     * @return Indicates whether all the events in this log stream were searched or more data exists to search by
-     *         paginating further.
+     * @return Indicates whether all the events in this log stream were searched.
      */
 
     public Boolean isSearchedCompletely() {

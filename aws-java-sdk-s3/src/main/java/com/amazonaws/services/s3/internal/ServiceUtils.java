@@ -17,9 +17,24 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import static com.amazonaws.util.IOUtils.closeQuietly;
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.services.s3.internal.Constants.KB;
+import com.amazonaws.Request;
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
+import com.amazonaws.services.s3.model.GetObjectRequest;
+import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.transfer.exception.FileLockException;
+import com.amazonaws.util.BinaryUtils;
+import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.Md5Utils;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.ValidationUtils;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -38,24 +53,9 @@ import java.util.Map;
 
 import javax.net.ssl.SSLProtocolException;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
-import com.amazonaws.services.s3.model.GetObjectRequest;
-import com.amazonaws.services.s3.model.ObjectMetadata;
-import com.amazonaws.services.s3.model.S3Object;
-import com.amazonaws.services.s3.transfer.exception.FileLockException;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.DateUtils;
-import com.amazonaws.util.SdkHttpUtils;
-import com.amazonaws.util.Md5Utils;
-import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.ValidationUtils;
+import static com.amazonaws.services.s3.internal.Constants.KB;
+import static com.amazonaws.util.IOUtils.closeQuietly;
+import static com.amazonaws.util.StringUtils.UTF8;
 
 /**
  * General utility methods used throughout the AWS S3 Java client.
@@ -138,7 +138,9 @@ public class ServiceUtils {
      *
      * @throws SdkClientException
      *             If the request cannot be converted to a well formed URL.
+     * @deprecated No longer used. May be removed in a future major version.
      */
+    @Deprecated
     public static URL convertRequestToUrl(Request<?> request) {
         // To be backward compatible, this method by default does not
         // remove the leading slash in the request resource-path.
@@ -158,7 +160,9 @@ public class ServiceUtils {
      *
      * @throws SdkClientException
      *             If the request cannot be converted to a well formed URL.
+     * @deprecated No longer used. May be removed in a future major version.
      */
+    @Deprecated
     public static URL convertRequestToUrl(Request<?> request, boolean removeLeadingSlashInResourcePath) {
         return convertRequestToUrl(request, removeLeadingSlashInResourcePath, true);
     }

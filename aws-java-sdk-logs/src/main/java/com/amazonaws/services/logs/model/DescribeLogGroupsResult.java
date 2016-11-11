@@ -19,12 +19,21 @@ import java.io.Serializable;
  */
 public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The log groups.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<LogGroup> logGroups;
 
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The log groups.
+     * </p>
+     * 
+     * @return The log groups.
      */
 
     public java.util.List<LogGroup> getLogGroups() {
@@ -35,7 +44,12 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The log groups.
+     * </p>
+     * 
      * @param logGroups
+     *        The log groups.
      */
 
     public void setLogGroups(java.util.Collection<LogGroup> logGroups) {
@@ -49,12 +63,16 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * The log groups.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLogGroups(java.util.Collection)} or {@link #withLogGroups(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param logGroups
+     *        The log groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,7 +87,12 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The log groups.
+     * </p>
+     * 
      * @param logGroups
+     *        The log groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

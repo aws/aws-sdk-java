@@ -14,7 +14,7 @@ package com.amazonaws.services.logs.model;
 
 /**
  * <p>
- * Returned if a parameter of the request is incorrectly specified.
+ * A parameter is specified incorrectly.
  * </p>
  */
 public class InvalidParameterException extends com.amazonaws.services.logs.model.AWSLogsException {

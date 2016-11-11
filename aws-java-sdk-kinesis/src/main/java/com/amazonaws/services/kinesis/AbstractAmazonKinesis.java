@@ -206,4 +206,5 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     public AmazonKinesisWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

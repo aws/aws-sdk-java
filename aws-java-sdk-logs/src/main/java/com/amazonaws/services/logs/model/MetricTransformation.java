@@ -15,42 +15,44 @@ package com.amazonaws.services.logs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Indicates how to transform ingested log events into metric data in a CloudWatch metric.
+ * </p>
  */
 public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the metric.
+     * The name of the CloudWatch metric.
      * </p>
      */
     private String metricName;
     /**
      * <p>
-     * Namespace to which the metric belongs.
+     * The namespace of the CloudWatch metric.
      * </p>
      */
     private String metricNamespace;
     /**
      * <p>
-     * A string representing a value to publish to this metric when a filter pattern matches a log event.
+     * The value to publish to the CloudWatch metric when a filter pattern matches a log event.
      * </p>
      */
     private String metricValue;
     /**
      * <p>
-     * (Optional) A default value to emit when a filter pattern does not match a log event. Can be null.
+     * (Optional) The value to emit when a filter pattern does not match a log event. This value can be null.
      * </p>
      */
     private Double defaultValue;
 
     /**
      * <p>
-     * Name of the metric.
+     * The name of the CloudWatch metric.
      * </p>
      * 
      * @param metricName
-     *        Name of the metric.
+     *        The name of the CloudWatch metric.
      */
 
     public void setMetricName(String metricName) {
@@ -59,10 +61,10 @@ public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the metric.
+     * The name of the CloudWatch metric.
      * </p>
      * 
-     * @return Name of the metric.
+     * @return The name of the CloudWatch metric.
      */
 
     public String getMetricName() {
@@ -71,11 +73,11 @@ public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the metric.
+     * The name of the CloudWatch metric.
      * </p>
      * 
      * @param metricName
-     *        Name of the metric.
+     *        The name of the CloudWatch metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +88,11 @@ public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Namespace to which the metric belongs.
+     * The namespace of the CloudWatch metric.
      * </p>
      * 
      * @param metricNamespace
-     *        Namespace to which the metric belongs.
+     *        The namespace of the CloudWatch metric.
      */
 
     public void setMetricNamespace(String metricNamespace) {
@@ -99,10 +101,10 @@ public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Namespace to which the metric belongs.
+     * The namespace of the CloudWatch metric.
      * </p>
      * 
-     * @return Namespace to which the metric belongs.
+     * @return The namespace of the CloudWatch metric.
      */
 
     public String getMetricNamespace() {
@@ -111,11 +113,11 @@ public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Namespace to which the metric belongs.
+     * The namespace of the CloudWatch metric.
      * </p>
      * 
      * @param metricNamespace
-     *        Namespace to which the metric belongs.
+     *        The namespace of the CloudWatch metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +128,11 @@ public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string representing a value to publish to this metric when a filter pattern matches a log event.
+     * The value to publish to the CloudWatch metric when a filter pattern matches a log event.
      * </p>
      * 
      * @param metricValue
-     *        A string representing a value to publish to this metric when a filter pattern matches a log event.
+     *        The value to publish to the CloudWatch metric when a filter pattern matches a log event.
      */
 
     public void setMetricValue(String metricValue) {
@@ -139,10 +141,10 @@ public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string representing a value to publish to this metric when a filter pattern matches a log event.
+     * The value to publish to the CloudWatch metric when a filter pattern matches a log event.
      * </p>
      * 
-     * @return A string representing a value to publish to this metric when a filter pattern matches a log event.
+     * @return The value to publish to the CloudWatch metric when a filter pattern matches a log event.
      */
 
     public String getMetricValue() {
@@ -151,11 +153,11 @@ public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string representing a value to publish to this metric when a filter pattern matches a log event.
+     * The value to publish to the CloudWatch metric when a filter pattern matches a log event.
      * </p>
      * 
      * @param metricValue
-     *        A string representing a value to publish to this metric when a filter pattern matches a log event.
+     *        The value to publish to the CloudWatch metric when a filter pattern matches a log event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +168,11 @@ public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) A default value to emit when a filter pattern does not match a log event. Can be null.
+     * (Optional) The value to emit when a filter pattern does not match a log event. This value can be null.
      * </p>
      * 
      * @param defaultValue
-     *        (Optional) A default value to emit when a filter pattern does not match a log event. Can be null.
+     *        (Optional) The value to emit when a filter pattern does not match a log event. This value can be null.
      */
 
     public void setDefaultValue(Double defaultValue) {
@@ -179,10 +181,10 @@ public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) A default value to emit when a filter pattern does not match a log event. Can be null.
+     * (Optional) The value to emit when a filter pattern does not match a log event. This value can be null.
      * </p>
      * 
-     * @return (Optional) A default value to emit when a filter pattern does not match a log event. Can be null.
+     * @return (Optional) The value to emit when a filter pattern does not match a log event. This value can be null.
      */
 
     public Double getDefaultValue() {
@@ -191,11 +193,11 @@ public class MetricTransformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) A default value to emit when a filter pattern does not match a log event. Can be null.
+     * (Optional) The value to emit when a filter pattern does not match a log event. This value can be null.
      * </p>
      * 
      * @param defaultValue
-     *        (Optional) A default value to emit when a filter pattern does not match a log event. Can be null.
+     *        (Optional) The value to emit when a filter pattern does not match a log event. This value can be null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

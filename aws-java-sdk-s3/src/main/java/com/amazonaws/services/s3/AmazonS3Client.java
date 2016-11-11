@@ -3849,7 +3849,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public URL getUrl(String bucketName, String key) {
         Request<?> request = new DefaultRequest<Object>(Constants.S3_SERVICE_DISPLAY_NAME);
         resolveRequestEndpoint(request, bucketName, key, endpoint);
-        return ServiceUtils.convertRequestToUrl(request);
+        return ServiceUtils.convertRequestToUrl(request, false, false);
     }
 
     @Override

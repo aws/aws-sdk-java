@@ -55,4 +55,11 @@ public class ${metadata.syncAbstractClass} implements ${metadata.syncInterface} 
            throw new java.lang.UnsupportedOperationException();
       }
   </#if>
+
+    <#if customizationConfig.presignersFqcn??>
+    @Override
+    public ${customizationConfig.presignersFqcn} presigners() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+    </#if>
 }

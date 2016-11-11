@@ -1166,4 +1166,5 @@ public interface AmazonDynamoDB {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonDynamoDBWaiters waiters();
+
 }

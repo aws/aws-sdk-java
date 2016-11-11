@@ -22,24 +22,24 @@ public class DeleteSubscriptionFilterRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the log group that is associated with the subscription filter to delete.
+     * The name of the log group.
      * </p>
      */
     private String logGroupName;
     /**
      * <p>
-     * The name of the subscription filter to delete.
+     * The name of the subscription filter.
      * </p>
      */
     private String filterName;
 
     /**
      * <p>
-     * The name of the log group that is associated with the subscription filter to delete.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group that is associated with the subscription filter to delete.
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -48,10 +48,10 @@ public class DeleteSubscriptionFilterRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the log group that is associated with the subscription filter to delete.
+     * The name of the log group.
      * </p>
      * 
-     * @return The name of the log group that is associated with the subscription filter to delete.
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -60,11 +60,11 @@ public class DeleteSubscriptionFilterRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the log group that is associated with the subscription filter to delete.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group that is associated with the subscription filter to delete.
+     *        The name of the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,11 +75,11 @@ public class DeleteSubscriptionFilterRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the subscription filter to delete.
+     * The name of the subscription filter.
      * </p>
      * 
      * @param filterName
-     *        The name of the subscription filter to delete.
+     *        The name of the subscription filter.
      */
 
     public void setFilterName(String filterName) {
@@ -88,10 +88,10 @@ public class DeleteSubscriptionFilterRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the subscription filter to delete.
+     * The name of the subscription filter.
      * </p>
      * 
-     * @return The name of the subscription filter to delete.
+     * @return The name of the subscription filter.
      */
 
     public String getFilterName() {
@@ -100,11 +100,11 @@ public class DeleteSubscriptionFilterRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the subscription filter to delete.
+     * The name of the subscription filter.
      * </p>
      * 
      * @param filterName
-     *        The name of the subscription filter to delete.
+     *        The name of the subscription filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

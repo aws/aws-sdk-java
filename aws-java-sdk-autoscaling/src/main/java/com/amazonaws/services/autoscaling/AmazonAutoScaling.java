@@ -1435,4 +1435,5 @@ public interface AmazonAutoScaling {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonAutoScalingWaiters waiters();
+
 }

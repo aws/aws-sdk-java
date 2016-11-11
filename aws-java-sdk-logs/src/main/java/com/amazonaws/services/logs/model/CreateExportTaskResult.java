@@ -21,18 +21,18 @@ public class CreateExportTaskResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Id of the export task that got created.
+     * The ID of the export task.
      * </p>
      */
     private String taskId;
 
     /**
      * <p>
-     * Id of the export task that got created.
+     * The ID of the export task.
      * </p>
      * 
      * @param taskId
-     *        Id of the export task that got created.
+     *        The ID of the export task.
      */
 
     public void setTaskId(String taskId) {
@@ -41,10 +41,10 @@ public class CreateExportTaskResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Id of the export task that got created.
+     * The ID of the export task.
      * </p>
      * 
-     * @return Id of the export task that got created.
+     * @return The ID of the export task.
      */
 
     public String getTaskId() {
@@ -53,11 +53,11 @@ public class CreateExportTaskResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Id of the export task that got created.
+     * The ID of the export task.
      * </p>
      * 
      * @param taskId
-     *        Id of the export task that got created.
+     *        The ID of the export task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

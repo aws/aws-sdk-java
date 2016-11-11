@@ -22,6 +22,7 @@ import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
+import com.amazonaws.auth.presign.PresignerParams;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
@@ -1342,6 +1343,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 
+    @Override
     public AmazonElasticMapReduceWaiters waiters() {
         if (waiters == null) {
             synchronized (this) {

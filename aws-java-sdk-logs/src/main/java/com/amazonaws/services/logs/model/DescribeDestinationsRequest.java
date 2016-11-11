@@ -22,25 +22,30 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no
-     * prefix is applied.
+     * The prefix to match. If you don't specify a value, no prefix filter is applied.
      * </p>
      */
     private String destinationNamePrefix;
-
+    /**
+     * <p>
+     * The token for the next set of items to return. (You received this token from a previous call.)
+     * </p>
+     */
     private String nextToken;
-
+    /**
+     * <p>
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     * </p>
+     */
     private Integer limit;
 
     /**
      * <p>
-     * Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no
-     * prefix is applied.
+     * The prefix to match. If you don't specify a value, no prefix filter is applied.
      * </p>
      * 
      * @param destinationNamePrefix
-     *        Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value,
-     *        no prefix is applied.
+     *        The prefix to match. If you don't specify a value, no prefix filter is applied.
      */
 
     public void setDestinationNamePrefix(String destinationNamePrefix) {
@@ -49,12 +54,10 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no
-     * prefix is applied.
+     * The prefix to match. If you don't specify a value, no prefix filter is applied.
      * </p>
      * 
-     * @return Will only return destinations that match the provided destinationNamePrefix. If you don't specify a
-     *         value, no prefix is applied.
+     * @return The prefix to match. If you don't specify a value, no prefix filter is applied.
      */
 
     public String getDestinationNamePrefix() {
@@ -63,13 +66,11 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no
-     * prefix is applied.
+     * The prefix to match. If you don't specify a value, no prefix filter is applied.
      * </p>
      * 
      * @param destinationNamePrefix
-     *        Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value,
-     *        no prefix is applied.
+     *        The prefix to match. If you don't specify a value, no prefix filter is applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,7 +80,12 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The token for the next set of items to return. (You received this token from a previous call.)
+     * </p>
+     * 
      * @param nextToken
+     *        The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -87,7 +93,11 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The token for the next set of items to return. (You received this token from a previous call.)
+     * </p>
+     * 
+     * @return The token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public String getNextToken() {
@@ -95,7 +105,12 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The token for the next set of items to return. (You received this token from a previous call.)
+     * </p>
+     * 
      * @param nextToken
+     *        The token for the next set of items to return. (You received this token from a previous call.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +120,12 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     * </p>
+     * 
      * @param limit
+     *        The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      */
 
     public void setLimit(Integer limit) {
@@ -113,7 +133,11 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     * </p>
+     * 
+     * @return The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      */
 
     public Integer getLimit() {
@@ -121,7 +145,12 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     * </p>
+     * 
      * @param limit
+     *        The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

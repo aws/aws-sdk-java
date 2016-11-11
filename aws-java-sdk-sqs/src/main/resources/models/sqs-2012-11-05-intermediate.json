@@ -80,6 +80,7 @@
     "customSignerProvider" : "com.amazonaws.services.sqs.internal.auth.SQSSignerProvider",
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
+    "presignersFqcn" : null,
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,

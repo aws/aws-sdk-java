@@ -201,6 +201,11 @@ public class CustomizationConfig {
      */
     private boolean skipSmokeTests;
 
+    /**
+     * Fully qualified class name of presigner extension class if it exists.
+     */
+    private String presignersFqcn;
+
     public String getRequestMetrics() {
         return requestMetrics;
     }
@@ -464,5 +469,13 @@ public class CustomizationConfig {
 
     public void setSendExplicitlyEmptyListsForQuery(boolean sendExplicitlyEmptyListsForQuery) {
         this.sendExplicitlyEmptyListsForQuery = sendExplicitlyEmptyListsForQuery;
+    }
+
+    public String getPresignersFqcn() {
+        return presignersFqcn;
+    }
+
+    public void setPresignersFqcn(String presignersFqcn) {
+        this.presignersFqcn = presignersFqcn;
     }
 }

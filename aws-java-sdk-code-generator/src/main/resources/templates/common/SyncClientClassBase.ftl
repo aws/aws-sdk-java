@@ -15,6 +15,7 @@ import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
+import com.amazonaws.auth.presign.PresignerParams;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
@@ -327,16 +328,28 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
     }
 
     <#if hasWaiters>
-        public ${metadata.syncInterface}Waiters waiters(){
-            if(waiters == null) {
-                   synchronized (this) {
-                        if(waiters == null) {
-                                waiters = new ${metadata.syncInterface}Waiters(this);
-                        }
-                   }
-            }
-            return waiters;
+    @Override
+    public ${metadata.syncInterface}Waiters waiters(){
+        if(waiters == null) {
+               synchronized (this) {
+                    if(waiters == null) {
+                            waiters = new ${metadata.syncInterface}Waiters(this);
+                    }
+               }
         }
+        return waiters;
+    }
+    </#if>
+
+    <#if customizationConfig.presignersFqcn??>
+    @Override
+    public ${customizationConfig.presignersFqcn} presigners() {
+        return new ${customizationConfig.presignersFqcn}(PresignerParams.builder()
+            .endpoint(endpoint)
+            .credentialsProvider(awsCredentialsProvider)
+            .signerProvider(getSignerProvider())
+            .build());
+    }
     </#if>
 
 }

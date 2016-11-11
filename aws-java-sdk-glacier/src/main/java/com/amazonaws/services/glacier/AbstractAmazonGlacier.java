@@ -204,4 +204,5 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     public AmazonGlacierWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

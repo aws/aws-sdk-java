@@ -171,4 +171,5 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     public AmazonElasticMapReduceWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

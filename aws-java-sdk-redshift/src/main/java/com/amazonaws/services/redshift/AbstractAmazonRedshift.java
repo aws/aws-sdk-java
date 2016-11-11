@@ -444,4 +444,5 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     public AmazonRedshiftWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

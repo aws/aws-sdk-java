@@ -15,24 +15,48 @@ package com.amazonaws.services.logs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents a subscription filter.
+ * </p>
  */
 public class SubscriptionFilter implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the subscription filter.
+     * </p>
+     */
     private String filterName;
-
+    /**
+     * <p>
+     * The name of the log group.
+     * </p>
+     */
     private String logGroupName;
 
     private String filterPattern;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the destination.
+     * </p>
+     */
     private String destinationArn;
-
+    /** <p/> */
     private String roleArn;
-
+    /**
+     * <p>
+     * The creation time of the subscription filter.
+     * </p>
+     */
     private Long creationTime;
 
     /**
+     * <p>
+     * The name of the subscription filter.
+     * </p>
+     * 
      * @param filterName
+     *        The name of the subscription filter.
      */
 
     public void setFilterName(String filterName) {
@@ -40,7 +64,11 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the subscription filter.
+     * </p>
+     * 
+     * @return The name of the subscription filter.
      */
 
     public String getFilterName() {
@@ -48,7 +76,12 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the subscription filter.
+     * </p>
+     * 
      * @param filterName
+     *        The name of the subscription filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +91,12 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the log group.
+     * </p>
+     * 
      * @param logGroupName
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -66,7 +104,11 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the log group.
+     * </p>
+     * 
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -74,7 +116,12 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the log group.
+     * </p>
+     * 
      * @param logGroupName
+     *        The name of the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +157,12 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the destination.
+     * </p>
+     * 
      * @param destinationArn
+     *        The Amazon Resource Name (ARN) of the destination.
      */
 
     public void setDestinationArn(String destinationArn) {
@@ -118,7 +170,11 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the destination.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the destination.
      */
 
     public String getDestinationArn() {
@@ -126,7 +182,12 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the destination.
+     * </p>
+     * 
      * @param destinationArn
+     *        The Amazon Resource Name (ARN) of the destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,6 +197,8 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param roleArn
      */
 
@@ -144,6 +207,8 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -152,6 +217,8 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param roleArn
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -162,7 +229,12 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The creation time of the subscription filter.
+     * </p>
+     * 
      * @param creationTime
+     *        The creation time of the subscription filter.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -170,7 +242,11 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The creation time of the subscription filter.
+     * </p>
+     * 
+     * @return The creation time of the subscription filter.
      */
 
     public Long getCreationTime() {
@@ -178,7 +254,12 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The creation time of the subscription filter.
+     * </p>
+     * 
      * @param creationTime
+     *        The creation time of the subscription filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

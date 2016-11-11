@@ -65,6 +65,7 @@
     "customSignerProvider" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
+    "presignersFqcn" : null,
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,

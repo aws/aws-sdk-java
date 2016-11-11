@@ -126,4 +126,14 @@ public interface ${metadata.syncInterface} {
   <#if hasWaiters>
     ${metadata.syncInterface}Waiters waiters();
   </#if>
+
+    <#if customizationConfig.presignersFqcn??>
+    /**
+     * {@link ${customizationConfig.presignersFqcn}} contains extension methods for presigning certain requests. The
+     * presigner will use the endpoint and credentials currently configured in the client.
+     *
+     * @return Presigners utility object.
+     */
+    ${customizationConfig.presignersFqcn} presigners();
+    </#if>
 }

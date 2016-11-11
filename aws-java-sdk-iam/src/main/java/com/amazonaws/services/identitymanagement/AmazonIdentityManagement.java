@@ -3465,4 +3465,5 @@ public interface AmazonIdentityManagement {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonIdentityManagementWaiters waiters();
+
 }

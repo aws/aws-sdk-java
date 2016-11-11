@@ -22,7 +22,7 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the log group to associate the metric filter with.
+     * The name of the log group.
      * </p>
      */
     private String logGroupName;
@@ -34,7 +34,7 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
     private String filterName;
     /**
      * <p>
-     * A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.
+     * A filter pattern for extracting metric data out of ingested log events.
      * </p>
      */
     private String filterPattern;
@@ -57,11 +57,11 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
      * to initialize any additional object members.
      * 
      * @param logGroupName
-     *        The name of the log group to associate the metric filter with.
+     *        The name of the log group.
      * @param filterName
      *        A name for the metric filter.
      * @param filterPattern
-     *        A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.
+     *        A filter pattern for extracting metric data out of ingested log events.
      * @param metricTransformations
      *        A collection of information needed to define how metric data gets emitted.
      */
@@ -74,11 +74,11 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the log group to associate the metric filter with.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group to associate the metric filter with.
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -87,10 +87,10 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the log group to associate the metric filter with.
+     * The name of the log group.
      * </p>
      * 
-     * @return The name of the log group to associate the metric filter with.
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -99,11 +99,11 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the log group to associate the metric filter with.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group to associate the metric filter with.
+     *        The name of the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +154,11 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.
+     * A filter pattern for extracting metric data out of ingested log events.
      * </p>
      * 
      * @param filterPattern
-     *        A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.
+     *        A filter pattern for extracting metric data out of ingested log events.
      */
 
     public void setFilterPattern(String filterPattern) {
@@ -167,10 +167,10 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.
+     * A filter pattern for extracting metric data out of ingested log events.
      * </p>
      * 
-     * @return A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.
+     * @return A filter pattern for extracting metric data out of ingested log events.
      */
 
     public String getFilterPattern() {
@@ -179,11 +179,11 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.
+     * A filter pattern for extracting metric data out of ingested log events.
      * </p>
      * 
      * @param filterPattern
-     *        A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.
+     *        A filter pattern for extracting metric data out of ingested log events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

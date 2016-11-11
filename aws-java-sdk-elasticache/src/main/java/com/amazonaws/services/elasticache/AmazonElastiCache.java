@@ -1355,4 +1355,5 @@ public interface AmazonElastiCache {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonElastiCacheWaiters waiters();
+
 }

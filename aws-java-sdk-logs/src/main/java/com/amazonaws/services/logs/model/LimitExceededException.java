@@ -14,7 +14,7 @@ package com.amazonaws.services.logs.model;
 
 /**
  * <p>
- * Returned if you have reached the maximum number of resources that can be created.
+ * You have reached the maximum number of resources that can be created.
  * </p>
  */
 public class LimitExceededException extends com.amazonaws.services.logs.model.AWSLogsException {

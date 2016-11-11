@@ -15,18 +15,38 @@ package com.amazonaws.services.logs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents a log event.
+ * </p>
  */
 public class OutputLogEvent implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The time the event occurred.
+     * </p>
+     */
     private Long timestamp;
-
+    /**
+     * <p>
+     * The data contained in the log event.
+     * </p>
+     */
     private String message;
-
+    /**
+     * <p>
+     * The time the event was ingested.
+     * </p>
+     */
     private Long ingestionTime;
 
     /**
+     * <p>
+     * The time the event occurred.
+     * </p>
+     * 
      * @param timestamp
+     *        The time the event occurred.
      */
 
     public void setTimestamp(Long timestamp) {
@@ -34,7 +54,11 @@ public class OutputLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The time the event occurred.
+     * </p>
+     * 
+     * @return The time the event occurred.
      */
 
     public Long getTimestamp() {
@@ -42,7 +66,12 @@ public class OutputLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the event occurred.
+     * </p>
+     * 
      * @param timestamp
+     *        The time the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -52,7 +81,12 @@ public class OutputLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The data contained in the log event.
+     * </p>
+     * 
      * @param message
+     *        The data contained in the log event.
      */
 
     public void setMessage(String message) {
@@ -60,7 +94,11 @@ public class OutputLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The data contained in the log event.
+     * </p>
+     * 
+     * @return The data contained in the log event.
      */
 
     public String getMessage() {
@@ -68,7 +106,12 @@ public class OutputLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The data contained in the log event.
+     * </p>
+     * 
      * @param message
+     *        The data contained in the log event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,7 +121,12 @@ public class OutputLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the event was ingested.
+     * </p>
+     * 
      * @param ingestionTime
+     *        The time the event was ingested.
      */
 
     public void setIngestionTime(Long ingestionTime) {
@@ -86,7 +134,11 @@ public class OutputLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The time the event was ingested.
+     * </p>
+     * 
+     * @return The time the event was ingested.
      */
 
     public Long getIngestionTime() {
@@ -94,7 +146,12 @@ public class OutputLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the event was ingested.
+     * </p>
+     * 
      * @param ingestionTime
+     *        The time the event was ingested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

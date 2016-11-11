@@ -19,12 +19,21 @@ import java.io.Serializable;
  */
 public class DescribeLogStreamsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The log streams.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<LogStream> logStreams;
 
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The log streams.
+     * </p>
+     * 
+     * @return The log streams.
      */
 
     public java.util.List<LogStream> getLogStreams() {
@@ -35,7 +44,12 @@ public class DescribeLogStreamsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The log streams.
+     * </p>
+     * 
      * @param logStreams
+     *        The log streams.
      */
 
     public void setLogStreams(java.util.Collection<LogStream> logStreams) {
@@ -49,12 +63,16 @@ public class DescribeLogStreamsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
+     * The log streams.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLogStreams(java.util.Collection)} or {@link #withLogStreams(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param logStreams
+     *        The log streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,7 +87,12 @@ public class DescribeLogStreamsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The log streams.
+     * </p>
+     * 
      * @param logStreams
+     *        The log streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

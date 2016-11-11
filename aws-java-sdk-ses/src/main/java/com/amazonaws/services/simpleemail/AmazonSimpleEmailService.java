@@ -1627,4 +1627,5 @@ public interface AmazonSimpleEmailService {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonSimpleEmailServiceWaiters waiters();
+
 }

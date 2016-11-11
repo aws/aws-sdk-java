@@ -38,7 +38,7 @@ import com.amazonaws.services.cloudformation.model.*;
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific
  * AWS product, you can find the product's technical documentation at <a
- * href="http://docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.
+ * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.
  * </p>
  */
 public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
@@ -838,9 +838,9 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * <code>Fn::ImportValue</code> </a> function.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-     * AWS CloudFormation Export Stack Output Values</a>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html"> AWS
+     * CloudFormation Export Stack Output Values</a>.
      * </p>
      * 
      * @param listExportsRequest
@@ -857,9 +857,9 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * <code>Fn::ImportValue</code> </a> function.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-     * AWS CloudFormation Export Stack Output Values</a>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html"> AWS
+     * CloudFormation Export Stack Output Values</a>.
      * </p>
      * 
      * @param listExportsRequest

@@ -294,4 +294,5 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     public AmazonElastiCacheWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

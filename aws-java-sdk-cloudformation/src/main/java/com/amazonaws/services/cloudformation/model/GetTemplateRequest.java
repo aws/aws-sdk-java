@@ -52,17 +52,20 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String changeSetName;
     /**
      * <p>
-     * The stage of the template that is returned. Valid values are <code>Original</code> and <code>Processed</code>:
+     * The stage of the template that is returned.
+     * </p>
+     * <p>
+     * Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Original</code> - Use to return the specified pre-transform template.
+     * <code>Original</code> - Use this value to return the user-submitted template.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Processed</code> - Use to return the template after all transforms have been processed.
+     * <code>Processed</code> - Use this value to return the template after all transforms have been processed.
      * </p>
      * </li>
      * </ul>
@@ -247,33 +250,39 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage of the template that is returned. Valid values are <code>Original</code> and <code>Processed</code>:
+     * The stage of the template that is returned.
+     * </p>
+     * <p>
+     * Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Original</code> - Use to return the specified pre-transform template.
+     * <code>Original</code> - Use this value to return the user-submitted template.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Processed</code> - Use to return the template after all transforms have been processed.
+     * <code>Processed</code> - Use this value to return the template after all transforms have been processed.
      * </p>
      * </li>
      * </ul>
      * 
      * @param templateStage
-     *        The stage of the template that is returned. Valid values are <code>Original</code> and
-     *        <code>Processed</code>:</p>
+     *        The stage of the template that is returned.</p>
+     *        <p>
+     *        Valid values are <code>Original</code> and <code>Processed</code>. The default value is
+     *        <code>Original</code>.
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Original</code> - Use to return the specified pre-transform template.
+     *        <code>Original</code> - Use this value to return the user-submitted template.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Processed</code> - Use to return the template after all transforms have been processed.
+     *        <code>Processed</code> - Use this value to return the template after all transforms have been processed.
      *        </p>
      *        </li>
      * @see TemplateStage
@@ -285,32 +294,38 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage of the template that is returned. Valid values are <code>Original</code> and <code>Processed</code>:
+     * The stage of the template that is returned.
+     * </p>
+     * <p>
+     * Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Original</code> - Use to return the specified pre-transform template.
+     * <code>Original</code> - Use this value to return the user-submitted template.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Processed</code> - Use to return the template after all transforms have been processed.
+     * <code>Processed</code> - Use this value to return the template after all transforms have been processed.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The stage of the template that is returned. Valid values are <code>Original</code> and
-     *         <code>Processed</code>:</p>
+     * @return The stage of the template that is returned.</p>
+     *         <p>
+     *         Valid values are <code>Original</code> and <code>Processed</code>. The default value is
+     *         <code>Original</code>.
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Original</code> - Use to return the specified pre-transform template.
+     *         <code>Original</code> - Use this value to return the user-submitted template.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Processed</code> - Use to return the template after all transforms have been processed.
+     *         <code>Processed</code> - Use this value to return the template after all transforms have been processed.
      *         </p>
      *         </li>
      * @see TemplateStage
@@ -322,33 +337,39 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage of the template that is returned. Valid values are <code>Original</code> and <code>Processed</code>:
+     * The stage of the template that is returned.
+     * </p>
+     * <p>
+     * Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Original</code> - Use to return the specified pre-transform template.
+     * <code>Original</code> - Use this value to return the user-submitted template.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Processed</code> - Use to return the template after all transforms have been processed.
+     * <code>Processed</code> - Use this value to return the template after all transforms have been processed.
      * </p>
      * </li>
      * </ul>
      * 
      * @param templateStage
-     *        The stage of the template that is returned. Valid values are <code>Original</code> and
-     *        <code>Processed</code>:</p>
+     *        The stage of the template that is returned.</p>
+     *        <p>
+     *        Valid values are <code>Original</code> and <code>Processed</code>. The default value is
+     *        <code>Original</code>.
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Original</code> - Use to return the specified pre-transform template.
+     *        <code>Original</code> - Use this value to return the user-submitted template.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Processed</code> - Use to return the template after all transforms have been processed.
+     *        <code>Processed</code> - Use this value to return the template after all transforms have been processed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -362,33 +383,39 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage of the template that is returned. Valid values are <code>Original</code> and <code>Processed</code>:
+     * The stage of the template that is returned.
+     * </p>
+     * <p>
+     * Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Original</code> - Use to return the specified pre-transform template.
+     * <code>Original</code> - Use this value to return the user-submitted template.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Processed</code> - Use to return the template after all transforms have been processed.
+     * <code>Processed</code> - Use this value to return the template after all transforms have been processed.
      * </p>
      * </li>
      * </ul>
      * 
      * @param templateStage
-     *        The stage of the template that is returned. Valid values are <code>Original</code> and
-     *        <code>Processed</code>:</p>
+     *        The stage of the template that is returned.</p>
+     *        <p>
+     *        Valid values are <code>Original</code> and <code>Processed</code>. The default value is
+     *        <code>Original</code>.
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Original</code> - Use to return the specified pre-transform template.
+     *        <code>Original</code> - Use this value to return the user-submitted template.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Processed</code> - Use to return the template after all transforms have been processed.
+     *        <code>Processed</code> - Use this value to return the template after all transforms have been processed.
      *        </p>
      *        </li>
      * @see TemplateStage
@@ -400,33 +427,39 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage of the template that is returned. Valid values are <code>Original</code> and <code>Processed</code>:
+     * The stage of the template that is returned.
+     * </p>
+     * <p>
+     * Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Original</code> - Use to return the specified pre-transform template.
+     * <code>Original</code> - Use this value to return the user-submitted template.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Processed</code> - Use to return the template after all transforms have been processed.
+     * <code>Processed</code> - Use this value to return the template after all transforms have been processed.
      * </p>
      * </li>
      * </ul>
      * 
      * @param templateStage
-     *        The stage of the template that is returned. Valid values are <code>Original</code> and
-     *        <code>Processed</code>:</p>
+     *        The stage of the template that is returned.</p>
+     *        <p>
+     *        Valid values are <code>Original</code> and <code>Processed</code>. The default value is
+     *        <code>Original</code>.
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Original</code> - Use to return the specified pre-transform template.
+     *        <code>Original</code> - Use this value to return the user-submitted template.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Processed</code> - Use to return the template after all transforms have been processed.
+     *        <code>Processed</code> - Use this value to return the template after all transforms have been processed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -194,4 +194,5 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     public AmazonCloudFormationWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

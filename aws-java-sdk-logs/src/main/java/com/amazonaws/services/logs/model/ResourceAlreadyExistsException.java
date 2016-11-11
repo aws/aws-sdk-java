@@ -14,7 +14,7 @@ package com.amazonaws.services.logs.model;
 
 /**
  * <p>
- * Returned if the specified resource already exists.
+ * The specified resource already exists.
  * </p>
  */
 public class ResourceAlreadyExistsException extends com.amazonaws.services.logs.model.AWSLogsException {

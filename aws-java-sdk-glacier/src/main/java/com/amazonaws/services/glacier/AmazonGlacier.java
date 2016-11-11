@@ -1625,4 +1625,5 @@ public interface AmazonGlacier {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonGlacierWaiters waiters();
+
 }

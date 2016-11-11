@@ -22,18 +22,18 @@ public class CancelExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Id of the export task to cancel.
+     * The ID of the export task.
      * </p>
      */
     private String taskId;
 
     /**
      * <p>
-     * Id of the export task to cancel.
+     * The ID of the export task.
      * </p>
      * 
      * @param taskId
-     *        Id of the export task to cancel.
+     *        The ID of the export task.
      */
 
     public void setTaskId(String taskId) {
@@ -42,10 +42,10 @@ public class CancelExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Id of the export task to cancel.
+     * The ID of the export task.
      * </p>
      * 
-     * @return Id of the export task to cancel.
+     * @return The ID of the export task.
      */
 
     public String getTaskId() {
@@ -54,11 +54,11 @@ public class CancelExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Id of the export task to cancel.
+     * The ID of the export task.
      * </p>
      * 
      * @param taskId
-     *        Id of the export task to cancel.
+     *        The ID of the export task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

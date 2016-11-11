@@ -1394,4 +1394,5 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     public AmazonEC2Waiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

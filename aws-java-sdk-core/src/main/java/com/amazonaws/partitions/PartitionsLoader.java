@@ -79,7 +79,7 @@ public class PartitionsLoader {
         } else {
             stream = classLoader.getResourceAsStream(PARTITIONS_RESOURCE_PATH);
             if (stream == null) {
-                throw new SdkClientException("Unable to load parition metadata from " + PARTITIONS_RESOURCE_PATH);
+                throw new SdkClientException("Unable to load partition metadata from " + PARTITIONS_RESOURCE_PATH);
             }
             return new PartitionMetadataProvider(loadPartitionFromStream(stream, PARTITIONS_RESOURCE_PATH).getPartitions());
         }

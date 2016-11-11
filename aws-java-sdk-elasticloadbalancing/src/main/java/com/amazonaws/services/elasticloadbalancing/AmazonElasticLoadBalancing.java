@@ -894,4 +894,5 @@ public interface AmazonElasticLoadBalancing {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonElasticLoadBalancingWaiters waiters();
+
 }

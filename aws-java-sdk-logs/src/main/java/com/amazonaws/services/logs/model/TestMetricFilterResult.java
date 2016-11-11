@@ -19,10 +19,19 @@ import java.io.Serializable;
  */
 public class TestMetricFilterResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The matched events.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord> matches;
 
     /**
-     * @return
+     * <p>
+     * The matched events.
+     * </p>
+     * 
+     * @return The matched events.
      */
 
     public java.util.List<MetricFilterMatchRecord> getMatches() {
@@ -33,7 +42,12 @@ public class TestMetricFilterResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The matched events.
+     * </p>
+     * 
      * @param matches
+     *        The matched events.
      */
 
     public void setMatches(java.util.Collection<MetricFilterMatchRecord> matches) {
@@ -47,12 +61,16 @@ public class TestMetricFilterResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * The matched events.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMatches(java.util.Collection)} or {@link #withMatches(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param matches
+     *        The matched events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,7 +85,12 @@ public class TestMetricFilterResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The matched events.
+     * </p>
+     * 
      * @param matches
+     *        The matched events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

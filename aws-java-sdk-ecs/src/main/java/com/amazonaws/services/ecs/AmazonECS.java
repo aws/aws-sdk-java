@@ -1020,4 +1020,5 @@ public interface AmazonECS {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonECSWaiters waiters();
+
 }

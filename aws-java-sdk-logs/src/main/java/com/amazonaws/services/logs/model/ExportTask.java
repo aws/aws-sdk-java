@@ -23,7 +23,7 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Id of the export task.
+     * The ID of the export task.
      * </p>
      */
     private String taskId;
@@ -41,33 +41,31 @@ public class ExportTask implements Serializable, Cloneable {
     private String logGroupName;
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * prior to this time are not exported.
+     * The start time. Events with a timestamp prior to this time are not exported.
      * </p>
      */
     private Long from;
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.
+     * The end time. Events with a timestamp later than this time are not exported.
      * </p>
      */
     private Long to;
     /**
      * <p>
-     * Name of Amazon S3 bucket to which the log data was exported.
+     * The name of Amazon S3 bucket to which the log data was exported.
      * </p>
      */
     private String destination;
     /**
      * <p>
-     * Prefix that was used as the start of Amazon S3 key for every object exported.
+     * The prefix that was used as the start of Amazon S3 key for every object exported.
      * </p>
      */
     private String destinationPrefix;
     /**
      * <p>
-     * Status of the export task.
+     * The status of the export task.
      * </p>
      */
     private ExportTaskStatus status;
@@ -80,11 +78,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Id of the export task.
+     * The ID of the export task.
      * </p>
      * 
      * @param taskId
-     *        Id of the export task.
+     *        The ID of the export task.
      */
 
     public void setTaskId(String taskId) {
@@ -93,10 +91,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Id of the export task.
+     * The ID of the export task.
      * </p>
      * 
-     * @return Id of the export task.
+     * @return The ID of the export task.
      */
 
     public String getTaskId() {
@@ -105,11 +103,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Id of the export task.
+     * The ID of the export task.
      * </p>
      * 
      * @param taskId
-     *        Id of the export task.
+     *        The ID of the export task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,13 +198,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * prior to this time are not exported.
+     * The start time. Events with a timestamp prior to this time are not exported.
      * </p>
      * 
      * @param from
-     *        A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     *        timestamp prior to this time are not exported.
+     *        The start time. Events with a timestamp prior to this time are not exported.
      */
 
     public void setFrom(Long from) {
@@ -215,12 +211,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * prior to this time are not exported.
+     * The start time. Events with a timestamp prior to this time are not exported.
      * </p>
      * 
-     * @return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     *         timestamp prior to this time are not exported.
+     * @return The start time. Events with a timestamp prior to this time are not exported.
      */
 
     public Long getFrom() {
@@ -229,13 +223,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * prior to this time are not exported.
+     * The start time. Events with a timestamp prior to this time are not exported.
      * </p>
      * 
      * @param from
-     *        A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     *        timestamp prior to this time are not exported.
+     *        The start time. Events with a timestamp prior to this time are not exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,13 +238,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.
+     * The end time. Events with a timestamp later than this time are not exported.
      * </p>
      * 
      * @param to
-     *        A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     *        timestamp later than this time are not exported.
+     *        The end time. Events with a timestamp later than this time are not exported.
      */
 
     public void setTo(Long to) {
@@ -261,12 +251,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.
+     * The end time. Events with a timestamp later than this time are not exported.
      * </p>
      * 
-     * @return A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     *         timestamp later than this time are not exported.
+     * @return The end time. Events with a timestamp later than this time are not exported.
      */
 
     public Long getTo() {
@@ -275,13 +263,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.
+     * The end time. Events with a timestamp later than this time are not exported.
      * </p>
      * 
      * @param to
-     *        A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     *        timestamp later than this time are not exported.
+     *        The end time. Events with a timestamp later than this time are not exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,11 +278,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of Amazon S3 bucket to which the log data was exported.
+     * The name of Amazon S3 bucket to which the log data was exported.
      * </p>
      * 
      * @param destination
-     *        Name of Amazon S3 bucket to which the log data was exported.
+     *        The name of Amazon S3 bucket to which the log data was exported.
      */
 
     public void setDestination(String destination) {
@@ -305,10 +291,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of Amazon S3 bucket to which the log data was exported.
+     * The name of Amazon S3 bucket to which the log data was exported.
      * </p>
      * 
-     * @return Name of Amazon S3 bucket to which the log data was exported.
+     * @return The name of Amazon S3 bucket to which the log data was exported.
      */
 
     public String getDestination() {
@@ -317,11 +303,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of Amazon S3 bucket to which the log data was exported.
+     * The name of Amazon S3 bucket to which the log data was exported.
      * </p>
      * 
      * @param destination
-     *        Name of Amazon S3 bucket to which the log data was exported.
+     *        The name of Amazon S3 bucket to which the log data was exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,11 +318,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Prefix that was used as the start of Amazon S3 key for every object exported.
+     * The prefix that was used as the start of Amazon S3 key for every object exported.
      * </p>
      * 
      * @param destinationPrefix
-     *        Prefix that was used as the start of Amazon S3 key for every object exported.
+     *        The prefix that was used as the start of Amazon S3 key for every object exported.
      */
 
     public void setDestinationPrefix(String destinationPrefix) {
@@ -345,10 +331,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Prefix that was used as the start of Amazon S3 key for every object exported.
+     * The prefix that was used as the start of Amazon S3 key for every object exported.
      * </p>
      * 
-     * @return Prefix that was used as the start of Amazon S3 key for every object exported.
+     * @return The prefix that was used as the start of Amazon S3 key for every object exported.
      */
 
     public String getDestinationPrefix() {
@@ -357,11 +343,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Prefix that was used as the start of Amazon S3 key for every object exported.
+     * The prefix that was used as the start of Amazon S3 key for every object exported.
      * </p>
      * 
      * @param destinationPrefix
-     *        Prefix that was used as the start of Amazon S3 key for every object exported.
+     *        The prefix that was used as the start of Amazon S3 key for every object exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,11 +358,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status of the export task.
+     * The status of the export task.
      * </p>
      * 
      * @param status
-     *        Status of the export task.
+     *        The status of the export task.
      */
 
     public void setStatus(ExportTaskStatus status) {
@@ -385,10 +371,10 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status of the export task.
+     * The status of the export task.
      * </p>
      * 
-     * @return Status of the export task.
+     * @return The status of the export task.
      */
 
     public ExportTaskStatus getStatus() {
@@ -397,11 +383,11 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status of the export task.
+     * The status of the export task.
      * </p>
      * 
      * @param status
-     *        Status of the export task.
+     *        The status of the export task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

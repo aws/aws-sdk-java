@@ -394,4 +394,5 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     public AmazonAutoScalingWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

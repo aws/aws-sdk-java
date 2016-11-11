@@ -64,6 +64,9 @@ public class MetricFilterJsonMarshaller {
             if (metricFilter.getCreationTime() != null) {
                 jsonGenerator.writeFieldName("creationTime").writeValue(metricFilter.getCreationTime());
             }
+            if (metricFilter.getLogGroupName() != null) {
+                jsonGenerator.writeFieldName("logGroupName").writeValue(metricFilter.getLogGroupName());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

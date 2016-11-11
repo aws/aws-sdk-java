@@ -22,7 +22,7 @@ public class DeleteLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log group to delete.
+     * The name of the log group.
      * </p>
      */
     private String logGroupName;
@@ -39,7 +39,7 @@ public class DeleteLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * to initialize any additional object members.
      * 
      * @param logGroupName
-     *        The name of the log group to delete.
+     *        The name of the log group.
      */
     public DeleteLogGroupRequest(String logGroupName) {
         setLogGroupName(logGroupName);
@@ -47,11 +47,11 @@ public class DeleteLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log group to delete.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group to delete.
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -60,10 +60,10 @@ public class DeleteLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log group to delete.
+     * The name of the log group.
      * </p>
      * 
-     * @return The name of the log group to delete.
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -72,11 +72,11 @@ public class DeleteLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log group to delete.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group to delete.
+     *        The name of the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

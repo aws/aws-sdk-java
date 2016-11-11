@@ -66,7 +66,7 @@ public final class TransferManagerBuilder {
      * AmazonS3ClientBuilder} to create a default {@link AmazonS3} client implementation.
      */
     public static TransferManager defaultTransferManager() {
-        return standard().withS3Client(AmazonS3ClientBuilder.defaultClient()).build();
+        return standard().build();
     }
 
     private TransferManagerBuilder() {
@@ -107,10 +107,7 @@ public final class TransferManagerBuilder {
     }
 
     private AmazonS3 resolveS3Client() {
-        if (s3Client == null) {
-            throw new IllegalStateException("S3 Client must be provided to build TransferManager");
-        }
-        return s3Client;
+        return s3Client == null ? AmazonS3ClientBuilder.defaultClient() : s3Client;
     }
 
     /**

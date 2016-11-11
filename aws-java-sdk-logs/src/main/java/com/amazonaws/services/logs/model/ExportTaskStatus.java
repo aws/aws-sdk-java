@@ -23,24 +23,24 @@ public class ExportTaskStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status code of the export task.
+     * The status code of the export task.
      * </p>
      */
     private String code;
     /**
      * <p>
-     * Status message related to the <code>code</code>.
+     * The status message related to the status code.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * Status code of the export task.
+     * The status code of the export task.
      * </p>
      * 
      * @param code
-     *        Status code of the export task.
+     *        The status code of the export task.
      * @see ExportTaskStatusCode
      */
 
@@ -50,10 +50,10 @@ public class ExportTaskStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status code of the export task.
+     * The status code of the export task.
      * </p>
      * 
-     * @return Status code of the export task.
+     * @return The status code of the export task.
      * @see ExportTaskStatusCode
      */
 
@@ -63,11 +63,11 @@ public class ExportTaskStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status code of the export task.
+     * The status code of the export task.
      * </p>
      * 
      * @param code
-     *        Status code of the export task.
+     *        The status code of the export task.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportTaskStatusCode
      */
@@ -79,11 +79,11 @@ public class ExportTaskStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status code of the export task.
+     * The status code of the export task.
      * </p>
      * 
      * @param code
-     *        Status code of the export task.
+     *        The status code of the export task.
      * @see ExportTaskStatusCode
      */
 
@@ -93,11 +93,11 @@ public class ExportTaskStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status code of the export task.
+     * The status code of the export task.
      * </p>
      * 
      * @param code
-     *        Status code of the export task.
+     *        The status code of the export task.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportTaskStatusCode
      */
@@ -109,11 +109,11 @@ public class ExportTaskStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status message related to the <code>code</code>.
+     * The status message related to the status code.
      * </p>
      * 
      * @param message
-     *        Status message related to the <code>code</code>.
+     *        The status message related to the status code.
      */
 
     public void setMessage(String message) {
@@ -122,10 +122,10 @@ public class ExportTaskStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status message related to the <code>code</code>.
+     * The status message related to the status code.
      * </p>
      * 
-     * @return Status message related to the <code>code</code>.
+     * @return The status message related to the status code.
      */
 
     public String getMessage() {
@@ -134,11 +134,11 @@ public class ExportTaskStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status message related to the <code>code</code>.
+     * The status message related to the status code.
      * </p>
      * 
      * @param message
-     *        Status message related to the <code>code</code>.
+     *        The status message related to the status code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -2199,4 +2199,5 @@ public interface AmazonRoute53 {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonRoute53Waiters waiters();
+
 }

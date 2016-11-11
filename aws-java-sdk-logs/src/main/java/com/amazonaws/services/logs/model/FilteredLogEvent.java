@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a matched event from a <code>FilterLogEvents</code> request.
+ * Represents a matched event.
  * </p>
  */
 public class FilteredLogEvent implements Serializable, Cloneable {
@@ -27,7 +27,11 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * </p>
      */
     private String logStreamName;
-
+    /**
+     * <p>
+     * The time the event occurred.
+     * </p>
+     */
     private Long timestamp;
     /**
      * <p>
@@ -35,11 +39,15 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * </p>
      */
     private String message;
-
+    /**
+     * <p>
+     * The time the event was ingested.
+     * </p>
+     */
     private Long ingestionTime;
     /**
      * <p>
-     * A unique identifier for this event.
+     * The ID of the event.
      * </p>
      */
     private String eventId;
@@ -85,7 +93,12 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the event occurred.
+     * </p>
+     * 
      * @param timestamp
+     *        The time the event occurred.
      */
 
     public void setTimestamp(Long timestamp) {
@@ -93,7 +106,11 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The time the event occurred.
+     * </p>
+     * 
+     * @return The time the event occurred.
      */
 
     public Long getTimestamp() {
@@ -101,7 +118,12 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the event occurred.
+     * </p>
+     * 
      * @param timestamp
+     *        The time the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,7 +173,12 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the event was ingested.
+     * </p>
+     * 
      * @param ingestionTime
+     *        The time the event was ingested.
      */
 
     public void setIngestionTime(Long ingestionTime) {
@@ -159,7 +186,11 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The time the event was ingested.
+     * </p>
+     * 
+     * @return The time the event was ingested.
      */
 
     public Long getIngestionTime() {
@@ -167,7 +198,12 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the event was ingested.
+     * </p>
+     * 
      * @param ingestionTime
+     *        The time the event was ingested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +214,11 @@ public class FilteredLogEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for this event.
+     * The ID of the event.
      * </p>
      * 
      * @param eventId
-     *        A unique identifier for this event.
+     *        The ID of the event.
      */
 
     public void setEventId(String eventId) {
@@ -191,10 +227,10 @@ public class FilteredLogEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for this event.
+     * The ID of the event.
      * </p>
      * 
-     * @return A unique identifier for this event.
+     * @return The ID of the event.
      */
 
     public String getEventId() {
@@ -203,11 +239,11 @@ public class FilteredLogEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for this event.
+     * The ID of the event.
      * </p>
      * 
      * @param eventId
-     *        A unique identifier for this event.
+     *        The ID of the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

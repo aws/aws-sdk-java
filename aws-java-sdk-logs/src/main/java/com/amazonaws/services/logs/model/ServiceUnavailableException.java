@@ -14,7 +14,7 @@ package com.amazonaws.services.logs.model;
 
 /**
  * <p>
- * Returned if the service cannot complete the request.
+ * The service cannot complete the request.
  * </p>
  */
 public class ServiceUnavailableException extends com.amazonaws.services.logs.model.AWSLogsException {

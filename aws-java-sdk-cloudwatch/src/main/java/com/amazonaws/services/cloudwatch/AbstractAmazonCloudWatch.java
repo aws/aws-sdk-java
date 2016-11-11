@@ -119,4 +119,5 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     public AmazonCloudWatchWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

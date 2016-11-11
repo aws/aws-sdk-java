@@ -16,22 +16,46 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Metric filters can be used to express how CloudWatch Logs would extract metric observations from ingested log events
- * and transform them to metric data in a CloudWatch metric.
+ * Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform
+ * them into metric data in a CloudWatch metric.
  * </p>
  */
 public class MetricFilter implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the metric filter.
+     * </p>
+     */
     private String filterName;
 
     private String filterPattern;
-
+    /**
+     * <p>
+     * The metric transformations.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<MetricTransformation> metricTransformations;
-
+    /**
+     * <p>
+     * The creation time of the metric filter.
+     * </p>
+     */
     private Long creationTime;
+    /**
+     * <p>
+     * The name of the log group.
+     * </p>
+     */
+    private String logGroupName;
 
     /**
+     * <p>
+     * The name of the metric filter.
+     * </p>
+     * 
      * @param filterName
+     *        The name of the metric filter.
      */
 
     public void setFilterName(String filterName) {
@@ -39,7 +63,11 @@ public class MetricFilter implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the metric filter.
+     * </p>
+     * 
+     * @return The name of the metric filter.
      */
 
     public String getFilterName() {
@@ -47,7 +75,12 @@ public class MetricFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the metric filter.
+     * </p>
+     * 
      * @param filterName
+     *        The name of the metric filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,7 +116,11 @@ public class MetricFilter implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The metric transformations.
+     * </p>
+     * 
+     * @return The metric transformations.
      */
 
     public java.util.List<MetricTransformation> getMetricTransformations() {
@@ -94,7 +131,12 @@ public class MetricFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The metric transformations.
+     * </p>
+     * 
      * @param metricTransformations
+     *        The metric transformations.
      */
 
     public void setMetricTransformations(java.util.Collection<MetricTransformation> metricTransformations) {
@@ -108,12 +150,16 @@ public class MetricFilter implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The metric transformations.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMetricTransformations(java.util.Collection)} or
      * {@link #withMetricTransformations(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param metricTransformations
+     *        The metric transformations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,7 +174,12 @@ public class MetricFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The metric transformations.
+     * </p>
+     * 
      * @param metricTransformations
+     *        The metric transformations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,7 +189,12 @@ public class MetricFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The creation time of the metric filter.
+     * </p>
+     * 
      * @param creationTime
+     *        The creation time of the metric filter.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -146,7 +202,11 @@ public class MetricFilter implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The creation time of the metric filter.
+     * </p>
+     * 
+     * @return The creation time of the metric filter.
      */
 
     public Long getCreationTime() {
@@ -154,12 +214,57 @@ public class MetricFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The creation time of the metric filter.
+     * </p>
+     * 
      * @param creationTime
+     *        The creation time of the metric filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public MetricFilter withCreationTime(Long creationTime) {
         setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the log group.
+     * </p>
+     * 
+     * @param logGroupName
+     *        The name of the log group.
+     */
+
+    public void setLogGroupName(String logGroupName) {
+        this.logGroupName = logGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the log group.
+     * </p>
+     * 
+     * @return The name of the log group.
+     */
+
+    public String getLogGroupName() {
+        return this.logGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the log group.
+     * </p>
+     * 
+     * @param logGroupName
+     *        The name of the log group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricFilter withLogGroupName(String logGroupName) {
+        setLogGroupName(logGroupName);
         return this;
     }
 
@@ -181,7 +286,9 @@ public class MetricFilter implements Serializable, Cloneable {
         if (getMetricTransformations() != null)
             sb.append("MetricTransformations: " + getMetricTransformations() + ",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime());
+            sb.append("CreationTime: " + getCreationTime() + ",");
+        if (getLogGroupName() != null)
+            sb.append("LogGroupName: " + getLogGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +319,10 @@ public class MetricFilter implements Serializable, Cloneable {
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
+            return false;
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+            return false;
         return true;
     }
 
@@ -224,6 +335,7 @@ public class MetricFilter implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getFilterPattern() == null) ? 0 : getFilterPattern().hashCode());
         hashCode = prime * hashCode + ((getMetricTransformations() == null) ? 0 : getMetricTransformations().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
         return hashCode;
     }
 

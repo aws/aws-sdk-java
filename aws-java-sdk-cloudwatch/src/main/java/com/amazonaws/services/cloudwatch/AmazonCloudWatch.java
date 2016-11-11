@@ -446,4 +446,5 @@ public interface AmazonCloudWatch {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonCloudWatchWaiters waiters();
+
 }

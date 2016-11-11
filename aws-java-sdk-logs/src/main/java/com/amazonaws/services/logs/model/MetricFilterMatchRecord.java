@@ -15,18 +15,38 @@ package com.amazonaws.services.logs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents a matched event.
+ * </p>
  */
 public class MetricFilterMatchRecord implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The event number.
+     * </p>
+     */
     private Long eventNumber;
-
+    /**
+     * <p>
+     * The raw event data.
+     * </p>
+     */
     private String eventMessage;
-
+    /**
+     * <p>
+     * The values extracted from the event data by the filter.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalMap<String, String> extractedValues;
 
     /**
+     * <p>
+     * The event number.
+     * </p>
+     * 
      * @param eventNumber
+     *        The event number.
      */
 
     public void setEventNumber(Long eventNumber) {
@@ -34,7 +54,11 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The event number.
+     * </p>
+     * 
+     * @return The event number.
      */
 
     public Long getEventNumber() {
@@ -42,7 +66,12 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The event number.
+     * </p>
+     * 
      * @param eventNumber
+     *        The event number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -52,7 +81,12 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The raw event data.
+     * </p>
+     * 
      * @param eventMessage
+     *        The raw event data.
      */
 
     public void setEventMessage(String eventMessage) {
@@ -60,7 +94,11 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The raw event data.
+     * </p>
+     * 
+     * @return The raw event data.
      */
 
     public String getEventMessage() {
@@ -68,7 +106,12 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The raw event data.
+     * </p>
+     * 
      * @param eventMessage
+     *        The raw event data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,7 +121,11 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The values extracted from the event data by the filter.
+     * </p>
+     * 
+     * @return The values extracted from the event data by the filter.
      */
 
     public java.util.Map<String, String> getExtractedValues() {
@@ -89,7 +136,12 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The values extracted from the event data by the filter.
+     * </p>
+     * 
      * @param extractedValues
+     *        The values extracted from the event data by the filter.
      */
 
     public void setExtractedValues(java.util.Map<String, String> extractedValues) {
@@ -97,7 +149,12 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The values extracted from the event data by the filter.
+     * </p>
+     * 
      * @param extractedValues
+     *        The values extracted from the event data by the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

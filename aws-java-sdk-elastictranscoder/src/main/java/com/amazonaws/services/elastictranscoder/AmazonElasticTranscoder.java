@@ -564,4 +564,5 @@ public interface AmazonElasticTranscoder {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonElasticTranscoderWaiters waiters();
+
 }

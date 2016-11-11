@@ -21,31 +21,29 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of <code>FilteredLogEvent</code> objects representing the matched events from the request.
+     * The matched events.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FilteredLogEvent> events;
     /**
      * <p>
-     * A list of <code>SearchedLogStream</code> objects indicating which log streams have been searched in this request
-     * and whether each has been searched completely or still has more to be paginated.
+     * Indicates which log streams have been searched and whether each has been searched completely.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SearchedLogStream> searchedLogStreams;
     /**
      * <p>
-     * A pagination token obtained from a <code>FilterLogEvents</code> response to continue paginating the
-     * FilterLogEvents results. This token is omitted from the response when there are no other events to display.
+     * The token to use when requesting the next set of items. The token expires after 24 hours.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of <code>FilteredLogEvent</code> objects representing the matched events from the request.
+     * The matched events.
      * </p>
      * 
-     * @return A list of <code>FilteredLogEvent</code> objects representing the matched events from the request.
+     * @return The matched events.
      */
 
     public java.util.List<FilteredLogEvent> getEvents() {
@@ -57,11 +55,11 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of <code>FilteredLogEvent</code> objects representing the matched events from the request.
+     * The matched events.
      * </p>
      * 
      * @param events
-     *        A list of <code>FilteredLogEvent</code> objects representing the matched events from the request.
+     *        The matched events.
      */
 
     public void setEvents(java.util.Collection<FilteredLogEvent> events) {
@@ -75,7 +73,7 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of <code>FilteredLogEvent</code> objects representing the matched events from the request.
+     * The matched events.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +82,7 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param events
-     *        A list of <code>FilteredLogEvent</code> objects representing the matched events from the request.
+     *        The matched events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +98,11 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of <code>FilteredLogEvent</code> objects representing the matched events from the request.
+     * The matched events.
      * </p>
      * 
      * @param events
-     *        A list of <code>FilteredLogEvent</code> objects representing the matched events from the request.
+     *        The matched events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,12 +113,10 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of <code>SearchedLogStream</code> objects indicating which log streams have been searched in this request
-     * and whether each has been searched completely or still has more to be paginated.
+     * Indicates which log streams have been searched and whether each has been searched completely.
      * </p>
      * 
-     * @return A list of <code>SearchedLogStream</code> objects indicating which log streams have been searched in this
-     *         request and whether each has been searched completely or still has more to be paginated.
+     * @return Indicates which log streams have been searched and whether each has been searched completely.
      */
 
     public java.util.List<SearchedLogStream> getSearchedLogStreams() {
@@ -132,13 +128,11 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of <code>SearchedLogStream</code> objects indicating which log streams have been searched in this request
-     * and whether each has been searched completely or still has more to be paginated.
+     * Indicates which log streams have been searched and whether each has been searched completely.
      * </p>
      * 
      * @param searchedLogStreams
-     *        A list of <code>SearchedLogStream</code> objects indicating which log streams have been searched in this
-     *        request and whether each has been searched completely or still has more to be paginated.
+     *        Indicates which log streams have been searched and whether each has been searched completely.
      */
 
     public void setSearchedLogStreams(java.util.Collection<SearchedLogStream> searchedLogStreams) {
@@ -152,8 +146,7 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of <code>SearchedLogStream</code> objects indicating which log streams have been searched in this request
-     * and whether each has been searched completely or still has more to be paginated.
+     * Indicates which log streams have been searched and whether each has been searched completely.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -162,8 +155,7 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param searchedLogStreams
-     *        A list of <code>SearchedLogStream</code> objects indicating which log streams have been searched in this
-     *        request and whether each has been searched completely or still has more to be paginated.
+     *        Indicates which log streams have been searched and whether each has been searched completely.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,13 +171,11 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of <code>SearchedLogStream</code> objects indicating which log streams have been searched in this request
-     * and whether each has been searched completely or still has more to be paginated.
+     * Indicates which log streams have been searched and whether each has been searched completely.
      * </p>
      * 
      * @param searchedLogStreams
-     *        A list of <code>SearchedLogStream</code> objects indicating which log streams have been searched in this
-     *        request and whether each has been searched completely or still has more to be paginated.
+     *        Indicates which log streams have been searched and whether each has been searched completely.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,14 +186,11 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A pagination token obtained from a <code>FilterLogEvents</code> response to continue paginating the
-     * FilterLogEvents results. This token is omitted from the response when there are no other events to display.
+     * The token to use when requesting the next set of items. The token expires after 24 hours.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token obtained from a <code>FilterLogEvents</code> response to continue paginating the
-     *        FilterLogEvents results. This token is omitted from the response when there are no other events to
-     *        display.
+     *        The token to use when requesting the next set of items. The token expires after 24 hours.
      */
 
     public void setNextToken(String nextToken) {
@@ -212,13 +199,10 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A pagination token obtained from a <code>FilterLogEvents</code> response to continue paginating the
-     * FilterLogEvents results. This token is omitted from the response when there are no other events to display.
+     * The token to use when requesting the next set of items. The token expires after 24 hours.
      * </p>
      * 
-     * @return A pagination token obtained from a <code>FilterLogEvents</code> response to continue paginating the
-     *         FilterLogEvents results. This token is omitted from the response when there are no other events to
-     *         display.
+     * @return The token to use when requesting the next set of items. The token expires after 24 hours.
      */
 
     public String getNextToken() {
@@ -227,14 +211,11 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A pagination token obtained from a <code>FilterLogEvents</code> response to continue paginating the
-     * FilterLogEvents results. This token is omitted from the response when there are no other events to display.
+     * The token to use when requesting the next set of items. The token expires after 24 hours.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token obtained from a <code>FilterLogEvents</code> response to continue paginating the
-     *        FilterLogEvents results. This token is omitted from the response when there are no other events to
-     *        display.
+     *        The token to use when requesting the next set of items. The token expires after 24 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

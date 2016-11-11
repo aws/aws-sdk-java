@@ -399,4 +399,5 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     public AWSOpsWorksWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

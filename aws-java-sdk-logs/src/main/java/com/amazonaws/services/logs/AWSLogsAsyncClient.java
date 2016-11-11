@@ -22,10 +22,9 @@ import com.amazonaws.annotation.ThreadSafe;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from Amazon Elastic Compute Cloud
- * (Amazon EC2) instances, Amazon CloudTrail, or other sources. You can then retrieve the associated log data from
- * CloudWatch Logs using the Amazon CloudWatch console, the CloudWatch Logs commands in the AWS CLI, the CloudWatch Logs
- * API, or the CloudWatch Logs SDK.
+ * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, Amazon
+ * CloudTrail, or other sources. You can then retrieve the associated log data from CloudWatch Logs using the Amazon
+ * CloudWatch console, the CloudWatch Logs commands in the AWS CLI, the CloudWatch Logs API, or the CloudWatch Logs SDK.
  * </p>
  * <p>
  * You can use CloudWatch Logs to:

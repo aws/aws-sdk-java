@@ -209,4 +209,5 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     public AmazonMachineLearningWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

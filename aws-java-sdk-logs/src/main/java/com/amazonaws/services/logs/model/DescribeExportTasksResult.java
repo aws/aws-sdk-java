@@ -19,12 +19,21 @@ import java.io.Serializable;
  */
 public class DescribeExportTasksResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The export tasks.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<ExportTask> exportTasks;
 
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The export tasks.
+     * </p>
+     * 
+     * @return The export tasks.
      */
 
     public java.util.List<ExportTask> getExportTasks() {
@@ -35,7 +44,12 @@ public class DescribeExportTasksResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The export tasks.
+     * </p>
+     * 
      * @param exportTasks
+     *        The export tasks.
      */
 
     public void setExportTasks(java.util.Collection<ExportTask> exportTasks) {
@@ -49,12 +63,16 @@ public class DescribeExportTasksResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * The export tasks.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExportTasks(java.util.Collection)} or {@link #withExportTasks(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param exportTasks
+     *        The export tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,7 +87,12 @@ public class DescribeExportTasksResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The export tasks.
+     * </p>
+     * 
      * @param exportTasks
+     *        The export tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

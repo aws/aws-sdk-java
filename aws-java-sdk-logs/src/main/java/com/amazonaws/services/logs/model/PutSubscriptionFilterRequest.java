@@ -22,7 +22,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the log group to associate the subscription filter with.
+     * The name of the log group.
      * </p>
      */
     private String logGroupName;
@@ -34,7 +34,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     private String filterName;
     /**
      * <p>
-     * A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.
+     * A filter pattern for subscribing to a filtered stream of log events.
      * </p>
      */
     private String filterPattern;
@@ -50,8 +50,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for
-     * cross-account delivery.
+     * A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.
      * </p>
      * </li>
      * <li>
@@ -71,19 +70,19 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination
-     * stream. You don't need to provide the ARN when you are working with a logical destination (used via an ARN of
-     * <code>Destination</code>) for cross-account delivery.
+     * stream. You don't need to provide the ARN when you are working with a logical destination for cross-account
+     * delivery.
      * </p>
      */
     private String roleArn;
 
     /**
      * <p>
-     * The name of the log group to associate the subscription filter with.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group to associate the subscription filter with.
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -92,10 +91,10 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the log group to associate the subscription filter with.
+     * The name of the log group.
      * </p>
      * 
-     * @return The name of the log group to associate the subscription filter with.
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -104,11 +103,11 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the log group to associate the subscription filter with.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group to associate the subscription filter with.
+     *        The name of the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +158,11 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.
+     * A filter pattern for subscribing to a filtered stream of log events.
      * </p>
      * 
      * @param filterPattern
-     *        A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.
+     *        A filter pattern for subscribing to a filtered stream of log events.
      */
 
     public void setFilterPattern(String filterPattern) {
@@ -172,10 +171,10 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.
+     * A filter pattern for subscribing to a filtered stream of log events.
      * </p>
      * 
-     * @return A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.
+     * @return A filter pattern for subscribing to a filtered stream of log events.
      */
 
     public String getFilterPattern() {
@@ -184,11 +183,11 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.
+     * A filter pattern for subscribing to a filtered stream of log events.
      * </p>
      * 
      * @param filterPattern
-     *        A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.
+     *        A filter pattern for subscribing to a filtered stream of log events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,8 +208,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for
-     * cross-account delivery.
+     * A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.
      * </p>
      * </li>
      * <li>
@@ -238,8 +236,8 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for
-     *        cross-account delivery.
+     *        A logical destination (specified using an ARN) belonging to a different account, for cross-account
+     *        delivery.
      *        </p>
      *        </li>
      *        <li>
@@ -272,8 +270,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for
-     * cross-account delivery.
+     * A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.
      * </p>
      * </li>
      * <li>
@@ -300,8 +297,8 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for
-     *         cross-account delivery.
+     *         A logical destination (specified using an ARN) belonging to a different account, for cross-account
+     *         delivery.
      *         </p>
      *         </li>
      *         <li>
@@ -334,8 +331,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for
-     * cross-account delivery.
+     * A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.
      * </p>
      * </li>
      * <li>
@@ -363,8 +359,8 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        A logical destination (used via an ARN of <code>Destination</code>) belonging to a different account, for
-     *        cross-account delivery.
+     *        A logical destination (specified using an ARN) belonging to a different account, for cross-account
+     *        delivery.
      *        </p>
      *        </li>
      *        <li>
@@ -390,14 +386,14 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination
-     * stream. You don't need to provide the ARN when you are working with a logical destination (used via an ARN of
-     * <code>Destination</code>) for cross-account delivery.
+     * stream. You don't need to provide the ARN when you are working with a logical destination for cross-account
+     * delivery.
      * </p>
      * 
      * @param roleArn
      *        The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the
-     *        destination stream. You don't need to provide the ARN when you are working with a logical destination
-     *        (used via an ARN of <code>Destination</code>) for cross-account delivery.
+     *        destination stream. You don't need to provide the ARN when you are working with a logical destination for
+     *        cross-account delivery.
      */
 
     public void setRoleArn(String roleArn) {
@@ -407,13 +403,13 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination
-     * stream. You don't need to provide the ARN when you are working with a logical destination (used via an ARN of
-     * <code>Destination</code>) for cross-account delivery.
+     * stream. You don't need to provide the ARN when you are working with a logical destination for cross-account
+     * delivery.
      * </p>
      * 
      * @return The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the
-     *         destination stream. You don't need to provide the ARN when you are working with a logical destination
-     *         (used via an ARN of <code>Destination</code>) for cross-account delivery.
+     *         destination stream. You don't need to provide the ARN when you are working with a logical destination for
+     *         cross-account delivery.
      */
 
     public String getRoleArn() {
@@ -423,14 +419,14 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination
-     * stream. You don't need to provide the ARN when you are working with a logical destination (used via an ARN of
-     * <code>Destination</code>) for cross-account delivery.
+     * stream. You don't need to provide the ARN when you are working with a logical destination for cross-account
+     * delivery.
      * </p>
      * 
      * @param roleArn
      *        The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the
-     *        destination stream. You don't need to provide the ARN when you are working with a logical destination
-     *        (used via an ARN of <code>Destination</code>) for cross-account delivery.
+     *        destination stream. You don't need to provide the ARN when you are working with a logical destination for
+     *        cross-account delivery.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

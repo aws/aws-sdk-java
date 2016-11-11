@@ -34,10 +34,26 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String templateBody;
     /**
      * <p>
-     * The available template type. For stacks, both the <code>Original</code> and <code>Processed</code> template types
-     * are always available. For change sets, the <code>Original</code> template is always available. After the
-     * transforms are processed, the <code>Processed</code> template becomes available.
+     * The template type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For change sets, you can use only the <code>Original</code> template type. After the transforms are processed,
+     * you can use the <code>Processed</code> template type.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you create a change set for a new stack, you must select the template type.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> stagesAvailable;
 
@@ -110,14 +126,45 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The available template type. For stacks, both the <code>Original</code> and <code>Processed</code> template types
-     * are always available. For change sets, the <code>Original</code> template is always available. After the
-     * transforms are processed, the <code>Processed</code> template becomes available.
+     * The template type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For change sets, you can use only the <code>Original</code> template type. After the transforms are processed,
+     * you can use the <code>Processed</code> template type.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you create a change set for a new stack, you must select the template type.
+     * </p>
+     * </note>
      * 
-     * @return The available template type. For stacks, both the <code>Original</code> and <code>Processed</code>
-     *         template types are always available. For change sets, the <code>Original</code> template is always
-     *         available. After the transforms are processed, the <code>Processed</code> template becomes available.
+     * @return The template type.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For change sets, you can use only the <code>Original</code> template type. After the transforms are
+     *         processed, you can use the <code>Processed</code> template type.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         If you create a change set for a new stack, you must select the template type.
+     *         </p>
      * @see TemplateStage
      */
 
@@ -130,15 +177,46 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The available template type. For stacks, both the <code>Original</code> and <code>Processed</code> template types
-     * are always available. For change sets, the <code>Original</code> template is always available. After the
-     * transforms are processed, the <code>Processed</code> template becomes available.
+     * The template type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For change sets, you can use only the <code>Original</code> template type. After the transforms are processed,
+     * you can use the <code>Processed</code> template type.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you create a change set for a new stack, you must select the template type.
+     * </p>
+     * </note>
      * 
      * @param stagesAvailable
-     *        The available template type. For stacks, both the <code>Original</code> and <code>Processed</code>
-     *        template types are always available. For change sets, the <code>Original</code> template is always
-     *        available. After the transforms are processed, the <code>Processed</code> template becomes available.
+     *        The template type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For change sets, you can use only the <code>Original</code> template type. After the transforms are
+     *        processed, you can use the <code>Processed</code> template type.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        If you create a change set for a new stack, you must select the template type.
+     *        </p>
      * @see TemplateStage
      */
 
@@ -153,10 +231,26 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The available template type. For stacks, both the <code>Original</code> and <code>Processed</code> template types
-     * are always available. For change sets, the <code>Original</code> template is always available. After the
-     * transforms are processed, the <code>Processed</code> template becomes available.
+     * The template type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For change sets, you can use only the <code>Original</code> template type. After the transforms are processed,
+     * you can use the <code>Processed</code> template type.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you create a change set for a new stack, you must select the template type.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setStagesAvailable(java.util.Collection)} or {@link #withStagesAvailable(java.util.Collection)} if you
@@ -164,9 +258,24 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param stagesAvailable
-     *        The available template type. For stacks, both the <code>Original</code> and <code>Processed</code>
-     *        template types are always available. For change sets, the <code>Original</code> template is always
-     *        available. After the transforms are processed, the <code>Processed</code> template becomes available.
+     *        The template type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For change sets, you can use only the <code>Original</code> template type. After the transforms are
+     *        processed, you can use the <code>Processed</code> template type.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        If you create a change set for a new stack, you must select the template type.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemplateStage
      */
@@ -183,15 +292,46 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The available template type. For stacks, both the <code>Original</code> and <code>Processed</code> template types
-     * are always available. For change sets, the <code>Original</code> template is always available. After the
-     * transforms are processed, the <code>Processed</code> template becomes available.
+     * The template type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For change sets, you can use only the <code>Original</code> template type. After the transforms are processed,
+     * you can use the <code>Processed</code> template type.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you create a change set for a new stack, you must select the template type.
+     * </p>
+     * </note>
      * 
      * @param stagesAvailable
-     *        The available template type. For stacks, both the <code>Original</code> and <code>Processed</code>
-     *        template types are always available. For change sets, the <code>Original</code> template is always
-     *        available. After the transforms are processed, the <code>Processed</code> template becomes available.
+     *        The template type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For change sets, you can use only the <code>Original</code> template type. After the transforms are
+     *        processed, you can use the <code>Processed</code> template type.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        If you create a change set for a new stack, you must select the template type.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemplateStage
      */
@@ -203,15 +343,46 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The available template type. For stacks, both the <code>Original</code> and <code>Processed</code> template types
-     * are always available. For change sets, the <code>Original</code> template is always available. After the
-     * transforms are processed, the <code>Processed</code> template becomes available.
+     * The template type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For change sets, you can use only the <code>Original</code> template type. After the transforms are processed,
+     * you can use the <code>Processed</code> template type.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you create a change set for a new stack, you must select the template type.
+     * </p>
+     * </note>
      * 
      * @param stagesAvailable
-     *        The available template type. For stacks, both the <code>Original</code> and <code>Processed</code>
-     *        template types are always available. For change sets, the <code>Original</code> template is always
-     *        available. After the transforms are processed, the <code>Processed</code> template becomes available.
+     *        The template type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For change sets, you can use only the <code>Original</code> template type. After the transforms are
+     *        processed, you can use the <code>Processed</code> template type.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        If you create a change set for a new stack, you must select the template type.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemplateStage
      */

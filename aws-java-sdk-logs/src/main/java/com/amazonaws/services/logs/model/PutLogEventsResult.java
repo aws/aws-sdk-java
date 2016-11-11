@@ -19,12 +19,26 @@ import java.io.Serializable;
  */
 public class PutLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The next sequence token.
+     * </p>
+     */
     private String nextSequenceToken;
-
+    /**
+     * <p>
+     * The rejected events.
+     * </p>
+     */
     private RejectedLogEventsInfo rejectedLogEventsInfo;
 
     /**
+     * <p>
+     * The next sequence token.
+     * </p>
+     * 
      * @param nextSequenceToken
+     *        The next sequence token.
      */
 
     public void setNextSequenceToken(String nextSequenceToken) {
@@ -32,7 +46,11 @@ public class PutLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * @return
+     * <p>
+     * The next sequence token.
+     * </p>
+     * 
+     * @return The next sequence token.
      */
 
     public String getNextSequenceToken() {
@@ -40,7 +58,12 @@ public class PutLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The next sequence token.
+     * </p>
+     * 
      * @param nextSequenceToken
+     *        The next sequence token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -50,7 +73,12 @@ public class PutLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The rejected events.
+     * </p>
+     * 
      * @param rejectedLogEventsInfo
+     *        The rejected events.
      */
 
     public void setRejectedLogEventsInfo(RejectedLogEventsInfo rejectedLogEventsInfo) {
@@ -58,7 +86,11 @@ public class PutLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * @return
+     * <p>
+     * The rejected events.
+     * </p>
+     * 
+     * @return The rejected events.
      */
 
     public RejectedLogEventsInfo getRejectedLogEventsInfo() {
@@ -66,7 +98,12 @@ public class PutLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The rejected events.
+     * </p>
+     * 
      * @param rejectedLogEventsInfo
+     *        The rejected events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -314,4 +314,5 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
     public AmazonSimpleEmailServiceWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

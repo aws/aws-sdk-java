@@ -23,24 +23,24 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time when the export task got created.
+     * The creation time of the export task.
      * </p>
      */
     private Long creationTime;
     /**
      * <p>
-     * A point in time when the export task got completed.
+     * The completion time of the export task.
      * </p>
      */
     private Long completionTime;
 
     /**
      * <p>
-     * A point in time when the export task got created.
+     * The creation time of the export task.
      * </p>
      * 
      * @param creationTime
-     *        A point in time when the export task got created.
+     *        The creation time of the export task.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -49,10 +49,10 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time when the export task got created.
+     * The creation time of the export task.
      * </p>
      * 
-     * @return A point in time when the export task got created.
+     * @return The creation time of the export task.
      */
 
     public Long getCreationTime() {
@@ -61,11 +61,11 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time when the export task got created.
+     * The creation time of the export task.
      * </p>
      * 
      * @param creationTime
-     *        A point in time when the export task got created.
+     *        The creation time of the export task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,11 +76,11 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time when the export task got completed.
+     * The completion time of the export task.
      * </p>
      * 
      * @param completionTime
-     *        A point in time when the export task got completed.
+     *        The completion time of the export task.
      */
 
     public void setCompletionTime(Long completionTime) {
@@ -89,10 +89,10 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time when the export task got completed.
+     * The completion time of the export task.
      * </p>
      * 
-     * @return A point in time when the export task got completed.
+     * @return The completion time of the export task.
      */
 
     public Long getCompletionTime() {
@@ -101,11 +101,11 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A point in time when the export task got completed.
+     * The completion time of the export task.
      * </p>
      * 
      * @param completionTime
-     *        A point in time when the export task got completed.
+     *        The completion time of the export task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

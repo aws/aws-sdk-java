@@ -54,7 +54,7 @@ public class ValidateTemplateResult extends com.amazonaws.AmazonWebServiceResult
     private String capabilitiesReason;
     /**
      * <p>
-     * A list of the transforms that have been declared in the template.
+     * A list of the transforms that are declared in the template.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> declaredTransforms;
@@ -385,10 +385,10 @@ public class ValidateTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of the transforms that have been declared in the template.
+     * A list of the transforms that are declared in the template.
      * </p>
      * 
-     * @return A list of the transforms that have been declared in the template.
+     * @return A list of the transforms that are declared in the template.
      */
 
     public java.util.List<String> getDeclaredTransforms() {
@@ -400,11 +400,11 @@ public class ValidateTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of the transforms that have been declared in the template.
+     * A list of the transforms that are declared in the template.
      * </p>
      * 
      * @param declaredTransforms
-     *        A list of the transforms that have been declared in the template.
+     *        A list of the transforms that are declared in the template.
      */
 
     public void setDeclaredTransforms(java.util.Collection<String> declaredTransforms) {
@@ -418,7 +418,7 @@ public class ValidateTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of the transforms that have been declared in the template.
+     * A list of the transforms that are declared in the template.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -427,7 +427,7 @@ public class ValidateTemplateResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param declaredTransforms
-     *        A list of the transforms that have been declared in the template.
+     *        A list of the transforms that are declared in the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -443,11 +443,11 @@ public class ValidateTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of the transforms that have been declared in the template.
+     * A list of the transforms that are declared in the template.
      * </p>
      * 
      * @param declaredTransforms
-     *        A list of the transforms that have been declared in the template.
+     *        A list of the transforms that are declared in the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

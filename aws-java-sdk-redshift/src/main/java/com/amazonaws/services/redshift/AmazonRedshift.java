@@ -1898,4 +1898,5 @@ public interface AmazonRedshift {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonRedshiftWaiters waiters();
+
 }

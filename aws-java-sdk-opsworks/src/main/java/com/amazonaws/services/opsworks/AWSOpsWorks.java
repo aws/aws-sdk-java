@@ -1878,4 +1878,5 @@ public interface AWSOpsWorks {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AWSOpsWorksWaiters waiters();
+
 }

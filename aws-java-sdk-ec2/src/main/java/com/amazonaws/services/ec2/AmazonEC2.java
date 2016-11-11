@@ -4794,4 +4794,5 @@ public interface AmazonEC2 {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonEC2Waiters waiters();
+
 }

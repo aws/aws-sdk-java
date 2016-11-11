@@ -16,19 +16,32 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A log event is a record of some activity that was recorded by the application or resource being monitored. The log
- * event record that CloudWatch Logs understands contains two properties: the timestamp of when the event occurred, and
- * the raw event message.
+ * Represents a log event, which is a record of activity that was recorded by the application or resource being
+ * monitored.
  * </p>
  */
 public class InputLogEvent implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The time the event occurred.
+     * </p>
+     */
     private Long timestamp;
-
+    /**
+     * <p>
+     * The raw event message.
+     * </p>
+     */
     private String message;
 
     /**
+     * <p>
+     * The time the event occurred.
+     * </p>
+     * 
      * @param timestamp
+     *        The time the event occurred.
      */
 
     public void setTimestamp(Long timestamp) {
@@ -36,7 +49,11 @@ public class InputLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The time the event occurred.
+     * </p>
+     * 
+     * @return The time the event occurred.
      */
 
     public Long getTimestamp() {
@@ -44,7 +61,12 @@ public class InputLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the event occurred.
+     * </p>
+     * 
      * @param timestamp
+     *        The time the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +76,12 @@ public class InputLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The raw event message.
+     * </p>
+     * 
      * @param message
+     *        The raw event message.
      */
 
     public void setMessage(String message) {
@@ -62,7 +89,11 @@ public class InputLogEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The raw event message.
+     * </p>
+     * 
+     * @return The raw event message.
      */
 
     public String getMessage() {
@@ -70,7 +101,12 @@ public class InputLogEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The raw event message.
+     * </p>
+     * 
      * @param message
+     *        The raw event message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -973,4 +973,5 @@ public interface AmazonCloudFront {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonCloudFrontWaiters waiters();
+
 }

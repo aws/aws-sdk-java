@@ -19,10 +19,20 @@ import java.io.Serializable;
  */
 public class PutDestinationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The destination.
+     * </p>
+     */
     private Destination destination;
 
     /**
+     * <p>
+     * The destination.
+     * </p>
+     * 
      * @param destination
+     *        The destination.
      */
 
     public void setDestination(Destination destination) {
@@ -30,7 +40,11 @@ public class PutDestinationResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * @return
+     * <p>
+     * The destination.
+     * </p>
+     * 
+     * @return The destination.
      */
 
     public Destination getDestination() {
@@ -38,7 +52,12 @@ public class PutDestinationResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The destination.
+     * </p>
+     * 
      * @param destination
+     *        The destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

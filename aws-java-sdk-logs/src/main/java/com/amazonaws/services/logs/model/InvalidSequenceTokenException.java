@@ -13,7 +13,9 @@
 package com.amazonaws.services.logs.model;
 
 /**
- * 
+ * <p>
+ * The sequence token is not valid.
+ * </p>
  */
 public class InvalidSequenceTokenException extends com.amazonaws.services.logs.model.AWSLogsException {
     private static final long serialVersionUID = 1L;

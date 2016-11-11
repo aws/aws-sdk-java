@@ -808,4 +808,5 @@ public interface AmazonMachineLearning {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonMachineLearningWaiters waiters();
+
 }

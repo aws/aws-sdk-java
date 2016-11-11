@@ -579,4 +579,5 @@ public class AbstractAmazonRDS implements AmazonRDS {
     public AmazonRDSWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

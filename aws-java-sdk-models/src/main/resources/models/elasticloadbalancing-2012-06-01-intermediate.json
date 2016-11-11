@@ -86,6 +86,7 @@
     "customSignerProvider" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
+    "presignersFqcn" : null,
     "renameShapes" : {
       "AccessPointNotFoundException" : "LoadBalancerNotFoundException",
       "DuplicateAccessPointNameException" : "DuplicateLoadBalancerNameException",

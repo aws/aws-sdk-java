@@ -565,4 +565,5 @@ public interface AmazonElasticMapReduce {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonElasticMapReduceWaiters waiters();
+
 }

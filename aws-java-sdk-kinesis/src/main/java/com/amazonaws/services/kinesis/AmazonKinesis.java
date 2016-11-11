@@ -994,4 +994,5 @@ public interface AmazonKinesis {
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
     AmazonKinesisWaiters waiters();
+
 }

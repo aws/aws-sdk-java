@@ -22,7 +22,7 @@ public class DeleteRetentionPolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the log group that is associated with the retention policy to delete.
+     * The name of the log group.
      * </p>
      */
     private String logGroupName;
@@ -39,7 +39,7 @@ public class DeleteRetentionPolicyRequest extends com.amazonaws.AmazonWebService
      * methods to initialize any additional object members.
      * 
      * @param logGroupName
-     *        The name of the log group that is associated with the retention policy to delete.
+     *        The name of the log group.
      */
     public DeleteRetentionPolicyRequest(String logGroupName) {
         setLogGroupName(logGroupName);
@@ -47,11 +47,11 @@ public class DeleteRetentionPolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the log group that is associated with the retention policy to delete.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group that is associated with the retention policy to delete.
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -60,10 +60,10 @@ public class DeleteRetentionPolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the log group that is associated with the retention policy to delete.
+     * The name of the log group.
      * </p>
      * 
-     * @return The name of the log group that is associated with the retention policy to delete.
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -72,11 +72,11 @@ public class DeleteRetentionPolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the log group that is associated with the retention policy to delete.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group that is associated with the retention policy to delete.
+     *        The name of the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

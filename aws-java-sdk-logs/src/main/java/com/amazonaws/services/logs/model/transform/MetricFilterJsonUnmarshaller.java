@@ -64,6 +64,10 @@ public class MetricFilterJsonUnmarshaller implements Unmarshaller<MetricFilter, 
                     context.nextToken();
                     metricFilter.setCreationTime(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("logGroupName", targetDepth)) {
+                    context.nextToken();
+                    metricFilter.setLogGroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

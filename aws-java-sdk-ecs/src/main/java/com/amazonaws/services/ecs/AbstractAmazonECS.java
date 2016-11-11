@@ -234,4 +234,5 @@ public class AbstractAmazonECS implements AmazonECS {
     public AmazonECSWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

@@ -232,4 +232,5 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     public AmazonDynamoDBWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

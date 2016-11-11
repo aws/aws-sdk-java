@@ -23,7 +23,7 @@ public class TestMetricFilterRequest extends com.amazonaws.AmazonWebServiceReque
     private String filterPattern;
     /**
      * <p>
-     * A list of log event messages to test.
+     * The log event messages to test.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> logEventMessages;
@@ -56,10 +56,10 @@ public class TestMetricFilterRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of log event messages to test.
+     * The log event messages to test.
      * </p>
      * 
-     * @return A list of log event messages to test.
+     * @return The log event messages to test.
      */
 
     public java.util.List<String> getLogEventMessages() {
@@ -71,11 +71,11 @@ public class TestMetricFilterRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of log event messages to test.
+     * The log event messages to test.
      * </p>
      * 
      * @param logEventMessages
-     *        A list of log event messages to test.
+     *        The log event messages to test.
      */
 
     public void setLogEventMessages(java.util.Collection<String> logEventMessages) {
@@ -89,7 +89,7 @@ public class TestMetricFilterRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of log event messages to test.
+     * The log event messages to test.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -98,7 +98,7 @@ public class TestMetricFilterRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param logEventMessages
-     *        A list of log event messages to test.
+     *        The log event messages to test.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,11 +114,11 @@ public class TestMetricFilterRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of log event messages to test.
+     * The log event messages to test.
      * </p>
      * 
      * @param logEventMessages
-     *        A list of log event messages to test.
+     *        The log event messages to test.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

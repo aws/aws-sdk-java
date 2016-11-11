@@ -22,13 +22,13 @@ public class DeleteMetricFilterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the log group that is associated with the metric filter to delete.
+     * The name of the log group.
      * </p>
      */
     private String logGroupName;
     /**
      * <p>
-     * The name of the metric filter to delete.
+     * The name of the metric filter.
      * </p>
      */
     private String filterName;
@@ -45,9 +45,9 @@ public class DeleteMetricFilterRequest extends com.amazonaws.AmazonWebServiceReq
      * methods to initialize any additional object members.
      * 
      * @param logGroupName
-     *        The name of the log group that is associated with the metric filter to delete.
+     *        The name of the log group.
      * @param filterName
-     *        The name of the metric filter to delete.
+     *        The name of the metric filter.
      */
     public DeleteMetricFilterRequest(String logGroupName, String filterName) {
         setLogGroupName(logGroupName);
@@ -56,11 +56,11 @@ public class DeleteMetricFilterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the log group that is associated with the metric filter to delete.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group that is associated with the metric filter to delete.
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -69,10 +69,10 @@ public class DeleteMetricFilterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the log group that is associated with the metric filter to delete.
+     * The name of the log group.
      * </p>
      * 
-     * @return The name of the log group that is associated with the metric filter to delete.
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -81,11 +81,11 @@ public class DeleteMetricFilterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the log group that is associated with the metric filter to delete.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group that is associated with the metric filter to delete.
+     *        The name of the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class DeleteMetricFilterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the metric filter to delete.
+     * The name of the metric filter.
      * </p>
      * 
      * @param filterName
-     *        The name of the metric filter to delete.
+     *        The name of the metric filter.
      */
 
     public void setFilterName(String filterName) {
@@ -109,10 +109,10 @@ public class DeleteMetricFilterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the metric filter to delete.
+     * The name of the metric filter.
      * </p>
      * 
-     * @return The name of the metric filter to delete.
+     * @return The name of the metric filter.
      */
 
     public String getFilterName() {
@@ -121,11 +121,11 @@ public class DeleteMetricFilterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the metric filter to delete.
+     * The name of the metric filter.
      * </p>
      * 
      * @param filterName
-     *        The name of the metric filter to delete.
+     *        The name of the metric filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,12 +19,21 @@ import java.io.Serializable;
  */
 public class DescribeSubscriptionFiltersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The subscription filters.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<SubscriptionFilter> subscriptionFilters;
 
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The subscription filters.
+     * </p>
+     * 
+     * @return The subscription filters.
      */
 
     public java.util.List<SubscriptionFilter> getSubscriptionFilters() {
@@ -35,7 +44,12 @@ public class DescribeSubscriptionFiltersResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The subscription filters.
+     * </p>
+     * 
      * @param subscriptionFilters
+     *        The subscription filters.
      */
 
     public void setSubscriptionFilters(java.util.Collection<SubscriptionFilter> subscriptionFilters) {
@@ -49,12 +63,16 @@ public class DescribeSubscriptionFiltersResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
+     * The subscription filters.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubscriptionFilters(java.util.Collection)} or {@link #withSubscriptionFilters(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param subscriptionFilters
+     *        The subscription filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,7 +87,12 @@ public class DescribeSubscriptionFiltersResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The subscription filters.
+     * </p>
+     * 
      * @param subscriptionFilters
+     *        The subscription filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
