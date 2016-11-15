@@ -39,7 +39,11 @@ public class AdminRespondToAuthChallengeResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private java.util.Map<String, String> challengeParameters;
-
+    /**
+     * <p>
+     * The result returned by the server in response to the authentication request.
+     * </p>
+     */
     private AuthenticationResultType authenticationResult;
 
     /**
@@ -217,7 +221,12 @@ public class AdminRespondToAuthChallengeResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The result returned by the server in response to the authentication request.
+     * </p>
+     * 
      * @param authenticationResult
+     *        The result returned by the server in response to the authentication request.
      */
 
     public void setAuthenticationResult(AuthenticationResultType authenticationResult) {
@@ -225,7 +234,11 @@ public class AdminRespondToAuthChallengeResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * @return
+     * <p>
+     * The result returned by the server in response to the authentication request.
+     * </p>
+     * 
+     * @return The result returned by the server in response to the authentication request.
      */
 
     public AuthenticationResultType getAuthenticationResult() {
@@ -233,7 +246,12 @@ public class AdminRespondToAuthChallengeResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The result returned by the server in response to the authentication request.
+     * </p>
+     * 
      * @param authenticationResult
+     *        The result returned by the server in response to the authentication request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

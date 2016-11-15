@@ -65,13 +65,13 @@ public class IpPermissionStaxUnmarshaller implements Unmarshaller<IpPermission, 
                     continue;
                 }
 
-                if (context.testExpression("ipRanges/item/cidrIp", targetDepth)) {
-                    ipPermission.withIpRanges(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("prefixListIds/item", targetDepth)) {
+                    ipPermission.withPrefixListIds(PrefixListIdStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("prefixListIds/item", targetDepth)) {
-                    ipPermission.withPrefixListIds(PrefixListIdStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ipRanges/item", targetDepth)) {
+                    ipPermission.withIpv4Ranges(IpRangeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

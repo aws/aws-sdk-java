@@ -27,7 +27,11 @@ public class SignUpResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      */
     private Boolean userConfirmed;
-
+    /**
+     * <p>
+     * The code delivery details returned by the server response to the user registration request.
+     * </p>
+     */
     private CodeDeliveryDetailsType codeDeliveryDetails;
 
     /**
@@ -83,7 +87,12 @@ public class SignUpResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * The code delivery details returned by the server response to the user registration request.
+     * </p>
+     * 
      * @param codeDeliveryDetails
+     *        The code delivery details returned by the server response to the user registration request.
      */
 
     public void setCodeDeliveryDetails(CodeDeliveryDetailsType codeDeliveryDetails) {
@@ -91,7 +100,11 @@ public class SignUpResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
-     * @return
+     * <p>
+     * The code delivery details returned by the server response to the user registration request.
+     * </p>
+     * 
+     * @return The code delivery details returned by the server response to the user registration request.
      */
 
     public CodeDeliveryDetailsType getCodeDeliveryDetails() {
@@ -99,7 +112,12 @@ public class SignUpResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * The code delivery details returned by the server response to the user registration request.
+     * </p>
+     * 
      * @param codeDeliveryDetails
+     *        The code delivery details returned by the server response to the user registration request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

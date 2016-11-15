@@ -135,20 +135,6 @@ public class AuthorizeSecurityGroupEgressRequestMarshaller implements
                     }
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> ipPermissionIpRangesList = (com.amazonaws.internal.SdkInternalList<String>) authorizeSecurityGroupEgressRequestIpPermissionsListValue
-                        .getIpRanges();
-                if (!ipPermissionIpRangesList.isEmpty() || !ipPermissionIpRangesList.isAutoConstruct()) {
-                    int ipRangesListIndex = 1;
-
-                    for (String ipPermissionIpRangesListValue : ipPermissionIpRangesList) {
-                        if (ipPermissionIpRangesListValue != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipRangesListIndex + ".CidrIp",
-                                    StringUtils.fromString(ipPermissionIpRangesListValue));
-                        }
-                        ipRangesListIndex++;
-                    }
-                }
-
                 com.amazonaws.internal.SdkInternalList<PrefixListId> ipPermissionPrefixListIdsList = (com.amazonaws.internal.SdkInternalList<PrefixListId>) authorizeSecurityGroupEgressRequestIpPermissionsListValue
                         .getPrefixListIds();
                 if (!ipPermissionPrefixListIdsList.isEmpty() || !ipPermissionPrefixListIdsList.isAutoConstruct()) {
@@ -161,6 +147,21 @@ public class AuthorizeSecurityGroupEgressRequestMarshaller implements
                                     StringUtils.fromString(ipPermissionPrefixListIdsListValue.getPrefixListId()));
                         }
                         prefixListIdsListIndex++;
+                    }
+                }
+
+                com.amazonaws.internal.SdkInternalList<IpRange> ipPermissionIpv4RangesList = (com.amazonaws.internal.SdkInternalList<IpRange>) authorizeSecurityGroupEgressRequestIpPermissionsListValue
+                        .getIpv4Ranges();
+                if (!ipPermissionIpv4RangesList.isEmpty() || !ipPermissionIpv4RangesList.isAutoConstruct()) {
+                    int ipv4RangesListIndex = 1;
+
+                    for (IpRange ipPermissionIpv4RangesListValue : ipPermissionIpv4RangesList) {
+
+                        if (ipPermissionIpv4RangesListValue.getCidrIp() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipv4RangesListIndex + ".CidrIp",
+                                    StringUtils.fromString(ipPermissionIpv4RangesListValue.getCidrIp()));
+                        }
+                        ipv4RangesListIndex++;
                     }
                 }
                 ipPermissionsListIndex++;

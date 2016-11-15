@@ -14,6 +14,8 @@
  */
 package com.amazonaws.handlers;
 
+import com.amazonaws.auth.AWSCredentials;
+
 /**
  * A type safe key used for setting and retrieving context in a {@link
  * com.amazonaws.Request} object.
@@ -41,6 +43,9 @@ package com.amazonaws.handlers;
  * </pre>
  */
 public class HandlerContextKey<T> {
+    /** The key under which the request credentials are set. */
+    public static final HandlerContextKey<AWSCredentials> AWS_CREDENTIALS = new HandlerContextKey<AWSCredentials>("AWSCredentials");
+
     private final String name;
 
     public HandlerContextKey(String name) {

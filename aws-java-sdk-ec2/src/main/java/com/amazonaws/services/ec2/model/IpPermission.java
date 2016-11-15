@@ -53,12 +53,6 @@ public class IpPermission implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<UserIdGroupPair> userIdGroupPairs;
     /**
      * <p>
-     * One or more IP ranges.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> ipRanges;
-    /**
-     * <p>
      * (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
      * <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you want to access through a VPC
@@ -66,6 +60,12 @@ public class IpPermission implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PrefixListId> prefixListIds;
+    /**
+     * <p>
+     * One or more IP ranges.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<IpRange> ipv4Ranges;
 
     /**
      * <p>
@@ -299,79 +299,6 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IP ranges.
-     * </p>
-     * 
-     * @return One or more IP ranges.
-     */
-
-    public java.util.List<String> getIpRanges() {
-        if (ipRanges == null) {
-            ipRanges = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return ipRanges;
-    }
-
-    /**
-     * <p>
-     * One or more IP ranges.
-     * </p>
-     * 
-     * @param ipRanges
-     *        One or more IP ranges.
-     */
-
-    public void setIpRanges(java.util.Collection<String> ipRanges) {
-        if (ipRanges == null) {
-            this.ipRanges = null;
-            return;
-        }
-
-        this.ipRanges = new com.amazonaws.internal.SdkInternalList<String>(ipRanges);
-    }
-
-    /**
-     * <p>
-     * One or more IP ranges.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setIpRanges(java.util.Collection)} or {@link #withIpRanges(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param ipRanges
-     *        One or more IP ranges.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public IpPermission withIpRanges(String... ipRanges) {
-        if (this.ipRanges == null) {
-            setIpRanges(new com.amazonaws.internal.SdkInternalList<String>(ipRanges.length));
-        }
-        for (String ele : ipRanges) {
-            this.ipRanges.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more IP ranges.
-     * </p>
-     * 
-     * @param ipRanges
-     *        One or more IP ranges.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public IpPermission withIpRanges(java.util.Collection<String> ipRanges) {
-        setIpRanges(ipRanges);
-        return this;
-    }
-
-    /**
-     * <p>
      * (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
      * <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you want to access through a VPC
@@ -468,6 +395,176 @@ public class IpPermission implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more IP ranges.
+     * </p>
+     * 
+     * @return One or more IP ranges.
+     */
+
+    public java.util.List<IpRange> getIpv4Ranges() {
+        if (ipv4Ranges == null) {
+            ipv4Ranges = new com.amazonaws.internal.SdkInternalList<IpRange>();
+        }
+        return ipv4Ranges;
+    }
+
+    /**
+     * <p>
+     * One or more IP ranges.
+     * </p>
+     * 
+     * @param ipv4Ranges
+     *        One or more IP ranges.
+     */
+
+    public void setIpv4Ranges(java.util.Collection<IpRange> ipv4Ranges) {
+        if (ipv4Ranges == null) {
+            this.ipv4Ranges = null;
+            return;
+        }
+
+        this.ipv4Ranges = new com.amazonaws.internal.SdkInternalList<IpRange>(ipv4Ranges);
+    }
+
+    /**
+     * <p>
+     * One or more IP ranges.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv4Ranges(java.util.Collection)} or {@link #withIpv4Ranges(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipv4Ranges
+     *        One or more IP ranges.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpPermission withIpv4Ranges(IpRange... ipv4Ranges) {
+        if (this.ipv4Ranges == null) {
+            setIpv4Ranges(new com.amazonaws.internal.SdkInternalList<IpRange>(ipv4Ranges.length));
+        }
+        for (IpRange ele : ipv4Ranges) {
+            this.ipv4Ranges.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IP ranges.
+     * </p>
+     * 
+     * @param ipv4Ranges
+     *        One or more IP ranges.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpPermission withIpv4Ranges(java.util.Collection<IpRange> ipv4Ranges) {
+        setIpv4Ranges(ipv4Ranges);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IP ranges.
+     * </p>
+     *
+     * @return One or more IP ranges.
+     * @deprecated Use {@link #getIpv4Ranges()}.
+     */
+    @Deprecated
+    public java.util.List<String> getIpRanges() {
+        if (ipv4Ranges == null) {
+            ipv4Ranges = new com.amazonaws.internal.SdkInternalList<IpRange>();
+        }
+        return newLegacyIpRangeList(ipv4Ranges);
+    }
+
+    /**
+     * <p>
+     * One or more IP ranges.
+     * </p>
+     *
+     * @param ipRanges
+     *        One or more IP ranges.
+     * @deprecated Use {@link #setIpv4Ranges(java.util.Collection)}
+     */
+    @Deprecated
+    public void setIpRanges(java.util.Collection<String> ipRanges) {
+        if (ipRanges == null) {
+            this.ipv4Ranges = null;
+            return;
+        }
+
+        this.ipv4Ranges = newIpRangeList(ipRanges);
+    }
+
+    /**
+     * <p>
+     * One or more IP ranges.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpRanges(java.util.Collection)} or {@link #withIpRanges(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     *
+     * @param ipRanges
+     *        One or more IP ranges.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @deprecated Use {@link #withIpv4Ranges(IpRange...)}
+     */
+    @Deprecated
+    public IpPermission withIpRanges(String... ipRanges) {
+        if (this.ipv4Ranges == null) {
+            setIpRanges(new com.amazonaws.internal.SdkInternalList<String>(ipRanges.length));
+        }
+        for (String ele : ipRanges) {
+            this.ipv4Ranges.add(newIpRange(ele));
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IP ranges.
+     * </p>
+     *
+     * @param ipRanges
+     *        One or more IP ranges.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @deprecated Use {@link #withIpv4Ranges(java.util.Collection)}
+     */
+    @Deprecated
+    public IpPermission withIpRanges(java.util.Collection<String> ipRanges) {
+        setIpRanges(ipRanges);
+        return this;
+    }
+
+    private IpRange newIpRange(String ipRange) {
+        return new IpRange().withCidrIp(ipRange);
+    }
+
+    private com.amazonaws.internal.SdkInternalList<IpRange> newIpRangeList(java.util.Collection<String> ipRanges) {
+        com.amazonaws.internal.SdkInternalList<IpRange> ipRangeList = new com.amazonaws.internal.SdkInternalList<IpRange>(ipRanges.size());
+        for (String ipRange : ipRanges) {
+            ipRangeList.add(newIpRange(ipRange));
+        }
+        return ipRangeList;
+    }
+
+    private java.util.List<String> newLegacyIpRangeList(java.util.List<IpRange> ipRanges) {
+        java.util.List<String> ipRangeList = new java.util.ArrayList<String>();
+        for (IpRange ipRange : ipRanges) {
+            ipRangeList.add(ipRange.getCidrIp());
+        }
+        return ipRangeList;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -486,10 +583,10 @@ public class IpPermission implements Serializable, Cloneable {
             sb.append("ToPort: " + getToPort() + ",");
         if (getUserIdGroupPairs() != null)
             sb.append("UserIdGroupPairs: " + getUserIdGroupPairs() + ",");
-        if (getIpRanges() != null)
-            sb.append("IpRanges: " + getIpRanges() + ",");
         if (getPrefixListIds() != null)
-            sb.append("PrefixListIds: " + getPrefixListIds());
+            sb.append("PrefixListIds: " + getPrefixListIds() + ",");
+        if (getIpv4Ranges() != null)
+            sb.append("Ipv4Ranges: " + getIpv4Ranges());
         sb.append("}");
         return sb.toString();
     }
@@ -520,13 +617,13 @@ public class IpPermission implements Serializable, Cloneable {
             return false;
         if (other.getUserIdGroupPairs() != null && other.getUserIdGroupPairs().equals(this.getUserIdGroupPairs()) == false)
             return false;
-        if (other.getIpRanges() == null ^ this.getIpRanges() == null)
-            return false;
-        if (other.getIpRanges() != null && other.getIpRanges().equals(this.getIpRanges()) == false)
-            return false;
         if (other.getPrefixListIds() == null ^ this.getPrefixListIds() == null)
             return false;
         if (other.getPrefixListIds() != null && other.getPrefixListIds().equals(this.getPrefixListIds()) == false)
+            return false;
+        if (other.getIpv4Ranges() == null ^ this.getIpv4Ranges() == null)
+            return false;
+        if (other.getIpv4Ranges() != null && other.getIpv4Ranges().equals(this.getIpv4Ranges()) == false)
             return false;
         return true;
     }
@@ -540,8 +637,8 @@ public class IpPermission implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getFromPort() == null) ? 0 : getFromPort().hashCode());
         hashCode = prime * hashCode + ((getToPort() == null) ? 0 : getToPort().hashCode());
         hashCode = prime * hashCode + ((getUserIdGroupPairs() == null) ? 0 : getUserIdGroupPairs().hashCode());
-        hashCode = prime * hashCode + ((getIpRanges() == null) ? 0 : getIpRanges().hashCode());
         hashCode = prime * hashCode + ((getPrefixListIds() == null) ? 0 : getPrefixListIds().hashCode());
+        hashCode = prime * hashCode + ((getIpv4Ranges() == null) ? 0 : getIpv4Ranges().hashCode());
         return hashCode;
     }
 

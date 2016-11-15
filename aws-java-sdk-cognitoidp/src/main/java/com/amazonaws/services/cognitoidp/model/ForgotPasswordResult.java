@@ -21,10 +21,20 @@ import java.io.Serializable;
  */
 public class ForgotPasswordResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The code delivery details returned by the server in response to the request to reset a password.
+     * </p>
+     */
     private CodeDeliveryDetailsType codeDeliveryDetails;
 
     /**
+     * <p>
+     * The code delivery details returned by the server in response to the request to reset a password.
+     * </p>
+     * 
      * @param codeDeliveryDetails
+     *        The code delivery details returned by the server in response to the request to reset a password.
      */
 
     public void setCodeDeliveryDetails(CodeDeliveryDetailsType codeDeliveryDetails) {
@@ -32,7 +42,11 @@ public class ForgotPasswordResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * @return
+     * <p>
+     * The code delivery details returned by the server in response to the request to reset a password.
+     * </p>
+     * 
+     * @return The code delivery details returned by the server in response to the request to reset a password.
      */
 
     public CodeDeliveryDetailsType getCodeDeliveryDetails() {
@@ -40,7 +54,12 @@ public class ForgotPasswordResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The code delivery details returned by the server in response to the request to reset a password.
+     * </p>
+     * 
      * @param codeDeliveryDetails
+     *        The code delivery details returned by the server in response to the request to reset a password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -23,6 +23,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.http.apache.client.impl.ConnectionManagerAwareHttpClient;
 import com.amazonaws.http.apache.request.impl.ApacheHttpRequestFactory;
 import com.amazonaws.http.request.HttpRequestFactory;
@@ -46,6 +49,8 @@ import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
+
+import static org.junit.Assert.assertEquals;
 
 public class AmazonHttpClientTest {
 
@@ -238,6 +243,38 @@ public class AmazonHttpClientTest {
         Assert.assertTrue(userAgent.endsWith(suffix));
     }
 
+    @Test
+    public void testCredentialsSetInRequestContext() throws Exception {
+        EasyMock.reset(httpClient);
+        EasyMock
+                .expect(httpClient.execute(EasyMock.<HttpRequestBase>anyObject(), EasyMock.<HttpContext>anyObject()))
+                .andReturn(createBasicHttpResponse())
+                .once();
+        EasyMock.replay(httpClient);
+
+        AmazonHttpClient client = new AmazonHttpClient(new ClientConfiguration(), httpClient, null);
+
+        final BasicAWSCredentials credentials = new BasicAWSCredentials("foo", "bar");
+
+        AWSCredentialsProvider credentialsProvider = EasyMock.createMock(AWSCredentialsProvider.class);
+        EasyMock.expect(credentialsProvider.getCredentials())
+                .andReturn(credentials)
+                .anyTimes();
+        EasyMock.replay(credentialsProvider);
+
+        ExecutionContext executionContext = new ExecutionContext();
+        executionContext.setCredentialsProvider(credentialsProvider);
+
+        Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.PUT, URI_NAME, true);
+
+        HttpResponseHandler<AmazonWebServiceResponse<Object>> handler = createStubResponseHandler();
+        EasyMock.replay(handler);
+
+        client.execute(request, handler, null, executionContext);
+
+        assertEquals(credentials, request.getHandlerContext(HandlerContextKey.AWS_CREDENTIALS));
+    }
+
     private BasicHttpResponse createBasicHttpResponse() {
         BasicHttpEntity entity = new BasicHttpEntity();
         entity.setContent(new ByteArrayInputStream(new byte[0]));
@@ -314,7 +351,7 @@ public class AmazonHttpClientTest {
                             len += b;
                         }
 
-                        Assert.assertEquals(contentLength, len);
+                        assertEquals(contentLength, len);
 
                         throw new IOException("BOOM");
                     }

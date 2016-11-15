@@ -2481,7 +2481,7 @@
       "operationName" : "ResendConfirmationCode",
       "returnType" : {
         "returnType" : "ResendConfirmationCodeResult",
-        "documentation" : "<p>The response from the server when the Amazon Cognito service makes the request to resend a confirmation code.</p>"
+        "documentation" : "<p>The response from the server when the Amazon Cognito Your User Pools service makes the request to resend a confirmation code.</p>"
       },
       "syncReturnType" : "ResendConfirmationCodeResult"
     },
@@ -10181,10 +10181,10 @@
         "c2jName" : "AuthenticationResult",
         "c2jShape" : "AuthenticationResultType",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The result of the authentication response.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The result of the authentication response.</p>\n@param authenticationResult The result of the authentication response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The result of the authentication response.</p>\n@return The result of the authentication response.*/",
         "getterModel" : {
           "returnType" : "AuthenticationResultType",
           "documentation" : null
@@ -10209,7 +10209,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "AuthenticationResult",
-        "setterDocumentation" : "/**\n@param authenticationResult */",
+        "setterDocumentation" : "/**<p>The result of the authentication response.</p>\n@param authenticationResult The result of the authentication response.*/",
         "setterModel" : {
           "variableDeclarationType" : "AuthenticationResultType",
           "variableName" : "authenticationResult",
@@ -10219,12 +10219,12 @@
           "variableSetterType" : "AuthenticationResultType"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The result of the authentication response.</p>\n@param authenticationResult The result of the authentication response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "AuthenticationResultType",
           "variableName" : "authenticationResult",
           "variableType" : "AuthenticationResultType",
-          "documentation" : "",
+          "documentation" : "<p>The result of the authentication response.</p>",
           "simpleType" : "AuthenticationResultType",
           "variableSetterType" : "AuthenticationResultType"
         },
@@ -10235,10 +10235,10 @@
           "c2jName" : "AuthenticationResult",
           "c2jShape" : "AuthenticationResultType",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The result of the authentication response.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The result of the authentication response.</p>\n@param authenticationResult The result of the authentication response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The result of the authentication response.</p>\n@return The result of the authentication response.*/",
           "getterModel" : {
             "returnType" : "AuthenticationResultType",
             "documentation" : null
@@ -10263,7 +10263,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "AuthenticationResult",
-          "setterDocumentation" : "/**\n@param authenticationResult */",
+          "setterDocumentation" : "/**<p>The result of the authentication response.</p>\n@param authenticationResult The result of the authentication response.*/",
           "setterModel" : {
             "variableDeclarationType" : "AuthenticationResultType",
             "variableName" : "authenticationResult",
@@ -10273,12 +10273,12 @@
             "variableSetterType" : "AuthenticationResultType"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The result of the authentication response.</p>\n@param authenticationResult The result of the authentication response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "AuthenticationResultType",
             "variableName" : "authenticationResult",
             "variableType" : "AuthenticationResultType",
-            "documentation" : "",
+            "documentation" : "<p>The result of the authentication response.</p>",
             "simpleType" : "AuthenticationResultType",
             "variableSetterType" : "AuthenticationResultType"
           },
@@ -12595,10 +12595,10 @@
         "c2jName" : "AuthenticationResult",
         "c2jShape" : "AuthenticationResultType",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The result returned by the server in response to the authentication request.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The result returned by the server in response to the authentication request.</p>\n@param authenticationResult The result returned by the server in response to the authentication request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The result returned by the server in response to the authentication request.</p>\n@return The result returned by the server in response to the authentication request.*/",
         "getterModel" : {
           "returnType" : "AuthenticationResultType",
           "documentation" : null
@@ -12623,7 +12623,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "AuthenticationResult",
-        "setterDocumentation" : "/**\n@param authenticationResult */",
+        "setterDocumentation" : "/**<p>The result returned by the server in response to the authentication request.</p>\n@param authenticationResult The result returned by the server in response to the authentication request.*/",
         "setterModel" : {
           "variableDeclarationType" : "AuthenticationResultType",
           "variableName" : "authenticationResult",
@@ -12633,12 +12633,12 @@
           "variableSetterType" : "AuthenticationResultType"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The result returned by the server in response to the authentication request.</p>\n@param authenticationResult The result returned by the server in response to the authentication request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "AuthenticationResultType",
           "variableName" : "authenticationResult",
           "variableType" : "AuthenticationResultType",
-          "documentation" : "",
+          "documentation" : "<p>The result returned by the server in response to the authentication request.</p>",
           "simpleType" : "AuthenticationResultType",
           "variableSetterType" : "AuthenticationResultType"
         },
@@ -12649,10 +12649,10 @@
           "c2jName" : "AuthenticationResult",
           "c2jShape" : "AuthenticationResultType",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The result returned by the server in response to the authentication request.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The result returned by the server in response to the authentication request.</p>\n@param authenticationResult The result returned by the server in response to the authentication request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The result returned by the server in response to the authentication request.</p>\n@return The result returned by the server in response to the authentication request.*/",
           "getterModel" : {
             "returnType" : "AuthenticationResultType",
             "documentation" : null
@@ -12677,7 +12677,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "AuthenticationResult",
-          "setterDocumentation" : "/**\n@param authenticationResult */",
+          "setterDocumentation" : "/**<p>The result returned by the server in response to the authentication request.</p>\n@param authenticationResult The result returned by the server in response to the authentication request.*/",
           "setterModel" : {
             "variableDeclarationType" : "AuthenticationResultType",
             "variableName" : "authenticationResult",
@@ -12687,12 +12687,12 @@
             "variableSetterType" : "AuthenticationResultType"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The result returned by the server in response to the authentication request.</p>\n@param authenticationResult The result returned by the server in response to the authentication request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "AuthenticationResultType",
             "variableName" : "authenticationResult",
             "variableType" : "AuthenticationResultType",
-            "documentation" : "",
+            "documentation" : "<p>The result returned by the server in response to the authentication request.</p>",
             "simpleType" : "AuthenticationResultType",
             "variableSetterType" : "AuthenticationResultType"
           },
@@ -21248,6 +21248,125 @@
           "variableSetterType" : "AdminCreateUserConfigType"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Schema",
+        "c2jShape" : "SchemaAttributesListType",
+        "deprecated" : false,
+        "documentation" : "<p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>\n@param schema An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>\n@return An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.*/",
+        "getterModel" : {
+          "returnType" : "java.util.List<SchemaAttributeType>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "Schema",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Schema",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "SchemaAttributeType",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "SchemaAttributeType",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterModel" : {
+              "variableDeclarationType" : "SchemaAttributeType",
+              "variableName" : "member",
+              "variableType" : "SchemaAttributeType",
+              "documentation" : "",
+              "simpleType" : "SchemaAttributeType",
+              "variableSetterType" : "SchemaAttributeType"
+            },
+            "simple" : false,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "SchemaAttributeType",
+              "variableName" : "member",
+              "variableType" : "SchemaAttributeType",
+              "documentation" : "",
+              "simpleType" : "SchemaAttributeType",
+              "variableSetterType" : "SchemaAttributeType"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "SchemaAttributeType",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "SchemaAttributeType",
+          "templateImplType" : "java.util.ArrayList<SchemaAttributeType>",
+          "templateType" : "java.util.List<SchemaAttributeType>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Schema",
+        "setterDocumentation" : "/**<p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>\n@param schema An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.List<SchemaAttributeType>",
+          "variableName" : "schema",
+          "variableType" : "java.util.List<SchemaAttributeType>",
+          "documentation" : "",
+          "simpleType" : "List<SchemaAttributeType>",
+          "variableSetterType" : "java.util.Collection<SchemaAttributeType>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSchema(java.util.Collection)} or {@link #withSchema(java.util.Collection)} if you want to override the existing values.</p>\n@param schema An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.List<SchemaAttributeType>",
+          "variableName" : "schema",
+          "variableType" : "java.util.List<SchemaAttributeType>",
+          "documentation" : "<p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>",
+          "simpleType" : "List<SchemaAttributeType>",
+          "variableSetterType" : "java.util.Collection<SchemaAttributeType>"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "AdminCreateUserConfig" : {
@@ -21964,6 +22083,126 @@
             "documentation" : "<p>A string used to name the user pool.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Schema" : {
+          "c2jName" : "Schema",
+          "c2jShape" : "SchemaAttributesListType",
+          "deprecated" : false,
+          "documentation" : "<p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>\n@param schema An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>\n@return An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.*/",
+          "getterModel" : {
+            "returnType" : "java.util.List<SchemaAttributeType>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "Schema",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Schema",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "SchemaAttributeType",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "SchemaAttributeType",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterModel" : {
+                "variableDeclarationType" : "SchemaAttributeType",
+                "variableName" : "member",
+                "variableType" : "SchemaAttributeType",
+                "documentation" : "",
+                "simpleType" : "SchemaAttributeType",
+                "variableSetterType" : "SchemaAttributeType"
+              },
+              "simple" : false,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "SchemaAttributeType",
+                "variableName" : "member",
+                "variableType" : "SchemaAttributeType",
+                "documentation" : "",
+                "simpleType" : "SchemaAttributeType",
+                "variableSetterType" : "SchemaAttributeType"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "SchemaAttributeType",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "SchemaAttributeType",
+            "templateImplType" : "java.util.ArrayList<SchemaAttributeType>",
+            "templateType" : "java.util.List<SchemaAttributeType>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Schema",
+          "setterDocumentation" : "/**<p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>\n@param schema An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.List<SchemaAttributeType>",
+            "variableName" : "schema",
+            "variableType" : "java.util.List<SchemaAttributeType>",
+            "documentation" : "",
+            "simpleType" : "List<SchemaAttributeType>",
+            "variableSetterType" : "java.util.Collection<SchemaAttributeType>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSchema(java.util.Collection)} or {@link #withSchema(java.util.Collection)} if you want to override the existing values.</p>\n@param schema An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.List<SchemaAttributeType>",
+            "variableName" : "schema",
+            "variableType" : "java.util.List<SchemaAttributeType>",
+            "documentation" : "<p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>",
+            "simpleType" : "List<SchemaAttributeType>",
+            "variableSetterType" : "java.util.Collection<SchemaAttributeType>"
           },
           "xmlNameSpaceUri" : null
         },
@@ -26418,10 +26657,10 @@
         "c2jName" : "Username",
         "c2jShape" : "UsernameType",
         "deprecated" : false,
-        "documentation" : "<p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>",
+        "documentation" : "<p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>\n@param username The user name of the user for whom you want to enter a code to retrieve a forgotten password.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>\n@return The user name of the user for whom you want to enter a code to retrieve a forgotten password.*/",
+        "fluentSetterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>\n@param username The user name of the user for whom you want to enter a code to reset a forgotten password.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>\n@return The user name of the user for whom you want to enter a code to reset a forgotten password.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -26446,7 +26685,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Username",
-        "setterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>\n@param username The user name of the user for whom you want to enter a code to retrieve a forgotten password.*/",
+        "setterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>\n@param username The user name of the user for whom you want to enter a code to reset a forgotten password.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "username",
@@ -26456,12 +26695,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>\n@param username The user name of the user for whom you want to enter a code to retrieve a forgotten password.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>\n@param username The user name of the user for whom you want to enter a code to reset a forgotten password.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "username",
           "variableType" : "String",
-          "documentation" : "<p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>",
+          "documentation" : "<p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -26578,10 +26817,10 @@
           "c2jName" : "Username",
           "c2jShape" : "UsernameType",
           "deprecated" : false,
-          "documentation" : "<p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>",
+          "documentation" : "<p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>\n@param username The user name of the user for whom you want to enter a code to retrieve a forgotten password.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>\n@return The user name of the user for whom you want to enter a code to retrieve a forgotten password.*/",
+          "fluentSetterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>\n@param username The user name of the user for whom you want to enter a code to reset a forgotten password.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>\n@return The user name of the user for whom you want to enter a code to reset a forgotten password.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -26606,7 +26845,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Username",
-          "setterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>\n@param username The user name of the user for whom you want to enter a code to retrieve a forgotten password.*/",
+          "setterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>\n@param username The user name of the user for whom you want to enter a code to reset a forgotten password.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "username",
@@ -26616,12 +26855,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>\n@param username The user name of the user for whom you want to enter a code to retrieve a forgotten password.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>\n@param username The user name of the user for whom you want to enter a code to reset a forgotten password.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "username",
             "variableType" : "String",
-            "documentation" : "<p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>",
+            "documentation" : "<p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -26662,10 +26901,10 @@
         "c2jName" : "CodeDeliveryDetails",
         "c2jShape" : "CodeDeliveryDetailsType",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The code delivery details returned by the server in response to the request to reset a password.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param codeDeliveryDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to reset a password.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to reset a password.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to reset a password.</p>\n@return The code delivery details returned by the server in response to the request to reset a password.*/",
         "getterModel" : {
           "returnType" : "CodeDeliveryDetailsType",
           "documentation" : null
@@ -26690,7 +26929,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "CodeDeliveryDetails",
-        "setterDocumentation" : "/**\n@param codeDeliveryDetails */",
+        "setterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to reset a password.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to reset a password.*/",
         "setterModel" : {
           "variableDeclarationType" : "CodeDeliveryDetailsType",
           "variableName" : "codeDeliveryDetails",
@@ -26700,12 +26939,12 @@
           "variableSetterType" : "CodeDeliveryDetailsType"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param codeDeliveryDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to reset a password.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to reset a password.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "CodeDeliveryDetailsType",
           "variableName" : "codeDeliveryDetails",
           "variableType" : "CodeDeliveryDetailsType",
-          "documentation" : "",
+          "documentation" : "<p>The code delivery details returned by the server in response to the request to reset a password.</p>",
           "simpleType" : "CodeDeliveryDetailsType",
           "variableSetterType" : "CodeDeliveryDetailsType"
         },
@@ -26716,10 +26955,10 @@
           "c2jName" : "CodeDeliveryDetails",
           "c2jShape" : "CodeDeliveryDetailsType",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The code delivery details returned by the server in response to the request to reset a password.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param codeDeliveryDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to reset a password.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to reset a password.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to reset a password.</p>\n@return The code delivery details returned by the server in response to the request to reset a password.*/",
           "getterModel" : {
             "returnType" : "CodeDeliveryDetailsType",
             "documentation" : null
@@ -26744,7 +26983,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "CodeDeliveryDetails",
-          "setterDocumentation" : "/**\n@param codeDeliveryDetails */",
+          "setterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to reset a password.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to reset a password.*/",
           "setterModel" : {
             "variableDeclarationType" : "CodeDeliveryDetailsType",
             "variableName" : "codeDeliveryDetails",
@@ -26754,12 +26993,12 @@
             "variableSetterType" : "CodeDeliveryDetailsType"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param codeDeliveryDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to reset a password.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to reset a password.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "CodeDeliveryDetailsType",
             "variableName" : "codeDeliveryDetails",
             "variableType" : "CodeDeliveryDetailsType",
-            "documentation" : "",
+            "documentation" : "<p>The code delivery details returned by the server in response to the request to reset a password.</p>",
             "simpleType" : "CodeDeliveryDetailsType",
             "variableSetterType" : "CodeDeliveryDetailsType"
           },
@@ -27969,10 +28208,10 @@
         "c2jName" : "CodeDeliveryDetails",
         "c2jShape" : "CodeDeliveryDetailsType",
         "deprecated" : false,
-        "documentation" : "<p>The code delivery details returned by the server response to get the user attribute verification code.</p>",
+        "documentation" : "<p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The code delivery details returned by the server response to get the user attribute verification code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server response to get the user attribute verification code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The code delivery details returned by the server response to get the user attribute verification code.</p>\n@return The code delivery details returned by the server response to get the user attribute verification code.*/",
+        "fluentSetterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to get the user attribute verification code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>\n@return The code delivery details returned by the server in response to the request to get the user attribute verification code.*/",
         "getterModel" : {
           "returnType" : "CodeDeliveryDetailsType",
           "documentation" : null
@@ -27997,7 +28236,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "CodeDeliveryDetails",
-        "setterDocumentation" : "/**<p>The code delivery details returned by the server response to get the user attribute verification code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server response to get the user attribute verification code.*/",
+        "setterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to get the user attribute verification code.*/",
         "setterModel" : {
           "variableDeclarationType" : "CodeDeliveryDetailsType",
           "variableName" : "codeDeliveryDetails",
@@ -28007,12 +28246,12 @@
           "variableSetterType" : "CodeDeliveryDetailsType"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>The code delivery details returned by the server response to get the user attribute verification code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server response to get the user attribute verification code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to get the user attribute verification code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "CodeDeliveryDetailsType",
           "variableName" : "codeDeliveryDetails",
           "variableType" : "CodeDeliveryDetailsType",
-          "documentation" : "<p>The code delivery details returned by the server response to get the user attribute verification code.</p>",
+          "documentation" : "<p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>",
           "simpleType" : "CodeDeliveryDetailsType",
           "variableSetterType" : "CodeDeliveryDetailsType"
         },
@@ -28023,10 +28262,10 @@
           "c2jName" : "CodeDeliveryDetails",
           "c2jShape" : "CodeDeliveryDetailsType",
           "deprecated" : false,
-          "documentation" : "<p>The code delivery details returned by the server response to get the user attribute verification code.</p>",
+          "documentation" : "<p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The code delivery details returned by the server response to get the user attribute verification code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server response to get the user attribute verification code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The code delivery details returned by the server response to get the user attribute verification code.</p>\n@return The code delivery details returned by the server response to get the user attribute verification code.*/",
+          "fluentSetterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to get the user attribute verification code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>\n@return The code delivery details returned by the server in response to the request to get the user attribute verification code.*/",
           "getterModel" : {
             "returnType" : "CodeDeliveryDetailsType",
             "documentation" : null
@@ -28051,7 +28290,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "CodeDeliveryDetails",
-          "setterDocumentation" : "/**<p>The code delivery details returned by the server response to get the user attribute verification code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server response to get the user attribute verification code.*/",
+          "setterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to get the user attribute verification code.*/",
           "setterModel" : {
             "variableDeclarationType" : "CodeDeliveryDetailsType",
             "variableName" : "codeDeliveryDetails",
@@ -28061,12 +28300,12 @@
             "variableSetterType" : "CodeDeliveryDetailsType"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>The code delivery details returned by the server response to get the user attribute verification code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server response to get the user attribute verification code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to get the user attribute verification code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "CodeDeliveryDetailsType",
             "variableName" : "codeDeliveryDetails",
             "variableType" : "CodeDeliveryDetailsType",
-            "documentation" : "<p>The code delivery details returned by the server response to get the user attribute verification code.</p>",
+            "documentation" : "<p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>",
             "simpleType" : "CodeDeliveryDetailsType",
             "variableSetterType" : "CodeDeliveryDetailsType"
           },
@@ -30005,10 +30244,10 @@
         "c2jName" : "AuthenticationResult",
         "c2jShape" : "AuthenticationResultType",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The result returned by the server in response to the request to initiate authentication.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The result returned by the server in response to the request to initiate authentication.</p>\n@param authenticationResult The result returned by the server in response to the request to initiate authentication.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The result returned by the server in response to the request to initiate authentication.</p>\n@return The result returned by the server in response to the request to initiate authentication.*/",
         "getterModel" : {
           "returnType" : "AuthenticationResultType",
           "documentation" : null
@@ -30033,7 +30272,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "AuthenticationResult",
-        "setterDocumentation" : "/**\n@param authenticationResult */",
+        "setterDocumentation" : "/**<p>The result returned by the server in response to the request to initiate authentication.</p>\n@param authenticationResult The result returned by the server in response to the request to initiate authentication.*/",
         "setterModel" : {
           "variableDeclarationType" : "AuthenticationResultType",
           "variableName" : "authenticationResult",
@@ -30043,12 +30282,12 @@
           "variableSetterType" : "AuthenticationResultType"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The result returned by the server in response to the request to initiate authentication.</p>\n@param authenticationResult The result returned by the server in response to the request to initiate authentication.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "AuthenticationResultType",
           "variableName" : "authenticationResult",
           "variableType" : "AuthenticationResultType",
-          "documentation" : "",
+          "documentation" : "<p>The result returned by the server in response to the request to initiate authentication.</p>",
           "simpleType" : "AuthenticationResultType",
           "variableSetterType" : "AuthenticationResultType"
         },
@@ -30059,10 +30298,10 @@
           "c2jName" : "AuthenticationResult",
           "c2jShape" : "AuthenticationResultType",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The result returned by the server in response to the request to initiate authentication.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The result returned by the server in response to the request to initiate authentication.</p>\n@param authenticationResult The result returned by the server in response to the request to initiate authentication.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The result returned by the server in response to the request to initiate authentication.</p>\n@return The result returned by the server in response to the request to initiate authentication.*/",
           "getterModel" : {
             "returnType" : "AuthenticationResultType",
             "documentation" : null
@@ -30087,7 +30326,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "AuthenticationResult",
-          "setterDocumentation" : "/**\n@param authenticationResult */",
+          "setterDocumentation" : "/**<p>The result returned by the server in response to the request to initiate authentication.</p>\n@param authenticationResult The result returned by the server in response to the request to initiate authentication.*/",
           "setterModel" : {
             "variableDeclarationType" : "AuthenticationResultType",
             "variableName" : "authenticationResult",
@@ -30097,12 +30336,12 @@
             "variableSetterType" : "AuthenticationResultType"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The result returned by the server in response to the request to initiate authentication.</p>\n@param authenticationResult The result returned by the server in response to the request to initiate authentication.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "AuthenticationResultType",
             "variableName" : "authenticationResult",
             "variableType" : "AuthenticationResultType",
-            "documentation" : "",
+            "documentation" : "<p>The result returned by the server in response to the request to initiate authentication.</p>",
             "simpleType" : "AuthenticationResultType",
             "variableSetterType" : "AuthenticationResultType"
           },
@@ -37612,7 +37851,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The response from the server when the Amazon Cognito service makes the request to resend a confirmation code.</p>",
+      "documentation" : "<p>The response from the server when the Amazon Cognito Your User Pools service makes the request to resend a confirmation code.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -37624,10 +37863,10 @@
         "c2jName" : "CodeDeliveryDetails",
         "c2jShape" : "CodeDeliveryDetailsType",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param codeDeliveryDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to resend the confirmation code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>\n@return The code delivery details returned by the server in response to the request to resend the confirmation code.*/",
         "getterModel" : {
           "returnType" : "CodeDeliveryDetailsType",
           "documentation" : null
@@ -37652,7 +37891,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "CodeDeliveryDetails",
-        "setterDocumentation" : "/**\n@param codeDeliveryDetails */",
+        "setterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to resend the confirmation code.*/",
         "setterModel" : {
           "variableDeclarationType" : "CodeDeliveryDetailsType",
           "variableName" : "codeDeliveryDetails",
@@ -37662,12 +37901,12 @@
           "variableSetterType" : "CodeDeliveryDetailsType"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param codeDeliveryDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to resend the confirmation code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "CodeDeliveryDetailsType",
           "variableName" : "codeDeliveryDetails",
           "variableType" : "CodeDeliveryDetailsType",
-          "documentation" : "",
+          "documentation" : "<p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>",
           "simpleType" : "CodeDeliveryDetailsType",
           "variableSetterType" : "CodeDeliveryDetailsType"
         },
@@ -37678,10 +37917,10 @@
           "c2jName" : "CodeDeliveryDetails",
           "c2jShape" : "CodeDeliveryDetailsType",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param codeDeliveryDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to resend the confirmation code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>\n@return The code delivery details returned by the server in response to the request to resend the confirmation code.*/",
           "getterModel" : {
             "returnType" : "CodeDeliveryDetailsType",
             "documentation" : null
@@ -37706,7 +37945,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "CodeDeliveryDetails",
-          "setterDocumentation" : "/**\n@param codeDeliveryDetails */",
+          "setterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to resend the confirmation code.*/",
           "setterModel" : {
             "variableDeclarationType" : "CodeDeliveryDetailsType",
             "variableName" : "codeDeliveryDetails",
@@ -37716,12 +37955,12 @@
             "variableSetterType" : "CodeDeliveryDetailsType"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param codeDeliveryDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>\n@param codeDeliveryDetails The code delivery details returned by the server in response to the request to resend the confirmation code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "CodeDeliveryDetailsType",
             "variableName" : "codeDeliveryDetails",
             "variableType" : "CodeDeliveryDetailsType",
-            "documentation" : "",
+            "documentation" : "<p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>",
             "simpleType" : "CodeDeliveryDetailsType",
             "variableSetterType" : "CodeDeliveryDetailsType"
           },
@@ -38614,10 +38853,10 @@
         "c2jName" : "AuthenticationResult",
         "c2jShape" : "AuthenticationResultType",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The result returned by the server in response to the request to respond to the authentication challenge.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The result returned by the server in response to the request to respond to the authentication challenge.</p>\n@param authenticationResult The result returned by the server in response to the request to respond to the authentication challenge.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The result returned by the server in response to the request to respond to the authentication challenge.</p>\n@return The result returned by the server in response to the request to respond to the authentication challenge.*/",
         "getterModel" : {
           "returnType" : "AuthenticationResultType",
           "documentation" : null
@@ -38642,7 +38881,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "AuthenticationResult",
-        "setterDocumentation" : "/**\n@param authenticationResult */",
+        "setterDocumentation" : "/**<p>The result returned by the server in response to the request to respond to the authentication challenge.</p>\n@param authenticationResult The result returned by the server in response to the request to respond to the authentication challenge.*/",
         "setterModel" : {
           "variableDeclarationType" : "AuthenticationResultType",
           "variableName" : "authenticationResult",
@@ -38652,12 +38891,12 @@
           "variableSetterType" : "AuthenticationResultType"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The result returned by the server in response to the request to respond to the authentication challenge.</p>\n@param authenticationResult The result returned by the server in response to the request to respond to the authentication challenge.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "AuthenticationResultType",
           "variableName" : "authenticationResult",
           "variableType" : "AuthenticationResultType",
-          "documentation" : "",
+          "documentation" : "<p>The result returned by the server in response to the request to respond to the authentication challenge.</p>",
           "simpleType" : "AuthenticationResultType",
           "variableSetterType" : "AuthenticationResultType"
         },
@@ -38668,10 +38907,10 @@
           "c2jName" : "AuthenticationResult",
           "c2jShape" : "AuthenticationResultType",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The result returned by the server in response to the request to respond to the authentication challenge.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The result returned by the server in response to the request to respond to the authentication challenge.</p>\n@param authenticationResult The result returned by the server in response to the request to respond to the authentication challenge.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The result returned by the server in response to the request to respond to the authentication challenge.</p>\n@return The result returned by the server in response to the request to respond to the authentication challenge.*/",
           "getterModel" : {
             "returnType" : "AuthenticationResultType",
             "documentation" : null
@@ -38696,7 +38935,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "AuthenticationResult",
-          "setterDocumentation" : "/**\n@param authenticationResult */",
+          "setterDocumentation" : "/**<p>The result returned by the server in response to the request to respond to the authentication challenge.</p>\n@param authenticationResult The result returned by the server in response to the request to respond to the authentication challenge.*/",
           "setterModel" : {
             "variableDeclarationType" : "AuthenticationResultType",
             "variableName" : "authenticationResult",
@@ -38706,12 +38945,12 @@
             "variableSetterType" : "AuthenticationResultType"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param authenticationResult \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The result returned by the server in response to the request to respond to the authentication challenge.</p>\n@param authenticationResult The result returned by the server in response to the request to respond to the authentication challenge.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "AuthenticationResultType",
             "variableName" : "authenticationResult",
             "variableType" : "AuthenticationResultType",
-            "documentation" : "",
+            "documentation" : "<p>The result returned by the server in response to the request to respond to the authentication challenge.</p>",
             "simpleType" : "AuthenticationResultType",
             "variableSetterType" : "AuthenticationResultType"
           },
@@ -41161,10 +41400,10 @@
         "c2jName" : "CodeDeliveryDetails",
         "c2jShape" : "CodeDeliveryDetailsType",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The code delivery details returned by the server response to the user registration request.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param codeDeliveryDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The code delivery details returned by the server response to the user registration request.</p>\n@param codeDeliveryDetails The code delivery details returned by the server response to the user registration request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The code delivery details returned by the server response to the user registration request.</p>\n@return The code delivery details returned by the server response to the user registration request.*/",
         "getterModel" : {
           "returnType" : "CodeDeliveryDetailsType",
           "documentation" : null
@@ -41189,7 +41428,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "CodeDeliveryDetails",
-        "setterDocumentation" : "/**\n@param codeDeliveryDetails */",
+        "setterDocumentation" : "/**<p>The code delivery details returned by the server response to the user registration request.</p>\n@param codeDeliveryDetails The code delivery details returned by the server response to the user registration request.*/",
         "setterModel" : {
           "variableDeclarationType" : "CodeDeliveryDetailsType",
           "variableName" : "codeDeliveryDetails",
@@ -41199,12 +41438,12 @@
           "variableSetterType" : "CodeDeliveryDetailsType"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param codeDeliveryDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The code delivery details returned by the server response to the user registration request.</p>\n@param codeDeliveryDetails The code delivery details returned by the server response to the user registration request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "CodeDeliveryDetailsType",
           "variableName" : "codeDeliveryDetails",
           "variableType" : "CodeDeliveryDetailsType",
-          "documentation" : "",
+          "documentation" : "<p>The code delivery details returned by the server response to the user registration request.</p>",
           "simpleType" : "CodeDeliveryDetailsType",
           "variableSetterType" : "CodeDeliveryDetailsType"
         },
@@ -41215,10 +41454,10 @@
           "c2jName" : "CodeDeliveryDetails",
           "c2jShape" : "CodeDeliveryDetailsType",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The code delivery details returned by the server response to the user registration request.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param codeDeliveryDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The code delivery details returned by the server response to the user registration request.</p>\n@param codeDeliveryDetails The code delivery details returned by the server response to the user registration request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The code delivery details returned by the server response to the user registration request.</p>\n@return The code delivery details returned by the server response to the user registration request.*/",
           "getterModel" : {
             "returnType" : "CodeDeliveryDetailsType",
             "documentation" : null
@@ -41243,7 +41482,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "CodeDeliveryDetails",
-          "setterDocumentation" : "/**\n@param codeDeliveryDetails */",
+          "setterDocumentation" : "/**<p>The code delivery details returned by the server response to the user registration request.</p>\n@param codeDeliveryDetails The code delivery details returned by the server response to the user registration request.*/",
           "setterModel" : {
             "variableDeclarationType" : "CodeDeliveryDetailsType",
             "variableName" : "codeDeliveryDetails",
@@ -41253,12 +41492,12 @@
             "variableSetterType" : "CodeDeliveryDetailsType"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param codeDeliveryDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The code delivery details returned by the server response to the user registration request.</p>\n@param codeDeliveryDetails The code delivery details returned by the server response to the user registration request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "CodeDeliveryDetailsType",
             "variableName" : "codeDeliveryDetails",
             "variableType" : "CodeDeliveryDetailsType",
-            "documentation" : "",
+            "documentation" : "<p>The code delivery details returned by the server response to the user registration request.</p>",
             "simpleType" : "CodeDeliveryDetailsType",
             "variableSetterType" : "CodeDeliveryDetailsType"
           },
@@ -41564,7 +41803,7 @@
           "xmlNameSpaceUri" : null
         }
       },
-      "required" : null,
+      "required" : [ "SnsCallerArn" ],
       "shapeName" : "SmsConfigurationType",
       "unmarshaller" : {
         "flattened" : false,

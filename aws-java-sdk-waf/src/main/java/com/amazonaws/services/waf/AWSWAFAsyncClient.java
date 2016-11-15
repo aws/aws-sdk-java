@@ -17,9 +17,9 @@ import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
- * Interface for accessing WAF asynchronously. Each asynchronous method will return a Java Future object representing
- * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
- * an asynchronous operation completes.
+ * Client for accessing WAF asynchronously. Each asynchronous method will return a Java Future object representing the
+ * asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when an
+ * asynchronous operation completes.
  * <p>
  * <p>
  * This is the <i>AWS WAF API Reference</i>. This guide is for developers who need detailed information about the AWS

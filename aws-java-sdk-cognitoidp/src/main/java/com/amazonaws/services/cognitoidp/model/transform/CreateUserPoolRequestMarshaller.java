@@ -126,6 +126,19 @@ public class CreateUserPoolRequestMarshaller implements Marshaller<Request<Creat
                 AdminCreateUserConfigTypeJsonMarshaller.getInstance().marshall(createUserPoolRequest.getAdminCreateUserConfig(), jsonGenerator);
             }
 
+            java.util.List<SchemaAttributeType> schemaList = createUserPoolRequest.getSchema();
+            if (schemaList != null) {
+                jsonGenerator.writeFieldName("Schema");
+                jsonGenerator.writeStartArray();
+                for (SchemaAttributeType schemaListValue : schemaList) {
+                    if (schemaListValue != null) {
+
+                        SchemaAttributeTypeJsonMarshaller.getInstance().marshall(schemaListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();

@@ -24,18 +24,21 @@ public class GetUserAttributeVerificationCodeResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The code delivery details returned by the server response to get the user attribute verification code.
+     * The code delivery details returned by the server in response to the request to get the user attribute
+     * verification code.
      * </p>
      */
     private CodeDeliveryDetailsType codeDeliveryDetails;
 
     /**
      * <p>
-     * The code delivery details returned by the server response to get the user attribute verification code.
+     * The code delivery details returned by the server in response to the request to get the user attribute
+     * verification code.
      * </p>
      * 
      * @param codeDeliveryDetails
-     *        The code delivery details returned by the server response to get the user attribute verification code.
+     *        The code delivery details returned by the server in response to the request to get the user attribute
+     *        verification code.
      */
 
     public void setCodeDeliveryDetails(CodeDeliveryDetailsType codeDeliveryDetails) {
@@ -44,10 +47,12 @@ public class GetUserAttributeVerificationCodeResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The code delivery details returned by the server response to get the user attribute verification code.
+     * The code delivery details returned by the server in response to the request to get the user attribute
+     * verification code.
      * </p>
      * 
-     * @return The code delivery details returned by the server response to get the user attribute verification code.
+     * @return The code delivery details returned by the server in response to the request to get the user attribute
+     *         verification code.
      */
 
     public CodeDeliveryDetailsType getCodeDeliveryDetails() {
@@ -56,11 +61,13 @@ public class GetUserAttributeVerificationCodeResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The code delivery details returned by the server response to get the user attribute verification code.
+     * The code delivery details returned by the server in response to the request to get the user attribute
+     * verification code.
      * </p>
      * 
      * @param codeDeliveryDetails
-     *        The code delivery details returned by the server response to get the user attribute verification code.
+     *        The code delivery details returned by the server in response to the request to get the user attribute
+     *        verification code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

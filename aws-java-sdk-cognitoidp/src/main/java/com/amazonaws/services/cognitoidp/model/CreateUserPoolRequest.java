@@ -107,6 +107,12 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private AdminCreateUserConfigType adminCreateUserConfig;
+    /**
+     * <p>
+     * An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.
+     * </p>
+     */
+    private java.util.List<SchemaAttributeType> schema;
 
     /**
      * <p>
@@ -828,6 +834,80 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.
+     * </p>
+     * 
+     * @return An array of schema attributes for the new user pool. These attributes can be standard or custom
+     *         attributes.
+     */
+
+    public java.util.List<SchemaAttributeType> getSchema() {
+        return schema;
+    }
+
+    /**
+     * <p>
+     * An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.
+     * </p>
+     * 
+     * @param schema
+     *        An array of schema attributes for the new user pool. These attributes can be standard or custom
+     *        attributes.
+     */
+
+    public void setSchema(java.util.Collection<SchemaAttributeType> schema) {
+        if (schema == null) {
+            this.schema = null;
+            return;
+        }
+
+        this.schema = new java.util.ArrayList<SchemaAttributeType>(schema);
+    }
+
+    /**
+     * <p>
+     * An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSchema(java.util.Collection)} or {@link #withSchema(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param schema
+     *        An array of schema attributes for the new user pool. These attributes can be standard or custom
+     *        attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserPoolRequest withSchema(SchemaAttributeType... schema) {
+        if (this.schema == null) {
+            setSchema(new java.util.ArrayList<SchemaAttributeType>(schema.length));
+        }
+        for (SchemaAttributeType ele : schema) {
+            this.schema.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.
+     * </p>
+     * 
+     * @param schema
+     *        An array of schema attributes for the new user pool. These attributes can be standard or custom
+     *        attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserPoolRequest withSchema(java.util.Collection<SchemaAttributeType> schema) {
+        setSchema(schema);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -865,7 +945,9 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getSmsConfiguration() != null)
             sb.append("SmsConfiguration: " + getSmsConfiguration() + ",");
         if (getAdminCreateUserConfig() != null)
-            sb.append("AdminCreateUserConfig: " + getAdminCreateUserConfig());
+            sb.append("AdminCreateUserConfig: " + getAdminCreateUserConfig() + ",");
+        if (getSchema() != null)
+            sb.append("Schema: " + getSchema());
         sb.append("}");
         return sb.toString();
     }
@@ -936,6 +1018,10 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAdminCreateUserConfig() != null && other.getAdminCreateUserConfig().equals(this.getAdminCreateUserConfig()) == false)
             return false;
+        if (other.getSchema() == null ^ this.getSchema() == null)
+            return false;
+        if (other.getSchema() != null && other.getSchema().equals(this.getSchema()) == false)
+            return false;
         return true;
     }
 
@@ -958,6 +1044,7 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getEmailConfiguration() == null) ? 0 : getEmailConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
+        hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         return hashCode;
     }
 

@@ -40,6 +40,7 @@ import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressInputStream;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.handlers.CredentialsRequestHandler;
+import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.apache.client.impl.ApacheHttpClientFactory;
 import com.amazonaws.http.apache.client.impl.ConnectionManagerAwareHttpClient;
@@ -689,12 +690,13 @@ public class AmazonHttpClient {
         }
 
         private void runBeforeRequestHandlers() {
+            AWSCredentials credentials = getCredentialsFromContext();
+            request.addHandlerContext(HandlerContextKey.AWS_CREDENTIALS, credentials);
             // Apply any additional service specific request handlers that need to be run
             for (RequestHandler2 requestHandler2 : requestHandler2s) {
                 // If the request handler is a type of CredentialsRequestHandler, then set the credentials in the request handler.
                 if (requestHandler2 instanceof CredentialsRequestHandler) {
-                    ((CredentialsRequestHandler) requestHandler2).setCredentials(
-                            executionContext.getCredentialsProvider().getCredentials());
+                    ((CredentialsRequestHandler) requestHandler2).setCredentials(credentials);
                 }
                 requestHandler2.beforeRequest(request);
             }

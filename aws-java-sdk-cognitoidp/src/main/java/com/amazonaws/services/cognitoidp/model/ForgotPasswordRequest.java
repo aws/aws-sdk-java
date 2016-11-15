@@ -37,7 +37,7 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
     private String secretHash;
     /**
      * <p>
-     * The user name of the user for whom you want to enter a code to retrieve a forgotten password.
+     * The user name of the user for whom you want to enter a code to reset a forgotten password.
      * </p>
      */
     private String username;
@@ -130,11 +130,11 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user name of the user for whom you want to enter a code to retrieve a forgotten password.
+     * The user name of the user for whom you want to enter a code to reset a forgotten password.
      * </p>
      * 
      * @param username
-     *        The user name of the user for whom you want to enter a code to retrieve a forgotten password.
+     *        The user name of the user for whom you want to enter a code to reset a forgotten password.
      */
 
     public void setUsername(String username) {
@@ -143,10 +143,10 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user name of the user for whom you want to enter a code to retrieve a forgotten password.
+     * The user name of the user for whom you want to enter a code to reset a forgotten password.
      * </p>
      * 
-     * @return The user name of the user for whom you want to enter a code to retrieve a forgotten password.
+     * @return The user name of the user for whom you want to enter a code to reset a forgotten password.
      */
 
     public String getUsername() {
@@ -155,11 +155,11 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user name of the user for whom you want to enter a code to retrieve a forgotten password.
+     * The user name of the user for whom you want to enter a code to reset a forgotten password.
      * </p>
      * 
      * @param username
-     *        The user name of the user for whom you want to enter a code to retrieve a forgotten password.
+     *        The user name of the user for whom you want to enter a code to reset a forgotten password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,15 +16,27 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The response from the server when the Amazon Cognito service makes the request to resend a confirmation code.
+ * The response from the server when the Amazon Cognito Your User Pools service makes the request to resend a
+ * confirmation code.
  * </p>
  */
 public class ResendConfirmationCodeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The code delivery details returned by the server in response to the request to resend the confirmation code.
+     * </p>
+     */
     private CodeDeliveryDetailsType codeDeliveryDetails;
 
     /**
+     * <p>
+     * The code delivery details returned by the server in response to the request to resend the confirmation code.
+     * </p>
+     * 
      * @param codeDeliveryDetails
+     *        The code delivery details returned by the server in response to the request to resend the confirmation
+     *        code.
      */
 
     public void setCodeDeliveryDetails(CodeDeliveryDetailsType codeDeliveryDetails) {
@@ -32,7 +44,12 @@ public class ResendConfirmationCodeResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The code delivery details returned by the server in response to the request to resend the confirmation code.
+     * </p>
+     * 
+     * @return The code delivery details returned by the server in response to the request to resend the confirmation
+     *         code.
      */
 
     public CodeDeliveryDetailsType getCodeDeliveryDetails() {
@@ -40,7 +57,13 @@ public class ResendConfirmationCodeResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The code delivery details returned by the server in response to the request to resend the confirmation code.
+     * </p>
+     * 
      * @param codeDeliveryDetails
+     *        The code delivery details returned by the server in response to the request to resend the confirmation
+     *        code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
