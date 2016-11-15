@@ -84,6 +84,12 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         InputStream content = response.getContent();
         if (content == null) {
             content = new ByteArrayInputStream("<eof/>".getBytes(StringUtils.UTF8));
+        } else {
+            // Creating the event reader seems to try to read some bytes from the passed input
+            // stream by the looks of it, in order to determine the encoding
+            // A read on the http input stream causes network access and suddenly all threads are
+            // blocked on that first synchronized block.
+            content = new ByteArrayInputStream(com.amazonaws.util.IOUtils.toByteArray(content));
         }
 
         XMLEventReader eventReader;
