@@ -19,6 +19,10 @@ import com.amazonaws.services.iot.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.iot.AbstractAWSIotAsync} instead.
+ * </p>
+ * <p>
  * <fullname>AWS IoT</fullname>
  * <p>
  * AWS IoT provides secure, bi-directional communication between Internet-connected things (such as sensors, actuators,

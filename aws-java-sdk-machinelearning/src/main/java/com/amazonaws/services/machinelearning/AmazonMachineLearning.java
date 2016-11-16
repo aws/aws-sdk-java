@@ -21,6 +21,10 @@ import com.amazonaws.services.machinelearning.waiters.AmazonMachineLearningWaite
 /**
  * Interface for accessing Amazon Machine Learning.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.machinelearning.AbstractAmazonMachineLearning} instead.
+ * </p>
+ * <p>
  * Definition of the public APIs exposed by Amazon Machine Learning
  */
 public interface AmazonMachineLearning {

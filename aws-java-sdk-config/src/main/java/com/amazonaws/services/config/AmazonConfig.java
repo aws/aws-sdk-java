@@ -20,6 +20,10 @@ import com.amazonaws.services.config.model.*;
 /**
  * Interface for accessing Config Service.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.config.AbstractAmazonConfig} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Config</fullname>
  * <p>
  * AWS Config provides a way to keep track of the configurations of all the AWS resources associated with your AWS

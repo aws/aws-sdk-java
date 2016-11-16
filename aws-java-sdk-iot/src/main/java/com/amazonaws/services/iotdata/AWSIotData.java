@@ -20,6 +20,10 @@ import com.amazonaws.services.iotdata.model.*;
 /**
  * Interface for accessing AWS IoT Data Plane.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.iotdata.AbstractAWSIotData} instead.
+ * </p>
+ * <p>
  * <fullname>AWS IoT</fullname>
  * <p>
  * AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors,

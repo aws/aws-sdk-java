@@ -20,6 +20,10 @@ import com.amazonaws.services.cloudsearchdomain.model.*;
 /**
  * Interface for accessing Amazon CloudSearch Domain.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cloudsearchdomain.AbstractAmazonCloudSearchDomain} instead.
+ * </p>
+ * <p>
  * <p>
  * You use the AmazonCloudSearch2013 API to upload documents to a search domain and search those documents.
  * </p>

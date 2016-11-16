@@ -21,6 +21,10 @@ import com.amazonaws.services.glacier.waiters.AmazonGlacierWaiters;
 /**
  * Interface for accessing Amazon Glacier.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.glacier.AbstractAmazonGlacier} instead.
+ * </p>
+ * <p>
  * <p>
  * Amazon Glacier is a storage solution for "cold data."
  * </p>

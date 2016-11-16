@@ -20,6 +20,10 @@ import com.amazonaws.services.sqs.model.*;
 /**
  * Interface for accessing Amazon SQS.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.sqs.AbstractAmazonSQS} instead.
+ * </p>
+ * <p>
  * <p>
  * Welcome to the <i>Amazon Simple Queue Service API Reference</i>. This section describes who should read this guide,
  * how the guide is organized, and other resources related to the Amazon Simple Queue Service (Amazon SQS).

@@ -19,6 +19,10 @@ import com.amazonaws.services.cloudsearchdomain.model.*;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cloudsearchdomain.AbstractAmazonCloudSearchDomainAsync} instead.
+ * </p>
+ * <p>
  * <p>
  * You use the AmazonCloudSearch2013 API to upload documents to a search domain and search those documents.
  * </p>

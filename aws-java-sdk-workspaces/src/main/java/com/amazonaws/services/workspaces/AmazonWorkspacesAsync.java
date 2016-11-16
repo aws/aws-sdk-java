@@ -19,6 +19,10 @@ import com.amazonaws.services.workspaces.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.workspaces.AbstractAmazonWorkspacesAsync} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon WorkSpaces Service</fullname>
  * <p>
  * This reference provides detailed information about the Amazon WorkSpaces operations.

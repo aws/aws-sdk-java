@@ -20,6 +20,10 @@ import com.amazonaws.services.importexport.model.*;
 /**
  * Interface for accessing AWS Import/Export.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.importexport.AbstractAmazonImportExport} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Import/Export Service</fullname> AWS Import/Export accelerates transferring large amounts of data
  * between the AWS cloud and portable storage devices that you mail to us. AWS Import/Export transfers data directly
  * onto and off of your storage devices using Amazon's high-speed internal network and bypassing the Internet. For large

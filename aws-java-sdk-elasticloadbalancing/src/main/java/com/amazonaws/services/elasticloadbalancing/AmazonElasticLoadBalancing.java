@@ -21,6 +21,10 @@ import com.amazonaws.services.elasticloadbalancing.waiters.AmazonElasticLoadBala
 /**
  * Interface for accessing Elastic Load Balancing.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.elasticloadbalancing.AbstractAmazonElasticLoadBalancing} instead.
+ * </p>
+ * <p>
  * <fullname>Elastic Load Balancing</fullname>
  * <p>
  * A load balancer distributes incoming traffic across your EC2 instances. This enables you to increase the availability

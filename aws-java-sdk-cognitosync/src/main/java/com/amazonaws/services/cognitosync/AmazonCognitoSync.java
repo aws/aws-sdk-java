@@ -20,6 +20,10 @@ import com.amazonaws.services.cognitosync.model.*;
 /**
  * Interface for accessing Amazon Cognito Sync.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cognitosync.AbstractAmazonCognitoSync} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Cognito Sync</fullname>
  * <p>
  * Amazon Cognito Sync provides an AWS service and client library that enable cross-device syncing of

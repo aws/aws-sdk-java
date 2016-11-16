@@ -19,6 +19,10 @@ import com.amazonaws.services.devicefarm.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.devicefarm.AbstractAWSDeviceFarmAsync} instead.
+ * </p>
+ * <p>
  * <p>
  * AWS Device Farm is a service that enables mobile app developers to test Android, iOS, and Fire OS apps on physical
  * phones, tablets, and other devices in the cloud.

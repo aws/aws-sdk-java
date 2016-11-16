@@ -19,6 +19,10 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.applicationautoscaling.AbstractAWSApplicationAutoScalingAsync} instead.
+ * </p>
+ * <p>
  * <p>
  * Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With
  * Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Auto

@@ -20,6 +20,10 @@ import com.amazonaws.services.marketplacecommerceanalytics.model.*;
 /**
  * Interface for accessing AWS Marketplace Commerce Analytics.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.marketplacecommerceanalytics.AbstractAWSMarketplaceCommerceAnalytics} instead.
+ * </p>
+ * <p>
  * Provides AWS Marketplace business intelligence data on-demand.
  */
 public interface AWSMarketplaceCommerceAnalytics {

@@ -74,7 +74,7 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer maxRecords;
     /**
      * <p>
-     * A boolean value which if true, the node group (shard) configuration is included in the snapshot description.
+     * A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.
      * </p>
      */
     private Boolean showNodeGroupConfig;
@@ -402,11 +402,11 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A boolean value which if true, the node group (shard) configuration is included in the snapshot description.
+     * A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.
      * </p>
      * 
      * @param showNodeGroupConfig
-     *        A boolean value which if true, the node group (shard) configuration is included in the snapshot
+     *        A Boolean value which if true, the node group (shard) configuration is included in the snapshot
      *        description.
      */
 
@@ -416,10 +416,10 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A boolean value which if true, the node group (shard) configuration is included in the snapshot description.
+     * A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.
      * </p>
      * 
-     * @return A boolean value which if true, the node group (shard) configuration is included in the snapshot
+     * @return A Boolean value which if true, the node group (shard) configuration is included in the snapshot
      *         description.
      */
 
@@ -429,11 +429,11 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A boolean value which if true, the node group (shard) configuration is included in the snapshot description.
+     * A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.
      * </p>
      * 
      * @param showNodeGroupConfig
-     *        A boolean value which if true, the node group (shard) configuration is included in the snapshot
+     *        A Boolean value which if true, the node group (shard) configuration is included in the snapshot
      *        description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -445,10 +445,10 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A boolean value which if true, the node group (shard) configuration is included in the snapshot description.
+     * A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.
      * </p>
      * 
-     * @return A boolean value which if true, the node group (shard) configuration is included in the snapshot
+     * @return A Boolean value which if true, the node group (shard) configuration is included in the snapshot
      *         description.
      */
 

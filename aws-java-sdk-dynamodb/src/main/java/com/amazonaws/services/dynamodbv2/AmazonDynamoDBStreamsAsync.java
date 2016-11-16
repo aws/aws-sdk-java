@@ -19,6 +19,10 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.dynamodbv2.AbstractAmazonDynamoDBStreamsAsync} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon DynamoDB</fullname>
  * <p>
  * Amazon DynamoDB Streams provides API actions for accessing streams and processing stream records. To learn more about

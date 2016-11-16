@@ -20,6 +20,10 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 /**
  * Interface for accessing EFS.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.elasticfilesystem.AbstractAmazonElasticFileSystem} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Elastic File System</fullname>
  * <p>
  * Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2 instances in

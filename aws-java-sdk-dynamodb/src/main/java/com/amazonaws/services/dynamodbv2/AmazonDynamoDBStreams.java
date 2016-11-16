@@ -20,6 +20,10 @@ import com.amazonaws.services.dynamodbv2.model.*;
 /**
  * Interface for accessing Amazon DynamoDB Streams.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.dynamodbv2.AbstractAmazonDynamoDBStreams} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon DynamoDB</fullname>
  * <p>
  * Amazon DynamoDB Streams provides API actions for accessing streams and processing stream records. To learn more about

@@ -21,6 +21,10 @@ import com.amazonaws.services.redshift.waiters.AmazonRedshiftWaiters;
 /**
  * Interface for accessing Amazon Redshift.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.redshift.AbstractAmazonRedshift} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Redshift</fullname>
  * <p>
  * <b>Overview</b>

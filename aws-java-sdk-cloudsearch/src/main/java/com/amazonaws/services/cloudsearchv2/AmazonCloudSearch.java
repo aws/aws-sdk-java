@@ -20,6 +20,10 @@ import com.amazonaws.services.cloudsearchv2.model.*;
 /**
  * Interface for accessing Amazon CloudSearch.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cloudsearchv2.AbstractAmazonCloudSearch} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon CloudSearch Configuration Service</fullname>
  * <p>
  * You use the Amazon CloudSearch configuration service to create, configure, and manage search domains. Configuration

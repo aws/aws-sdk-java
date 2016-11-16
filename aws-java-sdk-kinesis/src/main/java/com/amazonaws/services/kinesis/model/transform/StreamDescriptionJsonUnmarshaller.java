@@ -71,6 +71,10 @@ public class StreamDescriptionJsonUnmarshaller implements Unmarshaller<StreamDes
                     context.nextToken();
                     streamDescription.setRetentionPeriodHours(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("StreamCreationTimestamp", targetDepth)) {
+                    context.nextToken();
+                    streamDescription.setStreamCreationTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
                 if (context.testExpression("EnhancedMonitoring", targetDepth)) {
                     context.nextToken();
                     streamDescription.setEnhancedMonitoring(new ListUnmarshaller<EnhancedMetrics>(EnhancedMetricsJsonUnmarshaller.getInstance())

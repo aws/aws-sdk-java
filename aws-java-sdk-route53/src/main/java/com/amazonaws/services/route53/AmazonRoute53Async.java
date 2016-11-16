@@ -18,6 +18,10 @@ import com.amazonaws.services.route53.model.*;
  * Interface for accessing Route 53 asynchronously. Each asynchronous method will return a Java Future object
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
+ * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.route53.AbstractAmazonRoute53Async} instead.
+ * </p>
  */
 public interface AmazonRoute53Async extends AmazonRoute53 {
 

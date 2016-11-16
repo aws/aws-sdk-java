@@ -436,6 +436,35 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String snapshotWindow;
+    /**
+     * <p>
+     * The password used to access a password protected server.
+     * </p>
+     * <p>
+     * Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or "@".
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * </p>
+     */
+    private String authToken;
 
     /**
      * Default constructor for CreateCacheClusterRequest object. Callers should use the setter or fluent setter
@@ -3425,6 +3454,181 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The password used to access a password protected server.
+     * </p>
+     * <p>
+     * Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or "@".
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * </p>
+     * 
+     * @param authToken
+     *        The password used to access a password protected server.</p>
+     *        <p>
+     *        Password constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be only printable ASCII characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 16 characters and no more than 128 characters in length.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain any of the following characters: '/', '"', or "@".
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     */
+
+    public void setAuthToken(String authToken) {
+        this.authToken = authToken;
+    }
+
+    /**
+     * <p>
+     * The password used to access a password protected server.
+     * </p>
+     * <p>
+     * Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or "@".
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * </p>
+     * 
+     * @return The password used to access a password protected server.</p>
+     *         <p>
+     *         Password constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be only printable ASCII characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be at least 16 characters and no more than 128 characters in length.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot contain any of the following characters: '/', '"', or "@".
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     */
+
+    public String getAuthToken() {
+        return this.authToken;
+    }
+
+    /**
+     * <p>
+     * The password used to access a password protected server.
+     * </p>
+     * <p>
+     * Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or "@".
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * </p>
+     * 
+     * @param authToken
+     *        The password used to access a password protected server.</p>
+     *        <p>
+     *        Password constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be only printable ASCII characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 16 characters and no more than 128 characters in length.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain any of the following characters: '/', '"', or "@".
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheClusterRequest withAuthToken(String authToken) {
+        setAuthToken(authToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -3478,7 +3682,9 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         if (getSnapshotRetentionLimit() != null)
             sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
         if (getSnapshotWindow() != null)
-            sb.append("SnapshotWindow: " + getSnapshotWindow());
+            sb.append("SnapshotWindow: " + getSnapshotWindow() + ",");
+        if (getAuthToken() != null)
+            sb.append("AuthToken: " + getAuthToken());
         sb.append("}");
         return sb.toString();
     }
@@ -3581,6 +3787,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSnapshotWindow() != null && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false)
             return false;
+        if (other.getAuthToken() == null ^ this.getAuthToken() == null)
+            return false;
+        if (other.getAuthToken() != null && other.getAuthToken().equals(this.getAuthToken()) == false)
+            return false;
         return true;
     }
 
@@ -3611,6 +3821,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());
+        hashCode = prime * hashCode + ((getAuthToken() == null) ? 0 : getAuthToken().hashCode());
         return hashCode;
     }
 

@@ -19,6 +19,10 @@ import com.amazonaws.services.elasticsearch.model.*;
  * Future object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to
  * receive notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.elasticsearch.AbstractAWSElasticsearchAsync} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Elasticsearch Configuration Service</fullname>
  * <p>
  * Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.

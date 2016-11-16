@@ -19,6 +19,10 @@ import com.amazonaws.services.marketplacemetering.model.*;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.marketplacemetering.AbstractAWSMarketplaceMeteringAsync} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Marketplace Metering Service</fullname>
  * <p>
  * This reference provides descriptions of the low-level AWS Marketplace Metering Service API.

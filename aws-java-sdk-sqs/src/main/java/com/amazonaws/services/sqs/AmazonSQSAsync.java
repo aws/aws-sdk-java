@@ -19,6 +19,10 @@ import com.amazonaws.services.sqs.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.sqs.AbstractAmazonSQSAsync} instead.
+ * </p>
+ * <p>
  * <p>
  * Welcome to the <i>Amazon Simple Queue Service API Reference</i>. This section describes who should read this guide,
  * how the guide is organized, and other resources related to the Amazon Simple Queue Service (Amazon SQS).

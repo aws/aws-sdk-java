@@ -21,6 +21,10 @@ import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
 /**
  * Interface for accessing AWS OpsWorks.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.opsworks.AbstractAWSOpsWorks} instead.
+ * </p>
+ * <p>
  * <fullname>AWS OpsWorks</fullname>
  * <p>
  * Welcome to the <i>AWS OpsWorks API Reference</i>. This guide provides descriptions, syntax, and usage examples for

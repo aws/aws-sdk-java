@@ -20,6 +20,10 @@ import com.amazonaws.services.waf.model.*;
 /**
  * Interface for accessing WAF.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.waf.AbstractAWSWAF} instead.
+ * </p>
+ * <p>
  * <p>
  * This is the <i>AWS WAF API Reference</i>. This guide is for developers who need detailed information about the AWS
  * WAF API actions, data types, and errors. For detailed information about AWS WAF features and an overview of how to

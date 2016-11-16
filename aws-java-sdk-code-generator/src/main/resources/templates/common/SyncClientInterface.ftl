@@ -12,6 +12,10 @@ import ${metadata.packageName}.waiters.${metadata.syncInterface}Waiters;
 
 /**
  * Interface for accessing ${serviceAbbreviation}.
+ * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link ${metadata.packageName}.Abstract${metadata.syncInterface}} instead.
+ * </p>
 <#if metadata.documentation??>
  * <p>
  * ${metadata.documentation}

@@ -19,6 +19,10 @@ import com.amazonaws.services.cloudwatchevents.model.*;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cloudwatchevents.AbstractAmazonCloudWatchEventsAsync} instead.
+ * </p>
+ * <p>
  * <p>
  * Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change
  * state they automatically send events into an event stream. You can create rules that match selected events in the

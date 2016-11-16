@@ -18,6 +18,10 @@ import com.amazonaws.services.kinesisanalytics.model.*;
  * Interface for accessing Kinesis Analytics asynchronously. Each asynchronous method will return a Java Future object
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
+ * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.kinesisanalytics.AbstractAmazonKinesisAnalyticsAsync} instead.
+ * </p>
  */
 public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
 

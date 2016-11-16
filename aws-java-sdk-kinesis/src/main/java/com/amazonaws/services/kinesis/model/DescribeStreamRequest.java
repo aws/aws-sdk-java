@@ -30,7 +30,8 @@ public class DescribeStreamRequest extends com.amazonaws.AmazonWebServiceRequest
     private String streamName;
     /**
      * <p>
-     * The maximum number of shards to return.
+     * The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater
+     * than 100, at most 100 shards are returned.
      * </p>
      */
     private Integer limit;
@@ -83,11 +84,13 @@ public class DescribeStreamRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of shards to return.
+     * The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater
+     * than 100, at most 100 shards are returned.
      * </p>
      * 
      * @param limit
-     *        The maximum number of shards to return.
+     *        The maximum number of shards to return in a single call. The default value is 100. If you specify a value
+     *        greater than 100, at most 100 shards are returned.
      */
 
     public void setLimit(Integer limit) {
@@ -96,10 +99,12 @@ public class DescribeStreamRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of shards to return.
+     * The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater
+     * than 100, at most 100 shards are returned.
      * </p>
      * 
-     * @return The maximum number of shards to return.
+     * @return The maximum number of shards to return in a single call. The default value is 100. If you specify a value
+     *         greater than 100, at most 100 shards are returned.
      */
 
     public Integer getLimit() {
@@ -108,11 +113,13 @@ public class DescribeStreamRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of shards to return.
+     * The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater
+     * than 100, at most 100 shards are returned.
      * </p>
      * 
      * @param limit
-     *        The maximum number of shards to return.
+     *        The maximum number of shards to return in a single call. The default value is 100. If you specify a value
+     *        greater than 100, at most 100 shards are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

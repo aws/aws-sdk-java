@@ -20,6 +20,10 @@ import com.amazonaws.services.cloudtrail.model.*;
 /**
  * Interface for accessing CloudTrail.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cloudtrail.AbstractAWSCloudTrail} instead.
+ * </p>
+ * <p>
  * <fullname>AWS CloudTrail</fullname>
  * <p>
  * This is the CloudTrail API Reference. It provides descriptions of actions, data types, common parameters, and common

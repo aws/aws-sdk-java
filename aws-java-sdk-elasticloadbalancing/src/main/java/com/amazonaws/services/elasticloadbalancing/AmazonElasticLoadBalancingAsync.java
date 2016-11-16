@@ -19,6 +19,10 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.elasticloadbalancing.AbstractAmazonElasticLoadBalancingAsync} instead.
+ * </p>
+ * <p>
  * <fullname>Elastic Load Balancing</fullname>
  * <p>
  * A load balancer distributes incoming traffic across your EC2 instances. This enables you to increase the availability

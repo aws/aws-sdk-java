@@ -20,6 +20,10 @@ import com.amazonaws.services.snowball.model.*;
 /**
  * Interface for accessing Amazon Snowball.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.snowball.AbstractAmazonSnowball} instead.
+ * </p>
+ * <p>
  * <p>
  * AWS Import/Export Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large
  * amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball

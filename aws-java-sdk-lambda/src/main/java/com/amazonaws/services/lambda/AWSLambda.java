@@ -20,6 +20,10 @@ import com.amazonaws.services.lambda.model.*;
 /**
  * Interface for accessing AWS Lambda.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.lambda.AbstractAWSLambda} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Lambda</fullname>
  * <p>
  * <b>Overview</b>

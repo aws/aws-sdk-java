@@ -386,6 +386,38 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(DescribeLimitsRequest request) {
+
+        return describeLimitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(final DescribeLimitsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLimitsRequest, DescribeLimitsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLimitsResult>() {
+            @Override
+            public DescribeLimitsResult call() throws Exception {
+                DescribeLimitsResult result;
+
+                try {
+                    result = describeLimits(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(DescribeStreamRequest request) {
 
         return describeStreamAsync(request, null);
@@ -1076,6 +1108,38 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements Ama
 
         return splitShardAsync(new SplitShardRequest().withStreamName(streamName).withShardToSplit(shardToSplit).withNewStartingHashKey(newStartingHashKey),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateShardCountResult> updateShardCountAsync(UpdateShardCountRequest request) {
+
+        return updateShardCountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateShardCountResult> updateShardCountAsync(final UpdateShardCountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateShardCountRequest, UpdateShardCountResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateShardCountResult>() {
+            @Override
+            public UpdateShardCountResult call() throws Exception {
+                UpdateShardCountResult result;
+
+                try {
+                    result = updateShardCount(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     /**

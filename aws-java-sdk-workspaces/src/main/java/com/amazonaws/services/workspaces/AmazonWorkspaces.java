@@ -20,6 +20,10 @@ import com.amazonaws.services.workspaces.model.*;
 /**
  * Interface for accessing Amazon WorkSpaces.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.workspaces.AbstractAmazonWorkspaces} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon WorkSpaces Service</fullname>
  * <p>
  * This reference provides detailed information about the Amazon WorkSpaces operations.

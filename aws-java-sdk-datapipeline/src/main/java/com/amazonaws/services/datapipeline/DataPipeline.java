@@ -20,6 +20,10 @@ import com.amazonaws.services.datapipeline.model.*;
 /**
  * Interface for accessing AWS Data Pipeline.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.datapipeline.AbstractDataPipeline} instead.
+ * </p>
+ * <p>
  * <p>
  * AWS Data Pipeline configures and manages a data-driven workflow called a pipeline. AWS Data Pipeline handles the
  * details of scheduling and ensuring that data dependencies are met so that your application can focus on processing

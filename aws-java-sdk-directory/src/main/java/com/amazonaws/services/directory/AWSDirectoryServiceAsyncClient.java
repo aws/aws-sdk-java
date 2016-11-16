@@ -280,6 +280,38 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<CancelSchemaExtensionResult> cancelSchemaExtensionAsync(CancelSchemaExtensionRequest request) {
+
+        return cancelSchemaExtensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelSchemaExtensionResult> cancelSchemaExtensionAsync(final CancelSchemaExtensionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelSchemaExtensionRequest, CancelSchemaExtensionResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelSchemaExtensionResult>() {
+            @Override
+            public CancelSchemaExtensionResult call() throws Exception {
+                CancelSchemaExtensionResult result;
+
+                try {
+                    result = cancelSchemaExtension(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ConnectDirectoryResult> connectDirectoryAsync(ConnectDirectoryRequest request) {
 
         return connectDirectoryAsync(request, null);
@@ -1147,6 +1179,38 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<ListSchemaExtensionsResult> listSchemaExtensionsAsync(ListSchemaExtensionsRequest request) {
+
+        return listSchemaExtensionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSchemaExtensionsResult> listSchemaExtensionsAsync(final ListSchemaExtensionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSchemaExtensionsRequest, ListSchemaExtensionsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSchemaExtensionsResult>() {
+            @Override
+            public ListSchemaExtensionsResult call() throws Exception {
+                ListSchemaExtensionsResult result;
+
+                try {
+                    result = listSchemaExtensions(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1291,6 +1355,38 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
 
                 try {
                     result = restoreFromSnapshot(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSchemaExtensionResult> startSchemaExtensionAsync(StartSchemaExtensionRequest request) {
+
+        return startSchemaExtensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSchemaExtensionResult> startSchemaExtensionAsync(final StartSchemaExtensionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSchemaExtensionRequest, StartSchemaExtensionResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSchemaExtensionResult>() {
+            @Override
+            public StartSchemaExtensionResult call() throws Exception {
+                StartSchemaExtensionResult result;
+
+                try {
+                    result = startSchemaExtension(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

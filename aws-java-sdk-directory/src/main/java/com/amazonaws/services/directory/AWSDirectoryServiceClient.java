@@ -279,6 +279,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * this address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges
      * from your Microsoft AD on AWS to a peer VPC.
      * </p>
+     * <p>
+     * Before you call <i>AddIpRoutes</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>AddIpRoutes</i> operation, see <a
+     * href
+     * ="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+     * Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+     * </p>
      * 
      * @param addIpRoutesRequest
      * @return Result of the AddIpRoutes operation returned by the service.
@@ -331,7 +338,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Adds or overwrites one or more tags for the specified Amazon Directory Services directory. Each directory can
-     * have a maximum of 10 tags. Each tag consists of a key and optional value. Tag keys must be unique to each
+     * have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique to each
      * resource.
      * </p>
      * 
@@ -381,7 +388,63 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema extension has started
+     * replicating to all domain controllers, the task can no longer be canceled. A schema extension can be canceled
+     * during any of the following states; <code>Initializing</code>, <code>CreatingSnapshot</code>, and
+     * <code>UpdatingSchema</code>.
+     * </p>
+     * 
+     * @param cancelSchemaExtensionRequest
+     * @return Result of the CancelSchemaExtension operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CancelSchemaExtension
+     */
+    @Override
+    public CancelSchemaExtensionResult cancelSchemaExtension(CancelSchemaExtensionRequest cancelSchemaExtensionRequest) {
+        ExecutionContext executionContext = createExecutionContext(cancelSchemaExtensionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelSchemaExtensionRequest> request = null;
+        Response<CancelSchemaExtensionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelSchemaExtensionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelSchemaExtensionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelSchemaExtensionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CancelSchemaExtensionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an AD Connector to connect to an on-premises directory.
+     * </p>
+     * <p>
+     * Before you call <i>ConnectDirectory</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>ConnectDirectory</i> operation,
+     * see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
      * 
      * @param connectDirectoryRequest
@@ -603,6 +666,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * <p>
      * Creates a Simple AD directory.
      * </p>
+     * <p>
+     * Before you call <i>CreateDirectory</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>CreateDirectory</i> operation,
+     * see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+     * </p>
      * 
      * @param createDirectoryRequest
      *        Contains the inputs for the <a>CreateDirectory</a> operation.
@@ -651,6 +721,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Creates a Microsoft AD in the AWS cloud.
+     * </p>
+     * <p>
+     * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the <i>CreateMicrosoftAD</i>
+     * operation, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
      * 
      * @param createMicrosoftADRequest
@@ -876,6 +953,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Deletes an AWS Directory Service directory.
+     * </p>
+     * <p>
+     * Before you call <i>DeleteDirectory</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>DeleteDirectory</i> operation,
+     * see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
      * 
      * @param deleteDirectoryRequest
@@ -1709,6 +1793,53 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Lists all schema extensions applied to a Microsoft AD Directory.
+     * </p>
+     * 
+     * @param listSchemaExtensionsRequest
+     * @return Result of the ListSchemaExtensions operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <i>NextToken</i> value is not valid.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ListSchemaExtensions
+     */
+    @Override
+    public ListSchemaExtensionsResult listSchemaExtensions(ListSchemaExtensionsRequest listSchemaExtensionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listSchemaExtensionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSchemaExtensionsRequest> request = null;
+        Response<ListSchemaExtensionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSchemaExtensionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSchemaExtensionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSchemaExtensionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSchemaExtensionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all tags on an Amazon Directory Services directory.
      * </p>
      * 
@@ -1951,6 +2082,58 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<RestoreFromSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RestoreFromSnapshotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Applies a schema extension to a Microsoft AD directory.
+     * </p>
+     * 
+     * @param startSchemaExtensionRequest
+     * @return Result of the StartSchemaExtension operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws SnapshotLimitExceededException
+     *         The maximum number of manual snapshots for the directory has been reached. You can use the
+     *         <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a directory.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.StartSchemaExtension
+     */
+    @Override
+    public StartSchemaExtensionResult startSchemaExtension(StartSchemaExtensionRequest startSchemaExtensionRequest) {
+        ExecutionContext executionContext = createExecutionContext(startSchemaExtensionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSchemaExtensionRequest> request = null;
+        Response<StartSchemaExtensionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSchemaExtensionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSchemaExtensionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSchemaExtensionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSchemaExtensionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

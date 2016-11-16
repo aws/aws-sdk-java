@@ -20,6 +20,10 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 /**
  * Interface for accessing Amazon SSM.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.simplesystemsmanagement.AbstractAWSSimpleSystemsManagement} instead.
+ * </p>
+ * <p>
  * <p>
  * Amazon EC2 Simple Systems Manager (SSM) enables you to remotely manage the configuration of your Amazon EC2
  * instances, virtual machines (VMs), or servers in your on-premises environment or in an environment provided by other

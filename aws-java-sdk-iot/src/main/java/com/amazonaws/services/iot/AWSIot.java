@@ -20,6 +20,10 @@ import com.amazonaws.services.iot.model.*;
 /**
  * Interface for accessing AWS IoT.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.iot.AbstractAWSIot} instead.
+ * </p>
+ * <p>
  * <fullname>AWS IoT</fullname>
  * <p>
  * AWS IoT provides secure, bi-directional communication between Internet-connected things (such as sensors, actuators,

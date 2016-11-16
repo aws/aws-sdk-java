@@ -19,6 +19,10 @@ import com.amazonaws.services.route53domains.model.*;
 
 /**
  * Interface for accessing Amazon Route 53 Domains.
+ * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.route53domains.AbstractAmazonRoute53Domains} instead.
+ * </p>
  */
 public interface AmazonRoute53Domains {
 

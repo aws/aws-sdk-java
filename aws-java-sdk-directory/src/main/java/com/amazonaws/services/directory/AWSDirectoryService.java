@@ -20,6 +20,10 @@ import com.amazonaws.services.directory.model.*;
 /**
  * Interface for accessing Directory Service.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.directory.AbstractAWSDirectoryService} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Directory Service</fullname>
  * <p>
  * This is the <i>AWS Directory Service API Reference</i>. This guide provides detailed information about AWS Directory
@@ -88,6 +92,13 @@ public interface AWSDirectoryService {
      * this address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges
      * from your Microsoft AD on AWS to a peer VPC.
      * </p>
+     * <p>
+     * Before you call <i>AddIpRoutes</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>AddIpRoutes</i> operation, see <a
+     * href
+     * ="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+     * Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+     * </p>
      * 
      * @param addIpRoutesRequest
      * @return Result of the AddIpRoutes operation returned by the service.
@@ -112,7 +123,7 @@ public interface AWSDirectoryService {
     /**
      * <p>
      * Adds or overwrites one or more tags for the specified Amazon Directory Services directory. Each directory can
-     * have a maximum of 10 tags. Each tag consists of a key and optional value. Tag keys must be unique to each
+     * have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique to each
      * resource.
      * </p>
      * 
@@ -134,7 +145,34 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema extension has started
+     * replicating to all domain controllers, the task can no longer be canceled. A schema extension can be canceled
+     * during any of the following states; <code>Initializing</code>, <code>CreatingSnapshot</code>, and
+     * <code>UpdatingSchema</code>.
+     * </p>
+     * 
+     * @param cancelSchemaExtensionRequest
+     * @return Result of the CancelSchemaExtension operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CancelSchemaExtension
+     */
+    CancelSchemaExtensionResult cancelSchemaExtension(CancelSchemaExtensionRequest cancelSchemaExtensionRequest);
+
+    /**
+     * <p>
      * Creates an AD Connector to connect to an on-premises directory.
+     * </p>
+     * <p>
+     * Before you call <i>ConnectDirectory</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>ConnectDirectory</i> operation,
+     * see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
      * 
      * @param connectDirectoryRequest
@@ -243,6 +281,13 @@ public interface AWSDirectoryService {
      * <p>
      * Creates a Simple AD directory.
      * </p>
+     * <p>
+     * Before you call <i>CreateDirectory</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>CreateDirectory</i> operation,
+     * see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+     * </p>
      * 
      * @param createDirectoryRequest
      *        Contains the inputs for the <a>CreateDirectory</a> operation.
@@ -263,6 +308,13 @@ public interface AWSDirectoryService {
     /**
      * <p>
      * Creates a Microsoft AD in the AWS cloud.
+     * </p>
+     * <p>
+     * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the <i>CreateMicrosoftAD</i>
+     * operation, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
      * 
      * @param createMicrosoftADRequest
@@ -375,6 +427,13 @@ public interface AWSDirectoryService {
     /**
      * <p>
      * Deletes an AWS Directory Service directory.
+     * </p>
+     * <p>
+     * Before you call <i>DeleteDirectory</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>DeleteDirectory</i> operation,
+     * see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
      * 
      * @param deleteDirectoryRequest
@@ -764,6 +823,25 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Lists all schema extensions applied to a Microsoft AD Directory.
+     * </p>
+     * 
+     * @param listSchemaExtensionsRequest
+     * @return Result of the ListSchemaExtensions operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <i>NextToken</i> value is not valid.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ListSchemaExtensions
+     */
+    ListSchemaExtensionsResult listSchemaExtensions(ListSchemaExtensionsRequest listSchemaExtensionsRequest);
+
+    /**
+     * <p>
      * Lists all tags on an Amazon Directory Services directory.
      * </p>
      * 
@@ -874,6 +952,30 @@ public interface AWSDirectoryService {
      * @sample AWSDirectoryService.RestoreFromSnapshot
      */
     RestoreFromSnapshotResult restoreFromSnapshot(RestoreFromSnapshotRequest restoreFromSnapshotRequest);
+
+    /**
+     * <p>
+     * Applies a schema extension to a Microsoft AD directory.
+     * </p>
+     * 
+     * @param startSchemaExtensionRequest
+     * @return Result of the StartSchemaExtension operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws SnapshotLimitExceededException
+     *         The maximum number of manual snapshots for the directory has been reached. You can use the
+     *         <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a directory.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.StartSchemaExtension
+     */
+    StartSchemaExtensionResult startSchemaExtension(StartSchemaExtensionRequest startSchemaExtensionRequest);
 
     /**
      * <p>

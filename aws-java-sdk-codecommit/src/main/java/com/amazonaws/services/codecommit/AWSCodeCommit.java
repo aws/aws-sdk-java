@@ -20,6 +20,10 @@ import com.amazonaws.services.codecommit.model.*;
 /**
  * Interface for accessing CodeCommit.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.codecommit.AbstractAWSCodeCommit} instead.
+ * </p>
+ * <p>
  * <fullname>AWS CodeCommit</fullname>
  * <p>
  * This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions of the operations and data

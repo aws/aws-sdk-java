@@ -21,6 +21,10 @@ import com.amazonaws.services.elasticmapreduce.waiters.AmazonElasticMapReduceWai
 /**
  * Interface for accessing Amazon EMR.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.elasticmapreduce.AbstractAmazonElasticMapReduce} instead.
+ * </p>
+ * <p>
  * <p>
  * Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process large amounts of data
  * efficiently. Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such as web indexing,

@@ -20,6 +20,10 @@ import com.amazonaws.services.cloudhsm.model.*;
 /**
  * Interface for accessing CloudHSM.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cloudhsm.AbstractAWSCloudHSM} instead.
+ * </p>
+ * <p>
  * <fullname>AWS CloudHSM Service</fullname>
  */
 public interface AWSCloudHSM {

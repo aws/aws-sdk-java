@@ -20,6 +20,10 @@ import com.amazonaws.services.inspector.model.*;
 /**
  * Interface for accessing Amazon Inspector.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.inspector.AbstractAmazonInspector} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Inspector</fullname>
  * <p>
  * Amazon Inspector enables you to analyze the behavior of your AWS resources and to identify potential security issues.

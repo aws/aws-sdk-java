@@ -20,6 +20,10 @@ import com.amazonaws.services.securitytoken.model.*;
 /**
  * Interface for accessing AWS STS.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.securitytoken.AbstractAWSSecurityTokenService} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Security Token Service</fullname>
  * <p>
  * The AWS Security Token Service (STS) is a web service that enables you to request temporary, limited-privilege

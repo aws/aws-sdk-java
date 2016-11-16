@@ -21,6 +21,10 @@ import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
 /**
  * Interface for accessing CloudFront.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cloudfront.AbstractAmazonCloudFront} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon CloudFront</fullname>
  * <p>
  * This is the <i>Amazon CloudFront API Reference</i>. This guide is for developers who need detailed information about

@@ -20,6 +20,10 @@ import com.amazonaws.services.applicationdiscovery.model.*;
 /**
  * Interface for accessing AWS Application Discovery Service.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.applicationdiscovery.AbstractAWSApplicationDiscovery} instead.
+ * </p>
+ * <p>
  * <p>
  * The AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration
  * projects by automatically identifying applications running in on-premises data centers, their associated

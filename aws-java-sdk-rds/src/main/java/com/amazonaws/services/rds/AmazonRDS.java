@@ -21,6 +21,10 @@ import com.amazonaws.services.rds.waiters.AmazonRDSWaiters;
 /**
  * Interface for accessing Amazon RDS.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.rds.AbstractAmazonRDS} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Relational Database Service</fullname>
  * <p>
  * </p>

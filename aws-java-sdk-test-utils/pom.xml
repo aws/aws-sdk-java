@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.55-SNAPSHOT</version>
+    <version>1.11.55</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-test-utils</artifactId>
@@ -19,7 +19,7 @@
         <artifactId>aws-java-sdk-core</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
-        <version>1.11.55-SNAPSHOT</version>
+        <version>1.11.55</version>
     </dependency>
     <dependency>
         <artifactId>junit</artifactId>

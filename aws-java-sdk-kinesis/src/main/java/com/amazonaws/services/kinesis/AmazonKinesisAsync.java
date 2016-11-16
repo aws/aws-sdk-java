@@ -19,6 +19,10 @@ import com.amazonaws.services.kinesis.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.kinesis.AbstractAmazonKinesisAsync} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Kinesis Streams Service API Reference</fullname>
  * <p>
  * Amazon Kinesis Streams is a managed service that scales elastically for real time processing of streaming big data.
@@ -91,8 +95,16 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * do one of the following:
      * </p>
      * <ul>
-     * <li>Have more than five streams in the <code>CREATING</code> state at any point in time.</li>
-     * <li>Create more shards than are authorized for your account.</li>
+     * <li>
+     * <p>
+     * Have more than five streams in the <code>CREATING</code> state at any point in time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create more shards than are authorized for your account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For the default shard limit for an AWS account, see <a
@@ -143,8 +155,16 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * do one of the following:
      * </p>
      * <ul>
-     * <li>Have more than five streams in the <code>CREATING</code> state at any point in time.</li>
-     * <li>Create more shards than are authorized for your account.</li>
+     * <li>
+     * <p>
+     * Have more than five streams in the <code>CREATING</code> state at any point in time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create more shards than are authorized for your account.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For the default shard limit for an AWS account, see <a
@@ -320,33 +340,65 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
 
     /**
      * <p>
+     * Describes the shard limits and usage for the account.
+     * </p>
+     * <p>
+     * If you update your account limits, the old limits might be returned for a few minutes.
+     * </p>
+     * <p>
+     * This operation has a limit of 1 transaction per second per account.
+     * </p>
+     * 
+     * @param describeLimitsRequest
+     * @return A Java Future containing the result of the DescribeLimits operation returned by the service.
+     * @sample AmazonKinesisAsync.DescribeLimits
+     */
+    java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(DescribeLimitsRequest describeLimitsRequest);
+
+    /**
+     * <p>
+     * Describes the shard limits and usage for the account.
+     * </p>
+     * <p>
+     * If you update your account limits, the old limits might be returned for a few minutes.
+     * </p>
+     * <p>
+     * This operation has a limit of 1 transaction per second per account.
+     * </p>
+     * 
+     * @param describeLimitsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLimits operation returned by the service.
+     * @sample AmazonKinesisAsyncHandler.DescribeLimits
+     */
+    java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(DescribeLimitsRequest describeLimitsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLimitsRequest, DescribeLimitsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the specified Amazon Kinesis stream.
      * </p>
      * <p>
-     * The information about the stream includes its current status, its Amazon Resource Name (ARN), and an array of
-     * shard objects. For each shard object, there is information about the hash key and sequence number ranges that the
-     * shard spans, and the IDs of any earlier shards that played in a role in creating the shard. A sequence number is
-     * the identifier associated with every record ingested in the stream. The sequence number is assigned when a record
-     * is put into the stream.
+     * The information returned includes the stream name, Amazon Resource Name (ARN), creation time, enhanced metric
+     * configuration, and shard map. The shard map is an array of shard objects. For each shard object, there is the
+     * hash key and sequence number ranges that the shard spans, and the IDs of any earlier shards that played in a role
+     * in creating the shard. Every record ingested in the stream is identified by a sequence number, which is assigned
+     * when the record is put into the stream.
      * </p>
      * <p>
-     * You can limit the number of returned shards using the <code>Limit</code> parameter. The number of shards in a
-     * stream may be too large to return from a single call to <code>DescribeStream</code>. You can detect this by using
-     * the <code>HasMoreShards</code> flag in the returned output. <code>HasMoreShards</code> is set to
-     * <code>true</code> when there is more data available.
+     * You can limit the number of shards returned by each call. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-retrieve-shards.html">Retrieving
+     * Shards from a Stream</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * <p>
-     * <code>DescribeStream</code> is a paginated operation. If there are more shards available, you can request them
-     * using the shard ID of the last shard returned. Specify this ID in the <code>ExclusiveStartShardId</code>
-     * parameter in a subsequent request to <code>DescribeStream</code>.
+     * There are no guarantees about the chronological order shards returned. To process shards in chronological order,
+     * use the ID of the parent shard to track the lineage to the oldest shard.
      * </p>
      * <p>
-     * There are no guarantees about the chronological order shards returned in <code>DescribeStream</code> results. If
-     * you want to process shards in chronological order, use <code>ParentShardId</code> to track lineage to the oldest
-     * shard.
-     * </p>
-     * <p>
-     * <a>DescribeStream</a> has a limit of 10 transactions per second per account.
+     * This operation has a limit of 10 transactions per second per account.
      * </p>
      * 
      * @param describeStreamRequest
@@ -361,30 +413,23 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Describes the specified Amazon Kinesis stream.
      * </p>
      * <p>
-     * The information about the stream includes its current status, its Amazon Resource Name (ARN), and an array of
-     * shard objects. For each shard object, there is information about the hash key and sequence number ranges that the
-     * shard spans, and the IDs of any earlier shards that played in a role in creating the shard. A sequence number is
-     * the identifier associated with every record ingested in the stream. The sequence number is assigned when a record
-     * is put into the stream.
+     * The information returned includes the stream name, Amazon Resource Name (ARN), creation time, enhanced metric
+     * configuration, and shard map. The shard map is an array of shard objects. For each shard object, there is the
+     * hash key and sequence number ranges that the shard spans, and the IDs of any earlier shards that played in a role
+     * in creating the shard. Every record ingested in the stream is identified by a sequence number, which is assigned
+     * when the record is put into the stream.
      * </p>
      * <p>
-     * You can limit the number of returned shards using the <code>Limit</code> parameter. The number of shards in a
-     * stream may be too large to return from a single call to <code>DescribeStream</code>. You can detect this by using
-     * the <code>HasMoreShards</code> flag in the returned output. <code>HasMoreShards</code> is set to
-     * <code>true</code> when there is more data available.
+     * You can limit the number of shards returned by each call. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-retrieve-shards.html">Retrieving
+     * Shards from a Stream</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * <p>
-     * <code>DescribeStream</code> is a paginated operation. If there are more shards available, you can request them
-     * using the shard ID of the last shard returned. Specify this ID in the <code>ExclusiveStartShardId</code>
-     * parameter in a subsequent request to <code>DescribeStream</code>.
+     * There are no guarantees about the chronological order shards returned. To process shards in chronological order,
+     * use the ID of the parent shard to track the lineage to the oldest shard.
      * </p>
      * <p>
-     * There are no guarantees about the chronological order shards returned in <code>DescribeStream</code> results. If
-     * you want to process shards in chronological order, use <code>ParentShardId</code> to track lineage to the oldest
-     * shard.
-     * </p>
-     * <p>
-     * <a>DescribeStream</a> has a limit of 10 transactions per second per account.
+     * This operation has a limit of 10 transactions per second per account.
      * </p>
      * 
      * @param describeStreamRequest
@@ -1547,5 +1592,76 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      */
     java.util.concurrent.Future<SplitShardResult> splitShardAsync(String streamName, String shardToSplit, String newStartingHashKey,
             com.amazonaws.handlers.AsyncHandler<SplitShardRequest, SplitShardResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the shard count of the specified stream to the specified number of shards.
+     * </p>
+     * <p>
+     * Updating the shard count is an asynchronous operation. Upon receiving the request, Amazon Kinesis returns
+     * immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Amazon
+     * Kinesis sets the status of the stream back to <code>ACTIVE</code>. Depending on the size of the stream, the
+     * scaling action could take a few minutes to complete. You can continue to read and write data to your stream while
+     * its status is <code>UPDATING</code>.
+     * </p>
+     * <p>
+     * To update the shard count, Amazon Kinesis performs splits and merges and individual shards. This can cause
+     * short-lived shards to be created, in addition to the final shards. We recommend that you double or halve the
+     * shard count, as this results in the fewest number of splits or merges.
+     * </p>
+     * <p>
+     * This operation has a rate limit of twice per rolling 24 hour period. You cannot scale above double your current
+     * shard count, scale below half your current shard count, or exceed the shard limits for your account.
+     * </p>
+     * <p>
+     * For the default limits for an AWS account, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
+     * <i>Amazon Kinesis Streams Developer Guide</i>. If you need to increase a limit, <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact AWS Support</a>.
+     * </p>
+     * 
+     * @param updateShardCountRequest
+     * @return A Java Future containing the result of the UpdateShardCount operation returned by the service.
+     * @sample AmazonKinesisAsync.UpdateShardCount
+     */
+    java.util.concurrent.Future<UpdateShardCountResult> updateShardCountAsync(UpdateShardCountRequest updateShardCountRequest);
+
+    /**
+     * <p>
+     * Updates the shard count of the specified stream to the specified number of shards.
+     * </p>
+     * <p>
+     * Updating the shard count is an asynchronous operation. Upon receiving the request, Amazon Kinesis returns
+     * immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Amazon
+     * Kinesis sets the status of the stream back to <code>ACTIVE</code>. Depending on the size of the stream, the
+     * scaling action could take a few minutes to complete. You can continue to read and write data to your stream while
+     * its status is <code>UPDATING</code>.
+     * </p>
+     * <p>
+     * To update the shard count, Amazon Kinesis performs splits and merges and individual shards. This can cause
+     * short-lived shards to be created, in addition to the final shards. We recommend that you double or halve the
+     * shard count, as this results in the fewest number of splits or merges.
+     * </p>
+     * <p>
+     * This operation has a rate limit of twice per rolling 24 hour period. You cannot scale above double your current
+     * shard count, scale below half your current shard count, or exceed the shard limits for your account.
+     * </p>
+     * <p>
+     * For the default limits for an AWS account, see <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
+     * <i>Amazon Kinesis Streams Developer Guide</i>. If you need to increase a limit, <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact AWS Support</a>.
+     * </p>
+     * 
+     * @param updateShardCountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateShardCount operation returned by the service.
+     * @sample AmazonKinesisAsyncHandler.UpdateShardCount
+     */
+    java.util.concurrent.Future<UpdateShardCountResult> updateShardCountAsync(UpdateShardCountRequest updateShardCountRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateShardCountRequest, UpdateShardCountResult> asyncHandler);
 
 }

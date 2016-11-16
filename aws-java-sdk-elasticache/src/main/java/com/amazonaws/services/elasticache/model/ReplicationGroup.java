@@ -35,7 +35,8 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>,
+     * <code>modifying</code>, <code>deleting</code>, <code>create-failed</code>, <code>snapshotting</code>.
      * </p>
      */
     private String status;
@@ -208,11 +209,13 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>,
+     * <code>modifying</code>, <code>deleting</code>, <code>create-failed</code>, <code>snapshotting</code>.
      * </p>
      * 
      * @param status
-     *        The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     *        The current state of this replication group - <code>creating</code>, <code>available</code>,
+     *        <code>modifying</code>, <code>deleting</code>, <code>create-failed</code>, <code>snapshotting</code>.
      */
 
     public void setStatus(String status) {
@@ -221,10 +224,12 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>,
+     * <code>modifying</code>, <code>deleting</code>, <code>create-failed</code>, <code>snapshotting</code>.
      * </p>
      * 
-     * @return The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     * @return The current state of this replication group - <code>creating</code>, <code>available</code>,
+     *         <code>modifying</code>, <code>deleting</code>, <code>create-failed</code>, <code>snapshotting</code>.
      */
 
     public String getStatus() {
@@ -233,11 +238,13 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     * The current state of this replication group - <code>creating</code>, <code>available</code>,
+     * <code>modifying</code>, <code>deleting</code>, <code>create-failed</code>, <code>snapshotting</code>.
      * </p>
      * 
      * @param status
-     *        The current state of this replication group - <code>creating</code>, <code>available</code>, etc.
+     *        The current state of this replication group - <code>creating</code>, <code>available</code>,
+     *        <code>modifying</code>, <code>deleting</code>, <code>create-failed</code>, <code>snapshotting</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

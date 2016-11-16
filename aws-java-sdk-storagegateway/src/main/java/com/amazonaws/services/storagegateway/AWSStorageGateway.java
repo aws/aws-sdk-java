@@ -20,6 +20,10 @@ import com.amazonaws.services.storagegateway.model.*;
 /**
  * Interface for accessing AWS Storage Gateway.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.storagegateway.AbstractAWSStorageGateway} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Storage Gateway Service</fullname>
  * <p>
  * AWS Storage Gateway is the service that connects an on-premises software appliance with cloud-based storage to

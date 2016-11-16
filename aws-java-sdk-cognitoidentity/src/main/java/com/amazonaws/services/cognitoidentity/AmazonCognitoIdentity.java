@@ -20,6 +20,10 @@ import com.amazonaws.services.cognitoidentity.model.*;
 /**
  * Interface for accessing Amazon Cognito Identity.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cognitoidentity.AbstractAmazonCognitoIdentity} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Cognito</fullname>
  * <p>
  * Amazon Cognito is a web service that delivers scoped temporary credentials to mobile devices and other untrusted

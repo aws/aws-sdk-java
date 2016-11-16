@@ -19,6 +19,10 @@ import com.amazonaws.services.marketplacecommerceanalytics.model.*;
  * Java Future object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be
  * used to receive notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.marketplacecommerceanalytics.AbstractAWSMarketplaceCommerceAnalyticsAsync} instead.
+ * </p>
+ * <p>
  * Provides AWS Marketplace business intelligence data on-demand.
  */
 public interface AWSMarketplaceCommerceAnalyticsAsync extends AWSMarketplaceCommerceAnalytics {

@@ -19,6 +19,10 @@ import com.amazonaws.services.cognitoidp.model.*;
  * Future object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to
  * receive notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cognitoidp.AbstractAWSCognitoIdentityProviderAsync} instead.
+ * </p>
+ * <p>
  * <p>
  * Using the Amazon Cognito Your User Pools API, you can create a user pool to manage directories and users. You can
  * authenticate a user to obtain tokens related to user identity and access policies.

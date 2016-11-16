@@ -20,6 +20,10 @@ import com.amazonaws.services.applicationautoscaling.model.*;
 /**
  * Interface for accessing Application Auto Scaling.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.applicationautoscaling.AbstractAWSApplicationAutoScaling} instead.
+ * </p>
+ * <p>
  * <p>
  * Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With
  * Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Auto

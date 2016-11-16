@@ -45,6 +45,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public CancelSchemaExtensionResult cancelSchemaExtension(CancelSchemaExtensionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ConnectDirectoryResult connectDirectory(ConnectDirectoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -185,6 +190,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public ListSchemaExtensionsResult listSchemaExtensions(ListSchemaExtensionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -206,6 +216,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public RestoreFromSnapshotResult restoreFromSnapshot(RestoreFromSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartSchemaExtensionResult startSchemaExtension(StartSchemaExtensionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

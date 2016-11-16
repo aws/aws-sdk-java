@@ -19,6 +19,10 @@ import com.amazonaws.services.identitymanagement.model.*;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.identitymanagement.AbstractAmazonIdentityManagementAsync} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Identity and Access Management</fullname>
  * <p>
  * AWS Identity and Access Management (IAM) is a web service that you can use to manage users and user permissions under

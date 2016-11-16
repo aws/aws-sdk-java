@@ -20,6 +20,10 @@ import com.amazonaws.services.simpledb.model.*;
 /**
  * Interface for accessing Amazon SimpleDB.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.simpledb.AbstractAmazonSimpleDB} instead.
+ * </p>
+ * <p>
  * Amazon SimpleDB is a web service providing the core database functions of data indexing and querying in the cloud. By
  * offloading the time and effort associated with building and operating a web-scale database, SimpleDB provides
  * developers the freedom to focus on application development.

@@ -19,6 +19,10 @@ import com.amazonaws.services.directory.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.directory.AbstractAWSDirectoryServiceAsync} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Directory Service</fullname>
  * <p>
  * This is the <i>AWS Directory Service API Reference</i>. This guide provides detailed information about AWS Directory
@@ -34,6 +38,13 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * this address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges
      * from your Microsoft AD on AWS to a peer VPC.
      * </p>
+     * <p>
+     * Before you call <i>AddIpRoutes</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>AddIpRoutes</i> operation, see <a
+     * href
+     * ="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+     * Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+     * </p>
      * 
      * @param addIpRoutesRequest
      * @return A Java Future containing the result of the AddIpRoutes operation returned by the service.
@@ -47,6 +58,13 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * block to correctly route traffic to and from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i> adds
      * this address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges
      * from your Microsoft AD on AWS to a peer VPC.
+     * </p>
+     * <p>
+     * Before you call <i>AddIpRoutes</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>AddIpRoutes</i> operation, see <a
+     * href
+     * ="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+     * Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
      * 
      * @param addIpRoutesRequest
@@ -63,7 +81,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     /**
      * <p>
      * Adds or overwrites one or more tags for the specified Amazon Directory Services directory. Each directory can
-     * have a maximum of 10 tags. Each tag consists of a key and optional value. Tag keys must be unique to each
+     * have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique to each
      * resource.
      * </p>
      * 
@@ -76,7 +94,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     /**
      * <p>
      * Adds or overwrites one or more tags for the specified Amazon Directory Services directory. Each directory can
-     * have a maximum of 10 tags. Each tag consists of a key and optional value. Tag keys must be unique to each
+     * have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique to each
      * resource.
      * </p>
      * 
@@ -93,7 +111,47 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema extension has started
+     * replicating to all domain controllers, the task can no longer be canceled. A schema extension can be canceled
+     * during any of the following states; <code>Initializing</code>, <code>CreatingSnapshot</code>, and
+     * <code>UpdatingSchema</code>.
+     * </p>
+     * 
+     * @param cancelSchemaExtensionRequest
+     * @return A Java Future containing the result of the CancelSchemaExtension operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.CancelSchemaExtension
+     */
+    java.util.concurrent.Future<CancelSchemaExtensionResult> cancelSchemaExtensionAsync(CancelSchemaExtensionRequest cancelSchemaExtensionRequest);
+
+    /**
+     * <p>
+     * Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema extension has started
+     * replicating to all domain controllers, the task can no longer be canceled. A schema extension can be canceled
+     * during any of the following states; <code>Initializing</code>, <code>CreatingSnapshot</code>, and
+     * <code>UpdatingSchema</code>.
+     * </p>
+     * 
+     * @param cancelSchemaExtensionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelSchemaExtension operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.CancelSchemaExtension
+     */
+    java.util.concurrent.Future<CancelSchemaExtensionResult> cancelSchemaExtensionAsync(CancelSchemaExtensionRequest cancelSchemaExtensionRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelSchemaExtensionRequest, CancelSchemaExtensionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an AD Connector to connect to an on-premises directory.
+     * </p>
+     * <p>
+     * Before you call <i>ConnectDirectory</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>ConnectDirectory</i> operation,
+     * see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
      * 
      * @param connectDirectoryRequest
@@ -106,6 +164,13 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     /**
      * <p>
      * Creates an AD Connector to connect to an on-premises directory.
+     * </p>
+     * <p>
+     * Before you call <i>ConnectDirectory</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>ConnectDirectory</i> operation,
+     * see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
      * 
      * @param connectDirectoryRequest
@@ -233,6 +298,13 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * <p>
      * Creates a Simple AD directory.
      * </p>
+     * <p>
+     * Before you call <i>CreateDirectory</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>CreateDirectory</i> operation,
+     * see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+     * </p>
      * 
      * @param createDirectoryRequest
      *        Contains the inputs for the <a>CreateDirectory</a> operation.
@@ -244,6 +316,13 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     /**
      * <p>
      * Creates a Simple AD directory.
+     * </p>
+     * <p>
+     * Before you call <i>CreateDirectory</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>CreateDirectory</i> operation,
+     * see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
      * 
      * @param createDirectoryRequest
@@ -262,6 +341,13 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * <p>
      * Creates a Microsoft AD in the AWS cloud.
      * </p>
+     * <p>
+     * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the <i>CreateMicrosoftAD</i>
+     * operation, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+     * </p>
      * 
      * @param createMicrosoftADRequest
      *        Creates a Microsoft AD in the AWS cloud.
@@ -273,6 +359,13 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     /**
      * <p>
      * Creates a Microsoft AD in the AWS cloud.
+     * </p>
+     * <p>
+     * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the <i>CreateMicrosoftAD</i>
+     * operation, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
      * 
      * @param createMicrosoftADRequest
@@ -416,6 +509,13 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * <p>
      * Deletes an AWS Directory Service directory.
      * </p>
+     * <p>
+     * Before you call <i>DeleteDirectory</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>DeleteDirectory</i> operation,
+     * see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+     * </p>
      * 
      * @param deleteDirectoryRequest
      *        Contains the inputs for the <a>DeleteDirectory</a> operation.
@@ -427,6 +527,13 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     /**
      * <p>
      * Deletes an AWS Directory Service directory.
+     * </p>
+     * <p>
+     * Before you call <i>DeleteDirectory</i>, ensure that all of the required permissions have been explicitly granted
+     * through a policy. For details about what permissions are required to run the <i>DeleteDirectory</i> operation,
+     * see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
+     * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
      * 
      * @param deleteDirectoryRequest
@@ -997,6 +1104,33 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Lists all schema extensions applied to a Microsoft AD Directory.
+     * </p>
+     * 
+     * @param listSchemaExtensionsRequest
+     * @return A Java Future containing the result of the ListSchemaExtensions operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.ListSchemaExtensions
+     */
+    java.util.concurrent.Future<ListSchemaExtensionsResult> listSchemaExtensionsAsync(ListSchemaExtensionsRequest listSchemaExtensionsRequest);
+
+    /**
+     * <p>
+     * Lists all schema extensions applied to a Microsoft AD Directory.
+     * </p>
+     * 
+     * @param listSchemaExtensionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSchemaExtensions operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.ListSchemaExtensions
+     */
+    java.util.concurrent.Future<ListSchemaExtensionsResult> listSchemaExtensionsAsync(ListSchemaExtensionsRequest listSchemaExtensionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSchemaExtensionsRequest, ListSchemaExtensionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all tags on an Amazon Directory Services directory.
      * </p>
      * 
@@ -1157,6 +1291,33 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      */
     java.util.concurrent.Future<RestoreFromSnapshotResult> restoreFromSnapshotAsync(RestoreFromSnapshotRequest restoreFromSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<RestoreFromSnapshotRequest, RestoreFromSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Applies a schema extension to a Microsoft AD directory.
+     * </p>
+     * 
+     * @param startSchemaExtensionRequest
+     * @return A Java Future containing the result of the StartSchemaExtension operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.StartSchemaExtension
+     */
+    java.util.concurrent.Future<StartSchemaExtensionResult> startSchemaExtensionAsync(StartSchemaExtensionRequest startSchemaExtensionRequest);
+
+    /**
+     * <p>
+     * Applies a schema extension to a Microsoft AD directory.
+     * </p>
+     * 
+     * @param startSchemaExtensionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSchemaExtension operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.StartSchemaExtension
+     */
+    java.util.concurrent.Future<StartSchemaExtensionResult> startSchemaExtensionAsync(StartSchemaExtensionRequest startSchemaExtensionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSchemaExtensionRequest, StartSchemaExtensionResult> asyncHandler);
 
     /**
      * <p>

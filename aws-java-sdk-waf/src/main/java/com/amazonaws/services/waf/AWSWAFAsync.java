@@ -19,6 +19,10 @@ import com.amazonaws.services.waf.model.*;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.waf.AbstractAWSWAFAsync} instead.
+ * </p>
+ * <p>
  * <p>
  * This is the <i>AWS WAF API Reference</i>. This guide is for developers who need detailed information about the AWS
  * WAF API actions, data types, and errors. For detailed information about AWS WAF features and an overview of how to

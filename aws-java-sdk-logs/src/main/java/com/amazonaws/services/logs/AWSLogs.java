@@ -20,6 +20,10 @@ import com.amazonaws.services.logs.model.*;
 /**
  * Interface for accessing Amazon CloudWatch Logs.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.logs.AbstractAWSLogs} instead.
+ * </p>
+ * <p>
  * <p>
  * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, Amazon
  * CloudTrail, or other sources. You can then retrieve the associated log data from CloudWatch Logs using the Amazon

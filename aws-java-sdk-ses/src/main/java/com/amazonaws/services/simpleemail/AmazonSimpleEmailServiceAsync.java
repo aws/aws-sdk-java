@@ -19,6 +19,10 @@ import com.amazonaws.services.simpleemail.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.simpleemail.AbstractAmazonSimpleEmailServiceAsync} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Simple Email Service</fullname>
  * <p>
  * This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to be used in

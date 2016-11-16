@@ -229,6 +229,10 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("SnapshotWindow", StringUtils.fromString(createReplicationGroupRequest.getSnapshotWindow()));
         }
 
+        if (createReplicationGroupRequest.getAuthToken() != null) {
+            request.addParameter("AuthToken", StringUtils.fromString(createReplicationGroupRequest.getAuthToken()));
+        }
+
         return request;
     }
 

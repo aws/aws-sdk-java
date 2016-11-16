@@ -19,6 +19,10 @@ import com.amazonaws.services.logs.model.*;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.logs.AbstractAWSLogsAsync} instead.
+ * </p>
+ * <p>
  * <p>
  * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, Amazon
  * CloudTrail, or other sources. You can then retrieve the associated log data from CloudWatch Logs using the Amazon

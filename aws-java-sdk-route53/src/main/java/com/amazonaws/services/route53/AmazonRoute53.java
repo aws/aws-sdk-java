@@ -20,6 +20,10 @@ import com.amazonaws.services.route53.waiters.AmazonRoute53Waiters;
 
 /**
  * Interface for accessing Route 53.
+ * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.route53.AbstractAmazonRoute53} instead.
+ * </p>
  */
 public interface AmazonRoute53 {
 

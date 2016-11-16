@@ -20,6 +20,10 @@ import com.amazonaws.services.simpleworkflow.model.*;
 /**
  * Interface for accessing Amazon SWF.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.simpleworkflow.AbstractAmazonSimpleWorkflow} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Simple Workflow Service</fullname>
  * <p>
  * The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to

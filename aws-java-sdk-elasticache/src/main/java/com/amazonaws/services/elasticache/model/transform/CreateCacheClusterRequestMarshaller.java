@@ -181,6 +181,10 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             request.addParameter("SnapshotWindow", StringUtils.fromString(createCacheClusterRequest.getSnapshotWindow()));
         }
 
+        if (createCacheClusterRequest.getAuthToken() != null) {
+            request.addParameter("AuthToken", StringUtils.fromString(createCacheClusterRequest.getAuthToken()));
+        }
+
         return request;
     }
 

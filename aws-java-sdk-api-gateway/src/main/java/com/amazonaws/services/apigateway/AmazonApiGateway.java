@@ -20,6 +20,10 @@ import com.amazonaws.services.apigateway.model.*;
 /**
  * Interface for accessing Amazon API Gateway.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.apigateway.AbstractAmazonApiGateway} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon API Gateway</fullname>
  * <p>
  * Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and web application back ends. Amazon

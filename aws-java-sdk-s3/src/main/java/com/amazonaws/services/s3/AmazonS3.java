@@ -1066,8 +1066,16 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * <p>
-     * Creates a new Amazon S3 bucket in the default
-     * region, {@link Region#US_Standard}.
+     * Creates a new Amazon S3 bucket in the region that the client was created
+     * in. If no region or AWS S3 endpoint was specified when creating the client,
+     * the bucket will be created within the default (US) region, {@link Region#US_Standard}
+     * or the region that was specified within the {@link CreateBucketRequest#region} field.
+     * </p>
+     * <p>
+     * Requests that specify a region using the {@link CreateBucketRequest#setRegion(String)}
+     * method or through either constructor that allows passing in the region will return an
+     * error if the client is not configured to use the default (US) region, {@link Region#US_Standard}
+     * or the same region that is specified in the request.
      * </p>
      * <p>
      * Every object stored in Amazon S3 is contained within a bucket. Buckets
@@ -1133,7 +1141,9 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * <p>
-     * Creates a new Amazon S3 bucket with the specified name in the default
+     * Creates a new Amazon S3 bucket with the specified name in the region
+     * that the client was created in. If no region or AWS S3 endpoint was specified
+     * when creating the client, the bucket will be created within the default
      * (US) region, {@link Region#US_Standard}.
      * </p>
      * <p>

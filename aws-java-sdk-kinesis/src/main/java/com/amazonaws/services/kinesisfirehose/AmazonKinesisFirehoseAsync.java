@@ -19,6 +19,10 @@ import com.amazonaws.services.kinesisfirehose.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.kinesisfirehose.AbstractAmazonKinesisFirehoseAsync} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Kinesis Firehose API Reference</fullname>
  * <p>
  * Amazon Kinesis Firehose is a fully-managed service that delivers real-time streaming data to destinations such as

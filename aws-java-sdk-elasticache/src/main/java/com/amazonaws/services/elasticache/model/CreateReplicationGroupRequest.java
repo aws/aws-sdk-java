@@ -114,10 +114,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
      * </p>
      * <p>
-     * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need to
-     * exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
-     * >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
      * </p>
      */
     private Integer numCacheClusters;
@@ -481,6 +478,35 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </note>
      */
     private String snapshotWindow;
+    /**
+     * <p>
+     * The password used to access a password protected server.
+     * </p>
+     * <p>
+     * Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or "@".
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * </p>
+     */
+    private String authToken;
 
     /**
      * <p>
@@ -1056,10 +1082,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
      * </p>
      * <p>
-     * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need to
-     * exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
-     * >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
      * </p>
      * 
      * @param numCacheClusters
@@ -1072,10 +1095,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
      *        </p>
      *        <p>
-     *        The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need
-     *        to exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
-     *        href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
-     *        >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     *        The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
      */
 
     public void setNumCacheClusters(Integer numCacheClusters) {
@@ -1094,10 +1114,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
      * </p>
      * <p>
-     * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need to
-     * exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
-     * >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
      * </p>
      * 
      * @return The number of clusters this replication group initially has.</p>
@@ -1109,10 +1126,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
      *         </p>
      *         <p>
-     *         The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need
-     *         to exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
-     *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
-     *         >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     *         The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
      */
 
     public Integer getNumCacheClusters() {
@@ -1131,10 +1145,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
      * </p>
      * <p>
-     * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need to
-     * exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
-     * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
-     * >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
      * </p>
      * 
      * @param numCacheClusters
@@ -1147,10 +1158,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
      *        </p>
      *        <p>
-     *        The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas). If you need
-     *        to exceed this limit, fill out the ElastiCache Limit Increase Request form at <a
-     *        href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"
-     *        >http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+     *        The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3637,6 +3645,181 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The password used to access a password protected server.
+     * </p>
+     * <p>
+     * Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or "@".
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * </p>
+     * 
+     * @param authToken
+     *        The password used to access a password protected server.</p>
+     *        <p>
+     *        Password constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be only printable ASCII characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 16 characters and no more than 128 characters in length.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain any of the following characters: '/', '"', or "@".
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     */
+
+    public void setAuthToken(String authToken) {
+        this.authToken = authToken;
+    }
+
+    /**
+     * <p>
+     * The password used to access a password protected server.
+     * </p>
+     * <p>
+     * Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or "@".
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * </p>
+     * 
+     * @return The password used to access a password protected server.</p>
+     *         <p>
+     *         Password constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be only printable ASCII characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be at least 16 characters and no more than 128 characters in length.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot contain any of the following characters: '/', '"', or "@".
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     */
+
+    public String getAuthToken() {
+        return this.authToken;
+    }
+
+    /**
+     * <p>
+     * The password used to access a password protected server.
+     * </p>
+     * <p>
+     * Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or "@".
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * </p>
+     * 
+     * @param authToken
+     *        The password used to access a password protected server.</p>
+     *        <p>
+     *        Password constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be only printable ASCII characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 16 characters and no more than 128 characters in length.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain any of the following characters: '/', '"', or "@".
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupRequest withAuthToken(String authToken) {
+        setAuthToken(authToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -3696,7 +3879,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (getSnapshotRetentionLimit() != null)
             sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
         if (getSnapshotWindow() != null)
-            sb.append("SnapshotWindow: " + getSnapshotWindow());
+            sb.append("SnapshotWindow: " + getSnapshotWindow() + ",");
+        if (getAuthToken() != null)
+            sb.append("AuthToken: " + getAuthToken());
         sb.append("}");
         return sb.toString();
     }
@@ -3811,6 +3996,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getSnapshotWindow() != null && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false)
             return false;
+        if (other.getAuthToken() == null ^ this.getAuthToken() == null)
+            return false;
+        if (other.getAuthToken() != null && other.getAuthToken().equals(this.getAuthToken()) == false)
+            return false;
         return true;
     }
 
@@ -3844,6 +4033,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());
+        hashCode = prime * hashCode + ((getAuthToken() == null) ? 0 : getAuthToken().hashCode());
         return hashCode;
     }
 

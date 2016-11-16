@@ -20,6 +20,10 @@ import com.amazonaws.services.gamelift.model.*;
 /**
  * Interface for accessing Amazon GameLift.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.gamelift.AbstractAmazonGameLift} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon GameLift Service</fullname>
  * <p>
  * Welcome to the <i>Amazon GameLift API Reference</i>. Amazon GameLift is a managed Amazon Web Services (AWS) service

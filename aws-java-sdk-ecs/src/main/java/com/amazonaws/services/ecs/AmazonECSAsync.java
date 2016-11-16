@@ -19,6 +19,10 @@ import com.amazonaws.services.ecs.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.ecs.AbstractAmazonECSAsync} instead.
+ * </p>
+ * <p>
  * <p>
  * Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it easy
  * to run, stop, and manage Docker containers on a cluster of EC2 instances. Amazon ECS lets you launch and stop

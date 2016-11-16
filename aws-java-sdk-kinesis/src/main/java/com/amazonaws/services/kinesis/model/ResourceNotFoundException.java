@@ -14,8 +14,7 @@ package com.amazonaws.services.kinesis.model;
 
 /**
  * <p>
- * The requested resource could not be found. The stream might not be specified correctly, or it might not be in the
- * <code>ACTIVE</code> state if the operation requires it.
+ * The requested resource could not be found. The stream might not be specified correctly.
  * </p>
  */
 public class ResourceNotFoundException extends com.amazonaws.services.kinesis.model.AmazonKinesisException {

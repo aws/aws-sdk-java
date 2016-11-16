@@ -20,6 +20,10 @@ import com.amazonaws.services.sns.model.*;
 /**
  * Interface for accessing Amazon SNS.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.sns.AbstractAmazonSNS} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Simple Notification Service</fullname>
  * <p>
  * Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled

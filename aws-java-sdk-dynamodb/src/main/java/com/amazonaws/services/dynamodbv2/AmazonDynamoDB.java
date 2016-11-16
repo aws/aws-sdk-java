@@ -21,6 +21,10 @@ import com.amazonaws.services.dynamodbv2.waiters.AmazonDynamoDBWaiters;
 /**
  * Interface for accessing DynamoDB.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.dynamodbv2.AbstractAmazonDynamoDB} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon DynamoDB</fullname>
  * <p>
  * This is the Amazon DynamoDB API Reference. This guide provides descriptions of the low-level DynamoDB API.

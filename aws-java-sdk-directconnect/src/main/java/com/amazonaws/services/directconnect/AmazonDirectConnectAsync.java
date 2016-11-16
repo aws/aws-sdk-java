@@ -19,6 +19,10 @@ import com.amazonaws.services.directconnect.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.directconnect.AbstractAmazonDirectConnectAsync} instead.
+ * </p>
+ * <p>
  * <p>
  * AWS Direct Connect links your internal network to an AWS Direct Connect location over a standard 1 gigabit or 10
  * gigabit Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an AWS Direct

@@ -19,6 +19,10 @@ import com.amazonaws.services.kms.model.*;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.kms.AbstractAWSKMSAsync} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Key Management Service</fullname>
  * <p>
  * AWS Key Management Service (AWS KMS) is an encryption and key management web service. This guide describes the AWS

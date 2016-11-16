@@ -19,6 +19,10 @@ import com.amazonaws.services.kinesisanalytics.model.*;
 
 /**
  * Interface for accessing Kinesis Analytics.
+ * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.kinesisanalytics.AbstractAmazonKinesisAnalytics} instead.
+ * </p>
  */
 public interface AmazonKinesisAnalytics {
 

@@ -21,6 +21,10 @@ import com.amazonaws.services.cloudwatch.waiters.AmazonCloudWatchWaiters;
 /**
  * Interface for accessing CloudWatch.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cloudwatch.AbstractAmazonCloudWatch} instead.
+ * </p>
+ * <p>
  * <p>
  * Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real-time.
  * You can use CloudWatch to collect and track metrics, which are the variables you want to measure for your resources

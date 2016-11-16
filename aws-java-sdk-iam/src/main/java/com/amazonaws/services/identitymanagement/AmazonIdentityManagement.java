@@ -21,6 +21,10 @@ import com.amazonaws.services.identitymanagement.waiters.AmazonIdentityManagemen
 /**
  * Interface for accessing IAM.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.identitymanagement.AbstractAmazonIdentityManagement} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Identity and Access Management</fullname>
  * <p>
  * AWS Identity and Access Management (IAM) is a web service that you can use to manage users and user permissions under

@@ -69,6 +69,9 @@ public class StreamDescriptionJsonMarshaller {
             if (streamDescription.getRetentionPeriodHours() != null) {
                 jsonGenerator.writeFieldName("RetentionPeriodHours").writeValue(streamDescription.getRetentionPeriodHours());
             }
+            if (streamDescription.getStreamCreationTimestamp() != null) {
+                jsonGenerator.writeFieldName("StreamCreationTimestamp").writeValue(streamDescription.getStreamCreationTimestamp());
+            }
 
             com.amazonaws.internal.SdkInternalList<EnhancedMetrics> enhancedMonitoringList = (com.amazonaws.internal.SdkInternalList<EnhancedMetrics>) streamDescription
                     .getEnhancedMonitoring();

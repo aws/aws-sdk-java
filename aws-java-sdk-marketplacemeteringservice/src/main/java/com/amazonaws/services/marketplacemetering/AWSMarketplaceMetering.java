@@ -20,6 +20,10 @@ import com.amazonaws.services.marketplacemetering.model.*;
 /**
  * Interface for accessing AWSMarketplace Metering.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.marketplacemetering.AbstractAWSMarketplaceMetering} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Marketplace Metering Service</fullname>
  * <p>
  * This reference provides descriptions of the low-level AWS Marketplace Metering Service API.

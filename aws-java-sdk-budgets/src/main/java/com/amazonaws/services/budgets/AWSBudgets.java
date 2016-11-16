@@ -20,6 +20,10 @@ import com.amazonaws.services.budgets.model.*;
 /**
  * Interface for accessing AWSBudgets.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.budgets.AbstractAWSBudgets} instead.
+ * </p>
+ * <p>
  * All public APIs for AWS Budgets
  */
 public interface AWSBudgets {

@@ -21,6 +21,10 @@ import com.amazonaws.services.cloudformation.waiters.AmazonCloudFormationWaiters
 /**
  * Interface for accessing AWS CloudFormation.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cloudformation.AbstractAmazonCloudFormation} instead.
+ * </p>
+ * <p>
  * <fullname>AWS CloudFormation</fullname>
  * <p>
  * AWS CloudFormation allows you to create and manage AWS infrastructure deployments predictably and repeatedly. You can

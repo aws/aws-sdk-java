@@ -19,6 +19,10 @@ import com.amazonaws.services.cloudsearchv2.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.cloudsearchv2.AbstractAmazonCloudSearchAsync} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon CloudSearch Configuration Service</fullname>
  * <p>
  * You use the Amazon CloudSearch configuration service to create, configure, and manage search domains. Configuration

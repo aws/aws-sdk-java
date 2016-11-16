@@ -20,6 +20,10 @@ import com.amazonaws.services.support.model.*;
 /**
  * Interface for accessing AWS Support.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.support.AbstractAWSSupport} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Support</fullname>
  * <p>
  * The AWS Support API reference is intended for programmers who need detailed information about the AWS Support

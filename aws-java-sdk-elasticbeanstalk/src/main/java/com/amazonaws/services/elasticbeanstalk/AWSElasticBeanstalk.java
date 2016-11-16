@@ -20,6 +20,10 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
 /**
  * Interface for accessing Elastic Beanstalk.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.elasticbeanstalk.AbstractAWSElasticBeanstalk} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Elastic Beanstalk</fullname>
  * <p>
  * AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications

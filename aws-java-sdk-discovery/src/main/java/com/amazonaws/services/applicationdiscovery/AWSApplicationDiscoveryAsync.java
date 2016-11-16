@@ -19,6 +19,10 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * Future object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to
  * receive notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.applicationdiscovery.AbstractAWSApplicationDiscoveryAsync} instead.
+ * </p>
+ * <p>
  * <p>
  * The AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration
  * projects by automatically identifying applications running in on-premises data centers, their associated

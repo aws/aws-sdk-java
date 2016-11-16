@@ -66,6 +66,11 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
+    public DescribeLimitsResult describeLimits(DescribeLimitsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeStreamResult describeStream(DescribeStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -190,6 +195,11 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     @Override
     public SplitShardResult splitShard(String streamName, String shardToSplit, String newStartingHashKey) {
         return splitShard(new SplitShardRequest().withStreamName(streamName).withShardToSplit(shardToSplit).withNewStartingHashKey(newStartingHashKey));
+    }
+
+    @Override
+    public UpdateShardCountResult updateShardCount(UpdateShardCountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

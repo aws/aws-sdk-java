@@ -20,6 +20,10 @@ import com.amazonaws.services.servermigration.model.*;
 /**
  * Interface for accessing SMS.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.servermigration.AbstractAWSServerMigration} instead.
+ * </p>
+ * <p>
  * Amazon Server Migration Service automates the process of migrating servers to EC2.
  */
 public interface AWSServerMigration {

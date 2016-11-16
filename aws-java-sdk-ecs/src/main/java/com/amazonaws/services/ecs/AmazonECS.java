@@ -21,6 +21,10 @@ import com.amazonaws.services.ecs.waiters.AmazonECSWaiters;
 /**
  * Interface for accessing Amazon ECS.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.ecs.AbstractAmazonECS} instead.
+ * </p>
+ * <p>
  * <p>
  * Amazon EC2 Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it easy
  * to run, stop, and manage Docker containers on a cluster of EC2 instances. Amazon ECS lets you launch and stop

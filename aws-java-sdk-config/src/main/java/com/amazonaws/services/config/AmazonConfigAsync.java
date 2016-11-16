@@ -19,6 +19,10 @@ import com.amazonaws.services.config.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.config.AbstractAmazonConfigAsync} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Config</fullname>
  * <p>
  * AWS Config provides a way to keep track of the configurations of all the AWS resources associated with your AWS

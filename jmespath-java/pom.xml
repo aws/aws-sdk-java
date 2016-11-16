@@ -2,8 +2,13 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-pom</artifactId>
+    <version>1.11.55</version>
+  </parent>
   <groupId>com.amazonaws</groupId>
-  <version>1.0</version>
+  <version>1.11.55</version>
   <artifactId>jmespath-java</artifactId>
   <name>JMES Path Query library</name>
   <description>Implementation of the JMES Path JSON Query langauge for Java.</description>
@@ -33,7 +38,7 @@
       <dependency>
           <groupId>com.fasterxml.jackson.core</groupId>
           <artifactId>jackson-databind</artifactId>
-          <version>2.6.6</version>
+          <version>${jackson.version}</version>
       </dependency>
       <dependency>
           <groupId>junit</groupId>

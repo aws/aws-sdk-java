@@ -21,6 +21,10 @@ import com.amazonaws.services.ec2.waiters.AmazonEC2Waiters;
 /**
  * Interface for accessing Amazon EC2.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.ec2.AbstractAmazonEC2} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Elastic Compute Cloud</fullname>
  * <p>
  * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the Amazon Web Services (AWS)

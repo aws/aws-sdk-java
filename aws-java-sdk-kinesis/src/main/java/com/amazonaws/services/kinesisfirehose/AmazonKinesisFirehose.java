@@ -20,6 +20,10 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 /**
  * Interface for accessing Firehose.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.kinesisfirehose.AbstractAmazonKinesisFirehose} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon Kinesis Firehose API Reference</fullname>
  * <p>
  * Amazon Kinesis Firehose is a fully-managed service that delivers real-time streaming data to destinations such as

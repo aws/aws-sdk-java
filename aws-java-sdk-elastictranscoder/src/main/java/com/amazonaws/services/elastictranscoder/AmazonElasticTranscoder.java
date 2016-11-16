@@ -21,6 +21,10 @@ import com.amazonaws.services.elastictranscoder.waiters.AmazonElasticTranscoderW
 /**
  * Interface for accessing Amazon Elastic Transcoder.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.elastictranscoder.AbstractAmazonElasticTranscoder} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Elastic Transcoder Service</fullname>
  * <p>
  * The AWS Elastic Transcoder Service.

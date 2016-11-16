@@ -20,6 +20,10 @@ import com.amazonaws.services.codepipeline.model.*;
 /**
  * Interface for accessing CodePipeline.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.codepipeline.AbstractAWSCodePipeline} instead.
+ * </p>
+ * <p>
  * <fullname>AWS CodePipeline</fullname>
  * <p>
  * <b>Overview</b>

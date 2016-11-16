@@ -20,6 +20,10 @@ import com.amazonaws.services.certificatemanager.model.*;
 /**
  * Interface for accessing ACM.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.certificatemanager.AbstractAWSCertificateManager} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Certificate Manager</fullname>
  * <p>
  * Welcome to the AWS Certificate Manager (ACM) API documentation.

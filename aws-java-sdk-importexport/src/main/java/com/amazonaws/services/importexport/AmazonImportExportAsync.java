@@ -19,6 +19,10 @@ import com.amazonaws.services.importexport.model.*;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.importexport.AbstractAmazonImportExportAsync} instead.
+ * </p>
+ * <p>
  * <fullname>AWS Import/Export Service</fullname> AWS Import/Export accelerates transferring large amounts of data
  * between the AWS cloud and portable storage devices that you mail to us. AWS Import/Export transfers data directly
  * onto and off of your storage devices using Amazon's high-speed internal network and bypassing the Internet. For large

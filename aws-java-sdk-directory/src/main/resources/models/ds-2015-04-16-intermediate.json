@@ -87,7 +87,7 @@
       "asyncReturnType" : "AddIpRoutesResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>If the DNS server for your on-premises domain uses a publicly addressable IP address, you must add a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i> adds this address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges from your Microsoft AD on AWS to a peer VPC. </p>",
+      "documentation" : "<p>If the DNS server for your on-premises domain uses a publicly addressable IP address, you must add a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i> adds this address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges from your Microsoft AD on AWS to a peer VPC. </p> <p>Before you call <i>AddIpRoutes</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>AddIpRoutes</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>",
       "exceptions" : [ {
         "exceptionName" : "EntityDoesNotExistException",
         "documentation" : "<p>The specified entity could not be found.</p>"
@@ -135,7 +135,7 @@
       "asyncReturnType" : "AddTagsToResourceResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Adds or overwrites one or more tags for the specified Amazon Directory Services directory. Each directory can have a maximum of 10 tags. Each tag consists of a key and optional value. Tag keys must be unique to each resource.</p>",
+      "documentation" : "<p>Adds or overwrites one or more tags for the specified Amazon Directory Services directory. Each directory can have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique to each resource.</p>",
       "exceptions" : [ {
         "exceptionName" : "EntityDoesNotExistException",
         "documentation" : "<p>The specified entity could not be found.</p>"
@@ -170,6 +170,42 @@
       },
       "syncReturnType" : "AddTagsToResourceResult"
     },
+    "CancelSchemaExtension" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<CancelSchemaExtensionResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<CancelSchemaExtensionResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelSchemaExtensionRequest, CancelSchemaExtensionResult>",
+      "asyncReturnType" : "CancelSchemaExtensionResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema extension has started replicating to all domain controllers, the task can no longer be canceled. A schema extension can be canceled during any of the following states; <code>Initializing</code>, <code>CreatingSnapshot</code>, and <code>UpdatingSchema</code>.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "EntityDoesNotExistException",
+        "documentation" : "<p>The specified entity could not be found.</p>"
+      }, {
+        "exceptionName" : "ClientException",
+        "documentation" : "<p>A client exception has occurred.</p>"
+      }, {
+        "exceptionName" : "ServiceException",
+        "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "CancelSchemaExtensionRequest",
+        "variableName" : "cancelSchemaExtensionRequest",
+        "variableType" : "CancelSchemaExtensionRequest",
+        "documentation" : "",
+        "simpleType" : "CancelSchemaExtensionRequest",
+        "variableSetterType" : "CancelSchemaExtensionRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "cancelSchemaExtension",
+      "operationName" : "CancelSchemaExtension",
+      "returnType" : {
+        "returnType" : "CancelSchemaExtensionResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "CancelSchemaExtensionResult"
+    },
     "ConnectDirectory" : {
       "asyncCallableType" : "java.util.concurrent.Callable<ConnectDirectoryResult>",
       "asyncFutureType" : "java.util.concurrent.Future<ConnectDirectoryResult>",
@@ -177,7 +213,7 @@
       "asyncReturnType" : "ConnectDirectoryResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates an AD Connector to connect to an on-premises directory.</p>",
+      "documentation" : "<p>Creates an AD Connector to connect to an on-premises directory.</p> <p>Before you call <i>ConnectDirectory</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>ConnectDirectory</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>",
       "exceptions" : [ {
         "exceptionName" : "DirectoryLimitExceededException",
         "documentation" : "<p>The maximum number of directories in the region has been reached. You can use the <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.</p>"
@@ -357,7 +393,7 @@
       "asyncReturnType" : "CreateDirectoryResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates a Simple AD directory.</p>",
+      "documentation" : "<p>Creates a Simple AD directory.</p> <p>Before you call <i>CreateDirectory</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>CreateDirectory</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>",
       "exceptions" : [ {
         "exceptionName" : "DirectoryLimitExceededException",
         "documentation" : "<p>The maximum number of directories in the region has been reached. You can use the <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.</p>"
@@ -396,7 +432,7 @@
       "asyncReturnType" : "CreateMicrosoftADResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates a Microsoft AD in the AWS cloud.</p>",
+      "documentation" : "<p>Creates a Microsoft AD in the AWS cloud.</p> <p>Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>CreateMicrosoftAD</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>",
       "exceptions" : [ {
         "exceptionName" : "DirectoryLimitExceededException",
         "documentation" : "<p>The maximum number of directories in the region has been reached. You can use the <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.</p>"
@@ -570,7 +606,7 @@
       "asyncReturnType" : "DeleteDirectoryResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Deletes an AWS Directory Service directory.</p>",
+      "documentation" : "<p>Deletes an AWS Directory Service directory.</p> <p>Before you call <i>DeleteDirectory</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>DeleteDirectory</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>",
       "exceptions" : [ {
         "exceptionName" : "EntityDoesNotExistException",
         "documentation" : "<p>The specified entity could not be found.</p>"
@@ -1208,6 +1244,45 @@
       },
       "syncReturnType" : "ListIpRoutesResult"
     },
+    "ListSchemaExtensions" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<ListSchemaExtensionsResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ListSchemaExtensionsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListSchemaExtensionsRequest, ListSchemaExtensionsResult>",
+      "asyncReturnType" : "ListSchemaExtensionsResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Lists all schema extensions applied to a Microsoft AD Directory.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "InvalidNextTokenException",
+        "documentation" : "<p>The <i>NextToken</i> value is not valid.</p>"
+      }, {
+        "exceptionName" : "EntityDoesNotExistException",
+        "documentation" : "<p>The specified entity could not be found.</p>"
+      }, {
+        "exceptionName" : "ClientException",
+        "documentation" : "<p>A client exception has occurred.</p>"
+      }, {
+        "exceptionName" : "ServiceException",
+        "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "ListSchemaExtensionsRequest",
+        "variableName" : "listSchemaExtensionsRequest",
+        "variableType" : "ListSchemaExtensionsRequest",
+        "documentation" : "",
+        "simpleType" : "ListSchemaExtensionsRequest",
+        "variableSetterType" : "ListSchemaExtensionsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "listSchemaExtensions",
+      "operationName" : "ListSchemaExtensions",
+      "returnType" : {
+        "returnType" : "ListSchemaExtensionsResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "ListSchemaExtensionsResult"
+    },
     "ListTagsForResource" : {
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
@@ -1408,6 +1483,51 @@
         "documentation" : "<p>Contains the results of the <a>RestoreFromSnapshot</a> operation.</p>"
       },
       "syncReturnType" : "RestoreFromSnapshotResult"
+    },
+    "StartSchemaExtension" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<StartSchemaExtensionResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<StartSchemaExtensionResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartSchemaExtensionRequest, StartSchemaExtensionResult>",
+      "asyncReturnType" : "StartSchemaExtensionResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Applies a schema extension to a Microsoft AD directory.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "DirectoryUnavailableException",
+        "documentation" : "<p>The specified directory is unavailable or could not be found.</p>"
+      }, {
+        "exceptionName" : "EntityDoesNotExistException",
+        "documentation" : "<p>The specified entity could not be found.</p>"
+      }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>One or more parameters are not valid.</p>"
+      }, {
+        "exceptionName" : "SnapshotLimitExceededException",
+        "documentation" : "<p>The maximum number of manual snapshots for the directory has been reached. You can use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a directory.</p>"
+      }, {
+        "exceptionName" : "ClientException",
+        "documentation" : "<p>A client exception has occurred.</p>"
+      }, {
+        "exceptionName" : "ServiceException",
+        "documentation" : "<p>An exception has occurred in AWS Directory Service.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "StartSchemaExtensionRequest",
+        "variableName" : "startSchemaExtensionRequest",
+        "variableType" : "StartSchemaExtensionRequest",
+        "documentation" : "",
+        "simpleType" : "StartSchemaExtensionRequest",
+        "variableSetterType" : "StartSchemaExtensionRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "startSchemaExtension",
+      "operationName" : "StartSchemaExtension",
+      "returnType" : {
+        "returnType" : "StartSchemaExtensionResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "StartSchemaExtensionResult"
     },
     "UpdateConditionalForwarder" : {
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateConditionalForwarderResult>",
@@ -2861,6 +2981,291 @@
         "documentation" : null,
         "simpleType" : "AuthenticationFailedException",
         "variableSetterType" : "AuthenticationFailedException"
+      },
+      "wrapper" : false
+    },
+    "CancelSchemaExtensionRequest" : {
+      "c2jName" : "CancelSchemaExtensionRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "CancelSchemaExtension",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "DirectoryService_20150416.CancelSchemaExtension",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "DirectoryId",
+        "c2jShape" : "DirectoryId",
+        "deprecated" : false,
+        "documentation" : "<p>The identifier of the directory whose schema extension will be canceled.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The identifier of the directory whose schema extension will be canceled.</p>\n@param directoryId The identifier of the directory whose schema extension will be canceled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The identifier of the directory whose schema extension will be canceled.</p>\n@return The identifier of the directory whose schema extension will be canceled.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "DirectoryId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DirectoryId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DirectoryId",
+        "setterDocumentation" : "/**<p>The identifier of the directory whose schema extension will be canceled.</p>\n@param directoryId The identifier of the directory whose schema extension will be canceled.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The identifier of the directory whose schema extension will be canceled.</p>\n@param directoryId The identifier of the directory whose schema extension will be canceled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "documentation" : "<p>The identifier of the directory whose schema extension will be canceled.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "SchemaExtensionId",
+        "c2jShape" : "SchemaExtensionId",
+        "deprecated" : false,
+        "documentation" : "<p>The identifier of the schema extension that will be canceled.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The identifier of the schema extension that will be canceled.</p>\n@param schemaExtensionId The identifier of the schema extension that will be canceled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The identifier of the schema extension that will be canceled.</p>\n@return The identifier of the schema extension that will be canceled.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "SchemaExtensionId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SchemaExtensionId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "SchemaExtensionId",
+        "setterDocumentation" : "/**<p>The identifier of the schema extension that will be canceled.</p>\n@param schemaExtensionId The identifier of the schema extension that will be canceled.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "schemaExtensionId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The identifier of the schema extension that will be canceled.</p>\n@param schemaExtensionId The identifier of the schema extension that will be canceled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "schemaExtensionId",
+          "variableType" : "String",
+          "documentation" : "<p>The identifier of the schema extension that will be canceled.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "DirectoryId" : {
+          "c2jName" : "DirectoryId",
+          "c2jShape" : "DirectoryId",
+          "deprecated" : false,
+          "documentation" : "<p>The identifier of the directory whose schema extension will be canceled.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The identifier of the directory whose schema extension will be canceled.</p>\n@param directoryId The identifier of the directory whose schema extension will be canceled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The identifier of the directory whose schema extension will be canceled.</p>\n@return The identifier of the directory whose schema extension will be canceled.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "DirectoryId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DirectoryId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DirectoryId",
+          "setterDocumentation" : "/**<p>The identifier of the directory whose schema extension will be canceled.</p>\n@param directoryId The identifier of the directory whose schema extension will be canceled.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The identifier of the directory whose schema extension will be canceled.</p>\n@param directoryId The identifier of the directory whose schema extension will be canceled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "documentation" : "<p>The identifier of the directory whose schema extension will be canceled.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "SchemaExtensionId" : {
+          "c2jName" : "SchemaExtensionId",
+          "c2jShape" : "SchemaExtensionId",
+          "deprecated" : false,
+          "documentation" : "<p>The identifier of the schema extension that will be canceled.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The identifier of the schema extension that will be canceled.</p>\n@param schemaExtensionId The identifier of the schema extension that will be canceled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The identifier of the schema extension that will be canceled.</p>\n@return The identifier of the schema extension that will be canceled.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "SchemaExtensionId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SchemaExtensionId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "SchemaExtensionId",
+          "setterDocumentation" : "/**<p>The identifier of the schema extension that will be canceled.</p>\n@param schemaExtensionId The identifier of the schema extension that will be canceled.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "schemaExtensionId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The identifier of the schema extension that will be canceled.</p>\n@param schemaExtensionId The identifier of the schema extension that will be canceled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "schemaExtensionId",
+            "variableType" : "String",
+            "documentation" : "<p>The identifier of the schema extension that will be canceled.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "DirectoryId", "SchemaExtensionId" ],
+      "shapeName" : "CancelSchemaExtensionRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "CancelSchemaExtensionRequest",
+        "variableName" : "cancelSchemaExtensionRequest",
+        "variableType" : "CancelSchemaExtensionRequest",
+        "documentation" : null,
+        "simpleType" : "CancelSchemaExtensionRequest",
+        "variableSetterType" : "CancelSchemaExtensionRequest"
+      },
+      "wrapper" : false
+    },
+    "CancelSchemaExtensionResult" : {
+      "c2jName" : "CancelSchemaExtensionResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "CancelSchemaExtensionResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "CancelSchemaExtensionResult",
+        "variableName" : "cancelSchemaExtensionResult",
+        "variableType" : "CancelSchemaExtensionResult",
+        "documentation" : null,
+        "simpleType" : "CancelSchemaExtensionResult",
+        "variableSetterType" : "CancelSchemaExtensionResult"
       },
       "wrapper" : false
     },
@@ -26330,6 +26735,741 @@
       },
       "wrapper" : false
     },
+    "ListSchemaExtensionsRequest" : {
+      "c2jName" : "ListSchemaExtensionsRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "ListSchemaExtensions",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "DirectoryService_20150416.ListSchemaExtensions",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "DirectoryId",
+        "c2jShape" : "DirectoryId",
+        "deprecated" : false,
+        "documentation" : "<p>The identifier of the directory from which to retrieve the schema extension information.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The identifier of the directory from which to retrieve the schema extension information.</p>\n@param directoryId The identifier of the directory from which to retrieve the schema extension information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The identifier of the directory from which to retrieve the schema extension information.</p>\n@return The identifier of the directory from which to retrieve the schema extension information.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "DirectoryId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DirectoryId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DirectoryId",
+        "setterDocumentation" : "/**<p>The identifier of the directory from which to retrieve the schema extension information.</p>\n@param directoryId The identifier of the directory from which to retrieve the schema extension information.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The identifier of the directory from which to retrieve the schema extension information.</p>\n@param directoryId The identifier of the directory from which to retrieve the schema extension information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "documentation" : "<p>The identifier of the directory from which to retrieve the schema extension information.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "NextToken",
+        "c2jShape" : "NextToken",
+        "deprecated" : false,
+        "documentation" : "<p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>\n@return The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "NextToken",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "NextToken",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "NextToken",
+        "setterDocumentation" : "/**<p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "<p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Limit",
+        "c2jShape" : "Limit",
+        "deprecated" : false,
+        "documentation" : "<p>The maximum number of items to return.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The maximum number of items to return.</p>\n@param limit The maximum number of items to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The maximum number of items to return.</p>\n@return The maximum number of items to return.*/",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "Limit",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Limit",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Limit",
+        "setterDocumentation" : "/**<p>The maximum number of items to return.</p>\n@param limit The maximum number of items to return.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "limit",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The maximum number of items to return.</p>\n@param limit The maximum number of items to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "limit",
+          "variableType" : "Integer",
+          "documentation" : "<p>The maximum number of items to return.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "DirectoryId" : {
+          "c2jName" : "DirectoryId",
+          "c2jShape" : "DirectoryId",
+          "deprecated" : false,
+          "documentation" : "<p>The identifier of the directory from which to retrieve the schema extension information.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The identifier of the directory from which to retrieve the schema extension information.</p>\n@param directoryId The identifier of the directory from which to retrieve the schema extension information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The identifier of the directory from which to retrieve the schema extension information.</p>\n@return The identifier of the directory from which to retrieve the schema extension information.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "DirectoryId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DirectoryId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DirectoryId",
+          "setterDocumentation" : "/**<p>The identifier of the directory from which to retrieve the schema extension information.</p>\n@param directoryId The identifier of the directory from which to retrieve the schema extension information.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The identifier of the directory from which to retrieve the schema extension information.</p>\n@param directoryId The identifier of the directory from which to retrieve the schema extension information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "documentation" : "<p>The identifier of the directory from which to retrieve the schema extension information.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Limit" : {
+          "c2jName" : "Limit",
+          "c2jShape" : "Limit",
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of items to return.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The maximum number of items to return.</p>\n@param limit The maximum number of items to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The maximum number of items to return.</p>\n@return The maximum number of items to return.*/",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "Limit",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Limit",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Limit",
+          "setterDocumentation" : "/**<p>The maximum number of items to return.</p>\n@param limit The maximum number of items to return.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "limit",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The maximum number of items to return.</p>\n@param limit The maximum number of items to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "limit",
+            "variableType" : "Integer",
+            "documentation" : "<p>The maximum number of items to return.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "NextToken" : {
+          "c2jName" : "NextToken",
+          "c2jShape" : "NextToken",
+          "deprecated" : false,
+          "documentation" : "<p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>\n@return The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "NextToken",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "NextToken",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "NextToken",
+          "setterDocumentation" : "/**<p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "<p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "DirectoryId" ],
+      "shapeName" : "ListSchemaExtensionsRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "ListSchemaExtensionsRequest",
+        "variableName" : "listSchemaExtensionsRequest",
+        "variableType" : "ListSchemaExtensionsRequest",
+        "documentation" : null,
+        "simpleType" : "ListSchemaExtensionsRequest",
+        "variableSetterType" : "ListSchemaExtensionsRequest"
+      },
+      "wrapper" : false
+    },
+    "ListSchemaExtensionsResult" : {
+      "c2jName" : "ListSchemaExtensionsResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "SchemaExtensionsInfo",
+        "c2jShape" : "SchemaExtensionsInfo",
+        "deprecated" : false,
+        "documentation" : "<p>Information about the schema extensions applied to the directory.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Information about the schema extensions applied to the directory.</p>\n@param schemaExtensionsInfo Information about the schema extensions applied to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Information about the schema extensions applied to the directory.</p>\n@return Information about the schema extensions applied to the directory.*/",
+        "getterModel" : {
+          "returnType" : "java.util.List<SchemaExtensionInfo>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "SchemaExtensionsInfo",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SchemaExtensionsInfo",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "SchemaExtensionInfo",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "SchemaExtensionInfo",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterModel" : {
+              "variableDeclarationType" : "SchemaExtensionInfo",
+              "variableName" : "member",
+              "variableType" : "SchemaExtensionInfo",
+              "documentation" : "",
+              "simpleType" : "SchemaExtensionInfo",
+              "variableSetterType" : "SchemaExtensionInfo"
+            },
+            "simple" : false,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "SchemaExtensionInfo",
+              "variableName" : "member",
+              "variableType" : "SchemaExtensionInfo",
+              "documentation" : "",
+              "simpleType" : "SchemaExtensionInfo",
+              "variableSetterType" : "SchemaExtensionInfo"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "SchemaExtensionInfo",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "SchemaExtensionInfo",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SchemaExtensionInfo>",
+          "templateType" : "java.util.List<SchemaExtensionInfo>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "SchemaExtensionsInfo",
+        "setterDocumentation" : "/**<p>Information about the schema extensions applied to the directory.</p>\n@param schemaExtensionsInfo Information about the schema extensions applied to the directory.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<SchemaExtensionInfo>",
+          "variableName" : "schemaExtensionsInfo",
+          "variableType" : "java.util.List<SchemaExtensionInfo>",
+          "documentation" : "",
+          "simpleType" : "List<SchemaExtensionInfo>",
+          "variableSetterType" : "java.util.Collection<SchemaExtensionInfo>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>Information about the schema extensions applied to the directory.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSchemaExtensionsInfo(java.util.Collection)} or {@link #withSchemaExtensionsInfo(java.util.Collection)} if you want to override the existing values.</p>\n@param schemaExtensionsInfo Information about the schema extensions applied to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<SchemaExtensionInfo>",
+          "variableName" : "schemaExtensionsInfo",
+          "variableType" : "java.util.List<SchemaExtensionInfo>",
+          "documentation" : "<p>Information about the schema extensions applied to the directory.</p>",
+          "simpleType" : "List<SchemaExtensionInfo>",
+          "variableSetterType" : "java.util.Collection<SchemaExtensionInfo>"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "NextToken",
+        "c2jShape" : "NextToken",
+        "deprecated" : false,
+        "documentation" : "<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>\n@return If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "NextToken",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "NextToken",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "NextToken",
+        "setterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "NextToken" : {
+          "c2jName" : "NextToken",
+          "c2jShape" : "NextToken",
+          "deprecated" : false,
+          "documentation" : "<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>\n@return If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "NextToken",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "NextToken",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "NextToken",
+          "setterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "SchemaExtensionsInfo" : {
+          "c2jName" : "SchemaExtensionsInfo",
+          "c2jShape" : "SchemaExtensionsInfo",
+          "deprecated" : false,
+          "documentation" : "<p>Information about the schema extensions applied to the directory.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Information about the schema extensions applied to the directory.</p>\n@param schemaExtensionsInfo Information about the schema extensions applied to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Information about the schema extensions applied to the directory.</p>\n@return Information about the schema extensions applied to the directory.*/",
+          "getterModel" : {
+            "returnType" : "java.util.List<SchemaExtensionInfo>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "SchemaExtensionsInfo",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SchemaExtensionsInfo",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "SchemaExtensionInfo",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "SchemaExtensionInfo",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterModel" : {
+                "variableDeclarationType" : "SchemaExtensionInfo",
+                "variableName" : "member",
+                "variableType" : "SchemaExtensionInfo",
+                "documentation" : "",
+                "simpleType" : "SchemaExtensionInfo",
+                "variableSetterType" : "SchemaExtensionInfo"
+              },
+              "simple" : false,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "SchemaExtensionInfo",
+                "variableName" : "member",
+                "variableType" : "SchemaExtensionInfo",
+                "documentation" : "",
+                "simpleType" : "SchemaExtensionInfo",
+                "variableSetterType" : "SchemaExtensionInfo"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "SchemaExtensionInfo",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "SchemaExtensionInfo",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SchemaExtensionInfo>",
+            "templateType" : "java.util.List<SchemaExtensionInfo>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "SchemaExtensionsInfo",
+          "setterDocumentation" : "/**<p>Information about the schema extensions applied to the directory.</p>\n@param schemaExtensionsInfo Information about the schema extensions applied to the directory.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<SchemaExtensionInfo>",
+            "variableName" : "schemaExtensionsInfo",
+            "variableType" : "java.util.List<SchemaExtensionInfo>",
+            "documentation" : "",
+            "simpleType" : "List<SchemaExtensionInfo>",
+            "variableSetterType" : "java.util.Collection<SchemaExtensionInfo>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>Information about the schema extensions applied to the directory.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSchemaExtensionsInfo(java.util.Collection)} or {@link #withSchemaExtensionsInfo(java.util.Collection)} if you want to override the existing values.</p>\n@param schemaExtensionsInfo Information about the schema extensions applied to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<SchemaExtensionInfo>",
+            "variableName" : "schemaExtensionsInfo",
+            "variableType" : "java.util.List<SchemaExtensionInfo>",
+            "documentation" : "<p>Information about the schema extensions applied to the directory.</p>",
+            "simpleType" : "List<SchemaExtensionInfo>",
+            "variableSetterType" : "java.util.Collection<SchemaExtensionInfo>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "ListSchemaExtensionsResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "ListSchemaExtensionsResult",
+        "variableName" : "listSchemaExtensionsResult",
+        "variableType" : "ListSchemaExtensionsResult",
+        "documentation" : null,
+        "simpleType" : "ListSchemaExtensionsResult",
+        "variableSetterType" : "ListSchemaExtensionsResult"
+      },
+      "wrapper" : false
+    },
     "ListTagsForResourceRequest" : {
       "c2jName" : "ListTagsForResourceRequest",
       "customization" : {
@@ -29507,6 +30647,839 @@
       },
       "wrapper" : false
     },
+    "SchemaExtensionInfo" : {
+      "c2jName" : "SchemaExtensionInfo",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Information about a schema extension.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "DirectoryId",
+        "c2jShape" : "DirectoryId",
+        "deprecated" : false,
+        "documentation" : "<p>The identifier of the directory to which the schema extension is applied.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The identifier of the directory to which the schema extension is applied.</p>\n@param directoryId The identifier of the directory to which the schema extension is applied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The identifier of the directory to which the schema extension is applied.</p>\n@return The identifier of the directory to which the schema extension is applied.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "DirectoryId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DirectoryId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DirectoryId",
+        "setterDocumentation" : "/**<p>The identifier of the directory to which the schema extension is applied.</p>\n@param directoryId The identifier of the directory to which the schema extension is applied.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The identifier of the directory to which the schema extension is applied.</p>\n@param directoryId The identifier of the directory to which the schema extension is applied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "documentation" : "<p>The identifier of the directory to which the schema extension is applied.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "SchemaExtensionId",
+        "c2jShape" : "SchemaExtensionId",
+        "deprecated" : false,
+        "documentation" : "<p>The identifier of the schema extension.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The identifier of the schema extension.</p>\n@param schemaExtensionId The identifier of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The identifier of the schema extension.</p>\n@return The identifier of the schema extension.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "SchemaExtensionId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SchemaExtensionId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "SchemaExtensionId",
+        "setterDocumentation" : "/**<p>The identifier of the schema extension.</p>\n@param schemaExtensionId The identifier of the schema extension.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "schemaExtensionId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The identifier of the schema extension.</p>\n@param schemaExtensionId The identifier of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "schemaExtensionId",
+          "variableType" : "String",
+          "documentation" : "<p>The identifier of the schema extension.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Description",
+        "c2jShape" : "Description",
+        "deprecated" : false,
+        "documentation" : "<p>A description of the schema extension.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A description of the schema extension.</p>\n@param description A description of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>A description of the schema extension.</p>\n@return A description of the schema extension.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "Description",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Description",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Description",
+        "setterDocumentation" : "/**<p>A description of the schema extension.</p>\n@param description A description of the schema extension.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "description",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>A description of the schema extension.</p>\n@param description A description of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "description",
+          "variableType" : "String",
+          "documentation" : "<p>A description of the schema extension.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "SchemaExtensionStatus",
+        "c2jShape" : "SchemaExtensionStatus",
+        "deprecated" : false,
+        "documentation" : "<p>The current status of the schema extension.</p>",
+        "enumType" : "SchemaExtensionStatus",
+        "fluentSetterDocumentation" : "/**<p>The current status of the schema extension.</p>\n@param schemaExtensionStatus The current status of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaExtensionStatus*/",
+        "getterDocumentation" : "/**<p>The current status of the schema extension.</p>\n@return The current status of the schema extension.\n@see SchemaExtensionStatus*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "SchemaExtensionStatus",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SchemaExtensionStatus",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "SchemaExtensionStatus",
+        "setterDocumentation" : "/**<p>The current status of the schema extension.</p>\n@param schemaExtensionStatus The current status of the schema extension.\n@see SchemaExtensionStatus*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "schemaExtensionStatus",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The current status of the schema extension.</p>\n@param schemaExtensionStatus The current status of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaExtensionStatus*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "schemaExtensionStatus",
+          "variableType" : "String",
+          "documentation" : "<p>The current status of the schema extension.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "SchemaExtensionStatusReason",
+        "c2jShape" : "SchemaExtensionStatusReason",
+        "deprecated" : false,
+        "documentation" : "<p>The reason for the <code>SchemaExtensionStatus</code>.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The reason for the <code>SchemaExtensionStatus</code>.</p>\n@param schemaExtensionStatusReason The reason for the <code>SchemaExtensionStatus</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The reason for the <code>SchemaExtensionStatus</code>.</p>\n@return The reason for the <code>SchemaExtensionStatus</code>.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "SchemaExtensionStatusReason",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SchemaExtensionStatusReason",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "SchemaExtensionStatusReason",
+        "setterDocumentation" : "/**<p>The reason for the <code>SchemaExtensionStatus</code>.</p>\n@param schemaExtensionStatusReason The reason for the <code>SchemaExtensionStatus</code>.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "schemaExtensionStatusReason",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The reason for the <code>SchemaExtensionStatus</code>.</p>\n@param schemaExtensionStatusReason The reason for the <code>SchemaExtensionStatus</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "schemaExtensionStatusReason",
+          "variableType" : "String",
+          "documentation" : "<p>The reason for the <code>SchemaExtensionStatus</code>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "StartDateTime",
+        "c2jShape" : "StartDateTime",
+        "deprecated" : false,
+        "documentation" : "<p>The date and time that the schema extension started being applied to the directory.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The date and time that the schema extension started being applied to the directory.</p>\n@param startDateTime The date and time that the schema extension started being applied to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The date and time that the schema extension started being applied to the directory.</p>\n@return The date and time that the schema extension started being applied to the directory.*/",
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "StartDateTime",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "StartDateTime",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "StartDateTime",
+        "setterDocumentation" : "/**<p>The date and time that the schema extension started being applied to the directory.</p>\n@param startDateTime The date and time that the schema extension started being applied to the directory.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "startDateTime",
+          "variableType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The date and time that the schema extension started being applied to the directory.</p>\n@param startDateTime The date and time that the schema extension started being applied to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "startDateTime",
+          "variableType" : "java.util.Date",
+          "documentation" : "<p>The date and time that the schema extension started being applied to the directory.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "EndDateTime",
+        "c2jShape" : "EndDateTime",
+        "deprecated" : false,
+        "documentation" : "<p>The date and time that the schema extension was completed.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The date and time that the schema extension was completed.</p>\n@param endDateTime The date and time that the schema extension was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The date and time that the schema extension was completed.</p>\n@return The date and time that the schema extension was completed.*/",
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "EndDateTime",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "EndDateTime",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "EndDateTime",
+        "setterDocumentation" : "/**<p>The date and time that the schema extension was completed.</p>\n@param endDateTime The date and time that the schema extension was completed.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "endDateTime",
+          "variableType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The date and time that the schema extension was completed.</p>\n@param endDateTime The date and time that the schema extension was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "endDateTime",
+          "variableType" : "java.util.Date",
+          "documentation" : "<p>The date and time that the schema extension was completed.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Description" : {
+          "c2jName" : "Description",
+          "c2jShape" : "Description",
+          "deprecated" : false,
+          "documentation" : "<p>A description of the schema extension.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A description of the schema extension.</p>\n@param description A description of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>A description of the schema extension.</p>\n@return A description of the schema extension.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "Description",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Description",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Description",
+          "setterDocumentation" : "/**<p>A description of the schema extension.</p>\n@param description A description of the schema extension.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "description",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>A description of the schema extension.</p>\n@param description A description of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "description",
+            "variableType" : "String",
+            "documentation" : "<p>A description of the schema extension.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DirectoryId" : {
+          "c2jName" : "DirectoryId",
+          "c2jShape" : "DirectoryId",
+          "deprecated" : false,
+          "documentation" : "<p>The identifier of the directory to which the schema extension is applied.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The identifier of the directory to which the schema extension is applied.</p>\n@param directoryId The identifier of the directory to which the schema extension is applied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The identifier of the directory to which the schema extension is applied.</p>\n@return The identifier of the directory to which the schema extension is applied.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "DirectoryId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DirectoryId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DirectoryId",
+          "setterDocumentation" : "/**<p>The identifier of the directory to which the schema extension is applied.</p>\n@param directoryId The identifier of the directory to which the schema extension is applied.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The identifier of the directory to which the schema extension is applied.</p>\n@param directoryId The identifier of the directory to which the schema extension is applied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "documentation" : "<p>The identifier of the directory to which the schema extension is applied.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "EndDateTime" : {
+          "c2jName" : "EndDateTime",
+          "c2jShape" : "EndDateTime",
+          "deprecated" : false,
+          "documentation" : "<p>The date and time that the schema extension was completed.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The date and time that the schema extension was completed.</p>\n@param endDateTime The date and time that the schema extension was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The date and time that the schema extension was completed.</p>\n@return The date and time that the schema extension was completed.*/",
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "EndDateTime",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "EndDateTime",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "EndDateTime",
+          "setterDocumentation" : "/**<p>The date and time that the schema extension was completed.</p>\n@param endDateTime The date and time that the schema extension was completed.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "endDateTime",
+            "variableType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The date and time that the schema extension was completed.</p>\n@param endDateTime The date and time that the schema extension was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "endDateTime",
+            "variableType" : "java.util.Date",
+            "documentation" : "<p>The date and time that the schema extension was completed.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "SchemaExtensionId" : {
+          "c2jName" : "SchemaExtensionId",
+          "c2jShape" : "SchemaExtensionId",
+          "deprecated" : false,
+          "documentation" : "<p>The identifier of the schema extension.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The identifier of the schema extension.</p>\n@param schemaExtensionId The identifier of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The identifier of the schema extension.</p>\n@return The identifier of the schema extension.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "SchemaExtensionId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SchemaExtensionId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "SchemaExtensionId",
+          "setterDocumentation" : "/**<p>The identifier of the schema extension.</p>\n@param schemaExtensionId The identifier of the schema extension.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "schemaExtensionId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The identifier of the schema extension.</p>\n@param schemaExtensionId The identifier of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "schemaExtensionId",
+            "variableType" : "String",
+            "documentation" : "<p>The identifier of the schema extension.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "SchemaExtensionStatus" : {
+          "c2jName" : "SchemaExtensionStatus",
+          "c2jShape" : "SchemaExtensionStatus",
+          "deprecated" : false,
+          "documentation" : "<p>The current status of the schema extension.</p>",
+          "enumType" : "SchemaExtensionStatus",
+          "fluentSetterDocumentation" : "/**<p>The current status of the schema extension.</p>\n@param schemaExtensionStatus The current status of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaExtensionStatus*/",
+          "getterDocumentation" : "/**<p>The current status of the schema extension.</p>\n@return The current status of the schema extension.\n@see SchemaExtensionStatus*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "SchemaExtensionStatus",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SchemaExtensionStatus",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "SchemaExtensionStatus",
+          "setterDocumentation" : "/**<p>The current status of the schema extension.</p>\n@param schemaExtensionStatus The current status of the schema extension.\n@see SchemaExtensionStatus*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "schemaExtensionStatus",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The current status of the schema extension.</p>\n@param schemaExtensionStatus The current status of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaExtensionStatus*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "schemaExtensionStatus",
+            "variableType" : "String",
+            "documentation" : "<p>The current status of the schema extension.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "SchemaExtensionStatusReason" : {
+          "c2jName" : "SchemaExtensionStatusReason",
+          "c2jShape" : "SchemaExtensionStatusReason",
+          "deprecated" : false,
+          "documentation" : "<p>The reason for the <code>SchemaExtensionStatus</code>.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The reason for the <code>SchemaExtensionStatus</code>.</p>\n@param schemaExtensionStatusReason The reason for the <code>SchemaExtensionStatus</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The reason for the <code>SchemaExtensionStatus</code>.</p>\n@return The reason for the <code>SchemaExtensionStatus</code>.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "SchemaExtensionStatusReason",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SchemaExtensionStatusReason",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "SchemaExtensionStatusReason",
+          "setterDocumentation" : "/**<p>The reason for the <code>SchemaExtensionStatus</code>.</p>\n@param schemaExtensionStatusReason The reason for the <code>SchemaExtensionStatus</code>.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "schemaExtensionStatusReason",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The reason for the <code>SchemaExtensionStatus</code>.</p>\n@param schemaExtensionStatusReason The reason for the <code>SchemaExtensionStatus</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "schemaExtensionStatusReason",
+            "variableType" : "String",
+            "documentation" : "<p>The reason for the <code>SchemaExtensionStatus</code>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "StartDateTime" : {
+          "c2jName" : "StartDateTime",
+          "c2jShape" : "StartDateTime",
+          "deprecated" : false,
+          "documentation" : "<p>The date and time that the schema extension started being applied to the directory.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The date and time that the schema extension started being applied to the directory.</p>\n@param startDateTime The date and time that the schema extension started being applied to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The date and time that the schema extension started being applied to the directory.</p>\n@return The date and time that the schema extension started being applied to the directory.*/",
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "StartDateTime",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "StartDateTime",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "StartDateTime",
+          "setterDocumentation" : "/**<p>The date and time that the schema extension started being applied to the directory.</p>\n@param startDateTime The date and time that the schema extension started being applied to the directory.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "startDateTime",
+            "variableType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The date and time that the schema extension started being applied to the directory.</p>\n@param startDateTime The date and time that the schema extension started being applied to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "startDateTime",
+            "variableType" : "java.util.Date",
+            "documentation" : "<p>The date and time that the schema extension started being applied to the directory.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "SchemaExtensionInfo",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "SchemaExtensionInfo",
+        "variableName" : "schemaExtensionInfo",
+        "variableType" : "SchemaExtensionInfo",
+        "documentation" : null,
+        "simpleType" : "SchemaExtensionInfo",
+        "variableSetterType" : "SchemaExtensionInfo"
+      },
+      "wrapper" : false
+    },
+    "SchemaExtensionStatus" : {
+      "c2jName" : "SchemaExtensionStatus",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "Initializing",
+        "value" : "Initializing"
+      }, {
+        "name" : "CreatingSnapshot",
+        "value" : "CreatingSnapshot"
+      }, {
+        "name" : "UpdatingSchema",
+        "value" : "UpdatingSchema"
+      }, {
+        "name" : "Replicating",
+        "value" : "Replicating"
+      }, {
+        "name" : "CancelInProgress",
+        "value" : "CancelInProgress"
+      }, {
+        "name" : "RollbackInProgress",
+        "value" : "RollbackInProgress"
+      }, {
+        "name" : "Cancelled",
+        "value" : "Cancelled"
+      }, {
+        "name" : "Failed",
+        "value" : "Failed"
+      }, {
+        "name" : "Completed",
+        "value" : "Completed"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "SchemaExtensionStatus",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "SchemaExtensionStatus",
+        "variableName" : "schemaExtensionStatus",
+        "variableType" : "SchemaExtensionStatus",
+        "documentation" : null,
+        "simpleType" : "SchemaExtensionStatus",
+        "variableSetterType" : "SchemaExtensionStatus"
+      },
+      "wrapper" : false
+    },
     "ServiceException" : {
       "c2jName" : "ServiceException",
       "customization" : {
@@ -30882,6 +32855,607 @@
         "documentation" : null,
         "simpleType" : "SnapshotType",
         "variableSetterType" : "SnapshotType"
+      },
+      "wrapper" : false
+    },
+    "StartSchemaExtensionRequest" : {
+      "c2jName" : "StartSchemaExtensionRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "StartSchemaExtension",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "DirectoryService_20150416.StartSchemaExtension",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "DirectoryId",
+        "c2jShape" : "DirectoryId",
+        "deprecated" : false,
+        "documentation" : "<p>The identifier of the directory for which the schema extension will be applied to.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The identifier of the directory for which the schema extension will be applied to.</p>\n@param directoryId The identifier of the directory for which the schema extension will be applied to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The identifier of the directory for which the schema extension will be applied to.</p>\n@return The identifier of the directory for which the schema extension will be applied to.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "DirectoryId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DirectoryId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DirectoryId",
+        "setterDocumentation" : "/**<p>The identifier of the directory for which the schema extension will be applied to.</p>\n@param directoryId The identifier of the directory for which the schema extension will be applied to.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The identifier of the directory for which the schema extension will be applied to.</p>\n@param directoryId The identifier of the directory for which the schema extension will be applied to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "documentation" : "<p>The identifier of the directory for which the schema extension will be applied to.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "CreateSnapshotBeforeSchemaExtension",
+        "c2jShape" : "CreateSnapshotBeforeSchemaExtension",
+        "deprecated" : false,
+        "documentation" : "<p>If true, creates a snapshot of the directory before applying the schema extension.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>If true, creates a snapshot of the directory before applying the schema extension.</p>\n@param createSnapshotBeforeSchemaExtension If true, creates a snapshot of the directory before applying the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>If true, creates a snapshot of the directory before applying the schema extension.</p>\n@return If true, creates a snapshot of the directory before applying the schema extension.*/",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "CreateSnapshotBeforeSchemaExtension",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "CreateSnapshotBeforeSchemaExtension",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "CreateSnapshotBeforeSchemaExtension",
+        "setterDocumentation" : "/**<p>If true, creates a snapshot of the directory before applying the schema extension.</p>\n@param createSnapshotBeforeSchemaExtension If true, creates a snapshot of the directory before applying the schema extension.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "createSnapshotBeforeSchemaExtension",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>If true, creates a snapshot of the directory before applying the schema extension.</p>\n@param createSnapshotBeforeSchemaExtension If true, creates a snapshot of the directory before applying the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "createSnapshotBeforeSchemaExtension",
+          "variableType" : "Boolean",
+          "documentation" : "<p>If true, creates a snapshot of the directory before applying the schema extension.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "LdifContent",
+        "c2jShape" : "LdifContent",
+        "deprecated" : false,
+        "documentation" : "<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. The file size can be no larger than 1MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@return The LDIF file represented as a string. The file size can be no larger than 1MB.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "LdifContent",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "LdifContent",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "LdifContent",
+        "setterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. The file size can be no larger than 1MB.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "ldifContent",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. The file size can be no larger than 1MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "ldifContent",
+          "variableType" : "String",
+          "documentation" : "<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Description",
+        "c2jShape" : "Description",
+        "deprecated" : false,
+        "documentation" : "<p>A description of the schema extension.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A description of the schema extension.</p>\n@param description A description of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>A description of the schema extension.</p>\n@return A description of the schema extension.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "Description",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Description",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Description",
+        "setterDocumentation" : "/**<p>A description of the schema extension.</p>\n@param description A description of the schema extension.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "description",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>A description of the schema extension.</p>\n@param description A description of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "description",
+          "variableType" : "String",
+          "documentation" : "<p>A description of the schema extension.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "CreateSnapshotBeforeSchemaExtension" : {
+          "c2jName" : "CreateSnapshotBeforeSchemaExtension",
+          "c2jShape" : "CreateSnapshotBeforeSchemaExtension",
+          "deprecated" : false,
+          "documentation" : "<p>If true, creates a snapshot of the directory before applying the schema extension.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>If true, creates a snapshot of the directory before applying the schema extension.</p>\n@param createSnapshotBeforeSchemaExtension If true, creates a snapshot of the directory before applying the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>If true, creates a snapshot of the directory before applying the schema extension.</p>\n@return If true, creates a snapshot of the directory before applying the schema extension.*/",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "CreateSnapshotBeforeSchemaExtension",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "CreateSnapshotBeforeSchemaExtension",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "CreateSnapshotBeforeSchemaExtension",
+          "setterDocumentation" : "/**<p>If true, creates a snapshot of the directory before applying the schema extension.</p>\n@param createSnapshotBeforeSchemaExtension If true, creates a snapshot of the directory before applying the schema extension.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "createSnapshotBeforeSchemaExtension",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>If true, creates a snapshot of the directory before applying the schema extension.</p>\n@param createSnapshotBeforeSchemaExtension If true, creates a snapshot of the directory before applying the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "createSnapshotBeforeSchemaExtension",
+            "variableType" : "Boolean",
+            "documentation" : "<p>If true, creates a snapshot of the directory before applying the schema extension.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Description" : {
+          "c2jName" : "Description",
+          "c2jShape" : "Description",
+          "deprecated" : false,
+          "documentation" : "<p>A description of the schema extension.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A description of the schema extension.</p>\n@param description A description of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>A description of the schema extension.</p>\n@return A description of the schema extension.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "Description",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Description",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Description",
+          "setterDocumentation" : "/**<p>A description of the schema extension.</p>\n@param description A description of the schema extension.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "description",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>A description of the schema extension.</p>\n@param description A description of the schema extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "description",
+            "variableType" : "String",
+            "documentation" : "<p>A description of the schema extension.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DirectoryId" : {
+          "c2jName" : "DirectoryId",
+          "c2jShape" : "DirectoryId",
+          "deprecated" : false,
+          "documentation" : "<p>The identifier of the directory for which the schema extension will be applied to.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The identifier of the directory for which the schema extension will be applied to.</p>\n@param directoryId The identifier of the directory for which the schema extension will be applied to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The identifier of the directory for which the schema extension will be applied to.</p>\n@return The identifier of the directory for which the schema extension will be applied to.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "DirectoryId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DirectoryId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DirectoryId",
+          "setterDocumentation" : "/**<p>The identifier of the directory for which the schema extension will be applied to.</p>\n@param directoryId The identifier of the directory for which the schema extension will be applied to.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The identifier of the directory for which the schema extension will be applied to.</p>\n@param directoryId The identifier of the directory for which the schema extension will be applied to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "documentation" : "<p>The identifier of the directory for which the schema extension will be applied to.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "LdifContent" : {
+          "c2jName" : "LdifContent",
+          "c2jShape" : "LdifContent",
+          "deprecated" : false,
+          "documentation" : "<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. The file size can be no larger than 1MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@return The LDIF file represented as a string. The file size can be no larger than 1MB.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "LdifContent",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "LdifContent",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "LdifContent",
+          "setterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. The file size can be no larger than 1MB.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "ldifContent",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. The file size can be no larger than 1MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "ldifContent",
+            "variableType" : "String",
+            "documentation" : "<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "DirectoryId", "CreateSnapshotBeforeSchemaExtension", "LdifContent", "Description" ],
+      "shapeName" : "StartSchemaExtensionRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "StartSchemaExtensionRequest",
+        "variableName" : "startSchemaExtensionRequest",
+        "variableType" : "StartSchemaExtensionRequest",
+        "documentation" : null,
+        "simpleType" : "StartSchemaExtensionRequest",
+        "variableSetterType" : "StartSchemaExtensionRequest"
+      },
+      "wrapper" : false
+    },
+    "StartSchemaExtensionResult" : {
+      "c2jName" : "StartSchemaExtensionResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "SchemaExtensionId",
+        "c2jShape" : "SchemaExtensionId",
+        "deprecated" : false,
+        "documentation" : "<p>The identifier of the schema extension that will be applied.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The identifier of the schema extension that will be applied.</p>\n@param schemaExtensionId The identifier of the schema extension that will be applied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The identifier of the schema extension that will be applied.</p>\n@return The identifier of the schema extension that will be applied.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "SchemaExtensionId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SchemaExtensionId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "SchemaExtensionId",
+        "setterDocumentation" : "/**<p>The identifier of the schema extension that will be applied.</p>\n@param schemaExtensionId The identifier of the schema extension that will be applied.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "schemaExtensionId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The identifier of the schema extension that will be applied.</p>\n@param schemaExtensionId The identifier of the schema extension that will be applied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "schemaExtensionId",
+          "variableType" : "String",
+          "documentation" : "<p>The identifier of the schema extension that will be applied.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "SchemaExtensionId" : {
+          "c2jName" : "SchemaExtensionId",
+          "c2jShape" : "SchemaExtensionId",
+          "deprecated" : false,
+          "documentation" : "<p>The identifier of the schema extension that will be applied.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The identifier of the schema extension that will be applied.</p>\n@param schemaExtensionId The identifier of the schema extension that will be applied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The identifier of the schema extension that will be applied.</p>\n@return The identifier of the schema extension that will be applied.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "SchemaExtensionId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SchemaExtensionId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "SchemaExtensionId",
+          "setterDocumentation" : "/**<p>The identifier of the schema extension that will be applied.</p>\n@param schemaExtensionId The identifier of the schema extension that will be applied.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "schemaExtensionId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The identifier of the schema extension that will be applied.</p>\n@param schemaExtensionId The identifier of the schema extension that will be applied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "schemaExtensionId",
+            "variableType" : "String",
+            "documentation" : "<p>The identifier of the schema extension that will be applied.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "StartSchemaExtensionResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "StartSchemaExtensionResult",
+        "variableName" : "startSchemaExtensionResult",
+        "variableType" : "StartSchemaExtensionResult",
+        "documentation" : null,
+        "simpleType" : "StartSchemaExtensionResult",
+        "variableSetterType" : "StartSchemaExtensionResult"
       },
       "wrapper" : false
     },

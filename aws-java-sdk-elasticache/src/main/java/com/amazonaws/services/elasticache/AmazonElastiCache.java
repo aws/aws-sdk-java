@@ -21,6 +21,10 @@ import com.amazonaws.services.elasticache.waiters.AmazonElastiCacheWaiters;
 /**
  * Interface for accessing Amazon ElastiCache.
  * <p>
+ * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
+ * {@link com.amazonaws.services.elasticache.AbstractAmazonElastiCache} instead.
+ * </p>
+ * <p>
  * <fullname>Amazon ElastiCache</fullname>
  * <p>
  * Amazon ElastiCache is a web service that makes it easier to set up, operate, and scale a distributed cache in the
@@ -420,7 +424,7 @@ public interface AmazonElastiCache {
      * <p>
      * When a Redis (cluster mode disabled) replication group has been successfully created, you can add one or more
      * read replicas to it, up to a total of 5 read replicas. You cannot alter a Redis (cluster mode enabled)
-     * replication group once it has been created.
+     * replication group after it has been created.
      * </p>
      * <note>
      * <p>
