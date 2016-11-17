@@ -41,7 +41,7 @@ public class RecordDetail implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * The time when the record for the ProvisionedProduct object was created.
+     * The UTC timestamp of the creation time.
      * </p>
      */
     private java.util.Date createdTime;
@@ -71,7 +71,7 @@ public class RecordDetail implements Serializable, Cloneable {
     private String provisionedProductId;
     /**
      * <p>
-     * The identifier of the product.
+     * The product identifier.
      * </p>
      */
     private String productId;
@@ -255,11 +255,11 @@ public class RecordDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when the record for the ProvisionedProduct object was created.
+     * The UTC timestamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The time when the record for the ProvisionedProduct object was created.
+     *        The UTC timestamp of the creation time.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -268,10 +268,10 @@ public class RecordDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when the record for the ProvisionedProduct object was created.
+     * The UTC timestamp of the creation time.
      * </p>
      * 
-     * @return The time when the record for the ProvisionedProduct object was created.
+     * @return The UTC timestamp of the creation time.
      */
 
     public java.util.Date getCreatedTime() {
@@ -280,11 +280,11 @@ public class RecordDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when the record for the ProvisionedProduct object was created.
+     * The UTC timestamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The time when the record for the ProvisionedProduct object was created.
+     *        The UTC timestamp of the creation time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,11 +455,11 @@ public class RecordDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the product.
+     * The product identifier.
      * </p>
      * 
      * @param productId
-     *        The identifier of the product.
+     *        The product identifier.
      */
 
     public void setProductId(String productId) {
@@ -468,10 +468,10 @@ public class RecordDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the product.
+     * The product identifier.
      * </p>
      * 
-     * @return The identifier of the product.
+     * @return The product identifier.
      */
 
     public String getProductId() {
@@ -480,11 +480,11 @@ public class RecordDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the product.
+     * The product identifier.
      * </p>
      * 
      * @param productId
-     *        The identifier of the product.
+     *        The product identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

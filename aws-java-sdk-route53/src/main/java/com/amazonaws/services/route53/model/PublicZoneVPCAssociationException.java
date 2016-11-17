@@ -14,7 +14,8 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * The hosted zone specified in <code>HostedZoneId</code> is a public hosted zone.
+ * You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't support associating a VPC with a
+ * public hosted zone.
  * </p>
  */
 public class PublicZoneVPCAssociationException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {

@@ -17,7 +17,7 @@ import java.io.Serializable;
 /**
  * <p>
  * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, Elastic Beanstalk environment,
- * ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you are redirecting queries. The
+ * ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set that you're redirecting queries to. The
  * Elastic Beanstalk environment must have a regionalized subdomain.
  * </p>
  * <p>
@@ -26,7 +26,7 @@ import java.io.Serializable;
  * <ul>
  * <li>
  * <p>
- * Resource record sets cannot be created for CloudFront distributions in a private hosted zone.
+ * Resource record sets can't be created for CloudFront distributions in a private hosted zone.
  * </p>
  * </li>
  * <li>
@@ -58,7 +58,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Alias resource record sets for CloudFront cannot be created in a private zone.
+     * Alias resource record sets for CloudFront can't be created in a private zone.
      * </p>
      * </note></dd>
      * <dt>Elastic Beanstalk environment</dt>
@@ -67,7 +67,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * Specify the hosted zone ID for the region in which you created the environment. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
-     * in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
+     * in the Regions and Endpoints chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -79,9 +79,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * AWS Management Console: Go to the Amazon EC2; page, click Load Balancers in the navigation pane, select the load
-     * balancer, and get the value of the Hosted Zone ID field on the Description tab. Use the same process to get the
-     * DNS Name. See <a>HostedZone$Name</a>.
+     * AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane, select the
+     * load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b> tab. Use the same
+     * process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
      * </p>
      * </li>
      * <li>
@@ -113,7 +113,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
      * <dd>
      * <p>
-     * Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot reference a resource record
+     * Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record
      * set in a different hosted zone.)
      * </p>
      * </dd>
@@ -148,8 +148,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic
-     * Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
+     * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -180,9 +180,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>AWS Management Console</i>: Go to the Amazon EC2 page, click Load Balancers in the navigation pane, choose the
-     * load balancer, choose the Description tab, and get the value of the DNS Name field that begins with dualstack.
-     * Use the same process to get the Hosted Zone ID. See <a>HostedZone$Id</a>.
+     * <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane, choose the
+     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b> field that begins with
+     * dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See <a>HostedZone$Id</a>.
      * </p>
      * </li>
      * <li>
@@ -209,10 +209,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com</code>.
      * For more information about valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
-     * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using
-     * Amazon S3 buckets for websites, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on Amazon
-     * S3</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
+     * buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a
+     * Static Website on Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
      * </p>
      * </li>
      * <li>
@@ -271,7 +270,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You cannot set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront
+     * You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront
      * distribution.
      * </p>
      * </li>
@@ -290,23 +289,23 @@ public class AliasTarget implements Serializable, Cloneable {
      * If you specify an Elastic Beanstalk environment in <code>HostedZoneId</code> and <code>DNSName</code>, and if the
      * environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2
      * instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer
-     * if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to
-     * <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Amazon
-     * Route 53 routes queries to other available resources that are healthy, if any.
+     * if it includes more than one EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and
+     * either no EC2 instances are healthy or the load balancer itself is unhealthy, Amazon Route 53 routes queries to
+     * other available resources that are healthy, if any.
      * </p>
      * <p>
-     * If the environment contains a single Amazon EC2 instance, there are no special requirements.
+     * If the environment contains a single EC2 instance, there are no special requirements.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify an ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic Load Balancing routes queries
-     * only to the healthy Amazon EC2 instances that are registered with the load balancer. If no Amazon EC2 instances
-     * are healthy or if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true for the
-     * corresponding alias resource record set, Amazon Route 53 routes queries to other resources. When you create a
-     * load balancer, you configure settings for Elastic Load Balancing health checks; they're not Amazon Route 53
-     * health checks, but they perform a similar function. Do not create Amazon Route 53 health checks for the Amazon
-     * EC2 instances that you register with an ELB load balancer.
+     * only to the healthy EC2 instances that are registered with the load balancer. If no EC2 instances are healthy or
+     * if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true for the corresponding
+     * alias resource record set, Amazon Route 53 routes queries to other resources. When you create a load balancer,
+     * you configure settings for Elastic Load Balancing health checks; they're not Amazon Route 53 health checks, but
+     * they perform a similar function. Do not create Amazon Route 53 health checks for the EC2 instances that you
+     * register with an ELB load balancer.
      * </p>
      * <p>
      * For more information, see <a
@@ -350,7 +349,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        Alias resource record sets for CloudFront cannot be created in a private zone.
+     *        Alias resource record sets for CloudFront can't be created in a private zone.
      *        </p>
      *        </note></dd>
      *        <dt>Elastic Beanstalk environment</dt>
@@ -359,7 +358,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        Specify the hosted zone ID for the region in which you created the environment. The environment must have
      *        a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
-     *        Beanstalk</a> in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
+     *        Beanstalk</a> in the Regions and Endpoints chapter of the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -371,9 +370,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS Management Console: Go to the Amazon EC2; page, click Load Balancers in the navigation pane, select
-     *        the load balancer, and get the value of the Hosted Zone ID field on the Description tab. Use the same
-     *        process to get the DNS Name. See <a>HostedZone$Name</a>.
+     *        AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane,
+     *        select the load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b>
+     *        tab. Use the same process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -405,7 +404,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
      *        <dd>
      *        <p>
-     *        Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot reference a resource
+     *        Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource
      *        record set in a different hosted zone.)
      *        </p>
      *        </dd>
@@ -437,7 +436,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
      *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
-     *        Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     *        AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      *        </p>
      *        </li> <li>
      *        <p>
@@ -465,9 +464,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>AWS Management Console</i>: Go to the Amazon EC2 page, click Load Balancers in the navigation pane,
-     *        choose the load balancer, choose the Description tab, and get the value of the DNS Name field that begins
-     *        with dualstack. Use the same process to get the Hosted Zone ID. See <a>HostedZone$Id</a>.
+     *        <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane,
+     *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b>
+     *        field that begins with dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See
+     *        <a>HostedZone$Id</a>.
      *        </p>
      *        </li> <li>
      *        <p>
@@ -492,9 +492,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </code>. For more information about valid values, see the table <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
      *        (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
-     *        using Amazon S3 buckets for websites, see <a
+     *        using S3 buckets for websites, see <a
      *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on
-     *        Amazon S3</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     *        Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
      *        </p>
      *        </li> <li>
      *        <p>
@@ -520,7 +520,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Alias resource record sets for CloudFront cannot be created in a private zone.
+     * Alias resource record sets for CloudFront can't be created in a private zone.
      * </p>
      * </note></dd>
      * <dt>Elastic Beanstalk environment</dt>
@@ -529,7 +529,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * Specify the hosted zone ID for the region in which you created the environment. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
-     * in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
+     * in the Regions and Endpoints chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -541,9 +541,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * AWS Management Console: Go to the Amazon EC2; page, click Load Balancers in the navigation pane, select the load
-     * balancer, and get the value of the Hosted Zone ID field on the Description tab. Use the same process to get the
-     * DNS Name. See <a>HostedZone$Name</a>.
+     * AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane, select the
+     * load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b> tab. Use the same
+     * process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
      * </p>
      * </li>
      * <li>
@@ -575,7 +575,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
      * <dd>
      * <p>
-     * Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot reference a resource record
+     * Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record
      * set in a different hosted zone.)
      * </p>
      * </dd>
@@ -591,7 +591,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        Alias resource record sets for CloudFront cannot be created in a private zone.
+     *        Alias resource record sets for CloudFront can't be created in a private zone.
      *        </p>
      *        </note></dd>
      *        <dt>Elastic Beanstalk environment</dt>
@@ -600,7 +600,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        Specify the hosted zone ID for the region in which you created the environment. The environment must have
      *        a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
-     *        Beanstalk</a> in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
+     *        Beanstalk</a> in the Regions and Endpoints chapter of the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -612,9 +612,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS Management Console: Go to the Amazon EC2; page, click Load Balancers in the navigation pane, select
-     *        the load balancer, and get the value of the Hosted Zone ID field on the Description tab. Use the same
-     *        process to get the DNS Name. See <a>HostedZone$Name</a>.
+     *        AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane,
+     *        select the load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b>
+     *        tab. Use the same process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -646,7 +646,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
      *        <dd>
      *        <p>
-     *        Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot reference a resource
+     *        Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource
      *        record set in a different hosted zone.)
      *        </p>
      *        </dd>
@@ -668,7 +668,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Alias resource record sets for CloudFront cannot be created in a private zone.
+     * Alias resource record sets for CloudFront can't be created in a private zone.
      * </p>
      * </note></dd>
      * <dt>Elastic Beanstalk environment</dt>
@@ -677,7 +677,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * Specify the hosted zone ID for the region in which you created the environment. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
-     * in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
+     * in the Regions and Endpoints chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -689,9 +689,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * AWS Management Console: Go to the Amazon EC2; page, click Load Balancers in the navigation pane, select the load
-     * balancer, and get the value of the Hosted Zone ID field on the Description tab. Use the same process to get the
-     * DNS Name. See <a>HostedZone$Name</a>.
+     * AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane, select the
+     * load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b> tab. Use the same
+     * process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
      * </p>
      * </li>
      * <li>
@@ -723,7 +723,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
      * <dd>
      * <p>
-     * Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot reference a resource record
+     * Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record
      * set in a different hosted zone.)
      * </p>
      * </dd>
@@ -738,7 +738,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </p>
      *         <note>
      *         <p>
-     *         Alias resource record sets for CloudFront cannot be created in a private zone.
+     *         Alias resource record sets for CloudFront can't be created in a private zone.
      *         </p>
      *         </note></dd>
      *         <dt>Elastic Beanstalk environment</dt>
@@ -747,7 +747,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         Specify the hosted zone ID for the region in which you created the environment. The environment must have
      *         a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
-     *         Beanstalk</a> in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
+     *         Beanstalk</a> in the Regions and Endpoints chapter of the <i>Amazon Web Services General Reference</i>.
      *         </p>
      *         </dd>
      *         <dt>ELB load balancer</dt>
@@ -759,9 +759,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         AWS Management Console: Go to the Amazon EC2; page, click Load Balancers in the navigation pane, select
-     *         the load balancer, and get the value of the Hosted Zone ID field on the Description tab. Use the same
-     *         process to get the DNS Name. See <a>HostedZone$Name</a>.
+     *         AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane,
+     *         select the load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b>
+     *         tab. Use the same process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -793,7 +793,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
      *         <dd>
      *         <p>
-     *         Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot reference a resource
+     *         Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource
      *         record set in a different hosted zone.)
      *         </p>
      *         </dd>
@@ -815,7 +815,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Alias resource record sets for CloudFront cannot be created in a private zone.
+     * Alias resource record sets for CloudFront can't be created in a private zone.
      * </p>
      * </note></dd>
      * <dt>Elastic Beanstalk environment</dt>
@@ -824,7 +824,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * Specify the hosted zone ID for the region in which you created the environment. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
-     * in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
+     * in the Regions and Endpoints chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -836,9 +836,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * AWS Management Console: Go to the Amazon EC2; page, click Load Balancers in the navigation pane, select the load
-     * balancer, and get the value of the Hosted Zone ID field on the Description tab. Use the same process to get the
-     * DNS Name. See <a>HostedZone$Name</a>.
+     * AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane, select the
+     * load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b> tab. Use the same
+     * process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
      * </p>
      * </li>
      * <li>
@@ -870,7 +870,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
      * <dd>
      * <p>
-     * Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot reference a resource record
+     * Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record
      * set in a different hosted zone.)
      * </p>
      * </dd>
@@ -886,7 +886,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        Alias resource record sets for CloudFront cannot be created in a private zone.
+     *        Alias resource record sets for CloudFront can't be created in a private zone.
      *        </p>
      *        </note></dd>
      *        <dt>Elastic Beanstalk environment</dt>
@@ -895,7 +895,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        Specify the hosted zone ID for the region in which you created the environment. The environment must have
      *        a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
-     *        Beanstalk</a> in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
+     *        Beanstalk</a> in the Regions and Endpoints chapter of the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -907,9 +907,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS Management Console: Go to the Amazon EC2; page, click Load Balancers in the navigation pane, select
-     *        the load balancer, and get the value of the Hosted Zone ID field on the Description tab. Use the same
-     *        process to get the DNS Name. See <a>HostedZone$Name</a>.
+     *        AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane,
+     *        select the load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b>
+     *        tab. Use the same process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -941,7 +941,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
      *        <dd>
      *        <p>
-     *        Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot reference a resource
+     *        Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource
      *        record set in a different hosted zone.)
      *        </p>
      *        </dd>
@@ -981,8 +981,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic
-     * Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
+     * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1013,9 +1013,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>AWS Management Console</i>: Go to the Amazon EC2 page, click Load Balancers in the navigation pane, choose the
-     * load balancer, choose the Description tab, and get the value of the DNS Name field that begins with dualstack.
-     * Use the same process to get the Hosted Zone ID. See <a>HostedZone$Id</a>.
+     * <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane, choose the
+     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b> field that begins with
+     * dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See <a>HostedZone$Id</a>.
      * </p>
      * </li>
      * <li>
@@ -1042,10 +1042,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com</code>.
      * For more information about valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
-     * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using
-     * Amazon S3 buckets for websites, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on Amazon
-     * S3</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
+     * buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a
+     * Static Website on Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
      * </p>
      * </li>
      * <li>
@@ -1085,7 +1084,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
      *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
-     *        Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     *        AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1116,9 +1115,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>AWS Management Console</i>: Go to the Amazon EC2 page, click Load Balancers in the navigation pane,
-     *        choose the load balancer, choose the Description tab, and get the value of the DNS Name field that begins
-     *        with dualstack. Use the same process to get the Hosted Zone ID. See <a>HostedZone$Id</a>.
+     *        <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane,
+     *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b>
+     *        field that begins with dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See
+     *        <a>HostedZone$Id</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -1146,9 +1146,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <code>s3-website-us-east-1.amazonaws.com</code>. For more information about valid values, see the table <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
      *        (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
-     *        using Amazon S3 buckets for websites, see <a
+     *        using S3 buckets for websites, see <a
      *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on
-     *        Amazon S3</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     *        Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
      *        </p>
      *        </li>
      *        <li>
@@ -1191,8 +1191,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic
-     * Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
+     * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1223,9 +1223,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>AWS Management Console</i>: Go to the Amazon EC2 page, click Load Balancers in the navigation pane, choose the
-     * load balancer, choose the Description tab, and get the value of the DNS Name field that begins with dualstack.
-     * Use the same process to get the Hosted Zone ID. See <a>HostedZone$Id</a>.
+     * <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane, choose the
+     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b> field that begins with
+     * dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See <a>HostedZone$Id</a>.
      * </p>
      * </li>
      * <li>
@@ -1252,10 +1252,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com</code>.
      * For more information about valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
-     * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using
-     * Amazon S3 buckets for websites, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on Amazon
-     * S3</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
+     * buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a
+     * Static Website on Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
      * </p>
      * </li>
      * <li>
@@ -1294,7 +1293,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <p>
      *         <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
      *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
-     *         Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     *         AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1325,9 +1324,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>AWS Management Console</i>: Go to the Amazon EC2 page, click Load Balancers in the navigation pane,
-     *         choose the load balancer, choose the Description tab, and get the value of the DNS Name field that begins
-     *         with dualstack. Use the same process to get the Hosted Zone ID. See <a>HostedZone$Id</a>.
+     *         <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane,
+     *         choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b>
+     *         field that begins with dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See
+     *         <a>HostedZone$Id</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -1355,9 +1355,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <code>s3-website-us-east-1.amazonaws.com</code>. For more information about valid values, see the table
      *         <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
      *         (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information
-     *         about using Amazon S3 buckets for websites, see <a
+     *         about using S3 buckets for websites, see <a
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on
-     *         Amazon S3</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     *         Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -1400,8 +1400,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic
-     * Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
+     * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1432,9 +1432,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>AWS Management Console</i>: Go to the Amazon EC2 page, click Load Balancers in the navigation pane, choose the
-     * load balancer, choose the Description tab, and get the value of the DNS Name field that begins with dualstack.
-     * Use the same process to get the Hosted Zone ID. See <a>HostedZone$Id</a>.
+     * <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane, choose the
+     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b> field that begins with
+     * dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See <a>HostedZone$Id</a>.
      * </p>
      * </li>
      * <li>
@@ -1461,10 +1461,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com</code>.
      * For more information about valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
-     * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using
-     * Amazon S3 buckets for websites, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on Amazon
-     * S3</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
+     * buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a
+     * Static Website on Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
      * </p>
      * </li>
      * <li>
@@ -1504,7 +1503,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
      *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
-     *        Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     *        AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1535,9 +1534,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>AWS Management Console</i>: Go to the Amazon EC2 page, click Load Balancers in the navigation pane,
-     *        choose the load balancer, choose the Description tab, and get the value of the DNS Name field that begins
-     *        with dualstack. Use the same process to get the Hosted Zone ID. See <a>HostedZone$Id</a>.
+     *        <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane,
+     *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b>
+     *        field that begins with dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See
+     *        <a>HostedZone$Id</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -1565,9 +1565,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <code>s3-website-us-east-1.amazonaws.com</code>. For more information about valid values, see the table <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
      *        (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
-     *        using Amazon S3 buckets for websites, see <a
+     *        using S3 buckets for websites, see <a
      *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on
-     *        Amazon S3</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     *        Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
      *        </p>
      *        </li>
      *        <li>
@@ -1631,7 +1631,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You cannot set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront
+     * You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront
      * distribution.
      * </p>
      * </li>
@@ -1650,23 +1650,23 @@ public class AliasTarget implements Serializable, Cloneable {
      * If you specify an Elastic Beanstalk environment in <code>HostedZoneId</code> and <code>DNSName</code>, and if the
      * environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2
      * instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer
-     * if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to
-     * <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Amazon
-     * Route 53 routes queries to other available resources that are healthy, if any.
+     * if it includes more than one EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and
+     * either no EC2 instances are healthy or the load balancer itself is unhealthy, Amazon Route 53 routes queries to
+     * other available resources that are healthy, if any.
      * </p>
      * <p>
-     * If the environment contains a single Amazon EC2 instance, there are no special requirements.
+     * If the environment contains a single EC2 instance, there are no special requirements.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify an ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic Load Balancing routes queries
-     * only to the healthy Amazon EC2 instances that are registered with the load balancer. If no Amazon EC2 instances
-     * are healthy or if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true for the
-     * corresponding alias resource record set, Amazon Route 53 routes queries to other resources. When you create a
-     * load balancer, you configure settings for Elastic Load Balancing health checks; they're not Amazon Route 53
-     * health checks, but they perform a similar function. Do not create Amazon Route 53 health checks for the Amazon
-     * EC2 instances that you register with an ELB load balancer.
+     * only to the healthy EC2 instances that are registered with the load balancer. If no EC2 instances are healthy or
+     * if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true for the corresponding
+     * alias resource record set, Amazon Route 53 routes queries to other resources. When you create a load balancer,
+     * you configure settings for Elastic Load Balancing health checks; they're not Amazon Route 53 health checks, but
+     * they perform a similar function. Do not create Amazon Route 53 health checks for the EC2 instances that you
+     * register with an ELB load balancer.
      * </p>
      * <p>
      * For more information, see <a
@@ -1733,8 +1733,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        You cannot set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a
-     *        CloudFront distribution.
+     *        You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront
+     *        distribution.
      *        </p>
      *        </li>
      *        <li>
@@ -1752,25 +1752,24 @@ public class AliasTarget implements Serializable, Cloneable {
      *        If you specify an Elastic Beanstalk environment in <code>HostedZoneId</code> and <code>DNSName</code>, and
      *        if the environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the
      *        healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically
-     *        contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set
-     *        <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon EC2 instances are healthy or
-     *        the load balancer itself is unhealthy, Amazon Route 53 routes queries to other available resources that
-     *        are healthy, if any.
+     *        contains an ELB load balancer if it includes more than one EC2 instance.) If you set
+     *        <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load
+     *        balancer itself is unhealthy, Amazon Route 53 routes queries to other available resources that are
+     *        healthy, if any.
      *        </p>
      *        <p>
-     *        If the environment contains a single Amazon EC2 instance, there are no special requirements.
+     *        If the environment contains a single EC2 instance, there are no special requirements.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If you specify an ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic Load Balancing routes
-     *        queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If no Amazon
-     *        EC2 instances are healthy or if the load balancer itself is unhealthy, and if
-     *        <code>EvaluateTargetHealth</code> is true for the corresponding alias resource record set, Amazon Route 53
-     *        routes queries to other resources. When you create a load balancer, you configure settings for Elastic
-     *        Load Balancing health checks; they're not Amazon Route 53 health checks, but they perform a similar
-     *        function. Do not create Amazon Route 53 health checks for the Amazon EC2 instances that you register with
-     *        an ELB load balancer.
+     *        queries only to the healthy EC2 instances that are registered with the load balancer. If no EC2 instances
+     *        are healthy or if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true
+     *        for the corresponding alias resource record set, Amazon Route 53 routes queries to other resources. When
+     *        you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not
+     *        Amazon Route 53 health checks, but they perform a similar function. Do not create Amazon Route 53 health
+     *        checks for the EC2 instances that you register with an ELB load balancer.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -1843,7 +1842,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You cannot set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront
+     * You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront
      * distribution.
      * </p>
      * </li>
@@ -1862,23 +1861,23 @@ public class AliasTarget implements Serializable, Cloneable {
      * If you specify an Elastic Beanstalk environment in <code>HostedZoneId</code> and <code>DNSName</code>, and if the
      * environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2
      * instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer
-     * if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to
-     * <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Amazon
-     * Route 53 routes queries to other available resources that are healthy, if any.
+     * if it includes more than one EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and
+     * either no EC2 instances are healthy or the load balancer itself is unhealthy, Amazon Route 53 routes queries to
+     * other available resources that are healthy, if any.
      * </p>
      * <p>
-     * If the environment contains a single Amazon EC2 instance, there are no special requirements.
+     * If the environment contains a single EC2 instance, there are no special requirements.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify an ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic Load Balancing routes queries
-     * only to the healthy Amazon EC2 instances that are registered with the load balancer. If no Amazon EC2 instances
-     * are healthy or if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true for the
-     * corresponding alias resource record set, Amazon Route 53 routes queries to other resources. When you create a
-     * load balancer, you configure settings for Elastic Load Balancing health checks; they're not Amazon Route 53
-     * health checks, but they perform a similar function. Do not create Amazon Route 53 health checks for the Amazon
-     * EC2 instances that you register with an ELB load balancer.
+     * only to the healthy EC2 instances that are registered with the load balancer. If no EC2 instances are healthy or
+     * if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true for the corresponding
+     * alias resource record set, Amazon Route 53 routes queries to other resources. When you create a load balancer,
+     * you configure settings for Elastic Load Balancing health checks; they're not Amazon Route 53 health checks, but
+     * they perform a similar function. Do not create Amazon Route 53 health checks for the EC2 instances that you
+     * register with an ELB load balancer.
      * </p>
      * <p>
      * For more information, see <a
@@ -1944,7 +1943,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         You cannot set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a
+     *         You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a
      *         CloudFront distribution.
      *         </p>
      *         </li>
@@ -1963,25 +1962,24 @@ public class AliasTarget implements Serializable, Cloneable {
      *         If you specify an Elastic Beanstalk environment in <code>HostedZoneId</code> and <code>DNSName</code>,
      *         and if the environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the
      *         healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically
-     *         contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set
-     *         <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon EC2 instances are healthy or
-     *         the load balancer itself is unhealthy, Amazon Route 53 routes queries to other available resources that
-     *         are healthy, if any.
+     *         contains an ELB load balancer if it includes more than one EC2 instance.) If you set
+     *         <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the
+     *         load balancer itself is unhealthy, Amazon Route 53 routes queries to other available resources that are
+     *         healthy, if any.
      *         </p>
      *         <p>
-     *         If the environment contains a single Amazon EC2 instance, there are no special requirements.
+     *         If the environment contains a single EC2 instance, there are no special requirements.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         If you specify an ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic Load Balancing routes
-     *         queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If no Amazon
-     *         EC2 instances are healthy or if the load balancer itself is unhealthy, and if
-     *         <code>EvaluateTargetHealth</code> is true for the corresponding alias resource record set, Amazon Route
-     *         53 routes queries to other resources. When you create a load balancer, you configure settings for Elastic
-     *         Load Balancing health checks; they're not Amazon Route 53 health checks, but they perform a similar
-     *         function. Do not create Amazon Route 53 health checks for the Amazon EC2 instances that you register with
-     *         an ELB load balancer.
+     *         queries only to the healthy EC2 instances that are registered with the load balancer. If no EC2 instances
+     *         are healthy or if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true
+     *         for the corresponding alias resource record set, Amazon Route 53 routes queries to other resources. When
+     *         you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not
+     *         Amazon Route 53 health checks, but they perform a similar function. Do not create Amazon Route 53 health
+     *         checks for the EC2 instances that you register with an ELB load balancer.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -2054,7 +2052,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You cannot set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront
+     * You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront
      * distribution.
      * </p>
      * </li>
@@ -2073,23 +2071,23 @@ public class AliasTarget implements Serializable, Cloneable {
      * If you specify an Elastic Beanstalk environment in <code>HostedZoneId</code> and <code>DNSName</code>, and if the
      * environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2
      * instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer
-     * if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to
-     * <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Amazon
-     * Route 53 routes queries to other available resources that are healthy, if any.
+     * if it includes more than one EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and
+     * either no EC2 instances are healthy or the load balancer itself is unhealthy, Amazon Route 53 routes queries to
+     * other available resources that are healthy, if any.
      * </p>
      * <p>
-     * If the environment contains a single Amazon EC2 instance, there are no special requirements.
+     * If the environment contains a single EC2 instance, there are no special requirements.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify an ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic Load Balancing routes queries
-     * only to the healthy Amazon EC2 instances that are registered with the load balancer. If no Amazon EC2 instances
-     * are healthy or if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true for the
-     * corresponding alias resource record set, Amazon Route 53 routes queries to other resources. When you create a
-     * load balancer, you configure settings for Elastic Load Balancing health checks; they're not Amazon Route 53
-     * health checks, but they perform a similar function. Do not create Amazon Route 53 health checks for the Amazon
-     * EC2 instances that you register with an ELB load balancer.
+     * only to the healthy EC2 instances that are registered with the load balancer. If no EC2 instances are healthy or
+     * if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true for the corresponding
+     * alias resource record set, Amazon Route 53 routes queries to other resources. When you create a load balancer,
+     * you configure settings for Elastic Load Balancing health checks; they're not Amazon Route 53 health checks, but
+     * they perform a similar function. Do not create Amazon Route 53 health checks for the EC2 instances that you
+     * register with an ELB load balancer.
      * </p>
      * <p>
      * For more information, see <a
@@ -2156,8 +2154,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        You cannot set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a
-     *        CloudFront distribution.
+     *        You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront
+     *        distribution.
      *        </p>
      *        </li>
      *        <li>
@@ -2175,25 +2173,24 @@ public class AliasTarget implements Serializable, Cloneable {
      *        If you specify an Elastic Beanstalk environment in <code>HostedZoneId</code> and <code>DNSName</code>, and
      *        if the environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the
      *        healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically
-     *        contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set
-     *        <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon EC2 instances are healthy or
-     *        the load balancer itself is unhealthy, Amazon Route 53 routes queries to other available resources that
-     *        are healthy, if any.
+     *        contains an ELB load balancer if it includes more than one EC2 instance.) If you set
+     *        <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load
+     *        balancer itself is unhealthy, Amazon Route 53 routes queries to other available resources that are
+     *        healthy, if any.
      *        </p>
      *        <p>
-     *        If the environment contains a single Amazon EC2 instance, there are no special requirements.
+     *        If the environment contains a single EC2 instance, there are no special requirements.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If you specify an ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic Load Balancing routes
-     *        queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If no Amazon
-     *        EC2 instances are healthy or if the load balancer itself is unhealthy, and if
-     *        <code>EvaluateTargetHealth</code> is true for the corresponding alias resource record set, Amazon Route 53
-     *        routes queries to other resources. When you create a load balancer, you configure settings for Elastic
-     *        Load Balancing health checks; they're not Amazon Route 53 health checks, but they perform a similar
-     *        function. Do not create Amazon Route 53 health checks for the Amazon EC2 instances that you register with
-     *        an ELB load balancer.
+     *        queries only to the healthy EC2 instances that are registered with the load balancer. If no EC2 instances
+     *        are healthy or if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true
+     *        for the corresponding alias resource record set, Amazon Route 53 routes queries to other resources. When
+     *        you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not
+     *        Amazon Route 53 health checks, but they perform a similar function. Do not create Amazon Route 53 health
+     *        checks for the EC2 instances that you register with an ELB load balancer.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -2268,7 +2265,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You cannot set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront
+     * You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront
      * distribution.
      * </p>
      * </li>
@@ -2287,23 +2284,23 @@ public class AliasTarget implements Serializable, Cloneable {
      * If you specify an Elastic Beanstalk environment in <code>HostedZoneId</code> and <code>DNSName</code>, and if the
      * environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2
      * instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer
-     * if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to
-     * <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Amazon
-     * Route 53 routes queries to other available resources that are healthy, if any.
+     * if it includes more than one EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and
+     * either no EC2 instances are healthy or the load balancer itself is unhealthy, Amazon Route 53 routes queries to
+     * other available resources that are healthy, if any.
      * </p>
      * <p>
-     * If the environment contains a single Amazon EC2 instance, there are no special requirements.
+     * If the environment contains a single EC2 instance, there are no special requirements.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify an ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic Load Balancing routes queries
-     * only to the healthy Amazon EC2 instances that are registered with the load balancer. If no Amazon EC2 instances
-     * are healthy or if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true for the
-     * corresponding alias resource record set, Amazon Route 53 routes queries to other resources. When you create a
-     * load balancer, you configure settings for Elastic Load Balancing health checks; they're not Amazon Route 53
-     * health checks, but they perform a similar function. Do not create Amazon Route 53 health checks for the Amazon
-     * EC2 instances that you register with an ELB load balancer.
+     * only to the healthy EC2 instances that are registered with the load balancer. If no EC2 instances are healthy or
+     * if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true for the corresponding
+     * alias resource record set, Amazon Route 53 routes queries to other resources. When you create a load balancer,
+     * you configure settings for Elastic Load Balancing health checks; they're not Amazon Route 53 health checks, but
+     * they perform a similar function. Do not create Amazon Route 53 health checks for the EC2 instances that you
+     * register with an ELB load balancer.
      * </p>
      * <p>
      * For more information, see <a
@@ -2369,7 +2366,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         You cannot set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a
+     *         You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a
      *         CloudFront distribution.
      *         </p>
      *         </li>
@@ -2388,25 +2385,24 @@ public class AliasTarget implements Serializable, Cloneable {
      *         If you specify an Elastic Beanstalk environment in <code>HostedZoneId</code> and <code>DNSName</code>,
      *         and if the environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the
      *         healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically
-     *         contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set
-     *         <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon EC2 instances are healthy or
-     *         the load balancer itself is unhealthy, Amazon Route 53 routes queries to other available resources that
-     *         are healthy, if any.
+     *         contains an ELB load balancer if it includes more than one EC2 instance.) If you set
+     *         <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the
+     *         load balancer itself is unhealthy, Amazon Route 53 routes queries to other available resources that are
+     *         healthy, if any.
      *         </p>
      *         <p>
-     *         If the environment contains a single Amazon EC2 instance, there are no special requirements.
+     *         If the environment contains a single EC2 instance, there are no special requirements.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         If you specify an ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic Load Balancing routes
-     *         queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If no Amazon
-     *         EC2 instances are healthy or if the load balancer itself is unhealthy, and if
-     *         <code>EvaluateTargetHealth</code> is true for the corresponding alias resource record set, Amazon Route
-     *         53 routes queries to other resources. When you create a load balancer, you configure settings for Elastic
-     *         Load Balancing health checks; they're not Amazon Route 53 health checks, but they perform a similar
-     *         function. Do not create Amazon Route 53 health checks for the Amazon EC2 instances that you register with
-     *         an ELB load balancer.
+     *         queries only to the healthy EC2 instances that are registered with the load balancer. If no EC2 instances
+     *         are healthy or if the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true
+     *         for the corresponding alias resource record set, Amazon Route 53 routes queries to other resources. When
+     *         you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not
+     *         Amazon Route 53 health checks, but they perform a similar function. Do not create Amazon Route 53 health
+     *         checks for the EC2 instances that you register with an ELB load balancer.
      *         </p>
      *         <p>
      *         For more information, see <a

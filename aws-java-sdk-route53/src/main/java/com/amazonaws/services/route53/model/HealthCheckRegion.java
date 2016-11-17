@@ -14,7 +14,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * An Amazon EC2 region that you want Amazon Route 53 to use to perform health checks.
+ * An Amazon EC2 Region that you want Amazon Route 53 to use to perform health checks.
  * </p>
  */
 public enum HealthCheckRegion {

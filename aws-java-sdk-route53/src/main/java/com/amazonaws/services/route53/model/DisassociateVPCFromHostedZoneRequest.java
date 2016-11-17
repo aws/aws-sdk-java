@@ -17,21 +17,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the VPC and the hosted zone that you want to disassociate.
+ * A complex type that contains information about the VPC that you want to disassociate from a specified private hosted
+ * zone.
  * </p>
  */
 public class DisassociateVPCFromHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
+     * The ID of the private hosted zone that you want to disassociate a VPC from.
      * </p>
      */
     private String hostedZoneId;
     /**
      * <p>
-     * A complex type containing information about the Amazon VPC that you're disassociating from the specified hosted
-     * zone.
+     * A complex type that contains information about the VPC that you're disassociating from the specified hosted zone.
      * </p>
      */
     private VPC vPC;
@@ -44,11 +44,11 @@ public class DisassociateVPCFromHostedZoneRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
+     * The ID of the private hosted zone that you want to disassociate a VPC from.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
+     *        The ID of the private hosted zone that you want to disassociate a VPC from.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -57,10 +57,10 @@ public class DisassociateVPCFromHostedZoneRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
+     * The ID of the private hosted zone that you want to disassociate a VPC from.
      * </p>
      * 
-     * @return The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
+     * @return The ID of the private hosted zone that you want to disassociate a VPC from.
      */
 
     public String getHostedZoneId() {
@@ -69,11 +69,11 @@ public class DisassociateVPCFromHostedZoneRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
+     * The ID of the private hosted zone that you want to disassociate a VPC from.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the VPC that you want to disassociate from an Amazon Route 53 hosted zone.
+     *        The ID of the private hosted zone that you want to disassociate a VPC from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,12 +84,11 @@ public class DisassociateVPCFromHostedZoneRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A complex type containing information about the Amazon VPC that you're disassociating from the specified hosted
-     * zone.
+     * A complex type that contains information about the VPC that you're disassociating from the specified hosted zone.
      * </p>
      * 
      * @param vPC
-     *        A complex type containing information about the Amazon VPC that you're disassociating from the specified
+     *        A complex type that contains information about the VPC that you're disassociating from the specified
      *        hosted zone.
      */
 
@@ -99,11 +98,10 @@ public class DisassociateVPCFromHostedZoneRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A complex type containing information about the Amazon VPC that you're disassociating from the specified hosted
-     * zone.
+     * A complex type that contains information about the VPC that you're disassociating from the specified hosted zone.
      * </p>
      * 
-     * @return A complex type containing information about the Amazon VPC that you're disassociating from the specified
+     * @return A complex type that contains information about the VPC that you're disassociating from the specified
      *         hosted zone.
      */
 
@@ -113,12 +111,11 @@ public class DisassociateVPCFromHostedZoneRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A complex type containing information about the Amazon VPC that you're disassociating from the specified hosted
-     * zone.
+     * A complex type that contains information about the VPC that you're disassociating from the specified hosted zone.
      * </p>
      * 
      * @param vPC
-     *        A complex type containing information about the Amazon VPC that you're disassociating from the specified
+     *        A complex type that contains information about the VPC that you're disassociating from the specified
      *        hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

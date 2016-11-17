@@ -238,6 +238,489 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptPortfolioShareResult> acceptPortfolioShareAsync(AcceptPortfolioShareRequest request) {
+
+        return acceptPortfolioShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptPortfolioShareResult> acceptPortfolioShareAsync(final AcceptPortfolioShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AcceptPortfolioShareRequest, AcceptPortfolioShareResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AcceptPortfolioShareResult>() {
+            @Override
+            public AcceptPortfolioShareResult call() throws Exception {
+                AcceptPortfolioShareResult result;
+
+                try {
+                    result = acceptPortfolioShare(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociatePrincipalWithPortfolioResult> associatePrincipalWithPortfolioAsync(
+            AssociatePrincipalWithPortfolioRequest request) {
+
+        return associatePrincipalWithPortfolioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociatePrincipalWithPortfolioResult> associatePrincipalWithPortfolioAsync(
+            final AssociatePrincipalWithPortfolioRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociatePrincipalWithPortfolioRequest, AssociatePrincipalWithPortfolioResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociatePrincipalWithPortfolioResult>() {
+            @Override
+            public AssociatePrincipalWithPortfolioResult call() throws Exception {
+                AssociatePrincipalWithPortfolioResult result;
+
+                try {
+                    result = associatePrincipalWithPortfolio(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateProductWithPortfolioResult> associateProductWithPortfolioAsync(AssociateProductWithPortfolioRequest request) {
+
+        return associateProductWithPortfolioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateProductWithPortfolioResult> associateProductWithPortfolioAsync(
+            final AssociateProductWithPortfolioRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateProductWithPortfolioRequest, AssociateProductWithPortfolioResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateProductWithPortfolioResult>() {
+            @Override
+            public AssociateProductWithPortfolioResult call() throws Exception {
+                AssociateProductWithPortfolioResult result;
+
+                try {
+                    result = associateProductWithPortfolio(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConstraintResult> createConstraintAsync(CreateConstraintRequest request) {
+
+        return createConstraintAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConstraintResult> createConstraintAsync(final CreateConstraintRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConstraintRequest, CreateConstraintResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateConstraintResult>() {
+            @Override
+            public CreateConstraintResult call() throws Exception {
+                CreateConstraintResult result;
+
+                try {
+                    result = createConstraint(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePortfolioResult> createPortfolioAsync(CreatePortfolioRequest request) {
+
+        return createPortfolioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePortfolioResult> createPortfolioAsync(final CreatePortfolioRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePortfolioRequest, CreatePortfolioResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePortfolioResult>() {
+            @Override
+            public CreatePortfolioResult call() throws Exception {
+                CreatePortfolioResult result;
+
+                try {
+                    result = createPortfolio(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePortfolioShareResult> createPortfolioShareAsync(CreatePortfolioShareRequest request) {
+
+        return createPortfolioShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePortfolioShareResult> createPortfolioShareAsync(final CreatePortfolioShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePortfolioShareRequest, CreatePortfolioShareResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePortfolioShareResult>() {
+            @Override
+            public CreatePortfolioShareResult call() throws Exception {
+                CreatePortfolioShareResult result;
+
+                try {
+                    result = createPortfolioShare(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProductResult> createProductAsync(CreateProductRequest request) {
+
+        return createProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProductResult> createProductAsync(final CreateProductRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateProductRequest, CreateProductResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateProductResult>() {
+            @Override
+            public CreateProductResult call() throws Exception {
+                CreateProductResult result;
+
+                try {
+                    result = createProduct(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProvisioningArtifactResult> createProvisioningArtifactAsync(CreateProvisioningArtifactRequest request) {
+
+        return createProvisioningArtifactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProvisioningArtifactResult> createProvisioningArtifactAsync(final CreateProvisioningArtifactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateProvisioningArtifactRequest, CreateProvisioningArtifactResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateProvisioningArtifactResult>() {
+            @Override
+            public CreateProvisioningArtifactResult call() throws Exception {
+                CreateProvisioningArtifactResult result;
+
+                try {
+                    result = createProvisioningArtifact(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConstraintResult> deleteConstraintAsync(DeleteConstraintRequest request) {
+
+        return deleteConstraintAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConstraintResult> deleteConstraintAsync(final DeleteConstraintRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConstraintRequest, DeleteConstraintResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConstraintResult>() {
+            @Override
+            public DeleteConstraintResult call() throws Exception {
+                DeleteConstraintResult result;
+
+                try {
+                    result = deleteConstraint(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePortfolioResult> deletePortfolioAsync(DeletePortfolioRequest request) {
+
+        return deletePortfolioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePortfolioResult> deletePortfolioAsync(final DeletePortfolioRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePortfolioRequest, DeletePortfolioResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePortfolioResult>() {
+            @Override
+            public DeletePortfolioResult call() throws Exception {
+                DeletePortfolioResult result;
+
+                try {
+                    result = deletePortfolio(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePortfolioShareResult> deletePortfolioShareAsync(DeletePortfolioShareRequest request) {
+
+        return deletePortfolioShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePortfolioShareResult> deletePortfolioShareAsync(final DeletePortfolioShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePortfolioShareRequest, DeletePortfolioShareResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePortfolioShareResult>() {
+            @Override
+            public DeletePortfolioShareResult call() throws Exception {
+                DeletePortfolioShareResult result;
+
+                try {
+                    result = deletePortfolioShare(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProductResult> deleteProductAsync(DeleteProductRequest request) {
+
+        return deleteProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProductResult> deleteProductAsync(final DeleteProductRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteProductRequest, DeleteProductResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteProductResult>() {
+            @Override
+            public DeleteProductResult call() throws Exception {
+                DeleteProductResult result;
+
+                try {
+                    result = deleteProduct(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProvisioningArtifactResult> deleteProvisioningArtifactAsync(DeleteProvisioningArtifactRequest request) {
+
+        return deleteProvisioningArtifactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProvisioningArtifactResult> deleteProvisioningArtifactAsync(final DeleteProvisioningArtifactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteProvisioningArtifactRequest, DeleteProvisioningArtifactResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteProvisioningArtifactResult>() {
+            @Override
+            public DeleteProvisioningArtifactResult call() throws Exception {
+                DeleteProvisioningArtifactResult result;
+
+                try {
+                    result = deleteProvisioningArtifact(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConstraintResult> describeConstraintAsync(DescribeConstraintRequest request) {
+
+        return describeConstraintAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConstraintResult> describeConstraintAsync(final DescribeConstraintRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeConstraintRequest, DescribeConstraintResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeConstraintResult>() {
+            @Override
+            public DescribeConstraintResult call() throws Exception {
+                DescribeConstraintResult result;
+
+                try {
+                    result = describeConstraint(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePortfolioResult> describePortfolioAsync(DescribePortfolioRequest request) {
+
+        return describePortfolioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePortfolioResult> describePortfolioAsync(final DescribePortfolioRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePortfolioRequest, DescribePortfolioResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePortfolioResult>() {
+            @Override
+            public DescribePortfolioResult call() throws Exception {
+                DescribePortfolioResult result;
+
+                try {
+                    result = describePortfolio(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeProductResult> describeProductAsync(DescribeProductRequest request) {
 
         return describeProductAsync(request, null);
@@ -270,6 +753,38 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeProductAsAdminResult> describeProductAsAdminAsync(DescribeProductAsAdminRequest request) {
+
+        return describeProductAsAdminAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProductAsAdminResult> describeProductAsAdminAsync(final DescribeProductAsAdminRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeProductAsAdminRequest, DescribeProductAsAdminResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeProductAsAdminResult>() {
+            @Override
+            public DescribeProductAsAdminResult call() throws Exception {
+                DescribeProductAsAdminResult result;
+
+                try {
+                    result = describeProductAsAdmin(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeProductViewResult> describeProductViewAsync(DescribeProductViewRequest request) {
 
         return describeProductViewAsync(request, null);
@@ -286,6 +801,38 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = describeProductView(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProvisioningArtifactResult> describeProvisioningArtifactAsync(DescribeProvisioningArtifactRequest request) {
+
+        return describeProvisioningArtifactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProvisioningArtifactResult> describeProvisioningArtifactAsync(final DescribeProvisioningArtifactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeProvisioningArtifactRequest, DescribeProvisioningArtifactResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeProvisioningArtifactResult>() {
+            @Override
+            public DescribeProvisioningArtifactResult call() throws Exception {
+                DescribeProvisioningArtifactResult result;
+
+                try {
+                    result = describeProvisioningArtifact(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -367,6 +914,138 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociatePrincipalFromPortfolioResult> disassociatePrincipalFromPortfolioAsync(
+            DisassociatePrincipalFromPortfolioRequest request) {
+
+        return disassociatePrincipalFromPortfolioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociatePrincipalFromPortfolioResult> disassociatePrincipalFromPortfolioAsync(
+            final DisassociatePrincipalFromPortfolioRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociatePrincipalFromPortfolioRequest, DisassociatePrincipalFromPortfolioResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociatePrincipalFromPortfolioResult>() {
+            @Override
+            public DisassociatePrincipalFromPortfolioResult call() throws Exception {
+                DisassociatePrincipalFromPortfolioResult result;
+
+                try {
+                    result = disassociatePrincipalFromPortfolio(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateProductFromPortfolioResult> disassociateProductFromPortfolioAsync(
+            DisassociateProductFromPortfolioRequest request) {
+
+        return disassociateProductFromPortfolioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateProductFromPortfolioResult> disassociateProductFromPortfolioAsync(
+            final DisassociateProductFromPortfolioRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateProductFromPortfolioRequest, DisassociateProductFromPortfolioResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateProductFromPortfolioResult>() {
+            @Override
+            public DisassociateProductFromPortfolioResult call() throws Exception {
+                DisassociateProductFromPortfolioResult result;
+
+                try {
+                    result = disassociateProductFromPortfolio(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAcceptedPortfolioSharesResult> listAcceptedPortfolioSharesAsync(ListAcceptedPortfolioSharesRequest request) {
+
+        return listAcceptedPortfolioSharesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAcceptedPortfolioSharesResult> listAcceptedPortfolioSharesAsync(final ListAcceptedPortfolioSharesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAcceptedPortfolioSharesRequest, ListAcceptedPortfolioSharesResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAcceptedPortfolioSharesResult>() {
+            @Override
+            public ListAcceptedPortfolioSharesResult call() throws Exception {
+                ListAcceptedPortfolioSharesResult result;
+
+                try {
+                    result = listAcceptedPortfolioShares(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConstraintsForPortfolioResult> listConstraintsForPortfolioAsync(ListConstraintsForPortfolioRequest request) {
+
+        return listConstraintsForPortfolioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConstraintsForPortfolioResult> listConstraintsForPortfolioAsync(final ListConstraintsForPortfolioRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListConstraintsForPortfolioRequest, ListConstraintsForPortfolioResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListConstraintsForPortfolioResult>() {
+            @Override
+            public ListConstraintsForPortfolioResult call() throws Exception {
+                ListConstraintsForPortfolioResult result;
+
+                try {
+                    result = listConstraintsForPortfolio(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListLaunchPathsResult> listLaunchPathsAsync(ListLaunchPathsRequest request) {
 
         return listLaunchPathsAsync(request, null);
@@ -383,6 +1062,166 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = listLaunchPaths(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPortfolioAccessResult> listPortfolioAccessAsync(ListPortfolioAccessRequest request) {
+
+        return listPortfolioAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPortfolioAccessResult> listPortfolioAccessAsync(final ListPortfolioAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPortfolioAccessRequest, ListPortfolioAccessResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPortfolioAccessResult>() {
+            @Override
+            public ListPortfolioAccessResult call() throws Exception {
+                ListPortfolioAccessResult result;
+
+                try {
+                    result = listPortfolioAccess(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPortfoliosResult> listPortfoliosAsync(ListPortfoliosRequest request) {
+
+        return listPortfoliosAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPortfoliosResult> listPortfoliosAsync(final ListPortfoliosRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPortfoliosRequest, ListPortfoliosResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPortfoliosResult>() {
+            @Override
+            public ListPortfoliosResult call() throws Exception {
+                ListPortfoliosResult result;
+
+                try {
+                    result = listPortfolios(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPortfoliosForProductResult> listPortfoliosForProductAsync(ListPortfoliosForProductRequest request) {
+
+        return listPortfoliosForProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPortfoliosForProductResult> listPortfoliosForProductAsync(final ListPortfoliosForProductRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPortfoliosForProductRequest, ListPortfoliosForProductResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPortfoliosForProductResult>() {
+            @Override
+            public ListPortfoliosForProductResult call() throws Exception {
+                ListPortfoliosForProductResult result;
+
+                try {
+                    result = listPortfoliosForProduct(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPrincipalsForPortfolioResult> listPrincipalsForPortfolioAsync(ListPrincipalsForPortfolioRequest request) {
+
+        return listPrincipalsForPortfolioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPrincipalsForPortfolioResult> listPrincipalsForPortfolioAsync(final ListPrincipalsForPortfolioRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPrincipalsForPortfolioRequest, ListPrincipalsForPortfolioResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPrincipalsForPortfolioResult>() {
+            @Override
+            public ListPrincipalsForPortfolioResult call() throws Exception {
+                ListPrincipalsForPortfolioResult result;
+
+                try {
+                    result = listPrincipalsForPortfolio(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProvisioningArtifactsResult> listProvisioningArtifactsAsync(ListProvisioningArtifactsRequest request) {
+
+        return listProvisioningArtifactsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProvisioningArtifactsResult> listProvisioningArtifactsAsync(final ListProvisioningArtifactsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListProvisioningArtifactsRequest, ListProvisioningArtifactsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListProvisioningArtifactsResult>() {
+            @Override
+            public ListProvisioningArtifactsResult call() throws Exception {
+                ListProvisioningArtifactsResult result;
+
+                try {
+                    result = listProvisioningArtifacts(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -463,6 +1302,38 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<RejectPortfolioShareResult> rejectPortfolioShareAsync(RejectPortfolioShareRequest request) {
+
+        return rejectPortfolioShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectPortfolioShareResult> rejectPortfolioShareAsync(final RejectPortfolioShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RejectPortfolioShareRequest, RejectPortfolioShareResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<RejectPortfolioShareResult>() {
+            @Override
+            public RejectPortfolioShareResult call() throws Exception {
+                RejectPortfolioShareResult result;
+
+                try {
+                    result = rejectPortfolioShare(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ScanProvisionedProductsResult> scanProvisionedProductsAsync(ScanProvisionedProductsRequest request) {
 
         return scanProvisionedProductsAsync(request, null);
@@ -527,6 +1398,38 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<SearchProductsAsAdminResult> searchProductsAsAdminAsync(SearchProductsAsAdminRequest request) {
+
+        return searchProductsAsAdminAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchProductsAsAdminResult> searchProductsAsAdminAsync(final SearchProductsAsAdminRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchProductsAsAdminRequest, SearchProductsAsAdminResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchProductsAsAdminResult>() {
+            @Override
+            public SearchProductsAsAdminResult call() throws Exception {
+                SearchProductsAsAdminResult result;
+
+                try {
+                    result = searchProductsAsAdmin(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TerminateProvisionedProductResult> terminateProvisionedProductAsync(TerminateProvisionedProductRequest request) {
 
         return terminateProvisionedProductAsync(request, null);
@@ -559,6 +1462,102 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateConstraintResult> updateConstraintAsync(UpdateConstraintRequest request) {
+
+        return updateConstraintAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConstraintResult> updateConstraintAsync(final UpdateConstraintRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateConstraintRequest, UpdateConstraintResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateConstraintResult>() {
+            @Override
+            public UpdateConstraintResult call() throws Exception {
+                UpdateConstraintResult result;
+
+                try {
+                    result = updateConstraint(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePortfolioResult> updatePortfolioAsync(UpdatePortfolioRequest request) {
+
+        return updatePortfolioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePortfolioResult> updatePortfolioAsync(final UpdatePortfolioRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePortfolioRequest, UpdatePortfolioResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePortfolioResult>() {
+            @Override
+            public UpdatePortfolioResult call() throws Exception {
+                UpdatePortfolioResult result;
+
+                try {
+                    result = updatePortfolio(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProductResult> updateProductAsync(UpdateProductRequest request) {
+
+        return updateProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProductResult> updateProductAsync(final UpdateProductRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateProductRequest, UpdateProductResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateProductResult>() {
+            @Override
+            public UpdateProductResult call() throws Exception {
+                UpdateProductResult result;
+
+                try {
+                    result = updateProduct(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateProvisionedProductResult> updateProvisionedProductAsync(UpdateProvisionedProductRequest request) {
 
         return updateProvisionedProductAsync(request, null);
@@ -575,6 +1574,38 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = updateProvisionedProduct(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProvisioningArtifactResult> updateProvisioningArtifactAsync(UpdateProvisioningArtifactRequest request) {
+
+        return updateProvisioningArtifactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProvisioningArtifactResult> updateProvisioningArtifactAsync(final UpdateProvisioningArtifactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateProvisioningArtifactRequest, UpdateProvisioningArtifactResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateProvisioningArtifactResult>() {
+            @Override
+            public UpdateProvisioningArtifactResult call() throws Exception {
+                UpdateProvisioningArtifactResult result;
+
+                try {
+                    result = updateProvisioningArtifact(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

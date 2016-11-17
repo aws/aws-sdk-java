@@ -81,6 +81,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public CreateVPCAssociationAuthorizationResult createVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -106,18 +111,17 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public DeleteVPCAssociationAuthorizationResult deleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetChangeResult getChange(GetChangeRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    @Deprecated
-    public GetChangeDetailsResult getChangeDetails(GetChangeDetailsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -204,18 +208,6 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     @Override
     public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount() {
         return getTrafficPolicyInstanceCount(new GetTrafficPolicyInstanceCountRequest());
-    }
-
-    @Override
-    @Deprecated
-    public ListChangeBatchesByHostedZoneResult listChangeBatchesByHostedZone(ListChangeBatchesByHostedZoneRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    @Deprecated
-    public ListChangeBatchesByRRSetResult listChangeBatchesByRRSet(ListChangeBatchesByRRSetRequest request) {
-        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -315,6 +307,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
 
     @Override
     public ListTrafficPolicyVersionsResult listTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListVPCAssociationAuthorizationsResult listVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

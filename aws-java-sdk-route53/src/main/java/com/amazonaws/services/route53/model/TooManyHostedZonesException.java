@@ -14,7 +14,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * This hosted zone cannot be created because the hosted zone limit is exceeded. To request a limit increase, go to the
+ * This hosted zone can't be created because the hosted zone limit is exceeded. To request a limit increase, go to the
  * Amazon Route 53 <a href="http://aws.amazon.com/route53-request/">Contact Us</a> page.
  * </p>
  */

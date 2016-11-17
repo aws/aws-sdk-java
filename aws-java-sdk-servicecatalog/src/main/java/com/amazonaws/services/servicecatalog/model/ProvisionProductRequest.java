@@ -40,7 +40,7 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
     private String acceptLanguage;
     /**
      * <p>
-     * The identifier of the product.
+     * The product identifier.
      * </p>
      */
     private String productId;
@@ -200,11 +200,11 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the product.
+     * The product identifier.
      * </p>
      * 
      * @param productId
-     *        The identifier of the product.
+     *        The product identifier.
      */
 
     public void setProductId(String productId) {
@@ -213,10 +213,10 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the product.
+     * The product identifier.
      * </p>
      * 
-     * @return The identifier of the product.
+     * @return The product identifier.
      */
 
     public String getProductId() {
@@ -225,11 +225,11 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the product.
+     * The product identifier.
      * </p>
      * 
      * @param productId
-     *        The identifier of the product.
+     *        The product identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

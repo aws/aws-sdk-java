@@ -496,6 +496,40 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVPCAssociationAuthorizationResult> createVPCAssociationAuthorizationAsync(
+            CreateVPCAssociationAuthorizationRequest request) {
+
+        return createVPCAssociationAuthorizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVPCAssociationAuthorizationResult> createVPCAssociationAuthorizationAsync(
+            final CreateVPCAssociationAuthorizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVPCAssociationAuthorizationRequest, CreateVPCAssociationAuthorizationResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVPCAssociationAuthorizationResult>() {
+            @Override
+            public CreateVPCAssociationAuthorizationResult call() throws Exception {
+                CreateVPCAssociationAuthorizationResult result;
+
+                try {
+                    result = createVPCAssociationAuthorization(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteHealthCheckResult> deleteHealthCheckAsync(DeleteHealthCheckRequest request) {
 
         return deleteHealthCheckAsync(request, null);
@@ -656,6 +690,40 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteVPCAssociationAuthorizationResult> deleteVPCAssociationAuthorizationAsync(
+            DeleteVPCAssociationAuthorizationRequest request) {
+
+        return deleteVPCAssociationAuthorizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVPCAssociationAuthorizationResult> deleteVPCAssociationAuthorizationAsync(
+            final DeleteVPCAssociationAuthorizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVPCAssociationAuthorizationRequest, DeleteVPCAssociationAuthorizationResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVPCAssociationAuthorizationResult>() {
+            @Override
+            public DeleteVPCAssociationAuthorizationResult call() throws Exception {
+                DeleteVPCAssociationAuthorizationResult result;
+
+                try {
+                    result = deleteVPCAssociationAuthorization(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateVPCFromHostedZoneResult> disassociateVPCFromHostedZoneAsync(DisassociateVPCFromHostedZoneRequest request) {
 
         return disassociateVPCFromHostedZoneAsync(request, null);
@@ -705,40 +773,6 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
 
                 try {
                     result = getChange(request);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    @Deprecated
-    public java.util.concurrent.Future<GetChangeDetailsResult> getChangeDetailsAsync(GetChangeDetailsRequest request) {
-
-        return getChangeDetailsAsync(request, null);
-    }
-
-    @Override
-    @Deprecated
-    public java.util.concurrent.Future<GetChangeDetailsResult> getChangeDetailsAsync(final GetChangeDetailsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<GetChangeDetailsRequest, GetChangeDetailsResult> asyncHandler) {
-
-        return executorService.submit(new java.util.concurrent.Callable<GetChangeDetailsResult>() {
-            @Override
-            public GetChangeDetailsResult call() throws Exception {
-                GetChangeDetailsResult result;
-
-                try {
-                    result = getChangeDetails(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1250,75 +1284,6 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
             com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceCountRequest, GetTrafficPolicyInstanceCountResult> asyncHandler) {
 
         return getTrafficPolicyInstanceCountAsync(new GetTrafficPolicyInstanceCountRequest(), asyncHandler);
-    }
-
-    @Override
-    @Deprecated
-    public java.util.concurrent.Future<ListChangeBatchesByHostedZoneResult> listChangeBatchesByHostedZoneAsync(ListChangeBatchesByHostedZoneRequest request) {
-
-        return listChangeBatchesByHostedZoneAsync(request, null);
-    }
-
-    @Override
-    @Deprecated
-    public java.util.concurrent.Future<ListChangeBatchesByHostedZoneResult> listChangeBatchesByHostedZoneAsync(
-            final ListChangeBatchesByHostedZoneRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByHostedZoneRequest, ListChangeBatchesByHostedZoneResult> asyncHandler) {
-
-        return executorService.submit(new java.util.concurrent.Callable<ListChangeBatchesByHostedZoneResult>() {
-            @Override
-            public ListChangeBatchesByHostedZoneResult call() throws Exception {
-                ListChangeBatchesByHostedZoneResult result;
-
-                try {
-                    result = listChangeBatchesByHostedZone(request);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    @Deprecated
-    public java.util.concurrent.Future<ListChangeBatchesByRRSetResult> listChangeBatchesByRRSetAsync(ListChangeBatchesByRRSetRequest request) {
-
-        return listChangeBatchesByRRSetAsync(request, null);
-    }
-
-    @Override
-    @Deprecated
-    public java.util.concurrent.Future<ListChangeBatchesByRRSetResult> listChangeBatchesByRRSetAsync(final ListChangeBatchesByRRSetRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByRRSetRequest, ListChangeBatchesByRRSetResult> asyncHandler) {
-
-        return executorService.submit(new java.util.concurrent.Callable<ListChangeBatchesByRRSetResult>() {
-            @Override
-            public ListChangeBatchesByRRSetResult call() throws Exception {
-                ListChangeBatchesByRRSetResult result;
-
-                try {
-                    result = listChangeBatchesByRRSet(request);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
-                }
-                return result;
-            }
-        });
     }
 
     @Override
@@ -1880,6 +1845,40 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
 
                 try {
                     result = listTrafficPolicyVersions(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVPCAssociationAuthorizationsResult> listVPCAssociationAuthorizationsAsync(
+            ListVPCAssociationAuthorizationsRequest request) {
+
+        return listVPCAssociationAuthorizationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVPCAssociationAuthorizationsResult> listVPCAssociationAuthorizationsAsync(
+            final ListVPCAssociationAuthorizationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVPCAssociationAuthorizationsRequest, ListVPCAssociationAuthorizationsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVPCAssociationAuthorizationsResult>() {
+            @Override
+            public ListVPCAssociationAuthorizationsResult call() throws Exception {
+                ListVPCAssociationAuthorizationsResult result;
+
+                try {
+                    result = listVPCAssociationAuthorizations(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

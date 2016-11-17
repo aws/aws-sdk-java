@@ -17,24 +17,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the VPC and the hosted zone that you want to associate.
+ * A complex type that contains information about the request to associate a VPC with a private hosted zone.
  * </p>
  */
 public class AssociateVPCWithHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the hosted zone you want to associate your VPC with.
+     * The ID of the private hosted zone that you want to associate an Amazon VPC with.
      * </p>
      * <p>
-     * Note that you cannot associate a VPC with a hosted zone that doesn't have an existing VPC association.
+     * Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.
      * </p>
      */
     private String hostedZoneId;
     /**
      * <p>
-     * A complex type containing information about the Amazon VPC that you're associating with the specified hosted
-     * zone.
+     * A complex type that contains information about the VPC that you want to associate with a private hosted zone.
      * </p>
      */
     private VPC vPC;
@@ -47,16 +46,16 @@ public class AssociateVPCWithHostedZoneRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the hosted zone you want to associate your VPC with.
+     * The ID of the private hosted zone that you want to associate an Amazon VPC with.
      * </p>
      * <p>
-     * Note that you cannot associate a VPC with a hosted zone that doesn't have an existing VPC association.
+     * Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the hosted zone you want to associate your VPC with.</p>
+     *        The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
      *        <p>
-     *        Note that you cannot associate a VPC with a hosted zone that doesn't have an existing VPC association.
+     *        Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -65,15 +64,15 @@ public class AssociateVPCWithHostedZoneRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the hosted zone you want to associate your VPC with.
+     * The ID of the private hosted zone that you want to associate an Amazon VPC with.
      * </p>
      * <p>
-     * Note that you cannot associate a VPC with a hosted zone that doesn't have an existing VPC association.
+     * Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.
      * </p>
      * 
-     * @return The ID of the hosted zone you want to associate your VPC with.</p>
+     * @return The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
      *         <p>
-     *         Note that you cannot associate a VPC with a hosted zone that doesn't have an existing VPC association.
+     *         Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.
      */
 
     public String getHostedZoneId() {
@@ -82,16 +81,16 @@ public class AssociateVPCWithHostedZoneRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the hosted zone you want to associate your VPC with.
+     * The ID of the private hosted zone that you want to associate an Amazon VPC with.
      * </p>
      * <p>
-     * Note that you cannot associate a VPC with a hosted zone that doesn't have an existing VPC association.
+     * Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the hosted zone you want to associate your VPC with.</p>
+     *        The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
      *        <p>
-     *        Note that you cannot associate a VPC with a hosted zone that doesn't have an existing VPC association.
+     *        Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,13 +101,12 @@ public class AssociateVPCWithHostedZoneRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A complex type containing information about the Amazon VPC that you're associating with the specified hosted
-     * zone.
+     * A complex type that contains information about the VPC that you want to associate with a private hosted zone.
      * </p>
      * 
      * @param vPC
-     *        A complex type containing information about the Amazon VPC that you're associating with the specified
-     *        hosted zone.
+     *        A complex type that contains information about the VPC that you want to associate with a private hosted
+     *        zone.
      */
 
     public void setVPC(VPC vPC) {
@@ -117,12 +115,11 @@ public class AssociateVPCWithHostedZoneRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A complex type containing information about the Amazon VPC that you're associating with the specified hosted
-     * zone.
+     * A complex type that contains information about the VPC that you want to associate with a private hosted zone.
      * </p>
      * 
-     * @return A complex type containing information about the Amazon VPC that you're associating with the specified
-     *         hosted zone.
+     * @return A complex type that contains information about the VPC that you want to associate with a private hosted
+     *         zone.
      */
 
     public VPC getVPC() {
@@ -131,13 +128,12 @@ public class AssociateVPCWithHostedZoneRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A complex type containing information about the Amazon VPC that you're associating with the specified hosted
-     * zone.
+     * A complex type that contains information about the VPC that you want to associate with a private hosted zone.
      * </p>
      * 
      * @param vPC
-     *        A complex type containing information about the Amazon VPC that you're associating with the specified
-     *        hosted zone.
+     *        A complex type that contains information about the VPC that you want to associate with a private hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -110,6 +110,261 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Accepts an offer to share a portfolio.
+     * </p>
+     * 
+     * @param acceptPortfolioShareRequest
+     * @return Result of the AcceptPortfolioShare operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.AcceptPortfolioShare
+     */
+    AcceptPortfolioShareResult acceptPortfolioShare(AcceptPortfolioShareRequest acceptPortfolioShareRequest);
+
+    /**
+     * <p>
+     * Associates the specified principal ARN with the specified portfolio.
+     * </p>
+     * 
+     * @param associatePrincipalWithPortfolioRequest
+     * @return Result of the AssociatePrincipalWithPortfolio operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.AssociatePrincipalWithPortfolio
+     */
+    AssociatePrincipalWithPortfolioResult associatePrincipalWithPortfolio(AssociatePrincipalWithPortfolioRequest associatePrincipalWithPortfolioRequest);
+
+    /**
+     * <p>
+     * Associates a product with a portfolio.
+     * </p>
+     * 
+     * @param associateProductWithPortfolioRequest
+     * @return Result of the AssociateProductWithPortfolio operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.AssociateProductWithPortfolio
+     */
+    AssociateProductWithPortfolioResult associateProductWithPortfolio(AssociateProductWithPortfolioRequest associateProductWithPortfolioRequest);
+
+    /**
+     * <p>
+     * Creates a new constraint.
+     * </p>
+     * 
+     * @param createConstraintRequest
+     * @return Result of the CreateConstraint operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @throws DuplicateResourceException
+     *         The specified resource is a duplicate.
+     * @sample AWSServiceCatalog.CreateConstraint
+     */
+    CreateConstraintResult createConstraint(CreateConstraintRequest createConstraintRequest);
+
+    /**
+     * <p>
+     * Creates a new portfolio.
+     * </p>
+     * 
+     * @param createPortfolioRequest
+     * @return Result of the CreatePortfolio operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.CreatePortfolio
+     */
+    CreatePortfolioResult createPortfolio(CreatePortfolioRequest createPortfolioRequest);
+
+    /**
+     * <p>
+     * Creates a new portfolio share.
+     * </p>
+     * 
+     * @param createPortfolioShareRequest
+     * @return Result of the CreatePortfolioShare operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.CreatePortfolioShare
+     */
+    CreatePortfolioShareResult createPortfolioShare(CreatePortfolioShareRequest createPortfolioShareRequest);
+
+    /**
+     * <p>
+     * Creates a new product.
+     * </p>
+     * 
+     * @param createProductRequest
+     * @return Result of the CreateProduct operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.CreateProduct
+     */
+    CreateProductResult createProduct(CreateProductRequest createProductRequest);
+
+    /**
+     * <p>
+     * Create a new provisioning artifact for the specified product. This operation will not work with a product that
+     * has been shared with you.
+     * </p>
+     * 
+     * @param createProvisioningArtifactRequest
+     * @return Result of the CreateProvisioningArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.CreateProvisioningArtifact
+     */
+    CreateProvisioningArtifactResult createProvisioningArtifact(CreateProvisioningArtifactRequest createProvisioningArtifactRequest);
+
+    /**
+     * <p>
+     * Deletes the specified constraint.
+     * </p>
+     * 
+     * @param deleteConstraintRequest
+     * @return Result of the DeleteConstraint operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.DeleteConstraint
+     */
+    DeleteConstraintResult deleteConstraint(DeleteConstraintRequest deleteConstraintRequest);
+
+    /**
+     * <p>
+     * Deletes the specified portfolio. This operation will not work with a portfolio that has been shared with you or
+     * if it has products, users, constraints, or shared accounts associated with it.
+     * </p>
+     * 
+     * @param deletePortfolioRequest
+     * @return Result of the DeletePortfolio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceInUseException
+     *         The operation was requested against a resource that is currently in use. Free the resource from use and
+     *         retry the operation.
+     * @sample AWSServiceCatalog.DeletePortfolio
+     */
+    DeletePortfolioResult deletePortfolio(DeletePortfolioRequest deletePortfolioRequest);
+
+    /**
+     * <p>
+     * Deletes the specified portfolio share.
+     * </p>
+     * 
+     * @param deletePortfolioShareRequest
+     * @return Result of the DeletePortfolioShare operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DeletePortfolioShare
+     */
+    DeletePortfolioShareResult deletePortfolioShare(DeletePortfolioShareRequest deletePortfolioShareRequest);
+
+    /**
+     * <p>
+     * Deletes the specified product. This operation will not work with a product that has been shared with you or is
+     * associated with a portfolio.
+     * </p>
+     * 
+     * @param deleteProductRequest
+     * @return Result of the DeleteProduct operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceInUseException
+     *         The operation was requested against a resource that is currently in use. Free the resource from use and
+     *         retry the operation.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.DeleteProduct
+     */
+    DeleteProductResult deleteProduct(DeleteProductRequest deleteProductRequest);
+
+    /**
+     * <p>
+     * Deletes the specified provisioning artifact. This operation will not work on a provisioning artifact associated
+     * with a product that has been shared with you, or on the last provisioning artifact associated with a product (a
+     * product must have at least one provisioning artifact).
+     * </p>
+     * 
+     * @param deleteProvisioningArtifactRequest
+     * @return Result of the DeleteProvisioningArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceInUseException
+     *         The operation was requested against a resource that is currently in use. Free the resource from use and
+     *         retry the operation.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.DeleteProvisioningArtifact
+     */
+    DeleteProvisioningArtifactResult deleteProvisioningArtifact(DeleteProvisioningArtifactRequest deleteProvisioningArtifactRequest);
+
+    /**
+     * <p>
+     * Retrieves detailed information for a specified constraint.
+     * </p>
+     * 
+     * @param describeConstraintRequest
+     * @return Result of the DescribeConstraint operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeConstraint
+     */
+    DescribeConstraintResult describeConstraint(DescribeConstraintRequest describeConstraintRequest);
+
+    /**
+     * <p>
+     * Retrieves detailed information and any tags associated with the specified portfolio.
+     * </p>
+     * 
+     * @param describePortfolioRequest
+     * @return Result of the DescribePortfolio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribePortfolio
+     */
+    DescribePortfolioResult describePortfolio(DescribePortfolioRequest describePortfolioRequest);
+
+    /**
+     * <p>
      * Retrieves information about a specified product.
      * </p>
      * <p>
@@ -129,6 +384,19 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Retrieves information about a specified product, run with administrator access.
+     * </p>
+     * 
+     * @param describeProductAsAdminRequest
+     * @return Result of the DescribeProductAsAdmin operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeProductAsAdmin
+     */
+    DescribeProductAsAdminResult describeProductAsAdmin(DescribeProductAsAdminRequest describeProductAsAdminRequest);
+
+    /**
+     * <p>
      * Retrieves information about a specified product.
      * </p>
      * <p>
@@ -145,6 +413,19 @@ public interface AWSServiceCatalog {
      * @sample AWSServiceCatalog.DescribeProductView
      */
     DescribeProductViewResult describeProductView(DescribeProductViewRequest describeProductViewRequest);
+
+    /**
+     * <p>
+     * Retrieves detailed information about the specified provisioning artifact.
+     * </p>
+     * 
+     * @param describeProvisioningArtifactRequest
+     * @return Result of the DescribeProvisioningArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeProvisioningArtifact
+     */
+    DescribeProvisioningArtifactResult describeProvisioningArtifact(DescribeProvisioningArtifactRequest describeProvisioningArtifactRequest);
 
     /**
      * <p>
@@ -179,6 +460,65 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Disassociates a previously associated principal ARN from a specified portfolio.
+     * </p>
+     * 
+     * @param disassociatePrincipalFromPortfolioRequest
+     * @return Result of the DisassociatePrincipalFromPortfolio operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DisassociatePrincipalFromPortfolio
+     */
+    DisassociatePrincipalFromPortfolioResult disassociatePrincipalFromPortfolio(
+            DisassociatePrincipalFromPortfolioRequest disassociatePrincipalFromPortfolioRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified product from the specified portfolio.
+     * </p>
+     * 
+     * @param disassociateProductFromPortfolioRequest
+     * @return Result of the DisassociateProductFromPortfolio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.DisassociateProductFromPortfolio
+     */
+    DisassociateProductFromPortfolioResult disassociateProductFromPortfolio(DisassociateProductFromPortfolioRequest disassociateProductFromPortfolioRequest);
+
+    /**
+     * <p>
+     * Lists details of all portfolios for which sharing was accepted by this account.
+     * </p>
+     * 
+     * @param listAcceptedPortfolioSharesRequest
+     * @return Result of the ListAcceptedPortfolioShares operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListAcceptedPortfolioShares
+     */
+    ListAcceptedPortfolioSharesResult listAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest listAcceptedPortfolioSharesRequest);
+
+    /**
+     * <p>
+     * Retrieves detailed constraint information for the specified portfolio and product.
+     * </p>
+     * 
+     * @param listConstraintsForPortfolioRequest
+     * @return Result of the ListConstraintsForPortfolio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListConstraintsForPortfolio
+     */
+    ListConstraintsForPortfolioResult listConstraintsForPortfolio(ListConstraintsForPortfolioRequest listConstraintsForPortfolioRequest);
+
+    /**
+     * <p>
      * Returns a paginated list of all paths to a specified product. A path is how the user has access to a specified
      * product, and is necessary when provisioning a product. A path also determines the constraints put on the product.
      * </p>
@@ -192,6 +532,77 @@ public interface AWSServiceCatalog {
      * @sample AWSServiceCatalog.ListLaunchPaths
      */
     ListLaunchPathsResult listLaunchPaths(ListLaunchPathsRequest listLaunchPathsRequest);
+
+    /**
+     * <p>
+     * Lists the account IDs that have been authorized sharing of the specified portfolio.
+     * </p>
+     * 
+     * @param listPortfolioAccessRequest
+     * @return Result of the ListPortfolioAccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.ListPortfolioAccess
+     */
+    ListPortfolioAccessResult listPortfolioAccess(ListPortfolioAccessRequest listPortfolioAccessRequest);
+
+    /**
+     * <p>
+     * Lists all portfolios in the catalog.
+     * </p>
+     * 
+     * @param listPortfoliosRequest
+     * @return Result of the ListPortfolios operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListPortfolios
+     */
+    ListPortfoliosResult listPortfolios(ListPortfoliosRequest listPortfoliosRequest);
+
+    /**
+     * <p>
+     * Lists all portfolios that the specified product is associated with.
+     * </p>
+     * 
+     * @param listPortfoliosForProductRequest
+     * @return Result of the ListPortfoliosForProduct operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.ListPortfoliosForProduct
+     */
+    ListPortfoliosForProductResult listPortfoliosForProduct(ListPortfoliosForProductRequest listPortfoliosForProductRequest);
+
+    /**
+     * <p>
+     * Lists all principal ARNs associated with the specified portfolio.
+     * </p>
+     * 
+     * @param listPrincipalsForPortfolioRequest
+     * @return Result of the ListPrincipalsForPortfolio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListPrincipalsForPortfolio
+     */
+    ListPrincipalsForPortfolioResult listPrincipalsForPortfolio(ListPrincipalsForPortfolioRequest listPrincipalsForPortfolioRequest);
+
+    /**
+     * <p>
+     * Lists all provisioning artifacts associated with the specified product.
+     * </p>
+     * 
+     * @param listProvisioningArtifactsRequest
+     * @return Result of the ListProvisioningArtifacts operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListProvisioningArtifacts
+     */
+    ListProvisioningArtifactsResult listProvisioningArtifacts(ListProvisioningArtifactsRequest listProvisioningArtifactsRequest);
 
     /**
      * <p>
@@ -231,6 +642,19 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Rejects an offer to share a portfolio.
+     * </p>
+     * 
+     * @param rejectPortfolioShareRequest
+     * @return Result of the RejectPortfolioShare operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.RejectPortfolioShare
+     */
+    RejectPortfolioShareResult rejectPortfolioShare(RejectPortfolioShareRequest rejectPortfolioShareRequest);
+
+    /**
+     * <p>
      * Returns a paginated list of all the ProvisionedProduct objects that are currently available (not terminated).
      * </p>
      * 
@@ -260,6 +684,23 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Retrieves summary and status information about all products created within the caller's account. If a portfolio
+     * ID is provided, this operation retrieves information for only those products that are associated with the
+     * specified portfolio.
+     * </p>
+     * 
+     * @param searchProductsAsAdminRequest
+     * @return Result of the SearchProductsAsAdmin operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.SearchProductsAsAdmin
+     */
+    SearchProductsAsAdminResult searchProductsAsAdmin(SearchProductsAsAdminRequest searchProductsAsAdminRequest);
+
+    /**
+     * <p>
      * Requests termination of an existing ProvisionedProduct object. If there are <code>Tags</code> associated with the
      * object, they are terminated when the ProvisionedProduct object is terminated.
      * </p>
@@ -277,6 +718,55 @@ public interface AWSServiceCatalog {
      * @sample AWSServiceCatalog.TerminateProvisionedProduct
      */
     TerminateProvisionedProductResult terminateProvisionedProduct(TerminateProvisionedProductRequest terminateProvisionedProductRequest);
+
+    /**
+     * <p>
+     * Updates an existing constraint.
+     * </p>
+     * 
+     * @param updateConstraintRequest
+     * @return Result of the UpdateConstraint operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.UpdateConstraint
+     */
+    UpdateConstraintResult updateConstraint(UpdateConstraintRequest updateConstraintRequest);
+
+    /**
+     * <p>
+     * Updates the specified portfolio's details. This operation will not work with a product that has been shared with
+     * you.
+     * </p>
+     * 
+     * @param updatePortfolioRequest
+     * @return Result of the UpdatePortfolio operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.UpdatePortfolio
+     */
+    UpdatePortfolioResult updatePortfolio(UpdatePortfolioRequest updatePortfolioRequest);
+
+    /**
+     * <p>
+     * Updates an existing product.
+     * </p>
+     * 
+     * @param updateProductRequest
+     * @return Result of the UpdateProduct operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.UpdateProduct
+     */
+    UpdateProductResult updateProduct(UpdateProductRequest updateProductRequest);
 
     /**
      * <p>
@@ -298,6 +788,22 @@ public interface AWSServiceCatalog {
      * @sample AWSServiceCatalog.UpdateProvisionedProduct
      */
     UpdateProvisionedProductResult updateProvisionedProduct(UpdateProvisionedProductRequest updateProvisionedProductRequest);
+
+    /**
+     * <p>
+     * Updates an existing provisioning artifact's information. This operation will not work on a provisioning artifact
+     * associated with a product that has been shared with you.
+     * </p>
+     * 
+     * @param updateProvisioningArtifactRequest
+     * @return Result of the UpdateProvisioningArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.UpdateProvisioningArtifact
+     */
+    UpdateProvisioningArtifactResult updateProvisioningArtifact(UpdateProvisioningArtifactRequest updateProvisioningArtifactRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

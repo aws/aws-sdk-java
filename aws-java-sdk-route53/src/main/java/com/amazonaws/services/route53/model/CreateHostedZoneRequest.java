@@ -39,7 +39,7 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly created
-     * hosted cannot be resolved anywhere other than the given VPC.
+     * hosted can't be resolved anywhere other than the given VPC.
      * </p>
      */
     private VPC vPC;
@@ -211,12 +211,12 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly created
-     * hosted cannot be resolved anywhere other than the given VPC.
+     * hosted can't be resolved anywhere other than the given VPC.
      * </p>
      * 
      * @param vPC
      *        The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly
-     *        created hosted cannot be resolved anywhere other than the given VPC.
+     *        created hosted can't be resolved anywhere other than the given VPC.
      */
 
     public void setVPC(VPC vPC) {
@@ -226,11 +226,11 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly created
-     * hosted cannot be resolved anywhere other than the given VPC.
+     * hosted can't be resolved anywhere other than the given VPC.
      * </p>
      * 
      * @return The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly
-     *         created hosted cannot be resolved anywhere other than the given VPC.
+     *         created hosted can't be resolved anywhere other than the given VPC.
      */
 
     public VPC getVPC() {
@@ -240,12 +240,12 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly created
-     * hosted cannot be resolved anywhere other than the given VPC.
+     * hosted can't be resolved anywhere other than the given VPC.
      * </p>
      * 
      * @param vPC
      *        The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly
-     *        created hosted cannot be resolved anywhere other than the given VPC.
+     *        created hosted can't be resolved anywhere other than the given VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains information about the Amazon VPC that you're associating with the specified hosted zone.
+ * A complex type that contains information about an Amazon VPC that is associated with a private hosted zone.
  * </p>
  */
 public class VPC implements Serializable, Cloneable {

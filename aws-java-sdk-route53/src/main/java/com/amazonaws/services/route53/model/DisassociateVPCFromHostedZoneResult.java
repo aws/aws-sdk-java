@@ -24,18 +24,18 @@ public class DisassociateVPCFromHostedZoneResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A complex type that describes the changes made to your hosted zone.
+     * A complex type that describes the changes made to the specified private hosted zone.
      * </p>
      */
     private ChangeInfo changeInfo;
 
     /**
      * <p>
-     * A complex type that describes the changes made to your hosted zone.
+     * A complex type that describes the changes made to the specified private hosted zone.
      * </p>
      * 
      * @param changeInfo
-     *        A complex type that describes the changes made to your hosted zone.
+     *        A complex type that describes the changes made to the specified private hosted zone.
      */
 
     public void setChangeInfo(ChangeInfo changeInfo) {
@@ -44,10 +44,10 @@ public class DisassociateVPCFromHostedZoneResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A complex type that describes the changes made to your hosted zone.
+     * A complex type that describes the changes made to the specified private hosted zone.
      * </p>
      * 
-     * @return A complex type that describes the changes made to your hosted zone.
+     * @return A complex type that describes the changes made to the specified private hosted zone.
      */
 
     public ChangeInfo getChangeInfo() {
@@ -56,11 +56,11 @@ public class DisassociateVPCFromHostedZoneResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A complex type that describes the changes made to your hosted zone.
+     * A complex type that describes the changes made to the specified private hosted zone.
      * </p>
      * 
      * @param changeInfo
-     *        A complex type that describes the changes made to your hosted zone.
+     *        A complex type that describes the changes made to the specified private hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

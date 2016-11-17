@@ -29,16 +29,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * an IP address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
      * </p>
      * <p>
-     * If the endpoint is an Amazon EC2 instance, we recommend that you create an Elastic IP address, associate it with
-     * your Amazon EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP
-     * address of your instance will never change.
+     * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
+     * EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of
+     * your instance will never change.
      * </p>
      * <p>
      * For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
      * </p>
      * <p>
-     * Contraints: Amazon Route 53 cannot check the health of endpoints for which the IP address is in local, private,
-     * non-routable, or multicast ranges. For more information about IP addresses for which you cannot create health
+     * Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local, private,
+     * non-routable, or \ multicast ranges. For more information about IP addresses for which you can't create health
      * checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> and <a
      * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>.
      * </p>
@@ -363,16 +363,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * an IP address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
      * </p>
      * <p>
-     * If the endpoint is an Amazon EC2 instance, we recommend that you create an Elastic IP address, associate it with
-     * your Amazon EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP
-     * address of your instance will never change.
+     * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
+     * EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of
+     * your instance will never change.
      * </p>
      * <p>
      * For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
      * </p>
      * <p>
-     * Contraints: Amazon Route 53 cannot check the health of endpoints for which the IP address is in local, private,
-     * non-routable, or multicast ranges. For more information about IP addresses for which you cannot create health
+     * Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local, private,
+     * non-routable, or \ multicast ranges. For more information about IP addresses for which you can't create health
      * checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> and <a
      * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>.
      * </p>
@@ -387,16 +387,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        RequestInterval. Using an IP address that DNS returns, Amazon Route 53 then checks the health of the
      *        endpoint.</p>
      *        <p>
-     *        If the endpoint is an Amazon EC2 instance, we recommend that you create an Elastic IP address, associate
-     *        it with your Amazon EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This
-     *        ensures that the IP address of your instance will never change.
+     *        If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with
+     *        your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP
+     *        address of your instance will never change.
      *        </p>
      *        <p>
      *        For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
      *        </p>
      *        <p>
-     *        Contraints: Amazon Route 53 cannot check the health of endpoints for which the IP address is in local,
-     *        private, non-routable, or multicast ranges. For more information about IP addresses for which you cannot
+     *        Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local,
+     *        private, non-routable, or \ multicast ranges. For more information about IP addresses for which you can't
      *        create health checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
      *        Addresses</a> and <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for
      *        Shared Address Space</a>.
@@ -417,16 +417,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * an IP address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
      * </p>
      * <p>
-     * If the endpoint is an Amazon EC2 instance, we recommend that you create an Elastic IP address, associate it with
-     * your Amazon EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP
-     * address of your instance will never change.
+     * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
+     * EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of
+     * your instance will never change.
      * </p>
      * <p>
      * For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
      * </p>
      * <p>
-     * Contraints: Amazon Route 53 cannot check the health of endpoints for which the IP address is in local, private,
-     * non-routable, or multicast ranges. For more information about IP addresses for which you cannot create health
+     * Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local, private,
+     * non-routable, or \ multicast ranges. For more information about IP addresses for which you can't create health
      * checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> and <a
      * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>.
      * </p>
@@ -440,16 +440,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         RequestInterval. Using an IP address that DNS returns, Amazon Route 53 then checks the health of the
      *         endpoint.</p>
      *         <p>
-     *         If the endpoint is an Amazon EC2 instance, we recommend that you create an Elastic IP address, associate
-     *         it with your Amazon EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This
-     *         ensures that the IP address of your instance will never change.
+     *         If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with
+     *         your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the
+     *         IP address of your instance will never change.
      *         </p>
      *         <p>
      *         For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
      *         </p>
      *         <p>
-     *         Contraints: Amazon Route 53 cannot check the health of endpoints for which the IP address is in local,
-     *         private, non-routable, or multicast ranges. For more information about IP addresses for which you cannot
+     *         Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local,
+     *         private, non-routable, or \ multicast ranges. For more information about IP addresses for which you can't
      *         create health checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
      *         Addresses</a> and <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for
      *         Shared Address Space</a>.
@@ -470,16 +470,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * an IP address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
      * </p>
      * <p>
-     * If the endpoint is an Amazon EC2 instance, we recommend that you create an Elastic IP address, associate it with
-     * your Amazon EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP
-     * address of your instance will never change.
+     * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
+     * EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of
+     * your instance will never change.
      * </p>
      * <p>
      * For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
      * </p>
      * <p>
-     * Contraints: Amazon Route 53 cannot check the health of endpoints for which the IP address is in local, private,
-     * non-routable, or multicast ranges. For more information about IP addresses for which you cannot create health
+     * Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local, private,
+     * non-routable, or \ multicast ranges. For more information about IP addresses for which you can't create health
      * checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> and <a
      * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>.
      * </p>
@@ -494,16 +494,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        RequestInterval. Using an IP address that DNS returns, Amazon Route 53 then checks the health of the
      *        endpoint.</p>
      *        <p>
-     *        If the endpoint is an Amazon EC2 instance, we recommend that you create an Elastic IP address, associate
-     *        it with your Amazon EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This
-     *        ensures that the IP address of your instance will never change.
+     *        If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with
+     *        your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP
+     *        address of your instance will never change.
      *        </p>
      *        <p>
      *        For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
      *        </p>
      *        <p>
-     *        Contraints: Amazon Route 53 cannot check the health of endpoints for which the IP address is in local,
-     *        private, non-routable, or multicast ranges. For more information about IP addresses for which you cannot
+     *        Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local,
+     *        private, non-routable, or \ multicast ranges. For more information about IP addresses for which you can't
      *        create health checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
      *        Addresses</a> and <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for
      *        Shared Address Space</a>.

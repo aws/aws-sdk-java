@@ -92,14 +92,20 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             .withSupportsCbor(false)
             .withSupportsIon(false)
             .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.servicecatalog.model.ResourceNotFoundException.class))
+                    new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                            com.amazonaws.services.servicecatalog.model.ResourceInUseException.class))
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("InvalidParametersException").withModeledClass(
                             com.amazonaws.services.servicecatalog.model.InvalidParametersException.class))
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("DuplicateResourceException").withModeledClass(
                             com.amazonaws.services.servicecatalog.model.DuplicateResourceException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                            com.amazonaws.services.servicecatalog.model.LimitExceededException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                            com.amazonaws.services.servicecatalog.model.ResourceNotFoundException.class))
             .withBaseServiceExceptionClass(com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException.class));
 
     /**
@@ -264,6 +270,687 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Accepts an offer to share a portfolio.
+     * </p>
+     * 
+     * @param acceptPortfolioShareRequest
+     * @return Result of the AcceptPortfolioShare operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.AcceptPortfolioShare
+     */
+    @Override
+    public AcceptPortfolioShareResult acceptPortfolioShare(AcceptPortfolioShareRequest acceptPortfolioShareRequest) {
+        ExecutionContext executionContext = createExecutionContext(acceptPortfolioShareRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptPortfolioShareRequest> request = null;
+        Response<AcceptPortfolioShareResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptPortfolioShareRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptPortfolioShareRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptPortfolioShareResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AcceptPortfolioShareResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates the specified principal ARN with the specified portfolio.
+     * </p>
+     * 
+     * @param associatePrincipalWithPortfolioRequest
+     * @return Result of the AssociatePrincipalWithPortfolio operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.AssociatePrincipalWithPortfolio
+     */
+    @Override
+    public AssociatePrincipalWithPortfolioResult associatePrincipalWithPortfolio(AssociatePrincipalWithPortfolioRequest associatePrincipalWithPortfolioRequest) {
+        ExecutionContext executionContext = createExecutionContext(associatePrincipalWithPortfolioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociatePrincipalWithPortfolioRequest> request = null;
+        Response<AssociatePrincipalWithPortfolioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociatePrincipalWithPortfolioRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associatePrincipalWithPortfolioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociatePrincipalWithPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociatePrincipalWithPortfolioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a product with a portfolio.
+     * </p>
+     * 
+     * @param associateProductWithPortfolioRequest
+     * @return Result of the AssociateProductWithPortfolio operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.AssociateProductWithPortfolio
+     */
+    @Override
+    public AssociateProductWithPortfolioResult associateProductWithPortfolio(AssociateProductWithPortfolioRequest associateProductWithPortfolioRequest) {
+        ExecutionContext executionContext = createExecutionContext(associateProductWithPortfolioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateProductWithPortfolioRequest> request = null;
+        Response<AssociateProductWithPortfolioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateProductWithPortfolioRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateProductWithPortfolioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateProductWithPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateProductWithPortfolioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new constraint.
+     * </p>
+     * 
+     * @param createConstraintRequest
+     * @return Result of the CreateConstraint operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @throws DuplicateResourceException
+     *         The specified resource is a duplicate.
+     * @sample AWSServiceCatalog.CreateConstraint
+     */
+    @Override
+    public CreateConstraintResult createConstraint(CreateConstraintRequest createConstraintRequest) {
+        ExecutionContext executionContext = createExecutionContext(createConstraintRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateConstraintRequest> request = null;
+        Response<CreateConstraintResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateConstraintRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConstraintRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateConstraintResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateConstraintResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new portfolio.
+     * </p>
+     * 
+     * @param createPortfolioRequest
+     * @return Result of the CreatePortfolio operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.CreatePortfolio
+     */
+    @Override
+    public CreatePortfolioResult createPortfolio(CreatePortfolioRequest createPortfolioRequest) {
+        ExecutionContext executionContext = createExecutionContext(createPortfolioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePortfolioRequest> request = null;
+        Response<CreatePortfolioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePortfolioRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPortfolioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePortfolioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new portfolio share.
+     * </p>
+     * 
+     * @param createPortfolioShareRequest
+     * @return Result of the CreatePortfolioShare operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.CreatePortfolioShare
+     */
+    @Override
+    public CreatePortfolioShareResult createPortfolioShare(CreatePortfolioShareRequest createPortfolioShareRequest) {
+        ExecutionContext executionContext = createExecutionContext(createPortfolioShareRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePortfolioShareRequest> request = null;
+        Response<CreatePortfolioShareResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePortfolioShareRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPortfolioShareRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePortfolioShareResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePortfolioShareResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new product.
+     * </p>
+     * 
+     * @param createProductRequest
+     * @return Result of the CreateProduct operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.CreateProduct
+     */
+    @Override
+    public CreateProductResult createProduct(CreateProductRequest createProductRequest) {
+        ExecutionContext executionContext = createExecutionContext(createProductRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateProductRequest> request = null;
+        Response<CreateProductResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateProductRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProductRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateProductResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateProductResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Create a new provisioning artifact for the specified product. This operation will not work with a product that
+     * has been shared with you.
+     * </p>
+     * 
+     * @param createProvisioningArtifactRequest
+     * @return Result of the CreateProvisioningArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.CreateProvisioningArtifact
+     */
+    @Override
+    public CreateProvisioningArtifactResult createProvisioningArtifact(CreateProvisioningArtifactRequest createProvisioningArtifactRequest) {
+        ExecutionContext executionContext = createExecutionContext(createProvisioningArtifactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateProvisioningArtifactRequest> request = null;
+        Response<CreateProvisioningArtifactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateProvisioningArtifactRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProvisioningArtifactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateProvisioningArtifactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateProvisioningArtifactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified constraint.
+     * </p>
+     * 
+     * @param deleteConstraintRequest
+     * @return Result of the DeleteConstraint operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.DeleteConstraint
+     */
+    @Override
+    public DeleteConstraintResult deleteConstraint(DeleteConstraintRequest deleteConstraintRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteConstraintRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConstraintRequest> request = null;
+        Response<DeleteConstraintResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConstraintRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConstraintRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteConstraintResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteConstraintResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified portfolio. This operation will not work with a portfolio that has been shared with you or
+     * if it has products, users, constraints, or shared accounts associated with it.
+     * </p>
+     * 
+     * @param deletePortfolioRequest
+     * @return Result of the DeletePortfolio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceInUseException
+     *         The operation was requested against a resource that is currently in use. Free the resource from use and
+     *         retry the operation.
+     * @sample AWSServiceCatalog.DeletePortfolio
+     */
+    @Override
+    public DeletePortfolioResult deletePortfolio(DeletePortfolioRequest deletePortfolioRequest) {
+        ExecutionContext executionContext = createExecutionContext(deletePortfolioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePortfolioRequest> request = null;
+        Response<DeletePortfolioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePortfolioRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePortfolioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePortfolioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified portfolio share.
+     * </p>
+     * 
+     * @param deletePortfolioShareRequest
+     * @return Result of the DeletePortfolioShare operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DeletePortfolioShare
+     */
+    @Override
+    public DeletePortfolioShareResult deletePortfolioShare(DeletePortfolioShareRequest deletePortfolioShareRequest) {
+        ExecutionContext executionContext = createExecutionContext(deletePortfolioShareRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePortfolioShareRequest> request = null;
+        Response<DeletePortfolioShareResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePortfolioShareRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePortfolioShareRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePortfolioShareResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePortfolioShareResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified product. This operation will not work with a product that has been shared with you or is
+     * associated with a portfolio.
+     * </p>
+     * 
+     * @param deleteProductRequest
+     * @return Result of the DeleteProduct operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceInUseException
+     *         The operation was requested against a resource that is currently in use. Free the resource from use and
+     *         retry the operation.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.DeleteProduct
+     */
+    @Override
+    public DeleteProductResult deleteProduct(DeleteProductRequest deleteProductRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteProductRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProductRequest> request = null;
+        Response<DeleteProductResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProductRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProductRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProductResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProductResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified provisioning artifact. This operation will not work on a provisioning artifact associated
+     * with a product that has been shared with you, or on the last provisioning artifact associated with a product (a
+     * product must have at least one provisioning artifact).
+     * </p>
+     * 
+     * @param deleteProvisioningArtifactRequest
+     * @return Result of the DeleteProvisioningArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceInUseException
+     *         The operation was requested against a resource that is currently in use. Free the resource from use and
+     *         retry the operation.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.DeleteProvisioningArtifact
+     */
+    @Override
+    public DeleteProvisioningArtifactResult deleteProvisioningArtifact(DeleteProvisioningArtifactRequest deleteProvisioningArtifactRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteProvisioningArtifactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProvisioningArtifactRequest> request = null;
+        Response<DeleteProvisioningArtifactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProvisioningArtifactRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProvisioningArtifactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProvisioningArtifactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteProvisioningArtifactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves detailed information for a specified constraint.
+     * </p>
+     * 
+     * @param describeConstraintRequest
+     * @return Result of the DescribeConstraint operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeConstraint
+     */
+    @Override
+    public DescribeConstraintResult describeConstraint(DescribeConstraintRequest describeConstraintRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeConstraintRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeConstraintRequest> request = null;
+        Response<DescribeConstraintResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeConstraintRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConstraintRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConstraintResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeConstraintResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves detailed information and any tags associated with the specified portfolio.
+     * </p>
+     * 
+     * @param describePortfolioRequest
+     * @return Result of the DescribePortfolio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribePortfolio
+     */
+    @Override
+    public DescribePortfolioResult describePortfolio(DescribePortfolioRequest describePortfolioRequest) {
+        ExecutionContext executionContext = createExecutionContext(describePortfolioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePortfolioRequest> request = null;
+        Response<DescribePortfolioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePortfolioRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePortfolioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribePortfolioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves information about a specified product.
      * </p>
      * <p>
@@ -311,6 +998,48 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Retrieves information about a specified product, run with administrator access.
+     * </p>
+     * 
+     * @param describeProductAsAdminRequest
+     * @return Result of the DescribeProductAsAdmin operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeProductAsAdmin
+     */
+    @Override
+    public DescribeProductAsAdminResult describeProductAsAdmin(DescribeProductAsAdminRequest describeProductAsAdminRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeProductAsAdminRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeProductAsAdminRequest> request = null;
+        Response<DescribeProductAsAdminResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeProductAsAdminRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductAsAdminRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeProductAsAdminResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeProductAsAdminResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves information about a specified product.
      * </p>
      * <p>
@@ -346,6 +1075,49 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeProductViewResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeProductViewResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves detailed information about the specified provisioning artifact.
+     * </p>
+     * 
+     * @param describeProvisioningArtifactRequest
+     * @return Result of the DescribeProvisioningArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeProvisioningArtifact
+     */
+    @Override
+    public DescribeProvisioningArtifactResult describeProvisioningArtifact(DescribeProvisioningArtifactRequest describeProvisioningArtifactRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeProvisioningArtifactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeProvisioningArtifactRequest> request = null;
+        Response<DescribeProvisioningArtifactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeProvisioningArtifactRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeProvisioningArtifactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeProvisioningArtifactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeProvisioningArtifactResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -447,6 +1219,186 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Disassociates a previously associated principal ARN from a specified portfolio.
+     * </p>
+     * 
+     * @param disassociatePrincipalFromPortfolioRequest
+     * @return Result of the DisassociatePrincipalFromPortfolio operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DisassociatePrincipalFromPortfolio
+     */
+    @Override
+    public DisassociatePrincipalFromPortfolioResult disassociatePrincipalFromPortfolio(
+            DisassociatePrincipalFromPortfolioRequest disassociatePrincipalFromPortfolioRequest) {
+        ExecutionContext executionContext = createExecutionContext(disassociatePrincipalFromPortfolioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociatePrincipalFromPortfolioRequest> request = null;
+        Response<DisassociatePrincipalFromPortfolioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociatePrincipalFromPortfolioRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociatePrincipalFromPortfolioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociatePrincipalFromPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociatePrincipalFromPortfolioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates the specified product from the specified portfolio.
+     * </p>
+     * 
+     * @param disassociateProductFromPortfolioRequest
+     * @return Result of the DisassociateProductFromPortfolio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.DisassociateProductFromPortfolio
+     */
+    @Override
+    public DisassociateProductFromPortfolioResult disassociateProductFromPortfolio(
+            DisassociateProductFromPortfolioRequest disassociateProductFromPortfolioRequest) {
+        ExecutionContext executionContext = createExecutionContext(disassociateProductFromPortfolioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateProductFromPortfolioRequest> request = null;
+        Response<DisassociateProductFromPortfolioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateProductFromPortfolioRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateProductFromPortfolioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateProductFromPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateProductFromPortfolioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists details of all portfolios for which sharing was accepted by this account.
+     * </p>
+     * 
+     * @param listAcceptedPortfolioSharesRequest
+     * @return Result of the ListAcceptedPortfolioShares operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListAcceptedPortfolioShares
+     */
+    @Override
+    public ListAcceptedPortfolioSharesResult listAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest listAcceptedPortfolioSharesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listAcceptedPortfolioSharesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAcceptedPortfolioSharesRequest> request = null;
+        Response<ListAcceptedPortfolioSharesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAcceptedPortfolioSharesRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAcceptedPortfolioSharesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAcceptedPortfolioSharesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAcceptedPortfolioSharesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves detailed constraint information for the specified portfolio and product.
+     * </p>
+     * 
+     * @param listConstraintsForPortfolioRequest
+     * @return Result of the ListConstraintsForPortfolio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListConstraintsForPortfolio
+     */
+    @Override
+    public ListConstraintsForPortfolioResult listConstraintsForPortfolio(ListConstraintsForPortfolioRequest listConstraintsForPortfolioRequest) {
+        ExecutionContext executionContext = createExecutionContext(listConstraintsForPortfolioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListConstraintsForPortfolioRequest> request = null;
+        Response<ListConstraintsForPortfolioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListConstraintsForPortfolioRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listConstraintsForPortfolioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListConstraintsForPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListConstraintsForPortfolioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a paginated list of all paths to a specified product. A path is how the user has access to a specified
      * product, and is necessary when provisioning a product. A path also determines the constraints put on the product.
      * </p>
@@ -479,6 +1431,220 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListLaunchPathsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLaunchPathsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the account IDs that have been authorized sharing of the specified portfolio.
+     * </p>
+     * 
+     * @param listPortfolioAccessRequest
+     * @return Result of the ListPortfolioAccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.ListPortfolioAccess
+     */
+    @Override
+    public ListPortfolioAccessResult listPortfolioAccess(ListPortfolioAccessRequest listPortfolioAccessRequest) {
+        ExecutionContext executionContext = createExecutionContext(listPortfolioAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPortfolioAccessRequest> request = null;
+        Response<ListPortfolioAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPortfolioAccessRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortfolioAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPortfolioAccessResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPortfolioAccessResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all portfolios in the catalog.
+     * </p>
+     * 
+     * @param listPortfoliosRequest
+     * @return Result of the ListPortfolios operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListPortfolios
+     */
+    @Override
+    public ListPortfoliosResult listPortfolios(ListPortfoliosRequest listPortfoliosRequest) {
+        ExecutionContext executionContext = createExecutionContext(listPortfoliosRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPortfoliosRequest> request = null;
+        Response<ListPortfoliosResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPortfoliosRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortfoliosRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPortfoliosResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPortfoliosResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all portfolios that the specified product is associated with.
+     * </p>
+     * 
+     * @param listPortfoliosForProductRequest
+     * @return Result of the ListPortfoliosForProduct operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.ListPortfoliosForProduct
+     */
+    @Override
+    public ListPortfoliosForProductResult listPortfoliosForProduct(ListPortfoliosForProductRequest listPortfoliosForProductRequest) {
+        ExecutionContext executionContext = createExecutionContext(listPortfoliosForProductRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPortfoliosForProductRequest> request = null;
+        Response<ListPortfoliosForProductResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPortfoliosForProductRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortfoliosForProductRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPortfoliosForProductResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListPortfoliosForProductResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all principal ARNs associated with the specified portfolio.
+     * </p>
+     * 
+     * @param listPrincipalsForPortfolioRequest
+     * @return Result of the ListPrincipalsForPortfolio operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListPrincipalsForPortfolio
+     */
+    @Override
+    public ListPrincipalsForPortfolioResult listPrincipalsForPortfolio(ListPrincipalsForPortfolioRequest listPrincipalsForPortfolioRequest) {
+        ExecutionContext executionContext = createExecutionContext(listPrincipalsForPortfolioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPrincipalsForPortfolioRequest> request = null;
+        Response<ListPrincipalsForPortfolioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPrincipalsForPortfolioRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPrincipalsForPortfolioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPrincipalsForPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListPrincipalsForPortfolioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all provisioning artifacts associated with the specified product.
+     * </p>
+     * 
+     * @param listProvisioningArtifactsRequest
+     * @return Result of the ListProvisioningArtifacts operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListProvisioningArtifacts
+     */
+    @Override
+    public ListProvisioningArtifactsResult listProvisioningArtifacts(ListProvisioningArtifactsRequest listProvisioningArtifactsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listProvisioningArtifactsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListProvisioningArtifactsRequest> request = null;
+        Response<ListProvisioningArtifactsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListProvisioningArtifactsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProvisioningArtifactsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListProvisioningArtifactsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListProvisioningArtifactsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -583,6 +1749,47 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Rejects an offer to share a portfolio.
+     * </p>
+     * 
+     * @param rejectPortfolioShareRequest
+     * @return Result of the RejectPortfolioShare operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.RejectPortfolioShare
+     */
+    @Override
+    public RejectPortfolioShareResult rejectPortfolioShare(RejectPortfolioShareRequest rejectPortfolioShareRequest) {
+        ExecutionContext executionContext = createExecutionContext(rejectPortfolioShareRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RejectPortfolioShareRequest> request = null;
+        Response<RejectPortfolioShareResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RejectPortfolioShareRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectPortfolioShareRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RejectPortfolioShareResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RejectPortfolioShareResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a paginated list of all the ProvisionedProduct objects that are currently available (not terminated).
      * </p>
      * 
@@ -669,6 +1876,52 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Retrieves summary and status information about all products created within the caller's account. If a portfolio
+     * ID is provided, this operation retrieves information for only those products that are associated with the
+     * specified portfolio.
+     * </p>
+     * 
+     * @param searchProductsAsAdminRequest
+     * @return Result of the SearchProductsAsAdmin operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.SearchProductsAsAdmin
+     */
+    @Override
+    public SearchProductsAsAdminResult searchProductsAsAdmin(SearchProductsAsAdminRequest searchProductsAsAdminRequest) {
+        ExecutionContext executionContext = createExecutionContext(searchProductsAsAdminRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchProductsAsAdminRequest> request = null;
+        Response<SearchProductsAsAdminResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchProductsAsAdminRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchProductsAsAdminRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchProductsAsAdminResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new SearchProductsAsAdminResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Requests termination of an existing ProvisionedProduct object. If there are <code>Tags</code> associated with the
      * object, they are terminated when the ProvisionedProduct object is terminated.
      * </p>
@@ -719,6 +1972,139 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Updates an existing constraint.
+     * </p>
+     * 
+     * @param updateConstraintRequest
+     * @return Result of the UpdateConstraint operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.UpdateConstraint
+     */
+    @Override
+    public UpdateConstraintResult updateConstraint(UpdateConstraintRequest updateConstraintRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateConstraintRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConstraintRequest> request = null;
+        Response<UpdateConstraintResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConstraintRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConstraintRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateConstraintResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateConstraintResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the specified portfolio's details. This operation will not work with a product that has been shared with
+     * you.
+     * </p>
+     * 
+     * @param updatePortfolioRequest
+     * @return Result of the UpdatePortfolio operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.UpdatePortfolio
+     */
+    @Override
+    public UpdatePortfolioResult updatePortfolio(UpdatePortfolioRequest updatePortfolioRequest) {
+        ExecutionContext executionContext = createExecutionContext(updatePortfolioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePortfolioRequest> request = null;
+        Response<UpdatePortfolioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePortfolioRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePortfolioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePortfolioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing product.
+     * </p>
+     * 
+     * @param updateProductRequest
+     * @return Result of the UpdateProduct operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.UpdateProduct
+     */
+    @Override
+    public UpdateProductResult updateProduct(UpdateProductRequest updateProductRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateProductRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateProductRequest> request = null;
+        Response<UpdateProductResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateProductRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProductRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateProductResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateProductResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Requests updates to the configuration of an existing ProvisionedProduct object. If there are tags associated with
      * the object, they cannot be updated or added with this operation. Depending on the specific updates requested,
      * this operation may update with no interruption, with some interruption, or replace the ProvisionedProduct object
@@ -757,6 +2143,51 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<UpdateProvisionedProductResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateProvisionedProductResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing provisioning artifact's information. This operation will not work on a provisioning artifact
+     * associated with a product that has been shared with you.
+     * </p>
+     * 
+     * @param updateProvisioningArtifactRequest
+     * @return Result of the UpdateProvisioningArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.UpdateProvisioningArtifact
+     */
+    @Override
+    public UpdateProvisioningArtifactResult updateProvisioningArtifact(UpdateProvisioningArtifactRequest updateProvisioningArtifactRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateProvisioningArtifactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateProvisioningArtifactRequest> request = null;
+        Response<UpdateProvisioningArtifactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateProvisioningArtifactRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProvisioningArtifactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateProvisioningArtifactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateProvisioningArtifactResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

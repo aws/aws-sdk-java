@@ -41,7 +41,7 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The time that the artifact was created by the Administrator.
+     * The UTC timestamp of the creation time.
      * </p>
      */
     private java.util.Date createdTime;
@@ -168,11 +168,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the artifact was created by the Administrator.
+     * The UTC timestamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The time that the artifact was created by the Administrator.
+     *        The UTC timestamp of the creation time.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -181,10 +181,10 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the artifact was created by the Administrator.
+     * The UTC timestamp of the creation time.
      * </p>
      * 
-     * @return The time that the artifact was created by the Administrator.
+     * @return The UTC timestamp of the creation time.
      */
 
     public java.util.Date getCreatedTime() {
@@ -193,11 +193,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the artifact was created by the Administrator.
+     * The UTC timestamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The time that the artifact was created by the Administrator.
+     *        The UTC timestamp of the creation time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

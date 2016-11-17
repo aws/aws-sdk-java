@@ -14,8 +14,8 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * Only one VPC is currently associated with the hosted zone. You cannot convert a private hosted zone into a public
- * hosted zone by disassociating the last VPC from a hosted zone.
+ * The VPC that you're trying to disassociate from the private hosted zone is the last VPC that is associated with the
+ * hosted zone. Amazon Route 53 doesn't support disassociating the last VPC from a hosted zone.
  * </p>
  */
 public class LastVPCAssociationException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {

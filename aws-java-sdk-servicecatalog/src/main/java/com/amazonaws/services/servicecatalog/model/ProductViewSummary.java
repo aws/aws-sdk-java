@@ -298,6 +298,7 @@ public class ProductViewSummary implements Serializable, Cloneable {
      * 
      * @param type
      *        The product type. Contact the product administrator for the significance of this value.
+     * @see ProductType
      */
 
     public void setType(String type) {
@@ -310,6 +311,7 @@ public class ProductViewSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @return The product type. Contact the product administrator for the significance of this value.
+     * @see ProductType
      */
 
     public String getType() {
@@ -324,9 +326,40 @@ public class ProductViewSummary implements Serializable, Cloneable {
      * @param type
      *        The product type. Contact the product administrator for the significance of this value.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProductType
      */
 
     public ProductViewSummary withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The product type. Contact the product administrator for the significance of this value.
+     * </p>
+     * 
+     * @param type
+     *        The product type. Contact the product administrator for the significance of this value.
+     * @see ProductType
+     */
+
+    public void setType(ProductType type) {
+        this.type = type.toString();
+    }
+
+    /**
+     * <p>
+     * The product type. Contact the product administrator for the significance of this value.
+     * </p>
+     * 
+     * @param type
+     *        The product type. Contact the product administrator for the significance of this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProductType
+     */
+
+    public ProductViewSummary withType(ProductType type) {
         setType(type);
         return this;
     }

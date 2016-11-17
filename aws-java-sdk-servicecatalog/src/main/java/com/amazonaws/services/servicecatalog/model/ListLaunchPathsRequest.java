@@ -40,7 +40,8 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
     private String acceptLanguage;
     /**
      * <p>
-     * Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
+     * The product identifier.. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
+     * information.
      * </p>
      */
     private String productId;
@@ -169,11 +170,13 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
+     * The product identifier.. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
+     * information.
      * </p>
      * 
      * @param productId
-     *        Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
+     *        The product identifier.. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
+     *        information.
      */
 
     public void setProductId(String productId) {
@@ -182,10 +185,12 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
+     * The product identifier.. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
+     * information.
      * </p>
      * 
-     * @return Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
+     * @return The product identifier.. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
+     *         information.
      */
 
     public String getProductId() {
@@ -194,11 +199,13 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
+     * The product identifier.. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
+     * information.
      * </p>
      * 
      * @param productId
-     *        Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
+     *        The product identifier.. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
+     *        information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

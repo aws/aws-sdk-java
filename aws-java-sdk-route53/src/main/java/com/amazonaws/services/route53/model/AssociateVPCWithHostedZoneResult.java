@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A complex type that contains the response information for the hosted zone.
+ * A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code> request.
  * </p>
  */
 public class AssociateVPCWithHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

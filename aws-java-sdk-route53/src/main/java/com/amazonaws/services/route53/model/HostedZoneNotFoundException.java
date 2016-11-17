@@ -14,7 +14,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * The specified HostedZone cannot be found.
+ * The specified HostedZone can't be found.
  * </p>
  */
 public class HostedZoneNotFoundException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {

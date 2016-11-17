@@ -59,13 +59,14 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
     private String statusMessage;
     /**
      * <p>
-     * The time the ProvisionedProduct was created.
+     * The UTC timestamp of the creation time.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * An idempotency token that uniquely identifies this ProvisionedProduct.
+     * A token to disambiguate duplicate requests. You can create multiple resources using the same input in multiple
+     * requests, provided that you also specify a different idempotency token for each request.
      * </p>
      */
     private String idempotencyToken;
@@ -351,11 +352,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the ProvisionedProduct was created.
+     * The UTC timestamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The time the ProvisionedProduct was created.
+     *        The UTC timestamp of the creation time.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -364,10 +365,10 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the ProvisionedProduct was created.
+     * The UTC timestamp of the creation time.
      * </p>
      * 
-     * @return The time the ProvisionedProduct was created.
+     * @return The UTC timestamp of the creation time.
      */
 
     public java.util.Date getCreatedTime() {
@@ -376,11 +377,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the ProvisionedProduct was created.
+     * The UTC timestamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The time the ProvisionedProduct was created.
+     *        The UTC timestamp of the creation time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,11 +392,13 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An idempotency token that uniquely identifies this ProvisionedProduct.
+     * A token to disambiguate duplicate requests. You can create multiple resources using the same input in multiple
+     * requests, provided that you also specify a different idempotency token for each request.
      * </p>
      * 
      * @param idempotencyToken
-     *        An idempotency token that uniquely identifies this ProvisionedProduct.
+     *        A token to disambiguate duplicate requests. You can create multiple resources using the same input in
+     *        multiple requests, provided that you also specify a different idempotency token for each request.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -404,10 +407,12 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An idempotency token that uniquely identifies this ProvisionedProduct.
+     * A token to disambiguate duplicate requests. You can create multiple resources using the same input in multiple
+     * requests, provided that you also specify a different idempotency token for each request.
      * </p>
      * 
-     * @return An idempotency token that uniquely identifies this ProvisionedProduct.
+     * @return A token to disambiguate duplicate requests. You can create multiple resources using the same input in
+     *         multiple requests, provided that you also specify a different idempotency token for each request.
      */
 
     public String getIdempotencyToken() {
@@ -416,11 +421,13 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An idempotency token that uniquely identifies this ProvisionedProduct.
+     * A token to disambiguate duplicate requests. You can create multiple resources using the same input in multiple
+     * requests, provided that you also specify a different idempotency token for each request.
      * </p>
      * 
      * @param idempotencyToken
-     *        An idempotency token that uniquely identifies this ProvisionedProduct.
+     *        A token to disambiguate duplicate requests. You can create multiple resources using the same input in
+     *        multiple requests, provided that you also specify a different idempotency token for each request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
