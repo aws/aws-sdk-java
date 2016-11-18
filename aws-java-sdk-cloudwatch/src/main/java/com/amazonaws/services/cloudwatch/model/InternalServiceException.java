@@ -14,7 +14,7 @@ package com.amazonaws.services.cloudwatch.model;
 
 /**
  * <p>
- * Indicates that the request processing has failed due to some unknown error, exception, or failure.
+ * Request processing has failed due to some unknown error, exception, or failure.
  * </p>
  */
 public class InternalServiceException extends com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException {

@@ -122,6 +122,15 @@ public class SendMessageBatchRequestMarshaller implements Marshaller<Request<Sen
                     messageAttributesListIndex++;
                 }
 
+                if (entriesListValue.getMessageDeduplicationId() != null) {
+                    request.addParameter("SendMessageBatchRequestEntry." + entriesListIndex + ".MessageDeduplicationId",
+                            StringUtils.fromString(entriesListValue.getMessageDeduplicationId()));
+                }
+
+                if (entriesListValue.getMessageGroupId() != null) {
+                    request.addParameter("SendMessageBatchRequestEntry." + entriesListIndex + ".MessageGroupId",
+                            StringUtils.fromString(entriesListValue.getMessageGroupId()));
+                }
                 entriesListIndex++;
             }
         }

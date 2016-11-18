@@ -77,6 +77,9 @@ public class IntegrationResponseJsonMarshaller {
                 }
                 jsonGenerator.writeEndObject();
             }
+            if (integrationResponse.getContentHandling() != null) {
+                jsonGenerator.writeFieldName("contentHandling").writeValue(integrationResponse.getContentHandling());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

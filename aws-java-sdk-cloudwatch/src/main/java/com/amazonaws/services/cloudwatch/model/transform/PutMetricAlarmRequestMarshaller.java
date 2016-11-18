@@ -105,6 +105,10 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
             request.addParameter("Statistic", StringUtils.fromString(putMetricAlarmRequest.getStatistic()));
         }
 
+        if (putMetricAlarmRequest.getExtendedStatistic() != null) {
+            request.addParameter("ExtendedStatistic", StringUtils.fromString(putMetricAlarmRequest.getExtendedStatistic()));
+        }
+
         com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) putMetricAlarmRequest
                 .getDimensions();
         if (!dimensionsList.isEmpty() || !dimensionsList.isAutoConstruct()) {

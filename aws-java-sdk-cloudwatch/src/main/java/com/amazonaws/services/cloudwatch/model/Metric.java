@@ -16,12 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>Metric</code> data type contains information about a specific metric. If you call <a>ListMetrics</a>,
- * Amazon CloudWatch returns information contained by this data type.
- * </p>
- * <p>
- * The example in the Examples section publishes two metrics named buffers and latency. Both metrics are in the examples
- * namespace. Both metrics have two dimensions, InstanceID and InstanceType.
+ * Represents a specific metric.
  * </p>
  */
 public class Metric implements Serializable, Cloneable {
@@ -40,7 +35,7 @@ public class Metric implements Serializable, Cloneable {
     private String metricName;
     /**
      * <p>
-     * A list of dimensions associated with the metric.
+     * The dimensions for the metric.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Dimension> dimensions;
@@ -127,10 +122,10 @@ public class Metric implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of dimensions associated with the metric.
+     * The dimensions for the metric.
      * </p>
      * 
-     * @return A list of dimensions associated with the metric.
+     * @return The dimensions for the metric.
      */
 
     public java.util.List<Dimension> getDimensions() {
@@ -142,11 +137,11 @@ public class Metric implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of dimensions associated with the metric.
+     * The dimensions for the metric.
      * </p>
      * 
      * @param dimensions
-     *        A list of dimensions associated with the metric.
+     *        The dimensions for the metric.
      */
 
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
@@ -160,7 +155,7 @@ public class Metric implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of dimensions associated with the metric.
+     * The dimensions for the metric.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -169,7 +164,7 @@ public class Metric implements Serializable, Cloneable {
      * </p>
      * 
      * @param dimensions
-     *        A list of dimensions associated with the metric.
+     *        The dimensions for the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +180,11 @@ public class Metric implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of dimensions associated with the metric.
+     * The dimensions for the metric.
      * </p>
      * 
      * @param dimensions
-     *        A list of dimensions associated with the metric.
+     *        The dimensions for the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

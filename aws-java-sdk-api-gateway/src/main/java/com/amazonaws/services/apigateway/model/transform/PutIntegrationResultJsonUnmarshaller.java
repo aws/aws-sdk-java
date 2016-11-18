@@ -77,6 +77,10 @@ public class PutIntegrationResultJsonUnmarshaller implements Unmarshaller<PutInt
                     context.nextToken();
                     putIntegrationResult.setPassthroughBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("contentHandling", targetDepth)) {
+                    context.nextToken();
+                    putIntegrationResult.setContentHandling(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("cacheNamespace", targetDepth)) {
                     context.nextToken();
                     putIntegrationResult.setCacheNamespace(context.getUnmarshaller(String.class).unmarshall(context));

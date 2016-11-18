@@ -15,31 +15,29 @@ package com.amazonaws.services.cloudwatch.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output for <a>DescribeAlarmHistory</a>.
- * </p>
+ * 
  */
 public class DescribeAlarmHistoryResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of alarm histories in JSON format.
+     * The alarm histories, in JSON format.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AlarmHistoryItem> alarmHistoryItems;
     /**
      * <p>
-     * A string that marks the start of the next batch of returned results.
+     * The token that marks the start of the next batch of returned results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of alarm histories in JSON format.
+     * The alarm histories, in JSON format.
      * </p>
      * 
-     * @return A list of alarm histories in JSON format.
+     * @return The alarm histories, in JSON format.
      */
 
     public java.util.List<AlarmHistoryItem> getAlarmHistoryItems() {
@@ -51,11 +49,11 @@ public class DescribeAlarmHistoryResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of alarm histories in JSON format.
+     * The alarm histories, in JSON format.
      * </p>
      * 
      * @param alarmHistoryItems
-     *        A list of alarm histories in JSON format.
+     *        The alarm histories, in JSON format.
      */
 
     public void setAlarmHistoryItems(java.util.Collection<AlarmHistoryItem> alarmHistoryItems) {
@@ -69,7 +67,7 @@ public class DescribeAlarmHistoryResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of alarm histories in JSON format.
+     * The alarm histories, in JSON format.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +76,7 @@ public class DescribeAlarmHistoryResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param alarmHistoryItems
-     *        A list of alarm histories in JSON format.
+     *        The alarm histories, in JSON format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +92,11 @@ public class DescribeAlarmHistoryResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of alarm histories in JSON format.
+     * The alarm histories, in JSON format.
      * </p>
      * 
      * @param alarmHistoryItems
-     *        A list of alarm histories in JSON format.
+     *        The alarm histories, in JSON format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,11 +107,11 @@ public class DescribeAlarmHistoryResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A string that marks the start of the next batch of returned results.
+     * The token that marks the start of the next batch of returned results.
      * </p>
      * 
      * @param nextToken
-     *        A string that marks the start of the next batch of returned results.
+     *        The token that marks the start of the next batch of returned results.
      */
 
     public void setNextToken(String nextToken) {
@@ -122,10 +120,10 @@ public class DescribeAlarmHistoryResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A string that marks the start of the next batch of returned results.
+     * The token that marks the start of the next batch of returned results.
      * </p>
      * 
-     * @return A string that marks the start of the next batch of returned results.
+     * @return The token that marks the start of the next batch of returned results.
      */
 
     public String getNextToken() {
@@ -134,11 +132,11 @@ public class DescribeAlarmHistoryResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A string that marks the start of the next batch of returned results.
+     * The token that marks the start of the next batch of returned results.
      * </p>
      * 
      * @param nextToken
-     *        A string that marks the start of the next batch of returned results.
+     *        The token that marks the start of the next batch of returned results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

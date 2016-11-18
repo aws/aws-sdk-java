@@ -16,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>StatisticSet</code> data type describes the <code>StatisticValues</code> component of <a>MetricDatum</a>,
- * and represents a set of statistics that describes a specific metric.
+ * Represents a set of statistics that describes a specific metric.
  * </p>
  */
 public class StatisticSet implements Serializable, Cloneable {

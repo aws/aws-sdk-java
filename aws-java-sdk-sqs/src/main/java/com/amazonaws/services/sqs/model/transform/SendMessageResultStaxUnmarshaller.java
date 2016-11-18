@@ -59,6 +59,11 @@ public class SendMessageResultStaxUnmarshaller implements Unmarshaller<SendMessa
                     sendMessageResult.setMessageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SequenceNumber", targetDepth)) {
+                    sendMessageResult.setSequenceNumber(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return sendMessageResult;

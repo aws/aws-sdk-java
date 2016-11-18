@@ -71,6 +71,30 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private java.util.Map<String, String> responseTemplates;
+    /**
+     * <p>
+     * Specifies how to handle response payload content type conversions. Supported values are
+     * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this property is not defined, the response payload will be passed through from the integration response to the
+     * method response without modification.
+     * </p>
+     */
+    private String contentHandling;
 
     /**
      * <p>
@@ -443,6 +467,254 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Specifies how to handle response payload content type conversions. Supported values are
+     * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this property is not defined, the response payload will be passed through from the integration response to the
+     * method response without modification.
+     * </p>
+     * 
+     * @param contentHandling
+     *        Specifies how to handle response payload content type conversions. Supported values are
+     *        <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the
+     *        corresponding binary blob.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If this property is not defined, the response payload will be passed through from the integration response
+     *        to the method response without modification.
+     * @see ContentHandlingStrategy
+     */
+
+    public void setContentHandling(String contentHandling) {
+        this.contentHandling = contentHandling;
+    }
+
+    /**
+     * <p>
+     * Specifies how to handle response payload content type conversions. Supported values are
+     * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this property is not defined, the response payload will be passed through from the integration response to the
+     * method response without modification.
+     * </p>
+     * 
+     * @return Specifies how to handle response payload content type conversions. Supported values are
+     *         <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the
+     *         corresponding binary blob.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If this property is not defined, the response payload will be passed through from the integration
+     *         response to the method response without modification.
+     * @see ContentHandlingStrategy
+     */
+
+    public String getContentHandling() {
+        return this.contentHandling;
+    }
+
+    /**
+     * <p>
+     * Specifies how to handle response payload content type conversions. Supported values are
+     * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this property is not defined, the response payload will be passed through from the integration response to the
+     * method response without modification.
+     * </p>
+     * 
+     * @param contentHandling
+     *        Specifies how to handle response payload content type conversions. Supported values are
+     *        <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the
+     *        corresponding binary blob.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If this property is not defined, the response payload will be passed through from the integration response
+     *        to the method response without modification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContentHandlingStrategy
+     */
+
+    public PutIntegrationResponseRequest withContentHandling(String contentHandling) {
+        setContentHandling(contentHandling);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies how to handle response payload content type conversions. Supported values are
+     * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this property is not defined, the response payload will be passed through from the integration response to the
+     * method response without modification.
+     * </p>
+     * 
+     * @param contentHandling
+     *        Specifies how to handle response payload content type conversions. Supported values are
+     *        <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the
+     *        corresponding binary blob.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If this property is not defined, the response payload will be passed through from the integration response
+     *        to the method response without modification.
+     * @see ContentHandlingStrategy
+     */
+
+    public void setContentHandling(ContentHandlingStrategy contentHandling) {
+        this.contentHandling = contentHandling.toString();
+    }
+
+    /**
+     * <p>
+     * Specifies how to handle response payload content type conversions. Supported values are
+     * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this property is not defined, the response payload will be passed through from the integration response to the
+     * method response without modification.
+     * </p>
+     * 
+     * @param contentHandling
+     *        Specifies how to handle response payload content type conversions. Supported values are
+     *        <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the
+     *        corresponding binary blob.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If this property is not defined, the response payload will be passed through from the integration response
+     *        to the method response without modification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContentHandlingStrategy
+     */
+
+    public PutIntegrationResponseRequest withContentHandling(ContentHandlingStrategy contentHandling) {
+        setContentHandling(contentHandling);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -466,7 +738,9 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
         if (getResponseParameters() != null)
             sb.append("ResponseParameters: " + getResponseParameters() + ",");
         if (getResponseTemplates() != null)
-            sb.append("ResponseTemplates: " + getResponseTemplates());
+            sb.append("ResponseTemplates: " + getResponseTemplates() + ",");
+        if (getContentHandling() != null)
+            sb.append("ContentHandling: " + getContentHandling());
         sb.append("}");
         return sb.toString();
     }
@@ -509,6 +783,10 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getResponseTemplates() != null && other.getResponseTemplates().equals(this.getResponseTemplates()) == false)
             return false;
+        if (other.getContentHandling() == null ^ this.getContentHandling() == null)
+            return false;
+        if (other.getContentHandling() != null && other.getContentHandling().equals(this.getContentHandling()) == false)
+            return false;
         return true;
     }
 
@@ -524,6 +802,7 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getSelectionPattern() == null) ? 0 : getSelectionPattern().hashCode());
         hashCode = prime * hashCode + ((getResponseParameters() == null) ? 0 : getResponseParameters().hashCode());
         hashCode = prime * hashCode + ((getResponseTemplates() == null) ? 0 : getResponseTemplates().hashCode());
+        hashCode = prime * hashCode + ((getContentHandling() == null) ? 0 : getContentHandling().hashCode());
         return hashCode;
     }
 

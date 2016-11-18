@@ -16,8 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>MetricDatum</code> data type encapsulates the information sent with <a>PutMetricData</a> to either create a
- * new metric or add new values to be aggregated into an existing metric.
+ * Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing
+ * metric.
  * </p>
  */
 public class MetricDatum implements Serializable, Cloneable {
@@ -30,15 +30,13 @@ public class MetricDatum implements Serializable, Cloneable {
     private String metricName;
     /**
      * <p>
-     * A list of dimensions associated with the metric. Note, when using the Dimensions value in a query, you need to
-     * append .member.N to it (e.g., Dimensions.member.N).
+     * The dimensions associated with the metric.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Dimension> dimensions;
     /**
      * <p>
-     * The time stamp used for the metric in ISO 8601 Universal Coordinated Time (UTC) format. If not specified, the
-     * default value is set to the time the metric data was received.
+     * The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private java.util.Date timestamp;
@@ -46,19 +44,16 @@ public class MetricDatum implements Serializable, Cloneable {
      * <p>
      * The value for the metric.
      * </p>
-     * <important>
      * <p>
-     * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch rejects
-     * values that are either too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108
-     * (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not
-     * supported.
+     * Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either too small
+     * or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
+     * 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      * </p>
-     * </important>
      */
     private Double value;
     /**
      * <p>
-     * A set of statistical values describing the metric.
+     * The statistical values for the metric.
      * </p>
      */
     private StatisticSet statisticValues;
@@ -111,12 +106,10 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of dimensions associated with the metric. Note, when using the Dimensions value in a query, you need to
-     * append .member.N to it (e.g., Dimensions.member.N).
+     * The dimensions associated with the metric.
      * </p>
      * 
-     * @return A list of dimensions associated with the metric. Note, when using the Dimensions value in a query, you
-     *         need to append .member.N to it (e.g., Dimensions.member.N).
+     * @return The dimensions associated with the metric.
      */
 
     public java.util.List<Dimension> getDimensions() {
@@ -128,13 +121,11 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of dimensions associated with the metric. Note, when using the Dimensions value in a query, you need to
-     * append .member.N to it (e.g., Dimensions.member.N).
+     * The dimensions associated with the metric.
      * </p>
      * 
      * @param dimensions
-     *        A list of dimensions associated with the metric. Note, when using the Dimensions value in a query, you
-     *        need to append .member.N to it (e.g., Dimensions.member.N).
+     *        The dimensions associated with the metric.
      */
 
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
@@ -148,8 +139,7 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of dimensions associated with the metric. Note, when using the Dimensions value in a query, you need to
-     * append .member.N to it (e.g., Dimensions.member.N).
+     * The dimensions associated with the metric.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -158,8 +148,7 @@ public class MetricDatum implements Serializable, Cloneable {
      * </p>
      * 
      * @param dimensions
-     *        A list of dimensions associated with the metric. Note, when using the Dimensions value in a query, you
-     *        need to append .member.N to it (e.g., Dimensions.member.N).
+     *        The dimensions associated with the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,13 +164,11 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of dimensions associated with the metric. Note, when using the Dimensions value in a query, you need to
-     * append .member.N to it (e.g., Dimensions.member.N).
+     * The dimensions associated with the metric.
      * </p>
      * 
      * @param dimensions
-     *        A list of dimensions associated with the metric. Note, when using the Dimensions value in a query, you
-     *        need to append .member.N to it (e.g., Dimensions.member.N).
+     *        The dimensions associated with the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,13 +179,12 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamp used for the metric in ISO 8601 Universal Coordinated Time (UTC) format. If not specified, the
-     * default value is set to the time the metric data was received.
+     * The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param timestamp
-     *        The time stamp used for the metric in ISO 8601 Universal Coordinated Time (UTC) format. If not specified,
-     *        the default value is set to the time the metric data was received.
+     *        The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *        UTC.
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -207,12 +193,11 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamp used for the metric in ISO 8601 Universal Coordinated Time (UTC) format. If not specified, the
-     * default value is set to the time the metric data was received.
+     * The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The time stamp used for the metric in ISO 8601 Universal Coordinated Time (UTC) format. If not specified,
-     *         the default value is set to the time the metric data was received.
+     * @return The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *         UTC.
      */
 
     public java.util.Date getTimestamp() {
@@ -221,13 +206,12 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamp used for the metric in ISO 8601 Universal Coordinated Time (UTC) format. If not specified, the
-     * default value is set to the time the metric data was received.
+     * The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param timestamp
-     *        The time stamp used for the metric in ISO 8601 Universal Coordinated Time (UTC) format. If not specified,
-     *        the default value is set to the time the metric data was received.
+     *        The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *        UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,23 +224,18 @@ public class MetricDatum implements Serializable, Cloneable {
      * <p>
      * The value for the metric.
      * </p>
-     * <important>
      * <p>
-     * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch rejects
-     * values that are either too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108
-     * (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not
-     * supported.
+     * Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either too small
+     * or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
+     * 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      * </p>
-     * </important>
      * 
      * @param value
-     *        The value for the metric.</p> <important>
+     *        The value for the metric.</p>
      *        <p>
-     *        Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch
-     *        rejects values that are either too small or too large. Values must be in the range of 8.515920e-109 to
-     *        1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (e.g., NaN, +Infinity,
-     *        -Infinity) are not supported.
-     *        </p>
+     *        Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either
+     *        too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360
+     *        to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      */
 
     public void setValue(Double value) {
@@ -267,22 +246,18 @@ public class MetricDatum implements Serializable, Cloneable {
      * <p>
      * The value for the metric.
      * </p>
-     * <important>
      * <p>
-     * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch rejects
-     * values that are either too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108
-     * (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not
-     * supported.
+     * Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either too small
+     * or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
+     * 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      * </p>
-     * </important>
      * 
-     * @return The value for the metric.</p> <important>
+     * @return The value for the metric.</p>
      *         <p>
-     *         Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch
-     *         rejects values that are either too small or too large. Values must be in the range of 8.515920e-109 to
-     *         1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (e.g., NaN, +Infinity,
-     *         -Infinity) are not supported.
-     *         </p>
+     *         Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either
+     *         too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360
+     *         to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not
+     *         supported.
      */
 
     public Double getValue() {
@@ -293,23 +268,18 @@ public class MetricDatum implements Serializable, Cloneable {
      * <p>
      * The value for the metric.
      * </p>
-     * <important>
      * <p>
-     * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch rejects
-     * values that are either too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108
-     * (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not
-     * supported.
+     * Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either too small
+     * or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
+     * 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      * </p>
-     * </important>
      * 
      * @param value
-     *        The value for the metric.</p> <important>
+     *        The value for the metric.</p>
      *        <p>
-     *        Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch
-     *        rejects values that are either too small or too large. Values must be in the range of 8.515920e-109 to
-     *        1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (e.g., NaN, +Infinity,
-     *        -Infinity) are not supported.
-     *        </p>
+     *        Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either
+     *        too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360
+     *        to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,11 +290,11 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A set of statistical values describing the metric.
+     * The statistical values for the metric.
      * </p>
      * 
      * @param statisticValues
-     *        A set of statistical values describing the metric.
+     *        The statistical values for the metric.
      */
 
     public void setStatisticValues(StatisticSet statisticValues) {
@@ -333,10 +303,10 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A set of statistical values describing the metric.
+     * The statistical values for the metric.
      * </p>
      * 
-     * @return A set of statistical values describing the metric.
+     * @return The statistical values for the metric.
      */
 
     public StatisticSet getStatisticValues() {
@@ -345,11 +315,11 @@ public class MetricDatum implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A set of statistical values describing the metric.
+     * The statistical values for the metric.
      * </p>
      * 
      * @param statisticValues
-     *        A set of statistical values describing the metric.
+     *        The statistical values for the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

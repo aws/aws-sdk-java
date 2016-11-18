@@ -17,6 +17,7 @@ package com.amazonaws.services.sqs.model;
  */
 public enum QueueAttributeName {
 
+    All("All"),
     Policy("Policy"),
     VisibilityTimeout("VisibilityTimeout"),
     MaximumMessageSize("MaximumMessageSize"),
@@ -29,7 +30,9 @@ public enum QueueAttributeName {
     ApproximateNumberOfMessagesDelayed("ApproximateNumberOfMessagesDelayed"),
     DelaySeconds("DelaySeconds"),
     ReceiveMessageWaitTimeSeconds("ReceiveMessageWaitTimeSeconds"),
-    RedrivePolicy("RedrivePolicy");
+    RedrivePolicy("RedrivePolicy"),
+    FifoQueue("FifoQueue"),
+    ContentBasedDeduplication("ContentBasedDeduplication");
 
     private String value;
 

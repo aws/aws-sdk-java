@@ -136,6 +136,9 @@ public class PutIntegrationRequestMarshaller implements Marshaller<Request<PutIn
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (putIntegrationRequest.getContentHandling() != null) {
+                jsonGenerator.writeFieldName("contentHandling").writeValue(putIntegrationRequest.getContentHandling());
+            }
 
             jsonGenerator.writeEndObject();
 

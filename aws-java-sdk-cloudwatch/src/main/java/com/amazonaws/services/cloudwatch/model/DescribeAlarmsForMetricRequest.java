@@ -16,9 +16,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Describes the inputs for DescribeAlarmsForMetric.
- * </p>
+ * 
  */
 public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -36,20 +34,27 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
     private String namespace;
     /**
      * <p>
-     * The statistic for the metric.
+     * The statistic for the metric, other than percentiles. For percentile statistics, use
+     * <code>ExtendedStatistics</code>.
      * </p>
      */
     private String statistic;
     /**
      * <p>
-     * The list of dimensions associated with the metric. If the metric has any associated dimensions, you must specify
-     * them in order for the DescribeAlarmsForMetric to succeed.
+     * The percentile statistic for the metric. Specify a value between p0.0 and p100.
+     * </p>
+     */
+    private String extendedStatistic;
+    /**
+     * <p>
+     * The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in
+     * order for the call to succeed.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Dimension> dimensions;
     /**
      * <p>
-     * The period in seconds over which the statistic is applied.
+     * The period, in seconds, over which the statistic is applied.
      * </p>
      */
     private Integer period;
@@ -142,11 +147,13 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The statistic for the metric.
+     * The statistic for the metric, other than percentiles. For percentile statistics, use
+     * <code>ExtendedStatistics</code>.
      * </p>
      * 
      * @param statistic
-     *        The statistic for the metric.
+     *        The statistic for the metric, other than percentiles. For percentile statistics, use
+     *        <code>ExtendedStatistics</code>.
      * @see Statistic
      */
 
@@ -156,10 +163,12 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The statistic for the metric.
+     * The statistic for the metric, other than percentiles. For percentile statistics, use
+     * <code>ExtendedStatistics</code>.
      * </p>
      * 
-     * @return The statistic for the metric.
+     * @return The statistic for the metric, other than percentiles. For percentile statistics, use
+     *         <code>ExtendedStatistics</code>.
      * @see Statistic
      */
 
@@ -169,11 +178,13 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The statistic for the metric.
+     * The statistic for the metric, other than percentiles. For percentile statistics, use
+     * <code>ExtendedStatistics</code>.
      * </p>
      * 
      * @param statistic
-     *        The statistic for the metric.
+     *        The statistic for the metric, other than percentiles. For percentile statistics, use
+     *        <code>ExtendedStatistics</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Statistic
      */
@@ -185,11 +196,13 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The statistic for the metric.
+     * The statistic for the metric, other than percentiles. For percentile statistics, use
+     * <code>ExtendedStatistics</code>.
      * </p>
      * 
      * @param statistic
-     *        The statistic for the metric.
+     *        The statistic for the metric, other than percentiles. For percentile statistics, use
+     *        <code>ExtendedStatistics</code>.
      * @see Statistic
      */
 
@@ -199,11 +212,13 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The statistic for the metric.
+     * The statistic for the metric, other than percentiles. For percentile statistics, use
+     * <code>ExtendedStatistics</code>.
      * </p>
      * 
      * @param statistic
-     *        The statistic for the metric.
+     *        The statistic for the metric, other than percentiles. For percentile statistics, use
+     *        <code>ExtendedStatistics</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Statistic
      */
@@ -215,12 +230,52 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The list of dimensions associated with the metric. If the metric has any associated dimensions, you must specify
-     * them in order for the DescribeAlarmsForMetric to succeed.
+     * The percentile statistic for the metric. Specify a value between p0.0 and p100.
      * </p>
      * 
-     * @return The list of dimensions associated with the metric. If the metric has any associated dimensions, you must
-     *         specify them in order for the DescribeAlarmsForMetric to succeed.
+     * @param extendedStatistic
+     *        The percentile statistic for the metric. Specify a value between p0.0 and p100.
+     */
+
+    public void setExtendedStatistic(String extendedStatistic) {
+        this.extendedStatistic = extendedStatistic;
+    }
+
+    /**
+     * <p>
+     * The percentile statistic for the metric. Specify a value between p0.0 and p100.
+     * </p>
+     * 
+     * @return The percentile statistic for the metric. Specify a value between p0.0 and p100.
+     */
+
+    public String getExtendedStatistic() {
+        return this.extendedStatistic;
+    }
+
+    /**
+     * <p>
+     * The percentile statistic for the metric. Specify a value between p0.0 and p100.
+     * </p>
+     * 
+     * @param extendedStatistic
+     *        The percentile statistic for the metric. Specify a value between p0.0 and p100.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAlarmsForMetricRequest withExtendedStatistic(String extendedStatistic) {
+        setExtendedStatistic(extendedStatistic);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in
+     * order for the call to succeed.
+     * </p>
+     * 
+     * @return The dimensions associated with the metric. If the metric has any associated dimensions, you must specify
+     *         them in order for the call to succeed.
      */
 
     public java.util.List<Dimension> getDimensions() {
@@ -232,13 +287,13 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The list of dimensions associated with the metric. If the metric has any associated dimensions, you must specify
-     * them in order for the DescribeAlarmsForMetric to succeed.
+     * The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in
+     * order for the call to succeed.
      * </p>
      * 
      * @param dimensions
-     *        The list of dimensions associated with the metric. If the metric has any associated dimensions, you must
-     *        specify them in order for the DescribeAlarmsForMetric to succeed.
+     *        The dimensions associated with the metric. If the metric has any associated dimensions, you must specify
+     *        them in order for the call to succeed.
      */
 
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
@@ -252,8 +307,8 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The list of dimensions associated with the metric. If the metric has any associated dimensions, you must specify
-     * them in order for the DescribeAlarmsForMetric to succeed.
+     * The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in
+     * order for the call to succeed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -262,8 +317,8 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param dimensions
-     *        The list of dimensions associated with the metric. If the metric has any associated dimensions, you must
-     *        specify them in order for the DescribeAlarmsForMetric to succeed.
+     *        The dimensions associated with the metric. If the metric has any associated dimensions, you must specify
+     *        them in order for the call to succeed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,13 +334,13 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The list of dimensions associated with the metric. If the metric has any associated dimensions, you must specify
-     * them in order for the DescribeAlarmsForMetric to succeed.
+     * The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in
+     * order for the call to succeed.
      * </p>
      * 
      * @param dimensions
-     *        The list of dimensions associated with the metric. If the metric has any associated dimensions, you must
-     *        specify them in order for the DescribeAlarmsForMetric to succeed.
+     *        The dimensions associated with the metric. If the metric has any associated dimensions, you must specify
+     *        them in order for the call to succeed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,11 +351,11 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The period in seconds over which the statistic is applied.
+     * The period, in seconds, over which the statistic is applied.
      * </p>
      * 
      * @param period
-     *        The period in seconds over which the statistic is applied.
+     *        The period, in seconds, over which the statistic is applied.
      */
 
     public void setPeriod(Integer period) {
@@ -309,10 +364,10 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The period in seconds over which the statistic is applied.
+     * The period, in seconds, over which the statistic is applied.
      * </p>
      * 
-     * @return The period in seconds over which the statistic is applied.
+     * @return The period, in seconds, over which the statistic is applied.
      */
 
     public Integer getPeriod() {
@@ -321,11 +376,11 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The period in seconds over which the statistic is applied.
+     * The period, in seconds, over which the statistic is applied.
      * </p>
      * 
      * @param period
-     *        The period in seconds over which the statistic is applied.
+     *        The period, in seconds, over which the statistic is applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -424,6 +479,8 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
             sb.append("Namespace: " + getNamespace() + ",");
         if (getStatistic() != null)
             sb.append("Statistic: " + getStatistic() + ",");
+        if (getExtendedStatistic() != null)
+            sb.append("ExtendedStatistic: " + getExtendedStatistic() + ",");
         if (getDimensions() != null)
             sb.append("Dimensions: " + getDimensions() + ",");
         if (getPeriod() != null)
@@ -456,6 +513,10 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getStatistic() != null && other.getStatistic().equals(this.getStatistic()) == false)
             return false;
+        if (other.getExtendedStatistic() == null ^ this.getExtendedStatistic() == null)
+            return false;
+        if (other.getExtendedStatistic() != null && other.getExtendedStatistic().equals(this.getExtendedStatistic()) == false)
+            return false;
         if (other.getDimensions() == null ^ this.getDimensions() == null)
             return false;
         if (other.getDimensions() != null && other.getDimensions().equals(this.getDimensions()) == false)
@@ -479,6 +540,7 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getStatistic() == null) ? 0 : getStatistic().hashCode());
+        hashCode = prime * hashCode + ((getExtendedStatistic() == null) ? 0 : getExtendedStatistic().hashCode());
         hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
         hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());

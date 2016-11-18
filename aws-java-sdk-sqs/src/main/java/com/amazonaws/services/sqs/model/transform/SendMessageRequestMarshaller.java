@@ -108,6 +108,14 @@ public class SendMessageRequestMarshaller implements Marshaller<Request<SendMess
             messageAttributesListIndex++;
         }
 
+        if (sendMessageRequest.getMessageDeduplicationId() != null) {
+            request.addParameter("MessageDeduplicationId", StringUtils.fromString(sendMessageRequest.getMessageDeduplicationId()));
+        }
+
+        if (sendMessageRequest.getMessageGroupId() != null) {
+            request.addParameter("MessageGroupId", StringUtils.fromString(sendMessageRequest.getMessageGroupId()));
+        }
+
         return request;
     }
 

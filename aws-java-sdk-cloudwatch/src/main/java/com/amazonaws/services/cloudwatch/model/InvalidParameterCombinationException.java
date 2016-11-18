@@ -14,7 +14,7 @@ package com.amazonaws.services.cloudwatch.model;
 
 /**
  * <p>
- * Parameters that must not be used together were used together.
+ * Parameters that cannot be used together were used together.
  * </p>
  */
 public class InvalidParameterCombinationException extends com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException {

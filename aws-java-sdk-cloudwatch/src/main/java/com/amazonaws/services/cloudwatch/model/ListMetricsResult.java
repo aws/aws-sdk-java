@@ -15,31 +15,29 @@ package com.amazonaws.services.cloudwatch.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output for <a>ListMetrics</a>.
- * </p>
+ * 
  */
 public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of metrics used to generate statistics for an AWS account.
+     * The metrics.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Metric> metrics;
     /**
      * <p>
-     * A string that marks the start of the next batch of returned results.
+     * The token that marks the start of the next batch of returned results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of metrics used to generate statistics for an AWS account.
+     * The metrics.
      * </p>
      * 
-     * @return A list of metrics used to generate statistics for an AWS account.
+     * @return The metrics.
      */
 
     public java.util.List<Metric> getMetrics() {
@@ -51,11 +49,11 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of metrics used to generate statistics for an AWS account.
+     * The metrics.
      * </p>
      * 
      * @param metrics
-     *        A list of metrics used to generate statistics for an AWS account.
+     *        The metrics.
      */
 
     public void setMetrics(java.util.Collection<Metric> metrics) {
@@ -69,7 +67,7 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of metrics used to generate statistics for an AWS account.
+     * The metrics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +76,7 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param metrics
-     *        A list of metrics used to generate statistics for an AWS account.
+     *        The metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +92,11 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of metrics used to generate statistics for an AWS account.
+     * The metrics.
      * </p>
      * 
      * @param metrics
-     *        A list of metrics used to generate statistics for an AWS account.
+     *        The metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,11 +107,11 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A string that marks the start of the next batch of returned results.
+     * The token that marks the start of the next batch of returned results.
      * </p>
      * 
      * @param nextToken
-     *        A string that marks the start of the next batch of returned results.
+     *        The token that marks the start of the next batch of returned results.
      */
 
     public void setNextToken(String nextToken) {
@@ -122,10 +120,10 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A string that marks the start of the next batch of returned results.
+     * The token that marks the start of the next batch of returned results.
      * </p>
      * 
-     * @return A string that marks the start of the next batch of returned results.
+     * @return The token that marks the start of the next batch of returned results.
      */
 
     public String getNextToken() {
@@ -134,11 +132,11 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A string that marks the start of the next batch of returned results.
+     * The token that marks the start of the next batch of returned results.
      * </p>
      * 
      * @param nextToken
-     *        A string that marks the start of the next batch of returned results.
+     *        The token that marks the start of the next batch of returned results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

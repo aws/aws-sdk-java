@@ -35,7 +35,17 @@ public class AbstractAWSMarketplaceMetering implements AWSMarketplaceMetering {
     }
 
     @Override
+    public BatchMeterUsageResult batchMeterUsage(BatchMeterUsageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public MeterUsageResult meterUsage(MeterUsageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResolveCustomerResult resolveCustomer(ResolveCustomerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

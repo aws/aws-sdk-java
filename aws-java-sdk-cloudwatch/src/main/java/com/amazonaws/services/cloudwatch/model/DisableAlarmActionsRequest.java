@@ -16,23 +16,23 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * 
  */
 public class DisableAlarmActionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the alarms to disable actions for.
+     * The names of the alarms.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> alarmNames;
 
     /**
      * <p>
-     * The names of the alarms to disable actions for.
+     * The names of the alarms.
      * </p>
      * 
-     * @return The names of the alarms to disable actions for.
+     * @return The names of the alarms.
      */
 
     public java.util.List<String> getAlarmNames() {
@@ -44,11 +44,11 @@ public class DisableAlarmActionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of the alarms to disable actions for.
+     * The names of the alarms.
      * </p>
      * 
      * @param alarmNames
-     *        The names of the alarms to disable actions for.
+     *        The names of the alarms.
      */
 
     public void setAlarmNames(java.util.Collection<String> alarmNames) {
@@ -62,7 +62,7 @@ public class DisableAlarmActionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of the alarms to disable actions for.
+     * The names of the alarms.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class DisableAlarmActionsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param alarmNames
-     *        The names of the alarms to disable actions for.
+     *        The names of the alarms.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class DisableAlarmActionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of the alarms to disable actions for.
+     * The names of the alarms.
      * </p>
      * 
      * @param alarmNames
-     *        The names of the alarms to disable actions for.
+     *        The names of the alarms.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

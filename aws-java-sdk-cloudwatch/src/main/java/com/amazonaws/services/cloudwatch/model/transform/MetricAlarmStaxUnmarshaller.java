@@ -120,6 +120,11 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
                     continue;
                 }
 
+                if (context.testExpression("ExtendedStatistic", targetDepth)) {
+                    metricAlarm.setExtendedStatistic(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Dimensions/member", targetDepth)) {
                     metricAlarm.withDimensions(DimensionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

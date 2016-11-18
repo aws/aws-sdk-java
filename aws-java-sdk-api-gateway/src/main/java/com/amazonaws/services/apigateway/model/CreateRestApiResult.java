@@ -54,6 +54,13 @@ public class CreateRestApiResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private java.util.List<String> warnings;
+    /**
+     * <p>
+     * The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only
+     * UTF-8-encoded text payloads.
+     * </p>
+     */
+    private java.util.List<String> binaryMediaTypes;
 
     /**
      * <p>
@@ -292,6 +299,84 @@ public class CreateRestApiResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only
+     * UTF-8-encoded text payloads.
+     * </p>
+     * 
+     * @return The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports
+     *         only UTF-8-encoded text payloads.
+     */
+
+    public java.util.List<String> getBinaryMediaTypes() {
+        return binaryMediaTypes;
+    }
+
+    /**
+     * <p>
+     * The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only
+     * UTF-8-encoded text payloads.
+     * </p>
+     * 
+     * @param binaryMediaTypes
+     *        The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports
+     *        only UTF-8-encoded text payloads.
+     */
+
+    public void setBinaryMediaTypes(java.util.Collection<String> binaryMediaTypes) {
+        if (binaryMediaTypes == null) {
+            this.binaryMediaTypes = null;
+            return;
+        }
+
+        this.binaryMediaTypes = new java.util.ArrayList<String>(binaryMediaTypes);
+    }
+
+    /**
+     * <p>
+     * The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only
+     * UTF-8-encoded text payloads.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBinaryMediaTypes(java.util.Collection)} or {@link #withBinaryMediaTypes(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param binaryMediaTypes
+     *        The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports
+     *        only UTF-8-encoded text payloads.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRestApiResult withBinaryMediaTypes(String... binaryMediaTypes) {
+        if (this.binaryMediaTypes == null) {
+            setBinaryMediaTypes(new java.util.ArrayList<String>(binaryMediaTypes.length));
+        }
+        for (String ele : binaryMediaTypes) {
+            this.binaryMediaTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only
+     * UTF-8-encoded text payloads.
+     * </p>
+     * 
+     * @param binaryMediaTypes
+     *        The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports
+     *        only UTF-8-encoded text payloads.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRestApiResult withBinaryMediaTypes(java.util.Collection<String> binaryMediaTypes) {
+        setBinaryMediaTypes(binaryMediaTypes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -311,7 +396,9 @@ public class CreateRestApiResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getCreatedDate() != null)
             sb.append("CreatedDate: " + getCreatedDate() + ",");
         if (getWarnings() != null)
-            sb.append("Warnings: " + getWarnings());
+            sb.append("Warnings: " + getWarnings() + ",");
+        if (getBinaryMediaTypes() != null)
+            sb.append("BinaryMediaTypes: " + getBinaryMediaTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -346,6 +433,10 @@ public class CreateRestApiResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getWarnings() != null && other.getWarnings().equals(this.getWarnings()) == false)
             return false;
+        if (other.getBinaryMediaTypes() == null ^ this.getBinaryMediaTypes() == null)
+            return false;
+        if (other.getBinaryMediaTypes() != null && other.getBinaryMediaTypes().equals(this.getBinaryMediaTypes()) == false)
+            return false;
         return true;
     }
 
@@ -359,6 +450,7 @@ public class CreateRestApiResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
+        hashCode = prime * hashCode + ((getBinaryMediaTypes() == null) ? 0 : getBinaryMediaTypes().hashCode());
         return hashCode;
     }
 

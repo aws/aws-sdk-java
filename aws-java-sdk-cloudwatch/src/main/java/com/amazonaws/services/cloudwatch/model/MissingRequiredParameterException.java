@@ -14,7 +14,7 @@ package com.amazonaws.services.cloudwatch.model;
 
 /**
  * <p>
- * An input parameter that is mandatory for processing the request is not supplied.
+ * An input parameter that is required is missing.
  * </p>
  */
 public class MissingRequiredParameterException extends com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException {

@@ -682,6 +682,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * @throws TooManyRequestsException
      * @throws LimitExceededException
      * @throws ConflictException
+     * @throws NotFoundException
      * @sample AmazonApiGateway.CreateUsagePlan
      */
     @Override
@@ -3013,6 +3014,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws ConflictException
+     * @throws NotFoundException
      * @sample AmazonApiGateway.GetUsagePlans
      */
     @Override

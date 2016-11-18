@@ -58,7 +58,25 @@ import com.amazonaws.services.marketplacemetering.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <i>MeterUsage</i>- Submits the metering record for a Marketplace product.
+ * <i>MeterUsage</i>- Submits the metering record for a Marketplace product. MeterUsage is called from an EC2 instance.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <i>BatchMeterUsage</i>- Submits the metering record for a set of customers. BatchMeterUsage is called from a
+ * software-as-a-service (SaaS) application.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Accepting New Customers</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <i>ResolveCustomer</i>- Called by a SaaS application during the registration process. When a buyer visits your
+ * website during the registration process, the buyer submits a Registration Token through the browser. The Registration
+ * Token is resolved through this API to obtain a CustomerIdentifier and Product Code.
  * </p>
  * </li>
  * </ul>
@@ -81,6 +99,15 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
             .withSupportsCbor(false)
             .withSupportsIon(false)
             .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("InvalidTokenException").withModeledClass(
+                            com.amazonaws.services.marketplacemetering.model.InvalidTokenException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("ExpiredTokenException").withModeledClass(
+                            com.amazonaws.services.marketplacemetering.model.ExpiredTokenException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("InvalidEndpointRegionException").withModeledClass(
+                            com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException.class))
+            .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("TimestampOutOfBoundsException").withModeledClass(
                             com.amazonaws.services.marketplacemetering.model.TimestampOutOfBoundsException.class))
             .addErrorMetadata(
@@ -96,8 +123,8 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                     new JsonErrorShapeMetadata().withErrorCode("DuplicateRequestException").withModeledClass(
                             com.amazonaws.services.marketplacemetering.model.DuplicateRequestException.class))
             .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidEndpointRegionException").withModeledClass(
-                            com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException.class))
+                    new JsonErrorShapeMetadata().withErrorCode("InvalidCustomerIdentifierException").withModeledClass(
+                            com.amazonaws.services.marketplacemetering.model.InvalidCustomerIdentifierException.class))
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("InvalidProductCodeException").withModeledClass(
                             com.amazonaws.services.marketplacemetering.model.InvalidProductCodeException.class))
@@ -265,8 +292,78 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * BatchMeterUsage is called from a SaaS application listed on the AWS Marketplace to post metering records for a
+     * set of customers.
+     * </p>
+     * <p>
+     * For identical requests, the API is idempotent; requests can be retried with the same records or a subset of the
+     * input records.
+     * </p>
+     * <p>
+     * Every request to BatchMeterUsage is for one product. If you need to meter usage for multiple products, you must
+     * make multiple calls to BatchMeterUsage.
+     * </p>
+     * <p>
+     * BatchMeterUsage can process up to 25 UsageRecords at a time.
+     * </p>
+     * 
+     * @param batchMeterUsageRequest
+     *        A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your
+     *        application.
+     * @return Result of the BatchMeterUsage operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         An internal error has occurred. Retry your request. If the problem persists, post a message with details
+     *         on the AWS forums.
+     * @throws InvalidProductCodeException
+     *         The product code passed does not match the product code used for publishing the product.
+     * @throws InvalidUsageDimensionException
+     *         The usage dimension does not match one of the UsageDimensions associated with products.
+     * @throws InvalidCustomerIdentifierException
+     *         You have metered usage for a CustomerIdentifier that does not exist.
+     * @throws TimestampOutOfBoundsException
+     *         The timestamp value passed in the meterUsage() is out of allowed range.
+     * @throws ThrottlingException
+     *         The calls to the MeterUsage API are throttled.
+     * @sample AWSMarketplaceMetering.BatchMeterUsage
+     */
+    @Override
+    public BatchMeterUsageResult batchMeterUsage(BatchMeterUsageRequest batchMeterUsageRequest) {
+        ExecutionContext executionContext = createExecutionContext(batchMeterUsageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchMeterUsageRequest> request = null;
+        Response<BatchMeterUsageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchMeterUsageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchMeterUsageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchMeterUsageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchMeterUsageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * API to emit metering records. For identical requests, the API is idempotent. It simply returns the metering
      * record ID.
+     * </p>
+     * <p>
+     * MeterUsage is authenticated on the buyer's AWS account, generally when running from an EC2 instance on the AWS
+     * Marketplace.
      * </p>
      * 
      * @param meterUsageRequest
@@ -310,6 +407,59 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<MeterUsageResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new MeterUsageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * ResolveCustomer is called by a SaaS application during the registration process. When a buyer visits your website
+     * during the registration process, the buyer submits a registration token through their browser. The registration
+     * token is resolved through this API to obtain a CustomerIdentifier and product code.
+     * </p>
+     * 
+     * @param resolveCustomerRequest
+     *        Contains input to the ResolveCustomer operation.
+     * @return Result of the ResolveCustomer operation returned by the service.
+     * @throws InvalidTokenException
+     * @throws ExpiredTokenException
+     *         The submitted registration token has expired. This can happen if the buyer's browser takes too long to
+     *         redirect to your page, the buyer has resubmitted the registration token, or your application has held on
+     *         to the registration token for too long. Your SaaS registration website should redeem this token as soon
+     *         as it is submitted by the buyer's browser.
+     * @throws ThrottlingException
+     *         The calls to the MeterUsage API are throttled.
+     * @throws InternalServiceErrorException
+     *         An internal error has occurred. Retry your request. If the problem persists, post a message with details
+     *         on the AWS forums.
+     * @sample AWSMarketplaceMetering.ResolveCustomer
+     */
+    @Override
+    public ResolveCustomerResult resolveCustomer(ResolveCustomerRequest resolveCustomerRequest) {
+        ExecutionContext executionContext = createExecutionContext(resolveCustomerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResolveCustomerRequest> request = null;
+        Response<ResolveCustomerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResolveCustomerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveCustomerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResolveCustomerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResolveCustomerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

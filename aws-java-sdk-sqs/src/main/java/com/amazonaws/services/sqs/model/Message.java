@@ -60,8 +60,7 @@ public class Message implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      * received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For
-     * information about MD5, go to <a
-     * href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     * information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      */
     private String mD5OfMessageAttributes;
@@ -69,7 +68,7 @@ public class Message implements Serializable, Cloneable {
      * <p>
      * Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
-     * >Message Attribute Items</a>.
+     * >Message Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, MessageAttributeValue> messageAttributes;
@@ -257,10 +256,10 @@ public class Message implements Serializable, Cloneable {
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.
      * </p>
      * 
-     * @return SenderId</code>, <code>SentTimestamp</code>, <code>ApproximateReceiveCount</code>, and/or
+     * @return <code>SenderId</code>, <code>SentTimestamp</code>, <code>ApproximateReceiveCount</code>, and/or
      *         <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
      *         <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer representing the <a
-     *         href="http://en.wikipedia.org/wiki/Unix_time">epoch time
+     *         href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -279,10 +278,10 @@ public class Message implements Serializable, Cloneable {
      * </p>
      * 
      * @param attributes
-     *        SenderId</code>, <code>SentTimestamp</code>, <code>ApproximateReceiveCount</code>, and/or
+     *        <code>SenderId</code>, <code>SentTimestamp</code>, <code>ApproximateReceiveCount</code>, and/or
      *        <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
      *        <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer representing the <a
-     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -298,10 +297,10 @@ public class Message implements Serializable, Cloneable {
      * </p>
      * 
      * @param attributes
-     *        SenderId</code>, <code>SentTimestamp</code>, <code>ApproximateReceiveCount</code>, and/or
+     *        <code>SenderId</code>, <code>SentTimestamp</code>, <code>ApproximateReceiveCount</code>, and/or
      *        <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
      *        <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer representing the <a
-     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,15 +334,13 @@ public class Message implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      * received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For
-     * information about MD5, go to <a
-     * href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     * information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * 
      * @param mD5OfMessageAttributes
      *        An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      *        received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest.
-     *        For information about MD5, go to <a
-     *        href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     *        For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      */
 
     public void setMD5OfMessageAttributes(String mD5OfMessageAttributes) {
@@ -354,14 +351,12 @@ public class Message implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      * received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For
-     * information about MD5, go to <a
-     * href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     * information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * 
      * @return An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      *         received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest.
-     *         For information about MD5, go to <a
-     *         href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     *         For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      */
 
     public String getMD5OfMessageAttributes() {
@@ -372,15 +367,13 @@ public class Message implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      * received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For
-     * information about MD5, go to <a
-     * href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     * information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * 
      * @param mD5OfMessageAttributes
      *        An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      *        received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest.
-     *        For information about MD5, go to <a
-     *        href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     *        For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,12 +386,12 @@ public class Message implements Serializable, Cloneable {
      * <p>
      * Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
-     * >Message Attribute Items</a>.
+     * >Message Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @return Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
-     *         >Message Attribute Items</a>.
+     *         >Message Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public java.util.Map<String, MessageAttributeValue> getMessageAttributes() {
@@ -412,13 +405,13 @@ public class Message implements Serializable, Cloneable {
      * <p>
      * Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
-     * >Message Attribute Items</a>.
+     * >Message Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
-     *        >Message Attribute Items</a>.
+     *        >Message Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public void setMessageAttributes(java.util.Map<String, MessageAttributeValue> messageAttributes) {
@@ -429,13 +422,13 @@ public class Message implements Serializable, Cloneable {
      * <p>
      * Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
-     * >Message Attribute Items</a>.
+     * >Message Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
-     *        >Message Attribute Items</a>.
+     *        >Message Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

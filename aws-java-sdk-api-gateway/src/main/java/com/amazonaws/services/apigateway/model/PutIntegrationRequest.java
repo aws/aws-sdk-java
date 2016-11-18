@@ -126,6 +126,31 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.List<String> cacheKeyParameters;
+    /**
+     * <p>
+     * Specifies how to handle request payload content type conversions. Supported values are
+     * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding
+     * binary blob.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this property is not defined, the request payload will be passed through from the method request to
+     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * support payload pass-through.
+     * </p>
+     */
+    private String contentHandling;
 
     /**
      * <p>
@@ -907,6 +932,264 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifies how to handle request payload content type conversions. Supported values are
+     * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding
+     * binary blob.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this property is not defined, the request payload will be passed through from the method request to
+     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * support payload pass-through.
+     * </p>
+     * 
+     * @param contentHandling
+     *        Specifies how to handle request payload content type conversions. Supported values are
+     *        <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the
+     *        corresponding binary blob.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If this property is not defined, the request payload will be passed through from the method request to
+     *        integration request without modification, provided that the <code>passthroughBehaviors</code> is
+     *        configured to support payload pass-through.
+     * @see ContentHandlingStrategy
+     */
+
+    public void setContentHandling(String contentHandling) {
+        this.contentHandling = contentHandling;
+    }
+
+    /**
+     * <p>
+     * Specifies how to handle request payload content type conversions. Supported values are
+     * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding
+     * binary blob.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this property is not defined, the request payload will be passed through from the method request to
+     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * support payload pass-through.
+     * </p>
+     * 
+     * @return Specifies how to handle request payload content type conversions. Supported values are
+     *         <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the
+     *         corresponding binary blob.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If this property is not defined, the request payload will be passed through from the method request to
+     *         integration request without modification, provided that the <code>passthroughBehaviors</code> is
+     *         configured to support payload pass-through.
+     * @see ContentHandlingStrategy
+     */
+
+    public String getContentHandling() {
+        return this.contentHandling;
+    }
+
+    /**
+     * <p>
+     * Specifies how to handle request payload content type conversions. Supported values are
+     * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding
+     * binary blob.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this property is not defined, the request payload will be passed through from the method request to
+     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * support payload pass-through.
+     * </p>
+     * 
+     * @param contentHandling
+     *        Specifies how to handle request payload content type conversions. Supported values are
+     *        <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the
+     *        corresponding binary blob.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If this property is not defined, the request payload will be passed through from the method request to
+     *        integration request without modification, provided that the <code>passthroughBehaviors</code> is
+     *        configured to support payload pass-through.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContentHandlingStrategy
+     */
+
+    public PutIntegrationRequest withContentHandling(String contentHandling) {
+        setContentHandling(contentHandling);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies how to handle request payload content type conversions. Supported values are
+     * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding
+     * binary blob.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this property is not defined, the request payload will be passed through from the method request to
+     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * support payload pass-through.
+     * </p>
+     * 
+     * @param contentHandling
+     *        Specifies how to handle request payload content type conversions. Supported values are
+     *        <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the
+     *        corresponding binary blob.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If this property is not defined, the request payload will be passed through from the method request to
+     *        integration request without modification, provided that the <code>passthroughBehaviors</code> is
+     *        configured to support payload pass-through.
+     * @see ContentHandlingStrategy
+     */
+
+    public void setContentHandling(ContentHandlingStrategy contentHandling) {
+        this.contentHandling = contentHandling.toString();
+    }
+
+    /**
+     * <p>
+     * Specifies how to handle request payload content type conversions. Supported values are
+     * <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding
+     * binary blob.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If this property is not defined, the request payload will be passed through from the method request to
+     * integration request without modification, provided that the <code>passthroughBehaviors</code> is configured to
+     * support payload pass-through.
+     * </p>
+     * 
+     * @param contentHandling
+     *        Specifies how to handle request payload content type conversions. Supported values are
+     *        <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the
+     *        corresponding binary blob.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If this property is not defined, the request payload will be passed through from the method request to
+     *        integration request without modification, provided that the <code>passthroughBehaviors</code> is
+     *        configured to support payload pass-through.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContentHandlingStrategy
+     */
+
+    public PutIntegrationRequest withContentHandling(ContentHandlingStrategy contentHandling) {
+        setContentHandling(contentHandling);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -940,7 +1223,9 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getCacheNamespace() != null)
             sb.append("CacheNamespace: " + getCacheNamespace() + ",");
         if (getCacheKeyParameters() != null)
-            sb.append("CacheKeyParameters: " + getCacheKeyParameters());
+            sb.append("CacheKeyParameters: " + getCacheKeyParameters() + ",");
+        if (getContentHandling() != null)
+            sb.append("ContentHandling: " + getContentHandling());
         sb.append("}");
         return sb.toString();
     }
@@ -1003,6 +1288,10 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getCacheKeyParameters() != null && other.getCacheKeyParameters().equals(this.getCacheKeyParameters()) == false)
             return false;
+        if (other.getContentHandling() == null ^ this.getContentHandling() == null)
+            return false;
+        if (other.getContentHandling() != null && other.getContentHandling().equals(this.getContentHandling()) == false)
+            return false;
         return true;
     }
 
@@ -1023,6 +1312,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getPassthroughBehavior() == null) ? 0 : getPassthroughBehavior().hashCode());
         hashCode = prime * hashCode + ((getCacheNamespace() == null) ? 0 : getCacheNamespace().hashCode());
         hashCode = prime * hashCode + ((getCacheKeyParameters() == null) ? 0 : getCacheKeyParameters().hashCode());
+        hashCode = prime * hashCode + ((getContentHandling() == null) ? 0 : getContentHandling().hashCode());
         return hashCode;
     }
 

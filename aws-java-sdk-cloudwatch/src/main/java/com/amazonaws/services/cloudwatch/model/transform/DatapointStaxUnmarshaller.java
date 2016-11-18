@@ -30,6 +30,46 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DatapointStaxUnmarshaller implements Unmarshaller<Datapoint, StaxUnmarshallerContext> {
 
+    private static class ExtendedStatisticsMapEntryUnmarshaller implements Unmarshaller<Map.Entry<String, Double>, StaxUnmarshallerContext> {
+
+        @Override
+        public Entry<String, Double> unmarshall(StaxUnmarshallerContext context) throws Exception {
+            int originalDepth = context.getCurrentDepth();
+            int targetDepth = originalDepth + 1;
+
+            MapEntry<String, Double> entry = new MapEntry<String, Double>();
+
+            while (true) {
+                XMLEvent xmlEvent = context.nextEvent();
+                if (xmlEvent.isEndDocument())
+                    return entry;
+
+                if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+                    if (context.testExpression("key", targetDepth)) {
+                        entry.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                        continue;
+                    }
+                    if (context.testExpression("value", targetDepth)) {
+                        entry.setValue(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                        continue;
+                    }
+                } else if (xmlEvent.isEndElement()) {
+                    if (context.getCurrentDepth() < originalDepth)
+                        return entry;
+                }
+            }
+        }
+
+        private static ExtendedStatisticsMapEntryUnmarshaller instance;
+
+        public static ExtendedStatisticsMapEntryUnmarshaller getInstance() {
+            if (instance == null)
+                instance = new ExtendedStatisticsMapEntryUnmarshaller();
+            return instance;
+        }
+
+    }
+
     public Datapoint unmarshall(StaxUnmarshallerContext context) throws Exception {
         Datapoint datapoint = new Datapoint();
         int originalDepth = context.getCurrentDepth();
@@ -79,6 +119,13 @@ public class DatapointStaxUnmarshaller implements Unmarshaller<Datapoint, StaxUn
                     datapoint.setUnit(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ExtendedStatistics/entry", targetDepth)) {
+                    Entry<String, Double> entry = ExtendedStatisticsMapEntryUnmarshaller.getInstance().unmarshall(context);
+                    datapoint.addExtendedStatisticsEntry(entry.getKey(), entry.getValue());
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return datapoint;

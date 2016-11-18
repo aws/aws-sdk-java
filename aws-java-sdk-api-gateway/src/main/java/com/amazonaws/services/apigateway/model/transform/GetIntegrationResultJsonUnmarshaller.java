@@ -77,6 +77,10 @@ public class GetIntegrationResultJsonUnmarshaller implements Unmarshaller<GetInt
                     context.nextToken();
                     getIntegrationResult.setPassthroughBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("contentHandling", targetDepth)) {
+                    context.nextToken();
+                    getIntegrationResult.setContentHandling(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("cacheNamespace", targetDepth)) {
                     context.nextToken();
                     getIntegrationResult.setCacheNamespace(context.getUnmarshaller(String.class).unmarshall(context));

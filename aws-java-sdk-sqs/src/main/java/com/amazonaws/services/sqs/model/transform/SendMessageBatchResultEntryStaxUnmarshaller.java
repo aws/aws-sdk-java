@@ -64,6 +64,11 @@ public class SendMessageBatchResultEntryStaxUnmarshaller implements Unmarshaller
                     sendMessageBatchResultEntry.setMD5OfMessageAttributes(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SequenceNumber", targetDepth)) {
+                    sendMessageBatchResultEntry.setSequenceNumber(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return sendMessageBatchResultEntry;

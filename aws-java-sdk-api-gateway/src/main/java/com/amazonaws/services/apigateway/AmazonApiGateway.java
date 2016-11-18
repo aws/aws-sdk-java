@@ -262,6 +262,7 @@ public interface AmazonApiGateway {
      * @throws TooManyRequestsException
      * @throws LimitExceededException
      * @throws ConflictException
+     * @throws NotFoundException
      * @sample AmazonApiGateway.CreateUsagePlan
      */
     CreateUsagePlanResult createUsagePlan(CreateUsagePlanRequest createUsagePlanRequest);
@@ -1102,6 +1103,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws ConflictException
+     * @throws NotFoundException
      * @sample AmazonApiGateway.GetUsagePlans
      */
     GetUsagePlansResult getUsagePlans(GetUsagePlansRequest getUsagePlansRequest);

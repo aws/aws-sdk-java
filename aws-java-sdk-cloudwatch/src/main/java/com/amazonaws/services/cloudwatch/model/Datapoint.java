@@ -16,62 +16,67 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>Datapoint</code> data type encapsulates the statistical data that Amazon CloudWatch computes from metric
- * data.
+ * Encapsulates the statistical data that Amazon CloudWatch computes from metric data.
  * </p>
  */
 public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamp used for the datapoint.
+     * The time stamp used for the data point.
      * </p>
      */
     private java.util.Date timestamp;
     /**
      * <p>
-     * The number of metric values that contributed to the aggregate value of this datapoint.
+     * The number of metric values that contributed to the aggregate value of this data point.
      * </p>
      */
     private Double sampleCount;
     /**
      * <p>
-     * The average of metric values that correspond to the datapoint.
+     * The average of the metric values that correspond to the data point.
      * </p>
      */
     private Double average;
     /**
      * <p>
-     * The sum of metric values used for the datapoint.
+     * The sum of the metric values for the data point.
      * </p>
      */
     private Double sum;
     /**
      * <p>
-     * The minimum metric value used for the datapoint.
+     * The minimum metric value for the data point.
      * </p>
      */
     private Double minimum;
     /**
      * <p>
-     * The maximum of the metric value used for the datapoint.
+     * The maximum metric value for the data point.
      * </p>
      */
     private Double maximum;
     /**
      * <p>
-     * The standard unit used for the datapoint.
+     * The standard unit for the data point.
      * </p>
      */
     private String unit;
+    /**
+     * <p>
+     * The percentile statistic for the data point.
+     * </p>
+     */
+    private java.util.Map<String, Double> extendedStatistics;
 
     /**
      * <p>
-     * The time stamp used for the datapoint.
+     * The time stamp used for the data point.
      * </p>
      * 
      * @param timestamp
-     *        The time stamp used for the datapoint.
+     *        The time stamp used for the data point.
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -80,10 +85,10 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamp used for the datapoint.
+     * The time stamp used for the data point.
      * </p>
      * 
-     * @return The time stamp used for the datapoint.
+     * @return The time stamp used for the data point.
      */
 
     public java.util.Date getTimestamp() {
@@ -92,11 +97,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamp used for the datapoint.
+     * The time stamp used for the data point.
      * </p>
      * 
      * @param timestamp
-     *        The time stamp used for the datapoint.
+     *        The time stamp used for the data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +112,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of metric values that contributed to the aggregate value of this datapoint.
+     * The number of metric values that contributed to the aggregate value of this data point.
      * </p>
      * 
      * @param sampleCount
-     *        The number of metric values that contributed to the aggregate value of this datapoint.
+     *        The number of metric values that contributed to the aggregate value of this data point.
      */
 
     public void setSampleCount(Double sampleCount) {
@@ -120,10 +125,10 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of metric values that contributed to the aggregate value of this datapoint.
+     * The number of metric values that contributed to the aggregate value of this data point.
      * </p>
      * 
-     * @return The number of metric values that contributed to the aggregate value of this datapoint.
+     * @return The number of metric values that contributed to the aggregate value of this data point.
      */
 
     public Double getSampleCount() {
@@ -132,11 +137,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of metric values that contributed to the aggregate value of this datapoint.
+     * The number of metric values that contributed to the aggregate value of this data point.
      * </p>
      * 
      * @param sampleCount
-     *        The number of metric values that contributed to the aggregate value of this datapoint.
+     *        The number of metric values that contributed to the aggregate value of this data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +152,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The average of metric values that correspond to the datapoint.
+     * The average of the metric values that correspond to the data point.
      * </p>
      * 
      * @param average
-     *        The average of metric values that correspond to the datapoint.
+     *        The average of the metric values that correspond to the data point.
      */
 
     public void setAverage(Double average) {
@@ -160,10 +165,10 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The average of metric values that correspond to the datapoint.
+     * The average of the metric values that correspond to the data point.
      * </p>
      * 
-     * @return The average of metric values that correspond to the datapoint.
+     * @return The average of the metric values that correspond to the data point.
      */
 
     public Double getAverage() {
@@ -172,11 +177,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The average of metric values that correspond to the datapoint.
+     * The average of the metric values that correspond to the data point.
      * </p>
      * 
      * @param average
-     *        The average of metric values that correspond to the datapoint.
+     *        The average of the metric values that correspond to the data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +192,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The sum of metric values used for the datapoint.
+     * The sum of the metric values for the data point.
      * </p>
      * 
      * @param sum
-     *        The sum of metric values used for the datapoint.
+     *        The sum of the metric values for the data point.
      */
 
     public void setSum(Double sum) {
@@ -200,10 +205,10 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The sum of metric values used for the datapoint.
+     * The sum of the metric values for the data point.
      * </p>
      * 
-     * @return The sum of metric values used for the datapoint.
+     * @return The sum of the metric values for the data point.
      */
 
     public Double getSum() {
@@ -212,11 +217,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The sum of metric values used for the datapoint.
+     * The sum of the metric values for the data point.
      * </p>
      * 
      * @param sum
-     *        The sum of metric values used for the datapoint.
+     *        The sum of the metric values for the data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +232,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum metric value used for the datapoint.
+     * The minimum metric value for the data point.
      * </p>
      * 
      * @param minimum
-     *        The minimum metric value used for the datapoint.
+     *        The minimum metric value for the data point.
      */
 
     public void setMinimum(Double minimum) {
@@ -240,10 +245,10 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum metric value used for the datapoint.
+     * The minimum metric value for the data point.
      * </p>
      * 
-     * @return The minimum metric value used for the datapoint.
+     * @return The minimum metric value for the data point.
      */
 
     public Double getMinimum() {
@@ -252,11 +257,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum metric value used for the datapoint.
+     * The minimum metric value for the data point.
      * </p>
      * 
      * @param minimum
-     *        The minimum metric value used for the datapoint.
+     *        The minimum metric value for the data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,11 +272,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum of the metric value used for the datapoint.
+     * The maximum metric value for the data point.
      * </p>
      * 
      * @param maximum
-     *        The maximum of the metric value used for the datapoint.
+     *        The maximum metric value for the data point.
      */
 
     public void setMaximum(Double maximum) {
@@ -280,10 +285,10 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum of the metric value used for the datapoint.
+     * The maximum metric value for the data point.
      * </p>
      * 
-     * @return The maximum of the metric value used for the datapoint.
+     * @return The maximum metric value for the data point.
      */
 
     public Double getMaximum() {
@@ -292,11 +297,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum of the metric value used for the datapoint.
+     * The maximum metric value for the data point.
      * </p>
      * 
      * @param maximum
-     *        The maximum of the metric value used for the datapoint.
+     *        The maximum metric value for the data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,11 +312,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The standard unit used for the datapoint.
+     * The standard unit for the data point.
      * </p>
      * 
      * @param unit
-     *        The standard unit used for the datapoint.
+     *        The standard unit for the data point.
      * @see StandardUnit
      */
 
@@ -321,10 +326,10 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The standard unit used for the datapoint.
+     * The standard unit for the data point.
      * </p>
      * 
-     * @return The standard unit used for the datapoint.
+     * @return The standard unit for the data point.
      * @see StandardUnit
      */
 
@@ -334,11 +339,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The standard unit used for the datapoint.
+     * The standard unit for the data point.
      * </p>
      * 
      * @param unit
-     *        The standard unit used for the datapoint.
+     *        The standard unit for the data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardUnit
      */
@@ -350,11 +355,11 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The standard unit used for the datapoint.
+     * The standard unit for the data point.
      * </p>
      * 
      * @param unit
-     *        The standard unit used for the datapoint.
+     *        The standard unit for the data point.
      * @see StandardUnit
      */
 
@@ -364,17 +369,78 @@ public class Datapoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The standard unit used for the datapoint.
+     * The standard unit for the data point.
      * </p>
      * 
      * @param unit
-     *        The standard unit used for the datapoint.
+     *        The standard unit for the data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardUnit
      */
 
     public Datapoint withUnit(StandardUnit unit) {
         setUnit(unit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The percentile statistic for the data point.
+     * </p>
+     * 
+     * @return The percentile statistic for the data point.
+     */
+
+    public java.util.Map<String, Double> getExtendedStatistics() {
+        return extendedStatistics;
+    }
+
+    /**
+     * <p>
+     * The percentile statistic for the data point.
+     * </p>
+     * 
+     * @param extendedStatistics
+     *        The percentile statistic for the data point.
+     */
+
+    public void setExtendedStatistics(java.util.Map<String, Double> extendedStatistics) {
+        this.extendedStatistics = extendedStatistics;
+    }
+
+    /**
+     * <p>
+     * The percentile statistic for the data point.
+     * </p>
+     * 
+     * @param extendedStatistics
+     *        The percentile statistic for the data point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Datapoint withExtendedStatistics(java.util.Map<String, Double> extendedStatistics) {
+        setExtendedStatistics(extendedStatistics);
+        return this;
+    }
+
+    public Datapoint addExtendedStatisticsEntry(String key, Double value) {
+        if (null == this.extendedStatistics) {
+            this.extendedStatistics = new java.util.HashMap<String, Double>();
+        }
+        if (this.extendedStatistics.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.extendedStatistics.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ExtendedStatistics.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Datapoint clearExtendedStatisticsEntries() {
+        this.extendedStatistics = null;
         return this;
     }
 
@@ -402,7 +468,9 @@ public class Datapoint implements Serializable, Cloneable {
         if (getMaximum() != null)
             sb.append("Maximum: " + getMaximum() + ",");
         if (getUnit() != null)
-            sb.append("Unit: " + getUnit());
+            sb.append("Unit: " + getUnit() + ",");
+        if (getExtendedStatistics() != null)
+            sb.append("ExtendedStatistics: " + getExtendedStatistics());
         sb.append("}");
         return sb.toString();
     }
@@ -445,6 +513,10 @@ public class Datapoint implements Serializable, Cloneable {
             return false;
         if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false)
             return false;
+        if (other.getExtendedStatistics() == null ^ this.getExtendedStatistics() == null)
+            return false;
+        if (other.getExtendedStatistics() != null && other.getExtendedStatistics().equals(this.getExtendedStatistics()) == false)
+            return false;
         return true;
     }
 
@@ -460,6 +532,7 @@ public class Datapoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMinimum() == null) ? 0 : getMinimum().hashCode());
         hashCode = prime * hashCode + ((getMaximum() == null) ? 0 : getMaximum().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
+        hashCode = prime * hashCode + ((getExtendedStatistics() == null) ? 0 : getExtendedStatistics().hashCode());
         return hashCode;
     }
 

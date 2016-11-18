@@ -77,6 +77,18 @@ public class CreateRestApiRequestMarshaller implements Marshaller<Request<Create
                 jsonGenerator.writeFieldName("cloneFrom").writeValue(createRestApiRequest.getCloneFrom());
             }
 
+            java.util.List<String> binaryMediaTypesList = createRestApiRequest.getBinaryMediaTypes();
+            if (binaryMediaTypesList != null) {
+                jsonGenerator.writeFieldName("binaryMediaTypes");
+                jsonGenerator.writeStartArray();
+                for (String binaryMediaTypesListValue : binaryMediaTypesList) {
+                    if (binaryMediaTypesListValue != null) {
+                        jsonGenerator.writeValue(binaryMediaTypesListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();

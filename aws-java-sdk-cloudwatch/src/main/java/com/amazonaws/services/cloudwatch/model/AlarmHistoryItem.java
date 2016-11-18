@@ -16,9 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>AlarmHistoryItem</code> data type contains descriptive information about the history of a specific alarm.
- * If you call <a>DescribeAlarmHistory</a>, Amazon CloudWatch returns this data type as part of the
- * DescribeAlarmHistoryResult data type.
+ * Represents the history of a specific alarm.
  * </p>
  */
 public class AlarmHistoryItem implements Serializable, Cloneable {
@@ -43,13 +41,13 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
     private String historyItemType;
     /**
      * <p>
-     * A human-readable summary of the alarm history.
+     * A summary of the alarm history, in text format.
      * </p>
      */
     private String historySummary;
     /**
      * <p>
-     * Machine-readable data about the alarm in JSON format.
+     * Data about the alarm, in JSON format.
      * </p>
      */
     private String historyData;
@@ -209,11 +207,11 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A human-readable summary of the alarm history.
+     * A summary of the alarm history, in text format.
      * </p>
      * 
      * @param historySummary
-     *        A human-readable summary of the alarm history.
+     *        A summary of the alarm history, in text format.
      */
 
     public void setHistorySummary(String historySummary) {
@@ -222,10 +220,10 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A human-readable summary of the alarm history.
+     * A summary of the alarm history, in text format.
      * </p>
      * 
-     * @return A human-readable summary of the alarm history.
+     * @return A summary of the alarm history, in text format.
      */
 
     public String getHistorySummary() {
@@ -234,11 +232,11 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A human-readable summary of the alarm history.
+     * A summary of the alarm history, in text format.
      * </p>
      * 
      * @param historySummary
-     *        A human-readable summary of the alarm history.
+     *        A summary of the alarm history, in text format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,11 +247,11 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Machine-readable data about the alarm in JSON format.
+     * Data about the alarm, in JSON format.
      * </p>
      * 
      * @param historyData
-     *        Machine-readable data about the alarm in JSON format.
+     *        Data about the alarm, in JSON format.
      */
 
     public void setHistoryData(String historyData) {
@@ -262,10 +260,10 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Machine-readable data about the alarm in JSON format.
+     * Data about the alarm, in JSON format.
      * </p>
      * 
-     * @return Machine-readable data about the alarm in JSON format.
+     * @return Data about the alarm, in JSON format.
      */
 
     public String getHistoryData() {
@@ -274,11 +272,11 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Machine-readable data about the alarm in JSON format.
+     * Data about the alarm, in JSON format.
      * </p>
      * 
      * @param historyData
-     *        Machine-readable data about the alarm in JSON format.
+     *        Data about the alarm, in JSON format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -77,6 +77,10 @@ public class IntegrationJsonUnmarshaller implements Unmarshaller<Integration, Js
                     context.nextToken();
                     integration.setPassthroughBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("contentHandling", targetDepth)) {
+                    context.nextToken();
+                    integration.setContentHandling(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("cacheNamespace", targetDepth)) {
                     context.nextToken();
                     integration.setCacheNamespace(context.getUnmarshaller(String.class).unmarshall(context));

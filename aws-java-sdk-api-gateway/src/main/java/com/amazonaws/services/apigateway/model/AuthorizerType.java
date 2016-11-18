@@ -14,7 +14,8 @@ package com.amazonaws.services.apigateway.model;
 
 /**
  * <p>
- * The authorizer type. the only current value is TOKEN.
+ * The authorizer type. the current value is <code>TOKEN</code> for a Lambda function or <code>COGNITO_USER_POOLS</code>
+ * for an Amazon Cognito Your User Pool.
  * </p>
  */
 public enum AuthorizerType {

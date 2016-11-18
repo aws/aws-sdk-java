@@ -84,6 +84,10 @@ public class ReceiveMessageRequestMarshaller implements Marshaller<Request<Recei
             request.addParameter("WaitTimeSeconds", StringUtils.fromInteger(receiveMessageRequest.getWaitTimeSeconds()));
         }
 
+        if (receiveMessageRequest.getReceiveRequestAttemptId() != null) {
+            request.addParameter("ReceiveRequestAttemptId", StringUtils.fromString(receiveMessageRequest.getReceiveRequestAttemptId()));
+        }
+
         return request;
     }
 

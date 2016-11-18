@@ -34,7 +34,25 @@ import com.amazonaws.annotation.ThreadSafe;
  * <ul>
  * <li>
  * <p>
- * <i>MeterUsage</i>- Submits the metering record for a Marketplace product.
+ * <i>MeterUsage</i>- Submits the metering record for a Marketplace product. MeterUsage is called from an EC2 instance.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <i>BatchMeterUsage</i>- Submits the metering record for a set of customers. BatchMeterUsage is called from a
+ * software-as-a-service (SaaS) application.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Accepting New Customers</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <i>ResolveCustomer</i>- Called by a SaaS application during the registration process. When a buyer visits your
+ * website during the registration process, the buyer submits a Registration Token through the browser. The Registration
+ * Token is resolved through this API to obtain a CustomerIdentifier and Product Code.
  * </p>
  * </li>
  * </ul>
@@ -229,6 +247,38 @@ public class AWSMarketplaceMeteringAsyncClient extends AWSMarketplaceMeteringCli
     }
 
     @Override
+    public java.util.concurrent.Future<BatchMeterUsageResult> batchMeterUsageAsync(BatchMeterUsageRequest request) {
+
+        return batchMeterUsageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchMeterUsageResult> batchMeterUsageAsync(final BatchMeterUsageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchMeterUsageRequest, BatchMeterUsageResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchMeterUsageResult>() {
+            @Override
+            public BatchMeterUsageResult call() throws Exception {
+                BatchMeterUsageResult result;
+
+                try {
+                    result = batchMeterUsage(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<MeterUsageResult> meterUsageAsync(MeterUsageRequest request) {
 
         return meterUsageAsync(request, null);
@@ -245,6 +295,38 @@ public class AWSMarketplaceMeteringAsyncClient extends AWSMarketplaceMeteringCli
 
                 try {
                     result = meterUsage(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResolveCustomerResult> resolveCustomerAsync(ResolveCustomerRequest request) {
+
+        return resolveCustomerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResolveCustomerResult> resolveCustomerAsync(final ResolveCustomerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResolveCustomerRequest, ResolveCustomerResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ResolveCustomerResult>() {
+            @Override
+            public ResolveCustomerResult call() throws Exception {
+                ResolveCustomerResult result;
+
+                try {
+                    result = resolveCustomer(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

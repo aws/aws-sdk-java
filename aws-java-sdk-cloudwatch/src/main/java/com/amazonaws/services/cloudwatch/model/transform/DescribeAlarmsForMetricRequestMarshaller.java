@@ -54,6 +54,10 @@ public class DescribeAlarmsForMetricRequestMarshaller implements Marshaller<Requ
             request.addParameter("Statistic", StringUtils.fromString(describeAlarmsForMetricRequest.getStatistic()));
         }
 
+        if (describeAlarmsForMetricRequest.getExtendedStatistic() != null) {
+            request.addParameter("ExtendedStatistic", StringUtils.fromString(describeAlarmsForMetricRequest.getExtendedStatistic()));
+        }
+
         com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) describeAlarmsForMetricRequest
                 .getDimensions();
         if (!dimensionsList.isEmpty() || !dimensionsList.isAutoConstruct()) {

@@ -17,8 +17,7 @@ import java.io.Serializable;
 /**
  * <p>
  * The user-specified message attribute value. For string data types, the value attribute has the same restrictions on
- * the content as the message body. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html">SendMessage</a>.
+ * the content as the message body. For more information, see <a>SendMessage</a>.
  * </p>
  * <p>
  * Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts
@@ -31,8 +30,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * </p>
      */
     private String stringValue;
@@ -62,7 +60,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * <p>
      * You can also append custom labels. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
-     * >Message Attribute Data Types</a>.
+     * >Message Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      */
     private String dataType;
@@ -70,14 +68,12 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * </p>
      * 
      * @param stringValue
      *        Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     *        href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *        >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *        href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      */
 
     public void setStringValue(String stringValue) {
@@ -87,13 +83,11 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * </p>
      * 
      * @return Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *         >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      */
 
     public String getStringValue() {
@@ -103,14 +97,12 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * </p>
      * 
      * @param stringValue
      *        Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     *        href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *        >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *        href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,7 +323,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * <p>
      * You can also append custom labels. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
-     * >Message Attribute Data Types</a>.
+     * >Message Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param dataType
@@ -340,7 +332,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *        <p>
      *        You can also append custom labels. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
-     *        >Message Attribute Data Types</a>.
+     *        >Message Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public void setDataType(String dataType) {
@@ -355,7 +347,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * <p>
      * You can also append custom labels. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
-     * >Message Attribute Data Types</a>.
+     * >Message Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @return Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data
@@ -363,7 +355,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *         <p>
      *         You can also append custom labels. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
-     *         >Message Attribute Data Types</a>.
+     *         >Message Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public String getDataType() {
@@ -378,7 +370,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * <p>
      * You can also append custom labels. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
-     * >Message Attribute Data Types</a>.
+     * >Message Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param dataType
@@ -387,7 +379,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *        <p>
      *        You can also append custom labels. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
-     *        >Message Attribute Data Types</a>.
+     *        >Message Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

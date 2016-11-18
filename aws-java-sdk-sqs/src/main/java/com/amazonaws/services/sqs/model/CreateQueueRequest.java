@@ -22,8 +22,25 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name for the queue to be created.
+     * The name of the new queue. The following limits apply to this name:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A queue name can have up to 80 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The following are accepted: alphanumeric chatacters, hyphens (<code>-</code>), and underscores (<code>_</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A FIFO queue name must end with the <code>.fifo</code> suffix.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Queue names are case-sensitive.
      * </p>
@@ -34,27 +51,26 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * The following lists the names, descriptions, and values of the special request parameters the
+     * The following lists the names, descriptions, and values of the special request parameters that the
      * <code>CreateQueue</code> action uses:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>DelaySeconds</code> - The time in seconds that the delivery of all messages in the queue will be delayed.
-     * An integer from 0 to 900 (15 minutes). The default for this attribute is 0 (zero).
+     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is delayed.
+     * An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it.
-     * An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this attribute is 262144 (256
-     * KiB).
+     * An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - The number of seconds Amazon SQS retains a message. Integer representing
-     * seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4 days).
+     * <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An integer
+     * representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
      * </p>
      * </li>
      * <li>
@@ -66,25 +82,109 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The time for which a <a>ReceiveMessage</a> call will wait for a
-     * message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a> action will
+     * wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RedrivePolicy</code> - The parameters for dead letter queue functionality of the source queue. For more
-     * information about RedrivePolicy and dead letter queues, see <a
+     * <code>RedrivePolicy</code> - The parameters for the dead letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The dead letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead letter queue of a standard
+     * queue must also be a standard queue.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
-     * default for this attribute is 30. For more information about visibility timeout, see <a
+     * default is 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * (first-in-first-out) queues</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>FifoQueue</code> - Designates a queue as FIFO. You can provide this attribute only during queue creation;
+     * you can't change it for an existing queue. When you set this attribute, you must provide a
+     * <code>MessageGroupId</code> explicitly.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
+     * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Every message must have a unique <code>MessageDeduplicationId</code>,
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You may provide a <code>MessageDeduplicationId</code> explicitly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the
+     * <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides
+     * the generated one.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the
+     * deduplication interval are treated as duplicates and only one copy of the message is delivered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as
+     * duplicates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a
+     * <code>MessageDeduplicationId</code> that is the same as the one generated for the first
+     * <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message
+     * is delivered.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -107,7 +207,25 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * initialize any additional object members.
      * 
      * @param queueName
-     *        The name for the queue to be created.</p>
+     *        The name of the new queue. The following limits apply to this name:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A queue name can have up to 80 characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The following are accepted: alphanumeric chatacters, hyphens (<code>-</code>), and underscores (
+     *        <code>_</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A FIFO queue name must end with the <code>.fifo</code> suffix.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Queue names are case-sensitive.
      */
@@ -117,14 +235,49 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name for the queue to be created.
+     * The name of the new queue. The following limits apply to this name:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A queue name can have up to 80 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The following are accepted: alphanumeric chatacters, hyphens (<code>-</code>), and underscores (<code>_</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A FIFO queue name must end with the <code>.fifo</code> suffix.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Queue names are case-sensitive.
      * </p>
      * 
      * @param queueName
-     *        The name for the queue to be created.</p>
+     *        The name of the new queue. The following limits apply to this name:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A queue name can have up to 80 characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The following are accepted: alphanumeric chatacters, hyphens (<code>-</code>), and underscores (
+     *        <code>_</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A FIFO queue name must end with the <code>.fifo</code> suffix.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Queue names are case-sensitive.
      */
@@ -135,13 +288,48 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name for the queue to be created.
+     * The name of the new queue. The following limits apply to this name:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A queue name can have up to 80 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The following are accepted: alphanumeric chatacters, hyphens (<code>-</code>), and underscores (<code>_</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A FIFO queue name must end with the <code>.fifo</code> suffix.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Queue names are case-sensitive.
      * </p>
      * 
-     * @return The name for the queue to be created.</p>
+     * @return The name of the new queue. The following limits apply to this name:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         A queue name can have up to 80 characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The following are accepted: alphanumeric chatacters, hyphens (<code>-</code>), and underscores (
+     *         <code>_</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A FIFO queue name must end with the <code>.fifo</code> suffix.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         Queue names are case-sensitive.
      */
@@ -152,14 +340,49 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name for the queue to be created.
+     * The name of the new queue. The following limits apply to this name:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A queue name can have up to 80 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The following are accepted: alphanumeric chatacters, hyphens (<code>-</code>), and underscores (<code>_</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A FIFO queue name must end with the <code>.fifo</code> suffix.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Queue names are case-sensitive.
      * </p>
      * 
      * @param queueName
-     *        The name for the queue to be created.</p>
+     *        The name of the new queue. The following limits apply to this name:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A queue name can have up to 80 characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The following are accepted: alphanumeric chatacters, hyphens (<code>-</code>), and underscores (
+     *        <code>_</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A FIFO queue name must end with the <code>.fifo</code> suffix.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Queue names are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -175,27 +398,26 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * The following lists the names, descriptions, and values of the special request parameters the
+     * The following lists the names, descriptions, and values of the special request parameters that the
      * <code>CreateQueue</code> action uses:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>DelaySeconds</code> - The time in seconds that the delivery of all messages in the queue will be delayed.
-     * An integer from 0 to 900 (15 minutes). The default for this attribute is 0 (zero).
+     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is delayed.
+     * An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it.
-     * An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this attribute is 262144 (256
-     * KiB).
+     * An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - The number of seconds Amazon SQS retains a message. Integer representing
-     * seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4 days).
+     * <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An integer
+     * representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
      * </p>
      * </li>
      * <li>
@@ -207,25 +429,109 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The time for which a <a>ReceiveMessage</a> call will wait for a
-     * message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a> action will
+     * wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RedrivePolicy</code> - The parameters for dead letter queue functionality of the source queue. For more
-     * information about RedrivePolicy and dead letter queues, see <a
+     * <code>RedrivePolicy</code> - The parameters for the dead letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The dead letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead letter queue of a standard
+     * queue must also be a standard queue.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
-     * default for this attribute is 30. For more information about visibility timeout, see <a
+     * default is 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * (first-in-first-out) queues</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>FifoQueue</code> - Designates a queue as FIFO. You can provide this attribute only during queue creation;
+     * you can't change it for an existing queue. When you set this attribute, you must provide a
+     * <code>MessageGroupId</code> explicitly.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
+     * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Every message must have a unique <code>MessageDeduplicationId</code>,
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You may provide a <code>MessageDeduplicationId</code> explicitly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the
+     * <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides
+     * the generated one.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the
+     * deduplication interval are treated as duplicates and only one copy of the message is delivered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as
+     * duplicates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a
+     * <code>MessageDeduplicationId</code> that is the same as the one generated for the first
+     * <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message
+     * is delivered.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -236,28 +542,27 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return A map of attributes with their corresponding values.</p>
      *         <p>
-     *         The following lists the names, descriptions, and values of the special request parameters the
+     *         The following lists the names, descriptions, and values of the special request parameters that the
      *         <code>CreateQueue</code> action uses:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>DelaySeconds</code> - The time in seconds that the delivery of all messages in the queue will be
-     *         delayed. An integer from 0 to 900 (15 minutes). The default for this attribute is 0 (zero).
+     *         <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is
+     *         delayed. An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS
-     *         rejects it. An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this
-     *         attribute is 262144 (256 KiB).
+     *         rejects it. An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144
+     *         (256 KiB).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MessageRetentionPeriod</code> - The number of seconds Amazon SQS retains a message. Integer
-     *         representing seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600
-     *         (4 days).
+     *         <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An
+     *         integer representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
      *         </p>
      *         </li>
      *         <li>
@@ -269,25 +574,111 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ReceiveMessageWaitTimeSeconds</code> - The time for which a <a>ReceiveMessage</a> call will wait
-     *         for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.
+     *         <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a>
+     *         action will wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>RedrivePolicy</code> - The parameters for dead letter queue functionality of the source queue. For
-     *         more information about RedrivePolicy and dead letter queues, see <a href=
+     *         <code>RedrivePolicy</code> - The parameters for the dead letter queue functionality of the source queue.
+     *         For more information about the redrive policy and dead letter queues, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
      *         Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
-     *         </li>
+     *         <note>
+     *         <p>
+     *         The dead letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead letter queue of a
+     *         standard queue must also be a standard queue.
+     *         </p>
+     *         </note></li>
      *         <li>
      *         <p>
      *         <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12
-     *         hours). The default for this attribute is 30. For more information about visibility timeout, see <a
+     *         hours). The default is 30. For more information about the visibility timeout, see <a
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
      *         Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes apply only to <a
+     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     *         (first-in-first-out) queues</a>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>FifoQueue</code> - Designates a queue as FIFO. You can provide this attribute only during queue
+     *         creation; you can't change it for an existing queue. When you set this attribute, you must provide a
+     *         <code>MessageGroupId</code> explicitly.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
+     *         >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see
+     *         <a href=
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     *         >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Every message must have a unique <code>MessageDeduplicationId</code>,
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You may provide a <code>MessageDeduplicationId</code> explicitly.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable
+     *         <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the
+     *         <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the
+     *         message).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     *         <code>ContentBasedDeduplication</code> set, the action fails with an error.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code>
+     *         overrides the generated one.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the
+     *         deduplication interval are treated as duplicates and only one copy of the message is delivered.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated
+     *         as duplicates.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with
+     *         a <code>MessageDeduplicationId</code> that is the same as the one generated for the first
+     *         <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the
+     *         message is delivered.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         </ul>
      *         <p>
@@ -309,27 +700,26 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * The following lists the names, descriptions, and values of the special request parameters the
+     * The following lists the names, descriptions, and values of the special request parameters that the
      * <code>CreateQueue</code> action uses:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>DelaySeconds</code> - The time in seconds that the delivery of all messages in the queue will be delayed.
-     * An integer from 0 to 900 (15 minutes). The default for this attribute is 0 (zero).
+     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is delayed.
+     * An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it.
-     * An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this attribute is 262144 (256
-     * KiB).
+     * An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - The number of seconds Amazon SQS retains a message. Integer representing
-     * seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4 days).
+     * <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An integer
+     * representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
      * </p>
      * </li>
      * <li>
@@ -341,25 +731,109 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The time for which a <a>ReceiveMessage</a> call will wait for a
-     * message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a> action will
+     * wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RedrivePolicy</code> - The parameters for dead letter queue functionality of the source queue. For more
-     * information about RedrivePolicy and dead letter queues, see <a
+     * <code>RedrivePolicy</code> - The parameters for the dead letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The dead letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead letter queue of a standard
+     * queue must also be a standard queue.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
-     * default for this attribute is 30. For more information about visibility timeout, see <a
+     * default is 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * (first-in-first-out) queues</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>FifoQueue</code> - Designates a queue as FIFO. You can provide this attribute only during queue creation;
+     * you can't change it for an existing queue. When you set this attribute, you must provide a
+     * <code>MessageGroupId</code> explicitly.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
+     * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Every message must have a unique <code>MessageDeduplicationId</code>,
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You may provide a <code>MessageDeduplicationId</code> explicitly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the
+     * <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides
+     * the generated one.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the
+     * deduplication interval are treated as duplicates and only one copy of the message is delivered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as
+     * duplicates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a
+     * <code>MessageDeduplicationId</code> that is the same as the one generated for the first
+     * <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message
+     * is delivered.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -371,28 +845,27 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param attributes
      *        A map of attributes with their corresponding values.</p>
      *        <p>
-     *        The following lists the names, descriptions, and values of the special request parameters the
+     *        The following lists the names, descriptions, and values of the special request parameters that the
      *        <code>CreateQueue</code> action uses:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DelaySeconds</code> - The time in seconds that the delivery of all messages in the queue will be
-     *        delayed. An integer from 0 to 900 (15 minutes). The default for this attribute is 0 (zero).
+     *        <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is
+     *        delayed. An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS
-     *        rejects it. An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this
-     *        attribute is 262144 (256 KiB).
+     *        rejects it. An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256
+     *        KiB).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MessageRetentionPeriod</code> - The number of seconds Amazon SQS retains a message. Integer
-     *        representing seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4
-     *        days).
+     *        <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An
+     *        integer representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
      *        </p>
      *        </li>
      *        <li>
@@ -404,25 +877,110 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - The time for which a <a>ReceiveMessage</a> call will wait for
-     *        a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a>
+     *        action will wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RedrivePolicy</code> - The parameters for dead letter queue functionality of the source queue. For
-     *        more information about RedrivePolicy and dead letter queues, see <a
+     *        <code>RedrivePolicy</code> - The parameters for the dead letter queue functionality of the source queue.
+     *        For more information about the redrive policy and dead letter queues, see <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
      *        >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        The dead letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead letter queue of a
+     *        standard queue must also be a standard queue.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12
-     *        hours). The default for this attribute is 30. For more information about visibility timeout, see <a
+     *        hours). The default is 30. For more information about the visibility timeout, see <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
      *        Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes apply only to <a
+     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     *        (first-in-first-out) queues</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>FifoQueue</code> - Designates a queue as FIFO. You can provide this attribute only during queue
+     *        creation; you can't change it for an existing queue. When you set this attribute, you must provide a
+     *        <code>MessageGroupId</code> explicitly.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
+     *        >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     *        >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Every message must have a unique <code>MessageDeduplicationId</code>,
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You may provide a <code>MessageDeduplicationId</code> explicitly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable
+     *        <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the
+     *        <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     *        <code>ContentBasedDeduplication</code> set, the action fails with an error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code>
+     *        overrides the generated one.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the
+     *        deduplication interval are treated as duplicates and only one copy of the message is delivered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated
+     *        as duplicates.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with
+     *        a <code>MessageDeduplicationId</code> that is the same as the one generated for the first
+     *        <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the
+     *        message is delivered.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        </ul>
      *        <p>
@@ -441,27 +999,26 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * The following lists the names, descriptions, and values of the special request parameters the
+     * The following lists the names, descriptions, and values of the special request parameters that the
      * <code>CreateQueue</code> action uses:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>DelaySeconds</code> - The time in seconds that the delivery of all messages in the queue will be delayed.
-     * An integer from 0 to 900 (15 minutes). The default for this attribute is 0 (zero).
+     * <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is delayed.
+     * An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it.
-     * An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this attribute is 262144 (256
-     * KiB).
+     * An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - The number of seconds Amazon SQS retains a message. Integer representing
-     * seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4 days).
+     * <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An integer
+     * representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
      * </p>
      * </li>
      * <li>
@@ -473,25 +1030,109 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The time for which a <a>ReceiveMessage</a> call will wait for a
-     * message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a> action will
+     * wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RedrivePolicy</code> - The parameters for dead letter queue functionality of the source queue. For more
-     * information about RedrivePolicy and dead letter queues, see <a
+     * <code>RedrivePolicy</code> - The parameters for the dead letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The dead letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead letter queue of a standard
+     * queue must also be a standard queue.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
-     * default for this attribute is 30. For more information about visibility timeout, see <a
+     * default is 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes apply only to <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * (first-in-first-out) queues</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>FifoQueue</code> - Designates a queue as FIFO. You can provide this attribute only during queue creation;
+     * you can't change it for an existing queue. When you set this attribute, you must provide a
+     * <code>MessageGroupId</code> explicitly.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
+     * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Every message must have a unique <code>MessageDeduplicationId</code>,
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You may provide a <code>MessageDeduplicationId</code> explicitly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable
+     * <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the
+     * <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     * <code>ContentBasedDeduplication</code> set, the action fails with an error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides
+     * the generated one.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the
+     * deduplication interval are treated as duplicates and only one copy of the message is delivered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as
+     * duplicates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a
+     * <code>MessageDeduplicationId</code> that is the same as the one generated for the first
+     * <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message
+     * is delivered.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -503,28 +1144,27 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param attributes
      *        A map of attributes with their corresponding values.</p>
      *        <p>
-     *        The following lists the names, descriptions, and values of the special request parameters the
+     *        The following lists the names, descriptions, and values of the special request parameters that the
      *        <code>CreateQueue</code> action uses:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DelaySeconds</code> - The time in seconds that the delivery of all messages in the queue will be
-     *        delayed. An integer from 0 to 900 (15 minutes). The default for this attribute is 0 (zero).
+     *        <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is
+     *        delayed. An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS
-     *        rejects it. An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this
-     *        attribute is 262144 (256 KiB).
+     *        rejects it. An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256
+     *        KiB).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MessageRetentionPeriod</code> - The number of seconds Amazon SQS retains a message. Integer
-     *        representing seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4
-     *        days).
+     *        <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An
+     *        integer representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
      *        </p>
      *        </li>
      *        <li>
@@ -536,25 +1176,110 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - The time for which a <a>ReceiveMessage</a> call will wait for
-     *        a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a>
+     *        action will wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RedrivePolicy</code> - The parameters for dead letter queue functionality of the source queue. For
-     *        more information about RedrivePolicy and dead letter queues, see <a
+     *        <code>RedrivePolicy</code> - The parameters for the dead letter queue functionality of the source queue.
+     *        For more information about the redrive policy and dead letter queues, see <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
      *        >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        The dead letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead letter queue of a
+     *        standard queue must also be a standard queue.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12
-     *        hours). The default for this attribute is 30. For more information about visibility timeout, see <a
+     *        hours). The default is 30. For more information about the visibility timeout, see <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
      *        Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes apply only to <a
+     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     *        (first-in-first-out) queues</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>FifoQueue</code> - Designates a queue as FIFO. You can provide this attribute only during queue
+     *        creation; you can't change it for an existing queue. When you set this attribute, you must provide a
+     *        <code>MessageGroupId</code> explicitly.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
+     *        >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
+     *        >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Every message must have a unique <code>MessageDeduplicationId</code>,
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You may provide a <code>MessageDeduplicationId</code> explicitly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable
+     *        <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the
+     *        <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+     *        <code>ContentBasedDeduplication</code> set, the action fails with an error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code>
+     *        overrides the generated one.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the
+     *        deduplication interval are treated as duplicates and only one copy of the message is delivered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated
+     *        as duplicates.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with
+     *        a <code>MessageDeduplicationId</code> that is the same as the one generated for the first
+     *        <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the
+     *        message is delivered.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        </ul>
      *        <p>

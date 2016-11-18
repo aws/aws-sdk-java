@@ -16,21 +16,19 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Describes the inputs for DescribeAlarms.
- * </p>
+ * 
  */
 public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of alarm names to retrieve information for.
+     * The names of the alarms.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> alarmNames;
     /**
      * <p>
-     * The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter is specified.
+     * The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
      * </p>
      */
     private String alarmNamePrefix;
@@ -61,10 +59,10 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of alarm names to retrieve information for.
+     * The names of the alarms.
      * </p>
      * 
-     * @return A list of alarm names to retrieve information for.
+     * @return The names of the alarms.
      */
 
     public java.util.List<String> getAlarmNames() {
@@ -76,11 +74,11 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of alarm names to retrieve information for.
+     * The names of the alarms.
      * </p>
      * 
      * @param alarmNames
-     *        A list of alarm names to retrieve information for.
+     *        The names of the alarms.
      */
 
     public void setAlarmNames(java.util.Collection<String> alarmNames) {
@@ -94,7 +92,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of alarm names to retrieve information for.
+     * The names of the alarms.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -103,7 +101,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param alarmNames
-     *        A list of alarm names to retrieve information for.
+     *        The names of the alarms.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +117,11 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of alarm names to retrieve information for.
+     * The names of the alarms.
      * </p>
      * 
      * @param alarmNames
-     *        A list of alarm names to retrieve information for.
+     *        The names of the alarms.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +132,11 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter is specified.
+     * The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
      * </p>
      * 
      * @param alarmNamePrefix
-     *        The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter is specified.
+     *        The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
      */
 
     public void setAlarmNamePrefix(String alarmNamePrefix) {
@@ -147,10 +145,10 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter is specified.
+     * The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
      * </p>
      * 
-     * @return The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter is specified.
+     * @return The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
      */
 
     public String getAlarmNamePrefix() {
@@ -159,11 +157,11 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter is specified.
+     * The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
      * </p>
      * 
      * @param alarmNamePrefix
-     *        The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter is specified.
+     *        The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

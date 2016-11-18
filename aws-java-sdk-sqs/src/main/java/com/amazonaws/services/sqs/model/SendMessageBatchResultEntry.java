@@ -37,7 +37,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message body string. This can be used to verify that Amazon SQS received the
      * message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For information about
-     * MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      */
     private String mD5OfMessageBody;
@@ -45,11 +45,23 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      * received the message batch correctly. Amazon SQS first URL decodes the message before creating the MD5 digest.
-     * For information about MD5, go to <a
-     * href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     * For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      */
     private String mD5OfMessageAttributes;
+    /**
+     * <p>
+     * <i>This element applies only to FIFO (first-in-first-out) queues.</i>
+     * </p>
+     * <p>
+     * A large, non-consecutive number that Amazon SQS assigns to each message.
+     * </p>
+     * <p>
+     * The length of <code>SequenceNumber</code> is 128 bits. As <code>SequenceNumber</code> continues to increase for a
+     * particular <code>MessageGroupId</code>.
+     * </p>
+     */
+    private String sequenceNumber;
 
     /**
      * <p>
@@ -135,14 +147,13 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message body string. This can be used to verify that Amazon SQS received the
      * message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For information about
-     * MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * 
      * @param mD5OfMessageBody
      *        An MD5 digest of the non-URL-encoded message body string. This can be used to verify that Amazon SQS
      *        received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest.
-     *        For information about MD5, go to <a
-     *        href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     *        For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      */
 
     public void setMD5OfMessageBody(String mD5OfMessageBody) {
@@ -153,13 +164,12 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message body string. This can be used to verify that Amazon SQS received the
      * message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For information about
-     * MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * 
      * @return An MD5 digest of the non-URL-encoded message body string. This can be used to verify that Amazon SQS
      *         received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest.
-     *         For information about MD5, go to <a
-     *         href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     *         For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      */
 
     public String getMD5OfMessageBody() {
@@ -170,14 +180,13 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message body string. This can be used to verify that Amazon SQS received the
      * message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest. For information about
-     * MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * 
      * @param mD5OfMessageBody
      *        An MD5 digest of the non-URL-encoded message body string. This can be used to verify that Amazon SQS
      *        received the message correctly. Amazon SQS first URL decodes the message before creating the MD5 digest.
-     *        For information about MD5, go to <a
-     *        href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     *        For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,15 +199,13 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      * received the message batch correctly. Amazon SQS first URL decodes the message before creating the MD5 digest.
-     * For information about MD5, go to <a
-     * href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     * For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * 
      * @param mD5OfMessageAttributes
      *        An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      *        received the message batch correctly. Amazon SQS first URL decodes the message before creating the MD5
-     *        digest. For information about MD5, go to <a
-     *        href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     *        digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      */
 
     public void setMD5OfMessageAttributes(String mD5OfMessageAttributes) {
@@ -209,14 +216,12 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      * received the message batch correctly. Amazon SQS first URL decodes the message before creating the MD5 digest.
-     * For information about MD5, go to <a
-     * href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     * For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * 
      * @return An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      *         received the message batch correctly. Amazon SQS first URL decodes the message before creating the MD5
-     *         digest. For information about MD5, go to <a
-     *         href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     *         digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      */
 
     public String getMD5OfMessageAttributes() {
@@ -227,20 +232,97 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      * received the message batch correctly. Amazon SQS first URL decodes the message before creating the MD5 digest.
-     * For information about MD5, go to <a
-     * href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     * For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * 
      * @param mD5OfMessageAttributes
      *        An MD5 digest of the non-URL-encoded message attribute string. This can be used to verify that Amazon SQS
      *        received the message batch correctly. Amazon SQS first URL decodes the message before creating the MD5
-     *        digest. For information about MD5, go to <a
-     *        href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+     *        digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SendMessageBatchResultEntry withMD5OfMessageAttributes(String mD5OfMessageAttributes) {
         setMD5OfMessageAttributes(mD5OfMessageAttributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <i>This element applies only to FIFO (first-in-first-out) queues.</i>
+     * </p>
+     * <p>
+     * A large, non-consecutive number that Amazon SQS assigns to each message.
+     * </p>
+     * <p>
+     * The length of <code>SequenceNumber</code> is 128 bits. As <code>SequenceNumber</code> continues to increase for a
+     * particular <code>MessageGroupId</code>.
+     * </p>
+     * 
+     * @param sequenceNumber
+     *        <i>This element applies only to FIFO (first-in-first-out) queues.</i> </p>
+     *        <p>
+     *        A large, non-consecutive number that Amazon SQS assigns to each message.
+     *        </p>
+     *        <p>
+     *        The length of <code>SequenceNumber</code> is 128 bits. As <code>SequenceNumber</code> continues to
+     *        increase for a particular <code>MessageGroupId</code>.
+     */
+
+    public void setSequenceNumber(String sequenceNumber) {
+        this.sequenceNumber = sequenceNumber;
+    }
+
+    /**
+     * <p>
+     * <i>This element applies only to FIFO (first-in-first-out) queues.</i>
+     * </p>
+     * <p>
+     * A large, non-consecutive number that Amazon SQS assigns to each message.
+     * </p>
+     * <p>
+     * The length of <code>SequenceNumber</code> is 128 bits. As <code>SequenceNumber</code> continues to increase for a
+     * particular <code>MessageGroupId</code>.
+     * </p>
+     * 
+     * @return <i>This element applies only to FIFO (first-in-first-out) queues.</i> </p>
+     *         <p>
+     *         A large, non-consecutive number that Amazon SQS assigns to each message.
+     *         </p>
+     *         <p>
+     *         The length of <code>SequenceNumber</code> is 128 bits. As <code>SequenceNumber</code> continues to
+     *         increase for a particular <code>MessageGroupId</code>.
+     */
+
+    public String getSequenceNumber() {
+        return this.sequenceNumber;
+    }
+
+    /**
+     * <p>
+     * <i>This element applies only to FIFO (first-in-first-out) queues.</i>
+     * </p>
+     * <p>
+     * A large, non-consecutive number that Amazon SQS assigns to each message.
+     * </p>
+     * <p>
+     * The length of <code>SequenceNumber</code> is 128 bits. As <code>SequenceNumber</code> continues to increase for a
+     * particular <code>MessageGroupId</code>.
+     * </p>
+     * 
+     * @param sequenceNumber
+     *        <i>This element applies only to FIFO (first-in-first-out) queues.</i> </p>
+     *        <p>
+     *        A large, non-consecutive number that Amazon SQS assigns to each message.
+     *        </p>
+     *        <p>
+     *        The length of <code>SequenceNumber</code> is 128 bits. As <code>SequenceNumber</code> continues to
+     *        increase for a particular <code>MessageGroupId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendMessageBatchResultEntry withSequenceNumber(String sequenceNumber) {
+        setSequenceNumber(sequenceNumber);
         return this;
     }
 
@@ -262,7 +344,9 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
         if (getMD5OfMessageBody() != null)
             sb.append("MD5OfMessageBody: " + getMD5OfMessageBody() + ",");
         if (getMD5OfMessageAttributes() != null)
-            sb.append("MD5OfMessageAttributes: " + getMD5OfMessageAttributes());
+            sb.append("MD5OfMessageAttributes: " + getMD5OfMessageAttributes() + ",");
+        if (getSequenceNumber() != null)
+            sb.append("SequenceNumber: " + getSequenceNumber());
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +377,10 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
             return false;
         if (other.getMD5OfMessageAttributes() != null && other.getMD5OfMessageAttributes().equals(this.getMD5OfMessageAttributes()) == false)
             return false;
+        if (other.getSequenceNumber() == null ^ this.getSequenceNumber() == null)
+            return false;
+        if (other.getSequenceNumber() != null && other.getSequenceNumber().equals(this.getSequenceNumber()) == false)
+            return false;
         return true;
     }
 
@@ -305,6 +393,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMessageId() == null) ? 0 : getMessageId().hashCode());
         hashCode = prime * hashCode + ((getMD5OfMessageBody() == null) ? 0 : getMD5OfMessageBody().hashCode());
         hashCode = prime * hashCode + ((getMD5OfMessageAttributes() == null) ? 0 : getMD5OfMessageAttributes().hashCode());
+        hashCode = prime * hashCode + ((getSequenceNumber() == null) ? 0 : getSequenceNumber().hashCode());
         return hashCode;
     }
 

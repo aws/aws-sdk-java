@@ -40,6 +40,8 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String nameQuery;
+
+    private String customerId;
     /**
      * <p>
      * A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.
@@ -168,6 +170,32 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * @param customerId
+     */
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getCustomerId() {
+        return this.customerId;
+    }
+
+    /**
+     * @param customerId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApiKeysRequest withCustomerId(String customerId) {
+        setCustomerId(customerId);
+        return this;
+    }
+
+    /**
      * <p>
      * A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.
      * </p>
@@ -240,6 +268,8 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("Limit: " + getLimit() + ",");
         if (getNameQuery() != null)
             sb.append("NameQuery: " + getNameQuery() + ",");
+        if (getCustomerId() != null)
+            sb.append("CustomerId: " + getCustomerId() + ",");
         if (getIncludeValues() != null)
             sb.append("IncludeValues: " + getIncludeValues());
         sb.append("}");
@@ -268,6 +298,10 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getNameQuery() != null && other.getNameQuery().equals(this.getNameQuery()) == false)
             return false;
+        if (other.getCustomerId() == null ^ this.getCustomerId() == null)
+            return false;
+        if (other.getCustomerId() != null && other.getCustomerId().equals(this.getCustomerId()) == false)
+            return false;
         if (other.getIncludeValues() == null ^ this.getIncludeValues() == null)
             return false;
         if (other.getIncludeValues() != null && other.getIncludeValues().equals(this.getIncludeValues()) == false)
@@ -283,6 +317,7 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getNameQuery() == null) ? 0 : getNameQuery().hashCode());
+        hashCode = prime * hashCode + ((getCustomerId() == null) ? 0 : getCustomerId().hashCode());
         hashCode = prime * hashCode + ((getIncludeValues() == null) ? 0 : getIncludeValues().hashCode());
         return hashCode;
     }

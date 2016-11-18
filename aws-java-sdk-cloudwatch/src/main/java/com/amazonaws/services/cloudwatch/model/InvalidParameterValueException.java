@@ -14,7 +14,7 @@ package com.amazonaws.services.cloudwatch.model;
 
 /**
  * <p>
- * Bad or out-of-range value was supplied for the input parameter.
+ * The value of an input parameter is bad or out-of-range.
  * </p>
  */
 public class InvalidParameterValueException extends com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException {

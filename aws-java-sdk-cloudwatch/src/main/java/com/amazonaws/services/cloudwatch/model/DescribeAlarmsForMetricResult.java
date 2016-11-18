@@ -15,25 +15,23 @@ package com.amazonaws.services.cloudwatch.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * The output for <a>DescribeAlarmsForMetric</a>.
- * </p>
+ * 
  */
 public class DescribeAlarmsForMetricResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of information for each alarm with the specified metric.
+     * The information for each alarm with the specified metric.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MetricAlarm> metricAlarms;
 
     /**
      * <p>
-     * A list of information for each alarm with the specified metric.
+     * The information for each alarm with the specified metric.
      * </p>
      * 
-     * @return A list of information for each alarm with the specified metric.
+     * @return The information for each alarm with the specified metric.
      */
 
     public java.util.List<MetricAlarm> getMetricAlarms() {
@@ -45,11 +43,11 @@ public class DescribeAlarmsForMetricResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of information for each alarm with the specified metric.
+     * The information for each alarm with the specified metric.
      * </p>
      * 
      * @param metricAlarms
-     *        A list of information for each alarm with the specified metric.
+     *        The information for each alarm with the specified metric.
      */
 
     public void setMetricAlarms(java.util.Collection<MetricAlarm> metricAlarms) {
@@ -63,7 +61,7 @@ public class DescribeAlarmsForMetricResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of information for each alarm with the specified metric.
+     * The information for each alarm with the specified metric.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -72,7 +70,7 @@ public class DescribeAlarmsForMetricResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param metricAlarms
-     *        A list of information for each alarm with the specified metric.
+     *        The information for each alarm with the specified metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +86,11 @@ public class DescribeAlarmsForMetricResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of information for each alarm with the specified metric.
+     * The information for each alarm with the specified metric.
      * </p>
      * 
      * @param metricAlarms
-     *        A list of information for each alarm with the specified metric.
+     *        The information for each alarm with the specified metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,9 +16,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Describes the inputs for ListMetrics.
- * </p>
+ * 
  */
 public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -36,7 +34,7 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String metricName;
     /**
      * <p>
-     * A list of dimensions to filter against.
+     * The dimensions to filter against.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DimensionFilter> dimensions;
@@ -129,10 +127,10 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of dimensions to filter against.
+     * The dimensions to filter against.
      * </p>
      * 
-     * @return A list of dimensions to filter against.
+     * @return The dimensions to filter against.
      */
 
     public java.util.List<DimensionFilter> getDimensions() {
@@ -144,11 +142,11 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of dimensions to filter against.
+     * The dimensions to filter against.
      * </p>
      * 
      * @param dimensions
-     *        A list of dimensions to filter against.
+     *        The dimensions to filter against.
      */
 
     public void setDimensions(java.util.Collection<DimensionFilter> dimensions) {
@@ -162,7 +160,7 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of dimensions to filter against.
+     * The dimensions to filter against.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,7 +169,7 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param dimensions
-     *        A list of dimensions to filter against.
+     *        The dimensions to filter against.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +185,11 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of dimensions to filter against.
+     * The dimensions to filter against.
      * </p>
      * 
      * @param dimensions
-     *        A list of dimensions to filter against.
+     *        The dimensions to filter against.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

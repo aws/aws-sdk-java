@@ -106,6 +106,15 @@ public class SendMessageBatchRequestEntryStaxUnmarshaller implements Unmarshalle
                     continue;
                 }
 
+                if (context.testExpression("MessageDeduplicationId", targetDepth)) {
+                    sendMessageBatchRequestEntry.setMessageDeduplicationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MessageGroupId", targetDepth)) {
+                    sendMessageBatchRequestEntry.setMessageGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return sendMessageBatchRequestEntry;

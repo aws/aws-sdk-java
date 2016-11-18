@@ -16,25 +16,23 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Describes the inputs for DeleteAlarms.
- * </p>
+ * 
  */
 public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of alarms to be deleted.
+     * The alarms to be deleted.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> alarmNames;
 
     /**
      * <p>
-     * A list of alarms to be deleted.
+     * The alarms to be deleted.
      * </p>
      * 
-     * @return A list of alarms to be deleted.
+     * @return The alarms to be deleted.
      */
 
     public java.util.List<String> getAlarmNames() {
@@ -46,11 +44,11 @@ public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of alarms to be deleted.
+     * The alarms to be deleted.
      * </p>
      * 
      * @param alarmNames
-     *        A list of alarms to be deleted.
+     *        The alarms to be deleted.
      */
 
     public void setAlarmNames(java.util.Collection<String> alarmNames) {
@@ -64,7 +62,7 @@ public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of alarms to be deleted.
+     * The alarms to be deleted.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +71,7 @@ public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param alarmNames
-     *        A list of alarms to be deleted.
+     *        The alarms to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +87,11 @@ public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of alarms to be deleted.
+     * The alarms to be deleted.
      * </p>
      * 
      * @param alarmNames
-     *        A list of alarms to be deleted.
+     *        The alarms to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

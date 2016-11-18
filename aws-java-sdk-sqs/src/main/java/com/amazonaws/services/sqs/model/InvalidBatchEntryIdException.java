@@ -14,7 +14,7 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * The <code>Id</code> of a batch entry in a batch request does not abide by the specification.
+ * The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
  * </p>
  */
 public class InvalidBatchEntryIdException extends com.amazonaws.services.sqs.model.AmazonSQSException {

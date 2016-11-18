@@ -66,6 +66,18 @@ public class RestApiJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
 
+            java.util.List<String> binaryMediaTypesList = restApi.getBinaryMediaTypes();
+            if (binaryMediaTypesList != null) {
+                jsonGenerator.writeFieldName("binaryMediaTypes");
+                jsonGenerator.writeStartArray();
+                for (String binaryMediaTypesListValue : binaryMediaTypesList) {
+                    if (binaryMediaTypesListValue != null) {
+                        jsonGenerator.writeValue(binaryMediaTypesListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -35,7 +35,7 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.Date timestamp;
     /**
      * <p>
-     * It will be one of the 'fcp dimension name' provided during the publishing of the product.
+     * It will be one of the fcp dimension name provided during the publishing of the product.
      * </p>
      */
     private String usageDimension;
@@ -144,11 +144,11 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * It will be one of the 'fcp dimension name' provided during the publishing of the product.
+     * It will be one of the fcp dimension name provided during the publishing of the product.
      * </p>
      * 
      * @param usageDimension
-     *        It will be one of the 'fcp dimension name' provided during the publishing of the product.
+     *        It will be one of the fcp dimension name provided during the publishing of the product.
      */
 
     public void setUsageDimension(String usageDimension) {
@@ -157,10 +157,10 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * It will be one of the 'fcp dimension name' provided during the publishing of the product.
+     * It will be one of the fcp dimension name provided during the publishing of the product.
      * </p>
      * 
-     * @return It will be one of the 'fcp dimension name' provided during the publishing of the product.
+     * @return It will be one of the fcp dimension name provided during the publishing of the product.
      */
 
     public String getUsageDimension() {
@@ -169,11 +169,11 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * It will be one of the 'fcp dimension name' provided during the publishing of the product.
+     * It will be one of the fcp dimension name provided during the publishing of the product.
      * </p>
      * 
      * @param usageDimension
-     *        It will be one of the 'fcp dimension name' provided during the publishing of the product.
+     *        It will be one of the fcp dimension name provided during the publishing of the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

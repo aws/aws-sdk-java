@@ -93,6 +93,19 @@ public class GetMetricStatisticsRequestMarshaller implements Marshaller<Request<
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<String> extendedStatisticsList = (com.amazonaws.internal.SdkInternalList<String>) getMetricStatisticsRequest
+                .getExtendedStatistics();
+        if (!extendedStatisticsList.isEmpty() || !extendedStatisticsList.isAutoConstruct()) {
+            int extendedStatisticsListIndex = 1;
+
+            for (String extendedStatisticsListValue : extendedStatisticsList) {
+                if (extendedStatisticsListValue != null) {
+                    request.addParameter("ExtendedStatistics.member." + extendedStatisticsListIndex, StringUtils.fromString(extendedStatisticsListValue));
+                }
+                extendedStatisticsListIndex++;
+            }
+        }
+
         if (getMetricStatisticsRequest.getUnit() != null) {
             request.addParameter("Unit", StringUtils.fromString(getMetricStatisticsRequest.getUnit()));
         }

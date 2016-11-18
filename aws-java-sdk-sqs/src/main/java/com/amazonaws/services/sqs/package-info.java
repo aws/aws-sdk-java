@@ -22,14 +22,30 @@
  * without losing messages or requiring each component to be always available.
  * </p>
  * <p>
- * Helpful Links:
+ * <b>Topics</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl">Current WSDL (2012-11-05)</a>
+ * </p></li>
+ * <li>
+ * <p>
+ * </p></li>
+ * <li>
+ * <p>
+ * <a>CommonParameters</a>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <a>CommonErrors</a>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Helpful Links</b>
+ * </p>
+ * <ul>
  * <li>
  * <p>
  * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html">Making
@@ -81,7 +97,7 @@
  * </li>
  * </ul>
  * <p>
- * For a list of available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+ * For a list of available SDKs, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
  */
 package com.amazonaws.services.sqs;

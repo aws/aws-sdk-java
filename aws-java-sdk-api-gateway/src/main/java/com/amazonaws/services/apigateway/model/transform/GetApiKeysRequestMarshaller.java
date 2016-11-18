@@ -75,6 +75,10 @@ public class GetApiKeysRequestMarshaller implements Marshaller<Request<GetApiKey
             request.addParameter("name", StringUtils.fromString(getApiKeysRequest.getNameQuery()));
         }
 
+        if (getApiKeysRequest.getCustomerId() != null) {
+            request.addParameter("customerId", StringUtils.fromString(getApiKeysRequest.getCustomerId()));
+        }
+
         if (getApiKeysRequest.getIncludeValues() != null) {
             request.addParameter("includeValues", StringUtils.fromBoolean(getApiKeysRequest.getIncludeValues()));
         }

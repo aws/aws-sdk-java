@@ -14,7 +14,7 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * The queue referred to does not exist.
+ * The queue referred to doesn't exist.
  * </p>
  */
 public class QueueDoesNotExistException extends com.amazonaws.services.sqs.model.AmazonSQSException {

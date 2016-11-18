@@ -14,7 +14,7 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * The attribute referred to does not exist.
+ * The attribute referred to doesn't exist.
  * </p>
  */
 public class InvalidAttributeNameException extends com.amazonaws.services.sqs.model.AmazonSQSException {

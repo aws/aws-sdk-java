@@ -16,10 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The <code>Dimension</code> data type further expands on the identity of a metric using a Name, Value pair.
- * </p>
- * <p>
- * For examples that use one or more dimensions, see <a>PutMetricData</a>.
+ * Expands the identity of a metric.
  * </p>
  */
 public class Dimension implements Serializable, Cloneable {
@@ -32,7 +29,7 @@ public class Dimension implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The value representing the dimension measurement
+     * The value representing the dimension measurement.
      * </p>
      */
     private String value;
@@ -79,11 +76,11 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value representing the dimension measurement
+     * The value representing the dimension measurement.
      * </p>
      * 
      * @param value
-     *        The value representing the dimension measurement
+     *        The value representing the dimension measurement.
      */
 
     public void setValue(String value) {
@@ -92,10 +89,10 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value representing the dimension measurement
+     * The value representing the dimension measurement.
      * </p>
      * 
-     * @return The value representing the dimension measurement
+     * @return The value representing the dimension measurement.
      */
 
     public String getValue() {
@@ -104,11 +101,11 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value representing the dimension measurement
+     * The value representing the dimension measurement.
      * </p>
      * 
      * @param value
-     *        The value representing the dimension measurement
+     *        The value representing the dimension measurement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
