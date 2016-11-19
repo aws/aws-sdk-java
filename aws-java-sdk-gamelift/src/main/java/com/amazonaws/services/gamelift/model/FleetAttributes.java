@@ -42,14 +42,14 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * milliseconds (ex: "1469498468.057").
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
      * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * milliseconds (ex: "1469498468.057").
      * </p>
      */
     private java.util.Date terminationTime;
@@ -124,8 +124,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     * automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console to
-     * access stored logs.
+     * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      */
     private java.util.List<String> logPaths;
@@ -285,12 +285,12 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057".
+     *        milliseconds (ex: "1469498468.057").
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -300,11 +300,11 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *         milliseconds (ex: "1469498468.057".
+     *         milliseconds (ex: "1469498468.057").
      */
 
     public java.util.Date getCreationTime() {
@@ -314,12 +314,12 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057".
+     *        milliseconds (ex: "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,12 +331,12 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param terminationTime
      *        Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057".
+     *        milliseconds (ex: "1469498468.057").
      */
 
     public void setTerminationTime(java.util.Date terminationTime) {
@@ -346,11 +346,11 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     *         milliseconds (ex: "1469498468.057".
+     *         milliseconds (ex: "1469498468.057").
      */
 
     public java.util.Date getTerminationTime() {
@@ -360,12 +360,12 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param terminationTime
      *        Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057".
+     *        milliseconds (ex: "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -953,8 +953,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     * automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console to
-     * access stored logs.
+     * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      * 
      * @return Location of default log files. When a server process is shut down, Amazon GameLift captures and stores
@@ -962,8 +962,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      *         logs in the <a href=
      *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      *         >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     *         automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console
-     *         to access stored logs.
+     *         automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     *         <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      */
 
     public java.util.List<String> getLogPaths() {
@@ -977,8 +977,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     * automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console to
-     * access stored logs.
+     * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      * 
      * @param logPaths
@@ -987,8 +987,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        in the <a href=
      *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     *        automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console
-     *        to access stored logs.
+     *        automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     *        <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      */
 
     public void setLogPaths(java.util.Collection<String> logPaths) {
@@ -1007,8 +1007,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     * automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console to
-     * access stored logs.
+     * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1022,8 +1022,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        in the <a href=
      *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     *        automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console
-     *        to access stored logs.
+     *        automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     *        <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1044,8 +1044,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     * automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console to
-     * access stored logs.
+     * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      * 
      * @param logPaths
@@ -1054,8 +1054,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        in the <a href=
      *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     *        automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console
-     *        to access stored logs.
+     *        automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     *        <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

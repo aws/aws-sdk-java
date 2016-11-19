@@ -31,24 +31,24 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum number of game sessions an individual can create during the policy period.
+     * Maximum number of game sessions that an individual can create during the policy period.
      * </p>
      */
     private Integer newGameSessionsPerCreator;
     /**
      * <p>
-     * Time span used to evaluate the resource creation limit policy.
+     * Time span used in evaluating the resource creation limit policy.
      * </p>
      */
     private Integer policyPeriodInMinutes;
 
     /**
      * <p>
-     * Maximum number of game sessions an individual can create during the policy period.
+     * Maximum number of game sessions that an individual can create during the policy period.
      * </p>
      * 
      * @param newGameSessionsPerCreator
-     *        Maximum number of game sessions an individual can create during the policy period.
+     *        Maximum number of game sessions that an individual can create during the policy period.
      */
 
     public void setNewGameSessionsPerCreator(Integer newGameSessionsPerCreator) {
@@ -57,10 +57,10 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum number of game sessions an individual can create during the policy period.
+     * Maximum number of game sessions that an individual can create during the policy period.
      * </p>
      * 
-     * @return Maximum number of game sessions an individual can create during the policy period.
+     * @return Maximum number of game sessions that an individual can create during the policy period.
      */
 
     public Integer getNewGameSessionsPerCreator() {
@@ -69,11 +69,11 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum number of game sessions an individual can create during the policy period.
+     * Maximum number of game sessions that an individual can create during the policy period.
      * </p>
      * 
      * @param newGameSessionsPerCreator
-     *        Maximum number of game sessions an individual can create during the policy period.
+     *        Maximum number of game sessions that an individual can create during the policy period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time span used to evaluate the resource creation limit policy.
+     * Time span used in evaluating the resource creation limit policy.
      * </p>
      * 
      * @param policyPeriodInMinutes
-     *        Time span used to evaluate the resource creation limit policy.
+     *        Time span used in evaluating the resource creation limit policy.
      */
 
     public void setPolicyPeriodInMinutes(Integer policyPeriodInMinutes) {
@@ -97,10 +97,10 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time span used to evaluate the resource creation limit policy.
+     * Time span used in evaluating the resource creation limit policy.
      * </p>
      * 
-     * @return Time span used to evaluate the resource creation limit policy.
+     * @return Time span used in evaluating the resource creation limit policy.
      */
 
     public Integer getPolicyPeriodInMinutes() {
@@ -109,11 +109,11 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time span used to evaluate the resource creation limit policy.
+     * Time span used in evaluating the resource creation limit policy.
      * </p>
      * 
      * @param policyPeriodInMinutes
-     *        Time span used to evaluate the resource creation limit policy.
+     *        Time span used in evaluating the resource creation limit policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -24,7 +24,7 @@ public class AddInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Instance Groups to add.
+     * Instance groups to add.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceGroupConfig> instanceGroups;
@@ -47,7 +47,7 @@ public class AddInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * methods to initialize any additional object members.
      * 
      * @param instanceGroups
-     *        Instance Groups to add.
+     *        Instance groups to add.
      * @param jobFlowId
      *        Job flow in which to add the instance groups.
      */
@@ -58,10 +58,10 @@ public class AddInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Instance Groups to add.
+     * Instance groups to add.
      * </p>
      * 
-     * @return Instance Groups to add.
+     * @return Instance groups to add.
      */
 
     public java.util.List<InstanceGroupConfig> getInstanceGroups() {
@@ -73,11 +73,11 @@ public class AddInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Instance Groups to add.
+     * Instance groups to add.
      * </p>
      * 
      * @param instanceGroups
-     *        Instance Groups to add.
+     *        Instance groups to add.
      */
 
     public void setInstanceGroups(java.util.Collection<InstanceGroupConfig> instanceGroups) {
@@ -91,7 +91,7 @@ public class AddInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Instance Groups to add.
+     * Instance groups to add.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -100,7 +100,7 @@ public class AddInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param instanceGroups
-     *        Instance Groups to add.
+     *        Instance groups to add.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +116,11 @@ public class AddInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Instance Groups to add.
+     * Instance groups to add.
      * </p>
      * 
      * @param instanceGroups
-     *        Instance Groups to add.
+     *        Instance groups to add.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

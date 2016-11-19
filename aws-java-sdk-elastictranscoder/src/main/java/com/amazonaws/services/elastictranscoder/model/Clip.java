@@ -19,6 +19,7 @@ import java.io.Serializable;
  * Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.
  * </p>
  */
+@Deprecated
 public class Clip implements Serializable, Cloneable {
 
     /**

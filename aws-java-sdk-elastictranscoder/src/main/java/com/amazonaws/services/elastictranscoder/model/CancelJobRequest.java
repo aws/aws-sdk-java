@@ -43,7 +43,7 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param id
-     *        The identifier of the job that you want to cancel. </p>
+     *        The identifier of the job that you want to cancel.</p>
      *        <p>
      *        To get a list of the jobs (including their <code>jobId</code>) that have a status of
      *        <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
@@ -62,7 +62,7 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * the <a>ListJobsByStatus</a> API action.
      * </p>
      * 
-     * @return The identifier of the job that you want to cancel. </p>
+     * @return The identifier of the job that you want to cancel.</p>
      *         <p>
      *         To get a list of the jobs (including their <code>jobId</code>) that have a status of
      *         <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
@@ -82,7 +82,7 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param id
-     *        The identifier of the job that you want to cancel. </p>
+     *        The identifier of the job that you want to cancel.</p>
      *        <p>
      *        To get a list of the jobs (including their <code>jobId</code>) that have a status of
      *        <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.

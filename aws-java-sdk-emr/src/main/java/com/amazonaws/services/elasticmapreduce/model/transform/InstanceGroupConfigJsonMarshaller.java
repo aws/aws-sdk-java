@@ -77,6 +77,10 @@ public class InstanceGroupConfigJsonMarshaller {
                 jsonGenerator.writeFieldName("EbsConfiguration");
                 EbsConfigurationJsonMarshaller.getInstance().marshall(instanceGroupConfig.getEbsConfiguration(), jsonGenerator);
             }
+            if (instanceGroupConfig.getAutoScalingPolicy() != null) {
+                jsonGenerator.writeFieldName("AutoScalingPolicy");
+                AutoScalingPolicyJsonMarshaller.getInstance().marshall(instanceGroupConfig.getAutoScalingPolicy(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

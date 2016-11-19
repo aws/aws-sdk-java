@@ -23,18 +23,19 @@ public class UpdatePipelineNotificationsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A section of the response body that provides information about the pipeline.
+     * A section of the response body that provides information about the pipeline associated with this notification.
      * </p>
      */
     private Pipeline pipeline;
 
     /**
      * <p>
-     * A section of the response body that provides information about the pipeline.
+     * A section of the response body that provides information about the pipeline associated with this notification.
      * </p>
      * 
      * @param pipeline
-     *        A section of the response body that provides information about the pipeline.
+     *        A section of the response body that provides information about the pipeline associated with this
+     *        notification.
      */
 
     public void setPipeline(Pipeline pipeline) {
@@ -43,10 +44,11 @@ public class UpdatePipelineNotificationsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A section of the response body that provides information about the pipeline.
+     * A section of the response body that provides information about the pipeline associated with this notification.
      * </p>
      * 
-     * @return A section of the response body that provides information about the pipeline.
+     * @return A section of the response body that provides information about the pipeline associated with this
+     *         notification.
      */
 
     public Pipeline getPipeline() {
@@ -55,11 +57,12 @@ public class UpdatePipelineNotificationsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A section of the response body that provides information about the pipeline.
+     * A section of the response body that provides information about the pipeline associated with this notification.
      * </p>
      * 
      * @param pipeline
-     *        A section of the response body that provides information about the pipeline.
+     *        A section of the response body that provides information about the pipeline associated with this
+     *        notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

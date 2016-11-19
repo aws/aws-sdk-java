@@ -26,7 +26,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      * The content protection method for your output. The only valid value is: <code>aes-128</code>.
      * </p>
      * <p>
-     * This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
+     * This value is written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
      * playlist.
      * </p>
      */
@@ -87,15 +87,15 @@ public class HlsContentProtection implements Serializable, Cloneable {
      * The content protection method for your output. The only valid value is: <code>aes-128</code>.
      * </p>
      * <p>
-     * This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
+     * This value is written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
      * playlist.
      * </p>
      * 
      * @param method
      *        The content protection method for your output. The only valid value is: <code>aes-128</code>.</p>
      *        <p>
-     *        This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the
-     *        output playlist.
+     *        This value is written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
+     *        playlist.
      */
 
     public void setMethod(String method) {
@@ -107,14 +107,14 @@ public class HlsContentProtection implements Serializable, Cloneable {
      * The content protection method for your output. The only valid value is: <code>aes-128</code>.
      * </p>
      * <p>
-     * This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
+     * This value is written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
      * playlist.
      * </p>
      * 
      * @return The content protection method for your output. The only valid value is: <code>aes-128</code>.</p>
      *         <p>
-     *         This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the
-     *         output playlist.
+     *         This value is written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
+     *         playlist.
      */
 
     public String getMethod() {
@@ -126,15 +126,15 @@ public class HlsContentProtection implements Serializable, Cloneable {
      * The content protection method for your output. The only valid value is: <code>aes-128</code>.
      * </p>
      * <p>
-     * This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
+     * This value is written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
      * playlist.
      * </p>
      * 
      * @param method
      *        The content protection method for your output. The only valid value is: <code>aes-128</code>.</p>
      *        <p>
-     *        This value will be written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the
-     *        output playlist.
+     *        This value is written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output
+     *        playlist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

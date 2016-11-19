@@ -17,8 +17,8 @@ import java.io.Serializable;
 /**
  * <p>
  * The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If
- * your input file is encrypted, you must specify the mode that Elastic Transcoder will use to decrypt your file,
- * otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files.
+ * your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise
+ * you must specify the mode you want Elastic Transcoder to use to encrypt your output files.
  * </p>
  */
 public class Encryption implements Serializable, Cloneable {
@@ -54,7 +54,7 @@ public class Encryption implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning
-     * that a file, key, or initialization vector that has been tampered with will fail the decryption process.
+     * that a file, key, or initialization vector that has been tampered with fails the decryption process.
      * </p>
      * </li>
      * </ul>
@@ -150,7 +150,7 @@ public class Encryption implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning
-     * that a file, key, or initialization vector that has been tampered with will fail the decryption process.
+     * that a file, key, or initialization vector that has been tampered with fails the decryption process.
      * </p>
      * </li>
      * </ul>
@@ -211,7 +211,7 @@ public class Encryption implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format,
-     *        meaning that a file, key, or initialization vector that has been tampered with will fail the decryption
+     *        meaning that a file, key, or initialization vector that has been tampered with fails the decryption
      *        process.
      *        </p>
      *        </li>
@@ -279,7 +279,7 @@ public class Encryption implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning
-     * that a file, key, or initialization vector that has been tampered with will fail the decryption process.
+     * that a file, key, or initialization vector that has been tampered with fails the decryption process.
      * </p>
      * </li>
      * </ul>
@@ -339,7 +339,7 @@ public class Encryption implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format,
-     *         meaning that a file, key, or initialization vector that has been tampered with will fail the decryption
+     *         meaning that a file, key, or initialization vector that has been tampered with fails the decryption
      *         process.
      *         </p>
      *         </li>
@@ -407,7 +407,7 @@ public class Encryption implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning
-     * that a file, key, or initialization vector that has been tampered with will fail the decryption process.
+     * that a file, key, or initialization vector that has been tampered with fails the decryption process.
      * </p>
      * </li>
      * </ul>
@@ -468,7 +468,7 @@ public class Encryption implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format,
-     *        meaning that a file, key, or initialization vector that has been tampered with will fail the decryption
+     *        meaning that a file, key, or initialization vector that has been tampered with fails the decryption
      *        process.
      *        </p>
      *        </li>

@@ -29,7 +29,8 @@ public class CaptionSource implements Serializable, Cloneable {
     private String key;
     /**
      * <p>
-     * A string that specifies the language of the caption. Specify this as one of:
+     * A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption
+     * language must match in order to be included in the output. Specify this as one of:
      * </p>
      * <ul>
      * <li>
@@ -67,7 +68,8 @@ public class CaptionSource implements Serializable, Cloneable {
     private String label;
     /**
      * <p>
-     * The encryption settings, if any, that you want Elastic Transcoder to apply to your caption sources.
+     * The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that you want
+     * Elastic Transcoder to apply to your caption sources.
      * </p>
      */
     private Encryption encryption;
@@ -114,7 +116,8 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that specifies the language of the caption. Specify this as one of:
+     * A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption
+     * language must match in order to be included in the output. Specify this as one of:
      * </p>
      * <ul>
      * <li>
@@ -133,7 +136,8 @@ public class CaptionSource implements Serializable, Cloneable {
      * </p>
      * 
      * @param language
-     *        A string that specifies the language of the caption. Specify this as one of:</p>
+     *        A string that specifies the language of the caption. If you specified multiple inputs with captions, the
+     *        caption language must match in order to be included in the output. Specify this as one of:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -156,7 +160,8 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that specifies the language of the caption. Specify this as one of:
+     * A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption
+     * language must match in order to be included in the output. Specify this as one of:
      * </p>
      * <ul>
      * <li>
@@ -174,7 +179,8 @@ public class CaptionSource implements Serializable, Cloneable {
      * For more information on ISO language codes and language names, see the List of ISO 639-1 codes.
      * </p>
      * 
-     * @return A string that specifies the language of the caption. Specify this as one of:</p>
+     * @return A string that specifies the language of the caption. If you specified multiple inputs with captions, the
+     *         caption language must match in order to be included in the output. Specify this as one of:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -197,7 +203,8 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that specifies the language of the caption. Specify this as one of:
+     * A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption
+     * language must match in order to be included in the output. Specify this as one of:
      * </p>
      * <ul>
      * <li>
@@ -216,7 +223,8 @@ public class CaptionSource implements Serializable, Cloneable {
      * </p>
      * 
      * @param language
-     *        A string that specifies the language of the caption. Specify this as one of:</p>
+     *        A string that specifies the language of the caption. If you specified multiple inputs with captions, the
+     *        caption language must match in order to be included in the output. Specify this as one of:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -351,11 +359,13 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption settings, if any, that you want Elastic Transcoder to apply to your caption sources.
+     * The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that you want
+     * Elastic Transcoder to apply to your caption sources.
      * </p>
      * 
      * @param encryption
-     *        The encryption settings, if any, that you want Elastic Transcoder to apply to your caption sources.
+     *        The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that
+     *        you want Elastic Transcoder to apply to your caption sources.
      */
 
     public void setEncryption(Encryption encryption) {
@@ -364,10 +374,12 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption settings, if any, that you want Elastic Transcoder to apply to your caption sources.
+     * The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that you want
+     * Elastic Transcoder to apply to your caption sources.
      * </p>
      * 
-     * @return The encryption settings, if any, that you want Elastic Transcoder to apply to your caption sources.
+     * @return The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that
+     *         you want Elastic Transcoder to apply to your caption sources.
      */
 
     public Encryption getEncryption() {
@@ -376,11 +388,13 @@ public class CaptionSource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption settings, if any, that you want Elastic Transcoder to apply to your caption sources.
+     * The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that you want
+     * Elastic Transcoder to apply to your caption sources.
      * </p>
      * 
      * @param encryption
-     *        The encryption settings, if any, that you want Elastic Transcoder to apply to your caption sources.
+     *        The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that
+     *        you want Elastic Transcoder to apply to your caption sources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

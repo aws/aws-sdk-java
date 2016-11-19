@@ -37,7 +37,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
     private String slaveInstanceType;
     /**
      * <p>
-     * The number of Amazon EC2 instances used to execute the job flow.
+     * The number of EC2 instances used to execute the job flow.
      * </p>
      */
     private Integer instanceCount;
@@ -49,7 +49,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<InstanceGroupConfig> instanceGroups;
     /**
      * <p>
-     * The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
+     * The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
      * </p>
      */
     private String ec2KeyName;
@@ -207,11 +207,11 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of Amazon EC2 instances used to execute the job flow.
+     * The number of EC2 instances used to execute the job flow.
      * </p>
      * 
      * @param instanceCount
-     *        The number of Amazon EC2 instances used to execute the job flow.
+     *        The number of EC2 instances used to execute the job flow.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -220,10 +220,10 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of Amazon EC2 instances used to execute the job flow.
+     * The number of EC2 instances used to execute the job flow.
      * </p>
      * 
-     * @return The number of Amazon EC2 instances used to execute the job flow.
+     * @return The number of EC2 instances used to execute the job flow.
      */
 
     public Integer getInstanceCount() {
@@ -232,11 +232,11 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of Amazon EC2 instances used to execute the job flow.
+     * The number of EC2 instances used to execute the job flow.
      * </p>
      * 
      * @param instanceCount
-     *        The number of Amazon EC2 instances used to execute the job flow.
+     *        The number of EC2 instances used to execute the job flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,12 +320,11 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
+     * The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
      * </p>
      * 
      * @param ec2KeyName
-     *        The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called
-     *        "hadoop."
+     *        The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
      */
 
     public void setEc2KeyName(String ec2KeyName) {
@@ -334,11 +333,10 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
+     * The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
      * </p>
      * 
-     * @return The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called
-     *         "hadoop."
+     * @return The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
      */
 
     public String getEc2KeyName() {
@@ -347,12 +345,11 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
+     * The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
      * </p>
      * 
      * @param ec2KeyName
-     *        The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called
-     *        "hadoop."
+     *        The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

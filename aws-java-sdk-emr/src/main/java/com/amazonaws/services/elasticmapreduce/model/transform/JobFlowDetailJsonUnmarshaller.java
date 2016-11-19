@@ -96,6 +96,14 @@ public class JobFlowDetailJsonUnmarshaller implements Unmarshaller<JobFlowDetail
                     context.nextToken();
                     jobFlowDetail.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AutoScalingRole", targetDepth)) {
+                    context.nextToken();
+                    jobFlowDetail.setAutoScalingRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ScaleDownBehavior", targetDepth)) {
+                    context.nextToken();
+                    jobFlowDetail.setScaleDownBehavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

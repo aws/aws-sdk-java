@@ -277,6 +277,23 @@ import com.amazonaws.annotation.ThreadSafe;
  * </li>
  * <li>
  * <p>
+ * <b>Manage your instances:</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeInstances</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetInstanceAccess</a>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
  * <b>Manage fleet aliases:</b>
  * </p>
  * <ul>
@@ -1311,6 +1328,38 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
 
                 try {
                     result = getGameSessionLogUrl(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInstanceAccessResult> getInstanceAccessAsync(GetInstanceAccessRequest request) {
+
+        return getInstanceAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInstanceAccessResult> getInstanceAccessAsync(final GetInstanceAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetInstanceAccessRequest, GetInstanceAccessResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<GetInstanceAccessResult>() {
+            @Override
+            public GetInstanceAccessResult call() throws Exception {
+                GetInstanceAccessResult result;
+
+                try {
+                    result = getInstanceAccess(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

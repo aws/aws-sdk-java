@@ -31,12 +31,14 @@ public class Playlist implements Serializable, Cloneable {
      * identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all
      * <code>Name</code> objects must be unique.
      * </p>
+     * <note>
      * <p>
-     * <b>Note</b>: Elastic Transcoder automatically appends the relevant file extension to the file name (
-     * <code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and
-     * <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the
-     * file name will have two extensions.
+     * Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for
+     * <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for
+     * <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two
+     * extensions.
      * </p>
+     * </note>
      */
     private String name;
     /**
@@ -137,23 +139,26 @@ public class Playlist implements Serializable, Cloneable {
      * identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all
      * <code>Name</code> objects must be unique.
      * </p>
+     * <note>
      * <p>
-     * <b>Note</b>: Elastic Transcoder automatically appends the relevant file extension to the file name (
-     * <code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and
-     * <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the
-     * file name will have two extensions.
+     * Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for
+     * <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for
+     * <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two
+     * extensions.
      * </p>
+     * </note>
      * 
      * @param name
      *        The name that you want Elastic Transcoder to assign to the master playlist, for example,
      *        nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of the name before the
      *        last <code>/</code> must be identical for all <code>Name</code> objects. If you create more than one
-     *        master playlist, the values of all <code>Name</code> objects must be unique.</p>
+     *        master playlist, the values of all <code>Name</code> objects must be unique.</p> <note>
      *        <p>
-     *        <b>Note</b>: Elastic Transcoder automatically appends the relevant file extension to the file name (
-     *        <code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and
-     *        <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in
-     *        <code>Name</code>, the file name will have two extensions.
+     *        Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code>
+     *        for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for
+     *        <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will
+     *        have two extensions.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -167,22 +172,25 @@ public class Playlist implements Serializable, Cloneable {
      * identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all
      * <code>Name</code> objects must be unique.
      * </p>
+     * <note>
      * <p>
-     * <b>Note</b>: Elastic Transcoder automatically appends the relevant file extension to the file name (
-     * <code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and
-     * <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the
-     * file name will have two extensions.
+     * Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for
+     * <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for
+     * <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two
+     * extensions.
      * </p>
+     * </note>
      * 
      * @return The name that you want Elastic Transcoder to assign to the master playlist, for example,
      *         nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of the name before the
      *         last <code>/</code> must be identical for all <code>Name</code> objects. If you create more than one
-     *         master playlist, the values of all <code>Name</code> objects must be unique.</p>
+     *         master playlist, the values of all <code>Name</code> objects must be unique.</p> <note>
      *         <p>
-     *         <b>Note</b>: Elastic Transcoder automatically appends the relevant file extension to the file name (
-     *         <code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and
-     *         <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in
-     *         <code>Name</code>, the file name will have two extensions.
+     *         Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code>
+     *         for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for
+     *         <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will
+     *         have two extensions.
+     *         </p>
      */
 
     public String getName() {
@@ -196,23 +204,26 @@ public class Playlist implements Serializable, Cloneable {
      * identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all
      * <code>Name</code> objects must be unique.
      * </p>
+     * <note>
      * <p>
-     * <b>Note</b>: Elastic Transcoder automatically appends the relevant file extension to the file name (
-     * <code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and
-     * <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the
-     * file name will have two extensions.
+     * Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for
+     * <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for
+     * <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two
+     * extensions.
      * </p>
+     * </note>
      * 
      * @param name
      *        The name that you want Elastic Transcoder to assign to the master playlist, for example,
      *        nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of the name before the
      *        last <code>/</code> must be identical for all <code>Name</code> objects. If you create more than one
-     *        master playlist, the values of all <code>Name</code> objects must be unique.</p>
+     *        master playlist, the values of all <code>Name</code> objects must be unique.</p> <note>
      *        <p>
-     *        <b>Note</b>: Elastic Transcoder automatically appends the relevant file extension to the file name (
-     *        <code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and
-     *        <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in
-     *        <code>Name</code>, the file name will have two extensions.
+     *        Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code>
+     *        for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for
+     *        <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will
+     *        have two extensions.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

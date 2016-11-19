@@ -268,6 +268,23 @@
  * </li>
  * <li>
  * <p>
+ * <b>Manage your instances:</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeInstances</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetInstanceAccess</a>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
  * <b>Manage fleet aliases:</b>
  * </p>
  * <ul>

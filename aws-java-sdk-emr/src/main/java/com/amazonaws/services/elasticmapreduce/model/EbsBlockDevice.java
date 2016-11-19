@@ -23,7 +23,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume
+     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
      * attached to an EC2 instance in the cluster.
      * </p>
      */
@@ -37,12 +37,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume
+     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
      * attached to an EC2 instance in the cluster.
      * </p>
      * 
      * @param volumeSpecification
-     *        EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS
+     *        EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS
      *        volume attached to an EC2 instance in the cluster.
      */
 
@@ -52,11 +52,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume
+     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
      * attached to an EC2 instance in the cluster.
      * </p>
      * 
-     * @return EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS
+     * @return EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS
      *         volume attached to an EC2 instance in the cluster.
      */
 
@@ -66,12 +66,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume
+     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
      * attached to an EC2 instance in the cluster.
      * </p>
      * 
      * @param volumeSpecification
-     *        EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS
+     *        EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS
      *        volume attached to an EC2 instance in the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

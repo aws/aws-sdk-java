@@ -81,6 +81,13 @@ public class FunctionConfigurationJsonMarshaller {
                 jsonGenerator.writeFieldName("VpcConfig");
                 VpcConfigResponseJsonMarshaller.getInstance().marshall(functionConfiguration.getVpcConfig(), jsonGenerator);
             }
+            if (functionConfiguration.getEnvironment() != null) {
+                jsonGenerator.writeFieldName("Environment");
+                EnvironmentResponseJsonMarshaller.getInstance().marshall(functionConfiguration.getEnvironment(), jsonGenerator);
+            }
+            if (functionConfiguration.getKMSKeyArn() != null) {
+                jsonGenerator.writeFieldName("KMSKeyArn").writeValue(functionConfiguration.getKMSKeyArn());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

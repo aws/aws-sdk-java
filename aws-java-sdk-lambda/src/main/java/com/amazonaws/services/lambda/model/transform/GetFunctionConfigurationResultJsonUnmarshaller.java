@@ -99,6 +99,14 @@ public class GetFunctionConfigurationResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     getFunctionConfigurationResult.setVpcConfig(VpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Environment", targetDepth)) {
+                    context.nextToken();
+                    getFunctionConfigurationResult.setEnvironment(EnvironmentResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("KMSKeyArn", targetDepth)) {
+                    context.nextToken();
+                    getFunctionConfigurationResult.setKMSKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

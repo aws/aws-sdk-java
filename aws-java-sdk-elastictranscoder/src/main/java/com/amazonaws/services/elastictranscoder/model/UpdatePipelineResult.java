@@ -21,6 +21,11 @@ import java.io.Serializable;
  */
 public class UpdatePipelineResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The pipeline updated by this <code>UpdatePipelineResponse</code> call.
+     * </p>
+     */
     private Pipeline pipeline;
     /**
      * <p>
@@ -35,7 +40,12 @@ public class UpdatePipelineResult extends com.amazonaws.AmazonWebServiceResult<c
     private com.amazonaws.internal.SdkInternalList<Warning> warnings;
 
     /**
+     * <p>
+     * The pipeline updated by this <code>UpdatePipelineResponse</code> call.
+     * </p>
+     * 
      * @param pipeline
+     *        The pipeline updated by this <code>UpdatePipelineResponse</code> call.
      */
 
     public void setPipeline(Pipeline pipeline) {
@@ -43,7 +53,11 @@ public class UpdatePipelineResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * @return
+     * <p>
+     * The pipeline updated by this <code>UpdatePipelineResponse</code> call.
+     * </p>
+     * 
+     * @return The pipeline updated by this <code>UpdatePipelineResponse</code> call.
      */
 
     public Pipeline getPipeline() {
@@ -51,7 +65,12 @@ public class UpdatePipelineResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The pipeline updated by this <code>UpdatePipelineResponse</code> call.
+     * </p>
+     * 
      * @param pipeline
+     *        The pipeline updated by this <code>UpdatePipelineResponse</code> call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

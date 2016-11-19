@@ -18,7 +18,11 @@ import java.io.Serializable;
  * <p>
  * The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.
  * </p>
- * <important>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</important>
+ * <important>
+ * <p>
+ * To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.
+ * </p>
+ * </important>
  */
 public class Notifications implements Serializable, Cloneable {
 

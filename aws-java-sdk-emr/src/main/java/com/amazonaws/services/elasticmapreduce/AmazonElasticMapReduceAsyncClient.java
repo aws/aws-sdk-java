@@ -22,9 +22,9 @@ import com.amazonaws.annotation.ThreadSafe;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process large amounts of data
- * efficiently. Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such as web indexing,
- * data mining, log file analysis, machine learning, scientific simulation, and data warehousing.
+ * Amazon EMR is a web service that makes it easy to process large amounts of data efficiently. Amazon EMR uses Hadoop
+ * processing combined with several AWS products to do tasks such as web indexing, data mining, log file analysis,
+ * machine learning, scientific simulation, and data warehousing.
  * </p>
  */
 @ThreadSafe
@@ -296,6 +296,38 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
 
                 try {
                     result = addTags(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelStepsResult> cancelStepsAsync(CancelStepsRequest request) {
+
+        return cancelStepsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelStepsResult> cancelStepsAsync(final CancelStepsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelStepsRequest, CancelStepsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelStepsResult>() {
+            @Override
+            public CancelStepsResult call() throws Exception {
+                CancelStepsResult result;
+
+                try {
+                    result = cancelSteps(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -795,6 +827,70 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, ModifyInstanceGroupsResult> asyncHandler) {
 
         return modifyInstanceGroupsAsync(new ModifyInstanceGroupsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAutoScalingPolicyResult> putAutoScalingPolicyAsync(PutAutoScalingPolicyRequest request) {
+
+        return putAutoScalingPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAutoScalingPolicyResult> putAutoScalingPolicyAsync(final PutAutoScalingPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAutoScalingPolicyRequest, PutAutoScalingPolicyResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAutoScalingPolicyResult>() {
+            @Override
+            public PutAutoScalingPolicyResult call() throws Exception {
+                PutAutoScalingPolicyResult result;
+
+                try {
+                    result = putAutoScalingPolicy(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveAutoScalingPolicyResult> removeAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest request) {
+
+        return removeAutoScalingPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveAutoScalingPolicyResult> removeAutoScalingPolicyAsync(final RemoveAutoScalingPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveAutoScalingPolicyRequest, RemoveAutoScalingPolicyResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveAutoScalingPolicyResult>() {
+            @Override
+            public RemoveAutoScalingPolicyResult call() throws Exception {
+                RemoveAutoScalingPolicyResult result;
+
+                try {
+                    result = removeAutoScalingPolicy(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

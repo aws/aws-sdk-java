@@ -64,8 +64,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     * automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console to
-     * access stored logs.
+     * automatically upload logs stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      */
     private java.util.List<String> logPaths;
@@ -369,8 +369,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     * automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console to
-     * access stored logs.
+     * automatically upload logs stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      * 
      * @return Location of default log files. When a server process is shut down, Amazon GameLift captures and stores
@@ -378,8 +378,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         logs in the <a href=
      *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      *         >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     *         automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console
-     *         to access stored logs.
+     *         automatically upload logs stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     *         <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      */
 
     public java.util.List<String> getLogPaths() {
@@ -393,8 +393,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     * automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console to
-     * access stored logs.
+     * automatically upload logs stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      * 
      * @param logPaths
@@ -403,8 +403,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        in the <a href=
      *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     *        automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console
-     *        to access stored logs.
+     *        automatically upload logs stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     *        <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      */
 
     public void setLogPaths(java.util.Collection<String> logPaths) {
@@ -423,8 +423,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     * automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console to
-     * access stored logs.
+     * automatically upload logs stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -438,8 +438,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        in the <a href=
      *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     *        automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console
-     *        to access stored logs.
+     *        automatically upload logs stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     *        <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,8 +460,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     * automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console to
-     * access stored logs.
+     * automatically upload logs stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * </p>
      * 
      * @param logPaths
@@ -470,8 +470,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        in the <a href=
      *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
      *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     *        automatically upload logs stored on each instance at <code>C:\game\logs</code>. Use the GameLift console
-     *        to access stored logs.
+     *        automatically upload logs stored on each instance at <code>C:\game\logs</code> (for Windows) or
+     *        <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

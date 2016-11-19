@@ -59,6 +59,10 @@ public class ModifyInstanceGroupsRequestMarshaller implements Marshaller<Request
 
             jsonGenerator.writeStartObject();
 
+            if (modifyInstanceGroupsRequest.getClusterId() != null) {
+                jsonGenerator.writeFieldName("ClusterId").writeValue(modifyInstanceGroupsRequest.getClusterId());
+            }
+
             com.amazonaws.internal.SdkInternalList<InstanceGroupModifyConfig> instanceGroupsList = (com.amazonaws.internal.SdkInternalList<InstanceGroupModifyConfig>) modifyInstanceGroupsRequest
                     .getInstanceGroups();
             if (!instanceGroupsList.isEmpty() || !instanceGroupsList.isAutoConstruct()) {

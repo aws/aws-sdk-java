@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An object representing a step scaling policy configuration.
+ * Represents a step scaling policy configuration.
  * </p>
  */
 public class StepScalingPolicyConfiguration implements Serializable, Cloneable {

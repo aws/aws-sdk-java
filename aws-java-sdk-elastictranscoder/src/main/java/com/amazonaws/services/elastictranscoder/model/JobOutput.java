@@ -15,10 +15,15 @@ package com.amazonaws.services.elastictranscoder.model;
 import java.io.Serializable;
 
 /**
+ * <important>
  * <p>
- * <important>Outputs recommended instead.</important>If you specified one output for a job, information about that
- * output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first
- * output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.
+ * Outputs recommended instead.
+ * </p>
+ * </important>
+ * <p>
+ * If you specified one output for a job, information about that output. If you specified multiple outputs for a job,
+ * the <code>Output</code> object lists information about the first output. This duplicates the information that is
+ * listed for the first output in the <code>Outputs</code> object.
  * </p>
  */
 public class JobOutput implements Serializable, Cloneable {
@@ -52,13 +57,17 @@ public class JobOutput implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
+     * <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
      * in the <code>ThumbnailPattern</code> object. Wherever you specify <code>{count}</code>, Elastic Transcoder adds a
      * five-digit sequence number (beginning with <b>00001</b>) to thumbnail file names. The number indicates where a
      * given thumbnail appears in the sequence of thumbnails for a transcoded file.
      * </p>
-     * <important>If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
-     * Elastic Transcoder returns a validation error and does not create the job.</important></li>
+     * <important>
+     * <p>
+     * If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>, Elastic
+     * Transcoder returns a validation error and does not create the job.
+     * </p>
+     * </important></li>
      * <li>
      * <p>
      * <b>Literal values (Optional)</b>: You can specify literal values anywhere in the <code>ThumbnailPattern</code>
@@ -68,8 +77,8 @@ public class JobOutput implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file
-     * name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
+     * <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the
+     * file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      * </p>
      * </li>
      * </ul>
@@ -109,14 +118,19 @@ public class JobOutput implements Serializable, Cloneable {
      */
     private String presetId;
     /**
+     * <important>
      * <p>
-     * <important>(Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
-     * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in
-     * seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code>
-     * file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an output are stored in a
-     * single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual
-     * segments might be shorter or longer.
+     * (Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     * <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target
+     * maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is
+     * stored in a separate <code>.ts</code> file. For <code>HLSv4</code>, <code>MPEG-DASH</code>, and
+     * <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment is
+     * approximately the length of the <code>SegmentDuration</code>, though individual segments might be shorter or
+     * longer.
      * </p>
      * <p>
      * The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
@@ -133,18 +147,36 @@ public class JobOutput implements Serializable, Cloneable {
      * <p>
      * The status of one output in a job. If you specified only one output for the job, <code>Outputs:Status</code> is
      * always the same as <code>Job:Status</code>. If you specified more than one output:
+     * </p>
      * <ul>
-     * <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
-     * Transcoder starts to process the first output.</li>
-     * <li>When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that output and
+     * <li>
+     * <p>
+     * <code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
+     * Transcoder starts to process the first output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that output and
      * <code>Job:Status</code> both change to Progressing. For each output, the value of <code>Outputs:Status</code>
-     * remains Submitted until Elastic Transcoder starts to process the output.</li>
-     * <li>Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or Error.</li>
-     * <li>When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
+     * remains Submitted until Elastic Transcoder starts to process the output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or Error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
      * <code>Outputs:Status</code> for all of the outputs is <code>Complete</code>. If <code>Outputs:Status</code> for
      * one or more outputs is <code>Error</code>, the terminal status for <code>Job:Status</code> is also
-     * <code>Error</code>.</li>
+     * <code>Error</code>.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
      * The value of <code>Status</code> is one of the following: <code>Submitted</code>, <code>Progressing</code>,
      * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * </p>
@@ -202,8 +234,8 @@ public class JobOutput implements Serializable, Cloneable {
      * Watermarks are added to the output video in the sequence in which you list them in the job output—the first
      * watermark in the list is added to the output video first, the second watermark in the list is added next, and so
      * on. As a result, if the settings in a preset cause Elastic Transcoder to place all watermarks in the same
-     * location, the second watermark that you add will cover the first one, the third one will cover the second, and
-     * the fourth one will cover the third.
+     * location, the second watermark that you add covers the first one, the third one covers the second, and the fourth
+     * one covers the third.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<JobWatermark> watermarks;
@@ -221,6 +253,7 @@ public class JobOutput implements Serializable, Cloneable {
      * Composition object cannot be null.
      * </p>
      */
+    @Deprecated
     private com.amazonaws.internal.SdkInternalList<Clip> composition;
     /**
      * <p>
@@ -285,8 +318,8 @@ public class JobOutput implements Serializable, Cloneable {
     /**
      * <p>
      * The encryption settings, if any, that you want Elastic Transcoder to apply to your output files. If you choose to
-     * use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic Transcoder will
-     * write an unencrypted file to your Amazon S3 bucket.
+     * use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic Transcoder writes an
+     * unencrypted file to your Amazon S3 bucket.
      * </p>
      */
     private Encryption encryption;
@@ -294,7 +327,7 @@ public class JobOutput implements Serializable, Cloneable {
      * <p>
      * If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to transcode the output file,
      * the <code>AppliedColorSpaceConversion</code> parameter shows the conversion used. If no
-     * <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter will not be included in the job
+     * <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter is not be included in the job
      * response.
      * </p>
      */
@@ -407,13 +440,17 @@ public class JobOutput implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
+     * <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
      * in the <code>ThumbnailPattern</code> object. Wherever you specify <code>{count}</code>, Elastic Transcoder adds a
      * five-digit sequence number (beginning with <b>00001</b>) to thumbnail file names. The number indicates where a
      * given thumbnail appears in the sequence of thumbnails for a transcoded file.
      * </p>
-     * <important>If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
-     * Elastic Transcoder returns a validation error and does not create the job.</important></li>
+     * <important>
+     * <p>
+     * If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>, Elastic
+     * Transcoder returns a validation error and does not create the job.
+     * </p>
+     * </important></li>
      * <li>
      * <p>
      * <b>Literal values (Optional)</b>: You can specify literal values anywhere in the <code>ThumbnailPattern</code>
@@ -423,8 +460,8 @@ public class JobOutput implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file
-     * name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
+     * <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the
+     * file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      * </p>
      * </li>
      * </ul>
@@ -447,15 +484,18 @@ public class JobOutput implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include
+     *        <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include
      *        <code>{count}</code> in the <code>ThumbnailPattern</code> object. Wherever you specify
      *        <code>{count}</code>, Elastic Transcoder adds a five-digit sequence number (beginning with <b>00001</b>)
      *        to thumbnail file names. The number indicates where a given thumbnail appears in the sequence of
      *        thumbnails for a transcoded file.
      *        </p>
-     *        <important>If you specify a literal value and/or <code>{resolution}</code> but you omit
-     *        <code>{count}</code>, Elastic Transcoder returns a validation error and does not create the
-     *        job.</important></li>
+     *        <important>
+     *        <p>
+     *        If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>, Elastic
+     *        Transcoder returns a validation error and does not create the job.
+     *        </p>
+     *        </important></li>
      *        <li>
      *        <p>
      *        <b>Literal values (Optional)</b>: You can specify literal values anywhere in the
@@ -465,7 +505,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in
+     *        <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in
      *        the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      *        </p>
      *        </li>
@@ -495,13 +535,17 @@ public class JobOutput implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
+     * <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
      * in the <code>ThumbnailPattern</code> object. Wherever you specify <code>{count}</code>, Elastic Transcoder adds a
      * five-digit sequence number (beginning with <b>00001</b>) to thumbnail file names. The number indicates where a
      * given thumbnail appears in the sequence of thumbnails for a transcoded file.
      * </p>
-     * <important>If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
-     * Elastic Transcoder returns a validation error and does not create the job.</important></li>
+     * <important>
+     * <p>
+     * If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>, Elastic
+     * Transcoder returns a validation error and does not create the job.
+     * </p>
+     * </important></li>
      * <li>
      * <p>
      * <b>Literal values (Optional)</b>: You can specify literal values anywhere in the <code>ThumbnailPattern</code>
@@ -511,8 +555,8 @@ public class JobOutput implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file
-     * name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
+     * <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the
+     * file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      * </p>
      * </li>
      * </ul>
@@ -534,15 +578,18 @@ public class JobOutput implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include
+     *         <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include
      *         <code>{count}</code> in the <code>ThumbnailPattern</code> object. Wherever you specify
      *         <code>{count}</code>, Elastic Transcoder adds a five-digit sequence number (beginning with <b>00001</b>)
      *         to thumbnail file names. The number indicates where a given thumbnail appears in the sequence of
      *         thumbnails for a transcoded file.
      *         </p>
-     *         <important>If you specify a literal value and/or <code>{resolution}</code> but you omit
-     *         <code>{count}</code>, Elastic Transcoder returns a validation error and does not create the
-     *         job.</important></li>
+     *         <important>
+     *         <p>
+     *         If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
+     *         Elastic Transcoder returns a validation error and does not create the job.
+     *         </p>
+     *         </important></li>
      *         <li>
      *         <p>
      *         <b>Literal values (Optional)</b>: You can specify literal values anywhere in the
@@ -552,7 +599,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in
+     *         <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in
      *         the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      *         </p>
      *         </li>
@@ -582,13 +629,17 @@ public class JobOutput implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
+     * <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
      * in the <code>ThumbnailPattern</code> object. Wherever you specify <code>{count}</code>, Elastic Transcoder adds a
      * five-digit sequence number (beginning with <b>00001</b>) to thumbnail file names. The number indicates where a
      * given thumbnail appears in the sequence of thumbnails for a transcoded file.
      * </p>
-     * <important>If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
-     * Elastic Transcoder returns a validation error and does not create the job.</important></li>
+     * <important>
+     * <p>
+     * If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>, Elastic
+     * Transcoder returns a validation error and does not create the job.
+     * </p>
+     * </important></li>
      * <li>
      * <p>
      * <b>Literal values (Optional)</b>: You can specify literal values anywhere in the <code>ThumbnailPattern</code>
@@ -598,8 +649,8 @@ public class JobOutput implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file
-     * name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
+     * <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the
+     * file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      * </p>
      * </li>
      * </ul>
@@ -622,15 +673,18 @@ public class JobOutput implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include
+     *        <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include
      *        <code>{count}</code> in the <code>ThumbnailPattern</code> object. Wherever you specify
      *        <code>{count}</code>, Elastic Transcoder adds a five-digit sequence number (beginning with <b>00001</b>)
      *        to thumbnail file names. The number indicates where a given thumbnail appears in the sequence of
      *        thumbnails for a transcoded file.
      *        </p>
-     *        <important>If you specify a literal value and/or <code>{resolution}</code> but you omit
-     *        <code>{count}</code>, Elastic Transcoder returns a validation error and does not create the
-     *        job.</important></li>
+     *        <important>
+     *        <p>
+     *        If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>, Elastic
+     *        Transcoder returns a validation error and does not create the job.
+     *        </p>
+     *        </important></li>
      *        <li>
      *        <p>
      *        <b>Literal values (Optional)</b>: You can specify literal values anywhere in the
@@ -640,7 +694,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in
+     *        <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in
      *        the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      *        </p>
      *        </li>
@@ -711,7 +765,7 @@ public class JobOutput implements Serializable, Cloneable {
      * 
      * @param rotate
      *        The number of degrees clockwise by which you want Elastic Transcoder to rotate the output relative to the
-     *        input. Enter one of the following values: </p>
+     *        input. Enter one of the following values:</p>
      *        <p>
      *        <code>auto</code>, <code>0</code>, <code>90</code>, <code>180</code>, <code>270</code>
      *        </p>
@@ -737,7 +791,7 @@ public class JobOutput implements Serializable, Cloneable {
      * </p>
      * 
      * @return The number of degrees clockwise by which you want Elastic Transcoder to rotate the output relative to the
-     *         input. Enter one of the following values: </p>
+     *         input. Enter one of the following values:</p>
      *         <p>
      *         <code>auto</code>, <code>0</code>, <code>90</code>, <code>180</code>, <code>270</code>
      *         </p>
@@ -764,7 +818,7 @@ public class JobOutput implements Serializable, Cloneable {
      * 
      * @param rotate
      *        The number of degrees clockwise by which you want Elastic Transcoder to rotate the output relative to the
-     *        input. Enter one of the following values: </p>
+     *        input. Enter one of the following values:</p>
      *        <p>
      *        <code>auto</code>, <code>0</code>, <code>90</code>, <code>180</code>, <code>270</code>
      *        </p>
@@ -841,14 +895,19 @@ public class JobOutput implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * <important>(Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
-     * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in
-     * seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code>
-     * file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an output are stored in a
-     * single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual
-     * segments might be shorter or longer.
+     * (Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     * <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target
+     * maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is
+     * stored in a separate <code>.ts</code> file. For <code>HLSv4</code>, <code>MPEG-DASH</code>, and
+     * <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment is
+     * approximately the length of the <code>SegmentDuration</code>, though individual segments might be shorter or
+     * longer.
      * </p>
      * <p>
      * The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
@@ -861,13 +920,19 @@ public class JobOutput implements Serializable, Cloneable {
      * </p>
      * 
      * @param segmentDuration
-     *        (Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     *        <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4)
-     *        or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment
-     *        in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate
-     *        <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an
-     *        output are stored in a single file. Each segment is approximately the length of the
-     *        <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
+     *        <p>
+     *        (Outputs in Fragmented MP4 or MPEG-TS format only.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     *        <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the
+     *        target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media
+     *        segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code>, <code>MPEG-DASH</code>, and
+     *        <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment
+     *        is approximately the length of the <code>SegmentDuration</code>, though individual segments might be
+     *        shorter or longer.
+     *        </p>
      *        <p>
      *        The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
      *        <code>SegmentDuration</code>, the duration of the last segment is the remainder of total
@@ -876,7 +941,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        <p>
      *        Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you
      *        specify in OutputKeys. To add an output to the master playlist for this job, include it in the
-     *        <code>OutputKeys
+     *        <code>OutputKeys</code> of the associated playlist.
      */
 
     public void setSegmentDuration(String segmentDuration) {
@@ -884,14 +949,19 @@ public class JobOutput implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * <important>(Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
-     * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in
-     * seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code>
-     * file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an output are stored in a
-     * single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual
-     * segments might be shorter or longer.
+     * (Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     * <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target
+     * maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is
+     * stored in a separate <code>.ts</code> file. For <code>HLSv4</code>, <code>MPEG-DASH</code>, and
+     * <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment is
+     * approximately the length of the <code>SegmentDuration</code>, though individual segments might be shorter or
+     * longer.
      * </p>
      * <p>
      * The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
@@ -903,13 +973,19 @@ public class JobOutput implements Serializable, Cloneable {
      * the associated playlist.
      * </p>
      * 
-     * @return (Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     *         <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4)
-     *         or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment
-     *         in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate
-     *         <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for
-     *         an output are stored in a single file. Each segment is approximately the length of the
-     *         <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
+     * @return <p>
+     *         (Outputs in Fragmented MP4 or MPEG-TS format only.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     *         <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the
+     *         target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media
+     *         segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code>, <code>MPEG-DASH</code>,
+     *         and <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each
+     *         segment is approximately the length of the <code>SegmentDuration</code>, though individual segments might
+     *         be shorter or longer.
+     *         </p>
      *         <p>
      *         The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
      *         <code>SegmentDuration</code>, the duration of the last segment is the remainder of total
@@ -918,7 +994,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         <p>
      *         Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you
      *         specify in OutputKeys. To add an output to the master playlist for this job, include it in the
-     *         <code>OutputKeys
+     *         <code>OutputKeys</code> of the associated playlist.
      */
 
     public String getSegmentDuration() {
@@ -926,14 +1002,19 @@ public class JobOutput implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * <important>(Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
-     * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in
-     * seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code>
-     * file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an output are stored in a
-     * single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual
-     * segments might be shorter or longer.
+     * (Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     * <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target
+     * maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is
+     * stored in a separate <code>.ts</code> file. For <code>HLSv4</code>, <code>MPEG-DASH</code>, and
+     * <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment is
+     * approximately the length of the <code>SegmentDuration</code>, though individual segments might be shorter or
+     * longer.
      * </p>
      * <p>
      * The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
@@ -946,13 +1027,19 @@ public class JobOutput implements Serializable, Cloneable {
      * </p>
      * 
      * @param segmentDuration
-     *        (Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     *        <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4)
-     *        or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment
-     *        in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate
-     *        <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an
-     *        output are stored in a single file. Each segment is approximately the length of the
-     *        <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
+     *        <p>
+     *        (Outputs in Fragmented MP4 or MPEG-TS format only.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     *        <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the
+     *        target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media
+     *        segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code>, <code>MPEG-DASH</code>, and
+     *        <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment
+     *        is approximately the length of the <code>SegmentDuration</code>, though individual segments might be
+     *        shorter or longer.
+     *        </p>
      *        <p>
      *        The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
      *        <code>SegmentDuration</code>, the duration of the last segment is the remainder of total
@@ -961,7 +1048,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        <p>
      *        Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you
      *        specify in OutputKeys. To add an output to the master playlist for this job, include it in the
-     *        <code>OutputKeys
+     *        <code>OutputKeys</code> of the associated playlist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -974,18 +1061,36 @@ public class JobOutput implements Serializable, Cloneable {
      * <p>
      * The status of one output in a job. If you specified only one output for the job, <code>Outputs:Status</code> is
      * always the same as <code>Job:Status</code>. If you specified more than one output:
+     * </p>
      * <ul>
-     * <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
-     * Transcoder starts to process the first output.</li>
-     * <li>When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that output and
+     * <li>
+     * <p>
+     * <code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
+     * Transcoder starts to process the first output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that output and
      * <code>Job:Status</code> both change to Progressing. For each output, the value of <code>Outputs:Status</code>
-     * remains Submitted until Elastic Transcoder starts to process the output.</li>
-     * <li>Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or Error.</li>
-     * <li>When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
+     * remains Submitted until Elastic Transcoder starts to process the output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or Error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
      * <code>Outputs:Status</code> for all of the outputs is <code>Complete</code>. If <code>Outputs:Status</code> for
      * one or more outputs is <code>Error</code>, the terminal status for <code>Job:Status</code> is also
-     * <code>Error</code>.</li>
+     * <code>Error</code>.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
      * The value of <code>Status</code> is one of the following: <code>Submitted</code>, <code>Progressing</code>,
      * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * </p>
@@ -993,22 +1098,37 @@ public class JobOutput implements Serializable, Cloneable {
      * @param status
      *        The status of one output in a job. If you specified only one output for the job,
      *        <code>Outputs:Status</code> is always the same as <code>Job:Status</code>. If you specified more than one
-     *        output:
+     *        output: </p>
      *        <ul>
-     *        <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until
-     *        Elastic Transcoder starts to process the first output.</li>
-     *        <li>When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that
-     *        output and <code>Job:Status</code> both change to Progressing. For each output, the value of
-     *        <code>Outputs:Status</code> remains Submitted until Elastic Transcoder starts to process the output.</li>
-     *        <li>Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or
-     *        Error.</li>
-     *        <li>When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
+     *        <li>
+     *        <p>
+     *        <code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
+     *        Transcoder starts to process the first output.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that output
+     *        and <code>Job:Status</code> both change to Progressing. For each output, the value of
+     *        <code>Outputs:Status</code> remains Submitted until Elastic Transcoder starts to process the output.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or Error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
      *        <code>Outputs:Status</code> for all of the outputs is <code>Complete</code>. If
      *        <code>Outputs:Status</code> for one or more outputs is <code>Error</code>, the terminal status for
-     *        <code>Job:Status</code> is also <code>Error</code>.</li>
+     *        <code>Job:Status</code> is also <code>Error</code>.
+     *        </p>
+     *        </li>
      *        </ul>
-     *        The value of <code>Status</code> is one of the following: <code>Submitted</code>, <code>Progressing</code>
-     *        , <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
+     *        <p>
+     *        The value of <code>Status</code> is one of the following: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      */
 
     public void setStatus(String status) {
@@ -1019,38 +1139,73 @@ public class JobOutput implements Serializable, Cloneable {
      * <p>
      * The status of one output in a job. If you specified only one output for the job, <code>Outputs:Status</code> is
      * always the same as <code>Job:Status</code>. If you specified more than one output:
+     * </p>
      * <ul>
-     * <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
-     * Transcoder starts to process the first output.</li>
-     * <li>When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that output and
+     * <li>
+     * <p>
+     * <code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
+     * Transcoder starts to process the first output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that output and
      * <code>Job:Status</code> both change to Progressing. For each output, the value of <code>Outputs:Status</code>
-     * remains Submitted until Elastic Transcoder starts to process the output.</li>
-     * <li>Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or Error.</li>
-     * <li>When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
+     * remains Submitted until Elastic Transcoder starts to process the output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or Error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
      * <code>Outputs:Status</code> for all of the outputs is <code>Complete</code>. If <code>Outputs:Status</code> for
      * one or more outputs is <code>Error</code>, the terminal status for <code>Job:Status</code> is also
-     * <code>Error</code>.</li>
+     * <code>Error</code>.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
      * The value of <code>Status</code> is one of the following: <code>Submitted</code>, <code>Progressing</code>,
      * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * </p>
      * 
      * @return The status of one output in a job. If you specified only one output for the job,
      *         <code>Outputs:Status</code> is always the same as <code>Job:Status</code>. If you specified more than one
-     *         output:
+     *         output: </p>
      *         <ul>
-     *         <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until
-     *         Elastic Transcoder starts to process the first output.</li>
-     *         <li>When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that
-     *         output and <code>Job:Status</code> both change to Progressing. For each output, the value of
-     *         <code>Outputs:Status</code> remains Submitted until Elastic Transcoder starts to process the output.</li>
-     *         <li>Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or
-     *         Error.</li>
-     *         <li>When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
+     *         <li>
+     *         <p>
+     *         <code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
+     *         Transcoder starts to process the first output.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that output
+     *         and <code>Job:Status</code> both change to Progressing. For each output, the value of
+     *         <code>Outputs:Status</code> remains Submitted until Elastic Transcoder starts to process the output.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or
+     *         Error.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
      *         <code>Outputs:Status</code> for all of the outputs is <code>Complete</code>. If
      *         <code>Outputs:Status</code> for one or more outputs is <code>Error</code>, the terminal status for
-     *         <code>Job:Status</code> is also <code>Error</code>.</li>
+     *         <code>Job:Status</code> is also <code>Error</code>.
+     *         </p>
+     *         </li>
      *         </ul>
+     *         <p>
      *         The value of <code>Status</code> is one of the following: <code>Submitted</code>,
      *         <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      */
@@ -1063,18 +1218,36 @@ public class JobOutput implements Serializable, Cloneable {
      * <p>
      * The status of one output in a job. If you specified only one output for the job, <code>Outputs:Status</code> is
      * always the same as <code>Job:Status</code>. If you specified more than one output:
+     * </p>
      * <ul>
-     * <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
-     * Transcoder starts to process the first output.</li>
-     * <li>When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that output and
+     * <li>
+     * <p>
+     * <code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
+     * Transcoder starts to process the first output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that output and
      * <code>Job:Status</code> both change to Progressing. For each output, the value of <code>Outputs:Status</code>
-     * remains Submitted until Elastic Transcoder starts to process the output.</li>
-     * <li>Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or Error.</li>
-     * <li>When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
+     * remains Submitted until Elastic Transcoder starts to process the output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or Error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
      * <code>Outputs:Status</code> for all of the outputs is <code>Complete</code>. If <code>Outputs:Status</code> for
      * one or more outputs is <code>Error</code>, the terminal status for <code>Job:Status</code> is also
-     * <code>Error</code>.</li>
+     * <code>Error</code>.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
      * The value of <code>Status</code> is one of the following: <code>Submitted</code>, <code>Progressing</code>,
      * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * </p>
@@ -1082,22 +1255,37 @@ public class JobOutput implements Serializable, Cloneable {
      * @param status
      *        The status of one output in a job. If you specified only one output for the job,
      *        <code>Outputs:Status</code> is always the same as <code>Job:Status</code>. If you specified more than one
-     *        output:
+     *        output: </p>
      *        <ul>
-     *        <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until
-     *        Elastic Transcoder starts to process the first output.</li>
-     *        <li>When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that
-     *        output and <code>Job:Status</code> both change to Progressing. For each output, the value of
-     *        <code>Outputs:Status</code> remains Submitted until Elastic Transcoder starts to process the output.</li>
-     *        <li>Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or
-     *        Error.</li>
-     *        <li>When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
+     *        <li>
+     *        <p>
+     *        <code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
+     *        Transcoder starts to process the first output.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code> for that output
+     *        and <code>Job:Status</code> both change to Progressing. For each output, the value of
+     *        <code>Outputs:Status</code> remains Submitted until Elastic Transcoder starts to process the output.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Job:Status remains Progressing until all of the outputs reach a terminal status, either Complete or Error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When all of the outputs reach a terminal status, <code>Job:Status</code> changes to Complete only if
      *        <code>Outputs:Status</code> for all of the outputs is <code>Complete</code>. If
      *        <code>Outputs:Status</code> for one or more outputs is <code>Error</code>, the terminal status for
-     *        <code>Job:Status</code> is also <code>Error</code>.</li>
+     *        <code>Job:Status</code> is also <code>Error</code>.
+     *        </p>
+     *        </li>
      *        </ul>
-     *        The value of <code>Status</code> is one of the following: <code>Submitted</code>, <code>Progressing</code>
-     *        , <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
+     *        <p>
+     *        The value of <code>Status</code> is one of the following: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1396,8 +1584,8 @@ public class JobOutput implements Serializable, Cloneable {
      * Watermarks are added to the output video in the sequence in which you list them in the job output—the first
      * watermark in the list is added to the output video first, the second watermark in the list is added next, and so
      * on. As a result, if the settings in a preset cause Elastic Transcoder to place all watermarks in the same
-     * location, the second watermark that you add will cover the first one, the third one will cover the second, and
-     * the fourth one will cover the third.
+     * location, the second watermark that you add covers the first one, the third one covers the second, and the fourth
+     * one covers the third.
      * </p>
      * 
      * @return Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding.
@@ -1407,8 +1595,8 @@ public class JobOutput implements Serializable, Cloneable {
      *         Watermarks are added to the output video in the sequence in which you list them in the job output—the
      *         first watermark in the list is added to the output video first, the second watermark in the list is added
      *         next, and so on. As a result, if the settings in a preset cause Elastic Transcoder to place all
-     *         watermarks in the same location, the second watermark that you add will cover the first one, the third
-     *         one will cover the second, and the fourth one will cover the third.
+     *         watermarks in the same location, the second watermark that you add covers the first one, the third one
+     *         covers the second, and the fourth one covers the third.
      */
 
     public java.util.List<JobWatermark> getWatermarks() {
@@ -1428,8 +1616,8 @@ public class JobOutput implements Serializable, Cloneable {
      * Watermarks are added to the output video in the sequence in which you list them in the job output—the first
      * watermark in the list is added to the output video first, the second watermark in the list is added next, and so
      * on. As a result, if the settings in a preset cause Elastic Transcoder to place all watermarks in the same
-     * location, the second watermark that you add will cover the first one, the third one will cover the second, and
-     * the fourth one will cover the third.
+     * location, the second watermark that you add covers the first one, the third one covers the second, and the fourth
+     * one covers the third.
      * </p>
      * 
      * @param watermarks
@@ -1440,8 +1628,8 @@ public class JobOutput implements Serializable, Cloneable {
      *        Watermarks are added to the output video in the sequence in which you list them in the job output—the
      *        first watermark in the list is added to the output video first, the second watermark in the list is added
      *        next, and so on. As a result, if the settings in a preset cause Elastic Transcoder to place all watermarks
-     *        in the same location, the second watermark that you add will cover the first one, the third one will cover
-     *        the second, and the fourth one will cover the third.
+     *        in the same location, the second watermark that you add covers the first one, the third one covers the
+     *        second, and the fourth one covers the third.
      */
 
     public void setWatermarks(java.util.Collection<JobWatermark> watermarks) {
@@ -1463,8 +1651,8 @@ public class JobOutput implements Serializable, Cloneable {
      * Watermarks are added to the output video in the sequence in which you list them in the job output—the first
      * watermark in the list is added to the output video first, the second watermark in the list is added next, and so
      * on. As a result, if the settings in a preset cause Elastic Transcoder to place all watermarks in the same
-     * location, the second watermark that you add will cover the first one, the third one will cover the second, and
-     * the fourth one will cover the third.
+     * location, the second watermark that you add covers the first one, the third one covers the second, and the fourth
+     * one covers the third.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1480,8 +1668,8 @@ public class JobOutput implements Serializable, Cloneable {
      *        Watermarks are added to the output video in the sequence in which you list them in the job output—the
      *        first watermark in the list is added to the output video first, the second watermark in the list is added
      *        next, and so on. As a result, if the settings in a preset cause Elastic Transcoder to place all watermarks
-     *        in the same location, the second watermark that you add will cover the first one, the third one will cover
-     *        the second, and the fourth one will cover the third.
+     *        in the same location, the second watermark that you add covers the first one, the third one covers the
+     *        second, and the fourth one covers the third.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1505,8 +1693,8 @@ public class JobOutput implements Serializable, Cloneable {
      * Watermarks are added to the output video in the sequence in which you list them in the job output—the first
      * watermark in the list is added to the output video first, the second watermark in the list is added next, and so
      * on. As a result, if the settings in a preset cause Elastic Transcoder to place all watermarks in the same
-     * location, the second watermark that you add will cover the first one, the third one will cover the second, and
-     * the fourth one will cover the third.
+     * location, the second watermark that you add covers the first one, the third one covers the second, and the fourth
+     * one covers the third.
      * </p>
      * 
      * @param watermarks
@@ -1517,8 +1705,8 @@ public class JobOutput implements Serializable, Cloneable {
      *        Watermarks are added to the output video in the sequence in which you list them in the job output—the
      *        first watermark in the list is added to the output video first, the second watermark in the list is added
      *        next, and so on. As a result, if the settings in a preset cause Elastic Transcoder to place all watermarks
-     *        in the same location, the second watermark that you add will cover the first one, the third one will cover
-     *        the second, and the fourth one will cover the third.
+     *        in the same location, the second watermark that you add covers the first one, the third one covers the
+     *        second, and the fourth one covers the third.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1580,7 +1768,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         clips that make up an output file. For the current release, you can only specify settings for a single
      *         clip per output file. The Composition object cannot be null.
      */
-
+    @Deprecated
     public java.util.List<Clip> getComposition() {
         if (composition == null) {
             composition = new com.amazonaws.internal.SdkInternalList<Clip>();
@@ -1602,7 +1790,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        clips that make up an output file. For the current release, you can only specify settings for a single
      *        clip per output file. The Composition object cannot be null.
      */
-
+    @Deprecated
     public void setComposition(java.util.Collection<Clip> composition) {
         if (composition == null) {
             this.composition = null;
@@ -1632,7 +1820,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        clip per output file. The Composition object cannot be null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public JobOutput withComposition(Clip... composition) {
         if (this.composition == null) {
             setComposition(new com.amazonaws.internal.SdkInternalList<Clip>(composition.length));
@@ -1658,7 +1846,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        clip per output file. The Composition object cannot be null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public JobOutput withComposition(java.util.Collection<Clip> composition) {
         setComposition(composition);
         return this;
@@ -2037,14 +2225,14 @@ public class JobOutput implements Serializable, Cloneable {
     /**
      * <p>
      * The encryption settings, if any, that you want Elastic Transcoder to apply to your output files. If you choose to
-     * use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic Transcoder will
-     * write an unencrypted file to your Amazon S3 bucket.
+     * use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic Transcoder writes an
+     * unencrypted file to your Amazon S3 bucket.
      * </p>
      * 
      * @param encryption
      *        The encryption settings, if any, that you want Elastic Transcoder to apply to your output files. If you
      *        choose to use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic
-     *        Transcoder will write an unencrypted file to your Amazon S3 bucket.
+     *        Transcoder writes an unencrypted file to your Amazon S3 bucket.
      */
 
     public void setEncryption(Encryption encryption) {
@@ -2054,13 +2242,13 @@ public class JobOutput implements Serializable, Cloneable {
     /**
      * <p>
      * The encryption settings, if any, that you want Elastic Transcoder to apply to your output files. If you choose to
-     * use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic Transcoder will
-     * write an unencrypted file to your Amazon S3 bucket.
+     * use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic Transcoder writes an
+     * unencrypted file to your Amazon S3 bucket.
      * </p>
      * 
      * @return The encryption settings, if any, that you want Elastic Transcoder to apply to your output files. If you
      *         choose to use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic
-     *         Transcoder will write an unencrypted file to your Amazon S3 bucket.
+     *         Transcoder writes an unencrypted file to your Amazon S3 bucket.
      */
 
     public Encryption getEncryption() {
@@ -2070,14 +2258,14 @@ public class JobOutput implements Serializable, Cloneable {
     /**
      * <p>
      * The encryption settings, if any, that you want Elastic Transcoder to apply to your output files. If you choose to
-     * use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic Transcoder will
-     * write an unencrypted file to your Amazon S3 bucket.
+     * use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic Transcoder writes an
+     * unencrypted file to your Amazon S3 bucket.
      * </p>
      * 
      * @param encryption
      *        The encryption settings, if any, that you want Elastic Transcoder to apply to your output files. If you
      *        choose to use encryption, you must specify a mode to use. If you choose not to use encryption, Elastic
-     *        Transcoder will write an unencrypted file to your Amazon S3 bucket.
+     *        Transcoder writes an unencrypted file to your Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2090,15 +2278,15 @@ public class JobOutput implements Serializable, Cloneable {
      * <p>
      * If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to transcode the output file,
      * the <code>AppliedColorSpaceConversion</code> parameter shows the conversion used. If no
-     * <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter will not be included in the job
+     * <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter is not be included in the job
      * response.
      * </p>
      * 
      * @param appliedColorSpaceConversion
      *        If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to transcode the output
      *        file, the <code>AppliedColorSpaceConversion</code> parameter shows the conversion used. If no
-     *        <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter will not be included in
-     *        the job response.
+     *        <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter is not be included in the
+     *        job response.
      */
 
     public void setAppliedColorSpaceConversion(String appliedColorSpaceConversion) {
@@ -2109,14 +2297,14 @@ public class JobOutput implements Serializable, Cloneable {
      * <p>
      * If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to transcode the output file,
      * the <code>AppliedColorSpaceConversion</code> parameter shows the conversion used. If no
-     * <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter will not be included in the job
+     * <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter is not be included in the job
      * response.
      * </p>
      * 
      * @return If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to transcode the output
      *         file, the <code>AppliedColorSpaceConversion</code> parameter shows the conversion used. If no
-     *         <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter will not be included in
-     *         the job response.
+     *         <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter is not be included in the
+     *         job response.
      */
 
     public String getAppliedColorSpaceConversion() {
@@ -2127,15 +2315,15 @@ public class JobOutput implements Serializable, Cloneable {
      * <p>
      * If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to transcode the output file,
      * the <code>AppliedColorSpaceConversion</code> parameter shows the conversion used. If no
-     * <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter will not be included in the job
+     * <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter is not be included in the job
      * response.
      * </p>
      * 
      * @param appliedColorSpaceConversion
      *        If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to transcode the output
      *        file, the <code>AppliedColorSpaceConversion</code> parameter shows the conversion used. If no
-     *        <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter will not be included in
-     *        the job response.
+     *        <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter is not be included in the
+     *        job response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

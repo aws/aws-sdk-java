@@ -26,9 +26,12 @@ public class ServerProcess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Location in the game build of the server executable. All game builds are installed on instances at the root
-     * <code>C:\game\...</code>, so an executable file located at <code>MyGame\latest\server.exe</code> has a launch
-     * path of "<code>C:\game\MyGame\latest\server.exe</code>".
+     * Location of the server executable in a game build. All game builds are installed on instances at the root : for
+     * Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows game build
+     * with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch path of "
+     * <code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file located at
+     * <code>MyGame/latest/server.exe</code> must have a launch path of "
+     * <code>/local/game/MyGame/latest/server.exe</code>".
      * </p>
      */
     private String launchPath;
@@ -47,15 +50,21 @@ public class ServerProcess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Location in the game build of the server executable. All game builds are installed on instances at the root
-     * <code>C:\game\...</code>, so an executable file located at <code>MyGame\latest\server.exe</code> has a launch
-     * path of "<code>C:\game\MyGame\latest\server.exe</code>".
+     * Location of the server executable in a game build. All game builds are installed on instances at the root : for
+     * Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows game build
+     * with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch path of "
+     * <code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file located at
+     * <code>MyGame/latest/server.exe</code> must have a launch path of "
+     * <code>/local/game/MyGame/latest/server.exe</code>".
      * </p>
      * 
      * @param launchPath
-     *        Location in the game build of the server executable. All game builds are installed on instances at the
-     *        root <code>C:\game\...</code>, so an executable file located at <code>MyGame\latest\server.exe</code> has
-     *        a launch path of "<code>C:\game\MyGame\latest\server.exe</code>".
+     *        Location of the server executable in a game build. All game builds are installed on instances at the root
+     *        : for Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows
+     *        game build with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch
+     *        path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file
+     *        located at <code>MyGame/latest/server.exe</code> must have a launch path of "
+     *        <code>/local/game/MyGame/latest/server.exe</code>".
      */
 
     public void setLaunchPath(String launchPath) {
@@ -64,14 +73,20 @@ public class ServerProcess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Location in the game build of the server executable. All game builds are installed on instances at the root
-     * <code>C:\game\...</code>, so an executable file located at <code>MyGame\latest\server.exe</code> has a launch
-     * path of "<code>C:\game\MyGame\latest\server.exe</code>".
+     * Location of the server executable in a game build. All game builds are installed on instances at the root : for
+     * Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows game build
+     * with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch path of "
+     * <code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file located at
+     * <code>MyGame/latest/server.exe</code> must have a launch path of "
+     * <code>/local/game/MyGame/latest/server.exe</code>".
      * </p>
      * 
-     * @return Location in the game build of the server executable. All game builds are installed on instances at the
-     *         root <code>C:\game\...</code>, so an executable file located at <code>MyGame\latest\server.exe</code> has
-     *         a launch path of "<code>C:\game\MyGame\latest\server.exe</code>".
+     * @return Location of the server executable in a game build. All game builds are installed on instances at the root
+     *         : for Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows
+     *         game build with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch
+     *         path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file
+     *         located at <code>MyGame/latest/server.exe</code> must have a launch path of "
+     *         <code>/local/game/MyGame/latest/server.exe</code>".
      */
 
     public String getLaunchPath() {
@@ -80,15 +95,21 @@ public class ServerProcess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Location in the game build of the server executable. All game builds are installed on instances at the root
-     * <code>C:\game\...</code>, so an executable file located at <code>MyGame\latest\server.exe</code> has a launch
-     * path of "<code>C:\game\MyGame\latest\server.exe</code>".
+     * Location of the server executable in a game build. All game builds are installed on instances at the root : for
+     * Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows game build
+     * with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch path of "
+     * <code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file located at
+     * <code>MyGame/latest/server.exe</code> must have a launch path of "
+     * <code>/local/game/MyGame/latest/server.exe</code>".
      * </p>
      * 
      * @param launchPath
-     *        Location in the game build of the server executable. All game builds are installed on instances at the
-     *        root <code>C:\game\...</code>, so an executable file located at <code>MyGame\latest\server.exe</code> has
-     *        a launch path of "<code>C:\game\MyGame\latest\server.exe</code>".
+     *        Location of the server executable in a game build. All game builds are installed on instances at the root
+     *        : for Windows instances <code>C:\game</code>, and for Linux instances <code>/local/game</code>. A Windows
+     *        game build with an executable file located at <code>MyGame\latest\server.exe</code> must have a launch
+     *        path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game build with an executable file
+     *        located at <code>MyGame/latest/server.exe</code> must have a launch path of "
+     *        <code>/local/game/MyGame/latest/server.exe</code>".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

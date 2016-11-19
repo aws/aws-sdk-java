@@ -16,8 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested for the EBS volume attached
- * to an EC2 instance in the cluster.
+ * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume
+ * attached to an EC2 instance in the cluster.
  * </p>
  */
 public class VolumeSpecification implements Serializable, Cloneable {

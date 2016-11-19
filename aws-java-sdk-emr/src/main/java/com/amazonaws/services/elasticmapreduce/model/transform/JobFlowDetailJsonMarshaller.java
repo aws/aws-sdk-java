@@ -110,6 +110,12 @@ public class JobFlowDetailJsonMarshaller {
             if (jobFlowDetail.getServiceRole() != null) {
                 jsonGenerator.writeFieldName("ServiceRole").writeValue(jobFlowDetail.getServiceRole());
             }
+            if (jobFlowDetail.getAutoScalingRole() != null) {
+                jsonGenerator.writeFieldName("AutoScalingRole").writeValue(jobFlowDetail.getAutoScalingRole());
+            }
+            if (jobFlowDetail.getScaleDownBehavior() != null) {
+                jsonGenerator.writeFieldName("ScaleDownBehavior").writeValue(jobFlowDetail.getScaleDownBehavior());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

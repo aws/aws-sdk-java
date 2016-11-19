@@ -27,10 +27,8 @@ public class DescribeScalingActivitiesResult extends com.amazonaws.AmazonWebServ
     private java.util.List<ScalingActivity> scalingActivities;
     /**
      * <p>
-     * The <code>NextToken</code> value to include in a future <code>DescribeScalingActivities</code> request. When the
-     * results of a <code>DescribeScalingActivities</code> request exceed <code>MaxResults</code>, this value can be
-     * used to retrieve the next page of results. This value is <code>null</code> when there are no more results to
-     * return.
+     * The token required to get the next set of results. This value is <code>null</code> if there are no more results
+     * to return.
      * </p>
      */
     private String nextToken;
@@ -107,17 +105,13 @@ public class DescribeScalingActivitiesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code>NextToken</code> value to include in a future <code>DescribeScalingActivities</code> request. When the
-     * results of a <code>DescribeScalingActivities</code> request exceed <code>MaxResults</code>, this value can be
-     * used to retrieve the next page of results. This value is <code>null</code> when there are no more results to
-     * return.
+     * The token required to get the next set of results. This value is <code>null</code> if there are no more results
+     * to return.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> value to include in a future <code>DescribeScalingActivities</code> request.
-     *        When the results of a <code>DescribeScalingActivities</code> request exceed <code>MaxResults</code>, this
-     *        value can be used to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        The token required to get the next set of results. This value is <code>null</code> if there are no more
+     *        results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -126,16 +120,12 @@ public class DescribeScalingActivitiesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code>NextToken</code> value to include in a future <code>DescribeScalingActivities</code> request. When the
-     * results of a <code>DescribeScalingActivities</code> request exceed <code>MaxResults</code>, this value can be
-     * used to retrieve the next page of results. This value is <code>null</code> when there are no more results to
-     * return.
+     * The token required to get the next set of results. This value is <code>null</code> if there are no more results
+     * to return.
      * </p>
      * 
-     * @return The <code>NextToken</code> value to include in a future <code>DescribeScalingActivities</code> request.
-     *         When the results of a <code>DescribeScalingActivities</code> request exceed <code>MaxResults</code>, this
-     *         value can be used to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return.
+     * @return The token required to get the next set of results. This value is <code>null</code> if there are no more
+     *         results to return.
      */
 
     public String getNextToken() {
@@ -144,17 +134,13 @@ public class DescribeScalingActivitiesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code>NextToken</code> value to include in a future <code>DescribeScalingActivities</code> request. When the
-     * results of a <code>DescribeScalingActivities</code> request exceed <code>MaxResults</code>, this value can be
-     * used to retrieve the next page of results. This value is <code>null</code> when there are no more results to
-     * return.
+     * The token required to get the next set of results. This value is <code>null</code> if there are no more results
+     * to return.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> value to include in a future <code>DescribeScalingActivities</code> request.
-     *        When the results of a <code>DescribeScalingActivities</code> request exceed <code>MaxResults</code>, this
-     *        value can be used to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        The token required to get the next set of results. This value is <code>null</code> if there are no more
+     *        results to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

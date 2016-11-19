@@ -99,6 +99,14 @@ public class CreateFunctionResultJsonUnmarshaller implements Unmarshaller<Create
                     context.nextToken();
                     createFunctionResult.setVpcConfig(VpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Environment", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setEnvironment(EnvironmentResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("KMSKeyArn", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setKMSKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

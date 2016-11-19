@@ -17,8 +17,8 @@ import java.io.Serializable;
 /**
  * <p>
  * A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it
- * easier to associate clusters in various ways, such as grouping clu\ sters to track your Amazon EMR resource
- * allocation costs. For more information, see <a
+ * easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation
+ * costs. For more information, see <a
  * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR
  * Resources</a>.
  * </p>

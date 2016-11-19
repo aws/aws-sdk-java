@@ -61,9 +61,9 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * The ID for your DRM key, so that your DRM license provider knows which key to provide.
      * </p>
      * <p>
-     * The key ID must be provided in big endian, and Elastic Transcoder will convert it to little endian before
-     * inserting it into the PlayReady DRM headers. If you are unsure whether your license server provides your key ID
-     * in big or little endian, check with your DRM provider.
+     * The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before inserting
+     * it into the PlayReady DRM headers. If you are unsure whether your license server provides your key ID in big or
+     * little endian, check with your DRM provider.
      * </p>
      */
     private String keyId;
@@ -268,15 +268,15 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * The ID for your DRM key, so that your DRM license provider knows which key to provide.
      * </p>
      * <p>
-     * The key ID must be provided in big endian, and Elastic Transcoder will convert it to little endian before
-     * inserting it into the PlayReady DRM headers. If you are unsure whether your license server provides your key ID
-     * in big or little endian, check with your DRM provider.
+     * The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before inserting
+     * it into the PlayReady DRM headers. If you are unsure whether your license server provides your key ID in big or
+     * little endian, check with your DRM provider.
      * </p>
      * 
      * @param keyId
      *        The ID for your DRM key, so that your DRM license provider knows which key to provide.</p>
      *        <p>
-     *        The key ID must be provided in big endian, and Elastic Transcoder will convert it to little endian before
+     *        The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before
      *        inserting it into the PlayReady DRM headers. If you are unsure whether your license server provides your
      *        key ID in big or little endian, check with your DRM provider.
      */
@@ -290,14 +290,14 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * The ID for your DRM key, so that your DRM license provider knows which key to provide.
      * </p>
      * <p>
-     * The key ID must be provided in big endian, and Elastic Transcoder will convert it to little endian before
-     * inserting it into the PlayReady DRM headers. If you are unsure whether your license server provides your key ID
-     * in big or little endian, check with your DRM provider.
+     * The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before inserting
+     * it into the PlayReady DRM headers. If you are unsure whether your license server provides your key ID in big or
+     * little endian, check with your DRM provider.
      * </p>
      * 
      * @return The ID for your DRM key, so that your DRM license provider knows which key to provide.</p>
      *         <p>
-     *         The key ID must be provided in big endian, and Elastic Transcoder will convert it to little endian before
+     *         The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before
      *         inserting it into the PlayReady DRM headers. If you are unsure whether your license server provides your
      *         key ID in big or little endian, check with your DRM provider.
      */
@@ -311,15 +311,15 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * The ID for your DRM key, so that your DRM license provider knows which key to provide.
      * </p>
      * <p>
-     * The key ID must be provided in big endian, and Elastic Transcoder will convert it to little endian before
-     * inserting it into the PlayReady DRM headers. If you are unsure whether your license server provides your key ID
-     * in big or little endian, check with your DRM provider.
+     * The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before inserting
+     * it into the PlayReady DRM headers. If you are unsure whether your license server provides your key ID in big or
+     * little endian, check with your DRM provider.
      * </p>
      * 
      * @param keyId
      *        The ID for your DRM key, so that your DRM license provider knows which key to provide.</p>
      *        <p>
-     *        The key ID must be provided in big endian, and Elastic Transcoder will convert it to little endian before
+     *        The key ID must be provided in big endian, and Elastic Transcoder converts it to little endian before
      *        inserting it into the PlayReady DRM headers. If you are unsure whether your license server provides your
      *        key ID in big or little endian, check with your DRM provider.
      * @return Returns a reference to this object so that method calls can be chained together.

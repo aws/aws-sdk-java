@@ -27,9 +27,8 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
     private java.util.List<ScalingPolicy> scalingPolicies;
     /**
      * <p>
-     * The <code>NextToken</code> value to include in a future <code>DescribeScalingPolicies</code> request. When the
-     * results of a <code>DescribeScalingPolicies</code> request exceed <code>MaxResults</code>, this value can be used
-     * to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * The token required to get the next set of results. This value is <code>null</code> if there are no more results
+     * to return.
      * </p>
      */
     private String nextToken;
@@ -106,15 +105,12 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The <code>NextToken</code> value to include in a future <code>DescribeScalingPolicies</code> request. When the
-     * results of a <code>DescribeScalingPolicies</code> request exceed <code>MaxResults</code>, this value can be used
-     * to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * The token required to get the next set of results. This value is <code>null</code> if there are no more results
+     * to return.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> value to include in a future <code>DescribeScalingPolicies</code> request. When
-     *        the results of a <code>DescribeScalingPolicies</code> request exceed <code>MaxResults</code>, this value
-     *        can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
+     *        The token required to get the next set of results. This value is <code>null</code> if there are no more
      *        results to return.
      */
 
@@ -124,15 +120,12 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The <code>NextToken</code> value to include in a future <code>DescribeScalingPolicies</code> request. When the
-     * results of a <code>DescribeScalingPolicies</code> request exceed <code>MaxResults</code>, this value can be used
-     * to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * The token required to get the next set of results. This value is <code>null</code> if there are no more results
+     * to return.
      * </p>
      * 
-     * @return The <code>NextToken</code> value to include in a future <code>DescribeScalingPolicies</code> request.
-     *         When the results of a <code>DescribeScalingPolicies</code> request exceed <code>MaxResults</code>, this
-     *         value can be used to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return.
+     * @return The token required to get the next set of results. This value is <code>null</code> if there are no more
+     *         results to return.
      */
 
     public String getNextToken() {
@@ -141,15 +134,12 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The <code>NextToken</code> value to include in a future <code>DescribeScalingPolicies</code> request. When the
-     * results of a <code>DescribeScalingPolicies</code> request exceed <code>MaxResults</code>, this value can be used
-     * to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * The token required to get the next set of results. This value is <code>null</code> if there are no more results
+     * to return.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> value to include in a future <code>DescribeScalingPolicies</code> request. When
-     *        the results of a <code>DescribeScalingPolicies</code> request exceed <code>MaxResults</code>, this value
-     *        can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
+     *        The token required to get the next set of results. This value is <code>null</code> if there are no more
      *        results to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

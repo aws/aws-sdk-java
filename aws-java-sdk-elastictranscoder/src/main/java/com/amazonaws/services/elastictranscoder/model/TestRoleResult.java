@@ -19,6 +19,7 @@ import java.io.Serializable;
  * The <code>TestRoleResponse</code> structure.
  * </p>
  */
+@Deprecated
 public class TestRoleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**

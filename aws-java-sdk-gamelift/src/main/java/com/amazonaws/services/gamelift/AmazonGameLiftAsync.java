@@ -279,6 +279,23 @@ import com.amazonaws.services.gamelift.model.*;
  * </li>
  * <li>
  * <p>
+ * <b>Manage your instances:</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeInstances</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetInstanceAccess</a>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
  * <b>Manage fleet aliases:</b>
  * </p>
  * <ul>
@@ -627,16 +644,20 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Creates a multiplayer game session for players. This action creates a game session record and assigns the new
-     * session to an instance in the specified fleet, which initializes a new server process to host the game session. A
-     * fleet must be in an <code>ACTIVE</code> status before a game session can be created in it.
+     * Creates a multiplayer game session for players. This action creates a game session record and assigns an
+     * available server process in the specified fleet to host the game session. A fleet must be in an
+     * <code>ACTIVE</code> status before a game session can be created in it.
      * </p>
      * <p>
-     * To create a game session, specify either a fleet ID or an alias ID and indicate the maximum number of players the
-     * game session allows. You can also provide a name and a set of properties for your game (optional). If successful,
-     * a <a>GameSession</a> object is returned containing session properties, including an IP address. By default, newly
-     * created game sessions are set to accept adding any new players to the game session. Use <a>UpdateGameSession</a>
-     * to change the creation policy.
+     * To create a game session, specify either fleet ID or alias ID, and indicate a maximum number of players to allow
+     * in the game session. You can also provide a name and game-specific properties for this game session. If
+     * successful, a <a>GameSession</a> object is returned containing session properties, including an IP address. By
+     * default, newly created game sessions allow new players to join. Use <a>UpdateGameSession</a> to change the game
+     * sessions player session creation policy.
+     * </p>
+     * <p>
+     * When creating a game session on a fleet with a resource limit creation policy, the request should include a
+     * creator ID. If none is provided, GameLift does not evaluate the fleet's resource limit creation policy.
      * </p>
      * 
      * @param createGameSessionRequest
@@ -648,16 +669,20 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Creates a multiplayer game session for players. This action creates a game session record and assigns the new
-     * session to an instance in the specified fleet, which initializes a new server process to host the game session. A
-     * fleet must be in an <code>ACTIVE</code> status before a game session can be created in it.
+     * Creates a multiplayer game session for players. This action creates a game session record and assigns an
+     * available server process in the specified fleet to host the game session. A fleet must be in an
+     * <code>ACTIVE</code> status before a game session can be created in it.
      * </p>
      * <p>
-     * To create a game session, specify either a fleet ID or an alias ID and indicate the maximum number of players the
-     * game session allows. You can also provide a name and a set of properties for your game (optional). If successful,
-     * a <a>GameSession</a> object is returned containing session properties, including an IP address. By default, newly
-     * created game sessions are set to accept adding any new players to the game session. Use <a>UpdateGameSession</a>
-     * to change the creation policy.
+     * To create a game session, specify either fleet ID or alias ID, and indicate a maximum number of players to allow
+     * in the game session. You can also provide a name and game-specific properties for this game session. If
+     * successful, a <a>GameSession</a> object is returned containing session properties, including an IP address. By
+     * default, newly created game sessions allow new players to join. Use <a>UpdateGameSession</a> to change the game
+     * sessions player session creation policy.
+     * </p>
+     * <p>
+     * When creating a game session on a fleet with a resource limit creation policy, the request should include a
+     * creator ID. If none is provided, GameLift does not evaluate the fleet's resource limit creation policy.
      * </p>
      * 
      * @param createGameSessionRequest
@@ -1338,12 +1363,13 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Retrieves information about instances in a fleet.
+     * Retrieves information about a fleet's instances, including instance IDs. Use this action to get details on all
+     * instances in the fleet or get details on one specific instance.
      * </p>
      * <p>
-     * To get information on a specific instance, specify both a fleet ID and instance ID. To get information for all
-     * instances in a fleet, specify a fleet ID only. Use the pagination parameters to retrieve results as a set of
-     * sequential pages. If successful, an <a>Instance</a> object is returned for each result.
+     * To get a specific instance, specify fleet ID and instance ID. To get all instances in a fleet, specify a fleet ID
+     * only. Use the pagination parameters to retrieve results as a set of sequential pages. If successful, an
+     * <a>Instance</a> object is returned for each result.
      * </p>
      * 
      * @param describeInstancesRequest
@@ -1355,12 +1381,13 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Retrieves information about instances in a fleet.
+     * Retrieves information about a fleet's instances, including instance IDs. Use this action to get details on all
+     * instances in the fleet or get details on one specific instance.
      * </p>
      * <p>
-     * To get information on a specific instance, specify both a fleet ID and instance ID. To get information for all
-     * instances in a fleet, specify a fleet ID only. Use the pagination parameters to retrieve results as a set of
-     * sequential pages. If successful, an <a>Instance</a> object is returned for each result.
+     * To get a specific instance, specify fleet ID and instance ID. To get all instances in a fleet, specify a fleet ID
+     * only. Use the pagination parameters to retrieve results as a set of sequential pages. If successful, an
+     * <a>Instance</a> object is returned for each result.
      * </p>
      * 
      * @param describeInstancesRequest
@@ -1540,6 +1567,65 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      */
     java.util.concurrent.Future<GetGameSessionLogUrlResult> getGameSessionLogUrlAsync(GetGameSessionLogUrlRequest getGameSessionLogUrlRequest,
             com.amazonaws.handlers.AsyncHandler<GetGameSessionLogUrlRequest, GetGameSessionLogUrlResult> asyncHandler);
+
+    /**
+     * <p>
+     * Requests remote access to a fleet instance. Remote access is useful for debugging, gathering benchmarking data,
+     * or watching activity in real time.
+     * </p>
+     * <p>
+     * Access requires credentials that match the operating system of the instance. For a Windows instance, GameLift
+     * returns a username and password as strings for use with a Windows Remote Desktop client. For a Linux instance,
+     * GameLift returns a username and RSA private key, also as strings, for use with an SSH client. The private key
+     * must be saved in the proper format to a .pem file before using. If you're making this request using the AWS CLI,
+     * saving the secret can be handled as part of the GetInstanceAccess request (see the example later in this topic).
+     * For more information on remote access, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-remote-access.html">Remotely Accessing
+     * an Instance</a>.
+     * </p>
+     * <p>
+     * To request access to a specific instance, specify the IDs of the instance and the fleet it belongs to. If
+     * successful, an <a>InstanceAccess</a> object is returned containing the instance's IP address and a set of
+     * credentials.
+     * </p>
+     * 
+     * @param getInstanceAccessRequest
+     * @return A Java Future containing the result of the GetInstanceAccess operation returned by the service.
+     * @sample AmazonGameLiftAsync.GetInstanceAccess
+     */
+    java.util.concurrent.Future<GetInstanceAccessResult> getInstanceAccessAsync(GetInstanceAccessRequest getInstanceAccessRequest);
+
+    /**
+     * <p>
+     * Requests remote access to a fleet instance. Remote access is useful for debugging, gathering benchmarking data,
+     * or watching activity in real time.
+     * </p>
+     * <p>
+     * Access requires credentials that match the operating system of the instance. For a Windows instance, GameLift
+     * returns a username and password as strings for use with a Windows Remote Desktop client. For a Linux instance,
+     * GameLift returns a username and RSA private key, also as strings, for use with an SSH client. The private key
+     * must be saved in the proper format to a .pem file before using. If you're making this request using the AWS CLI,
+     * saving the secret can be handled as part of the GetInstanceAccess request (see the example later in this topic).
+     * For more information on remote access, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-remote-access.html">Remotely Accessing
+     * an Instance</a>.
+     * </p>
+     * <p>
+     * To request access to a specific instance, specify the IDs of the instance and the fleet it belongs to. If
+     * successful, an <a>InstanceAccess</a> object is returned containing the instance's IP address and a set of
+     * credentials.
+     * </p>
+     * 
+     * @param getInstanceAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInstanceAccess operation returned by the service.
+     * @sample AmazonGameLiftAsyncHandler.GetInstanceAccess
+     */
+    java.util.concurrent.Future<GetInstanceAccessResult> getInstanceAccessAsync(GetInstanceAccessRequest getInstanceAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInstanceAccessRequest, GetInstanceAccessResult> asyncHandler);
 
     /**
      * <p>
@@ -1748,7 +1834,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * </p>
      * <important>
      * <p>
-     * Call this action only if you need credentials for a build created with <code> <a>CreateBuild</a> </code>. This is
+     * Call this action only if you need credentials for a build created with<code> <a>CreateBuild</a> </code>. This is
      * a rare situation; in most cases, builds are created using the CLI command <code>upload-build</code>, which
      * creates a build record and also uploads build files.
      * </p>
@@ -1773,7 +1859,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * </p>
      * <important>
      * <p>
-     * Call this action only if you need credentials for a build created with <code> <a>CreateBuild</a> </code>. This is
+     * Call this action only if you need credentials for a build created with<code> <a>CreateBuild</a> </code>. This is
      * a rare situation; in most cases, builds are created using the CLI command <code>upload-build</code>, which
      * creates a build record and also uploads build files.
      * </p>

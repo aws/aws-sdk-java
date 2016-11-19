@@ -89,9 +89,13 @@ public interface AmazonElasticTranscoder {
      * <p>
      * The CancelJob operation cancels an unfinished job.
      * </p>
-     * <note>You can only cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline from starting
-     * to process a job while you're getting the job identifier, use <a>UpdatePipelineStatus</a> to temporarily pause
-     * the pipeline.</note>
+     * <note>
+     * <p>
+     * You can only cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline from starting to
+     * process a job while you're getting the job identifier, use <a>UpdatePipelineStatus</a> to temporarily pause the
+     * pipeline.
+     * </p>
+     * </note>
      * 
      * @param cancelJobRequest
      *        The <code>CancelJobRequest</code> structure.
@@ -173,13 +177,17 @@ public interface AmazonElasticTranscoder {
      * <p>
      * The CreatePreset operation creates a preset with settings that you specify.
      * </p>
-     * <important>Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder
-     * requirements and to determine whether they comply with H.264 standards. If your settings are not valid for
-     * Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>) and does
-     * not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the
-     * H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps
-     * you determine whether your settings comply with the H.264 standard while giving you greater flexibility with
-     * respect to the video that Elastic Transcoder produces.</important>
+     * <important>
+     * <p>
+     * Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and
+     * to determine whether they comply with H.264 standards. If your settings are not valid for Elastic Transcoder,
+     * Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>) and does not create the
+     * preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard,
+     * Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine
+     * whether your settings comply with the H.264 standard while giving you greater flexibility with respect to the
+     * video that Elastic Transcoder produces.
+     * </p>
+     * </important>
      * <p>
      * Elastic Transcoder uses the H.264 video-compression format. For more information, see the International
      * Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual
@@ -453,15 +461,20 @@ public interface AmazonElasticTranscoder {
      *         Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.
      * @sample AmazonElasticTranscoder.TestRole
      */
+    @Deprecated
     TestRoleResult testRole(TestRoleRequest testRoleRequest);
 
     /**
      * <p>
-     * Use the <code>UpdatePipeline</code> operation to update settings for a pipeline. <important>When you change
-     * pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic
-     * Transcoder has not started to process are affected in addition to jobs that you submit after you change settings.
-     * </important>
+     * Use the <code>UpdatePipeline</code> operation to update settings for a pipeline.
      * </p>
+     * <important>
+     * <p>
+     * When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and
+     * that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you
+     * change settings.
+     * </p>
+     * </important>
      * 
      * @param updatePipelineRequest
      *        The <code>UpdatePipelineRequest</code> structure.

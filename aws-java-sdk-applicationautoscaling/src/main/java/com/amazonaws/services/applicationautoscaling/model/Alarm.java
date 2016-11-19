@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An object representing a CloudWatch alarm associated with a scaling policy.
+ * Represents a CloudWatch alarm associated with a scaling policy.
  * </p>
  */
 public class Alarm implements Serializable, Cloneable {

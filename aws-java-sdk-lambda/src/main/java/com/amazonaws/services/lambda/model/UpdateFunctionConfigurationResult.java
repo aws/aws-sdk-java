@@ -105,6 +105,19 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private VpcConfigResponse vpcConfig;
+    /**
+     * <p>
+     * The parent object that contains your environment's configuration settings.
+     * </p>
+     */
+    private EnvironmentResponse environment;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it
+     * means you are using the AWS Lambda default service key.
+     * </p>
+     */
+    private String kMSKeyArn;
 
     /**
      * <p>
@@ -710,6 +723,92 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The parent object that contains your environment's configuration settings.
+     * </p>
+     * 
+     * @param environment
+     *        The parent object that contains your environment's configuration settings.
+     */
+
+    public void setEnvironment(EnvironmentResponse environment) {
+        this.environment = environment;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your environment's configuration settings.
+     * </p>
+     * 
+     * @return The parent object that contains your environment's configuration settings.
+     */
+
+    public EnvironmentResponse getEnvironment() {
+        return this.environment;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your environment's configuration settings.
+     * </p>
+     * 
+     * @param environment
+     *        The parent object that contains your environment's configuration settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationResult withEnvironment(EnvironmentResponse environment) {
+        setEnvironment(environment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it
+     * means you are using the AWS Lambda default service key.
+     * </p>
+     * 
+     * @param kMSKeyArn
+     *        The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
+     *        empty, it means you are using the AWS Lambda default service key.
+     */
+
+    public void setKMSKeyArn(String kMSKeyArn) {
+        this.kMSKeyArn = kMSKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it
+     * means you are using the AWS Lambda default service key.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
+     *         empty, it means you are using the AWS Lambda default service key.
+     */
+
+    public String getKMSKeyArn() {
+        return this.kMSKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it
+     * means you are using the AWS Lambda default service key.
+     * </p>
+     * 
+     * @param kMSKeyArn
+     *        The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
+     *        empty, it means you are using the AWS Lambda default service key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationResult withKMSKeyArn(String kMSKeyArn) {
+        setKMSKeyArn(kMSKeyArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -745,7 +844,11 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
         if (getVersion() != null)
             sb.append("Version: " + getVersion() + ",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: " + getVpcConfig());
+            sb.append("VpcConfig: " + getVpcConfig() + ",");
+        if (getEnvironment() != null)
+            sb.append("Environment: " + getEnvironment() + ",");
+        if (getKMSKeyArn() != null)
+            sb.append("KMSKeyArn: " + getKMSKeyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -812,6 +915,14 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getEnvironment() == null ^ this.getEnvironment() == null)
+            return false;
+        if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
+            return false;
+        if (other.getKMSKeyArn() == null ^ this.getKMSKeyArn() == null)
+            return false;
+        if (other.getKMSKeyArn() != null && other.getKMSKeyArn().equals(this.getKMSKeyArn()) == false)
+            return false;
         return true;
     }
 
@@ -833,6 +944,8 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getCodeSha256() == null) ? 0 : getCodeSha256().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
         return hashCode;
     }
 

@@ -18,7 +18,8 @@ package com.amazonaws.services.applicationautoscaling.model;
 public enum ScalableDimension {
 
     EcsServiceDesiredCount("ecs:service:DesiredCount"),
-    Ec2SpotFleetRequestTargetCapacity("ec2:spot-fleet-request:TargetCapacity");
+    Ec2SpotFleetRequestTargetCapacity("ec2:spot-fleet-request:TargetCapacity"),
+    ElasticmapreduceInstancegroupInstanceCount("elasticmapreduce:instancegroup:InstanceCount");
 
     private String value;
 

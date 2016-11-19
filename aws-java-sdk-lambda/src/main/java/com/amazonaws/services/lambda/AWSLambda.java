@@ -484,7 +484,9 @@ public interface AWSLambda {
 
     /**
      * <p>
-     * Invokes a specific Lambda function.
+     * Invokes a specific Lambda function. For an example, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually"
+     * >Create the Lambda Function and Test It Manually</a>.
      * </p>
      * <p>
      * If you are using the versioning feature, you can invoke the specific function version by providing function
@@ -536,6 +538,18 @@ public interface AWSLambda {
      *         The Security Group ID provided in the Lambda function VPC configuration is invalid.
      * @throws InvalidZipFileException
      *         AWS Lambda could not unzip the function zip file.
+     * @throws KMSDisabledException
+     *         Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Please check
+     *         the Lambda function's KMS key settings.
+     * @throws KMSInvalidStateException
+     *         Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state
+     *         for Decrypt. Please check the function's KMS key settings.
+     * @throws KMSAccessDeniedException
+     *         Lambda was unable to decrypt the environment variables becauses KMS access was denied. Please check the
+     *         Lambda function's KMS permissions.
+     * @throws KMSNotFoundException
+     *         Lambda was unable to decrypt the environment variables because the KMS key was not found. Please check
+     *         the function's KMS key settings.
      * @sample AWSLambda.Invoke
      */
     InvokeResult invoke(InvokeRequest invokeRequest);

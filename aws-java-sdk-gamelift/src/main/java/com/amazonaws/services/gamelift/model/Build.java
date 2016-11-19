@@ -85,7 +85,7 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * milliseconds (ex: "1469498468.057").
      * </p>
      */
     private java.util.Date creationTime;
@@ -642,12 +642,12 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057".
+     *        milliseconds (ex: "1469498468.057").
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -657,11 +657,11 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *         milliseconds (ex: "1469498468.057".
+     *         milliseconds (ex: "1469498468.057").
      */
 
     public java.util.Date getCreationTime() {
@@ -671,12 +671,12 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057".
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057".
+     *        milliseconds (ex: "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

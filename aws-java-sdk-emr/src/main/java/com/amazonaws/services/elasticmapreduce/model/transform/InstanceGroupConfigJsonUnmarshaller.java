@@ -79,6 +79,10 @@ public class InstanceGroupConfigJsonUnmarshaller implements Unmarshaller<Instanc
                     context.nextToken();
                     instanceGroupConfig.setEbsConfiguration(EbsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AutoScalingPolicy", targetDepth)) {
+                    context.nextToken();
+                    instanceGroupConfig.setAutoScalingPolicy(AutoScalingPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

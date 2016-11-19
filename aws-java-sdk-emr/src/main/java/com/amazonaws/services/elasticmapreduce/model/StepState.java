@@ -18,6 +18,7 @@ package com.amazonaws.services.elasticmapreduce.model;
 public enum StepState {
 
     PENDING("PENDING"),
+    CANCEL_PENDING("CANCEL_PENDING"),
     RUNNING("RUNNING"),
     COMPLETED("COMPLETED"),
     CANCELLED("CANCELLED"),

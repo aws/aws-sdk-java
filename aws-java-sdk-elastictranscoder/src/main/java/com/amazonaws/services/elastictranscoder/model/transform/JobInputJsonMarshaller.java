@@ -63,6 +63,14 @@ public class JobInputJsonMarshaller {
                 jsonGenerator.writeFieldName("Encryption");
                 EncryptionJsonMarshaller.getInstance().marshall(jobInput.getEncryption(), jsonGenerator);
             }
+            if (jobInput.getTimeSpan() != null) {
+                jsonGenerator.writeFieldName("TimeSpan");
+                TimeSpanJsonMarshaller.getInstance().marshall(jobInput.getTimeSpan(), jsonGenerator);
+            }
+            if (jobInput.getInputCaptions() != null) {
+                jsonGenerator.writeFieldName("InputCaptions");
+                InputCaptionsJsonMarshaller.getInstance().marshall(jobInput.getInputCaptions(), jsonGenerator);
+            }
             if (jobInput.getDetectedProperties() != null) {
                 jsonGenerator.writeFieldName("DetectedProperties");
                 DetectedPropertiesJsonMarshaller.getInstance().marshall(jobInput.getDetectedProperties(), jsonGenerator);

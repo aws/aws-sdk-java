@@ -95,6 +95,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                             new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withModeledClass(
                                     com.amazonaws.services.lambda.model.PolicyLengthExceededException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSAccessDeniedException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.KMSAccessDeniedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withModeledClass(
                                     com.amazonaws.services.lambda.model.ResourceConflictException.class))
                     .addErrorMetadata(
@@ -110,11 +113,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                             new JsonErrorShapeMetadata().withErrorCode("ENILimitReachedException").withModeledClass(
                                     com.amazonaws.services.lambda.model.ENILimitReachedException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.KMSInvalidStateException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidZipFileException").withModeledClass(
                                     com.amazonaws.services.lambda.model.InvalidZipFileException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSDisabledException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.KMSDisabledException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("SubnetIPAddressLimitReachedException").withModeledClass(
                                     com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSNotFoundException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.KMSNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSubnetIDException").withModeledClass(
                                     com.amazonaws.services.lambda.model.InvalidSubnetIDException.class))
@@ -1024,7 +1036,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Invokes a specific Lambda function.
+     * Invokes a specific Lambda function. For an example, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually"
+     * >Create the Lambda Function and Test It Manually</a>.
      * </p>
      * <p>
      * If you are using the versioning feature, you can invoke the specific function version by providing function
@@ -1076,6 +1090,18 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         The Security Group ID provided in the Lambda function VPC configuration is invalid.
      * @throws InvalidZipFileException
      *         AWS Lambda could not unzip the function zip file.
+     * @throws KMSDisabledException
+     *         Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Please check
+     *         the Lambda function's KMS key settings.
+     * @throws KMSInvalidStateException
+     *         Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state
+     *         for Decrypt. Please check the function's KMS key settings.
+     * @throws KMSAccessDeniedException
+     *         Lambda was unable to decrypt the environment variables becauses KMS access was denied. Please check the
+     *         Lambda function's KMS permissions.
+     * @throws KMSNotFoundException
+     *         Lambda was unable to decrypt the environment variables because the KMS key was not found. Please check
+     *         the function's KMS key settings.
      * @sample AWSLambda.Invoke
      */
     @Override

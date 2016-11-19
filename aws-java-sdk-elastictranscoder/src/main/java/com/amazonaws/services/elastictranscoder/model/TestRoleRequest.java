@@ -36,8 +36,8 @@ public class TestRoleRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String inputBucket;
     /**
      * <p>
-     * The Amazon S3 bucket that Elastic Transcoder will write transcoded media files to. The action attempts to read
-     * from this bucket.
+     * The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from
+     * this bucket.
      * </p>
      */
     private String outputBucket;
@@ -134,13 +134,13 @@ public class TestRoleRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon S3 bucket that Elastic Transcoder will write transcoded media files to. The action attempts to read
-     * from this bucket.
+     * The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from
+     * this bucket.
      * </p>
      * 
      * @param outputBucket
-     *        The Amazon S3 bucket that Elastic Transcoder will write transcoded media files to. The action attempts to
-     *        read from this bucket.
+     *        The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read
+     *        from this bucket.
      */
 
     public void setOutputBucket(String outputBucket) {
@@ -149,11 +149,11 @@ public class TestRoleRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon S3 bucket that Elastic Transcoder will write transcoded media files to. The action attempts to read
-     * from this bucket.
+     * The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from
+     * this bucket.
      * </p>
      * 
-     * @return The Amazon S3 bucket that Elastic Transcoder will write transcoded media files to. The action attempts to
+     * @return The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to
      *         read from this bucket.
      */
 
@@ -163,13 +163,13 @@ public class TestRoleRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon S3 bucket that Elastic Transcoder will write transcoded media files to. The action attempts to read
-     * from this bucket.
+     * The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from
+     * this bucket.
      * </p>
      * 
      * @param outputBucket
-     *        The Amazon S3 bucket that Elastic Transcoder will write transcoded media files to. The action attempts to
-     *        read from this bucket.
+     *        The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read
+     *        from this bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -64,10 +64,17 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * the defaults shown above.
      * </p>
      * <p>
-     * For details about the AMI versions currently supported by Amazon Elastic MapReduce, go to <a href=
+     * For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
      * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     * >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
+     * >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * Previously, the EMR AMI version API parameter options allowed you to use latest for the latest AMI version rather
+     * than specify a numerical value. Some regions no longer support this deprecated option as they only have a newer
+     * release label version of EMR, which requires you to specify an EMR release label release (EMR 4.x or later).
+     * </p>
+     * </note>
      */
     private String amiVersion;
     /**
@@ -107,7 +114,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use with the job flow. For more information, go to <a
+     * A list of strings that indicates third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
      * Party Applications with Amazon EMR</a>. Currently supported values are:
      * </p>
@@ -241,6 +248,28 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String securityConfiguration;
+    /**
+     * <p>
+     * An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM
+     * role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an
+     * instance group.
+     * </p>
+     */
+    private String autoScalingRole;
+    /**
+     * <p>
+     * Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an
+     * instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
+     * the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option
+     * is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists and drains tasks from nodes before
+     * terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the
+     * default for versions of Amazon EMR earlier than 5.1.0.
+     * </p>
+     */
+    private String scaleDownBehavior;
 
     /**
      * Default constructor for RunJobFlowRequest object. Callers should use the setter or fluent setter (with...)
@@ -412,10 +441,17 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * the defaults shown above.
      * </p>
      * <p>
-     * For details about the AMI versions currently supported by Amazon Elastic MapReduce, go to <a href=
+     * For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
      * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     * >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
+     * >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * Previously, the EMR AMI version API parameter options allowed you to use latest for the latest AMI version rather
+     * than specify a numerical value. Some regions no longer support this deprecated option as they only have a newer
+     * release label version of EMR, which requires you to specify an EMR release label release (EMR 4.x or later).
+     * </p>
+     * </note>
      * 
      * @param amiVersion
      *        <p>
@@ -439,9 +475,17 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        of Hadoop from the defaults shown above.
      *        </p>
      *        <p>
-     *        For details about the AMI versions currently supported by Amazon Elastic MapReduce, go to <a href=
+     *        For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
      *        "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     *        >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
+     *        >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Previously, the EMR AMI version API parameter options allowed you to use latest for the latest AMI version
+     *        rather than specify a numerical value. Some regions no longer support this deprecated option as they only
+     *        have a newer release label version of EMR, which requires you to specify an EMR release label release (EMR
+     *        4.x or later).
+     *        </p>
      */
 
     public void setAmiVersion(String amiVersion) {
@@ -471,10 +515,17 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * the defaults shown above.
      * </p>
      * <p>
-     * For details about the AMI versions currently supported by Amazon Elastic MapReduce, go to <a href=
+     * For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
      * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     * >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
+     * >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * Previously, the EMR AMI version API parameter options allowed you to use latest for the latest AMI version rather
+     * than specify a numerical value. Some regions no longer support this deprecated option as they only have a newer
+     * release label version of EMR, which requires you to specify an EMR release label release (EMR 4.x or later).
+     * </p>
+     * </note>
      * 
      * @return <p>
      *         For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use ReleaseLabel.
@@ -497,10 +548,17 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         of Hadoop from the defaults shown above.
      *         </p>
      *         <p>
-     *         For details about the AMI versions currently supported by Amazon Elastic MapReduce, go to <a href=
+     *         For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
      *         "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     *         >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer's
-     *         Guide.</i>
+     *         >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Previously, the EMR AMI version API parameter options allowed you to use latest for the latest AMI
+     *         version rather than specify a numerical value. Some regions no longer support this deprecated option as
+     *         they only have a newer release label version of EMR, which requires you to specify an EMR release label
+     *         release (EMR 4.x or later).
+     *         </p>
      */
 
     public String getAmiVersion() {
@@ -530,10 +588,17 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * the defaults shown above.
      * </p>
      * <p>
-     * For details about the AMI versions currently supported by Amazon Elastic MapReduce, go to <a href=
+     * For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
      * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     * >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
+     * >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * Previously, the EMR AMI version API parameter options allowed you to use latest for the latest AMI version rather
+     * than specify a numerical value. Some regions no longer support this deprecated option as they only have a newer
+     * release label version of EMR, which requires you to specify an EMR release label release (EMR 4.x or later).
+     * </p>
+     * </note>
      * 
      * @param amiVersion
      *        <p>
@@ -557,9 +622,17 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        of Hadoop from the defaults shown above.
      *        </p>
      *        <p>
-     *        For details about the AMI versions currently supported by Amazon Elastic MapReduce, go to <a href=
+     *        For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
      *        "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     *        >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
+     *        >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Previously, the EMR AMI version API parameter options allowed you to use latest for the latest AMI version
+     *        rather than specify a numerical value. Some regions no longer support this deprecated option as they only
+     *        have a newer release label version of EMR, which requires you to specify an EMR release label release (EMR
+     *        4.x or later).
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -837,7 +910,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use with the job flow. For more information, go to <a
+     * A list of strings that indicates third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
      * Party Applications with Amazon EMR</a>. Currently supported values are:
      * </p>
@@ -859,10 +932,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         </note>
      *         <p>
-     *         A list of strings that indicates third-party software to use with the job flow. For more information, go
-     *         to <a
-     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
-     *         Third Party Applications with Amazon EMR</a>. Currently supported values are:
+     *         A list of strings that indicates third-party software to use with the job flow. For more information, see
+     *         <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">
+     *         Use Third Party Applications with Amazon EMR</a>. Currently supported values are:
      *         </p>
      *         <ul>
      *         <li>
@@ -891,7 +963,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use with the job flow. For more information, go to <a
+     * A list of strings that indicates third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
      * Party Applications with Amazon EMR</a>. Currently supported values are:
      * </p>
@@ -914,8 +986,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </note>
      *        <p>
-     *        A list of strings that indicates third-party software to use with the job flow. For more information, go
-     *        to <a
+     *        A list of strings that indicates third-party software to use with the job flow. For more information, see
+     *        <a
      *        href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *        Third Party Applications with Amazon EMR</a>. Currently supported values are:
      *        </p>
@@ -948,7 +1020,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use with the job flow. For more information, go to <a
+     * A list of strings that indicates third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
      * Party Applications with Amazon EMR</a>. Currently supported values are:
      * </p>
@@ -976,8 +1048,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </note>
      *        <p>
-     *        A list of strings that indicates third-party software to use with the job flow. For more information, go
-     *        to <a
+     *        A list of strings that indicates third-party software to use with the job flow. For more information, see
+     *        <a
      *        href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *        Third Party Applications with Amazon EMR</a>. Currently supported values are:
      *        </p>
@@ -1012,7 +1084,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use with the job flow. For more information, go to <a
+     * A list of strings that indicates third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
      * Party Applications with Amazon EMR</a>. Currently supported values are:
      * </p>
@@ -1035,8 +1107,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </note>
      *        <p>
-     *        A list of strings that indicates third-party software to use with the job flow. For more information, go
-     *        to <a
+     *        A list of strings that indicates third-party software to use with the job flow. For more information, see
+     *        <a
      *        href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *        Third Party Applications with Amazon EMR</a>. Currently supported values are:
      *        </p>
@@ -2064,6 +2136,216 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM
+     * role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an
+     * instance group.
+     * </p>
+     * 
+     * @param autoScalingRole
+     *        An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>.
+     *        The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2
+     *        instances in an instance group.
+     */
+
+    public void setAutoScalingRole(String autoScalingRole) {
+        this.autoScalingRole = autoScalingRole;
+    }
+
+    /**
+     * <p>
+     * An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM
+     * role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an
+     * instance group.
+     * </p>
+     * 
+     * @return An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>.
+     *         The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2
+     *         instances in an instance group.
+     */
+
+    public String getAutoScalingRole() {
+        return this.autoScalingRole;
+    }
+
+    /**
+     * <p>
+     * An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM
+     * role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an
+     * instance group.
+     * </p>
+     * 
+     * @param autoScalingRole
+     *        An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>.
+     *        The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2
+     *        instances in an instance group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunJobFlowRequest withAutoScalingRole(String autoScalingRole) {
+        setAutoScalingRole(autoScalingRole);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an
+     * instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
+     * the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option
+     * is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists and drains tasks from nodes before
+     * terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the
+     * default for versions of Amazon EMR earlier than 5.1.0.
+     * </p>
+     * 
+     * @param scaleDownBehavior
+     *        Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity
+     *        occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR
+     *        terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance
+     *        was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for
+     *        clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR
+     *        blacklists and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
+     *        instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
+     *        instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     *        available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *        earlier than 5.1.0.
+     * @see ScaleDownBehavior
+     */
+
+    public void setScaleDownBehavior(String scaleDownBehavior) {
+        this.scaleDownBehavior = scaleDownBehavior;
+    }
+
+    /**
+     * <p>
+     * Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an
+     * instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
+     * the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option
+     * is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists and drains tasks from nodes before
+     * terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the
+     * default for versions of Amazon EMR earlier than 5.1.0.
+     * </p>
+     * 
+     * @return Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity
+     *         occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR
+     *         terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance
+     *         was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for
+     *         clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR
+     *         blacklists and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
+     *         instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
+     *         instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     *         available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *         earlier than 5.1.0.
+     * @see ScaleDownBehavior
+     */
+
+    public String getScaleDownBehavior() {
+        return this.scaleDownBehavior;
+    }
+
+    /**
+     * <p>
+     * Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an
+     * instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
+     * the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option
+     * is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists and drains tasks from nodes before
+     * terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the
+     * default for versions of Amazon EMR earlier than 5.1.0.
+     * </p>
+     * 
+     * @param scaleDownBehavior
+     *        Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity
+     *        occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR
+     *        terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance
+     *        was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for
+     *        clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR
+     *        blacklists and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
+     *        instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
+     *        instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     *        available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *        earlier than 5.1.0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScaleDownBehavior
+     */
+
+    public RunJobFlowRequest withScaleDownBehavior(String scaleDownBehavior) {
+        setScaleDownBehavior(scaleDownBehavior);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an
+     * instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
+     * the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option
+     * is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists and drains tasks from nodes before
+     * terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the
+     * default for versions of Amazon EMR earlier than 5.1.0.
+     * </p>
+     * 
+     * @param scaleDownBehavior
+     *        Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity
+     *        occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR
+     *        terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance
+     *        was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for
+     *        clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR
+     *        blacklists and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
+     *        instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
+     *        instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     *        available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *        earlier than 5.1.0.
+     * @see ScaleDownBehavior
+     */
+
+    public void setScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
+        this.scaleDownBehavior = scaleDownBehavior.toString();
+    }
+
+    /**
+     * <p>
+     * Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an
+     * instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
+     * the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option
+     * is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists and drains tasks from nodes before
+     * terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the
+     * default for versions of Amazon EMR earlier than 5.1.0.
+     * </p>
+     * 
+     * @param scaleDownBehavior
+     *        Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity
+     *        occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR
+     *        terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance
+     *        was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for
+     *        clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR
+     *        blacklists and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
+     *        instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
+     *        instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
+     *        available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *        earlier than 5.1.0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScaleDownBehavior
+     */
+
+    public RunJobFlowRequest withScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
+        setScaleDownBehavior(scaleDownBehavior);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2107,7 +2389,11 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getTags() != null)
             sb.append("Tags: " + getTags() + ",");
         if (getSecurityConfiguration() != null)
-            sb.append("SecurityConfiguration: " + getSecurityConfiguration());
+            sb.append("SecurityConfiguration: " + getSecurityConfiguration() + ",");
+        if (getAutoScalingRole() != null)
+            sb.append("AutoScalingRole: " + getAutoScalingRole() + ",");
+        if (getScaleDownBehavior() != null)
+            sb.append("ScaleDownBehavior: " + getScaleDownBehavior());
         sb.append("}");
         return sb.toString();
     }
@@ -2190,6 +2476,14 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
             return false;
+        if (other.getAutoScalingRole() == null ^ this.getAutoScalingRole() == null)
+            return false;
+        if (other.getAutoScalingRole() != null && other.getAutoScalingRole().equals(this.getAutoScalingRole()) == false)
+            return false;
+        if (other.getScaleDownBehavior() == null ^ this.getScaleDownBehavior() == null)
+            return false;
+        if (other.getScaleDownBehavior() != null && other.getScaleDownBehavior().equals(this.getScaleDownBehavior()) == false)
+            return false;
         return true;
     }
 
@@ -2215,6 +2509,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingRole() == null) ? 0 : getAutoScalingRole().hashCode());
+        hashCode = prime * hashCode + ((getScaleDownBehavior() == null) ? 0 : getScaleDownBehavior().hashCode());
         return hashCode;
     }
 

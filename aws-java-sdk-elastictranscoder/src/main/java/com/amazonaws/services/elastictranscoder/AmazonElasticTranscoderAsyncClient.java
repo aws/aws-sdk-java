@@ -676,12 +676,14 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<TestRoleResult> testRoleAsync(TestRoleRequest request) {
 
         return testRoleAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<TestRoleResult> testRoleAsync(final TestRoleRequest request,
             final com.amazonaws.handlers.AsyncHandler<TestRoleRequest, TestRoleResult> asyncHandler) {
 

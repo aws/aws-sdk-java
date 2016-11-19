@@ -73,6 +73,8 @@ public enum GameliftActions implements Action {
     DescribeScalingPolicies("gamelift:DescribeScalingPolicies"),
     /** Action for the GetGameSessionLogUrl operation. */
     GetGameSessionLogUrl("gamelift:GetGameSessionLogUrl"),
+    /** Action for the GetInstanceAccess operation. */
+    GetInstanceAccess("gamelift:GetInstanceAccess"),
     /** Action for the ListAliases operation. */
     ListAliases("gamelift:ListAliases"),
     /** Action for the ListBuilds operation. */

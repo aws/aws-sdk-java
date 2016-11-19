@@ -50,13 +50,24 @@ public class Job implements Serializable, Cloneable {
     private JobInput input;
     /**
      * <p>
+     * Information about the files that you're transcoding. If you specified multiple files for this job, Elastic
+     * Transcoder stitches the files together to make one output.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<JobInput> inputs;
+    /**
+     * <p>
      * If you specified one output for a job, information about that output. If you specified multiple outputs for a
      * job, the Output object lists information about the first output. This duplicates the information that is listed
      * for the first output in the Outputs object.
      * </p>
+     * <important>
      * <p>
-     * <important>Outputs recommended instead.</important> A section of the request or response body that provides
-     * information about the transcoded (target) file.
+     * Outputs recommended instead.
+     * </p>
+     * </important>
+     * <p>
+     * A section of the request or response body that provides information about the transcoded (target) file.
      * </p>
      */
     private JobOutput output;
@@ -82,11 +93,15 @@ public class Job implements Serializable, Cloneable {
      */
     private String outputKeyPrefix;
     /**
+     * <important>
      * <p>
-     * <important>Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
-     * <code>Playlists</code> contains information about the master playlists that you want Elastic Transcoder to
-     * create.
+     * Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     * (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you
+     * want Elastic Transcoder to create.
      * </p>
      * <p>
      * The maximum number of master playlists in a job is 30.
@@ -104,8 +119,7 @@ public class Job implements Serializable, Cloneable {
      * <p>
      * User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      * <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder
-     * does not guarantee that <code>key/value</code> pairs will be returned in the same order in which you specify
-     * them.
+     * does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.
      * </p>
      * <p>
      * Metadata <code>keys</code> and <code>values</code> must use characters from the following list:
@@ -324,22 +338,110 @@ public class Job implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Information about the files that you're transcoding. If you specified multiple files for this job, Elastic
+     * Transcoder stitches the files together to make one output.
+     * </p>
+     * 
+     * @return Information about the files that you're transcoding. If you specified multiple files for this job,
+     *         Elastic Transcoder stitches the files together to make one output.
+     */
+
+    public java.util.List<JobInput> getInputs() {
+        if (inputs == null) {
+            inputs = new com.amazonaws.internal.SdkInternalList<JobInput>();
+        }
+        return inputs;
+    }
+
+    /**
+     * <p>
+     * Information about the files that you're transcoding. If you specified multiple files for this job, Elastic
+     * Transcoder stitches the files together to make one output.
+     * </p>
+     * 
+     * @param inputs
+     *        Information about the files that you're transcoding. If you specified multiple files for this job, Elastic
+     *        Transcoder stitches the files together to make one output.
+     */
+
+    public void setInputs(java.util.Collection<JobInput> inputs) {
+        if (inputs == null) {
+            this.inputs = null;
+            return;
+        }
+
+        this.inputs = new com.amazonaws.internal.SdkInternalList<JobInput>(inputs);
+    }
+
+    /**
+     * <p>
+     * Information about the files that you're transcoding. If you specified multiple files for this job, Elastic
+     * Transcoder stitches the files together to make one output.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInputs(java.util.Collection)} or {@link #withInputs(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param inputs
+     *        Information about the files that you're transcoding. If you specified multiple files for this job, Elastic
+     *        Transcoder stitches the files together to make one output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withInputs(JobInput... inputs) {
+        if (this.inputs == null) {
+            setInputs(new com.amazonaws.internal.SdkInternalList<JobInput>(inputs.length));
+        }
+        for (JobInput ele : inputs) {
+            this.inputs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the files that you're transcoding. If you specified multiple files for this job, Elastic
+     * Transcoder stitches the files together to make one output.
+     * </p>
+     * 
+     * @param inputs
+     *        Information about the files that you're transcoding. If you specified multiple files for this job, Elastic
+     *        Transcoder stitches the files together to make one output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withInputs(java.util.Collection<JobInput> inputs) {
+        setInputs(inputs);
+        return this;
+    }
+
+    /**
+     * <p>
      * If you specified one output for a job, information about that output. If you specified multiple outputs for a
      * job, the Output object lists information about the first output. This duplicates the information that is listed
      * for the first output in the Outputs object.
      * </p>
+     * <important>
      * <p>
-     * <important>Outputs recommended instead.</important> A section of the request or response body that provides
-     * information about the transcoded (target) file.
+     * Outputs recommended instead.
+     * </p>
+     * </important>
+     * <p>
+     * A section of the request or response body that provides information about the transcoded (target) file.
      * </p>
      * 
      * @param output
      *        If you specified one output for a job, information about that output. If you specified multiple outputs
      *        for a job, the Output object lists information about the first output. This duplicates the information
-     *        that is listed for the first output in the Outputs object.</p>
+     *        that is listed for the first output in the Outputs object.</p> <important>
      *        <p>
-     *        <important>Outputs recommended instead.</important> A section of the request or response body that
-     *        provides information about the transcoded (target) file.
+     *        Outputs recommended instead.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        A section of the request or response body that provides information about the transcoded (target) file.
      */
 
     public void setOutput(JobOutput output) {
@@ -352,17 +454,24 @@ public class Job implements Serializable, Cloneable {
      * job, the Output object lists information about the first output. This duplicates the information that is listed
      * for the first output in the Outputs object.
      * </p>
+     * <important>
      * <p>
-     * <important>Outputs recommended instead.</important> A section of the request or response body that provides
-     * information about the transcoded (target) file.
+     * Outputs recommended instead.
+     * </p>
+     * </important>
+     * <p>
+     * A section of the request or response body that provides information about the transcoded (target) file.
      * </p>
      * 
      * @return If you specified one output for a job, information about that output. If you specified multiple outputs
      *         for a job, the Output object lists information about the first output. This duplicates the information
-     *         that is listed for the first output in the Outputs object.</p>
+     *         that is listed for the first output in the Outputs object.</p> <important>
      *         <p>
-     *         <important>Outputs recommended instead.</important> A section of the request or response body that
-     *         provides information about the transcoded (target) file.
+     *         Outputs recommended instead.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         A section of the request or response body that provides information about the transcoded (target) file.
      */
 
     public JobOutput getOutput() {
@@ -375,18 +484,25 @@ public class Job implements Serializable, Cloneable {
      * job, the Output object lists information about the first output. This duplicates the information that is listed
      * for the first output in the Outputs object.
      * </p>
+     * <important>
      * <p>
-     * <important>Outputs recommended instead.</important> A section of the request or response body that provides
-     * information about the transcoded (target) file.
+     * Outputs recommended instead.
+     * </p>
+     * </important>
+     * <p>
+     * A section of the request or response body that provides information about the transcoded (target) file.
      * </p>
      * 
      * @param output
      *        If you specified one output for a job, information about that output. If you specified multiple outputs
      *        for a job, the Output object lists information about the first output. This duplicates the information
-     *        that is listed for the first output in the Outputs object.</p>
+     *        that is listed for the first output in the Outputs object.</p> <important>
      *        <p>
-     *        <important>Outputs recommended instead.</important> A section of the request or response body that
-     *        provides information about the transcoded (target) file.
+     *        Outputs recommended instead.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        A section of the request or response body that provides information about the transcoded (target) file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -573,20 +689,31 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * <important>Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
-     * <code>Playlists</code> contains information about the master playlists that you want Elastic Transcoder to
-     * create.
+     * Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     * (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you
+     * want Elastic Transcoder to create.
      * </p>
      * <p>
      * The maximum number of master playlists in a job is 30.
      * </p>
      * 
-     * @return Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     *         <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts
-     *         (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you want Elastic
-     *         Transcoder to create.</p>
+     * @return <p>
+     *         Outputs in Fragmented MP4 or MPEG-TS format only.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     *         (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists
+     *         that you want Elastic Transcoder to create.
+     *         </p>
+     *         <p>
+     *         The maximum number of master playlists in a job is 30.
      */
 
     public java.util.List<Playlist> getPlaylists() {
@@ -597,21 +724,32 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * <important>Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
-     * <code>Playlists</code> contains information about the master playlists that you want Elastic Transcoder to
-     * create.
+     * Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     * (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you
+     * want Elastic Transcoder to create.
      * </p>
      * <p>
      * The maximum number of master playlists in a job is 30.
      * </p>
      * 
      * @param playlists
-     *        Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     *        <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts
-     *        (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you want Elastic
-     *        Transcoder to create.</p>
+     *        <p>
+     *        Outputs in Fragmented MP4 or MPEG-TS format only.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     *        (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists
+     *        that you want Elastic Transcoder to create.
+     *        </p>
+     *        <p>
+     *        The maximum number of master playlists in a job is 30.
      */
 
     public void setPlaylists(java.util.Collection<Playlist> playlists) {
@@ -624,11 +762,15 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * <important>Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
-     * <code>Playlists</code> contains information about the master playlists that you want Elastic Transcoder to
-     * create.
+     * Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     * (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you
+     * want Elastic Transcoder to create.
      * </p>
      * <p>
      * The maximum number of master playlists in a job is 30.
@@ -640,10 +782,17 @@ public class Job implements Serializable, Cloneable {
      * </p>
      * 
      * @param playlists
-     *        Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     *        <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts
-     *        (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you want Elastic
-     *        Transcoder to create.</p>
+     *        <p>
+     *        Outputs in Fragmented MP4 or MPEG-TS format only.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     *        (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists
+     *        that you want Elastic Transcoder to create.
+     *        </p>
+     *        <p>
+     *        The maximum number of master playlists in a job is 30.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -658,21 +807,32 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * <important>Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
-     * <code>Playlists</code> contains information about the master playlists that you want Elastic Transcoder to
-     * create.
+     * Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     * (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you
+     * want Elastic Transcoder to create.
      * </p>
      * <p>
      * The maximum number of master playlists in a job is 30.
      * </p>
      * 
      * @param playlists
-     *        Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     *        <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts
-     *        (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you want Elastic
-     *        Transcoder to create.</p>
+     *        <p>
+     *        Outputs in Fragmented MP4 or MPEG-TS format only.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4
+     *        (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists
+     *        that you want Elastic Transcoder to create.
+     *        </p>
+     *        <p>
+     *        The maximum number of master playlists in a job is 30.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -731,8 +891,7 @@ public class Job implements Serializable, Cloneable {
      * <p>
      * User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      * <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder
-     * does not guarantee that <code>key/value</code> pairs will be returned in the same order in which you specify
-     * them.
+     * does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.
      * </p>
      * <p>
      * Metadata <code>keys</code> and <code>values</code> must use characters from the following list:
@@ -762,8 +921,8 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      *         <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic
-     *         Transcoder does not guarantee that <code>key/value</code> pairs will be returned in the same order in
-     *         which you specify them.</p>
+     *         Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which
+     *         you specify them.</p>
      *         <p>
      *         Metadata <code>keys</code> and <code>values</code> must use characters from the following list:
      *         </p>
@@ -801,8 +960,7 @@ public class Job implements Serializable, Cloneable {
      * <p>
      * User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      * <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder
-     * does not guarantee that <code>key/value</code> pairs will be returned in the same order in which you specify
-     * them.
+     * does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.
      * </p>
      * <p>
      * Metadata <code>keys</code> and <code>values</code> must use characters from the following list:
@@ -833,8 +991,8 @@ public class Job implements Serializable, Cloneable {
      * @param userMetadata
      *        User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      *        <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic
-     *        Transcoder does not guarantee that <code>key/value</code> pairs will be returned in the same order in
-     *        which you specify them.</p>
+     *        Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which
+     *        you specify them.</p>
      *        <p>
      *        Metadata <code>keys</code> and <code>values</code> must use characters from the following list:
      *        </p>
@@ -869,8 +1027,7 @@ public class Job implements Serializable, Cloneable {
      * <p>
      * User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      * <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder
-     * does not guarantee that <code>key/value</code> pairs will be returned in the same order in which you specify
-     * them.
+     * does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.
      * </p>
      * <p>
      * Metadata <code>keys</code> and <code>values</code> must use characters from the following list:
@@ -901,8 +1058,8 @@ public class Job implements Serializable, Cloneable {
      * @param userMetadata
      *        User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      *        <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic
-     *        Transcoder does not guarantee that <code>key/value</code> pairs will be returned in the same order in
-     *        which you specify them.</p>
+     *        Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which
+     *        you specify them.</p>
      *        <p>
      *        Metadata <code>keys</code> and <code>values</code> must use characters from the following list:
      *        </p>
@@ -1015,6 +1172,8 @@ public class Job implements Serializable, Cloneable {
             sb.append("PipelineId: " + getPipelineId() + ",");
         if (getInput() != null)
             sb.append("Input: " + getInput() + ",");
+        if (getInputs() != null)
+            sb.append("Inputs: " + getInputs() + ",");
         if (getOutput() != null)
             sb.append("Output: " + getOutput() + ",");
         if (getOutputs() != null)
@@ -1059,6 +1218,10 @@ public class Job implements Serializable, Cloneable {
             return false;
         if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
             return false;
+        if (other.getInputs() == null ^ this.getInputs() == null)
+            return false;
+        if (other.getInputs() != null && other.getInputs().equals(this.getInputs()) == false)
+            return false;
         if (other.getOutput() == null ^ this.getOutput() == null)
             return false;
         if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false)
@@ -1099,6 +1262,7 @@ public class Job implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
+        hashCode = prime * hashCode + ((getInputs() == null) ? 0 : getInputs().hashCode());
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getOutputKeyPrefix() == null) ? 0 : getOutputKeyPrefix().hashCode());

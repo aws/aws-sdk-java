@@ -73,11 +73,12 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String sourceArn;
     /**
      * <p>
-     * This parameter is used for S3 and SES only. The AWS account ID (without a hyphen) of the source owner. For
-     * example, if the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's account ID. You can
-     * use this additional condition to ensure the bucket you specify is owned by a specific account (it is possible the
-     * bucket owner deleted the bucket and some other AWS account created the bucket). You can also use this condition
-     * to specify all sources (that is, you don't specify the <code>SourceArn</code>) owned by a specific account.
+     * This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules only. The AWS account ID (without a
+     * hyphen) of the source owner. For example, if the <code>SourceArn</code> identifies a bucket, then this is the
+     * bucket owner's account ID. You can use this additional condition to ensure the bucket you specify is owned by a
+     * specific account (it is possible the bucket owner deleted the bucket and some other AWS account created the
+     * bucket). You can also use this condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account.
      * </p>
      */
     private String sourceAccount;
@@ -434,20 +435,21 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This parameter is used for S3 and SES only. The AWS account ID (without a hyphen) of the source owner. For
-     * example, if the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's account ID. You can
-     * use this additional condition to ensure the bucket you specify is owned by a specific account (it is possible the
-     * bucket owner deleted the bucket and some other AWS account created the bucket). You can also use this condition
-     * to specify all sources (that is, you don't specify the <code>SourceArn</code>) owned by a specific account.
+     * This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules only. The AWS account ID (without a
+     * hyphen) of the source owner. For example, if the <code>SourceArn</code> identifies a bucket, then this is the
+     * bucket owner's account ID. You can use this additional condition to ensure the bucket you specify is owned by a
+     * specific account (it is possible the bucket owner deleted the bucket and some other AWS account created the
+     * bucket). You can also use this condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account.
      * </p>
      * 
      * @param sourceAccount
-     *        This parameter is used for S3 and SES only. The AWS account ID (without a hyphen) of the source owner. For
-     *        example, if the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's account ID.
-     *        You can use this additional condition to ensure the bucket you specify is owned by a specific account (it
-     *        is possible the bucket owner deleted the bucket and some other AWS account created the bucket). You can
-     *        also use this condition to specify all sources (that is, you don't specify the <code>SourceArn</code>)
-     *        owned by a specific account.
+     *        This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules only. The AWS account ID (without
+     *        a hyphen) of the source owner. For example, if the <code>SourceArn</code> identifies a bucket, then this
+     *        is the bucket owner's account ID. You can use this additional condition to ensure the bucket you specify
+     *        is owned by a specific account (it is possible the bucket owner deleted the bucket and some other AWS
+     *        account created the bucket). You can also use this condition to specify all sources (that is, you don't
+     *        specify the <code>SourceArn</code>) owned by a specific account.
      */
 
     public void setSourceAccount(String sourceAccount) {
@@ -456,19 +458,20 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This parameter is used for S3 and SES only. The AWS account ID (without a hyphen) of the source owner. For
-     * example, if the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's account ID. You can
-     * use this additional condition to ensure the bucket you specify is owned by a specific account (it is possible the
-     * bucket owner deleted the bucket and some other AWS account created the bucket). You can also use this condition
-     * to specify all sources (that is, you don't specify the <code>SourceArn</code>) owned by a specific account.
+     * This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules only. The AWS account ID (without a
+     * hyphen) of the source owner. For example, if the <code>SourceArn</code> identifies a bucket, then this is the
+     * bucket owner's account ID. You can use this additional condition to ensure the bucket you specify is owned by a
+     * specific account (it is possible the bucket owner deleted the bucket and some other AWS account created the
+     * bucket). You can also use this condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account.
      * </p>
      * 
-     * @return This parameter is used for S3 and SES only. The AWS account ID (without a hyphen) of the source owner.
-     *         For example, if the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's account
-     *         ID. You can use this additional condition to ensure the bucket you specify is owned by a specific account
-     *         (it is possible the bucket owner deleted the bucket and some other AWS account created the bucket). You
-     *         can also use this condition to specify all sources (that is, you don't specify the <code>SourceArn</code>
-     *         ) owned by a specific account.
+     * @return This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules only. The AWS account ID
+     *         (without a hyphen) of the source owner. For example, if the <code>SourceArn</code> identifies a bucket,
+     *         then this is the bucket owner's account ID. You can use this additional condition to ensure the bucket
+     *         you specify is owned by a specific account (it is possible the bucket owner deleted the bucket and some
+     *         other AWS account created the bucket). You can also use this condition to specify all sources (that is,
+     *         you don't specify the <code>SourceArn</code>) owned by a specific account.
      */
 
     public String getSourceAccount() {
@@ -477,20 +480,21 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This parameter is used for S3 and SES only. The AWS account ID (without a hyphen) of the source owner. For
-     * example, if the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's account ID. You can
-     * use this additional condition to ensure the bucket you specify is owned by a specific account (it is possible the
-     * bucket owner deleted the bucket and some other AWS account created the bucket). You can also use this condition
-     * to specify all sources (that is, you don't specify the <code>SourceArn</code>) owned by a specific account.
+     * This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules only. The AWS account ID (without a
+     * hyphen) of the source owner. For example, if the <code>SourceArn</code> identifies a bucket, then this is the
+     * bucket owner's account ID. You can use this additional condition to ensure the bucket you specify is owned by a
+     * specific account (it is possible the bucket owner deleted the bucket and some other AWS account created the
+     * bucket). You can also use this condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account.
      * </p>
      * 
      * @param sourceAccount
-     *        This parameter is used for S3 and SES only. The AWS account ID (without a hyphen) of the source owner. For
-     *        example, if the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's account ID.
-     *        You can use this additional condition to ensure the bucket you specify is owned by a specific account (it
-     *        is possible the bucket owner deleted the bucket and some other AWS account created the bucket). You can
-     *        also use this condition to specify all sources (that is, you don't specify the <code>SourceArn</code>)
-     *        owned by a specific account.
+     *        This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules only. The AWS account ID (without
+     *        a hyphen) of the source owner. For example, if the <code>SourceArn</code> identifies a bucket, then this
+     *        is the bucket owner's account ID. You can use this additional condition to ensure the bucket you specify
+     *        is owned by a specific account (it is possible the bucket owner deleted the bucket and some other AWS
+     *        account created the bucket). You can also use this condition to specify all sources (that is, you don't
+     *        specify the <code>SourceArn</code>) owned by a specific account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

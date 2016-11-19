@@ -104,6 +104,10 @@ public class InstanceGroupJsonMarshaller {
                 jsonGenerator.writeFieldName("ShrinkPolicy");
                 ShrinkPolicyJsonMarshaller.getInstance().marshall(instanceGroup.getShrinkPolicy(), jsonGenerator);
             }
+            if (instanceGroup.getAutoScalingPolicy() != null) {
+                jsonGenerator.writeFieldName("AutoScalingPolicy");
+                AutoScalingPolicyDescriptionJsonMarshaller.getInstance().marshall(instanceGroup.getAutoScalingPolicy(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

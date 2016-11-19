@@ -24,23 +24,35 @@ public class VideoParameters implements Serializable, Cloneable {
     /**
      * <p>
      * The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>,
-     * <code>mpeg2</code>, and <code>vp8</code>. You can only specify <code>vp8</code> when the container type is
-     * <code>webm</code>, <code>gif</code> when the container type is <code>gif</code>, and <code>mpeg2</code> when the
-     * container type is <code>mpg</code>.
+     * <code>mpeg2</code>, <code>vp8</code>, and <code>vp9</code>. You can only specify <code>vp8</code> and
+     * <code>vp9</code> when the container type is <code>webm</code>, <code>gif</code> when the container type is
+     * <code>gif</code>, and <code>mpeg2</code> when the container type is <code>mpg</code>.
      * </p>
      */
     private String codec;
     /**
      * <p>
-     * <b>Profile (H.264/VP8 Only)</b>
+     * <b>Profile (H.264/VP8/VP9 Only)</b>
      * </p>
      * <p>
      * The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following profiles:
      * </p>
      * <ul>
-     * <li><code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</li>
-     * <li><code>main</code>: The profile used for standard-definition digital TV broadcasts.</li>
-     * <li><code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</li>
+     * <li>
+     * <p>
+     * <code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>main</code>: The profile used for standard-definition digital TV broadcasts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Level (H.264 Only)</b>
@@ -70,22 +82,74 @@ public class VideoParameters implements Serializable, Cloneable {
      * the list below. (A macroblock is a block of pixels measuring 16x16.)
      * </p>
      * <ul>
-     * <li>1 - 396</li>
-     * <li>1b - 396</li>
-     * <li>1.1 - 900</li>
-     * <li>1.2 - 2376</li>
-     * <li>1.3 - 2376</li>
-     * <li>2 - 2376</li>
-     * <li>2.1 - 4752</li>
-     * <li>2.2 - 8100</li>
-     * <li>3 - 8100</li>
-     * <li>3.1 - 18000</li>
-     * <li>3.2 - 20480</li>
-     * <li>4 - 32768</li>
-     * <li>4.1 - 32768</li>
+     * <li>
+     * <p>
+     * 1 - 396
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 396
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 900
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 2376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 2376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 2376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.1 - 4752
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.2 - 8100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 8100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 18000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 20480
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 32768
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 32768
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>MaxBitRate (Optional, H.264/MPEG2/VP8 only)</b>
+     * <b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      * </p>
      * <p>
      * The maximum number of bits per second in a video buffer; the size of the buffer is specified by
@@ -93,7 +157,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * video by reducing the maximum bit rate, but this also reduces the quality of the video.
      * </p>
      * <p>
-     * <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b>
+     * <b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      * </p>
      * <p>
      * The maximum number of bits in any x seconds of the output video. This window is commonly 10 seconds, the standard
@@ -140,13 +204,33 @@ public class VideoParameters implements Serializable, Cloneable {
      * from the list below, Elastic Transcoder applies the following color space conversions:
      * </p>
      * <ul>
-     * <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     * <li><i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     * <li><i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
-     * <li><i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
+     * <li>
+     * <p>
+     * <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     * </p>
+     * </li>
      * </ul>
-     * <note>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code>
-     * mode in the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.</note>
+     * <note>
+     * <p>
+     * Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
+     * the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.
+     * </p>
+     * </note>
      * <p>
      * If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the color space
      * of a file. If you are unsure what <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -211,9 +295,17 @@ public class VideoParameters implements Serializable, Cloneable {
      * :
      * </p>
      * <ul>
-     * <li><code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance
-     * between key frames (the number of frames in a group of pictures, or GOP).</li>
-     * <li><code>false</code>: The distance between key frames can vary.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between
+     * key frames (the number of frames in a group of pictures, or GOP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: The distance between key frames can vary.
+     * </p>
+     * </li>
      * </ul>
      * <important>
      * <p>
@@ -234,17 +326,61 @@ public class VideoParameters implements Serializable, Cloneable {
      * kilobits/second (high Profile)</i>
      * </p>
      * <ul>
-     * <li>1 - 64 : 80</li>
-     * <li>1b - 128 : 160</li>
-     * <li>1.1 - 192 : 240</li>
-     * <li>1.2 - 384 : 480</li>
-     * <li>1.3 - 768 : 960</li>
-     * <li>2 - 2000 : 2500</li>
-     * <li>3 - 10000 : 12500</li>
-     * <li>3.1 - 14000 : 17500</li>
-     * <li>3.2 - 20000 : 25000</li>
-     * <li>4 - 20000 : 25000</li>
-     * <li>4.1 - 50000 : 62500</li>
+     * <li>
+     * <p>
+     * 1 - 64 : 80
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 128 : 160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 192 : 240
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 384 : 480
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 768 : 960
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 2000 : 2500
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 10000 : 12500
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 14000 : 17500
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 20000 : 25000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 20000 : 25000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 50000 : 62500
+     * </p>
+     * </li>
      * </ul>
      */
     private String bitRate;
@@ -267,28 +403,88 @@ public class VideoParameters implements Serializable, Cloneable {
      * where:
      * </p>
      * <ul>
-     * <li><i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</li>
-     * <li><i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value
-     * listed in the following table, based on the value that you specified for Level.</li>
+     * <li>
+     * <p>
+     * <i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value
+     * listed in the following table, based on the value that you specified for Level.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The maximum recommended decoding speed in Luma samples/second for each level is described in the following list
      * (<i>Level - Decoding speed</i>):
      * </p>
      * <ul>
-     * <li>1 - 380160</li>
-     * <li>1b - 380160</li>
-     * <li>1.1 - 76800</li>
-     * <li>1.2 - 1536000</li>
-     * <li>1.3 - 3041280</li>
-     * <li>2 - 3041280</li>
-     * <li>2.1 - 5068800</li>
-     * <li>2.2 - 5184000</li>
-     * <li>3 - 10368000</li>
-     * <li>3.1 - 27648000</li>
-     * <li>3.2 - 55296000</li>
-     * <li>4 - 62914560</li>
-     * <li>4.1 - 62914560</li>
+     * <li>
+     * <p>
+     * 1 - 380160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 380160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 76800
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 1536000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 3041280
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 3041280
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.1 - 5068800
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.2 - 5184000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 10368000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 27648000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 55296000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 62914560
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 62914560
+     * </p>
+     * </li>
      * </ul>
      */
     private String frameRate;
@@ -316,37 +512,117 @@ public class VideoParameters implements Serializable, Cloneable {
      * <i>width</i> x <i>height</i>:
      * </p>
      * <ul>
-     * <li><code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to
-     * the following rules.</li>
-     * <li><code><i>width</i> x <i>height</i></code>: The width and height of the output video in pixels.</li>
+     * <li>
+     * <p>
+     * <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the
+     * following rules.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Note the following about specifying the width and height:
      * </p>
      * <ul>
-     * <li>The width must be an even integer between 128 and 4096, inclusive.</li>
-     * <li>The height must be an even integer between 96 and 3072, inclusive.</li>
-     * <li>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales
-     * the output file to the lower resolution.</li>
-     * <li>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder
-     * rescales the output to the higher resolution.</li>
-     * <li>We recommend that you specify a resolution for which the product of width and height is less than or equal to
-     * the applicable value in the following list (<i>List - Max width x height value</i>):</li>
+     * <li>
+     * <p>
+     * The width must be an even integer between 128 and 4096, inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The height must be an even integer between 96 and 3072, inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the
+     * output file to the lower resolution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales
+     * the output to the higher resolution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * We recommend that you specify a resolution for which the product of width and height is less than or equal to the
+     * applicable value in the following list (<i>List - Max width x height value</i>):
+     * </p>
      * <ul>
-     * <li>1 - 25344</li>
-     * <li>1b - 25344</li>
-     * <li>1.1 - 101376</li>
-     * <li>1.2 - 101376</li>
-     * <li>1.3 - 101376</li>
-     * <li>2 - 101376</li>
-     * <li>2.1 - 202752</li>
-     * <li>2.2 - 404720</li>
-     * <li>3 - 404720</li>
-     * <li>3.1 - 921600</li>
-     * <li>3.2 - 1310720</li>
-     * <li>4 - 2097152</li>
-     * <li>4.1 - 2097152</li>
+     * <li>
+     * <p>
+     * 1 - 25344
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 25344
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.1 - 202752
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.2 - 404720
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 404720
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 921600
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 1310720
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 2097152
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 2097152
+     * </p>
+     * </li>
      * </ul>
+     * </li>
      * </ul>
      */
     private String resolution;
@@ -399,27 +675,49 @@ public class VideoParameters implements Serializable, Cloneable {
      * <p>
      * Specify one of the following values to control scaling of the output video:
      * </p>
-     * <p>
      * <ul>
-     * <li><code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
-     * either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
-     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
-     * either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder
-     * centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</li>
-     * <li><code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified
-     * for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the
-     * output video are different, the output video will be distorted.</li>
-     * <li><code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video
-     * exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder
-     * crops the output video.</li>
-     * <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the
-     * values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding
-     * either value. If you specify this option, Elastic Transcoder does not scale the video up.</li>
-     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the
-     * values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
-     * below either value. If you specify this option, Elastic Transcoder does not scale the video up.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either
+     * <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
+     * either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder
+     * centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for
+     * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output
+     * video are different, the output video will be distorted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video
+     * exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder
+     * crops the output video.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values
+     * that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either
+     * value. If you specify this option, Elastic Transcoder does not scale the video up.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the
+     * values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
+     * below either value. If you specify this option, Elastic Transcoder does not scale the video up.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String sizingPolicy;
     /**
@@ -452,16 +750,16 @@ public class VideoParameters implements Serializable, Cloneable {
     /**
      * <p>
      * The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>,
-     * <code>mpeg2</code>, and <code>vp8</code>. You can only specify <code>vp8</code> when the container type is
-     * <code>webm</code>, <code>gif</code> when the container type is <code>gif</code>, and <code>mpeg2</code> when the
-     * container type is <code>mpg</code>.
+     * <code>mpeg2</code>, <code>vp8</code>, and <code>vp9</code>. You can only specify <code>vp8</code> and
+     * <code>vp9</code> when the container type is <code>webm</code>, <code>gif</code> when the container type is
+     * <code>gif</code>, and <code>mpeg2</code> when the container type is <code>mpg</code>.
      * </p>
      * 
      * @param codec
      *        The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>,
-     *        <code>mpeg2</code>, and <code>vp8</code>. You can only specify <code>vp8</code> when the container type is
-     *        <code>webm</code>, <code>gif</code> when the container type is <code>gif</code>, and <code>mpeg2</code>
-     *        when the container type is <code>mpg</code>.
+     *        <code>mpeg2</code>, <code>vp8</code>, and <code>vp9</code>. You can only specify <code>vp8</code> and
+     *        <code>vp9</code> when the container type is <code>webm</code>, <code>gif</code> when the container type is
+     *        <code>gif</code>, and <code>mpeg2</code> when the container type is <code>mpg</code>.
      */
 
     public void setCodec(String codec) {
@@ -471,15 +769,15 @@ public class VideoParameters implements Serializable, Cloneable {
     /**
      * <p>
      * The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>,
-     * <code>mpeg2</code>, and <code>vp8</code>. You can only specify <code>vp8</code> when the container type is
-     * <code>webm</code>, <code>gif</code> when the container type is <code>gif</code>, and <code>mpeg2</code> when the
-     * container type is <code>mpg</code>.
+     * <code>mpeg2</code>, <code>vp8</code>, and <code>vp9</code>. You can only specify <code>vp8</code> and
+     * <code>vp9</code> when the container type is <code>webm</code>, <code>gif</code> when the container type is
+     * <code>gif</code>, and <code>mpeg2</code> when the container type is <code>mpg</code>.
      * </p>
      * 
      * @return The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>,
-     *         <code>mpeg2</code>, and <code>vp8</code>. You can only specify <code>vp8</code> when the container type
-     *         is <code>webm</code>, <code>gif</code> when the container type is <code>gif</code>, and
-     *         <code>mpeg2</code> when the container type is <code>mpg</code>.
+     *         <code>mpeg2</code>, <code>vp8</code>, and <code>vp9</code>. You can only specify <code>vp8</code> and
+     *         <code>vp9</code> when the container type is <code>webm</code>, <code>gif</code> when the container type
+     *         is <code>gif</code>, and <code>mpeg2</code> when the container type is <code>mpg</code>.
      */
 
     public String getCodec() {
@@ -489,16 +787,16 @@ public class VideoParameters implements Serializable, Cloneable {
     /**
      * <p>
      * The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>,
-     * <code>mpeg2</code>, and <code>vp8</code>. You can only specify <code>vp8</code> when the container type is
-     * <code>webm</code>, <code>gif</code> when the container type is <code>gif</code>, and <code>mpeg2</code> when the
-     * container type is <code>mpg</code>.
+     * <code>mpeg2</code>, <code>vp8</code>, and <code>vp9</code>. You can only specify <code>vp8</code> and
+     * <code>vp9</code> when the container type is <code>webm</code>, <code>gif</code> when the container type is
+     * <code>gif</code>, and <code>mpeg2</code> when the container type is <code>mpg</code>.
      * </p>
      * 
      * @param codec
      *        The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>,
-     *        <code>mpeg2</code>, and <code>vp8</code>. You can only specify <code>vp8</code> when the container type is
-     *        <code>webm</code>, <code>gif</code> when the container type is <code>gif</code>, and <code>mpeg2</code>
-     *        when the container type is <code>mpg</code>.
+     *        <code>mpeg2</code>, <code>vp8</code>, and <code>vp9</code>. You can only specify <code>vp8</code> and
+     *        <code>vp9</code> when the container type is <code>webm</code>, <code>gif</code> when the container type is
+     *        <code>gif</code>, and <code>mpeg2</code> when the container type is <code>mpg</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,15 +807,27 @@ public class VideoParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Profile (H.264/VP8 Only)</b>
+     * <b>Profile (H.264/VP8/VP9 Only)</b>
      * </p>
      * <p>
      * The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following profiles:
      * </p>
      * <ul>
-     * <li><code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</li>
-     * <li><code>main</code>: The profile used for standard-definition digital TV broadcasts.</li>
-     * <li><code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</li>
+     * <li>
+     * <p>
+     * <code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>main</code>: The profile used for standard-definition digital TV broadcasts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Level (H.264 Only)</b>
@@ -547,22 +857,74 @@ public class VideoParameters implements Serializable, Cloneable {
      * the list below. (A macroblock is a block of pixels measuring 16x16.)
      * </p>
      * <ul>
-     * <li>1 - 396</li>
-     * <li>1b - 396</li>
-     * <li>1.1 - 900</li>
-     * <li>1.2 - 2376</li>
-     * <li>1.3 - 2376</li>
-     * <li>2 - 2376</li>
-     * <li>2.1 - 4752</li>
-     * <li>2.2 - 8100</li>
-     * <li>3 - 8100</li>
-     * <li>3.1 - 18000</li>
-     * <li>3.2 - 20480</li>
-     * <li>4 - 32768</li>
-     * <li>4.1 - 32768</li>
+     * <li>
+     * <p>
+     * 1 - 396
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 396
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 900
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 2376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 2376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 2376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.1 - 4752
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.2 - 8100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 8100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 18000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 20480
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 32768
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 32768
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>MaxBitRate (Optional, H.264/MPEG2/VP8 only)</b>
+     * <b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      * </p>
      * <p>
      * The maximum number of bits per second in a video buffer; the size of the buffer is specified by
@@ -570,7 +932,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * video by reducing the maximum bit rate, but this also reduces the quality of the video.
      * </p>
      * <p>
-     * <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b>
+     * <b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      * </p>
      * <p>
      * The maximum number of bits in any x seconds of the output video. This window is commonly 10 seconds, the standard
@@ -617,13 +979,33 @@ public class VideoParameters implements Serializable, Cloneable {
      * from the list below, Elastic Transcoder applies the following color space conversions:
      * </p>
      * <ul>
-     * <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     * <li><i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     * <li><i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
-     * <li><i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
+     * <li>
+     * <p>
+     * <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     * </p>
+     * </li>
      * </ul>
-     * <note>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code>
-     * mode in the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.</note>
+     * <note>
+     * <p>
+     * Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
+     * the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.
+     * </p>
+     * </note>
      * <p>
      * If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the color space
      * of a file. If you are unsure what <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -650,16 +1032,27 @@ public class VideoParameters implements Serializable, Cloneable {
      * between <code>0</code> and <code>100</code>, inclusive.
      * </p>
      * 
-     * @return <b>Profile (H.264/VP8 Only)</b> </p>
+     * @return <b>Profile (H.264/VP8/VP9 Only)</b> </p>
      *         <p>
      *         The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following
      *         profiles:
      *         </p>
      *         <ul>
-     *         <li><code>baseline</code>: The profile most commonly used for videoconferencing and for mobile
-     *         applications.</li>
-     *         <li><code>main</code>: The profile used for standard-definition digital TV broadcasts.</li>
-     *         <li><code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</li>
+     *         <li>
+     *         <p>
+     *         <code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>main</code>: The profile used for standard-definition digital TV broadcasts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>Level (H.264 Only)</b>
@@ -690,22 +1083,74 @@ public class VideoParameters implements Serializable, Cloneable {
      *         <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.)
      *         </p>
      *         <ul>
-     *         <li>1 - 396</li>
-     *         <li>1b - 396</li>
-     *         <li>1.1 - 900</li>
-     *         <li>1.2 - 2376</li>
-     *         <li>1.3 - 2376</li>
-     *         <li>2 - 2376</li>
-     *         <li>2.1 - 4752</li>
-     *         <li>2.2 - 8100</li>
-     *         <li>3 - 8100</li>
-     *         <li>3.1 - 18000</li>
-     *         <li>3.2 - 20480</li>
-     *         <li>4 - 32768</li>
-     *         <li>4.1 - 32768</li>
+     *         <li>
+     *         <p>
+     *         1 - 396
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1b - 396
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.1 - 900
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.2 - 2376
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.3 - 2376
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2 - 2376
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2.1 - 4752
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2.2 - 8100
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3 - 8100
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3.1 - 18000
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3.2 - 20480
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         4 - 32768
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         4.1 - 32768
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
-     *         <b>MaxBitRate (Optional, H.264/MPEG2/VP8 only)</b>
+     *         <b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      *         </p>
      *         <p>
      *         The maximum number of bits per second in a video buffer; the size of the buffer is specified by
@@ -713,7 +1158,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         stream a video by reducing the maximum bit rate, but this also reduces the quality of the video.
      *         </p>
      *         <p>
-     *         <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b>
+     *         <b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      *         </p>
      *         <p>
      *         The maximum number of bits in any x seconds of the output video. This window is commonly 10 seconds, the
@@ -763,14 +1208,33 @@ public class VideoParameters implements Serializable, Cloneable {
      *         conversions:
      *         </p>
      *         <ul>
-     *         <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     *         <li><i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     *         <li><i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
-     *         <li><i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
+     *         <li>
+     *         <p>
+     *         <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     *         </p>
+     *         </li>
      *         </ul>
-     *         <note>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code>
-     *         <code>Auto</code> mode in the future. All outputs in a playlist must use the same
-     *         <code>ColorSpaceConversionMode</code>.</note>
+     *         <note>
+     *         <p>
+     *         Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code>
+     *         mode in the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.
+     *         </p>
+     *         </note>
      *         <p>
      *         If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      *         color space of a file. If you are unsure what <code>ColorSpaceConversionMode</code> was applied to your
@@ -807,15 +1271,27 @@ public class VideoParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Profile (H.264/VP8 Only)</b>
+     * <b>Profile (H.264/VP8/VP9 Only)</b>
      * </p>
      * <p>
      * The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following profiles:
      * </p>
      * <ul>
-     * <li><code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</li>
-     * <li><code>main</code>: The profile used for standard-definition digital TV broadcasts.</li>
-     * <li><code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</li>
+     * <li>
+     * <p>
+     * <code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>main</code>: The profile used for standard-definition digital TV broadcasts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Level (H.264 Only)</b>
@@ -845,22 +1321,74 @@ public class VideoParameters implements Serializable, Cloneable {
      * the list below. (A macroblock is a block of pixels measuring 16x16.)
      * </p>
      * <ul>
-     * <li>1 - 396</li>
-     * <li>1b - 396</li>
-     * <li>1.1 - 900</li>
-     * <li>1.2 - 2376</li>
-     * <li>1.3 - 2376</li>
-     * <li>2 - 2376</li>
-     * <li>2.1 - 4752</li>
-     * <li>2.2 - 8100</li>
-     * <li>3 - 8100</li>
-     * <li>3.1 - 18000</li>
-     * <li>3.2 - 20480</li>
-     * <li>4 - 32768</li>
-     * <li>4.1 - 32768</li>
+     * <li>
+     * <p>
+     * 1 - 396
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 396
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 900
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 2376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 2376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 2376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.1 - 4752
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.2 - 8100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 8100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 18000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 20480
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 32768
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 32768
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>MaxBitRate (Optional, H.264/MPEG2/VP8 only)</b>
+     * <b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      * </p>
      * <p>
      * The maximum number of bits per second in a video buffer; the size of the buffer is specified by
@@ -868,7 +1396,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * video by reducing the maximum bit rate, but this also reduces the quality of the video.
      * </p>
      * <p>
-     * <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b>
+     * <b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      * </p>
      * <p>
      * The maximum number of bits in any x seconds of the output video. This window is commonly 10 seconds, the standard
@@ -915,13 +1443,33 @@ public class VideoParameters implements Serializable, Cloneable {
      * from the list below, Elastic Transcoder applies the following color space conversions:
      * </p>
      * <ul>
-     * <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     * <li><i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     * <li><i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
-     * <li><i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
+     * <li>
+     * <p>
+     * <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     * </p>
+     * </li>
      * </ul>
-     * <note>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code>
-     * mode in the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.</note>
+     * <note>
+     * <p>
+     * Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
+     * the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.
+     * </p>
+     * </note>
      * <p>
      * If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the color space
      * of a file. If you are unsure what <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -949,16 +1497,27 @@ public class VideoParameters implements Serializable, Cloneable {
      * </p>
      * 
      * @param codecOptions
-     *        <b>Profile (H.264/VP8 Only)</b> </p>
+     *        <b>Profile (H.264/VP8/VP9 Only)</b> </p>
      *        <p>
      *        The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following
      *        profiles:
      *        </p>
      *        <ul>
-     *        <li><code>baseline</code>: The profile most commonly used for videoconferencing and for mobile
-     *        applications.</li>
-     *        <li><code>main</code>: The profile used for standard-definition digital TV broadcasts.</li>
-     *        <li><code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</li>
+     *        <li>
+     *        <p>
+     *        <code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>main</code>: The profile used for standard-definition digital TV broadcasts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Level (H.264 Only)</b>
@@ -989,22 +1548,74 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.)
      *        </p>
      *        <ul>
-     *        <li>1 - 396</li>
-     *        <li>1b - 396</li>
-     *        <li>1.1 - 900</li>
-     *        <li>1.2 - 2376</li>
-     *        <li>1.3 - 2376</li>
-     *        <li>2 - 2376</li>
-     *        <li>2.1 - 4752</li>
-     *        <li>2.2 - 8100</li>
-     *        <li>3 - 8100</li>
-     *        <li>3.1 - 18000</li>
-     *        <li>3.2 - 20480</li>
-     *        <li>4 - 32768</li>
-     *        <li>4.1 - 32768</li>
+     *        <li>
+     *        <p>
+     *        1 - 396
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1b - 396
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.1 - 900
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.2 - 2376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.3 - 2376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2 - 2376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2.1 - 4752
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2.2 - 8100
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3 - 8100
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.1 - 18000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.2 - 20480
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4 - 32768
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4.1 - 32768
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        <b>MaxBitRate (Optional, H.264/MPEG2/VP8 only)</b>
+     *        <b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      *        </p>
      *        <p>
      *        The maximum number of bits per second in a video buffer; the size of the buffer is specified by
@@ -1012,7 +1623,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        stream a video by reducing the maximum bit rate, but this also reduces the quality of the video.
      *        </p>
      *        <p>
-     *        <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b>
+     *        <b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      *        </p>
      *        <p>
      *        The maximum number of bits in any x seconds of the output video. This window is commonly 10 seconds, the
@@ -1060,14 +1671,33 @@ public class VideoParameters implements Serializable, Cloneable {
      *        conversions:
      *        </p>
      *        <ul>
-     *        <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     *        <li><i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     *        <li><i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
-     *        <li><i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
+     *        <li>
+     *        <p>
+     *        <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <note>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code>
-     *        <code>Auto</code> mode in the future. All outputs in a playlist must use the same
-     *        <code>ColorSpaceConversionMode</code>.</note>
+     *        <note>
+     *        <p>
+     *        Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code>
+     *        mode in the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.
+     *        </p>
+     *        </note>
      *        <p>
      *        If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      *        color space of a file. If you are unsure what <code>ColorSpaceConversionMode</code> was applied to your
@@ -1101,15 +1731,27 @@ public class VideoParameters implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Profile (H.264/VP8 Only)</b>
+     * <b>Profile (H.264/VP8/VP9 Only)</b>
      * </p>
      * <p>
      * The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following profiles:
      * </p>
      * <ul>
-     * <li><code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.</li>
-     * <li><code>main</code>: The profile used for standard-definition digital TV broadcasts.</li>
-     * <li><code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</li>
+     * <li>
+     * <p>
+     * <code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>main</code>: The profile used for standard-definition digital TV broadcasts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Level (H.264 Only)</b>
@@ -1139,22 +1781,74 @@ public class VideoParameters implements Serializable, Cloneable {
      * the list below. (A macroblock is a block of pixels measuring 16x16.)
      * </p>
      * <ul>
-     * <li>1 - 396</li>
-     * <li>1b - 396</li>
-     * <li>1.1 - 900</li>
-     * <li>1.2 - 2376</li>
-     * <li>1.3 - 2376</li>
-     * <li>2 - 2376</li>
-     * <li>2.1 - 4752</li>
-     * <li>2.2 - 8100</li>
-     * <li>3 - 8100</li>
-     * <li>3.1 - 18000</li>
-     * <li>3.2 - 20480</li>
-     * <li>4 - 32768</li>
-     * <li>4.1 - 32768</li>
+     * <li>
+     * <p>
+     * 1 - 396
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 396
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 900
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 2376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 2376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 2376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.1 - 4752
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.2 - 8100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 8100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 18000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 20480
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 32768
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 32768
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>MaxBitRate (Optional, H.264/MPEG2/VP8 only)</b>
+     * <b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      * </p>
      * <p>
      * The maximum number of bits per second in a video buffer; the size of the buffer is specified by
@@ -1162,7 +1856,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * video by reducing the maximum bit rate, but this also reduces the quality of the video.
      * </p>
      * <p>
-     * <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b>
+     * <b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      * </p>
      * <p>
      * The maximum number of bits in any x seconds of the output video. This window is commonly 10 seconds, the standard
@@ -1209,13 +1903,33 @@ public class VideoParameters implements Serializable, Cloneable {
      * from the list below, Elastic Transcoder applies the following color space conversions:
      * </p>
      * <ul>
-     * <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     * <li><i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     * <li><i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
-     * <li><i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
+     * <li>
+     * <p>
+     * <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     * </p>
+     * </li>
      * </ul>
-     * <note>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code>
-     * mode in the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.</note>
+     * <note>
+     * <p>
+     * Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
+     * the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.
+     * </p>
+     * </note>
      * <p>
      * If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the color space
      * of a file. If you are unsure what <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -1243,16 +1957,27 @@ public class VideoParameters implements Serializable, Cloneable {
      * </p>
      * 
      * @param codecOptions
-     *        <b>Profile (H.264/VP8 Only)</b> </p>
+     *        <b>Profile (H.264/VP8/VP9 Only)</b> </p>
      *        <p>
      *        The H.264 profile that you want to use for the output file. Elastic Transcoder supports the following
      *        profiles:
      *        </p>
      *        <ul>
-     *        <li><code>baseline</code>: The profile most commonly used for videoconferencing and for mobile
-     *        applications.</li>
-     *        <li><code>main</code>: The profile used for standard-definition digital TV broadcasts.</li>
-     *        <li><code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.</li>
+     *        <li>
+     *        <p>
+     *        <code>baseline</code>: The profile most commonly used for videoconferencing and for mobile applications.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>main</code>: The profile used for standard-definition digital TV broadcasts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>high</code>: The profile used for high-definition digital TV broadcasts and for Blu-ray discs.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Level (H.264 Only)</b>
@@ -1283,22 +2008,74 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <code>Level</code> object. See the list below. (A macroblock is a block of pixels measuring 16x16.)
      *        </p>
      *        <ul>
-     *        <li>1 - 396</li>
-     *        <li>1b - 396</li>
-     *        <li>1.1 - 900</li>
-     *        <li>1.2 - 2376</li>
-     *        <li>1.3 - 2376</li>
-     *        <li>2 - 2376</li>
-     *        <li>2.1 - 4752</li>
-     *        <li>2.2 - 8100</li>
-     *        <li>3 - 8100</li>
-     *        <li>3.1 - 18000</li>
-     *        <li>3.2 - 20480</li>
-     *        <li>4 - 32768</li>
-     *        <li>4.1 - 32768</li>
+     *        <li>
+     *        <p>
+     *        1 - 396
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1b - 396
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.1 - 900
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.2 - 2376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.3 - 2376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2 - 2376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2.1 - 4752
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2.2 - 8100
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3 - 8100
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.1 - 18000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.2 - 20480
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4 - 32768
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4.1 - 32768
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        <b>MaxBitRate (Optional, H.264/MPEG2/VP8 only)</b>
+     *        <b>MaxBitRate (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      *        </p>
      *        <p>
      *        The maximum number of bits per second in a video buffer; the size of the buffer is specified by
@@ -1306,7 +2083,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        stream a video by reducing the maximum bit rate, but this also reduces the quality of the video.
      *        </p>
      *        <p>
-     *        <b>BufferSize (Optional, H.264/MPEG2/VP8 only)</b>
+     *        <b>BufferSize (Optional, H.264/MPEG2/VP8/VP9 only)</b>
      *        </p>
      *        <p>
      *        The maximum number of bits in any x seconds of the output video. This window is commonly 10 seconds, the
@@ -1354,14 +2131,33 @@ public class VideoParameters implements Serializable, Cloneable {
      *        conversions:
      *        </p>
      *        <ul>
-     *        <li><i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     *        <li><i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code></li>
-     *        <li><i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
-     *        <li><i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code></li>
+     *        <li>
+     *        <p>
+     *        <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <note>Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code>
-     *        <code>Auto</code> mode in the future. All outputs in a playlist must use the same
-     *        <code>ColorSpaceConversionMode</code>.</note>
+     *        <note>
+     *        <p>
+     *        Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code>
+     *        mode in the future. All outputs in a playlist must use the same <code>ColorSpaceConversionMode</code>.
+     *        </p>
+     *        </note>
      *        <p>
      *        If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      *        color space of a file. If you are unsure what <code>ColorSpaceConversionMode</code> was applied to your
@@ -1589,9 +2385,17 @@ public class VideoParameters implements Serializable, Cloneable {
      * :
      * </p>
      * <ul>
-     * <li><code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance
-     * between key frames (the number of frames in a group of pictures, or GOP).</li>
-     * <li><code>false</code>: The distance between key frames can vary.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between
+     * key frames (the number of frames in a group of pictures, or GOP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: The distance between key frames can vary.
+     * </p>
+     * </li>
      * </ul>
      * <important>
      * <p>
@@ -1607,9 +2411,17 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <code>false</code>:
      *        </p>
      *        <ul>
-     *        <li><code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance
-     *        between key frames (the number of frames in a group of pictures, or GOP).</li>
-     *        <li><code>false</code>: The distance between key frames can vary.</li>
+     *        <li>
+     *        <p>
+     *        <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance
+     *        between key frames (the number of frames in a group of pictures, or GOP).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code>: The distance between key frames can vary.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <important>
      *        <p>
@@ -1631,9 +2443,17 @@ public class VideoParameters implements Serializable, Cloneable {
      * :
      * </p>
      * <ul>
-     * <li><code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance
-     * between key frames (the number of frames in a group of pictures, or GOP).</li>
-     * <li><code>false</code>: The distance between key frames can vary.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between
+     * key frames (the number of frames in a group of pictures, or GOP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: The distance between key frames can vary.
+     * </p>
+     * </li>
      * </ul>
      * <important>
      * <p>
@@ -1648,9 +2468,17 @@ public class VideoParameters implements Serializable, Cloneable {
      *         <code>false</code>:
      *         </p>
      *         <ul>
-     *         <li><code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the
-     *         distance between key frames (the number of frames in a group of pictures, or GOP).</li>
-     *         <li><code>false</code>: The distance between key frames can vary.</li>
+     *         <li>
+     *         <p>
+     *         <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance
+     *         between key frames (the number of frames in a group of pictures, or GOP).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>false</code>: The distance between key frames can vary.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <important>
      *         <p>
@@ -1672,9 +2500,17 @@ public class VideoParameters implements Serializable, Cloneable {
      * :
      * </p>
      * <ul>
-     * <li><code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance
-     * between key frames (the number of frames in a group of pictures, or GOP).</li>
-     * <li><code>false</code>: The distance between key frames can vary.</li>
+     * <li>
+     * <p>
+     * <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance between
+     * key frames (the number of frames in a group of pictures, or GOP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>false</code>: The distance between key frames can vary.
+     * </p>
+     * </li>
      * </ul>
      * <important>
      * <p>
@@ -1690,9 +2526,17 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <code>false</code>:
      *        </p>
      *        <ul>
-     *        <li><code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance
-     *        between key frames (the number of frames in a group of pictures, or GOP).</li>
-     *        <li><code>false</code>: The distance between key frames can vary.</li>
+     *        <li>
+     *        <p>
+     *        <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code> for the distance
+     *        between key frames (the number of frames in a group of pictures, or GOP).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>false</code>: The distance between key frames can vary.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <important>
      *        <p>
@@ -1718,17 +2562,61 @@ public class VideoParameters implements Serializable, Cloneable {
      * kilobits/second (high Profile)</i>
      * </p>
      * <ul>
-     * <li>1 - 64 : 80</li>
-     * <li>1b - 128 : 160</li>
-     * <li>1.1 - 192 : 240</li>
-     * <li>1.2 - 384 : 480</li>
-     * <li>1.3 - 768 : 960</li>
-     * <li>2 - 2000 : 2500</li>
-     * <li>3 - 10000 : 12500</li>
-     * <li>3.1 - 14000 : 17500</li>
-     * <li>3.2 - 20000 : 25000</li>
-     * <li>4 - 20000 : 25000</li>
-     * <li>4.1 - 50000 : 62500</li>
+     * <li>
+     * <p>
+     * 1 - 64 : 80
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 128 : 160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 192 : 240
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 384 : 480
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 768 : 960
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 2000 : 2500
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 10000 : 12500
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 14000 : 17500
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 20000 : 25000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 20000 : 25000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 50000 : 62500
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param bitRate
@@ -1742,17 +2630,61 @@ public class VideoParameters implements Serializable, Cloneable {
      *        in kilobits/second (high Profile)</i>
      *        </p>
      *        <ul>
-     *        <li>1 - 64 : 80</li>
-     *        <li>1b - 128 : 160</li>
-     *        <li>1.1 - 192 : 240</li>
-     *        <li>1.2 - 384 : 480</li>
-     *        <li>1.3 - 768 : 960</li>
-     *        <li>2 - 2000 : 2500</li>
-     *        <li>3 - 10000 : 12500</li>
-     *        <li>3.1 - 14000 : 17500</li>
-     *        <li>3.2 - 20000 : 25000</li>
-     *        <li>4 - 20000 : 25000</li>
-     *        <li>4.1 - 50000 : 62500</li>
+     *        <li>
+     *        <p>
+     *        1 - 64 : 80
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1b - 128 : 160
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.1 - 192 : 240
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.2 - 384 : 480
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.3 - 768 : 960
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2 - 2000 : 2500
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3 - 10000 : 12500
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.1 - 14000 : 17500
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.2 - 20000 : 25000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4 - 20000 : 25000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4.1 - 50000 : 62500
+     *        </p>
+     *        </li>
      */
 
     public void setBitRate(String bitRate) {
@@ -1771,17 +2703,61 @@ public class VideoParameters implements Serializable, Cloneable {
      * kilobits/second (high Profile)</i>
      * </p>
      * <ul>
-     * <li>1 - 64 : 80</li>
-     * <li>1b - 128 : 160</li>
-     * <li>1.1 - 192 : 240</li>
-     * <li>1.2 - 384 : 480</li>
-     * <li>1.3 - 768 : 960</li>
-     * <li>2 - 2000 : 2500</li>
-     * <li>3 - 10000 : 12500</li>
-     * <li>3.1 - 14000 : 17500</li>
-     * <li>3.2 - 20000 : 25000</li>
-     * <li>4 - 20000 : 25000</li>
-     * <li>4.1 - 50000 : 62500</li>
+     * <li>
+     * <p>
+     * 1 - 64 : 80
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 128 : 160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 192 : 240
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 384 : 480
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 768 : 960
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 2000 : 2500
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 10000 : 12500
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 14000 : 17500
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 20000 : 25000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 20000 : 25000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 50000 : 62500
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The bit rate of the video stream in the output file, in kilobits/second. Valid values depend on the
@@ -1794,17 +2770,61 @@ public class VideoParameters implements Serializable, Cloneable {
      *         in kilobits/second (high Profile)</i>
      *         </p>
      *         <ul>
-     *         <li>1 - 64 : 80</li>
-     *         <li>1b - 128 : 160</li>
-     *         <li>1.1 - 192 : 240</li>
-     *         <li>1.2 - 384 : 480</li>
-     *         <li>1.3 - 768 : 960</li>
-     *         <li>2 - 2000 : 2500</li>
-     *         <li>3 - 10000 : 12500</li>
-     *         <li>3.1 - 14000 : 17500</li>
-     *         <li>3.2 - 20000 : 25000</li>
-     *         <li>4 - 20000 : 25000</li>
-     *         <li>4.1 - 50000 : 62500</li>
+     *         <li>
+     *         <p>
+     *         1 - 64 : 80
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1b - 128 : 160
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.1 - 192 : 240
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.2 - 384 : 480
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.3 - 768 : 960
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2 - 2000 : 2500
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3 - 10000 : 12500
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3.1 - 14000 : 17500
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3.2 - 20000 : 25000
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         4 - 20000 : 25000
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         4.1 - 50000 : 62500
+     *         </p>
+     *         </li>
      */
 
     public String getBitRate() {
@@ -1823,17 +2843,61 @@ public class VideoParameters implements Serializable, Cloneable {
      * kilobits/second (high Profile)</i>
      * </p>
      * <ul>
-     * <li>1 - 64 : 80</li>
-     * <li>1b - 128 : 160</li>
-     * <li>1.1 - 192 : 240</li>
-     * <li>1.2 - 384 : 480</li>
-     * <li>1.3 - 768 : 960</li>
-     * <li>2 - 2000 : 2500</li>
-     * <li>3 - 10000 : 12500</li>
-     * <li>3.1 - 14000 : 17500</li>
-     * <li>3.2 - 20000 : 25000</li>
-     * <li>4 - 20000 : 25000</li>
-     * <li>4.1 - 50000 : 62500</li>
+     * <li>
+     * <p>
+     * 1 - 64 : 80
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 128 : 160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 192 : 240
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 384 : 480
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 768 : 960
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 2000 : 2500
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 10000 : 12500
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 14000 : 17500
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 20000 : 25000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 20000 : 25000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 50000 : 62500
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param bitRate
@@ -1847,17 +2911,61 @@ public class VideoParameters implements Serializable, Cloneable {
      *        in kilobits/second (high Profile)</i>
      *        </p>
      *        <ul>
-     *        <li>1 - 64 : 80</li>
-     *        <li>1b - 128 : 160</li>
-     *        <li>1.1 - 192 : 240</li>
-     *        <li>1.2 - 384 : 480</li>
-     *        <li>1.3 - 768 : 960</li>
-     *        <li>2 - 2000 : 2500</li>
-     *        <li>3 - 10000 : 12500</li>
-     *        <li>3.1 - 14000 : 17500</li>
-     *        <li>3.2 - 20000 : 25000</li>
-     *        <li>4 - 20000 : 25000</li>
-     *        <li>4.1 - 50000 : 62500</li>
+     *        <li>
+     *        <p>
+     *        1 - 64 : 80
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1b - 128 : 160
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.1 - 192 : 240
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.2 - 384 : 480
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.3 - 768 : 960
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2 - 2000 : 2500
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3 - 10000 : 12500
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.1 - 14000 : 17500
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.2 - 20000 : 25000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4 - 20000 : 25000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4.1 - 50000 : 62500
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1885,28 +2993,88 @@ public class VideoParameters implements Serializable, Cloneable {
      * where:
      * </p>
      * <ul>
-     * <li><i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</li>
-     * <li><i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value
-     * listed in the following table, based on the value that you specified for Level.</li>
+     * <li>
+     * <p>
+     * <i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value
+     * listed in the following table, based on the value that you specified for Level.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The maximum recommended decoding speed in Luma samples/second for each level is described in the following list
      * (<i>Level - Decoding speed</i>):
      * </p>
      * <ul>
-     * <li>1 - 380160</li>
-     * <li>1b - 380160</li>
-     * <li>1.1 - 76800</li>
-     * <li>1.2 - 1536000</li>
-     * <li>1.3 - 3041280</li>
-     * <li>2 - 3041280</li>
-     * <li>2.1 - 5068800</li>
-     * <li>2.2 - 5184000</li>
-     * <li>3 - 10368000</li>
-     * <li>3.1 - 27648000</li>
-     * <li>3.2 - 55296000</li>
-     * <li>4 - 62914560</li>
-     * <li>4.1 - 62914560</li>
+     * <li>
+     * <p>
+     * 1 - 380160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 380160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 76800
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 1536000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 3041280
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 3041280
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.1 - 5068800
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.2 - 5184000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 10368000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 27648000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 55296000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 62914560
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 62914560
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param frameRate
@@ -1926,28 +3094,88 @@ public class VideoParameters implements Serializable, Cloneable {
      *        where:
      *        </p>
      *        <ul>
-     *        <li><i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</li>
-     *        <li><i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum
-     *        value listed in the following table, based on the value that you specified for Level.</li>
+     *        <li>
+     *        <p>
+     *        <i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum
+     *        value listed in the following table, based on the value that you specified for Level.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The maximum recommended decoding speed in Luma samples/second for each level is described in the following
      *        list (<i>Level - Decoding speed</i>):
      *        </p>
      *        <ul>
-     *        <li>1 - 380160</li>
-     *        <li>1b - 380160</li>
-     *        <li>1.1 - 76800</li>
-     *        <li>1.2 - 1536000</li>
-     *        <li>1.3 - 3041280</li>
-     *        <li>2 - 3041280</li>
-     *        <li>2.1 - 5068800</li>
-     *        <li>2.2 - 5184000</li>
-     *        <li>3 - 10368000</li>
-     *        <li>3.1 - 27648000</li>
-     *        <li>3.2 - 55296000</li>
-     *        <li>4 - 62914560</li>
-     *        <li>4.1 - 62914560</li>
+     *        <li>
+     *        <p>
+     *        1 - 380160
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1b - 380160
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.1 - 76800
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.2 - 1536000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.3 - 3041280
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2 - 3041280
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2.1 - 5068800
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2.2 - 5184000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3 - 10368000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.1 - 27648000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.2 - 55296000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4 - 62914560
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4.1 - 62914560
+     *        </p>
+     *        </li>
      */
 
     public void setFrameRate(String frameRate) {
@@ -1973,28 +3201,88 @@ public class VideoParameters implements Serializable, Cloneable {
      * where:
      * </p>
      * <ul>
-     * <li><i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</li>
-     * <li><i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value
-     * listed in the following table, based on the value that you specified for Level.</li>
+     * <li>
+     * <p>
+     * <i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value
+     * listed in the following table, based on the value that you specified for Level.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The maximum recommended decoding speed in Luma samples/second for each level is described in the following list
      * (<i>Level - Decoding speed</i>):
      * </p>
      * <ul>
-     * <li>1 - 380160</li>
-     * <li>1b - 380160</li>
-     * <li>1.1 - 76800</li>
-     * <li>1.2 - 1536000</li>
-     * <li>1.3 - 3041280</li>
-     * <li>2 - 3041280</li>
-     * <li>2.1 - 5068800</li>
-     * <li>2.2 - 5184000</li>
-     * <li>3 - 10368000</li>
-     * <li>3.1 - 27648000</li>
-     * <li>3.2 - 55296000</li>
-     * <li>4 - 62914560</li>
-     * <li>4.1 - 62914560</li>
+     * <li>
+     * <p>
+     * 1 - 380160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 380160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 76800
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 1536000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 3041280
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 3041280
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.1 - 5068800
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.2 - 5184000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 10368000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 27648000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 55296000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 62914560
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 62914560
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The frames per second for the video stream in the output file. Valid values include:</p>
@@ -2012,28 +3300,88 @@ public class VideoParameters implements Serializable, Cloneable {
      *         where:
      *         </p>
      *         <ul>
-     *         <li><i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</li>
-     *         <li><i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum
-     *         value listed in the following table, based on the value that you specified for Level.</li>
+     *         <li>
+     *         <p>
+     *         <i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum
+     *         value listed in the following table, based on the value that you specified for Level.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         The maximum recommended decoding speed in Luma samples/second for each level is described in the
      *         following list (<i>Level - Decoding speed</i>):
      *         </p>
      *         <ul>
-     *         <li>1 - 380160</li>
-     *         <li>1b - 380160</li>
-     *         <li>1.1 - 76800</li>
-     *         <li>1.2 - 1536000</li>
-     *         <li>1.3 - 3041280</li>
-     *         <li>2 - 3041280</li>
-     *         <li>2.1 - 5068800</li>
-     *         <li>2.2 - 5184000</li>
-     *         <li>3 - 10368000</li>
-     *         <li>3.1 - 27648000</li>
-     *         <li>3.2 - 55296000</li>
-     *         <li>4 - 62914560</li>
-     *         <li>4.1 - 62914560</li>
+     *         <li>
+     *         <p>
+     *         1 - 380160
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1b - 380160
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.1 - 76800
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.2 - 1536000
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.3 - 3041280
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2 - 3041280
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2.1 - 5068800
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2.2 - 5184000
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3 - 10368000
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3.1 - 27648000
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3.2 - 55296000
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         4 - 62914560
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         4.1 - 62914560
+     *         </p>
+     *         </li>
      */
 
     public String getFrameRate() {
@@ -2059,28 +3407,88 @@ public class VideoParameters implements Serializable, Cloneable {
      * where:
      * </p>
      * <ul>
-     * <li><i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</li>
-     * <li><i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value
-     * listed in the following table, based on the value that you specified for Level.</li>
+     * <li>
+     * <p>
+     * <i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum value
+     * listed in the following table, based on the value that you specified for Level.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The maximum recommended decoding speed in Luma samples/second for each level is described in the following list
      * (<i>Level - Decoding speed</i>):
      * </p>
      * <ul>
-     * <li>1 - 380160</li>
-     * <li>1b - 380160</li>
-     * <li>1.1 - 76800</li>
-     * <li>1.2 - 1536000</li>
-     * <li>1.3 - 3041280</li>
-     * <li>2 - 3041280</li>
-     * <li>2.1 - 5068800</li>
-     * <li>2.2 - 5184000</li>
-     * <li>3 - 10368000</li>
-     * <li>3.1 - 27648000</li>
-     * <li>3.2 - 55296000</li>
-     * <li>4 - 62914560</li>
-     * <li>4.1 - 62914560</li>
+     * <li>
+     * <p>
+     * 1 - 380160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 380160
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 76800
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 1536000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 3041280
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 3041280
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.1 - 5068800
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.2 - 5184000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 10368000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 27648000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 55296000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 62914560
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 62914560
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param frameRate
@@ -2100,28 +3508,88 @@ public class VideoParameters implements Serializable, Cloneable {
      *        where:
      *        </p>
      *        <ul>
-     *        <li><i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.</li>
-     *        <li><i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum
-     *        value listed in the following table, based on the value that you specified for Level.</li>
+     *        <li>
+     *        <p>
+     *        <i>width in pixels</i> and <i>height in pixels</i> represent the Resolution of the output video.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>maximum recommended decoding speed in Luma samples/second</i> is less than or equal to the maximum
+     *        value listed in the following table, based on the value that you specified for Level.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The maximum recommended decoding speed in Luma samples/second for each level is described in the following
      *        list (<i>Level - Decoding speed</i>):
      *        </p>
      *        <ul>
-     *        <li>1 - 380160</li>
-     *        <li>1b - 380160</li>
-     *        <li>1.1 - 76800</li>
-     *        <li>1.2 - 1536000</li>
-     *        <li>1.3 - 3041280</li>
-     *        <li>2 - 3041280</li>
-     *        <li>2.1 - 5068800</li>
-     *        <li>2.2 - 5184000</li>
-     *        <li>3 - 10368000</li>
-     *        <li>3.1 - 27648000</li>
-     *        <li>3.2 - 55296000</li>
-     *        <li>4 - 62914560</li>
-     *        <li>4.1 - 62914560</li>
+     *        <li>
+     *        <p>
+     *        1 - 380160
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1b - 380160
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.1 - 76800
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.2 - 1536000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.3 - 3041280
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2 - 3041280
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2.1 - 5068800
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2.2 - 5184000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3 - 10368000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.1 - 27648000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.2 - 55296000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4 - 62914560
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4.1 - 62914560
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2209,37 +3677,117 @@ public class VideoParameters implements Serializable, Cloneable {
      * <i>width</i> x <i>height</i>:
      * </p>
      * <ul>
-     * <li><code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to
-     * the following rules.</li>
-     * <li><code><i>width</i> x <i>height</i></code>: The width and height of the output video in pixels.</li>
+     * <li>
+     * <p>
+     * <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the
+     * following rules.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Note the following about specifying the width and height:
      * </p>
      * <ul>
-     * <li>The width must be an even integer between 128 and 4096, inclusive.</li>
-     * <li>The height must be an even integer between 96 and 3072, inclusive.</li>
-     * <li>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales
-     * the output file to the lower resolution.</li>
-     * <li>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder
-     * rescales the output to the higher resolution.</li>
-     * <li>We recommend that you specify a resolution for which the product of width and height is less than or equal to
-     * the applicable value in the following list (<i>List - Max width x height value</i>):</li>
+     * <li>
+     * <p>
+     * The width must be an even integer between 128 and 4096, inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The height must be an even integer between 96 and 3072, inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the
+     * output file to the lower resolution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales
+     * the output to the higher resolution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * We recommend that you specify a resolution for which the product of width and height is less than or equal to the
+     * applicable value in the following list (<i>List - Max width x height value</i>):
+     * </p>
      * <ul>
-     * <li>1 - 25344</li>
-     * <li>1b - 25344</li>
-     * <li>1.1 - 101376</li>
-     * <li>1.2 - 101376</li>
-     * <li>1.3 - 101376</li>
-     * <li>2 - 101376</li>
-     * <li>2.1 - 202752</li>
-     * <li>2.2 - 404720</li>
-     * <li>3 - 404720</li>
-     * <li>3.1 - 921600</li>
-     * <li>3.2 - 1310720</li>
-     * <li>4 - 2097152</li>
-     * <li>4.1 - 2097152</li>
+     * <li>
+     * <p>
+     * 1 - 25344
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 25344
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.1 - 202752
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.2 - 404720
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 404720
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 921600
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 1310720
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 2097152
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 2097152
+     * </p>
+     * </li>
      * </ul>
+     * </li>
      * </ul>
      * 
      * @param resolution
@@ -2255,37 +3803,117 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <i>width</i> x <i>height</i>:
      *        </p>
      *        <ul>
-     *        <li><code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file,
-     *        subject to the following rules.</li>
-     *        <li><code><i>width</i> x <i>height</i></code>: The width and height of the output video in pixels.</li>
+     *        <li>
+     *        <p>
+     *        <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject
+     *        to the following rules.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Note the following about specifying the width and height:
      *        </p>
      *        <ul>
-     *        <li>The width must be an even integer between 128 and 4096, inclusive.</li>
-     *        <li>The height must be an even integer between 96 and 3072, inclusive.</li>
-     *        <li>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder
-     *        rescales the output file to the lower resolution.</li>
-     *        <li>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder
-     *        rescales the output to the higher resolution.</li>
-     *        <li>We recommend that you specify a resolution for which the product of width and height is less than or
-     *        equal to the applicable value in the following list (<i>List - Max width x height value</i>):</li>
+     *        <li>
+     *        <p>
+     *        The width must be an even integer between 128 and 4096, inclusive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The height must be an even integer between 96 and 3072, inclusive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder
+     *        rescales the output file to the lower resolution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder
+     *        rescales the output to the higher resolution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        We recommend that you specify a resolution for which the product of width and height is less than or equal
+     *        to the applicable value in the following list (<i>List - Max width x height value</i>):
+     *        </p>
      *        <ul>
-     *        <li>1 - 25344</li>
-     *        <li>1b - 25344</li>
-     *        <li>1.1 - 101376</li>
-     *        <li>1.2 - 101376</li>
-     *        <li>1.3 - 101376</li>
-     *        <li>2 - 101376</li>
-     *        <li>2.1 - 202752</li>
-     *        <li>2.2 - 404720</li>
-     *        <li>3 - 404720</li>
-     *        <li>3.1 - 921600</li>
-     *        <li>3.2 - 1310720</li>
-     *        <li>4 - 2097152</li>
-     *        <li>4.1 - 2097152</li>
+     *        <li>
+     *        <p>
+     *        1 - 25344
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1b - 25344
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.1 - 101376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.2 - 101376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.3 - 101376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2 - 101376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2.1 - 202752
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2.2 - 404720
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3 - 404720
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.1 - 921600
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.2 - 1310720
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4 - 2097152
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4.1 - 2097152
+     *        </p>
+     *        </li>
      *        </ul>
+     *        </li>
      */
 
     public void setResolution(String resolution) {
@@ -2306,37 +3934,117 @@ public class VideoParameters implements Serializable, Cloneable {
      * <i>width</i> x <i>height</i>:
      * </p>
      * <ul>
-     * <li><code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to
-     * the following rules.</li>
-     * <li><code><i>width</i> x <i>height</i></code>: The width and height of the output video in pixels.</li>
+     * <li>
+     * <p>
+     * <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the
+     * following rules.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Note the following about specifying the width and height:
      * </p>
      * <ul>
-     * <li>The width must be an even integer between 128 and 4096, inclusive.</li>
-     * <li>The height must be an even integer between 96 and 3072, inclusive.</li>
-     * <li>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales
-     * the output file to the lower resolution.</li>
-     * <li>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder
-     * rescales the output to the higher resolution.</li>
-     * <li>We recommend that you specify a resolution for which the product of width and height is less than or equal to
-     * the applicable value in the following list (<i>List - Max width x height value</i>):</li>
+     * <li>
+     * <p>
+     * The width must be an even integer between 128 and 4096, inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The height must be an even integer between 96 and 3072, inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the
+     * output file to the lower resolution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales
+     * the output to the higher resolution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * We recommend that you specify a resolution for which the product of width and height is less than or equal to the
+     * applicable value in the following list (<i>List - Max width x height value</i>):
+     * </p>
      * <ul>
-     * <li>1 - 25344</li>
-     * <li>1b - 25344</li>
-     * <li>1.1 - 101376</li>
-     * <li>1.2 - 101376</li>
-     * <li>1.3 - 101376</li>
-     * <li>2 - 101376</li>
-     * <li>2.1 - 202752</li>
-     * <li>2.2 - 404720</li>
-     * <li>3 - 404720</li>
-     * <li>3.1 - 921600</li>
-     * <li>3.2 - 1310720</li>
-     * <li>4 - 2097152</li>
-     * <li>4.1 - 2097152</li>
+     * <li>
+     * <p>
+     * 1 - 25344
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 25344
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.1 - 202752
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.2 - 404720
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 404720
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 921600
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 1310720
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 2097152
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 2097152
+     * </p>
+     * </li>
      * </ul>
+     * </li>
      * </ul>
      * 
      * @return <p>
@@ -2351,37 +4059,117 @@ public class VideoParameters implements Serializable, Cloneable {
      *         <i>width</i> x <i>height</i>:
      *         </p>
      *         <ul>
-     *         <li><code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file,
-     *         subject to the following rules.</li>
-     *         <li><code><i>width</i> x <i>height</i></code>: The width and height of the output video in pixels.</li>
+     *         <li>
+     *         <p>
+     *         <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file,
+     *         subject to the following rules.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Note the following about specifying the width and height:
      *         </p>
      *         <ul>
-     *         <li>The width must be an even integer between 128 and 4096, inclusive.</li>
-     *         <li>The height must be an even integer between 96 and 3072, inclusive.</li>
-     *         <li>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder
-     *         rescales the output file to the lower resolution.</li>
-     *         <li>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder
-     *         rescales the output to the higher resolution.</li>
-     *         <li>We recommend that you specify a resolution for which the product of width and height is less than or
-     *         equal to the applicable value in the following list (<i>List - Max width x height value</i>):</li>
+     *         <li>
+     *         <p>
+     *         The width must be an even integer between 128 and 4096, inclusive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The height must be an even integer between 96 and 3072, inclusive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder
+     *         rescales the output file to the lower resolution.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder
+     *         rescales the output to the higher resolution.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         We recommend that you specify a resolution for which the product of width and height is less than or
+     *         equal to the applicable value in the following list (<i>List - Max width x height value</i>):
+     *         </p>
      *         <ul>
-     *         <li>1 - 25344</li>
-     *         <li>1b - 25344</li>
-     *         <li>1.1 - 101376</li>
-     *         <li>1.2 - 101376</li>
-     *         <li>1.3 - 101376</li>
-     *         <li>2 - 101376</li>
-     *         <li>2.1 - 202752</li>
-     *         <li>2.2 - 404720</li>
-     *         <li>3 - 404720</li>
-     *         <li>3.1 - 921600</li>
-     *         <li>3.2 - 1310720</li>
-     *         <li>4 - 2097152</li>
-     *         <li>4.1 - 2097152</li>
+     *         <li>
+     *         <p>
+     *         1 - 25344
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1b - 25344
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.1 - 101376
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.2 - 101376
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.3 - 101376
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2 - 101376
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2.1 - 202752
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2.2 - 404720
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3 - 404720
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3.1 - 921600
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         3.2 - 1310720
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         4 - 2097152
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         4.1 - 2097152
+     *         </p>
+     *         </li>
      *         </ul>
+     *         </li>
      */
 
     public String getResolution() {
@@ -2402,37 +4190,117 @@ public class VideoParameters implements Serializable, Cloneable {
      * <i>width</i> x <i>height</i>:
      * </p>
      * <ul>
-     * <li><code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to
-     * the following rules.</li>
-     * <li><code><i>width</i> x <i>height</i></code>: The width and height of the output video in pixels.</li>
+     * <li>
+     * <p>
+     * <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject to the
+     * following rules.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Note the following about specifying the width and height:
      * </p>
      * <ul>
-     * <li>The width must be an even integer between 128 and 4096, inclusive.</li>
-     * <li>The height must be an even integer between 96 and 3072, inclusive.</li>
-     * <li>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales
-     * the output file to the lower resolution.</li>
-     * <li>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder
-     * rescales the output to the higher resolution.</li>
-     * <li>We recommend that you specify a resolution for which the product of width and height is less than or equal to
-     * the applicable value in the following list (<i>List - Max width x height value</i>):</li>
+     * <li>
+     * <p>
+     * The width must be an even integer between 128 and 4096, inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The height must be an even integer between 96 and 3072, inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder rescales the
+     * output file to the lower resolution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder rescales
+     * the output to the higher resolution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * We recommend that you specify a resolution for which the product of width and height is less than or equal to the
+     * applicable value in the following list (<i>List - Max width x height value</i>):
+     * </p>
      * <ul>
-     * <li>1 - 25344</li>
-     * <li>1b - 25344</li>
-     * <li>1.1 - 101376</li>
-     * <li>1.2 - 101376</li>
-     * <li>1.3 - 101376</li>
-     * <li>2 - 101376</li>
-     * <li>2.1 - 202752</li>
-     * <li>2.2 - 404720</li>
-     * <li>3 - 404720</li>
-     * <li>3.1 - 921600</li>
-     * <li>3.2 - 1310720</li>
-     * <li>4 - 2097152</li>
-     * <li>4.1 - 2097152</li>
+     * <li>
+     * <p>
+     * 1 - 25344
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1b - 25344
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.1 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.2 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.3 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2 - 101376
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.1 - 202752
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2.2 - 404720
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3 - 404720
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.1 - 921600
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 3.2 - 1310720
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4 - 2097152
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4.1 - 2097152
+     * </p>
+     * </li>
      * </ul>
+     * </li>
      * </ul>
      * 
      * @param resolution
@@ -2448,37 +4316,117 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <i>width</i> x <i>height</i>:
      *        </p>
      *        <ul>
-     *        <li><code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file,
-     *        subject to the following rules.</li>
-     *        <li><code><i>width</i> x <i>height</i></code>: The width and height of the output video in pixels.</li>
+     *        <li>
+     *        <p>
+     *        <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of the input file, subject
+     *        to the following rules.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video in pixels.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Note the following about specifying the width and height:
      *        </p>
      *        <ul>
-     *        <li>The width must be an even integer between 128 and 4096, inclusive.</li>
-     *        <li>The height must be an even integer between 96 and 3072, inclusive.</li>
-     *        <li>If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder
-     *        rescales the output file to the lower resolution.</li>
-     *        <li>If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder
-     *        rescales the output to the higher resolution.</li>
-     *        <li>We recommend that you specify a resolution for which the product of width and height is less than or
-     *        equal to the applicable value in the following list (<i>List - Max width x height value</i>):</li>
+     *        <li>
+     *        <p>
+     *        The width must be an even integer between 128 and 4096, inclusive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The height must be an even integer between 96 and 3072, inclusive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify a resolution that is less than the resolution of the input file, Elastic Transcoder
+     *        rescales the output file to the lower resolution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify a resolution that is greater than the resolution of the input file, Elastic Transcoder
+     *        rescales the output to the higher resolution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        We recommend that you specify a resolution for which the product of width and height is less than or equal
+     *        to the applicable value in the following list (<i>List - Max width x height value</i>):
+     *        </p>
      *        <ul>
-     *        <li>1 - 25344</li>
-     *        <li>1b - 25344</li>
-     *        <li>1.1 - 101376</li>
-     *        <li>1.2 - 101376</li>
-     *        <li>1.3 - 101376</li>
-     *        <li>2 - 101376</li>
-     *        <li>2.1 - 202752</li>
-     *        <li>2.2 - 404720</li>
-     *        <li>3 - 404720</li>
-     *        <li>3.1 - 921600</li>
-     *        <li>3.2 - 1310720</li>
-     *        <li>4 - 2097152</li>
-     *        <li>4.1 - 2097152</li>
+     *        <li>
+     *        <p>
+     *        1 - 25344
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1b - 25344
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.1 - 101376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.2 - 101376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.3 - 101376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2 - 101376
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2.1 - 202752
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2.2 - 404720
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3 - 404720
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.1 - 921600
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        3.2 - 1310720
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4 - 2097152
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4.1 - 2097152
+     *        </p>
+     *        </li>
      *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2784,52 +4732,95 @@ public class VideoParameters implements Serializable, Cloneable {
      * <p>
      * Specify one of the following values to control scaling of the output video:
      * </p>
-     * <p>
      * <ul>
-     * <li><code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
-     * either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
-     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
-     * either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder
-     * centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</li>
-     * <li><code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified
-     * for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the
-     * output video are different, the output video will be distorted.</li>
-     * <li><code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video
-     * exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder
-     * crops the output video.</li>
-     * <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the
-     * values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding
-     * either value. If you specify this option, Elastic Transcoder does not scale the video up.</li>
-     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the
-     * values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
-     * below either value. If you specify this option, Elastic Transcoder does not scale the video up.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either
+     * <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
+     * either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder
+     * centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for
+     * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output
+     * video are different, the output video will be distorted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video
+     * exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder
+     * crops the output video.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values
+     * that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either
+     * value. If you specify this option, Elastic Transcoder does not scale the video up.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the
+     * values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
+     * below either value. If you specify this option, Elastic Transcoder does not scale the video up.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param sizingPolicy
      *        Specify one of the following values to control scaling of the output video:</p>
-     *        <p>
      *        <ul>
-     *        <li><code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you
-     *        specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
-     *        <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you
-     *        specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other
-     *        value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that
-     *        exceeds the maximum value.</li>
-     *        <li><code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you
-     *        specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input
-     *        video and the output video are different, the output video will be distorted.</li>
-     *        <li><code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the
-     *        input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>,
-     *        Elastic Transcoder crops the output video.</li>
-     *        <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match
+     *        <li>
+     *        <p>
+     *        <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
+     *        either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified
+     *        in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic
+     *        Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum
+     *        value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified
+     *        for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and
+     *        the output video are different, the output video will be distorted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input
+     *        video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
+     *        Transcoder crops the output video.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the
+     *        values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
+     *        exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match
      *        the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
-     *        exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</li>
-     *        <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions
-     *        match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
-     *        without dropping below either value. If you specify this option, Elastic Transcoder does not scale the
-     *        video up.</li>
-     *        </ul>
+     *        dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.
+     *        </p>
+     *        </li>
      */
 
     public void setSizingPolicy(String sizingPolicy) {
@@ -2840,52 +4831,96 @@ public class VideoParameters implements Serializable, Cloneable {
      * <p>
      * Specify one of the following values to control scaling of the output video:
      * </p>
-     * <p>
      * <ul>
-     * <li><code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
-     * either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
-     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
-     * either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder
-     * centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</li>
-     * <li><code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified
-     * for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the
-     * output video are different, the output video will be distorted.</li>
-     * <li><code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video
-     * exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder
-     * crops the output video.</li>
-     * <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the
-     * values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding
-     * either value. If you specify this option, Elastic Transcoder does not scale the video up.</li>
-     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the
-     * values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
-     * below either value. If you specify this option, Elastic Transcoder does not scale the video up.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either
+     * <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
+     * either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder
+     * centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for
+     * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output
+     * video are different, the output video will be distorted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video
+     * exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder
+     * crops the output video.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values
+     * that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either
+     * value. If you specify this option, Elastic Transcoder does not scale the video up.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the
+     * values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
+     * below either value. If you specify this option, Elastic Transcoder does not scale the video up.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Specify one of the following values to control scaling of the output video:</p>
-     *         <p>
      *         <ul>
-     *         <li><code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you
-     *         specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
-     *         <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you
-     *         specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other
-     *         value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that
-     *         exceeds the maximum value.</li>
-     *         <li><code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you
+     *         <li>
+     *         <p>
+     *         <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified
+     *         in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified
+     *         in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic
+     *         Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum
+     *         value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you
      *         specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input
-     *         video and the output video are different, the output video will be distorted.</li>
-     *         <li><code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the
-     *         input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>,
-     *         Elastic Transcoder crops the output video.</li>
-     *         <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions
-     *         match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
+     *         video and the output video are different, the output video will be distorted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input
+     *         video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
+     *         Transcoder crops the output video.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match
+     *         the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
      *         without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video
-     *         up.</li>
-     *         <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions
-     *         match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
+     *         up.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match
+     *         the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
      *         without dropping below either value. If you specify this option, Elastic Transcoder does not scale the
-     *         video up.</li>
-     *         </ul>
+     *         video up.
+     *         </p>
+     *         </li>
      */
 
     public String getSizingPolicy() {
@@ -2896,52 +4931,95 @@ public class VideoParameters implements Serializable, Cloneable {
      * <p>
      * Specify one of the following values to control scaling of the output video:
      * </p>
-     * <p>
      * <ul>
-     * <li><code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
-     * either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
-     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
-     * either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder
-     * centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.</li>
-     * <li><code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified
-     * for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the
-     * output video are different, the output video will be distorted.</li>
-     * <li><code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video
-     * exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder
-     * crops the output video.</li>
-     * <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the
-     * values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding
-     * either value. If you specify this option, Elastic Transcoder does not scale the video up.</li>
-     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the
-     * values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
-     * below either value. If you specify this option, Elastic Transcoder does not scale the video up.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in either
+     * <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
+     * either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder
+     * centers the output video and then crops it in the dimension (if any) that exceeds the maximum value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified for
+     * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and the output
+     * video are different, the output video will be distorted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input video
+     * exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder
+     * crops the output video.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values
+     * that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either
+     * value. If you specify this option, Elastic Transcoder does not scale the video up.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the
+     * values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
+     * below either value. If you specify this option, Elastic Transcoder does not scale the video up.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param sizingPolicy
      *        Specify one of the following values to control scaling of the output video:</p>
-     *        <p>
      *        <ul>
-     *        <li><code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you
-     *        specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</li>
-     *        <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you
-     *        specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other
-     *        value. Elastic Transcoder centers the output video and then crops it in the dimension (if any) that
-     *        exceeds the maximum value.</li>
-     *        <li><code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you
-     *        specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input
-     *        video and the output video are different, the output video will be distorted.</li>
-     *        <li><code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the
-     *        input video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>,
-     *        Elastic Transcoder crops the output video.</li>
-     *        <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match
+     *        <li>
+     *        <p>
+     *        <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value that you specified in
+     *        either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value that you specified
+     *        in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic
+     *        Transcoder centers the output video and then crops it in the dimension (if any) that exceeds the maximum
+     *        value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Stretch</code>: Elastic Transcoder stretches the output video to match the values that you specified
+     *        for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input video and
+     *        the output video are different, the output video will be distorted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Keep</code>: Elastic Transcoder does not scale the output video. If either dimension of the input
+     *        video exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
+     *        Transcoder crops the output video.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the
+     *        values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
+     *        exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match
      *        the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
-     *        exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</li>
-     *        <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions
-     *        match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
-     *        without dropping below either value. If you specify this option, Elastic Transcoder does not scale the
-     *        video up.</li>
-     *        </ul>
+     *        dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

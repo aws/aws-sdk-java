@@ -160,6 +160,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public GetInstanceAccessResult getInstanceAccess(GetInstanceAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAliasesResult listAliases(ListAliasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

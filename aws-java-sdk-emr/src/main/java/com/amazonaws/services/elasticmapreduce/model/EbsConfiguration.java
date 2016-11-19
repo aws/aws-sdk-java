@@ -15,16 +15,31 @@ package com.amazonaws.services.elasticmapreduce.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The Amazon EBS configuration of a cluster instance.
+ * </p>
  */
 public class EbsConfiguration implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An array of Amazon EBS volume specifications attached to a cluster instance.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig> ebsBlockDeviceConfigs;
-
+    /**
+     * <p>
+     * Indicates whether an Amazon EBS volume is EBS-optimized.
+     * </p>
+     */
     private Boolean ebsOptimized;
 
     /**
-     * @return
+     * <p>
+     * An array of Amazon EBS volume specifications attached to a cluster instance.
+     * </p>
+     * 
+     * @return An array of Amazon EBS volume specifications attached to a cluster instance.
      */
 
     public java.util.List<EbsBlockDeviceConfig> getEbsBlockDeviceConfigs() {
@@ -35,7 +50,12 @@ public class EbsConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An array of Amazon EBS volume specifications attached to a cluster instance.
+     * </p>
+     * 
      * @param ebsBlockDeviceConfigs
+     *        An array of Amazon EBS volume specifications attached to a cluster instance.
      */
 
     public void setEbsBlockDeviceConfigs(java.util.Collection<EbsBlockDeviceConfig> ebsBlockDeviceConfigs) {
@@ -49,12 +69,16 @@ public class EbsConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
+     * An array of Amazon EBS volume specifications attached to a cluster instance.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEbsBlockDeviceConfigs(java.util.Collection)} or
      * {@link #withEbsBlockDeviceConfigs(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param ebsBlockDeviceConfigs
+     *        An array of Amazon EBS volume specifications attached to a cluster instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,7 +93,12 @@ public class EbsConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An array of Amazon EBS volume specifications attached to a cluster instance.
+     * </p>
+     * 
      * @param ebsBlockDeviceConfigs
+     *        An array of Amazon EBS volume specifications attached to a cluster instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,7 +108,12 @@ public class EbsConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether an Amazon EBS volume is EBS-optimized.
+     * </p>
+     * 
      * @param ebsOptimized
+     *        Indicates whether an Amazon EBS volume is EBS-optimized.
      */
 
     public void setEbsOptimized(Boolean ebsOptimized) {
@@ -87,7 +121,11 @@ public class EbsConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether an Amazon EBS volume is EBS-optimized.
+     * </p>
+     * 
+     * @return Indicates whether an Amazon EBS volume is EBS-optimized.
      */
 
     public Boolean getEbsOptimized() {
@@ -95,7 +133,12 @@ public class EbsConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether an Amazon EBS volume is EBS-optimized.
+     * </p>
+     * 
      * @param ebsOptimized
+     *        Indicates whether an Amazon EBS volume is EBS-optimized.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +148,11 @@ public class EbsConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether an Amazon EBS volume is EBS-optimized.
+     * </p>
+     * 
+     * @return Indicates whether an Amazon EBS volume is EBS-optimized.
      */
 
     public Boolean isEbsOptimized() {

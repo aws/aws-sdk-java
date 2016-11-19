@@ -108,6 +108,14 @@ public class InstanceGroup implements Serializable, Cloneable {
      * </p>
      */
     private ShrinkPolicy shrinkPolicy;
+    /**
+     * <p>
+     * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
+     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
+     * to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     * </p>
+     */
+    private AutoScalingPolicyDescription autoScalingPolicy;
 
     /**
      * <p>
@@ -836,6 +844,58 @@ public class InstanceGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
+     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
+     * to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     * </p>
+     * 
+     * @param autoScalingPolicy
+     *        An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
+     *        automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in
+     *        response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     */
+
+    public void setAutoScalingPolicy(AutoScalingPolicyDescription autoScalingPolicy) {
+        this.autoScalingPolicy = autoScalingPolicy;
+    }
+
+    /**
+     * <p>
+     * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
+     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
+     * to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     * </p>
+     * 
+     * @return An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster.
+     *         The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances
+     *         in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     */
+
+    public AutoScalingPolicyDescription getAutoScalingPolicy() {
+        return this.autoScalingPolicy;
+    }
+
+    /**
+     * <p>
+     * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
+     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
+     * to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     * </p>
+     * 
+     * @param autoScalingPolicy
+     *        An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
+     *        automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in
+     *        response to the value of a CloudWatch metric. See PutAutoScalingPolicy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceGroup withAutoScalingPolicy(AutoScalingPolicyDescription autoScalingPolicy) {
+        setAutoScalingPolicy(autoScalingPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -871,7 +931,9 @@ public class InstanceGroup implements Serializable, Cloneable {
         if (getEbsOptimized() != null)
             sb.append("EbsOptimized: " + getEbsOptimized() + ",");
         if (getShrinkPolicy() != null)
-            sb.append("ShrinkPolicy: " + getShrinkPolicy());
+            sb.append("ShrinkPolicy: " + getShrinkPolicy() + ",");
+        if (getAutoScalingPolicy() != null)
+            sb.append("AutoScalingPolicy: " + getAutoScalingPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -938,6 +1000,10 @@ public class InstanceGroup implements Serializable, Cloneable {
             return false;
         if (other.getShrinkPolicy() != null && other.getShrinkPolicy().equals(this.getShrinkPolicy()) == false)
             return false;
+        if (other.getAutoScalingPolicy() == null ^ this.getAutoScalingPolicy() == null)
+            return false;
+        if (other.getAutoScalingPolicy() != null && other.getAutoScalingPolicy().equals(this.getAutoScalingPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -959,6 +1025,7 @@ public class InstanceGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEbsBlockDevices() == null) ? 0 : getEbsBlockDevices().hashCode());
         hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
         hashCode = prime * hashCode + ((getShrinkPolicy() == null) ? 0 : getShrinkPolicy().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingPolicy() == null) ? 0 : getAutoScalingPolicy().hashCode());
         return hashCode;
     }
 

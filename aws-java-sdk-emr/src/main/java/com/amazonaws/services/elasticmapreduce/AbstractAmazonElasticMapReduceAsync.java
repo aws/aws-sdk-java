@@ -64,6 +64,19 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     }
 
     @Override
+    public java.util.concurrent.Future<CancelStepsResult> cancelStepsAsync(CancelStepsRequest request) {
+
+        return cancelStepsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelStepsResult> cancelStepsAsync(CancelStepsRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelStepsRequest, CancelStepsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(CreateSecurityConfigurationRequest request) {
 
         return createSecurityConfigurationAsync(request, null);
@@ -299,6 +312,32 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
             com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, ModifyInstanceGroupsResult> asyncHandler) {
 
         return modifyInstanceGroupsAsync(new ModifyInstanceGroupsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAutoScalingPolicyResult> putAutoScalingPolicyAsync(PutAutoScalingPolicyRequest request) {
+
+        return putAutoScalingPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAutoScalingPolicyResult> putAutoScalingPolicyAsync(PutAutoScalingPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAutoScalingPolicyRequest, PutAutoScalingPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveAutoScalingPolicyResult> removeAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest request) {
+
+        return removeAutoScalingPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveAutoScalingPolicyResult> removeAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveAutoScalingPolicyRequest, RemoveAutoScalingPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

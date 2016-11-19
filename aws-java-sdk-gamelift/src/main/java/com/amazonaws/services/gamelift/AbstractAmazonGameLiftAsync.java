@@ -350,6 +350,19 @@ public class AbstractAmazonGameLiftAsync extends AbstractAmazonGameLift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetInstanceAccessResult> getInstanceAccessAsync(GetInstanceAccessRequest request) {
+
+        return getInstanceAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInstanceAccessResult> getInstanceAccessAsync(GetInstanceAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetInstanceAccessRequest, GetInstanceAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(ListAliasesRequest request) {
 
         return listAliasesAsync(request, null);

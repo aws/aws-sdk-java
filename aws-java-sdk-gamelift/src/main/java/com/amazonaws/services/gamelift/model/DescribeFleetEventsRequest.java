@@ -32,7 +32,7 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from
      * when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds
-     * (ex: "1469498468.057".
+     * (ex: "1469498468.057").
      * </p>
      */
     private java.util.Date startTime;
@@ -40,7 +40,7 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
      * specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057".
+     * "1469498468.057").
      * </p>
      */
     private java.util.Date endTime;
@@ -103,13 +103,13 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from
      * when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds
-     * (ex: "1469498468.057".
+     * (ex: "1469498468.057").
      * </p>
      * 
      * @param startTime
      *        Earliest date to retrieve event logs for. If no start time is specified, this call returns entries
      *        starting from when the fleet was created to the specified end time. Format is a number expressed in Unix
-     *        time as milliseconds (ex: "1469498468.057".
+     *        time as milliseconds (ex: "1469498468.057").
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -120,12 +120,12 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from
      * when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds
-     * (ex: "1469498468.057".
+     * (ex: "1469498468.057").
      * </p>
      * 
      * @return Earliest date to retrieve event logs for. If no start time is specified, this call returns entries
      *         starting from when the fleet was created to the specified end time. Format is a number expressed in Unix
-     *         time as milliseconds (ex: "1469498468.057".
+     *         time as milliseconds (ex: "1469498468.057").
      */
 
     public java.util.Date getStartTime() {
@@ -136,13 +136,13 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from
      * when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds
-     * (ex: "1469498468.057".
+     * (ex: "1469498468.057").
      * </p>
      * 
      * @param startTime
      *        Earliest date to retrieve event logs for. If no start time is specified, this call returns entries
      *        starting from when the fleet was created to the specified end time. Format is a number expressed in Unix
-     *        time as milliseconds (ex: "1469498468.057".
+     *        time as milliseconds (ex: "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,13 +155,13 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
      * specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057".
+     * "1469498468.057").
      * </p>
      * 
      * @param endTime
      *        Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from
      *        the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057".
+     *        "1469498468.057").
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -172,12 +172,12 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
      * specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057".
+     * "1469498468.057").
      * </p>
      * 
      * @return Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from
      *         the specified start time up to the present. Format is a number expressed in Unix time as milliseconds
-     *         (ex: "1469498468.057".
+     *         (ex: "1469498468.057").
      */
 
     public java.util.Date getEndTime() {
@@ -188,13 +188,13 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
      * specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057".
+     * "1469498468.057").
      * </p>
      * 
      * @param endTime
      *        Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from
      *        the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057".
+     *        "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

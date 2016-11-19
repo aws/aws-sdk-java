@@ -24,6 +24,12 @@ public class ModifyInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * The ID of the cluster to which the instance group belongs.
+     * </p>
+     */
+    private String clusterId;
+    /**
+     * <p>
      * Instance groups to change.
      * </p>
      */
@@ -45,6 +51,46 @@ public class ModifyInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceR
      */
     public ModifyInstanceGroupsRequest(java.util.List<InstanceGroupModifyConfig> instanceGroups) {
         setInstanceGroups(instanceGroups);
+    }
+
+    /**
+     * <p>
+     * The ID of the cluster to which the instance group belongs.
+     * </p>
+     * 
+     * @param clusterId
+     *        The ID of the cluster to which the instance group belongs.
+     */
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
+    /**
+     * <p>
+     * The ID of the cluster to which the instance group belongs.
+     * </p>
+     * 
+     * @return The ID of the cluster to which the instance group belongs.
+     */
+
+    public String getClusterId() {
+        return this.clusterId;
+    }
+
+    /**
+     * <p>
+     * The ID of the cluster to which the instance group belongs.
+     * </p>
+     * 
+     * @param clusterId
+     *        The ID of the cluster to which the instance group belongs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyInstanceGroupsRequest withClusterId(String clusterId) {
+        setClusterId(clusterId);
+        return this;
     }
 
     /**
@@ -131,6 +177,8 @@ public class ModifyInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getClusterId() != null)
+            sb.append("ClusterId: " + getClusterId() + ",");
         if (getInstanceGroups() != null)
             sb.append("InstanceGroups: " + getInstanceGroups());
         sb.append("}");
@@ -147,6 +195,10 @@ public class ModifyInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof ModifyInstanceGroupsRequest == false)
             return false;
         ModifyInstanceGroupsRequest other = (ModifyInstanceGroupsRequest) obj;
+        if (other.getClusterId() == null ^ this.getClusterId() == null)
+            return false;
+        if (other.getClusterId() != null && other.getClusterId().equals(this.getClusterId()) == false)
+            return false;
         if (other.getInstanceGroups() == null ^ this.getInstanceGroups() == null)
             return false;
         if (other.getInstanceGroups() != null && other.getInstanceGroups().equals(this.getInstanceGroups()) == false)
@@ -159,6 +211,7 @@ public class ModifyInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
         hashCode = prime * hashCode + ((getInstanceGroups() == null) ? 0 : getInstanceGroups().hashCode());
         return hashCode;
     }

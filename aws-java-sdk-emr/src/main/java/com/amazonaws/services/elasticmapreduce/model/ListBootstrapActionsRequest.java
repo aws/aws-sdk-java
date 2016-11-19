@@ -24,7 +24,7 @@ public class ListBootstrapActionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The cluster identifier for the bootstrap actions to list .
+     * The cluster identifier for the bootstrap actions to list.
      * </p>
      */
     private String clusterId;
@@ -37,11 +37,11 @@ public class ListBootstrapActionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The cluster identifier for the bootstrap actions to list .
+     * The cluster identifier for the bootstrap actions to list.
      * </p>
      * 
      * @param clusterId
-     *        The cluster identifier for the bootstrap actions to list .
+     *        The cluster identifier for the bootstrap actions to list.
      */
 
     public void setClusterId(String clusterId) {
@@ -50,10 +50,10 @@ public class ListBootstrapActionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The cluster identifier for the bootstrap actions to list .
+     * The cluster identifier for the bootstrap actions to list.
      * </p>
      * 
-     * @return The cluster identifier for the bootstrap actions to list .
+     * @return The cluster identifier for the bootstrap actions to list.
      */
 
     public String getClusterId() {
@@ -62,11 +62,11 @@ public class ListBootstrapActionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The cluster identifier for the bootstrap actions to list .
+     * The cluster identifier for the bootstrap actions to list.
      * </p>
      * 
      * @param clusterId
-     *        The cluster identifier for the bootstrap actions to list .
+     *        The cluster identifier for the bootstrap actions to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

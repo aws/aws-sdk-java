@@ -36,9 +36,11 @@ public class Warning implements Serializable, Cloneable {
      * <p>
      * The message explaining what resources are in a different region from the pipeline.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> AWS KMS keys must be in the same region as the pipeline.
+     * AWS KMS keys must be in the same region as the pipeline.
      * </p>
+     * </note>
      */
     private String message;
 
@@ -86,14 +88,17 @@ public class Warning implements Serializable, Cloneable {
      * <p>
      * The message explaining what resources are in a different region from the pipeline.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> AWS KMS keys must be in the same region as the pipeline.
+     * AWS KMS keys must be in the same region as the pipeline.
      * </p>
+     * </note>
      * 
      * @param message
-     *        The message explaining what resources are in a different region from the pipeline.</p>
+     *        The message explaining what resources are in a different region from the pipeline.</p> <note>
      *        <p>
-     *        <b>Note:</b> AWS KMS keys must be in the same region as the pipeline.
+     *        AWS KMS keys must be in the same region as the pipeline.
+     *        </p>
      */
 
     public void setMessage(String message) {
@@ -104,13 +109,16 @@ public class Warning implements Serializable, Cloneable {
      * <p>
      * The message explaining what resources are in a different region from the pipeline.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> AWS KMS keys must be in the same region as the pipeline.
+     * AWS KMS keys must be in the same region as the pipeline.
      * </p>
+     * </note>
      * 
-     * @return The message explaining what resources are in a different region from the pipeline.</p>
+     * @return The message explaining what resources are in a different region from the pipeline.</p> <note>
      *         <p>
-     *         <b>Note:</b> AWS KMS keys must be in the same region as the pipeline.
+     *         AWS KMS keys must be in the same region as the pipeline.
+     *         </p>
      */
 
     public String getMessage() {
@@ -121,14 +129,17 @@ public class Warning implements Serializable, Cloneable {
      * <p>
      * The message explaining what resources are in a different region from the pipeline.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> AWS KMS keys must be in the same region as the pipeline.
+     * AWS KMS keys must be in the same region as the pipeline.
      * </p>
+     * </note>
      * 
      * @param message
-     *        The message explaining what resources are in a different region from the pipeline.</p>
+     *        The message explaining what resources are in a different region from the pipeline.</p> <note>
      *        <p>
-     *        <b>Note:</b> AWS KMS keys must be in the same region as the pipeline.
+     *        AWS KMS keys must be in the same region as the pipeline.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

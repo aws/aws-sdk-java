@@ -103,10 +103,76 @@ public class JobInput implements Serializable, Cloneable {
     /**
      * <p>
      * The encryption settings, if any, that are used for decrypting your input files. If your input file is encrypted,
-     * you must specify the mode that Elastic Transcoder will use to decrypt your file.
+     * you must specify the mode that Elastic Transcoder uses to decrypt your file.
      * </p>
      */
     private Encryption encryption;
+    /**
+     * <p>
+     * Settings for clipping an input. Each input can have different clip settings.
+     * </p>
+     */
+    private TimeSpan timeSpan;
+    /**
+     * <p>
+     * You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All
+     * captions must be in UTF-8. Elastic Transcoder supports two types of captions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Embedded:</b> Embedded captions are included in the same file as the audio and video. Elastic Transcoder
+     * supports only one embedded caption per language, to a maximum of 300 embedded captions per file.
+     * </p>
+     * <p>
+     * Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel only),
+     * <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
+     * </p>
+     * <p>
+     * Valid outputs include: <code>mov-text</code>
+     * </p>
+     * <p>
+     * Elastic Transcoder supports a maximum of one embedded format per output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio and video data. Sidecar
+     * captions require a player that is capable of understanding the relationship between the video file and the
+     * sidecar file. Elastic Transcoder supports only one sidecar caption per language, to a maximum of 20 sidecar
+     * captions per file.
+     * </p>
+     * <p>
+     * Valid input values include: <code>dfxp</code> (first div element only), <code>ebu-tt</code>, <code>scc</code>,
+     * <code>smpt</code>, <code>srt</code>, <code>ttml</code> (first div element only), and <code>webvtt</code>
+     * </p>
+     * <p>
+     * Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>, <code>srt</code>, and
+     * <code>webvtt</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
+     * </p>
+     * <p>
+     * Elastic Transcoder does not support OCR (Optical Character Recognition), does not accept pictures as a valid
+     * input for captions, and is not available for audio-only transcoding. Elastic Transcoder does not preserve text
+     * formatting (for example, italics) during the transcoding process.
+     * </p>
+     * <p>
+     * To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through existing
+     * captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
+     * <code>CaptionSources</code> array.
+     * </p>
+     * <p>
+     * For more information on embedded files, see the Subtitles Wikipedia page.
+     * </p>
+     * <p>
+     * For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.
+     * </p>
+     */
+    private InputCaptions inputCaptions;
     /**
      * <p>
      * The detected properties of the input file.
@@ -596,12 +662,12 @@ public class JobInput implements Serializable, Cloneable {
     /**
      * <p>
      * The encryption settings, if any, that are used for decrypting your input files. If your input file is encrypted,
-     * you must specify the mode that Elastic Transcoder will use to decrypt your file.
+     * you must specify the mode that Elastic Transcoder uses to decrypt your file.
      * </p>
      * 
      * @param encryption
      *        The encryption settings, if any, that are used for decrypting your input files. If your input file is
-     *        encrypted, you must specify the mode that Elastic Transcoder will use to decrypt your file.
+     *        encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file.
      */
 
     public void setEncryption(Encryption encryption) {
@@ -611,11 +677,11 @@ public class JobInput implements Serializable, Cloneable {
     /**
      * <p>
      * The encryption settings, if any, that are used for decrypting your input files. If your input file is encrypted,
-     * you must specify the mode that Elastic Transcoder will use to decrypt your file.
+     * you must specify the mode that Elastic Transcoder uses to decrypt your file.
      * </p>
      * 
      * @return The encryption settings, if any, that are used for decrypting your input files. If your input file is
-     *         encrypted, you must specify the mode that Elastic Transcoder will use to decrypt your file.
+     *         encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file.
      */
 
     public Encryption getEncryption() {
@@ -625,17 +691,427 @@ public class JobInput implements Serializable, Cloneable {
     /**
      * <p>
      * The encryption settings, if any, that are used for decrypting your input files. If your input file is encrypted,
-     * you must specify the mode that Elastic Transcoder will use to decrypt your file.
+     * you must specify the mode that Elastic Transcoder uses to decrypt your file.
      * </p>
      * 
      * @param encryption
      *        The encryption settings, if any, that are used for decrypting your input files. If your input file is
-     *        encrypted, you must specify the mode that Elastic Transcoder will use to decrypt your file.
+     *        encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public JobInput withEncryption(Encryption encryption) {
         setEncryption(encryption);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings for clipping an input. Each input can have different clip settings.
+     * </p>
+     * 
+     * @param timeSpan
+     *        Settings for clipping an input. Each input can have different clip settings.
+     */
+
+    public void setTimeSpan(TimeSpan timeSpan) {
+        this.timeSpan = timeSpan;
+    }
+
+    /**
+     * <p>
+     * Settings for clipping an input. Each input can have different clip settings.
+     * </p>
+     * 
+     * @return Settings for clipping an input. Each input can have different clip settings.
+     */
+
+    public TimeSpan getTimeSpan() {
+        return this.timeSpan;
+    }
+
+    /**
+     * <p>
+     * Settings for clipping an input. Each input can have different clip settings.
+     * </p>
+     * 
+     * @param timeSpan
+     *        Settings for clipping an input. Each input can have different clip settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobInput withTimeSpan(TimeSpan timeSpan) {
+        setTimeSpan(timeSpan);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All
+     * captions must be in UTF-8. Elastic Transcoder supports two types of captions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Embedded:</b> Embedded captions are included in the same file as the audio and video. Elastic Transcoder
+     * supports only one embedded caption per language, to a maximum of 300 embedded captions per file.
+     * </p>
+     * <p>
+     * Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel only),
+     * <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
+     * </p>
+     * <p>
+     * Valid outputs include: <code>mov-text</code>
+     * </p>
+     * <p>
+     * Elastic Transcoder supports a maximum of one embedded format per output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio and video data. Sidecar
+     * captions require a player that is capable of understanding the relationship between the video file and the
+     * sidecar file. Elastic Transcoder supports only one sidecar caption per language, to a maximum of 20 sidecar
+     * captions per file.
+     * </p>
+     * <p>
+     * Valid input values include: <code>dfxp</code> (first div element only), <code>ebu-tt</code>, <code>scc</code>,
+     * <code>smpt</code>, <code>srt</code>, <code>ttml</code> (first div element only), and <code>webvtt</code>
+     * </p>
+     * <p>
+     * Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>, <code>srt</code>, and
+     * <code>webvtt</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
+     * </p>
+     * <p>
+     * Elastic Transcoder does not support OCR (Optical Character Recognition), does not accept pictures as a valid
+     * input for captions, and is not available for audio-only transcoding. Elastic Transcoder does not preserve text
+     * formatting (for example, italics) during the transcoding process.
+     * </p>
+     * <p>
+     * To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through existing
+     * captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
+     * <code>CaptionSources</code> array.
+     * </p>
+     * <p>
+     * For more information on embedded files, see the Subtitles Wikipedia page.
+     * </p>
+     * <p>
+     * For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.
+     * </p>
+     * 
+     * @param inputCaptions
+     *        You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All
+     *        captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Embedded:</b> Embedded captions are included in the same file as the audio and video. Elastic
+     *        Transcoder supports only one embedded caption per language, to a maximum of 300 embedded captions per
+     *        file.
+     *        </p>
+     *        <p>
+     *        Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel only),
+     *        <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
+     *        </p>
+     *        <p>
+     *        Valid outputs include: <code>mov-text</code>
+     *        </p>
+     *        <p>
+     *        Elastic Transcoder supports a maximum of one embedded format per output.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio and video data.
+     *        Sidecar captions require a player that is capable of understanding the relationship between the video file
+     *        and the sidecar file. Elastic Transcoder supports only one sidecar caption per language, to a maximum of
+     *        20 sidecar captions per file.
+     *        </p>
+     *        <p>
+     *        Valid input values include: <code>dfxp</code> (first div element only), <code>ebu-tt</code>,
+     *        <code>scc</code>, <code>smpt</code>, <code>srt</code>, <code>ttml</code> (first div element only), and
+     *        <code>webvtt</code>
+     *        </p>
+     *        <p>
+     *        Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>, <code>srt</code>, and
+     *        <code>webvtt</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
+     *        </p>
+     *        <p>
+     *        Elastic Transcoder does not support OCR (Optical Character Recognition), does not accept pictures as a
+     *        valid input for captions, and is not available for audio-only transcoding. Elastic Transcoder does not
+     *        preserve text formatting (for example, italics) during the transcoding process.
+     *        </p>
+     *        <p>
+     *        To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through
+     *        existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a
+     *        null <code>CaptionSources</code> array.
+     *        </p>
+     *        <p>
+     *        For more information on embedded files, see the Subtitles Wikipedia page.
+     *        </p>
+     *        <p>
+     *        For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia
+     *        pages.
+     */
+
+    public void setInputCaptions(InputCaptions inputCaptions) {
+        this.inputCaptions = inputCaptions;
+    }
+
+    /**
+     * <p>
+     * You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All
+     * captions must be in UTF-8. Elastic Transcoder supports two types of captions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Embedded:</b> Embedded captions are included in the same file as the audio and video. Elastic Transcoder
+     * supports only one embedded caption per language, to a maximum of 300 embedded captions per file.
+     * </p>
+     * <p>
+     * Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel only),
+     * <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
+     * </p>
+     * <p>
+     * Valid outputs include: <code>mov-text</code>
+     * </p>
+     * <p>
+     * Elastic Transcoder supports a maximum of one embedded format per output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio and video data. Sidecar
+     * captions require a player that is capable of understanding the relationship between the video file and the
+     * sidecar file. Elastic Transcoder supports only one sidecar caption per language, to a maximum of 20 sidecar
+     * captions per file.
+     * </p>
+     * <p>
+     * Valid input values include: <code>dfxp</code> (first div element only), <code>ebu-tt</code>, <code>scc</code>,
+     * <code>smpt</code>, <code>srt</code>, <code>ttml</code> (first div element only), and <code>webvtt</code>
+     * </p>
+     * <p>
+     * Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>, <code>srt</code>, and
+     * <code>webvtt</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
+     * </p>
+     * <p>
+     * Elastic Transcoder does not support OCR (Optical Character Recognition), does not accept pictures as a valid
+     * input for captions, and is not available for audio-only transcoding. Elastic Transcoder does not preserve text
+     * formatting (for example, italics) during the transcoding process.
+     * </p>
+     * <p>
+     * To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through existing
+     * captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
+     * <code>CaptionSources</code> array.
+     * </p>
+     * <p>
+     * For more information on embedded files, see the Subtitles Wikipedia page.
+     * </p>
+     * <p>
+     * For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.
+     * </p>
+     * 
+     * @return You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All
+     *         captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Embedded:</b> Embedded captions are included in the same file as the audio and video. Elastic
+     *         Transcoder supports only one embedded caption per language, to a maximum of 300 embedded captions per
+     *         file.
+     *         </p>
+     *         <p>
+     *         Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel only),
+     *         <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
+     *         </p>
+     *         <p>
+     *         Valid outputs include: <code>mov-text</code>
+     *         </p>
+     *         <p>
+     *         Elastic Transcoder supports a maximum of one embedded format per output.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio and video data.
+     *         Sidecar captions require a player that is capable of understanding the relationship between the video
+     *         file and the sidecar file. Elastic Transcoder supports only one sidecar caption per language, to a
+     *         maximum of 20 sidecar captions per file.
+     *         </p>
+     *         <p>
+     *         Valid input values include: <code>dfxp</code> (first div element only), <code>ebu-tt</code>,
+     *         <code>scc</code>, <code>smpt</code>, <code>srt</code>, <code>ttml</code> (first div element only), and
+     *         <code>webvtt</code>
+     *         </p>
+     *         <p>
+     *         Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>, <code>srt</code>,
+     *         and <code>webvtt</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
+     *         </p>
+     *         <p>
+     *         Elastic Transcoder does not support OCR (Optical Character Recognition), does not accept pictures as a
+     *         valid input for captions, and is not available for audio-only transcoding. Elastic Transcoder does not
+     *         preserve text formatting (for example, italics) during the transcoding process.
+     *         </p>
+     *         <p>
+     *         To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through
+     *         existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a
+     *         null <code>CaptionSources</code> array.
+     *         </p>
+     *         <p>
+     *         For more information on embedded files, see the Subtitles Wikipedia page.
+     *         </p>
+     *         <p>
+     *         For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia
+     *         pages.
+     */
+
+    public InputCaptions getInputCaptions() {
+        return this.inputCaptions;
+    }
+
+    /**
+     * <p>
+     * You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All
+     * captions must be in UTF-8. Elastic Transcoder supports two types of captions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Embedded:</b> Embedded captions are included in the same file as the audio and video. Elastic Transcoder
+     * supports only one embedded caption per language, to a maximum of 300 embedded captions per file.
+     * </p>
+     * <p>
+     * Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel only),
+     * <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
+     * </p>
+     * <p>
+     * Valid outputs include: <code>mov-text</code>
+     * </p>
+     * <p>
+     * Elastic Transcoder supports a maximum of one embedded format per output.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio and video data. Sidecar
+     * captions require a player that is capable of understanding the relationship between the video file and the
+     * sidecar file. Elastic Transcoder supports only one sidecar caption per language, to a maximum of 20 sidecar
+     * captions per file.
+     * </p>
+     * <p>
+     * Valid input values include: <code>dfxp</code> (first div element only), <code>ebu-tt</code>, <code>scc</code>,
+     * <code>smpt</code>, <code>srt</code>, <code>ttml</code> (first div element only), and <code>webvtt</code>
+     * </p>
+     * <p>
+     * Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>, <code>srt</code>, and
+     * <code>webvtt</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
+     * </p>
+     * <p>
+     * Elastic Transcoder does not support OCR (Optical Character Recognition), does not accept pictures as a valid
+     * input for captions, and is not available for audio-only transcoding. Elastic Transcoder does not preserve text
+     * formatting (for example, italics) during the transcoding process.
+     * </p>
+     * <p>
+     * To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through existing
+     * captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
+     * <code>CaptionSources</code> array.
+     * </p>
+     * <p>
+     * For more information on embedded files, see the Subtitles Wikipedia page.
+     * </p>
+     * <p>
+     * For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.
+     * </p>
+     * 
+     * @param inputCaptions
+     *        You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All
+     *        captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Embedded:</b> Embedded captions are included in the same file as the audio and video. Elastic
+     *        Transcoder supports only one embedded caption per language, to a maximum of 300 embedded captions per
+     *        file.
+     *        </p>
+     *        <p>
+     *        Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel only),
+     *        <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
+     *        </p>
+     *        <p>
+     *        Valid outputs include: <code>mov-text</code>
+     *        </p>
+     *        <p>
+     *        Elastic Transcoder supports a maximum of one embedded format per output.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio and video data.
+     *        Sidecar captions require a player that is capable of understanding the relationship between the video file
+     *        and the sidecar file. Elastic Transcoder supports only one sidecar caption per language, to a maximum of
+     *        20 sidecar captions per file.
+     *        </p>
+     *        <p>
+     *        Valid input values include: <code>dfxp</code> (first div element only), <code>ebu-tt</code>,
+     *        <code>scc</code>, <code>smpt</code>, <code>srt</code>, <code>ttml</code> (first div element only), and
+     *        <code>webvtt</code>
+     *        </p>
+     *        <p>
+     *        Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>, <code>srt</code>, and
+     *        <code>webvtt</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
+     *        </p>
+     *        <p>
+     *        Elastic Transcoder does not support OCR (Optical Character Recognition), does not accept pictures as a
+     *        valid input for captions, and is not available for audio-only transcoding. Elastic Transcoder does not
+     *        preserve text formatting (for example, italics) during the transcoding process.
+     *        </p>
+     *        <p>
+     *        To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through
+     *        existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a
+     *        null <code>CaptionSources</code> array.
+     *        </p>
+     *        <p>
+     *        For more information on embedded files, see the Subtitles Wikipedia page.
+     *        </p>
+     *        <p>
+     *        For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia
+     *        pages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobInput withInputCaptions(InputCaptions inputCaptions) {
+        setInputCaptions(inputCaptions);
         return this;
     }
 
@@ -704,6 +1180,10 @@ public class JobInput implements Serializable, Cloneable {
             sb.append("Container: " + getContainer() + ",");
         if (getEncryption() != null)
             sb.append("Encryption: " + getEncryption() + ",");
+        if (getTimeSpan() != null)
+            sb.append("TimeSpan: " + getTimeSpan() + ",");
+        if (getInputCaptions() != null)
+            sb.append("InputCaptions: " + getInputCaptions() + ",");
         if (getDetectedProperties() != null)
             sb.append("DetectedProperties: " + getDetectedProperties());
         sb.append("}");
@@ -748,6 +1228,14 @@ public class JobInput implements Serializable, Cloneable {
             return false;
         if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false)
             return false;
+        if (other.getTimeSpan() == null ^ this.getTimeSpan() == null)
+            return false;
+        if (other.getTimeSpan() != null && other.getTimeSpan().equals(this.getTimeSpan()) == false)
+            return false;
+        if (other.getInputCaptions() == null ^ this.getInputCaptions() == null)
+            return false;
+        if (other.getInputCaptions() != null && other.getInputCaptions().equals(this.getInputCaptions()) == false)
+            return false;
         if (other.getDetectedProperties() == null ^ this.getDetectedProperties() == null)
             return false;
         if (other.getDetectedProperties() != null && other.getDetectedProperties().equals(this.getDetectedProperties()) == false)
@@ -767,6 +1255,8 @@ public class JobInput implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInterlaced() == null) ? 0 : getInterlaced().hashCode());
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
+        hashCode = prime * hashCode + ((getTimeSpan() == null) ? 0 : getTimeSpan().hashCode());
+        hashCode = prime * hashCode + ((getInputCaptions() == null) ? 0 : getInputCaptions().hashCode());
         hashCode = prime * hashCode + ((getDetectedProperties() == null) ? 0 : getDetectedProperties().hashCode());
         return hashCode;
     }

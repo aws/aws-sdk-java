@@ -619,7 +619,9 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Invokes a specific Lambda function.
+     * Invokes a specific Lambda function. For an example, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually"
+     * >Create the Lambda Function and Test It Manually</a>.
      * </p>
      * <p>
      * If you are using the versioning feature, you can invoke the specific function version by providing function
@@ -642,7 +644,9 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Invokes a specific Lambda function.
+     * Invokes a specific Lambda function. For an example, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually"
+     * >Create the Lambda Function and Test It Manually</a>.
      * </p>
      * <p>
      * If you are using the versioning feature, you can invoke the specific function version by providing function

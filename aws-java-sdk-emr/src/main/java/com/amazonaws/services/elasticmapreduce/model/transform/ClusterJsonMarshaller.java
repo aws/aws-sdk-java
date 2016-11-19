@@ -129,6 +129,12 @@ public class ClusterJsonMarshaller {
             if (cluster.getSecurityConfiguration() != null) {
                 jsonGenerator.writeFieldName("SecurityConfiguration").writeValue(cluster.getSecurityConfiguration());
             }
+            if (cluster.getAutoScalingRole() != null) {
+                jsonGenerator.writeFieldName("AutoScalingRole").writeValue(cluster.getAutoScalingRole());
+            }
+            if (cluster.getScaleDownBehavior() != null) {
+                jsonGenerator.writeFieldName("ScaleDownBehavior").writeValue(cluster.getScaleDownBehavior());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

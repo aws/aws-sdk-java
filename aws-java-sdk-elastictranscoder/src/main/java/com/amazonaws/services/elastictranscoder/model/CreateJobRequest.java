@@ -36,7 +36,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private JobInput input;
-
+    /**
+     * <p>
+     * A section of the request body that provides information about the files that are being transcoded.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<JobInput> inputs;
+    /**
+     * <p>
+     * A section of the request body that provides information about the transcoded (target) file. We strongly recommend
+     * that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
+     * </p>
+     */
     private CreateJobOutput output;
     /**
      * <p>
@@ -67,8 +78,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      * <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder
-     * does not guarantee that <code>key/value</code> pairs will be returned in the same order in which you specify
-     * them.
+     * does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> userMetadata;
@@ -166,7 +176,87 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * A section of the request body that provides information about the files that are being transcoded.
+     * </p>
+     * 
+     * @return A section of the request body that provides information about the files that are being transcoded.
+     */
+
+    public java.util.List<JobInput> getInputs() {
+        if (inputs == null) {
+            inputs = new com.amazonaws.internal.SdkInternalList<JobInput>();
+        }
+        return inputs;
+    }
+
+    /**
+     * <p>
+     * A section of the request body that provides information about the files that are being transcoded.
+     * </p>
+     * 
+     * @param inputs
+     *        A section of the request body that provides information about the files that are being transcoded.
+     */
+
+    public void setInputs(java.util.Collection<JobInput> inputs) {
+        if (inputs == null) {
+            this.inputs = null;
+            return;
+        }
+
+        this.inputs = new com.amazonaws.internal.SdkInternalList<JobInput>(inputs);
+    }
+
+    /**
+     * <p>
+     * A section of the request body that provides information about the files that are being transcoded.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInputs(java.util.Collection)} or {@link #withInputs(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param inputs
+     *        A section of the request body that provides information about the files that are being transcoded.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withInputs(JobInput... inputs) {
+        if (this.inputs == null) {
+            setInputs(new com.amazonaws.internal.SdkInternalList<JobInput>(inputs.length));
+        }
+        for (JobInput ele : inputs) {
+            this.inputs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A section of the request body that provides information about the files that are being transcoded.
+     * </p>
+     * 
+     * @param inputs
+     *        A section of the request body that provides information about the files that are being transcoded.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withInputs(java.util.Collection<JobInput> inputs) {
+        setInputs(inputs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A section of the request body that provides information about the transcoded (target) file. We strongly recommend
+     * that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
+     * </p>
+     * 
      * @param output
+     *        A section of the request body that provides information about the transcoded (target) file. We strongly
+     *        recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      */
 
     public void setOutput(CreateJobOutput output) {
@@ -174,7 +264,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * @return
+     * <p>
+     * A section of the request body that provides information about the transcoded (target) file. We strongly recommend
+     * that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
+     * </p>
+     * 
+     * @return A section of the request body that provides information about the transcoded (target) file. We strongly
+     *         recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      */
 
     public CreateJobOutput getOutput() {
@@ -182,7 +278,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * A section of the request body that provides information about the transcoded (target) file. We strongly recommend
+     * that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
+     * </p>
+     * 
      * @param output
+     *        A section of the request body that provides information about the transcoded (target) file. We strongly
+     *        recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -431,14 +534,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      * <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder
-     * does not guarantee that <code>key/value</code> pairs will be returned in the same order in which you specify
-     * them.
+     * does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.
      * </p>
      * 
      * @return User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      *         <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic
-     *         Transcoder does not guarantee that <code>key/value</code> pairs will be returned in the same order in
-     *         which you specify them.
+     *         Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which
+     *         you specify them.
      */
 
     public java.util.Map<String, String> getUserMetadata() {
@@ -452,15 +554,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      * <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder
-     * does not guarantee that <code>key/value</code> pairs will be returned in the same order in which you specify
-     * them.
+     * does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.
      * </p>
      * 
      * @param userMetadata
      *        User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      *        <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic
-     *        Transcoder does not guarantee that <code>key/value</code> pairs will be returned in the same order in
-     *        which you specify them.
+     *        Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which
+     *        you specify them.
      */
 
     public void setUserMetadata(java.util.Map<String, String> userMetadata) {
@@ -471,15 +572,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      * <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder
-     * does not guarantee that <code>key/value</code> pairs will be returned in the same order in which you specify
-     * them.
+     * does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.
      * </p>
      * 
      * @param userMetadata
      *        User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
      *        <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic
-     *        Transcoder does not guarantee that <code>key/value</code> pairs will be returned in the same order in
-     *        which you specify them.
+     *        Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which
+     *        you specify them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,6 +624,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("PipelineId: " + getPipelineId() + ",");
         if (getInput() != null)
             sb.append("Input: " + getInput() + ",");
+        if (getInputs() != null)
+            sb.append("Inputs: " + getInputs() + ",");
         if (getOutput() != null)
             sb.append("Output: " + getOutput() + ",");
         if (getOutputs() != null)
@@ -556,6 +658,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
             return false;
+        if (other.getInputs() == null ^ this.getInputs() == null)
+            return false;
+        if (other.getInputs() != null && other.getInputs().equals(this.getInputs()) == false)
+            return false;
         if (other.getOutput() == null ^ this.getOutput() == null)
             return false;
         if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false)
@@ -586,6 +692,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
         hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
+        hashCode = prime * hashCode + ((getInputs() == null) ? 0 : getInputs().hashCode());
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getOutputKeyPrefix() == null) ? 0 : getOutputKeyPrefix().hashCode());

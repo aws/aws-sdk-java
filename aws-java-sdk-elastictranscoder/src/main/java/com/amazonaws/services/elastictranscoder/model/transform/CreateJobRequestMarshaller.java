@@ -74,6 +74,19 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                 jsonGenerator.writeFieldName("Input");
                 JobInputJsonMarshaller.getInstance().marshall(createJobRequest.getInput(), jsonGenerator);
             }
+
+            com.amazonaws.internal.SdkInternalList<JobInput> inputsList = (com.amazonaws.internal.SdkInternalList<JobInput>) createJobRequest.getInputs();
+            if (!inputsList.isEmpty() || !inputsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("Inputs");
+                jsonGenerator.writeStartArray();
+                for (JobInput inputsListValue : inputsList) {
+                    if (inputsListValue != null) {
+
+                        JobInputJsonMarshaller.getInstance().marshall(inputsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
             if (createJobRequest.getOutput() != null) {
                 jsonGenerator.writeFieldName("Output");
                 CreateJobOutputJsonMarshaller.getInstance().marshall(createJobRequest.getOutput(), jsonGenerator);

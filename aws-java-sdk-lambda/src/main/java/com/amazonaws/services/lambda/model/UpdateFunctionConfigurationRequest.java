@@ -74,6 +74,19 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     private VpcConfig vpcConfig;
     /**
      * <p>
+     * The parent object that contains your environment's configuration settings.
+     * </p>
+     */
+    private Environment environment;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If you elect
+     * to use the AWS Lambda default service key, pass in an empty string ("") for this parameter.
+     * </p>
+     */
+    private String kMSKeyArn;
+    /**
+     * <p>
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
@@ -432,6 +445,92 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
+     * The parent object that contains your environment's configuration settings.
+     * </p>
+     * 
+     * @param environment
+     *        The parent object that contains your environment's configuration settings.
+     */
+
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your environment's configuration settings.
+     * </p>
+     * 
+     * @return The parent object that contains your environment's configuration settings.
+     */
+
+    public Environment getEnvironment() {
+        return this.environment;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your environment's configuration settings.
+     * </p>
+     * 
+     * @param environment
+     *        The parent object that contains your environment's configuration settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationRequest withEnvironment(Environment environment) {
+        setEnvironment(environment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If you elect
+     * to use the AWS Lambda default service key, pass in an empty string ("") for this parameter.
+     * </p>
+     * 
+     * @param kMSKeyArn
+     *        The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
+     *        you elect to use the AWS Lambda default service key, pass in an empty string ("") for this parameter.
+     */
+
+    public void setKMSKeyArn(String kMSKeyArn) {
+        this.kMSKeyArn = kMSKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If you elect
+     * to use the AWS Lambda default service key, pass in an empty string ("") for this parameter.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
+     *         you elect to use the AWS Lambda default service key, pass in an empty string ("") for this parameter.
+     */
+
+    public String getKMSKeyArn() {
+        return this.kMSKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If you elect
+     * to use the AWS Lambda default service key, pass in an empty string ("") for this parameter.
+     * </p>
+     * 
+     * @param kMSKeyArn
+     *        The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
+     *        you elect to use the AWS Lambda default service key, pass in an empty string ("") for this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationRequest withKMSKeyArn(String kMSKeyArn) {
+        setKMSKeyArn(kMSKeyArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
@@ -563,6 +662,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
             sb.append("MemorySize: " + getMemorySize() + ",");
         if (getVpcConfig() != null)
             sb.append("VpcConfig: " + getVpcConfig() + ",");
+        if (getEnvironment() != null)
+            sb.append("Environment: " + getEnvironment() + ",");
+        if (getKMSKeyArn() != null)
+            sb.append("KMSKeyArn: " + getKMSKeyArn() + ",");
         if (getRuntime() != null)
             sb.append("Runtime: " + getRuntime());
         sb.append("}");
@@ -607,6 +710,14 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getEnvironment() == null ^ this.getEnvironment() == null)
+            return false;
+        if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
+            return false;
+        if (other.getKMSKeyArn() == null ^ this.getKMSKeyArn() == null)
+            return false;
+        if (other.getKMSKeyArn() != null && other.getKMSKeyArn().equals(this.getKMSKeyArn()) == false)
+            return false;
         if (other.getRuntime() == null ^ this.getRuntime() == null)
             return false;
         if (other.getRuntime() != null && other.getRuntime().equals(this.getRuntime()) == false)
@@ -626,6 +737,8 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
         hashCode = prime * hashCode + ((getRuntime() == null) ? 0 : getRuntime().hashCode());
         return hashCode;
     }

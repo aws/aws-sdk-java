@@ -44,13 +44,17 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
+     * <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
      * in the <code>ThumbnailPattern</code> object. Wherever you specify <code>{count}</code>, Elastic Transcoder adds a
      * five-digit sequence number (beginning with <b>00001</b>) to thumbnail file names. The number indicates where a
      * given thumbnail appears in the sequence of thumbnails for a transcoded file.
      * </p>
-     * <important>If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
-     * Elastic Transcoder returns a validation error and does not create the job.</important></li>
+     * <important>
+     * <p>
+     * If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>, Elastic
+     * Transcoder returns a validation error and does not create the job.
+     * </p>
+     * </important></li>
      * <li>
      * <p>
      * <b>Literal values (Optional)</b>: You can specify literal values anywhere in the <code>ThumbnailPattern</code>
@@ -60,8 +64,8 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file
-     * name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
+     * <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the
+     * file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      * </p>
      * </li>
      * </ul>
@@ -95,14 +99,18 @@ public class CreateJobOutput implements Serializable, Cloneable {
      */
     private String presetId;
     /**
+     * <important>
      * <p>
-     * <important>(Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
-     * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in
-     * seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code>
-     * file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an output are stored in a
-     * single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual
-     * segments might be shorter or longer.
+     * (Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     * <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target
+     * maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is
+     * stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media
+     * segments for an output are stored in a single file. Each segment is approximately the length of the
+     * <code>SegmentDuration</code>, though individual segments might be shorter or longer.
      * </p>
      * <p>
      * The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
@@ -139,6 +147,7 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * Composition object cannot be null.
      * </p>
      */
+    @Deprecated
     private com.amazonaws.internal.SdkInternalList<Clip> composition;
     /**
      * <p>
@@ -276,13 +285,17 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
+     * <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
      * in the <code>ThumbnailPattern</code> object. Wherever you specify <code>{count}</code>, Elastic Transcoder adds a
      * five-digit sequence number (beginning with <b>00001</b>) to thumbnail file names. The number indicates where a
      * given thumbnail appears in the sequence of thumbnails for a transcoded file.
      * </p>
-     * <important>If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
-     * Elastic Transcoder returns a validation error and does not create the job.</important></li>
+     * <important>
+     * <p>
+     * If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>, Elastic
+     * Transcoder returns a validation error and does not create the job.
+     * </p>
+     * </important></li>
      * <li>
      * <p>
      * <b>Literal values (Optional)</b>: You can specify literal values anywhere in the <code>ThumbnailPattern</code>
@@ -292,8 +305,8 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file
-     * name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
+     * <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the
+     * file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      * </p>
      * </li>
      * </ul>
@@ -316,15 +329,18 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include
+     *        <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include
      *        <code>{count}</code> in the <code>ThumbnailPattern</code> object. Wherever you specify
      *        <code>{count}</code>, Elastic Transcoder adds a five-digit sequence number (beginning with <b>00001</b>)
      *        to thumbnail file names. The number indicates where a given thumbnail appears in the sequence of
      *        thumbnails for a transcoded file.
      *        </p>
-     *        <important>If you specify a literal value and/or <code>{resolution}</code> but you omit
-     *        <code>{count}</code>, Elastic Transcoder returns a validation error and does not create the
-     *        job.</important></li>
+     *        <important>
+     *        <p>
+     *        If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>, Elastic
+     *        Transcoder returns a validation error and does not create the job.
+     *        </p>
+     *        </important></li>
      *        <li>
      *        <p>
      *        <b>Literal values (Optional)</b>: You can specify literal values anywhere in the
@@ -334,7 +350,7 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in
+     *        <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in
      *        the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      *        </p>
      *        </li>
@@ -364,13 +380,17 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
+     * <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
      * in the <code>ThumbnailPattern</code> object. Wherever you specify <code>{count}</code>, Elastic Transcoder adds a
      * five-digit sequence number (beginning with <b>00001</b>) to thumbnail file names. The number indicates where a
      * given thumbnail appears in the sequence of thumbnails for a transcoded file.
      * </p>
-     * <important>If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
-     * Elastic Transcoder returns a validation error and does not create the job.</important></li>
+     * <important>
+     * <p>
+     * If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>, Elastic
+     * Transcoder returns a validation error and does not create the job.
+     * </p>
+     * </important></li>
      * <li>
      * <p>
      * <b>Literal values (Optional)</b>: You can specify literal values anywhere in the <code>ThumbnailPattern</code>
@@ -380,8 +400,8 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file
-     * name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
+     * <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the
+     * file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      * </p>
      * </li>
      * </ul>
@@ -403,15 +423,18 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include
+     *         <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include
      *         <code>{count}</code> in the <code>ThumbnailPattern</code> object. Wherever you specify
      *         <code>{count}</code>, Elastic Transcoder adds a five-digit sequence number (beginning with <b>00001</b>)
      *         to thumbnail file names. The number indicates where a given thumbnail appears in the sequence of
      *         thumbnails for a transcoded file.
      *         </p>
-     *         <important>If you specify a literal value and/or <code>{resolution}</code> but you omit
-     *         <code>{count}</code>, Elastic Transcoder returns a validation error and does not create the
-     *         job.</important></li>
+     *         <important>
+     *         <p>
+     *         If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
+     *         Elastic Transcoder returns a validation error and does not create the job.
+     *         </p>
+     *         </important></li>
      *         <li>
      *         <p>
      *         <b>Literal values (Optional)</b>: You can specify literal values anywhere in the
@@ -421,7 +444,7 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in
+     *         <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in
      *         the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      *         </p>
      *         </li>
@@ -451,13 +474,17 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
+     * <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include <code>{count}</code>
      * in the <code>ThumbnailPattern</code> object. Wherever you specify <code>{count}</code>, Elastic Transcoder adds a
      * five-digit sequence number (beginning with <b>00001</b>) to thumbnail file names. The number indicates where a
      * given thumbnail appears in the sequence of thumbnails for a transcoded file.
      * </p>
-     * <important>If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
-     * Elastic Transcoder returns a validation error and does not create the job.</important></li>
+     * <important>
+     * <p>
+     * If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>, Elastic
+     * Transcoder returns a validation error and does not create the job.
+     * </p>
+     * </important></li>
      * <li>
      * <p>
      * <b>Literal values (Optional)</b>: You can specify literal values anywhere in the <code>ThumbnailPattern</code>
@@ -467,8 +494,8 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file
-     * name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
+     * <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the
+     * file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      * </p>
      * </li>
      * </ul>
@@ -491,15 +518,18 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include
+     *        <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must include
      *        <code>{count}</code> in the <code>ThumbnailPattern</code> object. Wherever you specify
      *        <code>{count}</code>, Elastic Transcoder adds a five-digit sequence number (beginning with <b>00001</b>)
      *        to thumbnail file names. The number indicates where a given thumbnail appears in the sequence of
      *        thumbnails for a transcoded file.
      *        </p>
-     *        <important>If you specify a literal value and/or <code>{resolution}</code> but you omit
-     *        <code>{count}</code>, Elastic Transcoder returns a validation error and does not create the
-     *        job.</important></li>
+     *        <important>
+     *        <p>
+     *        If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>, Elastic
+     *        Transcoder returns a validation error and does not create the job.
+     *        </p>
+     *        </important></li>
      *        <li>
      *        <p>
      *        <b>Literal values (Optional)</b>: You can specify literal values anywhere in the
@@ -509,7 +539,7 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in
+     *        <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in
      *        the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.
      *        </p>
      *        </li>
@@ -671,14 +701,18 @@ public class CreateJobOutput implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * <important>(Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
-     * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in
-     * seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code>
-     * file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an output are stored in a
-     * single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual
-     * segments might be shorter or longer.
+     * (Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     * <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target
+     * maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is
+     * stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media
+     * segments for an output are stored in a single file. Each segment is approximately the length of the
+     * <code>SegmentDuration</code>, though individual segments might be shorter or longer.
      * </p>
      * <p>
      * The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
@@ -691,13 +725,18 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * </p>
      * 
      * @param segmentDuration
-     *        (Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     *        <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4)
-     *        or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment
-     *        in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate
-     *        <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an
-     *        output are stored in a single file. Each segment is approximately the length of the
-     *        <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
+     *        <p>
+     *        (Outputs in Fragmented MP4 or MPEG-TS format only.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     *        <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the
+     *        target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media
+     *        segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code>
+     *        playlists, all media segments for an output are stored in a single file. Each segment is approximately the
+     *        length of the <code>SegmentDuration</code>, though individual segments might be shorter or longer.
+     *        </p>
      *        <p>
      *        The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
      *        <code>SegmentDuration</code>, the duration of the last segment is the remainder of total
@@ -706,7 +745,7 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *        <p>
      *        Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you
      *        specify in OutputKeys. To add an output to the master playlist for this job, include it in the
-     *        <code>OutputKeys
+     *        <code>OutputKeys</code> of the associated playlist.
      */
 
     public void setSegmentDuration(String segmentDuration) {
@@ -714,14 +753,18 @@ public class CreateJobOutput implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * <important>(Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
-     * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in
-     * seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code>
-     * file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an output are stored in a
-     * single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual
-     * segments might be shorter or longer.
+     * (Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     * <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target
+     * maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is
+     * stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media
+     * segments for an output are stored in a single file. Each segment is approximately the length of the
+     * <code>SegmentDuration</code>, though individual segments might be shorter or longer.
      * </p>
      * <p>
      * The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
@@ -733,13 +776,18 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * the associated playlist.
      * </p>
      * 
-     * @return (Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     *         <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4)
-     *         or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment
-     *         in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate
-     *         <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for
-     *         an output are stored in a single file. Each segment is approximately the length of the
-     *         <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
+     * @return <p>
+     *         (Outputs in Fragmented MP4 or MPEG-TS format only.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     *         <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the
+     *         target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media
+     *         segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code>
+     *         playlists, all media segments for an output are stored in a single file. Each segment is approximately
+     *         the length of the <code>SegmentDuration</code>, though individual segments might be shorter or longer.
+     *         </p>
      *         <p>
      *         The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
      *         <code>SegmentDuration</code>, the duration of the last segment is the remainder of total
@@ -748,7 +796,7 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *         <p>
      *         Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you
      *         specify in OutputKeys. To add an output to the master playlist for this job, include it in the
-     *         <code>OutputKeys
+     *         <code>OutputKeys</code> of the associated playlist.
      */
 
     public String getSegmentDuration() {
@@ -756,14 +804,18 @@ public class CreateJobOutput implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * <important>(Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     * <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
-     * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in
-     * seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code>
-     * file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an output are stored in a
-     * single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual
-     * segments might be shorter or longer.
+     * (Outputs in Fragmented MP4 or MPEG-TS format only.
+     * </p>
+     * </important>
+     * <p>
+     * If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     * <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target
+     * maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is
+     * stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media
+     * segments for an output are stored in a single file. Each segment is approximately the length of the
+     * <code>SegmentDuration</code>, though individual segments might be shorter or longer.
      * </p>
      * <p>
      * The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
@@ -776,13 +828,18 @@ public class CreateJobOutput implements Serializable, Cloneable {
      * </p>
      * 
      * @param segmentDuration
-     *        (Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify a preset in
-     *        <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4)
-     *        or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment
-     *        in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate
-     *        <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an
-     *        output are stored in a single file. Each segment is approximately the length of the
-     *        <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
+     *        <p>
+     *        (Outputs in Fragmented MP4 or MPEG-TS format only.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is
+     *        <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the
+     *        target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media
+     *        segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code>
+     *        playlists, all media segments for an output are stored in a single file. Each segment is approximately the
+     *        length of the <code>SegmentDuration</code>, though individual segments might be shorter or longer.
+     *        </p>
      *        <p>
      *        The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by
      *        <code>SegmentDuration</code>, the duration of the last segment is the remainder of total
@@ -791,7 +848,7 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *        <p>
      *        Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you
      *        specify in OutputKeys. To add an output to the master playlist for this job, include it in the
-     *        <code>OutputKeys
+     *        <code>OutputKeys</code> of the associated playlist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -954,7 +1011,7 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *         clips that make up an output file. For the current release, you can only specify settings for a single
      *         clip per output file. The Composition object cannot be null.
      */
-
+    @Deprecated
     public java.util.List<Clip> getComposition() {
         if (composition == null) {
             composition = new com.amazonaws.internal.SdkInternalList<Clip>();
@@ -976,7 +1033,7 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *        clips that make up an output file. For the current release, you can only specify settings for a single
      *        clip per output file. The Composition object cannot be null.
      */
-
+    @Deprecated
     public void setComposition(java.util.Collection<Clip> composition) {
         if (composition == null) {
             this.composition = null;
@@ -1006,7 +1063,7 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *        clip per output file. The Composition object cannot be null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public CreateJobOutput withComposition(Clip... composition) {
         if (this.composition == null) {
             setComposition(new com.amazonaws.internal.SdkInternalList<Clip>(composition.length));
@@ -1032,7 +1089,7 @@ public class CreateJobOutput implements Serializable, Cloneable {
      *        clip per output file. The Composition object cannot be null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public CreateJobOutput withComposition(java.util.Collection<Clip> composition) {
         setComposition(composition);
         return this;

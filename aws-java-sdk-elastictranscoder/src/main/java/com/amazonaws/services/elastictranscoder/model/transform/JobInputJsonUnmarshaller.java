@@ -75,6 +75,14 @@ public class JobInputJsonUnmarshaller implements Unmarshaller<JobInput, JsonUnma
                     context.nextToken();
                     jobInput.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TimeSpan", targetDepth)) {
+                    context.nextToken();
+                    jobInput.setTimeSpan(TimeSpanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("InputCaptions", targetDepth)) {
+                    context.nextToken();
+                    jobInput.setInputCaptions(InputCaptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DetectedProperties", targetDepth)) {
                     context.nextToken();
                     jobInput.setDetectedProperties(DetectedPropertiesJsonUnmarshaller.getInstance().unmarshall(context));

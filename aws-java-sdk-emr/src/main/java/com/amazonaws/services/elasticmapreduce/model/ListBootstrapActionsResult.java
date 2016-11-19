@@ -16,14 +16,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This output contains the boostrap actions detail .
+ * This output contains the bootstrap actions detail.
  * </p>
  */
 public class ListBootstrapActionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bootstrap actions associated with the cluster .
+     * The bootstrap actions associated with the cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Command> bootstrapActions;
@@ -36,10 +36,10 @@ public class ListBootstrapActionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The bootstrap actions associated with the cluster .
+     * The bootstrap actions associated with the cluster.
      * </p>
      * 
-     * @return The bootstrap actions associated with the cluster .
+     * @return The bootstrap actions associated with the cluster.
      */
 
     public java.util.List<Command> getBootstrapActions() {
@@ -51,11 +51,11 @@ public class ListBootstrapActionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The bootstrap actions associated with the cluster .
+     * The bootstrap actions associated with the cluster.
      * </p>
      * 
      * @param bootstrapActions
-     *        The bootstrap actions associated with the cluster .
+     *        The bootstrap actions associated with the cluster.
      */
 
     public void setBootstrapActions(java.util.Collection<Command> bootstrapActions) {
@@ -69,7 +69,7 @@ public class ListBootstrapActionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The bootstrap actions associated with the cluster .
+     * The bootstrap actions associated with the cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListBootstrapActionsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param bootstrapActions
-     *        The bootstrap actions associated with the cluster .
+     *        The bootstrap actions associated with the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListBootstrapActionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The bootstrap actions associated with the cluster .
+     * The bootstrap actions associated with the cluster.
      * </p>
      * 
      * @param bootstrapActions
-     *        The bootstrap actions associated with the cluster .
+     *        The bootstrap actions associated with the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

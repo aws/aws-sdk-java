@@ -33,8 +33,16 @@ public class UpdatePipelineStatusRequest extends com.amazonaws.AmazonWebServiceR
      * The desired status of the pipeline:
      * </p>
      * <ul>
-     * <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     * <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li>
+     * <li>
+     * <p>
+     * <code>Active</code>: The pipeline is processing jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Paused</code>: The pipeline is not currently processing jobs.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -84,15 +92,31 @@ public class UpdatePipelineStatusRequest extends com.amazonaws.AmazonWebServiceR
      * The desired status of the pipeline:
      * </p>
      * <ul>
-     * <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     * <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li>
+     * <li>
+     * <p>
+     * <code>Active</code>: The pipeline is processing jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Paused</code>: The pipeline is not currently processing jobs.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The desired status of the pipeline:</p>
      *        <ul>
-     *        <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     *        <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li>
+     *        <li>
+     *        <p>
+     *        <code>Active</code>: The pipeline is processing jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Paused</code>: The pipeline is not currently processing jobs.
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -104,14 +128,30 @@ public class UpdatePipelineStatusRequest extends com.amazonaws.AmazonWebServiceR
      * The desired status of the pipeline:
      * </p>
      * <ul>
-     * <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     * <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li>
+     * <li>
+     * <p>
+     * <code>Active</code>: The pipeline is processing jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Paused</code>: The pipeline is not currently processing jobs.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The desired status of the pipeline:</p>
      *         <ul>
-     *         <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     *         <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li>
+     *         <li>
+     *         <p>
+     *         <code>Active</code>: The pipeline is processing jobs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Paused</code>: The pipeline is not currently processing jobs.
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -123,15 +163,31 @@ public class UpdatePipelineStatusRequest extends com.amazonaws.AmazonWebServiceR
      * The desired status of the pipeline:
      * </p>
      * <ul>
-     * <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     * <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li>
+     * <li>
+     * <p>
+     * <code>Active</code>: The pipeline is processing jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Paused</code>: The pipeline is not currently processing jobs.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The desired status of the pipeline:</p>
      *        <ul>
-     *        <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     *        <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li>
+     *        <li>
+     *        <p>
+     *        <code>Active</code>: The pipeline is processing jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Paused</code>: The pipeline is not currently processing jobs.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

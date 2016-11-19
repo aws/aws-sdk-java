@@ -101,6 +101,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      */
     private VpcConfig vpcConfig;
 
+    private Environment environment;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If not
+     * provided, AWS Lambda will use a default service key.
+     * </p>
+     */
+    private String kMSKeyArn;
+
     /**
      * <p>
      * The name you want to assign to the function you are uploading. The function names appear in the console and are
@@ -683,6 +692,78 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * @param environment
+     */
+
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
+    }
+
+    /**
+     * @return
+     */
+
+    public Environment getEnvironment() {
+        return this.environment;
+    }
+
+    /**
+     * @param environment
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withEnvironment(Environment environment) {
+        setEnvironment(environment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If not
+     * provided, AWS Lambda will use a default service key.
+     * </p>
+     * 
+     * @param kMSKeyArn
+     *        The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
+     *        not provided, AWS Lambda will use a default service key.
+     */
+
+    public void setKMSKeyArn(String kMSKeyArn) {
+        this.kMSKeyArn = kMSKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If not
+     * provided, AWS Lambda will use a default service key.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
+     *         not provided, AWS Lambda will use a default service key.
+     */
+
+    public String getKMSKeyArn() {
+        return this.kMSKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If not
+     * provided, AWS Lambda will use a default service key.
+     * </p>
+     * 
+     * @param kMSKeyArn
+     *        The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
+     *        not provided, AWS Lambda will use a default service key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withKMSKeyArn(String kMSKeyArn) {
+        setKMSKeyArn(kMSKeyArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -712,7 +793,11 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getPublish() != null)
             sb.append("Publish: " + getPublish() + ",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: " + getVpcConfig());
+            sb.append("VpcConfig: " + getVpcConfig() + ",");
+        if (getEnvironment() != null)
+            sb.append("Environment: " + getEnvironment() + ",");
+        if (getKMSKeyArn() != null)
+            sb.append("KMSKeyArn: " + getKMSKeyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -767,6 +852,14 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getEnvironment() == null ^ this.getEnvironment() == null)
+            return false;
+        if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
+            return false;
+        if (other.getKMSKeyArn() == null ^ this.getKMSKeyArn() == null)
+            return false;
+        if (other.getKMSKeyArn() != null && other.getKMSKeyArn().equals(this.getKMSKeyArn()) == false)
+            return false;
         return true;
     }
 
@@ -785,6 +878,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode());
         hashCode = prime * hashCode + ((getPublish() == null) ? 0 : getPublish().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
         return hashCode;
     }
 

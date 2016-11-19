@@ -16,8 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Properties describing an instance of a virtual computing resource that is hosting game servers. Fleets contain zero
- * or more instances.
+ * Properties that describe an instance of a virtual computing resource that hosts one or more game servers. A fleet
+ * contains zero or more instances.
  * </p>
  */
 public class Instance implements Serializable, Cloneable {
@@ -42,7 +42,7 @@ public class Instance implements Serializable, Cloneable {
     private String ipAddress;
     /**
      * <p>
-     * Operating system being used on this instance.
+     * Operating system that is running on this instance.
      * </p>
      */
     private String operatingSystem;
@@ -209,11 +209,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system being used on this instance.
+     * Operating system that is running on this instance.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system being used on this instance.
+     *        Operating system that is running on this instance.
      * @see OperatingSystem
      */
 
@@ -223,10 +223,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system being used on this instance.
+     * Operating system that is running on this instance.
      * </p>
      * 
-     * @return Operating system being used on this instance.
+     * @return Operating system that is running on this instance.
      * @see OperatingSystem
      */
 
@@ -236,11 +236,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system being used on this instance.
+     * Operating system that is running on this instance.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system being used on this instance.
+     *        Operating system that is running on this instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
@@ -252,11 +252,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system being used on this instance.
+     * Operating system that is running on this instance.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system being used on this instance.
+     *        Operating system that is running on this instance.
      * @see OperatingSystem
      */
 
@@ -266,11 +266,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operating system being used on this instance.
+     * Operating system that is running on this instance.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system being used on this instance.
+     *        Operating system that is running on this instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */

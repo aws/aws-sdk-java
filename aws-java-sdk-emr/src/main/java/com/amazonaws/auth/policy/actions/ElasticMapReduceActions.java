@@ -29,6 +29,8 @@ public enum ElasticMapReduceActions implements Action {
     AddJobFlowSteps("elasticmapreduce:AddJobFlowSteps"),
     /** Action for the AddTags operation. */
     AddTags("elasticmapreduce:AddTags"),
+    /** Action for the CancelSteps operation. */
+    CancelSteps("elasticmapreduce:CancelSteps"),
     /** Action for the CreateSecurityConfiguration operation. */
     CreateSecurityConfiguration("elasticmapreduce:CreateSecurityConfiguration"),
     /** Action for the DeleteSecurityConfiguration operation. */
@@ -55,6 +57,10 @@ public enum ElasticMapReduceActions implements Action {
     ListSteps("elasticmapreduce:ListSteps"),
     /** Action for the ModifyInstanceGroups operation. */
     ModifyInstanceGroups("elasticmapreduce:ModifyInstanceGroups"),
+    /** Action for the PutAutoScalingPolicy operation. */
+    PutAutoScalingPolicy("elasticmapreduce:PutAutoScalingPolicy"),
+    /** Action for the RemoveAutoScalingPolicy operation. */
+    RemoveAutoScalingPolicy("elasticmapreduce:RemoveAutoScalingPolicy"),
     /** Action for the RemoveTags operation. */
     RemoveTags("elasticmapreduce:RemoveTags"),
     /** Action for the RunJobFlow operation. */

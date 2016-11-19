@@ -238,12 +238,14 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<TestRoleResult> testRoleAsync(TestRoleRequest request) {
 
         return testRoleAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<TestRoleResult> testRoleAsync(TestRoleRequest request,
             com.amazonaws.handlers.AsyncHandler<TestRoleRequest, TestRoleResult> asyncHandler) {
 

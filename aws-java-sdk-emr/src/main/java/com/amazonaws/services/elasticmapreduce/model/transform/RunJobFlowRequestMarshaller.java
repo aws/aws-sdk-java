@@ -185,6 +185,12 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
             if (runJobFlowRequest.getSecurityConfiguration() != null) {
                 jsonGenerator.writeFieldName("SecurityConfiguration").writeValue(runJobFlowRequest.getSecurityConfiguration());
             }
+            if (runJobFlowRequest.getAutoScalingRole() != null) {
+                jsonGenerator.writeFieldName("AutoScalingRole").writeValue(runJobFlowRequest.getAutoScalingRole());
+            }
+            if (runJobFlowRequest.getScaleDownBehavior() != null) {
+                jsonGenerator.writeFieldName("ScaleDownBehavior").writeValue(runJobFlowRequest.getScaleDownBehavior());
+            }
 
             jsonGenerator.writeEndObject();
 

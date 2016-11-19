@@ -26,9 +26,9 @@ import com.amazonaws.services.elasticmapreduce.waiters.AmazonElasticMapReduceWai
  * </p>
  * <p>
  * <p>
- * Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process large amounts of data
- * efficiently. Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such as web indexing,
- * data mining, log file analysis, machine learning, scientific simulation, and data warehousing.
+ * Amazon EMR is a web service that makes it easy to process large amounts of data efficiently. Amazon EMR uses Hadoop
+ * processing combined with several AWS products to do tasks such as web indexing, data mining, log file analysis,
+ * machine learning, scientific simulation, and data warehousing.
  * </p>
  */
 public interface AmazonElasticMapReduce {
@@ -88,7 +88,7 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * AddInstanceGroups adds an instance group to a running cluster.
+     * Adds one or more instance groups to a running cluster.
      * </p>
      * 
      * @param addInstanceGroupsRequest
@@ -108,9 +108,9 @@ public interface AmazonElasticMapReduce {
      * If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps
      * to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to
      * connect to the master node and submitting queries directly to the software running on the master node, such as
-     * Hive and Hadoop. For more information on how to do this, go to <a
+     * Hive and Hadoop. For more information on how to do this, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add More than
-     * 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce Developer's Guide</i>.
+     * 256 Steps to a Job Flow</a> in the <i>Amazon EMR Developer's Guide</i>.
      * </p>
      * <p>
      * A step specifies the location of a JAR file stored either on the master node of the job flow or in Amazon S3.
@@ -118,9 +118,9 @@ public interface AmazonElasticMapReduce {
      * either in the manifest of the JAR or by using the MainFunction parameter of the step.
      * </p>
      * <p>
-     * Elastic MapReduce executes each step in the order listed. For a step to be considered complete, the main function
-     * must exit with a zero exit code and all Hadoop jobs started while the step was running must have completed and
-     * run successfully.
+     * Amazon EMR executes each step in the order listed. For a step to be considered complete, the main function must
+     * exit with a zero exit code and all Hadoop jobs started while the step was running must have completed and run
+     * successfully.
      * </p>
      * <p>
      * You can only add steps to a job flow that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or
@@ -157,9 +157,26 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * Creates a security configuration using EMR Security Configurations, which are stored in the service. Security
-     * Configurations enable you to more easily create a configuration, reuse it, and apply it whenever a cluster is
-     * created.
+     * Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later,
+     * excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is
+     * idempotent but asynchronous; it does not guarantee a step will be canceled, even if the request is successfully
+     * submitted. You can only cancel steps that are in a <code>PENDING</code> state.
+     * </p>
+     * 
+     * @param cancelStepsRequest
+     *        The input argument to the <a>CancelSteps</a> operation.
+     * @return Result of the CancelSteps operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.CancelSteps
+     */
+    CancelStepsResult cancelSteps(CancelStepsRequest cancelStepsRequest);
+
+    /**
+     * <p>
+     * Creates a security configuration, which is stored in the service and can be specified when a cluster is created.
      * </p>
      * 
      * @param createSecurityConfigurationRequest
@@ -233,7 +250,7 @@ public interface AmazonElasticMapReduce {
      * </li>
      * </ul>
      * <p>
-     * Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions.
+     * Amazon EMR can return a maximum of 512 job flow descriptions.
      * </p>
      * 
      * @param describeJobFlowsRequest
@@ -380,7 +397,7 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * Provides a list of steps for the cluster.
+     * Provides a list of steps for the cluster in reverse order unless you specify stepIds with the request.
      * </p>
      * 
      * @param listStepsRequest
@@ -419,6 +436,30 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Creates or updates an automatic scaling policy for a core instance group or task instance group in an Amazon EMR
+     * cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances
+     * in response to the value of a CloudWatch metric.
+     * </p>
+     * 
+     * @param putAutoScalingPolicyRequest
+     * @return Result of the PutAutoScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduce.PutAutoScalingPolicy
+     */
+    PutAutoScalingPolicyResult putAutoScalingPolicy(PutAutoScalingPolicyRequest putAutoScalingPolicyRequest);
+
+    /**
+     * <p>
+     * Removes an automatic scaling policy from a specified instance group within an EMR cluster.
+     * </p>
+     * 
+     * @param removeAutoScalingPolicyRequest
+     * @return Result of the RemoveAutoScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduce.RemoveAutoScalingPolicy
+     */
+    RemoveAutoScalingPolicyResult removeAutoScalingPolicy(RemoveAutoScalingPolicyRequest removeAutoScalingPolicyRequest);
+
+    /**
+     * <p>
      * Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as
      * grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR
@@ -441,11 +482,11 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * RunJobFlow creates and starts running a new job flow. The job flow will run the steps specified. Once the job
+     * RunJobFlow creates and starts running a new job flow. The job flow will run the steps specified. After the job
      * flow completes, the cluster is stopped and the HDFS partition is lost. To prevent loss of data, configure the
      * last step of the job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a>
      * <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>, the job flow will transition to
-     * the WAITING state rather than shutting down once the steps have completed.
+     * the WAITING state rather than shutting down after the steps have completed.
      * </p>
      * <p>
      * For additional protection, you can set the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code>
@@ -459,9 +500,9 @@ public interface AmazonElasticMapReduce {
      * If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps
      * to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to
      * connect to the master node and submitting queries directly to the software running on the master node, such as
-     * Hive and Hadoop. For more information on how to do this, go to <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add More than
-     * 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce Developer's Guide</i>.
+     * Hive and Hadoop. For more information on how to do this, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Management/Guide/AddMoreThan256Steps.html">Add More than
+     * 256 Steps to a Job Flow</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * <p>
      * For long running job flows, we recommend that you periodically store your results.
@@ -478,7 +519,7 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster cannot be terminated by user
+     * SetTerminationProtection locks a job flow so the EC2 instances in the cluster cannot be terminated by user
      * intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful
      * completion of the job flow. Calling SetTerminationProtection on a job flow is analogous to calling the Amazon EC2
      * DisableAPITermination API on all of the EC2 instances in a cluster.
@@ -493,9 +534,9 @@ public interface AmazonElasticMapReduce {
      * <code>false</code>.
      * </p>
      * <p>
-     * For more information, go to <a
+     * For more information, see<a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html"
-     * >Protecting a Job Flow from Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
+     * >Protecting a Job Flow from Termination</a> in the <i>Amazon EMR Guide.</i>
      * </p>
      * 
      * @param setTerminationProtectionRequest
@@ -532,8 +573,8 @@ public interface AmazonElasticMapReduce {
      * </p>
      * <p>
      * The maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is asynchronous. Depending on the
-     * configuration of the job flow, it may take up to 5-20 minutes for the job flow to completely terminate and
-     * release allocated resources, such as Amazon EC2 instances.
+     * configuration of the job flow, it may take up to 1-5 minutes for the job flow to completely terminate and release
+     * allocated resources, such as Amazon EC2 instances.
      * </p>
      * 
      * @param terminateJobFlowsRequest

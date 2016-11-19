@@ -60,10 +60,10 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<InstanceGroupDetail> instanceGroups;
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented once for
-     * every hour an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four
-     * times more expensive would result in the normalized instance hours being incremented by four. This result is only
-     * an approximation and does not reflect the actual billing rate.
+     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
+     * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      */
     private Integer normalizedInstanceHours;
@@ -416,17 +416,17 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented once for
-     * every hour an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four
-     * times more expensive would result in the normalized instance hours being incremented by four. This result is only
-     * an approximation and does not reflect the actual billing rate.
+     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
+     * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented
-     *        once for every hour an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that
-     *        is roughly four times more expensive would result in the normalized instance hours being incremented by
-     *        four. This result is only an approximation and does not reflect the actual billing rate.
+     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        time for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance
+     *        that is roughly four times more expensive would result in the normalized instance hours being incremented
+     *        by four. This result is only an approximation and does not reflect the actual billing rate.
      */
 
     public void setNormalizedInstanceHours(Integer normalizedInstanceHours) {
@@ -435,16 +435,16 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented once for
-     * every hour an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four
-     * times more expensive would result in the normalized instance hours being incremented by four. This result is only
-     * an approximation and does not reflect the actual billing rate.
+     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
+     * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @return An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented
-     *         once for every hour an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that
-     *         is roughly four times more expensive would result in the normalized instance hours being incremented by
-     *         four. This result is only an approximation and does not reflect the actual billing rate.
+     *         one time for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2
+     *         instance that is roughly four times more expensive would result in the normalized instance hours being
+     *         incremented by four. This result is only an approximation and does not reflect the actual billing rate.
      */
 
     public Integer getNormalizedInstanceHours() {
@@ -453,17 +453,17 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented once for
-     * every hour an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four
-     * times more expensive would result in the normalized instance hours being incremented by four. This result is only
-     * an approximation and does not reflect the actual billing rate.
+     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
+     * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented
-     *        once for every hour an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that
-     *        is roughly four times more expensive would result in the normalized instance hours being incremented by
-     *        four. This result is only an approximation and does not reflect the actual billing rate.
+     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        time for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance
+     *        that is roughly four times more expensive would result in the normalized instance hours being incremented
+     *        by four. This result is only an approximation and does not reflect the actual billing rate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

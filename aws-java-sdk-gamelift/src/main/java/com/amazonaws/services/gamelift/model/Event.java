@@ -16,7 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Log entry describing an event involving an Amazon GameLift resource (such as a fleet).
+ * Log entry describing an event involving Amazon GameLift resources (such as a fleet). In addition to tracking
+ * activity, event codes and messages can provide additional information for troubleshooting and debugging problems.
  * </p>
  */
 public class Event implements Serializable, Cloneable {
@@ -48,7 +49,7 @@ public class Event implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057".
+     * "1469498468.057").
      * </p>
      */
     private java.util.Date eventTime;
@@ -249,12 +250,12 @@ public class Event implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057".
+     * "1469498468.057").
      * </p>
      * 
      * @param eventTime
      *        Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
-     *        (ex: "1469498468.057".
+     *        (ex: "1469498468.057").
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -264,11 +265,11 @@ public class Event implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057".
+     * "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
-     *         (ex: "1469498468.057".
+     *         (ex: "1469498468.057").
      */
 
     public java.util.Date getEventTime() {
@@ -278,12 +279,12 @@ public class Event implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057".
+     * "1469498468.057").
      * </p>
      * 
      * @param eventTime
      *        Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
-     *        (ex: "1469498468.057".
+     *        (ex: "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

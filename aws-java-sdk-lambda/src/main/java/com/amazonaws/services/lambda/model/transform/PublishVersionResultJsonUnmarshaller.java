@@ -99,6 +99,14 @@ public class PublishVersionResultJsonUnmarshaller implements Unmarshaller<Publis
                     context.nextToken();
                     publishVersionResult.setVpcConfig(VpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Environment", targetDepth)) {
+                    context.nextToken();
+                    publishVersionResult.setEnvironment(EnvironmentResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("KMSKeyArn", targetDepth)) {
+                    context.nextToken();
+                    publishVersionResult.setKMSKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

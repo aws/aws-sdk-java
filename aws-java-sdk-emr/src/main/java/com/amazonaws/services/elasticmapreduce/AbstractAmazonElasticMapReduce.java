@@ -51,6 +51,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public CancelStepsResult cancelSteps(CancelStepsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSecurityConfigurationResult createSecurityConfiguration(CreateSecurityConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -130,6 +135,16 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     @Override
     public ModifyInstanceGroupsResult modifyInstanceGroups() {
         return modifyInstanceGroups(new ModifyInstanceGroupsRequest());
+    }
+
+    @Override
+    public PutAutoScalingPolicyResult putAutoScalingPolicy(PutAutoScalingPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveAutoScalingPolicyResult removeAutoScalingPolicy(RemoveAutoScalingPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

@@ -54,6 +54,19 @@ public class JobJsonMarshaller {
                 jsonGenerator.writeFieldName("Input");
                 JobInputJsonMarshaller.getInstance().marshall(job.getInput(), jsonGenerator);
             }
+
+            com.amazonaws.internal.SdkInternalList<JobInput> inputsList = (com.amazonaws.internal.SdkInternalList<JobInput>) job.getInputs();
+            if (!inputsList.isEmpty() || !inputsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("Inputs");
+                jsonGenerator.writeStartArray();
+                for (JobInput inputsListValue : inputsList) {
+                    if (inputsListValue != null) {
+
+                        JobInputJsonMarshaller.getInstance().marshall(inputsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
             if (job.getOutput() != null) {
                 jsonGenerator.writeFieldName("Output");
                 JobOutputJsonMarshaller.getInstance().marshall(job.getOutput(), jsonGenerator);

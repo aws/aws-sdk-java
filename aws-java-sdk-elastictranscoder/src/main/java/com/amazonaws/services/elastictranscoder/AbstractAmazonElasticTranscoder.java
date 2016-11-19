@@ -111,6 +111,7 @@ public class AbstractAmazonElasticTranscoder implements AmazonElasticTranscoder 
     }
 
     @Override
+    @Deprecated
     public TestRoleResult testRole(TestRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

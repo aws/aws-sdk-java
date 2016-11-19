@@ -92,6 +92,13 @@ public class UpdateFunctionConfigurationRequestMarshaller implements
                 jsonGenerator.writeFieldName("VpcConfig");
                 VpcConfigJsonMarshaller.getInstance().marshall(updateFunctionConfigurationRequest.getVpcConfig(), jsonGenerator);
             }
+            if (updateFunctionConfigurationRequest.getEnvironment() != null) {
+                jsonGenerator.writeFieldName("Environment");
+                EnvironmentJsonMarshaller.getInstance().marshall(updateFunctionConfigurationRequest.getEnvironment(), jsonGenerator);
+            }
+            if (updateFunctionConfigurationRequest.getKMSKeyArn() != null) {
+                jsonGenerator.writeFieldName("KMSKeyArn").writeValue(updateFunctionConfigurationRequest.getKMSKeyArn());
+            }
             if (updateFunctionConfigurationRequest.getRuntime() != null) {
                 jsonGenerator.writeFieldName("Runtime").writeValue(updateFunctionConfigurationRequest.getRuntime());
             }
