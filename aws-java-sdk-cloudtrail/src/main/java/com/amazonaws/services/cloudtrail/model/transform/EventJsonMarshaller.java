@@ -50,6 +50,9 @@ public class EventJsonMarshaller {
             if (event.getEventTime() != null) {
                 jsonGenerator.writeFieldName("EventTime").writeValue(event.getEventTime());
             }
+            if (event.getEventSource() != null) {
+                jsonGenerator.writeFieldName("EventSource").writeValue(event.getEventSource());
+            }
             if (event.getUsername() != null) {
                 jsonGenerator.writeFieldName("Username").writeValue(event.getUsername());
             }

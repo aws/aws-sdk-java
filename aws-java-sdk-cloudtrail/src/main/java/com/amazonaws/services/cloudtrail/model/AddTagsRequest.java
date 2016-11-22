@@ -33,7 +33,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String resourceId;
     /**
      * <p>
-     * Contains a list of CloudTrail tags, up to a limit of 10.
+     * Contains a list of CloudTrail tags, up to a limit of 50
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tagsList;
@@ -95,10 +95,10 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Contains a list of CloudTrail tags, up to a limit of 10.
+     * Contains a list of CloudTrail tags, up to a limit of 50
      * </p>
      * 
-     * @return Contains a list of CloudTrail tags, up to a limit of 10.
+     * @return Contains a list of CloudTrail tags, up to a limit of 50
      */
 
     public java.util.List<Tag> getTagsList() {
@@ -110,11 +110,11 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Contains a list of CloudTrail tags, up to a limit of 10.
+     * Contains a list of CloudTrail tags, up to a limit of 50
      * </p>
      * 
      * @param tagsList
-     *        Contains a list of CloudTrail tags, up to a limit of 10.
+     *        Contains a list of CloudTrail tags, up to a limit of 50
      */
 
     public void setTagsList(java.util.Collection<Tag> tagsList) {
@@ -128,7 +128,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Contains a list of CloudTrail tags, up to a limit of 10.
+     * Contains a list of CloudTrail tags, up to a limit of 50
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -137,7 +137,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param tagsList
-     *        Contains a list of CloudTrail tags, up to a limit of 10.
+     *        Contains a list of CloudTrail tags, up to a limit of 50
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Contains a list of CloudTrail tags, up to a limit of 10.
+     * Contains a list of CloudTrail tags, up to a limit of 50
      * </p>
      * 
      * @param tagsList
-     *        Contains a list of CloudTrail tags, up to a limit of 10.
+     *        Contains a list of CloudTrail tags, up to a limit of 50
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

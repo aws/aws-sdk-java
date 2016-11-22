@@ -55,6 +55,10 @@ public class ContainerInstanceJsonUnmarshaller implements Unmarshaller<Container
                     context.nextToken();
                     containerInstance.setEc2InstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("version", targetDepth)) {
+                    context.nextToken();
+                    containerInstance.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("versionInfo", targetDepth)) {
                     context.nextToken();
                     containerInstance.setVersionInfo(VersionInfoJsonUnmarshaller.getInstance().unmarshall(context));

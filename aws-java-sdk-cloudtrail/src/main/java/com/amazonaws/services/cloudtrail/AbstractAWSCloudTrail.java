@@ -60,6 +60,11 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
     }
 
     @Override
+    public GetEventSelectorsResult getEventSelectors(GetEventSelectorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTrailStatusResult getTrailStatus(GetTrailStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -87,6 +92,11 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
     @Override
     public LookupEventsResult lookupEvents() {
         return lookupEvents(new LookupEventsRequest());
+    }
+
+    @Override
+    public PutEventSelectorsResult putEventSelectors(PutEventSelectorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

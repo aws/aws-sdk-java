@@ -7868,6 +7868,58 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "version",
+        "c2jShape" : "Long",
+        "deprecated" : false,
+        "documentation" : "<p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@param version The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@return The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.*/",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "version",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "version",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Version",
+        "setterDocumentation" : "/**<p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@param version The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "version",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@param version The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "version",
+          "variableType" : "Long",
+          "documentation" : "<p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "versionInfo",
         "c2jShape" : "VersionInfo",
         "deprecated" : false,
@@ -9266,6 +9318,59 @@
             "documentation" : "<p>The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Version" : {
+          "c2jName" : "version",
+          "c2jShape" : "Long",
+          "deprecated" : false,
+          "documentation" : "<p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@param version The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@return The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.*/",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "version",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "version",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Version",
+          "setterDocumentation" : "/**<p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@param version The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "version",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@param version The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "version",
+            "variableType" : "Long",
+            "documentation" : "<p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container instance state with CloudWatch events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
           },
           "xmlNameSpaceUri" : null
         },
@@ -13574,10 +13679,10 @@
         "c2jName" : "containerInstance",
         "c2jShape" : "ContainerInstance",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The container instance that was deregistered.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param containerInstance \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The container instance that was deregistered.</p>\n@param containerInstance The container instance that was deregistered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The container instance that was deregistered.</p>\n@return The container instance that was deregistered.*/",
         "getterModel" : {
           "returnType" : "ContainerInstance",
           "documentation" : null
@@ -13602,7 +13707,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "ContainerInstance",
-        "setterDocumentation" : "/**\n@param containerInstance */",
+        "setterDocumentation" : "/**<p>The container instance that was deregistered.</p>\n@param containerInstance The container instance that was deregistered.*/",
         "setterModel" : {
           "variableDeclarationType" : "ContainerInstance",
           "variableName" : "containerInstance",
@@ -13612,12 +13717,12 @@
           "variableSetterType" : "ContainerInstance"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param containerInstance \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The container instance that was deregistered.</p>\n@param containerInstance The container instance that was deregistered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "ContainerInstance",
           "variableName" : "containerInstance",
           "variableType" : "ContainerInstance",
-          "documentation" : "",
+          "documentation" : "<p>The container instance that was deregistered.</p>",
           "simpleType" : "ContainerInstance",
           "variableSetterType" : "ContainerInstance"
         },
@@ -13628,10 +13733,10 @@
           "c2jName" : "containerInstance",
           "c2jShape" : "ContainerInstance",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The container instance that was deregistered.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param containerInstance \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The container instance that was deregistered.</p>\n@param containerInstance The container instance that was deregistered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The container instance that was deregistered.</p>\n@return The container instance that was deregistered.*/",
           "getterModel" : {
             "returnType" : "ContainerInstance",
             "documentation" : null
@@ -13656,7 +13761,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "ContainerInstance",
-          "setterDocumentation" : "/**\n@param containerInstance */",
+          "setterDocumentation" : "/**<p>The container instance that was deregistered.</p>\n@param containerInstance The container instance that was deregistered.*/",
           "setterModel" : {
             "variableDeclarationType" : "ContainerInstance",
             "variableName" : "containerInstance",
@@ -13666,12 +13771,12 @@
             "variableSetterType" : "ContainerInstance"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param containerInstance \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The container instance that was deregistered.</p>\n@param containerInstance The container instance that was deregistered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "ContainerInstance",
             "variableName" : "containerInstance",
             "variableType" : "ContainerInstance",
-            "documentation" : "",
+            "documentation" : "<p>The container instance that was deregistered.</p>",
             "simpleType" : "ContainerInstance",
             "variableSetterType" : "ContainerInstance"
           },
@@ -27571,10 +27676,10 @@
         "c2jName" : "containerInstance",
         "c2jShape" : "ContainerInstance",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The container instance that was registered.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param containerInstance \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The container instance that was registered.</p>\n@param containerInstance The container instance that was registered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The container instance that was registered.</p>\n@return The container instance that was registered.*/",
         "getterModel" : {
           "returnType" : "ContainerInstance",
           "documentation" : null
@@ -27599,7 +27704,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "ContainerInstance",
-        "setterDocumentation" : "/**\n@param containerInstance */",
+        "setterDocumentation" : "/**<p>The container instance that was registered.</p>\n@param containerInstance The container instance that was registered.*/",
         "setterModel" : {
           "variableDeclarationType" : "ContainerInstance",
           "variableName" : "containerInstance",
@@ -27609,12 +27714,12 @@
           "variableSetterType" : "ContainerInstance"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param containerInstance \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The container instance that was registered.</p>\n@param containerInstance The container instance that was registered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "ContainerInstance",
           "variableName" : "containerInstance",
           "variableType" : "ContainerInstance",
-          "documentation" : "",
+          "documentation" : "<p>The container instance that was registered.</p>",
           "simpleType" : "ContainerInstance",
           "variableSetterType" : "ContainerInstance"
         },
@@ -27625,10 +27730,10 @@
           "c2jName" : "containerInstance",
           "c2jShape" : "ContainerInstance",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The container instance that was registered.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param containerInstance \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The container instance that was registered.</p>\n@param containerInstance The container instance that was registered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The container instance that was registered.</p>\n@return The container instance that was registered.*/",
           "getterModel" : {
             "returnType" : "ContainerInstance",
             "documentation" : null
@@ -27653,7 +27758,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "ContainerInstance",
-          "setterDocumentation" : "/**\n@param containerInstance */",
+          "setterDocumentation" : "/**<p>The container instance that was registered.</p>\n@param containerInstance The container instance that was registered.*/",
           "setterModel" : {
             "variableDeclarationType" : "ContainerInstance",
             "variableName" : "containerInstance",
@@ -27663,12 +27768,12 @@
             "variableSetterType" : "ContainerInstance"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param containerInstance \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The container instance that was registered.</p>\n@param containerInstance The container instance that was registered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "ContainerInstance",
             "variableName" : "containerInstance",
             "variableType" : "ContainerInstance",
-            "documentation" : "",
+            "documentation" : "<p>The container instance that was registered.</p>",
             "simpleType" : "ContainerInstance",
             "variableSetterType" : "ContainerInstance"
           },
@@ -34529,10 +34634,10 @@
         "c2jName" : "task",
         "c2jShape" : "Task",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The task that was stopped.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param task \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The task that was stopped.</p>\n@param task The task that was stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The task that was stopped.</p>\n@return The task that was stopped.*/",
         "getterModel" : {
           "returnType" : "Task",
           "documentation" : null
@@ -34557,7 +34662,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Task",
-        "setterDocumentation" : "/**\n@param task */",
+        "setterDocumentation" : "/**<p>The task that was stopped.</p>\n@param task The task that was stopped.*/",
         "setterModel" : {
           "variableDeclarationType" : "Task",
           "variableName" : "task",
@@ -34567,12 +34672,12 @@
           "variableSetterType" : "Task"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param task \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The task that was stopped.</p>\n@param task The task that was stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Task",
           "variableName" : "task",
           "variableType" : "Task",
-          "documentation" : "",
+          "documentation" : "<p>The task that was stopped.</p>",
           "simpleType" : "Task",
           "variableSetterType" : "Task"
         },
@@ -34583,10 +34688,10 @@
           "c2jName" : "task",
           "c2jShape" : "Task",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The task that was stopped.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param task \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The task that was stopped.</p>\n@param task The task that was stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The task that was stopped.</p>\n@return The task that was stopped.*/",
           "getterModel" : {
             "returnType" : "Task",
             "documentation" : null
@@ -34611,7 +34716,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Task",
-          "setterDocumentation" : "/**\n@param task */",
+          "setterDocumentation" : "/**<p>The task that was stopped.</p>\n@param task The task that was stopped.*/",
           "setterModel" : {
             "variableDeclarationType" : "Task",
             "variableName" : "task",
@@ -34621,12 +34726,12 @@
             "variableSetterType" : "Task"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param task \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The task that was stopped.</p>\n@param task The task that was stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Task",
             "variableName" : "task",
             "variableType" : "Task",
-            "documentation" : "",
+            "documentation" : "<p>The task that was stopped.</p>",
             "simpleType" : "Task",
             "variableSetterType" : "Task"
           },
@@ -36853,6 +36958,58 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "version",
+        "c2jShape" : "Long",
+        "deprecated" : false,
+        "documentation" : "<p>The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@param version The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@return The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.*/",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "version",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "version",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Version",
+        "setterDocumentation" : "/**<p>The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@param version The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "version",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@param version The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "version",
+          "variableType" : "Long",
+          "documentation" : "<p>The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "stoppedReason",
         "c2jShape" : "String",
         "deprecated" : false,
@@ -37815,6 +37972,59 @@
             "documentation" : "<p>The Amazon Resource Name (ARN) of the task definition that creates the task.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Version" : {
+          "c2jName" : "version",
+          "c2jShape" : "Long",
+          "deprecated" : false,
+          "documentation" : "<p>The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@param version The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@return The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.*/",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "version",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "version",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Version",
+          "setterDocumentation" : "/**<p>The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@param version The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "version",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>\n@param version The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "version",
+            "variableType" : "Long",
+            "documentation" : "<p>The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
           },
           "xmlNameSpaceUri" : null
         }
@@ -40426,10 +40636,10 @@
         "c2jName" : "containerInstance",
         "c2jShape" : "ContainerInstance",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The container instance for which the container agent was updated.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param containerInstance \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The container instance for which the container agent was updated.</p>\n@param containerInstance The container instance for which the container agent was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The container instance for which the container agent was updated.</p>\n@return The container instance for which the container agent was updated.*/",
         "getterModel" : {
           "returnType" : "ContainerInstance",
           "documentation" : null
@@ -40454,7 +40664,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "ContainerInstance",
-        "setterDocumentation" : "/**\n@param containerInstance */",
+        "setterDocumentation" : "/**<p>The container instance for which the container agent was updated.</p>\n@param containerInstance The container instance for which the container agent was updated.*/",
         "setterModel" : {
           "variableDeclarationType" : "ContainerInstance",
           "variableName" : "containerInstance",
@@ -40464,12 +40674,12 @@
           "variableSetterType" : "ContainerInstance"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param containerInstance \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The container instance for which the container agent was updated.</p>\n@param containerInstance The container instance for which the container agent was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "ContainerInstance",
           "variableName" : "containerInstance",
           "variableType" : "ContainerInstance",
-          "documentation" : "",
+          "documentation" : "<p>The container instance for which the container agent was updated.</p>",
           "simpleType" : "ContainerInstance",
           "variableSetterType" : "ContainerInstance"
         },
@@ -40480,10 +40690,10 @@
           "c2jName" : "containerInstance",
           "c2jShape" : "ContainerInstance",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The container instance for which the container agent was updated.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param containerInstance \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The container instance for which the container agent was updated.</p>\n@param containerInstance The container instance for which the container agent was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The container instance for which the container agent was updated.</p>\n@return The container instance for which the container agent was updated.*/",
           "getterModel" : {
             "returnType" : "ContainerInstance",
             "documentation" : null
@@ -40508,7 +40718,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "ContainerInstance",
-          "setterDocumentation" : "/**\n@param containerInstance */",
+          "setterDocumentation" : "/**<p>The container instance for which the container agent was updated.</p>\n@param containerInstance The container instance for which the container agent was updated.*/",
           "setterModel" : {
             "variableDeclarationType" : "ContainerInstance",
             "variableName" : "containerInstance",
@@ -40518,12 +40728,12 @@
             "variableSetterType" : "ContainerInstance"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param containerInstance \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The container instance for which the container agent was updated.</p>\n@param containerInstance The container instance for which the container agent was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "ContainerInstance",
             "variableName" : "containerInstance",
             "variableType" : "ContainerInstance",
-            "documentation" : "",
+            "documentation" : "<p>The container instance for which the container agent was updated.</p>",
             "simpleType" : "ContainerInstance",
             "variableSetterType" : "ContainerInstance"
           },

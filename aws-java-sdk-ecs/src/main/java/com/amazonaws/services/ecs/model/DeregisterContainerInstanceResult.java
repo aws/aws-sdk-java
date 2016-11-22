@@ -19,10 +19,20 @@ import java.io.Serializable;
  */
 public class DeregisterContainerInstanceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The container instance that was deregistered.
+     * </p>
+     */
     private ContainerInstance containerInstance;
 
     /**
+     * <p>
+     * The container instance that was deregistered.
+     * </p>
+     * 
      * @param containerInstance
+     *        The container instance that was deregistered.
      */
 
     public void setContainerInstance(ContainerInstance containerInstance) {
@@ -30,7 +40,11 @@ public class DeregisterContainerInstanceResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * @return
+     * <p>
+     * The container instance that was deregistered.
+     * </p>
+     * 
+     * @return The container instance that was deregistered.
      */
 
     public ContainerInstance getContainerInstance() {
@@ -38,7 +52,12 @@ public class DeregisterContainerInstanceResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The container instance that was deregistered.
+     * </p>
+     * 
      * @param containerInstance
+     *        The container instance that was deregistered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

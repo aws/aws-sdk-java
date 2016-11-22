@@ -41,8 +41,8 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  * </note>
  * <p>
- * See the CloudTrail User Guide for information about the data that is included with each AWS API call listed in the
- * log files.
+ * See the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS CloudTrail
+ * User Guide</a> for information about the data that is included with each AWS API call listed in the log files.
  * </p>
  */
 @ThreadSafe
@@ -382,6 +382,38 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetEventSelectorsResult> getEventSelectorsAsync(GetEventSelectorsRequest request) {
+
+        return getEventSelectorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventSelectorsResult> getEventSelectorsAsync(final GetEventSelectorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEventSelectorsRequest, GetEventSelectorsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEventSelectorsResult>() {
+            @Override
+            public GetEventSelectorsResult call() throws Exception {
+                GetEventSelectorsResult result;
+
+                try {
+                    result = getEventSelectors(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTrailStatusResult> getTrailStatusAsync(GetTrailStatusRequest request) {
 
         return getTrailStatusAsync(request, null);
@@ -551,6 +583,38 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
             com.amazonaws.handlers.AsyncHandler<LookupEventsRequest, LookupEventsResult> asyncHandler) {
 
         return lookupEventsAsync(new LookupEventsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEventSelectorsResult> putEventSelectorsAsync(PutEventSelectorsRequest request) {
+
+        return putEventSelectorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEventSelectorsResult> putEventSelectorsAsync(final PutEventSelectorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutEventSelectorsRequest, PutEventSelectorsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<PutEventSelectorsResult>() {
+            @Override
+            public PutEventSelectorsResult call() throws Exception {
+                PutEventSelectorsResult result;
+
+                try {
+                    result = putEventSelectors(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

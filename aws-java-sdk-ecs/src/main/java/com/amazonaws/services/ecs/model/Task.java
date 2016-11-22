@@ -78,6 +78,15 @@ public class Task implements Serializable, Cloneable {
     private String startedBy;
     /**
      * <p>
+     * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
+     * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can
+     * compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for
+     * the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.
+     * </p>
+     */
+    private Long version;
+    /**
+     * <p>
      * The reason the task was stopped.
      * </p>
      */
@@ -504,6 +513,67 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
+     * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can
+     * compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for
+     * the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.
+     * </p>
+     * 
+     * @param version
+     *        The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event,
+     *        the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch
+     *        events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in
+     *        CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your
+     *        event stream is current.
+     */
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
+     * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can
+     * compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for
+     * the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.
+     * </p>
+     * 
+     * @return The version counter for the task. Every time a task experiences a change that triggers a CloudWatch
+     *         event, the version counter is incremented. If you are replicating your Amazon ECS task state with
+     *         CloudWatch events, you can compare the version of a task reported by the Amazon ECS APIs with the version
+     *         reported in CloudWatch events for the task (inside the <code>detail</code> object) to verify that the
+     *         version in your event stream is current.
+     */
+
+    public Long getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
+     * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch events, you can
+     * compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch events for
+     * the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.
+     * </p>
+     * 
+     * @param version
+     *        The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event,
+     *        the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch
+     *        events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in
+     *        CloudWatch events for the task (inside the <code>detail</code> object) to verify that the version in your
+     *        event stream is current.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Task withVersion(Long version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
+     * <p>
      * The reason the task was stopped.
      * </p>
      * 
@@ -703,6 +773,8 @@ public class Task implements Serializable, Cloneable {
             sb.append("Containers: " + getContainers() + ",");
         if (getStartedBy() != null)
             sb.append("StartedBy: " + getStartedBy() + ",");
+        if (getVersion() != null)
+            sb.append("Version: " + getVersion() + ",");
         if (getStoppedReason() != null)
             sb.append("StoppedReason: " + getStoppedReason() + ",");
         if (getCreatedAt() != null)
@@ -761,6 +833,10 @@ public class Task implements Serializable, Cloneable {
             return false;
         if (other.getStartedBy() != null && other.getStartedBy().equals(this.getStartedBy()) == false)
             return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
+            return false;
         if (other.getStoppedReason() == null ^ this.getStoppedReason() == null)
             return false;
         if (other.getStoppedReason() != null && other.getStoppedReason().equals(this.getStoppedReason()) == false)
@@ -794,6 +870,7 @@ public class Task implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDesiredStatus() == null) ? 0 : getDesiredStatus().hashCode());
         hashCode = prime * hashCode + ((getContainers() == null) ? 0 : getContainers().hashCode());
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getStoppedReason() == null) ? 0 : getStoppedReason().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());

@@ -19,10 +19,20 @@ import java.io.Serializable;
  */
 public class StopTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The task that was stopped.
+     * </p>
+     */
     private Task task;
 
     /**
+     * <p>
+     * The task that was stopped.
+     * </p>
+     * 
      * @param task
+     *        The task that was stopped.
      */
 
     public void setTask(Task task) {
@@ -30,7 +40,11 @@ public class StopTaskResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * @return
+     * <p>
+     * The task that was stopped.
+     * </p>
+     * 
+     * @return The task that was stopped.
      */
 
     public Task getTask() {
@@ -38,7 +52,12 @@ public class StopTaskResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
+     * <p>
+     * The task that was stopped.
+     * </p>
+     * 
      * @param task
+     *        The task that was stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

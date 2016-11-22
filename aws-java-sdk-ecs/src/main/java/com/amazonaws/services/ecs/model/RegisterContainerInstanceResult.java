@@ -19,10 +19,20 @@ import java.io.Serializable;
  */
 public class RegisterContainerInstanceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The container instance that was registered.
+     * </p>
+     */
     private ContainerInstance containerInstance;
 
     /**
+     * <p>
+     * The container instance that was registered.
+     * </p>
+     * 
      * @param containerInstance
+     *        The container instance that was registered.
      */
 
     public void setContainerInstance(ContainerInstance containerInstance) {
@@ -30,7 +40,11 @@ public class RegisterContainerInstanceResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * The container instance that was registered.
+     * </p>
+     * 
+     * @return The container instance that was registered.
      */
 
     public ContainerInstance getContainerInstance() {
@@ -38,7 +52,12 @@ public class RegisterContainerInstanceResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The container instance that was registered.
+     * </p>
+     * 
      * @param containerInstance
+     *        The container instance that was registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

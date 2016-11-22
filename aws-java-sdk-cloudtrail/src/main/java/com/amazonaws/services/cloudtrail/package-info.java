@@ -32,8 +32,8 @@
  * </p>
  * </note>
  * <p>
- * See the CloudTrail User Guide for information about the data that is included with each AWS API call listed in the
- * log files.
+ * See the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS CloudTrail
+ * User Guide</a> for information about the data that is included with each AWS API call listed in the log files.
  * </p>
  */
 package com.amazonaws.services.cloudtrail;

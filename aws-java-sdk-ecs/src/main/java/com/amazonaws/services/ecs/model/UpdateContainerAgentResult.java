@@ -19,10 +19,20 @@ import java.io.Serializable;
  */
 public class UpdateContainerAgentResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The container instance for which the container agent was updated.
+     * </p>
+     */
     private ContainerInstance containerInstance;
 
     /**
+     * <p>
+     * The container instance for which the container agent was updated.
+     * </p>
+     * 
      * @param containerInstance
+     *        The container instance for which the container agent was updated.
      */
 
     public void setContainerInstance(ContainerInstance containerInstance) {
@@ -30,7 +40,11 @@ public class UpdateContainerAgentResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The container instance for which the container agent was updated.
+     * </p>
+     * 
+     * @return The container instance for which the container agent was updated.
      */
 
     public ContainerInstance getContainerInstance() {
@@ -38,7 +52,12 @@ public class UpdateContainerAgentResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The container instance for which the container agent was updated.
+     * </p>
+     * 
      * @param containerInstance
+     *        The container instance for which the container agent was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

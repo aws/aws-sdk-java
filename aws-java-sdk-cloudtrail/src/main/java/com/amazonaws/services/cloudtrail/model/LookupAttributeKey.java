@@ -21,7 +21,8 @@ public enum LookupAttributeKey {
     EventName("EventName"),
     Username("Username"),
     ResourceType("ResourceType"),
-    ResourceName("ResourceName");
+    ResourceName("ResourceName"),
+    EventSource("EventSource");
 
     private String value;
 

@@ -47,6 +47,9 @@ public class ContainerInstanceJsonMarshaller {
             if (containerInstance.getEc2InstanceId() != null) {
                 jsonGenerator.writeFieldName("ec2InstanceId").writeValue(containerInstance.getEc2InstanceId());
             }
+            if (containerInstance.getVersion() != null) {
+                jsonGenerator.writeFieldName("version").writeValue(containerInstance.getVersion());
+            }
             if (containerInstance.getVersionInfo() != null) {
                 jsonGenerator.writeFieldName("versionInfo");
                 VersionInfoJsonMarshaller.getInstance().marshall(containerInstance.getVersionInfo(), jsonGenerator);

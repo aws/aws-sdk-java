@@ -42,6 +42,12 @@ public class Event implements Serializable, Cloneable {
     private java.util.Date eventTime;
     /**
      * <p>
+     * The AWS service that the request was made to.
+     * </p>
+     */
+    private String eventSource;
+    /**
+     * <p>
      * A user name or role name of the requester that called the API in the event returned.
      * </p>
      */
@@ -176,6 +182,46 @@ public class Event implements Serializable, Cloneable {
 
     public Event withEventTime(java.util.Date eventTime) {
         setEventTime(eventTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS service that the request was made to.
+     * </p>
+     * 
+     * @param eventSource
+     *        The AWS service that the request was made to.
+     */
+
+    public void setEventSource(String eventSource) {
+        this.eventSource = eventSource;
+    }
+
+    /**
+     * <p>
+     * The AWS service that the request was made to.
+     * </p>
+     * 
+     * @return The AWS service that the request was made to.
+     */
+
+    public String getEventSource() {
+        return this.eventSource;
+    }
+
+    /**
+     * <p>
+     * The AWS service that the request was made to.
+     * </p>
+     * 
+     * @param eventSource
+     *        The AWS service that the request was made to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Event withEventSource(String eventSource) {
+        setEventSource(eventSource);
         return this;
     }
 
@@ -349,6 +395,8 @@ public class Event implements Serializable, Cloneable {
             sb.append("EventName: " + getEventName() + ",");
         if (getEventTime() != null)
             sb.append("EventTime: " + getEventTime() + ",");
+        if (getEventSource() != null)
+            sb.append("EventSource: " + getEventSource() + ",");
         if (getUsername() != null)
             sb.append("Username: " + getUsername() + ",");
         if (getResources() != null)
@@ -381,6 +429,10 @@ public class Event implements Serializable, Cloneable {
             return false;
         if (other.getEventTime() != null && other.getEventTime().equals(this.getEventTime()) == false)
             return false;
+        if (other.getEventSource() == null ^ this.getEventSource() == null)
+            return false;
+        if (other.getEventSource() != null && other.getEventSource().equals(this.getEventSource()) == false)
+            return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
         if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
@@ -404,6 +456,7 @@ public class Event implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEventId() == null) ? 0 : getEventId().hashCode());
         hashCode = prime * hashCode + ((getEventName() == null) ? 0 : getEventName().hashCode());
         hashCode = prime * hashCode + ((getEventTime() == null) ? 0 : getEventTime().hashCode());
+        hashCode = prime * hashCode + ((getEventSource() == null) ? 0 : getEventSource().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
         hashCode = prime * hashCode + ((getCloudTrailEvent() == null) ? 0 : getCloudTrailEvent().hashCode());

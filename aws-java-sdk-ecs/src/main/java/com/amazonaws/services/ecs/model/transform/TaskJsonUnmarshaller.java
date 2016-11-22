@@ -83,6 +83,10 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                     context.nextToken();
                     task.setStartedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("version", targetDepth)) {
+                    context.nextToken();
+                    task.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("stoppedReason", targetDepth)) {
                     context.nextToken();
                     task.setStoppedReason(context.getUnmarshaller(String.class).unmarshall(context));

@@ -44,8 +44,8 @@ import com.amazonaws.services.cloudtrail.model.*;
  * </p>
  * </note>
  * <p>
- * See the CloudTrail User Guide for information about the data that is included with each AWS API call listed in the
- * log files.
+ * See the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS CloudTrail
+ * User Guide</a> for information about the data that is included with each AWS API call listed in the log files.
  * </p>
  */
 public interface AWSCloudTrail {
@@ -105,7 +105,7 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Adds one or more tags to a trail, up to a limit of 10. Tags must be unique per trail. Overwrites an existing
+     * Adds one or more tags to a trail, up to a limit of 50. Tags must be unique per trail. Overwrites an existing
      * tag's value when a new value is specified for an existing tag key. If you specify a key without a value, the tag
      * will be created with the specified key and a value of null. You can tag a trail that applies to all regions only
      * from the region in which the trail was created (that is, from its home region).
@@ -124,7 +124,7 @@ public interface AWSCloudTrail {
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not supported by CloudTrail.
      * @throws TagsLimitExceededException
-     *         The number of tags per trail has exceeded the permitted amount. Currently, the limit is 10.
+     *         The number of tags per trail has exceeded the permitted amount. Currently, the limit is 50.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
      *         requirements:
@@ -326,6 +326,76 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
+     * Describes the settings for the event selectors that you configured for your trail. The information returned for
+     * your event selectors includes the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The S3 objects that you are logging for data events.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your event selector includes management events.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your event selector includes read-only events, write-only events, or all.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html"
+     * >Configuring Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * </p>
+     * 
+     * @param getEventSelectorsRequest
+     * @return Result of the GetEventSelectors operation returned by the service.
+     * @throws TrailNotFoundException
+     *         This exception is thrown when the trail with the given name is not found.
+     * @throws InvalidTrailNameException
+     *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
+     *         requirements:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
+     *         <code>my--namespace</code> are invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @sample AWSCloudTrail.GetEventSelectors
+     */
+    GetEventSelectorsResult getEventSelectors(GetEventSelectorsRequest getEventSelectorsRequest);
+
+    /**
+     * <p>
      * Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery
      * errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. This operation returns
      * trail status from a single region. To return trail status from all regions, you must call the operation on each
@@ -469,11 +539,38 @@ public interface AWSCloudTrail {
      * <p>
      * Looks up API activity events captured by CloudTrail that create, update, or delete resources in your account.
      * Events for a region can be looked up for the times in which you had CloudTrail turned on in that region during
-     * the last seven days. Lookup supports five different attributes: time range (defined by a start time and end
-     * time), user name, event name, resource type, and resource name. All attributes are optional. The maximum number
-     * of attributes that can be specified in any one lookup request are time range and one other attribute. The default
-     * number of results returned is 10, with a maximum of 50 possible. The response includes a token that you can use
-     * to get the next page of results.
+     * the last seven days. Lookup supports the following attributes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Event ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Event name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User name
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * All attributes are optional. The default number of results returned is 10, with a maximum of 50 possible. The
+     * response includes a token that you can use to get the next page of results.
      * </p>
      * <important>
      * <p>
@@ -510,6 +607,119 @@ public interface AWSCloudTrail {
      * @see #lookupEvents(LookupEventsRequest)
      */
     LookupEventsResult lookupEvents();
+
+    /**
+     * <p>
+     * Configures an event selector for your trail. Use event selectors to specify the type of events that you want your
+     * trail to log. When an event occurs in your account, CloudTrail evaluates the event selectors in all trails. For
+     * each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't
+     * match any event selector, the trail doesn't log the event.
+     * </p>
+     * <p>
+     * Example
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * You create an event selector for a trail and specify that you want write-only events.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The EC2 <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur in your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CloudTrail evaluates whether the events match your event selectors.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>RunInstances</code> is a write-only event and it matches your event selector. The trail logs the event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>GetConsoleOutput</code> is a read-only event but it doesn't match your event selector. The trail
+     * doesn't log the event.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * The <code>PutEventSelectors</code> operation must be called from the region in which the trail was created;
+     * otherwise, an <code>InvalidHomeRegionException</code> is thrown.
+     * </p>
+     * <p>
+     * You can configure up to five event selectors for each trail. For more information, see <a
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html"
+     * >Configuring Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * </p>
+     * 
+     * @param putEventSelectorsRequest
+     * @return Result of the PutEventSelectors operation returned by the service.
+     * @throws TrailNotFoundException
+     *         This exception is thrown when the trail with the given name is not found.
+     * @throws InvalidTrailNameException
+     *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
+     *         requirements:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
+     *         <code>my--namespace</code> are invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
+     * @throws InvalidHomeRegionException
+     *         This exception is thrown when an operation is called on a trail from a region other than the region in
+     *         which the trail was created.
+     * @throws InvalidEventSelectorsException
+     *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with an invalid
+     *         number of event selectors, data resources, or an invalid value for a parameter:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify a valid number of event selectors (1 to 5) for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a valid number of data resources (1 to 50) for an event selector.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter
+     *         with a value of <code>read-only</code> is invalid.
+     *         </p>
+     *         </li>
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @sample AWSCloudTrail.PutEventSelectors
+     */
+    PutEventSelectorsResult putEventSelectors(PutEventSelectorsRequest putEventSelectorsRequest);
 
     /**
      * <p>

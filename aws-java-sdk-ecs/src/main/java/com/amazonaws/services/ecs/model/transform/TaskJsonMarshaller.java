@@ -79,6 +79,9 @@ public class TaskJsonMarshaller {
             if (task.getStartedBy() != null) {
                 jsonGenerator.writeFieldName("startedBy").writeValue(task.getStartedBy());
             }
+            if (task.getVersion() != null) {
+                jsonGenerator.writeFieldName("version").writeValue(task.getVersion());
+            }
             if (task.getStoppedReason() != null) {
                 jsonGenerator.writeFieldName("stoppedReason").writeValue(task.getStoppedReason());
             }

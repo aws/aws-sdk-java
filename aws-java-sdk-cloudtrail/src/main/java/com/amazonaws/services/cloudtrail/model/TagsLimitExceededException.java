@@ -14,7 +14,7 @@ package com.amazonaws.services.cloudtrail.model;
 
 /**
  * <p>
- * The number of tags per trail has exceeded the permitted amount. Currently, the limit is 10.
+ * The number of tags per trail has exceeded the permitted amount. Currently, the limit is 50.
  * </p>
  */
 public class TagsLimitExceededException extends com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {

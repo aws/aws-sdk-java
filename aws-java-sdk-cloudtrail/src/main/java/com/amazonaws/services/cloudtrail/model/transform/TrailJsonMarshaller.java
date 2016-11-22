@@ -80,6 +80,9 @@ public class TrailJsonMarshaller {
             if (trail.getKmsKeyId() != null) {
                 jsonGenerator.writeFieldName("KmsKeyId").writeValue(trail.getKmsKeyId());
             }
+            if (trail.getHasCustomEventSelectors() != null) {
+                jsonGenerator.writeFieldName("HasCustomEventSelectors").writeValue(trail.getHasCustomEventSelectors());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

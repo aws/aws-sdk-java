@@ -117,6 +117,12 @@ public class Trail implements Serializable, Cloneable {
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * Specifies if the trail has custom event selectors.
+     * </p>
+     */
+    private Boolean hasCustomEventSelectors;
 
     /**
      * <p>
@@ -770,6 +776,58 @@ public class Trail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies if the trail has custom event selectors.
+     * </p>
+     * 
+     * @param hasCustomEventSelectors
+     *        Specifies if the trail has custom event selectors.
+     */
+
+    public void setHasCustomEventSelectors(Boolean hasCustomEventSelectors) {
+        this.hasCustomEventSelectors = hasCustomEventSelectors;
+    }
+
+    /**
+     * <p>
+     * Specifies if the trail has custom event selectors.
+     * </p>
+     * 
+     * @return Specifies if the trail has custom event selectors.
+     */
+
+    public Boolean getHasCustomEventSelectors() {
+        return this.hasCustomEventSelectors;
+    }
+
+    /**
+     * <p>
+     * Specifies if the trail has custom event selectors.
+     * </p>
+     * 
+     * @param hasCustomEventSelectors
+     *        Specifies if the trail has custom event selectors.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Trail withHasCustomEventSelectors(Boolean hasCustomEventSelectors) {
+        setHasCustomEventSelectors(hasCustomEventSelectors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies if the trail has custom event selectors.
+     * </p>
+     * 
+     * @return Specifies if the trail has custom event selectors.
+     */
+
+    public Boolean isHasCustomEventSelectors() {
+        return this.hasCustomEventSelectors;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -805,7 +863,9 @@ public class Trail implements Serializable, Cloneable {
         if (getCloudWatchLogsRoleArn() != null)
             sb.append("CloudWatchLogsRoleArn: " + getCloudWatchLogsRoleArn() + ",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId());
+            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+        if (getHasCustomEventSelectors() != null)
+            sb.append("HasCustomEventSelectors: " + getHasCustomEventSelectors());
         sb.append("}");
         return sb.toString();
     }
@@ -872,6 +932,10 @@ public class Trail implements Serializable, Cloneable {
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getHasCustomEventSelectors() == null ^ this.getHasCustomEventSelectors() == null)
+            return false;
+        if (other.getHasCustomEventSelectors() != null && other.getHasCustomEventSelectors().equals(this.getHasCustomEventSelectors()) == false)
+            return false;
         return true;
     }
 
@@ -893,6 +957,7 @@ public class Trail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCloudWatchLogsLogGroupArn() == null) ? 0 : getCloudWatchLogsLogGroupArn().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLogsRoleArn() == null) ? 0 : getCloudWatchLogsRoleArn().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getHasCustomEventSelectors() == null) ? 0 : getHasCustomEventSelectors().hashCode());
         return hashCode;
     }
 
