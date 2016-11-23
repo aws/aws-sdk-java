@@ -23,10 +23,11 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IPv4 IP address of the endpoint on which you want Amazon Route 53 to perform health checks. If you don't
-     * specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the domain name that
-     * you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in RequestInterval. Using
-     * an IP address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
+     * The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you
+     * don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the domain name
+     * that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in
+     * <code>RequestInterval</code>. Using an IP address returned by DNS, Amazon Route 53 then checks the health of the
+     * endpoint.
      * </p>
      * <p>
      * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
@@ -38,12 +39,29 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local, private,
-     * non-routable, or \ multicast ranges. For more information about IP addresses for which you can't create health
-     * checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> and <a
-     * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>.
+     * non-routable, or multicast ranges. For more information about IP addresses for which you can't create health
+     * checks, see the following documents:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * When the value of Type is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit IPAddress.
+     * <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit
+     * <code>IPAddress</code>.
      * </p>
      */
     private String iPAddress;
@@ -141,13 +159,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.
      * </p>
      * <p>
-     * <b>If you specify</b> <code>IPAddress</code>:
+     * <b>If you specify a value for</b> <code>IPAddress</code>:
      * </p>
      * <p>
-     * The value that you want Amazon Route 53 to pass in the <code>Host</code> header in all health checks except TCP
-     * health checks. This is typically the fully qualified DNS name of the website that you are attempting to health
-     * check. When Amazon Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code>
-     * header:
+     * Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of
+     * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health
+     * checks. This is typically the fully qualified DNS name of the endpoint on which you want Amazon Route 53 to
+     * perform health checks.
+     * </p>
+     * <p>
+     * When Amazon Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:
      * </p>
      * <ul>
      * <li>
@@ -177,13 +198,20 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.
      * </p>
      * <p>
-     * <b>If you don't specify</b> <code>IPAddress</code>:
+     * <b>If you don't specify a value for <code>IPAddress</code> </b>:
      * </p>
      * <p>
-     * If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain that
-     * you specify in <code>FullyQualifiedDomainName</code> at the interval you specify in <code>RequestInterval</code>.
-     * Using an IP address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
+     * Amazon Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at
+     * the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Amazon
+     * Route 53 then checks the health of the endpoint.
      * </p>
+     * <note>
+     * <p>
+     * If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 uses only IPv4 to send health checks to
+     * the endpoint. If there's no resource record set with a type of A for the name that you specify for
+     * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.
+     * </p>
+     * </note>
      * <p>
      * If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check
@@ -357,10 +385,11 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IPv4 IP address of the endpoint on which you want Amazon Route 53 to perform health checks. If you don't
-     * specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the domain name that
-     * you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in RequestInterval. Using
-     * an IP address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
+     * The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you
+     * don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the domain name
+     * that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in
+     * <code>RequestInterval</code>. Using an IP address returned by DNS, Amazon Route 53 then checks the health of the
+     * endpoint.
      * </p>
      * <p>
      * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
@@ -372,20 +401,37 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local, private,
-     * non-routable, or \ multicast ranges. For more information about IP addresses for which you can't create health
-     * checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> and <a
-     * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>.
+     * non-routable, or multicast ranges. For more information about IP addresses for which you can't create health
+     * checks, see the following documents:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * When the value of Type is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit IPAddress.
+     * <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit
+     * <code>IPAddress</code>.
      * </p>
      * 
      * @param iPAddress
-     *        The IPv4 IP address of the endpoint on which you want Amazon Route 53 to perform health checks. If you
-     *        don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the
+     *        The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If
+     *        you don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the
      *        domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in
-     *        RequestInterval. Using an IP address that DNS returns, Amazon Route 53 then checks the health of the
-     *        endpoint.</p>
+     *        <code>RequestInterval</code>. Using an IP address returned by DNS, Amazon Route 53 then checks the health
+     *        of the endpoint.</p>
      *        <p>
      *        If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with
      *        your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP
@@ -396,13 +442,30 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local,
-     *        private, non-routable, or \ multicast ranges. For more information about IP addresses for which you can't
-     *        create health checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
-     *        Addresses</a> and <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for
-     *        Shared Address Space</a>.
+     *        private, non-routable, or multicast ranges. For more information about IP addresses for which you can't
+     *        create health checks, see the following documents:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        When the value of Type is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit IPAddress.
+     *        <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address
+     *        Space</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit
+     *        <code>IPAddress</code>.
      */
 
     public void setIPAddress(String iPAddress) {
@@ -411,10 +474,11 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IPv4 IP address of the endpoint on which you want Amazon Route 53 to perform health checks. If you don't
-     * specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the domain name that
-     * you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in RequestInterval. Using
-     * an IP address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
+     * The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you
+     * don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the domain name
+     * that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in
+     * <code>RequestInterval</code>. Using an IP address returned by DNS, Amazon Route 53 then checks the health of the
+     * endpoint.
      * </p>
      * <p>
      * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
@@ -426,19 +490,36 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local, private,
-     * non-routable, or \ multicast ranges. For more information about IP addresses for which you can't create health
-     * checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> and <a
-     * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>.
+     * non-routable, or multicast ranges. For more information about IP addresses for which you can't create health
+     * checks, see the following documents:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * When the value of Type is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit IPAddress.
+     * <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit
+     * <code>IPAddress</code>.
      * </p>
      * 
-     * @return The IPv4 IP address of the endpoint on which you want Amazon Route 53 to perform health checks. If you
-     *         don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the
+     * @return The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If
+     *         you don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the
      *         domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in
-     *         RequestInterval. Using an IP address that DNS returns, Amazon Route 53 then checks the health of the
-     *         endpoint.</p>
+     *         <code>RequestInterval</code>. Using an IP address returned by DNS, Amazon Route 53 then checks the health
+     *         of the endpoint.</p>
      *         <p>
      *         If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with
      *         your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the
@@ -449,13 +530,30 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local,
-     *         private, non-routable, or \ multicast ranges. For more information about IP addresses for which you can't
-     *         create health checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
-     *         Addresses</a> and <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for
-     *         Shared Address Space</a>.
+     *         private, non-routable, or multicast ranges. For more information about IP addresses for which you can't
+     *         create health checks, see the following documents:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         When the value of Type is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit IPAddress.
+     *         <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address
+     *         Space</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit
+     *         <code>IPAddress</code>.
      */
 
     public String getIPAddress() {
@@ -464,10 +562,11 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IPv4 IP address of the endpoint on which you want Amazon Route 53 to perform health checks. If you don't
-     * specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the domain name that
-     * you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in RequestInterval. Using
-     * an IP address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
+     * The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you
+     * don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the domain name
+     * that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in
+     * <code>RequestInterval</code>. Using an IP address returned by DNS, Amazon Route 53 then checks the health of the
+     * endpoint.
      * </p>
      * <p>
      * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
@@ -479,20 +578,37 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local, private,
-     * non-routable, or \ multicast ranges. For more information about IP addresses for which you can't create health
-     * checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> and <a
-     * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>.
+     * non-routable, or multicast ranges. For more information about IP addresses for which you can't create health
+     * checks, see the following documents:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * When the value of Type is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit IPAddress.
+     * <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit
+     * <code>IPAddress</code>.
      * </p>
      * 
      * @param iPAddress
-     *        The IPv4 IP address of the endpoint on which you want Amazon Route 53 to perform health checks. If you
-     *        don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the
+     *        The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If
+     *        you don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to resolve the
      *        domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in
-     *        RequestInterval. Using an IP address that DNS returns, Amazon Route 53 then checks the health of the
-     *        endpoint.</p>
+     *        <code>RequestInterval</code>. Using an IP address returned by DNS, Amazon Route 53 then checks the health
+     *        of the endpoint.</p>
      *        <p>
      *        If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with
      *        your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP
@@ -503,13 +619,30 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Constraints: Amazon Route 53 can't check the health of endpoints for which the IP address is in local,
-     *        private, non-routable, or \ multicast ranges. For more information about IP addresses for which you can't
-     *        create health checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
-     *        Addresses</a> and <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for
-     *        Shared Address Space</a>.
+     *        private, non-routable, or multicast ranges. For more information about IP addresses for which you can't
+     *        create health checks, see the following documents:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        When the value of Type is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit IPAddress.
+     *        <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address
+     *        Space</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit
+     *        <code>IPAddress</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1364,13 +1497,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.
      * </p>
      * <p>
-     * <b>If you specify</b> <code>IPAddress</code>:
+     * <b>If you specify a value for</b> <code>IPAddress</code>:
      * </p>
      * <p>
-     * The value that you want Amazon Route 53 to pass in the <code>Host</code> header in all health checks except TCP
-     * health checks. This is typically the fully qualified DNS name of the website that you are attempting to health
-     * check. When Amazon Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code>
-     * header:
+     * Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of
+     * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health
+     * checks. This is typically the fully qualified DNS name of the endpoint on which you want Amazon Route 53 to
+     * perform health checks.
+     * </p>
+     * <p>
+     * When Amazon Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:
      * </p>
      * <ul>
      * <li>
@@ -1400,13 +1536,20 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.
      * </p>
      * <p>
-     * <b>If you don't specify</b> <code>IPAddress</code>:
+     * <b>If you don't specify a value for <code>IPAddress</code> </b>:
      * </p>
      * <p>
-     * If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain that
-     * you specify in <code>FullyQualifiedDomainName</code> at the interval you specify in <code>RequestInterval</code>.
-     * Using an IP address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
+     * Amazon Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at
+     * the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Amazon
+     * Route 53 then checks the health of the endpoint.
      * </p>
+     * <note>
+     * <p>
+     * If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 uses only IPv4 to send health checks to
+     * the endpoint. If there's no resource record set with a type of A for the name that you specify for
+     * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.
+     * </p>
+     * </note>
      * <p>
      * If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check
@@ -1432,13 +1575,17 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @param fullyQualifiedDomainName
      *        Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p>
      *        <p>
-     *        <b>If you specify</b> <code>IPAddress</code>:
+     *        <b>If you specify a value for</b> <code>IPAddress</code>:
      *        </p>
      *        <p>
-     *        The value that you want Amazon Route 53 to pass in the <code>Host</code> header in all health checks
-     *        except TCP health checks. This is typically the fully qualified DNS name of the website that you are
-     *        attempting to health check. When Amazon Route 53 checks the health of an endpoint, here is how it
-     *        constructs the <code>Host</code> header:
+     *        Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of
+     *        <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP
+     *        health checks. This is typically the fully qualified DNS name of the endpoint on which you want Amazon
+     *        Route 53 to perform health checks.
+     *        </p>
+     *        <p>
+     *        When Amazon Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code>
+     *        header:
      *        </p>
      *        <ul>
      *        <li>
@@ -1468,14 +1615,20 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        value of <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.
      *        </p>
      *        <p>
-     *        <b>If you don't specify</b> <code>IPAddress</code>:
+     *        <b>If you don't specify a value for <code>IPAddress</code> </b>:
      *        </p>
      *        <p>
-     *        If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain
-     *        that you specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
-     *        <code>RequestInterval</code>. Using an IP address that DNS returns, Amazon Route 53 then checks the health
-     *        of the endpoint.
+     *        Amazon Route 53 sends a DNS request to the domain that you specify for
+     *        <code>FullyQualifiedDomainName</code> at the interval that you specify for <code>RequestInterval</code>.
+     *        Using an IPv4 address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
      *        </p>
+     *        <note>
+     *        <p>
+     *        If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 uses only IPv4 to send health
+     *        checks to the endpoint. If there's no resource record set with a type of A for the name that you specify
+     *        for <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.
+     *        </p>
+     *        </note>
      *        <p>
      *        If you want to check the health of weighted, latency, or failover resource record sets and you choose to
      *        specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a
@@ -1508,13 +1661,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.
      * </p>
      * <p>
-     * <b>If you specify</b> <code>IPAddress</code>:
+     * <b>If you specify a value for</b> <code>IPAddress</code>:
      * </p>
      * <p>
-     * The value that you want Amazon Route 53 to pass in the <code>Host</code> header in all health checks except TCP
-     * health checks. This is typically the fully qualified DNS name of the website that you are attempting to health
-     * check. When Amazon Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code>
-     * header:
+     * Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of
+     * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health
+     * checks. This is typically the fully qualified DNS name of the endpoint on which you want Amazon Route 53 to
+     * perform health checks.
+     * </p>
+     * <p>
+     * When Amazon Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:
      * </p>
      * <ul>
      * <li>
@@ -1544,13 +1700,20 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.
      * </p>
      * <p>
-     * <b>If you don't specify</b> <code>IPAddress</code>:
+     * <b>If you don't specify a value for <code>IPAddress</code> </b>:
      * </p>
      * <p>
-     * If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain that
-     * you specify in <code>FullyQualifiedDomainName</code> at the interval you specify in <code>RequestInterval</code>.
-     * Using an IP address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
+     * Amazon Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at
+     * the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Amazon
+     * Route 53 then checks the health of the endpoint.
      * </p>
+     * <note>
+     * <p>
+     * If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 uses only IPv4 to send health checks to
+     * the endpoint. If there's no resource record set with a type of A for the name that you specify for
+     * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.
+     * </p>
+     * </note>
      * <p>
      * If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check
@@ -1575,13 +1738,17 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * 
      * @return Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p>
      *         <p>
-     *         <b>If you specify</b> <code>IPAddress</code>:
+     *         <b>If you specify a value for</b> <code>IPAddress</code>:
      *         </p>
      *         <p>
-     *         The value that you want Amazon Route 53 to pass in the <code>Host</code> header in all health checks
-     *         except TCP health checks. This is typically the fully qualified DNS name of the website that you are
-     *         attempting to health check. When Amazon Route 53 checks the health of an endpoint, here is how it
-     *         constructs the <code>Host</code> header:
+     *         Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of
+     *         <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP
+     *         health checks. This is typically the fully qualified DNS name of the endpoint on which you want Amazon
+     *         Route 53 to perform health checks.
+     *         </p>
+     *         <p>
+     *         When Amazon Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code>
+     *         header:
      *         </p>
      *         <ul>
      *         <li>
@@ -1611,14 +1778,20 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         value of <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.
      *         </p>
      *         <p>
-     *         <b>If you don't specify</b> <code>IPAddress</code>:
+     *         <b>If you don't specify a value for <code>IPAddress</code> </b>:
      *         </p>
      *         <p>
-     *         If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the
-     *         domain that you specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
-     *         <code>RequestInterval</code>. Using an IP address that DNS returns, Amazon Route 53 then checks the
-     *         health of the endpoint.
+     *         Amazon Route 53 sends a DNS request to the domain that you specify for
+     *         <code>FullyQualifiedDomainName</code> at the interval that you specify for <code>RequestInterval</code>.
+     *         Using an IPv4 address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
      *         </p>
+     *         <note>
+     *         <p>
+     *         If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 uses only IPv4 to send health
+     *         checks to the endpoint. If there's no resource record set with a type of A for the name that you specify
+     *         for <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.
+     *         </p>
+     *         </note>
      *         <p>
      *         If you want to check the health of weighted, latency, or failover resource record sets and you choose to
      *         specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a
@@ -1650,13 +1823,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.
      * </p>
      * <p>
-     * <b>If you specify</b> <code>IPAddress</code>:
+     * <b>If you specify a value for</b> <code>IPAddress</code>:
      * </p>
      * <p>
-     * The value that you want Amazon Route 53 to pass in the <code>Host</code> header in all health checks except TCP
-     * health checks. This is typically the fully qualified DNS name of the website that you are attempting to health
-     * check. When Amazon Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code>
-     * header:
+     * Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of
+     * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health
+     * checks. This is typically the fully qualified DNS name of the endpoint on which you want Amazon Route 53 to
+     * perform health checks.
+     * </p>
+     * <p>
+     * When Amazon Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:
      * </p>
      * <ul>
      * <li>
@@ -1686,13 +1862,20 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.
      * </p>
      * <p>
-     * <b>If you don't specify</b> <code>IPAddress</code>:
+     * <b>If you don't specify a value for <code>IPAddress</code> </b>:
      * </p>
      * <p>
-     * If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain that
-     * you specify in <code>FullyQualifiedDomainName</code> at the interval you specify in <code>RequestInterval</code>.
-     * Using an IP address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
+     * Amazon Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at
+     * the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Amazon
+     * Route 53 then checks the health of the endpoint.
      * </p>
+     * <note>
+     * <p>
+     * If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 uses only IPv4 to send health checks to
+     * the endpoint. If there's no resource record set with a type of A for the name that you specify for
+     * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.
+     * </p>
+     * </note>
      * <p>
      * If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify
      * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check
@@ -1718,13 +1901,17 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @param fullyQualifiedDomainName
      *        Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p>
      *        <p>
-     *        <b>If you specify</b> <code>IPAddress</code>:
+     *        <b>If you specify a value for</b> <code>IPAddress</code>:
      *        </p>
      *        <p>
-     *        The value that you want Amazon Route 53 to pass in the <code>Host</code> header in all health checks
-     *        except TCP health checks. This is typically the fully qualified DNS name of the website that you are
-     *        attempting to health check. When Amazon Route 53 checks the health of an endpoint, here is how it
-     *        constructs the <code>Host</code> header:
+     *        Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of
+     *        <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP
+     *        health checks. This is typically the fully qualified DNS name of the endpoint on which you want Amazon
+     *        Route 53 to perform health checks.
+     *        </p>
+     *        <p>
+     *        When Amazon Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code>
+     *        header:
      *        </p>
      *        <ul>
      *        <li>
@@ -1754,14 +1941,20 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        value of <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.
      *        </p>
      *        <p>
-     *        <b>If you don't specify</b> <code>IPAddress</code>:
+     *        <b>If you don't specify a value for <code>IPAddress</code> </b>:
      *        </p>
      *        <p>
-     *        If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 sends a DNS request to the domain
-     *        that you specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
-     *        <code>RequestInterval</code>. Using an IP address that DNS returns, Amazon Route 53 then checks the health
-     *        of the endpoint.
+     *        Amazon Route 53 sends a DNS request to the domain that you specify for
+     *        <code>FullyQualifiedDomainName</code> at the interval that you specify for <code>RequestInterval</code>.
+     *        Using an IPv4 address that DNS returns, Amazon Route 53 then checks the health of the endpoint.
      *        </p>
+     *        <note>
+     *        <p>
+     *        If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 uses only IPv4 to send health
+     *        checks to the endpoint. If there's no resource record set with a type of A for the name that you specify
+     *        for <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.
+     *        </p>
+     *        </note>
      *        <p>
      *        If you want to check the health of weighted, latency, or failover resource record sets and you choose to
      *        specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a

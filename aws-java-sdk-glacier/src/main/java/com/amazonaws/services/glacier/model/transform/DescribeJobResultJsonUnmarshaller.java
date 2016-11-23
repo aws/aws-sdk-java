@@ -111,6 +111,10 @@ public class DescribeJobResultJsonUnmarshaller implements Unmarshaller<DescribeJ
                     context.nextToken();
                     describeJobResult.setRetrievalByteRange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Tier", targetDepth)) {
+                    context.nextToken();
+                    describeJobResult.setTier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InventoryRetrievalParameters", targetDepth)) {
                     context.nextToken();
                     describeJobResult.setInventoryRetrievalParameters(InventoryRetrievalJobDescriptionJsonUnmarshaller.getInstance().unmarshall(context));

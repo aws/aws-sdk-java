@@ -89,6 +89,9 @@ public class GlacierJobDescriptionJsonMarshaller {
             if (glacierJobDescription.getRetrievalByteRange() != null) {
                 jsonGenerator.writeFieldName("RetrievalByteRange").writeValue(glacierJobDescription.getRetrievalByteRange());
             }
+            if (glacierJobDescription.getTier() != null) {
+                jsonGenerator.writeFieldName("Tier").writeValue(glacierJobDescription.getTier());
+            }
             if (glacierJobDescription.getInventoryRetrievalParameters() != null) {
                 jsonGenerator.writeFieldName("InventoryRetrievalParameters");
                 InventoryRetrievalJobDescriptionJsonMarshaller.getInstance().marshall(glacierJobDescription.getInventoryRetrievalParameters(), jsonGenerator);

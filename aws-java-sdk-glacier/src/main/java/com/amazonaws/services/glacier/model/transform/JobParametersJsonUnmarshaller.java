@@ -71,6 +71,10 @@ public class JobParametersJsonUnmarshaller implements Unmarshaller<JobParameters
                     context.nextToken();
                     jobParameters.setRetrievalByteRange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Tier", targetDepth)) {
+                    context.nextToken();
+                    jobParameters.setTier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InventoryRetrievalParameters", targetDepth)) {
                     context.nextToken();
                     jobParameters.setInventoryRetrievalParameters(InventoryRetrievalJobInputJsonUnmarshaller.getInstance().unmarshall(context));

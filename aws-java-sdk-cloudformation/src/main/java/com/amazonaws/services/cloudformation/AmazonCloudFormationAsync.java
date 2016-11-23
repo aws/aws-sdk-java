@@ -879,6 +879,47 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
+     * Lists all stacks that are importing an exported output value. To modify or remove an exported output value, first
+     * use this action to see which stacks are using it. To see the exported output values in your account, see
+     * <a>ListExports</a>.
+     * </p>
+     * <p>
+     * For more information about importing an exported output value, see the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+     * <code>Fn::ImportValue</code> </a> function.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @return A Java Future containing the result of the ListImports operation returned by the service.
+     * @sample AmazonCloudFormationAsync.ListImports
+     */
+    java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest listImportsRequest);
+
+    /**
+     * <p>
+     * Lists all stacks that are importing an exported output value. To modify or remove an exported output value, first
+     * use this action to see which stacks are using it. To see the exported output values in your account, see
+     * <a>ListExports</a>.
+     * </p>
+     * <p>
+     * For more information about importing an exported output value, see the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+     * <code>Fn::ImportValue</code> </a> function.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImports operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.ListImports
+     */
+    java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest listImportsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImportsRequest, ListImportsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns descriptions of all resources of the specified stack.
      * </p>
      * <p>

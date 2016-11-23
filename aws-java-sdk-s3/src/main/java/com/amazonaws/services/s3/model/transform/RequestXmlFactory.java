@@ -14,15 +14,16 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.s3.internal.XmlWriter;
+import com.amazonaws.services.s3.model.GlacierJobParameters;
+import com.amazonaws.services.s3.model.PartETag;
+import com.amazonaws.services.s3.model.RestoreObjectRequest;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import com.amazonaws.SdkClientException;
-import com.amazonaws.services.s3.internal.XmlWriter;
-import com.amazonaws.services.s3.model.PartETag;
-import com.amazonaws.services.s3.model.RestoreObjectRequest;
 
 public class RequestXmlFactory {
 
@@ -79,8 +80,20 @@ public class RequestXmlFactory {
 
         xml.start("RestoreRequest");
         xml.start("Days").value(Integer.toString(restoreObjectRequest.getExpirationInDays())).end();
+        final GlacierJobParameters glacierJobParameters = restoreObjectRequest.getGlacierJobParameters();
+        if (glacierJobParameters != null) {
+            xml.start("GlacierJobParameters");
+            addIfNotNull(xml, "Tier", glacierJobParameters.getTier());
+            xml.end();
+        }
         xml.end();
 
         return xml.getBytes();
+    }
+
+    private static void addIfNotNull(XmlWriter xml, String xmlTag, String value) {
+        if (value != null) {
+            xml.start(xmlTag).value(value).end();
+        }
     }
 }

@@ -45,30 +45,21 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String stackName;
     /**
      * <p>
-     * Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you
-     * specify a name, you must also specify the <code>StackName</code>.
+     * The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated
+     * template. If you specify a name, you must also specify the <code>StackName</code>.
      * </p>
      */
     private String changeSetName;
     /**
      * <p>
-     * The stage of the template that is returned.
+     * For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the
+     * user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has
+     * processed all transforms, specify <code>Processed</code>.
      * </p>
      * <p>
-     * Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.
+     * If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same
+     * template. By default, AWS CloudFormation specifies <code>Original</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Original</code> - Use this value to return the user-submitted template.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Processed</code> - Use this value to return the template after all transforms have been processed.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String templateStage;
 
@@ -204,13 +195,13 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you
-     * specify a name, you must also specify the <code>StackName</code>.
+     * The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated
+     * template. If you specify a name, you must also specify the <code>StackName</code>.
      * </p>
      * 
      * @param changeSetName
-     *        Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If
-     *        you specify a name, you must also specify the <code>StackName</code>.
+     *        The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated
+     *        template. If you specify a name, you must also specify the <code>StackName</code>.
      */
 
     public void setChangeSetName(String changeSetName) {
@@ -219,12 +210,12 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you
-     * specify a name, you must also specify the <code>StackName</code>.
+     * The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated
+     * template. If you specify a name, you must also specify the <code>StackName</code>.
      * </p>
      * 
-     * @return Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If
-     *         you specify a name, you must also specify the <code>StackName</code>.
+     * @return The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the
+     *         associated template. If you specify a name, you must also specify the <code>StackName</code>.
      */
 
     public String getChangeSetName() {
@@ -233,13 +224,13 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you
-     * specify a name, you must also specify the <code>StackName</code>.
+     * The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated
+     * template. If you specify a name, you must also specify the <code>StackName</code>.
      * </p>
      * 
      * @param changeSetName
-     *        Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If
-     *        you specify a name, you must also specify the <code>StackName</code>.
+     *        The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated
+     *        template. If you specify a name, you must also specify the <code>StackName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,41 +241,22 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage of the template that is returned.
+     * For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the
+     * user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has
+     * processed all transforms, specify <code>Processed</code>.
      * </p>
      * <p>
-     * Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.
+     * If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same
+     * template. By default, AWS CloudFormation specifies <code>Original</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Original</code> - Use this value to return the user-submitted template.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Processed</code> - Use this value to return the template after all transforms have been processed.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param templateStage
-     *        The stage of the template that is returned.</p>
+     *        For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get
+     *        the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation
+     *        has processed all transforms, specify <code>Processed</code>. </p>
      *        <p>
-     *        Valid values are <code>Original</code> and <code>Processed</code>. The default value is
-     *        <code>Original</code>.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Original</code> - Use this value to return the user-submitted template.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Processed</code> - Use this value to return the template after all transforms have been processed.
-     *        </p>
-     *        </li>
+     *        If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the
+     *        same template. By default, AWS CloudFormation specifies <code>Original</code>.
      * @see TemplateStage
      */
 
@@ -294,40 +266,21 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage of the template that is returned.
+     * For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the
+     * user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has
+     * processed all transforms, specify <code>Processed</code>.
      * </p>
      * <p>
-     * Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.
+     * If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same
+     * template. By default, AWS CloudFormation specifies <code>Original</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Original</code> - Use this value to return the user-submitted template.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Processed</code> - Use this value to return the template after all transforms have been processed.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The stage of the template that is returned.</p>
+     * @return For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get
+     *         the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation
+     *         has processed all transforms, specify <code>Processed</code>. </p>
      *         <p>
-     *         Valid values are <code>Original</code> and <code>Processed</code>. The default value is
-     *         <code>Original</code>.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Original</code> - Use this value to return the user-submitted template.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Processed</code> - Use this value to return the template after all transforms have been processed.
-     *         </p>
-     *         </li>
+     *         If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the
+     *         same template. By default, AWS CloudFormation specifies <code>Original</code>.
      * @see TemplateStage
      */
 
@@ -337,41 +290,22 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage of the template that is returned.
+     * For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the
+     * user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has
+     * processed all transforms, specify <code>Processed</code>.
      * </p>
      * <p>
-     * Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.
+     * If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same
+     * template. By default, AWS CloudFormation specifies <code>Original</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Original</code> - Use this value to return the user-submitted template.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Processed</code> - Use this value to return the template after all transforms have been processed.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param templateStage
-     *        The stage of the template that is returned.</p>
+     *        For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get
+     *        the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation
+     *        has processed all transforms, specify <code>Processed</code>. </p>
      *        <p>
-     *        Valid values are <code>Original</code> and <code>Processed</code>. The default value is
-     *        <code>Original</code>.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Original</code> - Use this value to return the user-submitted template.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Processed</code> - Use this value to return the template after all transforms have been processed.
-     *        </p>
-     *        </li>
+     *        If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the
+     *        same template. By default, AWS CloudFormation specifies <code>Original</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemplateStage
      */
@@ -383,41 +317,22 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage of the template that is returned.
+     * For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the
+     * user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has
+     * processed all transforms, specify <code>Processed</code>.
      * </p>
      * <p>
-     * Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.
+     * If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same
+     * template. By default, AWS CloudFormation specifies <code>Original</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Original</code> - Use this value to return the user-submitted template.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Processed</code> - Use this value to return the template after all transforms have been processed.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param templateStage
-     *        The stage of the template that is returned.</p>
+     *        For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get
+     *        the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation
+     *        has processed all transforms, specify <code>Processed</code>. </p>
      *        <p>
-     *        Valid values are <code>Original</code> and <code>Processed</code>. The default value is
-     *        <code>Original</code>.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Original</code> - Use this value to return the user-submitted template.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Processed</code> - Use this value to return the template after all transforms have been processed.
-     *        </p>
-     *        </li>
+     *        If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the
+     *        same template. By default, AWS CloudFormation specifies <code>Original</code>.
      * @see TemplateStage
      */
 
@@ -427,41 +342,22 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage of the template that is returned.
+     * For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the
+     * user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has
+     * processed all transforms, specify <code>Processed</code>.
      * </p>
      * <p>
-     * Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.
+     * If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same
+     * template. By default, AWS CloudFormation specifies <code>Original</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Original</code> - Use this value to return the user-submitted template.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Processed</code> - Use this value to return the template after all transforms have been processed.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param templateStage
-     *        The stage of the template that is returned.</p>
+     *        For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get
+     *        the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation
+     *        has processed all transforms, specify <code>Processed</code>. </p>
      *        <p>
-     *        Valid values are <code>Original</code> and <code>Processed</code>. The default value is
-     *        <code>Original</code>.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Original</code> - Use this value to return the user-submitted template.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Processed</code> - Use this value to return the template after all transforms have been processed.
-     *        </p>
-     *        </li>
+     *        If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the
+     *        same template. By default, AWS CloudFormation specifies <code>Original</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemplateStage
      */

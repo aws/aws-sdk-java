@@ -487,6 +487,9 @@
       }, {
         "exceptionName" : "ChangeSetNotFoundException",
         "documentation" : "<p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> action.</p>"
+      }, {
+        "exceptionName" : "InsufficientCapabilitiesException",
+        "documentation" : "<p>The template contains resources with capabilities that were not specified in the Capabilities parameter.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -541,7 +544,10 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns the template body for a specified stack. You can get the template for running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.</p> <note> <p> If the template does not exist, a <code>ValidationError</code> is returned. </p> </note>",
-      "exceptions" : null,
+      "exceptions" : [ {
+        "exceptionName" : "ChangeSetNotFoundException",
+        "documentation" : "<p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> action.</p>"
+      } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
         "variableDeclarationType" : "GetTemplateRequest",
@@ -640,6 +646,33 @@
         "documentation" : null
       },
       "syncReturnType" : "ListExportsResult"
+    },
+    "ListImports" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<ListImportsResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ListImportsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListImportsRequest, ListImportsResult>",
+      "asyncReturnType" : "ListImportsResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Lists all stacks that are importing an exported output value. To modify or remove an exported output value, first use this action to see which stacks are using it. To see the exported output values in your account, see <a>ListExports</a>. </p> <p>For more information about importing an exported output value, see the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html\"> <code>Fn::ImportValue</code> </a> function. </p>",
+      "exceptions" : null,
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "ListImportsRequest",
+        "variableName" : "listImportsRequest",
+        "variableType" : "ListImportsRequest",
+        "documentation" : "",
+        "simpleType" : "ListImportsRequest",
+        "variableSetterType" : "ListImportsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "listImports",
+      "operationName" : "ListImports",
+      "returnType" : {
+        "returnType" : "ListImportsResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "ListImportsResult"
     },
     "ListStackResources" : {
       "asyncCallableType" : "java.util.concurrent.Callable<ListStackResourcesResult>",
@@ -4352,10 +4385,10 @@
         "c2jName" : "ChangeSetType",
         "c2jShape" : "ChangeSetType",
         "deprecated" : false,
-        "documentation" : "<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>",
+        "documentation" : "<p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>",
         "enumType" : "ChangeSetType",
-        "fluentSetterDocumentation" : "/**<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>\n@param changeSetType The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeSetType*/",
-        "getterDocumentation" : "/**<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>\n@return The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li>\n@see ChangeSetType*/",
+        "fluentSetterDocumentation" : "/**<p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>\n@param changeSetType The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeSetType*/",
+        "getterDocumentation" : "/**<p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>\n@return The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.\n@see ChangeSetType*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -4380,7 +4413,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "ChangeSetType",
-        "setterDocumentation" : "/**<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>\n@param changeSetType The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li>\n@see ChangeSetType*/",
+        "setterDocumentation" : "/**<p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>\n@param changeSetType The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.\n@see ChangeSetType*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "changeSetType",
@@ -4390,12 +4423,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>\n@param changeSetType The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeSetType*/",
+        "varargSetterDocumentation" : "/**<p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>\n@param changeSetType The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeSetType*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "changeSetType",
           "variableType" : "String",
-          "documentation" : "<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>",
+          "documentation" : "<p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4579,10 +4612,10 @@
           "c2jName" : "ChangeSetType",
           "c2jShape" : "ChangeSetType",
           "deprecated" : false,
-          "documentation" : "<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>",
+          "documentation" : "<p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>",
           "enumType" : "ChangeSetType",
-          "fluentSetterDocumentation" : "/**<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>\n@param changeSetType The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeSetType*/",
-          "getterDocumentation" : "/**<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>\n@return The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li>\n@see ChangeSetType*/",
+          "fluentSetterDocumentation" : "/**<p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>\n@param changeSetType The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeSetType*/",
+          "getterDocumentation" : "/**<p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>\n@return The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.\n@see ChangeSetType*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -4607,7 +4640,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "ChangeSetType",
-          "setterDocumentation" : "/**<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>\n@param changeSetType The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li>\n@see ChangeSetType*/",
+          "setterDocumentation" : "/**<p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>\n@param changeSetType The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.\n@see ChangeSetType*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "changeSetType",
@@ -4617,12 +4650,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>\n@param changeSetType The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeSetType*/",
+          "varargSetterDocumentation" : "/**<p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>\n@param changeSetType The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeSetType*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "changeSetType",
             "variableType" : "String",
-            "documentation" : "<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>",
+            "documentation" : "<p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p> <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -16037,10 +16070,10 @@
         "c2jName" : "ChangeSetName",
         "c2jShape" : "ChangeSetNameOrId",
         "deprecated" : false,
-        "documentation" : "<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>",
+        "documentation" : "<p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@param changeSetName Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@return Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.*/",
+        "fluentSetterDocumentation" : "/**<p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@param changeSetName The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@return The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -16065,7 +16098,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "ChangeSetName",
-        "setterDocumentation" : "/**<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@param changeSetName Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.*/",
+        "setterDocumentation" : "/**<p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@param changeSetName The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "changeSetName",
@@ -16075,12 +16108,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@param changeSetName Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@param changeSetName The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "changeSetName",
           "variableType" : "String",
-          "documentation" : "<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>",
+          "documentation" : "<p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -16089,10 +16122,10 @@
         "c2jName" : "TemplateStage",
         "c2jShape" : "TemplateStage",
         "deprecated" : false,
-        "documentation" : "<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>",
+        "documentation" : "<p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>",
         "enumType" : "TemplateStage",
-        "fluentSetterDocumentation" : "/**<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>\n@param templateStage The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
-        "getterDocumentation" : "/**<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>\n@return The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li>\n@see TemplateStage*/",
+        "fluentSetterDocumentation" : "/**<p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>\n@param templateStage For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
+        "getterDocumentation" : "/**<p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>\n@return For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>.\n@see TemplateStage*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -16117,7 +16150,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "TemplateStage",
-        "setterDocumentation" : "/**<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>\n@param templateStage The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li>\n@see TemplateStage*/",
+        "setterDocumentation" : "/**<p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>\n@param templateStage For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>.\n@see TemplateStage*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "templateStage",
@@ -16127,12 +16160,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>\n@param templateStage The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
+        "varargSetterDocumentation" : "/**<p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>\n@param templateStage For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "templateStage",
           "variableType" : "String",
-          "documentation" : "<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>",
+          "documentation" : "<p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -16143,10 +16176,10 @@
           "c2jName" : "ChangeSetName",
           "c2jShape" : "ChangeSetNameOrId",
           "deprecated" : false,
-          "documentation" : "<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>",
+          "documentation" : "<p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@param changeSetName Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@return Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.*/",
+          "fluentSetterDocumentation" : "/**<p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@param changeSetName The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@return The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -16171,7 +16204,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "ChangeSetName",
-          "setterDocumentation" : "/**<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@param changeSetName Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.*/",
+          "setterDocumentation" : "/**<p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@param changeSetName The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "changeSetName",
@@ -16181,12 +16214,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@param changeSetName Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>\n@param changeSetName The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "changeSetName",
             "variableType" : "String",
-            "documentation" : "<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>",
+            "documentation" : "<p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -16249,10 +16282,10 @@
           "c2jName" : "TemplateStage",
           "c2jShape" : "TemplateStage",
           "deprecated" : false,
-          "documentation" : "<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>",
+          "documentation" : "<p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>",
           "enumType" : "TemplateStage",
-          "fluentSetterDocumentation" : "/**<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>\n@param templateStage The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
-          "getterDocumentation" : "/**<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>\n@return The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li>\n@see TemplateStage*/",
+          "fluentSetterDocumentation" : "/**<p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>\n@param templateStage For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
+          "getterDocumentation" : "/**<p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>\n@return For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>.\n@see TemplateStage*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -16277,7 +16310,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "TemplateStage",
-          "setterDocumentation" : "/**<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>\n@param templateStage The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li>\n@see TemplateStage*/",
+          "setterDocumentation" : "/**<p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>\n@param templateStage For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>.\n@see TemplateStage*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "templateStage",
@@ -16287,12 +16320,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>\n@param templateStage The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
+          "varargSetterDocumentation" : "/**<p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>\n@param templateStage For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "templateStage",
             "variableType" : "String",
-            "documentation" : "<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>",
+            "documentation" : "<p>For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>. </p> <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, AWS CloudFormation specifies <code>Original</code>. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -16385,10 +16418,10 @@
         "c2jName" : "StagesAvailable",
         "c2jShape" : "StageList",
         "deprecated" : false,
-        "documentation" : "<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>",
+        "documentation" : "<p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>",
         "enumType" : "TemplateStage",
-        "fluentSetterDocumentation" : "/**<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>\n@param stagesAvailable The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
-        "getterDocumentation" : "/**<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>\n@return The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p>\n@see TemplateStage*/",
+        "fluentSetterDocumentation" : "/**<p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>\n@param stagesAvailable The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
+        "getterDocumentation" : "/**<p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>\n@return The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.\n@see TemplateStage*/",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
           "documentation" : null
@@ -16480,7 +16513,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "StagesAvailable",
-        "setterDocumentation" : "/**<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>\n@param stagesAvailable The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p>\n@see TemplateStage*/",
+        "setterDocumentation" : "/**<p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>\n@param stagesAvailable The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.\n@see TemplateStage*/",
         "setterModel" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "variableName" : "stagesAvailable",
@@ -16490,12 +16523,12 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStagesAvailable(java.util.Collection)} or {@link #withStagesAvailable(java.util.Collection)} if you want to override the existing values.</p>\n@param stagesAvailable The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
+        "varargSetterDocumentation" : "/**<p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStagesAvailable(java.util.Collection)} or {@link #withStagesAvailable(java.util.Collection)} if you want to override the existing values.</p>\n@param stagesAvailable The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "variableName" : "stagesAvailable",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>",
+          "documentation" : "<p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -16506,10 +16539,10 @@
           "c2jName" : "StagesAvailable",
           "c2jShape" : "StageList",
           "deprecated" : false,
-          "documentation" : "<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>",
+          "documentation" : "<p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>",
           "enumType" : "TemplateStage",
-          "fluentSetterDocumentation" : "/**<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>\n@param stagesAvailable The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
-          "getterDocumentation" : "/**<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>\n@return The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p>\n@see TemplateStage*/",
+          "fluentSetterDocumentation" : "/**<p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>\n@param stagesAvailable The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
+          "getterDocumentation" : "/**<p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>\n@return The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.\n@see TemplateStage*/",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
             "documentation" : null
@@ -16601,7 +16634,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "StagesAvailable",
-          "setterDocumentation" : "/**<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>\n@param stagesAvailable The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p>\n@see TemplateStage*/",
+          "setterDocumentation" : "/**<p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>\n@param stagesAvailable The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.\n@see TemplateStage*/",
           "setterModel" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "variableName" : "stagesAvailable",
@@ -16611,12 +16644,12 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStagesAvailable(java.util.Collection)} or {@link #withStagesAvailable(java.util.Collection)} if you want to override the existing values.</p>\n@param stagesAvailable The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
+          "varargSetterDocumentation" : "/**<p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStagesAvailable(java.util.Collection)} or {@link #withStagesAvailable(java.util.Collection)} if you want to override the existing values.</p>\n@param stagesAvailable The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TemplateStage*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "variableName" : "stagesAvailable",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>",
+            "documentation" : "<p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After AWS CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -19707,6 +19740,636 @@
         "documentation" : null,
         "simpleType" : "ListExportsResult",
         "variableSetterType" : "ListExportsResult"
+      },
+      "wrapper" : false
+    },
+    "ListImportsRequest" : {
+      "c2jName" : "ListImportsInput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "ListImports",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : null,
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "ExportName",
+        "c2jShape" : "ExportName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value. </p>\n@param exportName The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value. </p>\n@return The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "ExportName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ExportName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ExportName",
+        "setterDocumentation" : "/**<p>The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value. </p>\n@param exportName The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "exportName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value. </p>\n@param exportName The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "exportName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value. </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "NextToken",
+        "c2jShape" : "NextToken",
+        "deprecated" : false,
+        "documentation" : "<p>A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. </p>\n@param nextToken A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. </p>\n@return A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "NextToken",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "NextToken",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "NextToken",
+        "setterDocumentation" : "/**<p>A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. </p>\n@param nextToken A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. </p>\n@param nextToken A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "<p>A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ExportName" : {
+          "c2jName" : "ExportName",
+          "c2jShape" : "ExportName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value. </p>\n@param exportName The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value. </p>\n@return The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "ExportName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ExportName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ExportName",
+          "setterDocumentation" : "/**<p>The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value. </p>\n@param exportName The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "exportName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value. </p>\n@param exportName The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "exportName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the exported output value. AWS CloudFormation returns the stack names that are importing this value. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "NextToken" : {
+          "c2jName" : "NextToken",
+          "c2jShape" : "NextToken",
+          "deprecated" : false,
+          "documentation" : "<p>A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. </p>\n@param nextToken A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. </p>\n@return A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "NextToken",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "NextToken",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "NextToken",
+          "setterDocumentation" : "/**<p>A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. </p>\n@param nextToken A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. </p>\n@param nextToken A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "<p>A string (provided by the <a>ListImports</a> response output) that identifies the next page of stacks that are importing the specified exported output value. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "ExportName" ],
+      "shapeName" : "ListImportsRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "ListImportsRequest",
+        "variableName" : "listImportsRequest",
+        "variableType" : "ListImportsRequest",
+        "documentation" : null,
+        "simpleType" : "ListImportsRequest",
+        "variableSetterType" : "ListImportsRequest"
+      },
+      "wrapper" : false
+    },
+    "ListImportsResult" : {
+      "c2jName" : "ListImportsOutput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "Imports",
+        "c2jShape" : "Imports",
+        "deprecated" : false,
+        "documentation" : "<p>A list of stack names that are importing the specified exported output value. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A list of stack names that are importing the specified exported output value. </p>\n@param imports A list of stack names that are importing the specified exported output value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>A list of stack names that are importing the specified exported output value. </p>\n@return A list of stack names that are importing the specified exported output value.*/",
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "Imports",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Imports",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "StackName",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterModel" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "simple" : true,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "String",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : true,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Imports",
+        "setterDocumentation" : "/**<p>A list of stack names that are importing the specified exported output value. </p>\n@param imports A list of stack names that are importing the specified exported output value.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "variableName" : "imports",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>A list of stack names that are importing the specified exported output value. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setImports(java.util.Collection)} or {@link #withImports(java.util.Collection)} if you want to override the existing values.</p>\n@param imports A list of stack names that are importing the specified exported output value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "variableName" : "imports",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "<p>A list of stack names that are importing the specified exported output value. </p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "NextToken",
+        "c2jShape" : "NextToken",
+        "deprecated" : false,
+        "documentation" : "<p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>\n@param nextToken A string that identifies the next page of exports. If there is no additional page, this value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>\n@return A string that identifies the next page of exports. If there is no additional page, this value is null.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "NextToken",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "NextToken",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "NextToken",
+        "setterDocumentation" : "/**<p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>\n@param nextToken A string that identifies the next page of exports. If there is no additional page, this value is null.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>\n@param nextToken A string that identifies the next page of exports. If there is no additional page, this value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "<p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Imports" : {
+          "c2jName" : "Imports",
+          "c2jShape" : "Imports",
+          "deprecated" : false,
+          "documentation" : "<p>A list of stack names that are importing the specified exported output value. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A list of stack names that are importing the specified exported output value. </p>\n@param imports A list of stack names that are importing the specified exported output value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>A list of stack names that are importing the specified exported output value. </p>\n@return A list of stack names that are importing the specified exported output value.*/",
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "Imports",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Imports",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "StackName",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterModel" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "simple" : true,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "String",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : true,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Imports",
+          "setterDocumentation" : "/**<p>A list of stack names that are importing the specified exported output value. </p>\n@param imports A list of stack names that are importing the specified exported output value.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "variableName" : "imports",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>A list of stack names that are importing the specified exported output value. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setImports(java.util.Collection)} or {@link #withImports(java.util.Collection)} if you want to override the existing values.</p>\n@param imports A list of stack names that are importing the specified exported output value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "variableName" : "imports",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "<p>A list of stack names that are importing the specified exported output value. </p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "NextToken" : {
+          "c2jName" : "NextToken",
+          "c2jShape" : "NextToken",
+          "deprecated" : false,
+          "documentation" : "<p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>\n@param nextToken A string that identifies the next page of exports. If there is no additional page, this value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>\n@return A string that identifies the next page of exports. If there is no additional page, this value is null.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "NextToken",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "NextToken",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "NextToken",
+          "setterDocumentation" : "/**<p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>\n@param nextToken A string that identifies the next page of exports. If there is no additional page, this value is null.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>\n@param nextToken A string that identifies the next page of exports. If there is no additional page, this value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "<p>A string that identifies the next page of exports. If there is no additional page, this value is null.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "ListImportsResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : "ListImportsResult"
+      },
+      "variable" : {
+        "variableDeclarationType" : "ListImportsResult",
+        "variableName" : "listImportsResult",
+        "variableType" : "ListImportsResult",
+        "documentation" : null,
+        "simpleType" : "ListImportsResult",
+        "variableSetterType" : "ListImportsResult"
       },
       "wrapper" : false
     },

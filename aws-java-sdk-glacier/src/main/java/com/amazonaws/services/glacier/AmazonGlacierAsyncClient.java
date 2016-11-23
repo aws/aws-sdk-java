@@ -34,8 +34,8 @@ import com.amazonaws.annotation.ThreadSafe;
  * <p>
  * Amazon Glacier is a great storage choice when low storage cost is paramount, your data is rarely retrieved, and
  * retrieval latency of several hours is acceptable. If your application requires fast or frequent access to your data,
- * consider using Amazon S3. For more information, go to <a href="http://aws.amazon.com/s3/">Amazon Simple Storage
- * Service (Amazon S3)</a>.
+ * consider using Amazon S3. For more information, see <a href="http://aws.amazon.com/s3/">Amazon Simple Storage Service
+ * (Amazon S3)</a>.
  * </p>
  * <p>
  * You can store any kind of data in any format. There is no maximum limit on the total amount of data you can store in
@@ -985,6 +985,38 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ListProvisionedCapacityResult> listProvisionedCapacityAsync(ListProvisionedCapacityRequest request) {
+
+        return listProvisionedCapacityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProvisionedCapacityResult> listProvisionedCapacityAsync(final ListProvisionedCapacityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListProvisionedCapacityRequest, ListProvisionedCapacityResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListProvisionedCapacityResult>() {
+            @Override
+            public ListProvisionedCapacityResult call() throws Exception {
+                ListProvisionedCapacityResult result;
+
+                try {
+                    result = listProvisionedCapacity(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForVaultResult> listTagsForVaultAsync(ListTagsForVaultRequest request) {
 
         return listTagsForVaultAsync(request, null);
@@ -1033,6 +1065,38 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
 
                 try {
                     result = listVaults(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseProvisionedCapacityResult> purchaseProvisionedCapacityAsync(PurchaseProvisionedCapacityRequest request) {
+
+        return purchaseProvisionedCapacityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseProvisionedCapacityResult> purchaseProvisionedCapacityAsync(final PurchaseProvisionedCapacityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PurchaseProvisionedCapacityRequest, PurchaseProvisionedCapacityResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<PurchaseProvisionedCapacityResult>() {
+            @Override
+            public PurchaseProvisionedCapacityResult call() throws Exception {
+                PurchaseProvisionedCapacityResult result;
+
+                try {
+                    result = purchaseProvisionedCapacity(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -14,7 +14,7 @@ package com.amazonaws.services.glacier.model;
 
 /**
  * <p>
- * Returned if the specified resource, such as a vault, upload ID, or job ID, does not exist.
+ * Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.
  * </p>
  */
 public class ResourceNotFoundException extends com.amazonaws.services.glacier.model.AmazonGlacierException {

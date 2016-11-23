@@ -25,9 +25,9 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with
-     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos
-     * <code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
-     * used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.
+     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '
+     * <code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
+     * used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.
      * </p>
      */
     private String accountId;
@@ -63,9 +63,9 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *        associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *        optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
      *        associated with the credentials used to sign the request. If you specify your account ID, do not include
-     *        any hyphens (apos-apos) in the ID.
+     *        any hyphens ('-') in the ID.
      * @param vaultName
      *        The name of the vault.
      */
@@ -77,17 +77,17 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with
-     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos
-     * <code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
-     * used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.
+     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '
+     * <code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
+     * used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *        associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *        optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
      *        associated with the credentials used to sign the request. If you specify your account ID, do not include
-     *        any hyphens (apos-apos) in the ID.
+     *        any hyphens ('-') in the ID.
      */
 
     public void setAccountId(String accountId) {
@@ -97,16 +97,16 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with
-     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos
-     * <code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
-     * used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.
+     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '
+     * <code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
+     * used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.
      * </p>
      * 
      * @return The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *         associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *         optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
      *         associated with the credentials used to sign the request. If you specify your account ID, do not include
-     *         any hyphens (apos-apos) in the ID.
+     *         any hyphens ('-') in the ID.
      */
 
     public String getAccountId() {
@@ -116,17 +116,17 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with
-     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos
-     * <code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
-     * used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.
+     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '
+     * <code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
+     * used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *        associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *        optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
      *        associated with the credentials used to sign the request. If you specify your account ID, do not include
-     *        any hyphens (apos-apos) in the ID.
+     *        any hyphens ('-') in the ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

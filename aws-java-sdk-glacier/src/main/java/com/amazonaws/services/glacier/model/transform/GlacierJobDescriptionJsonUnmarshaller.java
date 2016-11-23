@@ -111,6 +111,10 @@ public class GlacierJobDescriptionJsonUnmarshaller implements Unmarshaller<Glaci
                     context.nextToken();
                     glacierJobDescription.setRetrievalByteRange(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Tier", targetDepth)) {
+                    context.nextToken();
+                    glacierJobDescription.setTier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InventoryRetrievalParameters", targetDepth)) {
                     context.nextToken();
                     glacierJobDescription.setInventoryRetrievalParameters(InventoryRetrievalJobDescriptionJsonUnmarshaller.getInstance().unmarshall(context));

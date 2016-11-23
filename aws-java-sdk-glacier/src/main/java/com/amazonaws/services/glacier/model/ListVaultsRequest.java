@@ -26,9 +26,9 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with
-     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos
-     * <code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
-     * used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.
+     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '
+     * <code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
+     * used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.
      * </p>
      */
     private String accountId;
@@ -40,8 +40,8 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String marker;
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't specify a value, the List Vaults operation
-     * returns up to 1,000 items.
+     * The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned might be
+     * fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      * </p>
      */
     private String limit;
@@ -60,9 +60,9 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *        associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *        optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
      *        associated with the credentials used to sign the request. If you specify your account ID, do not include
-     *        any hyphens (apos-apos) in the ID.
+     *        any hyphens ('-') in the ID.
      */
     public ListVaultsRequest(String accountId) {
         setAccountId(accountId);
@@ -75,15 +75,15 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *        associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *        optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
      *        associated with the credentials used to sign the request. If you specify your account ID, do not include
-     *        any hyphens (apos-apos) in the ID.
+     *        any hyphens ('-') in the ID.
      * @param marker
      *        A string used for pagination. The marker specifies the vault ARN after which the listing of vaults should
      *        begin.
      * @param limit
-     *        The maximum number of items returned in the response. If you don't specify a value, the List Vaults
-     *        operation returns up to 1,000 items.
+     *        The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned
+     *        might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      */
     public ListVaultsRequest(String accountId, String marker, String limit) {
         setAccountId(accountId);
@@ -94,17 +94,17 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with
-     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos
-     * <code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
-     * used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.
+     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '
+     * <code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
+     * used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *        associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *        optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
      *        associated with the credentials used to sign the request. If you specify your account ID, do not include
-     *        any hyphens (apos-apos) in the ID.
+     *        any hyphens ('-') in the ID.
      */
 
     public void setAccountId(String accountId) {
@@ -114,16 +114,16 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with
-     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos
-     * <code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
-     * used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.
+     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '
+     * <code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
+     * used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.
      * </p>
      * 
      * @return The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *         associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *         optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
      *         associated with the credentials used to sign the request. If you specify your account ID, do not include
-     *         any hyphens (apos-apos) in the ID.
+     *         any hyphens ('-') in the ID.
      */
 
     public String getAccountId() {
@@ -133,17 +133,17 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with
-     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos
-     * <code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
-     * used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.
+     * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '
+     * <code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
+     * used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *        associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *        optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
      *        associated with the credentials used to sign the request. If you specify your account ID, do not include
-     *        any hyphens (apos-apos) in the ID.
+     *        any hyphens ('-') in the ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,13 +197,13 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't specify a value, the List Vaults operation
-     * returns up to 1,000 items.
+     * The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned might be
+     * fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items returned in the response. If you don't specify a value, the List Vaults
-     *        operation returns up to 1,000 items.
+     *        The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned
+     *        might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      */
 
     public void setLimit(String limit) {
@@ -212,12 +212,12 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't specify a value, the List Vaults operation
-     * returns up to 1,000 items.
+     * The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned might be
+     * fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      * </p>
      * 
-     * @return The maximum number of items returned in the response. If you don't specify a value, the List Vaults
-     *         operation returns up to 1,000 items.
+     * @return The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned
+     *         might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      */
 
     public String getLimit() {
@@ -226,13 +226,13 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of items returned in the response. If you don't specify a value, the List Vaults operation
-     * returns up to 1,000 items.
+     * The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned might be
+     * fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items returned in the response. If you don't specify a value, the List Vaults
-     *        operation returns up to 1,000 items.
+     *        The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned
+     *        might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

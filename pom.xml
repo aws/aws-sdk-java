@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.60-SNAPSHOT</version>
+  <version>1.11.60</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -117,7 +117,7 @@
     <url>https://github.com/aws/aws-sdk-java.git</url>
   </scm>
   <properties>
-      <awsjavasdk.version>1.11.59</awsjavasdk.version>
+      <awsjavasdk.version>1.11.60</awsjavasdk.version>
       <jackson.version>2.6.6</jackson.version>
       <ion.java.version>1.0.1</ion.java.version>
       <junit.version>4.12</junit.version>
@@ -151,7 +151,7 @@
       <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>jmespath-java</artifactId>
-        <version>1.11.60-SNAPSHOT</version>
+        <version>1.11.60</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

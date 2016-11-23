@@ -25,9 +25,9 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
-     * AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include
-     * any hyphens (apos-apos) in the ID.
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * </p>
      */
     private String accountId;
@@ -46,8 +46,44 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes,
-     * specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
+     * specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.
      * </p>
+     * <p>
+     * If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to
+     * download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want
+     * to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output
+     * requests. You use the following process to download the job output:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was
+     * received.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the
+     * payload on the client and compare it with the checksum you received in the response to ensure you received all
+     * the expected data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte
+     * range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree
+     * hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API, obtain job
+     * information of the job that provided you the output. The response includes the checksum of the entire archive
+     * stored in Amazon Glacier. You compare this value with the checksum you computed to ensure you have downloaded the
+     * entire archive content with no errors.
+     * </p>
+     * <p/></li>
+     * </ol>
      */
     private String range;
 
@@ -68,7 +104,43 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        The job ID whose data is downloaded.
      * @param range
      *        The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576
-     *        bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
+     *        bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire
+     *        output.</p>
+     *        <p>
+     *        If the job output is large, then you can use a range to retrieve a portion of the output. This allows you
+     *        to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output
+     *        you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight
+     *        Get Job Output requests. You use the following process to download the job output:
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data
+     *        was received.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of
+     *        the payload on the client and compare it with the checksum you received in the response to ensure you
+     *        received all the expected data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate
+     *        byte range.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        After downloading all the parts of the job output, you have a list of eight checksum values. Compute the
+     *        tree hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API,
+     *        obtain job information of the job that provided you the output. The response includes the checksum of the
+     *        entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure
+     *        you have downloaded the entire archive content with no errors.
+     *        </p>
+     *        <p/></li>
      */
     public GetJobOutputRequest(String vaultName, String jobId, String range) {
         setVaultName(vaultName);
@@ -82,16 +154,52 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
-     *        account ID, do not include any hyphens (apos-apos) in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
+     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens ('-') in the ID.
      * @param vaultName
      *        The name of the vault.
      * @param jobId
      *        The job ID whose data is downloaded.
      * @param range
      *        The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576
-     *        bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
+     *        bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire
+     *        output.</p>
+     *        <p>
+     *        If the job output is large, then you can use a range to retrieve a portion of the output. This allows you
+     *        to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output
+     *        you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight
+     *        Get Job Output requests. You use the following process to download the job output:
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data
+     *        was received.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of
+     *        the payload on the client and compare it with the checksum you received in the response to ensure you
+     *        received all the expected data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate
+     *        byte range.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        After downloading all the parts of the job output, you have a list of eight checksum values. Compute the
+     *        tree hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API,
+     *        obtain job information of the job that provided you the output. The response includes the checksum of the
+     *        entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure
+     *        you have downloaded the entire archive content with no errors.
+     *        </p>
+     *        <p/></li>
      */
     public GetJobOutputRequest(String accountId, String vaultName, String jobId, String range) {
         setAccountId(accountId);
@@ -103,16 +211,16 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
-     * AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include
-     * any hyphens (apos-apos) in the ID.
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
-     *        account ID, do not include any hyphens (apos-apos) in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
+     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens ('-') in the ID.
      */
 
     public void setAccountId(String accountId) {
@@ -122,15 +230,15 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
-     * AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include
-     * any hyphens (apos-apos) in the ID.
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * </p>
      * 
      * @return The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *         specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     *         Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
-     *         account ID, do not include any hyphens (apos-apos) in the ID.
+     *         specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
+     *         uses the AWS account ID associated with the credentials used to sign the request. If you use an account
+     *         ID, do not include any hyphens ('-') in the ID.
      */
 
     public String getAccountId() {
@@ -140,16 +248,16 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the
-     * AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include
-     * any hyphens (apos-apos) in the ID.
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
+     * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon
-     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
-     *        account ID, do not include any hyphens (apos-apos) in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
+     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
+     *        ID, do not include any hyphens ('-') in the ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,12 +349,84 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes,
-     * specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
+     * specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.
      * </p>
+     * <p>
+     * If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to
+     * download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want
+     * to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output
+     * requests. You use the following process to download the job output:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was
+     * received.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the
+     * payload on the client and compare it with the checksum you received in the response to ensure you received all
+     * the expected data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte
+     * range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree
+     * hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API, obtain job
+     * information of the job that provided you the output. The response includes the checksum of the entire archive
+     * stored in Amazon Glacier. You compare this value with the checksum you computed to ensure you have downloaded the
+     * entire archive content with no errors.
+     * </p>
+     * <p/></li>
+     * </ol>
      * 
      * @param range
      *        The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576
-     *        bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
+     *        bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire
+     *        output.</p>
+     *        <p>
+     *        If the job output is large, then you can use a range to retrieve a portion of the output. This allows you
+     *        to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output
+     *        you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight
+     *        Get Job Output requests. You use the following process to download the job output:
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data
+     *        was received.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of
+     *        the payload on the client and compare it with the checksum you received in the response to ensure you
+     *        received all the expected data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate
+     *        byte range.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        After downloading all the parts of the job output, you have a list of eight checksum values. Compute the
+     *        tree hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API,
+     *        obtain job information of the job that provided you the output. The response includes the checksum of the
+     *        entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure
+     *        you have downloaded the entire archive content with no errors.
+     *        </p>
+     *        <p/></li>
      */
 
     public void setRange(String range) {
@@ -256,11 +436,83 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes,
-     * specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
+     * specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.
      * </p>
+     * <p>
+     * If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to
+     * download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want
+     * to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output
+     * requests. You use the following process to download the job output:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was
+     * received.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the
+     * payload on the client and compare it with the checksum you received in the response to ensure you received all
+     * the expected data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte
+     * range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree
+     * hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API, obtain job
+     * information of the job that provided you the output. The response includes the checksum of the entire archive
+     * stored in Amazon Glacier. You compare this value with the checksum you computed to ensure you have downloaded the
+     * entire archive content with no errors.
+     * </p>
+     * <p/></li>
+     * </ol>
      * 
      * @return The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576
-     *         bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
+     *         bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire
+     *         output.</p>
+     *         <p>
+     *         If the job output is large, then you can use a range to retrieve a portion of the output. This allows you
+     *         to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job
+     *         output you want to download and you decide to download 128 MB chunks of data at a time, which is a total
+     *         of eight Get Job Output requests. You use the following process to download the job output:
+     *         </p>
+     *         <ol>
+     *         <li>
+     *         <p>
+     *         Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of
+     *         data was received.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of
+     *         the payload on the client and compare it with the checksum you received in the response to ensure you
+     *         received all the expected data.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate
+     *         byte range.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         After downloading all the parts of the job output, you have a list of eight checksum values. Compute the
+     *         tree hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API,
+     *         obtain job information of the job that provided you the output. The response includes the checksum of the
+     *         entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure
+     *         you have downloaded the entire archive content with no errors.
+     *         </p>
+     *         <p/></li>
      */
 
     public String getRange() {
@@ -270,12 +522,84 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576 bytes,
-     * specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
+     * specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire output.
      * </p>
+     * <p>
+     * If the job output is large, then you can use a range to retrieve a portion of the output. This allows you to
+     * download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want
+     * to download and you decide to download 128 MB chunks of data at a time, which is a total of eight Get Job Output
+     * requests. You use the following process to download the job output:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data was
+     * received.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of the
+     * payload on the client and compare it with the checksum you received in the response to ensure you received all
+     * the expected data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte
+     * range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree
+     * hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API, obtain job
+     * information of the job that provided you the output. The response includes the checksum of the entire archive
+     * stored in Amazon Glacier. You compare this value with the checksum you computed to ensure you have downloaded the
+     * entire archive content with no errors.
+     * </p>
+     * <p/></li>
+     * </ol>
      * 
      * @param range
      *        The range of bytes to retrieve from the output. For example, if you want to download the first 1,048,576
-     *        bytes, specify "Range: bytes=0-1048575". By default, this operation downloads the entire output.
+     *        bytes, specify the range as <code>bytes=0-1048575</code>. By default, this operation downloads the entire
+     *        output.</p>
+     *        <p>
+     *        If the job output is large, then you can use a range to retrieve a portion of the output. This allows you
+     *        to download the entire output in smaller chunks of bytes. For example, suppose you have 1 GB of job output
+     *        you want to download and you decide to download 128 MB chunks of data at a time, which is a total of eight
+     *        Get Job Output requests. You use the following process to download the job output:
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        Download a 128 MB chunk of output by specifying the appropriate byte range. Verify that all 128 MB of data
+     *        was received.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Along with the data, the response includes a SHA256 tree hash of the payload. You compute the checksum of
+     *        the payload on the client and compare it with the checksum you received in the response to ensure you
+     *        received all the expected data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate
+     *        byte range.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        After downloading all the parts of the job output, you have a list of eight checksum values. Compute the
+     *        tree hash of these values to find the checksum of the entire output. Using the <a>DescribeJob</a> API,
+     *        obtain job information of the job that provided you the output. The response includes the checksum of the
+     *        entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to ensure
+     *        you have downloaded the entire archive content with no errors.
+     *        </p>
+     *        <p/></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

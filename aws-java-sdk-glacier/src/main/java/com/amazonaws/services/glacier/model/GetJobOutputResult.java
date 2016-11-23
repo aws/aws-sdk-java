@@ -31,16 +31,28 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * The checksum of the data in the response. This header is returned only when retrieving the output for an archive
      * retrieval job. Furthermore, this header appears only under the following conditions:
-     * <ul>
-     * <li>You get the entire range of the archive.</li>
-     * <li>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you
-     * have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the
-     * x-amz-sha256-tree-hash is returned as a response header.</li>
-     * <li>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the
-     * archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
-     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You get the entire range of the archive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have
+     * an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the
+     * x-amz-sha256-tree-hash is returned as a response header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the
+     * archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
+     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String checksum;
     /**
@@ -59,7 +71,7 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
     private String contentRange;
     /**
      * <p>
-     * Indicates the range units accepted. For more information, go to <a
+     * Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      * </p>
      */
@@ -124,30 +136,52 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * The checksum of the data in the response. This header is returned only when retrieving the output for an archive
      * retrieval job. Furthermore, this header appears only under the following conditions:
-     * <ul>
-     * <li>You get the entire range of the archive.</li>
-     * <li>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you
-     * have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the
-     * x-amz-sha256-tree-hash is returned as a response header.</li>
-     * <li>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the
-     * archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
-     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You get the entire range of the archive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have
+     * an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the
+     * x-amz-sha256-tree-hash is returned as a response header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the
+     * archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
+     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param checksum
      *        The checksum of the data in the response. This header is returned only when retrieving the output for an
-     *        archive retrieval job. Furthermore, this header appears only under the following conditions:
+     *        archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
      *        <ul>
-     *        <li>You get the entire range of the archive.</li>
-     *        <li>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example,
-     *        if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then
-     *        the x-amz-sha256-tree-hash is returned as a response header.</li>
-     *        <li>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of
-     *        the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and
-     *        ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.
+     *        <li>
+     *        <p>
+     *        You get the entire range of the archive.
+     *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if
+     *        you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then
+     *        the x-amz-sha256-tree-hash is returned as a response header.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the
+     *        archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at
+     *        3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.
+     *        </p>
+     *        </li>
      */
 
     public void setChecksum(String checksum) {
@@ -158,29 +192,51 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * The checksum of the data in the response. This header is returned only when retrieving the output for an archive
      * retrieval job. Furthermore, this header appears only under the following conditions:
-     * <ul>
-     * <li>You get the entire range of the archive.</li>
-     * <li>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you
-     * have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the
-     * x-amz-sha256-tree-hash is returned as a response header.</li>
-     * <li>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the
-     * archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
-     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You get the entire range of the archive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have
+     * an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the
+     * x-amz-sha256-tree-hash is returned as a response header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the
+     * archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
+     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The checksum of the data in the response. This header is returned only when retrieving the output for an
-     *         archive retrieval job. Furthermore, this header appears only under the following conditions:
+     *         archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
      *         <ul>
-     *         <li>You get the entire range of the archive.</li>
-     *         <li>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example,
-     *         if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB,
-     *         then the x-amz-sha256-tree-hash is returned as a response header.</li>
-     *         <li>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of
-     *         the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and
-     *         ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response
-     *         header.</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         You get the entire range of the archive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if
+     *         you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then
+     *         the x-amz-sha256-tree-hash is returned as a response header.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the
+     *         archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends
+     *         at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.
+     *         </p>
+     *         </li>
      */
 
     public String getChecksum() {
@@ -191,30 +247,52 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * The checksum of the data in the response. This header is returned only when retrieving the output for an archive
      * retrieval job. Furthermore, this header appears only under the following conditions:
-     * <ul>
-     * <li>You get the entire range of the archive.</li>
-     * <li>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you
-     * have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the
-     * x-amz-sha256-tree-hash is returned as a response header.</li>
-     * <li>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the
-     * archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
-     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You get the entire range of the archive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have
+     * an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the
+     * x-amz-sha256-tree-hash is returned as a response header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the
+     * archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
+     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param checksum
      *        The checksum of the data in the response. This header is returned only when retrieving the output for an
-     *        archive retrieval job. Furthermore, this header appears only under the following conditions:
+     *        archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
      *        <ul>
-     *        <li>You get the entire range of the archive.</li>
-     *        <li>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example,
-     *        if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then
-     *        the x-amz-sha256-tree-hash is returned as a response header.</li>
-     *        <li>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of
-     *        the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and
-     *        ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.
+     *        <li>
+     *        <p>
+     *        You get the entire range of the archive.
+     *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if
+     *        you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then
+     *        the x-amz-sha256-tree-hash is returned as a response header.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the
+     *        archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at
+     *        3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,12 +398,12 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Indicates the range units accepted. For more information, go to <a
+     * Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      * </p>
      * 
      * @param acceptRanges
-     *        Indicates the range units accepted. For more information, go to <a
+     *        Indicates the range units accepted. For more information, see <a
      *        href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      */
 
@@ -335,11 +413,11 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Indicates the range units accepted. For more information, go to <a
+     * Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      * </p>
      * 
-     * @return Indicates the range units accepted. For more information, go to <a
+     * @return Indicates the range units accepted. For more information, see <a
      *         href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      */
 
@@ -349,12 +427,12 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Indicates the range units accepted. For more information, go to <a
+     * Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      * </p>
      * 
      * @param acceptRanges
-     *        Indicates the range units accepted. For more information, go to <a
+     *        Indicates the range units accepted. For more information, see <a
      *        href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -14,8 +14,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon Route 53 returns this error
- * when the VPC specified by <code>VPCId</code> does not belong to you.
+ * The VPC ID that you specified either isn't a valid ID or the current account is not authorized to access this VPC.
  * </p>
  */
 public class InvalidVPCIdException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {

@@ -395,6 +395,8 @@ public interface AmazonCloudFormation {
      * @throws ChangeSetNotFoundException
      *         The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the
      *         <code>ListChangeSets</code> action.
+     * @throws InsufficientCapabilitiesException
+     *         The template contains resources with capabilities that were not specified in the Capabilities parameter.
      * @sample AmazonCloudFormation.ExecuteChangeSet
      */
     ExecuteChangeSetResult executeChangeSet(ExecuteChangeSetRequest executeChangeSetRequest);
@@ -427,6 +429,9 @@ public interface AmazonCloudFormation {
      * @param getTemplateRequest
      *        The input for a <a>GetTemplate</a> action.
      * @return Result of the GetTemplate operation returned by the service.
+     * @throws ChangeSetNotFoundException
+     *         The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the
+     *         <code>ListChangeSets</code> action.
      * @sample AmazonCloudFormation.GetTemplate
      */
     GetTemplateResult getTemplate(GetTemplateRequest getTemplateRequest);
@@ -491,6 +496,24 @@ public interface AmazonCloudFormation {
      * @sample AmazonCloudFormation.ListExports
      */
     ListExportsResult listExports(ListExportsRequest listExportsRequest);
+
+    /**
+     * <p>
+     * Lists all stacks that are importing an exported output value. To modify or remove an exported output value, first
+     * use this action to see which stacks are using it. To see the exported output values in your account, see
+     * <a>ListExports</a>.
+     * </p>
+     * <p>
+     * For more information about importing an exported output value, see the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+     * <code>Fn::ImportValue</code> </a> function.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @return Result of the ListImports operation returned by the service.
+     * @sample AmazonCloudFormation.ListImports
+     */
+    ListImportsResult listImports(ListImportsRequest listImportsRequest);
 
     /**
      * <p>

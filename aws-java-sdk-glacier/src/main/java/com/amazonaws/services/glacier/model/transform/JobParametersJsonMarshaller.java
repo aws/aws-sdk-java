@@ -59,6 +59,9 @@ public class JobParametersJsonMarshaller {
             if (jobParameters.getRetrievalByteRange() != null) {
                 jsonGenerator.writeFieldName("RetrievalByteRange").writeValue(jobParameters.getRetrievalByteRange());
             }
+            if (jobParameters.getTier() != null) {
+                jsonGenerator.writeFieldName("Tier").writeValue(jobParameters.getTier());
+            }
             if (jobParameters.getInventoryRetrievalParameters() != null) {
                 jsonGenerator.writeFieldName("InventoryRetrievalParameters");
                 InventoryRetrievalJobInputJsonMarshaller.getInstance().marshall(jobParameters.getInventoryRetrievalParameters(), jsonGenerator);

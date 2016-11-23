@@ -74,6 +74,13 @@ public class JobParameters implements Serializable, Cloneable {
     private String retrievalByteRange;
     /**
      * <p>
+     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     * </p>
+     */
+    private String tier;
+    /**
+     * <p>
      * Input parameters used for range inventory retrieval.
      * </p>
      */
@@ -448,6 +455,52 @@ public class JobParameters implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     * </p>
+     * 
+     * @param tier
+     *        The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     *        <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     */
+
+    public void setTier(String tier) {
+        this.tier = tier;
+    }
+
+    /**
+     * <p>
+     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     * </p>
+     * 
+     * @return The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     *         <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     */
+
+    public String getTier() {
+        return this.tier;
+    }
+
+    /**
+     * <p>
+     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     * </p>
+     * 
+     * @param tier
+     *        The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     *        <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobParameters withTier(String tier) {
+        setTier(tier);
+        return this;
+    }
+
+    /**
+     * <p>
      * Input parameters used for range inventory retrieval.
      * </p>
      * 
@@ -509,6 +562,8 @@ public class JobParameters implements Serializable, Cloneable {
             sb.append("SNSTopic: " + getSNSTopic() + ",");
         if (getRetrievalByteRange() != null)
             sb.append("RetrievalByteRange: " + getRetrievalByteRange() + ",");
+        if (getTier() != null)
+            sb.append("Tier: " + getTier() + ",");
         if (getInventoryRetrievalParameters() != null)
             sb.append("InventoryRetrievalParameters: " + getInventoryRetrievalParameters());
         sb.append("}");
@@ -549,6 +604,10 @@ public class JobParameters implements Serializable, Cloneable {
             return false;
         if (other.getRetrievalByteRange() != null && other.getRetrievalByteRange().equals(this.getRetrievalByteRange()) == false)
             return false;
+        if (other.getTier() == null ^ this.getTier() == null)
+            return false;
+        if (other.getTier() != null && other.getTier().equals(this.getTier()) == false)
+            return false;
         if (other.getInventoryRetrievalParameters() == null ^ this.getInventoryRetrievalParameters() == null)
             return false;
         if (other.getInventoryRetrievalParameters() != null && other.getInventoryRetrievalParameters().equals(this.getInventoryRetrievalParameters()) == false)
@@ -567,6 +626,7 @@ public class JobParameters implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSNSTopic() == null) ? 0 : getSNSTopic().hashCode());
         hashCode = prime * hashCode + ((getRetrievalByteRange() == null) ? 0 : getRetrievalByteRange().hashCode());
+        hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
         hashCode = prime * hashCode + ((getInventoryRetrievalParameters() == null) ? 0 : getInventoryRetrievalParameters().hashCode());
         return hashCode;
     }

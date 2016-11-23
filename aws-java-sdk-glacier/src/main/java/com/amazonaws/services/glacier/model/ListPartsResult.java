@@ -41,7 +41,7 @@ public class ListPartsResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String archiveDescription;
     /**
      * <p>
-     * The part size in bytes.
+     * The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.
      * </p>
      */
     private Long partSizeInBytes;
@@ -53,7 +53,8 @@ public class ListPartsResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String creationDate;
     /**
      * <p>
-     * A list of the part sizes of the multipart upload.
+     * A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and
+     * <code>sha256-tree-hash</code> name/value pair.
      * </p>
      */
     private java.util.List<PartListElement> parts;
@@ -187,11 +188,12 @@ public class ListPartsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The part size in bytes.
+     * The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.
      * </p>
      * 
      * @param partSizeInBytes
-     *        The part size in bytes.
+     *        The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload
+     *        request.
      */
 
     public void setPartSizeInBytes(Long partSizeInBytes) {
@@ -200,10 +202,11 @@ public class ListPartsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The part size in bytes.
+     * The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.
      * </p>
      * 
-     * @return The part size in bytes.
+     * @return The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload
+     *         request.
      */
 
     public Long getPartSizeInBytes() {
@@ -212,11 +215,12 @@ public class ListPartsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The part size in bytes.
+     * The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.
      * </p>
      * 
      * @param partSizeInBytes
-     *        The part size in bytes.
+     *        The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,10 +271,12 @@ public class ListPartsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of the part sizes of the multipart upload.
+     * A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and
+     * <code>sha256-tree-hash</code> name/value pair.
      * </p>
      * 
-     * @return A list of the part sizes of the multipart upload.
+     * @return A list of the part sizes of the multipart upload. Each object in the array contains a
+     *         <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.
      */
 
     public java.util.List<PartListElement> getParts() {
@@ -279,11 +285,13 @@ public class ListPartsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of the part sizes of the multipart upload.
+     * A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and
+     * <code>sha256-tree-hash</code> name/value pair.
      * </p>
      * 
      * @param parts
-     *        A list of the part sizes of the multipart upload.
+     *        A list of the part sizes of the multipart upload. Each object in the array contains a
+     *        <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.
      */
 
     public void setParts(java.util.Collection<PartListElement> parts) {
@@ -297,7 +305,8 @@ public class ListPartsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of the part sizes of the multipart upload.
+     * A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and
+     * <code>sha256-tree-hash</code> name/value pair.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -306,7 +315,8 @@ public class ListPartsResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param parts
-     *        A list of the part sizes of the multipart upload.
+     *        A list of the part sizes of the multipart upload. Each object in the array contains a
+     *        <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,11 +332,13 @@ public class ListPartsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list of the part sizes of the multipart upload.
+     * A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and
+     * <code>sha256-tree-hash</code> name/value pair.
      * </p>
      * 
      * @param parts
-     *        A list of the part sizes of the multipart upload.
+     *        A list of the part sizes of the multipart upload. Each object in the array contains a
+     *        <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

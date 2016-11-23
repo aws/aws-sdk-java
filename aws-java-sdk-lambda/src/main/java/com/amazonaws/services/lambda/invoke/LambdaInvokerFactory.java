@@ -388,7 +388,7 @@ public final class LambdaInvokerFactory {
         private Class<?> findCustomExceptionClass(Method method, String type) {
             if (type != null) {
                 for (Class<?> exceptionType : method.getExceptionTypes()) {
-                    if (exceptionType.getSimpleName().startsWith(type)) {
+                    if (exceptionType.getName().equals(type) || exceptionType.getSimpleName().equals(type)) {
                         return exceptionType;
                     }
                 }

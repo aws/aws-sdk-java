@@ -151,12 +151,22 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     }
 
     @Override
+    public ListProvisionedCapacityResult listProvisionedCapacity(ListProvisionedCapacityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForVaultResult listTagsForVault(ListTagsForVaultRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListVaultsResult listVaults(ListVaultsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PurchaseProvisionedCapacityResult purchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

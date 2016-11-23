@@ -146,58 +146,99 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </li>
      * <li>
      * <p>
-     * <code>DELETE</code>: Deletes an existing resource record set that has the applicable values for the following
-     * elements:
+     * <code>DELETE</code>: Deletes an existing resource record set that has the specified values.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>: required to delete any resource record set
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>: required to delete any resource record set
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AliasTarget</code>, <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and <code>HostedZoneId</code>:
-     * required to delete an alias resource record set
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code>: required to delete a failover, geolocation, latency, or weighted resource record set
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>: required to delete any resource record set except an alias resource record set (For alias
-     * resource record sets, the TTL is determined by the AWS resource tat you're routing traffic to.)
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * <li>
      * <p>
      * <code>UPSERT</code>: If a resource record set does not already exist, AWS creates it. If a resource set does
-     * exist, Amazon Route 53 updates it with the values in the request. Amazon Route 53 can update an existing resource
-     * record set only when all of the following values match: <code>Name</code>, <code>Type</code>, and
-     * <code>Set Identifier</code> (for weighted, latency, geolocation, and failover resource record sets).
+     * exist, Amazon Route 53 updates it with the values in the request.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * In response to a <code>ChangeResourceRecordSets</code> request, the DNS data is changed on all Amazon Route 53
-     * DNS servers. Initially, the status of a change is <code>PENDING</code>, meaning the change has not yet propagated
-     * to all the authoritative Amazon Route 53 DNS servers. When the change is propagated to all hosts, the change
-     * returns a status of <code>INSYNC</code>.
+     * The values that you need to include in the request depend on the type of resource record set that you're
+     * creating, deleting, or updating:
      * </p>
      * <p>
-     * After sending a change request, confirm your change has propagated to all Amazon Route 53 DNS servers. Changes
-     * generally propagate to all Amazon Route 53 name servers in a few minutes. In rare circumstances, propagation can
-     * take up to 30 minutes. For more information, see <a>GetChange</a>.
+     * <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource record
+     * sets)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TTL</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record sets)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TTL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SetIdentifier</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted alias
+     * resource record sets)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
+     * <code>HostedZoneId</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you submit a <code>ChangeResourceRecordSets</code> request, Amazon Route 53 propagates your changes to all
+     * of the Amazon Route 53 authoritative DNS servers. While your changes are propagating, <code>GetChange</code>
+     * returns a status of <code>PENDING</code>. When propagation is complete, <code>GetChange</code> returns a status
+     * of <code>INSYNC</code>. Changes generally propagate to all Amazon Route 53 name servers in a few minutes. In rare
+     * circumstances, propagation can take up to 30 minutes. For more information, see <a>GetChange</a>
      * </p>
      * <p>
      * For information about the limits on a <code>ChangeResourceRecordSets</code> request, see <a
@@ -262,58 +303,99 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </li>
      * <li>
      * <p>
-     * <code>DELETE</code>: Deletes an existing resource record set that has the applicable values for the following
-     * elements:
+     * <code>DELETE</code>: Deletes an existing resource record set that has the specified values.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>: required to delete any resource record set
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>: required to delete any resource record set
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AliasTarget</code>, <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and <code>HostedZoneId</code>:
-     * required to delete an alias resource record set
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code>: required to delete a failover, geolocation, latency, or weighted resource record set
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>: required to delete any resource record set except an alias resource record set (For alias
-     * resource record sets, the TTL is determined by the AWS resource tat you're routing traffic to.)
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * <li>
      * <p>
      * <code>UPSERT</code>: If a resource record set does not already exist, AWS creates it. If a resource set does
-     * exist, Amazon Route 53 updates it with the values in the request. Amazon Route 53 can update an existing resource
-     * record set only when all of the following values match: <code>Name</code>, <code>Type</code>, and
-     * <code>Set Identifier</code> (for weighted, latency, geolocation, and failover resource record sets).
+     * exist, Amazon Route 53 updates it with the values in the request.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * In response to a <code>ChangeResourceRecordSets</code> request, the DNS data is changed on all Amazon Route 53
-     * DNS servers. Initially, the status of a change is <code>PENDING</code>, meaning the change has not yet propagated
-     * to all the authoritative Amazon Route 53 DNS servers. When the change is propagated to all hosts, the change
-     * returns a status of <code>INSYNC</code>.
+     * The values that you need to include in the request depend on the type of resource record set that you're
+     * creating, deleting, or updating:
      * </p>
      * <p>
-     * After sending a change request, confirm your change has propagated to all Amazon Route 53 DNS servers. Changes
-     * generally propagate to all Amazon Route 53 name servers in a few minutes. In rare circumstances, propagation can
-     * take up to 30 minutes. For more information, see <a>GetChange</a>.
+     * <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource record
+     * sets)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TTL</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record sets)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TTL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SetIdentifier</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted alias
+     * resource record sets)</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
+     * <code>HostedZoneId</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you submit a <code>ChangeResourceRecordSets</code> request, Amazon Route 53 propagates your changes to all
+     * of the Amazon Route 53 authoritative DNS servers. While your changes are propagating, <code>GetChange</code>
+     * returns a status of <code>PENDING</code>. When propagation is complete, <code>GetChange</code> returns a status
+     * of <code>INSYNC</code>. Changes generally propagate to all Amazon Route 53 name servers in a few minutes. In rare
+     * circumstances, propagation can take up to 30 minutes. For more information, see <a>GetChange</a>
      * </p>
      * <p>
      * For information about the limits on a <code>ChangeResourceRecordSets</code> request, see <a

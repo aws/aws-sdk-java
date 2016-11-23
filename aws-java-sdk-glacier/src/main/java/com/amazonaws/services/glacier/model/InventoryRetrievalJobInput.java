@@ -24,14 +24,14 @@ public class InventoryRetrievalJobInput implements Serializable, Cloneable {
     /**
      * <p>
      * The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this
-     * date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     * date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.
      * </p>
      */
     private String startDate;
     /**
      * <p>
-     * The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. A
-     * string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     * The end of the date range in UTC for vault inventory retrieval that includes archives created before this date.
+     * This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.
      * </p>
      */
     private String endDate;
@@ -54,12 +54,13 @@ public class InventoryRetrievalJobInput implements Serializable, Cloneable {
     /**
      * <p>
      * The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this
-     * date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     * date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.
      * </p>
      * 
      * @param startDate
      *        The start of the date range in UTC for vault inventory retrieval that includes archives created on or
-     *        after this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     *        after this date. This value should be a string in the ISO 8601 date format, for example
+     *        <code>2013-03-20T17:03:43Z</code>.
      */
 
     public void setStartDate(String startDate) {
@@ -69,11 +70,12 @@ public class InventoryRetrievalJobInput implements Serializable, Cloneable {
     /**
      * <p>
      * The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this
-     * date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     * date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.
      * </p>
      * 
      * @return The start of the date range in UTC for vault inventory retrieval that includes archives created on or
-     *         after this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     *         after this date. This value should be a string in the ISO 8601 date format, for example
+     *         <code>2013-03-20T17:03:43Z</code>.
      */
 
     public String getStartDate() {
@@ -83,12 +85,13 @@ public class InventoryRetrievalJobInput implements Serializable, Cloneable {
     /**
      * <p>
      * The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this
-     * date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     * date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.
      * </p>
      * 
      * @param startDate
      *        The start of the date range in UTC for vault inventory retrieval that includes archives created on or
-     *        after this date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     *        after this date. This value should be a string in the ISO 8601 date format, for example
+     *        <code>2013-03-20T17:03:43Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,13 +102,14 @@ public class InventoryRetrievalJobInput implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. A
-     * string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     * The end of the date range in UTC for vault inventory retrieval that includes archives created before this date.
+     * This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.
      * </p>
      * 
      * @param endDate
      *        The end of the date range in UTC for vault inventory retrieval that includes archives created before this
-     *        date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     *        date. This value should be a string in the ISO 8601 date format, for example
+     *        <code>2013-03-20T17:03:43Z</code>.
      */
 
     public void setEndDate(String endDate) {
@@ -114,12 +118,13 @@ public class InventoryRetrievalJobInput implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. A
-     * string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     * The end of the date range in UTC for vault inventory retrieval that includes archives created before this date.
+     * This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.
      * </p>
      * 
      * @return The end of the date range in UTC for vault inventory retrieval that includes archives created before this
-     *         date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     *         date. This value should be a string in the ISO 8601 date format, for example
+     *         <code>2013-03-20T17:03:43Z</code>.
      */
 
     public String getEndDate() {
@@ -128,13 +133,14 @@ public class InventoryRetrievalJobInput implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. A
-     * string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     * The end of the date range in UTC for vault inventory retrieval that includes archives created before this date.
+     * This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.
      * </p>
      * 
      * @param endDate
      *        The end of the date range in UTC for vault inventory retrieval that includes archives created before this
-     *        date. A string representation of ISO 8601 date format, for example, 2013-03-20T17:03:43Z.
+     *        date. This value should be a string in the ISO 8601 date format, for example
+     *        <code>2013-03-20T17:03:43Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -906,6 +906,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @throws ChangeSetNotFoundException
      *         The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the
      *         <code>ListChangeSets</code> action.
+     * @throws InsufficientCapabilitiesException
+     *         The template contains resources with capabilities that were not specified in the Capabilities parameter.
      * @sample AmazonCloudFormation.ExecuteChangeSet
      */
     @Override
@@ -994,6 +996,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @param getTemplateRequest
      *        The input for a <a>GetTemplate</a> action.
      * @return Result of the GetTemplate operation returned by the service.
+     * @throws ChangeSetNotFoundException
+     *         The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the
+     *         <code>ListChangeSets</code> action.
      * @sample AmazonCloudFormation.GetTemplate
      */
     @Override
@@ -1157,6 +1162,51 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<ListExportsResult> responseHandler = new StaxResponseHandler<ListExportsResult>(new ListExportsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all stacks that are importing an exported output value. To modify or remove an exported output value, first
+     * use this action to see which stacks are using it. To see the exported output values in your account, see
+     * <a>ListExports</a>.
+     * </p>
+     * <p>
+     * For more information about importing an exported output value, see the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+     * <code>Fn::ImportValue</code> </a> function.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @return Result of the ListImports operation returned by the service.
+     * @sample AmazonCloudFormation.ListImports
+     */
+    @Override
+    public ListImportsResult listImports(ListImportsRequest listImportsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listImportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListImportsRequest> request = null;
+        Response<ListImportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListImportsRequestMarshaller().marshall(super.beforeMarshalling(listImportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListImportsResult> responseHandler = new StaxResponseHandler<ListImportsResult>(new ListImportsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

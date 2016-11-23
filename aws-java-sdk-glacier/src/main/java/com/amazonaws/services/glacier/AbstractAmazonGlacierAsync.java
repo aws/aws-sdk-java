@@ -324,6 +324,19 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListProvisionedCapacityResult> listProvisionedCapacityAsync(ListProvisionedCapacityRequest request) {
+
+        return listProvisionedCapacityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProvisionedCapacityResult> listProvisionedCapacityAsync(ListProvisionedCapacityRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListProvisionedCapacityRequest, ListProvisionedCapacityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForVaultResult> listTagsForVaultAsync(ListTagsForVaultRequest request) {
 
         return listTagsForVaultAsync(request, null);
@@ -345,6 +358,19 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     @Override
     public java.util.concurrent.Future<ListVaultsResult> listVaultsAsync(ListVaultsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListVaultsRequest, ListVaultsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseProvisionedCapacityResult> purchaseProvisionedCapacityAsync(PurchaseProvisionedCapacityRequest request) {
+
+        return purchaseProvisionedCapacityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseProvisionedCapacityResult> purchaseProvisionedCapacityAsync(PurchaseProvisionedCapacityRequest request,
+            com.amazonaws.handlers.AsyncHandler<PurchaseProvisionedCapacityRequest, PurchaseProvisionedCapacityResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -69,10 +69,14 @@ public enum GlacierActions implements Action {
     ListMultipartUploads("glacier:ListMultipartUploads"),
     /** Action for the ListParts operation. */
     ListParts("glacier:ListParts"),
+    /** Action for the ListProvisionedCapacity operation. */
+    ListProvisionedCapacity("glacier:ListProvisionedCapacity"),
     /** Action for the ListTagsForVault operation. */
     ListTagsForVault("glacier:ListTagsForVault"),
     /** Action for the ListVaults operation. */
     ListVaults("glacier:ListVaults"),
+    /** Action for the PurchaseProvisionedCapacity operation. */
+    PurchaseProvisionedCapacity("glacier:PurchaseProvisionedCapacity"),
     /** Action for the RemoveTagsFromVault operation. */
     RemoveTagsFromVault("glacier:RemoveTagsFromVault"),
     /** Action for the SetDataRetrievalPolicy operation. */
