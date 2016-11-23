@@ -5,10 +5,10 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.60</version>
+    <version>1.11.61-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
-  <version>1.11.60</version>
+  <version>1.11.61-SNAPSHOT</version>
   <artifactId>jmespath-java</artifactId>
   <name>JMES Path Query library</name>
   <description>Implementation of the JMES Path JSON Query langauge for Java.</description>
