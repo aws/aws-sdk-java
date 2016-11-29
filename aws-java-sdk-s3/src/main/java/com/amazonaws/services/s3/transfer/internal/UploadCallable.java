@@ -26,6 +26,8 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
+import com.amazonaws.services.s3.model.ObjectTagging;
+import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -263,6 +265,16 @@ public class UploadCallable implements Callable<UploadResult> {
             .withRequestMetricCollector(origReq.getRequestMetricCollector())
             ;
         CompleteMultipartUploadResult res = s3.completeMultipartUpload(req);
+
+        // Note: The multipart upload API does not currently support tagging.
+        // This is a workaround until it is supported by the service.
+        ObjectTagging tagging = origReq.getTagging();
+        if (tagging != null) {
+            s3.setObjectTagging(new SetObjectTaggingRequest(
+                    origReq.getBucketName(),
+                    origReq.getKey(),
+                    tagging));
+        }
 
         UploadResult uploadResult = new UploadResult();
         uploadResult.setBucketName(res.getBucketName());

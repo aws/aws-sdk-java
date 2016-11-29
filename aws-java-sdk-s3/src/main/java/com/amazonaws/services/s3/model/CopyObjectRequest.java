@@ -150,6 +150,8 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
      */
     private boolean isRequesterPays;
 
+    private ObjectTagging newObjectTagging;
+
     /**
      * <p>
      * Constructs with basic options.
@@ -1173,6 +1175,34 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
      */
     public CopyObjectRequest withRequesterPays(boolean isRequesterPays) {
         setRequesterPays(isRequesterPays);
+        return this;
+    }
+
+    /**
+     * @return the tagging for the new object.
+     */
+    public ObjectTagging getNewObjectTagging() {
+        return newObjectTagging;
+    }
+
+    /**
+     * set the tagging for the new object.
+     *
+     * @param newObjectTagging the tagging for the new object.
+     */
+    public void setNewObjectTagging(ObjectTagging newObjectTagging) {
+        this.newObjectTagging = newObjectTagging;
+    }
+
+    /**
+     * set the tagging for the new object.
+     *
+     * @param newObjectTagging the tagging for the new object.
+     *
+     * @return This object for chaining.
+     */
+    public CopyObjectRequest withNewObjectTagging(ObjectTagging newObjectTagging) {
+        setNewObjectTagging(newObjectTagging);
         return this;
     }
 }

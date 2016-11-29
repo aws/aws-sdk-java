@@ -26,6 +26,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.regions.Region;
 import com.amazonaws.services.s3.model.*;
+import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
+import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
+import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
 import com.amazonaws.services.s3.waiters.AmazonS3Waiters;
 
 /**
@@ -369,6 +372,22 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     @Override
     public String getObjectAsString(String bucketName, String key)
             throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public GetObjectTaggingResult getObjectTagging(GetObjectTaggingRequest objectTaggingRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public SetObjectTaggingResult setObjectTagging(SetObjectTaggingRequest setObjectTaggingRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+
+    }
+
+    @Override
+    public DeleteObjectTaggingResult deleteObjectTagging(DeleteObjectTaggingRequest deleteObjectTaggingRequest) {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
 
     }
@@ -920,6 +939,149 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
             throws AmazonServiceException, SdkClientException {
         throw new UnsupportedOperationException(
                 "Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public DeleteBucketMetricsConfigurationResult deleteBucketMetricsConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return deleteBucketMetricsConfiguration(new DeleteBucketMetricsConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public DeleteBucketMetricsConfigurationResult deleteBucketMetricsConfiguration(
+            DeleteBucketMetricsConfigurationRequest deleteBucketMetricsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public GetBucketMetricsConfigurationResult getBucketMetricsConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return getBucketMetricsConfiguration(new GetBucketMetricsConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public GetBucketMetricsConfigurationResult getBucketMetricsConfiguration(
+            GetBucketMetricsConfigurationRequest getBucketMetricsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    public SetBucketMetricsConfigurationResult setBucketMetricsConfiguration(
+            String bucketName, MetricsConfiguration metricsConfiguration)
+            throws AmazonServiceException, SdkClientException {
+        return setBucketMetricsConfiguration(new SetBucketMetricsConfigurationRequest(bucketName, metricsConfiguration));
+    }
+
+    @Override
+    public SetBucketMetricsConfigurationResult setBucketMetricsConfiguration(SetBucketMetricsConfigurationRequest setBucketMetricsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public ListBucketMetricsConfigurationsResult listBucketMetricsConfigurations(
+            ListBucketMetricsConfigurationsRequest listBucketMetricsConfigurationsRequest)
+            throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public DeleteBucketAnalyticsConfigurationResult deleteBucketAnalyticsConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return deleteBucketAnalyticsConfiguration(new DeleteBucketAnalyticsConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public DeleteBucketAnalyticsConfigurationResult deleteBucketAnalyticsConfiguration(
+            DeleteBucketAnalyticsConfigurationRequest deleteBucketAnalyticsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public GetBucketAnalyticsConfigurationResult getBucketAnalyticsConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return getBucketAnalyticsConfiguration(new GetBucketAnalyticsConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public GetBucketAnalyticsConfigurationResult getBucketAnalyticsConfiguration(
+            GetBucketAnalyticsConfigurationRequest getBucketAnalyticsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public SetBucketAnalyticsConfigurationResult setBucketAnalyticsConfiguration(
+            String bucketName, AnalyticsConfiguration analyticsConfiguration)
+            throws AmazonServiceException, SdkClientException {
+        return setBucketAnalyticsConfiguration(
+                new SetBucketAnalyticsConfigurationRequest(bucketName, analyticsConfiguration));
+    }
+
+    @Override
+    public SetBucketAnalyticsConfigurationResult setBucketAnalyticsConfiguration(
+            SetBucketAnalyticsConfigurationRequest setBucketAnalyticsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public ListBucketAnalyticsConfigurationsResult listBucketAnalyticsConfigurations(
+            ListBucketAnalyticsConfigurationsRequest listBucketAnalyticsConfigurationsRequest)
+            throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public DeleteBucketInventoryConfigurationResult deleteBucketInventoryConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return deleteBucketInventoryConfiguration(
+                new DeleteBucketInventoryConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public DeleteBucketInventoryConfigurationResult deleteBucketInventoryConfiguration(
+            DeleteBucketInventoryConfigurationRequest deleteBucketInventoryConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public GetBucketInventoryConfigurationResult getBucketInventoryConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return getBucketInventoryConfiguration(
+                new GetBucketInventoryConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public GetBucketInventoryConfigurationResult getBucketInventoryConfiguration(
+            GetBucketInventoryConfigurationRequest getBucketInventoryConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public SetBucketInventoryConfigurationResult setBucketInventoryConfiguration(
+            String bucketName, InventoryConfiguration inventoryConfiguration)
+            throws AmazonServiceException, SdkClientException {
+        return setBucketInventoryConfiguration(
+                new SetBucketInventoryConfigurationRequest(bucketName, inventoryConfiguration));
+    }
+
+    @Override
+    public SetBucketInventoryConfigurationResult setBucketInventoryConfiguration(
+            SetBucketInventoryConfigurationRequest setBucketInventoryConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public ListBucketInventoryConfigurationsResult listBucketInventoryConfigurations(
+            ListBucketInventoryConfigurationsRequest listBucketInventoryConfigurationsRequest)
+            throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }
 
     @Override

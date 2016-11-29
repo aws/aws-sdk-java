@@ -25,6 +25,10 @@ import org.apache.http.protocol.HttpContext;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.timeout;
+import static org.mockito.Mockito.verify;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -47,14 +51,12 @@ public class IdleConnectionReaperTest {
     public void forceShutdown() throws Exception {
         assertEquals(0, IdleConnectionReaper.size());
         for (int i = 0; i < 3; i++) {
-            assertTrue(IdleConnectionReaper
-                    .registerConnectionManager(new TestClientConnectionManager()));
+            assertTrue(IdleConnectionReaper.registerConnectionManager(new TestClientConnectionManager()));
             assertEquals(1, IdleConnectionReaper.size());
             assertTrue(IdleConnectionReaper.shutdown());
             assertEquals(0, IdleConnectionReaper.size());
             assertFalse(IdleConnectionReaper.shutdown());
         }
-
     }
 
     @Test
@@ -63,11 +65,9 @@ public class IdleConnectionReaperTest {
         for (int i = 0; i < 3; i++) {
             HttpClientConnectionManager m = new TestClientConnectionManager();
             HttpClientConnectionManager m2 = new TestClientConnectionManager();
-            assertTrue(IdleConnectionReaper
-                    .registerConnectionManager(m));
+            assertTrue(IdleConnectionReaper.registerConnectionManager(m));
             assertEquals(1, IdleConnectionReaper.size());
-            assertTrue(IdleConnectionReaper
-                    .registerConnectionManager(m2));
+            assertTrue(IdleConnectionReaper.registerConnectionManager(m2));
             assertEquals(2, IdleConnectionReaper.size());
             assertTrue(IdleConnectionReaper.removeConnectionManager(m));
             assertEquals(1, IdleConnectionReaper.size());
@@ -77,6 +77,14 @@ public class IdleConnectionReaperTest {
         }
     }
 
+    @Test
+    public void maxIdle_HonoredOnClose() throws InterruptedException {
+        HttpClientConnectionManager connectionManager = mock(HttpClientConnectionManager.class);
+        final long idleTime = 10 * 1000;
+        IdleConnectionReaper.registerConnectionManager(connectionManager, idleTime);
+        verify(connectionManager, timeout(90 * 1000)).closeIdleConnections(eq(idleTime), eq(TimeUnit.MILLISECONDS));
+
+    }
     private static class TestClientConnectionManager implements HttpClientConnectionManager {
         @Override
         public void releaseConnection(HttpClientConnection conn, Object newState, long validDuration, TimeUnit timeUnit) {}

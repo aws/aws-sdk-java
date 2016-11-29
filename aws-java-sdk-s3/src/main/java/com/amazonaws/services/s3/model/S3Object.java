@@ -51,6 +51,8 @@ public class S3Object implements Closeable,Serializable, S3RequesterChargedResul
     /** The redirect location for this object */
     private String redirectLocation;
 
+    private Integer taggingCount;
+
     /**
      * Indicates if the requester is charged for downloading the data from
      * Requester Pays Buckets.
@@ -191,6 +193,14 @@ public class S3Object implements Closeable,Serializable, S3RequesterChargedResul
      */
     public void setRedirectLocation(String redirectLocation) {
         this.redirectLocation = redirectLocation;
+    }
+
+    public Integer getTaggingCount() {
+        return taggingCount;
+    }
+
+    public void setTaggingCount(Integer taggingCount) {
+        this.taggingCount = taggingCount;
     }
 
     /**

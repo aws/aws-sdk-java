@@ -90,7 +90,7 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
      */
     @Deprecated
     public void setRequestCredentials(AWSCredentials credentials) {
-        this.credentialsProvider = new StaticCredentialsProvider(credentials);
+        this.credentialsProvider = credentials == null ? null : new StaticCredentialsProvider(credentials);
     }
 
     /**

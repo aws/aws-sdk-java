@@ -238,6 +238,11 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
         return super.withSSECustomerKey(sseKey);
     }
 
+    public PutObjectRequest withTagging(ObjectTagging tagSet) {
+        super.setTagging(tagSet);
+        return this;
+    }
+
     @Deprecated
     @Override
     @SuppressWarnings("unchecked")

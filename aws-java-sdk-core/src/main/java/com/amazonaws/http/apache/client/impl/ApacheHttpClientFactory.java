@@ -78,7 +78,7 @@ public class ApacheHttpClientFactory implements HttpClientFactory<ConnectionMana
         final ConnectionManagerAwareHttpClient httpClient = new SdkHttpClient(builder.build(), cm);
 
         if (settings.useReaper()) {
-            IdleConnectionReaper.registerConnectionManager(cm);
+            IdleConnectionReaper.registerConnectionManager(cm, settings.getMaxIdleConnectionTime());
         }
 
         return httpClient;

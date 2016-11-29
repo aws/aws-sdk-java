@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.model.*;
+import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
+import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 import com.amazonaws.transform.Unmarshaller;
@@ -284,6 +286,154 @@ public class Unmarshallers {
         public RequestPaymentConfiguration unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser()
                     .parseRequestPaymentConfigurationResponse(in).getConfiguration();
+        }
+    }
+
+    public static final class GetObjectTaggingResponseUnmarshaller implements Unmarshaller<GetObjectTaggingResult, InputStream> {
+
+        @Override
+        public GetObjectTaggingResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseObjectTaggingResponse(in).getResult();
+        }
+    }
+
+    public static final class SetObjectTaggingResponseUnmarshaller implements Unmarshaller<SetObjectTaggingResult, InputStream> {
+
+        @Override
+        public SetObjectTaggingResult unmarshall(InputStream in) throws Exception {
+            return new SetObjectTaggingResult();
+        }
+    }
+
+    public static final class DeleteObjectTaggingResponseUnmarshaller implements Unmarshaller<DeleteObjectTaggingResult, InputStream> {
+
+        @Override
+        public DeleteObjectTaggingResult unmarshall(InputStream in) throws Exception {
+            return new DeleteObjectTaggingResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the GetBucketAnalyticsConfiguration XML response.
+     */
+    public static final class GetBucketAnalyticsConfigurationUnmarshaller implements
+            Unmarshaller<GetBucketAnalyticsConfigurationResult, InputStream> {
+        public GetBucketAnalyticsConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseGetBucketAnalyticsConfigurationResponse(in).getResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the ListBucketAnalyticsConfigurations XML response.
+     */
+    public static final class ListBucketAnalyticsConfigurationUnmarshaller implements
+            Unmarshaller<ListBucketAnalyticsConfigurationsResult, InputStream> {
+        public ListBucketAnalyticsConfigurationsResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseListBucketAnalyticsConfigurationResponse(in).getResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the DeleteBucketAnalyticsConfiguration XML response.
+     */
+    public static final class DeleteBucketAnalyticsConfigurationUnmarshaller implements
+            Unmarshaller<DeleteBucketAnalyticsConfigurationResult, InputStream> {
+        public DeleteBucketAnalyticsConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new DeleteBucketAnalyticsConfigurationResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the SetBucketAnalyticsConfiguration XML response.
+     */
+    public static final class SetBucketAnalyticsConfigurationUnmarshaller implements
+            Unmarshaller<SetBucketAnalyticsConfigurationResult, InputStream> {
+        public SetBucketAnalyticsConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new SetBucketAnalyticsConfigurationResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the GetBucketMetricsConfiguration XML response.
+     */
+    public static final class GetBucketMetricsConfigurationUnmarshaller implements
+            Unmarshaller<GetBucketMetricsConfigurationResult, InputStream> {
+        public GetBucketMetricsConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseGetBucketMetricsConfigurationResponse(in).getResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the ListBucketMetricsConfigurations XML response.
+     */
+    public static final class ListBucketMetricsConfigurationsUnmarshaller implements
+            Unmarshaller<ListBucketMetricsConfigurationsResult, InputStream> {
+        public ListBucketMetricsConfigurationsResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseListBucketMetricsConfigurationsResponse(in).getResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the DeleteBucketMetricsConfiguration XML response.
+     */
+    public static final class DeleteBucketMetricsConfigurationUnmarshaller implements
+            Unmarshaller<DeleteBucketMetricsConfigurationResult, InputStream> {
+        public DeleteBucketMetricsConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new DeleteBucketMetricsConfigurationResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the SetBucketMetricsConfiguration XML response.
+     */
+    public static final class SetBucketMetricsConfigurationUnmarshaller implements
+            Unmarshaller<SetBucketMetricsConfigurationResult, InputStream> {
+        public SetBucketMetricsConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new SetBucketMetricsConfigurationResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the GetBucketInventoryConfiguration XML response.
+     */
+    public static final class GetBucketInventoryConfigurationUnmarshaller implements
+            Unmarshaller<GetBucketInventoryConfigurationResult, InputStream> {
+
+        public GetBucketInventoryConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseGetBucketInventoryConfigurationResponse(in).getResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the ListBucketInventoryConfigurations XML response.
+     */
+    public static final class ListBucketInventoryConfigurationsUnmarshaller implements
+            Unmarshaller<ListBucketInventoryConfigurationsResult, InputStream> {
+
+        public ListBucketInventoryConfigurationsResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseBucketListInventoryConfigurationsResponse(in).getResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the DeleteBucketInventoryConfiguration XML response.
+     */
+    public static final class DeleteBucketInventoryConfigurationUnmarshaller implements
+            Unmarshaller<DeleteBucketInventoryConfigurationResult, InputStream> {
+
+        public DeleteBucketInventoryConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new DeleteBucketInventoryConfigurationResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the SetBucketInventoryConfiguration XML response.
+     */
+    public static final class SetBucketInventoryConfigurationUnmarshaller implements
+            Unmarshaller<SetBucketInventoryConfigurationResult, InputStream> {
+
+        public SetBucketInventoryConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new SetBucketInventoryConfigurationResult();
         }
     }
 }

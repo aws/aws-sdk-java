@@ -219,4 +219,11 @@ public interface Headers {
     /** S3 response header for a multipart object containing the number of parts in the object. */
     public static final String S3_PARTS_COUNT = "x-amz-mp-parts-count";
 
+    /** S3 request header for PUT object with a tag set */
+    public static final String S3_TAGGING = "x-amz-tagging";
+
+    /** S3 response header the number of tags on an object */
+    public static final String S3_TAGGING_COUNT = "x-amz-tagging-count";
+
+    public static final String TAGGING_DIRECTIVE = "x-amz-tagging-directive";
 }

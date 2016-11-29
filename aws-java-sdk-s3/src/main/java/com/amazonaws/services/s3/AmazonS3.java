@@ -29,6 +29,9 @@ import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.S3DirectSpi;
 import com.amazonaws.services.s3.model.*;
+import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
+import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
+import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
 import com.amazonaws.services.s3.waiters.AmazonS3Waiters;
 
 /**
@@ -69,7 +72,7 @@ public interface AmazonS3 extends S3DirectSpi {
      *
      * @see RegionUtils#getRegionsForService(String)
      */
-    String ENDPOINT_PREFIX = "s3"; 
+    String ENDPOINT_PREFIX = "s3";
     /**
      * <p>
      * Overrides the default endpoint for this client.
@@ -2105,6 +2108,37 @@ public interface AmazonS3 extends S3DirectSpi {
      */
     String getObjectAsString(String bucketName, String key)
             throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Returns the tags for the specified object.
+     *
+     * @param getObjectTaggingRequest
+     *            The request object containing all the options on how to
+     *            retrieve the Amazon S3 object tags.
+     * @return The tags for the specified object.
+     */
+    public GetObjectTaggingResult getObjectTagging(GetObjectTaggingRequest getObjectTaggingRequest);
+
+    /**
+     * Set the tags for the specified object.
+     *
+     * @param setObjectTaggingRequest
+     *            The request object containing all the options for setting the
+     *            tags for the specified object.
+     */
+    public SetObjectTaggingResult setObjectTagging(SetObjectTaggingRequest setObjectTaggingRequest);
+
+    /**
+     * Remove the tags for the specified object.
+     *
+     * @param deleteObjectTaggingRequest
+     *            The request object containing all the options for deleting
+     *            the tags for the specified object.
+     *
+     * @return a {@link DeleteObjectTaggingResult} object containing the
+     * information returned by S3 for the the tag deletion.
+     */
+    public DeleteObjectTaggingResult deleteObjectTagging(DeleteObjectTaggingRequest deleteObjectTaggingRequest);
 
     /**
      * <p>
@@ -4581,6 +4615,247 @@ public interface AmazonS3 extends S3DirectSpi {
      */
     public void setBucketAccelerateConfiguration(
             SetBucketAccelerateConfigurationRequest setBucketAccelerateConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Deletes a metrics configuration (specified by the metrics configuration ID) from the bucket.
+     *
+     * @param bucketName
+     *              The name of the bucket from which the metrics configuration is to be deleted
+     * @param id
+     *              The ID of the metrics configuration to delete.
+     */
+    public DeleteBucketMetricsConfigurationResult deleteBucketMetricsConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Deletes a metrics configuration (specified by the metrics configuration ID) from the bucket.
+     *
+     * @param deleteBucketMetricsConfigurationRequest
+     *              The request object to delete the metrics configuration.
+     */
+    public DeleteBucketMetricsConfigurationResult deleteBucketMetricsConfiguration(
+            DeleteBucketMetricsConfigurationRequest deleteBucketMetricsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Gets a metrics configuration (specified by the metrics configuration ID) from the bucket.
+     *
+     * @param bucketName
+     *              The name of the bucket to get the metrics configuration from.
+     * @param id
+     *              The ID of the metrics configuration to get.
+     * @return
+     *              The result containing the requested metrics configuration.
+     */
+    public GetBucketMetricsConfigurationResult getBucketMetricsConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Gets a metrics configuration (specified by the metrics configuration ID) from the bucket.
+     *
+     * @param getBucketMetricsConfigurationRequest
+     *              The request object to retrieve the metrics configuration.
+     * @return
+     *              The result containing the requested metrics configuration.
+     */
+    public GetBucketMetricsConfigurationResult getBucketMetricsConfiguration(
+            GetBucketMetricsConfigurationRequest getBucketMetricsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Sets a metrics configuration (specified by the metrics configuration ID) for the bucket.
+     *
+     * @param bucketName
+     *              The name of the bucket to set the metrics configuration.
+     * @param metricsConfiguration
+     *              The metrics configuration to set.
+     */
+    public SetBucketMetricsConfigurationResult setBucketMetricsConfiguration(
+            String bucketName, MetricsConfiguration metricsConfiguration)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Sets a metrics configuration (specified by the metrics configuration ID) for the bucket.
+     *
+     * @param setBucketMetricsConfigurationRequest
+     *              The request object to set the metrics configuration.
+     */
+    public SetBucketMetricsConfigurationResult setBucketMetricsConfiguration(
+            SetBucketMetricsConfigurationRequest setBucketMetricsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Lists the metrics configurations for the bucket.
+     *
+     * @param listBucketMetricsConfigurationsRequest
+     *              The request object to list all the metrics configurations for a bucket.
+     * @return
+     *              The result containing the list of all the metrics configurations for the bucket.
+     */
+    public ListBucketMetricsConfigurationsResult listBucketMetricsConfigurations(
+            ListBucketMetricsConfigurationsRequest listBucketMetricsConfigurationsRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Deletes an analytics configuration for the bucket (specified by the analytics configuration ID).
+     *
+     * @param bucketName
+     *              The name of the bucket from which the analytics configuration is to be deleted
+     * @param id
+     *              The ID of the analytics configuration to delete.
+     */
+    public DeleteBucketAnalyticsConfigurationResult deleteBucketAnalyticsConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Deletes an analytics configuration for the bucket (specified by the analytics configuration ID).
+     *
+     * @param deleteBucketAnalyticsConfigurationRequest
+     *              The request object to delete the analytics configuration.
+     */
+    public DeleteBucketAnalyticsConfigurationResult deleteBucketAnalyticsConfiguration(
+            DeleteBucketAnalyticsConfigurationRequest deleteBucketAnalyticsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Gets an analytics configuration for the bucket (specified by the analytics configuration ID).
+     *
+     * @param bucketName
+     *               The name of the bucket to get the analytics configuration from.
+     * @param id
+     *              The ID of the analytics configuration to get.
+     * @return
+     *              The result containing the requested analytics configuration.
+     */
+    public GetBucketAnalyticsConfigurationResult getBucketAnalyticsConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Gets an analytics configuration for the bucket (specified by the analytics configuration ID).
+     *
+     * @param getBucketAnalyticsConfigurationRequest
+     *              The request object to retrieve the analytics configuration.
+     * @return
+     *              The result containing the requested analytics configuration.
+     */
+    public GetBucketAnalyticsConfigurationResult getBucketAnalyticsConfiguration(
+            GetBucketAnalyticsConfigurationRequest getBucketAnalyticsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Sets an analytics configuration for the bucket (specified by the analytics configuration ID).
+     *
+     * @param bucketName
+     *              The name of the bucket to set the analytics configuration.
+     * @param analyticsConfiguration
+     *              The analytics configuration to set.
+     */
+    public SetBucketAnalyticsConfigurationResult setBucketAnalyticsConfiguration(
+            String bucketName, AnalyticsConfiguration analyticsConfiguration)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Sets an analytics configuration for the bucket (specified by the analytics configuration ID).
+     *
+     * @param setBucketAnalyticsConfigurationRequest
+     *              The request object to set the analytics configuration.
+     */
+    public SetBucketAnalyticsConfigurationResult setBucketAnalyticsConfiguration(
+            SetBucketAnalyticsConfigurationRequest setBucketAnalyticsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Lists the analytics configurations for the bucket.
+     *
+     * @param listBucketAnalyticsConfigurationsRequest
+     *              The request object to list all the analytics configurations for a bucket.
+     *
+     * @return All the analytics configurations for the bucket.
+     */
+    public ListBucketAnalyticsConfigurationsResult listBucketAnalyticsConfigurations(
+            ListBucketAnalyticsConfigurationsRequest listBucketAnalyticsConfigurationsRequest)
+            throws AmazonServiceException, SdkClientException;
+
+
+    /**
+     * Deletes an inventory configuration (identified by the inventory ID) from the bucket.
+     *
+     * @param bucketName
+     *              The name of the bucket from which the inventory configuration is to be deleted.
+     * @param id
+     *              The ID of the inventory configuration to delete.
+     */
+    public DeleteBucketInventoryConfigurationResult deleteBucketInventoryConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Deletes an inventory configuration (identified by the inventory ID) from the bucket.
+     *
+     * @param deleteBucketInventoryConfigurationRequest
+     *              The request object for deleting an inventory configuration.
+     */
+    public DeleteBucketInventoryConfigurationResult deleteBucketInventoryConfiguration(
+            DeleteBucketInventoryConfigurationRequest deleteBucketInventoryConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Returns an inventory configuration (identified by the inventory ID) from the bucket.
+     *
+     * @param bucketName
+     *              The name of the bucket to get the inventory configuration from.
+     * @param id
+     *              The ID of the inventory configuration to delete.
+     * @return
+     *              An {@link GetBucketInventoryConfigurationResult} object containing the inventory configuration.
+     */
+    public GetBucketInventoryConfigurationResult getBucketInventoryConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Returns an inventory configuration (identified by the inventory ID) from the bucket.
+     *
+     * @param getBucketInventoryConfigurationRequest
+     *              The request object to retreive an inventory configuration.
+     * @return
+     *              An {@link GetBucketInventoryConfigurationResult} object containing the inventory configuration.
+     */
+    public GetBucketInventoryConfigurationResult getBucketInventoryConfiguration(
+            GetBucketInventoryConfigurationRequest getBucketInventoryConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Sets an inventory configuration (identified by the inventory ID) to the bucket.
+     *
+     * @param bucketName
+     *              The name of the bucket to set the inventory configuration to.
+     * @param inventoryConfiguration
+     *              The inventory configuration to set.
+     */
+    public SetBucketInventoryConfigurationResult setBucketInventoryConfiguration(
+            String bucketName, InventoryConfiguration inventoryConfiguration)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Sets an inventory configuration (identified by the inventory ID) to the bucket.
+     *
+     * @param setBucketInventoryConfigurationRequest
+     *              The request object for setting an inventory configuration.
+     */
+    public SetBucketInventoryConfigurationResult setBucketInventoryConfiguration(
+            SetBucketInventoryConfigurationRequest setBucketInventoryConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Returns the list of inventory configurations for the bucket.
+     *
+     * @param listBucketInventoryConfigurationsRequest
+     *              The request object to list the inventory configurations in a bucket.
+     * @return
+     *              An {@link ListBucketInventoryConfigurationsResult} object containing the list of {@link InventoryConfiguration}s.
+     */
+    public ListBucketInventoryConfigurationsResult listBucketInventoryConfigurations(
+            ListBucketInventoryConfigurationsRequest listBucketInventoryConfigurationsRequest)
             throws AmazonServiceException, SdkClientException;
 
     /**

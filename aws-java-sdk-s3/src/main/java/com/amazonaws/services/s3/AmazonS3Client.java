@@ -60,9 +60,11 @@ import com.amazonaws.services.s3.internal.AWSS3V4Signer;
 import com.amazonaws.services.s3.internal.BucketNameUtils;
 import com.amazonaws.services.s3.internal.CompleteMultipartUploadRetryCondition;
 import com.amazonaws.services.s3.internal.Constants;
+import com.amazonaws.services.s3.internal.DeleteObjectTaggingHeaderHandler;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.internal.DigestValidationInputStream;
 import com.amazonaws.services.s3.internal.DualstackEndpointBuilder;
+import com.amazonaws.services.s3.internal.GetObjectTaggingResponseHeaderHandler;
 import com.amazonaws.services.s3.internal.InitiateMultipartUploadHeaderHandler;
 import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.internal.ListPartsHeaderHandler;
@@ -84,6 +86,7 @@ import com.amazonaws.services.s3.internal.S3VersionHeaderHandler;
 import com.amazonaws.services.s3.internal.S3XmlResponseHandler;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionHeaderHandler;
 import com.amazonaws.services.s3.internal.ServiceUtils;
+import com.amazonaws.services.s3.internal.SetObjectTaggingResponseHeaderHandler;
 import com.amazonaws.services.s3.internal.SkipMd5CheckStrategy;
 import com.amazonaws.services.s3.internal.XmlWriter;
 import com.amazonaws.services.s3.internal.auth.S3SignerProvider;
@@ -110,14 +113,21 @@ import com.amazonaws.services.s3.model.CopyObjectResult;
 import com.amazonaws.services.s3.model.CopyPartRequest;
 import com.amazonaws.services.s3.model.CopyPartResult;
 import com.amazonaws.services.s3.model.CreateBucketRequest;
+import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
 import com.amazonaws.services.s3.model.DeleteBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketWebsiteConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
+import com.amazonaws.services.s3.model.DeleteObjectTaggingRequest;
+import com.amazonaws.services.s3.model.DeleteObjectTaggingResult;
 import com.amazonaws.services.s3.model.DeleteObjectsRequest;
 import com.amazonaws.services.s3.model.DeleteObjectsResult;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
@@ -129,15 +139,21 @@ import com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketLocationRequest;
 import com.amazonaws.services.s3.model.GetBucketLoggingConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.GetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetObjectAclRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
+import com.amazonaws.services.s3.model.GetObjectTaggingRequest;
+import com.amazonaws.services.s3.model.GetObjectTaggingResult;
 import com.amazonaws.services.s3.model.GetRequestPaymentConfigurationRequest;
 import com.amazonaws.services.s3.model.GetS3AccountOwnerRequest;
 import com.amazonaws.services.s3.model.Grant;
@@ -147,7 +163,14 @@ import com.amazonaws.services.s3.model.HeadBucketRequest;
 import com.amazonaws.services.s3.model.HeadBucketResult;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
+import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsRequest;
+import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsResult;
+import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
+import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
 import com.amazonaws.services.s3.model.ListBucketsRequest;
+import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsRequest;
+import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsResult;
 import com.amazonaws.services.s3.model.ListMultipartUploadsRequest;
 import com.amazonaws.services.s3.model.ListNextBatchOfObjectsRequest;
 import com.amazonaws.services.s3.model.ListNextBatchOfVersionsRequest;
@@ -161,6 +184,7 @@ import com.amazonaws.services.s3.model.MultiObjectDeleteException;
 import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.ObjectTagging;
 import com.amazonaws.services.s3.model.Owner;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.PartListing;
@@ -181,9 +205,12 @@ import com.amazonaws.services.s3.model.SSECustomerKey;
 import com.amazonaws.services.s3.model.SSECustomerKeyProvider;
 import com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
+import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.SetBucketReplicationConfigurationRequest;
@@ -191,17 +218,29 @@ import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.SetObjectAclRequest;
+import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
+import com.amazonaws.services.s3.model.SetObjectTaggingResult;
 import com.amazonaws.services.s3.model.SetRequestPaymentConfigurationRequest;
 import com.amazonaws.services.s3.model.StorageClass;
+import com.amazonaws.services.s3.model.Tag;
 import com.amazonaws.services.s3.model.UploadObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.services.s3.model.VersionListing;
+import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
+import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
+import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
+import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsRequest;
+import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
+import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationRequest;
 import com.amazonaws.services.s3.model.transform.AclXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketNotificationConfigurationStaxUnmarshaller;
 import com.amazonaws.services.s3.model.transform.HeadBucketResultHandler;
 import com.amazonaws.services.s3.model.transform.MultiObjectDeleteXmlFactory;
+import com.amazonaws.services.s3.model.transform.ObjectTaggingXmlFactory;
 import com.amazonaws.services.s3.model.transform.RequestPaymentConfigurationXmlFactory;
 import com.amazonaws.services.s3.model.transform.RequestXmlFactory;
 import com.amazonaws.services.s3.model.transform.Unmarshallers;
@@ -225,7 +264,6 @@ import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.ServiceClientHolderInputStream;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.ValidationUtils;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -248,6 +286,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -265,6 +304,8 @@ import static com.amazonaws.services.s3.model.S3DataSource.Utils.cleanupDataSour
 import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
 import static com.amazonaws.util.Throwables.failure;
+import static com.amazonaws.util.ValidationUtils.assertNotNull;
+import static com.amazonaws.util.ValidationUtils.assertStringNotEmpty;
 
 /**
  * <p>
@@ -817,8 +858,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return invoke(request, new Unmarshallers.ListObjectsV2Unmarshaller(shouldSDKDecodeResponse), listObjectsV2Request.getBucketName(), null);
     }
 
-
-
     @Override
     public ObjectListing listNextBatchOfObjects(ObjectListing previousObjectListing)
             throws SdkClientException, AmazonServiceException {
@@ -1267,9 +1306,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     public S3Object getObject(GetObjectRequest getObjectRequest)
             throws SdkClientException, AmazonServiceException {
-        ValidationUtils.assertNotNull(getObjectRequest, "GetObjectRequest");
-        ValidationUtils.assertStringNotEmpty(getObjectRequest.getBucketName(), "BucketName");
-        ValidationUtils.assertStringNotEmpty(getObjectRequest.getKey(), "Key");
+        assertNotNull(getObjectRequest, "GetObjectRequest");
+        assertStringNotEmpty(getObjectRequest.getBucketName(), "BucketName");
+        assertStringNotEmpty(getObjectRequest.getKey(), "Key");
 
         Request<GetObjectRequest> request = createRequest(getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest, HttpMethodName.GET);
 
@@ -1417,6 +1456,65 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     @Override
+    public GetObjectTaggingResult getObjectTagging(GetObjectTaggingRequest getObjectTaggingRequest) {
+        rejectNull(getObjectTaggingRequest,
+                "The request parameter must be specified when getting the object tags");
+        String bucketName = assertStringNotEmpty(getObjectTaggingRequest.getBucketName(), "BucketName");
+        String key = assertNotNull(getObjectTaggingRequest.getKey(), "Key");
+
+        Request<GetObjectTaggingRequest> request = createRequest(bucketName, key, getObjectTaggingRequest, HttpMethodName.GET);
+        request.addParameter("tagging", null);
+        addParameterIfNotNull(request, "versionId", getObjectTaggingRequest.getVersionId());
+
+        ResponseHeaderHandlerChain<GetObjectTaggingResult> handlerChain = new ResponseHeaderHandlerChain<GetObjectTaggingResult>(
+                new Unmarshallers.GetObjectTaggingResponseUnmarshaller(),
+                new GetObjectTaggingResponseHeaderHandler()
+        );
+
+        return invoke(request, handlerChain, bucketName, key);
+    }
+
+    @Override
+    public SetObjectTaggingResult setObjectTagging(SetObjectTaggingRequest setObjectTaggingRequest) {
+        rejectNull(setObjectTaggingRequest,
+                "The request parameter must be specified setting the object tags");
+        String bucketName = assertStringNotEmpty(setObjectTaggingRequest.getBucketName(), "BucketName");
+        String key = assertNotNull(setObjectTaggingRequest.getKey(), "Key");
+        ObjectTagging tagging = assertNotNull(setObjectTaggingRequest.getTagging(), "ObjectTagging");
+
+        Request<SetObjectTaggingRequest> request = createRequest(bucketName, key, setObjectTaggingRequest, HttpMethodName.PUT);
+        request.addParameter("tagging", null);
+        addParameterIfNotNull(request, "versionId", setObjectTaggingRequest.getVersionId());
+        byte[] content = new ObjectTaggingXmlFactory().convertToXmlByteArray(tagging);
+        setContent(request, content, "application/xml", true);
+
+        ResponseHeaderHandlerChain<SetObjectTaggingResult> handlerChain = new ResponseHeaderHandlerChain<SetObjectTaggingResult>(
+                new Unmarshallers.SetObjectTaggingResponseUnmarshaller(),
+                new SetObjectTaggingResponseHeaderHandler()
+        );
+
+        return invoke(request, handlerChain, bucketName, key);
+    }
+
+    @Override
+    public DeleteObjectTaggingResult deleteObjectTagging(DeleteObjectTaggingRequest deleteObjectTaggingRequest) {
+        rejectNull(deleteObjectTaggingRequest, "The request parameter must be specified when delete the object tags");
+        String bucketName = assertStringNotEmpty(deleteObjectTaggingRequest.getBucketName(), "BucketName");
+        String key = assertStringNotEmpty(deleteObjectTaggingRequest.getKey(), "Key");
+
+        Request<DeleteObjectTaggingRequest> request = createRequest(bucketName, key, deleteObjectTaggingRequest, HttpMethodName.DELETE);
+        request.addParameter("tagging", null);
+        addParameterIfNotNull(request, "versionId", deleteObjectTaggingRequest.getVersionId());
+
+        ResponseHeaderHandlerChain<DeleteObjectTaggingResult> handlerChain = new ResponseHeaderHandlerChain<DeleteObjectTaggingResult>(
+                new Unmarshallers.DeleteObjectTaggingResponseUnmarshaller(),
+                new DeleteObjectTaggingHeaderHandler()
+        );
+
+        return invoke(request, handlerChain, bucketName, key);
+    }
+
+    @Override
     public void deleteBucket(String bucketName)
             throws SdkClientException, AmazonServiceException {
         deleteBucket(new DeleteBucketRequest(bucketName));
@@ -1521,6 +1619,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                     input = new ByteArrayInputStream(new byte[0]);
                 }
             }
+
+            addHeaderIfNotNull(request, Headers.S3_TAGGING, urlEncodeTags(putObjectRequest.getTagging()));
 
             populateRequesterPaysHeader(request, putObjectRequest.isRequesterPays());
 
@@ -3533,7 +3633,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            The object containing all the options for copying an object in
      *            Amazon S3.
      */
-    private static void populateRequestWithCopyObjectParameters(Request<? extends AmazonWebServiceRequest> request, CopyObjectRequest copyObjectRequest) {
+    private void populateRequestWithCopyObjectParameters(Request<? extends AmazonWebServiceRequest> request, CopyObjectRequest copyObjectRequest) {
         String copySourceHeader =
              "/" + SdkHttpUtils.urlEncode(copyObjectRequest.getSourceBucketName(), true)
            + "/" + SdkHttpUtils.urlEncode(copyObjectRequest.getSourceKey(), true);
@@ -3573,6 +3673,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (newObjectMetadata != null) {
             request.addHeader(Headers.METADATA_DIRECTIVE, "REPLACE");
             populateRequestMetadata(request, newObjectMetadata);
+        }
+
+        ObjectTagging newObjectTagging = copyObjectRequest.getNewObjectTagging();
+        if (newObjectTagging != null) {
+            request.addHeader(Headers.TAGGING_DIRECTIVE, "REPLACE");
+            request.addHeader(Headers.S3_TAGGING, urlEncodeTags(newObjectTagging));
         }
 
         // Populate the SSE-C parameters for the destination object
@@ -4404,6 +4510,286 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         invoke(request, voidResponseHandler, bucketName, null);
     }
 
+    @Override
+    public DeleteBucketMetricsConfigurationResult deleteBucketMetricsConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return deleteBucketMetricsConfiguration(new DeleteBucketMetricsConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public DeleteBucketMetricsConfigurationResult deleteBucketMetricsConfiguration(
+            DeleteBucketMetricsConfigurationRequest deleteBucketMetricsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+
+        rejectNull(deleteBucketMetricsConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(deleteBucketMetricsConfigurationRequest.getBucketName(), "BucketName");
+        final String id = assertStringNotEmpty(deleteBucketMetricsConfigurationRequest.getId(), "Metrics Id");
+
+        Request<DeleteBucketMetricsConfigurationRequest> request =
+                createRequest(bucketName, null, deleteBucketMetricsConfigurationRequest, HttpMethodName.DELETE);
+        request.addParameter("metrics", null);
+        request.addParameter("id", id);
+
+        return invoke(request, new Unmarshallers.DeleteBucketMetricsConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public GetBucketMetricsConfigurationResult getBucketMetricsConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return getBucketMetricsConfiguration(new GetBucketMetricsConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public GetBucketMetricsConfigurationResult getBucketMetricsConfiguration(
+            GetBucketMetricsConfigurationRequest getBucketMetricsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+
+        rejectNull(getBucketMetricsConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(getBucketMetricsConfigurationRequest.getBucketName(), "BucketName");
+        final String id = assertStringNotEmpty(getBucketMetricsConfigurationRequest.getId(), "Metrics Id");
+
+        Request<GetBucketMetricsConfigurationRequest> request =
+                createRequest(bucketName, null, getBucketMetricsConfigurationRequest, HttpMethodName.GET);
+        request.addParameter("metrics", null);
+        request.addParameter("id", id);
+
+        return invoke(request, new Unmarshallers.GetBucketMetricsConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    public SetBucketMetricsConfigurationResult setBucketMetricsConfiguration(
+            String bucketName, MetricsConfiguration metricsConfiguration)
+            throws AmazonServiceException, SdkClientException {
+        return setBucketMetricsConfiguration(new SetBucketMetricsConfigurationRequest(bucketName, metricsConfiguration));
+    }
+
+    @Override
+    public SetBucketMetricsConfigurationResult setBucketMetricsConfiguration(
+            SetBucketMetricsConfigurationRequest setBucketMetricsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+
+        new SetBucketMetricsConfigurationRequest();
+        rejectNull(setBucketMetricsConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(setBucketMetricsConfigurationRequest.getBucketName(), "BucketName");
+        final MetricsConfiguration metricsConfiguration = assertNotNull(
+                setBucketMetricsConfigurationRequest.getMetricsConfiguration(), "Metrics Configuration");
+        final String id = assertNotNull(metricsConfiguration.getId(), "Metrics Id");
+
+        Request<SetBucketMetricsConfigurationRequest> request =
+                createRequest(bucketName, null, setBucketMetricsConfigurationRequest, HttpMethodName.PUT);
+        request.addParameter("metrics", null);
+        request.addParameter("id", id);
+
+        byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(metricsConfiguration);
+        request.addHeader("Content-Length", String.valueOf(bytes.length));
+        request.addHeader("Content-Type", "application/xml");
+        request.setContent(new ByteArrayInputStream(bytes));
+
+        return invoke(request, new Unmarshallers.SetBucketMetricsConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public ListBucketMetricsConfigurationsResult listBucketMetricsConfigurations(
+            ListBucketMetricsConfigurationsRequest listBucketMetricsConfigurationsRequest)
+            throws AmazonServiceException, SdkClientException {
+
+        rejectNull(listBucketMetricsConfigurationsRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(listBucketMetricsConfigurationsRequest.getBucketName(), "BucketName");
+
+        Request<ListBucketMetricsConfigurationsRequest> request =
+                createRequest(bucketName, null, listBucketMetricsConfigurationsRequest, HttpMethodName.GET);
+        request.addParameter("metrics", null);
+        addParameterIfNotNull(request, "continuation-token", listBucketMetricsConfigurationsRequest.getContinuationToken());
+
+        return invoke(request, new Unmarshallers.ListBucketMetricsConfigurationsUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public DeleteBucketAnalyticsConfigurationResult deleteBucketAnalyticsConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return deleteBucketAnalyticsConfiguration(new DeleteBucketAnalyticsConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public DeleteBucketAnalyticsConfigurationResult deleteBucketAnalyticsConfiguration(
+            DeleteBucketAnalyticsConfigurationRequest deleteBucketAnalyticsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+
+        rejectNull(deleteBucketAnalyticsConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(
+                deleteBucketAnalyticsConfigurationRequest.getBucketName(), "BucketName");
+        final String id = assertStringNotEmpty(
+                deleteBucketAnalyticsConfigurationRequest.getId(), "Analytics Id");
+
+        Request<DeleteBucketAnalyticsConfigurationRequest> request =
+                createRequest(bucketName, null, deleteBucketAnalyticsConfigurationRequest, HttpMethodName.DELETE);
+        request.addParameter("analytics", null);
+        request.addParameter("id", id);
+
+        return invoke(request, new Unmarshallers.DeleteBucketAnalyticsConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public GetBucketAnalyticsConfigurationResult getBucketAnalyticsConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return getBucketAnalyticsConfiguration(new GetBucketAnalyticsConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public GetBucketAnalyticsConfigurationResult getBucketAnalyticsConfiguration(
+            GetBucketAnalyticsConfigurationRequest getBucketAnalyticsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+
+        rejectNull(getBucketAnalyticsConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(
+                getBucketAnalyticsConfigurationRequest.getBucketName(), "BucketName");
+        final String id = assertStringNotEmpty(
+                getBucketAnalyticsConfigurationRequest.getId(), "Analytics Id");
+
+        Request<GetBucketAnalyticsConfigurationRequest> request =
+                createRequest(bucketName, null, getBucketAnalyticsConfigurationRequest, HttpMethodName.GET);
+        request.addParameter("analytics", null);
+        request.addParameter("id", id);
+
+        return invoke(request, new Unmarshallers.GetBucketAnalyticsConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public SetBucketAnalyticsConfigurationResult setBucketAnalyticsConfiguration(
+            String bucketName, AnalyticsConfiguration analyticsConfiguration)
+            throws AmazonServiceException, SdkClientException {
+        return setBucketAnalyticsConfiguration(
+                new SetBucketAnalyticsConfigurationRequest(bucketName, analyticsConfiguration));
+    }
+
+    @Override
+    public SetBucketAnalyticsConfigurationResult setBucketAnalyticsConfiguration(
+            SetBucketAnalyticsConfigurationRequest setBucketAnalyticsConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+
+        rejectNull(setBucketAnalyticsConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(
+                setBucketAnalyticsConfigurationRequest.getBucketName(), "BucketName");
+        final AnalyticsConfiguration analyticsConfiguration = assertNotNull(
+                setBucketAnalyticsConfigurationRequest.getAnalyticsConfiguration(), "Analytics Configuration");
+        final String id = assertNotNull(analyticsConfiguration.getId(), "Analytics Id");
+
+        Request<SetBucketAnalyticsConfigurationRequest> request =
+                createRequest(bucketName, null, setBucketAnalyticsConfigurationRequest, HttpMethodName.PUT);
+        request.addParameter("analytics", null);
+        request.addParameter("id", id);
+
+        byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(analyticsConfiguration);
+        request.addHeader("Content-Length", String.valueOf(bytes.length));
+        request.addHeader("Content-Type", "application/xml");
+        request.setContent(new ByteArrayInputStream(bytes));
+
+        return invoke(request, new Unmarshallers.SetBucketAnalyticsConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public ListBucketAnalyticsConfigurationsResult listBucketAnalyticsConfigurations(
+            ListBucketAnalyticsConfigurationsRequest listBucketAnalyticsConfigurationsRequest)
+            throws AmazonServiceException, SdkClientException {
+
+        rejectNull(listBucketAnalyticsConfigurationsRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(
+                listBucketAnalyticsConfigurationsRequest.getBucketName(), "BucketName");
+
+        Request<ListBucketAnalyticsConfigurationsRequest> request =
+                createRequest(bucketName, null, listBucketAnalyticsConfigurationsRequest, HttpMethodName.GET);
+        request.addParameter("analytics", null);
+        addParameterIfNotNull(request, "continuation-token", listBucketAnalyticsConfigurationsRequest.getContinuationToken());
+
+        return invoke(request, new Unmarshallers.ListBucketAnalyticsConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public DeleteBucketInventoryConfigurationResult deleteBucketInventoryConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return deleteBucketInventoryConfiguration(
+                new DeleteBucketInventoryConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public DeleteBucketInventoryConfigurationResult deleteBucketInventoryConfiguration(
+            DeleteBucketInventoryConfigurationRequest deleteBucketInventoryConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        rejectNull(deleteBucketInventoryConfigurationRequest, "The request cannot be null");
+        String bucketName = assertStringNotEmpty(deleteBucketInventoryConfigurationRequest.getBucketName(), "BucketName");
+        String id = assertStringNotEmpty(deleteBucketInventoryConfigurationRequest.getId(), "Inventory id");
+
+        Request<DeleteBucketInventoryConfigurationRequest> request = createRequest(bucketName, null, deleteBucketInventoryConfigurationRequest, HttpMethodName.DELETE);
+        request.addParameter("inventory", null);
+        request.addParameter("id", id);
+
+        return invoke(request, new Unmarshallers.DeleteBucketInventoryConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public GetBucketInventoryConfigurationResult getBucketInventoryConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return getBucketInventoryConfiguration(
+                new GetBucketInventoryConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public GetBucketInventoryConfigurationResult getBucketInventoryConfiguration(
+            GetBucketInventoryConfigurationRequest getBucketInventoryConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        rejectNull(getBucketInventoryConfigurationRequest, "The request cannot be null");
+        String bucketName = assertStringNotEmpty(getBucketInventoryConfigurationRequest.getBucketName(), "BucketName");
+        String id = assertStringNotEmpty(getBucketInventoryConfigurationRequest.getId(), "Inventory id");
+
+        Request<GetBucketInventoryConfigurationRequest> request = createRequest(bucketName, null, getBucketInventoryConfigurationRequest, HttpMethodName.GET);
+        request.addParameter("inventory", null);
+        request.addParameter("id", id);
+
+        return invoke(request, new Unmarshallers.GetBucketInventoryConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public SetBucketInventoryConfigurationResult setBucketInventoryConfiguration(
+            String bucketName, InventoryConfiguration inventoryConfiguration)
+            throws AmazonServiceException, SdkClientException {
+        return setBucketInventoryConfiguration(
+                new SetBucketInventoryConfigurationRequest(bucketName, inventoryConfiguration));
+    }
+
+    @Override
+    public SetBucketInventoryConfigurationResult setBucketInventoryConfiguration(
+            SetBucketInventoryConfigurationRequest setBucketInventoryConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        rejectNull(setBucketInventoryConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(setBucketInventoryConfigurationRequest.getBucketName(), "BucketName");
+        final InventoryConfiguration inventoryConfiguration = assertNotNull(setBucketInventoryConfigurationRequest.getInventoryConfiguration(),
+                "InventoryConfiguration");
+        final String id = assertNotNull(inventoryConfiguration.getId(), "Inventory id");
+
+        Request<SetBucketInventoryConfigurationRequest> request = createRequest(bucketName, null, setBucketInventoryConfigurationRequest, HttpMethodName.PUT);
+        request.addParameter("inventory", null);
+        request.addParameter("id", id);
+
+        final byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(inventoryConfiguration);
+        request.addHeader("Content-Length", String.valueOf(bytes.length));
+        request.addHeader("Content-Type", "application/xml");
+        request.setContent(new ByteArrayInputStream(bytes));
+
+        return invoke(request, new Unmarshallers.SetBucketInventoryConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public ListBucketInventoryConfigurationsResult listBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest listBucketInventoryConfigurationsRequest)
+            throws AmazonServiceException, SdkClientException {
+        rejectNull(listBucketInventoryConfigurationsRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(listBucketInventoryConfigurationsRequest.getBucketName(), "BucketName");
+
+        Request<ListBucketInventoryConfigurationsRequest> request = createRequest(bucketName, null, listBucketInventoryConfigurationsRequest, HttpMethodName.GET);
+        request.addParameter("inventory", null);
+        addParameterIfNotNull(request, "continuation-token", listBucketInventoryConfigurationsRequest.getContinuationToken());
+
+        return invoke(request, new Unmarshallers.ListBucketInventoryConfigurationsUnmarshaller(), bucketName, null);
+    }
+
     /**
      * Specifically made package access for testing.
      * Used for internal consumption of AWS SDK.
@@ -4494,5 +4880,37 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
         }
         return waiters;
+    }
+
+    private String urlEncodeTags(ObjectTagging tagging) {
+        if (tagging == null || tagging.getTagSet() == null) return null;
+
+        StringBuilder sb = new StringBuilder();
+
+        Iterator<Tag> tagIter = tagging.getTagSet().iterator();
+        while (tagIter.hasNext()) {
+            Tag tag = tagIter.next();
+            sb.append(SdkHttpUtils.urlEncode(tag.getKey(), false)).append('=').append(SdkHttpUtils.urlEncode(tag.getValue(), false));
+            if (tagIter.hasNext()) {
+                sb.append("&");
+            }
+        }
+
+        return sb.toString();
+    }
+
+    private void setContent(Request<?> request, byte[] content, String contentType, boolean setMd5) {
+        request.setContent(new ByteArrayInputStream(content));
+        request.addHeader("Content-Length", Integer.toString(content.length));
+        request.addHeader("Content-Type", contentType);
+        if (setMd5) {
+            try {
+                byte[] md5 = Md5Utils.computeMD5Hash(content);
+                String md5Base64 = BinaryUtils.toBase64(md5);
+                request.addHeader("Content-MD5", md5Base64);
+            } catch ( Exception e ) {
+                throw new AmazonClientException("Couldn't compute md5 sum", e);
+            }
+        }
     }
 }

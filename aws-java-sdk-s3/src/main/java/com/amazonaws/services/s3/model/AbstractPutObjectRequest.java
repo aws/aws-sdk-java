@@ -98,6 +98,8 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
      */
     private SSEAwsKeyManagementParams sseAwsKeyManagementParams;
 
+    private ObjectTagging tagging;
+
     /**
      * Constructs a new
      * {@link AbstractPutObjectRequest} object to upload a file to the
@@ -756,6 +758,20 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
             SSECustomerKey sseKey) {
         setSSECustomerKey(sseKey);
         @SuppressWarnings("unchecked") T t = (T)this;
+        return t;
+    }
+
+    public ObjectTagging getTagging() {
+        return tagging;
+    }
+
+    public void setTagging(ObjectTagging tagging) {
+        this.tagging = tagging;
+    }
+
+    public <T extends PutObjectRequest> T withTagging(ObjectTagging tagSet) {
+        setTagging(tagSet);
+        T t = (T)this;
         return t;
     }
 

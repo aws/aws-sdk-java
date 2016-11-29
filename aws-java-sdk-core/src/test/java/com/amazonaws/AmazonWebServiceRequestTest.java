@@ -34,6 +34,8 @@ import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.SyncProgressListener;
 import com.amazonaws.metrics.RequestMetricCollector;
 
+import utils.model.EmptyAmazonWebServiceRequest;
+
 public class AmazonWebServiceRequestTest {
 
     @Test
@@ -88,6 +90,13 @@ public class AmazonWebServiceRequestTest {
         // After copy
         from.copyBaseTo(to);
         verifyBaseAfterCopy(listener, credentials, collector, from, to);
+    }
+
+    @Test
+    public void nullCredentialsSet_ReturnsNullProvider() {
+        AmazonWebServiceRequest request = new EmptyAmazonWebServiceRequest();
+        request.setRequestCredentials(null);
+        assertNull(request.getRequestCredentialsProvider());
     }
 
     public static void verifyBaseBeforeCopy(final AmazonWebServiceRequest to) {

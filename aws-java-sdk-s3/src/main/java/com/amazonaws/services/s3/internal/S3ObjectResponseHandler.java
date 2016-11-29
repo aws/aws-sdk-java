@@ -47,6 +47,11 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
         if (response.getHeaders().get(Headers.REQUESTER_CHARGED_HEADER) != null) {
             object.setRequesterCharged(true);
         }
+
+        if (response.getHeaders().get(Headers.S3_TAGGING_COUNT) != null) {
+            object.setTaggingCount(Integer.parseInt(response.getHeaders().get(Headers.S3_TAGGING_COUNT)));
+        }
+
         ObjectMetadata metadata = object.getObjectMetadata();
         populateObjectMetadata(response, metadata);
 

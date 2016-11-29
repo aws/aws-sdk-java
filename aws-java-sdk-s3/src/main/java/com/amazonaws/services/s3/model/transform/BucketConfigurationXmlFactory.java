@@ -38,6 +38,8 @@ import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
 import com.amazonaws.services.s3.model.CloudFunctionConfiguration;
 import com.amazonaws.services.s3.model.Filter;
 import com.amazonaws.services.s3.model.FilterRule;
+import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
+import com.amazonaws.services.s3.model.inventory.InventoryDestination;
 import com.amazonaws.services.s3.model.LambdaConfiguration;
 import com.amazonaws.services.s3.model.NotificationConfiguration;
 import com.amazonaws.services.s3.model.QueueConfiguration;
@@ -47,8 +49,38 @@ import com.amazonaws.services.s3.model.ReplicationRule;
 import com.amazonaws.services.s3.model.RoutingRule;
 import com.amazonaws.services.s3.model.RoutingRuleCondition;
 import com.amazonaws.services.s3.model.S3KeyFilter;
+import com.amazonaws.services.s3.model.Tag;
 import com.amazonaws.services.s3.model.TagSet;
 import com.amazonaws.services.s3.model.TopicConfiguration;
+import com.amazonaws.services.s3.model.lifecycle.LifecycleAndOperator;
+import com.amazonaws.services.s3.model.lifecycle.LifecycleFilter;
+import com.amazonaws.services.s3.model.lifecycle.LifecycleFilterPredicate;
+import com.amazonaws.services.s3.model.lifecycle.LifecyclePredicateVisitor;
+import com.amazonaws.services.s3.model.lifecycle.LifecyclePrefixPredicate;
+import com.amazonaws.services.s3.model.lifecycle.LifecycleTagPredicate;
+import com.amazonaws.services.s3.model.metrics.MetricsAndOperator;
+import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
+import com.amazonaws.services.s3.model.metrics.MetricsFilter;
+import com.amazonaws.services.s3.model.metrics.MetricsFilterPredicate;
+import com.amazonaws.services.s3.model.metrics.MetricsPredicateVisitor;
+import com.amazonaws.services.s3.model.metrics.MetricsPrefixPredicate;
+import com.amazonaws.services.s3.model.metrics.MetricsTagPredicate;
+import com.amazonaws.services.s3.model.analytics.AnalyticsAndOperator;
+import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
+import com.amazonaws.services.s3.model.analytics.AnalyticsExportDestination;
+import com.amazonaws.services.s3.model.analytics.AnalyticsFilter;
+import com.amazonaws.services.s3.model.analytics.AnalyticsFilterPredicate;
+import com.amazonaws.services.s3.model.analytics.AnalyticsPredicateVisitor;
+import com.amazonaws.services.s3.model.analytics.AnalyticsPrefixPredicate;
+import com.amazonaws.services.s3.model.analytics.AnalyticsS3BucketDestination;
+import com.amazonaws.services.s3.model.analytics.AnalyticsTagPredicate;
+import com.amazonaws.services.s3.model.analytics.StorageClassAnalysis;
+import com.amazonaws.services.s3.model.analytics.StorageClassAnalysisDataExport;
+import com.amazonaws.services.s3.model.inventory.InventoryFilter;
+import com.amazonaws.services.s3.model.inventory.InventoryFilterPredicate;
+import com.amazonaws.services.s3.model.inventory.InventoryPrefixPredicate;
+import com.amazonaws.services.s3.model.inventory.InventoryS3BucketDestination;
+import com.amazonaws.services.s3.model.inventory.InventorySchedule;
 import com.amazonaws.util.CollectionUtils;
 
 /**
@@ -336,7 +368,6 @@ public class BucketConfigurationXmlFactory {
      /* <LifecycleConfiguration>
            <Rule>
                <ID>logs-rule</ID>
-               <Prefix>logs/</Prefix>
                <Status>Enabled</Status>
                <Transition>
                    <Days>30</Days>
@@ -352,6 +383,24 @@ public class BucketConfigurationXmlFactory {
                <NoncurrentVersionExpiration>
                    <NoncurrentDays>14</NoncurrentDays>
                </NoncurrentVersionExpiration>
+               <Filter> <!-- A filter can have only one of Prefix, Tag or And. -->
+                 <Prefix>logs/</Prefix>
+                 <Tag>
+                    <Key>key1</Key>
+                    <Value>value1</Value>
+                 </Tag>
+                 <And>
+                    <Prefix>logs/</Prefix>
+                    <Tag>
+                        <Key>key1</Key>
+                        <Value>value1</Value>
+                    </Tag>
+                    <Tag>
+                        <Key>key1</Key>
+                        <Value>value1</Value>
+                    </Tag>
+                 </And>
+           </Filter>
            </Rule>
            <Rule>
                <ID>image-rule</ID>
@@ -420,8 +469,9 @@ public class BucketConfigurationXmlFactory {
         if (rule.getId() != null) {
             xml.start("ID").value(rule.getId()).end();
         }
-        xml.start("Prefix").value(rule.getPrefix()).end();
+        writePrefix(xml, rule.getPrefix());
         xml.start("Status").value(rule.getStatus()).end();
+        writeLifecycleFilter(xml, rule.getFilter());
 
         addTransitions(xml, rule.getTransitions());
         addNoncurrentTransitions(xml, rule.getNoncurrentVersionTransitions());
@@ -461,6 +511,7 @@ public class BucketConfigurationXmlFactory {
 
         xml.end(); // </Rule>
     }
+
 
     private void addTransitions(XmlWriter xml, List<Transition> transitions) {
         if (transitions == null || transitions.isEmpty()) {
@@ -512,6 +563,49 @@ public class BucketConfigurationXmlFactory {
         }
     }
 
+    private void writeLifecycleFilter(XmlWriter xml, LifecycleFilter filter) {
+        if (filter == null) {
+            return;
+        }
+
+        xml.start("Filter");
+        writeLifecycleFilterPredicate(xml, filter.getPredicate());
+        xml.end();
+    }
+
+    private void writeLifecycleFilterPredicate(XmlWriter xml, LifecycleFilterPredicate predicate) {
+        if (predicate == null) {
+            return;
+        }
+        predicate.accept(new LifecyclePredicateVisitorImpl(xml));
+    }
+
+    private class LifecyclePredicateVisitorImpl implements LifecyclePredicateVisitor {
+        private final XmlWriter xml;
+
+        public LifecyclePredicateVisitorImpl(XmlWriter xml) {
+            this.xml = xml;
+        }
+
+        @Override
+        public void visit(LifecyclePrefixPredicate lifecyclePrefixPredicate) {
+            writePrefix(xml, lifecyclePrefixPredicate.getPrefix());
+        }
+
+        @Override
+        public void visit(LifecycleTagPredicate lifecycleTagPredicate) {
+            writeTag(xml, lifecycleTagPredicate.getTag());
+        }
+
+        @Override
+        public void visit(LifecycleAndOperator lifecycleAndOperator) {
+            xml.start("And");
+            for (LifecycleFilterPredicate predicate : lifecycleAndOperator.getOperands()) {
+                predicate.accept(this);
+            }
+            xml.end(); // </And>
+        }
+    }
 
     /**
      * @param rule
@@ -633,6 +727,121 @@ public class BucketConfigurationXmlFactory {
         return xml.getBytes();
     }
 
+    /**
+     * Converts the specified {@link InventoryConfiguration} object to an XML fragment that
+     * can be sent to Amazon S3.
+     *
+     * @param config
+     *            The {@link InventoryConfiguration}
+     */
+     /*
+        <?xml version="1.0" encoding="UTF-8"?>
+        <InventoryConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+           <Destination>
+              <S3BucketDestination>
+                 <AccountId>A2OCNCIEQW9MSG</AccountId>
+                 <Bucket>s3-object-inventory-list-gamma-us-east-1</Bucket>
+                 <Format>CSV</Format>
+                 <Prefix>string</Prefix>
+              </S3BucketDestination>
+           </Destination>
+           <IsEnabled>true</IsEnabled>
+           <Filter>
+              <Prefix>string</Prefix>
+           </Filter>
+           <Id>configId</Id>
+           <IncludedObjectVersions>All</IncludedObjectVersions>
+           <OptionalFields>
+              <Field>Size</Field>
+              <Field>LastModifiedDate</Field>
+              <Field>StorageClass</Field>
+              <Field>ETag</Field>
+              <Field>IsMultipartUploaded</Field>
+              <Field>ReplicationStatus</Field>
+           </OptionalFields>
+           <Schedule>
+              <Frequency>Daily</Frequency>
+           </Schedule>
+        </InventoryConfiguration>
+    */
+    public byte[] convertToXmlByteArray(InventoryConfiguration config) throws SdkClientException {
+        XmlWriter xml = new XmlWriter();
+        xml.start("InventoryConfiguration", "xmlns", Constants.XML_NAMESPACE);
+
+        xml.start("Id").value(config.getId()).end();
+        xml.start("IsEnabled").value(String.valueOf(config.isEnabled())).end();
+        xml.start("IncludedObjectVersions").value(config.getIncludedObjectVersions()).end();
+
+        writeInventoryDestination(xml, config.getDestination());
+        writeInventoryFilter(xml, config.getInventoryFilter());
+        addInventorySchedule(xml, config.getSchedule());
+        addInventoryOptionalFields(xml, config.getOptionalFields());
+
+        xml.end(); // </InventoryConfiguration>
+
+        return xml.getBytes();
+    }
+
+    private void writeInventoryDestination(XmlWriter xml, InventoryDestination destination) {
+        if (destination == null) {
+            return;
+        }
+
+        xml.start("Destination");
+        InventoryS3BucketDestination s3BucketDestination = destination.getS3BucketDestination();
+        if (s3BucketDestination != null) {
+            xml.start("S3BucketDestination");
+            addParameterIfNotNull(xml, "AccountId", s3BucketDestination.getAccountId());
+            addParameterIfNotNull(xml, "Bucket", s3BucketDestination.getBucketArn());
+            addParameterIfNotNull(xml, "Prefix", s3BucketDestination.getPrefix());
+            addParameterIfNotNull(xml, "Format", s3BucketDestination.getFormat());
+            xml.end(); // </S3BucketDestination>
+        }
+        xml.end(); // </Destination>
+    }
+
+    private void writeInventoryFilter(XmlWriter xml, InventoryFilter inventoryFilter) {
+        if (inventoryFilter == null) {
+            return;
+        }
+
+        xml.start("Filter");
+        writeInventoryFilterPredicate(xml, inventoryFilter.getPredicate());
+        xml.end();
+    }
+
+    private void writeInventoryFilterPredicate(XmlWriter xml, InventoryFilterPredicate predicate) {
+        if (predicate == null) {
+            return;
+        }
+
+        if (predicate instanceof InventoryPrefixPredicate) {
+            writePrefix(xml, ((InventoryPrefixPredicate) predicate).getPrefix());
+        }
+    }
+
+    private void addInventorySchedule(XmlWriter xml, InventorySchedule schedule) {
+        if (schedule == null) {
+            return;
+        }
+
+        xml.start("Schedule");
+        addParameterIfNotNull(xml, "Frequency", schedule.getFrequency());
+        xml.end();
+    }
+
+    private void addInventoryOptionalFields(XmlWriter xml, List<String> optionalFields) {
+        if (CollectionUtils.isNullOrEmpty(optionalFields)) {
+            return;
+        }
+
+        xml.start("OptionalFields");
+        for (String field : optionalFields) {
+            xml.start("Field").value(field).end();
+        }
+        xml.end();
+    }
+
     private void writeRule(XmlWriter xml, TagSet tagset) {
         xml.start("TagSet");
         for ( String key : tagset.getAllTags().keySet() ) {
@@ -642,6 +851,246 @@ public class BucketConfigurationXmlFactory {
             xml.end(); // </Tag>
         }
         xml.end(); // </TagSet>
+    }
+
+    private boolean hasTags(TagSet tagSet) {
+        return tagSet != null && tagSet.getAllTags() != null && tagSet.getAllTags().size() > 0;
+    }
+
+    /**
+     * Converts the specified {@link com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration} object to an
+     * XML fragment that can be sent to Amazon S3.
+     *
+     * @param config
+     *            The {@link com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration}
+     */
+     /*
+      * <AnalyticsConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+           <Id>XXX</Id>
+           <Filter>
+             <And>
+               <Prefix>documents/</Prefix>
+               <Tag>
+                 <Key>foo</Key>
+                 <Value>bar</Value>
+               </Tag>
+             </And>
+           </Filter>
+           <StorageClassAnalysis>
+             <DataExport>
+               <OutputSchemaVersion>1</OutputSchemaVersion>
+               <Destination>
+                 <S3BucketDestination>
+                   <Format>CSV</Format>
+                   <BucketAccountId>123456789</BucketAccountId>
+                   <Bucket>destination-bucket</Bucket>
+                   <Prefix>destination-prefix</Prefix>
+                 </S3BucketDestination>
+               </Destination>
+             </DataExport>
+           </StorageClassAnalysis>
+        </AnalyticsConfiguration>
+     */
+    public byte[] convertToXmlByteArray(AnalyticsConfiguration config) throws SdkClientException {
+        XmlWriter xml = new XmlWriter();
+
+        xml.start("AnalyticsConfiguration", "xmlns", Constants.XML_NAMESPACE);
+
+        addParameterIfNotNull(xml, "Id", config.getId());
+        writeAnalyticsFilter(xml, config.getFilter());
+        writeStorageClassAnalysis(xml, config.getStorageClassAnalysis());
+
+        xml.end();
+
+        return xml.getBytes();
+    }
+
+    private void writeAnalyticsFilter(XmlWriter xml, AnalyticsFilter filter) {
+        if (filter == null) {
+            return;
+        }
+
+        xml.start("Filter");
+        writeAnalyticsFilterPredicate(xml, filter.getPredicate());
+        xml.end();
+    }
+
+    private void writeAnalyticsFilterPredicate(XmlWriter xml, AnalyticsFilterPredicate predicate) {
+        if (predicate == null) {
+            return;
+        }
+
+        predicate.accept(new AnalyticsPredicateVisitorImpl(xml));
+    }
+
+    private void writeStorageClassAnalysis(XmlWriter xml, StorageClassAnalysis storageClassAnalysis) {
+        if (storageClassAnalysis == null) return;
+
+        xml.start("StorageClassAnalysis");
+        if (storageClassAnalysis.getDataExport() != null) {
+            StorageClassAnalysisDataExport dataExport = storageClassAnalysis.getDataExport();
+
+            xml.start("DataExport");
+
+            addParameterIfNotNull(xml, "OutputSchemaVersion", dataExport.getOutputSchemaVersion());
+            writeAnalyticsExportDestination(xml, dataExport.getDestination());
+
+            xml.end(); // </DataExport>
+        }
+
+        xml.end(); // </StorageClassAnalysis>
+    }
+
+    private void writeAnalyticsExportDestination(XmlWriter xml, AnalyticsExportDestination destination) {
+        if (destination == null) {
+            return;
+        }
+
+        xml.start("Destination");
+
+        if (destination.getS3BucketDestination() != null) {
+            xml.start("S3BucketDestination");
+            AnalyticsS3BucketDestination s3BucketDestination = destination.getS3BucketDestination();
+            addParameterIfNotNull(xml, "Format", s3BucketDestination.getFormat());
+            addParameterIfNotNull(xml, "BucketAccountId", s3BucketDestination.getBucketAccountId());
+            addParameterIfNotNull(xml, "Bucket", s3BucketDestination.getBucketArn());
+            addParameterIfNotNull(xml, "Prefix", s3BucketDestination.getPrefix());
+            xml.end();  // </S3BucketDestination>
+        }
+
+        xml.end(); // </Destination>
+    }
+
+    private class AnalyticsPredicateVisitorImpl implements AnalyticsPredicateVisitor {
+        private final XmlWriter xml;
+
+        public AnalyticsPredicateVisitorImpl(XmlWriter xml) {
+            this.xml = xml;
+        }
+
+        @Override
+        public void visit(AnalyticsPrefixPredicate analyticsPrefixPredicate) {
+            writePrefix(xml, analyticsPrefixPredicate.getPrefix());
+        }
+
+        @Override
+        public void visit(AnalyticsTagPredicate analyticsTagPredicate) {
+            writeTag(xml, analyticsTagPredicate.getTag());
+        }
+
+        @Override
+        public void visit(AnalyticsAndOperator analyticsAndOperator) {
+            xml.start("And");
+            for (AnalyticsFilterPredicate predicate : analyticsAndOperator.getOperands()) {
+                predicate.accept(this);
+            }
+            xml.end();
+        }
+    }
+
+    /**
+     * Converts the specified {@link com.amazonaws.services.s3.model.metrics.MetricsConfiguration}
+     * object to an XML fragment that can be sent to Amazon S3.
+     *
+     * @param config
+     *            The {@link com.amazonaws.services.s3.model.metrics.MetricsConfiguration}.
+     */
+     /*
+      * <MetricsConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+           <Id>metrics-id</Id>
+           <Filter>
+           <!-- A filter should have only one of Prefix, Tag or And-->
+             <Prefix>prefix</Prefix>
+             <Tag>
+                 <Key>Project</Key>
+                 <Value>Foo</Value>
+             </Tag>
+             <And>
+               <Prefix>documents/</Prefix>
+               <Tag>
+                 <Key>foo</Key>
+                 <Value>bar</Value>
+               </Tag>
+             </And>
+           </Filter>
+        </MetricsConfiguration>
+     */
+    public byte[] convertToXmlByteArray(MetricsConfiguration config) throws SdkClientException {
+        XmlWriter xml = new XmlWriter();
+
+        xml.start("MetricsConfiguration", "xmlns", Constants.XML_NAMESPACE);
+
+        addParameterIfNotNull(xml, "Id", config.getId());
+        writeMetricsFilter(xml, config.getFilter());
+
+        xml.end();
+
+        return xml.getBytes();
+    }
+
+    private void writeMetricsFilter(XmlWriter xml, MetricsFilter filter) {
+        if (filter == null) {
+            return;
+        }
+
+        xml.start("Filter");
+        writeMetricsFilterPredicate(xml, filter.getPredicate());
+        xml.end();
+    }
+
+    private void writeMetricsFilterPredicate(XmlWriter xml, MetricsFilterPredicate predicate) {
+        if (predicate == null) {
+            return;
+        }
+
+        predicate.accept(new MetricsPredicateVisitorImpl(xml));
+    }
+
+    private class MetricsPredicateVisitorImpl implements MetricsPredicateVisitor {
+        private final XmlWriter xml;
+
+        public MetricsPredicateVisitorImpl(XmlWriter xml) {
+            this.xml = xml;
+        }
+
+        @Override
+        public void visit(MetricsPrefixPredicate metricsPrefixPredicate) {
+            writePrefix(xml, metricsPrefixPredicate.getPrefix());
+        }
+
+        @Override
+        public void visit(MetricsTagPredicate metricsTagPredicate) {
+            writeTag(xml, metricsTagPredicate.getTag());
+        }
+
+        @Override
+        public void visit(MetricsAndOperator metricsAndOperator) {
+            xml.start("And");
+            for (MetricsFilterPredicate predicate : metricsAndOperator.getOperands()) {
+                predicate.accept(this);
+            }
+            xml.end();
+        }
+    }
+
+    private void addParameterIfNotNull(XmlWriter xml, String xmlTagName, String value) {
+        if (value != null) {
+            xml.start(xmlTagName).value(value).end();
+        }
+    }
+
+    private void writePrefix(XmlWriter xml, String prefix) {
+        addParameterIfNotNull(xml, "Prefix", prefix);
+    }
+
+    private void writeTag(XmlWriter xml, Tag tag) {
+        if (tag == null) {
+            return;
+        }
+        xml.start("Tag");
+        xml.start("Key").value(tag.getKey()).end();
+        xml.start("Value").value(tag.getValue()).end();
+        xml.end();
     }
 
 }

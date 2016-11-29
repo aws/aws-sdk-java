@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+
+import com.amazonaws.services.s3.model.lifecycle.LifecycleFilter;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -91,6 +94,7 @@ public class BucketLifecycleConfiguration implements Serializable {
         private String id;
         private String prefix;
         private String status;
+        private LifecycleFilter filter;
 
         /**
          * The time, in days, between when the object is uploaded to the bucket
@@ -140,7 +144,10 @@ public class BucketLifecycleConfiguration implements Serializable {
 
         /**
          * Sets the key prefix for which this rule will apply.
+         *
+         * @deprecated Use {@link LifecycleFilter} instead.
          */
+        @Deprecated
         public void setPrefix(String prefix) {
             this.prefix = prefix;
         }
@@ -181,7 +188,14 @@ public class BucketLifecycleConfiguration implements Serializable {
 
         /**
          * Returns the key prefix for which this rule will apply.
+         *
+         * This method should be used only if prefix was set using
+         * {@link #setPrefix(String)}.
+         *
+         * @deprecated The method returns prefix only if was was set using
+         *              {@link #setPrefix(String)}. Otherwise, Use {@link LifecycleFilter}.
          */
+        @Deprecated
         public String getPrefix() {
             return prefix;
         }
@@ -191,7 +205,9 @@ public class BucketLifecycleConfiguration implements Serializable {
          * object for method chaining.
          *
          * @see Rule#setPrefix(String)
+         * @deprecated Use {@link LifecycleFilter} instead.
          */
+        @Deprecated
         public Rule withPrefix(String prefix) {
             this.prefix = prefix;
             return this;
@@ -515,6 +531,36 @@ public class BucketLifecycleConfiguration implements Serializable {
          */
         public Rule withExpiredObjectDeleteMarker(boolean expiredObjectDeleteMarker) {
             this.expiredObjectDeleteMarker = expiredObjectDeleteMarker;
+            return this;
+        }
+
+        /**
+         * Returns a {@link LifecycleFilter} that is used to identify objects that a Lifecycle Rule applies to.
+         */
+        public LifecycleFilter getFilter() {
+            return filter;
+        }
+
+        /**
+         * Sets the {@link LifecycleFilter} that is used to identify objects that a Lifecycle Rule applies to.
+         * A rule cannot have both {@link LifecycleFilter} and the deprecated {@link #prefix}.
+         *
+         * @param filter {@link LifecycleFilter}
+         */
+        public void setFilter(LifecycleFilter filter) {
+            this.filter = filter;
+        }
+
+        /**
+         * Fluent method to set the {@link LifecycleFilter} that is used to identify objects
+         * that a Lifecycle Rule applies to. A rule cannot have both {@link LifecycleFilter}
+         * and the deprecated {@link #prefix}.
+         *
+         * @param filter {@link LifecycleFilter}
+         * @return This object for method chaining.
+         */
+        public Rule withFilter(LifecycleFilter filter) {
+            setFilter(filter);
             return this;
         }
     }

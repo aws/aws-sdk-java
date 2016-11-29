@@ -27,8 +27,10 @@ import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
+import com.amazonaws.services.s3.model.ObjectTagging;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import com.amazonaws.services.s3.transfer.model.UploadResult;
 
 /**
@@ -89,6 +91,17 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
                 .withRequestMetricCollector(origReq.getRequestMetricCollector())
                 ;
             res = s3.completeMultipartUpload(req);
+
+            // Note: The multipart upload API does not currently support
+            // tagging.  This is a workaround until it is supported by the
+            // service.
+            ObjectTagging tagging = origReq.getTagging();
+            if (tagging != null) {
+                s3.setObjectTagging(new SetObjectTaggingRequest(
+                        origReq.getBucketName(),
+                        origReq.getKey(),
+                        tagging));
+            }
         } catch (Exception e) {
             publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw e;
