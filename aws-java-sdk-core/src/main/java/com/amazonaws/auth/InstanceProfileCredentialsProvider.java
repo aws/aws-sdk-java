@@ -139,8 +139,9 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
 
     @Override
     public AWSCredentials getCredentials() {
+        AWSCredentials creds = credentialsFetcher.getCredentials();
         getCredentialsCalled = true;
-        return credentialsFetcher.getCredentials();
+        return creds;
     }
 
     @Override
