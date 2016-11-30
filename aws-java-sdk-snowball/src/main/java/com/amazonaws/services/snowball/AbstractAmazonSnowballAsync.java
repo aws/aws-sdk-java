@@ -25,6 +25,19 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CancelClusterResult> cancelClusterAsync(CancelClusterRequest request) {
+
+        return cancelClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelClusterResult> cancelClusterAsync(CancelClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelClusterRequest, CancelClusterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest request) {
 
         return cancelJobAsync(request, null);
@@ -46,6 +59,19 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     @Override
     public java.util.concurrent.Future<CreateAddressResult> createAddressAsync(CreateAddressRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAddressRequest, CreateAddressResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest request) {
+
+        return createClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, CreateClusterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -85,6 +111,19 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     @Override
     public java.util.concurrent.Future<DescribeAddressesResult> describeAddressesAsync(DescribeAddressesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAddressesRequest, DescribeAddressesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest request) {
+
+        return describeClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeClusterRequest, DescribeClusterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -142,6 +181,32 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListClusterJobsResult> listClusterJobsAsync(ListClusterJobsRequest request) {
+
+        return listClusterJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClusterJobsResult> listClusterJobsAsync(ListClusterJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListClusterJobsRequest, ListClusterJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest request) {
+
+        return listClustersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest request) {
 
         return listJobsAsync(request, null);
@@ -150,6 +215,19 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest request) {
+
+        return updateClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateClusterRequest, UpdateClusterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

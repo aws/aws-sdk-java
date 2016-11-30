@@ -67,8 +67,8 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String description;
     /**
      * <p>
-     * The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. Note that the 50 TB
-     * Snowballs are only available in the US regions.
+     * The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs
+     * are only available in the US regions.
      * </p>
      */
     private String snowballCapacityPreference;
@@ -409,13 +409,13 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. Note that the 50 TB
-     * Snowballs are only available in the US regions.
+     * The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs
+     * are only available in the US regions.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. Note that the
-     *        50 TB Snowballs are only available in the US regions.
+     *        The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB
+     *        Snowballs are only available in the US regions.
      * @see SnowballCapacity
      */
 
@@ -425,12 +425,12 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. Note that the 50 TB
-     * Snowballs are only available in the US regions.
+     * The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs
+     * are only available in the US regions.
      * </p>
      * 
-     * @return The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. Note that
-     *         the 50 TB Snowballs are only available in the US regions.
+     * @return The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB
+     *         Snowballs are only available in the US regions.
      * @see SnowballCapacity
      */
 
@@ -440,13 +440,13 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. Note that the 50 TB
-     * Snowballs are only available in the US regions.
+     * The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs
+     * are only available in the US regions.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. Note that the
-     *        50 TB Snowballs are only available in the US regions.
+     *        The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB
+     *        Snowballs are only available in the US regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballCapacity
      */
@@ -458,13 +458,13 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. Note that the 50 TB
-     * Snowballs are only available in the US regions.
+     * The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs
+     * are only available in the US regions.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. Note that the
-     *        50 TB Snowballs are only available in the US regions.
+     *        The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB
+     *        Snowballs are only available in the US regions.
      * @see SnowballCapacity
      */
 
@@ -474,13 +474,13 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. Note that the 50 TB
-     * Snowballs are only available in the US regions.
+     * The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs
+     * are only available in the US regions.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. Note that the
-     *        50 TB Snowballs are only available in the US regions.
+     *        The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB
+     *        Snowballs are only available in the US regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballCapacity
      */

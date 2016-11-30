@@ -74,13 +74,13 @@ public class Address implements Serializable, Cloneable {
     private String stateOrProvince;
     /**
      * <p>
-     * The prefecture or district in an address that a Snowball is to be delivered to.
+     * The prefecture or district that the appliance will be shipped to.
      * </p>
      */
     private String prefectureOrDistrict;
     /**
      * <p>
-     * A landmark listed in an address that a Snowball is to be delivered to.
+     * The landmark identifying the address that the appliance will be shipped to.
      * </p>
      */
     private String landmark;
@@ -425,11 +425,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefecture or district in an address that a Snowball is to be delivered to.
+     * The prefecture or district that the appliance will be shipped to.
      * </p>
      * 
      * @param prefectureOrDistrict
-     *        The prefecture or district in an address that a Snowball is to be delivered to.
+     *        The prefecture or district that the appliance will be shipped to.
      */
 
     public void setPrefectureOrDistrict(String prefectureOrDistrict) {
@@ -438,10 +438,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefecture or district in an address that a Snowball is to be delivered to.
+     * The prefecture or district that the appliance will be shipped to.
      * </p>
      * 
-     * @return The prefecture or district in an address that a Snowball is to be delivered to.
+     * @return The prefecture or district that the appliance will be shipped to.
      */
 
     public String getPrefectureOrDistrict() {
@@ -450,11 +450,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefecture or district in an address that a Snowball is to be delivered to.
+     * The prefecture or district that the appliance will be shipped to.
      * </p>
      * 
      * @param prefectureOrDistrict
-     *        The prefecture or district in an address that a Snowball is to be delivered to.
+     *        The prefecture or district that the appliance will be shipped to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -465,11 +465,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A landmark listed in an address that a Snowball is to be delivered to.
+     * The landmark identifying the address that the appliance will be shipped to.
      * </p>
      * 
      * @param landmark
-     *        A landmark listed in an address that a Snowball is to be delivered to.
+     *        The landmark identifying the address that the appliance will be shipped to.
      */
 
     public void setLandmark(String landmark) {
@@ -478,10 +478,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A landmark listed in an address that a Snowball is to be delivered to.
+     * The landmark identifying the address that the appliance will be shipped to.
      * </p>
      * 
-     * @return A landmark listed in an address that a Snowball is to be delivered to.
+     * @return The landmark identifying the address that the appliance will be shipped to.
      */
 
     public String getLandmark() {
@@ -490,11 +490,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A landmark listed in an address that a Snowball is to be delivered to.
+     * The landmark identifying the address that the appliance will be shipped to.
      * </p>
      * 
      * @param landmark
-     *        A landmark listed in an address that a Snowball is to be delivered to.
+     *        The landmark identifying the address that the appliance will be shipped to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

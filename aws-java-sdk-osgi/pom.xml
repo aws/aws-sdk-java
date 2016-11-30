@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.62-SNAPSHOT</version>
+    <version>1.11.62</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -436,6 +436,24 @@
         <version>${awsjavasdk.version}</version>
     </dependency>
     <dependency>
+        <artifactId>aws-java-sdk-rekognition</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-polly</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-lightsail</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
         <artifactId>aws-java-sdk-core</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
@@ -857,6 +875,18 @@
                               <group>
                                   <title>AWS Server Migration</title>
                                   <packages>com.amazonaws.services.servermigration*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Rekognition</title>
+                                  <packages>com.amazonaws.services.rekognition*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Polly</title>
+                                  <packages>com.amazonaws.services.polly*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Lightsail</title>
+                                  <packages>com.amazonaws.services.lightsail*</packages>
                               </group>
                               <group>
                                   <title>Common</title>

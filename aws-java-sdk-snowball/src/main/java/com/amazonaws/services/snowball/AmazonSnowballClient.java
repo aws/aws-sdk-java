@@ -46,12 +46,12 @@ import com.amazonaws.services.snowball.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * AWS Import/Export Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large
- * amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball
- * commands described here provide access to the same functionality that is available in the AWS Snowball Management
- * Console, which enables you to create and manage jobs for Snowball. To transfer data locally with a Snowball
- * appliance, you'll need to use the Snowball client or the Amazon S3 API adapter for Snowball. For more information,
- * see the <a href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+ * AWS Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of
+ * data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball commands
+ * described here provide access to the same functionality that is available in the AWS Snowball Management Console,
+ * which enables you to create and manage jobs for Snowball. To transfer data locally with a Snowball appliance, you'll
+ * need to use the Snowball client or the Amazon S3 API adapter for Snowball. For more information, see the <a
+ * href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -72,9 +72,6 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
             .withSupportsCbor(false)
             .withSupportsIon(false)
             .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedAddressException").withModeledClass(
-                            com.amazonaws.services.snowball.model.UnsupportedAddressException.class))
-            .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("InvalidJobStateException").withModeledClass(
                             com.amazonaws.services.snowball.model.InvalidJobStateException.class))
             .addErrorMetadata(
@@ -83,6 +80,15 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("KMSRequestFailedException").withModeledClass(
                             com.amazonaws.services.snowball.model.KMSRequestFailedException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedAddressException").withModeledClass(
+                            com.amazonaws.services.snowball.model.UnsupportedAddressException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("ClusterLimitExceededException").withModeledClass(
+                            com.amazonaws.services.snowball.model.ClusterLimitExceededException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("InvalidInputCombinationException").withModeledClass(
+                            com.amazonaws.services.snowball.model.InvalidInputCombinationException.class))
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("InvalidAddressException").withModeledClass(
                             com.amazonaws.services.snowball.model.InvalidAddressException.class))
@@ -249,7 +255,55 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Cancels the specified job. Note that you can only cancel a job before its <code>JobState</code> value changes to
+     * Cancels a cluster job. You can only cancel a cluster job while it's in the <code>AwaitingQuorum</code> status.
+     * You'll have at least an hour after creating a cluster job to cancel it.
+     * </p>
+     * 
+     * @param cancelClusterRequest
+     * @return Result of the CancelCluster operation returned by the service.
+     * @throws KMSRequestFailedException
+     *         The provided AWS Key Management Service key lacks the permissions to perform the specified
+     *         <a>CreateJob</a> or <a>UpdateJob</a> action.
+     * @throws InvalidJobStateException
+     *         The action can't be performed because the job's current state doesn't allow that action to be performed.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @sample AmazonSnowball.CancelCluster
+     */
+    @Override
+    public CancelClusterResult cancelCluster(CancelClusterRequest cancelClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(cancelClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelClusterRequest> request = null;
+        Response<CancelClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelClusterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelClusterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelClusterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels the specified job. You can only cancel a job before its <code>JobState</code> value changes to
      * <code>PreparingAppliance</code>. Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action will
      * return a job's <code>JobState</code> as part of the response element data returned.
      * </p>
@@ -346,9 +400,60 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a job to import or export data between Amazon S3 and your on-premises data center. Note that your AWS
-     * account must have the right trust policies and permissions in place to create a job for Snowball. For more
-     * information, see <a>api-reference-policies</a>.
+     * Creates an empty cluster. Each cluster supports five nodes. You use the <a>CreateJob</a> action separately to
+     * create the jobs for each of these nodes. The cluster does not ship until these five node jobs have been created.
+     * </p>
+     * 
+     * @param createClusterRequest
+     * @return Result of the CreateCluster operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @throws KMSRequestFailedException
+     *         The provided AWS Key Management Service key lacks the permissions to perform the specified
+     *         <a>CreateJob</a> or <a>UpdateJob</a> action.
+     * @throws InvalidInputCombinationException
+     *         Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+     *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
+     *         again.
+     * @sample AmazonSnowball.CreateCluster
+     */
+    @Override
+    public CreateClusterResult createCluster(CreateClusterRequest createClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(createClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateClusterRequest> request = null;
+        Response<CreateClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateClusterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateClusterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateClusterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a job to import or export data between Amazon S3 and your on-premises data center. Your AWS account must
+     * have the right trust policies and permissions in place to create a job for Snowball. If you're creating a job for
+     * a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes are
+     * inherited from the cluster. .
      * </p>
      * 
      * @param createJobRequest
@@ -359,6 +464,14 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * @throws KMSRequestFailedException
      *         The provided AWS Key Management Service key lacks the permissions to perform the specified
      *         <a>CreateJob</a> or <a>UpdateJob</a> action.
+     * @throws InvalidInputCombinationException
+     *         Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+     *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
+     *         again.
+     * @throws ClusterLimitExceededException
+     *         Job creation failed. Currently, clusters support five nodes. If you have less than five nodes for your
+     *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
+     *         has exactly five notes.
      * @sample AmazonSnowball.CreateJob
      */
     @Override
@@ -479,8 +592,51 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Returns information about a specific job including shipping information, job status, and other important
+     * Returns information about a specific cluster including shipping information, cluster status, and other important
      * metadata.
+     * </p>
+     * 
+     * @param describeClusterRequest
+     * @return Result of the DescribeCluster operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @sample AmazonSnowball.DescribeCluster
+     */
+    @Override
+    public DescribeClusterResult describeCluster(DescribeClusterRequest describeClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeClusterRequest> request = null;
+        Response<DescribeClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeClusterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeClusterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeClusterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a specific job including shipping information, job status, and other important
+     * metadata. .
      * </p>
      * 
      * @param describeJobRequest
@@ -538,8 +694,8 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * gaining access to the Snowball associated with that job.
      * </p>
      * <p>
-     * Note that the credentials of a given job, including its manifest file and unlock code, expire 90 days after the
-     * job is created.
+     * The credentials of a given job, including its manifest file and unlock code, expire 90 days after the job is
+     * created.
      * </p>
      * 
      * @param getJobManifestRequest
@@ -642,8 +798,8 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * account has in use.
      * </p>
      * <p>
-     * Note that the default service limit for the number of Snowballs that you can have at one time is 1. If you want
-     * to increase your service limit, contact AWS Support.
+     * The default service limit for the number of Snowballs that you can have at one time is 1. If you want to increase
+     * your service limit, contact AWS Support.
      * </p>
      * 
      * @param getSnowballUsageRequest
@@ -670,6 +826,90 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSnowballUsageResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSnowballUsageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of <code>JobListEntry</code> objects of the specified length. Each <code>JobListEntry</code>
+     * object is for a job in the specified cluster and contains a job's state, a job's ID, and other information.
+     * </p>
+     * 
+     * @param listClusterJobsRequest
+     * @return Result of the ListClusterJobs operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @sample AmazonSnowball.ListClusterJobs
+     */
+    @Override
+    public ListClusterJobsResult listClusterJobs(ListClusterJobsRequest listClusterJobsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listClusterJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListClusterJobsRequest> request = null;
+        Response<ListClusterJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListClusterJobsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClusterJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListClusterJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListClusterJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of <code>ClusterListEntry</code> objects of the specified length. Each
+     * <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status
+     * information.
+     * </p>
+     * 
+     * @param listClustersRequest
+     * @return Result of the ListClusters operation returned by the service.
+     * @sample AmazonSnowball.ListClusters
+     */
+    @Override
+    public ListClustersResult listClusters(ListClustersRequest listClustersRequest) {
+        ExecutionContext executionContext = createExecutionContext(listClustersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListClustersRequest> request = null;
+        Response<ListClustersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListClustersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClustersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListClustersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListClustersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -724,6 +964,59 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * While a cluster's <code>ClusterState</code> value is in the <code>AwaitingQuorum</code> state, you can update
+     * some of the information associated with a cluster. Once the cluster changes to a different job state, usually 60
+     * minutes after the cluster being created, this action is no longer available.
+     * </p>
+     * 
+     * @param updateClusterRequest
+     * @return Result of the UpdateCluster operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @throws InvalidJobStateException
+     *         The action can't be performed because the job's current state doesn't allow that action to be performed.
+     * @throws KMSRequestFailedException
+     *         The provided AWS Key Management Service key lacks the permissions to perform the specified
+     *         <a>CreateJob</a> or <a>UpdateJob</a> action.
+     * @throws InvalidInputCombinationException
+     *         Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+     *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
+     *         again.
+     * @sample AmazonSnowball.UpdateCluster
+     */
+    @Override
+    public UpdateClusterResult updateCluster(UpdateClusterRequest updateClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateClusterRequest> request = null;
+        Response<UpdateClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateClusterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateClusterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateClusterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * While a job's <code>JobState</code> value is <code>New</code>, you can update some of the information associated
      * with a job. Once the job changes to a different job state, usually within 60 minutes of the job being created,
      * this action is no longer available.
@@ -739,6 +1032,14 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * @throws KMSRequestFailedException
      *         The provided AWS Key Management Service key lacks the permissions to perform the specified
      *         <a>CreateJob</a> or <a>UpdateJob</a> action.
+     * @throws InvalidInputCombinationException
+     *         Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+     *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
+     *         again.
+     * @throws ClusterLimitExceededException
+     *         Job creation failed. Currently, clusters support five nodes. If you have less than five nodes for your
+     *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
+     *         has exactly five notes.
      * @sample AmazonSnowball.UpdateJob
      */
     @Override

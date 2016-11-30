@@ -59,6 +59,10 @@ public class JobMetadataJsonUnmarshaller implements Unmarshaller<JobMetadata, Js
                     context.nextToken();
                     jobMetadata.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SnowballType", targetDepth)) {
+                    context.nextToken();
+                    jobMetadata.setSnowballType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
                     jobMetadata.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
@@ -102,6 +106,10 @@ public class JobMetadataJsonUnmarshaller implements Unmarshaller<JobMetadata, Js
                 if (context.testExpression("JobLogInfo", targetDepth)) {
                     context.nextToken();
                     jobMetadata.setJobLogInfo(JobLogsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ClusterId", targetDepth)) {
+                    context.nextToken();
+                    jobMetadata.setClusterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

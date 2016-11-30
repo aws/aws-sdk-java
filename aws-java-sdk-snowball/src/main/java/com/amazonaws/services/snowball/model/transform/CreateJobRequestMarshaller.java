@@ -88,6 +88,12 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                 jsonGenerator.writeFieldName("Notification");
                 NotificationJsonMarshaller.getInstance().marshall(createJobRequest.getNotification(), jsonGenerator);
             }
+            if (createJobRequest.getClusterId() != null) {
+                jsonGenerator.writeFieldName("ClusterId").writeValue(createJobRequest.getClusterId());
+            }
+            if (createJobRequest.getSnowballType() != null) {
+                jsonGenerator.writeFieldName("SnowballType").writeValue(createJobRequest.getSnowballType());
+            }
 
             jsonGenerator.writeEndObject();
 

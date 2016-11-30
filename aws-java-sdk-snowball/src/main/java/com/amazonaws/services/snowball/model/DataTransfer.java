@@ -16,8 +16,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Defines the real-time status of a Snowball's data transfer while the appliance is at AWS. Note that this data is only
- * available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
+ * Defines the real-time status of a Snowball's data transfer while the appliance is at AWS. This data is only available
+ * while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
  * </p>
  */
 public class DataTransfer implements Serializable, Cloneable {

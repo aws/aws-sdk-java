@@ -50,6 +50,9 @@ public class JobMetadataJsonMarshaller {
             if (jobMetadata.getJobType() != null) {
                 jsonGenerator.writeFieldName("JobType").writeValue(jobMetadata.getJobType());
             }
+            if (jobMetadata.getSnowballType() != null) {
+                jsonGenerator.writeFieldName("SnowballType").writeValue(jobMetadata.getSnowballType());
+            }
             if (jobMetadata.getCreationDate() != null) {
                 jsonGenerator.writeFieldName("CreationDate").writeValue(jobMetadata.getCreationDate());
             }
@@ -87,6 +90,9 @@ public class JobMetadataJsonMarshaller {
             if (jobMetadata.getJobLogInfo() != null) {
                 jsonGenerator.writeFieldName("JobLogInfo");
                 JobLogsJsonMarshaller.getInstance().marshall(jobMetadata.getJobLogInfo(), jsonGenerator);
+            }
+            if (jobMetadata.getClusterId() != null) {
+                jsonGenerator.writeFieldName("ClusterId").writeValue(jobMetadata.getClusterId());
             }
 
             jsonGenerator.writeEndObject();

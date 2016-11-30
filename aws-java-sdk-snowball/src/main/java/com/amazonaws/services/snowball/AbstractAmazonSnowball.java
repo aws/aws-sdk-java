@@ -35,12 +35,22 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
     }
 
     @Override
+    public CancelClusterResult cancelCluster(CancelClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelJobResult cancelJob(CancelJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateAddressResult createAddress(CreateAddressRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateClusterResult createCluster(CreateClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -56,6 +66,11 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
 
     @Override
     public DescribeAddressesResult describeAddresses(DescribeAddressesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeClusterResult describeCluster(DescribeClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,7 +95,22 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
     }
 
     @Override
+    public ListClusterJobsResult listClusterJobs(ListClusterJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListClustersResult listClusters(ListClustersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListJobsResult listJobs(ListJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateClusterResult updateCluster(UpdateClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

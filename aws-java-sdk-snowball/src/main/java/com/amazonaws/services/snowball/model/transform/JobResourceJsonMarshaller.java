@@ -54,6 +54,19 @@ public class JobResourceJsonMarshaller {
                 jsonGenerator.writeEndArray();
             }
 
+            java.util.List<LambdaResource> lambdaResourcesList = jobResource.getLambdaResources();
+            if (lambdaResourcesList != null) {
+                jsonGenerator.writeFieldName("LambdaResources");
+                jsonGenerator.writeStartArray();
+                for (LambdaResource lambdaResourcesListValue : lambdaResourcesList) {
+                    if (lambdaResourcesListValue != null) {
+
+                        LambdaResourceJsonMarshaller.getInstance().marshall(lambdaResourcesListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -22,12 +22,12 @@ import com.amazonaws.annotation.ThreadSafe;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * AWS Import/Export Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large
- * amounts of data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball
- * commands described here provide access to the same functionality that is available in the AWS Snowball Management
- * Console, which enables you to create and manage jobs for Snowball. To transfer data locally with a Snowball
- * appliance, you'll need to use the Snowball client or the Amazon S3 API adapter for Snowball. For more information,
- * see the <a href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+ * AWS Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of
+ * data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball commands
+ * described here provide access to the same functionality that is available in the AWS Snowball Management Console,
+ * which enables you to create and manage jobs for Snowball. To transfer data locally with a Snowball appliance, you'll
+ * need to use the Snowball client or the Amazon S3 API adapter for Snowball. For more information, see the <a
+ * href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -217,6 +217,38 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CancelClusterResult> cancelClusterAsync(CancelClusterRequest request) {
+
+        return cancelClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelClusterResult> cancelClusterAsync(final CancelClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelClusterRequest, CancelClusterResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelClusterResult>() {
+            @Override
+            public CancelClusterResult call() throws Exception {
+                CancelClusterResult result;
+
+                try {
+                    result = cancelCluster(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest request) {
 
         return cancelJobAsync(request, null);
@@ -265,6 +297,38 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
 
                 try {
                     result = createAddress(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest request) {
+
+        return createClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(final CreateClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, CreateClusterResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateClusterResult>() {
+            @Override
+            public CreateClusterResult call() throws Exception {
+                CreateClusterResult result;
+
+                try {
+                    result = createCluster(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -361,6 +425,38 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
 
                 try {
                     result = describeAddresses(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest request) {
+
+        return describeClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(final DescribeClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeClusterRequest, DescribeClusterResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeClusterResult>() {
+            @Override
+            public DescribeClusterResult call() throws Exception {
+                DescribeClusterResult result;
+
+                try {
+                    result = describeCluster(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -505,6 +601,70 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListClusterJobsResult> listClusterJobsAsync(ListClusterJobsRequest request) {
+
+        return listClusterJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClusterJobsResult> listClusterJobsAsync(final ListClusterJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListClusterJobsRequest, ListClusterJobsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListClusterJobsResult>() {
+            @Override
+            public ListClusterJobsResult call() throws Exception {
+                ListClusterJobsResult result;
+
+                try {
+                    result = listClusterJobs(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest request) {
+
+        return listClustersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClustersResult> listClustersAsync(final ListClustersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListClustersResult>() {
+            @Override
+            public ListClustersResult call() throws Exception {
+                ListClustersResult result;
+
+                try {
+                    result = listClusters(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest request) {
 
         return listJobsAsync(request, null);
@@ -521,6 +681,38 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
 
                 try {
                     result = listJobs(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest request) {
+
+        return updateClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(final UpdateClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateClusterRequest, UpdateClusterResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateClusterResult>() {
+            @Override
+            public UpdateClusterResult call() throws Exception {
+                UpdateClusterResult result;
+
+                try {
+                    result = updateCluster(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -22,7 +22,7 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The 39 character job ID for the job that you want to cancel, for example
+     * The 39-character job ID for the job that you want to cancel, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      */
@@ -30,12 +30,12 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The 39 character job ID for the job that you want to cancel, for example
+     * The 39-character job ID for the job that you want to cancel, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @param jobId
-     *        The 39 character job ID for the job that you want to cancel, for example
+     *        The 39-character job ID for the job that you want to cancel, for example
      *        <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      */
 
@@ -45,11 +45,11 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The 39 character job ID for the job that you want to cancel, for example
+     * The 39-character job ID for the job that you want to cancel, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
-     * @return The 39 character job ID for the job that you want to cancel, for example
+     * @return The 39-character job ID for the job that you want to cancel, for example
      *         <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      */
 
@@ -59,12 +59,12 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The 39 character job ID for the job that you want to cancel, for example
+     * The 39-character job ID for the job that you want to cancel, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @param jobId
-     *        The 39 character job ID for the job that you want to cancel, for example
+     *        The 39-character job ID for the job that you want to cancel, for example
      *        <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

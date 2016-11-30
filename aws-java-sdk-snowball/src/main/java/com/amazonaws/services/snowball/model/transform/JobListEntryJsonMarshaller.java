@@ -50,6 +50,18 @@ public class JobListEntryJsonMarshaller {
             if (jobListEntry.getIsMaster() != null) {
                 jsonGenerator.writeFieldName("IsMaster").writeValue(jobListEntry.getIsMaster());
             }
+            if (jobListEntry.getJobType() != null) {
+                jsonGenerator.writeFieldName("JobType").writeValue(jobListEntry.getJobType());
+            }
+            if (jobListEntry.getSnowballType() != null) {
+                jsonGenerator.writeFieldName("SnowballType").writeValue(jobListEntry.getSnowballType());
+            }
+            if (jobListEntry.getCreationDate() != null) {
+                jsonGenerator.writeFieldName("CreationDate").writeValue(jobListEntry.getCreationDate());
+            }
+            if (jobListEntry.getDescription() != null) {
+                jsonGenerator.writeFieldName("Description").writeValue(jobListEntry.getDescription());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

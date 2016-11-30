@@ -18,7 +18,8 @@ package com.amazonaws.services.snowball.model;
 public enum JobType {
 
     IMPORT("IMPORT"),
-    EXPORT("EXPORT");
+    EXPORT("EXPORT"),
+    LOCAL_USE("LOCAL_USE");
 
     private String value;
 

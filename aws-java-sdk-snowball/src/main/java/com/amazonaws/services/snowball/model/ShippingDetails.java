@@ -23,9 +23,9 @@ public class ShippingDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shipping speed for a particular job. Note that this speed does not dictate how soon you'll get the Snowball
-     * from the job's creation date. This speed represents how quickly it moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from the
+     * job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional
+     * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
@@ -71,9 +71,9 @@ public class ShippingDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shipping speed for a particular job. Note that this speed does not dictate how soon you'll get the Snowball
-     * from the job's creation date. This speed represents how quickly it moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from the
+     * job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional
+     * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
@@ -102,9 +102,9 @@ public class ShippingDetails implements Serializable, Cloneable {
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for a particular job. Note that this speed does not dictate how soon you'll get the
-     *        Snowball from the job's creation date. This speed represents how quickly it moves to its destination while
-     *        in transit. Regional shipping speeds are as follows:</p>
+     *        The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from
+     *        the job's creation date. This speed represents how quickly it moves to its destination while in transit.
+     *        Regional shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -138,9 +138,9 @@ public class ShippingDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shipping speed for a particular job. Note that this speed does not dictate how soon you'll get the Snowball
-     * from the job's creation date. This speed represents how quickly it moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from the
+     * job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional
+     * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
@@ -168,9 +168,9 @@ public class ShippingDetails implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The shipping speed for a particular job. Note that this speed does not dictate how soon you'll get the
-     *         Snowball from the job's creation date. This speed represents how quickly it moves to its destination
-     *         while in transit. Regional shipping speeds are as follows:</p>
+     * @return The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from
+     *         the job's creation date. This speed represents how quickly it moves to its destination while in transit.
+     *         Regional shipping speeds are as follows:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -204,9 +204,9 @@ public class ShippingDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shipping speed for a particular job. Note that this speed does not dictate how soon you'll get the Snowball
-     * from the job's creation date. This speed represents how quickly it moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from the
+     * job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional
+     * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
@@ -235,9 +235,9 @@ public class ShippingDetails implements Serializable, Cloneable {
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for a particular job. Note that this speed does not dictate how soon you'll get the
-     *        Snowball from the job's creation date. This speed represents how quickly it moves to its destination while
-     *        in transit. Regional shipping speeds are as follows:</p>
+     *        The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from
+     *        the job's creation date. This speed represents how quickly it moves to its destination while in transit.
+     *        Regional shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -273,9 +273,9 @@ public class ShippingDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shipping speed for a particular job. Note that this speed does not dictate how soon you'll get the Snowball
-     * from the job's creation date. This speed represents how quickly it moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from the
+     * job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional
+     * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
@@ -304,9 +304,9 @@ public class ShippingDetails implements Serializable, Cloneable {
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for a particular job. Note that this speed does not dictate how soon you'll get the
-     *        Snowball from the job's creation date. This speed represents how quickly it moves to its destination while
-     *        in transit. Regional shipping speeds are as follows:</p>
+     *        The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from
+     *        the job's creation date. This speed represents how quickly it moves to its destination while in transit.
+     *        Regional shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -340,9 +340,9 @@ public class ShippingDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shipping speed for a particular job. Note that this speed does not dictate how soon you'll get the Snowball
-     * from the job's creation date. This speed represents how quickly it moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from the
+     * job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional
+     * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
@@ -371,9 +371,9 @@ public class ShippingDetails implements Serializable, Cloneable {
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for a particular job. Note that this speed does not dictate how soon you'll get the
-     *        Snowball from the job's creation date. This speed represents how quickly it moves to its destination while
-     *        in transit. Regional shipping speeds are as follows:</p>
+     *        The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from
+     *        the job's creation date. This speed represents how quickly it moves to its destination while in transit.
+     *        Regional shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>

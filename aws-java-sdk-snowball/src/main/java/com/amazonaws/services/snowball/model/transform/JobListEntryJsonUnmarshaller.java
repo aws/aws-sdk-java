@@ -59,6 +59,22 @@ public class JobListEntryJsonUnmarshaller implements Unmarshaller<JobListEntry, 
                     context.nextToken();
                     jobListEntry.setIsMaster(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("JobType", targetDepth)) {
+                    context.nextToken();
+                    jobListEntry.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SnowballType", targetDepth)) {
+                    context.nextToken();
+                    jobListEntry.setSnowballType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CreationDate", targetDepth)) {
+                    context.nextToken();
+                    jobListEntry.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    jobListEntry.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

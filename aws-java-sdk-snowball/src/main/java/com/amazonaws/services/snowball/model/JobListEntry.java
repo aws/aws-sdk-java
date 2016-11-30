@@ -43,6 +43,30 @@ public class JobListEntry implements Serializable, Cloneable {
      * </p>
      */
     private Boolean isMaster;
+    /**
+     * <p>
+     * The type of job.
+     * </p>
+     */
+    private String jobType;
+    /**
+     * <p>
+     * The type of appliance used with this job.
+     * </p>
+     */
+    private String snowballType;
+    /**
+     * <p>
+     * The creation date for this job.
+     * </p>
+     */
+    private java.util.Date creationDate;
+    /**
+     * <p>
+     * The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -241,6 +265,232 @@ public class JobListEntry implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of job.
+     * </p>
+     * 
+     * @param jobType
+     *        The type of job.
+     * @see JobType
+     */
+
+    public void setJobType(String jobType) {
+        this.jobType = jobType;
+    }
+
+    /**
+     * <p>
+     * The type of job.
+     * </p>
+     * 
+     * @return The type of job.
+     * @see JobType
+     */
+
+    public String getJobType() {
+        return this.jobType;
+    }
+
+    /**
+     * <p>
+     * The type of job.
+     * </p>
+     * 
+     * @param jobType
+     *        The type of job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobType
+     */
+
+    public JobListEntry withJobType(String jobType) {
+        setJobType(jobType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of job.
+     * </p>
+     * 
+     * @param jobType
+     *        The type of job.
+     * @see JobType
+     */
+
+    public void setJobType(JobType jobType) {
+        this.jobType = jobType.toString();
+    }
+
+    /**
+     * <p>
+     * The type of job.
+     * </p>
+     * 
+     * @param jobType
+     *        The type of job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobType
+     */
+
+    public JobListEntry withJobType(JobType jobType) {
+        setJobType(jobType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of appliance used with this job.
+     * </p>
+     * 
+     * @param snowballType
+     *        The type of appliance used with this job.
+     * @see SnowballType
+     */
+
+    public void setSnowballType(String snowballType) {
+        this.snowballType = snowballType;
+    }
+
+    /**
+     * <p>
+     * The type of appliance used with this job.
+     * </p>
+     * 
+     * @return The type of appliance used with this job.
+     * @see SnowballType
+     */
+
+    public String getSnowballType() {
+        return this.snowballType;
+    }
+
+    /**
+     * <p>
+     * The type of appliance used with this job.
+     * </p>
+     * 
+     * @param snowballType
+     *        The type of appliance used with this job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SnowballType
+     */
+
+    public JobListEntry withSnowballType(String snowballType) {
+        setSnowballType(snowballType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of appliance used with this job.
+     * </p>
+     * 
+     * @param snowballType
+     *        The type of appliance used with this job.
+     * @see SnowballType
+     */
+
+    public void setSnowballType(SnowballType snowballType) {
+        this.snowballType = snowballType.toString();
+    }
+
+    /**
+     * <p>
+     * The type of appliance used with this job.
+     * </p>
+     * 
+     * @param snowballType
+     *        The type of appliance used with this job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SnowballType
+     */
+
+    public JobListEntry withSnowballType(SnowballType snowballType) {
+        setSnowballType(snowballType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The creation date for this job.
+     * </p>
+     * 
+     * @param creationDate
+     *        The creation date for this job.
+     */
+
+    public void setCreationDate(java.util.Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    /**
+     * <p>
+     * The creation date for this job.
+     * </p>
+     * 
+     * @return The creation date for this job.
+     */
+
+    public java.util.Date getCreationDate() {
+        return this.creationDate;
+    }
+
+    /**
+     * <p>
+     * The creation date for this job.
+     * </p>
+     * 
+     * @param creationDate
+     *        The creation date for this job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobListEntry withCreationDate(java.util.Date creationDate) {
+        setCreationDate(creationDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
+     * </p>
+     * 
+     * @param description
+     *        The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
+     * </p>
+     * 
+     * @return The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
+     * </p>
+     * 
+     * @param description
+     *        The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobListEntry withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -256,7 +506,15 @@ public class JobListEntry implements Serializable, Cloneable {
         if (getJobState() != null)
             sb.append("JobState: " + getJobState() + ",");
         if (getIsMaster() != null)
-            sb.append("IsMaster: " + getIsMaster());
+            sb.append("IsMaster: " + getIsMaster() + ",");
+        if (getJobType() != null)
+            sb.append("JobType: " + getJobType() + ",");
+        if (getSnowballType() != null)
+            sb.append("SnowballType: " + getSnowballType() + ",");
+        if (getCreationDate() != null)
+            sb.append("CreationDate: " + getCreationDate() + ",");
+        if (getDescription() != null)
+            sb.append("Description: " + getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -283,6 +541,22 @@ public class JobListEntry implements Serializable, Cloneable {
             return false;
         if (other.getIsMaster() != null && other.getIsMaster().equals(this.getIsMaster()) == false)
             return false;
+        if (other.getJobType() == null ^ this.getJobType() == null)
+            return false;
+        if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
+            return false;
+        if (other.getSnowballType() == null ^ this.getSnowballType() == null)
+            return false;
+        if (other.getSnowballType() != null && other.getSnowballType().equals(this.getSnowballType()) == false)
+            return false;
+        if (other.getCreationDate() == null ^ this.getCreationDate() == null)
+            return false;
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +568,10 @@ public class JobListEntry implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobState() == null) ? 0 : getJobState().hashCode());
         hashCode = prime * hashCode + ((getIsMaster() == null) ? 0 : getIsMaster().hashCode());
+        hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
+        hashCode = prime * hashCode + ((getSnowballType() == null) ? 0 : getSnowballType().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

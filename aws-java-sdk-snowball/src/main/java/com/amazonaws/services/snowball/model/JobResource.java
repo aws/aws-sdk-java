@@ -28,6 +28,12 @@ public class JobResource implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<S3Resource> s3Resources;
+    /**
+     * <p>
+     * The Python-language Lambda functions for this job.
+     * </p>
+     */
+    private java.util.List<LambdaResource> lambdaResources;
 
     /**
      * <p>
@@ -100,6 +106,76 @@ public class JobResource implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Python-language Lambda functions for this job.
+     * </p>
+     * 
+     * @return The Python-language Lambda functions for this job.
+     */
+
+    public java.util.List<LambdaResource> getLambdaResources() {
+        return lambdaResources;
+    }
+
+    /**
+     * <p>
+     * The Python-language Lambda functions for this job.
+     * </p>
+     * 
+     * @param lambdaResources
+     *        The Python-language Lambda functions for this job.
+     */
+
+    public void setLambdaResources(java.util.Collection<LambdaResource> lambdaResources) {
+        if (lambdaResources == null) {
+            this.lambdaResources = null;
+            return;
+        }
+
+        this.lambdaResources = new java.util.ArrayList<LambdaResource>(lambdaResources);
+    }
+
+    /**
+     * <p>
+     * The Python-language Lambda functions for this job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLambdaResources(java.util.Collection)} or {@link #withLambdaResources(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param lambdaResources
+     *        The Python-language Lambda functions for this job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobResource withLambdaResources(LambdaResource... lambdaResources) {
+        if (this.lambdaResources == null) {
+            setLambdaResources(new java.util.ArrayList<LambdaResource>(lambdaResources.length));
+        }
+        for (LambdaResource ele : lambdaResources) {
+            this.lambdaResources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Python-language Lambda functions for this job.
+     * </p>
+     * 
+     * @param lambdaResources
+     *        The Python-language Lambda functions for this job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobResource withLambdaResources(java.util.Collection<LambdaResource> lambdaResources) {
+        setLambdaResources(lambdaResources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -111,7 +187,9 @@ public class JobResource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3Resources() != null)
-            sb.append("S3Resources: " + getS3Resources());
+            sb.append("S3Resources: " + getS3Resources() + ",");
+        if (getLambdaResources() != null)
+            sb.append("LambdaResources: " + getLambdaResources());
         sb.append("}");
         return sb.toString();
     }
@@ -130,6 +208,10 @@ public class JobResource implements Serializable, Cloneable {
             return false;
         if (other.getS3Resources() != null && other.getS3Resources().equals(this.getS3Resources()) == false)
             return false;
+        if (other.getLambdaResources() == null ^ this.getLambdaResources() == null)
+            return false;
+        if (other.getLambdaResources() != null && other.getLambdaResources().equals(this.getLambdaResources()) == false)
+            return false;
         return true;
     }
 
@@ -139,6 +221,7 @@ public class JobResource implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getS3Resources() == null) ? 0 : getS3Resources().hashCode());
+        hashCode = prime * hashCode + ((getLambdaResources() == null) ? 0 : getLambdaResources().hashCode());
         return hashCode;
     }
 
