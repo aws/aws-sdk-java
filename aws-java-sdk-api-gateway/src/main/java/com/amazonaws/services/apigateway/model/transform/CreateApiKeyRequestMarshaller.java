@@ -95,6 +95,9 @@ public class CreateApiKeyRequestMarshaller implements Marshaller<Request<CreateA
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (createApiKeyRequest.getCustomerId() != null) {
+                jsonGenerator.writeFieldName("customerId").writeValue(createApiKeyRequest.getCustomerId());
+            }
 
             jsonGenerator.writeEndObject();
 

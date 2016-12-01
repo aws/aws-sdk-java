@@ -65,6 +65,9 @@ public class DescribeAssociationRequestMarshaller implements Marshaller<Request<
             if (describeAssociationRequest.getInstanceId() != null) {
                 jsonGenerator.writeFieldName("InstanceId").writeValue(describeAssociationRequest.getInstanceId());
             }
+            if (describeAssociationRequest.getAssociationId() != null) {
+                jsonGenerator.writeFieldName("AssociationId").writeValue(describeAssociationRequest.getAssociationId());
+            }
 
             jsonGenerator.writeEndObject();
 

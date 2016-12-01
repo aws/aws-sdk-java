@@ -91,6 +91,10 @@ public class AllocatePublicVirtualInterfaceResultJsonUnmarshaller implements Unm
                     context.nextToken();
                     allocatePublicVirtualInterfaceResult.setCustomerAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("addressFamily", targetDepth)) {
+                    context.nextToken();
+                    allocatePublicVirtualInterfaceResult.setAddressFamily(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("virtualInterfaceState", targetDepth)) {
                     context.nextToken();
                     allocatePublicVirtualInterfaceResult.setVirtualInterfaceState(context.getUnmarshaller(String.class).unmarshall(context));
@@ -107,6 +111,10 @@ public class AllocatePublicVirtualInterfaceResultJsonUnmarshaller implements Unm
                     context.nextToken();
                     allocatePublicVirtualInterfaceResult.setRouteFilterPrefixes(new ListUnmarshaller<RouteFilterPrefix>(RouteFilterPrefixJsonUnmarshaller
                             .getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("bgpPeers", targetDepth)) {
+                    context.nextToken();
+                    allocatePublicVirtualInterfaceResult.setBgpPeers(new ListUnmarshaller<BGPPeer>(BGPPeerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

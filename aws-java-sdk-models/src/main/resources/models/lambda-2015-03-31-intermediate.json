@@ -378,6 +378,39 @@
       },
       "syncReturnType" : "DeleteFunctionResult"
     },
+    "GetAccountSettings" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<GetAccountSettingsResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<GetAccountSettingsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetAccountSettingsRequest, GetAccountSettingsResult>",
+      "asyncReturnType" : "GetAccountSettingsResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Returns a customer's account settings.</p> <p>You can use this operation to retrieve Lambda limit information such as code size and concurrency limits. For more information on limits, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/limits.html\">AWS Lambda Limits</a>. You can also retrieve resource usage statistics such as code storage usage and function count.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "TooManyRequestsException",
+        "documentation" : "<p/>"
+      }, {
+        "exceptionName" : "ServiceException",
+        "documentation" : "<p>The AWS Lambda service encountered an internal error.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "GetAccountSettingsRequest",
+        "variableName" : "getAccountSettingsRequest",
+        "variableType" : "GetAccountSettingsRequest",
+        "documentation" : "",
+        "simpleType" : "GetAccountSettingsRequest",
+        "variableSetterType" : "GetAccountSettingsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "getAccountSettings",
+      "operationName" : "GetAccountSettings",
+      "returnType" : {
+        "returnType" : "GetAccountSettingsResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "GetAccountSettingsResult"
+    },
     "GetAlias" : {
       "asyncCallableType" : "java.util.concurrent.Callable<GetAliasResult>",
       "asyncFutureType" : "java.util.concurrent.Future<GetAliasResult>",
@@ -634,7 +667,7 @@
         "documentation" : "<p>Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state for Decrypt. Please check the function's KMS key settings.</p>"
       }, {
         "exceptionName" : "KMSAccessDeniedException",
-        "documentation" : "<p>Lambda was unable to decrypt the environment variables becauses KMS access was denied. Please check the Lambda function's KMS permissions.</p>"
+        "documentation" : "<p>Lambda was unable to decrypt the environment variables because KMS access was denied. Please check the Lambda function's KMS permissions.</p>"
       }, {
         "exceptionName" : "KMSNotFoundException",
         "documentation" : "<p>Lambda was unable to decrypt the environment variables because the KMS key was not found. Please check the function's KMS key settings. </p>"
@@ -1088,6 +1121,708 @@
     }
   },
   "shapes" : {
+    "AccountLimit" : {
+      "c2jName" : "AccountLimit",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Provides limits of code size and concurrency associated with the current account and region.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "TotalCodeSize",
+        "c2jShape" : "Long",
+        "deprecated" : false,
+        "documentation" : "<p>Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB. </p>\n@param totalCodeSize Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB. </p>\n@return Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.*/",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "TotalCodeSize",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "TotalCodeSize",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "TotalCodeSize",
+        "setterDocumentation" : "/**<p>Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB. </p>\n@param totalCodeSize Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "totalCodeSize",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB. </p>\n@param totalCodeSize Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "totalCodeSize",
+          "variableType" : "Long",
+          "documentation" : "<p>Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB. </p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "CodeSizeUnzipped",
+        "c2jShape" : "Long",
+        "deprecated" : false,
+        "documentation" : "<p>Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.</p>\n@param codeSizeUnzipped Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.</p>\n@return Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.*/",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "CodeSizeUnzipped",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "CodeSizeUnzipped",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "CodeSizeUnzipped",
+        "setterDocumentation" : "/**<p>Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.</p>\n@param codeSizeUnzipped Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "codeSizeUnzipped",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.</p>\n@param codeSizeUnzipped Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "codeSizeUnzipped",
+          "variableType" : "Long",
+          "documentation" : "<p>Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.</p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "CodeSizeZipped",
+        "c2jShape" : "Long",
+        "deprecated" : false,
+        "documentation" : "<p>Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.</p>\n@param codeSizeZipped Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.</p>\n@return Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.*/",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "CodeSizeZipped",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "CodeSizeZipped",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "CodeSizeZipped",
+        "setterDocumentation" : "/**<p>Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.</p>\n@param codeSizeZipped Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "codeSizeZipped",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.</p>\n@param codeSizeZipped Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "codeSizeZipped",
+          "variableType" : "Long",
+          "documentation" : "<p>Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.</p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ConcurrentExecutions",
+        "c2jShape" : "Integer",
+        "deprecated" : false,
+        "documentation" : "<p>Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.</p>\n@param concurrentExecutions Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.</p>\n@return Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.*/",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "ConcurrentExecutions",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ConcurrentExecutions",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ConcurrentExecutions",
+        "setterDocumentation" : "/**<p>Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.</p>\n@param concurrentExecutions Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "concurrentExecutions",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.</p>\n@param concurrentExecutions Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "concurrentExecutions",
+          "variableType" : "Integer",
+          "documentation" : "<p>Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "CodeSizeUnzipped" : {
+          "c2jName" : "CodeSizeUnzipped",
+          "c2jShape" : "Long",
+          "deprecated" : false,
+          "documentation" : "<p>Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.</p>\n@param codeSizeUnzipped Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.</p>\n@return Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.*/",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "CodeSizeUnzipped",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "CodeSizeUnzipped",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "CodeSizeUnzipped",
+          "setterDocumentation" : "/**<p>Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.</p>\n@param codeSizeUnzipped Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "codeSizeUnzipped",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.</p>\n@param codeSizeUnzipped Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "codeSizeUnzipped",
+            "variableType" : "Long",
+            "documentation" : "<p>Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for uploading. The default limit is 250 MB.</p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "CodeSizeZipped" : {
+          "c2jName" : "CodeSizeZipped",
+          "c2jShape" : "Long",
+          "deprecated" : false,
+          "documentation" : "<p>Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.</p>\n@param codeSizeZipped Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.</p>\n@return Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.*/",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "CodeSizeZipped",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "CodeSizeZipped",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "CodeSizeZipped",
+          "setterDocumentation" : "/**<p>Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.</p>\n@param codeSizeZipped Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "codeSizeZipped",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.</p>\n@param codeSizeZipped Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "codeSizeZipped",
+            "variableType" : "Long",
+            "documentation" : "<p>Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default limit is 50 MB.</p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ConcurrentExecutions" : {
+          "c2jName" : "ConcurrentExecutions",
+          "c2jShape" : "Integer",
+          "deprecated" : false,
+          "documentation" : "<p>Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.</p>\n@param concurrentExecutions Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.</p>\n@return Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.*/",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "ConcurrentExecutions",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ConcurrentExecutions",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ConcurrentExecutions",
+          "setterDocumentation" : "/**<p>Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.</p>\n@param concurrentExecutions Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "concurrentExecutions",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.</p>\n@param concurrentExecutions Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "concurrentExecutions",
+            "variableType" : "Integer",
+            "documentation" : "<p>Number of simultaneous executions of your function per region. For more information or to request a limit increase for concurrent executions, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html\">Lambda Function Concurrent Executions</a>. The default limit is 100.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "TotalCodeSize" : {
+          "c2jName" : "TotalCodeSize",
+          "c2jShape" : "Long",
+          "deprecated" : false,
+          "documentation" : "<p>Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB. </p>\n@param totalCodeSize Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB. </p>\n@return Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.*/",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "TotalCodeSize",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "TotalCodeSize",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "TotalCodeSize",
+          "setterDocumentation" : "/**<p>Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB. </p>\n@param totalCodeSize Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "totalCodeSize",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB. </p>\n@param totalCodeSize Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "totalCodeSize",
+            "variableType" : "Long",
+            "documentation" : "<p>Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB. </p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "AccountLimit",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "AccountLimit",
+        "variableName" : "accountLimit",
+        "variableType" : "AccountLimit",
+        "documentation" : null,
+        "simpleType" : "AccountLimit",
+        "variableSetterType" : "AccountLimit"
+      },
+      "wrapper" : false
+    },
+    "AccountUsage" : {
+      "c2jName" : "AccountUsage",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Provides code size usage and function count associated with the current account and region.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "TotalCodeSize",
+        "c2jShape" : "Long",
+        "deprecated" : false,
+        "documentation" : "<p>Total size, in megabytes, of the account's deployment packages per region.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Total size, in megabytes, of the account's deployment packages per region.</p>\n@param totalCodeSize Total size, in megabytes, of the account's deployment packages per region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Total size, in megabytes, of the account's deployment packages per region.</p>\n@return Total size, in megabytes, of the account's deployment packages per region.*/",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "TotalCodeSize",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "TotalCodeSize",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "TotalCodeSize",
+        "setterDocumentation" : "/**<p>Total size, in megabytes, of the account's deployment packages per region.</p>\n@param totalCodeSize Total size, in megabytes, of the account's deployment packages per region.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "totalCodeSize",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>Total size, in megabytes, of the account's deployment packages per region.</p>\n@param totalCodeSize Total size, in megabytes, of the account's deployment packages per region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "totalCodeSize",
+          "variableType" : "Long",
+          "documentation" : "<p>Total size, in megabytes, of the account's deployment packages per region.</p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "FunctionCount",
+        "c2jShape" : "Long",
+        "deprecated" : false,
+        "documentation" : "<p>The number of your account's existing functions per region.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The number of your account's existing functions per region.</p>\n@param functionCount The number of your account's existing functions per region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The number of your account's existing functions per region.</p>\n@return The number of your account's existing functions per region.*/",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "FunctionCount",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "FunctionCount",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "FunctionCount",
+        "setterDocumentation" : "/**<p>The number of your account's existing functions per region.</p>\n@param functionCount The number of your account's existing functions per region.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "functionCount",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The number of your account's existing functions per region.</p>\n@param functionCount The number of your account's existing functions per region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Long",
+          "variableName" : "functionCount",
+          "variableType" : "Long",
+          "documentation" : "<p>The number of your account's existing functions per region.</p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "FunctionCount" : {
+          "c2jName" : "FunctionCount",
+          "c2jShape" : "Long",
+          "deprecated" : false,
+          "documentation" : "<p>The number of your account's existing functions per region.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The number of your account's existing functions per region.</p>\n@param functionCount The number of your account's existing functions per region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The number of your account's existing functions per region.</p>\n@return The number of your account's existing functions per region.*/",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "FunctionCount",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "FunctionCount",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "FunctionCount",
+          "setterDocumentation" : "/**<p>The number of your account's existing functions per region.</p>\n@param functionCount The number of your account's existing functions per region.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "functionCount",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The number of your account's existing functions per region.</p>\n@param functionCount The number of your account's existing functions per region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "functionCount",
+            "variableType" : "Long",
+            "documentation" : "<p>The number of your account's existing functions per region.</p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "TotalCodeSize" : {
+          "c2jName" : "TotalCodeSize",
+          "c2jShape" : "Long",
+          "deprecated" : false,
+          "documentation" : "<p>Total size, in megabytes, of the account's deployment packages per region.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Total size, in megabytes, of the account's deployment packages per region.</p>\n@param totalCodeSize Total size, in megabytes, of the account's deployment packages per region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Total size, in megabytes, of the account's deployment packages per region.</p>\n@return Total size, in megabytes, of the account's deployment packages per region.*/",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "TotalCodeSize",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "TotalCodeSize",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "TotalCodeSize",
+          "setterDocumentation" : "/**<p>Total size, in megabytes, of the account's deployment packages per region.</p>\n@param totalCodeSize Total size, in megabytes, of the account's deployment packages per region.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "totalCodeSize",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>Total size, in megabytes, of the account's deployment packages per region.</p>\n@param totalCodeSize Total size, in megabytes, of the account's deployment packages per region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Long",
+            "variableName" : "totalCodeSize",
+            "variableType" : "Long",
+            "documentation" : "<p>Total size, in megabytes, of the account's deployment packages per region.</p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "AccountUsage",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "AccountUsage",
+        "variableName" : "accountUsage",
+        "variableType" : "AccountUsage",
+        "documentation" : null,
+        "simpleType" : "AccountUsage",
+        "variableSetterType" : "AccountUsage"
+      },
+      "wrapper" : false
+    },
     "AddPermissionRequest" : {
       "c2jName" : "AddPermissionRequest",
       "customization" : {
@@ -3855,10 +4590,10 @@
         "c2jName" : "StartingPosition",
         "c2jShape" : "EventSourcePosition",
         "deprecated" : false,
-        "documentation" : "<p>The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>",
+        "documentation" : "<p>The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>",
         "enumType" : "EventSourcePosition",
-        "fluentSetterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@param startingPosition The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventSourcePosition*/",
-        "getterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@return The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@see EventSourcePosition*/",
+        "fluentSetterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@param startingPosition The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventSourcePosition*/",
+        "getterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@return The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@see EventSourcePosition*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -3883,7 +4618,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "StartingPosition",
-        "setterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@param startingPosition The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@see EventSourcePosition*/",
+        "setterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@param startingPosition The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@see EventSourcePosition*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "startingPosition",
@@ -3893,14 +4628,66 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@param startingPosition The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventSourcePosition*/",
+        "varargSetterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@param startingPosition The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventSourcePosition*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "startingPosition",
           "variableType" : "String",
-          "documentation" : "<p>The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>",
+          "documentation" : "<p>The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "StartingPositionTimestamp",
+        "c2jShape" : "Date",
+        "deprecated" : false,
+        "documentation" : "<p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>\n@param startingPositionTimestamp The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>\n@return The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.*/",
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "StartingPositionTimestamp",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "StartingPositionTimestamp",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "StartingPositionTimestamp",
+        "setterDocumentation" : "/**<p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>\n@param startingPositionTimestamp The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "startingPositionTimestamp",
+          "variableType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>\n@param startingPositionTimestamp The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "startingPositionTimestamp",
+          "variableType" : "java.util.Date",
+          "documentation" : "<p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "xmlNameSpaceUri" : null
       } ],
@@ -4121,10 +4908,10 @@
           "c2jName" : "StartingPosition",
           "c2jShape" : "EventSourcePosition",
           "deprecated" : false,
-          "documentation" : "<p>The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>",
+          "documentation" : "<p>The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>",
           "enumType" : "EventSourcePosition",
-          "fluentSetterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@param startingPosition The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventSourcePosition*/",
-          "getterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@return The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@see EventSourcePosition*/",
+          "fluentSetterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@param startingPosition The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventSourcePosition*/",
+          "getterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@return The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@see EventSourcePosition*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -4149,7 +4936,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "StartingPosition",
-          "setterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@param startingPosition The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@see EventSourcePosition*/",
+          "setterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@param startingPosition The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@see EventSourcePosition*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "startingPosition",
@@ -4159,14 +4946,67 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@param startingPosition The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventSourcePosition*/",
+          "varargSetterDocumentation" : "/**<p>The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>\n@param startingPosition The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventSourcePosition*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "startingPosition",
             "variableType" : "String",
-            "documentation" : "<p>The position in the stream where AWS Lambda should start reading. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>",
+            "documentation" : "<p>The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more information, go to <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "StartingPositionTimestamp" : {
+          "c2jName" : "StartingPositionTimestamp",
+          "c2jShape" : "Date",
+          "deprecated" : false,
+          "documentation" : "<p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>\n@param startingPositionTimestamp The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>\n@return The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.*/",
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "StartingPositionTimestamp",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "StartingPositionTimestamp",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "StartingPositionTimestamp",
+          "setterDocumentation" : "/**<p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>\n@param startingPositionTimestamp The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "startingPositionTimestamp",
+            "variableType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>\n@param startingPositionTimestamp The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "startingPositionTimestamp",
+            "variableType" : "java.util.Date",
+            "documentation" : "<p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams. </p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "xmlNameSpaceUri" : null
         }
@@ -5140,10 +5980,10 @@
         "c2jName" : "Runtime",
         "c2jShape" : "Runtime",
         "deprecated" : false,
-        "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>",
+        "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>",
         "enumType" : "Runtime",
-        "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
-        "getterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@return The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@see Runtime*/",
+        "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+        "getterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>\n@return The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p>\n@see Runtime*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -5168,7 +6008,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Runtime",
-        "setterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@see Runtime*/",
+        "setterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p>\n@see Runtime*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "runtime",
@@ -5178,12 +6018,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+        "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "runtime",
           "variableType" : "String",
-          "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>",
+          "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5605,6 +6445,58 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "DeadLetterConfig",
+        "c2jShape" : "DeadLetterConfig",
+        "deprecated" : false,
+        "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "getterModel" : {
+          "returnType" : "DeadLetterConfig",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "DeadLetterConfig",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DeadLetterConfig",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DeadLetterConfig",
+        "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Environment",
         "c2jShape" : "Environment",
         "deprecated" : false,
@@ -5760,6 +6652,59 @@
             "documentation" : "<p>The code for the Lambda function.</p>",
             "simpleType" : "FunctionCode",
             "variableSetterType" : "FunctionCode"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DeadLetterConfig" : {
+          "c2jName" : "DeadLetterConfig",
+          "c2jShape" : "DeadLetterConfig",
+          "deprecated" : false,
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "getterModel" : {
+            "returnType" : "DeadLetterConfig",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "DeadLetterConfig",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DeadLetterConfig",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DeadLetterConfig",
+          "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
           },
           "xmlNameSpaceUri" : null
         },
@@ -6191,10 +7136,10 @@
           "c2jName" : "Runtime",
           "c2jShape" : "Runtime",
           "deprecated" : false,
-          "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>",
+          "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>",
           "enumType" : "Runtime",
-          "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
-          "getterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@return The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@see Runtime*/",
+          "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+          "getterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>\n@return The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p>\n@see Runtime*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -6219,7 +7164,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Runtime",
-          "setterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@see Runtime*/",
+          "setterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p>\n@see Runtime*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "runtime",
@@ -6229,12 +7174,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+          "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "runtime",
             "variableType" : "String",
-            "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>",
+            "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7054,6 +7999,58 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "DeadLetterConfig",
+        "c2jShape" : "DeadLetterConfig",
+        "deprecated" : false,
+        "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "getterModel" : {
+          "returnType" : "DeadLetterConfig",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "DeadLetterConfig",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DeadLetterConfig",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DeadLetterConfig",
+        "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Environment",
         "c2jShape" : "EnvironmentResponse",
         "deprecated" : false,
@@ -7262,6 +8259,59 @@
             "documentation" : "<p>The size, in bytes, of the function .zip file you uploaded.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DeadLetterConfig" : {
+          "c2jName" : "DeadLetterConfig",
+          "c2jShape" : "DeadLetterConfig",
+          "deprecated" : false,
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "getterModel" : {
+            "returnType" : "DeadLetterConfig",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "DeadLetterConfig",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DeadLetterConfig",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DeadLetterConfig",
+          "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
           },
           "xmlNameSpaceUri" : null
         },
@@ -7968,6 +9018,147 @@
         "documentation" : null,
         "simpleType" : "CreateFunctionResult",
         "variableSetterType" : "CreateFunctionResult"
+      },
+      "wrapper" : false
+    },
+    "DeadLetterConfig" : {
+      "c2jName" : "DeadLetterConfig",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "TargetArn",
+        "c2jShape" : "ResourceArn",
+        "deprecated" : false,
+        "documentation" : "<p>The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</p>\n@param targetArn The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</p>\n@return The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "TargetArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "TargetArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "TargetArn",
+        "setterDocumentation" : "/**<p>The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</p>\n@param targetArn The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "targetArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</p>\n@param targetArn The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "targetArn",
+          "variableType" : "String",
+          "documentation" : "<p>The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "TargetArn" : {
+          "c2jName" : "TargetArn",
+          "c2jShape" : "ResourceArn",
+          "deprecated" : false,
+          "documentation" : "<p>The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</p>\n@param targetArn The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</p>\n@return The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "TargetArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "TargetArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "TargetArn",
+          "setterDocumentation" : "/**<p>The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</p>\n@param targetArn The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "targetArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</p>\n@param targetArn The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "targetArn",
+            "variableType" : "String",
+            "documentation" : "<p>The ARN (Amazon Resource Value) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue (DLQ).</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "DeadLetterConfig",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "DeadLetterConfig",
+        "variableName" : "deadLetterConfig",
+        "variableType" : "DeadLetterConfig",
+        "documentation" : null,
+        "simpleType" : "DeadLetterConfig",
+        "variableSetterType" : "DeadLetterConfig"
       },
       "wrapper" : false
     },
@@ -10565,7 +11756,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "Message",
-        "c2jShape" : "String",
+        "c2jShape" : "SensitiveString",
         "deprecated" : false,
         "documentation" : "<p>The message returned by the environment error object.</p>",
         "enumType" : null,
@@ -10672,7 +11863,7 @@
         },
         "Message" : {
           "c2jName" : "Message",
-          "c2jShape" : "String",
+          "c2jShape" : "SensitiveString",
           "deprecated" : false,
           "documentation" : "<p>The message returned by the environment error object.</p>",
           "enumType" : null,
@@ -12012,6 +13203,9 @@
       }, {
         "name" : "LATEST",
         "value" : "LATEST"
+      }, {
+        "name" : "AT_TIMESTAMP",
+        "value" : "AT_TIMESTAMP"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -13433,6 +14627,58 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "DeadLetterConfig",
+        "c2jShape" : "DeadLetterConfig",
+        "deprecated" : false,
+        "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "getterModel" : {
+          "returnType" : "DeadLetterConfig",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "DeadLetterConfig",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DeadLetterConfig",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DeadLetterConfig",
+        "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Environment",
         "c2jShape" : "EnvironmentResponse",
         "deprecated" : false,
@@ -13641,6 +14887,59 @@
             "documentation" : "<p>The size, in bytes, of the function .zip file you uploaded.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DeadLetterConfig" : {
+          "c2jName" : "DeadLetterConfig",
+          "c2jShape" : "DeadLetterConfig",
+          "deprecated" : false,
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "getterModel" : {
+            "returnType" : "DeadLetterConfig",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "DeadLetterConfig",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DeadLetterConfig",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DeadLetterConfig",
+          "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
           },
           "xmlNameSpaceUri" : null
         },
@@ -14347,6 +15646,291 @@
         "documentation" : null,
         "simpleType" : "FunctionConfiguration",
         "variableSetterType" : "FunctionConfiguration"
+      },
+      "wrapper" : false
+    },
+    "GetAccountSettingsRequest" : {
+      "c2jName" : "GetAccountSettingsRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "GetAccountSettings",
+        "locationName" : null,
+        "requestUri" : "/2016-08-19/account-settings/",
+        "target" : null,
+        "verb" : "GET",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "GetAccountSettingsRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "GetAccountSettingsRequest",
+        "variableName" : "getAccountSettingsRequest",
+        "variableType" : "GetAccountSettingsRequest",
+        "documentation" : null,
+        "simpleType" : "GetAccountSettingsRequest",
+        "variableSetterType" : "GetAccountSettingsRequest"
+      },
+      "wrapper" : false
+    },
+    "GetAccountSettingsResult" : {
+      "c2jName" : "GetAccountSettingsResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "AccountLimit",
+        "c2jShape" : "AccountLimit",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param accountLimit \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**\n@return */",
+        "getterModel" : {
+          "returnType" : "AccountLimit",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "AccountLimit",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "AccountLimit",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "AccountLimit",
+        "setterDocumentation" : "/**\n@param accountLimit */",
+        "setterModel" : {
+          "variableDeclarationType" : "AccountLimit",
+          "variableName" : "accountLimit",
+          "variableType" : "AccountLimit",
+          "documentation" : "",
+          "simpleType" : "AccountLimit",
+          "variableSetterType" : "AccountLimit"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**\n@param accountLimit \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "AccountLimit",
+          "variableName" : "accountLimit",
+          "variableType" : "AccountLimit",
+          "documentation" : "",
+          "simpleType" : "AccountLimit",
+          "variableSetterType" : "AccountLimit"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "AccountUsage",
+        "c2jShape" : "AccountUsage",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param accountUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**\n@return */",
+        "getterModel" : {
+          "returnType" : "AccountUsage",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "AccountUsage",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "AccountUsage",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "AccountUsage",
+        "setterDocumentation" : "/**\n@param accountUsage */",
+        "setterModel" : {
+          "variableDeclarationType" : "AccountUsage",
+          "variableName" : "accountUsage",
+          "variableType" : "AccountUsage",
+          "documentation" : "",
+          "simpleType" : "AccountUsage",
+          "variableSetterType" : "AccountUsage"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**\n@param accountUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "AccountUsage",
+          "variableName" : "accountUsage",
+          "variableType" : "AccountUsage",
+          "documentation" : "",
+          "simpleType" : "AccountUsage",
+          "variableSetterType" : "AccountUsage"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "AccountLimit" : {
+          "c2jName" : "AccountLimit",
+          "c2jShape" : "AccountLimit",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param accountLimit \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**\n@return */",
+          "getterModel" : {
+            "returnType" : "AccountLimit",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "AccountLimit",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "AccountLimit",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "AccountLimit",
+          "setterDocumentation" : "/**\n@param accountLimit */",
+          "setterModel" : {
+            "variableDeclarationType" : "AccountLimit",
+            "variableName" : "accountLimit",
+            "variableType" : "AccountLimit",
+            "documentation" : "",
+            "simpleType" : "AccountLimit",
+            "variableSetterType" : "AccountLimit"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**\n@param accountLimit \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "AccountLimit",
+            "variableName" : "accountLimit",
+            "variableType" : "AccountLimit",
+            "documentation" : "",
+            "simpleType" : "AccountLimit",
+            "variableSetterType" : "AccountLimit"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "AccountUsage" : {
+          "c2jName" : "AccountUsage",
+          "c2jShape" : "AccountUsage",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param accountUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**\n@return */",
+          "getterModel" : {
+            "returnType" : "AccountUsage",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "AccountUsage",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "AccountUsage",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "AccountUsage",
+          "setterDocumentation" : "/**\n@param accountUsage */",
+          "setterModel" : {
+            "variableDeclarationType" : "AccountUsage",
+            "variableName" : "accountUsage",
+            "variableType" : "AccountUsage",
+            "documentation" : "",
+            "simpleType" : "AccountUsage",
+            "variableSetterType" : "AccountUsage"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**\n@param accountUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "AccountUsage",
+            "variableName" : "accountUsage",
+            "variableType" : "AccountUsage",
+            "documentation" : "",
+            "simpleType" : "AccountUsage",
+            "variableSetterType" : "AccountUsage"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "GetAccountSettingsResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "GetAccountSettingsResult",
+        "variableName" : "getAccountSettingsResult",
+        "variableType" : "GetAccountSettingsResult",
+        "documentation" : null,
+        "simpleType" : "GetAccountSettingsResult",
+        "variableSetterType" : "GetAccountSettingsResult"
       },
       "wrapper" : false
     },
@@ -17021,6 +18605,58 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "DeadLetterConfig",
+        "c2jShape" : "DeadLetterConfig",
+        "deprecated" : false,
+        "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "getterModel" : {
+          "returnType" : "DeadLetterConfig",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "DeadLetterConfig",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DeadLetterConfig",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DeadLetterConfig",
+        "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Environment",
         "c2jShape" : "EnvironmentResponse",
         "deprecated" : false,
@@ -17229,6 +18865,59 @@
             "documentation" : "<p>The size, in bytes, of the function .zip file you uploaded.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DeadLetterConfig" : {
+          "c2jName" : "DeadLetterConfig",
+          "c2jShape" : "DeadLetterConfig",
+          "deprecated" : false,
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "getterModel" : {
+            "returnType" : "DeadLetterConfig",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "DeadLetterConfig",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DeadLetterConfig",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DeadLetterConfig",
+          "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
           },
           "xmlNameSpaceUri" : null
         },
@@ -21085,7 +22774,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Lambda was unable to decrypt the environment variables becauses KMS access was denied. Please check the Lambda function's KMS permissions.</p>",
+      "documentation" : "<p>Lambda was unable to decrypt the environment variables because KMS access was denied. Please check the Lambda function's KMS permissions.</p>",
       "enums" : null,
       "errorCode" : "KMSAccessDeniedException",
       "hasHeaderMember" : false,
@@ -25901,6 +27590,58 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "DeadLetterConfig",
+        "c2jShape" : "DeadLetterConfig",
+        "deprecated" : false,
+        "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "getterModel" : {
+          "returnType" : "DeadLetterConfig",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "DeadLetterConfig",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DeadLetterConfig",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DeadLetterConfig",
+        "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Environment",
         "c2jShape" : "EnvironmentResponse",
         "deprecated" : false,
@@ -26109,6 +27850,59 @@
             "documentation" : "<p>The size, in bytes, of the function .zip file you uploaded.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DeadLetterConfig" : {
+          "c2jName" : "DeadLetterConfig",
+          "c2jShape" : "DeadLetterConfig",
+          "deprecated" : false,
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "getterModel" : {
+            "returnType" : "DeadLetterConfig",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "DeadLetterConfig",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DeadLetterConfig",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DeadLetterConfig",
+          "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
           },
           "xmlNameSpaceUri" : null
         },
@@ -27644,6 +29438,12 @@
       }, {
         "name" : "Python27",
         "value" : "python2.7"
+      }, {
+        "name" : "Dotnetcore10",
+        "value" : "dotnetcore1.0"
+      }, {
+        "name" : "Nodejs43Edge",
+        "value" : "nodejs4.3-edge"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -32091,6 +33891,58 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "DeadLetterConfig",
+        "c2jShape" : "DeadLetterConfig",
+        "deprecated" : false,
+        "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "getterModel" : {
+          "returnType" : "DeadLetterConfig",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "DeadLetterConfig",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DeadLetterConfig",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DeadLetterConfig",
+        "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Environment",
         "c2jShape" : "EnvironmentResponse",
         "deprecated" : false,
@@ -32299,6 +34151,59 @@
             "documentation" : "<p>The size, in bytes, of the function .zip file you uploaded.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DeadLetterConfig" : {
+          "c2jName" : "DeadLetterConfig",
+          "c2jShape" : "DeadLetterConfig",
+          "deprecated" : false,
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "getterModel" : {
+            "returnType" : "DeadLetterConfig",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "DeadLetterConfig",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DeadLetterConfig",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DeadLetterConfig",
+          "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
           },
           "xmlNameSpaceUri" : null
         },
@@ -33449,6 +35354,110 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "Runtime",
+        "c2jShape" : "Runtime",
+        "deprecated" : false,
+        "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p> </note>",
+        "enumType" : "Runtime",
+        "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+        "getterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p> </note>\n@return The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p>\n@see Runtime*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "Runtime",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Runtime",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Runtime",
+        "setterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p>\n@see Runtime*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "runtime",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "runtime",
+          "variableType" : "String",
+          "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p> </note>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "DeadLetterConfig",
+        "c2jShape" : "DeadLetterConfig",
+        "deprecated" : false,
+        "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "getterModel" : {
+          "returnType" : "DeadLetterConfig",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "DeadLetterConfig",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DeadLetterConfig",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DeadLetterConfig",
+        "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "KMSKeyArn",
         "c2jShape" : "KMSKeyArn",
         "deprecated" : false,
@@ -33500,60 +35509,61 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
-      }, {
-        "c2jName" : "Runtime",
-        "c2jShape" : "Runtime",
-        "deprecated" : false,
-        "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>",
-        "enumType" : "Runtime",
-        "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
-        "getterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@return The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@see Runtime*/",
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "additionalMarshallingPath" : null,
-          "additionalUnmarshallingPath" : null,
-          "flattened" : false,
-          "header" : false,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "marshallLocationName" : "Runtime",
-          "queryString" : false,
-          "statusCode" : false,
-          "unmarshallLocationName" : "Runtime",
-          "uri" : false
-        },
-        "idempotencyToken" : false,
-        "list" : false,
-        "listModel" : null,
-        "map" : false,
-        "mapModel" : null,
-        "name" : "Runtime",
-        "setterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@see Runtime*/",
-        "setterModel" : {
-          "variableDeclarationType" : "String",
-          "variableName" : "runtime",
-          "variableType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
-        "variable" : {
-          "variableDeclarationType" : "String",
-          "variableName" : "runtime",
-          "variableType" : "String",
-          "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "DeadLetterConfig" : {
+          "c2jName" : "DeadLetterConfig",
+          "c2jShape" : "DeadLetterConfig",
+          "deprecated" : false,
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "getterModel" : {
+            "returnType" : "DeadLetterConfig",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "DeadLetterConfig",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DeadLetterConfig",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DeadLetterConfig",
+          "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Description" : {
           "c2jName" : "Description",
           "c2jShape" : "Description",
@@ -33929,10 +35939,10 @@
           "c2jName" : "Runtime",
           "c2jShape" : "Runtime",
           "deprecated" : false,
-          "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>",
+          "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p> </note>",
           "enumType" : "Runtime",
-          "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
-          "getterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@return The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@see Runtime*/",
+          "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+          "getterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p> </note>\n@return The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p>\n@see Runtime*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -33957,7 +35967,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Runtime",
-          "setterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@see Runtime*/",
+          "setterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p>\n@see Runtime*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "runtime",
@@ -33967,12 +35977,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+          "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "runtime",
             "variableType" : "String",
-            "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p>",
+            "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use earlier runtime (v0.10.42), set the value to \"nodejs\".</p> <note> <p>You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early 2017.</p> </note>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -34792,6 +36802,58 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "DeadLetterConfig",
+        "c2jShape" : "DeadLetterConfig",
+        "deprecated" : false,
+        "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "getterModel" : {
+          "returnType" : "DeadLetterConfig",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "DeadLetterConfig",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DeadLetterConfig",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "DeadLetterConfig",
+        "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "DeadLetterConfig",
+          "variableName" : "deadLetterConfig",
+          "variableType" : "DeadLetterConfig",
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "simpleType" : "DeadLetterConfig",
+          "variableSetterType" : "DeadLetterConfig"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Environment",
         "c2jShape" : "EnvironmentResponse",
         "deprecated" : false,
@@ -35000,6 +37062,59 @@
             "documentation" : "<p>The size, in bytes, of the function .zip file you uploaded.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DeadLetterConfig" : {
+          "c2jName" : "DeadLetterConfig",
+          "c2jShape" : "DeadLetterConfig",
+          "deprecated" : false,
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "getterModel" : {
+            "returnType" : "DeadLetterConfig",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "DeadLetterConfig",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DeadLetterConfig",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "DeadLetterConfig",
+          "setterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>\n@param deadLetterConfig The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "DeadLetterConfig",
+            "variableName" : "deadLetterConfig",
+            "variableType" : "DeadLetterConfig",
+            "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
+            "simpleType" : "DeadLetterConfig",
+            "variableSetterType" : "DeadLetterConfig"
           },
           "xmlNameSpaceUri" : null
         },

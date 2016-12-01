@@ -16,25 +16,28 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an IP range.
+ * Describes an IPv4 range.
  * </p>
  */
 public class IpRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CIDR range. You can either specify a CIDR range or a source security group, not both.
+     * The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
+     * single IPv4 address, use the /32 prefix.
      * </p>
      */
     private String cidrIp;
 
     /**
      * <p>
-     * The CIDR range. You can either specify a CIDR range or a source security group, not both.
+     * The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
+     * single IPv4 address, use the /32 prefix.
      * </p>
      * 
      * @param cidrIp
-     *        The CIDR range. You can either specify a CIDR range or a source security group, not both.
+     *        The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
+     *        a single IPv4 address, use the /32 prefix.
      */
 
     public void setCidrIp(String cidrIp) {
@@ -43,10 +46,12 @@ public class IpRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CIDR range. You can either specify a CIDR range or a source security group, not both.
+     * The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
+     * single IPv4 address, use the /32 prefix.
      * </p>
      * 
-     * @return The CIDR range. You can either specify a CIDR range or a source security group, not both.
+     * @return The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
+     *         a single IPv4 address, use the /32 prefix.
      */
 
     public String getCidrIp() {
@@ -55,11 +60,13 @@ public class IpRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CIDR range. You can either specify a CIDR range or a source security group, not both.
+     * The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
+     * single IPv4 address, use the /32 prefix.
      * </p>
      * 
      * @param cidrIp
-     *        The CIDR range. You can either specify a CIDR range or a source security group, not both.
+     *        The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
+     *        a single IPv4 address, use the /32 prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

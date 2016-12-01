@@ -39,7 +39,7 @@ public class DescribeNatGatewaysRequestMarshaller implements Marshaller<Request<
 
         Request<DescribeNatGatewaysRequest> request = new DefaultRequest<DescribeNatGatewaysRequest>(describeNatGatewaysRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeNatGateways");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> describeNatGatewaysRequestNatGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNatGatewaysRequest

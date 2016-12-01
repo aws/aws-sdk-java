@@ -40,7 +40,7 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
         Request<RevokeSecurityGroupIngressRequest> request = new DefaultRequest<RevokeSecurityGroupIngressRequest>(revokeSecurityGroupIngressRequest,
                 "AmazonEC2");
         request.addParameter("Action", "RevokeSecurityGroupIngress");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (revokeSecurityGroupIngressRequest.getGroupName() != null) {
@@ -135,6 +135,21 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
                                     StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getPeeringStatus()));
                         }
                         userIdGroupPairsListIndex++;
+                    }
+                }
+
+                com.amazonaws.internal.SdkInternalList<Ipv6Range> ipPermissionIpv6RangesList = (com.amazonaws.internal.SdkInternalList<Ipv6Range>) revokeSecurityGroupIngressRequestIpPermissionsListValue
+                        .getIpv6Ranges();
+                if (!ipPermissionIpv6RangesList.isEmpty() || !ipPermissionIpv6RangesList.isAutoConstruct()) {
+                    int ipv6RangesListIndex = 1;
+
+                    for (Ipv6Range ipPermissionIpv6RangesListValue : ipPermissionIpv6RangesList) {
+
+                        if (ipPermissionIpv6RangesListValue.getCidrIpv6() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Ipv6Ranges." + ipv6RangesListIndex + ".CidrIpv6",
+                                    StringUtils.fromString(ipPermissionIpv6RangesListValue.getCidrIpv6()));
+                        }
+                        ipv6RangesListIndex++;
                     }
                 }
 

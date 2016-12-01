@@ -48,6 +48,8 @@ public class VirtualInterface implements Serializable, Cloneable {
 
     private String customerAddress;
 
+    private String addressFamily;
+
     private String virtualInterfaceState;
     /**
      * <p>
@@ -59,6 +61,8 @@ public class VirtualInterface implements Serializable, Cloneable {
     private String virtualGatewayId;
 
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixes;
+
+    private com.amazonaws.internal.SdkInternalList<BGPPeer> bgpPeers;
 
     /**
      * <p>
@@ -361,6 +365,55 @@ public class VirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * @param addressFamily
+     * @see AddressFamily
+     */
+
+    public void setAddressFamily(String addressFamily) {
+        this.addressFamily = addressFamily;
+    }
+
+    /**
+     * @return
+     * @see AddressFamily
+     */
+
+    public String getAddressFamily() {
+        return this.addressFamily;
+    }
+
+    /**
+     * @param addressFamily
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AddressFamily
+     */
+
+    public VirtualInterface withAddressFamily(String addressFamily) {
+        setAddressFamily(addressFamily);
+        return this;
+    }
+
+    /**
+     * @param addressFamily
+     * @see AddressFamily
+     */
+
+    public void setAddressFamily(AddressFamily addressFamily) {
+        this.addressFamily = addressFamily.toString();
+    }
+
+    /**
+     * @param addressFamily
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AddressFamily
+     */
+
+    public VirtualInterface withAddressFamily(AddressFamily addressFamily) {
+        setAddressFamily(addressFamily);
+        return this;
+    }
+
+    /**
      * @param virtualInterfaceState
      * @see VirtualInterfaceState
      */
@@ -531,6 +584,61 @@ public class VirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<BGPPeer> getBgpPeers() {
+        if (bgpPeers == null) {
+            bgpPeers = new com.amazonaws.internal.SdkInternalList<BGPPeer>();
+        }
+        return bgpPeers;
+    }
+
+    /**
+     * @param bgpPeers
+     */
+
+    public void setBgpPeers(java.util.Collection<BGPPeer> bgpPeers) {
+        if (bgpPeers == null) {
+            this.bgpPeers = null;
+            return;
+        }
+
+        this.bgpPeers = new com.amazonaws.internal.SdkInternalList<BGPPeer>(bgpPeers);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBgpPeers(java.util.Collection)} or {@link #withBgpPeers(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param bgpPeers
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualInterface withBgpPeers(BGPPeer... bgpPeers) {
+        if (this.bgpPeers == null) {
+            setBgpPeers(new com.amazonaws.internal.SdkInternalList<BGPPeer>(bgpPeers.length));
+        }
+        for (BGPPeer ele : bgpPeers) {
+            this.bgpPeers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param bgpPeers
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualInterface withBgpPeers(java.util.Collection<BGPPeer> bgpPeers) {
+        setBgpPeers(bgpPeers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -563,6 +671,8 @@ public class VirtualInterface implements Serializable, Cloneable {
             sb.append("AmazonAddress: " + getAmazonAddress() + ",");
         if (getCustomerAddress() != null)
             sb.append("CustomerAddress: " + getCustomerAddress() + ",");
+        if (getAddressFamily() != null)
+            sb.append("AddressFamily: " + getAddressFamily() + ",");
         if (getVirtualInterfaceState() != null)
             sb.append("VirtualInterfaceState: " + getVirtualInterfaceState() + ",");
         if (getCustomerRouterConfig() != null)
@@ -570,7 +680,9 @@ public class VirtualInterface implements Serializable, Cloneable {
         if (getVirtualGatewayId() != null)
             sb.append("VirtualGatewayId: " + getVirtualGatewayId() + ",");
         if (getRouteFilterPrefixes() != null)
-            sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes());
+            sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes() + ",");
+        if (getBgpPeers() != null)
+            sb.append("BgpPeers: " + getBgpPeers());
         sb.append("}");
         return sb.toString();
     }
@@ -629,6 +741,10 @@ public class VirtualInterface implements Serializable, Cloneable {
             return false;
         if (other.getCustomerAddress() != null && other.getCustomerAddress().equals(this.getCustomerAddress()) == false)
             return false;
+        if (other.getAddressFamily() == null ^ this.getAddressFamily() == null)
+            return false;
+        if (other.getAddressFamily() != null && other.getAddressFamily().equals(this.getAddressFamily()) == false)
+            return false;
         if (other.getVirtualInterfaceState() == null ^ this.getVirtualInterfaceState() == null)
             return false;
         if (other.getVirtualInterfaceState() != null && other.getVirtualInterfaceState().equals(this.getVirtualInterfaceState()) == false)
@@ -644,6 +760,10 @@ public class VirtualInterface implements Serializable, Cloneable {
         if (other.getRouteFilterPrefixes() == null ^ this.getRouteFilterPrefixes() == null)
             return false;
         if (other.getRouteFilterPrefixes() != null && other.getRouteFilterPrefixes().equals(this.getRouteFilterPrefixes()) == false)
+            return false;
+        if (other.getBgpPeers() == null ^ this.getBgpPeers() == null)
+            return false;
+        if (other.getBgpPeers() != null && other.getBgpPeers().equals(this.getBgpPeers()) == false)
             return false;
         return true;
     }
@@ -664,10 +784,12 @@ public class VirtualInterface implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAuthKey() == null) ? 0 : getAuthKey().hashCode());
         hashCode = prime * hashCode + ((getAmazonAddress() == null) ? 0 : getAmazonAddress().hashCode());
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
+        hashCode = prime * hashCode + ((getAddressFamily() == null) ? 0 : getAddressFamily().hashCode());
         hashCode = prime * hashCode + ((getVirtualInterfaceState() == null) ? 0 : getVirtualInterfaceState().hashCode());
         hashCode = prime * hashCode + ((getCustomerRouterConfig() == null) ? 0 : getCustomerRouterConfig().hashCode());
         hashCode = prime * hashCode + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId().hashCode());
         hashCode = prime * hashCode + ((getRouteFilterPrefixes() == null) ? 0 : getRouteFilterPrefixes().hashCode());
+        hashCode = prime * hashCode + ((getBgpPeers() == null) ? 0 : getBgpPeers().hashCode());
         return hashCode;
     }
 

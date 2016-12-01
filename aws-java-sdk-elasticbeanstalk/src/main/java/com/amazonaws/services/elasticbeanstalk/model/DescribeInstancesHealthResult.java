@@ -16,36 +16,36 @@ import java.io.Serializable;
 
 /**
  * <p>
- * See the example below for a sample response.
+ * Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment.
  * </p>
  */
 public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the response body with information about the health of the instance.
+     * Detailed health information about each instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SingleInstanceHealth> instanceHealthList;
     /**
      * <p>
-     * The date and time the information was last refreshed.
+     * The date and time that the health information was retrieved.
      * </p>
      */
     private java.util.Date refreshedAt;
     /**
      * <p>
-     * The next token.
+     * Pagination token for the next page of results, if available.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Contains the response body with information about the health of the instance.
+     * Detailed health information about each instance.
      * </p>
      * 
-     * @return Contains the response body with information about the health of the instance.
+     * @return Detailed health information about each instance.
      */
 
     public java.util.List<SingleInstanceHealth> getInstanceHealthList() {
@@ -57,11 +57,11 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Contains the response body with information about the health of the instance.
+     * Detailed health information about each instance.
      * </p>
      * 
      * @param instanceHealthList
-     *        Contains the response body with information about the health of the instance.
+     *        Detailed health information about each instance.
      */
 
     public void setInstanceHealthList(java.util.Collection<SingleInstanceHealth> instanceHealthList) {
@@ -75,7 +75,7 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Contains the response body with information about the health of the instance.
+     * Detailed health information about each instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param instanceHealthList
-     *        Contains the response body with information about the health of the instance.
+     *        Detailed health information about each instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Contains the response body with information about the health of the instance.
+     * Detailed health information about each instance.
      * </p>
      * 
      * @param instanceHealthList
-     *        Contains the response body with information about the health of the instance.
+     *        Detailed health information about each instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,11 +115,11 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The date and time the information was last refreshed.
+     * The date and time that the health information was retrieved.
      * </p>
      * 
      * @param refreshedAt
-     *        The date and time the information was last refreshed.
+     *        The date and time that the health information was retrieved.
      */
 
     public void setRefreshedAt(java.util.Date refreshedAt) {
@@ -128,10 +128,10 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The date and time the information was last refreshed.
+     * The date and time that the health information was retrieved.
      * </p>
      * 
-     * @return The date and time the information was last refreshed.
+     * @return The date and time that the health information was retrieved.
      */
 
     public java.util.Date getRefreshedAt() {
@@ -140,11 +140,11 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The date and time the information was last refreshed.
+     * The date and time that the health information was retrieved.
      * </p>
      * 
      * @param refreshedAt
-     *        The date and time the information was last refreshed.
+     *        The date and time that the health information was retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,11 +155,11 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The next token.
+     * Pagination token for the next page of results, if available.
      * </p>
      * 
      * @param nextToken
-     *        The next token.
+     *        Pagination token for the next page of results, if available.
      */
 
     public void setNextToken(String nextToken) {
@@ -168,10 +168,10 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The next token.
+     * Pagination token for the next page of results, if available.
      * </p>
      * 
-     * @return The next token.
+     * @return Pagination token for the next page of results, if available.
      */
 
     public String getNextToken() {
@@ -180,11 +180,11 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The next token.
+     * Pagination token for the next page of results, if available.
      * </p>
      * 
      * @param nextToken
-     *        The next token.
+     *        Pagination token for the next page of results, if available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

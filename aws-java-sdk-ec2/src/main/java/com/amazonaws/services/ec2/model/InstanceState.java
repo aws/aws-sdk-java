@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the current state of the instance.
+ * Describes the current state of an instance.
  * </p>
  */
 public class InstanceState implements Serializable, Cloneable {

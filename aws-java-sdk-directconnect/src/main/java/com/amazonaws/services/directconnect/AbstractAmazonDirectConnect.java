@@ -65,6 +65,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public CreateBGPPeerResult createBGPPeer(CreateBGPPeerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateConnectionResult createConnection(CreateConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -81,6 +86,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
 
     @Override
     public CreatePublicVirtualInterfaceResult createPublicVirtualInterface(CreatePublicVirtualInterfaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBGPPeerResult deleteBGPPeer(DeleteBGPPeerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

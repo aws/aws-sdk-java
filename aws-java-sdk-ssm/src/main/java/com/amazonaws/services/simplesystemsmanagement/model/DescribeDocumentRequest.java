@@ -26,6 +26,12 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The document version for which you want information. Can be a specific version or the default version.
+     * </p>
+     */
+    private String documentVersion;
 
     /**
      * <p>
@@ -68,6 +74,46 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The document version for which you want information. Can be a specific version or the default version.
+     * </p>
+     * 
+     * @param documentVersion
+     *        The document version for which you want information. Can be a specific version or the default version.
+     */
+
+    public void setDocumentVersion(String documentVersion) {
+        this.documentVersion = documentVersion;
+    }
+
+    /**
+     * <p>
+     * The document version for which you want information. Can be a specific version or the default version.
+     * </p>
+     * 
+     * @return The document version for which you want information. Can be a specific version or the default version.
+     */
+
+    public String getDocumentVersion() {
+        return this.documentVersion;
+    }
+
+    /**
+     * <p>
+     * The document version for which you want information. Can be a specific version or the default version.
+     * </p>
+     * 
+     * @param documentVersion
+     *        The document version for which you want information. Can be a specific version or the default version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDocumentRequest withDocumentVersion(String documentVersion) {
+        setDocumentVersion(documentVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -79,7 +125,9 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: " + getName() + ",");
+        if (getDocumentVersion() != null)
+            sb.append("DocumentVersion: " + getDocumentVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -98,6 +146,10 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
+            return false;
+        if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
+            return false;
         return true;
     }
 
@@ -107,6 +159,7 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         return hashCode;
     }
 

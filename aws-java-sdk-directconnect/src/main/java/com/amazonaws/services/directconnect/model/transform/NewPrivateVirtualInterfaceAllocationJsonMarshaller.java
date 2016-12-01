@@ -56,6 +56,9 @@ public class NewPrivateVirtualInterfaceAllocationJsonMarshaller {
             if (newPrivateVirtualInterfaceAllocation.getAmazonAddress() != null) {
                 jsonGenerator.writeFieldName("amazonAddress").writeValue(newPrivateVirtualInterfaceAllocation.getAmazonAddress());
             }
+            if (newPrivateVirtualInterfaceAllocation.getAddressFamily() != null) {
+                jsonGenerator.writeFieldName("addressFamily").writeValue(newPrivateVirtualInterfaceAllocation.getAddressFamily());
+            }
             if (newPrivateVirtualInterfaceAllocation.getCustomerAddress() != null) {
                 jsonGenerator.writeFieldName("customerAddress").writeValue(newPrivateVirtualInterfaceAllocation.getCustomerAddress());
             }

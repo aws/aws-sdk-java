@@ -59,6 +59,10 @@ public class UpdateApiKeyResultJsonUnmarshaller implements Unmarshaller<UpdateAp
                     context.nextToken();
                     updateApiKeyResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("customerId", targetDepth)) {
+                    context.nextToken();
+                    updateApiKeyResult.setCustomerId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     updateApiKeyResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

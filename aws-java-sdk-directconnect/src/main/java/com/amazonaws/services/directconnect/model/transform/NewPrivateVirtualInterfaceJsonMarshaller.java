@@ -59,6 +59,9 @@ public class NewPrivateVirtualInterfaceJsonMarshaller {
             if (newPrivateVirtualInterface.getCustomerAddress() != null) {
                 jsonGenerator.writeFieldName("customerAddress").writeValue(newPrivateVirtualInterface.getCustomerAddress());
             }
+            if (newPrivateVirtualInterface.getAddressFamily() != null) {
+                jsonGenerator.writeFieldName("addressFamily").writeValue(newPrivateVirtualInterface.getAddressFamily());
+            }
             if (newPrivateVirtualInterface.getVirtualGatewayId() != null) {
                 jsonGenerator.writeFieldName("virtualGatewayId").writeValue(newPrivateVirtualInterface.getVirtualGatewayId());
             }

@@ -15,9 +15,9 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 /**
  * <p>
  * The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that
- * includes the required trust policy. For information about configuring the IAM role for SSM notifications, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Configuring SNS Notifications SSM</a> in the
- * <i>Amazon Elastic Compute Cloud User Guide </i>.
+ * includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see
+ * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Getting Amazon SNS Notifications When a
+ * Command Changes Status</a> in the <i>Amazon Elastic Compute Cloud User Guide </i>.
  * </p>
  */
 public class InvalidRoleException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {

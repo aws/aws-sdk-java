@@ -41,7 +41,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
      * </p>
      * </li>
      * <li>
@@ -61,7 +61,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
+     * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.
      * </p>
      * </li>
      * <li>
@@ -216,7 +216,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
      * </p>
      * </li>
      * <li>
@@ -236,7 +236,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
+     * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.
      * </p>
      * </li>
      * <li>
@@ -293,7 +293,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
+     *         <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
      *         </p>
      *         </li>
      *         <li>
@@ -313,7 +313,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
+     *         <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.
      *         </p>
      *         </li>
      *         <li>
@@ -380,7 +380,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
      * </p>
      * </li>
      * <li>
@@ -400,7 +400,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
+     * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.
      * </p>
      * </li>
      * <li>
@@ -458,7 +458,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
+     *        <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -478,7 +478,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
+     *        <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -547,7 +547,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
      * </p>
      * </li>
      * <li>
@@ -567,7 +567,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
+     * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.
      * </p>
      * </li>
      * <li>
@@ -630,7 +630,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
+     *        <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -650,7 +650,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
+     *        <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -721,7 +721,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
      * </p>
      * </li>
      * <li>
@@ -741,7 +741,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
+     * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.
      * </p>
      * </li>
      * <li>
@@ -799,7 +799,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
+     *        <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -819,7 +819,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
+     *        <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.
      *        </p>
      *        </li>
      *        <li>

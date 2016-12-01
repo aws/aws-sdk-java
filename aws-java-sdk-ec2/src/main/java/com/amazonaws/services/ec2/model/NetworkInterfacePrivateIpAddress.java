@@ -16,14 +16,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the private IP address of a network interface.
+ * Describes the private IPv4 address of a network interface.
  * </p>
  */
 public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IP address.
+     * The private IPv4 address.
      * </p>
      */
     private String privateIpAddress;
@@ -35,24 +35,24 @@ public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable
     private String privateDnsName;
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of the network interface.
+     * Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
      * </p>
      */
     private Boolean primary;
     /**
      * <p>
-     * The association information for an Elastic IP address associated with the network interface.
+     * The association information for an Elastic IP address (IPv4) associated with the network interface.
      * </p>
      */
     private NetworkInterfaceAssociation association;
 
     /**
      * <p>
-     * The private IP address.
+     * The private IPv4 address.
      * </p>
      * 
      * @param privateIpAddress
-     *        The private IP address.
+     *        The private IPv4 address.
      */
 
     public void setPrivateIpAddress(String privateIpAddress) {
@@ -61,10 +61,10 @@ public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable
 
     /**
      * <p>
-     * The private IP address.
+     * The private IPv4 address.
      * </p>
      * 
-     * @return The private IP address.
+     * @return The private IPv4 address.
      */
 
     public String getPrivateIpAddress() {
@@ -73,11 +73,11 @@ public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable
 
     /**
      * <p>
-     * The private IP address.
+     * The private IPv4 address.
      * </p>
      * 
      * @param privateIpAddress
-     *        The private IP address.
+     *        The private IPv4 address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,11 +128,11 @@ public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable
 
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of the network interface.
+     * Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
      * </p>
      * 
      * @param primary
-     *        Indicates whether this IP address is the primary private IP address of the network interface.
+     *        Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
      */
 
     public void setPrimary(Boolean primary) {
@@ -141,10 +141,10 @@ public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable
 
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of the network interface.
+     * Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
      * </p>
      * 
-     * @return Indicates whether this IP address is the primary private IP address of the network interface.
+     * @return Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
      */
 
     public Boolean getPrimary() {
@@ -153,11 +153,11 @@ public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable
 
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of the network interface.
+     * Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
      * </p>
      * 
      * @param primary
-     *        Indicates whether this IP address is the primary private IP address of the network interface.
+     *        Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,10 +168,10 @@ public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable
 
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of the network interface.
+     * Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
      * </p>
      * 
-     * @return Indicates whether this IP address is the primary private IP address of the network interface.
+     * @return Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.
      */
 
     public Boolean isPrimary() {
@@ -180,11 +180,11 @@ public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable
 
     /**
      * <p>
-     * The association information for an Elastic IP address associated with the network interface.
+     * The association information for an Elastic IP address (IPv4) associated with the network interface.
      * </p>
      * 
      * @param association
-     *        The association information for an Elastic IP address associated with the network interface.
+     *        The association information for an Elastic IP address (IPv4) associated with the network interface.
      */
 
     public void setAssociation(NetworkInterfaceAssociation association) {
@@ -193,10 +193,10 @@ public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable
 
     /**
      * <p>
-     * The association information for an Elastic IP address associated with the network interface.
+     * The association information for an Elastic IP address (IPv4) associated with the network interface.
      * </p>
      * 
-     * @return The association information for an Elastic IP address associated with the network interface.
+     * @return The association information for an Elastic IP address (IPv4) associated with the network interface.
      */
 
     public NetworkInterfaceAssociation getAssociation() {
@@ -205,11 +205,11 @@ public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable
 
     /**
      * <p>
-     * The association information for an Elastic IP address associated with the network interface.
+     * The association information for an Elastic IP address (IPv4) associated with the network interface.
      * </p>
      * 
      * @param association
-     *        The association information for an Elastic IP address associated with the network interface.
+     *        The association information for an Elastic IP address (IPv4) associated with the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

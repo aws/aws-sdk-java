@@ -28,6 +28,12 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     private com.amazonaws.internal.SdkInternalList<InstanceInformationFilter> instanceInformationFilterList;
     /**
      * <p>
+     * One or more filters. Use a filter to return a more specific list of instances.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<InstanceInformationStringFilter> filters;
+    /**
+     * <p>
      * The maximum number of items to return for this call. The call also returns a token that you can specify in a
      * subsequent call to get the next set of results.
      * </p>
@@ -110,6 +116,79 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     public DescribeInstanceInformationRequest withInstanceInformationFilterList(java.util.Collection<InstanceInformationFilter> instanceInformationFilterList) {
         setInstanceInformationFilterList(instanceInformationFilterList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of instances.
+     * </p>
+     * 
+     * @return One or more filters. Use a filter to return a more specific list of instances.
+     */
+
+    public java.util.List<InstanceInformationStringFilter> getFilters() {
+        if (filters == null) {
+            filters = new com.amazonaws.internal.SdkInternalList<InstanceInformationStringFilter>();
+        }
+        return filters;
+    }
+
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of instances.
+     * </p>
+     * 
+     * @param filters
+     *        One or more filters. Use a filter to return a more specific list of instances.
+     */
+
+    public void setFilters(java.util.Collection<InstanceInformationStringFilter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new com.amazonaws.internal.SdkInternalList<InstanceInformationStringFilter>(filters);
+    }
+
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of instances.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        One or more filters. Use a filter to return a more specific list of instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInstanceInformationRequest withFilters(InstanceInformationStringFilter... filters) {
+        if (this.filters == null) {
+            setFilters(new com.amazonaws.internal.SdkInternalList<InstanceInformationStringFilter>(filters.length));
+        }
+        for (InstanceInformationStringFilter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of instances.
+     * </p>
+     * 
+     * @param filters
+     *        One or more filters. Use a filter to return a more specific list of instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInstanceInformationRequest withFilters(java.util.Collection<InstanceInformationStringFilter> filters) {
+        setFilters(filters);
         return this;
     }
 
@@ -212,6 +291,8 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
         sb.append("{");
         if (getInstanceInformationFilterList() != null)
             sb.append("InstanceInformationFilterList: " + getInstanceInformationFilterList() + ",");
+        if (getFilters() != null)
+            sb.append("Filters: " + getFilters() + ",");
         if (getMaxResults() != null)
             sb.append("MaxResults: " + getMaxResults() + ",");
         if (getNextToken() != null)
@@ -235,6 +316,10 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
         if (other.getInstanceInformationFilterList() != null
                 && other.getInstanceInformationFilterList().equals(this.getInstanceInformationFilterList()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -252,6 +337,7 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceInformationFilterList() == null) ? 0 : getInstanceInformationFilterList().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

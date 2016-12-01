@@ -60,6 +60,11 @@ public class VpcPeeringConnectionVpcInfoStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
+                if (context.testExpression("ipv6CidrBlockSet/item", targetDepth)) {
+                    vpcPeeringConnectionVpcInfo.withIpv6CidrBlockSet(Ipv6CidrBlockStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("peeringOptions", targetDepth)) {
                     vpcPeeringConnectionVpcInfo.setPeeringOptions(VpcPeeringConnectionOptionsDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -99,6 +99,9 @@ public class CreateStageRequestMarshaller implements Marshaller<Request<CreateSt
                 }
                 jsonGenerator.writeEndObject();
             }
+            if (createStageRequest.getDocumentationVersion() != null) {
+                jsonGenerator.writeFieldName("documentationVersion").writeValue(createStageRequest.getDocumentationVersion());
+            }
 
             jsonGenerator.writeEndObject();
 

@@ -81,6 +81,10 @@ public class FunctionConfigurationJsonMarshaller {
                 jsonGenerator.writeFieldName("VpcConfig");
                 VpcConfigResponseJsonMarshaller.getInstance().marshall(functionConfiguration.getVpcConfig(), jsonGenerator);
             }
+            if (functionConfiguration.getDeadLetterConfig() != null) {
+                jsonGenerator.writeFieldName("DeadLetterConfig");
+                DeadLetterConfigJsonMarshaller.getInstance().marshall(functionConfiguration.getDeadLetterConfig(), jsonGenerator);
+            }
             if (functionConfiguration.getEnvironment() != null) {
                 jsonGenerator.writeFieldName("Environment");
                 EnvironmentResponseJsonMarshaller.getInstance().marshall(functionConfiguration.getEnvironment(), jsonGenerator);

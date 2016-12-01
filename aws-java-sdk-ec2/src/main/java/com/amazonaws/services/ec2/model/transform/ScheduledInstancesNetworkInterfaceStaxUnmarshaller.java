@@ -95,6 +95,16 @@ public class ScheduledInstancesNetworkInterfaceStaxUnmarshaller implements Unmar
                     scheduledInstancesNetworkInterface.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Ipv6Address/Ipv6Address", targetDepth)) {
+                    scheduledInstancesNetworkInterface.withIpv6Addresses(ScheduledInstancesIpv6AddressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Ipv6AddressCount", targetDepth)) {
+                    scheduledInstancesNetworkInterface.setIpv6AddressCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return scheduledInstancesNetworkInterface;

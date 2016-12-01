@@ -18,7 +18,8 @@ package com.amazonaws.services.lambda.model;
 public enum EventSourcePosition {
 
     TRIM_HORIZON("TRIM_HORIZON"),
-    LATEST("LATEST");
+    LATEST("LATEST"),
+    AT_TIMESTAMP("AT_TIMESTAMP");
 
     private String value;
 

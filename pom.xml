@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.63-SNAPSHOT</version>
+  <version>1.11.63</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -33,6 +33,9 @@
   </developers>
   <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
   <modules>
+    <module>aws-java-sdk-pinpoint</module>
+    <module>aws-java-sdk-xray</module>
+    <module>aws-java-sdk-opsworkscm</module>
     <module>aws-java-sdk-support</module>
     <module>aws-java-sdk-simpledb</module>
     <module>aws-java-sdk-servicecatalog</module>
@@ -106,6 +109,11 @@
     <module>aws-java-sdk-rekognition</module>
     <module>aws-java-sdk-polly</module>
     <module>aws-java-sdk-lightsail</module>
+    <module>aws-java-sdk-stepfunctions</module>
+    <module>aws-java-sdk-health</module>
+    <module>aws-java-sdk-codebuild</module>
+    <module>aws-java-sdk-appstream</module>
+    <module>aws-java-sdk-shield</module>
     <module>aws-java-sdk</module>
     <module>aws-java-sdk-osgi</module>
     <module>aws-java-sdk-core</module>
@@ -120,7 +128,7 @@
     <url>https://github.com/aws/aws-sdk-java.git</url>
   </scm>
   <properties>
-      <awsjavasdk.version>1.11.62</awsjavasdk.version>
+      <awsjavasdk.version>1.11.63</awsjavasdk.version>
       <jackson.version>2.6.6</jackson.version>
       <ion.java.version>1.0.1</ion.java.version>
       <junit.version>4.12</junit.version>
@@ -154,7 +162,7 @@
       <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>jmespath-java</artifactId>
-        <version>1.11.63-SNAPSHOT</version>
+        <version>1.11.63</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -47,6 +47,9 @@ public class CommandPluginJsonMarshaller {
             if (commandPlugin.getStatus() != null) {
                 jsonGenerator.writeFieldName("Status").writeValue(commandPlugin.getStatus());
             }
+            if (commandPlugin.getStatusDetails() != null) {
+                jsonGenerator.writeFieldName("StatusDetails").writeValue(commandPlugin.getStatusDetails());
+            }
             if (commandPlugin.getResponseCode() != null) {
                 jsonGenerator.writeFieldName("ResponseCode").writeValue(commandPlugin.getResponseCode());
             }
@@ -58,6 +61,15 @@ public class CommandPluginJsonMarshaller {
             }
             if (commandPlugin.getOutput() != null) {
                 jsonGenerator.writeFieldName("Output").writeValue(commandPlugin.getOutput());
+            }
+            if (commandPlugin.getStandardOutputUrl() != null) {
+                jsonGenerator.writeFieldName("StandardOutputUrl").writeValue(commandPlugin.getStandardOutputUrl());
+            }
+            if (commandPlugin.getStandardErrorUrl() != null) {
+                jsonGenerator.writeFieldName("StandardErrorUrl").writeValue(commandPlugin.getStandardErrorUrl());
+            }
+            if (commandPlugin.getOutputS3Region() != null) {
+                jsonGenerator.writeFieldName("OutputS3Region").writeValue(commandPlugin.getOutputS3Region());
             }
             if (commandPlugin.getOutputS3BucketName() != null) {
                 jsonGenerator.writeFieldName("OutputS3BucketName").writeValue(commandPlugin.getOutputS3BucketName());

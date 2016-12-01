@@ -70,6 +70,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAliasResult getAlias(GetAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

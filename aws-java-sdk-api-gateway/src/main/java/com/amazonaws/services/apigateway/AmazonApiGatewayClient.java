@@ -442,6 +442,92 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     }
 
     /**
+     * @param createDocumentationPartRequest
+     *        Creates a new documentation part of a given API.
+     * @return Result of the CreateDocumentationPart operation returned by the service.
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateDocumentationPart
+     */
+    @Override
+    public CreateDocumentationPartResult createDocumentationPart(CreateDocumentationPartRequest createDocumentationPartRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDocumentationPartRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDocumentationPartRequest> request = null;
+        Response<CreateDocumentationPartResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDocumentationPartRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDocumentationPartRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDocumentationPartResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateDocumentationPartResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param createDocumentationVersionRequest
+     *        Creates a new documentation version of a given API.
+     * @return Result of the CreateDocumentationVersion operation returned by the service.
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateDocumentationVersion
+     */
+    @Override
+    public CreateDocumentationVersionResult createDocumentationVersion(CreateDocumentationVersionRequest createDocumentationVersionRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDocumentationVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDocumentationVersionRequest> request = null;
+        Response<CreateDocumentationVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDocumentationVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDocumentationVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDocumentationVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateDocumentationVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Creates a new domain name.
      * </p>
@@ -974,6 +1060,90 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDeploymentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param deleteDocumentationPartRequest
+     *        Deletes an existing documentation part of an API.
+     * @return Result of the DeleteDocumentationPart operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws ConflictException
+     * @throws BadRequestException
+     * @sample AmazonApiGateway.DeleteDocumentationPart
+     */
+    @Override
+    public DeleteDocumentationPartResult deleteDocumentationPart(DeleteDocumentationPartRequest deleteDocumentationPartRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDocumentationPartRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDocumentationPartRequest> request = null;
+        Response<DeleteDocumentationPartResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDocumentationPartRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDocumentationPartRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDocumentationPartResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteDocumentationPartResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param deleteDocumentationVersionRequest
+     *        Deletes an existing documentation version of an API.
+     * @return Result of the DeleteDocumentationVersion operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteDocumentationVersion
+     */
+    @Override
+    public DeleteDocumentationVersionResult deleteDocumentationVersion(DeleteDocumentationVersionRequest deleteDocumentationVersionRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDocumentationVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDocumentationVersionRequest> request = null;
+        Response<DeleteDocumentationVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDocumentationVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDocumentationVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDocumentationVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteDocumentationVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2089,6 +2259,168 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     }
 
     /**
+     * @param getDocumentationPartRequest
+     *        Gets a specified documentation part of a given API.
+     * @return Result of the GetDocumentationPart operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetDocumentationPart
+     */
+    @Override
+    public GetDocumentationPartResult getDocumentationPart(GetDocumentationPartRequest getDocumentationPartRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDocumentationPartRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDocumentationPartRequest> request = null;
+        Response<GetDocumentationPartResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDocumentationPartRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentationPartRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDocumentationPartResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDocumentationPartResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param getDocumentationPartsRequest
+     *        Gets the documentation parts of an API. The result may be filtered by the type, name, or path of API
+     *        entities (targets).
+     * @return Result of the GetDocumentationParts operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetDocumentationParts
+     */
+    @Override
+    public GetDocumentationPartsResult getDocumentationParts(GetDocumentationPartsRequest getDocumentationPartsRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDocumentationPartsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDocumentationPartsRequest> request = null;
+        Response<GetDocumentationPartsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDocumentationPartsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentationPartsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDocumentationPartsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetDocumentationPartsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param getDocumentationVersionRequest
+     *        Gets a documentation snapshot of an API.
+     * @return Result of the GetDocumentationVersion operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetDocumentationVersion
+     */
+    @Override
+    public GetDocumentationVersionResult getDocumentationVersion(GetDocumentationVersionRequest getDocumentationVersionRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDocumentationVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDocumentationVersionRequest> request = null;
+        Response<GetDocumentationVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDocumentationVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentationVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDocumentationVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDocumentationVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param getDocumentationVersionsRequest
+     *        Gets the documentation versions of an API.
+     * @return Result of the GetDocumentationVersions operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetDocumentationVersions
+     */
+    @Override
+    public GetDocumentationVersionsResult getDocumentationVersions(GetDocumentationVersionsRequest getDocumentationVersionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDocumentationVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDocumentationVersionsRequest> request = null;
+        Response<GetDocumentationVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDocumentationVersionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentationVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDocumentationVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDocumentationVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Represents a domain name that is contained in a simpler, more intuitive URL that can be called.
      * </p>
@@ -3094,6 +3426,48 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     }
 
     /**
+     * @param importDocumentationPartsRequest
+     *        Import documentation parts from an external (e.g., Swagger) definition file.
+     * @return Result of the ImportDocumentationParts operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.ImportDocumentationParts
+     */
+    @Override
+    public ImportDocumentationPartsResult importDocumentationParts(ImportDocumentationPartsRequest importDocumentationPartsRequest) {
+        ExecutionContext executionContext = createExecutionContext(importDocumentationPartsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportDocumentationPartsRequest> request = null;
+        Response<ImportDocumentationPartsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportDocumentationPartsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(importDocumentationPartsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportDocumentationPartsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ImportDocumentationPartsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * A feature of the Amazon API Gateway control service for creating a new API from an external API definition file.
      * </p>
@@ -3724,6 +4098,91 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDeploymentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param updateDocumentationPartRequest
+     *        Updates an existing documentation part of a given API.
+     * @return Result of the UpdateDocumentationPart operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws ConflictException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateDocumentationPart
+     */
+    @Override
+    public UpdateDocumentationPartResult updateDocumentationPart(UpdateDocumentationPartRequest updateDocumentationPartRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateDocumentationPartRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDocumentationPartRequest> request = null;
+        Response<UpdateDocumentationPartResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDocumentationPartRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentationPartRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDocumentationPartResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateDocumentationPartResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param updateDocumentationVersionRequest
+     *        Updates an existing documentation version of an API.
+     * @return Result of the UpdateDocumentationVersion operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws ConflictException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateDocumentationVersion
+     */
+    @Override
+    public UpdateDocumentationVersionResult updateDocumentationVersion(UpdateDocumentationVersionRequest updateDocumentationVersionRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateDocumentationVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDocumentationVersionRequest> request = null;
+        Response<UpdateDocumentationVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDocumentationVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentationVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDocumentationVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateDocumentationVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

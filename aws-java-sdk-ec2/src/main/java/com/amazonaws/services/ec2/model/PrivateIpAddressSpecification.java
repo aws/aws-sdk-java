@@ -16,32 +16,32 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a secondary private IP address for a network interface.
+ * Describes a secondary private IPv4 address for a network interface.
  * </p>
  */
 public class PrivateIpAddressSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IP addresses.
+     * The private IPv4 addresses.
      * </p>
      */
     private String privateIpAddress;
     /**
      * <p>
-     * Indicates whether the private IP address is the primary private IP address. Only one IP address can be designated
-     * as primary.
+     * Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be
+     * designated as primary.
      * </p>
      */
     private Boolean primary;
 
     /**
      * <p>
-     * The private IP addresses.
+     * The private IPv4 addresses.
      * </p>
      * 
      * @param privateIpAddress
-     *        The private IP addresses.
+     *        The private IPv4 addresses.
      */
 
     public void setPrivateIpAddress(String privateIpAddress) {
@@ -50,10 +50,10 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IP addresses.
+     * The private IPv4 addresses.
      * </p>
      * 
-     * @return The private IP addresses.
+     * @return The private IPv4 addresses.
      */
 
     public String getPrivateIpAddress() {
@@ -62,11 +62,11 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IP addresses.
+     * The private IPv4 addresses.
      * </p>
      * 
      * @param privateIpAddress
-     *        The private IP addresses.
+     *        The private IPv4 addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,13 +77,13 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the private IP address is the primary private IP address. Only one IP address can be designated
-     * as primary.
+     * Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be
+     * designated as primary.
      * </p>
      * 
      * @param primary
-     *        Indicates whether the private IP address is the primary private IP address. Only one IP address can be
-     *        designated as primary.
+     *        Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can
+     *        be designated as primary.
      */
 
     public void setPrimary(Boolean primary) {
@@ -92,12 +92,12 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the private IP address is the primary private IP address. Only one IP address can be designated
-     * as primary.
+     * Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be
+     * designated as primary.
      * </p>
      * 
-     * @return Indicates whether the private IP address is the primary private IP address. Only one IP address can be
-     *         designated as primary.
+     * @return Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can
+     *         be designated as primary.
      */
 
     public Boolean getPrimary() {
@@ -106,13 +106,13 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the private IP address is the primary private IP address. Only one IP address can be designated
-     * as primary.
+     * Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be
+     * designated as primary.
      * </p>
      * 
      * @param primary
-     *        Indicates whether the private IP address is the primary private IP address. Only one IP address can be
-     *        designated as primary.
+     *        Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can
+     *        be designated as primary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,12 +123,12 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the private IP address is the primary private IP address. Only one IP address can be designated
-     * as primary.
+     * Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be
+     * designated as primary.
      * </p>
      * 
-     * @return Indicates whether the private IP address is the primary private IP address. Only one IP address can be
-     *         designated as primary.
+     * @return Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can
+     *         be designated as primary.
      */
 
     public Boolean isPrimary() {

@@ -17,7 +17,8 @@ package com.amazonaws.services.elasticbeanstalk.model;
  */
 public enum SourceType {
 
-    Git("Git");
+    Git("Git"),
+    Zip("Zip");
 
     private String value;
 

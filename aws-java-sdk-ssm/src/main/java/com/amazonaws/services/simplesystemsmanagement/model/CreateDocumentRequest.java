@@ -32,6 +32,12 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * </p>
+     */
+    private String documentType;
 
     /**
      * <p>
@@ -114,6 +120,79 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * @see DocumentType
+     */
+
+    public void setDocumentType(String documentType) {
+        this.documentType = documentType;
+    }
+
+    /**
+     * <p>
+     * The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * </p>
+     * 
+     * @return The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * @see DocumentType
+     */
+
+    public String getDocumentType() {
+        return this.documentType;
+    }
+
+    /**
+     * <p>
+     * The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentType
+     */
+
+    public CreateDocumentRequest withDocumentType(String documentType) {
+        setDocumentType(documentType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * @see DocumentType
+     */
+
+    public void setDocumentType(DocumentType documentType) {
+        this.documentType = documentType.toString();
+    }
+
+    /**
+     * <p>
+     * The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of document to create. Valid document types include: Policy, Automation, and Command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentType
+     */
+
+    public CreateDocumentRequest withDocumentType(DocumentType documentType) {
+        setDocumentType(documentType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -127,7 +206,9 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getContent() != null)
             sb.append("Content: " + getContent() + ",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: " + getName() + ",");
+        if (getDocumentType() != null)
+            sb.append("DocumentType: " + getDocumentType());
         sb.append("}");
         return sb.toString();
     }
@@ -150,6 +231,10 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDocumentType() == null ^ this.getDocumentType() == null)
+            return false;
+        if (other.getDocumentType() != null && other.getDocumentType().equals(this.getDocumentType()) == false)
+            return false;
         return true;
     }
 
@@ -160,6 +245,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());
         return hashCode;
     }
 

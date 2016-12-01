@@ -743,6 +743,53 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
+     * Returns a customer's account settings.
+     * </p>
+     * <p>
+     * You can use this operation to retrieve Lambda limit information such as code size and concurrency limits. For
+     * more information on limits, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
+     * Limits</a>. You can also retrieve resource usage statistics such as code storage usage and function count.
+     * </p>
+     * 
+     * @param getAccountSettingsRequest
+     * @return Result of the GetAccountSettings operation returned by the service.
+     * @throws TooManyRequestsException
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @sample AWSLambda.GetAccountSettings
+     */
+    @Override
+    public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest getAccountSettingsRequest) {
+        ExecutionContext executionContext = createExecutionContext(getAccountSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccountSettingsRequest> request = null;
+        Response<GetAccountSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccountSettingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAccountSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAccountSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the specified alias information such as the alias ARN, description, and function version it is pointing
      * to. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction to AWS Lambda Aliases</a>.
@@ -1097,7 +1144,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state
      *         for Decrypt. Please check the function's KMS key settings.
      * @throws KMSAccessDeniedException
-     *         Lambda was unable to decrypt the environment variables becauses KMS access was denied. Please check the
+     *         Lambda was unable to decrypt the environment variables because KMS access was denied. Please check the
      *         Lambda function's KMS permissions.
      * @throws KMSNotFoundException
      *         Lambda was unable to decrypt the environment variables because the KMS key was not found. Please check

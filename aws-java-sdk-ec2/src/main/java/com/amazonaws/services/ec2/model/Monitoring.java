@@ -16,25 +16,25 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the monitoring for the instance.
+ * Describes the monitoring of an instance.
  * </p>
  */
 public class Monitoring implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether monitoring is enabled for the instance.
+     * Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * </p>
      */
     private String state;
 
     /**
      * <p>
-     * Indicates whether monitoring is enabled for the instance.
+     * Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * </p>
      * 
      * @param state
-     *        Indicates whether monitoring is enabled for the instance.
+     *        Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * @see MonitoringState
      */
 
@@ -44,10 +44,10 @@ public class Monitoring implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether monitoring is enabled for the instance.
+     * Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * </p>
      * 
-     * @return Indicates whether monitoring is enabled for the instance.
+     * @return Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * @see MonitoringState
      */
 
@@ -57,11 +57,11 @@ public class Monitoring implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether monitoring is enabled for the instance.
+     * Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * </p>
      * 
      * @param state
-     *        Indicates whether monitoring is enabled for the instance.
+     *        Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MonitoringState
      */
@@ -73,11 +73,11 @@ public class Monitoring implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether monitoring is enabled for the instance.
+     * Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * </p>
      * 
      * @param state
-     *        Indicates whether monitoring is enabled for the instance.
+     *        Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * @see MonitoringState
      */
 
@@ -87,11 +87,11 @@ public class Monitoring implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether monitoring is enabled for the instance.
+     * Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * </p>
      * 
      * @param state
-     *        Indicates whether monitoring is enabled for the instance.
+     *        Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MonitoringState
      */

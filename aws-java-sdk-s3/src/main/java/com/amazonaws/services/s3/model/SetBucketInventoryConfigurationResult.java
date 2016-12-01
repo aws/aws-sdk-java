@@ -14,10 +14,12 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.io.Serializable;
+
 /**
  * Result object to contain the response returned from
  * {@link com.amazonaws.services.s3.AmazonS3Client#setBucketInventoryConfiguration(SetBucketInventoryConfigurationRequest)}
  * operation.
  */
-public class SetBucketInventoryConfigurationResult {
+public class SetBucketInventoryConfigurationResult implements Serializable {
 }

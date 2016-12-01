@@ -32,7 +32,8 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     private String routeTableId;
     /**
      * <p>
-     * The CIDR address block used for the destination match. Routing decisions are based on the most specific match.
+     * The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific
+     * match.
      * </p>
      */
     private String destinationCidrBlock;
@@ -42,6 +43,18 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      */
     private String gatewayId;
+    /**
+     * <p>
+     * The IPv6 CIDR block used for the destination match. Routing decisions are based on the most specific match.
+     * </p>
+     */
+    private String destinationIpv6CidrBlock;
+    /**
+     * <p>
+     * [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * </p>
+     */
+    private String egressOnlyInternetGatewayId;
     /**
      * <p>
      * The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly one
@@ -63,7 +76,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     private String vpcPeeringConnectionId;
     /**
      * <p>
-     * The ID of a NAT gateway.
+     * [IPv4 traffic only] The ID of a NAT gateway.
      * </p>
      */
     private String natGatewayId;
@@ -110,12 +123,13 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The CIDR address block used for the destination match. Routing decisions are based on the most specific match.
+     * The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific
+     * match.
      * </p>
      * 
      * @param destinationCidrBlock
-     *        The CIDR address block used for the destination match. Routing decisions are based on the most specific
-     *        match.
+     *        The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most
+     *        specific match.
      */
 
     public void setDestinationCidrBlock(String destinationCidrBlock) {
@@ -124,11 +138,12 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The CIDR address block used for the destination match. Routing decisions are based on the most specific match.
+     * The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific
+     * match.
      * </p>
      * 
-     * @return The CIDR address block used for the destination match. Routing decisions are based on the most specific
-     *         match.
+     * @return The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most
+     *         specific match.
      */
 
     public String getDestinationCidrBlock() {
@@ -137,12 +152,13 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The CIDR address block used for the destination match. Routing decisions are based on the most specific match.
+     * The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific
+     * match.
      * </p>
      * 
      * @param destinationCidrBlock
-     *        The CIDR address block used for the destination match. Routing decisions are based on the most specific
-     *        match.
+     *        The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most
+     *        specific match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,6 +204,89 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     public CreateRouteRequest withGatewayId(String gatewayId) {
         setGatewayId(gatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block used for the destination match. Routing decisions are based on the most specific match.
+     * </p>
+     * 
+     * @param destinationIpv6CidrBlock
+     *        The IPv6 CIDR block used for the destination match. Routing decisions are based on the most specific
+     *        match.
+     */
+
+    public void setDestinationIpv6CidrBlock(String destinationIpv6CidrBlock) {
+        this.destinationIpv6CidrBlock = destinationIpv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block used for the destination match. Routing decisions are based on the most specific match.
+     * </p>
+     * 
+     * @return The IPv6 CIDR block used for the destination match. Routing decisions are based on the most specific
+     *         match.
+     */
+
+    public String getDestinationIpv6CidrBlock() {
+        return this.destinationIpv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block used for the destination match. Routing decisions are based on the most specific match.
+     * </p>
+     * 
+     * @param destinationIpv6CidrBlock
+     *        The IPv6 CIDR block used for the destination match. Routing decisions are based on the most specific
+     *        match.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRouteRequest withDestinationIpv6CidrBlock(String destinationIpv6CidrBlock) {
+        setDestinationIpv6CidrBlock(destinationIpv6CidrBlock);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * </p>
+     * 
+     * @param egressOnlyInternetGatewayId
+     *        [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     */
+
+    public void setEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
+        this.egressOnlyInternetGatewayId = egressOnlyInternetGatewayId;
+    }
+
+    /**
+     * <p>
+     * [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * </p>
+     * 
+     * @return [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     */
+
+    public String getEgressOnlyInternetGatewayId() {
+        return this.egressOnlyInternetGatewayId;
+    }
+
+    /**
+     * <p>
+     * [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * </p>
+     * 
+     * @param egressOnlyInternetGatewayId
+     *        [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRouteRequest withEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
+        setEgressOnlyInternetGatewayId(egressOnlyInternetGatewayId);
         return this;
     }
 
@@ -319,11 +418,11 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The ID of a NAT gateway.
+     * [IPv4 traffic only] The ID of a NAT gateway.
      * </p>
      * 
      * @param natGatewayId
-     *        The ID of a NAT gateway.
+     *        [IPv4 traffic only] The ID of a NAT gateway.
      */
 
     public void setNatGatewayId(String natGatewayId) {
@@ -332,10 +431,10 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The ID of a NAT gateway.
+     * [IPv4 traffic only] The ID of a NAT gateway.
      * </p>
      * 
-     * @return The ID of a NAT gateway.
+     * @return [IPv4 traffic only] The ID of a NAT gateway.
      */
 
     public String getNatGatewayId() {
@@ -344,11 +443,11 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The ID of a NAT gateway.
+     * [IPv4 traffic only] The ID of a NAT gateway.
      * </p>
      * 
      * @param natGatewayId
-     *        The ID of a NAT gateway.
+     *        [IPv4 traffic only] The ID of a NAT gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,6 +484,10 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
             sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ",");
         if (getGatewayId() != null)
             sb.append("GatewayId: " + getGatewayId() + ",");
+        if (getDestinationIpv6CidrBlock() != null)
+            sb.append("DestinationIpv6CidrBlock: " + getDestinationIpv6CidrBlock() + ",");
+        if (getEgressOnlyInternetGatewayId() != null)
+            sb.append("EgressOnlyInternetGatewayId: " + getEgressOnlyInternetGatewayId() + ",");
         if (getInstanceId() != null)
             sb.append("InstanceId: " + getInstanceId() + ",");
         if (getNetworkInterfaceId() != null)
@@ -419,6 +522,14 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false)
             return false;
+        if (other.getDestinationIpv6CidrBlock() == null ^ this.getDestinationIpv6CidrBlock() == null)
+            return false;
+        if (other.getDestinationIpv6CidrBlock() != null && other.getDestinationIpv6CidrBlock().equals(this.getDestinationIpv6CidrBlock()) == false)
+            return false;
+        if (other.getEgressOnlyInternetGatewayId() == null ^ this.getEgressOnlyInternetGatewayId() == null)
+            return false;
+        if (other.getEgressOnlyInternetGatewayId() != null && other.getEgressOnlyInternetGatewayId().equals(this.getEgressOnlyInternetGatewayId()) == false)
+            return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
@@ -446,6 +557,8 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getDestinationIpv6CidrBlock() == null) ? 0 : getDestinationIpv6CidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getEgressOnlyInternetGatewayId() == null) ? 0 : getEgressOnlyInternetGatewayId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());

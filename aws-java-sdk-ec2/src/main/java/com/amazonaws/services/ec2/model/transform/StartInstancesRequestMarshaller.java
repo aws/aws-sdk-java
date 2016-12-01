@@ -39,7 +39,7 @@ public class StartInstancesRequestMarshaller implements Marshaller<Request<Start
 
         Request<StartInstancesRequest> request = new DefaultRequest<StartInstancesRequest>(startInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "StartInstances");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> startInstancesRequestInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) startInstancesRequest

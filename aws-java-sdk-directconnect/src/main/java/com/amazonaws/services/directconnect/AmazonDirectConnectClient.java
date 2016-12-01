@@ -375,6 +375,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * ConfirmPublicVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming'
      * state, and will not be available for handling traffic.
      * </p>
+     * <p>
+     * When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer and amazon address fields
+     * should be left blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not supported.
+     * </p>
      * 
      * @param allocatePublicVirtualInterfaceRequest
      *        Container for the parameters to the AllocatePublicVirtualInterface operation.
@@ -575,6 +579,65 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Creates a new BGP peer on a specified virtual interface. The BGP peer cannot be in the same address family
+     * (IPv4/IPv6) of an existing BGP peer on the virtual interface.
+     * </p>
+     * <p>
+     * You must create a BGP peer for the corresponding address family in order to access AWS resources that also use
+     * that address family.
+     * </p>
+     * <p>
+     * When creating a IPv6 BGP peer, the Amazon address and customer address fields must be left blank. IPv6 addresses
+     * are automatically assigned from Amazon's pool of IPv6 addresses; you cannot specify custom IPv6 addresses.
+     * </p>
+     * <p>
+     * For a public virtual interface, the Autonomous System Number (ASN) must be private or already whitelisted for the
+     * virtual interface.
+     * </p>
+     * 
+     * @param createBGPPeerRequest
+     *        Container for the parameters to the CreateBGPPeer operation.
+     * @return Result of the CreateBGPPeer operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error message will contain additional details about
+     *         the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message will contain additional details about the
+     *         cause.
+     * @sample AmazonDirectConnect.CreateBGPPeer
+     */
+    @Override
+    public CreateBGPPeerResult createBGPPeer(CreateBGPPeerRequest createBGPPeerRequest) {
+        ExecutionContext executionContext = createExecutionContext(createBGPPeerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateBGPPeerRequest> request = null;
+        Response<CreateBGPPeerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateBGPPeerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBGPPeerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateBGPPeerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateBGPPeerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new connection between the customer network and a specific AWS Direct Connect location.
      * </p>
      * <p>
@@ -745,6 +808,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * traffic. A public virtual interface supports sending traffic to public services of AWS such as Amazon Simple
      * Storage Service (Amazon S3).
      * </p>
+     * <p>
+     * When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer and amazon address fields
+     * should be left blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not supported.
+     * </p>
      * 
      * @param createPublicVirtualInterfaceRequest
      *        Container for the parameters to the CreatePublicVirtualInterface operation.
@@ -779,6 +846,53 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<CreatePublicVirtualInterfaceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreatePublicVirtualInterfaceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a BGP peer on the specified virtual interface that matches the specified customer address and ASN. You
+     * cannot delete the last BGP peer from a virtual interface.
+     * </p>
+     * 
+     * @param deleteBGPPeerRequest
+     *        Container for the parameters to the DeleteBGPPeer operation.
+     * @return Result of the DeleteBGPPeer operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error message will contain additional details about
+     *         the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message will contain additional details about the
+     *         cause.
+     * @sample AmazonDirectConnect.DeleteBGPPeer
+     */
+    @Override
+    public DeleteBGPPeerResult deleteBGPPeer(DeleteBGPPeerRequest deleteBGPPeerRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteBGPPeerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBGPPeerRequest> request = null;
+        Response<DeleteBGPPeerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteBGPPeerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBGPPeerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteBGPPeerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBGPPeerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

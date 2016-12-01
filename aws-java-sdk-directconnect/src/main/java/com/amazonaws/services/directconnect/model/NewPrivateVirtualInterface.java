@@ -33,6 +33,8 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
 
     private String customerAddress;
 
+    private String addressFamily;
+
     private String virtualGatewayId;
 
     /**
@@ -192,6 +194,55 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * @param addressFamily
+     * @see AddressFamily
+     */
+
+    public void setAddressFamily(String addressFamily) {
+        this.addressFamily = addressFamily;
+    }
+
+    /**
+     * @return
+     * @see AddressFamily
+     */
+
+    public String getAddressFamily() {
+        return this.addressFamily;
+    }
+
+    /**
+     * @param addressFamily
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AddressFamily
+     */
+
+    public NewPrivateVirtualInterface withAddressFamily(String addressFamily) {
+        setAddressFamily(addressFamily);
+        return this;
+    }
+
+    /**
+     * @param addressFamily
+     * @see AddressFamily
+     */
+
+    public void setAddressFamily(AddressFamily addressFamily) {
+        this.addressFamily = addressFamily.toString();
+    }
+
+    /**
+     * @param addressFamily
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AddressFamily
+     */
+
+    public NewPrivateVirtualInterface withAddressFamily(AddressFamily addressFamily) {
+        setAddressFamily(addressFamily);
+        return this;
+    }
+
+    /**
      * @param virtualGatewayId
      */
 
@@ -240,6 +291,8 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
             sb.append("AmazonAddress: " + getAmazonAddress() + ",");
         if (getCustomerAddress() != null)
             sb.append("CustomerAddress: " + getCustomerAddress() + ",");
+        if (getAddressFamily() != null)
+            sb.append("AddressFamily: " + getAddressFamily() + ",");
         if (getVirtualGatewayId() != null)
             sb.append("VirtualGatewayId: " + getVirtualGatewayId());
         sb.append("}");
@@ -280,6 +333,10 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
             return false;
         if (other.getCustomerAddress() != null && other.getCustomerAddress().equals(this.getCustomerAddress()) == false)
             return false;
+        if (other.getAddressFamily() == null ^ this.getAddressFamily() == null)
+            return false;
+        if (other.getAddressFamily() != null && other.getAddressFamily().equals(this.getAddressFamily()) == false)
+            return false;
         if (other.getVirtualGatewayId() == null ^ this.getVirtualGatewayId() == null)
             return false;
         if (other.getVirtualGatewayId() != null && other.getVirtualGatewayId().equals(this.getVirtualGatewayId()) == false)
@@ -298,6 +355,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAuthKey() == null) ? 0 : getAuthKey().hashCode());
         hashCode = prime * hashCode + ((getAmazonAddress() == null) ? 0 : getAmazonAddress().hashCode());
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
+        hashCode = prime * hashCode + ((getAddressFamily() == null) ? 0 : getAddressFamily().hashCode());
         hashCode = prime * hashCode + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId().hashCode());
         return hashCode;
     }

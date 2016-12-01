@@ -77,7 +77,9 @@ public enum InstanceType {
     D2Xlarge("d2.xlarge"),
     D22xlarge("d2.2xlarge"),
     D24xlarge("d2.4xlarge"),
-    D28xlarge("d2.8xlarge");
+    D28xlarge("d2.8xlarge"),
+    F12xlarge("f1.2xlarge"),
+    F116xlarge("f1.16xlarge");
 
     private String value;
 

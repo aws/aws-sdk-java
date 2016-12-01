@@ -39,7 +39,7 @@ public class AttachClassicLinkVpcRequestMarshaller implements Marshaller<Request
 
         Request<AttachClassicLinkVpcRequest> request = new DefaultRequest<AttachClassicLinkVpcRequest>(attachClassicLinkVpcRequest, "AmazonEC2");
         request.addParameter("Action", "AttachClassicLinkVpc");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (attachClassicLinkVpcRequest.getInstanceId() != null) {

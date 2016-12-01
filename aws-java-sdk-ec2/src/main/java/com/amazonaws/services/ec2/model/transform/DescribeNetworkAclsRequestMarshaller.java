@@ -39,7 +39,7 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
 
         Request<DescribeNetworkAclsRequest> request = new DefaultRequest<DescribeNetworkAclsRequest>(describeNetworkAclsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeNetworkAcls");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> describeNetworkAclsRequestNetworkAclIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkAclsRequest

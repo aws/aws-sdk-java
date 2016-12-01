@@ -39,7 +39,7 @@ public class DescribeHostReservationsRequestMarshaller implements Marshaller<Req
 
         Request<DescribeHostReservationsRequest> request = new DefaultRequest<DescribeHostReservationsRequest>(describeHostReservationsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeHostReservations");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> describeHostReservationsRequestHostReservationIdSetList = (com.amazonaws.internal.SdkInternalList<String>) describeHostReservationsRequest

@@ -65,6 +65,9 @@ public class CreateDocumentRequestMarshaller implements Marshaller<Request<Creat
             if (createDocumentRequest.getName() != null) {
                 jsonGenerator.writeFieldName("Name").writeValue(createDocumentRequest.getName());
             }
+            if (createDocumentRequest.getDocumentType() != null) {
+                jsonGenerator.writeFieldName("DocumentType").writeValue(createDocumentRequest.getDocumentType());
+            }
 
             jsonGenerator.writeEndObject();
 

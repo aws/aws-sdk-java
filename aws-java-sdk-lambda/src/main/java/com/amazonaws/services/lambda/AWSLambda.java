@@ -333,6 +333,25 @@ public interface AWSLambda {
 
     /**
      * <p>
+     * Returns a customer's account settings.
+     * </p>
+     * <p>
+     * You can use this operation to retrieve Lambda limit information such as code size and concurrency limits. For
+     * more information on limits, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
+     * Limits</a>. You can also retrieve resource usage statistics such as code storage usage and function count.
+     * </p>
+     * 
+     * @param getAccountSettingsRequest
+     * @return Result of the GetAccountSettings operation returned by the service.
+     * @throws TooManyRequestsException
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @sample AWSLambda.GetAccountSettings
+     */
+    GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest getAccountSettingsRequest);
+
+    /**
+     * <p>
      * Returns the specified alias information such as the alias ARN, description, and function version it is pointing
      * to. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction to AWS Lambda Aliases</a>.
@@ -545,7 +564,7 @@ public interface AWSLambda {
      *         Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state
      *         for Decrypt. Please check the function's KMS key settings.
      * @throws KMSAccessDeniedException
-     *         Lambda was unable to decrypt the environment variables becauses KMS access was denied. Please check the
+     *         Lambda was unable to decrypt the environment variables because KMS access was denied. Please check the
      *         Lambda function's KMS permissions.
      * @throws KMSNotFoundException
      *         Lambda was unable to decrypt the environment variables because the KMS key was not found. Please check

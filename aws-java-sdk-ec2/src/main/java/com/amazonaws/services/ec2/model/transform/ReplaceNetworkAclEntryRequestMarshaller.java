@@ -39,7 +39,7 @@ public class ReplaceNetworkAclEntryRequestMarshaller implements Marshaller<Reque
 
         Request<ReplaceNetworkAclEntryRequest> request = new DefaultRequest<ReplaceNetworkAclEntryRequest>(replaceNetworkAclEntryRequest, "AmazonEC2");
         request.addParameter("Action", "ReplaceNetworkAclEntry");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (replaceNetworkAclEntryRequest.getNetworkAclId() != null) {
@@ -64,6 +64,10 @@ public class ReplaceNetworkAclEntryRequestMarshaller implements Marshaller<Reque
 
         if (replaceNetworkAclEntryRequest.getCidrBlock() != null) {
             request.addParameter("CidrBlock", StringUtils.fromString(replaceNetworkAclEntryRequest.getCidrBlock()));
+        }
+
+        if (replaceNetworkAclEntryRequest.getIpv6CidrBlock() != null) {
+            request.addParameter("Ipv6CidrBlock", StringUtils.fromString(replaceNetworkAclEntryRequest.getIpv6CidrBlock()));
         }
 
         IcmpTypeCode icmpTypeCode = replaceNetworkAclEntryRequest.getIcmpTypeCode();

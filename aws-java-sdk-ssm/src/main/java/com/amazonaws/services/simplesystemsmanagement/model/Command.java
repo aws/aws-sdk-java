@@ -60,6 +60,13 @@ public class Command implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
+     * An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination that
+     * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Target> targets;
+    /**
+     * <p>
      * The date and time the command was requested.
      * </p>
      */
@@ -70,6 +77,79 @@ public class Command implements Serializable, Cloneable {
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * A detailed status of the command execution. <code>StatusDetails</code> includes more information than
+     * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
+     * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
+     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
+     * Commands</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
+     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Pending – The command has not been sent to any instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     * instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Success – The command successfully executed on all invocations. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     * <code>Delivery Timed Out</code>. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     * <code>Execution Timed Out</code>. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of <code>Failed</code>.
+     * This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Incomplete – The command was attempted on all instances and one or more invocations does not have a value of
+     * <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This is a
+     * terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     * invocations. The system has canceled the command before executing it on any instance. This is a terminal state.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String statusDetails;
+    /**
+     * <p>
+     * The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default value is the
+     * region where Run Command is being called.
+     * </p>
+     */
+    private String outputS3Region;
     /**
      * <p>
      * The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the
@@ -86,7 +166,52 @@ public class Command implements Serializable, Cloneable {
     private String outputS3KeyPrefix;
     /**
      * <p>
-     * The IAM service role that SSM uses to act on your behalf when sending notifications about command status changes.
+     * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
+     * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
+     * information about how to use <code>MaxConcurrency</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     */
+    private String maxConcurrency;
+    /**
+     * <p>
+     * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
+     * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
+     * information about how to use <code>MaxErrors</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     */
+    private String maxErrors;
+    /**
+     * <p>
+     * The number of targets for the command.
+     * </p>
+     */
+    private Integer targetCount;
+    /**
+     * <p>
+     * The number of targets for which the command invocation reached a terminal state. Terminal states include the
+     * following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
+     * <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or <code>Undeliverable</code>.
+     * </p>
+     */
+    private Integer completedCount;
+    /**
+     * <p>
+     * The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     * </p>
+     */
+    private Integer errorCount;
+    /**
+     * <p>
+     * The IAM service role that Run Command uses to act on your behalf when sending notifications about command status
+     * changes.
      * </p>
      */
     private String serviceRole;
@@ -399,6 +524,91 @@ public class Command implements Serializable, Cloneable {
 
     /**
      * <p>
+     * An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination that
+     * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
+     * </p>
+     * 
+     * @return An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     *         combination that you specify. <code>Targets</code> is required if you don't provide one or more instance
+     *         IDs in the call.
+     */
+
+    public java.util.List<Target> getTargets() {
+        if (targets == null) {
+            targets = new com.amazonaws.internal.SdkInternalList<Target>();
+        }
+        return targets;
+    }
+
+    /**
+     * <p>
+     * An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination that
+     * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
+     * </p>
+     * 
+     * @param targets
+     *        An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination
+     *        that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the
+     *        call.
+     */
+
+    public void setTargets(java.util.Collection<Target> targets) {
+        if (targets == null) {
+            this.targets = null;
+            return;
+        }
+
+        this.targets = new com.amazonaws.internal.SdkInternalList<Target>(targets);
+    }
+
+    /**
+     * <p>
+     * An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination that
+     * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param targets
+     *        An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination
+     *        that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the
+     *        call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withTargets(Target... targets) {
+        if (this.targets == null) {
+            setTargets(new com.amazonaws.internal.SdkInternalList<Target>(targets.length));
+        }
+        for (Target ele : targets) {
+            this.targets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination that
+     * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
+     * </p>
+     * 
+     * @param targets
+     *        An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination
+     *        that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the
+     *        call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withTargets(java.util.Collection<Target> targets) {
+        setTargets(targets);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time the command was requested.
      * </p>
      * 
@@ -512,6 +722,452 @@ public class Command implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A detailed status of the command execution. <code>StatusDetails</code> includes more information than
+     * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
+     * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
+     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
+     * Commands</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
+     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Pending – The command has not been sent to any instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     * instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Success – The command successfully executed on all invocations. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     * <code>Delivery Timed Out</code>. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     * <code>Execution Timed Out</code>. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of <code>Failed</code>.
+     * This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Incomplete – The command was attempted on all instances and one or more invocations does not have a value of
+     * <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This is a
+     * terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     * invocations. The system has canceled the command before executing it on any instance. This is a terminal state.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statusDetails
+     *        A detailed status of the command execution. <code>StatusDetails</code> includes more information than
+     *        <code>Status</code> because it includes states resulting from error and concurrency control parameters.
+     *        <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about
+     *        these statuses, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
+     *        (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
+     *        Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Pending – The command has not been sent to any instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     *        instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Success – The command successfully executed on all invocations. This is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     *        <code>Delivery Timed Out</code>. This is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     *        <code>Execution Timed Out</code>. This is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     *        <code>Failed</code>. This is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Incomplete – The command was attempted on all instances and one or more invocations does not have a value
+     *        of <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This
+     *        is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Canceled – The command was terminated before it was completed. This is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     *        invocations. The system has canceled the command before executing it on any instance. This is a terminal
+     *        state.
+     *        </p>
+     *        </li>
+     */
+
+    public void setStatusDetails(String statusDetails) {
+        this.statusDetails = statusDetails;
+    }
+
+    /**
+     * <p>
+     * A detailed status of the command execution. <code>StatusDetails</code> includes more information than
+     * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
+     * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
+     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
+     * Commands</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
+     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Pending – The command has not been sent to any instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     * instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Success – The command successfully executed on all invocations. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     * <code>Delivery Timed Out</code>. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     * <code>Execution Timed Out</code>. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of <code>Failed</code>.
+     * This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Incomplete – The command was attempted on all instances and one or more invocations does not have a value of
+     * <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This is a
+     * terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     * invocations. The system has canceled the command before executing it on any instance. This is a terminal state.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A detailed status of the command execution. <code>StatusDetails</code> includes more information than
+     *         <code>Status</code> because it includes states resulting from error and concurrency control parameters.
+     *         <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
+     *         about these statuses, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
+     *         (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
+     *         Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Pending – The command has not been sent to any instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     *         instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Success – The command successfully executed on all invocations. This is a terminal state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     *         <code>Delivery Timed Out</code>. This is a terminal state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     *         <code>Execution Timed Out</code>. This is a terminal state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     *         <code>Failed</code>. This is a terminal state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Incomplete – The command was attempted on all instances and one or more invocations does not have a value
+     *         of <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This
+     *         is a terminal state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Canceled – The command was terminated before it was completed. This is a terminal state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     *         invocations. The system has canceled the command before executing it on any instance. This is a terminal
+     *         state.
+     *         </p>
+     *         </li>
+     */
+
+    public String getStatusDetails() {
+        return this.statusDetails;
+    }
+
+    /**
+     * <p>
+     * A detailed status of the command execution. <code>StatusDetails</code> includes more information than
+     * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
+     * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
+     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
+     * Commands</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
+     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Pending – The command has not been sent to any instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     * instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Success – The command successfully executed on all invocations. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     * <code>Delivery Timed Out</code>. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     * <code>Execution Timed Out</code>. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of <code>Failed</code>.
+     * This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Incomplete – The command was attempted on all instances and one or more invocations does not have a value of
+     * <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This is a
+     * terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     * invocations. The system has canceled the command before executing it on any instance. This is a terminal state.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statusDetails
+     *        A detailed status of the command execution. <code>StatusDetails</code> includes more information than
+     *        <code>Status</code> because it includes states resulting from error and concurrency control parameters.
+     *        <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about
+     *        these statuses, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
+     *        (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
+     *        Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Pending – The command has not been sent to any instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     *        instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Success – The command successfully executed on all invocations. This is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     *        <code>Delivery Timed Out</code>. This is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     *        <code>Execution Timed Out</code>. This is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of
+     *        <code>Failed</code>. This is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Incomplete – The command was attempted on all instances and one or more invocations does not have a value
+     *        of <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This
+     *        is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Canceled – The command was terminated before it was completed. This is a terminal state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     *        invocations. The system has canceled the command before executing it on any instance. This is a terminal
+     *        state.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withStatusDetails(String statusDetails) {
+        setStatusDetails(statusDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default value is the
+     * region where Run Command is being called.
+     * </p>
+     * 
+     * @param outputS3Region
+     *        The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default value
+     *        is the region where Run Command is being called.
+     */
+
+    public void setOutputS3Region(String outputS3Region) {
+        this.outputS3Region = outputS3Region;
+    }
+
+    /**
+     * <p>
+     * The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default value is the
+     * region where Run Command is being called.
+     * </p>
+     * 
+     * @return The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default
+     *         value is the region where Run Command is being called.
+     */
+
+    public String getOutputS3Region() {
+        return this.outputS3Region;
+    }
+
+    /**
+     * <p>
+     * The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default value is the
+     * region where Run Command is being called.
+     * </p>
+     * 
+     * @param outputS3Region
+     *        The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default value
+     *        is the region where Run Command is being called.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withOutputS3Region(String outputS3Region) {
+        setOutputS3Region(outputS3Region);
+        return this;
+    }
+
+    /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the
      * command.
      * </p>
@@ -604,12 +1260,300 @@ public class Command implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM service role that SSM uses to act on your behalf when sending notifications about command status changes.
+     * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
+     * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
+     * information about how to use <code>MaxConcurrency</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @param maxConcurrency
+     *        The maximum number of instances that are allowed to execute the command at the same time. You can specify
+     *        a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
+     *        more information about how to use <code>MaxConcurrency</code>, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Linux) or <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Windows).
+     */
+
+    public void setMaxConcurrency(String maxConcurrency) {
+        this.maxConcurrency = maxConcurrency;
+    }
+
+    /**
+     * <p>
+     * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
+     * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
+     * information about how to use <code>MaxConcurrency</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @return The maximum number of instances that are allowed to execute the command at the same time. You can specify
+     *         a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50.
+     *         For more information about how to use <code>MaxConcurrency</code>, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *         Amazon EC2 Run Command</a> (Linux) or <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *         Amazon EC2 Run Command</a> (Windows).
+     */
+
+    public String getMaxConcurrency() {
+        return this.maxConcurrency;
+    }
+
+    /**
+     * <p>
+     * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
+     * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
+     * information about how to use <code>MaxConcurrency</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @param maxConcurrency
+     *        The maximum number of instances that are allowed to execute the command at the same time. You can specify
+     *        a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
+     *        more information about how to use <code>MaxConcurrency</code>, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Linux) or <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Windows).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withMaxConcurrency(String maxConcurrency) {
+        setMaxConcurrency(maxConcurrency);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
+     * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
+     * information about how to use <code>MaxErrors</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @param maxErrors
+     *        The maximum number of errors allowed before the system stops sending the command to additional targets.
+     *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
+     *        is 50. For more information about how to use <code>MaxErrors</code>, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Linux) or <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Windows).
+     */
+
+    public void setMaxErrors(String maxErrors) {
+        this.maxErrors = maxErrors;
+    }
+
+    /**
+     * <p>
+     * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
+     * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
+     * information about how to use <code>MaxErrors</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @return The maximum number of errors allowed before the system stops sending the command to additional targets.
+     *         You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
+     *         is 50. For more information about how to use <code>MaxErrors</code>, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *         Amazon EC2 Run Command</a> (Linux) or <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *         Amazon EC2 Run Command</a> (Windows).
+     */
+
+    public String getMaxErrors() {
+        return this.maxErrors;
+    }
+
+    /**
+     * <p>
+     * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
+     * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
+     * information about how to use <code>MaxErrors</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @param maxErrors
+     *        The maximum number of errors allowed before the system stops sending the command to additional targets.
+     *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
+     *        is 50. For more information about how to use <code>MaxErrors</code>, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Linux) or <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Windows).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withMaxErrors(String maxErrors) {
+        setMaxErrors(maxErrors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of targets for the command.
+     * </p>
+     * 
+     * @param targetCount
+     *        The number of targets for the command.
+     */
+
+    public void setTargetCount(Integer targetCount) {
+        this.targetCount = targetCount;
+    }
+
+    /**
+     * <p>
+     * The number of targets for the command.
+     * </p>
+     * 
+     * @return The number of targets for the command.
+     */
+
+    public Integer getTargetCount() {
+        return this.targetCount;
+    }
+
+    /**
+     * <p>
+     * The number of targets for the command.
+     * </p>
+     * 
+     * @param targetCount
+     *        The number of targets for the command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withTargetCount(Integer targetCount) {
+        setTargetCount(targetCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of targets for which the command invocation reached a terminal state. Terminal states include the
+     * following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
+     * <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or <code>Undeliverable</code>.
+     * </p>
+     * 
+     * @param completedCount
+     *        The number of targets for which the command invocation reached a terminal state. Terminal states include
+     *        the following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
+     *        <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or
+     *        <code>Undeliverable</code>.
+     */
+
+    public void setCompletedCount(Integer completedCount) {
+        this.completedCount = completedCount;
+    }
+
+    /**
+     * <p>
+     * The number of targets for which the command invocation reached a terminal state. Terminal states include the
+     * following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
+     * <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or <code>Undeliverable</code>.
+     * </p>
+     * 
+     * @return The number of targets for which the command invocation reached a terminal state. Terminal states include
+     *         the following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
+     *         <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or
+     *         <code>Undeliverable</code>.
+     */
+
+    public Integer getCompletedCount() {
+        return this.completedCount;
+    }
+
+    /**
+     * <p>
+     * The number of targets for which the command invocation reached a terminal state. Terminal states include the
+     * following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
+     * <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or <code>Undeliverable</code>.
+     * </p>
+     * 
+     * @param completedCount
+     *        The number of targets for which the command invocation reached a terminal state. Terminal states include
+     *        the following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
+     *        <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or
+     *        <code>Undeliverable</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withCompletedCount(Integer completedCount) {
+        setCompletedCount(completedCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     * </p>
+     * 
+     * @param errorCount
+     *        The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     */
+
+    public void setErrorCount(Integer errorCount) {
+        this.errorCount = errorCount;
+    }
+
+    /**
+     * <p>
+     * The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     * </p>
+     * 
+     * @return The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     */
+
+    public Integer getErrorCount() {
+        return this.errorCount;
+    }
+
+    /**
+     * <p>
+     * The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     * </p>
+     * 
+     * @param errorCount
+     *        The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withErrorCount(Integer errorCount) {
+        setErrorCount(errorCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IAM service role that Run Command uses to act on your behalf when sending notifications about command status
+     * changes.
      * </p>
      * 
      * @param serviceRole
-     *        The IAM service role that SSM uses to act on your behalf when sending notifications about command status
-     *        changes.
+     *        The IAM service role that Run Command uses to act on your behalf when sending notifications about command
+     *        status changes.
      */
 
     public void setServiceRole(String serviceRole) {
@@ -618,11 +1562,12 @@ public class Command implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM service role that SSM uses to act on your behalf when sending notifications about command status changes.
+     * The IAM service role that Run Command uses to act on your behalf when sending notifications about command status
+     * changes.
      * </p>
      * 
-     * @return The IAM service role that SSM uses to act on your behalf when sending notifications about command status
-     *         changes.
+     * @return The IAM service role that Run Command uses to act on your behalf when sending notifications about command
+     *         status changes.
      */
 
     public String getServiceRole() {
@@ -631,12 +1576,13 @@ public class Command implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM service role that SSM uses to act on your behalf when sending notifications about command status changes.
+     * The IAM service role that Run Command uses to act on your behalf when sending notifications about command status
+     * changes.
      * </p>
      * 
      * @param serviceRole
-     *        The IAM service role that SSM uses to act on your behalf when sending notifications about command status
-     *        changes.
+     *        The IAM service role that Run Command uses to act on your behalf when sending notifications about command
+     *        status changes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -708,14 +1654,30 @@ public class Command implements Serializable, Cloneable {
             sb.append("Parameters: " + getParameters() + ",");
         if (getInstanceIds() != null)
             sb.append("InstanceIds: " + getInstanceIds() + ",");
+        if (getTargets() != null)
+            sb.append("Targets: " + getTargets() + ",");
         if (getRequestedDateTime() != null)
             sb.append("RequestedDateTime: " + getRequestedDateTime() + ",");
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
+        if (getStatusDetails() != null)
+            sb.append("StatusDetails: " + getStatusDetails() + ",");
+        if (getOutputS3Region() != null)
+            sb.append("OutputS3Region: " + getOutputS3Region() + ",");
         if (getOutputS3BucketName() != null)
             sb.append("OutputS3BucketName: " + getOutputS3BucketName() + ",");
         if (getOutputS3KeyPrefix() != null)
             sb.append("OutputS3KeyPrefix: " + getOutputS3KeyPrefix() + ",");
+        if (getMaxConcurrency() != null)
+            sb.append("MaxConcurrency: " + getMaxConcurrency() + ",");
+        if (getMaxErrors() != null)
+            sb.append("MaxErrors: " + getMaxErrors() + ",");
+        if (getTargetCount() != null)
+            sb.append("TargetCount: " + getTargetCount() + ",");
+        if (getCompletedCount() != null)
+            sb.append("CompletedCount: " + getCompletedCount() + ",");
+        if (getErrorCount() != null)
+            sb.append("ErrorCount: " + getErrorCount() + ",");
         if (getServiceRole() != null)
             sb.append("ServiceRole: " + getServiceRole() + ",");
         if (getNotificationConfig() != null)
@@ -758,6 +1720,10 @@ public class Command implements Serializable, Cloneable {
             return false;
         if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false)
             return false;
+        if (other.getTargets() == null ^ this.getTargets() == null)
+            return false;
+        if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
+            return false;
         if (other.getRequestedDateTime() == null ^ this.getRequestedDateTime() == null)
             return false;
         if (other.getRequestedDateTime() != null && other.getRequestedDateTime().equals(this.getRequestedDateTime()) == false)
@@ -766,6 +1732,14 @@ public class Command implements Serializable, Cloneable {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getStatusDetails() == null ^ this.getStatusDetails() == null)
+            return false;
+        if (other.getStatusDetails() != null && other.getStatusDetails().equals(this.getStatusDetails()) == false)
+            return false;
+        if (other.getOutputS3Region() == null ^ this.getOutputS3Region() == null)
+            return false;
+        if (other.getOutputS3Region() != null && other.getOutputS3Region().equals(this.getOutputS3Region()) == false)
+            return false;
         if (other.getOutputS3BucketName() == null ^ this.getOutputS3BucketName() == null)
             return false;
         if (other.getOutputS3BucketName() != null && other.getOutputS3BucketName().equals(this.getOutputS3BucketName()) == false)
@@ -773,6 +1747,26 @@ public class Command implements Serializable, Cloneable {
         if (other.getOutputS3KeyPrefix() == null ^ this.getOutputS3KeyPrefix() == null)
             return false;
         if (other.getOutputS3KeyPrefix() != null && other.getOutputS3KeyPrefix().equals(this.getOutputS3KeyPrefix()) == false)
+            return false;
+        if (other.getMaxConcurrency() == null ^ this.getMaxConcurrency() == null)
+            return false;
+        if (other.getMaxConcurrency() != null && other.getMaxConcurrency().equals(this.getMaxConcurrency()) == false)
+            return false;
+        if (other.getMaxErrors() == null ^ this.getMaxErrors() == null)
+            return false;
+        if (other.getMaxErrors() != null && other.getMaxErrors().equals(this.getMaxErrors()) == false)
+            return false;
+        if (other.getTargetCount() == null ^ this.getTargetCount() == null)
+            return false;
+        if (other.getTargetCount() != null && other.getTargetCount().equals(this.getTargetCount()) == false)
+            return false;
+        if (other.getCompletedCount() == null ^ this.getCompletedCount() == null)
+            return false;
+        if (other.getCompletedCount() != null && other.getCompletedCount().equals(this.getCompletedCount()) == false)
+            return false;
+        if (other.getErrorCount() == null ^ this.getErrorCount() == null)
+            return false;
+        if (other.getErrorCount() != null && other.getErrorCount().equals(this.getErrorCount()) == false)
             return false;
         if (other.getServiceRole() == null ^ this.getServiceRole() == null)
             return false;
@@ -796,10 +1790,18 @@ public class Command implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getExpiresAfter() == null) ? 0 : getExpiresAfter().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
+        hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getRequestedDateTime() == null) ? 0 : getRequestedDateTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusDetails() == null) ? 0 : getStatusDetails().hashCode());
+        hashCode = prime * hashCode + ((getOutputS3Region() == null) ? 0 : getOutputS3Region().hashCode());
         hashCode = prime * hashCode + ((getOutputS3BucketName() == null) ? 0 : getOutputS3BucketName().hashCode());
         hashCode = prime * hashCode + ((getOutputS3KeyPrefix() == null) ? 0 : getOutputS3KeyPrefix().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
+        hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
+        hashCode = prime * hashCode + ((getTargetCount() == null) ? 0 : getTargetCount().hashCode());
+        hashCode = prime * hashCode + ((getCompletedCount() == null) ? 0 : getCompletedCount().hashCode());
+        hashCode = prime * hashCode + ((getErrorCount() == null) ? 0 : getErrorCount().hashCode());
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getNotificationConfig() == null) ? 0 : getNotificationConfig().hashCode());
         return hashCode;

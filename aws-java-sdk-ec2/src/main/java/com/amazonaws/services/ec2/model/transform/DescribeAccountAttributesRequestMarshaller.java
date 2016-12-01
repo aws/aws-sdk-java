@@ -39,7 +39,7 @@ public class DescribeAccountAttributesRequestMarshaller implements Marshaller<Re
 
         Request<DescribeAccountAttributesRequest> request = new DefaultRequest<DescribeAccountAttributesRequest>(describeAccountAttributesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeAccountAttributes");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> describeAccountAttributesRequestAttributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAccountAttributesRequest

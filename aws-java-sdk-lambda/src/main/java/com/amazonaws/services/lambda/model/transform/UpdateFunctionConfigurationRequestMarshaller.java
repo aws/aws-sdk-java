@@ -96,11 +96,15 @@ public class UpdateFunctionConfigurationRequestMarshaller implements
                 jsonGenerator.writeFieldName("Environment");
                 EnvironmentJsonMarshaller.getInstance().marshall(updateFunctionConfigurationRequest.getEnvironment(), jsonGenerator);
             }
-            if (updateFunctionConfigurationRequest.getKMSKeyArn() != null) {
-                jsonGenerator.writeFieldName("KMSKeyArn").writeValue(updateFunctionConfigurationRequest.getKMSKeyArn());
-            }
             if (updateFunctionConfigurationRequest.getRuntime() != null) {
                 jsonGenerator.writeFieldName("Runtime").writeValue(updateFunctionConfigurationRequest.getRuntime());
+            }
+            if (updateFunctionConfigurationRequest.getDeadLetterConfig() != null) {
+                jsonGenerator.writeFieldName("DeadLetterConfig");
+                DeadLetterConfigJsonMarshaller.getInstance().marshall(updateFunctionConfigurationRequest.getDeadLetterConfig(), jsonGenerator);
+            }
+            if (updateFunctionConfigurationRequest.getKMSKeyArn() != null) {
+                jsonGenerator.writeFieldName("KMSKeyArn").writeValue(updateFunctionConfigurationRequest.getKMSKeyArn());
             }
 
             jsonGenerator.writeEndObject();

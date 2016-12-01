@@ -68,6 +68,30 @@ public class CreateAssociationBatchRequestEntryJsonMarshaller {
                 }
                 jsonGenerator.writeEndObject();
             }
+            if (createAssociationBatchRequestEntry.getDocumentVersion() != null) {
+                jsonGenerator.writeFieldName("DocumentVersion").writeValue(createAssociationBatchRequestEntry.getDocumentVersion());
+            }
+
+            com.amazonaws.internal.SdkInternalList<Target> targetsList = (com.amazonaws.internal.SdkInternalList<Target>) createAssociationBatchRequestEntry
+                    .getTargets();
+            if (!targetsList.isEmpty() || !targetsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("Targets");
+                jsonGenerator.writeStartArray();
+                for (Target targetsListValue : targetsList) {
+                    if (targetsListValue != null) {
+
+                        TargetJsonMarshaller.getInstance().marshall(targetsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+            if (createAssociationBatchRequestEntry.getScheduleExpression() != null) {
+                jsonGenerator.writeFieldName("ScheduleExpression").writeValue(createAssociationBatchRequestEntry.getScheduleExpression());
+            }
+            if (createAssociationBatchRequestEntry.getOutputLocation() != null) {
+                jsonGenerator.writeFieldName("OutputLocation");
+                InstanceAssociationOutputLocationJsonMarshaller.getInstance().marshall(createAssociationBatchRequestEntry.getOutputLocation(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

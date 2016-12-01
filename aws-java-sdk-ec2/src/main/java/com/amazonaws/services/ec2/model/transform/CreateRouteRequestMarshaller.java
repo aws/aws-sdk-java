@@ -39,7 +39,7 @@ public class CreateRouteRequestMarshaller implements Marshaller<Request<CreateRo
 
         Request<CreateRouteRequest> request = new DefaultRequest<CreateRouteRequest>(createRouteRequest, "AmazonEC2");
         request.addParameter("Action", "CreateRoute");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createRouteRequest.getRouteTableId() != null) {
@@ -52,6 +52,14 @@ public class CreateRouteRequestMarshaller implements Marshaller<Request<CreateRo
 
         if (createRouteRequest.getGatewayId() != null) {
             request.addParameter("GatewayId", StringUtils.fromString(createRouteRequest.getGatewayId()));
+        }
+
+        if (createRouteRequest.getDestinationIpv6CidrBlock() != null) {
+            request.addParameter("DestinationIpv6CidrBlock", StringUtils.fromString(createRouteRequest.getDestinationIpv6CidrBlock()));
+        }
+
+        if (createRouteRequest.getEgressOnlyInternetGatewayId() != null) {
+            request.addParameter("EgressOnlyInternetGatewayId", StringUtils.fromString(createRouteRequest.getEgressOnlyInternetGatewayId()));
         }
 
         if (createRouteRequest.getInstanceId() != null) {

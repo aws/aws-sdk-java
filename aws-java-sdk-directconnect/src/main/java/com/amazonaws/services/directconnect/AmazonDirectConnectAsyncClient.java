@@ -420,6 +420,38 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBGPPeerResult> createBGPPeerAsync(CreateBGPPeerRequest request) {
+
+        return createBGPPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBGPPeerResult> createBGPPeerAsync(final CreateBGPPeerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateBGPPeerRequest, CreateBGPPeerResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateBGPPeerResult>() {
+            @Override
+            public CreateBGPPeerResult call() throws Exception {
+                CreateBGPPeerResult result;
+
+                try {
+                    result = createBGPPeer(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest request) {
 
         return createConnectionAsync(request, null);
@@ -533,6 +565,38 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
 
                 try {
                     result = createPublicVirtualInterface(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBGPPeerResult> deleteBGPPeerAsync(DeleteBGPPeerRequest request) {
+
+        return deleteBGPPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBGPPeerResult> deleteBGPPeerAsync(final DeleteBGPPeerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBGPPeerRequest, DeleteBGPPeerResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBGPPeerResult>() {
+            @Override
+            public DeleteBGPPeerResult call() throws Exception {
+                DeleteBGPPeerResult result;
+
+                try {
+                    result = deleteBGPPeer(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

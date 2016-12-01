@@ -13,7 +13,7 @@
 package com.amazonaws.services.simplesystemsmanagement.model;
 
 /**
- * Base exception for all service exceptions thrown by Amazon Simple Systems Management Service
+ * Base exception for all service exceptions thrown by Amazon Simple Systems Manager (SSM)
  */
 public class AWSSimpleSystemsManagementException extends com.amazonaws.AmazonServiceException {
 

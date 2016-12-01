@@ -65,6 +65,16 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("ipv6CidrBlockAssociationSet/item", targetDepth)) {
+                    subnet.withIpv6CidrBlockAssociationSet(SubnetIpv6CidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("assignIpv6AddressOnCreation", targetDepth)) {
+                    subnet.setAssignIpv6AddressOnCreation(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("availableIpAddressCount", targetDepth)) {
                     subnet.setAvailableIpAddressCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

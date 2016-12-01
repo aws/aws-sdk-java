@@ -21,21 +21,21 @@ public class SendCommandResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The request as it was received by SSM. Also provides the command ID which can be used future references to this
-     * request.
+     * The request as it was received by Systems Manager. Also provides the command ID which can be used future
+     * references to this request.
      * </p>
      */
     private Command command;
 
     /**
      * <p>
-     * The request as it was received by SSM. Also provides the command ID which can be used future references to this
-     * request.
+     * The request as it was received by Systems Manager. Also provides the command ID which can be used future
+     * references to this request.
      * </p>
      * 
      * @param command
-     *        The request as it was received by SSM. Also provides the command ID which can be used future references to
-     *        this request.
+     *        The request as it was received by Systems Manager. Also provides the command ID which can be used future
+     *        references to this request.
      */
 
     public void setCommand(Command command) {
@@ -44,12 +44,12 @@ public class SendCommandResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The request as it was received by SSM. Also provides the command ID which can be used future references to this
-     * request.
+     * The request as it was received by Systems Manager. Also provides the command ID which can be used future
+     * references to this request.
      * </p>
      * 
-     * @return The request as it was received by SSM. Also provides the command ID which can be used future references
-     *         to this request.
+     * @return The request as it was received by Systems Manager. Also provides the command ID which can be used future
+     *         references to this request.
      */
 
     public Command getCommand() {
@@ -58,13 +58,13 @@ public class SendCommandResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The request as it was received by SSM. Also provides the command ID which can be used future references to this
-     * request.
+     * The request as it was received by Systems Manager. Also provides the command ID which can be used future
+     * references to this request.
      * </p>
      * 
      * @param command
-     *        The request as it was received by SSM. Also provides the command ID which can be used future references to
-     *        this request.
+     *        The request as it was received by Systems Manager. Also provides the command ID which can be used future
+     *        references to this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

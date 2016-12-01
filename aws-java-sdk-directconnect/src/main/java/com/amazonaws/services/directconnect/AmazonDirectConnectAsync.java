@@ -151,6 +151,10 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * ConfirmPublicVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming'
      * state, and will not be available for handling traffic.
      * </p>
+     * <p>
+     * When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer and amazon address fields
+     * should be left blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not supported.
+     * </p>
      * 
      * @param allocatePublicVirtualInterfaceRequest
      *        Container for the parameters to the AllocatePublicVirtualInterface operation.
@@ -173,6 +177,10 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * Virtual interfaces created using this function must be confirmed by the virtual interface owner by calling
      * ConfirmPublicVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming'
      * state, and will not be available for handling traffic.
+     * </p>
+     * <p>
+     * When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer and amazon address fields
+     * should be left blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not supported.
      * </p>
      * 
      * @param allocatePublicVirtualInterfaceRequest
@@ -307,6 +315,61 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
     java.util.concurrent.Future<ConfirmPublicVirtualInterfaceResult> confirmPublicVirtualInterfaceAsync(
             ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest,
             com.amazonaws.handlers.AsyncHandler<ConfirmPublicVirtualInterfaceRequest, ConfirmPublicVirtualInterfaceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new BGP peer on a specified virtual interface. The BGP peer cannot be in the same address family
+     * (IPv4/IPv6) of an existing BGP peer on the virtual interface.
+     * </p>
+     * <p>
+     * You must create a BGP peer for the corresponding address family in order to access AWS resources that also use
+     * that address family.
+     * </p>
+     * <p>
+     * When creating a IPv6 BGP peer, the Amazon address and customer address fields must be left blank. IPv6 addresses
+     * are automatically assigned from Amazon's pool of IPv6 addresses; you cannot specify custom IPv6 addresses.
+     * </p>
+     * <p>
+     * For a public virtual interface, the Autonomous System Number (ASN) must be private or already whitelisted for the
+     * virtual interface.
+     * </p>
+     * 
+     * @param createBGPPeerRequest
+     *        Container for the parameters to the CreateBGPPeer operation.
+     * @return A Java Future containing the result of the CreateBGPPeer operation returned by the service.
+     * @sample AmazonDirectConnectAsync.CreateBGPPeer
+     */
+    java.util.concurrent.Future<CreateBGPPeerResult> createBGPPeerAsync(CreateBGPPeerRequest createBGPPeerRequest);
+
+    /**
+     * <p>
+     * Creates a new BGP peer on a specified virtual interface. The BGP peer cannot be in the same address family
+     * (IPv4/IPv6) of an existing BGP peer on the virtual interface.
+     * </p>
+     * <p>
+     * You must create a BGP peer for the corresponding address family in order to access AWS resources that also use
+     * that address family.
+     * </p>
+     * <p>
+     * When creating a IPv6 BGP peer, the Amazon address and customer address fields must be left blank. IPv6 addresses
+     * are automatically assigned from Amazon's pool of IPv6 addresses; you cannot specify custom IPv6 addresses.
+     * </p>
+     * <p>
+     * For a public virtual interface, the Autonomous System Number (ASN) must be private or already whitelisted for the
+     * virtual interface.
+     * </p>
+     * 
+     * @param createBGPPeerRequest
+     *        Container for the parameters to the CreateBGPPeer operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBGPPeer operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.CreateBGPPeer
+     */
+    java.util.concurrent.Future<CreateBGPPeerResult> createBGPPeerAsync(CreateBGPPeerRequest createBGPPeerRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBGPPeerRequest, CreateBGPPeerResult> asyncHandler);
 
     /**
      * <p>
@@ -457,6 +520,10 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * traffic. A public virtual interface supports sending traffic to public services of AWS such as Amazon Simple
      * Storage Service (Amazon S3).
      * </p>
+     * <p>
+     * When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer and amazon address fields
+     * should be left blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not supported.
+     * </p>
      * 
      * @param createPublicVirtualInterfaceRequest
      *        Container for the parameters to the CreatePublicVirtualInterface operation.
@@ -473,6 +540,10 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * traffic. A public virtual interface supports sending traffic to public services of AWS such as Amazon Simple
      * Storage Service (Amazon S3).
      * </p>
+     * <p>
+     * When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer and amazon address fields
+     * should be left blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not supported.
+     * </p>
      * 
      * @param createPublicVirtualInterfaceRequest
      *        Container for the parameters to the CreatePublicVirtualInterface operation.
@@ -487,6 +558,37 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
     java.util.concurrent.Future<CreatePublicVirtualInterfaceResult> createPublicVirtualInterfaceAsync(
             CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest,
             com.amazonaws.handlers.AsyncHandler<CreatePublicVirtualInterfaceRequest, CreatePublicVirtualInterfaceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a BGP peer on the specified virtual interface that matches the specified customer address and ASN. You
+     * cannot delete the last BGP peer from a virtual interface.
+     * </p>
+     * 
+     * @param deleteBGPPeerRequest
+     *        Container for the parameters to the DeleteBGPPeer operation.
+     * @return A Java Future containing the result of the DeleteBGPPeer operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DeleteBGPPeer
+     */
+    java.util.concurrent.Future<DeleteBGPPeerResult> deleteBGPPeerAsync(DeleteBGPPeerRequest deleteBGPPeerRequest);
+
+    /**
+     * <p>
+     * Deletes a BGP peer on the specified virtual interface that matches the specified customer address and ASN. You
+     * cannot delete the last BGP peer from a virtual interface.
+     * </p>
+     * 
+     * @param deleteBGPPeerRequest
+     *        Container for the parameters to the DeleteBGPPeer operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBGPPeer operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DeleteBGPPeer
+     */
+    java.util.concurrent.Future<DeleteBGPPeerResult> deleteBGPPeerAsync(DeleteBGPPeerRequest deleteBGPPeerRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBGPPeerRequest, DeleteBGPPeerResult> asyncHandler);
 
     /**
      * <p>

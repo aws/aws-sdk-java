@@ -25,7 +25,7 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID created by SSM when you submitted the activation.
+     * The ID created by Systems Manager when you submitted the activation.
      * </p>
      */
     private String activationId;
@@ -80,11 +80,11 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID created by SSM when you submitted the activation.
+     * The ID created by Systems Manager when you submitted the activation.
      * </p>
      * 
      * @param activationId
-     *        The ID created by SSM when you submitted the activation.
+     *        The ID created by Systems Manager when you submitted the activation.
      */
 
     public void setActivationId(String activationId) {
@@ -93,10 +93,10 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID created by SSM when you submitted the activation.
+     * The ID created by Systems Manager when you submitted the activation.
      * </p>
      * 
-     * @return The ID created by SSM when you submitted the activation.
+     * @return The ID created by Systems Manager when you submitted the activation.
      */
 
     public String getActivationId() {
@@ -105,11 +105,11 @@ public class Activation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID created by SSM when you submitted the activation.
+     * The ID created by Systems Manager when you submitted the activation.
      * </p>
      * 
      * @param activationId
-     *        The ID created by SSM when you submitted the activation.
+     *        The ID created by Systems Manager when you submitted the activation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

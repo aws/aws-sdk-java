@@ -389,6 +389,38 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<AssignIpv6AddressesResult> assignIpv6AddressesAsync(AssignIpv6AddressesRequest request) {
+
+        return assignIpv6AddressesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssignIpv6AddressesResult> assignIpv6AddressesAsync(final AssignIpv6AddressesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssignIpv6AddressesRequest, AssignIpv6AddressesResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AssignIpv6AddressesResult>() {
+            @Override
+            public AssignIpv6AddressesResult call() throws Exception {
+                AssignIpv6AddressesResult result;
+
+                try {
+                    result = assignIpv6Addresses(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssignPrivateIpAddressesResult> assignPrivateIpAddressesAsync(AssignPrivateIpAddressesRequest request) {
 
         return assignPrivateIpAddressesAsync(request, null);
@@ -501,6 +533,70 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = associateRouteTable(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSubnetCidrBlockResult> associateSubnetCidrBlockAsync(AssociateSubnetCidrBlockRequest request) {
+
+        return associateSubnetCidrBlockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSubnetCidrBlockResult> associateSubnetCidrBlockAsync(final AssociateSubnetCidrBlockRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateSubnetCidrBlockRequest, AssociateSubnetCidrBlockResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateSubnetCidrBlockResult>() {
+            @Override
+            public AssociateSubnetCidrBlockResult call() throws Exception {
+                AssociateSubnetCidrBlockResult result;
+
+                try {
+                    result = associateSubnetCidrBlock(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateVpcCidrBlockResult> associateVpcCidrBlockAsync(AssociateVpcCidrBlockRequest request) {
+
+        return associateVpcCidrBlockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateVpcCidrBlockResult> associateVpcCidrBlockAsync(final AssociateVpcCidrBlockRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateVpcCidrBlockRequest, AssociateVpcCidrBlockResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateVpcCidrBlockResult>() {
+            @Override
+            public AssociateVpcCidrBlockResult call() throws Exception {
+                AssociateVpcCidrBlockResult result;
+
+                try {
+                    result = associateVpcCidrBlock(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1165,6 +1261,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = createDhcpOptions(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEgressOnlyInternetGatewayResult> createEgressOnlyInternetGatewayAsync(
+            CreateEgressOnlyInternetGatewayRequest request) {
+
+        return createEgressOnlyInternetGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEgressOnlyInternetGatewayResult> createEgressOnlyInternetGatewayAsync(
+            final CreateEgressOnlyInternetGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEgressOnlyInternetGatewayRequest, CreateEgressOnlyInternetGatewayResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEgressOnlyInternetGatewayResult>() {
+            @Override
+            public CreateEgressOnlyInternetGatewayResult call() throws Exception {
+                CreateEgressOnlyInternetGatewayResult result;
+
+                try {
+                    result = createEgressOnlyInternetGateway(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2075,6 +2205,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = deleteDhcpOptions(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEgressOnlyInternetGatewayResult> deleteEgressOnlyInternetGatewayAsync(
+            DeleteEgressOnlyInternetGatewayRequest request) {
+
+        return deleteEgressOnlyInternetGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEgressOnlyInternetGatewayResult> deleteEgressOnlyInternetGatewayAsync(
+            final DeleteEgressOnlyInternetGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEgressOnlyInternetGatewayRequest, DeleteEgressOnlyInternetGatewayResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEgressOnlyInternetGatewayResult>() {
+            @Override
+            public DeleteEgressOnlyInternetGatewayResult call() throws Exception {
+                DeleteEgressOnlyInternetGatewayResult result;
+
+                try {
+                    result = deleteEgressOnlyInternetGateway(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3280,6 +3444,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
             com.amazonaws.handlers.AsyncHandler<DescribeDhcpOptionsRequest, DescribeDhcpOptionsResult> asyncHandler) {
 
         return describeDhcpOptionsAsync(new DescribeDhcpOptionsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEgressOnlyInternetGatewaysResult> describeEgressOnlyInternetGatewaysAsync(
+            DescribeEgressOnlyInternetGatewaysRequest request) {
+
+        return describeEgressOnlyInternetGatewaysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEgressOnlyInternetGatewaysResult> describeEgressOnlyInternetGatewaysAsync(
+            final DescribeEgressOnlyInternetGatewaysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEgressOnlyInternetGatewaysRequest, DescribeEgressOnlyInternetGatewaysResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEgressOnlyInternetGatewaysResult>() {
+            @Override
+            public DescribeEgressOnlyInternetGatewaysResult call() throws Exception {
+                DescribeEgressOnlyInternetGatewaysResult result;
+
+                try {
+                    result = describeEgressOnlyInternetGateways(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -6281,6 +6479,70 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateSubnetCidrBlockResult> disassociateSubnetCidrBlockAsync(DisassociateSubnetCidrBlockRequest request) {
+
+        return disassociateSubnetCidrBlockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSubnetCidrBlockResult> disassociateSubnetCidrBlockAsync(final DisassociateSubnetCidrBlockRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateSubnetCidrBlockRequest, DisassociateSubnetCidrBlockResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateSubnetCidrBlockResult>() {
+            @Override
+            public DisassociateSubnetCidrBlockResult call() throws Exception {
+                DisassociateSubnetCidrBlockResult result;
+
+                try {
+                    result = disassociateSubnetCidrBlock(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateVpcCidrBlockResult> disassociateVpcCidrBlockAsync(DisassociateVpcCidrBlockRequest request) {
+
+        return disassociateVpcCidrBlockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateVpcCidrBlockResult> disassociateVpcCidrBlockAsync(final DisassociateVpcCidrBlockRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateVpcCidrBlockRequest, DisassociateVpcCidrBlockResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateVpcCidrBlockResult>() {
+            @Override
+            public DisassociateVpcCidrBlockResult call() throws Exception {
+                DisassociateVpcCidrBlockResult result;
+
+                try {
+                    result = disassociateVpcCidrBlock(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableVgwRoutePropagationResult> enableVgwRoutePropagationAsync(EnableVgwRoutePropagationRequest request) {
 
         return enableVgwRoutePropagationAsync(request, null);
@@ -8199,6 +8461,38 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = terminateInstances(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnassignIpv6AddressesResult> unassignIpv6AddressesAsync(UnassignIpv6AddressesRequest request) {
+
+        return unassignIpv6AddressesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnassignIpv6AddressesResult> unassignIpv6AddressesAsync(final UnassignIpv6AddressesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UnassignIpv6AddressesRequest, UnassignIpv6AddressesResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UnassignIpv6AddressesResult>() {
+            @Override
+            public UnassignIpv6AddressesResult call() throws Exception {
+                UnassignIpv6AddressesResult result;
+
+                try {
+                    result = unassignIpv6Addresses(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -39,7 +39,7 @@ public class CreateTagsRequestMarshaller implements Marshaller<Request<CreateTag
 
         Request<CreateTagsRequest> request = new DefaultRequest<CreateTagsRequest>(createTagsRequest, "AmazonEC2");
         request.addParameter("Action", "CreateTags");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> createTagsRequestResourcesList = (com.amazonaws.internal.SdkInternalList<String>) createTagsRequest

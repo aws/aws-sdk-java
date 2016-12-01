@@ -39,7 +39,7 @@ public class DeleteRouteRequestMarshaller implements Marshaller<Request<DeleteRo
 
         Request<DeleteRouteRequest> request = new DefaultRequest<DeleteRouteRequest>(deleteRouteRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteRoute");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (deleteRouteRequest.getRouteTableId() != null) {
@@ -48,6 +48,10 @@ public class DeleteRouteRequestMarshaller implements Marshaller<Request<DeleteRo
 
         if (deleteRouteRequest.getDestinationCidrBlock() != null) {
             request.addParameter("DestinationCidrBlock", StringUtils.fromString(deleteRouteRequest.getDestinationCidrBlock()));
+        }
+
+        if (deleteRouteRequest.getDestinationIpv6CidrBlock() != null) {
+            request.addParameter("DestinationIpv6CidrBlock", StringUtils.fromString(deleteRouteRequest.getDestinationIpv6CidrBlock()));
         }
 
         return request;

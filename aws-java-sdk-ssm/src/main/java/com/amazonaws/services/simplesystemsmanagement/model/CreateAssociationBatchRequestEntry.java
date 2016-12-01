@@ -39,6 +39,30 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> parameters;
+    /**
+     * <p>
+     * The document version.
+     * </p>
+     */
+    private String documentVersion;
+    /**
+     * <p>
+     * The instances targeted by the request.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Target> targets;
+    /**
+     * <p>
+     * A cron expression that specifies a schedule when the association runs.
+     * </p>
+     */
+    private String scheduleExpression;
+    /**
+     * <p>
+     * An Amazon S3 bucket where you want to store the results of this request.
+     * </p>
+     */
+    private InstanceAssociationOutputLocation outputLocation;
 
     /**
      * <p>
@@ -182,6 +206,199 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The document version.
+     * </p>
+     * 
+     * @param documentVersion
+     *        The document version.
+     */
+
+    public void setDocumentVersion(String documentVersion) {
+        this.documentVersion = documentVersion;
+    }
+
+    /**
+     * <p>
+     * The document version.
+     * </p>
+     * 
+     * @return The document version.
+     */
+
+    public String getDocumentVersion() {
+        return this.documentVersion;
+    }
+
+    /**
+     * <p>
+     * The document version.
+     * </p>
+     * 
+     * @param documentVersion
+     *        The document version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationBatchRequestEntry withDocumentVersion(String documentVersion) {
+        setDocumentVersion(documentVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instances targeted by the request.
+     * </p>
+     * 
+     * @return The instances targeted by the request.
+     */
+
+    public java.util.List<Target> getTargets() {
+        if (targets == null) {
+            targets = new com.amazonaws.internal.SdkInternalList<Target>();
+        }
+        return targets;
+    }
+
+    /**
+     * <p>
+     * The instances targeted by the request.
+     * </p>
+     * 
+     * @param targets
+     *        The instances targeted by the request.
+     */
+
+    public void setTargets(java.util.Collection<Target> targets) {
+        if (targets == null) {
+            this.targets = null;
+            return;
+        }
+
+        this.targets = new com.amazonaws.internal.SdkInternalList<Target>(targets);
+    }
+
+    /**
+     * <p>
+     * The instances targeted by the request.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param targets
+     *        The instances targeted by the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationBatchRequestEntry withTargets(Target... targets) {
+        if (this.targets == null) {
+            setTargets(new com.amazonaws.internal.SdkInternalList<Target>(targets.length));
+        }
+        for (Target ele : targets) {
+            this.targets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instances targeted by the request.
+     * </p>
+     * 
+     * @param targets
+     *        The instances targeted by the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationBatchRequestEntry withTargets(java.util.Collection<Target> targets) {
+        setTargets(targets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A cron expression that specifies a schedule when the association runs.
+     * </p>
+     * 
+     * @param scheduleExpression
+     *        A cron expression that specifies a schedule when the association runs.
+     */
+
+    public void setScheduleExpression(String scheduleExpression) {
+        this.scheduleExpression = scheduleExpression;
+    }
+
+    /**
+     * <p>
+     * A cron expression that specifies a schedule when the association runs.
+     * </p>
+     * 
+     * @return A cron expression that specifies a schedule when the association runs.
+     */
+
+    public String getScheduleExpression() {
+        return this.scheduleExpression;
+    }
+
+    /**
+     * <p>
+     * A cron expression that specifies a schedule when the association runs.
+     * </p>
+     * 
+     * @param scheduleExpression
+     *        A cron expression that specifies a schedule when the association runs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationBatchRequestEntry withScheduleExpression(String scheduleExpression) {
+        setScheduleExpression(scheduleExpression);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An Amazon S3 bucket where you want to store the results of this request.
+     * </p>
+     * 
+     * @param outputLocation
+     *        An Amazon S3 bucket where you want to store the results of this request.
+     */
+
+    public void setOutputLocation(InstanceAssociationOutputLocation outputLocation) {
+        this.outputLocation = outputLocation;
+    }
+
+    /**
+     * <p>
+     * An Amazon S3 bucket where you want to store the results of this request.
+     * </p>
+     * 
+     * @return An Amazon S3 bucket where you want to store the results of this request.
+     */
+
+    public InstanceAssociationOutputLocation getOutputLocation() {
+        return this.outputLocation;
+    }
+
+    /**
+     * <p>
+     * An Amazon S3 bucket where you want to store the results of this request.
+     * </p>
+     * 
+     * @param outputLocation
+     *        An Amazon S3 bucket where you want to store the results of this request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationBatchRequestEntry withOutputLocation(InstanceAssociationOutputLocation outputLocation) {
+        setOutputLocation(outputLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -197,7 +414,15 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
         if (getInstanceId() != null)
             sb.append("InstanceId: " + getInstanceId() + ",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters());
+            sb.append("Parameters: " + getParameters() + ",");
+        if (getDocumentVersion() != null)
+            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
+        if (getTargets() != null)
+            sb.append("Targets: " + getTargets() + ",");
+        if (getScheduleExpression() != null)
+            sb.append("ScheduleExpression: " + getScheduleExpression() + ",");
+        if (getOutputLocation() != null)
+            sb.append("OutputLocation: " + getOutputLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -224,6 +449,22 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
             return false;
+        if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
+            return false;
+        if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
+            return false;
+        if (other.getTargets() == null ^ this.getTargets() == null)
+            return false;
+        if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
+            return false;
+        if (other.getScheduleExpression() == null ^ this.getScheduleExpression() == null)
+            return false;
+        if (other.getScheduleExpression() != null && other.getScheduleExpression().equals(this.getScheduleExpression()) == false)
+            return false;
+        if (other.getOutputLocation() == null ^ this.getOutputLocation() == null)
+            return false;
+        if (other.getOutputLocation() != null && other.getOutputLocation().equals(this.getOutputLocation()) == false)
+            return false;
         return true;
     }
 
@@ -235,6 +476,10 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
+        hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
+        hashCode = prime * hashCode + ((getScheduleExpression() == null) ? 0 : getScheduleExpression().hashCode());
+        hashCode = prime * hashCode + ((getOutputLocation() == null) ? 0 : getOutputLocation().hashCode());
         return hashCode;
     }
 

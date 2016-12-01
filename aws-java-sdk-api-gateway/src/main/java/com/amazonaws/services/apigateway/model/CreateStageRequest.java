@@ -65,6 +65,12 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.Map<String, String> variables;
+    /**
+     * <p>
+     * The version of the associated API documentation.
+     * </p>
+     */
+    private String documentationVersion;
 
     /**
      * <p>
@@ -389,6 +395,46 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The version of the associated API documentation.
+     * </p>
+     * 
+     * @param documentationVersion
+     *        The version of the associated API documentation.
+     */
+
+    public void setDocumentationVersion(String documentationVersion) {
+        this.documentationVersion = documentationVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the associated API documentation.
+     * </p>
+     * 
+     * @return The version of the associated API documentation.
+     */
+
+    public String getDocumentationVersion() {
+        return this.documentationVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the associated API documentation.
+     * </p>
+     * 
+     * @param documentationVersion
+     *        The version of the associated API documentation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStageRequest withDocumentationVersion(String documentationVersion) {
+        setDocumentationVersion(documentationVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -412,7 +458,9 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getCacheClusterSize() != null)
             sb.append("CacheClusterSize: " + getCacheClusterSize() + ",");
         if (getVariables() != null)
-            sb.append("Variables: " + getVariables());
+            sb.append("Variables: " + getVariables() + ",");
+        if (getDocumentationVersion() != null)
+            sb.append("DocumentationVersion: " + getDocumentationVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -455,6 +503,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getVariables() != null && other.getVariables().equals(this.getVariables()) == false)
             return false;
+        if (other.getDocumentationVersion() == null ^ this.getDocumentationVersion() == null)
+            return false;
+        if (other.getDocumentationVersion() != null && other.getDocumentationVersion().equals(this.getDocumentationVersion()) == false)
+            return false;
         return true;
     }
 
@@ -470,6 +522,7 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getCacheClusterEnabled() == null) ? 0 : getCacheClusterEnabled().hashCode());
         hashCode = prime * hashCode + ((getCacheClusterSize() == null) ? 0 : getCacheClusterSize().hashCode());
         hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
+        hashCode = prime * hashCode + ((getDocumentationVersion() == null) ? 0 : getDocumentationVersion().hashCode());
         return hashCode;
     }
 

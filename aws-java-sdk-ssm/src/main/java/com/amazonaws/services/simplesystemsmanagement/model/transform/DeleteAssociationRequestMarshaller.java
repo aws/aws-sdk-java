@@ -65,6 +65,9 @@ public class DeleteAssociationRequestMarshaller implements Marshaller<Request<De
             if (deleteAssociationRequest.getInstanceId() != null) {
                 jsonGenerator.writeFieldName("InstanceId").writeValue(deleteAssociationRequest.getInstanceId());
             }
+            if (deleteAssociationRequest.getAssociationId() != null) {
+                jsonGenerator.writeFieldName("AssociationId").writeValue(deleteAssociationRequest.getAssociationId());
+            }
 
             jsonGenerator.writeEndObject();
 

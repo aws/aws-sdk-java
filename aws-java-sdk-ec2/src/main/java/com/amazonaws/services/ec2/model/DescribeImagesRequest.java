@@ -94,6 +94,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
@@ -531,6 +536,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
@@ -688,6 +698,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         <li>
      *         <p>
      *         <code>description</code> - The description of the image (provided during image creation).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.
      *         </p>
      *         </li>
      *         <li>
@@ -865,6 +880,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
@@ -1023,6 +1043,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>description</code> - The description of the image (provided during image creation).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.
      *        </p>
      *        </li>
      *        <li>
@@ -1202,6 +1227,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
@@ -1365,6 +1395,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>description</code> - The description of the image (provided during image creation).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.
      *        </p>
      *        </li>
      *        <li>
@@ -1546,6 +1581,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
@@ -1704,6 +1744,11 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>description</code> - The description of the image (provided during image creation).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ena-support</code> - A Boolean that indicates whether enhanced networking with ENA is enabled.
      *        </p>
      *        </li>
      *        <li>

@@ -55,6 +55,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public CreateDocumentationPartResult createDocumentationPart(CreateDocumentationPartRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDocumentationVersionResult createDocumentationVersion(CreateDocumentationVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDomainNameResult createDomainName(CreateDomainNameRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -111,6 +121,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public DeleteDeploymentResult deleteDeployment(DeleteDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDocumentationPartResult deleteDocumentationPart(DeleteDocumentationPartRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDocumentationVersionResult deleteDocumentationVersion(DeleteDocumentationVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -240,6 +260,26 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public GetDocumentationPartResult getDocumentationPart(GetDocumentationPartRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDocumentationPartsResult getDocumentationParts(GetDocumentationPartsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDocumentationVersionResult getDocumentationVersion(GetDocumentationVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDocumentationVersionsResult getDocumentationVersions(GetDocumentationVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDomainNameResult getDomainName(GetDomainNameRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -355,6 +395,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public ImportDocumentationPartsResult importDocumentationParts(ImportDocumentationPartsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportRestApiResult importRestApi(ImportRestApiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -421,6 +466,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public UpdateDeploymentResult updateDeployment(UpdateDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDocumentationPartResult updateDocumentationPart(UpdateDocumentationPartRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDocumentationVersionResult updateDocumentationVersion(UpdateDocumentationVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

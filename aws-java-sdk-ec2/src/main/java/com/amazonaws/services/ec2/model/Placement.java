@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the placement for the instance.
+ * Describes the placement of an instance.
  * </p>
  */
 public class Placement implements Serializable, Cloneable {

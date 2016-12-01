@@ -50,9 +50,19 @@ public class AssociationDescriptionJsonMarshaller {
             if (associationDescription.getDate() != null) {
                 jsonGenerator.writeFieldName("Date").writeValue(associationDescription.getDate());
             }
+            if (associationDescription.getLastUpdateAssociationDate() != null) {
+                jsonGenerator.writeFieldName("LastUpdateAssociationDate").writeValue(associationDescription.getLastUpdateAssociationDate());
+            }
             if (associationDescription.getStatus() != null) {
                 jsonGenerator.writeFieldName("Status");
                 AssociationStatusJsonMarshaller.getInstance().marshall(associationDescription.getStatus(), jsonGenerator);
+            }
+            if (associationDescription.getOverview() != null) {
+                jsonGenerator.writeFieldName("Overview");
+                AssociationOverviewJsonMarshaller.getInstance().marshall(associationDescription.getOverview(), jsonGenerator);
+            }
+            if (associationDescription.getDocumentVersion() != null) {
+                jsonGenerator.writeFieldName("DocumentVersion").writeValue(associationDescription.getDocumentVersion());
             }
 
             java.util.Map<String, java.util.List<String>> parametersMap = associationDescription.getParameters();
@@ -74,6 +84,35 @@ public class AssociationDescriptionJsonMarshaller {
                     }
                 }
                 jsonGenerator.writeEndObject();
+            }
+            if (associationDescription.getAssociationId() != null) {
+                jsonGenerator.writeFieldName("AssociationId").writeValue(associationDescription.getAssociationId());
+            }
+
+            com.amazonaws.internal.SdkInternalList<Target> targetsList = (com.amazonaws.internal.SdkInternalList<Target>) associationDescription.getTargets();
+            if (!targetsList.isEmpty() || !targetsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("Targets");
+                jsonGenerator.writeStartArray();
+                for (Target targetsListValue : targetsList) {
+                    if (targetsListValue != null) {
+
+                        TargetJsonMarshaller.getInstance().marshall(targetsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+            if (associationDescription.getScheduleExpression() != null) {
+                jsonGenerator.writeFieldName("ScheduleExpression").writeValue(associationDescription.getScheduleExpression());
+            }
+            if (associationDescription.getOutputLocation() != null) {
+                jsonGenerator.writeFieldName("OutputLocation");
+                InstanceAssociationOutputLocationJsonMarshaller.getInstance().marshall(associationDescription.getOutputLocation(), jsonGenerator);
+            }
+            if (associationDescription.getLastExecutionDate() != null) {
+                jsonGenerator.writeFieldName("LastExecutionDate").writeValue(associationDescription.getLastExecutionDate());
+            }
+            if (associationDescription.getLastSuccessfulExecutionDate() != null) {
+                jsonGenerator.writeFieldName("LastSuccessfulExecutionDate").writeValue(associationDescription.getLastSuccessfulExecutionDate());
             }
 
             jsonGenerator.writeEndObject();

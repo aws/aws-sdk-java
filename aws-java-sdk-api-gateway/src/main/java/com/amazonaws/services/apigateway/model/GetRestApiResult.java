@@ -50,6 +50,12 @@ public class GetRestApiResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private java.util.Date createdDate;
     /**
      * <p>
+     * A version identifier for the API.
+     * </p>
+     */
+    private String version;
+    /**
+     * <p>
      * The warning messages reported when <code>failonwarnings</code> is turned on during API import.
      * </p>
      */
@@ -230,6 +236,46 @@ public class GetRestApiResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
+     * A version identifier for the API.
+     * </p>
+     * 
+     * @param version
+     *        A version identifier for the API.
+     */
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * A version identifier for the API.
+     * </p>
+     * 
+     * @return A version identifier for the API.
+     */
+
+    public String getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * A version identifier for the API.
+     * </p>
+     * 
+     * @param version
+     *        A version identifier for the API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRestApiResult withVersion(String version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
+     * <p>
      * The warning messages reported when <code>failonwarnings</code> is turned on during API import.
      * </p>
      * 
@@ -395,6 +441,8 @@ public class GetRestApiResult extends com.amazonaws.AmazonWebServiceResult<com.a
             sb.append("Description: " + getDescription() + ",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: " + getCreatedDate() + ",");
+        if (getVersion() != null)
+            sb.append("Version: " + getVersion() + ",");
         if (getWarnings() != null)
             sb.append("Warnings: " + getWarnings() + ",");
         if (getBinaryMediaTypes() != null)
@@ -429,6 +477,10 @@ public class GetRestApiResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
             return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
+            return false;
         if (other.getWarnings() == null ^ this.getWarnings() == null)
             return false;
         if (other.getWarnings() != null && other.getWarnings().equals(this.getWarnings()) == false)
@@ -449,6 +501,7 @@ public class GetRestApiResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         hashCode = prime * hashCode + ((getBinaryMediaTypes() == null) ? 0 : getBinaryMediaTypes().hashCode());
         return hashCode;

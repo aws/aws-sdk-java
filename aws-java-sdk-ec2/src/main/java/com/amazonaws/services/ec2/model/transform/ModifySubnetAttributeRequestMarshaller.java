@@ -39,7 +39,7 @@ public class ModifySubnetAttributeRequestMarshaller implements Marshaller<Reques
 
         Request<ModifySubnetAttributeRequest> request = new DefaultRequest<ModifySubnetAttributeRequest>(modifySubnetAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifySubnetAttribute");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifySubnetAttributeRequest.getSubnetId() != null) {
@@ -48,6 +48,10 @@ public class ModifySubnetAttributeRequestMarshaller implements Marshaller<Reques
 
         if (modifySubnetAttributeRequest.getMapPublicIpOnLaunch() != null) {
             request.addParameter("MapPublicIpOnLaunch.Value", StringUtils.fromBoolean(modifySubnetAttributeRequest.getMapPublicIpOnLaunch()));
+        }
+
+        if (modifySubnetAttributeRequest.getAssignIpv6AddressOnCreation() != null) {
+            request.addParameter("AssignIpv6AddressOnCreation.Value", StringUtils.fromBoolean(modifySubnetAttributeRequest.getAssignIpv6AddressOnCreation()));
         }
 
         return request;

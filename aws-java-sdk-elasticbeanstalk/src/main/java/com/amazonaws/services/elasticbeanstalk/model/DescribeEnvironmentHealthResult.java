@@ -16,63 +16,70 @@ import java.io.Serializable;
 
 /**
  * <p>
- * See the example below for a sample response.
+ * Health details for an AWS Elastic Beanstalk environment.
  * </p>
  */
 public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Elastic Beanstalk environment name.
+     * The environment's name.
      * </p>
      */
     private String environmentName;
     /**
      * <p>
-     * Contains the response body with information about the health of the environment.
+     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a>
+     * of the environment. For example, <code>Ok</code>.
      * </p>
      */
     private String healthStatus;
     /**
      * <p>
-     * Returns the health status value of the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     * Statuses</a>.
+     * The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>,
+     * <code>Terminating</code>, or <code>Terminated</code>.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * Returns the color indicator that tells you information about the health of the environment. For more information,
-     * see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     * Statuses</a>.
+     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a>
+     * of the environment.
      * </p>
      */
     private String color;
     /**
      * <p>
-     * Returns potential causes for the reported status.
+     * Descriptions of the data that contributed to the environment's current health status.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> causes;
-
+    /**
+     * <p>
+     * Application request metrics for the environment.
+     * </p>
+     */
     private ApplicationMetrics applicationMetrics;
-
+    /**
+     * <p>
+     * Summary health information for the instances in the environment.
+     * </p>
+     */
     private InstanceHealthSummary instancesHealth;
     /**
      * <p>
-     * The date and time the information was last refreshed.
+     * The date and time that the health information was retrieved.
      * </p>
      */
     private java.util.Date refreshedAt;
 
     /**
      * <p>
-     * The AWS Elastic Beanstalk environment name.
+     * The environment's name.
      * </p>
      * 
      * @param environmentName
-     *        The AWS Elastic Beanstalk environment name.
+     *        The environment's name.
      */
 
     public void setEnvironmentName(String environmentName) {
@@ -81,10 +88,10 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS Elastic Beanstalk environment name.
+     * The environment's name.
      * </p>
      * 
-     * @return The AWS Elastic Beanstalk environment name.
+     * @return The environment's name.
      */
 
     public String getEnvironmentName() {
@@ -93,11 +100,11 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS Elastic Beanstalk environment name.
+     * The environment's name.
      * </p>
      * 
      * @param environmentName
-     *        The AWS Elastic Beanstalk environment name.
+     *        The environment's name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +115,13 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Contains the response body with information about the health of the environment.
+     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a>
+     * of the environment. For example, <code>Ok</code>.
      * </p>
      * 
      * @param healthStatus
-     *        Contains the response body with information about the health of the environment.
+     *        The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     *        status</a> of the environment. For example, <code>Ok</code>.
      */
 
     public void setHealthStatus(String healthStatus) {
@@ -121,10 +130,12 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Contains the response body with information about the health of the environment.
+     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a>
+     * of the environment. For example, <code>Ok</code>.
      * </p>
      * 
-     * @return Contains the response body with information about the health of the environment.
+     * @return The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     *         status</a> of the environment. For example, <code>Ok</code>.
      */
 
     public String getHealthStatus() {
@@ -133,11 +144,13 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Contains the response body with information about the health of the environment.
+     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a>
+     * of the environment. For example, <code>Ok</code>.
      * </p>
      * 
      * @param healthStatus
-     *        Contains the response body with information about the health of the environment.
+     *        The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     *        status</a> of the environment. For example, <code>Ok</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,15 +161,13 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the health status value of the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     * Statuses</a>.
+     * The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>,
+     * <code>Terminating</code>, or <code>Terminated</code>.
      * </p>
      * 
      * @param status
-     *        Returns the health status value of the environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>,
+     *        <code>Terminating</code>, or <code>Terminated</code>.
      * @see EnvironmentHealth
      */
 
@@ -166,14 +177,12 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the health status value of the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     * Statuses</a>.
+     * The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>,
+     * <code>Terminating</code>, or <code>Terminated</code>.
      * </p>
      * 
-     * @return Returns the health status value of the environment. For more information, see <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
-     *         and Statuses</a>.
+     * @return The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>,
+     *         <code>Terminating</code>, or <code>Terminated</code>.
      * @see EnvironmentHealth
      */
 
@@ -183,15 +192,13 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the health status value of the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     * Statuses</a>.
+     * The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>,
+     * <code>Terminating</code>, or <code>Terminated</code>.
      * </p>
      * 
      * @param status
-     *        Returns the health status value of the environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>,
+     *        <code>Terminating</code>, or <code>Terminated</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentHealth
      */
@@ -203,15 +210,13 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the health status value of the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     * Statuses</a>.
+     * The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>,
+     * <code>Terminating</code>, or <code>Terminated</code>.
      * </p>
      * 
      * @param status
-     *        Returns the health status value of the environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>,
+     *        <code>Terminating</code>, or <code>Terminated</code>.
      * @see EnvironmentHealth
      */
 
@@ -221,15 +226,13 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the health status value of the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     * Statuses</a>.
+     * The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>,
+     * <code>Terminating</code>, or <code>Terminated</code>.
      * </p>
      * 
      * @param status
-     *        Returns the health status value of the environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>,
+     *        <code>Terminating</code>, or <code>Terminated</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentHealth
      */
@@ -241,16 +244,13 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the color indicator that tells you information about the health of the environment. For more information,
-     * see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     * Statuses</a>.
+     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a>
+     * of the environment.
      * </p>
      * 
      * @param color
-     *        Returns the color indicator that tells you information about the health of the environment. For more
-     *        information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     *        color</a> of the environment.
      */
 
     public void setColor(String color) {
@@ -259,15 +259,12 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the color indicator that tells you information about the health of the environment. For more information,
-     * see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     * Statuses</a>.
+     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a>
+     * of the environment.
      * </p>
      * 
-     * @return Returns the color indicator that tells you information about the health of the environment. For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
-     *         and Statuses</a>.
+     * @return The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     *         color</a> of the environment.
      */
 
     public String getColor() {
@@ -276,16 +273,13 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the color indicator that tells you information about the health of the environment. For more information,
-     * see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     * Statuses</a>.
+     * The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a>
+     * of the environment.
      * </p>
      * 
      * @param color
-     *        Returns the color indicator that tells you information about the health of the environment. For more
-     *        information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     *        color</a> of the environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,10 +290,10 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns potential causes for the reported status.
+     * Descriptions of the data that contributed to the environment's current health status.
      * </p>
      * 
-     * @return Returns potential causes for the reported status.
+     * @return Descriptions of the data that contributed to the environment's current health status.
      */
 
     public java.util.List<String> getCauses() {
@@ -311,11 +305,11 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns potential causes for the reported status.
+     * Descriptions of the data that contributed to the environment's current health status.
      * </p>
      * 
      * @param causes
-     *        Returns potential causes for the reported status.
+     *        Descriptions of the data that contributed to the environment's current health status.
      */
 
     public void setCauses(java.util.Collection<String> causes) {
@@ -329,7 +323,7 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns potential causes for the reported status.
+     * Descriptions of the data that contributed to the environment's current health status.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -338,7 +332,7 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param causes
-     *        Returns potential causes for the reported status.
+     *        Descriptions of the data that contributed to the environment's current health status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,11 +348,11 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns potential causes for the reported status.
+     * Descriptions of the data that contributed to the environment's current health status.
      * </p>
      * 
      * @param causes
-     *        Returns potential causes for the reported status.
+     *        Descriptions of the data that contributed to the environment's current health status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,7 +362,12 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Application request metrics for the environment.
+     * </p>
+     * 
      * @param applicationMetrics
+     *        Application request metrics for the environment.
      */
 
     public void setApplicationMetrics(ApplicationMetrics applicationMetrics) {
@@ -376,7 +375,11 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * Application request metrics for the environment.
+     * </p>
+     * 
+     * @return Application request metrics for the environment.
      */
 
     public ApplicationMetrics getApplicationMetrics() {
@@ -384,7 +387,12 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Application request metrics for the environment.
+     * </p>
+     * 
      * @param applicationMetrics
+     *        Application request metrics for the environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -394,7 +402,12 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Summary health information for the instances in the environment.
+     * </p>
+     * 
      * @param instancesHealth
+     *        Summary health information for the instances in the environment.
      */
 
     public void setInstancesHealth(InstanceHealthSummary instancesHealth) {
@@ -402,7 +415,11 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * Summary health information for the instances in the environment.
+     * </p>
+     * 
+     * @return Summary health information for the instances in the environment.
      */
 
     public InstanceHealthSummary getInstancesHealth() {
@@ -410,7 +427,12 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Summary health information for the instances in the environment.
+     * </p>
+     * 
      * @param instancesHealth
+     *        Summary health information for the instances in the environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,11 +443,11 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The date and time the information was last refreshed.
+     * The date and time that the health information was retrieved.
      * </p>
      * 
      * @param refreshedAt
-     *        The date and time the information was last refreshed.
+     *        The date and time that the health information was retrieved.
      */
 
     public void setRefreshedAt(java.util.Date refreshedAt) {
@@ -434,10 +456,10 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The date and time the information was last refreshed.
+     * The date and time that the health information was retrieved.
      * </p>
      * 
-     * @return The date and time the information was last refreshed.
+     * @return The date and time that the health information was retrieved.
      */
 
     public java.util.Date getRefreshedAt() {
@@ -446,11 +468,11 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The date and time the information was last refreshed.
+     * The date and time that the health information was retrieved.
      * </p>
      * 
      * @param refreshedAt
-     *        The date and time the information was last refreshed.
+     *        The date and time that the health information was retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

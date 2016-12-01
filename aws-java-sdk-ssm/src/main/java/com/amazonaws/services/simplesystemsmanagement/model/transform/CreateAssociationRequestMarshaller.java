@@ -62,6 +62,9 @@ public class CreateAssociationRequestMarshaller implements Marshaller<Request<Cr
             if (createAssociationRequest.getName() != null) {
                 jsonGenerator.writeFieldName("Name").writeValue(createAssociationRequest.getName());
             }
+            if (createAssociationRequest.getDocumentVersion() != null) {
+                jsonGenerator.writeFieldName("DocumentVersion").writeValue(createAssociationRequest.getDocumentVersion());
+            }
             if (createAssociationRequest.getInstanceId() != null) {
                 jsonGenerator.writeFieldName("InstanceId").writeValue(createAssociationRequest.getInstanceId());
             }
@@ -85,6 +88,26 @@ public class CreateAssociationRequestMarshaller implements Marshaller<Request<Cr
                     }
                 }
                 jsonGenerator.writeEndObject();
+            }
+
+            com.amazonaws.internal.SdkInternalList<Target> targetsList = (com.amazonaws.internal.SdkInternalList<Target>) createAssociationRequest.getTargets();
+            if (!targetsList.isEmpty() || !targetsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("Targets");
+                jsonGenerator.writeStartArray();
+                for (Target targetsListValue : targetsList) {
+                    if (targetsListValue != null) {
+
+                        TargetJsonMarshaller.getInstance().marshall(targetsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+            if (createAssociationRequest.getScheduleExpression() != null) {
+                jsonGenerator.writeFieldName("ScheduleExpression").writeValue(createAssociationRequest.getScheduleExpression());
+            }
+            if (createAssociationRequest.getOutputLocation() != null) {
+                jsonGenerator.writeFieldName("OutputLocation");
+                InstanceAssociationOutputLocationJsonMarshaller.getInstance().marshall(createAssociationRequest.getOutputLocation(), jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();

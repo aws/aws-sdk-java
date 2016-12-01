@@ -56,7 +56,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private String addressingType;
     /**
      * <p>
-     * The instance type.
+     * The instance type. Note that T2 and HS1 instance types are not supported.
      * </p>
      */
     private String instanceType;
@@ -99,7 +99,8 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private String subnetId;
     /**
      * <p>
-     * One or more network interfaces.
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
@@ -399,11 +400,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
      * @param instanceType
-     *        The instance type.
+     *        The instance type. Note that T2 and HS1 instance types are not supported.
      * @see InstanceType
      */
 
@@ -413,10 +414,10 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
-     * @return The instance type.
+     * @return The instance type. Note that T2 and HS1 instance types are not supported.
      * @see InstanceType
      */
 
@@ -426,11 +427,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
      * @param instanceType
-     *        The instance type.
+     *        The instance type. Note that T2 and HS1 instance types are not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -442,11 +443,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
      * @param instanceType
-     *        The instance type.
+     *        The instance type. Note that T2 and HS1 instance types are not supported.
      * @see InstanceType
      */
 
@@ -456,11 +457,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
      * @param instanceType
-     *        The instance type.
+     *        The instance type. Note that T2 and HS1 instance types are not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -751,10 +752,12 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more network interfaces.
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
      * </p>
      * 
-     * @return One or more network interfaces.
+     * @return One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
+     *         security group IDs using the network interface.
      */
 
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
@@ -766,11 +769,13 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more network interfaces.
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces.
+     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
+     *        security group IDs using the network interface.
      */
 
     public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
@@ -784,7 +789,8 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more network interfaces.
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -793,7 +799,8 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces.
+     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
+     *        security group IDs using the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -809,11 +816,13 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more network interfaces.
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces.
+     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
+     *        security group IDs using the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -99,6 +99,10 @@ public class PublishVersionResultJsonUnmarshaller implements Unmarshaller<Publis
                     context.nextToken();
                     publishVersionResult.setVpcConfig(VpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DeadLetterConfig", targetDepth)) {
+                    context.nextToken();
+                    publishVersionResult.setDeadLetterConfig(DeadLetterConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Environment", targetDepth)) {
                     context.nextToken();
                     publishVersionResult.setEnvironment(EnvironmentResponseJsonUnmarshaller.getInstance().unmarshall(context));

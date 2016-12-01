@@ -584,11 +584,11 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage bucket.
+     * Retrieve a list of application versions.
      * </p>
      * 
      * @param describeApplicationVersionsRequest
-     *        Result message containing a list of configuration descriptions.
+     *        Request to describe application versions.
      * @return A Java Future containing the result of the DescribeApplicationVersions operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.DescribeApplicationVersions
      */
@@ -597,11 +597,11 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage bucket.
+     * Retrieve a list of application versions.
      * </p>
      * 
      * @param describeApplicationVersionsRequest
-     *        Result message containing a list of configuration descriptions.
+     *        Request to describe application versions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1008,13 +1008,13 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Returns more detailed information about the health of the specified instances (for example, CPU utilization, load
-     * average, and causes). The <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic Beanstalk
-     * Enhanced Health.
+     * Retrives detailed information about the health of instances in your AWS Elastic Beanstalk. This operation
+     * requires <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health
+     * reporting</a>.
      * </p>
      * 
      * @param describeInstancesHealthRequest
-     *        See the example below to learn how to create a request body.
+     *        Parameters for a call to <code>DescribeInstancesHealth</code>.
      * @return A Java Future containing the result of the DescribeInstancesHealth operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.DescribeInstancesHealth
      */
@@ -1022,13 +1022,13 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Returns more detailed information about the health of the specified instances (for example, CPU utilization, load
-     * average, and causes). The <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic Beanstalk
-     * Enhanced Health.
+     * Retrives detailed information about the health of instances in your AWS Elastic Beanstalk. This operation
+     * requires <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health
+     * reporting</a>.
      * </p>
      * 
      * @param describeInstancesHealthRequest
-     *        See the example below to learn how to create a request body.
+     *        Parameters for a call to <code>DescribeInstancesHealth</code>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

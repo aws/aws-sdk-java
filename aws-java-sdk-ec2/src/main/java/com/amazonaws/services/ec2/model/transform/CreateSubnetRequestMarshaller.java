@@ -39,7 +39,7 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
 
         Request<CreateSubnetRequest> request = new DefaultRequest<CreateSubnetRequest>(createSubnetRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSubnet");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createSubnetRequest.getVpcId() != null) {
@@ -48,6 +48,10 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
 
         if (createSubnetRequest.getCidrBlock() != null) {
             request.addParameter("CidrBlock", StringUtils.fromString(createSubnetRequest.getCidrBlock()));
+        }
+
+        if (createSubnetRequest.getIpv6CidrBlock() != null) {
+            request.addParameter("Ipv6CidrBlock", StringUtils.fromString(createSubnetRequest.getIpv6CidrBlock()));
         }
 
         if (createSubnetRequest.getAvailabilityZone() != null) {

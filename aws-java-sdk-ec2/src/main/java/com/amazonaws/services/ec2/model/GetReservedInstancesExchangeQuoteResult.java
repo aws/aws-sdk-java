@@ -59,13 +59,13 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
     private java.util.Date outputReservedInstancesWillExpireAt;
     /**
      * <p>
-     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be performed.
+     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
      * </p>
      */
     private Boolean isValidExchange;
     /**
      * <p>
-     * Describes the reason why the exchange can not be completed.
+     * Describes the reason why the exchange cannot be completed.
      * </p>
      */
     private String validationFailureReason;
@@ -390,11 +390,11 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be performed.
+     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
      * </p>
      * 
      * @param isValidExchange
-     *        If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be performed.
+     *        If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
      */
 
     public void setIsValidExchange(Boolean isValidExchange) {
@@ -403,10 +403,10 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be performed.
+     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
      * </p>
      * 
-     * @return If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be performed.
+     * @return If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
      */
 
     public Boolean getIsValidExchange() {
@@ -415,11 +415,11 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be performed.
+     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
      * </p>
      * 
      * @param isValidExchange
-     *        If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be performed.
+     *        If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,10 +430,10 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be performed.
+     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
      * </p>
      * 
-     * @return If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be performed.
+     * @return If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
      */
 
     public Boolean isValidExchange() {
@@ -442,11 +442,11 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Describes the reason why the exchange can not be completed.
+     * Describes the reason why the exchange cannot be completed.
      * </p>
      * 
      * @param validationFailureReason
-     *        Describes the reason why the exchange can not be completed.
+     *        Describes the reason why the exchange cannot be completed.
      */
 
     public void setValidationFailureReason(String validationFailureReason) {
@@ -455,10 +455,10 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Describes the reason why the exchange can not be completed.
+     * Describes the reason why the exchange cannot be completed.
      * </p>
      * 
-     * @return Describes the reason why the exchange can not be completed.
+     * @return Describes the reason why the exchange cannot be completed.
      */
 
     public String getValidationFailureReason() {
@@ -467,11 +467,11 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Describes the reason why the exchange can not be completed.
+     * Describes the reason why the exchange cannot be completed.
      * </p>
      * 
      * @param validationFailureReason
-     *        Describes the reason why the exchange can not be completed.
+     *        Describes the reason why the exchange cannot be completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

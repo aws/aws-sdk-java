@@ -39,7 +39,7 @@ public class DescribeTagsRequestMarshaller implements Marshaller<Request<Describ
 
         Request<DescribeTagsRequest> request = new DefaultRequest<DescribeTagsRequest>(describeTagsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeTags");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<Filter> describeTagsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeTagsRequest

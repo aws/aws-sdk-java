@@ -86,6 +86,20 @@ public class InstanceInformationJsonMarshaller {
             if (instanceInformation.getComputerName() != null) {
                 jsonGenerator.writeFieldName("ComputerName").writeValue(instanceInformation.getComputerName());
             }
+            if (instanceInformation.getAssociationStatus() != null) {
+                jsonGenerator.writeFieldName("AssociationStatus").writeValue(instanceInformation.getAssociationStatus());
+            }
+            if (instanceInformation.getLastAssociationExecutionDate() != null) {
+                jsonGenerator.writeFieldName("LastAssociationExecutionDate").writeValue(instanceInformation.getLastAssociationExecutionDate());
+            }
+            if (instanceInformation.getLastSuccessfulAssociationExecutionDate() != null) {
+                jsonGenerator.writeFieldName("LastSuccessfulAssociationExecutionDate").writeValue(
+                        instanceInformation.getLastSuccessfulAssociationExecutionDate());
+            }
+            if (instanceInformation.getAssociationOverview() != null) {
+                jsonGenerator.writeFieldName("AssociationOverview");
+                InstanceAggregatedAssociationOverviewJsonMarshaller.getInstance().marshall(instanceInformation.getAssociationOverview(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

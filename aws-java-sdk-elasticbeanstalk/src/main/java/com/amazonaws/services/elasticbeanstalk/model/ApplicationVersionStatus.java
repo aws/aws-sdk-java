@@ -20,7 +20,8 @@ public enum ApplicationVersionStatus {
     Processed("Processed"),
     Unprocessed("Unprocessed"),
     Failed("Failed"),
-    Processing("Processing");
+    Processing("Processing"),
+    Building("Building");
 
     private String value;
 

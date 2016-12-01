@@ -23,27 +23,34 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the application associated with this release.
+     * The name of the application to which the application version belongs.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * The description of this application version.
+     * The description of the application version.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * A label uniquely identifying the version for the associated application.
+     * A unique identifier for the application version.
      * </p>
      */
     private String versionLabel;
-
-    private SourceBuildInformation sourceBuildInformation;
     /**
      * <p>
-     * The location where the source bundle is located for this version.
+     * If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the
+     * application version.
+     * </p>
+     */
+    private SourceBuildInformation sourceBuildInformation;
+
+    private String buildArn;
+    /**
+     * <p>
+     * The storage location of the application version's source bundle in Amazon S3.
      * </p>
      */
     private S3Location sourceBundle;
@@ -68,11 +75,11 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the application associated with this release.
+     * The name of the application to which the application version belongs.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application associated with this release.
+     *        The name of the application to which the application version belongs.
      */
 
     public void setApplicationName(String applicationName) {
@@ -81,10 +88,10 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the application associated with this release.
+     * The name of the application to which the application version belongs.
      * </p>
      * 
-     * @return The name of the application associated with this release.
+     * @return The name of the application to which the application version belongs.
      */
 
     public String getApplicationName() {
@@ -93,11 +100,11 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the application associated with this release.
+     * The name of the application to which the application version belongs.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application associated with this release.
+     *        The name of the application to which the application version belongs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +115,11 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of this application version.
+     * The description of the application version.
      * </p>
      * 
      * @param description
-     *        The description of this application version.
+     *        The description of the application version.
      */
 
     public void setDescription(String description) {
@@ -121,10 +128,10 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of this application version.
+     * The description of the application version.
      * </p>
      * 
-     * @return The description of this application version.
+     * @return The description of the application version.
      */
 
     public String getDescription() {
@@ -133,11 +140,11 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of this application version.
+     * The description of the application version.
      * </p>
      * 
      * @param description
-     *        The description of this application version.
+     *        The description of the application version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +155,11 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A label uniquely identifying the version for the associated application.
+     * A unique identifier for the application version.
      * </p>
      * 
      * @param versionLabel
-     *        A label uniquely identifying the version for the associated application.
+     *        A unique identifier for the application version.
      */
 
     public void setVersionLabel(String versionLabel) {
@@ -161,10 +168,10 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A label uniquely identifying the version for the associated application.
+     * A unique identifier for the application version.
      * </p>
      * 
-     * @return A label uniquely identifying the version for the associated application.
+     * @return A unique identifier for the application version.
      */
 
     public String getVersionLabel() {
@@ -173,11 +180,11 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A label uniquely identifying the version for the associated application.
+     * A unique identifier for the application version.
      * </p>
      * 
      * @param versionLabel
-     *        A label uniquely identifying the version for the associated application.
+     *        A unique identifier for the application version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,7 +194,14 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the
+     * application version.
+     * </p>
+     * 
      * @param sourceBuildInformation
+     *        If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the
+     *        application version.
      */
 
     public void setSourceBuildInformation(SourceBuildInformation sourceBuildInformation) {
@@ -195,7 +209,13 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the
+     * application version.
+     * </p>
+     * 
+     * @return If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the
+     *         application version.
      */
 
     public SourceBuildInformation getSourceBuildInformation() {
@@ -203,7 +223,14 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the
+     * application version.
+     * </p>
+     * 
      * @param sourceBuildInformation
+     *        If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the
+     *        application version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,12 +240,38 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
     }
 
     /**
+     * @param buildArn
+     */
+
+    public void setBuildArn(String buildArn) {
+        this.buildArn = buildArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getBuildArn() {
+        return this.buildArn;
+    }
+
+    /**
+     * @param buildArn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationVersionDescription withBuildArn(String buildArn) {
+        setBuildArn(buildArn);
+        return this;
+    }
+
+    /**
      * <p>
-     * The location where the source bundle is located for this version.
+     * The storage location of the application version's source bundle in Amazon S3.
      * </p>
      * 
      * @param sourceBundle
-     *        The location where the source bundle is located for this version.
+     *        The storage location of the application version's source bundle in Amazon S3.
      */
 
     public void setSourceBundle(S3Location sourceBundle) {
@@ -227,10 +280,10 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location where the source bundle is located for this version.
+     * The storage location of the application version's source bundle in Amazon S3.
      * </p>
      * 
-     * @return The location where the source bundle is located for this version.
+     * @return The storage location of the application version's source bundle in Amazon S3.
      */
 
     public S3Location getSourceBundle() {
@@ -239,11 +292,11 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location where the source bundle is located for this version.
+     * The storage location of the application version's source bundle in Amazon S3.
      * </p>
      * 
      * @param sourceBundle
-     *        The location where the source bundle is located for this version.
+     *        The storage location of the application version's source bundle in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -424,6 +477,8 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
             sb.append("VersionLabel: " + getVersionLabel() + ",");
         if (getSourceBuildInformation() != null)
             sb.append("SourceBuildInformation: " + getSourceBuildInformation() + ",");
+        if (getBuildArn() != null)
+            sb.append("BuildArn: " + getBuildArn() + ",");
         if (getSourceBundle() != null)
             sb.append("SourceBundle: " + getSourceBundle() + ",");
         if (getDateCreated() != null)
@@ -462,6 +517,10 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
             return false;
         if (other.getSourceBuildInformation() != null && other.getSourceBuildInformation().equals(this.getSourceBuildInformation()) == false)
             return false;
+        if (other.getBuildArn() == null ^ this.getBuildArn() == null)
+            return false;
+        if (other.getBuildArn() != null && other.getBuildArn().equals(this.getBuildArn()) == false)
+            return false;
         if (other.getSourceBundle() == null ^ this.getSourceBundle() == null)
             return false;
         if (other.getSourceBundle() != null && other.getSourceBundle().equals(this.getSourceBundle()) == false)
@@ -490,6 +549,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
         hashCode = prime * hashCode + ((getSourceBuildInformation() == null) ? 0 : getSourceBuildInformation().hashCode());
+        hashCode = prime * hashCode + ((getBuildArn() == null) ? 0 : getBuildArn().hashCode());
         hashCode = prime * hashCode + ((getSourceBundle() == null) ? 0 : getSourceBundle().hashCode());
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
         hashCode = prime * hashCode + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode());

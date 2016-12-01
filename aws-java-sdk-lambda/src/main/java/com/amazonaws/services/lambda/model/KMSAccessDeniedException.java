@@ -14,7 +14,7 @@ package com.amazonaws.services.lambda.model;
 
 /**
  * <p>
- * Lambda was unable to decrypt the environment variables becauses KMS access was denied. Please check the Lambda
+ * Lambda was unable to decrypt the environment variables because KMS access was denied. Please check the Lambda
  * function's KMS permissions.
  * </p>
  */

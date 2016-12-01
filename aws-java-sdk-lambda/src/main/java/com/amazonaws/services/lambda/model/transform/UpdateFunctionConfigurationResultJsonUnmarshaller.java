@@ -99,6 +99,10 @@ public class UpdateFunctionConfigurationResultJsonUnmarshaller implements Unmars
                     context.nextToken();
                     updateFunctionConfigurationResult.setVpcConfig(VpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DeadLetterConfig", targetDepth)) {
+                    context.nextToken();
+                    updateFunctionConfigurationResult.setDeadLetterConfig(DeadLetterConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Environment", targetDepth)) {
                     context.nextToken();
                     updateFunctionConfigurationResult.setEnvironment(EnvironmentResponseJsonUnmarshaller.getInstance().unmarshall(context));

@@ -99,6 +99,10 @@ public class CreateFunctionResultJsonUnmarshaller implements Unmarshaller<Create
                     context.nextToken();
                     createFunctionResult.setVpcConfig(VpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DeadLetterConfig", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setDeadLetterConfig(DeadLetterConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Environment", targetDepth)) {
                     context.nextToken();
                     createFunctionResult.setEnvironment(EnvironmentResponseJsonUnmarshaller.getInstance().unmarshall(context));

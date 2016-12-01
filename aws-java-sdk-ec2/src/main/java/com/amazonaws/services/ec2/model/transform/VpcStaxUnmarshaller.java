@@ -79,6 +79,12 @@ public class VpcStaxUnmarshaller implements Unmarshaller<Vpc, StaxUnmarshallerCo
                     vpc.setIsDefault(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ipv6CidrBlockAssociationSet/item", targetDepth)) {
+                    vpc.withIpv6CidrBlockAssociationSet(VpcIpv6CidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpc;

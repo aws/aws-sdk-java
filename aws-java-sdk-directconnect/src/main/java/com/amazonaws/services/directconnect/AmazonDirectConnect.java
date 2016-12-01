@@ -157,6 +157,10 @@ public interface AmazonDirectConnect {
      * ConfirmPublicVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming'
      * state, and will not be available for handling traffic.
      * </p>
+     * <p>
+     * When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer and amazon address fields
+     * should be left blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not supported.
+     * </p>
      * 
      * @param allocatePublicVirtualInterfaceRequest
      *        Container for the parameters to the AllocatePublicVirtualInterface operation.
@@ -236,6 +240,37 @@ public interface AmazonDirectConnect {
      * @sample AmazonDirectConnect.ConfirmPublicVirtualInterface
      */
     ConfirmPublicVirtualInterfaceResult confirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest);
+
+    /**
+     * <p>
+     * Creates a new BGP peer on a specified virtual interface. The BGP peer cannot be in the same address family
+     * (IPv4/IPv6) of an existing BGP peer on the virtual interface.
+     * </p>
+     * <p>
+     * You must create a BGP peer for the corresponding address family in order to access AWS resources that also use
+     * that address family.
+     * </p>
+     * <p>
+     * When creating a IPv6 BGP peer, the Amazon address and customer address fields must be left blank. IPv6 addresses
+     * are automatically assigned from Amazon's pool of IPv6 addresses; you cannot specify custom IPv6 addresses.
+     * </p>
+     * <p>
+     * For a public virtual interface, the Autonomous System Number (ASN) must be private or already whitelisted for the
+     * virtual interface.
+     * </p>
+     * 
+     * @param createBGPPeerRequest
+     *        Container for the parameters to the CreateBGPPeer operation.
+     * @return Result of the CreateBGPPeer operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error message will contain additional details about
+     *         the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message will contain additional details about the
+     *         cause.
+     * @sample AmazonDirectConnect.CreateBGPPeer
+     */
+    CreateBGPPeerResult createBGPPeer(CreateBGPPeerRequest createBGPPeerRequest);
 
     /**
      * <p>
@@ -323,6 +358,10 @@ public interface AmazonDirectConnect {
      * traffic. A public virtual interface supports sending traffic to public services of AWS such as Amazon Simple
      * Storage Service (Amazon S3).
      * </p>
+     * <p>
+     * When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer and amazon address fields
+     * should be left blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not supported.
+     * </p>
      * 
      * @param createPublicVirtualInterfaceRequest
      *        Container for the parameters to the CreatePublicVirtualInterface operation.
@@ -336,6 +375,25 @@ public interface AmazonDirectConnect {
      * @sample AmazonDirectConnect.CreatePublicVirtualInterface
      */
     CreatePublicVirtualInterfaceResult createPublicVirtualInterface(CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest);
+
+    /**
+     * <p>
+     * Deletes a BGP peer on the specified virtual interface that matches the specified customer address and ASN. You
+     * cannot delete the last BGP peer from a virtual interface.
+     * </p>
+     * 
+     * @param deleteBGPPeerRequest
+     *        Container for the parameters to the DeleteBGPPeer operation.
+     * @return Result of the DeleteBGPPeer operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error message will contain additional details about
+     *         the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message will contain additional details about the
+     *         cause.
+     * @sample AmazonDirectConnect.DeleteBGPPeer
+     */
+    DeleteBGPPeerResult deleteBGPPeer(DeleteBGPPeerRequest deleteBGPPeerRequest);
 
     /**
      * <p>

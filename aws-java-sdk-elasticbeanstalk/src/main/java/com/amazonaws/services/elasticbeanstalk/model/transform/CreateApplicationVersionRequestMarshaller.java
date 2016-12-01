@@ -83,6 +83,30 @@ public class CreateApplicationVersionRequestMarshaller implements Marshaller<Req
             }
         }
 
+        BuildConfiguration buildConfiguration = createApplicationVersionRequest.getBuildConfiguration();
+        if (buildConfiguration != null) {
+
+            if (buildConfiguration.getArtifactName() != null) {
+                request.addParameter("BuildConfiguration.ArtifactName", StringUtils.fromString(buildConfiguration.getArtifactName()));
+            }
+
+            if (buildConfiguration.getCodeBuildServiceRole() != null) {
+                request.addParameter("BuildConfiguration.CodeBuildServiceRole", StringUtils.fromString(buildConfiguration.getCodeBuildServiceRole()));
+            }
+
+            if (buildConfiguration.getComputeType() != null) {
+                request.addParameter("BuildConfiguration.ComputeType", StringUtils.fromString(buildConfiguration.getComputeType()));
+            }
+
+            if (buildConfiguration.getImage() != null) {
+                request.addParameter("BuildConfiguration.Image", StringUtils.fromString(buildConfiguration.getImage()));
+            }
+
+            if (buildConfiguration.getTimeoutInMinutes() != null) {
+                request.addParameter("BuildConfiguration.TimeoutInMinutes", StringUtils.fromInteger(buildConfiguration.getTimeoutInMinutes()));
+            }
+        }
+
         if (createApplicationVersionRequest.getAutoCreateApplication() != null) {
             request.addParameter("AutoCreateApplication", StringUtils.fromBoolean(createApplicationVersionRequest.getAutoCreateApplication()));
         }

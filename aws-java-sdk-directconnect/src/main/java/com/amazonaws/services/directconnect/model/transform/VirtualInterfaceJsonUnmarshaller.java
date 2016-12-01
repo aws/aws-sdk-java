@@ -91,6 +91,10 @@ public class VirtualInterfaceJsonUnmarshaller implements Unmarshaller<VirtualInt
                     context.nextToken();
                     virtualInterface.setCustomerAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("addressFamily", targetDepth)) {
+                    context.nextToken();
+                    virtualInterface.setAddressFamily(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("virtualInterfaceState", targetDepth)) {
                     context.nextToken();
                     virtualInterface.setVirtualInterfaceState(context.getUnmarshaller(String.class).unmarshall(context));
@@ -107,6 +111,10 @@ public class VirtualInterfaceJsonUnmarshaller implements Unmarshaller<VirtualInt
                     context.nextToken();
                     virtualInterface.setRouteFilterPrefixes(new ListUnmarshaller<RouteFilterPrefix>(RouteFilterPrefixJsonUnmarshaller.getInstance())
                             .unmarshall(context));
+                }
+                if (context.testExpression("bgpPeers", targetDepth)) {
+                    context.nextToken();
+                    virtualInterface.setBgpPeers(new ListUnmarshaller<BGPPeer>(BGPPeerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

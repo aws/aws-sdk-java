@@ -39,7 +39,7 @@ public class DescribeVolumeStatusRequestMarshaller implements Marshaller<Request
 
         Request<DescribeVolumeStatusRequest> request = new DefaultRequest<DescribeVolumeStatusRequest>(describeVolumeStatusRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVolumeStatus");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> describeVolumeStatusRequestVolumeIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVolumeStatusRequest

@@ -80,21 +80,33 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     private Environment environment;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If you elect
-     * to use the AWS Lambda default service key, pass in an empty string ("") for this parameter.
-     * </p>
-     */
-    private String kMSKeyArn;
-    /**
-     * <p>
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
      * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
      * to "nodejs".
      * </p>
+     * <note>
+     * <p>
+     * You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early
+     * 2017.
+     * </p>
+     * </note>
      */
     private String runtime;
+    /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     */
+    private DeadLetterConfig deadLetterConfig;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If you elect
+     * to use the AWS Lambda default service key, pass in an empty string ("") for this parameter.
+     * </p>
+     */
+    private String kMSKeyArn;
 
     /**
      * <p>
@@ -485,6 +497,217 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
+     * The runtime environment for the Lambda function.
+     * </p>
+     * <p>
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
+     * </p>
+     * <note>
+     * <p>
+     * You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early
+     * 2017.
+     * </p>
+     * </note>
+     * 
+     * @param runtime
+     *        The runtime environment for the Lambda function.</p>
+     *        <p>
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *        value to "nodejs".
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as
+     *        of early 2017.
+     *        </p>
+     * @see Runtime
+     */
+
+    public void setRuntime(String runtime) {
+        this.runtime = runtime;
+    }
+
+    /**
+     * <p>
+     * The runtime environment for the Lambda function.
+     * </p>
+     * <p>
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
+     * </p>
+     * <note>
+     * <p>
+     * You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early
+     * 2017.
+     * </p>
+     * </note>
+     * 
+     * @return The runtime environment for the Lambda function.</p>
+     *         <p>
+     *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *         value to "nodejs".
+     *         </p>
+     *         <note>
+     *         <p>
+     *         You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as
+     *         of early 2017.
+     *         </p>
+     * @see Runtime
+     */
+
+    public String getRuntime() {
+        return this.runtime;
+    }
+
+    /**
+     * <p>
+     * The runtime environment for the Lambda function.
+     * </p>
+     * <p>
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
+     * </p>
+     * <note>
+     * <p>
+     * You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early
+     * 2017.
+     * </p>
+     * </note>
+     * 
+     * @param runtime
+     *        The runtime environment for the Lambda function.</p>
+     *        <p>
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *        value to "nodejs".
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as
+     *        of early 2017.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Runtime
+     */
+
+    public UpdateFunctionConfigurationRequest withRuntime(String runtime) {
+        setRuntime(runtime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The runtime environment for the Lambda function.
+     * </p>
+     * <p>
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
+     * </p>
+     * <note>
+     * <p>
+     * You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early
+     * 2017.
+     * </p>
+     * </note>
+     * 
+     * @param runtime
+     *        The runtime environment for the Lambda function.</p>
+     *        <p>
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *        value to "nodejs".
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as
+     *        of early 2017.
+     *        </p>
+     * @see Runtime
+     */
+
+    public void setRuntime(Runtime runtime) {
+        this.runtime = runtime.toString();
+    }
+
+    /**
+     * <p>
+     * The runtime environment for the Lambda function.
+     * </p>
+     * <p>
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
+     * to "nodejs".
+     * </p>
+     * <note>
+     * <p>
+     * You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as of early
+     * 2017.
+     * </p>
+     * </note>
+     * 
+     * @param runtime
+     *        The runtime environment for the Lambda function.</p>
+     *        <p>
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
+     *        value to "nodejs".
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can no longer downgrade to the v0.10.42 runtime version. This version will no longer be supported as
+     *        of early 2017.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Runtime
+     */
+
+    public UpdateFunctionConfigurationRequest withRuntime(Runtime runtime) {
+        setRuntime(runtime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     * 
+     * @param deadLetterConfig
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
+     *        topic.
+     */
+
+    public void setDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
+        this.deadLetterConfig = deadLetterConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     * 
+     * @return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon
+     *         SNS topic.
+     */
+
+    public DeadLetterConfig getDeadLetterConfig() {
+        return this.deadLetterConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     * 
+     * @param deadLetterConfig
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
+     *        topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationRequest withDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
+        setDeadLetterConfig(deadLetterConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If you elect
      * to use the AWS Lambda default service key, pass in an empty string ("") for this parameter.
      * </p>
@@ -530,114 +753,6 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * <p>
-     * The runtime environment for the Lambda function.
-     * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
-     * 
-     * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
-     * @see Runtime
-     */
-
-    public void setRuntime(String runtime) {
-        this.runtime = runtime;
-    }
-
-    /**
-     * <p>
-     * The runtime environment for the Lambda function.
-     * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
-     * 
-     * @return The runtime environment for the Lambda function.</p>
-     *         <p>
-     *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *         value to "nodejs".
-     * @see Runtime
-     */
-
-    public String getRuntime() {
-        return this.runtime;
-    }
-
-    /**
-     * <p>
-     * The runtime environment for the Lambda function.
-     * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
-     * 
-     * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Runtime
-     */
-
-    public UpdateFunctionConfigurationRequest withRuntime(String runtime) {
-        setRuntime(runtime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The runtime environment for the Lambda function.
-     * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
-     * 
-     * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
-     * @see Runtime
-     */
-
-    public void setRuntime(Runtime runtime) {
-        this.runtime = runtime.toString();
-    }
-
-    /**
-     * <p>
-     * The runtime environment for the Lambda function.
-     * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
-     * 
-     * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Runtime
-     */
-
-    public UpdateFunctionConfigurationRequest withRuntime(Runtime runtime) {
-        setRuntime(runtime);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -664,10 +779,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
             sb.append("VpcConfig: " + getVpcConfig() + ",");
         if (getEnvironment() != null)
             sb.append("Environment: " + getEnvironment() + ",");
-        if (getKMSKeyArn() != null)
-            sb.append("KMSKeyArn: " + getKMSKeyArn() + ",");
         if (getRuntime() != null)
-            sb.append("Runtime: " + getRuntime());
+            sb.append("Runtime: " + getRuntime() + ",");
+        if (getDeadLetterConfig() != null)
+            sb.append("DeadLetterConfig: " + getDeadLetterConfig() + ",");
+        if (getKMSKeyArn() != null)
+            sb.append("KMSKeyArn: " + getKMSKeyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -714,13 +831,17 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
             return false;
-        if (other.getKMSKeyArn() == null ^ this.getKMSKeyArn() == null)
-            return false;
-        if (other.getKMSKeyArn() != null && other.getKMSKeyArn().equals(this.getKMSKeyArn()) == false)
-            return false;
         if (other.getRuntime() == null ^ this.getRuntime() == null)
             return false;
         if (other.getRuntime() != null && other.getRuntime().equals(this.getRuntime()) == false)
+            return false;
+        if (other.getDeadLetterConfig() == null ^ this.getDeadLetterConfig() == null)
+            return false;
+        if (other.getDeadLetterConfig() != null && other.getDeadLetterConfig().equals(this.getDeadLetterConfig()) == false)
+            return false;
+        if (other.getKMSKeyArn() == null ^ this.getKMSKeyArn() == null)
+            return false;
+        if (other.getKMSKeyArn() != null && other.getKMSKeyArn().equals(this.getKMSKeyArn()) == false)
             return false;
         return true;
     }
@@ -738,8 +859,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
-        hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
         hashCode = prime * hashCode + ((getRuntime() == null) ? 0 : getRuntime().hashCode());
+        hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
+        hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
         return hashCode;
     }
 

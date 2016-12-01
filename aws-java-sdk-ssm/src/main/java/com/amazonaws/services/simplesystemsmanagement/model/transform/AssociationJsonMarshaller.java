@@ -47,6 +47,35 @@ public class AssociationJsonMarshaller {
             if (association.getInstanceId() != null) {
                 jsonGenerator.writeFieldName("InstanceId").writeValue(association.getInstanceId());
             }
+            if (association.getAssociationId() != null) {
+                jsonGenerator.writeFieldName("AssociationId").writeValue(association.getAssociationId());
+            }
+            if (association.getDocumentVersion() != null) {
+                jsonGenerator.writeFieldName("DocumentVersion").writeValue(association.getDocumentVersion());
+            }
+
+            com.amazonaws.internal.SdkInternalList<Target> targetsList = (com.amazonaws.internal.SdkInternalList<Target>) association.getTargets();
+            if (!targetsList.isEmpty() || !targetsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("Targets");
+                jsonGenerator.writeStartArray();
+                for (Target targetsListValue : targetsList) {
+                    if (targetsListValue != null) {
+
+                        TargetJsonMarshaller.getInstance().marshall(targetsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+            if (association.getLastExecutionDate() != null) {
+                jsonGenerator.writeFieldName("LastExecutionDate").writeValue(association.getLastExecutionDate());
+            }
+            if (association.getOverview() != null) {
+                jsonGenerator.writeFieldName("Overview");
+                AssociationOverviewJsonMarshaller.getInstance().marshall(association.getOverview(), jsonGenerator);
+            }
+            if (association.getScheduleExpression() != null) {
+                jsonGenerator.writeFieldName("ScheduleExpression").writeValue(association.getScheduleExpression());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

@@ -85,6 +85,10 @@ public class StageJsonUnmarshaller implements Unmarshaller<Stage, JsonUnmarshall
                     stage.setVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("documentationVersion", targetDepth)) {
+                    context.nextToken();
+                    stage.setDocumentationVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
                     stage.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

@@ -66,6 +66,12 @@ public class UpdateUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private QuotaSettings quota;
+    /**
+     * <p>
+     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * </p>
+     */
+    private String productCode;
 
     /**
      * <p>
@@ -338,6 +344,49 @@ public class UpdateUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * </p>
+     * 
+     * @param productCode
+     *        The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS
+     *        Marketplace.
+     */
+
+    public void setProductCode(String productCode) {
+        this.productCode = productCode;
+    }
+
+    /**
+     * <p>
+     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * </p>
+     * 
+     * @return The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS
+     *         Marketplace.
+     */
+
+    public String getProductCode() {
+        return this.productCode;
+    }
+
+    /**
+     * <p>
+     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * </p>
+     * 
+     * @param productCode
+     *        The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS
+     *        Marketplace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUsagePlanResult withProductCode(String productCode) {
+        setProductCode(productCode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -359,7 +408,9 @@ public class UpdateUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<
         if (getThrottle() != null)
             sb.append("Throttle: " + getThrottle() + ",");
         if (getQuota() != null)
-            sb.append("Quota: " + getQuota());
+            sb.append("Quota: " + getQuota() + ",");
+        if (getProductCode() != null)
+            sb.append("ProductCode: " + getProductCode());
         sb.append("}");
         return sb.toString();
     }
@@ -398,6 +449,10 @@ public class UpdateUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getQuota() != null && other.getQuota().equals(this.getQuota()) == false)
             return false;
+        if (other.getProductCode() == null ^ this.getProductCode() == null)
+            return false;
+        if (other.getProductCode() != null && other.getProductCode().equals(this.getProductCode()) == false)
+            return false;
         return true;
     }
 
@@ -412,6 +467,7 @@ public class UpdateUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getApiStages() == null) ? 0 : getApiStages().hashCode());
         hashCode = prime * hashCode + ((getThrottle() == null) ? 0 : getThrottle().hashCode());
         hashCode = prime * hashCode + ((getQuota() == null) ? 0 : getQuota().hashCode());
+        hashCode = prime * hashCode + ((getProductCode() == null) ? 0 : getProductCode().hashCode());
         return hashCode;
     }
 

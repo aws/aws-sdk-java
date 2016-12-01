@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A specification of a location in Amazon S3.
+ * The bucket and key of an item stored in Amazon S3.
  * </p>
  */
 public class S3Location implements Serializable, Cloneable {

@@ -162,6 +162,34 @@ public interface AmazonApiGateway {
     CreateDeploymentResult createDeployment(CreateDeploymentRequest createDeploymentRequest);
 
     /**
+     * @param createDocumentationPartRequest
+     *        Creates a new documentation part of a given API.
+     * @return Result of the CreateDocumentationPart operation returned by the service.
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateDocumentationPart
+     */
+    CreateDocumentationPartResult createDocumentationPart(CreateDocumentationPartRequest createDocumentationPartRequest);
+
+    /**
+     * @param createDocumentationVersionRequest
+     *        Creates a new documentation version of a given API.
+     * @return Result of the CreateDocumentationVersion operation returned by the service.
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateDocumentationVersion
+     */
+    CreateDocumentationVersionResult createDocumentationVersion(CreateDocumentationVersionRequest createDocumentationVersionRequest);
+
+    /**
      * <p>
      * Creates a new domain name.
      * </p>
@@ -365,6 +393,32 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.DeleteDeployment
      */
     DeleteDeploymentResult deleteDeployment(DeleteDeploymentRequest deleteDeploymentRequest);
+
+    /**
+     * @param deleteDocumentationPartRequest
+     *        Deletes an existing documentation part of an API.
+     * @return Result of the DeleteDocumentationPart operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws ConflictException
+     * @throws BadRequestException
+     * @sample AmazonApiGateway.DeleteDocumentationPart
+     */
+    DeleteDocumentationPartResult deleteDocumentationPart(DeleteDocumentationPartRequest deleteDocumentationPartRequest);
+
+    /**
+     * @param deleteDocumentationVersionRequest
+     *        Deletes an existing documentation version of an API.
+     * @return Result of the DeleteDocumentationVersion operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteDocumentationVersion
+     */
+    DeleteDocumentationVersionResult deleteDocumentationVersion(DeleteDocumentationVersionRequest deleteDocumentationVersionRequest);
 
     /**
      * <p>
@@ -767,6 +821,53 @@ public interface AmazonApiGateway {
     GetDeploymentsResult getDeployments(GetDeploymentsRequest getDeploymentsRequest);
 
     /**
+     * @param getDocumentationPartRequest
+     *        Gets a specified documentation part of a given API.
+     * @return Result of the GetDocumentationPart operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetDocumentationPart
+     */
+    GetDocumentationPartResult getDocumentationPart(GetDocumentationPartRequest getDocumentationPartRequest);
+
+    /**
+     * @param getDocumentationPartsRequest
+     *        Gets the documentation parts of an API. The result may be filtered by the type, name, or path of API
+     *        entities (targets).
+     * @return Result of the GetDocumentationParts operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetDocumentationParts
+     */
+    GetDocumentationPartsResult getDocumentationParts(GetDocumentationPartsRequest getDocumentationPartsRequest);
+
+    /**
+     * @param getDocumentationVersionRequest
+     *        Gets a documentation snapshot of an API.
+     * @return Result of the GetDocumentationVersion operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetDocumentationVersion
+     */
+    GetDocumentationVersionResult getDocumentationVersion(GetDocumentationVersionRequest getDocumentationVersionRequest);
+
+    /**
+     * @param getDocumentationVersionsRequest
+     *        Gets the documentation versions of an API.
+     * @return Result of the GetDocumentationVersions operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetDocumentationVersions
+     */
+    GetDocumentationVersionsResult getDocumentationVersions(GetDocumentationVersionsRequest getDocumentationVersionsRequest);
+
+    /**
      * <p>
      * Represents a domain name that is contained in a simpler, more intuitive URL that can be called.
      * </p>
@@ -1127,6 +1228,19 @@ public interface AmazonApiGateway {
     ImportApiKeysResult importApiKeys(ImportApiKeysRequest importApiKeysRequest);
 
     /**
+     * @param importDocumentationPartsRequest
+     *        Import documentation parts from an external (e.g., Swagger) definition file.
+     * @return Result of the ImportDocumentationParts operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.ImportDocumentationParts
+     */
+    ImportDocumentationPartsResult importDocumentationParts(ImportDocumentationPartsRequest importDocumentationPartsRequest);
+
+    /**
      * <p>
      * A feature of the Amazon API Gateway control service for creating a new API from an external API definition file.
      * </p>
@@ -1371,6 +1485,33 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.UpdateDeployment
      */
     UpdateDeploymentResult updateDeployment(UpdateDeploymentRequest updateDeploymentRequest);
+
+    /**
+     * @param updateDocumentationPartRequest
+     *        Updates an existing documentation part of a given API.
+     * @return Result of the UpdateDocumentationPart operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws ConflictException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateDocumentationPart
+     */
+    UpdateDocumentationPartResult updateDocumentationPart(UpdateDocumentationPartRequest updateDocumentationPartRequest);
+
+    /**
+     * @param updateDocumentationVersionRequest
+     *        Updates an existing documentation version of an API.
+     * @return Result of the UpdateDocumentationVersion operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws ConflictException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateDocumentationVersion
+     */
+    UpdateDocumentationVersionResult updateDocumentationVersion(UpdateDocumentationVersionRequest updateDocumentationVersionRequest);
 
     /**
      * <p>

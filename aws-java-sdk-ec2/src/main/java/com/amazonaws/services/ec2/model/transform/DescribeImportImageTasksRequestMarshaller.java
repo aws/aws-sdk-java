@@ -39,7 +39,7 @@ public class DescribeImportImageTasksRequestMarshaller implements Marshaller<Req
 
         Request<DescribeImportImageTasksRequest> request = new DefaultRequest<DescribeImportImageTasksRequest>(describeImportImageTasksRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeImportImageTasks");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> describeImportImageTasksRequestImportTaskIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImportImageTasksRequest

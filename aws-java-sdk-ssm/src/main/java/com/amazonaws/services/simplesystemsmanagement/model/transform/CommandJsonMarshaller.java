@@ -86,17 +86,51 @@ public class CommandJsonMarshaller {
                 }
                 jsonGenerator.writeEndArray();
             }
+
+            com.amazonaws.internal.SdkInternalList<Target> targetsList = (com.amazonaws.internal.SdkInternalList<Target>) command.getTargets();
+            if (!targetsList.isEmpty() || !targetsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("Targets");
+                jsonGenerator.writeStartArray();
+                for (Target targetsListValue : targetsList) {
+                    if (targetsListValue != null) {
+
+                        TargetJsonMarshaller.getInstance().marshall(targetsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
             if (command.getRequestedDateTime() != null) {
                 jsonGenerator.writeFieldName("RequestedDateTime").writeValue(command.getRequestedDateTime());
             }
             if (command.getStatus() != null) {
                 jsonGenerator.writeFieldName("Status").writeValue(command.getStatus());
             }
+            if (command.getStatusDetails() != null) {
+                jsonGenerator.writeFieldName("StatusDetails").writeValue(command.getStatusDetails());
+            }
+            if (command.getOutputS3Region() != null) {
+                jsonGenerator.writeFieldName("OutputS3Region").writeValue(command.getOutputS3Region());
+            }
             if (command.getOutputS3BucketName() != null) {
                 jsonGenerator.writeFieldName("OutputS3BucketName").writeValue(command.getOutputS3BucketName());
             }
             if (command.getOutputS3KeyPrefix() != null) {
                 jsonGenerator.writeFieldName("OutputS3KeyPrefix").writeValue(command.getOutputS3KeyPrefix());
+            }
+            if (command.getMaxConcurrency() != null) {
+                jsonGenerator.writeFieldName("MaxConcurrency").writeValue(command.getMaxConcurrency());
+            }
+            if (command.getMaxErrors() != null) {
+                jsonGenerator.writeFieldName("MaxErrors").writeValue(command.getMaxErrors());
+            }
+            if (command.getTargetCount() != null) {
+                jsonGenerator.writeFieldName("TargetCount").writeValue(command.getTargetCount());
+            }
+            if (command.getCompletedCount() != null) {
+                jsonGenerator.writeFieldName("CompletedCount").writeValue(command.getCompletedCount());
+            }
+            if (command.getErrorCount() != null) {
+                jsonGenerator.writeFieldName("ErrorCount").writeValue(command.getErrorCount());
             }
             if (command.getServiceRole() != null) {
                 jsonGenerator.writeFieldName("ServiceRole").writeValue(command.getServiceRole());

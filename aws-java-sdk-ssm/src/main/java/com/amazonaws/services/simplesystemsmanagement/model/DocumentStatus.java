@@ -19,6 +19,7 @@ public enum DocumentStatus {
 
     Creating("Creating"),
     Active("Active"),
+    Updating("Updating"),
     Deleting("Deleting");
 
     private String value;

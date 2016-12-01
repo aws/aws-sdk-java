@@ -39,7 +39,7 @@ public class ModifyHostsRequestMarshaller implements Marshaller<Request<ModifyHo
 
         Request<ModifyHostsRequest> request = new DefaultRequest<ModifyHostsRequest>(modifyHostsRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyHosts");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> modifyHostsRequestHostIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyHostsRequest

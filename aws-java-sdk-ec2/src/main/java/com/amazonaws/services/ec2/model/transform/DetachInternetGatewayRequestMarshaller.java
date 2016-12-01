@@ -39,7 +39,7 @@ public class DetachInternetGatewayRequestMarshaller implements Marshaller<Reques
 
         Request<DetachInternetGatewayRequest> request = new DefaultRequest<DetachInternetGatewayRequest>(detachInternetGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DetachInternetGateway");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (detachInternetGatewayRequest.getInternetGatewayId() != null) {

@@ -71,6 +71,19 @@ public class SendCommandRequestMarshaller implements Marshaller<Request<SendComm
                 }
                 jsonGenerator.writeEndArray();
             }
+
+            com.amazonaws.internal.SdkInternalList<Target> targetsList = (com.amazonaws.internal.SdkInternalList<Target>) sendCommandRequest.getTargets();
+            if (!targetsList.isEmpty() || !targetsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("Targets");
+                jsonGenerator.writeStartArray();
+                for (Target targetsListValue : targetsList) {
+                    if (targetsListValue != null) {
+
+                        TargetJsonMarshaller.getInstance().marshall(targetsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
             if (sendCommandRequest.getDocumentName() != null) {
                 jsonGenerator.writeFieldName("DocumentName").writeValue(sendCommandRequest.getDocumentName());
             }
@@ -107,11 +120,20 @@ public class SendCommandRequestMarshaller implements Marshaller<Request<SendComm
                 }
                 jsonGenerator.writeEndObject();
             }
+            if (sendCommandRequest.getOutputS3Region() != null) {
+                jsonGenerator.writeFieldName("OutputS3Region").writeValue(sendCommandRequest.getOutputS3Region());
+            }
             if (sendCommandRequest.getOutputS3BucketName() != null) {
                 jsonGenerator.writeFieldName("OutputS3BucketName").writeValue(sendCommandRequest.getOutputS3BucketName());
             }
             if (sendCommandRequest.getOutputS3KeyPrefix() != null) {
                 jsonGenerator.writeFieldName("OutputS3KeyPrefix").writeValue(sendCommandRequest.getOutputS3KeyPrefix());
+            }
+            if (sendCommandRequest.getMaxConcurrency() != null) {
+                jsonGenerator.writeFieldName("MaxConcurrency").writeValue(sendCommandRequest.getMaxConcurrency());
+            }
+            if (sendCommandRequest.getMaxErrors() != null) {
+                jsonGenerator.writeFieldName("MaxErrors").writeValue(sendCommandRequest.getMaxErrors());
             }
             if (sendCommandRequest.getServiceRoleArn() != null) {
                 jsonGenerator.writeFieldName("ServiceRoleArn").writeValue(sendCommandRequest.getServiceRoleArn());

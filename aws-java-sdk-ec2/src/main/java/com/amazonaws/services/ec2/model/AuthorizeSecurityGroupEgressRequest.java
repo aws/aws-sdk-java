@@ -67,7 +67,7 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     private Integer toPort;
     /**
      * <p>
-     * The CIDR IP address range. We recommend that you specify the CIDR range in a set of IP permissions instead.
+     * The CIDR IPv4 address range. We recommend that you specify the CIDR range in a set of IP permissions instead.
      * </p>
      */
     private String cidrIp;
@@ -347,11 +347,11 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The CIDR IP address range. We recommend that you specify the CIDR range in a set of IP permissions instead.
+     * The CIDR IPv4 address range. We recommend that you specify the CIDR range in a set of IP permissions instead.
      * </p>
      * 
      * @param cidrIp
-     *        The CIDR IP address range. We recommend that you specify the CIDR range in a set of IP permissions
+     *        The CIDR IPv4 address range. We recommend that you specify the CIDR range in a set of IP permissions
      *        instead.
      */
 
@@ -361,10 +361,10 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The CIDR IP address range. We recommend that you specify the CIDR range in a set of IP permissions instead.
+     * The CIDR IPv4 address range. We recommend that you specify the CIDR range in a set of IP permissions instead.
      * </p>
      * 
-     * @return The CIDR IP address range. We recommend that you specify the CIDR range in a set of IP permissions
+     * @return The CIDR IPv4 address range. We recommend that you specify the CIDR range in a set of IP permissions
      *         instead.
      */
 
@@ -374,11 +374,11 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The CIDR IP address range. We recommend that you specify the CIDR range in a set of IP permissions instead.
+     * The CIDR IPv4 address range. We recommend that you specify the CIDR range in a set of IP permissions instead.
      * </p>
      * 
      * @param cidrIp
-     *        The CIDR IP address range. We recommend that you specify the CIDR range in a set of IP permissions
+     *        The CIDR IPv4 address range. We recommend that you specify the CIDR range in a set of IP permissions
      *        instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

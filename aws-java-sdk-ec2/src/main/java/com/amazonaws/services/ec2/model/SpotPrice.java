@@ -23,7 +23,7 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. Note that T2 and HS1 instance types are not supported.
      * </p>
      */
     private String instanceType;
@@ -55,11 +55,11 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
      * @param instanceType
-     *        The instance type.
+     *        The instance type. Note that T2 and HS1 instance types are not supported.
      * @see InstanceType
      */
 
@@ -69,10 +69,10 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
-     * @return The instance type.
+     * @return The instance type. Note that T2 and HS1 instance types are not supported.
      * @see InstanceType
      */
 
@@ -82,11 +82,11 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
      * @param instanceType
-     *        The instance type.
+     *        The instance type. Note that T2 and HS1 instance types are not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -98,11 +98,11 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
      * @param instanceType
-     *        The instance type.
+     *        The instance type. Note that T2 and HS1 instance types are not supported.
      * @see InstanceType
      */
 
@@ -112,11 +112,11 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
      * @param instanceType
-     *        The instance type.
+     *        The instance type. Note that T2 and HS1 instance types are not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */

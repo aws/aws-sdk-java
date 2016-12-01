@@ -344,6 +344,70 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDocumentationPartResult> createDocumentationPartAsync(CreateDocumentationPartRequest request) {
+
+        return createDocumentationPartAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDocumentationPartResult> createDocumentationPartAsync(final CreateDocumentationPartRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDocumentationPartRequest, CreateDocumentationPartResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDocumentationPartResult>() {
+            @Override
+            public CreateDocumentationPartResult call() throws Exception {
+                CreateDocumentationPartResult result;
+
+                try {
+                    result = createDocumentationPart(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDocumentationVersionResult> createDocumentationVersionAsync(CreateDocumentationVersionRequest request) {
+
+        return createDocumentationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDocumentationVersionResult> createDocumentationVersionAsync(final CreateDocumentationVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDocumentationVersionRequest, CreateDocumentationVersionResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDocumentationVersionResult>() {
+            @Override
+            public CreateDocumentationVersionResult call() throws Exception {
+                CreateDocumentationVersionResult result;
+
+                try {
+                    result = createDocumentationVersion(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDomainNameResult> createDomainNameAsync(CreateDomainNameRequest request) {
 
         return createDomainNameAsync(request, null);
@@ -712,6 +776,70 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
 
                 try {
                     result = deleteDeployment(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDocumentationPartResult> deleteDocumentationPartAsync(DeleteDocumentationPartRequest request) {
+
+        return deleteDocumentationPartAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDocumentationPartResult> deleteDocumentationPartAsync(final DeleteDocumentationPartRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDocumentationPartRequest, DeleteDocumentationPartResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDocumentationPartResult>() {
+            @Override
+            public DeleteDocumentationPartResult call() throws Exception {
+                DeleteDocumentationPartResult result;
+
+                try {
+                    result = deleteDocumentationPart(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDocumentationVersionResult> deleteDocumentationVersionAsync(DeleteDocumentationVersionRequest request) {
+
+        return deleteDocumentationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDocumentationVersionResult> deleteDocumentationVersionAsync(final DeleteDocumentationVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDocumentationVersionRequest, DeleteDocumentationVersionResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDocumentationVersionResult>() {
+            @Override
+            public DeleteDocumentationVersionResult call() throws Exception {
+                DeleteDocumentationVersionResult result;
+
+                try {
+                    result = deleteDocumentationVersion(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1528,6 +1656,134 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetDocumentationPartResult> getDocumentationPartAsync(GetDocumentationPartRequest request) {
+
+        return getDocumentationPartAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDocumentationPartResult> getDocumentationPartAsync(final GetDocumentationPartRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDocumentationPartRequest, GetDocumentationPartResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDocumentationPartResult>() {
+            @Override
+            public GetDocumentationPartResult call() throws Exception {
+                GetDocumentationPartResult result;
+
+                try {
+                    result = getDocumentationPart(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDocumentationPartsResult> getDocumentationPartsAsync(GetDocumentationPartsRequest request) {
+
+        return getDocumentationPartsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDocumentationPartsResult> getDocumentationPartsAsync(final GetDocumentationPartsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDocumentationPartsRequest, GetDocumentationPartsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDocumentationPartsResult>() {
+            @Override
+            public GetDocumentationPartsResult call() throws Exception {
+                GetDocumentationPartsResult result;
+
+                try {
+                    result = getDocumentationParts(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDocumentationVersionResult> getDocumentationVersionAsync(GetDocumentationVersionRequest request) {
+
+        return getDocumentationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDocumentationVersionResult> getDocumentationVersionAsync(final GetDocumentationVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDocumentationVersionRequest, GetDocumentationVersionResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDocumentationVersionResult>() {
+            @Override
+            public GetDocumentationVersionResult call() throws Exception {
+                GetDocumentationVersionResult result;
+
+                try {
+                    result = getDocumentationVersion(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDocumentationVersionsResult> getDocumentationVersionsAsync(GetDocumentationVersionsRequest request) {
+
+        return getDocumentationVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDocumentationVersionsResult> getDocumentationVersionsAsync(final GetDocumentationVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDocumentationVersionsRequest, GetDocumentationVersionsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDocumentationVersionsResult>() {
+            @Override
+            public GetDocumentationVersionsResult call() throws Exception {
+                GetDocumentationVersionsResult result;
+
+                try {
+                    result = getDocumentationVersions(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDomainNameResult> getDomainNameAsync(GetDomainNameRequest request) {
 
         return getDomainNameAsync(request, null);
@@ -2264,6 +2520,38 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ImportDocumentationPartsResult> importDocumentationPartsAsync(ImportDocumentationPartsRequest request) {
+
+        return importDocumentationPartsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportDocumentationPartsResult> importDocumentationPartsAsync(final ImportDocumentationPartsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportDocumentationPartsRequest, ImportDocumentationPartsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportDocumentationPartsResult>() {
+            @Override
+            public ImportDocumentationPartsResult call() throws Exception {
+                ImportDocumentationPartsResult result;
+
+                try {
+                    result = importDocumentationParts(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportRestApiResult> importRestApiAsync(ImportRestApiRequest request) {
 
         return importRestApiAsync(request, null);
@@ -2696,6 +2984,70 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
 
                 try {
                     result = updateDeployment(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDocumentationPartResult> updateDocumentationPartAsync(UpdateDocumentationPartRequest request) {
+
+        return updateDocumentationPartAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDocumentationPartResult> updateDocumentationPartAsync(final UpdateDocumentationPartRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDocumentationPartRequest, UpdateDocumentationPartResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDocumentationPartResult>() {
+            @Override
+            public UpdateDocumentationPartResult call() throws Exception {
+                UpdateDocumentationPartResult result;
+
+                try {
+                    result = updateDocumentationPart(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDocumentationVersionResult> updateDocumentationVersionAsync(UpdateDocumentationVersionRequest request) {
+
+        return updateDocumentationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDocumentationVersionResult> updateDocumentationVersionAsync(final UpdateDocumentationVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDocumentationVersionRequest, UpdateDocumentationVersionResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDocumentationVersionResult>() {
+            @Override
+            public UpdateDocumentationVersionResult call() throws Exception {
+                UpdateDocumentationVersionResult result;
+
+                try {
+                    result = updateDocumentationVersion(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

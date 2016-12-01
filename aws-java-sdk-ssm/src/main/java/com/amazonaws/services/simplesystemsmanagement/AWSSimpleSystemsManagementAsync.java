@@ -24,173 +24,22 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon EC2 Simple Systems Manager (SSM) enables you to remotely manage the configuration of your Amazon EC2
- * instances, virtual machines (VMs), or servers in your on-premises environment or in an environment provided by other
- * cloud providers using scripts, commands, or the Amazon EC2 console. SSM includes an on-demand solution called
- * <i>Amazon EC2 Run Command</i> and a lightweight instance configuration solution called <i>SSM Config</i>.
+ * Amazon EC2 Systems Manager is a collection of capabilities that helps you automate management tasks such as
+ * collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images
+ * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager works with managed
+ * instances: Amazon EC2 instances and servers or virtual machines (VMs) in your on-premises environment that are
+ * configured for Systems Manager.
  * </p>
  * <p>
- * This references is intended to be used with the EC2 Run Command User Guide for <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html">Linux</a> or <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html">Windows</a>.
- * </p>
- * <note>
- * <p>
- * You must register your on-premises servers and VMs through an activation process before you can configure them using
- * Run Command. Registered servers and VMs are called <i>managed instances</i>. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting Up Run Command On Managed
- * Instances (On-Premises Servers and VMs) on Linux</a> or <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting Up Run Command On Managed
- * Instances (On-Premises Servers and VMs) on Windows</a>.
- * </p>
- * </note>
- * <p>
- * <b>Run Command</b>
+ * This references is intended to be used with the EC2 Systems Manager User Guide (<a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager.html">Linux</a>) (<a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager.html">Windows</a>).
  * </p>
  * <p>
- * Run Command provides an on-demand experience for executing commands. You can use pre-defined SSM documents to perform
- * the actions listed later in this section, or you can create your own documents. With these documents, you can
- * remotely configure your instances by sending commands using the <b>Commands</b> page in the <a
- * href="http://console.aws.amazon.com/ec2/">Amazon EC2 console</a>, <a
- * href="http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html">AWS
- * Tools for Windows PowerShell</a>, the <a href="http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html">AWS
- * CLI</a>, or AWS SDKs.
+ * To get started, verify prerequisites and configure managed instances (<a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager-prereqs.html">Linux</a>) (<a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a>).
  * </p>
- * <p>
- * Run Command reports the status of the command execution for each instance targeted by a command. You can also audit
- * the command execution to understand who executed commands, when, and what changes were made. By switching between
- * different SSM documents, you can quickly configure your instances with different types of commands. To get started
- * with Run Command, verify that your environment meets the prerequisites for remotely running commands on EC2 instances
- * (<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/remote-commands-prereq.html">Linux</a> or <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/remote-commands-prereq.html">Windows</a>).
- * </p>
- * <p/>
- * <p>
- * <b>SSM Config</b>
- * </p>
- * <p>
- * SSM Config is a lightweight instance configuration solution. SSM Config is currently only available for Windows
- * instances. With SSM Config, you can specify a setup configuration for your instances. SSM Config is similar to EC2
- * User Data, which is another way of running one-time scripts or applying settings during instance launch. SSM Config
- * is an extension of this capability. Using SSM documents, you can specify which actions the system should perform on
- * your instances, including which applications to install, which AWS Directory Service directory to join, which
- * Microsoft PowerShell modules to install, etc. If an instance is missing one or more of these configurations, the
- * system makes those changes. By default, the system checks every five minutes to see if there is a new configuration
- * to apply as defined in a new SSM document. If so, the system updates the instances accordingly. In this way, you can
- * remotely maintain a consistent configuration baseline on your instances. SSM Config is available using the AWS CLI or
- * the AWS Tools for Windows PowerShell. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-configuration-manage.html">Managing Windows Instance
- * Configuration</a>.
- * </p>
- * <p>
- * SSM Config and Run Command include the following pre-defined documents.
- * </p>
- * <p>
- * <b>Linux</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <b>AWS-RunShellScript</b> to run shell scripts
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-UpdateSSMAgent</b> to update the Amazon SSM agent
- * </p>
- * </li>
- * </ul>
- * <p/>
- * <p>
- * <b>Windows</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <b>AWS-JoinDirectoryServiceDomain</b> to join an AWS Directory
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-RunPowerShellScript</b> to run PowerShell commands or scripts
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-UpdateEC2Config</b> to update the EC2Config service
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-ConfigureWindowsUpdate</b> to configure Windows Update settings
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-InstallApplication</b> to install, repair, or uninstall software using an MSI package
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-InstallPowerShellModule</b> to install PowerShell modules
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-ConfigureCloudWatch</b> to configure Amazon CloudWatch Logs to monitor applications and systems
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-ListWindowsInventory</b> to collect information about an EC2 instance running in Windows.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-FindWindowsUpdates</b> to scan an instance and determines which updates are missing.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-InstallMissingWindowsUpdates</b> to install missing updates on your EC2 instance.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-InstallSpecificWindowsUpdates</b> to install one or more specific updates.
- * </p>
- * </li>
- * </ul>
- * <important>
- * <p>
- * The commands or scripts specified in SSM documents run with administrative privilege on your instances because the
- * Amazon SSM agent runs as root on Linux and the EC2Config service runs in the Local System account on Windows. If a
- * user has permission to execute any of the pre-defined SSM documents (any document that begins with AWS-*) then that
- * user also has administrator access to the instance. Delegate access to Run Command and SSM Config judiciously. This
- * becomes extremely important if you create your own SSM documents. Amazon Web Services does not provide guidance about
- * how to create secure SSM documents. You create SSM documents and delegate access to Run Command at your own risk. As
- * a security best practice, we recommend that you assign access to "AWS-*" documents, especially the AWS-RunShellScript
- * document on Linux and the AWS-RunPowerShellScript document on Windows, to trusted administrators only. You can create
- * SSM documents for specific tasks and delegate access to non-administrators.
- * </p>
- * </important>
- * <p>
- * For information about creating and sharing SSM documents, see the following topics in the SSM User Guide:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ssm-doc.html">Creating SSM Documents</a> and <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssm-sharing.html">Sharing SSM Documents</a> (Linux)
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html">Creating SSM Documents</a> and <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ssm-sharing.html">Sharing SSM Documents</a> (Windows)
- * </p>
- * </li>
- * </ul>
  */
 public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagement {
 
@@ -321,11 +170,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Associates the specified SSM document with the specified instance.
+     * Associates the specified SSM document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate an SSM document with an instance, the configuration agent on the instance (SSM agent for Linux
-     * and EC2Config service for Windows) processes the document and configures the instance as specified.
+     * When you associate an SSM document with one or more instances using instance IDs or tags, the SSM agent running
+     * on the instance processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an associated document, the system throws the
@@ -340,11 +189,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Associates the specified SSM document with the specified instance.
+     * Associates the specified SSM document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate an SSM document with an instance, the configuration agent on the instance (SSM agent for Linux
-     * and EC2Config service for Windows) processes the document and configures the instance as specified.
+     * When you associate an SSM document with one or more instances using instance IDs or tags, the SSM agent running
+     * on the instance processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an associated document, the system throws the
@@ -364,11 +213,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Associates the specified SSM document with the specified instances.
+     * Associates the specified SSM document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate an SSM document with an instance, the configuration agent on the instance (SSM agent for Linux
-     * and EC2Config service for Windows) processes the document and configures the instance as specified.
+     * When you associate an SSM document with one or more instances using instance IDs or tags, the SSM agent running
+     * on the instance processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an associated document, the system throws the
@@ -383,11 +232,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Associates the specified SSM document with the specified instances.
+     * Associates the specified SSM document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate an SSM document with an instance, the configuration agent on the instance (SSM agent for Linux
-     * and EC2Config service for Windows) processes the document and configures the instance as specified.
+     * When you associate an SSM document with one or more instances using instance IDs or tags, the SSM agent running
+     * on the instance processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an associated document, the system throws the
@@ -439,6 +288,33 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<CreateDocumentResult> createDocumentAsync(CreateDocumentRequest createDocumentRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDocumentRequest, CreateDocumentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new Maintenance Window.
+     * </p>
+     * 
+     * @param createMaintenanceWindowRequest
+     * @return A Java Future containing the result of the CreateMaintenanceWindow operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.CreateMaintenanceWindow
+     */
+    java.util.concurrent.Future<CreateMaintenanceWindowResult> createMaintenanceWindowAsync(CreateMaintenanceWindowRequest createMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Creates a new Maintenance Window.
+     * </p>
+     * 
+     * @param createMaintenanceWindowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMaintenanceWindow operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.CreateMaintenanceWindow
+     */
+    java.util.concurrent.Future<CreateMaintenanceWindowResult> createMaintenanceWindowAsync(CreateMaintenanceWindowRequest createMaintenanceWindowRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMaintenanceWindowRequest, CreateMaintenanceWindowResult> asyncHandler);
 
     /**
      * <p>
@@ -545,6 +421,60 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Deletes a Maintenance Window.
+     * </p>
+     * 
+     * @param deleteMaintenanceWindowRequest
+     * @return A Java Future containing the result of the DeleteMaintenanceWindow operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DeleteMaintenanceWindow
+     */
+    java.util.concurrent.Future<DeleteMaintenanceWindowResult> deleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Deletes a Maintenance Window.
+     * </p>
+     * 
+     * @param deleteMaintenanceWindowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMaintenanceWindow operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteMaintenanceWindow
+     */
+    java.util.concurrent.Future<DeleteMaintenanceWindowResult> deleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMaintenanceWindowRequest, DeleteMaintenanceWindowResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete a parameter from the system.
+     * </p>
+     * 
+     * @param deleteParameterRequest
+     * @return A Java Future containing the result of the DeleteParameter operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DeleteParameter
+     */
+    java.util.concurrent.Future<DeleteParameterResult> deleteParameterAsync(DeleteParameterRequest deleteParameterRequest);
+
+    /**
+     * <p>
+     * Delete a parameter from the system.
+     * </p>
+     * 
+     * @param deleteParameterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteParameter operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteParameter
+     */
+    java.util.concurrent.Future<DeleteParameterResult> deleteParameterAsync(DeleteParameterRequest deleteParameterRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteParameterRequest, DeleteParameterResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes the server or virtual machine from the list of registered servers. You can reregister the instance again
      * at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM agent first.
      * </p>
@@ -573,6 +503,68 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     java.util.concurrent.Future<DeregisterManagedInstanceResult> deregisterManagedInstanceAsync(
             DeregisterManagedInstanceRequest deregisterManagedInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<DeregisterManagedInstanceRequest, DeregisterManagedInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a target from a Maintenance Window.
+     * </p>
+     * 
+     * @param deregisterTargetFromMaintenanceWindowRequest
+     * @return A Java Future containing the result of the DeregisterTargetFromMaintenanceWindow operation returned by
+     *         the service.
+     * @sample AWSSimpleSystemsManagementAsync.DeregisterTargetFromMaintenanceWindow
+     */
+    java.util.concurrent.Future<DeregisterTargetFromMaintenanceWindowResult> deregisterTargetFromMaintenanceWindowAsync(
+            DeregisterTargetFromMaintenanceWindowRequest deregisterTargetFromMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Removes a target from a Maintenance Window.
+     * </p>
+     * 
+     * @param deregisterTargetFromMaintenanceWindowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterTargetFromMaintenanceWindow operation returned by
+     *         the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeregisterTargetFromMaintenanceWindow
+     */
+    java.util.concurrent.Future<DeregisterTargetFromMaintenanceWindowResult> deregisterTargetFromMaintenanceWindowAsync(
+            DeregisterTargetFromMaintenanceWindowRequest deregisterTargetFromMaintenanceWindowRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterTargetFromMaintenanceWindowRequest, DeregisterTargetFromMaintenanceWindowResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a task from a Maintenance Window.
+     * </p>
+     * 
+     * @param deregisterTaskFromMaintenanceWindowRequest
+     * @return A Java Future containing the result of the DeregisterTaskFromMaintenanceWindow operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DeregisterTaskFromMaintenanceWindow
+     */
+    java.util.concurrent.Future<DeregisterTaskFromMaintenanceWindowResult> deregisterTaskFromMaintenanceWindowAsync(
+            DeregisterTaskFromMaintenanceWindowRequest deregisterTaskFromMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Removes a task from a Maintenance Window.
+     * </p>
+     * 
+     * @param deregisterTaskFromMaintenanceWindowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterTaskFromMaintenanceWindow operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeregisterTaskFromMaintenanceWindow
+     */
+    java.util.concurrent.Future<DeregisterTaskFromMaintenanceWindowResult> deregisterTaskFromMaintenanceWindowAsync(
+            DeregisterTaskFromMaintenanceWindowRequest deregisterTaskFromMaintenanceWindowRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterTaskFromMaintenanceWindowRequest, DeregisterTaskFromMaintenanceWindowResult> asyncHandler);
 
     /**
      * <p>
@@ -629,6 +621,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<DescribeAssociationResult> describeAssociationAsync(DescribeAssociationRequest describeAssociationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAssociationRequest, DescribeAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides details about all active and terminated Automation executions.
+     * </p>
+     * 
+     * @param describeAutomationExecutionsRequest
+     * @return A Java Future containing the result of the DescribeAutomationExecutions operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeAutomationExecutions
+     */
+    java.util.concurrent.Future<DescribeAutomationExecutionsResult> describeAutomationExecutionsAsync(
+            DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest);
+
+    /**
+     * <p>
+     * Provides details about all active and terminated Automation executions.
+     * </p>
+     * 
+     * @param describeAutomationExecutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAutomationExecutions operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeAutomationExecutions
+     */
+    java.util.concurrent.Future<DescribeAutomationExecutionsResult> describeAutomationExecutionsAsync(
+            DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAutomationExecutionsRequest, DescribeAutomationExecutionsResult> asyncHandler);
 
     /**
      * <p>
@@ -690,6 +713,68 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * All associations for the instance(s).
+     * </p>
+     * 
+     * @param describeEffectiveInstanceAssociationsRequest
+     * @return A Java Future containing the result of the DescribeEffectiveInstanceAssociations operation returned by
+     *         the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeEffectiveInstanceAssociations
+     */
+    java.util.concurrent.Future<DescribeEffectiveInstanceAssociationsResult> describeEffectiveInstanceAssociationsAsync(
+            DescribeEffectiveInstanceAssociationsRequest describeEffectiveInstanceAssociationsRequest);
+
+    /**
+     * <p>
+     * All associations for the instance(s).
+     * </p>
+     * 
+     * @param describeEffectiveInstanceAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEffectiveInstanceAssociations operation returned by
+     *         the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeEffectiveInstanceAssociations
+     */
+    java.util.concurrent.Future<DescribeEffectiveInstanceAssociationsResult> describeEffectiveInstanceAssociationsAsync(
+            DescribeEffectiveInstanceAssociationsRequest describeEffectiveInstanceAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEffectiveInstanceAssociationsRequest, DescribeEffectiveInstanceAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * The status of the associations for the instance(s).
+     * </p>
+     * 
+     * @param describeInstanceAssociationsStatusRequest
+     * @return A Java Future containing the result of the DescribeInstanceAssociationsStatus operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeInstanceAssociationsStatus
+     */
+    java.util.concurrent.Future<DescribeInstanceAssociationsStatusResult> describeInstanceAssociationsStatusAsync(
+            DescribeInstanceAssociationsStatusRequest describeInstanceAssociationsStatusRequest);
+
+    /**
+     * <p>
+     * The status of the associations for the instance(s).
+     * </p>
+     * 
+     * @param describeInstanceAssociationsStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstanceAssociationsStatus operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeInstanceAssociationsStatus
+     */
+    java.util.concurrent.Future<DescribeInstanceAssociationsStatusResult> describeInstanceAssociationsStatusAsync(
+            DescribeInstanceAssociationsStatusRequest describeInstanceAssociationsStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceAssociationsStatusRequest, DescribeInstanceAssociationsStatusResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes one or more of your instances. You can use this to get information about instances like the operating
      * system platform, the SSM agent version (Linux), status etc. If you specify one or more instance IDs, it returns
      * information for those instances. If you do not specify instance IDs, it returns information for all your
@@ -727,6 +812,275 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Retrieves the individual task executions (one per target) for a particular task executed as part of a Maintenance
+     * Window execution.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowExecutionTaskInvocationsRequest
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowExecutionTaskInvocations operation
+     *         returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindowExecutionTaskInvocations
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowExecutionTaskInvocationsResult> describeMaintenanceWindowExecutionTaskInvocationsAsync(
+            DescribeMaintenanceWindowExecutionTaskInvocationsRequest describeMaintenanceWindowExecutionTaskInvocationsRequest);
+
+    /**
+     * <p>
+     * Retrieves the individual task executions (one per target) for a particular task executed as part of a Maintenance
+     * Window execution.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowExecutionTaskInvocationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowExecutionTaskInvocations operation
+     *         returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindowExecutionTaskInvocations
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowExecutionTaskInvocationsResult> describeMaintenanceWindowExecutionTaskInvocationsAsync(
+            DescribeMaintenanceWindowExecutionTaskInvocationsRequest describeMaintenanceWindowExecutionTaskInvocationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowExecutionTaskInvocationsRequest, DescribeMaintenanceWindowExecutionTaskInvocationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * For a given Maintenance Window execution, lists the tasks that were executed.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowExecutionTasksRequest
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowExecutionTasks operation returned by
+     *         the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindowExecutionTasks
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowExecutionTasksResult> describeMaintenanceWindowExecutionTasksAsync(
+            DescribeMaintenanceWindowExecutionTasksRequest describeMaintenanceWindowExecutionTasksRequest);
+
+    /**
+     * <p>
+     * For a given Maintenance Window execution, lists the tasks that were executed.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowExecutionTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowExecutionTasks operation returned by
+     *         the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindowExecutionTasks
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowExecutionTasksResult> describeMaintenanceWindowExecutionTasksAsync(
+            DescribeMaintenanceWindowExecutionTasksRequest describeMaintenanceWindowExecutionTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowExecutionTasksRequest, DescribeMaintenanceWindowExecutionTasksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the executions of a Maintenance Window (meaning, information about when the Maintenance Window was
+     * scheduled to be active and information about tasks registered and run with the Maintenance Window).
+     * </p>
+     * 
+     * @param describeMaintenanceWindowExecutionsRequest
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowExecutions operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindowExecutions
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowExecutionsResult> describeMaintenanceWindowExecutionsAsync(
+            DescribeMaintenanceWindowExecutionsRequest describeMaintenanceWindowExecutionsRequest);
+
+    /**
+     * <p>
+     * Lists the executions of a Maintenance Window (meaning, information about when the Maintenance Window was
+     * scheduled to be active and information about tasks registered and run with the Maintenance Window).
+     * </p>
+     * 
+     * @param describeMaintenanceWindowExecutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowExecutions operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindowExecutions
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowExecutionsResult> describeMaintenanceWindowExecutionsAsync(
+            DescribeMaintenanceWindowExecutionsRequest describeMaintenanceWindowExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowExecutionsRequest, DescribeMaintenanceWindowExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the targets registered with the Maintenance Window.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowTargetsRequest
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowTargets operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindowTargets
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowTargetsResult> describeMaintenanceWindowTargetsAsync(
+            DescribeMaintenanceWindowTargetsRequest describeMaintenanceWindowTargetsRequest);
+
+    /**
+     * <p>
+     * Lists the targets registered with the Maintenance Window.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowTargets operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindowTargets
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowTargetsResult> describeMaintenanceWindowTargetsAsync(
+            DescribeMaintenanceWindowTargetsRequest describeMaintenanceWindowTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowTargetsRequest, DescribeMaintenanceWindowTargetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the tasks in a Maintenance Window.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowTasksRequest
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowTasks operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindowTasks
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowTasksResult> describeMaintenanceWindowTasksAsync(
+            DescribeMaintenanceWindowTasksRequest describeMaintenanceWindowTasksRequest);
+
+    /**
+     * <p>
+     * Lists the tasks in a Maintenance Window.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowTasks operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindowTasks
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowTasksResult> describeMaintenanceWindowTasksAsync(
+            DescribeMaintenanceWindowTasksRequest describeMaintenanceWindowTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowTasksRequest, DescribeMaintenanceWindowTasksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the Maintenance Windows in an AWS account.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowsRequest
+     * @return A Java Future containing the result of the DescribeMaintenanceWindows operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindows
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowsResult> describeMaintenanceWindowsAsync(
+            DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest);
+
+    /**
+     * <p>
+     * Retrieves the Maintenance Windows in an AWS account.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMaintenanceWindows operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindows
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowsResult> describeMaintenanceWindowsAsync(
+            DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowsRequest, DescribeMaintenanceWindowsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get information about a parameter.
+     * </p>
+     * 
+     * @param describeParametersRequest
+     * @return A Java Future containing the result of the DescribeParameters operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeParameters
+     */
+    java.util.concurrent.Future<DescribeParametersResult> describeParametersAsync(DescribeParametersRequest describeParametersRequest);
+
+    /**
+     * <p>
+     * Get information about a parameter.
+     * </p>
+     * 
+     * @param describeParametersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeParameters operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeParameters
+     */
+    java.util.concurrent.Future<DescribeParametersResult> describeParametersAsync(DescribeParametersRequest describeParametersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeParametersRequest, DescribeParametersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get detailed information about a particular Automation execution.
+     * </p>
+     * 
+     * @param getAutomationExecutionRequest
+     * @return A Java Future containing the result of the GetAutomationExecution operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetAutomationExecution
+     */
+    java.util.concurrent.Future<GetAutomationExecutionResult> getAutomationExecutionAsync(GetAutomationExecutionRequest getAutomationExecutionRequest);
+
+    /**
+     * <p>
+     * Get detailed information about a particular Automation execution.
+     * </p>
+     * 
+     * @param getAutomationExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAutomationExecution operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetAutomationExecution
+     */
+    java.util.concurrent.Future<GetAutomationExecutionResult> getAutomationExecutionAsync(GetAutomationExecutionRequest getAutomationExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAutomationExecutionRequest, GetAutomationExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns detailed information about command execution for an invocation or plugin.
+     * </p>
+     * 
+     * @param getCommandInvocationRequest
+     * @return A Java Future containing the result of the GetCommandInvocation operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetCommandInvocation
+     */
+    java.util.concurrent.Future<GetCommandInvocationResult> getCommandInvocationAsync(GetCommandInvocationRequest getCommandInvocationRequest);
+
+    /**
+     * <p>
+     * Returns detailed information about command execution for an invocation or plugin.
+     * </p>
+     * 
+     * @param getCommandInvocationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCommandInvocation operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetCommandInvocation
+     */
+    java.util.concurrent.Future<GetCommandInvocationResult> getCommandInvocationAsync(GetCommandInvocationRequest getCommandInvocationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCommandInvocationRequest, GetCommandInvocationResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the contents of the specified SSM document.
      * </p>
      * 
@@ -751,6 +1105,205 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<GetDocumentResult> getDocumentAsync(GetDocumentRequest getDocumentRequest,
             com.amazonaws.handlers.AsyncHandler<GetDocumentRequest, GetDocumentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Query inventory information.
+     * </p>
+     * 
+     * @param getInventoryRequest
+     * @return A Java Future containing the result of the GetInventory operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetInventory
+     */
+    java.util.concurrent.Future<GetInventoryResult> getInventoryAsync(GetInventoryRequest getInventoryRequest);
+
+    /**
+     * <p>
+     * Query inventory information.
+     * </p>
+     * 
+     * @param getInventoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInventory operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetInventory
+     */
+    java.util.concurrent.Future<GetInventoryResult> getInventoryAsync(GetInventoryRequest getInventoryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInventoryRequest, GetInventoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Return a list of inventory type names for the account, or return a list of attribute names for a specific
+     * Inventory item type.
+     * </p>
+     * 
+     * @param getInventorySchemaRequest
+     * @return A Java Future containing the result of the GetInventorySchema operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetInventorySchema
+     */
+    java.util.concurrent.Future<GetInventorySchemaResult> getInventorySchemaAsync(GetInventorySchemaRequest getInventorySchemaRequest);
+
+    /**
+     * <p>
+     * Return a list of inventory type names for the account, or return a list of attribute names for a specific
+     * Inventory item type.
+     * </p>
+     * 
+     * @param getInventorySchemaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInventorySchema operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetInventorySchema
+     */
+    java.util.concurrent.Future<GetInventorySchemaResult> getInventorySchemaAsync(GetInventorySchemaRequest getInventorySchemaRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInventorySchemaRequest, GetInventorySchemaResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a Maintenance Window.
+     * </p>
+     * 
+     * @param getMaintenanceWindowRequest
+     * @return A Java Future containing the result of the GetMaintenanceWindow operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetMaintenanceWindow
+     */
+    java.util.concurrent.Future<GetMaintenanceWindowResult> getMaintenanceWindowAsync(GetMaintenanceWindowRequest getMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Retrieves a Maintenance Window.
+     * </p>
+     * 
+     * @param getMaintenanceWindowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMaintenanceWindow operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetMaintenanceWindow
+     */
+    java.util.concurrent.Future<GetMaintenanceWindowResult> getMaintenanceWindowAsync(GetMaintenanceWindowRequest getMaintenanceWindowRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowRequest, GetMaintenanceWindowResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details about a specific task executed as part of a Maintenance Window execution.
+     * </p>
+     * 
+     * @param getMaintenanceWindowExecutionRequest
+     * @return A Java Future containing the result of the GetMaintenanceWindowExecution operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.GetMaintenanceWindowExecution
+     */
+    java.util.concurrent.Future<GetMaintenanceWindowExecutionResult> getMaintenanceWindowExecutionAsync(
+            GetMaintenanceWindowExecutionRequest getMaintenanceWindowExecutionRequest);
+
+    /**
+     * <p>
+     * Retrieves details about a specific task executed as part of a Maintenance Window execution.
+     * </p>
+     * 
+     * @param getMaintenanceWindowExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMaintenanceWindowExecution operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetMaintenanceWindowExecution
+     */
+    java.util.concurrent.Future<GetMaintenanceWindowExecutionResult> getMaintenanceWindowExecutionAsync(
+            GetMaintenanceWindowExecutionRequest getMaintenanceWindowExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowExecutionRequest, GetMaintenanceWindowExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the details about a specific task executed as part of a Maintenance Window execution.
+     * </p>
+     * 
+     * @param getMaintenanceWindowExecutionTaskRequest
+     * @return A Java Future containing the result of the GetMaintenanceWindowExecutionTask operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.GetMaintenanceWindowExecutionTask
+     */
+    java.util.concurrent.Future<GetMaintenanceWindowExecutionTaskResult> getMaintenanceWindowExecutionTaskAsync(
+            GetMaintenanceWindowExecutionTaskRequest getMaintenanceWindowExecutionTaskRequest);
+
+    /**
+     * <p>
+     * Retrieves the details about a specific task executed as part of a Maintenance Window execution.
+     * </p>
+     * 
+     * @param getMaintenanceWindowExecutionTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMaintenanceWindowExecutionTask operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetMaintenanceWindowExecutionTask
+     */
+    java.util.concurrent.Future<GetMaintenanceWindowExecutionTaskResult> getMaintenanceWindowExecutionTaskAsync(
+            GetMaintenanceWindowExecutionTaskRequest getMaintenanceWindowExecutionTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowExecutionTaskRequest, GetMaintenanceWindowExecutionTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Query a list of all parameters used by the AWS account.
+     * </p>
+     * 
+     * @param getParameterHistoryRequest
+     * @return A Java Future containing the result of the GetParameterHistory operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetParameterHistory
+     */
+    java.util.concurrent.Future<GetParameterHistoryResult> getParameterHistoryAsync(GetParameterHistoryRequest getParameterHistoryRequest);
+
+    /**
+     * <p>
+     * Query a list of all parameters used by the AWS account.
+     * </p>
+     * 
+     * @param getParameterHistoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetParameterHistory operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetParameterHistory
+     */
+    java.util.concurrent.Future<GetParameterHistoryResult> getParameterHistoryAsync(GetParameterHistoryRequest getParameterHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetParameterHistoryRequest, GetParameterHistoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get a list of parameters used by the AWS account.&gt;
+     * </p>
+     * 
+     * @param getParametersRequest
+     * @return A Java Future containing the result of the GetParameters operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetParameters
+     */
+    java.util.concurrent.Future<GetParametersResult> getParametersAsync(GetParametersRequest getParametersRequest);
+
+    /**
+     * <p>
+     * Get a list of parameters used by the AWS account.&gt;
+     * </p>
+     * 
+     * @param getParametersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetParameters operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetParameters
+     */
+    java.util.concurrent.Future<GetParametersResult> getParametersAsync(GetParametersRequest getParametersRequest,
+            com.amazonaws.handlers.AsyncHandler<GetParametersRequest, GetParametersResult> asyncHandler);
 
     /**
      * <p>
@@ -841,6 +1394,33 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * List all versions for a document.
+     * </p>
+     * 
+     * @param listDocumentVersionsRequest
+     * @return A Java Future containing the result of the ListDocumentVersions operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListDocumentVersions
+     */
+    java.util.concurrent.Future<ListDocumentVersionsResult> listDocumentVersionsAsync(ListDocumentVersionsRequest listDocumentVersionsRequest);
+
+    /**
+     * <p>
+     * List all versions for a document.
+     * </p>
+     * 
+     * @param listDocumentVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDocumentVersions operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListDocumentVersions
+     */
+    java.util.concurrent.Future<ListDocumentVersionsResult> listDocumentVersionsAsync(ListDocumentVersionsRequest listDocumentVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDocumentVersionsRequest, ListDocumentVersionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes one or more of your SSM documents.
      * </p>
      * 
@@ -880,6 +1460,33 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync(
             com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * A list of inventory items returned by the request.
+     * </p>
+     * 
+     * @param listInventoryEntriesRequest
+     * @return A Java Future containing the result of the ListInventoryEntries operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListInventoryEntries
+     */
+    java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(ListInventoryEntriesRequest listInventoryEntriesRequest);
+
+    /**
+     * <p>
+     * A list of inventory items returned by the request.
+     * </p>
+     * 
+     * @param listInventoryEntriesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInventoryEntries operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListInventoryEntries
+     */
+    java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(ListInventoryEntriesRequest listInventoryEntriesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInventoryEntriesRequest, ListInventoryEntriesResult> asyncHandler);
 
     /**
      * <p>
@@ -941,6 +1548,124 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Bulk update custom inventory items on one more instance. The request adds an inventory item, if it doesn't
+     * already exist, or updates an inventory item, if it does exist.
+     * </p>
+     * 
+     * @param putInventoryRequest
+     * @return A Java Future containing the result of the PutInventory operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.PutInventory
+     */
+    java.util.concurrent.Future<PutInventoryResult> putInventoryAsync(PutInventoryRequest putInventoryRequest);
+
+    /**
+     * <p>
+     * Bulk update custom inventory items on one more instance. The request adds an inventory item, if it doesn't
+     * already exist, or updates an inventory item, if it does exist.
+     * </p>
+     * 
+     * @param putInventoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutInventory operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.PutInventory
+     */
+    java.util.concurrent.Future<PutInventoryResult> putInventoryAsync(PutInventoryRequest putInventoryRequest,
+            com.amazonaws.handlers.AsyncHandler<PutInventoryRequest, PutInventoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Add one or more paramaters to the system.
+     * </p>
+     * 
+     * @param putParameterRequest
+     * @return A Java Future containing the result of the PutParameter operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.PutParameter
+     */
+    java.util.concurrent.Future<PutParameterResult> putParameterAsync(PutParameterRequest putParameterRequest);
+
+    /**
+     * <p>
+     * Add one or more paramaters to the system.
+     * </p>
+     * 
+     * @param putParameterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutParameter operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.PutParameter
+     */
+    java.util.concurrent.Future<PutParameterResult> putParameterAsync(PutParameterRequest putParameterRequest,
+            com.amazonaws.handlers.AsyncHandler<PutParameterRequest, PutParameterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Registers a target with a Maintenance Window.
+     * </p>
+     * 
+     * @param registerTargetWithMaintenanceWindowRequest
+     * @return A Java Future containing the result of the RegisterTargetWithMaintenanceWindow operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.RegisterTargetWithMaintenanceWindow
+     */
+    java.util.concurrent.Future<RegisterTargetWithMaintenanceWindowResult> registerTargetWithMaintenanceWindowAsync(
+            RegisterTargetWithMaintenanceWindowRequest registerTargetWithMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Registers a target with a Maintenance Window.
+     * </p>
+     * 
+     * @param registerTargetWithMaintenanceWindowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterTargetWithMaintenanceWindow operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.RegisterTargetWithMaintenanceWindow
+     */
+    java.util.concurrent.Future<RegisterTargetWithMaintenanceWindowResult> registerTargetWithMaintenanceWindowAsync(
+            RegisterTargetWithMaintenanceWindowRequest registerTargetWithMaintenanceWindowRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterTargetWithMaintenanceWindowRequest, RegisterTargetWithMaintenanceWindowResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a new task to a Maintenance Window.
+     * </p>
+     * 
+     * @param registerTaskWithMaintenanceWindowRequest
+     * @return A Java Future containing the result of the RegisterTaskWithMaintenanceWindow operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.RegisterTaskWithMaintenanceWindow
+     */
+    java.util.concurrent.Future<RegisterTaskWithMaintenanceWindowResult> registerTaskWithMaintenanceWindowAsync(
+            RegisterTaskWithMaintenanceWindowRequest registerTaskWithMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Adds a new task to a Maintenance Window.
+     * </p>
+     * 
+     * @param registerTaskWithMaintenanceWindowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterTaskWithMaintenanceWindow operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.RegisterTaskWithMaintenanceWindow
+     */
+    java.util.concurrent.Future<RegisterTaskWithMaintenanceWindowResult> registerTaskWithMaintenanceWindowAsync(
+            RegisterTaskWithMaintenanceWindowRequest registerTaskWithMaintenanceWindowRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterTaskWithMaintenanceWindowRequest, RegisterTaskWithMaintenanceWindowResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes all tags from the specified resource.
      * </p>
      * 
@@ -995,6 +1720,89 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Initiates execution of an Automation document.
+     * </p>
+     * 
+     * @param startAutomationExecutionRequest
+     * @return A Java Future containing the result of the StartAutomationExecution operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.StartAutomationExecution
+     */
+    java.util.concurrent.Future<StartAutomationExecutionResult> startAutomationExecutionAsync(StartAutomationExecutionRequest startAutomationExecutionRequest);
+
+    /**
+     * <p>
+     * Initiates execution of an Automation document.
+     * </p>
+     * 
+     * @param startAutomationExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartAutomationExecution operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.StartAutomationExecution
+     */
+    java.util.concurrent.Future<StartAutomationExecutionResult> startAutomationExecutionAsync(StartAutomationExecutionRequest startAutomationExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartAutomationExecutionRequest, StartAutomationExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stop an Automation that is currently executing.
+     * </p>
+     * 
+     * @param stopAutomationExecutionRequest
+     * @return A Java Future containing the result of the StopAutomationExecution operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.StopAutomationExecution
+     */
+    java.util.concurrent.Future<StopAutomationExecutionResult> stopAutomationExecutionAsync(StopAutomationExecutionRequest stopAutomationExecutionRequest);
+
+    /**
+     * <p>
+     * Stop an Automation that is currently executing.
+     * </p>
+     * 
+     * @param stopAutomationExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopAutomationExecution operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.StopAutomationExecution
+     */
+    java.util.concurrent.Future<StopAutomationExecutionResult> stopAutomationExecutionAsync(StopAutomationExecutionRequest stopAutomationExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopAutomationExecutionRequest, StopAutomationExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an association. You can only update the document version, schedule, parameters, and Amazon S3 output of
+     * an association.
+     * </p>
+     * 
+     * @param updateAssociationRequest
+     * @return A Java Future containing the result of the UpdateAssociation operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateAssociation
+     */
+    java.util.concurrent.Future<UpdateAssociationResult> updateAssociationAsync(UpdateAssociationRequest updateAssociationRequest);
+
+    /**
+     * <p>
+     * Updates an association. You can only update the document version, schedule, parameters, and Amazon S3 output of
+     * an association.
+     * </p>
+     * 
+     * @param updateAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAssociation operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateAssociation
+     */
+    java.util.concurrent.Future<UpdateAssociationResult> updateAssociationAsync(UpdateAssociationRequest updateAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAssociationRequest, UpdateAssociationResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the status of the SSM document associated with the specified instance.
      * </p>
      * 
@@ -1019,6 +1827,91 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<UpdateAssociationStatusResult> updateAssociationStatusAsync(UpdateAssociationStatusRequest updateAssociationStatusRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAssociationStatusRequest, UpdateAssociationStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * The document you want to update.
+     * </p>
+     * 
+     * @param updateDocumentRequest
+     * @return A Java Future containing the result of the UpdateDocument operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateDocument
+     */
+    java.util.concurrent.Future<UpdateDocumentResult> updateDocumentAsync(UpdateDocumentRequest updateDocumentRequest);
+
+    /**
+     * <p>
+     * The document you want to update.
+     * </p>
+     * 
+     * @param updateDocumentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDocument operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateDocument
+     */
+    java.util.concurrent.Future<UpdateDocumentResult> updateDocumentAsync(UpdateDocumentRequest updateDocumentRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDocumentRequest, UpdateDocumentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Set the default version of a document.
+     * </p>
+     * 
+     * @param updateDocumentDefaultVersionRequest
+     * @return A Java Future containing the result of the UpdateDocumentDefaultVersion operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateDocumentDefaultVersion
+     */
+    java.util.concurrent.Future<UpdateDocumentDefaultVersionResult> updateDocumentDefaultVersionAsync(
+            UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest);
+
+    /**
+     * <p>
+     * Set the default version of a document.
+     * </p>
+     * 
+     * @param updateDocumentDefaultVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDocumentDefaultVersion operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateDocumentDefaultVersion
+     */
+    java.util.concurrent.Future<UpdateDocumentDefaultVersionResult> updateDocumentDefaultVersionAsync(
+            UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDocumentDefaultVersionRequest, UpdateDocumentDefaultVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing Maintenance Window. Only specified parameters are modified.
+     * </p>
+     * 
+     * @param updateMaintenanceWindowRequest
+     * @return A Java Future containing the result of the UpdateMaintenanceWindow operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateMaintenanceWindow
+     */
+    java.util.concurrent.Future<UpdateMaintenanceWindowResult> updateMaintenanceWindowAsync(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Updates an existing Maintenance Window. Only specified parameters are modified.
+     * </p>
+     * 
+     * @param updateMaintenanceWindowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMaintenanceWindow operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateMaintenanceWindow
+     */
+    java.util.concurrent.Future<UpdateMaintenanceWindowResult> updateMaintenanceWindowAsync(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResult> asyncHandler);
 
     /**
      * <p>

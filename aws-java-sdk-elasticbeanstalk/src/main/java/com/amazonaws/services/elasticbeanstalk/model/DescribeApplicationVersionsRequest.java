@@ -17,21 +17,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Result message containing a list of configuration descriptions.
+ * Request to describe application versions.
  * </p>
  */
 public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include ones that are associated
-     * with the specified application.
+     * Specify an application name to show only application versions for that application.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * If specified, restricts the returned descriptions to only include ones that have the specified version labels.
+     * Specify a version label to show a specific application version.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> versionLabels;
@@ -50,13 +49,11 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include ones that are associated
-     * with the specified application.
+     * Specify an application name to show only application versions for that application.
      * </p>
      * 
      * @param applicationName
-     *        If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include ones that are
-     *        associated with the specified application.
+     *        Specify an application name to show only application versions for that application.
      */
 
     public void setApplicationName(String applicationName) {
@@ -65,12 +62,10 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include ones that are associated
-     * with the specified application.
+     * Specify an application name to show only application versions for that application.
      * </p>
      * 
-     * @return If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include ones that are
-     *         associated with the specified application.
+     * @return Specify an application name to show only application versions for that application.
      */
 
     public String getApplicationName() {
@@ -79,13 +74,11 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include ones that are associated
-     * with the specified application.
+     * Specify an application name to show only application versions for that application.
      * </p>
      * 
      * @param applicationName
-     *        If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include ones that are
-     *        associated with the specified application.
+     *        Specify an application name to show only application versions for that application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +89,10 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, restricts the returned descriptions to only include ones that have the specified version labels.
+     * Specify a version label to show a specific application version.
      * </p>
      * 
-     * @return If specified, restricts the returned descriptions to only include ones that have the specified version
-     *         labels.
+     * @return Specify a version label to show a specific application version.
      */
 
     public java.util.List<String> getVersionLabels() {
@@ -112,12 +104,11 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, restricts the returned descriptions to only include ones that have the specified version labels.
+     * Specify a version label to show a specific application version.
      * </p>
      * 
      * @param versionLabels
-     *        If specified, restricts the returned descriptions to only include ones that have the specified version
-     *        labels.
+     *        Specify a version label to show a specific application version.
      */
 
     public void setVersionLabels(java.util.Collection<String> versionLabels) {
@@ -131,7 +122,7 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, restricts the returned descriptions to only include ones that have the specified version labels.
+     * Specify a version label to show a specific application version.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -140,8 +131,7 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param versionLabels
-     *        If specified, restricts the returned descriptions to only include ones that have the specified version
-     *        labels.
+     *        Specify a version label to show a specific application version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,12 +147,11 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, restricts the returned descriptions to only include ones that have the specified version labels.
+     * Specify a version label to show a specific application version.
      * </p>
      * 
      * @param versionLabels
-     *        If specified, restricts the returned descriptions to only include ones that have the specified version
-     *        labels.
+     *        Specify a version label to show a specific application version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

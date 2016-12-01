@@ -39,7 +39,12 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     private Integer ruleNumber;
     /**
      * <p>
-     * The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols.
+     * The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols. If you specify
+     * <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or
+     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports or ICMP types or codes you specify.
+     * If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and
+     * codes allowed, regardless of any that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
+     * an IPv6 CIDR block, you must specify an ICMP type and code.
      * </p>
      */
     private String protocol;
@@ -60,19 +65,26 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
     private Boolean egress;
     /**
      * <p>
-     * The network range to allow or deny, in CIDR notation.
+     * The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
      * </p>
      */
     private String cidrBlock;
     /**
      * <p>
-     * ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP) for the protocol.
+     * The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).
+     * </p>
+     */
+    private String ipv6CidrBlock;
+    /**
+     * <p>
+     * ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the ICMP (1) protocol, or protocol 58
+     * (ICMPv6) with an IPv6 CIDR block.
      * </p>
      */
     private IcmpTypeCode icmpTypeCode;
     /**
      * <p>
-     * TCP or UDP protocols: The range of ports the rule applies to. Required if specifying 6 (TCP) or 17 (UDP) for the
+     * TCP or UDP protocols: The range of ports the rule applies to. Required if specifying TCP (6) or UDP (17) for the
      * protocol.
      * </p>
      */
@@ -160,11 +172,21 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols.
+     * The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols. If you specify
+     * <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or
+     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports or ICMP types or codes you specify.
+     * If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and
+     * codes allowed, regardless of any that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
+     * an IPv6 CIDR block, you must specify an ICMP type and code.
      * </p>
      * 
      * @param protocol
-     *        The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols.
+     *        The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols. If you specify
+     *        <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or
+     *        <code>icmp</code>, traffic on all ports is allowed, regardless of any ports or ICMP types or codes you
+     *        specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all
+     *        ICMP types and codes allowed, regardless of any that you specify. If you specify protocol <code>58</code>
+     *        (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.
      */
 
     public void setProtocol(String protocol) {
@@ -173,10 +195,20 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols.
+     * The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols. If you specify
+     * <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or
+     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports or ICMP types or codes you specify.
+     * If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and
+     * codes allowed, regardless of any that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
+     * an IPv6 CIDR block, you must specify an ICMP type and code.
      * </p>
      * 
-     * @return The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols.
+     * @return The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols. If you
+     *         specify <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>,
+     *         <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any ports or ICMP
+     *         types or codes you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR
+     *         block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify
+     *         protocol <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.
      */
 
     public String getProtocol() {
@@ -185,11 +217,21 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols.
+     * The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols. If you specify
+     * <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or
+     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports or ICMP types or codes you specify.
+     * If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and
+     * codes allowed, regardless of any that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify
+     * an IPv6 CIDR block, you must specify an ICMP type and code.
      * </p>
      * 
      * @param protocol
-     *        The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols.
+     *        The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols. If you specify
+     *        <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or
+     *        <code>icmp</code>, traffic on all ports is allowed, regardless of any ports or ICMP types or codes you
+     *        specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all
+     *        ICMP types and codes allowed, regardless of any that you specify. If you specify protocol <code>58</code>
+     *        (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,11 +387,11 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The network range to allow or deny, in CIDR notation.
+     * The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
      * </p>
      * 
      * @param cidrBlock
-     *        The network range to allow or deny, in CIDR notation.
+     *        The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
      */
 
     public void setCidrBlock(String cidrBlock) {
@@ -358,10 +400,10 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The network range to allow or deny, in CIDR notation.
+     * The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
      * </p>
      * 
-     * @return The network range to allow or deny, in CIDR notation.
+     * @return The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
      */
 
     public String getCidrBlock() {
@@ -370,11 +412,11 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The network range to allow or deny, in CIDR notation.
+     * The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
      * </p>
      * 
      * @param cidrBlock
-     *        The network range to allow or deny, in CIDR notation.
+     *        The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,11 +427,56 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP) for the protocol.
+     * The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).
+     * </p>
+     * 
+     * @param ipv6CidrBlock
+     *        The IPv6 network range to allow or deny, in CIDR notation (for example
+     *        <code>2001:bd8:1234:1a00::/64</code>).
+     */
+
+    public void setIpv6CidrBlock(String ipv6CidrBlock) {
+        this.ipv6CidrBlock = ipv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).
+     * </p>
+     * 
+     * @return The IPv6 network range to allow or deny, in CIDR notation (for example
+     *         <code>2001:bd8:1234:1a00::/64</code>).
+     */
+
+    public String getIpv6CidrBlock() {
+        return this.ipv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).
+     * </p>
+     * 
+     * @param ipv6CidrBlock
+     *        The IPv6 network range to allow or deny, in CIDR notation (for example
+     *        <code>2001:bd8:1234:1a00::/64</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplaceNetworkAclEntryRequest withIpv6CidrBlock(String ipv6CidrBlock) {
+        setIpv6CidrBlock(ipv6CidrBlock);
+        return this;
+    }
+
+    /**
+     * <p>
+     * ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the ICMP (1) protocol, or protocol 58
+     * (ICMPv6) with an IPv6 CIDR block.
      * </p>
      * 
      * @param icmpTypeCode
-     *        ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP) for the protocol.
+     *        ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the ICMP (1) protocol, or protocol
+     *        58 (ICMPv6) with an IPv6 CIDR block.
      */
 
     public void setIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
@@ -398,10 +485,12 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP) for the protocol.
+     * ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the ICMP (1) protocol, or protocol 58
+     * (ICMPv6) with an IPv6 CIDR block.
      * </p>
      * 
-     * @return ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP) for the protocol.
+     * @return ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the ICMP (1) protocol, or
+     *         protocol 58 (ICMPv6) with an IPv6 CIDR block.
      */
 
     public IcmpTypeCode getIcmpTypeCode() {
@@ -410,11 +499,13 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP) for the protocol.
+     * ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the ICMP (1) protocol, or protocol 58
+     * (ICMPv6) with an IPv6 CIDR block.
      * </p>
      * 
      * @param icmpTypeCode
-     *        ICMP protocol: The ICMP type and code. Required if specifying 1 (ICMP) for the protocol.
+     *        ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the ICMP (1) protocol, or protocol
+     *        58 (ICMPv6) with an IPv6 CIDR block.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -425,12 +516,12 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * TCP or UDP protocols: The range of ports the rule applies to. Required if specifying 6 (TCP) or 17 (UDP) for the
+     * TCP or UDP protocols: The range of ports the rule applies to. Required if specifying TCP (6) or UDP (17) for the
      * protocol.
      * </p>
      * 
      * @param portRange
-     *        TCP or UDP protocols: The range of ports the rule applies to. Required if specifying 6 (TCP) or 17 (UDP)
+     *        TCP or UDP protocols: The range of ports the rule applies to. Required if specifying TCP (6) or UDP (17)
      *        for the protocol.
      */
 
@@ -440,11 +531,11 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * TCP or UDP protocols: The range of ports the rule applies to. Required if specifying 6 (TCP) or 17 (UDP) for the
+     * TCP or UDP protocols: The range of ports the rule applies to. Required if specifying TCP (6) or UDP (17) for the
      * protocol.
      * </p>
      * 
-     * @return TCP or UDP protocols: The range of ports the rule applies to. Required if specifying 6 (TCP) or 17 (UDP)
+     * @return TCP or UDP protocols: The range of ports the rule applies to. Required if specifying TCP (6) or UDP (17)
      *         for the protocol.
      */
 
@@ -454,12 +545,12 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * TCP or UDP protocols: The range of ports the rule applies to. Required if specifying 6 (TCP) or 17 (UDP) for the
+     * TCP or UDP protocols: The range of ports the rule applies to. Required if specifying TCP (6) or UDP (17) for the
      * protocol.
      * </p>
      * 
      * @param portRange
-     *        TCP or UDP protocols: The range of ports the rule applies to. Required if specifying 6 (TCP) or 17 (UDP)
+     *        TCP or UDP protocols: The range of ports the rule applies to. Required if specifying TCP (6) or UDP (17)
      *        for the protocol.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -503,6 +594,8 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
             sb.append("Egress: " + getEgress() + ",");
         if (getCidrBlock() != null)
             sb.append("CidrBlock: " + getCidrBlock() + ",");
+        if (getIpv6CidrBlock() != null)
+            sb.append("Ipv6CidrBlock: " + getIpv6CidrBlock() + ",");
         if (getIcmpTypeCode() != null)
             sb.append("IcmpTypeCode: " + getIcmpTypeCode() + ",");
         if (getPortRange() != null)
@@ -545,6 +638,10 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
             return false;
         if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
             return false;
+        if (other.getIpv6CidrBlock() == null ^ this.getIpv6CidrBlock() == null)
+            return false;
+        if (other.getIpv6CidrBlock() != null && other.getIpv6CidrBlock().equals(this.getIpv6CidrBlock()) == false)
+            return false;
         if (other.getIcmpTypeCode() == null ^ this.getIcmpTypeCode() == null)
             return false;
         if (other.getIcmpTypeCode() != null && other.getIcmpTypeCode().equals(this.getIcmpTypeCode()) == false)
@@ -567,6 +664,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getRuleAction() == null) ? 0 : getRuleAction().hashCode());
         hashCode = prime * hashCode + ((getEgress() == null) ? 0 : getEgress().hashCode());
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getIcmpTypeCode() == null) ? 0 : getIcmpTypeCode().hashCode());
         hashCode = prime * hashCode + ((getPortRange() == null) ? 0 : getPortRange().hashCode());
         return hashCode;

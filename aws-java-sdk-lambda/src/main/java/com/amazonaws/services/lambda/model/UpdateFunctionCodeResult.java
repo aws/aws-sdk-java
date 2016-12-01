@@ -107,6 +107,12 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
     private VpcConfigResponse vpcConfig;
     /**
      * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     */
+    private DeadLetterConfig deadLetterConfig;
+    /**
+     * <p>
      * The parent object that contains your environment's configuration settings.
      * </p>
      */
@@ -724,6 +730,49 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     * 
+     * @param deadLetterConfig
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
+     *        topic.
+     */
+
+    public void setDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
+        this.deadLetterConfig = deadLetterConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     * 
+     * @return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon
+     *         SNS topic.
+     */
+
+    public DeadLetterConfig getDeadLetterConfig() {
+        return this.deadLetterConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     * 
+     * @param deadLetterConfig
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
+     *        topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionCodeResult withDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
+        setDeadLetterConfig(deadLetterConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The parent object that contains your environment's configuration settings.
      * </p>
      * 
@@ -845,6 +894,8 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
             sb.append("Version: " + getVersion() + ",");
         if (getVpcConfig() != null)
             sb.append("VpcConfig: " + getVpcConfig() + ",");
+        if (getDeadLetterConfig() != null)
+            sb.append("DeadLetterConfig: " + getDeadLetterConfig() + ",");
         if (getEnvironment() != null)
             sb.append("Environment: " + getEnvironment() + ",");
         if (getKMSKeyArn() != null)
@@ -915,6 +966,10 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getDeadLetterConfig() == null ^ this.getDeadLetterConfig() == null)
+            return false;
+        if (other.getDeadLetterConfig() != null && other.getDeadLetterConfig().equals(this.getDeadLetterConfig()) == false)
+            return false;
         if (other.getEnvironment() == null ^ this.getEnvironment() == null)
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
@@ -944,6 +999,7 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getCodeSha256() == null) ? 0 : getCodeSha256().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
         return hashCode;

@@ -65,6 +65,11 @@ public class IpPermissionStaxUnmarshaller implements Unmarshaller<IpPermission, 
                     continue;
                 }
 
+                if (context.testExpression("ipv6Ranges/item", targetDepth)) {
+                    ipPermission.withIpv6Ranges(Ipv6RangeStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("prefixListIds/item", targetDepth)) {
                     ipPermission.withPrefixListIds(PrefixListIdStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -60,6 +60,15 @@ public class DocumentIdentifierJsonMarshaller {
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (documentIdentifier.getDocumentVersion() != null) {
+                jsonGenerator.writeFieldName("DocumentVersion").writeValue(documentIdentifier.getDocumentVersion());
+            }
+            if (documentIdentifier.getDocumentType() != null) {
+                jsonGenerator.writeFieldName("DocumentType").writeValue(documentIdentifier.getDocumentType());
+            }
+            if (documentIdentifier.getSchemaVersion() != null) {
+                jsonGenerator.writeFieldName("SchemaVersion").writeValue(documentIdentifier.getSchemaVersion());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

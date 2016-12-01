@@ -59,14 +59,50 @@ public class AssociationDescriptionJsonUnmarshaller implements Unmarshaller<Asso
                     context.nextToken();
                     associationDescription.setDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("LastUpdateAssociationDate", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setLastUpdateAssociationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     associationDescription.setStatus(AssociationStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Overview", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setOverview(AssociationOverviewJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DocumentVersion", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     associationDescription.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                }
+                if (context.testExpression("AssociationId", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Targets", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ScheduleExpression", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OutputLocation", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setOutputLocation(InstanceAssociationOutputLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LastExecutionDate", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setLastExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("LastSuccessfulExecutionDate", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setLastSuccessfulExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

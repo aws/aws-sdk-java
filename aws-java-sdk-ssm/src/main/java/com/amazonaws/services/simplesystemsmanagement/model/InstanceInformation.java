@@ -35,7 +35,7 @@ public class InstanceInformation implements Serializable, Cloneable {
     private String pingStatus;
     /**
      * <p>
-     * The date and time when agent last pinged SSM service.
+     * The date and time when agent last pinged Systems Manager service.
      * </p>
      */
     private java.util.Date lastPingDateTime;
@@ -71,7 +71,7 @@ public class InstanceInformation implements Serializable, Cloneable {
     private String platformVersion;
     /**
      * <p>
-     * The activation ID created by SSM when the server or VM was registered.
+     * The activation ID created by Systems Manager when the server or VM was registered.
      * </p>
      */
     private String activationId;
@@ -111,6 +111,30 @@ public class InstanceInformation implements Serializable, Cloneable {
      * </p>
      */
     private String computerName;
+    /**
+     * <p>
+     * The status of the association.
+     * </p>
+     */
+    private String associationStatus;
+    /**
+     * <p>
+     * The date the association was last executed.
+     * </p>
+     */
+    private java.util.Date lastAssociationExecutionDate;
+    /**
+     * <p>
+     * The last date the association was successfully run.
+     * </p>
+     */
+    private java.util.Date lastSuccessfulAssociationExecutionDate;
+    /**
+     * <p>
+     * Information about the association.
+     * </p>
+     */
+    private InstanceAggregatedAssociationOverview associationOverview;
 
     /**
      * <p>
@@ -227,11 +251,11 @@ public class InstanceInformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time when agent last pinged SSM service.
+     * The date and time when agent last pinged Systems Manager service.
      * </p>
      * 
      * @param lastPingDateTime
-     *        The date and time when agent last pinged SSM service.
+     *        The date and time when agent last pinged Systems Manager service.
      */
 
     public void setLastPingDateTime(java.util.Date lastPingDateTime) {
@@ -240,10 +264,10 @@ public class InstanceInformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time when agent last pinged SSM service.
+     * The date and time when agent last pinged Systems Manager service.
      * </p>
      * 
-     * @return The date and time when agent last pinged SSM service.
+     * @return The date and time when agent last pinged Systems Manager service.
      */
 
     public java.util.Date getLastPingDateTime() {
@@ -252,11 +276,11 @@ public class InstanceInformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time when agent last pinged SSM service.
+     * The date and time when agent last pinged Systems Manager service.
      * </p>
      * 
      * @param lastPingDateTime
-     *        The date and time when agent last pinged SSM service.
+     *        The date and time when agent last pinged Systems Manager service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,11 +536,11 @@ public class InstanceInformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The activation ID created by SSM when the server or VM was registered.
+     * The activation ID created by Systems Manager when the server or VM was registered.
      * </p>
      * 
      * @param activationId
-     *        The activation ID created by SSM when the server or VM was registered.
+     *        The activation ID created by Systems Manager when the server or VM was registered.
      */
 
     public void setActivationId(String activationId) {
@@ -525,10 +549,10 @@ public class InstanceInformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The activation ID created by SSM when the server or VM was registered.
+     * The activation ID created by Systems Manager when the server or VM was registered.
      * </p>
      * 
-     * @return The activation ID created by SSM when the server or VM was registered.
+     * @return The activation ID created by Systems Manager when the server or VM was registered.
      */
 
     public String getActivationId() {
@@ -537,11 +561,11 @@ public class InstanceInformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The activation ID created by SSM when the server or VM was registered.
+     * The activation ID created by Systems Manager when the server or VM was registered.
      * </p>
      * 
      * @param activationId
-     *        The activation ID created by SSM when the server or VM was registered.
+     *        The activation ID created by Systems Manager when the server or VM was registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -824,6 +848,166 @@ public class InstanceInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the association.
+     * </p>
+     * 
+     * @param associationStatus
+     *        The status of the association.
+     */
+
+    public void setAssociationStatus(String associationStatus) {
+        this.associationStatus = associationStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the association.
+     * </p>
+     * 
+     * @return The status of the association.
+     */
+
+    public String getAssociationStatus() {
+        return this.associationStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the association.
+     * </p>
+     * 
+     * @param associationStatus
+     *        The status of the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceInformation withAssociationStatus(String associationStatus) {
+        setAssociationStatus(associationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the association was last executed.
+     * </p>
+     * 
+     * @param lastAssociationExecutionDate
+     *        The date the association was last executed.
+     */
+
+    public void setLastAssociationExecutionDate(java.util.Date lastAssociationExecutionDate) {
+        this.lastAssociationExecutionDate = lastAssociationExecutionDate;
+    }
+
+    /**
+     * <p>
+     * The date the association was last executed.
+     * </p>
+     * 
+     * @return The date the association was last executed.
+     */
+
+    public java.util.Date getLastAssociationExecutionDate() {
+        return this.lastAssociationExecutionDate;
+    }
+
+    /**
+     * <p>
+     * The date the association was last executed.
+     * </p>
+     * 
+     * @param lastAssociationExecutionDate
+     *        The date the association was last executed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceInformation withLastAssociationExecutionDate(java.util.Date lastAssociationExecutionDate) {
+        setLastAssociationExecutionDate(lastAssociationExecutionDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The last date the association was successfully run.
+     * </p>
+     * 
+     * @param lastSuccessfulAssociationExecutionDate
+     *        The last date the association was successfully run.
+     */
+
+    public void setLastSuccessfulAssociationExecutionDate(java.util.Date lastSuccessfulAssociationExecutionDate) {
+        this.lastSuccessfulAssociationExecutionDate = lastSuccessfulAssociationExecutionDate;
+    }
+
+    /**
+     * <p>
+     * The last date the association was successfully run.
+     * </p>
+     * 
+     * @return The last date the association was successfully run.
+     */
+
+    public java.util.Date getLastSuccessfulAssociationExecutionDate() {
+        return this.lastSuccessfulAssociationExecutionDate;
+    }
+
+    /**
+     * <p>
+     * The last date the association was successfully run.
+     * </p>
+     * 
+     * @param lastSuccessfulAssociationExecutionDate
+     *        The last date the association was successfully run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceInformation withLastSuccessfulAssociationExecutionDate(java.util.Date lastSuccessfulAssociationExecutionDate) {
+        setLastSuccessfulAssociationExecutionDate(lastSuccessfulAssociationExecutionDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the association.
+     * </p>
+     * 
+     * @param associationOverview
+     *        Information about the association.
+     */
+
+    public void setAssociationOverview(InstanceAggregatedAssociationOverview associationOverview) {
+        this.associationOverview = associationOverview;
+    }
+
+    /**
+     * <p>
+     * Information about the association.
+     * </p>
+     * 
+     * @return Information about the association.
+     */
+
+    public InstanceAggregatedAssociationOverview getAssociationOverview() {
+        return this.associationOverview;
+    }
+
+    /**
+     * <p>
+     * Information about the association.
+     * </p>
+     * 
+     * @param associationOverview
+     *        Information about the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceInformation withAssociationOverview(InstanceAggregatedAssociationOverview associationOverview) {
+        setAssociationOverview(associationOverview);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -863,7 +1047,15 @@ public class InstanceInformation implements Serializable, Cloneable {
         if (getIPAddress() != null)
             sb.append("IPAddress: " + getIPAddress() + ",");
         if (getComputerName() != null)
-            sb.append("ComputerName: " + getComputerName());
+            sb.append("ComputerName: " + getComputerName() + ",");
+        if (getAssociationStatus() != null)
+            sb.append("AssociationStatus: " + getAssociationStatus() + ",");
+        if (getLastAssociationExecutionDate() != null)
+            sb.append("LastAssociationExecutionDate: " + getLastAssociationExecutionDate() + ",");
+        if (getLastSuccessfulAssociationExecutionDate() != null)
+            sb.append("LastSuccessfulAssociationExecutionDate: " + getLastSuccessfulAssociationExecutionDate() + ",");
+        if (getAssociationOverview() != null)
+            sb.append("AssociationOverview: " + getAssociationOverview());
         sb.append("}");
         return sb.toString();
     }
@@ -938,6 +1130,23 @@ public class InstanceInformation implements Serializable, Cloneable {
             return false;
         if (other.getComputerName() != null && other.getComputerName().equals(this.getComputerName()) == false)
             return false;
+        if (other.getAssociationStatus() == null ^ this.getAssociationStatus() == null)
+            return false;
+        if (other.getAssociationStatus() != null && other.getAssociationStatus().equals(this.getAssociationStatus()) == false)
+            return false;
+        if (other.getLastAssociationExecutionDate() == null ^ this.getLastAssociationExecutionDate() == null)
+            return false;
+        if (other.getLastAssociationExecutionDate() != null && other.getLastAssociationExecutionDate().equals(this.getLastAssociationExecutionDate()) == false)
+            return false;
+        if (other.getLastSuccessfulAssociationExecutionDate() == null ^ this.getLastSuccessfulAssociationExecutionDate() == null)
+            return false;
+        if (other.getLastSuccessfulAssociationExecutionDate() != null
+                && other.getLastSuccessfulAssociationExecutionDate().equals(this.getLastSuccessfulAssociationExecutionDate()) == false)
+            return false;
+        if (other.getAssociationOverview() == null ^ this.getAssociationOverview() == null)
+            return false;
+        if (other.getAssociationOverview() != null && other.getAssociationOverview().equals(this.getAssociationOverview()) == false)
+            return false;
         return true;
     }
 
@@ -961,6 +1170,10 @@ public class InstanceInformation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getIPAddress() == null) ? 0 : getIPAddress().hashCode());
         hashCode = prime * hashCode + ((getComputerName() == null) ? 0 : getComputerName().hashCode());
+        hashCode = prime * hashCode + ((getAssociationStatus() == null) ? 0 : getAssociationStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastAssociationExecutionDate() == null) ? 0 : getLastAssociationExecutionDate().hashCode());
+        hashCode = prime * hashCode + ((getLastSuccessfulAssociationExecutionDate() == null) ? 0 : getLastSuccessfulAssociationExecutionDate().hashCode());
+        hashCode = prime * hashCode + ((getAssociationOverview() == null) ? 0 : getAssociationOverview().hashCode());
         return hashCode;
     }
 

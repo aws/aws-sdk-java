@@ -45,6 +45,12 @@ public class CreateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
     private String name;
     /**
      * <p>
+     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * </p>
+     */
+    private String customerId;
+    /**
+     * <p>
      * The description of the API Key.
      * </p>
      */
@@ -192,6 +198,46 @@ public class CreateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     public CreateApiKeyResult withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * </p>
+     * 
+     * @param customerId
+     *        An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     */
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    /**
+     * <p>
+     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * </p>
+     * 
+     * @return An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     */
+
+    public String getCustomerId() {
+        return this.customerId;
+    }
+
+    /**
+     * <p>
+     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * </p>
+     * 
+     * @param customerId
+     *        An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApiKeyResult withCustomerId(String customerId) {
+        setCustomerId(customerId);
         return this;
     }
 
@@ -460,6 +506,8 @@ public class CreateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
             sb.append("Value: " + getValue() + ",");
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
+        if (getCustomerId() != null)
+            sb.append("CustomerId: " + getCustomerId() + ",");
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getEnabled() != null)
@@ -496,6 +544,10 @@ public class CreateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getCustomerId() == null ^ this.getCustomerId() == null)
+            return false;
+        if (other.getCustomerId() != null && other.getCustomerId().equals(this.getCustomerId()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -527,6 +579,7 @@ public class CreateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCustomerId() == null) ? 0 : getCustomerId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());

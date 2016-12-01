@@ -70,6 +70,11 @@ public class NetworkAclEntryStaxUnmarshaller implements Unmarshaller<NetworkAclE
                     continue;
                 }
 
+                if (context.testExpression("ipv6CidrBlock", targetDepth)) {
+                    networkAclEntry.setIpv6CidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("icmpTypeCode", targetDepth)) {
                     networkAclEntry.setIcmpTypeCode(IcmpTypeCodeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

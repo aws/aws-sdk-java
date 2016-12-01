@@ -23,7 +23,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CIDR block for the VPC.
+     * The IPv4 CIDR block for the VPC.
      * </p>
      */
     private String cidrBlock;
@@ -41,6 +41,12 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
+     * The IPv6 CIDR block for the VPC.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Ipv6CidrBlock> ipv6CidrBlockSet;
+    /**
+     * <p>
      * Information about the VPC peering connection options for the accepter or requester VPC.
      * </p>
      */
@@ -48,11 +54,11 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CIDR block for the VPC.
+     * The IPv4 CIDR block for the VPC.
      * </p>
      * 
      * @param cidrBlock
-     *        The CIDR block for the VPC.
+     *        The IPv4 CIDR block for the VPC.
      */
 
     public void setCidrBlock(String cidrBlock) {
@@ -61,10 +67,10 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CIDR block for the VPC.
+     * The IPv4 CIDR block for the VPC.
      * </p>
      * 
-     * @return The CIDR block for the VPC.
+     * @return The IPv4 CIDR block for the VPC.
      */
 
     public String getCidrBlock() {
@@ -73,11 +79,11 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CIDR block for the VPC.
+     * The IPv4 CIDR block for the VPC.
      * </p>
      * 
      * @param cidrBlock
-     *        The CIDR block for the VPC.
+     *        The IPv4 CIDR block for the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,6 +174,79 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The IPv6 CIDR block for the VPC.
+     * </p>
+     * 
+     * @return The IPv6 CIDR block for the VPC.
+     */
+
+    public java.util.List<Ipv6CidrBlock> getIpv6CidrBlockSet() {
+        if (ipv6CidrBlockSet == null) {
+            ipv6CidrBlockSet = new com.amazonaws.internal.SdkInternalList<Ipv6CidrBlock>();
+        }
+        return ipv6CidrBlockSet;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block for the VPC.
+     * </p>
+     * 
+     * @param ipv6CidrBlockSet
+     *        The IPv6 CIDR block for the VPC.
+     */
+
+    public void setIpv6CidrBlockSet(java.util.Collection<Ipv6CidrBlock> ipv6CidrBlockSet) {
+        if (ipv6CidrBlockSet == null) {
+            this.ipv6CidrBlockSet = null;
+            return;
+        }
+
+        this.ipv6CidrBlockSet = new com.amazonaws.internal.SdkInternalList<Ipv6CidrBlock>(ipv6CidrBlockSet);
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block for the VPC.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv6CidrBlockSet(java.util.Collection)} or {@link #withIpv6CidrBlockSet(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param ipv6CidrBlockSet
+     *        The IPv6 CIDR block for the VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcPeeringConnectionVpcInfo withIpv6CidrBlockSet(Ipv6CidrBlock... ipv6CidrBlockSet) {
+        if (this.ipv6CidrBlockSet == null) {
+            setIpv6CidrBlockSet(new com.amazonaws.internal.SdkInternalList<Ipv6CidrBlock>(ipv6CidrBlockSet.length));
+        }
+        for (Ipv6CidrBlock ele : ipv6CidrBlockSet) {
+            this.ipv6CidrBlockSet.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block for the VPC.
+     * </p>
+     * 
+     * @param ipv6CidrBlockSet
+     *        The IPv6 CIDR block for the VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcPeeringConnectionVpcInfo withIpv6CidrBlockSet(java.util.Collection<Ipv6CidrBlock> ipv6CidrBlockSet) {
+        setIpv6CidrBlockSet(ipv6CidrBlockSet);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the VPC peering connection options for the accepter or requester VPC.
      * </p>
      * 
@@ -223,6 +302,8 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
             sb.append("OwnerId: " + getOwnerId() + ",");
         if (getVpcId() != null)
             sb.append("VpcId: " + getVpcId() + ",");
+        if (getIpv6CidrBlockSet() != null)
+            sb.append("Ipv6CidrBlockSet: " + getIpv6CidrBlockSet() + ",");
         if (getPeeringOptions() != null)
             sb.append("PeeringOptions: " + getPeeringOptions());
         sb.append("}");
@@ -251,6 +332,10 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getIpv6CidrBlockSet() == null ^ this.getIpv6CidrBlockSet() == null)
+            return false;
+        if (other.getIpv6CidrBlockSet() != null && other.getIpv6CidrBlockSet().equals(this.getIpv6CidrBlockSet()) == false)
+            return false;
         if (other.getPeeringOptions() == null ^ this.getPeeringOptions() == null)
             return false;
         if (other.getPeeringOptions() != null && other.getPeeringOptions().equals(this.getPeeringOptions()) == false)
@@ -266,6 +351,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getIpv6CidrBlockSet() == null) ? 0 : getIpv6CidrBlockSet().hashCode());
         hashCode = prime * hashCode + ((getPeeringOptions() == null) ? 0 : getPeeringOptions().hashCode());
         return hashCode;
     }

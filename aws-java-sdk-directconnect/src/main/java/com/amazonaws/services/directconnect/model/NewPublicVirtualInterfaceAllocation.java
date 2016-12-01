@@ -33,6 +33,8 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
 
     private String customerAddress;
 
+    private String addressFamily;
+
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixes;
 
     /**
@@ -192,6 +194,55 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
     }
 
     /**
+     * @param addressFamily
+     * @see AddressFamily
+     */
+
+    public void setAddressFamily(String addressFamily) {
+        this.addressFamily = addressFamily;
+    }
+
+    /**
+     * @return
+     * @see AddressFamily
+     */
+
+    public String getAddressFamily() {
+        return this.addressFamily;
+    }
+
+    /**
+     * @param addressFamily
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AddressFamily
+     */
+
+    public NewPublicVirtualInterfaceAllocation withAddressFamily(String addressFamily) {
+        setAddressFamily(addressFamily);
+        return this;
+    }
+
+    /**
+     * @param addressFamily
+     * @see AddressFamily
+     */
+
+    public void setAddressFamily(AddressFamily addressFamily) {
+        this.addressFamily = addressFamily.toString();
+    }
+
+    /**
+     * @param addressFamily
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AddressFamily
+     */
+
+    public NewPublicVirtualInterfaceAllocation withAddressFamily(AddressFamily addressFamily) {
+        setAddressFamily(addressFamily);
+        return this;
+    }
+
+    /**
      * @return
      */
 
@@ -269,6 +320,8 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
             sb.append("AmazonAddress: " + getAmazonAddress() + ",");
         if (getCustomerAddress() != null)
             sb.append("CustomerAddress: " + getCustomerAddress() + ",");
+        if (getAddressFamily() != null)
+            sb.append("AddressFamily: " + getAddressFamily() + ",");
         if (getRouteFilterPrefixes() != null)
             sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes());
         sb.append("}");
@@ -309,6 +362,10 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
             return false;
         if (other.getCustomerAddress() != null && other.getCustomerAddress().equals(this.getCustomerAddress()) == false)
             return false;
+        if (other.getAddressFamily() == null ^ this.getAddressFamily() == null)
+            return false;
+        if (other.getAddressFamily() != null && other.getAddressFamily().equals(this.getAddressFamily()) == false)
+            return false;
         if (other.getRouteFilterPrefixes() == null ^ this.getRouteFilterPrefixes() == null)
             return false;
         if (other.getRouteFilterPrefixes() != null && other.getRouteFilterPrefixes().equals(this.getRouteFilterPrefixes()) == false)
@@ -327,6 +384,7 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
         hashCode = prime * hashCode + ((getAuthKey() == null) ? 0 : getAuthKey().hashCode());
         hashCode = prime * hashCode + ((getAmazonAddress() == null) ? 0 : getAmazonAddress().hashCode());
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
+        hashCode = prime * hashCode + ((getAddressFamily() == null) ? 0 : getAddressFamily().hashCode());
         hashCode = prime * hashCode + ((getRouteFilterPrefixes() == null) ? 0 : getRouteFilterPrefixes().hashCode());
         return hashCode;
     }

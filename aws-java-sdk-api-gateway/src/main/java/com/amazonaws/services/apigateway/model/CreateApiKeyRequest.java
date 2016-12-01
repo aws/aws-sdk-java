@@ -59,6 +59,12 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.List<StageKey> stageKeys;
+    /**
+     * <p>
+     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * </p>
+     */
+    private String customerId;
 
     /**
      * <p>
@@ -363,6 +369,46 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * </p>
+     * 
+     * @param customerId
+     *        An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     */
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    /**
+     * <p>
+     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * </p>
+     * 
+     * @return An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     */
+
+    public String getCustomerId() {
+        return this.customerId;
+    }
+
+    /**
+     * <p>
+     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * </p>
+     * 
+     * @param customerId
+     *        An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApiKeyRequest withCustomerId(String customerId) {
+        setCustomerId(customerId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -384,7 +430,9 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getValue() != null)
             sb.append("Value: " + getValue() + ",");
         if (getStageKeys() != null)
-            sb.append("StageKeys: " + getStageKeys());
+            sb.append("StageKeys: " + getStageKeys() + ",");
+        if (getCustomerId() != null)
+            sb.append("CustomerId: " + getCustomerId());
         sb.append("}");
         return sb.toString();
     }
@@ -423,6 +471,10 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getStageKeys() != null && other.getStageKeys().equals(this.getStageKeys()) == false)
             return false;
+        if (other.getCustomerId() == null ^ this.getCustomerId() == null)
+            return false;
+        if (other.getCustomerId() != null && other.getCustomerId().equals(this.getCustomerId()) == false)
+            return false;
         return true;
     }
 
@@ -437,6 +489,7 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getGenerateDistinctId() == null) ? 0 : getGenerateDistinctId().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getStageKeys() == null) ? 0 : getStageKeys().hashCode());
+        hashCode = prime * hashCode + ((getCustomerId() == null) ? 0 : getCustomerId().hashCode());
         return hashCode;
     }
 

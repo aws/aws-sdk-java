@@ -209,6 +209,8 @@ public interface AWSElasticBeanstalk {
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @throws S3LocationNotInServiceRegionException
      *         The specified S3 bucket does not belong to the S3 region in which the service is running.
+     * @throws CodeBuildNotInServiceRegionException
+     *         The CodeBuild service is not supported in this region.
      * @sample AWSElasticBeanstalk.CreateApplicationVersion
      */
     CreateApplicationVersionResult createApplicationVersion(CreateApplicationVersionRequest createApplicationVersionRequest);
@@ -383,11 +385,11 @@ public interface AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage bucket.
+     * Retrieve a list of application versions.
      * </p>
      * 
      * @param describeApplicationVersionsRequest
-     *        Result message containing a list of configuration descriptions.
+     *        Request to describe application versions.
      * @return Result of the DescribeApplicationVersions operation returned by the service.
      * @sample AWSElasticBeanstalk.DescribeApplicationVersions
      */
@@ -572,13 +574,13 @@ public interface AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Returns more detailed information about the health of the specified instances (for example, CPU utilization, load
-     * average, and causes). The <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic Beanstalk
-     * Enhanced Health.
+     * Retrives detailed information about the health of instances in your AWS Elastic Beanstalk. This operation
+     * requires <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health
+     * reporting</a>.
      * </p>
      * 
      * @param describeInstancesHealthRequest
-     *        See the example below to learn how to create a request body.
+     *        Parameters for a call to <code>DescribeInstancesHealth</code>.
      * @return Result of the DescribeInstancesHealth operation returned by the service.
      * @throws InvalidRequestException
      *         One or more input parameters is not valid. Please correct the input parameters and try the operation

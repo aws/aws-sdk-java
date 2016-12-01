@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes association information for an Elastic IP address.
+ * Describes association information for an Elastic IP address (IPv4 only).
  * </p>
  */
 public class NetworkInterfaceAssociation implements Serializable, Cloneable {

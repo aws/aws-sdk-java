@@ -39,7 +39,7 @@ public class ModifySpotFleetRequestRequestMarshaller implements Marshaller<Reque
 
         Request<ModifySpotFleetRequestRequest> request = new DefaultRequest<ModifySpotFleetRequestRequest>(modifySpotFleetRequestRequest, "AmazonEC2");
         request.addParameter("Action", "ModifySpotFleetRequest");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifySpotFleetRequestRequest.getSpotFleetRequestId() != null) {

@@ -62,6 +62,9 @@ public class GetDocumentRequestMarshaller implements Marshaller<Request<GetDocum
             if (getDocumentRequest.getName() != null) {
                 jsonGenerator.writeFieldName("Name").writeValue(getDocumentRequest.getName());
             }
+            if (getDocumentRequest.getDocumentVersion() != null) {
+                jsonGenerator.writeFieldName("DocumentVersion").writeValue(getDocumentRequest.getDocumentVersion());
+            }
 
             jsonGenerator.writeEndObject();
 

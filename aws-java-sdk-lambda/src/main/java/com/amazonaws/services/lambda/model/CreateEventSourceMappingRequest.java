@@ -68,12 +68,23 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private Integer batchSize;
     /**
      * <p>
-     * The position in the stream where AWS Lambda should start reading. For more information, go to <a href=
+     * The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
+     * information, go to <a href=
      * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * </p>
      */
     private String startingPosition;
+    /**
+     * <p>
+     * The timestamp of the data record from which to start reading. Used with <a href=
+     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     * >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
+     * returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator
+     * returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.
+     * </p>
+     */
+    private java.util.Date startingPositionTimestamp;
 
     /**
      * <p>
@@ -386,13 +397,15 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position in the stream where AWS Lambda should start reading. For more information, go to <a href=
+     * The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
+     * information, go to <a href=
      * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * </p>
      * 
      * @param startingPosition
-     *        The position in the stream where AWS Lambda should start reading. For more information, go to <a href=
+     *        The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
+     *        information, go to <a href=
      *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      *        >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * @see EventSourcePosition
@@ -404,12 +417,14 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position in the stream where AWS Lambda should start reading. For more information, go to <a href=
+     * The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
+     * information, go to <a href=
      * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * </p>
      * 
-     * @return The position in the stream where AWS Lambda should start reading. For more information, go to <a href=
+     * @return The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For
+     *         more information, go to <a href=
      *         "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      *         >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * @see EventSourcePosition
@@ -421,13 +436,15 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position in the stream where AWS Lambda should start reading. For more information, go to <a href=
+     * The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
+     * information, go to <a href=
      * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * </p>
      * 
      * @param startingPosition
-     *        The position in the stream where AWS Lambda should start reading. For more information, go to <a href=
+     *        The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
+     *        information, go to <a href=
      *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      *        >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -441,13 +458,15 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position in the stream where AWS Lambda should start reading. For more information, go to <a href=
+     * The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
+     * information, go to <a href=
      * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * </p>
      * 
      * @param startingPosition
-     *        The position in the stream where AWS Lambda should start reading. For more information, go to <a href=
+     *        The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
+     *        information, go to <a href=
      *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      *        >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * @see EventSourcePosition
@@ -459,13 +478,15 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position in the stream where AWS Lambda should start reading. For more information, go to <a href=
+     * The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
+     * information, go to <a href=
      * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * </p>
      * 
      * @param startingPosition
-     *        The position in the stream where AWS Lambda should start reading. For more information, go to <a href=
+     *        The position in the stream where AWS Lambda should start reading. Valid only for Kinesis streams. For more
+     *        information, go to <a href=
      *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
      *        >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -474,6 +495,70 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     public CreateEventSourceMappingRequest withStartingPosition(EventSourcePosition startingPosition) {
         setStartingPosition(startingPosition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp of the data record from which to start reading. Used with <a href=
+     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     * >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
+     * returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator
+     * returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.
+     * </p>
+     * 
+     * @param startingPositionTimestamp
+     *        The timestamp of the data record from which to start reading. Used with <a href=
+     *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     *        >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
+     *        returned is for the next (later) record. If the timestamp is older than the current trim horizon, the
+     *        iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.
+     */
+
+    public void setStartingPositionTimestamp(java.util.Date startingPositionTimestamp) {
+        this.startingPositionTimestamp = startingPositionTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp of the data record from which to start reading. Used with <a href=
+     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     * >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
+     * returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator
+     * returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.
+     * </p>
+     * 
+     * @return The timestamp of the data record from which to start reading. Used with <a href=
+     *         "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     *         >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
+     *         returned is for the next (later) record. If the timestamp is older than the current trim horizon, the
+     *         iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.
+     */
+
+    public java.util.Date getStartingPositionTimestamp() {
+        return this.startingPositionTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp of the data record from which to start reading. Used with <a href=
+     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     * >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
+     * returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator
+     * returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.
+     * </p>
+     * 
+     * @param startingPositionTimestamp
+     *        The timestamp of the data record from which to start reading. Used with <a href=
+     *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     *        >shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator
+     *        returned is for the next (later) record. If the timestamp is older than the current trim horizon, the
+     *        iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for Kinesis streams.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingRequest withStartingPositionTimestamp(java.util.Date startingPositionTimestamp) {
+        setStartingPositionTimestamp(startingPositionTimestamp);
         return this;
     }
 
@@ -497,7 +582,9 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         if (getBatchSize() != null)
             sb.append("BatchSize: " + getBatchSize() + ",");
         if (getStartingPosition() != null)
-            sb.append("StartingPosition: " + getStartingPosition());
+            sb.append("StartingPosition: " + getStartingPosition() + ",");
+        if (getStartingPositionTimestamp() != null)
+            sb.append("StartingPositionTimestamp: " + getStartingPositionTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -532,6 +619,10 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getStartingPosition() != null && other.getStartingPosition().equals(this.getStartingPosition()) == false)
             return false;
+        if (other.getStartingPositionTimestamp() == null ^ this.getStartingPositionTimestamp() == null)
+            return false;
+        if (other.getStartingPositionTimestamp() != null && other.getStartingPositionTimestamp().equals(this.getStartingPositionTimestamp()) == false)
+            return false;
         return true;
     }
 
@@ -545,6 +636,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getBatchSize() == null) ? 0 : getBatchSize().hashCode());
         hashCode = prime * hashCode + ((getStartingPosition() == null) ? 0 : getStartingPosition().hashCode());
+        hashCode = prime * hashCode + ((getStartingPositionTimestamp() == null) ? 0 : getStartingPositionTimestamp().hashCode());
         return hashCode;
     }
 

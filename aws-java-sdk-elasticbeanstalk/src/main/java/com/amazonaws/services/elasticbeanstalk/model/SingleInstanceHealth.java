@@ -16,8 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents health information from the specified instance that belongs to the AWS Elastic Beanstalk environment. Use
- * the <code>InstanceId</code> property to specify the application instance for which you'd like to return data.
+ * Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment.
  * </p>
  */
 public class SingleInstanceHealth implements Serializable, Cloneable {
@@ -57,9 +56,17 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date launchedAt;
-
+    /**
+     * <p>
+     * Request metrics from your application.
+     * </p>
+     */
     private ApplicationMetrics applicationMetrics;
-
+    /**
+     * <p>
+     * Operating system metrics from the instance.
+     * </p>
+     */
     private SystemStatus system;
     /**
      * <p>
@@ -344,7 +351,12 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Request metrics from your application.
+     * </p>
+     * 
      * @param applicationMetrics
+     *        Request metrics from your application.
      */
 
     public void setApplicationMetrics(ApplicationMetrics applicationMetrics) {
@@ -352,7 +364,11 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Request metrics from your application.
+     * </p>
+     * 
+     * @return Request metrics from your application.
      */
 
     public ApplicationMetrics getApplicationMetrics() {
@@ -360,7 +376,12 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Request metrics from your application.
+     * </p>
+     * 
      * @param applicationMetrics
+     *        Request metrics from your application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,7 +391,12 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Operating system metrics from the instance.
+     * </p>
+     * 
      * @param system
+     *        Operating system metrics from the instance.
      */
 
     public void setSystem(SystemStatus system) {
@@ -378,7 +404,11 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Operating system metrics from the instance.
+     * </p>
+     * 
+     * @return Operating system metrics from the instance.
      */
 
     public SystemStatus getSystem() {
@@ -386,7 +416,12 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Operating system metrics from the instance.
+     * </p>
+     * 
      * @param system
+     *        Operating system metrics from the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

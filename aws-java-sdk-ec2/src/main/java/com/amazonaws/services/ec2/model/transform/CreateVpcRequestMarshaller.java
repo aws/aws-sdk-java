@@ -39,7 +39,7 @@ public class CreateVpcRequestMarshaller implements Marshaller<Request<CreateVpcR
 
         Request<CreateVpcRequest> request = new DefaultRequest<CreateVpcRequest>(createVpcRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpc");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createVpcRequest.getCidrBlock() != null) {
@@ -48,6 +48,10 @@ public class CreateVpcRequestMarshaller implements Marshaller<Request<CreateVpcR
 
         if (createVpcRequest.getInstanceTenancy() != null) {
             request.addParameter("InstanceTenancy", StringUtils.fromString(createVpcRequest.getInstanceTenancy()));
+        }
+
+        if (createVpcRequest.getAmazonProvidedIpv6CidrBlock() != null) {
+            request.addParameter("AmazonProvidedIpv6CidrBlock", StringUtils.fromBoolean(createVpcRequest.getAmazonProvidedIpv6CidrBlock()));
         }
 
         return request;

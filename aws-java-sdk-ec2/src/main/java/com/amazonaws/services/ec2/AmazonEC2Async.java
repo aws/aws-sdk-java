@@ -34,7 +34,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Purchases Convertible Reserved Instance offerings described in the <a>GetReservedInstancesExchangeQuote</a> call.
+     * Accepts the Convertible Reserved Instance exchange quote described in the
+     * <a>GetReservedInstancesExchangeQuote</a> call.
      * </p>
      * 
      * @param acceptReservedInstancesExchangeQuoteRequest
@@ -48,7 +49,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Purchases Convertible Reserved Instance offerings described in the <a>GetReservedInstancesExchangeQuote</a> call.
+     * Accepts the Convertible Reserved Instance exchange quote described in the
+     * <a>GetReservedInstancesExchangeQuote</a> call.
      * </p>
      * 
      * @param acceptReservedInstancesExchangeQuoteRequest
@@ -199,6 +201,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<AllocateHostsResult> allocateHostsAsync(AllocateHostsRequest allocateHostsRequest,
             com.amazonaws.handlers.AsyncHandler<AllocateHostsRequest, AllocateHostsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Assigns one or more IPv6 addresses to the specified network interface. You can specify one or more specific IPv6
+     * addresses, or you can specify the number of IPv6 addresses to be automatically assigned from within the subnet's
+     * IPv6 CIDR block range. You can assign as many IPv6 addresses to a network interface as you can assign private
+     * IPv4 addresses, and the limit varies per instance type. For information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses Per
+     * Network Interface Per Instance Type</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param assignIpv6AddressesRequest
+     * @return A Java Future containing the result of the AssignIpv6Addresses operation returned by the service.
+     * @sample AmazonEC2Async.AssignIpv6Addresses
+     */
+    java.util.concurrent.Future<AssignIpv6AddressesResult> assignIpv6AddressesAsync(AssignIpv6AddressesRequest assignIpv6AddressesRequest);
+
+    /**
+     * <p>
+     * Assigns one or more IPv6 addresses to the specified network interface. You can specify one or more specific IPv6
+     * addresses, or you can specify the number of IPv6 addresses to be automatically assigned from within the subnet's
+     * IPv6 CIDR block range. You can assign as many IPv6 addresses to a network interface as you can assign private
+     * IPv4 addresses, and the limit varies per instance type. For information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses Per
+     * Network Interface Per Instance Type</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param assignIpv6AddressesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssignIpv6Addresses operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.AssignIpv6Addresses
+     */
+    java.util.concurrent.Future<AssignIpv6AddressesResult> assignIpv6AddressesAsync(AssignIpv6AddressesRequest assignIpv6AddressesRequest,
+            com.amazonaws.handlers.AsyncHandler<AssignIpv6AddressesRequest, AssignIpv6AddressesResult> asyncHandler);
 
     /**
      * <p>
@@ -419,6 +458,64 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<AssociateRouteTableResult> associateRouteTableAsync(AssociateRouteTableRequest associateRouteTableRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateRouteTableRequest, AssociateRouteTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR block with your subnet. An
+     * IPv6 CIDR block must have a prefix length of /64.
+     * </p>
+     * 
+     * @param associateSubnetCidrBlockRequest
+     * @return A Java Future containing the result of the AssociateSubnetCidrBlock operation returned by the service.
+     * @sample AmazonEC2Async.AssociateSubnetCidrBlock
+     */
+    java.util.concurrent.Future<AssociateSubnetCidrBlockResult> associateSubnetCidrBlockAsync(AssociateSubnetCidrBlockRequest associateSubnetCidrBlockRequest);
+
+    /**
+     * <p>
+     * Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR block with your subnet. An
+     * IPv6 CIDR block must have a prefix length of /64.
+     * </p>
+     * 
+     * @param associateSubnetCidrBlockRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateSubnetCidrBlock operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.AssociateSubnetCidrBlock
+     */
+    java.util.concurrent.Future<AssociateSubnetCidrBlockResult> associateSubnetCidrBlockAsync(AssociateSubnetCidrBlockRequest associateSubnetCidrBlockRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateSubnetCidrBlockRequest, AssociateSubnetCidrBlockResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a CIDR block with your VPC. You can only associate a single Amazon-provided IPv6 CIDR block with your
+     * VPC. The IPv6 CIDR block size is fixed at /56.
+     * </p>
+     * 
+     * @param associateVpcCidrBlockRequest
+     * @return A Java Future containing the result of the AssociateVpcCidrBlock operation returned by the service.
+     * @sample AmazonEC2Async.AssociateVpcCidrBlock
+     */
+    java.util.concurrent.Future<AssociateVpcCidrBlockResult> associateVpcCidrBlockAsync(AssociateVpcCidrBlockRequest associateVpcCidrBlockRequest);
+
+    /**
+     * <p>
+     * Associates a CIDR block with your VPC. You can only associate a single Amazon-provided IPv6 CIDR block with your
+     * VPC. The IPv6 CIDR block size is fixed at /56.
+     * </p>
+     * 
+     * @param associateVpcCidrBlockRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateVpcCidrBlock operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.AssociateVpcCidrBlock
+     */
+    java.util.concurrent.Future<AssociateVpcCidrBlockResult> associateVpcCidrBlockAsync(AssociateVpcCidrBlockRequest associateVpcCidrBlockRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateVpcCidrBlockRequest, AssociateVpcCidrBlockResult> asyncHandler);
 
     /**
      * <p>
@@ -692,17 +789,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * [EC2-VPC only] Adds one or more egress rules to a security group for use with a VPC. Specifically, this action
-     * permits instances to send traffic to one or more destination CIDR IP address ranges, or to one or more
+     * permits instances to send traffic to one or more destination IPv4 or IPv6 CIDR address ranges, or to one or more
      * destination security groups for the same VPC. This action doesn't apply to security groups for use in
      * EC2-Classic. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
-     * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. For more information about security group limits,
+     * see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC
+     * Limits</a>.
      * </p>
-     * <important>
-     * <p>
-     * You can have up to 50 rules per security group (covering both ingress and egress rules).
-     * </p>
-     * </important>
      * <p>
      * Each rule consists of the protocol (for example, TCP), plus either a CIDR range or a source group. For the TCP
      * and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you must also
@@ -724,17 +818,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * [EC2-VPC only] Adds one or more egress rules to a security group for use with a VPC. Specifically, this action
-     * permits instances to send traffic to one or more destination CIDR IP address ranges, or to one or more
+     * permits instances to send traffic to one or more destination IPv4 or IPv6 CIDR address ranges, or to one or more
      * destination security groups for the same VPC. This action doesn't apply to security groups for use in
      * EC2-Classic. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
-     * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. For more information about security group limits,
+     * see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC
+     * Limits</a>.
      * </p>
-     * <important>
-     * <p>
-     * You can have up to 50 rules per security group (covering both ingress and egress rules).
-     * </p>
-     * </important>
      * <p>
      * Each rule consists of the protocol (for example, TCP), plus either a CIDR range or a source group. For the TCP
      * and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you must also
@@ -762,27 +853,22 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Adds one or more ingress rules to a security group.
      * </p>
-     * <important>
-     * <p>
-     * EC2-Classic: You can have up to 100 rules per group.
-     * </p>
-     * <p>
-     * EC2-VPC: You can have up to 50 rules per group (covering both ingress and egress rules).
-     * </p>
-     * </important>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
      * </p>
      * <p>
-     * [EC2-Classic] This action gives one or more CIDR IP address ranges permission to access a security group in your
-     * account, or gives one or more security groups (called the <i>source groups</i>) permission to access a security
-     * group for your account. A source group can be for your own AWS account, or another.
+     * [EC2-Classic] This action gives one or more IPv4 CIDR address ranges permission to access a security group in
+     * your account, or gives one or more security groups (called the <i>source groups</i>) permission to access a
+     * security group for your account. A source group can be for your own AWS account, or another. You can have up to
+     * 100 rules per group.
      * </p>
      * <p>
-     * [EC2-VPC] This action gives one or more CIDR IP address ranges permission to access a security group in your VPC,
-     * or gives one or more other security groups (called the <i>source groups</i>) permission to access a security
-     * group for your VPC. The security groups must all be for the same VPC.
+     * [EC2-VPC] This action gives one or more IPv4 or IPv6 CIDR address ranges permission to access a security group in
+     * your VPC, or gives one or more other security groups (called the <i>source groups</i>) permission to access a
+     * security group for your VPC. The security groups must all be for the same VPC or a peer VPC in a VPC peering
+     * connection. For more information about VPC security group limits, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Limits</a>.
      * </p>
      * 
      * @param authorizeSecurityGroupIngressRequest
@@ -798,27 +884,22 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Adds one or more ingress rules to a security group.
      * </p>
-     * <important>
-     * <p>
-     * EC2-Classic: You can have up to 100 rules per group.
-     * </p>
-     * <p>
-     * EC2-VPC: You can have up to 50 rules per group (covering both ingress and egress rules).
-     * </p>
-     * </important>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
      * </p>
      * <p>
-     * [EC2-Classic] This action gives one or more CIDR IP address ranges permission to access a security group in your
-     * account, or gives one or more security groups (called the <i>source groups</i>) permission to access a security
-     * group for your account. A source group can be for your own AWS account, or another.
+     * [EC2-Classic] This action gives one or more IPv4 CIDR address ranges permission to access a security group in
+     * your account, or gives one or more security groups (called the <i>source groups</i>) permission to access a
+     * security group for your account. A source group can be for your own AWS account, or another. You can have up to
+     * 100 rules per group.
      * </p>
      * <p>
-     * [EC2-VPC] This action gives one or more CIDR IP address ranges permission to access a security group in your VPC,
-     * or gives one or more other security groups (called the <i>source groups</i>) permission to access a security
-     * group for your VPC. The security groups must all be for the same VPC.
+     * [EC2-VPC] This action gives one or more IPv4 or IPv6 CIDR address ranges permission to access a security group in
+     * your VPC, or gives one or more other security groups (called the <i>source groups</i>) permission to access a
+     * security group for your VPC. The security groups must all be for the same VPC or a peer VPC in a VPC peering
+     * connection. For more information about VPC security group limits, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Limits</a>.
      * </p>
      * 
      * @param authorizeSecurityGroupIngressRequest
@@ -1537,6 +1618,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * [IPv6 only] Creates an egress-only Internet gateway for your VPC. An egress-only Internet gateway is used to
+     * enable outbound communication over IPv6 from instances in your VPC to the Internet, and prevents hosts outside of
+     * your VPC from initiating an IPv6 connection with your instance.
+     * </p>
+     * 
+     * @param createEgressOnlyInternetGatewayRequest
+     * @return A Java Future containing the result of the CreateEgressOnlyInternetGateway operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateEgressOnlyInternetGateway
+     */
+    java.util.concurrent.Future<CreateEgressOnlyInternetGatewayResult> createEgressOnlyInternetGatewayAsync(
+            CreateEgressOnlyInternetGatewayRequest createEgressOnlyInternetGatewayRequest);
+
+    /**
+     * <p>
+     * [IPv6 only] Creates an egress-only Internet gateway for your VPC. An egress-only Internet gateway is used to
+     * enable outbound communication over IPv6 from instances in your VPC to the Internet, and prevents hosts outside of
+     * your VPC from initiating an IPv6 connection with your instance.
+     * </p>
+     * 
+     * @param createEgressOnlyInternetGatewayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEgressOnlyInternetGateway operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateEgressOnlyInternetGateway
+     */
+    java.util.concurrent.Future<CreateEgressOnlyInternetGatewayResult> createEgressOnlyInternetGatewayAsync(
+            CreateEgressOnlyInternetGatewayRequest createEgressOnlyInternetGatewayRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEgressOnlyInternetGatewayRequest, CreateEgressOnlyInternetGatewayResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates one or more flow logs to capture IP traffic for a specific network interface, subnet, or VPC. Flow logs
      * are delivered to a specified log group in Amazon CloudWatch Logs. If you specify a VPC or subnet in the request,
      * a log stream is created in CloudWatch Logs for each network interface in the subnet or VPC. Log streams can
@@ -1927,7 +2043,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information about network interfaces, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createNetworkInterfaceRequest
@@ -1944,7 +2060,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information about network interfaces, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createNetworkInterfaceRequest
@@ -2077,11 +2193,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * You must specify one of the following targets: Internet gateway or virtual private gateway, NAT instance, NAT
-     * gateway, VPC peering connection, or network interface.
+     * gateway, VPC peering connection, network interface, or egress-only Internet gateway.
      * </p>
      * <p>
-     * When determining how to route traffic, we use the route with the most specific match. For example, let's say the
-     * traffic is destined for <code>192.0.2.3</code>, and the route table includes the following two routes:
+     * When determining how to route traffic, we use the route with the most specific match. For example, traffic is
+     * destined for the IPv4 address <code>192.0.2.3</code>, and the route table includes the following two IPv4 routes:
      * </p>
      * <ul>
      * <li>
@@ -2119,11 +2235,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * You must specify one of the following targets: Internet gateway or virtual private gateway, NAT instance, NAT
-     * gateway, VPC peering connection, or network interface.
+     * gateway, VPC peering connection, network interface, or egress-only Internet gateway.
      * </p>
      * <p>
-     * When determining how to route traffic, we use the route with the most specific match. For example, let's say the
-     * traffic is destined for <code>192.0.2.3</code>, and the route table includes the following two routes:
+     * When determining how to route traffic, we use the route with the most specific match. For example, traffic is
+     * destined for the IPv4 address <code>192.0.2.3</code>, and the route table includes the following two IPv4 routes:
      * </p>
      * <ul>
      * <li>
@@ -2422,10 +2538,15 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * When you create each subnet, you provide the VPC ID and the CIDR block you want for the subnet. After you create
-     * a subnet, you can't change its CIDR block. The subnet's CIDR block can be the same as the VPC's CIDR block
-     * (assuming you want only a single subnet in the VPC), or a subset of the VPC's CIDR block. If you create more than
-     * one subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest subnet (and VPC) you can create uses
-     * a /28 netmask (16 IP addresses), and the largest uses a /16 netmask (65,536 IP addresses).
+     * a subnet, you can't change its CIDR block. The subnet's IPv4 CIDR block can be the same as the VPC's IPv4 CIDR
+     * block (assuming you want only a single subnet in the VPC), or a subset of the VPC's IPv4 CIDR block. If you
+     * create more than one subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4 subnet (and
+     * VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4
+     * addresses).
+     * </p>
+     * <p>
+     * If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR block that uses
+     * a /64 prefix length.
      * </p>
      * <important>
      * <p>
@@ -2461,10 +2582,15 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * When you create each subnet, you provide the VPC ID and the CIDR block you want for the subnet. After you create
-     * a subnet, you can't change its CIDR block. The subnet's CIDR block can be the same as the VPC's CIDR block
-     * (assuming you want only a single subnet in the VPC), or a subset of the VPC's CIDR block. If you create more than
-     * one subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest subnet (and VPC) you can create uses
-     * a /28 netmask (16 IP addresses), and the largest uses a /16 netmask (65,536 IP addresses).
+     * a subnet, you can't change its CIDR block. The subnet's IPv4 CIDR block can be the same as the VPC's IPv4 CIDR
+     * block (assuming you want only a single subnet in the VPC), or a subset of the VPC's IPv4 CIDR block. If you
+     * create more than one subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4 subnet (and
+     * VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4
+     * addresses).
+     * </p>
+     * <p>
+     * If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR block that uses
+     * a /64 prefix length.
      * </p>
      * <important>
      * <p>
@@ -2613,13 +2739,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPC with the specified CIDR block.
+     * Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4
+     * addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses). To help you decide how big to make your
+     * VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your VPC and
+     * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * The smallest VPC you can create uses a /28 netmask (16 IP addresses), and the largest uses a /16 netmask (65,536
-     * IP addresses). To help you decide how big to make your VPC, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your VPC and Subnets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * You can optionally request an Amazon-provided IPv6 CIDR block for the VPC. The IPv6 CIDR block uses a /56 prefix
+     * length, and is allocated from Amazon's pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.
      * </p>
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP options, which includes only a default DNS
@@ -2643,13 +2770,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPC with the specified CIDR block.
+     * Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4
+     * addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses). To help you decide how big to make your
+     * VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your VPC and
+     * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * The smallest VPC you can create uses a /28 netmask (16 IP addresses), and the largest uses a /16 netmask (65,536
-     * IP addresses). To help you decide how big to make your VPC, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your VPC and Subnets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * You can optionally request an Amazon-provided IPv6 CIDR block for the VPC. The IPv6 CIDR block uses a /56 prefix
+     * length, and is allocated from Amazon's pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.
      * </p>
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP options, which includes only a default DNS
@@ -3005,6 +3133,37 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DeleteDhcpOptionsResult> deleteDhcpOptionsAsync(DeleteDhcpOptionsRequest deleteDhcpOptionsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDhcpOptionsRequest, DeleteDhcpOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an egress-only Internet gateway.
+     * </p>
+     * 
+     * @param deleteEgressOnlyInternetGatewayRequest
+     * @return A Java Future containing the result of the DeleteEgressOnlyInternetGateway operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteEgressOnlyInternetGateway
+     */
+    java.util.concurrent.Future<DeleteEgressOnlyInternetGatewayResult> deleteEgressOnlyInternetGatewayAsync(
+            DeleteEgressOnlyInternetGatewayRequest deleteEgressOnlyInternetGatewayRequest);
+
+    /**
+     * <p>
+     * Deletes an egress-only Internet gateway.
+     * </p>
+     * 
+     * @param deleteEgressOnlyInternetGatewayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEgressOnlyInternetGateway operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteEgressOnlyInternetGateway
+     */
+    java.util.concurrent.Future<DeleteEgressOnlyInternetGatewayResult> deleteEgressOnlyInternetGatewayAsync(
+            DeleteEgressOnlyInternetGatewayRequest deleteEgressOnlyInternetGatewayRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEgressOnlyInternetGatewayRequest, DeleteEgressOnlyInternetGatewayResult> asyncHandler);
 
     /**
      * <p>
@@ -4332,6 +4491,37 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeDhcpOptionsResult> describeDhcpOptionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDhcpOptionsRequest, DescribeDhcpOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more of your egress-only Internet gateways.
+     * </p>
+     * 
+     * @param describeEgressOnlyInternetGatewaysRequest
+     * @return A Java Future containing the result of the DescribeEgressOnlyInternetGateways operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeEgressOnlyInternetGateways
+     */
+    java.util.concurrent.Future<DescribeEgressOnlyInternetGatewaysResult> describeEgressOnlyInternetGatewaysAsync(
+            DescribeEgressOnlyInternetGatewaysRequest describeEgressOnlyInternetGatewaysRequest);
+
+    /**
+     * <p>
+     * Describes one or more of your egress-only Internet gateways.
+     * </p>
+     * 
+     * @param describeEgressOnlyInternetGatewaysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEgressOnlyInternetGateways operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeEgressOnlyInternetGateways
+     */
+    java.util.concurrent.Future<DescribeEgressOnlyInternetGatewaysResult> describeEgressOnlyInternetGatewaysAsync(
+            DescribeEgressOnlyInternetGatewaysRequest describeEgressOnlyInternetGatewaysRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEgressOnlyInternetGatewaysRequest, DescribeEgressOnlyInternetGatewaysResult> asyncHandler);
 
     /**
      * <p>
@@ -6496,8 +6686,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the Spot price history. The prices returned are listed in chronological order, from the oldest to the
-     * most recent, for up to the past 90 days. For more information, see <a
+     * Describes the Spot price history. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot Instance Pricing
      * History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -6516,8 +6705,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the Spot price history. The prices returned are listed in chronological order, from the oldest to the
-     * most recent, for up to the past 90 days. For more information, see <a
+     * Describes the Spot price history. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot Instance Pricing
      * History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -7705,6 +7893,68 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Disassociates a CIDR block from a subnet. Currently, you can disassociate an IPv6 CIDR block only. You must
+     * detach or delete all gateways and resources that are associated with the CIDR block before you can disassociate
+     * it.
+     * </p>
+     * 
+     * @param disassociateSubnetCidrBlockRequest
+     * @return A Java Future containing the result of the DisassociateSubnetCidrBlock operation returned by the service.
+     * @sample AmazonEC2Async.DisassociateSubnetCidrBlock
+     */
+    java.util.concurrent.Future<DisassociateSubnetCidrBlockResult> disassociateSubnetCidrBlockAsync(
+            DisassociateSubnetCidrBlockRequest disassociateSubnetCidrBlockRequest);
+
+    /**
+     * <p>
+     * Disassociates a CIDR block from a subnet. Currently, you can disassociate an IPv6 CIDR block only. You must
+     * detach or delete all gateways and resources that are associated with the CIDR block before you can disassociate
+     * it.
+     * </p>
+     * 
+     * @param disassociateSubnetCidrBlockRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateSubnetCidrBlock operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DisassociateSubnetCidrBlock
+     */
+    java.util.concurrent.Future<DisassociateSubnetCidrBlockResult> disassociateSubnetCidrBlockAsync(
+            DisassociateSubnetCidrBlockRequest disassociateSubnetCidrBlockRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateSubnetCidrBlockRequest, DisassociateSubnetCidrBlockResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates a CIDR block from a VPC. Currently, you can disassociate an IPv6 CIDR block only. You must detach
+     * or delete all gateways and resources that are associated with the CIDR block before you can disassociate it.
+     * </p>
+     * 
+     * @param disassociateVpcCidrBlockRequest
+     * @return A Java Future containing the result of the DisassociateVpcCidrBlock operation returned by the service.
+     * @sample AmazonEC2Async.DisassociateVpcCidrBlock
+     */
+    java.util.concurrent.Future<DisassociateVpcCidrBlockResult> disassociateVpcCidrBlockAsync(DisassociateVpcCidrBlockRequest disassociateVpcCidrBlockRequest);
+
+    /**
+     * <p>
+     * Disassociates a CIDR block from a VPC. Currently, you can disassociate an IPv6 CIDR block only. You must detach
+     * or delete all gateways and resources that are associated with the CIDR block before you can disassociate it.
+     * </p>
+     * 
+     * @param disassociateVpcCidrBlockRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateVpcCidrBlock operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DisassociateVpcCidrBlock
+     */
+    java.util.concurrent.Future<DisassociateVpcCidrBlockResult> disassociateVpcCidrBlockAsync(DisassociateVpcCidrBlockRequest disassociateVpcCidrBlockRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateVpcCidrBlockRequest, DisassociateVpcCidrBlockResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables a virtual private gateway (VGW) to propagate routes to the specified route table of a VPC.
      * </p>
      * 
@@ -7812,8 +8062,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * EC2-Classic instance resolves to its private IP address when addressed from an instance in the VPC to which it's
      * linked. Similarly, the DNS hostname of an instance in a VPC resolves to its private IP address when addressed
      * from a linked EC2-Classic instance. For more information about ClassicLink, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the Amazon
-     * Elastic Compute Cloud User Guide.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param enableVpcClassicLinkDnsSupportRequest
@@ -7831,8 +8081,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * EC2-Classic instance resolves to its private IP address when addressed from an instance in the VPC to which it's
      * linked. Similarly, the DNS hostname of an instance in a VPC resolves to its private IP address when addressed
      * from a linked EC2-Classic instance. For more information about ClassicLink, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the Amazon
-     * Elastic Compute Cloud User Guide.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param enableVpcClassicLinkDnsSupportRequest
@@ -8047,8 +8297,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Returns details about the values and term of your specified Convertible Reserved Instances. When an offering ID
-     * is specified it returns information about whether the exchange is valid and can be performed.
+     * Returns details about the values and term of your specified Convertible Reserved Instances. When a target
+     * configuration is specified, it returns information about whether the exchange is valid and can be performed.
      * </p>
      * 
      * @param getReservedInstancesExchangeQuoteRequest
@@ -8062,8 +8312,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Returns details about the values and term of your specified Convertible Reserved Instances. When an offering ID
-     * is specified it returns information about whether the exchange is valid and can be performed.
+     * Returns details about the values and term of your specified Convertible Reserved Instances. When a target
+     * configuration is specified, it returns information about whether the exchange is valid and can be performed.
      * </p>
      * 
      * @param getReservedInstancesExchangeQuoteRequest
@@ -8810,7 +9060,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies a subnet attribute.
+     * Modifies a subnet attribute. You can only modify one attribute at a time.
      * </p>
      * 
      * @param modifySubnetAttributeRequest
@@ -8822,7 +9072,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies a subnet attribute.
+     * Modifies a subnet attribute. You can only modify one attribute at a time.
      * </p>
      * 
      * @param modifySubnetAttributeRequest
@@ -9031,9 +9281,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Enables monitoring for a running instance. For more information about monitoring instances, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances and
-     * Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Enables detailed monitoring for a running instance. Otherwise, basic monitoring is enabled. For more information,
+     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances
+     * and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * To disable detailed monitoring, see .
      * </p>
      * 
      * @param monitorInstancesRequest
@@ -9045,9 +9298,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Enables monitoring for a running instance. For more information about monitoring instances, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances and
-     * Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Enables detailed monitoring for a running instance. Otherwise, basic monitoring is enabled. For more information,
+     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances
+     * and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * To disable detailed monitoring, see .
      * </p>
      * 
      * @param monitorInstancesRequest
@@ -9616,7 +9872,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Replaces an existing route within a route table in a VPC. You must provide only one of the following: Internet
-     * gateway or virtual private gateway, NAT instance, NAT gateway, VPC peering connection, or network interface.
+     * gateway or virtual private gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or
+     * egress-only Internet gateway.
      * </p>
      * <p>
      * For more information about route tables, see <a
@@ -9634,7 +9891,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Replaces an existing route within a route table in a VPC. You must provide only one of the following: Internet
-     * gateway or virtual private gateway, NAT instance, NAT gateway, VPC peering connection, or network interface.
+     * gateway or virtual private gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or
+     * egress-only Internet gateway.
      * </p>
      * <p>
      * For more information about route tables, see <a
@@ -10044,9 +10302,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * must match the existing rule's values for the rule to be revoked.
      * </p>
      * <p>
-     * Each rule consists of the protocol and the CIDR range or source security group. For the TCP and UDP protocols,
-     * you must also specify the destination port or range of ports. For the ICMP protocol, you must also specify the
-     * ICMP type and code.
+     * Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
+     * protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must also
+     * specify the ICMP type and code.
      * </p>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
@@ -10068,9 +10326,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * must match the existing rule's values for the rule to be revoked.
      * </p>
      * <p>
-     * Each rule consists of the protocol and the CIDR range or source security group. For the TCP and UDP protocols,
-     * you must also specify the destination port or range of ports. For the ICMP protocol, you must also specify the
-     * ICMP type and code.
+     * Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
+     * protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must also
+     * specify the ICMP type and code.
      * </p>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
@@ -10161,31 +10419,61 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Launches the specified number of instances using an AMI for which you have permissions.
      * </p>
      * <p>
-     * When you launch an instance, it enters the <code>pending</code> state. After the instance is ready for you, it
-     * enters the <code>running</code> state. To check the state of your instance, call <a>DescribeInstances</a>.
+     * You can specify a number of options, or leave the default options. The following rules apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * [EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default VPC for you. If you
+     * don't have a default VPC, you must specify a subnet ID in the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * [EC2-Classic] If don't specify an Availability Zone, we choose one for you.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Some instance types must be launched into a VPC. If you do not have a default VPC, or if you do not specify a
+     * subnet ID, the request fails. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance Types
+     * Available Only in a VPC</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * [EC2-VPC] All instances have a network interface with a primary private IPv4 address. If you don't specify this
+     * address, we choose one from the IPv4 range of your subnet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not all instance types support IPv6 addresses. For more information, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't specify a security group ID, we use the default security group. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security Groups</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If any of the AMIs have a product code attached for which the user has not subscribed, the request fails.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To ensure faster instance launches, break up large requests into smaller batches. For example, create 5 separate
+     * launch requests for 100 instances each instead of 1 launch request for 500 instances.
      * </p>
      * <p>
-     * To ensure faster instance launches, break up large requests into smaller batches. For example, create five
-     * separate launch requests for 100 instances each instead of one launch request for 500 instances.
-     * </p>
-     * <p>
-     * To tag your instance, ensure that it is <code>running</code> as <a>CreateTags</a> requires a resource ID. For
-     * more information about tagging, see <a
+     * An instance is ready for you to use when it's in the <code>running</code> state. You can check the state of your
+     * instance using <a>DescribeInstances</a>. After launch, you can apply tags to your running instance (requires a
+     * resource ID). For more information, see <a>CreateTags</a> and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
-     * </p>
-     * <p>
-     * If you don't specify a security group when launching an instance, Amazon EC2 uses the default security group. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security Groups</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * [EC2-VPC only accounts] If you don't specify a subnet in the request, we choose a default subnet from your
-     * default VPC for you.
-     * </p>
-     * <p>
-     * [EC2-Classic accounts] If you're launching into EC2-Classic and you don't specify an Availability Zone, we choose
-     * one for you.
      * </p>
      * <p>
      * Linux instances have access to the public key of the key pair at boot. You can use this key to provide secure
@@ -10194,22 +10482,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * You can provide optional user data when launching an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * If any of the AMIs have a product code attached for which the user has not subscribed, <code>RunInstances</code>
-     * fails.
-     * </p>
-     * <p>
-     * Some instance types can only be launched into a VPC. If you do not have a default VPC, or if you do not specify a
-     * subnet ID in the request, <code>RunInstances</code> fails. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance Types
-     * Available Only in a VPC</a>.
-     * </p>
-     * <p>
-     * For more information about troubleshooting, see <a
+     * For troubleshooting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What To Do If
      * An Instance Immediately Terminates</a>, and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
@@ -10228,31 +10501,61 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Launches the specified number of instances using an AMI for which you have permissions.
      * </p>
      * <p>
-     * When you launch an instance, it enters the <code>pending</code> state. After the instance is ready for you, it
-     * enters the <code>running</code> state. To check the state of your instance, call <a>DescribeInstances</a>.
+     * You can specify a number of options, or leave the default options. The following rules apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * [EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default VPC for you. If you
+     * don't have a default VPC, you must specify a subnet ID in the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * [EC2-Classic] If don't specify an Availability Zone, we choose one for you.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Some instance types must be launched into a VPC. If you do not have a default VPC, or if you do not specify a
+     * subnet ID, the request fails. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance Types
+     * Available Only in a VPC</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * [EC2-VPC] All instances have a network interface with a primary private IPv4 address. If you don't specify this
+     * address, we choose one from the IPv4 range of your subnet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not all instance types support IPv6 addresses. For more information, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't specify a security group ID, we use the default security group. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security Groups</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If any of the AMIs have a product code attached for which the user has not subscribed, the request fails.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To ensure faster instance launches, break up large requests into smaller batches. For example, create 5 separate
+     * launch requests for 100 instances each instead of 1 launch request for 500 instances.
      * </p>
      * <p>
-     * To ensure faster instance launches, break up large requests into smaller batches. For example, create five
-     * separate launch requests for 100 instances each instead of one launch request for 500 instances.
-     * </p>
-     * <p>
-     * To tag your instance, ensure that it is <code>running</code> as <a>CreateTags</a> requires a resource ID. For
-     * more information about tagging, see <a
+     * An instance is ready for you to use when it's in the <code>running</code> state. You can check the state of your
+     * instance using <a>DescribeInstances</a>. After launch, you can apply tags to your running instance (requires a
+     * resource ID). For more information, see <a>CreateTags</a> and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
-     * </p>
-     * <p>
-     * If you don't specify a security group when launching an instance, Amazon EC2 uses the default security group. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security Groups</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * [EC2-VPC only accounts] If you don't specify a subnet in the request, we choose a default subnet from your
-     * default VPC for you.
-     * </p>
-     * <p>
-     * [EC2-Classic accounts] If you're launching into EC2-Classic and you don't specify an Availability Zone, we choose
-     * one for you.
      * </p>
      * <p>
      * Linux instances have access to the public key of the key pair at boot. You can use this key to provide secure
@@ -10261,22 +10564,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * You can provide optional user data when launching an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * If any of the AMIs have a product code attached for which the user has not subscribed, <code>RunInstances</code>
-     * fails.
-     * </p>
-     * <p>
-     * Some instance types can only be launched into a VPC. If you do not have a default VPC, or if you do not specify a
-     * subnet ID in the request, <code>RunInstances</code> fails. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance Types
-     * Available Only in a VPC</a>.
-     * </p>
-     * <p>
-     * For more information about troubleshooting, see <a
+     * For troubleshooting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What To Do If
      * An Instance Immediately Terminates</a>, and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
@@ -10581,6 +10869,33 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Unassigns one or more IPv6 addresses from a network interface.
+     * </p>
+     * 
+     * @param unassignIpv6AddressesRequest
+     * @return A Java Future containing the result of the UnassignIpv6Addresses operation returned by the service.
+     * @sample AmazonEC2Async.UnassignIpv6Addresses
+     */
+    java.util.concurrent.Future<UnassignIpv6AddressesResult> unassignIpv6AddressesAsync(UnassignIpv6AddressesRequest unassignIpv6AddressesRequest);
+
+    /**
+     * <p>
+     * Unassigns one or more IPv6 addresses from a network interface.
+     * </p>
+     * 
+     * @param unassignIpv6AddressesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UnassignIpv6Addresses operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.UnassignIpv6Addresses
+     */
+    java.util.concurrent.Future<UnassignIpv6AddressesResult> unassignIpv6AddressesAsync(UnassignIpv6AddressesRequest unassignIpv6AddressesRequest,
+            com.amazonaws.handlers.AsyncHandler<UnassignIpv6AddressesRequest, UnassignIpv6AddressesResult> asyncHandler);
+
+    /**
+     * <p>
      * Unassigns one or more secondary private IP addresses from a network interface.
      * </p>
      * 
@@ -10612,7 +10927,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Disables monitoring for a running instance. For more information about monitoring instances, see <a
+     * Disables detailed monitoring for a running instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances and
      * Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -10626,7 +10941,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Disables monitoring for a running instance. For more information about monitoring instances, see <a
+     * Disables detailed monitoring for a running instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances and
      * Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>

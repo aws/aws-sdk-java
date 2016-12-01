@@ -99,6 +99,10 @@ public class CreateFunctionRequestMarshaller implements Marshaller<Request<Creat
                 jsonGenerator.writeFieldName("VpcConfig");
                 VpcConfigJsonMarshaller.getInstance().marshall(createFunctionRequest.getVpcConfig(), jsonGenerator);
             }
+            if (createFunctionRequest.getDeadLetterConfig() != null) {
+                jsonGenerator.writeFieldName("DeadLetterConfig");
+                DeadLetterConfigJsonMarshaller.getInstance().marshall(createFunctionRequest.getDeadLetterConfig(), jsonGenerator);
+            }
             if (createFunctionRequest.getEnvironment() != null) {
                 jsonGenerator.writeFieldName("Environment");
                 EnvironmentJsonMarshaller.getInstance().marshall(createFunctionRequest.getEnvironment(), jsonGenerator);

@@ -41,7 +41,7 @@ public class AcceptReservedInstancesExchangeQuoteRequestMarshaller implements
         Request<AcceptReservedInstancesExchangeQuoteRequest> request = new DefaultRequest<AcceptReservedInstancesExchangeQuoteRequest>(
                 acceptReservedInstancesExchangeQuoteRequest, "AmazonEC2");
         request.addParameter("Action", "AcceptReservedInstancesExchangeQuote");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> acceptReservedInstancesExchangeQuoteRequestReservedInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) acceptReservedInstancesExchangeQuoteRequest

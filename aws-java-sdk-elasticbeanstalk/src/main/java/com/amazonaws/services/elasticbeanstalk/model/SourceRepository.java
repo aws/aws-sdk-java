@@ -17,7 +17,8 @@ package com.amazonaws.services.elasticbeanstalk.model;
  */
 public enum SourceRepository {
 
-    CodeCommit("CodeCommit");
+    CodeCommit("CodeCommit"),
+    S3("S3");
 
     private String value;
 

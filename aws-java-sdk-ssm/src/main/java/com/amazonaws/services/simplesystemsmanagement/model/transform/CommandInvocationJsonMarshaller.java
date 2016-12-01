@@ -47,6 +47,9 @@ public class CommandInvocationJsonMarshaller {
             if (commandInvocation.getInstanceId() != null) {
                 jsonGenerator.writeFieldName("InstanceId").writeValue(commandInvocation.getInstanceId());
             }
+            if (commandInvocation.getInstanceName() != null) {
+                jsonGenerator.writeFieldName("InstanceName").writeValue(commandInvocation.getInstanceName());
+            }
             if (commandInvocation.getComment() != null) {
                 jsonGenerator.writeFieldName("Comment").writeValue(commandInvocation.getComment());
             }
@@ -59,8 +62,17 @@ public class CommandInvocationJsonMarshaller {
             if (commandInvocation.getStatus() != null) {
                 jsonGenerator.writeFieldName("Status").writeValue(commandInvocation.getStatus());
             }
+            if (commandInvocation.getStatusDetails() != null) {
+                jsonGenerator.writeFieldName("StatusDetails").writeValue(commandInvocation.getStatusDetails());
+            }
             if (commandInvocation.getTraceOutput() != null) {
                 jsonGenerator.writeFieldName("TraceOutput").writeValue(commandInvocation.getTraceOutput());
+            }
+            if (commandInvocation.getStandardOutputUrl() != null) {
+                jsonGenerator.writeFieldName("StandardOutputUrl").writeValue(commandInvocation.getStandardOutputUrl());
+            }
+            if (commandInvocation.getStandardErrorUrl() != null) {
+                jsonGenerator.writeFieldName("StandardErrorUrl").writeValue(commandInvocation.getStandardErrorUrl());
             }
 
             com.amazonaws.internal.SdkInternalList<CommandPlugin> commandPluginsList = (com.amazonaws.internal.SdkInternalList<CommandPlugin>) commandInvocation

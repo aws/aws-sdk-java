@@ -66,6 +66,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public AssignIpv6AddressesResult assignIpv6Addresses(AssignIpv6AddressesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssignPrivateIpAddressesResult assignPrivateIpAddresses(AssignPrivateIpAddressesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -82,6 +87,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public AssociateRouteTableResult associateRouteTable(AssociateRouteTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateSubnetCidrBlockResult associateSubnetCidrBlock(AssociateSubnetCidrBlockRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateVpcCidrBlockResult associateVpcCidrBlock(AssociateVpcCidrBlockRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -187,6 +202,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public CreateDhcpOptionsResult createDhcpOptions(CreateDhcpOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateEgressOnlyInternetGatewayResult createEgressOnlyInternetGateway(CreateEgressOnlyInternetGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -332,6 +352,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DeleteDhcpOptionsResult deleteDhcpOptions(DeleteDhcpOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteEgressOnlyInternetGatewayResult deleteEgressOnlyInternetGateway(DeleteEgressOnlyInternetGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -533,6 +558,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     @Override
     public DescribeDhcpOptionsResult describeDhcpOptions() {
         return describeDhcpOptions(new DescribeDhcpOptionsRequest());
+    }
+
+    @Override
+    public DescribeEgressOnlyInternetGatewaysResult describeEgressOnlyInternetGateways(DescribeEgressOnlyInternetGatewaysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -1061,6 +1091,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DisassociateSubnetCidrBlockResult disassociateSubnetCidrBlock(DisassociateSubnetCidrBlockRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateVpcCidrBlockResult disassociateVpcCidrBlock(DisassociateVpcCidrBlockRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public EnableVgwRoutePropagationResult enableVgwRoutePropagation(EnableVgwRoutePropagationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1362,6 +1402,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public TerminateInstancesResult terminateInstances(TerminateInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UnassignIpv6AddressesResult unassignIpv6Addresses(UnassignIpv6AddressesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

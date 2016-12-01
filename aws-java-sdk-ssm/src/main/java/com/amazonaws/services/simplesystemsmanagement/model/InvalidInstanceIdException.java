@@ -14,6 +14,20 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 /**
  * <p>
+ * The following problems can cause this exception:
+ * </p>
+ * <p>
+ * You do not have permission to access the instance.
+ * </p>
+ * <p>
+ * The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is running. On EC2
+ * Windows instances, verify that the EC2Config service is running.
+ * </p>
+ * <p>
+ * The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent or EC2Config
+ * service.
+ * </p>
+ * <p>
  * The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are:
  * Shutting-down and Terminated.
  * </p>

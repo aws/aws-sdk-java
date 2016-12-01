@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the application metrics for a specified environment.
+ * Application request metrics for an AWS Elastic Beanstalk environment.
  * </p>
  */
 public class ApplicationMetrics implements Serializable, Cloneable {

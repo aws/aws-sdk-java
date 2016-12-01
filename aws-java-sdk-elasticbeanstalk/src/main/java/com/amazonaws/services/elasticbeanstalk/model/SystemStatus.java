@@ -16,11 +16,16 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents CPU utilization and load average information for applications running in the specified environment.
+ * CPU utilization and load average metrics for an Amazon EC2 instance.
  * </p>
  */
 public class SystemStatus implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * CPU utilization metrics for the instance.
+     * </p>
+     */
     private CPUUtilization cPUUtilization;
     /**
      * <p>
@@ -32,7 +37,12 @@ public class SystemStatus implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Double> loadAverage;
 
     /**
+     * <p>
+     * CPU utilization metrics for the instance.
+     * </p>
+     * 
      * @param cPUUtilization
+     *        CPU utilization metrics for the instance.
      */
 
     public void setCPUUtilization(CPUUtilization cPUUtilization) {
@@ -40,7 +50,11 @@ public class SystemStatus implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * CPU utilization metrics for the instance.
+     * </p>
+     * 
+     * @return CPU utilization metrics for the instance.
      */
 
     public CPUUtilization getCPUUtilization() {
@@ -48,7 +62,12 @@ public class SystemStatus implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * CPU utilization metrics for the instance.
+     * </p>
+     * 
      * @param cPUUtilization
+     *        CPU utilization metrics for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

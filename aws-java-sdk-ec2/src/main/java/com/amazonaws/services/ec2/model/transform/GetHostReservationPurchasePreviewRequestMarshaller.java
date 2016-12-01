@@ -41,7 +41,7 @@ public class GetHostReservationPurchasePreviewRequestMarshaller implements
         Request<GetHostReservationPurchasePreviewRequest> request = new DefaultRequest<GetHostReservationPurchasePreviewRequest>(
                 getHostReservationPurchasePreviewRequest, "AmazonEC2");
         request.addParameter("Action", "GetHostReservationPurchasePreview");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (getHostReservationPurchasePreviewRequest.getOfferingId() != null) {

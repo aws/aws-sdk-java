@@ -92,6 +92,9 @@ public class StageJsonMarshaller {
                 }
                 jsonGenerator.writeEndObject();
             }
+            if (stage.getDocumentationVersion() != null) {
+                jsonGenerator.writeFieldName("documentationVersion").writeValue(stage.getDocumentationVersion());
+            }
             if (stage.getCreatedDate() != null) {
                 jsonGenerator.writeFieldName("createdDate").writeValue(stage.getCreatedDate());
             }

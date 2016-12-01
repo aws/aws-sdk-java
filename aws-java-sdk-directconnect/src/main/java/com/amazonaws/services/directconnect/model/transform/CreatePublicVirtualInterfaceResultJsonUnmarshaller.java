@@ -91,6 +91,10 @@ public class CreatePublicVirtualInterfaceResultJsonUnmarshaller implements Unmar
                     context.nextToken();
                     createPublicVirtualInterfaceResult.setCustomerAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("addressFamily", targetDepth)) {
+                    context.nextToken();
+                    createPublicVirtualInterfaceResult.setAddressFamily(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("virtualInterfaceState", targetDepth)) {
                     context.nextToken();
                     createPublicVirtualInterfaceResult.setVirtualInterfaceState(context.getUnmarshaller(String.class).unmarshall(context));
@@ -107,6 +111,10 @@ public class CreatePublicVirtualInterfaceResultJsonUnmarshaller implements Unmar
                     context.nextToken();
                     createPublicVirtualInterfaceResult.setRouteFilterPrefixes(new ListUnmarshaller<RouteFilterPrefix>(RouteFilterPrefixJsonUnmarshaller
                             .getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("bgpPeers", targetDepth)) {
+                    context.nextToken();
+                    createPublicVirtualInterfaceResult.setBgpPeers(new ListUnmarshaller<BGPPeer>(BGPPeerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -25,173 +25,22 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon EC2 Simple Systems Manager (SSM) enables you to remotely manage the configuration of your Amazon EC2
- * instances, virtual machines (VMs), or servers in your on-premises environment or in an environment provided by other
- * cloud providers using scripts, commands, or the Amazon EC2 console. SSM includes an on-demand solution called
- * <i>Amazon EC2 Run Command</i> and a lightweight instance configuration solution called <i>SSM Config</i>.
+ * Amazon EC2 Systems Manager is a collection of capabilities that helps you automate management tasks such as
+ * collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images
+ * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager works with managed
+ * instances: Amazon EC2 instances and servers or virtual machines (VMs) in your on-premises environment that are
+ * configured for Systems Manager.
  * </p>
  * <p>
- * This references is intended to be used with the EC2 Run Command User Guide for <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html">Linux</a> or <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html">Windows</a>.
- * </p>
- * <note>
- * <p>
- * You must register your on-premises servers and VMs through an activation process before you can configure them using
- * Run Command. Registered servers and VMs are called <i>managed instances</i>. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting Up Run Command On Managed
- * Instances (On-Premises Servers and VMs) on Linux</a> or <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting Up Run Command On Managed
- * Instances (On-Premises Servers and VMs) on Windows</a>.
- * </p>
- * </note>
- * <p>
- * <b>Run Command</b>
+ * This references is intended to be used with the EC2 Systems Manager User Guide (<a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager.html">Linux</a>) (<a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager.html">Windows</a>).
  * </p>
  * <p>
- * Run Command provides an on-demand experience for executing commands. You can use pre-defined SSM documents to perform
- * the actions listed later in this section, or you can create your own documents. With these documents, you can
- * remotely configure your instances by sending commands using the <b>Commands</b> page in the <a
- * href="http://console.aws.amazon.com/ec2/">Amazon EC2 console</a>, <a
- * href="http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html">AWS
- * Tools for Windows PowerShell</a>, the <a href="http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html">AWS
- * CLI</a>, or AWS SDKs.
+ * To get started, verify prerequisites and configure managed instances (<a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager-prereqs.html">Linux</a>) (<a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a>).
  * </p>
- * <p>
- * Run Command reports the status of the command execution for each instance targeted by a command. You can also audit
- * the command execution to understand who executed commands, when, and what changes were made. By switching between
- * different SSM documents, you can quickly configure your instances with different types of commands. To get started
- * with Run Command, verify that your environment meets the prerequisites for remotely running commands on EC2 instances
- * (<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/remote-commands-prereq.html">Linux</a> or <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/remote-commands-prereq.html">Windows</a>).
- * </p>
- * <p/>
- * <p>
- * <b>SSM Config</b>
- * </p>
- * <p>
- * SSM Config is a lightweight instance configuration solution. SSM Config is currently only available for Windows
- * instances. With SSM Config, you can specify a setup configuration for your instances. SSM Config is similar to EC2
- * User Data, which is another way of running one-time scripts or applying settings during instance launch. SSM Config
- * is an extension of this capability. Using SSM documents, you can specify which actions the system should perform on
- * your instances, including which applications to install, which AWS Directory Service directory to join, which
- * Microsoft PowerShell modules to install, etc. If an instance is missing one or more of these configurations, the
- * system makes those changes. By default, the system checks every five minutes to see if there is a new configuration
- * to apply as defined in a new SSM document. If so, the system updates the instances accordingly. In this way, you can
- * remotely maintain a consistent configuration baseline on your instances. SSM Config is available using the AWS CLI or
- * the AWS Tools for Windows PowerShell. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-configuration-manage.html">Managing Windows Instance
- * Configuration</a>.
- * </p>
- * <p>
- * SSM Config and Run Command include the following pre-defined documents.
- * </p>
- * <p>
- * <b>Linux</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <b>AWS-RunShellScript</b> to run shell scripts
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-UpdateSSMAgent</b> to update the Amazon SSM agent
- * </p>
- * </li>
- * </ul>
- * <p/>
- * <p>
- * <b>Windows</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <b>AWS-JoinDirectoryServiceDomain</b> to join an AWS Directory
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-RunPowerShellScript</b> to run PowerShell commands or scripts
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-UpdateEC2Config</b> to update the EC2Config service
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-ConfigureWindowsUpdate</b> to configure Windows Update settings
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-InstallApplication</b> to install, repair, or uninstall software using an MSI package
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-InstallPowerShellModule</b> to install PowerShell modules
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-ConfigureCloudWatch</b> to configure Amazon CloudWatch Logs to monitor applications and systems
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-ListWindowsInventory</b> to collect information about an EC2 instance running in Windows.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-FindWindowsUpdates</b> to scan an instance and determines which updates are missing.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-InstallMissingWindowsUpdates</b> to install missing updates on your EC2 instance.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>AWS-InstallSpecificWindowsUpdates</b> to install one or more specific updates.
- * </p>
- * </li>
- * </ul>
- * <important>
- * <p>
- * The commands or scripts specified in SSM documents run with administrative privilege on your instances because the
- * Amazon SSM agent runs as root on Linux and the EC2Config service runs in the Local System account on Windows. If a
- * user has permission to execute any of the pre-defined SSM documents (any document that begins with AWS-*) then that
- * user also has administrator access to the instance. Delegate access to Run Command and SSM Config judiciously. This
- * becomes extremely important if you create your own SSM documents. Amazon Web Services does not provide guidance about
- * how to create secure SSM documents. You create SSM documents and delegate access to Run Command at your own risk. As
- * a security best practice, we recommend that you assign access to "AWS-*" documents, especially the AWS-RunShellScript
- * document on Linux and the AWS-RunPowerShellScript document on Windows, to trusted administrators only. You can create
- * SSM documents for specific tasks and delegate access to non-administrators.
- * </p>
- * </important>
- * <p>
- * For information about creating and sharing SSM documents, see the following topics in the SSM User Guide:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ssm-doc.html">Creating SSM Documents</a> and <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssm-sharing.html">Sharing SSM Documents</a> (Linux)
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html">Creating SSM Documents</a> and <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ssm-sharing.html">Sharing SSM Documents</a> (Windows)
- * </p>
- * </li>
- * </ul>
  */
 public interface AWSSimpleSystemsManagement {
 
@@ -278,6 +127,9 @@ public interface AWSSimpleSystemsManagement {
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @throws TooManyTagsErrorException
+     *         The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try the command
+     *         again.
      * @sample AWSSimpleSystemsManagement.AddTagsToResource
      */
     AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest);
@@ -294,6 +146,19 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
      * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws DuplicateInstanceIdException
@@ -322,11 +187,11 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Associates the specified SSM document with the specified instance.
+     * Associates the specified SSM document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate an SSM document with an instance, the configuration agent on the instance (SSM agent for Linux
-     * and EC2Config service for Windows) processes the document and configures the instance as specified.
+     * When you associate an SSM document with one or more instances using instance IDs or tags, the SSM agent running
+     * on the instance processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an associated document, the system throws the
@@ -343,26 +208,48 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
      * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws UnsupportedPlatformTypeException
      *         The document does not support the platform type of the given instance ID(s). For example, you sent an SSM
      *         document for a Windows instance to a Linux instance.
+     * @throws InvalidOutputLocationException
+     *         The output location is not valid or does not exist.
      * @throws InvalidParametersException
      *         You must specify values for all required parameters in the SSM document. You can only supply values to
      *         parameters defined in the SSM document.
+     * @throws InvalidTargetException
+     *         The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you
+     *         might not have permission to perform the operation.
+     * @throws InvalidScheduleException
+     *         The schedule is invalid. Verify your cron or rate expression and try again.
      * @sample AWSSimpleSystemsManagement.CreateAssociation
      */
     CreateAssociationResult createAssociation(CreateAssociationRequest createAssociationRequest);
 
     /**
      * <p>
-     * Associates the specified SSM document with the specified instances.
+     * Associates the specified SSM document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate an SSM document with an instance, the configuration agent on the instance (SSM agent for Linux
-     * and EC2Config service for Windows) processes the document and configures the instance as specified.
+     * When you associate an SSM document with one or more instances using instance IDs or tags, the SSM agent running
+     * on the instance processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an associated document, the system throws the
@@ -375,7 +262,22 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
      * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws InvalidParametersException
@@ -388,6 +290,13 @@ public interface AWSSimpleSystemsManagement {
      * @throws UnsupportedPlatformTypeException
      *         The document does not support the platform type of the given instance ID(s). For example, you sent an SSM
      *         document for a Windows instance to a Linux instance.
+     * @throws InvalidOutputLocationException
+     *         The output location is not valid or does not exist.
+     * @throws InvalidTargetException
+     *         The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you
+     *         might not have permission to perform the operation.
+     * @throws InvalidScheduleException
+     *         The schedule is invalid. Verify your cron or rate expression and try again.
      * @sample AWSSimpleSystemsManagement.CreateAssociationBatch
      */
     CreateAssociationBatchResult createAssociationBatch(CreateAssociationBatchRequest createAssociationBatchRequest);
@@ -413,9 +322,30 @@ public interface AWSSimpleSystemsManagement {
      *         The content for the SSM document is not valid.
      * @throws DocumentLimitExceededException
      *         You can have at most 200 active SSM documents.
+     * @throws InvalidDocumentSchemaVersionException
+     *         The version of the document schema is not supported.
      * @sample AWSSimpleSystemsManagement.CreateDocument
      */
     CreateDocumentResult createDocument(CreateDocumentRequest createDocumentRequest);
+
+    /**
+     * <p>
+     * Creates a new Maintenance Window.
+     * </p>
+     * 
+     * @param createMaintenanceWindowRequest
+     * @return Result of the CreateMaintenanceWindow operation returned by the service.
+     * @throws IdempotentParameterMismatchException
+     *         Error returned when an idempotent operation is retried and the parameters don’t match the original call
+     *         to the API with the same idempotency token.
+     * @throws ResourceLimitExceededException
+     *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
+     *         Windows have been created).
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.CreateMaintenanceWindow
+     */
+    CreateMaintenanceWindowResult createMaintenanceWindow(CreateMaintenanceWindowRequest createMaintenanceWindowRequest);
 
     /**
      * <p>
@@ -457,6 +387,19 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidDocumentException
      *         The specified document does not exist.
      * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws TooManyUpdatesException
@@ -491,6 +434,34 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Deletes a Maintenance Window.
+     * </p>
+     * 
+     * @param deleteMaintenanceWindowRequest
+     * @return Result of the DeleteMaintenanceWindow operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeleteMaintenanceWindow
+     */
+    DeleteMaintenanceWindowResult deleteMaintenanceWindow(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Delete a parameter from the system.
+     * </p>
+     * 
+     * @param deleteParameterRequest
+     * @return Result of the DeleteParameter operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ParameterNotFoundException
+     *         The parameter could not be found. Verify the name and try again.
+     * @sample AWSSimpleSystemsManagement.DeleteParameter
+     */
+    DeleteParameterResult deleteParameter(DeleteParameterRequest deleteParameterRequest);
+
+    /**
+     * <p>
      * Removes the server or virtual machine from the list of registered servers. You can reregister the instance again
      * at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM agent first.
      * </p>
@@ -498,6 +469,19 @@ public interface AWSSimpleSystemsManagement {
      * @param deregisterManagedInstanceRequest
      * @return Result of the DeregisterManagedInstance operation returned by the service.
      * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws InternalServerErrorException
@@ -505,6 +489,38 @@ public interface AWSSimpleSystemsManagement {
      * @sample AWSSimpleSystemsManagement.DeregisterManagedInstance
      */
     DeregisterManagedInstanceResult deregisterManagedInstance(DeregisterManagedInstanceRequest deregisterManagedInstanceRequest);
+
+    /**
+     * <p>
+     * Removes a target from a Maintenance Window.
+     * </p>
+     * 
+     * @param deregisterTargetFromMaintenanceWindowRequest
+     * @return Result of the DeregisterTargetFromMaintenanceWindow operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeregisterTargetFromMaintenanceWindow
+     */
+    DeregisterTargetFromMaintenanceWindowResult deregisterTargetFromMaintenanceWindow(
+            DeregisterTargetFromMaintenanceWindowRequest deregisterTargetFromMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Removes a task from a Maintenance Window.
+     * </p>
+     * 
+     * @param deregisterTaskFromMaintenanceWindowRequest
+     * @return Result of the DeregisterTaskFromMaintenanceWindow operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeregisterTaskFromMaintenanceWindow
+     */
+    DeregisterTaskFromMaintenanceWindowResult deregisterTaskFromMaintenanceWindow(
+            DeregisterTaskFromMaintenanceWindowRequest deregisterTaskFromMaintenanceWindowRequest);
 
     /**
      * <p>
@@ -538,11 +554,39 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidDocumentException
      *         The specified document does not exist.
      * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @sample AWSSimpleSystemsManagement.DescribeAssociation
      */
     DescribeAssociationResult describeAssociation(DescribeAssociationRequest describeAssociationRequest);
+
+    /**
+     * <p>
+     * Provides details about all active and terminated Automation executions.
+     * </p>
+     * 
+     * @param describeAutomationExecutionsRequest
+     * @return Result of the DescribeAutomationExecutions operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeAutomationExecutions
+     */
+    DescribeAutomationExecutionsResult describeAutomationExecutions(DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest);
 
     /**
      * <p>
@@ -555,6 +599,8 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
      * @sample AWSSimpleSystemsManagement.DescribeDocument
      */
     DescribeDocumentResult describeDocument(DescribeDocumentRequest describeDocumentRequest);
@@ -579,6 +625,70 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * All associations for the instance(s).
+     * </p>
+     * 
+     * @param describeEffectiveInstanceAssociationsRequest
+     * @return Result of the DescribeEffectiveInstanceAssociations operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
+     *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
+     *         are: Shutting-down and Terminated.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeEffectiveInstanceAssociations
+     */
+    DescribeEffectiveInstanceAssociationsResult describeEffectiveInstanceAssociations(
+            DescribeEffectiveInstanceAssociationsRequest describeEffectiveInstanceAssociationsRequest);
+
+    /**
+     * <p>
+     * The status of the associations for the instance(s).
+     * </p>
+     * 
+     * @param describeInstanceAssociationsStatusRequest
+     * @return Result of the DescribeInstanceAssociationsStatus operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
+     *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
+     *         are: Shutting-down and Terminated.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeInstanceAssociationsStatus
+     */
+    DescribeInstanceAssociationsStatusResult describeInstanceAssociationsStatus(
+            DescribeInstanceAssociationsStatusRequest describeInstanceAssociationsStatusRequest);
+
+    /**
+     * <p>
      * Describes one or more of your instances. You can use this to get information about instances like the operating
      * system platform, the SSM agent version (Linux), status etc. If you specify one or more instance IDs, it returns
      * information for those instances. If you do not specify instance IDs, it returns information for all your
@@ -591,6 +701,19 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws InvalidNextTokenException
@@ -605,6 +728,164 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Retrieves the individual task executions (one per target) for a particular task executed as part of a Maintenance
+     * Window execution.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowExecutionTaskInvocationsRequest
+     * @return Result of the DescribeMaintenanceWindowExecutionTaskInvocations operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowExecutionTaskInvocations
+     */
+    DescribeMaintenanceWindowExecutionTaskInvocationsResult describeMaintenanceWindowExecutionTaskInvocations(
+            DescribeMaintenanceWindowExecutionTaskInvocationsRequest describeMaintenanceWindowExecutionTaskInvocationsRequest);
+
+    /**
+     * <p>
+     * For a given Maintenance Window execution, lists the tasks that were executed.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowExecutionTasksRequest
+     * @return Result of the DescribeMaintenanceWindowExecutionTasks operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowExecutionTasks
+     */
+    DescribeMaintenanceWindowExecutionTasksResult describeMaintenanceWindowExecutionTasks(
+            DescribeMaintenanceWindowExecutionTasksRequest describeMaintenanceWindowExecutionTasksRequest);
+
+    /**
+     * <p>
+     * Lists the executions of a Maintenance Window (meaning, information about when the Maintenance Window was
+     * scheduled to be active and information about tasks registered and run with the Maintenance Window).
+     * </p>
+     * 
+     * @param describeMaintenanceWindowExecutionsRequest
+     * @return Result of the DescribeMaintenanceWindowExecutions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowExecutions
+     */
+    DescribeMaintenanceWindowExecutionsResult describeMaintenanceWindowExecutions(
+            DescribeMaintenanceWindowExecutionsRequest describeMaintenanceWindowExecutionsRequest);
+
+    /**
+     * <p>
+     * Lists the targets registered with the Maintenance Window.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowTargetsRequest
+     * @return Result of the DescribeMaintenanceWindowTargets operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowTargets
+     */
+    DescribeMaintenanceWindowTargetsResult describeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest describeMaintenanceWindowTargetsRequest);
+
+    /**
+     * <p>
+     * Lists the tasks in a Maintenance Window.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowTasksRequest
+     * @return Result of the DescribeMaintenanceWindowTasks operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowTasks
+     */
+    DescribeMaintenanceWindowTasksResult describeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest describeMaintenanceWindowTasksRequest);
+
+    /**
+     * <p>
+     * Retrieves the Maintenance Windows in an AWS account.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowsRequest
+     * @return Result of the DescribeMaintenanceWindows operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindows
+     */
+    DescribeMaintenanceWindowsResult describeMaintenanceWindows(DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest);
+
+    /**
+     * <p>
+     * Get information about a parameter.
+     * </p>
+     * 
+     * @param describeParametersRequest
+     * @return Result of the DescribeParameters operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidFilterValueException
+     *         The filter value is not valid. Verify the value and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeParameters
+     */
+    DescribeParametersResult describeParameters(DescribeParametersRequest describeParametersRequest);
+
+    /**
+     * <p>
+     * Get detailed information about a particular Automation execution.
+     * </p>
+     * 
+     * @param getAutomationExecutionRequest
+     * @return Result of the GetAutomationExecution operation returned by the service.
+     * @throws AutomationExecutionNotFoundException
+     *         There is no automation execution information for the requested automation execution ID.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetAutomationExecution
+     */
+    GetAutomationExecutionResult getAutomationExecution(GetAutomationExecutionRequest getAutomationExecutionRequest);
+
+    /**
+     * <p>
+     * Returns detailed information about command execution for an invocation or plugin.
+     * </p>
+     * 
+     * @param getCommandInvocationRequest
+     * @return Result of the GetCommandInvocation operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidCommandIdException
+     * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
+     *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
+     *         are: Shutting-down and Terminated.
+     * @throws InvalidPluginNameException
+     *         The plugin name is not valid.
+     * @throws InvocationDoesNotExistException
+     *         The command ID and instance ID you specified did not match any invocations. Verify the command ID adn the
+     *         instance ID and try again.
+     * @sample AWSSimpleSystemsManagement.GetCommandInvocation
+     */
+    GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest getCommandInvocationRequest);
+
+    /**
+     * <p>
      * Gets the contents of the specified SSM document.
      * </p>
      * 
@@ -614,9 +895,125 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
      * @sample AWSSimpleSystemsManagement.GetDocument
      */
     GetDocumentResult getDocument(GetDocumentRequest getDocumentRequest);
+
+    /**
+     * <p>
+     * Query inventory information.
+     * </p>
+     * 
+     * @param getInventoryRequest
+     * @return Result of the GetInventory operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidFilterException
+     *         The filter name is not valid. Verify the you entered the correct name and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws InvalidTypeNameException
+     *         The parameter type name is not valid.
+     * @throws InvalidResultAttributeException
+     *         The specified inventory item result attribute is not valid.
+     * @sample AWSSimpleSystemsManagement.GetInventory
+     */
+    GetInventoryResult getInventory(GetInventoryRequest getInventoryRequest);
+
+    /**
+     * <p>
+     * Return a list of inventory type names for the account, or return a list of attribute names for a specific
+     * Inventory item type.
+     * </p>
+     * 
+     * @param getInventorySchemaRequest
+     * @return Result of the GetInventorySchema operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidTypeNameException
+     *         The parameter type name is not valid.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.GetInventorySchema
+     */
+    GetInventorySchemaResult getInventorySchema(GetInventorySchemaRequest getInventorySchemaRequest);
+
+    /**
+     * <p>
+     * Retrieves a Maintenance Window.
+     * </p>
+     * 
+     * @param getMaintenanceWindowRequest
+     * @return Result of the GetMaintenanceWindow operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetMaintenanceWindow
+     */
+    GetMaintenanceWindowResult getMaintenanceWindow(GetMaintenanceWindowRequest getMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Retrieves details about a specific task executed as part of a Maintenance Window execution.
+     * </p>
+     * 
+     * @param getMaintenanceWindowExecutionRequest
+     * @return Result of the GetMaintenanceWindowExecution operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecution
+     */
+    GetMaintenanceWindowExecutionResult getMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest getMaintenanceWindowExecutionRequest);
+
+    /**
+     * <p>
+     * Retrieves the details about a specific task executed as part of a Maintenance Window execution.
+     * </p>
+     * 
+     * @param getMaintenanceWindowExecutionTaskRequest
+     * @return Result of the GetMaintenanceWindowExecutionTask operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecutionTask
+     */
+    GetMaintenanceWindowExecutionTaskResult getMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest getMaintenanceWindowExecutionTaskRequest);
+
+    /**
+     * <p>
+     * Query a list of all parameters used by the AWS account.
+     * </p>
+     * 
+     * @param getParameterHistoryRequest
+     * @return Result of the GetParameterHistory operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ParameterNotFoundException
+     *         The parameter could not be found. Verify the name and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.GetParameterHistory
+     */
+    GetParameterHistoryResult getParameterHistory(GetParameterHistoryRequest getParameterHistoryRequest);
+
+    /**
+     * <p>
+     * Get a list of parameters used by the AWS account.&gt;
+     * </p>
+     * 
+     * @param getParametersRequest
+     * @return Result of the GetParameters operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetParameters
+     */
+    GetParametersResult getParameters(GetParametersRequest getParametersRequest);
 
     /**
      * <p>
@@ -647,6 +1044,19 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
      * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws InvalidFilterKeyException
@@ -668,6 +1078,19 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
      * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws InvalidFilterKeyException
@@ -677,6 +1100,23 @@ public interface AWSSimpleSystemsManagement {
      * @sample AWSSimpleSystemsManagement.ListCommands
      */
     ListCommandsResult listCommands(ListCommandsRequest listCommandsRequest);
+
+    /**
+     * <p>
+     * List all versions for a document.
+     * </p>
+     * 
+     * @param listDocumentVersionsRequest
+     * @return Result of the ListDocumentVersions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @sample AWSSimpleSystemsManagement.ListDocumentVersions
+     */
+    ListDocumentVersionsResult listDocumentVersions(ListDocumentVersionsRequest listDocumentVersionsRequest);
 
     /**
      * <p>
@@ -701,6 +1141,41 @@ public interface AWSSimpleSystemsManagement {
      * @see #listDocuments(ListDocumentsRequest)
      */
     ListDocumentsResult listDocuments();
+
+    /**
+     * <p>
+     * A list of inventory items returned by the request.
+     * </p>
+     * 
+     * @param listInventoryEntriesRequest
+     * @return Result of the ListInventoryEntries operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
+     *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
+     *         are: Shutting-down and Terminated.
+     * @throws InvalidTypeNameException
+     *         The parameter type name is not valid.
+     * @throws InvalidFilterException
+     *         The filter name is not valid. Verify the you entered the correct name and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListInventoryEntries
+     */
+    ListInventoryEntriesResult listInventoryEntries(ListInventoryEntriesRequest listInventoryEntriesRequest);
 
     /**
      * <p>
@@ -747,6 +1222,118 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Bulk update custom inventory items on one more instance. The request adds an inventory item, if it doesn't
+     * already exist, or updates an inventory item, if it does exist.
+     * </p>
+     * 
+     * @param putInventoryRequest
+     * @return Result of the PutInventory operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
+     *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
+     *         are: Shutting-down and Terminated.
+     * @throws InvalidTypeNameException
+     *         The parameter type name is not valid.
+     * @throws InvalidItemContentException
+     *         One or more content items is not valid.
+     * @throws TotalSizeLimitExceededException
+     *         The size of inventory data has exceeded the total size limit for the resource.
+     * @throws ItemSizeLimitExceededException
+     *         The inventory item size has exceeded the size limit.
+     * @throws ItemContentMismatchException
+     *         The inventory item has invalid content.
+     * @throws CustomSchemaCountLimitExceededException
+     *         You have exceeded the limit for custom schemas. Delete one or more custom schemas and try again.
+     * @throws UnsupportedInventorySchemaVersionException
+     *         Inventory item type schema version has to match supported versions in the service. Check output of
+     *         <code>GetInventorySchema</code> to see the available schema version for each type.
+     * @sample AWSSimpleSystemsManagement.PutInventory
+     */
+    PutInventoryResult putInventory(PutInventoryRequest putInventoryRequest);
+
+    /**
+     * <p>
+     * Add one or more paramaters to the system.
+     * </p>
+     * 
+     * @param putParameterRequest
+     * @return Result of the PutParameter operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidKeyIdException
+     *         The query key ID is not valid.
+     * @throws ParameterLimitExceededException
+     *         You have exceeded the number of parameters for this AWS account. Delete one or more parameters and try
+     *         again.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
+     * @throws ParameterAlreadyExistsException
+     *         The parameter already exists. You can't create duplicate parameters.
+     * @throws UnsupportedParameterTypeException
+     *         The parameter type is not supported.
+     * @sample AWSSimpleSystemsManagement.PutParameter
+     */
+    PutParameterResult putParameter(PutParameterRequest putParameterRequest);
+
+    /**
+     * <p>
+     * Registers a target with a Maintenance Window.
+     * </p>
+     * 
+     * @param registerTargetWithMaintenanceWindowRequest
+     * @return Result of the RegisterTargetWithMaintenanceWindow operation returned by the service.
+     * @throws IdempotentParameterMismatchException
+     *         Error returned when an idempotent operation is retried and the parameters don’t match the original call
+     *         to the API with the same idempotency token.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws ResourceLimitExceededException
+     *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
+     *         Windows have been created).
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.RegisterTargetWithMaintenanceWindow
+     */
+    RegisterTargetWithMaintenanceWindowResult registerTargetWithMaintenanceWindow(
+            RegisterTargetWithMaintenanceWindowRequest registerTargetWithMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Adds a new task to a Maintenance Window.
+     * </p>
+     * 
+     * @param registerTaskWithMaintenanceWindowRequest
+     * @return Result of the RegisterTaskWithMaintenanceWindow operation returned by the service.
+     * @throws IdempotentParameterMismatchException
+     *         Error returned when an idempotent operation is retried and the parameters don’t match the original call
+     *         to the API with the same idempotency token.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws ResourceLimitExceededException
+     *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
+     *         Windows have been created).
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.RegisterTaskWithMaintenanceWindow
+     */
+    RegisterTaskWithMaintenanceWindowResult registerTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest registerTaskWithMaintenanceWindowRequest);
+
+    /**
+     * <p>
      * Removes all tags from the specified resource.
      * </p>
      * 
@@ -775,6 +1362,19 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws InvalidDocumentException
@@ -792,15 +1392,81 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidRoleException
      *         The role name can't contain invalid characters. Also verify that you specified an IAM role for
      *         notifications that includes the required trust policy. For information about configuring the IAM role for
-     *         SSM notifications, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Configuring SNS Notifications
-     *         SSM</a> in the <i>Amazon Elastic Compute Cloud User Guide </i>.
+     *         Run Command notifications, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Getting Amazon SNS Notifications
+     *         When a Command Changes Status</a> in the <i>Amazon Elastic Compute Cloud User Guide </i>.
      * @throws InvalidNotificationConfigException
      *         One or more configuration items is not valid. Verify that a valid Amazon Resource Name (ARN) was provided
      *         for an Amazon SNS topic.
      * @sample AWSSimpleSystemsManagement.SendCommand
      */
     SendCommandResult sendCommand(SendCommandRequest sendCommandRequest);
+
+    /**
+     * <p>
+     * Initiates execution of an Automation document.
+     * </p>
+     * 
+     * @param startAutomationExecutionRequest
+     * @return Result of the StartAutomationExecution operation returned by the service.
+     * @throws AutomationDefinitionNotFoundException
+     *         An Automation document with the specified name could not be found.
+     * @throws InvalidAutomationExecutionParametersException
+     *         The supplied parameters for invoking the specified Automation document are incorrect. For example, they
+     *         may not match the set of parameters permitted for the specified Automation document.
+     * @throws AutomationExecutionLimitExceededException
+     *         The number of simultaneously running Automation executions exceeded the allowable limit.
+     * @throws AutomationDefinitionVersionNotFoundException
+     *         An Automation document with the specified name and version could not be found.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.StartAutomationExecution
+     */
+    StartAutomationExecutionResult startAutomationExecution(StartAutomationExecutionRequest startAutomationExecutionRequest);
+
+    /**
+     * <p>
+     * Stop an Automation that is currently executing.
+     * </p>
+     * 
+     * @param stopAutomationExecutionRequest
+     * @return Result of the StopAutomationExecution operation returned by the service.
+     * @throws AutomationExecutionNotFoundException
+     *         There is no automation execution information for the requested automation execution ID.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.StopAutomationExecution
+     */
+    StopAutomationExecutionResult stopAutomationExecution(StopAutomationExecutionRequest stopAutomationExecutionRequest);
+
+    /**
+     * <p>
+     * Updates an association. You can only update the document version, schedule, parameters, and Amazon S3 output of
+     * an association.
+     * </p>
+     * 
+     * @param updateAssociationRequest
+     * @return Result of the UpdateAssociation operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidScheduleException
+     *         The schedule is invalid. Verify your cron or rate expression and try again.
+     * @throws InvalidParametersException
+     *         You must specify values for all required parameters in the SSM document. You can only supply values to
+     *         parameters defined in the SSM document.
+     * @throws InvalidOutputLocationException
+     *         The output location is not valid or does not exist.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
+     * @throws AssociationDoesNotExistException
+     *         The specified association does not exist.
+     * @throws InvalidUpdateException
+     *         The update is not valid.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
+     * @sample AWSSimpleSystemsManagement.UpdateAssociation
+     */
+    UpdateAssociationResult updateAssociation(UpdateAssociationRequest updateAssociationRequest);
 
     /**
      * <p>
@@ -812,6 +1478,19 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws InvalidDocumentException
@@ -828,12 +1507,87 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * The document you want to update.
+     * </p>
+     * 
+     * @param updateDocumentRequest
+     * @return Result of the UpdateDocument operation returned by the service.
+     * @throws MaxDocumentSizeExceededException
+     *         The size limit of an SSM document is 64 KB.
+     * @throws DocumentVersionLimitExceededException
+     *         The document has too many versions. Delete one or more document versions and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws DuplicateDocumentContentException
+     *         The content of the association document matches another document. Change the content of the document and
+     *         try again.
+     * @throws InvalidDocumentContentException
+     *         The content for the SSM document is not valid.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
+     * @throws InvalidDocumentSchemaVersionException
+     *         The version of the document schema is not supported.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @sample AWSSimpleSystemsManagement.UpdateDocument
+     */
+    UpdateDocumentResult updateDocument(UpdateDocumentRequest updateDocumentRequest);
+
+    /**
+     * <p>
+     * Set the default version of a document.
+     * </p>
+     * 
+     * @param updateDocumentDefaultVersionRequest
+     * @return Result of the UpdateDocumentDefaultVersion operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
+     * @throws InvalidDocumentSchemaVersionException
+     *         The version of the document schema is not supported.
+     * @sample AWSSimpleSystemsManagement.UpdateDocumentDefaultVersion
+     */
+    UpdateDocumentDefaultVersionResult updateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest);
+
+    /**
+     * <p>
+     * Updates an existing Maintenance Window. Only specified parameters are modified.
+     * </p>
+     * 
+     * @param updateMaintenanceWindowRequest
+     * @return Result of the UpdateMaintenanceWindow operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.UpdateMaintenanceWindow
+     */
+    UpdateMaintenanceWindowResult updateMaintenanceWindow(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest);
+
+    /**
+     * <p>
      * Assigns or changes an Amazon Identity and Access Management (IAM) role to the managed instance.
      * </p>
      * 
      * @param updateManagedInstanceRoleRequest
      * @return Result of the UpdateManagedInstanceRole operation returned by the service.
      * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws InternalServerErrorException

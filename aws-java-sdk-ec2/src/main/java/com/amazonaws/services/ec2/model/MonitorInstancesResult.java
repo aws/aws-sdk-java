@@ -24,17 +24,17 @@ public class MonitorInstancesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Monitoring information for one or more instances.
+     * The monitoring information.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceMonitoring> instanceMonitorings;
 
     /**
      * <p>
-     * Monitoring information for one or more instances.
+     * The monitoring information.
      * </p>
      * 
-     * @return Monitoring information for one or more instances.
+     * @return The monitoring information.
      */
 
     public java.util.List<InstanceMonitoring> getInstanceMonitorings() {
@@ -46,11 +46,11 @@ public class MonitorInstancesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Monitoring information for one or more instances.
+     * The monitoring information.
      * </p>
      * 
      * @param instanceMonitorings
-     *        Monitoring information for one or more instances.
+     *        The monitoring information.
      */
 
     public void setInstanceMonitorings(java.util.Collection<InstanceMonitoring> instanceMonitorings) {
@@ -64,7 +64,7 @@ public class MonitorInstancesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Monitoring information for one or more instances.
+     * The monitoring information.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class MonitorInstancesResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param instanceMonitorings
-     *        Monitoring information for one or more instances.
+     *        The monitoring information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class MonitorInstancesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Monitoring information for one or more instances.
+     * The monitoring information.
      * </p>
      * 
      * @param instanceMonitorings
-     *        Monitoring information for one or more instances.
+     *        The monitoring information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

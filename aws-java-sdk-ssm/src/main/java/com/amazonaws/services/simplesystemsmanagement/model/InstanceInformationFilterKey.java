@@ -23,7 +23,8 @@ public enum InstanceInformationFilterKey {
     PlatformTypes("PlatformTypes"),
     ActivationIds("ActivationIds"),
     IamRole("IamRole"),
-    ResourceType("ResourceType");
+    ResourceType("ResourceType"),
+    AssociationStatus("AssociationStatus");
 
     private String value;
 

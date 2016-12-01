@@ -95,6 +95,16 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
                     instanceNetworkInterfaceSpecification.setAssociatePublicIpAddress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ipv6AddressesSet/item", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.withIpv6Addresses(InstanceIpv6AddressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6AddressCount", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setIpv6AddressCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceNetworkInterfaceSpecification;

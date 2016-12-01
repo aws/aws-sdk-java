@@ -27,7 +27,10 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
      * CIDR notation for the advertised route. Multiple routes are separated by commas.
      * </p>
      * <p>
-     * Example: 10.10.10.0/24,10.10.11.0/24
+     * IPv6 CIDRs must be at least a /64 or shorter
+     * </p>
+     * <p>
+     * Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      * </p>
      */
     private String cidr;
@@ -37,13 +40,19 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
      * CIDR notation for the advertised route. Multiple routes are separated by commas.
      * </p>
      * <p>
-     * Example: 10.10.10.0/24,10.10.11.0/24
+     * IPv6 CIDRs must be at least a /64 or shorter
+     * </p>
+     * <p>
+     * Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      * </p>
      * 
      * @param cidr
      *        CIDR notation for the advertised route. Multiple routes are separated by commas.</p>
      *        <p>
-     *        Example: 10.10.10.0/24,10.10.11.0/24
+     *        IPv6 CIDRs must be at least a /64 or shorter
+     *        </p>
+     *        <p>
+     *        Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      */
 
     public void setCidr(String cidr) {
@@ -55,12 +64,18 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
      * CIDR notation for the advertised route. Multiple routes are separated by commas.
      * </p>
      * <p>
-     * Example: 10.10.10.0/24,10.10.11.0/24
+     * IPv6 CIDRs must be at least a /64 or shorter
+     * </p>
+     * <p>
+     * Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      * </p>
      * 
      * @return CIDR notation for the advertised route. Multiple routes are separated by commas.</p>
      *         <p>
-     *         Example: 10.10.10.0/24,10.10.11.0/24
+     *         IPv6 CIDRs must be at least a /64 or shorter
+     *         </p>
+     *         <p>
+     *         Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      */
 
     public String getCidr() {
@@ -72,13 +87,19 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
      * CIDR notation for the advertised route. Multiple routes are separated by commas.
      * </p>
      * <p>
-     * Example: 10.10.10.0/24,10.10.11.0/24
+     * IPv6 CIDRs must be at least a /64 or shorter
+     * </p>
+     * <p>
+     * Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      * </p>
      * 
      * @param cidr
      *        CIDR notation for the advertised route. Multiple routes are separated by commas.</p>
      *        <p>
-     *        Example: 10.10.10.0/24,10.10.11.0/24
+     *        IPv6 CIDRs must be at least a /64 or shorter
+     *        </p>
+     *        <p>
+     *        Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -60,7 +60,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.cidr</code> - The CIDR range specified in the entry.
+     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.
      * </p>
      * </li>
      * <li>
@@ -76,6 +76,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.
      * </p>
      * </li>
      * <li>
@@ -258,7 +263,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.cidr</code> - The CIDR range specified in the entry.
+     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.
      * </p>
      * </li>
      * <li>
@@ -274,6 +279,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.
      * </p>
      * </li>
      * <li>
@@ -358,7 +368,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *         </li>
      *         <li>
      *         <p>
-     *         <code>entry.cidr</code> - The CIDR range specified in the entry.
+     *         <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.
      *         </p>
      *         </li>
      *         <li>
@@ -374,6 +384,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *         <li>
      *         <p>
      *         <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.
      *         </p>
      *         </li>
      *         <li>
@@ -470,7 +485,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.cidr</code> - The CIDR range specified in the entry.
+     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.
      * </p>
      * </li>
      * <li>
@@ -486,6 +501,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.
      * </p>
      * </li>
      * <li>
@@ -571,7 +591,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>entry.cidr</code> - The CIDR range specified in the entry.
+     *        <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.
      *        </p>
      *        </li>
      *        <li>
@@ -587,6 +607,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.
      *        </p>
      *        </li>
      *        <li>
@@ -685,7 +710,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.cidr</code> - The CIDR range specified in the entry.
+     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.
      * </p>
      * </li>
      * <li>
@@ -701,6 +726,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.
      * </p>
      * </li>
      * <li>
@@ -791,7 +821,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>entry.cidr</code> - The CIDR range specified in the entry.
+     *        <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.
      *        </p>
      *        </li>
      *        <li>
@@ -807,6 +837,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.
      *        </p>
      *        </li>
      *        <li>
@@ -907,7 +942,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.cidr</code> - The CIDR range specified in the entry.
+     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.
      * </p>
      * </li>
      * <li>
@@ -923,6 +958,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.
      * </p>
      * </li>
      * <li>
@@ -1008,7 +1048,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>entry.cidr</code> - The CIDR range specified in the entry.
+     *        <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.
      *        </p>
      *        </li>
      *        <li>
@@ -1024,6 +1064,11 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.
      *        </p>
      *        </li>
      *        <li>

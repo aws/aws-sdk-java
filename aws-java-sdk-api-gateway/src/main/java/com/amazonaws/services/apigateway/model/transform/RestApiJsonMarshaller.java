@@ -53,6 +53,9 @@ public class RestApiJsonMarshaller {
             if (restApi.getCreatedDate() != null) {
                 jsonGenerator.writeFieldName("createdDate").writeValue(restApi.getCreatedDate());
             }
+            if (restApi.getVersion() != null) {
+                jsonGenerator.writeFieldName("version").writeValue(restApi.getVersion());
+            }
 
             java.util.List<String> warningsList = restApi.getWarnings();
             if (warningsList != null) {

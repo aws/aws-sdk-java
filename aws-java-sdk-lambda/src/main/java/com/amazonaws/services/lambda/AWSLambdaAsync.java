@@ -392,6 +392,43 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Returns a customer's account settings.
+     * </p>
+     * <p>
+     * You can use this operation to retrieve Lambda limit information such as code size and concurrency limits. For
+     * more information on limits, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
+     * Limits</a>. You can also retrieve resource usage statistics such as code storage usage and function count.
+     * </p>
+     * 
+     * @param getAccountSettingsRequest
+     * @return A Java Future containing the result of the GetAccountSettings operation returned by the service.
+     * @sample AWSLambdaAsync.GetAccountSettings
+     */
+    java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(GetAccountSettingsRequest getAccountSettingsRequest);
+
+    /**
+     * <p>
+     * Returns a customer's account settings.
+     * </p>
+     * <p>
+     * You can use this operation to retrieve Lambda limit information such as code size and concurrency limits. For
+     * more information on limits, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
+     * Limits</a>. You can also retrieve resource usage statistics such as code storage usage and function count.
+     * </p>
+     * 
+     * @param getAccountSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccountSettings operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.GetAccountSettings
+     */
+    java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(GetAccountSettingsRequest getAccountSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccountSettingsRequest, GetAccountSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the specified alias information such as the alias ARN, description, and function version it is pointing
      * to. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction to AWS Lambda Aliases</a>.

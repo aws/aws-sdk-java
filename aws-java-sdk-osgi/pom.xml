@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.63-SNAPSHOT</version>
+    <version>1.11.63</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,24 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-pinpoint</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-xray</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-opsworkscm</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-support</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -454,6 +472,36 @@
         <version>${awsjavasdk.version}</version>
     </dependency>
     <dependency>
+        <artifactId>aws-java-sdk-stepfunctions</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-health</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-codebuild</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-appstream</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-shield</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
         <artifactId>aws-java-sdk-core</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
@@ -887,6 +935,38 @@
                               <group>
                                   <title>Amazon Lightsail</title>
                                   <packages>com.amazonaws.services.lightsail*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon AppStream</title>
+                                  <packages>com.amazonaws.services.appstream*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS X-Ray</title>
+                                  <packages>com.amazonaws.services.xray*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS OpsWorks for Chef Automate</title>
+                                  <packages>com.amazonaws.services.opsworkscm*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Pinpoint</title>
+                                  <packages>com.amazonaws.services.pinpoint*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Step Functions</title>
+                                  <packages>com.amazonaws.services.stepfunctions*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Shield</title>
+                                  <packages>com.amazonaws.services.shield*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Health APIs and Notifications</title>
+                                  <packages>com.amazonaws.services.health*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Code Build</title>
+                                  <packages>com.amazonaws.services.codebuild*</packages>
                               </group>
                               <group>
                                   <title>Common</title>

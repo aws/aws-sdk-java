@@ -63,6 +63,10 @@ public class RestApiJsonUnmarshaller implements Unmarshaller<RestApi, JsonUnmars
                     context.nextToken();
                     restApi.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("version", targetDepth)) {
+                    context.nextToken();
+                    restApi.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();
                     restApi.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

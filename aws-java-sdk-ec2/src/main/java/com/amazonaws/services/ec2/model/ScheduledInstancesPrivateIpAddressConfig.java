@@ -16,31 +16,31 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a private IP address for a Scheduled Instance.
+ * Describes a private IPv4 address for a Scheduled Instance.
  * </p>
  */
 public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address.
+     * The IPv4 address.
      * </p>
      */
     private String privateIpAddress;
     /**
      * <p>
-     * Indicates whether this is a primary IP address. Otherwise, this is a secondary IP address.
+     * Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      * </p>
      */
     private Boolean primary;
 
     /**
      * <p>
-     * The IP address.
+     * The IPv4 address.
      * </p>
      * 
      * @param privateIpAddress
-     *        The IP address.
+     *        The IPv4 address.
      */
 
     public void setPrivateIpAddress(String privateIpAddress) {
@@ -49,10 +49,10 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
 
     /**
      * <p>
-     * The IP address.
+     * The IPv4 address.
      * </p>
      * 
-     * @return The IP address.
+     * @return The IPv4 address.
      */
 
     public String getPrivateIpAddress() {
@@ -61,11 +61,11 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
 
     /**
      * <p>
-     * The IP address.
+     * The IPv4 address.
      * </p>
      * 
      * @param privateIpAddress
-     *        The IP address.
+     *        The IPv4 address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,11 +76,11 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
 
     /**
      * <p>
-     * Indicates whether this is a primary IP address. Otherwise, this is a secondary IP address.
+     * Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      * </p>
      * 
      * @param primary
-     *        Indicates whether this is a primary IP address. Otherwise, this is a secondary IP address.
+     *        Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      */
 
     public void setPrimary(Boolean primary) {
@@ -89,10 +89,10 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
 
     /**
      * <p>
-     * Indicates whether this is a primary IP address. Otherwise, this is a secondary IP address.
+     * Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      * </p>
      * 
-     * @return Indicates whether this is a primary IP address. Otherwise, this is a secondary IP address.
+     * @return Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      */
 
     public Boolean getPrimary() {
@@ -101,11 +101,11 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
 
     /**
      * <p>
-     * Indicates whether this is a primary IP address. Otherwise, this is a secondary IP address.
+     * Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      * </p>
      * 
      * @param primary
-     *        Indicates whether this is a primary IP address. Otherwise, this is a secondary IP address.
+     *        Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,10 +116,10 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
 
     /**
      * <p>
-     * Indicates whether this is a primary IP address. Otherwise, this is a secondary IP address.
+     * Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      * </p>
      * 
-     * @return Indicates whether this is a primary IP address. Otherwise, this is a secondary IP address.
+     * @return Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      */
 
     public Boolean isPrimary() {

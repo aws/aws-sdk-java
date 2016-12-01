@@ -1,0 +1,915 @@
+/*
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.simplesystemsmanagement.model;
+
+import java.io.Serializable;
+
+/**
+ * 
+ */
+public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
+        Cloneable {
+
+    /**
+     * <p>
+     * The ID of the Maintenance Window execution that includes the task.
+     * </p>
+     */
+    private String windowExecutionId;
+    /**
+     * <p>
+     * The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * </p>
+     */
+    private String taskExecutionId;
+    /**
+     * <p>
+     * The ARN of the executed task.
+     * </p>
+     */
+    private String taskArn;
+    /**
+     * <p>
+     * The role that was assumed when executing the task.
+     * </p>
+     */
+    private String serviceRole;
+    /**
+     * <p>
+     * The type of task executed.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
+     * The parameters passed to the task when it was executed. The map has the following format:
+     * </p>
+     * <p>
+     * Key: string, 1 ≤ length ≤ 255
+     * </p>
+     * <p>
+     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> taskParameters;
+    /**
+     * <p>
+     * The priority of the task.
+     * </p>
+     */
+    private Integer priority;
+    /**
+     * <p>
+     * The defined maximum number of task executions that could be run in parallel.
+     * </p>
+     */
+    private String maxConcurrency;
+    /**
+     * <p>
+     * The defined maximum number of task execution errors allowed before scheduling of the task execution would have
+     * been stopped.
+     * </p>
+     */
+    private String maxErrors;
+    /**
+     * <p>
+     * The status of the task.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The details explaining the Status. Only available for certain status values.
+     * </p>
+     */
+    private String statusDetails;
+    /**
+     * <p>
+     * The time the task execution started.
+     * </p>
+     */
+    private java.util.Date startTime;
+    /**
+     * <p>
+     * The time the task execution completed.
+     * </p>
+     */
+    private java.util.Date endTime;
+
+    /**
+     * <p>
+     * The ID of the Maintenance Window execution that includes the task.
+     * </p>
+     * 
+     * @param windowExecutionId
+     *        The ID of the Maintenance Window execution that includes the task.
+     */
+
+    public void setWindowExecutionId(String windowExecutionId) {
+        this.windowExecutionId = windowExecutionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Maintenance Window execution that includes the task.
+     * </p>
+     * 
+     * @return The ID of the Maintenance Window execution that includes the task.
+     */
+
+    public String getWindowExecutionId() {
+        return this.windowExecutionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Maintenance Window execution that includes the task.
+     * </p>
+     * 
+     * @param windowExecutionId
+     *        The ID of the Maintenance Window execution that includes the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withWindowExecutionId(String windowExecutionId) {
+        setWindowExecutionId(windowExecutionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * </p>
+     * 
+     * @param taskExecutionId
+     *        The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     */
+
+    public void setTaskExecutionId(String taskExecutionId) {
+        this.taskExecutionId = taskExecutionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * </p>
+     * 
+     * @return The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     */
+
+    public String getTaskExecutionId() {
+        return this.taskExecutionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * </p>
+     * 
+     * @param taskExecutionId
+     *        The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withTaskExecutionId(String taskExecutionId) {
+        setTaskExecutionId(taskExecutionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the executed task.
+     * </p>
+     * 
+     * @param taskArn
+     *        The ARN of the executed task.
+     */
+
+    public void setTaskArn(String taskArn) {
+        this.taskArn = taskArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the executed task.
+     * </p>
+     * 
+     * @return The ARN of the executed task.
+     */
+
+    public String getTaskArn() {
+        return this.taskArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the executed task.
+     * </p>
+     * 
+     * @param taskArn
+     *        The ARN of the executed task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withTaskArn(String taskArn) {
+        setTaskArn(taskArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The role that was assumed when executing the task.
+     * </p>
+     * 
+     * @param serviceRole
+     *        The role that was assumed when executing the task.
+     */
+
+    public void setServiceRole(String serviceRole) {
+        this.serviceRole = serviceRole;
+    }
+
+    /**
+     * <p>
+     * The role that was assumed when executing the task.
+     * </p>
+     * 
+     * @return The role that was assumed when executing the task.
+     */
+
+    public String getServiceRole() {
+        return this.serviceRole;
+    }
+
+    /**
+     * <p>
+     * The role that was assumed when executing the task.
+     * </p>
+     * 
+     * @param serviceRole
+     *        The role that was assumed when executing the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withServiceRole(String serviceRole) {
+        setServiceRole(serviceRole);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of task executed.
+     * </p>
+     * 
+     * @param type
+     *        The type of task executed.
+     * @see MaintenanceWindowTaskType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of task executed.
+     * </p>
+     * 
+     * @return The type of task executed.
+     * @see MaintenanceWindowTaskType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of task executed.
+     * </p>
+     * 
+     * @param type
+     *        The type of task executed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MaintenanceWindowTaskType
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of task executed.
+     * </p>
+     * 
+     * @param type
+     *        The type of task executed.
+     * @see MaintenanceWindowTaskType
+     */
+
+    public void setType(MaintenanceWindowTaskType type) {
+        this.type = type.toString();
+    }
+
+    /**
+     * <p>
+     * The type of task executed.
+     * </p>
+     * 
+     * @param type
+     *        The type of task executed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MaintenanceWindowTaskType
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withType(MaintenanceWindowTaskType type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters passed to the task when it was executed. The map has the following format:
+     * </p>
+     * <p>
+     * Key: string, 1 ≤ length ≤ 255
+     * </p>
+     * <p>
+     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * </p>
+     * 
+     * @return The parameters passed to the task when it was executed. The map has the following format:</p>
+     *         <p>
+     *         Key: string, 1 ≤ length ≤ 255
+     *         </p>
+     *         <p>
+     *         Value: an array of strings where each string 1 ≤ length ≤ 255
+     */
+
+    public java.util.List<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> getTaskParameters() {
+        if (taskParameters == null) {
+            taskParameters = new com.amazonaws.internal.SdkInternalList<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>>();
+        }
+        return taskParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters passed to the task when it was executed. The map has the following format:
+     * </p>
+     * <p>
+     * Key: string, 1 ≤ length ≤ 255
+     * </p>
+     * <p>
+     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * </p>
+     * 
+     * @param taskParameters
+     *        The parameters passed to the task when it was executed. The map has the following format:</p>
+     *        <p>
+     *        Key: string, 1 ≤ length ≤ 255
+     *        </p>
+     *        <p>
+     *        Value: an array of strings where each string 1 ≤ length ≤ 255
+     */
+
+    public void setTaskParameters(java.util.Collection<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> taskParameters) {
+        if (taskParameters == null) {
+            this.taskParameters = null;
+            return;
+        }
+
+        this.taskParameters = new com.amazonaws.internal.SdkInternalList<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>>(taskParameters);
+    }
+
+    /**
+     * <p>
+     * The parameters passed to the task when it was executed. The map has the following format:
+     * </p>
+     * <p>
+     * Key: string, 1 ≤ length ≤ 255
+     * </p>
+     * <p>
+     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTaskParameters(java.util.Collection)} or {@link #withTaskParameters(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param taskParameters
+     *        The parameters passed to the task when it was executed. The map has the following format:</p>
+     *        <p>
+     *        Key: string, 1 ≤ length ≤ 255
+     *        </p>
+     *        <p>
+     *        Value: an array of strings where each string 1 ≤ length ≤ 255
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withTaskParameters(java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>... taskParameters) {
+        if (this.taskParameters == null) {
+            setTaskParameters(new com.amazonaws.internal.SdkInternalList<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>>(
+                    taskParameters.length));
+        }
+        for (java.util.Map<String, MaintenanceWindowTaskParameterValueExpression> ele : taskParameters) {
+            this.taskParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters passed to the task when it was executed. The map has the following format:
+     * </p>
+     * <p>
+     * Key: string, 1 ≤ length ≤ 255
+     * </p>
+     * <p>
+     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * </p>
+     * 
+     * @param taskParameters
+     *        The parameters passed to the task when it was executed. The map has the following format:</p>
+     *        <p>
+     *        Key: string, 1 ≤ length ≤ 255
+     *        </p>
+     *        <p>
+     *        Value: an array of strings where each string 1 ≤ length ≤ 255
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withTaskParameters(
+            java.util.Collection<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> taskParameters) {
+        setTaskParameters(taskParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The priority of the task.
+     * </p>
+     * 
+     * @param priority
+     *        The priority of the task.
+     */
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    /**
+     * <p>
+     * The priority of the task.
+     * </p>
+     * 
+     * @return The priority of the task.
+     */
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * <p>
+     * The priority of the task.
+     * </p>
+     * 
+     * @param priority
+     *        The priority of the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withPriority(Integer priority) {
+        setPriority(priority);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The defined maximum number of task executions that could be run in parallel.
+     * </p>
+     * 
+     * @param maxConcurrency
+     *        The defined maximum number of task executions that could be run in parallel.
+     */
+
+    public void setMaxConcurrency(String maxConcurrency) {
+        this.maxConcurrency = maxConcurrency;
+    }
+
+    /**
+     * <p>
+     * The defined maximum number of task executions that could be run in parallel.
+     * </p>
+     * 
+     * @return The defined maximum number of task executions that could be run in parallel.
+     */
+
+    public String getMaxConcurrency() {
+        return this.maxConcurrency;
+    }
+
+    /**
+     * <p>
+     * The defined maximum number of task executions that could be run in parallel.
+     * </p>
+     * 
+     * @param maxConcurrency
+     *        The defined maximum number of task executions that could be run in parallel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withMaxConcurrency(String maxConcurrency) {
+        setMaxConcurrency(maxConcurrency);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The defined maximum number of task execution errors allowed before scheduling of the task execution would have
+     * been stopped.
+     * </p>
+     * 
+     * @param maxErrors
+     *        The defined maximum number of task execution errors allowed before scheduling of the task execution would
+     *        have been stopped.
+     */
+
+    public void setMaxErrors(String maxErrors) {
+        this.maxErrors = maxErrors;
+    }
+
+    /**
+     * <p>
+     * The defined maximum number of task execution errors allowed before scheduling of the task execution would have
+     * been stopped.
+     * </p>
+     * 
+     * @return The defined maximum number of task execution errors allowed before scheduling of the task execution would
+     *         have been stopped.
+     */
+
+    public String getMaxErrors() {
+        return this.maxErrors;
+    }
+
+    /**
+     * <p>
+     * The defined maximum number of task execution errors allowed before scheduling of the task execution would have
+     * been stopped.
+     * </p>
+     * 
+     * @param maxErrors
+     *        The defined maximum number of task execution errors allowed before scheduling of the task execution would
+     *        have been stopped.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withMaxErrors(String maxErrors) {
+        setMaxErrors(maxErrors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the task.
+     * </p>
+     * 
+     * @param status
+     *        The status of the task.
+     * @see MaintenanceWindowExecutionStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the task.
+     * </p>
+     * 
+     * @return The status of the task.
+     * @see MaintenanceWindowExecutionStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the task.
+     * </p>
+     * 
+     * @param status
+     *        The status of the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MaintenanceWindowExecutionStatus
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the task.
+     * </p>
+     * 
+     * @param status
+     *        The status of the task.
+     * @see MaintenanceWindowExecutionStatus
+     */
+
+    public void setStatus(MaintenanceWindowExecutionStatus status) {
+        this.status = status.toString();
+    }
+
+    /**
+     * <p>
+     * The status of the task.
+     * </p>
+     * 
+     * @param status
+     *        The status of the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MaintenanceWindowExecutionStatus
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withStatus(MaintenanceWindowExecutionStatus status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details explaining the Status. Only available for certain status values.
+     * </p>
+     * 
+     * @param statusDetails
+     *        The details explaining the Status. Only available for certain status values.
+     */
+
+    public void setStatusDetails(String statusDetails) {
+        this.statusDetails = statusDetails;
+    }
+
+    /**
+     * <p>
+     * The details explaining the Status. Only available for certain status values.
+     * </p>
+     * 
+     * @return The details explaining the Status. Only available for certain status values.
+     */
+
+    public String getStatusDetails() {
+        return this.statusDetails;
+    }
+
+    /**
+     * <p>
+     * The details explaining the Status. Only available for certain status values.
+     * </p>
+     * 
+     * @param statusDetails
+     *        The details explaining the Status. Only available for certain status values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withStatusDetails(String statusDetails) {
+        setStatusDetails(statusDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time the task execution started.
+     * </p>
+     * 
+     * @param startTime
+     *        The time the task execution started.
+     */
+
+    public void setStartTime(java.util.Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * <p>
+     * The time the task execution started.
+     * </p>
+     * 
+     * @return The time the task execution started.
+     */
+
+    public java.util.Date getStartTime() {
+        return this.startTime;
+    }
+
+    /**
+     * <p>
+     * The time the task execution started.
+     * </p>
+     * 
+     * @param startTime
+     *        The time the task execution started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withStartTime(java.util.Date startTime) {
+        setStartTime(startTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time the task execution completed.
+     * </p>
+     * 
+     * @param endTime
+     *        The time the task execution completed.
+     */
+
+    public void setEndTime(java.util.Date endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * <p>
+     * The time the task execution completed.
+     * </p>
+     * 
+     * @return The time the task execution completed.
+     */
+
+    public java.util.Date getEndTime() {
+        return this.endTime;
+    }
+
+    /**
+     * <p>
+     * The time the task execution completed.
+     * </p>
+     * 
+     * @param endTime
+     *        The time the task execution completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowExecutionTaskResult withEndTime(java.util.Date endTime) {
+        setEndTime(endTime);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getWindowExecutionId() != null)
+            sb.append("WindowExecutionId: " + getWindowExecutionId() + ",");
+        if (getTaskExecutionId() != null)
+            sb.append("TaskExecutionId: " + getTaskExecutionId() + ",");
+        if (getTaskArn() != null)
+            sb.append("TaskArn: " + getTaskArn() + ",");
+        if (getServiceRole() != null)
+            sb.append("ServiceRole: " + getServiceRole() + ",");
+        if (getType() != null)
+            sb.append("Type: " + getType() + ",");
+        if (getTaskParameters() != null)
+            sb.append("TaskParameters: " + getTaskParameters() + ",");
+        if (getPriority() != null)
+            sb.append("Priority: " + getPriority() + ",");
+        if (getMaxConcurrency() != null)
+            sb.append("MaxConcurrency: " + getMaxConcurrency() + ",");
+        if (getMaxErrors() != null)
+            sb.append("MaxErrors: " + getMaxErrors() + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus() + ",");
+        if (getStatusDetails() != null)
+            sb.append("StatusDetails: " + getStatusDetails() + ",");
+        if (getStartTime() != null)
+            sb.append("StartTime: " + getStartTime() + ",");
+        if (getEndTime() != null)
+            sb.append("EndTime: " + getEndTime());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetMaintenanceWindowExecutionTaskResult == false)
+            return false;
+        GetMaintenanceWindowExecutionTaskResult other = (GetMaintenanceWindowExecutionTaskResult) obj;
+        if (other.getWindowExecutionId() == null ^ this.getWindowExecutionId() == null)
+            return false;
+        if (other.getWindowExecutionId() != null && other.getWindowExecutionId().equals(this.getWindowExecutionId()) == false)
+            return false;
+        if (other.getTaskExecutionId() == null ^ this.getTaskExecutionId() == null)
+            return false;
+        if (other.getTaskExecutionId() != null && other.getTaskExecutionId().equals(this.getTaskExecutionId()) == false)
+            return false;
+        if (other.getTaskArn() == null ^ this.getTaskArn() == null)
+            return false;
+        if (other.getTaskArn() != null && other.getTaskArn().equals(this.getTaskArn()) == false)
+            return false;
+        if (other.getServiceRole() == null ^ this.getServiceRole() == null)
+            return false;
+        if (other.getServiceRole() != null && other.getServiceRole().equals(this.getServiceRole()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getTaskParameters() == null ^ this.getTaskParameters() == null)
+            return false;
+        if (other.getTaskParameters() != null && other.getTaskParameters().equals(this.getTaskParameters()) == false)
+            return false;
+        if (other.getPriority() == null ^ this.getPriority() == null)
+            return false;
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
+            return false;
+        if (other.getMaxConcurrency() == null ^ this.getMaxConcurrency() == null)
+            return false;
+        if (other.getMaxConcurrency() != null && other.getMaxConcurrency().equals(this.getMaxConcurrency()) == false)
+            return false;
+        if (other.getMaxErrors() == null ^ this.getMaxErrors() == null)
+            return false;
+        if (other.getMaxErrors() != null && other.getMaxErrors().equals(this.getMaxErrors()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getStatusDetails() == null ^ this.getStatusDetails() == null)
+            return false;
+        if (other.getStatusDetails() != null && other.getStatusDetails().equals(this.getStatusDetails()) == false)
+            return false;
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
+            return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+            return false;
+        if (other.getEndTime() == null ^ this.getEndTime() == null)
+            return false;
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getWindowExecutionId() == null) ? 0 : getWindowExecutionId().hashCode());
+        hashCode = prime * hashCode + ((getTaskExecutionId() == null) ? 0 : getTaskExecutionId().hashCode());
+        hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
+        hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getTaskParameters() == null) ? 0 : getTaskParameters().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
+        hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusDetails() == null) ? 0 : getStatusDetails().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public GetMaintenanceWindowExecutionTaskResult clone() {
+        try {
+            return (GetMaintenanceWindowExecutionTaskResult) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+}

@@ -59,6 +59,10 @@ public class ApiKeyJsonUnmarshaller implements Unmarshaller<ApiKey, JsonUnmarsha
                     context.nextToken();
                     apiKey.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("customerId", targetDepth)) {
+                    context.nextToken();
+                    apiKey.setCustomerId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     apiKey.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

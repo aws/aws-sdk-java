@@ -59,6 +59,9 @@ public class NewPublicVirtualInterfaceJsonMarshaller {
             if (newPublicVirtualInterface.getCustomerAddress() != null) {
                 jsonGenerator.writeFieldName("customerAddress").writeValue(newPublicVirtualInterface.getCustomerAddress());
             }
+            if (newPublicVirtualInterface.getAddressFamily() != null) {
+                jsonGenerator.writeFieldName("addressFamily").writeValue(newPublicVirtualInterface.getAddressFamily());
+            }
 
             com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixesList = (com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>) newPublicVirtualInterface
                     .getRouteFilterPrefixes();

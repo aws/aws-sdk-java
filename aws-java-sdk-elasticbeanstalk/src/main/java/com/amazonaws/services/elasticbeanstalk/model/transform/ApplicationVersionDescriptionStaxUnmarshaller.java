@@ -65,6 +65,11 @@ public class ApplicationVersionDescriptionStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
+                if (context.testExpression("BuildArn", targetDepth)) {
+                    applicationVersionDescription.setBuildArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("SourceBundle", targetDepth)) {
                     applicationVersionDescription.setSourceBundle(S3LocationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

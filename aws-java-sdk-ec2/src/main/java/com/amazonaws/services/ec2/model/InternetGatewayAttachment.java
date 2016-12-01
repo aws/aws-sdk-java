@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the attachment of a VPC to an Internet gateway.
+ * Describes the attachment of a VPC to an Internet gateway or an egress-only Internet gateway.
  * </p>
  */
 public class InternetGatewayAttachment implements Serializable, Cloneable {

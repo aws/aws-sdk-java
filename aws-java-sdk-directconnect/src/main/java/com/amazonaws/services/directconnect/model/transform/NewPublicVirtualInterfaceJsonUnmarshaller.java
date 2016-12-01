@@ -71,6 +71,10 @@ public class NewPublicVirtualInterfaceJsonUnmarshaller implements Unmarshaller<N
                     context.nextToken();
                     newPublicVirtualInterface.setCustomerAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("addressFamily", targetDepth)) {
+                    context.nextToken();
+                    newPublicVirtualInterface.setAddressFamily(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("routeFilterPrefixes", targetDepth)) {
                     context.nextToken();
                     newPublicVirtualInterface.setRouteFilterPrefixes(new ListUnmarshaller<RouteFilterPrefix>(RouteFilterPrefixJsonUnmarshaller.getInstance())

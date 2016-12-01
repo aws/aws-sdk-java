@@ -36,6 +36,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
      * to "nodejs".
      * </p>
+     * <note>
+     * <p>
+     * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
+     * will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as
+     * possible.
+     * </p>
+     * </note>
      */
     private String runtime;
     /**
@@ -100,6 +107,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private VpcConfig vpcConfig;
+    /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     */
+    private DeadLetterConfig deadLetterConfig;
 
     private Environment environment;
     /**
@@ -170,12 +183,26 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
      * to "nodejs".
      * </p>
+     * <note>
+     * <p>
+     * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
+     * will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as
+     * possible.
+     * </p>
+     * </note>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function you are uploading.</p>
      *        <p>
      *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
      *        value to "nodejs".
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
+     *        functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime
+     *        version as soon as possible.
+     *        </p>
      * @see Runtime
      */
 
@@ -191,11 +218,25 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
      * to "nodejs".
      * </p>
+     * <note>
+     * <p>
+     * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
+     * will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as
+     * possible.
+     * </p>
+     * </note>
      * 
      * @return The runtime environment for the Lambda function you are uploading.</p>
      *         <p>
      *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
      *         value to "nodejs".
+     *         </p>
+     *         <note>
+     *         <p>
+     *         You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
+     *         functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime
+     *         version as soon as possible.
+     *         </p>
      * @see Runtime
      */
 
@@ -211,12 +252,26 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
      * to "nodejs".
      * </p>
+     * <note>
+     * <p>
+     * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
+     * will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as
+     * possible.
+     * </p>
+     * </note>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function you are uploading.</p>
      *        <p>
      *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
      *        value to "nodejs".
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
+     *        functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime
+     *        version as soon as possible.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -234,12 +289,26 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
      * to "nodejs".
      * </p>
+     * <note>
+     * <p>
+     * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
+     * will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as
+     * possible.
+     * </p>
+     * </note>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function you are uploading.</p>
      *        <p>
      *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
      *        value to "nodejs".
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
+     *        functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime
+     *        version as soon as possible.
+     *        </p>
      * @see Runtime
      */
 
@@ -255,12 +324,26 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
      * to "nodejs".
      * </p>
+     * <note>
+     * <p>
+     * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
+     * will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime version as soon as
+     * possible.
+     * </p>
+     * </note>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function you are uploading.</p>
      *        <p>
      *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
      *        value to "nodejs".
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
+     *        functions will be supported until early 2017 but we recommend you migrate them to nodejs4.3 runtime
+     *        version as soon as possible.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -692,6 +775,49 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     * 
+     * @param deadLetterConfig
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
+     *        topic.
+     */
+
+    public void setDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
+        this.deadLetterConfig = deadLetterConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     * 
+     * @return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon
+     *         SNS topic.
+     */
+
+    public DeadLetterConfig getDeadLetterConfig() {
+        return this.deadLetterConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * </p>
+     * 
+     * @param deadLetterConfig
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
+     *        topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
+        setDeadLetterConfig(deadLetterConfig);
+        return this;
+    }
+
+    /**
      * @param environment
      */
 
@@ -794,6 +920,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Publish: " + getPublish() + ",");
         if (getVpcConfig() != null)
             sb.append("VpcConfig: " + getVpcConfig() + ",");
+        if (getDeadLetterConfig() != null)
+            sb.append("DeadLetterConfig: " + getDeadLetterConfig() + ",");
         if (getEnvironment() != null)
             sb.append("Environment: " + getEnvironment() + ",");
         if (getKMSKeyArn() != null)
@@ -852,6 +980,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getDeadLetterConfig() == null ^ this.getDeadLetterConfig() == null)
+            return false;
+        if (other.getDeadLetterConfig() != null && other.getDeadLetterConfig().equals(this.getDeadLetterConfig()) == false)
+            return false;
         if (other.getEnvironment() == null ^ this.getEnvironment() == null)
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
@@ -878,6 +1010,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode());
         hashCode = prime * hashCode + ((getPublish() == null) ? 0 : getPublish().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
         return hashCode;

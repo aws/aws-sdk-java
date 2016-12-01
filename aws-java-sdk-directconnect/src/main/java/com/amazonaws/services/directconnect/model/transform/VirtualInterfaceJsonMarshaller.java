@@ -74,6 +74,9 @@ public class VirtualInterfaceJsonMarshaller {
             if (virtualInterface.getCustomerAddress() != null) {
                 jsonGenerator.writeFieldName("customerAddress").writeValue(virtualInterface.getCustomerAddress());
             }
+            if (virtualInterface.getAddressFamily() != null) {
+                jsonGenerator.writeFieldName("addressFamily").writeValue(virtualInterface.getAddressFamily());
+            }
             if (virtualInterface.getVirtualInterfaceState() != null) {
                 jsonGenerator.writeFieldName("virtualInterfaceState").writeValue(virtualInterface.getVirtualInterfaceState());
             }
@@ -93,6 +96,19 @@ public class VirtualInterfaceJsonMarshaller {
                     if (routeFilterPrefixesListValue != null) {
 
                         RouteFilterPrefixJsonMarshaller.getInstance().marshall(routeFilterPrefixesListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
+            com.amazonaws.internal.SdkInternalList<BGPPeer> bgpPeersList = (com.amazonaws.internal.SdkInternalList<BGPPeer>) virtualInterface.getBgpPeers();
+            if (!bgpPeersList.isEmpty() || !bgpPeersList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("bgpPeers");
+                jsonGenerator.writeStartArray();
+                for (BGPPeer bgpPeersListValue : bgpPeersList) {
+                    if (bgpPeersListValue != null) {
+
+                        BGPPeerJsonMarshaller.getInstance().marshall(bgpPeersListValue, jsonGenerator);
                     }
                 }
                 jsonGenerator.writeEndArray();

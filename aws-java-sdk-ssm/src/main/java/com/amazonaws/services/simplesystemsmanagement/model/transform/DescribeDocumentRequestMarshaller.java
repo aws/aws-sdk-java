@@ -62,6 +62,9 @@ public class DescribeDocumentRequestMarshaller implements Marshaller<Request<Des
             if (describeDocumentRequest.getName() != null) {
                 jsonGenerator.writeFieldName("Name").writeValue(describeDocumentRequest.getName());
             }
+            if (describeDocumentRequest.getDocumentVersion() != null) {
+                jsonGenerator.writeFieldName("DocumentVersion").writeValue(describeDocumentRequest.getDocumentVersion());
+            }
 
             jsonGenerator.writeEndObject();
 

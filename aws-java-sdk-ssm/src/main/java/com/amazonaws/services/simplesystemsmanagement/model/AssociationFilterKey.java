@@ -18,7 +18,11 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 public enum AssociationFilterKey {
 
     InstanceId("InstanceId"),
-    Name("Name");
+    Name("Name"),
+    AssociationId("AssociationId"),
+    AssociationStatusName("AssociationStatusName"),
+    LastExecutedBefore("LastExecutedBefore"),
+    LastExecutedAfter("LastExecutedAfter");
 
     private String value;
 

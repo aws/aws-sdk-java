@@ -42,7 +42,7 @@ public class UpdateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     private String versionLabel;
     /**
      * <p>
-     * A new description for this release.
+     * A new description for this version.
      * </p>
      */
     private String description;
@@ -199,11 +199,11 @@ public class UpdateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A new description for this release.
+     * A new description for this version.
      * </p>
      * 
      * @param description
-     *        A new description for this release.
+     *        A new description for this version.
      */
 
     public void setDescription(String description) {
@@ -212,10 +212,10 @@ public class UpdateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A new description for this release.
+     * A new description for this version.
      * </p>
      * 
-     * @return A new description for this release.
+     * @return A new description for this version.
      */
 
     public String getDescription() {
@@ -224,11 +224,11 @@ public class UpdateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A new description for this release.
+     * A new description for this version.
      * </p>
      * 
      * @param description
-     *        A new description for this release.
+     *        A new description for this version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -39,7 +39,7 @@ public class DescribeIdentityIdFormatRequestMarshaller implements Marshaller<Req
 
         Request<DescribeIdentityIdFormatRequest> request = new DefaultRequest<DescribeIdentityIdFormatRequest>(describeIdentityIdFormatRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeIdentityIdFormat");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeIdentityIdFormatRequest.getResource() != null) {

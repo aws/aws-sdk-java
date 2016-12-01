@@ -444,6 +444,38 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(GetAccountSettingsRequest request) {
+
+        return getAccountSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(final GetAccountSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAccountSettingsRequest, GetAccountSettingsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAccountSettingsResult>() {
+            @Override
+            public GetAccountSettingsResult call() throws Exception {
+                GetAccountSettingsResult result;
+
+                try {
+                    result = getAccountSettings(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAliasResult> getAliasAsync(GetAliasRequest request) {
 
         return getAliasAsync(request, null);

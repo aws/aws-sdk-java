@@ -23,7 +23,7 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of <code>ApplicationVersionDescription</code> objects sorted by order of creation.
+     * List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ApplicationVersionDescription> applicationVersions;
@@ -36,10 +36,10 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of <code>ApplicationVersionDescription</code> objects sorted by order of creation.
+     * List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.
      * </p>
      * 
-     * @return List of <code>ApplicationVersionDescription</code> objects sorted by order of creation.
+     * @return List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.
      */
 
     public java.util.List<ApplicationVersionDescription> getApplicationVersions() {
@@ -51,11 +51,11 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of <code>ApplicationVersionDescription</code> objects sorted by order of creation.
+     * List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.
      * </p>
      * 
      * @param applicationVersions
-     *        List of <code>ApplicationVersionDescription</code> objects sorted by order of creation.
+     *        List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.
      */
 
     public void setApplicationVersions(java.util.Collection<ApplicationVersionDescription> applicationVersions) {
@@ -69,7 +69,7 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of <code>ApplicationVersionDescription</code> objects sorted by order of creation.
+     * List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param applicationVersions
-     *        List of <code>ApplicationVersionDescription</code> objects sorted by order of creation.
+     *        List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of <code>ApplicationVersionDescription</code> objects sorted by order of creation.
+     * List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.
      * </p>
      * 
      * @param applicationVersions
-     *        List of <code>ApplicationVersionDescription</code> objects sorted by order of creation.
+     *        List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

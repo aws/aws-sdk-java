@@ -35,6 +35,8 @@ public enum DirectConnectActions implements Action {
     ConfirmPrivateVirtualInterface("directconnect:ConfirmPrivateVirtualInterface"),
     /** Action for the ConfirmPublicVirtualInterface operation. */
     ConfirmPublicVirtualInterface("directconnect:ConfirmPublicVirtualInterface"),
+    /** Action for the CreateBGPPeer operation. */
+    CreateBGPPeer("directconnect:CreateBGPPeer"),
     /** Action for the CreateConnection operation. */
     CreateConnection("directconnect:CreateConnection"),
     /** Action for the CreateInterconnect operation. */
@@ -43,6 +45,8 @@ public enum DirectConnectActions implements Action {
     CreatePrivateVirtualInterface("directconnect:CreatePrivateVirtualInterface"),
     /** Action for the CreatePublicVirtualInterface operation. */
     CreatePublicVirtualInterface("directconnect:CreatePublicVirtualInterface"),
+    /** Action for the DeleteBGPPeer operation. */
+    DeleteBGPPeer("directconnect:DeleteBGPPeer"),
     /** Action for the DeleteConnection operation. */
     DeleteConnection("directconnect:DeleteConnection"),
     /** Action for the DeleteInterconnect operation. */

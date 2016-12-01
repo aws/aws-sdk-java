@@ -19,11 +19,11 @@ public enum CommandStatus {
 
     Pending("Pending"),
     InProgress("InProgress"),
-    Cancelling("Cancelling"),
     Success("Success"),
-    TimedOut("TimedOut"),
     Cancelled("Cancelled"),
-    Failed("Failed");
+    Failed("Failed"),
+    TimedOut("TimedOut"),
+    Cancelling("Cancelling");
 
     private String value;
 

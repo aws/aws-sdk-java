@@ -74,7 +74,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.cidr</code> - A CIDR range that has been granted permission.
+     * <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted permission in a security group rule.
      * </p>
      * </li>
      * <li>
@@ -91,6 +91,12 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>ip-permission.group-name</code> - The name of a security group that has been granted permission.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been granted permission in a security group
+     * rule.
      * </p>
      * </li>
      * <li>
@@ -364,7 +370,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.cidr</code> - A CIDR range that has been granted permission.
+     * <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted permission in a security group rule.
      * </p>
      * </li>
      * <li>
@@ -381,6 +387,12 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>ip-permission.group-name</code> - The name of a security group that has been granted permission.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been granted permission in a security group
+     * rule.
      * </p>
      * </li>
      * <li>
@@ -447,7 +459,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ip-permission.cidr</code> - A CIDR range that has been granted permission.
+     *         <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted permission in a security group
+     *         rule.
      *         </p>
      *         </li>
      *         <li>
@@ -464,6 +477,12 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         <li>
      *         <p>
      *         <code>ip-permission.group-name</code> - The name of a security group that has been granted permission.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been granted permission in a security
+     *         group rule.
      *         </p>
      *         </li>
      *         <li>
@@ -541,7 +560,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.cidr</code> - A CIDR range that has been granted permission.
+     * <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted permission in a security group rule.
      * </p>
      * </li>
      * <li>
@@ -558,6 +577,12 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>ip-permission.group-name</code> - The name of a security group that has been granted permission.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been granted permission in a security group
+     * rule.
      * </p>
      * </li>
      * <li>
@@ -625,7 +650,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ip-permission.cidr</code> - A CIDR range that has been granted permission.
+     *        <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted permission in a security group
+     *        rule.
      *        </p>
      *        </li>
      *        <li>
@@ -642,6 +668,12 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        <li>
      *        <p>
      *        <code>ip-permission.group-name</code> - The name of a security group that has been granted permission.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been granted permission in a security
+     *        group rule.
      *        </p>
      *        </li>
      *        <li>
@@ -720,7 +752,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.cidr</code> - A CIDR range that has been granted permission.
+     * <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted permission in a security group rule.
      * </p>
      * </li>
      * <li>
@@ -737,6 +769,12 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>ip-permission.group-name</code> - The name of a security group that has been granted permission.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been granted permission in a security group
+     * rule.
      * </p>
      * </li>
      * <li>
@@ -809,7 +847,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ip-permission.cidr</code> - A CIDR range that has been granted permission.
+     *        <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted permission in a security group
+     *        rule.
      *        </p>
      *        </li>
      *        <li>
@@ -826,6 +865,12 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        <li>
      *        <p>
      *        <code>ip-permission.group-name</code> - The name of a security group that has been granted permission.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been granted permission in a security
+     *        group rule.
      *        </p>
      *        </li>
      *        <li>
@@ -906,7 +951,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.cidr</code> - A CIDR range that has been granted permission.
+     * <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted permission in a security group rule.
      * </p>
      * </li>
      * <li>
@@ -923,6 +968,12 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <li>
      * <p>
      * <code>ip-permission.group-name</code> - The name of a security group that has been granted permission.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been granted permission in a security group
+     * rule.
      * </p>
      * </li>
      * <li>
@@ -990,7 +1041,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ip-permission.cidr</code> - A CIDR range that has been granted permission.
+     *        <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted permission in a security group
+     *        rule.
      *        </p>
      *        </li>
      *        <li>
@@ -1007,6 +1059,12 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        <li>
      *        <p>
      *        <code>ip-permission.group-name</code> - The name of a security group that has been granted permission.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been granted permission in a security
+     *        group rule.
      *        </p>
      *        </li>
      *        <li>

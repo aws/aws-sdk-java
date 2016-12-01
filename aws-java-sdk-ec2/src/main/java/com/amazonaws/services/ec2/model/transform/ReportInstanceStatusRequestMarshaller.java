@@ -39,7 +39,7 @@ public class ReportInstanceStatusRequestMarshaller implements Marshaller<Request
 
         Request<ReportInstanceStatusRequest> request = new DefaultRequest<ReportInstanceStatusRequest>(reportInstanceStatusRequest, "AmazonEC2");
         request.addParameter("Action", "ReportInstanceStatus");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> reportInstanceStatusRequestInstancesList = (com.amazonaws.internal.SdkInternalList<String>) reportInstanceStatusRequest

@@ -39,7 +39,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
         Request<RunInstancesRequest> request = new DefaultRequest<RunInstancesRequest>(runInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RunInstances");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (runInstancesRequest.getImageId() != null) {
@@ -202,6 +202,25 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             request.addParameter("PrivateIpAddress", StringUtils.fromString(runInstancesRequest.getPrivateIpAddress()));
         }
 
+        com.amazonaws.internal.SdkInternalList<InstanceIpv6Address> runInstancesRequestIpv6AddressesList = (com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>) runInstancesRequest
+                .getIpv6Addresses();
+        if (!runInstancesRequestIpv6AddressesList.isEmpty() || !runInstancesRequestIpv6AddressesList.isAutoConstruct()) {
+            int ipv6AddressesListIndex = 1;
+
+            for (InstanceIpv6Address runInstancesRequestIpv6AddressesListValue : runInstancesRequestIpv6AddressesList) {
+
+                if (runInstancesRequestIpv6AddressesListValue.getIpv6Address() != null) {
+                    request.addParameter("Ipv6Address." + ipv6AddressesListIndex + ".Ipv6Address",
+                            StringUtils.fromString(runInstancesRequestIpv6AddressesListValue.getIpv6Address()));
+                }
+                ipv6AddressesListIndex++;
+            }
+        }
+
+        if (runInstancesRequest.getIpv6AddressCount() != null) {
+            request.addParameter("Ipv6AddressCount", StringUtils.fromInteger(runInstancesRequest.getIpv6AddressCount()));
+        }
+
         if (runInstancesRequest.getClientToken() != null) {
             request.addParameter("ClientToken", StringUtils.fromString(runInstancesRequest.getClientToken()));
         }
@@ -291,6 +310,28 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                 if (runInstancesRequestNetworkInterfacesListValue.getAssociatePublicIpAddress() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".AssociatePublicIpAddress",
                             StringUtils.fromBoolean(runInstancesRequestNetworkInterfacesListValue.getAssociatePublicIpAddress()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<InstanceIpv6Address> instanceNetworkInterfaceSpecificationIpv6AddressesList = (com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>) runInstancesRequestNetworkInterfacesListValue
+                        .getIpv6Addresses();
+                if (!instanceNetworkInterfaceSpecificationIpv6AddressesList.isEmpty()
+                        || !instanceNetworkInterfaceSpecificationIpv6AddressesList.isAutoConstruct()) {
+                    int ipv6AddressesListIndex = 1;
+
+                    for (InstanceIpv6Address instanceNetworkInterfaceSpecificationIpv6AddressesListValue : instanceNetworkInterfaceSpecificationIpv6AddressesList) {
+
+                        if (instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIpv6Address() != null) {
+                            request.addParameter(
+                                    "NetworkInterface." + networkInterfacesListIndex + ".Ipv6Addresses." + ipv6AddressesListIndex + ".Ipv6Address",
+                                    StringUtils.fromString(instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIpv6Address()));
+                        }
+                        ipv6AddressesListIndex++;
+                    }
+                }
+
+                if (runInstancesRequestNetworkInterfacesListValue.getIpv6AddressCount() != null) {
+                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".Ipv6AddressCount",
+                            StringUtils.fromInteger(runInstancesRequestNetworkInterfacesListValue.getIpv6AddressCount()));
                 }
                 networkInterfacesListIndex++;
             }

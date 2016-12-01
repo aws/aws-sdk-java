@@ -28,6 +28,18 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
+     * (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     * combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in
+     * the call. For more information about how to use <code>Targets</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Target> targets;
+    /**
+     * <p>
      * Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.
      * </p>
      */
@@ -74,6 +86,13 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.Map<String, java.util.List<String>> parameters;
     /**
      * <p>
+     * (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default
+     * value is the region where Run Command is being called.
+     * </p>
+     */
+    private String outputS3Region;
+    /**
+     * <p>
      * The name of the S3 bucket where command execution responses should be stored.
      * </p>
      */
@@ -86,7 +105,32 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String outputS3KeyPrefix;
     /**
      * <p>
-     * The IAM role that SSM uses to send notifications.
+     * (Optional) The maximum number of instances that are allowed to execute the command at the same time. You can
+     * specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     */
+    private String maxConcurrency;
+    /**
+     * <p>
+     * The maximum number of errors allowed without the command failing. When the command fails one more time beyond the
+     * value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a
+     * number like “10” or a percentage like “10%”. The default value is 50. For more information about how to use
+     * <code>MaxErrors</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     */
+    private String maxErrors;
+    /**
+     * <p>
+     * The IAM role that Systems Manager uses to send notifications.
      * </p>
      */
     private String serviceRoleArn;
@@ -167,6 +211,127 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public SendCommandRequest withInstanceIds(java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     * combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in
+     * the call. For more information about how to use <code>Targets</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @return (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     *         combination that you specify. <code>Targets</code> is required if you don't provide one or more instance
+     *         IDs in the call. For more information about how to use <code>Targets</code>, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *         Amazon EC2 Run Command</a> (Linux) or <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *         Amazon EC2 Run Command</a> (Windows).
+     */
+
+    public java.util.List<Target> getTargets() {
+        if (targets == null) {
+            targets = new com.amazonaws.internal.SdkInternalList<Target>();
+        }
+        return targets;
+    }
+
+    /**
+     * <p>
+     * (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     * combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in
+     * the call. For more information about how to use <code>Targets</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @param targets
+     *        (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     *        combination that you specify. <code>Targets</code> is required if you don't provide one or more instance
+     *        IDs in the call. For more information about how to use <code>Targets</code>, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Linux) or <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Windows).
+     */
+
+    public void setTargets(java.util.Collection<Target> targets) {
+        if (targets == null) {
+            this.targets = null;
+            return;
+        }
+
+        this.targets = new com.amazonaws.internal.SdkInternalList<Target>(targets);
+    }
+
+    /**
+     * <p>
+     * (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     * combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in
+     * the call. For more information about how to use <code>Targets</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param targets
+     *        (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     *        combination that you specify. <code>Targets</code> is required if you don't provide one or more instance
+     *        IDs in the call. For more information about how to use <code>Targets</code>, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Linux) or <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Windows).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendCommandRequest withTargets(Target... targets) {
+        if (this.targets == null) {
+            setTargets(new com.amazonaws.internal.SdkInternalList<Target>(targets.length));
+        }
+        for (Target ele : targets) {
+            this.targets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     * combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in
+     * the call. For more information about how to use <code>Targets</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @param targets
+     *        (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     *        combination that you specify. <code>Targets</code> is required if you don't provide one or more instance
+     *        IDs in the call. For more information about how to use <code>Targets</code>, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Linux) or <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Windows).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendCommandRequest withTargets(java.util.Collection<Target> targets) {
+        setTargets(targets);
         return this;
     }
 
@@ -533,6 +698,52 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default
+     * value is the region where Run Command is being called.
+     * </p>
+     * 
+     * @param outputS3Region
+     *        (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The
+     *        default value is the region where Run Command is being called.
+     */
+
+    public void setOutputS3Region(String outputS3Region) {
+        this.outputS3Region = outputS3Region;
+    }
+
+    /**
+     * <p>
+     * (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default
+     * value is the region where Run Command is being called.
+     * </p>
+     * 
+     * @return (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The
+     *         default value is the region where Run Command is being called.
+     */
+
+    public String getOutputS3Region() {
+        return this.outputS3Region;
+    }
+
+    /**
+     * <p>
+     * (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default
+     * value is the region where Run Command is being called.
+     * </p>
+     * 
+     * @param outputS3Region
+     *        (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The
+     *        default value is the region where Run Command is being called.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendCommandRequest withOutputS3Region(String outputS3Region) {
+        setOutputS3Region(outputS3Region);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the S3 bucket where command execution responses should be stored.
      * </p>
      * 
@@ -613,11 +824,169 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IAM role that SSM uses to send notifications.
+     * (Optional) The maximum number of instances that are allowed to execute the command at the same time. You can
+     * specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @param maxConcurrency
+     *        (Optional) The maximum number of instances that are allowed to execute the command at the same time. You
+     *        can specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more
+     *        information about how to use <code>MaxConcurrency</code>, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Linux) or <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Windows).
+     */
+
+    public void setMaxConcurrency(String maxConcurrency) {
+        this.maxConcurrency = maxConcurrency;
+    }
+
+    /**
+     * <p>
+     * (Optional) The maximum number of instances that are allowed to execute the command at the same time. You can
+     * specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @return (Optional) The maximum number of instances that are allowed to execute the command at the same time. You
+     *         can specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more
+     *         information about how to use <code>MaxConcurrency</code>, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *         Amazon EC2 Run Command</a> (Linux) or <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *         Amazon EC2 Run Command</a> (Windows).
+     */
+
+    public String getMaxConcurrency() {
+        return this.maxConcurrency;
+    }
+
+    /**
+     * <p>
+     * (Optional) The maximum number of instances that are allowed to execute the command at the same time. You can
+     * specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @param maxConcurrency
+     *        (Optional) The maximum number of instances that are allowed to execute the command at the same time. You
+     *        can specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more
+     *        information about how to use <code>MaxConcurrency</code>, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Linux) or <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Windows).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendCommandRequest withMaxConcurrency(String maxConcurrency) {
+        setMaxConcurrency(maxConcurrency);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of errors allowed without the command failing. When the command fails one more time beyond the
+     * value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a
+     * number like “10” or a percentage like “10%”. The default value is 50. For more information about how to use
+     * <code>MaxErrors</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @param maxErrors
+     *        The maximum number of errors allowed without the command failing. When the command fails one more time
+     *        beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets.
+     *        You can specify a number like “10” or a percentage like “10%”. The default value is 50. For more
+     *        information about how to use <code>MaxErrors</code>, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Linux) or <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Windows).
+     */
+
+    public void setMaxErrors(String maxErrors) {
+        this.maxErrors = maxErrors;
+    }
+
+    /**
+     * <p>
+     * The maximum number of errors allowed without the command failing. When the command fails one more time beyond the
+     * value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a
+     * number like “10” or a percentage like “10%”. The default value is 50. For more information about how to use
+     * <code>MaxErrors</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @return The maximum number of errors allowed without the command failing. When the command fails one more time
+     *         beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets.
+     *         You can specify a number like “10” or a percentage like “10%”. The default value is 50. For more
+     *         information about how to use <code>MaxErrors</code>, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *         Amazon EC2 Run Command</a> (Linux) or <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *         Amazon EC2 Run Command</a> (Windows).
+     */
+
+    public String getMaxErrors() {
+        return this.maxErrors;
+    }
+
+    /**
+     * <p>
+     * The maximum number of errors allowed without the command failing. When the command fails one more time beyond the
+     * value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a
+     * number like “10” or a percentage like “10%”. The default value is 50. For more information about how to use
+     * <code>MaxErrors</code>, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
+     * Run Command</a> (Linux) or <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
+     * EC2 Run Command</a> (Windows).
+     * </p>
+     * 
+     * @param maxErrors
+     *        The maximum number of errors allowed without the command failing. When the command fails one more time
+     *        beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets.
+     *        You can specify a number like “10” or a percentage like “10%”. The default value is 50. For more
+     *        information about how to use <code>MaxErrors</code>, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Linux) or <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
+     *        Amazon EC2 Run Command</a> (Windows).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendCommandRequest withMaxErrors(String maxErrors) {
+        setMaxErrors(maxErrors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IAM role that Systems Manager uses to send notifications.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM role that SSM uses to send notifications.
+     *        The IAM role that Systems Manager uses to send notifications.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -626,10 +995,10 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IAM role that SSM uses to send notifications.
+     * The IAM role that Systems Manager uses to send notifications.
      * </p>
      * 
-     * @return The IAM role that SSM uses to send notifications.
+     * @return The IAM role that Systems Manager uses to send notifications.
      */
 
     public String getServiceRoleArn() {
@@ -638,11 +1007,11 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IAM role that SSM uses to send notifications.
+     * The IAM role that Systems Manager uses to send notifications.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM role that SSM uses to send notifications.
+     *        The IAM role that Systems Manager uses to send notifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -704,6 +1073,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getInstanceIds() != null)
             sb.append("InstanceIds: " + getInstanceIds() + ",");
+        if (getTargets() != null)
+            sb.append("Targets: " + getTargets() + ",");
         if (getDocumentName() != null)
             sb.append("DocumentName: " + getDocumentName() + ",");
         if (getDocumentHash() != null)
@@ -716,10 +1087,16 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("Comment: " + getComment() + ",");
         if (getParameters() != null)
             sb.append("Parameters: " + getParameters() + ",");
+        if (getOutputS3Region() != null)
+            sb.append("OutputS3Region: " + getOutputS3Region() + ",");
         if (getOutputS3BucketName() != null)
             sb.append("OutputS3BucketName: " + getOutputS3BucketName() + ",");
         if (getOutputS3KeyPrefix() != null)
             sb.append("OutputS3KeyPrefix: " + getOutputS3KeyPrefix() + ",");
+        if (getMaxConcurrency() != null)
+            sb.append("MaxConcurrency: " + getMaxConcurrency() + ",");
+        if (getMaxErrors() != null)
+            sb.append("MaxErrors: " + getMaxErrors() + ",");
         if (getServiceRoleArn() != null)
             sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
         if (getNotificationConfig() != null)
@@ -741,6 +1118,10 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getInstanceIds() == null ^ this.getInstanceIds() == null)
             return false;
         if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false)
+            return false;
+        if (other.getTargets() == null ^ this.getTargets() == null)
+            return false;
+        if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
             return false;
         if (other.getDocumentName() == null ^ this.getDocumentName() == null)
             return false;
@@ -766,6 +1147,10 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
             return false;
+        if (other.getOutputS3Region() == null ^ this.getOutputS3Region() == null)
+            return false;
+        if (other.getOutputS3Region() != null && other.getOutputS3Region().equals(this.getOutputS3Region()) == false)
+            return false;
         if (other.getOutputS3BucketName() == null ^ this.getOutputS3BucketName() == null)
             return false;
         if (other.getOutputS3BucketName() != null && other.getOutputS3BucketName().equals(this.getOutputS3BucketName()) == false)
@@ -773,6 +1158,14 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getOutputS3KeyPrefix() == null ^ this.getOutputS3KeyPrefix() == null)
             return false;
         if (other.getOutputS3KeyPrefix() != null && other.getOutputS3KeyPrefix().equals(this.getOutputS3KeyPrefix()) == false)
+            return false;
+        if (other.getMaxConcurrency() == null ^ this.getMaxConcurrency() == null)
+            return false;
+        if (other.getMaxConcurrency() != null && other.getMaxConcurrency().equals(this.getMaxConcurrency()) == false)
+            return false;
+        if (other.getMaxErrors() == null ^ this.getMaxErrors() == null)
+            return false;
+        if (other.getMaxErrors() != null && other.getMaxErrors().equals(this.getMaxErrors()) == false)
             return false;
         if (other.getServiceRoleArn() == null ^ this.getServiceRoleArn() == null)
             return false;
@@ -791,14 +1184,18 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
+        hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getDocumentName() == null) ? 0 : getDocumentName().hashCode());
         hashCode = prime * hashCode + ((getDocumentHash() == null) ? 0 : getDocumentHash().hashCode());
         hashCode = prime * hashCode + ((getDocumentHashType() == null) ? 0 : getDocumentHashType().hashCode());
         hashCode = prime * hashCode + ((getTimeoutSeconds() == null) ? 0 : getTimeoutSeconds().hashCode());
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getOutputS3Region() == null) ? 0 : getOutputS3Region().hashCode());
         hashCode = prime * hashCode + ((getOutputS3BucketName() == null) ? 0 : getOutputS3BucketName().hashCode());
         hashCode = prime * hashCode + ((getOutputS3KeyPrefix() == null) ? 0 : getOutputS3KeyPrefix().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
+        hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
         hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getNotificationConfig() == null) ? 0 : getNotificationConfig().hashCode());
         return hashCode;

@@ -36,6 +36,12 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String description;
     /**
      * <p>
+     * A version identifier for the API.
+     * </p>
+     */
+    private String version;
+    /**
+     * <p>
      * The ID of the <a>RestApi</a> that you want to clone from.
      * </p>
      */
@@ -125,6 +131,46 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateRestApiRequest withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A version identifier for the API.
+     * </p>
+     * 
+     * @param version
+     *        A version identifier for the API.
+     */
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * A version identifier for the API.
+     * </p>
+     * 
+     * @return A version identifier for the API.
+     */
+
+    public String getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * A version identifier for the API.
+     * </p>
+     * 
+     * @param version
+     *        A version identifier for the API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRestApiRequest withVersion(String version) {
+        setVersion(version);
         return this;
     }
 
@@ -261,6 +307,8 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("Name: " + getName() + ",");
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
+        if (getVersion() != null)
+            sb.append("Version: " + getVersion() + ",");
         if (getCloneFrom() != null)
             sb.append("CloneFrom: " + getCloneFrom() + ",");
         if (getBinaryMediaTypes() != null)
@@ -287,6 +335,10 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
+            return false;
         if (other.getCloneFrom() == null ^ this.getCloneFrom() == null)
             return false;
         if (other.getCloneFrom() != null && other.getCloneFrom().equals(this.getCloneFrom()) == false)
@@ -305,6 +357,7 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getCloneFrom() == null) ? 0 : getCloneFrom().hashCode());
         hashCode = prime * hashCode + ((getBinaryMediaTypes() == null) ? 0 : getBinaryMediaTypes().hashCode());
         return hashCode;

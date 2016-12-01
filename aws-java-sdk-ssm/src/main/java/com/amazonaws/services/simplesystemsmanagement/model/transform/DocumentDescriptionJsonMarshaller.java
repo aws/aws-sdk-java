@@ -62,6 +62,9 @@ public class DocumentDescriptionJsonMarshaller {
             if (documentDescription.getStatus() != null) {
                 jsonGenerator.writeFieldName("Status").writeValue(documentDescription.getStatus());
             }
+            if (documentDescription.getDocumentVersion() != null) {
+                jsonGenerator.writeFieldName("DocumentVersion").writeValue(documentDescription.getDocumentVersion());
+            }
             if (documentDescription.getDescription() != null) {
                 jsonGenerator.writeFieldName("Description").writeValue(documentDescription.getDescription());
             }
@@ -91,6 +94,18 @@ public class DocumentDescriptionJsonMarshaller {
                     }
                 }
                 jsonGenerator.writeEndArray();
+            }
+            if (documentDescription.getDocumentType() != null) {
+                jsonGenerator.writeFieldName("DocumentType").writeValue(documentDescription.getDocumentType());
+            }
+            if (documentDescription.getSchemaVersion() != null) {
+                jsonGenerator.writeFieldName("SchemaVersion").writeValue(documentDescription.getSchemaVersion());
+            }
+            if (documentDescription.getLatestVersion() != null) {
+                jsonGenerator.writeFieldName("LatestVersion").writeValue(documentDescription.getLatestVersion());
+            }
+            if (documentDescription.getDefaultVersion() != null) {
+                jsonGenerator.writeFieldName("DefaultVersion").writeValue(documentDescription.getDefaultVersion());
             }
 
             jsonGenerator.writeEndObject();

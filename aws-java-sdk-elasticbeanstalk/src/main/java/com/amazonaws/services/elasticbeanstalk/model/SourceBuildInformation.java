@@ -15,18 +15,39 @@ package com.amazonaws.services.elasticbeanstalk.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Location of the source code for an application version.
+ * </p>
  */
 public class SourceBuildInformation implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The type of repository, such as <code>Git</code>.
+     * </p>
+     */
     private String sourceType;
-
+    /**
+     * <p>
+     * Location where the repository is stored, such as <code>CodeCommit</code>.
+     * </p>
+     */
     private String sourceRepository;
-
+    /**
+     * <p>
+     * The repository name and commit ID, separated by a forward slash. For example,
+     * <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.
+     * </p>
+     */
     private String sourceLocation;
 
     /**
+     * <p>
+     * The type of repository, such as <code>Git</code>.
+     * </p>
+     * 
      * @param sourceType
+     *        The type of repository, such as <code>Git</code>.
      * @see SourceType
      */
 
@@ -35,7 +56,11 @@ public class SourceBuildInformation implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The type of repository, such as <code>Git</code>.
+     * </p>
+     * 
+     * @return The type of repository, such as <code>Git</code>.
      * @see SourceType
      */
 
@@ -44,7 +69,12 @@ public class SourceBuildInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of repository, such as <code>Git</code>.
+     * </p>
+     * 
      * @param sourceType
+     *        The type of repository, such as <code>Git</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
@@ -55,7 +85,12 @@ public class SourceBuildInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of repository, such as <code>Git</code>.
+     * </p>
+     * 
      * @param sourceType
+     *        The type of repository, such as <code>Git</code>.
      * @see SourceType
      */
 
@@ -64,7 +99,12 @@ public class SourceBuildInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of repository, such as <code>Git</code>.
+     * </p>
+     * 
      * @param sourceType
+     *        The type of repository, such as <code>Git</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
@@ -75,7 +115,12 @@ public class SourceBuildInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Location where the repository is stored, such as <code>CodeCommit</code>.
+     * </p>
+     * 
      * @param sourceRepository
+     *        Location where the repository is stored, such as <code>CodeCommit</code>.
      * @see SourceRepository
      */
 
@@ -84,7 +129,11 @@ public class SourceBuildInformation implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Location where the repository is stored, such as <code>CodeCommit</code>.
+     * </p>
+     * 
+     * @return Location where the repository is stored, such as <code>CodeCommit</code>.
      * @see SourceRepository
      */
 
@@ -93,7 +142,12 @@ public class SourceBuildInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Location where the repository is stored, such as <code>CodeCommit</code>.
+     * </p>
+     * 
      * @param sourceRepository
+     *        Location where the repository is stored, such as <code>CodeCommit</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceRepository
      */
@@ -104,7 +158,12 @@ public class SourceBuildInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Location where the repository is stored, such as <code>CodeCommit</code>.
+     * </p>
+     * 
      * @param sourceRepository
+     *        Location where the repository is stored, such as <code>CodeCommit</code>.
      * @see SourceRepository
      */
 
@@ -113,7 +172,12 @@ public class SourceBuildInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Location where the repository is stored, such as <code>CodeCommit</code>.
+     * </p>
+     * 
      * @param sourceRepository
+     *        Location where the repository is stored, such as <code>CodeCommit</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceRepository
      */
@@ -124,7 +188,14 @@ public class SourceBuildInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The repository name and commit ID, separated by a forward slash. For example,
+     * <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.
+     * </p>
+     * 
      * @param sourceLocation
+     *        The repository name and commit ID, separated by a forward slash. For example,
+     *        <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.
      */
 
     public void setSourceLocation(String sourceLocation) {
@@ -132,7 +203,13 @@ public class SourceBuildInformation implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The repository name and commit ID, separated by a forward slash. For example,
+     * <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.
+     * </p>
+     * 
+     * @return The repository name and commit ID, separated by a forward slash. For example,
+     *         <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.
      */
 
     public String getSourceLocation() {
@@ -140,7 +217,14 @@ public class SourceBuildInformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The repository name and commit ID, separated by a forward slash. For example,
+     * <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.
+     * </p>
+     * 
      * @param sourceLocation
+     *        The repository name and commit ID, separated by a forward slash. For example,
+     *        <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,10 +32,16 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     private String vpcId;
     /**
      * <p>
-     * The network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
      * </p>
      */
     private String cidrBlock;
+    /**
+     * <p>
+     * The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
+     * </p>
+     */
+    private String ipv6CidrBlock;
     /**
      * <p>
      * The Availability Zone for the subnet.
@@ -61,7 +67,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * @param vpcId
      *        The ID of the VPC.
      * @param cidrBlock
-     *        The network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
      */
     public CreateSubnetRequest(String vpcId, String cidrBlock) {
         setVpcId(vpcId);
@@ -110,11 +116,11 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
      * </p>
      * 
      * @param cidrBlock
-     *        The network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
      */
 
     public void setCidrBlock(String cidrBlock) {
@@ -123,10 +129,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
      * </p>
      * 
-     * @return The network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     * @return The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
      */
 
     public String getCidrBlock() {
@@ -135,16 +141,56 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
      * </p>
      * 
      * @param cidrBlock
-     *        The network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateSubnetRequest withCidrBlock(String cidrBlock) {
         setCidrBlock(cidrBlock);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
+     * </p>
+     * 
+     * @param ipv6CidrBlock
+     *        The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
+     */
+
+    public void setIpv6CidrBlock(String ipv6CidrBlock) {
+        this.ipv6CidrBlock = ipv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
+     * </p>
+     * 
+     * @return The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
+     */
+
+    public String getIpv6CidrBlock() {
+        return this.ipv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
+     * </p>
+     * 
+     * @param ipv6CidrBlock
+     *        The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubnetRequest withIpv6CidrBlock(String ipv6CidrBlock) {
+        setIpv6CidrBlock(ipv6CidrBlock);
         return this;
     }
 
@@ -235,6 +281,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
             sb.append("VpcId: " + getVpcId() + ",");
         if (getCidrBlock() != null)
             sb.append("CidrBlock: " + getCidrBlock() + ",");
+        if (getIpv6CidrBlock() != null)
+            sb.append("Ipv6CidrBlock: " + getIpv6CidrBlock() + ",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: " + getAvailabilityZone());
         sb.append("}");
@@ -259,6 +307,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
             return false;
+        if (other.getIpv6CidrBlock() == null ^ this.getIpv6CidrBlock() == null)
+            return false;
+        if (other.getIpv6CidrBlock() != null && other.getIpv6CidrBlock().equals(this.getIpv6CidrBlock()) == false)
+            return false;
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
@@ -273,6 +325,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         return hashCode;
     }

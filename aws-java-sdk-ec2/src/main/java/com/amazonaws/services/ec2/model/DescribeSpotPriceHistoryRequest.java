@@ -41,7 +41,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
     private java.util.Date endTime;
     /**
      * <p>
-     * Filters the results by the specified instance types.
+     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceTypes;
@@ -203,10 +203,11 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filters the results by the specified instance types.
+     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
-     * @return Filters the results by the specified instance types.
+     * @return Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
+     *         supported.
      * @see InstanceType
      */
 
@@ -219,11 +220,12 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filters the results by the specified instance types.
+     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
      * @param instanceTypes
-     *        Filters the results by the specified instance types.
+     *        Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
+     *        supported.
      * @see InstanceType
      */
 
@@ -238,7 +240,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filters the results by the specified instance types.
+     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -247,7 +249,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param instanceTypes
-     *        Filters the results by the specified instance types.
+     *        Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
+     *        supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -264,11 +267,12 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filters the results by the specified instance types.
+     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
      * @param instanceTypes
-     *        Filters the results by the specified instance types.
+     *        Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
+     *        supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -280,11 +284,12 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filters the results by the specified instance types.
+     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
      * </p>
      * 
      * @param instanceTypes
-     *        Filters the results by the specified instance types.
+     *        Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
+     *        supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */

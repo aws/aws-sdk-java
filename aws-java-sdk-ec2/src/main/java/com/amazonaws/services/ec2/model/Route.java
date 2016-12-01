@@ -23,7 +23,7 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CIDR block used for the destination match.
+     * The IPv4 CIDR block used for the destination match.
      * </p>
      */
     private String destinationCidrBlock;
@@ -99,14 +99,26 @@ public class Route implements Serializable, Cloneable {
      * </ul>
      */
     private String origin;
+    /**
+     * <p>
+     * The IPv6 CIDR block used for the destination match.
+     * </p>
+     */
+    private String destinationIpv6CidrBlock;
+    /**
+     * <p>
+     * The ID of the egress-only Internet gateway.
+     * </p>
+     */
+    private String egressOnlyInternetGatewayId;
 
     /**
      * <p>
-     * The CIDR block used for the destination match.
+     * The IPv4 CIDR block used for the destination match.
      * </p>
      * 
      * @param destinationCidrBlock
-     *        The CIDR block used for the destination match.
+     *        The IPv4 CIDR block used for the destination match.
      */
 
     public void setDestinationCidrBlock(String destinationCidrBlock) {
@@ -115,10 +127,10 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CIDR block used for the destination match.
+     * The IPv4 CIDR block used for the destination match.
      * </p>
      * 
-     * @return The CIDR block used for the destination match.
+     * @return The IPv4 CIDR block used for the destination match.
      */
 
     public String getDestinationCidrBlock() {
@@ -127,11 +139,11 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CIDR block used for the destination match.
+     * The IPv4 CIDR block used for the destination match.
      * </p>
      * 
      * @param destinationCidrBlock
-     *        The CIDR block used for the destination match.
+     *        The IPv4 CIDR block used for the destination match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -747,6 +759,86 @@ public class Route implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IPv6 CIDR block used for the destination match.
+     * </p>
+     * 
+     * @param destinationIpv6CidrBlock
+     *        The IPv6 CIDR block used for the destination match.
+     */
+
+    public void setDestinationIpv6CidrBlock(String destinationIpv6CidrBlock) {
+        this.destinationIpv6CidrBlock = destinationIpv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block used for the destination match.
+     * </p>
+     * 
+     * @return The IPv6 CIDR block used for the destination match.
+     */
+
+    public String getDestinationIpv6CidrBlock() {
+        return this.destinationIpv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block used for the destination match.
+     * </p>
+     * 
+     * @param destinationIpv6CidrBlock
+     *        The IPv6 CIDR block used for the destination match.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Route withDestinationIpv6CidrBlock(String destinationIpv6CidrBlock) {
+        setDestinationIpv6CidrBlock(destinationIpv6CidrBlock);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the egress-only Internet gateway.
+     * </p>
+     * 
+     * @param egressOnlyInternetGatewayId
+     *        The ID of the egress-only Internet gateway.
+     */
+
+    public void setEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
+        this.egressOnlyInternetGatewayId = egressOnlyInternetGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the egress-only Internet gateway.
+     * </p>
+     * 
+     * @return The ID of the egress-only Internet gateway.
+     */
+
+    public String getEgressOnlyInternetGatewayId() {
+        return this.egressOnlyInternetGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the egress-only Internet gateway.
+     * </p>
+     * 
+     * @param egressOnlyInternetGatewayId
+     *        The ID of the egress-only Internet gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Route withEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
+        setEgressOnlyInternetGatewayId(egressOnlyInternetGatewayId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -776,7 +868,11 @@ public class Route implements Serializable, Cloneable {
         if (getState() != null)
             sb.append("State: " + getState() + ",");
         if (getOrigin() != null)
-            sb.append("Origin: " + getOrigin());
+            sb.append("Origin: " + getOrigin() + ",");
+        if (getDestinationIpv6CidrBlock() != null)
+            sb.append("DestinationIpv6CidrBlock: " + getDestinationIpv6CidrBlock() + ",");
+        if (getEgressOnlyInternetGatewayId() != null)
+            sb.append("EgressOnlyInternetGatewayId: " + getEgressOnlyInternetGatewayId());
         sb.append("}");
         return sb.toString();
     }
@@ -831,6 +927,14 @@ public class Route implements Serializable, Cloneable {
             return false;
         if (other.getOrigin() != null && other.getOrigin().equals(this.getOrigin()) == false)
             return false;
+        if (other.getDestinationIpv6CidrBlock() == null ^ this.getDestinationIpv6CidrBlock() == null)
+            return false;
+        if (other.getDestinationIpv6CidrBlock() != null && other.getDestinationIpv6CidrBlock().equals(this.getDestinationIpv6CidrBlock()) == false)
+            return false;
+        if (other.getEgressOnlyInternetGatewayId() == null ^ this.getEgressOnlyInternetGatewayId() == null)
+            return false;
+        if (other.getEgressOnlyInternetGatewayId() != null && other.getEgressOnlyInternetGatewayId().equals(this.getEgressOnlyInternetGatewayId()) == false)
+            return false;
         return true;
     }
 
@@ -849,6 +953,8 @@ public class Route implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
+        hashCode = prime * hashCode + ((getDestinationIpv6CidrBlock() == null) ? 0 : getDestinationIpv6CidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getEgressOnlyInternetGatewayId() == null) ? 0 : getEgressOnlyInternetGatewayId().hashCode());
         return hashCode;
     }
 

@@ -73,6 +73,9 @@ public class CreateRestApiRequestMarshaller implements Marshaller<Request<Create
             if (createRestApiRequest.getDescription() != null) {
                 jsonGenerator.writeFieldName("description").writeValue(createRestApiRequest.getDescription());
             }
+            if (createRestApiRequest.getVersion() != null) {
+                jsonGenerator.writeFieldName("version").writeValue(createRestApiRequest.getVersion());
+            }
             if (createRestApiRequest.getCloneFrom() != null) {
                 jsonGenerator.writeFieldName("cloneFrom").writeValue(createRestApiRequest.getCloneFrom());
             }

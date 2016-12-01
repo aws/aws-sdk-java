@@ -75,6 +75,12 @@ public class DocumentDescription implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
+     * The document version.
+     * </p>
+     */
+    private String documentVersion;
+    /**
+     * <p>
      * A description of the document.
      * </p>
      */
@@ -91,6 +97,30 @@ public class DocumentDescription implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> platformTypes;
+    /**
+     * <p>
+     * The type of document.
+     * </p>
+     */
+    private String documentType;
+    /**
+     * <p>
+     * The schema version.
+     * </p>
+     */
+    private String schemaVersion;
+    /**
+     * <p>
+     * The latest version of the document.
+     * </p>
+     */
+    private String latestVersion;
+    /**
+     * <p>
+     * The default version.
+     * </p>
+     */
+    private String defaultVersion;
 
     /**
      * <p>
@@ -504,6 +534,46 @@ public class DocumentDescription implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The document version.
+     * </p>
+     * 
+     * @param documentVersion
+     *        The document version.
+     */
+
+    public void setDocumentVersion(String documentVersion) {
+        this.documentVersion = documentVersion;
+    }
+
+    /**
+     * <p>
+     * The document version.
+     * </p>
+     * 
+     * @return The document version.
+     */
+
+    public String getDocumentVersion() {
+        return this.documentVersion;
+    }
+
+    /**
+     * <p>
+     * The document version.
+     * </p>
+     * 
+     * @param documentVersion
+     *        The document version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withDocumentVersion(String documentVersion) {
+        setDocumentVersion(documentVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * A description of the document.
      * </p>
      * 
@@ -717,6 +787,199 @@ public class DocumentDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of document.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of document.
+     * @see DocumentType
+     */
+
+    public void setDocumentType(String documentType) {
+        this.documentType = documentType;
+    }
+
+    /**
+     * <p>
+     * The type of document.
+     * </p>
+     * 
+     * @return The type of document.
+     * @see DocumentType
+     */
+
+    public String getDocumentType() {
+        return this.documentType;
+    }
+
+    /**
+     * <p>
+     * The type of document.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentType
+     */
+
+    public DocumentDescription withDocumentType(String documentType) {
+        setDocumentType(documentType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of document.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of document.
+     * @see DocumentType
+     */
+
+    public void setDocumentType(DocumentType documentType) {
+        this.documentType = documentType.toString();
+    }
+
+    /**
+     * <p>
+     * The type of document.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentType
+     */
+
+    public DocumentDescription withDocumentType(DocumentType documentType) {
+        setDocumentType(documentType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The schema version.
+     * </p>
+     * 
+     * @param schemaVersion
+     *        The schema version.
+     */
+
+    public void setSchemaVersion(String schemaVersion) {
+        this.schemaVersion = schemaVersion;
+    }
+
+    /**
+     * <p>
+     * The schema version.
+     * </p>
+     * 
+     * @return The schema version.
+     */
+
+    public String getSchemaVersion() {
+        return this.schemaVersion;
+    }
+
+    /**
+     * <p>
+     * The schema version.
+     * </p>
+     * 
+     * @param schemaVersion
+     *        The schema version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withSchemaVersion(String schemaVersion) {
+        setSchemaVersion(schemaVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The latest version of the document.
+     * </p>
+     * 
+     * @param latestVersion
+     *        The latest version of the document.
+     */
+
+    public void setLatestVersion(String latestVersion) {
+        this.latestVersion = latestVersion;
+    }
+
+    /**
+     * <p>
+     * The latest version of the document.
+     * </p>
+     * 
+     * @return The latest version of the document.
+     */
+
+    public String getLatestVersion() {
+        return this.latestVersion;
+    }
+
+    /**
+     * <p>
+     * The latest version of the document.
+     * </p>
+     * 
+     * @param latestVersion
+     *        The latest version of the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withLatestVersion(String latestVersion) {
+        setLatestVersion(latestVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default version.
+     * </p>
+     * 
+     * @param defaultVersion
+     *        The default version.
+     */
+
+    public void setDefaultVersion(String defaultVersion) {
+        this.defaultVersion = defaultVersion;
+    }
+
+    /**
+     * <p>
+     * The default version.
+     * </p>
+     * 
+     * @return The default version.
+     */
+
+    public String getDefaultVersion() {
+        return this.defaultVersion;
+    }
+
+    /**
+     * <p>
+     * The default version.
+     * </p>
+     * 
+     * @param defaultVersion
+     *        The default version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withDefaultVersion(String defaultVersion) {
+        setDefaultVersion(defaultVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -741,12 +1004,22 @@ public class DocumentDescription implements Serializable, Cloneable {
             sb.append("CreatedDate: " + getCreatedDate() + ",");
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
+        if (getDocumentVersion() != null)
+            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getParameters() != null)
             sb.append("Parameters: " + getParameters() + ",");
         if (getPlatformTypes() != null)
-            sb.append("PlatformTypes: " + getPlatformTypes());
+            sb.append("PlatformTypes: " + getPlatformTypes() + ",");
+        if (getDocumentType() != null)
+            sb.append("DocumentType: " + getDocumentType() + ",");
+        if (getSchemaVersion() != null)
+            sb.append("SchemaVersion: " + getSchemaVersion() + ",");
+        if (getLatestVersion() != null)
+            sb.append("LatestVersion: " + getLatestVersion() + ",");
+        if (getDefaultVersion() != null)
+            sb.append("DefaultVersion: " + getDefaultVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -789,6 +1062,10 @@ public class DocumentDescription implements Serializable, Cloneable {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
+            return false;
+        if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -800,6 +1077,22 @@ public class DocumentDescription implements Serializable, Cloneable {
         if (other.getPlatformTypes() == null ^ this.getPlatformTypes() == null)
             return false;
         if (other.getPlatformTypes() != null && other.getPlatformTypes().equals(this.getPlatformTypes()) == false)
+            return false;
+        if (other.getDocumentType() == null ^ this.getDocumentType() == null)
+            return false;
+        if (other.getDocumentType() != null && other.getDocumentType().equals(this.getDocumentType()) == false)
+            return false;
+        if (other.getSchemaVersion() == null ^ this.getSchemaVersion() == null)
+            return false;
+        if (other.getSchemaVersion() != null && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
+            return false;
+        if (other.getLatestVersion() == null ^ this.getLatestVersion() == null)
+            return false;
+        if (other.getLatestVersion() != null && other.getLatestVersion().equals(this.getLatestVersion()) == false)
+            return false;
+        if (other.getDefaultVersion() == null ^ this.getDefaultVersion() == null)
+            return false;
+        if (other.getDefaultVersion() != null && other.getDefaultVersion().equals(this.getDefaultVersion()) == false)
             return false;
         return true;
     }
@@ -816,9 +1109,14 @@ public class DocumentDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getPlatformTypes() == null) ? 0 : getPlatformTypes().hashCode());
+        hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());
+        hashCode = prime * hashCode + ((getSchemaVersion() == null) ? 0 : getSchemaVersion().hashCode());
+        hashCode = prime * hashCode + ((getLatestVersion() == null) ? 0 : getLatestVersion().hashCode());
+        hashCode = prime * hashCode + ((getDefaultVersion() == null) ? 0 : getDefaultVersion().hashCode());
         return hashCode;
     }
 

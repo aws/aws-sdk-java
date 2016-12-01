@@ -17,7 +17,9 @@ package com.amazonaws.services.simplesystemsmanagement.model;
  */
 public enum ResourceTypeForTagging {
 
-    ManagedInstance("ManagedInstance");
+    ManagedInstance("ManagedInstance"),
+    MaintenanceWindow("MaintenanceWindow"),
+    Parameter("Parameter");
 
     private String value;
 

@@ -45,9 +45,17 @@ public class ValidationMessage implements Serializable, Cloneable {
      * </ul>
      */
     private String severity;
-    /** <p/> */
+    /**
+     * <p>
+     * The namespace to which the option belongs.
+     * </p>
+     */
     private String namespace;
-    /** <p/> */
+    /**
+     * <p>
+     * The name of the option.
+     * </p>
+     */
     private String optionName;
 
     /**
@@ -279,9 +287,12 @@ public class ValidationMessage implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The namespace to which the option belongs.
+     * </p>
      * 
      * @param namespace
+     *        The namespace to which the option belongs.
      */
 
     public void setNamespace(String namespace) {
@@ -289,9 +300,11 @@ public class ValidationMessage implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The namespace to which the option belongs.
+     * </p>
      * 
-     * @return
+     * @return The namespace to which the option belongs.
      */
 
     public String getNamespace() {
@@ -299,9 +312,12 @@ public class ValidationMessage implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The namespace to which the option belongs.
+     * </p>
      * 
      * @param namespace
+     *        The namespace to which the option belongs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,9 +327,12 @@ public class ValidationMessage implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the option.
+     * </p>
      * 
      * @param optionName
+     *        The name of the option.
      */
 
     public void setOptionName(String optionName) {
@@ -321,9 +340,11 @@ public class ValidationMessage implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the option.
+     * </p>
      * 
-     * @return
+     * @return The name of the option.
      */
 
     public String getOptionName() {
@@ -331,9 +352,12 @@ public class ValidationMessage implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the option.
+     * </p>
      * 
      * @param optionName
+     *        The name of the option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

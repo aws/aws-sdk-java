@@ -39,7 +39,7 @@ public class DescribeCustomerGatewaysRequestMarshaller implements Marshaller<Req
 
         Request<DescribeCustomerGatewaysRequest> request = new DefaultRequest<DescribeCustomerGatewaysRequest>(describeCustomerGatewaysRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeCustomerGateways");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> describeCustomerGatewaysRequestCustomerGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeCustomerGatewaysRequest

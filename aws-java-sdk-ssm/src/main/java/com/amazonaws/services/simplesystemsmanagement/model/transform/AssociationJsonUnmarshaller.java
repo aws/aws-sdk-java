@@ -55,6 +55,30 @@ public class AssociationJsonUnmarshaller implements Unmarshaller<Association, Js
                     context.nextToken();
                     association.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AssociationId", targetDepth)) {
+                    context.nextToken();
+                    association.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DocumentVersion", targetDepth)) {
+                    context.nextToken();
+                    association.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Targets", targetDepth)) {
+                    context.nextToken();
+                    association.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("LastExecutionDate", targetDepth)) {
+                    context.nextToken();
+                    association.setLastExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("Overview", targetDepth)) {
+                    context.nextToken();
+                    association.setOverview(AssociationOverviewJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ScheduleExpression", targetDepth)) {
+                    context.nextToken();
+                    association.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

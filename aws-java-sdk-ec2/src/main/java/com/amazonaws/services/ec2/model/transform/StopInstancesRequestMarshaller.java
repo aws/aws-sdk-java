@@ -39,7 +39,7 @@ public class StopInstancesRequestMarshaller implements Marshaller<Request<StopIn
 
         Request<StopInstancesRequest> request = new DefaultRequest<StopInstancesRequest>(stopInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "StopInstances");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> stopInstancesRequestInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) stopInstancesRequest

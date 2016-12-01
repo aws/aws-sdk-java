@@ -67,6 +67,10 @@ public class NewPrivateVirtualInterfaceAllocationJsonUnmarshaller implements Unm
                     context.nextToken();
                     newPrivateVirtualInterfaceAllocation.setAmazonAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("addressFamily", targetDepth)) {
+                    context.nextToken();
+                    newPrivateVirtualInterfaceAllocation.setAddressFamily(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("customerAddress", targetDepth)) {
                     context.nextToken();
                     newPrivateVirtualInterfaceAllocation.setCustomerAddress(context.getUnmarshaller(String.class).unmarshall(context));

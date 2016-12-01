@@ -55,6 +55,10 @@ public class CommandPluginJsonUnmarshaller implements Unmarshaller<CommandPlugin
                     context.nextToken();
                     commandPlugin.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StatusDetails", targetDepth)) {
+                    context.nextToken();
+                    commandPlugin.setStatusDetails(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ResponseCode", targetDepth)) {
                     context.nextToken();
                     commandPlugin.setResponseCode(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -70,6 +74,18 @@ public class CommandPluginJsonUnmarshaller implements Unmarshaller<CommandPlugin
                 if (context.testExpression("Output", targetDepth)) {
                     context.nextToken();
                     commandPlugin.setOutput(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StandardOutputUrl", targetDepth)) {
+                    context.nextToken();
+                    commandPlugin.setStandardOutputUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StandardErrorUrl", targetDepth)) {
+                    context.nextToken();
+                    commandPlugin.setStandardErrorUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OutputS3Region", targetDepth)) {
+                    context.nextToken();
+                    commandPlugin.setOutputS3Region(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputS3BucketName", targetDepth)) {
                     context.nextToken();

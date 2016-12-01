@@ -63,6 +63,10 @@ public class ImportRestApiResultJsonUnmarshaller implements Unmarshaller<ImportR
                     context.nextToken();
                     importRestApiResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("version", targetDepth)) {
+                    context.nextToken();
+                    importRestApiResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();
                     importRestApiResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

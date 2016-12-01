@@ -41,7 +41,7 @@ public class DescribeVpcPeeringConnectionsRequestMarshaller implements
         Request<DescribeVpcPeeringConnectionsRequest> request = new DefaultRequest<DescribeVpcPeeringConnectionsRequest>(describeVpcPeeringConnectionsRequest,
                 "AmazonEC2");
         request.addParameter("Action", "DescribeVpcPeeringConnections");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcPeeringConnectionsRequest

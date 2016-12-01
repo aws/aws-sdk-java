@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the monitoring information of the instance.
+ * Describes the monitoring of an instance.
  * </p>
  */
 public class InstanceMonitoring implements Serializable, Cloneable {
@@ -29,7 +29,7 @@ public class InstanceMonitoring implements Serializable, Cloneable {
     private String instanceId;
     /**
      * <p>
-     * The monitoring information.
+     * The monitoring for the instance.
      * </p>
      */
     private Monitoring monitoring;
@@ -76,11 +76,11 @@ public class InstanceMonitoring implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The monitoring information.
+     * The monitoring for the instance.
      * </p>
      * 
      * @param monitoring
-     *        The monitoring information.
+     *        The monitoring for the instance.
      */
 
     public void setMonitoring(Monitoring monitoring) {
@@ -89,10 +89,10 @@ public class InstanceMonitoring implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The monitoring information.
+     * The monitoring for the instance.
      * </p>
      * 
-     * @return The monitoring information.
+     * @return The monitoring for the instance.
      */
 
     public Monitoring getMonitoring() {
@@ -101,11 +101,11 @@ public class InstanceMonitoring implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The monitoring information.
+     * The monitoring for the instance.
      * </p>
      * 
      * @param monitoring
-     *        The monitoring information.
+     *        The monitoring for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

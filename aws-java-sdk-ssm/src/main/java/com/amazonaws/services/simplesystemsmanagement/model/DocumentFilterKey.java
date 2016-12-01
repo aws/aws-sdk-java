@@ -19,7 +19,8 @@ public enum DocumentFilterKey {
 
     Name("Name"),
     Owner("Owner"),
-    PlatformTypes("PlatformTypes");
+    PlatformTypes("PlatformTypes"),
+    DocumentType("DocumentType");
 
     private String value;
 

@@ -23,8 +23,8 @@ public class NotificationConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. SSM pushes notifications about
-     * command status changes to this topic.
+     * An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command pushes notifications
+     * about command status changes to this topic.
      * </p>
      */
     private String notificationArn;
@@ -47,13 +47,13 @@ public class NotificationConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. SSM pushes notifications about
-     * command status changes to this topic.
+     * An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command pushes notifications
+     * about command status changes to this topic.
      * </p>
      * 
      * @param notificationArn
-     *        An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. SSM pushes notifications
-     *        about command status changes to this topic.
+     *        An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command pushes
+     *        notifications about command status changes to this topic.
      */
 
     public void setNotificationArn(String notificationArn) {
@@ -62,12 +62,12 @@ public class NotificationConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. SSM pushes notifications about
-     * command status changes to this topic.
+     * An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command pushes notifications
+     * about command status changes to this topic.
      * </p>
      * 
-     * @return An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. SSM pushes notifications
-     *         about command status changes to this topic.
+     * @return An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command pushes
+     *         notifications about command status changes to this topic.
      */
 
     public String getNotificationArn() {
@@ -76,13 +76,13 @@ public class NotificationConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. SSM pushes notifications about
-     * command status changes to this topic.
+     * An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command pushes notifications
+     * about command status changes to this topic.
      * </p>
      * 
      * @param notificationArn
-     *        An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. SSM pushes notifications
-     *        about command status changes to this topic.
+     *        An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command pushes
+     *        notifications about command status changes to this topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

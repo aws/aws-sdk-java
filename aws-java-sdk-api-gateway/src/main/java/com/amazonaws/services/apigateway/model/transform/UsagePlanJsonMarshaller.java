@@ -71,6 +71,9 @@ public class UsagePlanJsonMarshaller {
                 jsonGenerator.writeFieldName("quota");
                 QuotaSettingsJsonMarshaller.getInstance().marshall(usagePlan.getQuota(), jsonGenerator);
             }
+            if (usagePlan.getProductCode() != null) {
+                jsonGenerator.writeFieldName("productCode").writeValue(usagePlan.getProductCode());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

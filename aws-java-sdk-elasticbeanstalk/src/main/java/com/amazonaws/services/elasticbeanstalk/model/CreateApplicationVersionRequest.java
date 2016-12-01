@@ -43,46 +43,33 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.
+     * </p>
+     * <p>
+     * Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but
+     * not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic
+     * Beanstalk uses a sample application.
+     * </p>
+     */
     private SourceBuildInformation sourceBuildInformation;
     /**
      * <p>
      * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
      * <p>
-     * If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
-     * </p>
-     * <p>
-     * Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for
-     * example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
+     * <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
+     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.
      * </p>
      */
     private S3Location sourceBundle;
+
+    private BuildConfiguration buildConfiguration;
     /**
      * <p>
-     * Determines how the system behaves if the specified application for this version does not already exist:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>true</code> : Automatically creates the specified application for this release if it does not already
-     * exist.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release
-     * does not already exist.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * Set to <code>true</code> to create an application with the specified name if it doesn't already exist.
      * </p>
      */
     private Boolean autoCreateApplication;
@@ -271,7 +258,22 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.
+     * </p>
+     * <p>
+     * Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but
+     * not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic
+     * Beanstalk uses a sample application.
+     * </p>
+     * 
      * @param sourceBuildInformation
+     *        Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application
+     *        version.</p>
+     *        <p>
+     *        Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>
+     *        ), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are
+     *        provided, Elastic Beanstalk uses a sample application.
      */
 
     public void setSourceBuildInformation(SourceBuildInformation sourceBuildInformation) {
@@ -279,7 +281,21 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.
+     * </p>
+     * <p>
+     * Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but
+     * not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic
+     * Beanstalk uses a sample application.
+     * </p>
+     * 
+     * @return Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application
+     *         version.</p>
+     *         <p>
+     *         Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>
+     *         ), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are
+     *         provided, Elastic Beanstalk uses a sample application.
      */
 
     public SourceBuildInformation getSourceBuildInformation() {
@@ -287,7 +303,22 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.
+     * </p>
+     * <p>
+     * Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but
+     * not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic
+     * Beanstalk uses a sample application.
+     * </p>
+     * 
      * @param sourceBuildInformation
+     *        Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application
+     *        version.</p>
+     *        <p>
+     *        Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>
+     *        ), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are
+     *        provided, Elastic Beanstalk uses a sample application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,25 +332,17 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
      * <p>
-     * If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
-     * </p>
-     * <p>
-     * Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for
-     * example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
+     * <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
+     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.
      * </p>
      * 
      * @param sourceBundle
      *        The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p>
      *        <p>
-     *        If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic
-     *        Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
-     *        </p>
-     *        <p>
-     *        Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified
-     *        (for example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS
-     *        Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     *        Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
+     *        <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
+     *        <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.
      */
 
     public void setSourceBundle(S3Location sourceBundle) {
@@ -331,24 +354,16 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
      * <p>
-     * If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
-     * </p>
-     * <p>
-     * Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for
-     * example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
+     * <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
+     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.
      * </p>
      * 
      * @return The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p>
      *         <p>
-     *         If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic
-     *         Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
-     *         </p>
-     *         <p>
-     *         Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified
-     *         (for example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS
-     *         Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     *         Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
+     *         <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
+     *         <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.
      */
 
     public S3Location getSourceBundle() {
@@ -360,25 +375,17 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
      * <p>
-     * If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
-     * </p>
-     * <p>
-     * Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified (for
-     * example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS Elastic
-     * Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
+     * <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
+     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.
      * </p>
      * 
      * @param sourceBundle
      *        The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p>
      *        <p>
-     *        If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, AWS Elastic
-     *        Beanstalk returns an <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
-     *        </p>
-     *        <p>
-     *        Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only partially specified
-     *        (for example, a bucket is provided but not the key) or if no data is found at the Amazon S3 location, AWS
-     *        Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     *        Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
+     *        <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
+     *        <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,52 +395,38 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * @param buildConfiguration
+     */
+
+    public void setBuildConfiguration(BuildConfiguration buildConfiguration) {
+        this.buildConfiguration = buildConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public BuildConfiguration getBuildConfiguration() {
+        return this.buildConfiguration;
+    }
+
+    /**
+     * @param buildConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationVersionRequest withBuildConfiguration(BuildConfiguration buildConfiguration) {
+        setBuildConfiguration(buildConfiguration);
+        return this;
+    }
+
+    /**
      * <p>
-     * Determines how the system behaves if the specified application for this version does not already exist:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>true</code> : Automatically creates the specified application for this release if it does not already
-     * exist.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release
-     * does not already exist.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * Set to <code>true</code> to create an application with the specified name if it doesn't already exist.
      * </p>
      * 
      * @param autoCreateApplication
-     *        Determines how the system behaves if the specified application for this version does not already
-     *        exist:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>true</code> : Automatically creates the specified application for this release if it does not
-     *        already exist.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
-     *        release does not already exist.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Default: <code>false</code>
-     *        </p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        Set to <code>true</code> to create an application with the specified name if it doesn't already exist.
      */
 
     public void setAutoCreateApplication(Boolean autoCreateApplication) {
@@ -442,50 +435,10 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Determines how the system behaves if the specified application for this version does not already exist:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>true</code> : Automatically creates the specified application for this release if it does not already
-     * exist.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release
-     * does not already exist.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * Set to <code>true</code> to create an application with the specified name if it doesn't already exist.
      * </p>
      * 
-     * @return Determines how the system behaves if the specified application for this version does not already
-     *         exist:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>true</code> : Automatically creates the specified application for this release if it does not
-     *         already exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
-     *         release does not already exist.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         Default: <code>false</code>
-     *         </p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     * @return Set to <code>true</code> to create an application with the specified name if it doesn't already exist.
      */
 
     public Boolean getAutoCreateApplication() {
@@ -494,51 +447,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Determines how the system behaves if the specified application for this version does not already exist:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>true</code> : Automatically creates the specified application for this release if it does not already
-     * exist.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release
-     * does not already exist.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * Set to <code>true</code> to create an application with the specified name if it doesn't already exist.
      * </p>
      * 
      * @param autoCreateApplication
-     *        Determines how the system behaves if the specified application for this version does not already
-     *        exist:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>true</code> : Automatically creates the specified application for this release if it does not
-     *        already exist.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
-     *        release does not already exist.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Default: <code>false</code>
-     *        </p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        Set to <code>true</code> to create an application with the specified name if it doesn't already exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -549,50 +462,10 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Determines how the system behaves if the specified application for this version does not already exist:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>true</code> : Automatically creates the specified application for this release if it does not already
-     * exist.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this release
-     * does not already exist.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * Set to <code>true</code> to create an application with the specified name if it doesn't already exist.
      * </p>
      * 
-     * @return Determines how the system behaves if the specified application for this version does not already
-     *         exist:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>true</code> : Automatically creates the specified application for this release if it does not
-     *         already exist.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified application for this
-     *         release does not already exist.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         Default: <code>false</code>
-     *         </p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     * @return Set to <code>true</code> to create an application with the specified name if it doesn't already exist.
      */
 
     public Boolean isAutoCreateApplication() {
@@ -684,6 +557,8 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
             sb.append("SourceBuildInformation: " + getSourceBuildInformation() + ",");
         if (getSourceBundle() != null)
             sb.append("SourceBundle: " + getSourceBundle() + ",");
+        if (getBuildConfiguration() != null)
+            sb.append("BuildConfiguration: " + getBuildConfiguration() + ",");
         if (getAutoCreateApplication() != null)
             sb.append("AutoCreateApplication: " + getAutoCreateApplication() + ",");
         if (getProcess() != null)
@@ -722,6 +597,10 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getSourceBundle() != null && other.getSourceBundle().equals(this.getSourceBundle()) == false)
             return false;
+        if (other.getBuildConfiguration() == null ^ this.getBuildConfiguration() == null)
+            return false;
+        if (other.getBuildConfiguration() != null && other.getBuildConfiguration().equals(this.getBuildConfiguration()) == false)
+            return false;
         if (other.getAutoCreateApplication() == null ^ this.getAutoCreateApplication() == null)
             return false;
         if (other.getAutoCreateApplication() != null && other.getAutoCreateApplication().equals(this.getAutoCreateApplication()) == false)
@@ -743,6 +622,7 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSourceBuildInformation() == null) ? 0 : getSourceBuildInformation().hashCode());
         hashCode = prime * hashCode + ((getSourceBundle() == null) ? 0 : getSourceBundle().hashCode());
+        hashCode = prime * hashCode + ((getBuildConfiguration() == null) ? 0 : getBuildConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAutoCreateApplication() == null) ? 0 : getAutoCreateApplication().hashCode());
         hashCode = prime * hashCode + ((getProcess() == null) ? 0 : getProcess().hashCode());
         return hashCode;

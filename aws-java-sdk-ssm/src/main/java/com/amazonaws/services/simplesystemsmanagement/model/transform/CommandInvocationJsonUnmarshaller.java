@@ -55,6 +55,10 @@ public class CommandInvocationJsonUnmarshaller implements Unmarshaller<CommandIn
                     context.nextToken();
                     commandInvocation.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InstanceName", targetDepth)) {
+                    context.nextToken();
+                    commandInvocation.setInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Comment", targetDepth)) {
                     context.nextToken();
                     commandInvocation.setComment(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,9 +75,21 @@ public class CommandInvocationJsonUnmarshaller implements Unmarshaller<CommandIn
                     context.nextToken();
                     commandInvocation.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StatusDetails", targetDepth)) {
+                    context.nextToken();
+                    commandInvocation.setStatusDetails(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("TraceOutput", targetDepth)) {
                     context.nextToken();
                     commandInvocation.setTraceOutput(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StandardOutputUrl", targetDepth)) {
+                    context.nextToken();
+                    commandInvocation.setStandardOutputUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StandardErrorUrl", targetDepth)) {
+                    context.nextToken();
+                    commandInvocation.setStandardErrorUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CommandPlugins", targetDepth)) {
                     context.nextToken();

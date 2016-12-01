@@ -71,6 +71,10 @@ public class GetUsagePlanResultJsonUnmarshaller implements Unmarshaller<GetUsage
                     context.nextToken();
                     getUsagePlanResult.setQuota(QuotaSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("productCode", targetDepth)) {
+                    context.nextToken();
+                    getUsagePlanResult.setProductCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -40,7 +40,11 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String nameQuery;
-
+    /**
+     * <p>
+     * The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * </p>
+     */
     private String customerId;
     /**
      * <p>
@@ -170,7 +174,12 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * </p>
+     * 
      * @param customerId
+     *        The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
      */
 
     public void setCustomerId(String customerId) {
@@ -178,7 +187,11 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * </p>
+     * 
+     * @return The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
      */
 
     public String getCustomerId() {
@@ -186,7 +199,12 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * </p>
+     * 
      * @param customerId
+     *        The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -39,7 +39,7 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
 
         Request<CreateNetworkInterfaceRequest> request = new DefaultRequest<CreateNetworkInterfaceRequest>(createNetworkInterfaceRequest, "AmazonEC2");
         request.addParameter("Action", "CreateNetworkInterface");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createNetworkInterfaceRequest.getSubnetId() != null) {
@@ -89,6 +89,25 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
 
         if (createNetworkInterfaceRequest.getSecondaryPrivateIpAddressCount() != null) {
             request.addParameter("SecondaryPrivateIpAddressCount", StringUtils.fromInteger(createNetworkInterfaceRequest.getSecondaryPrivateIpAddressCount()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<InstanceIpv6Address> createNetworkInterfaceRequestIpv6AddressesList = (com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>) createNetworkInterfaceRequest
+                .getIpv6Addresses();
+        if (!createNetworkInterfaceRequestIpv6AddressesList.isEmpty() || !createNetworkInterfaceRequestIpv6AddressesList.isAutoConstruct()) {
+            int ipv6AddressesListIndex = 1;
+
+            for (InstanceIpv6Address createNetworkInterfaceRequestIpv6AddressesListValue : createNetworkInterfaceRequestIpv6AddressesList) {
+
+                if (createNetworkInterfaceRequestIpv6AddressesListValue.getIpv6Address() != null) {
+                    request.addParameter("Ipv6Addresses." + ipv6AddressesListIndex + ".Ipv6Address",
+                            StringUtils.fromString(createNetworkInterfaceRequestIpv6AddressesListValue.getIpv6Address()));
+                }
+                ipv6AddressesListIndex++;
+            }
+        }
+
+        if (createNetworkInterfaceRequest.getIpv6AddressCount() != null) {
+            request.addParameter("Ipv6AddressCount", StringUtils.fromInteger(createNetworkInterfaceRequest.getIpv6AddressCount()));
         }
 
         return request;

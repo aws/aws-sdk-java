@@ -39,7 +39,7 @@ public class DescribeRouteTablesRequestMarshaller implements Marshaller<Request<
 
         Request<DescribeRouteTablesRequest> request = new DefaultRequest<DescribeRouteTablesRequest>(describeRouteTablesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeRouteTables");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> describeRouteTablesRequestRouteTableIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeRouteTablesRequest

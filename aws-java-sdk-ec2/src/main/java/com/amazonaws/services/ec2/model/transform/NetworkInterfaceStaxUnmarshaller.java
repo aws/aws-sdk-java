@@ -135,6 +135,11 @@ public class NetworkInterfaceStaxUnmarshaller implements Unmarshaller<NetworkInt
                     continue;
                 }
 
+                if (context.testExpression("ipv6AddressesSet/item", targetDepth)) {
+                    networkInterface.withIpv6Addresses(NetworkInterfaceIpv6AddressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("interfaceType", targetDepth)) {
                     networkInterface.setInterfaceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

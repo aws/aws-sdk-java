@@ -82,6 +82,9 @@ public class CreateEventSourceMappingRequestMarshaller implements Marshaller<Req
             if (createEventSourceMappingRequest.getStartingPosition() != null) {
                 jsonGenerator.writeFieldName("StartingPosition").writeValue(createEventSourceMappingRequest.getStartingPosition());
             }
+            if (createEventSourceMappingRequest.getStartingPositionTimestamp() != null) {
+                jsonGenerator.writeFieldName("StartingPositionTimestamp").writeValue(createEventSourceMappingRequest.getStartingPositionTimestamp());
+            }
 
             jsonGenerator.writeEndObject();
 

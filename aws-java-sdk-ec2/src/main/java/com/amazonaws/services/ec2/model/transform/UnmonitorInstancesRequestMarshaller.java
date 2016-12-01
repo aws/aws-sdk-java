@@ -39,7 +39,7 @@ public class UnmonitorInstancesRequestMarshaller implements Marshaller<Request<U
 
         Request<UnmonitorInstancesRequest> request = new DefaultRequest<UnmonitorInstancesRequest>(unmonitorInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "UnmonitorInstances");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> unmonitorInstancesRequestInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) unmonitorInstancesRequest

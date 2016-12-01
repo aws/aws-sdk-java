@@ -83,6 +83,12 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.util.Map<String, String> variables;
     /**
      * <p>
+     * The version of the associated API documentation.
+     * </p>
+     */
+    private String documentationVersion;
+    /**
+     * <p>
      * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
@@ -572,6 +578,46 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * The version of the associated API documentation.
+     * </p>
+     * 
+     * @param documentationVersion
+     *        The version of the associated API documentation.
+     */
+
+    public void setDocumentationVersion(String documentationVersion) {
+        this.documentationVersion = documentationVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the associated API documentation.
+     * </p>
+     * 
+     * @return The version of the associated API documentation.
+     */
+
+    public String getDocumentationVersion() {
+        return this.documentationVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the associated API documentation.
+     * </p>
+     * 
+     * @param documentationVersion
+     *        The version of the associated API documentation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStageResult withDocumentationVersion(String documentationVersion) {
+        setDocumentationVersion(documentationVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
@@ -691,6 +737,8 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("MethodSettings: " + getMethodSettings() + ",");
         if (getVariables() != null)
             sb.append("Variables: " + getVariables() + ",");
+        if (getDocumentationVersion() != null)
+            sb.append("DocumentationVersion: " + getDocumentationVersion() + ",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: " + getCreatedDate() + ",");
         if (getLastUpdatedDate() != null)
@@ -745,6 +793,10 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getVariables() != null && other.getVariables().equals(this.getVariables()) == false)
             return false;
+        if (other.getDocumentationVersion() == null ^ this.getDocumentationVersion() == null)
+            return false;
+        if (other.getDocumentationVersion() != null && other.getDocumentationVersion().equals(this.getDocumentationVersion()) == false)
+            return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
@@ -770,6 +822,7 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getCacheClusterStatus() == null) ? 0 : getCacheClusterStatus().hashCode());
         hashCode = prime * hashCode + ((getMethodSettings() == null) ? 0 : getMethodSettings().hashCode());
         hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
+        hashCode = prime * hashCode + ((getDocumentationVersion() == null) ? 0 : getDocumentationVersion().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         return hashCode;

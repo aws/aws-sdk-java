@@ -50,6 +50,9 @@ public class ApiKeyJsonMarshaller {
             if (apiKey.getName() != null) {
                 jsonGenerator.writeFieldName("name").writeValue(apiKey.getName());
             }
+            if (apiKey.getCustomerId() != null) {
+                jsonGenerator.writeFieldName("customerId").writeValue(apiKey.getCustomerId());
+            }
             if (apiKey.getDescription() != null) {
                 jsonGenerator.writeFieldName("description").writeValue(apiKey.getDescription());
             }

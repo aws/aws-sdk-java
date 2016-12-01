@@ -16,26 +16,26 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a private IP address.
+ * Describes a private IPv4 address.
  * </p>
  */
 public class InstancePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IP address of the network interface.
+     * The private IPv4 address of the network interface.
      * </p>
      */
     private String privateIpAddress;
     /**
      * <p>
-     * The private DNS name.
+     * The private IPv4 DNS name.
      * </p>
      */
     private String privateDnsName;
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of the network interface.
+     * Indicates whether this IPv4 address is the primary private IP address of the network interface.
      * </p>
      */
     private Boolean primary;
@@ -48,11 +48,11 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IP address of the network interface.
+     * The private IPv4 address of the network interface.
      * </p>
      * 
      * @param privateIpAddress
-     *        The private IP address of the network interface.
+     *        The private IPv4 address of the network interface.
      */
 
     public void setPrivateIpAddress(String privateIpAddress) {
@@ -61,10 +61,10 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IP address of the network interface.
+     * The private IPv4 address of the network interface.
      * </p>
      * 
-     * @return The private IP address of the network interface.
+     * @return The private IPv4 address of the network interface.
      */
 
     public String getPrivateIpAddress() {
@@ -73,11 +73,11 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IP address of the network interface.
+     * The private IPv4 address of the network interface.
      * </p>
      * 
      * @param privateIpAddress
-     *        The private IP address of the network interface.
+     *        The private IPv4 address of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +88,11 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private DNS name.
+     * The private IPv4 DNS name.
      * </p>
      * 
      * @param privateDnsName
-     *        The private DNS name.
+     *        The private IPv4 DNS name.
      */
 
     public void setPrivateDnsName(String privateDnsName) {
@@ -101,10 +101,10 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private DNS name.
+     * The private IPv4 DNS name.
      * </p>
      * 
-     * @return The private DNS name.
+     * @return The private IPv4 DNS name.
      */
 
     public String getPrivateDnsName() {
@@ -113,11 +113,11 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private DNS name.
+     * The private IPv4 DNS name.
      * </p>
      * 
      * @param privateDnsName
-     *        The private DNS name.
+     *        The private IPv4 DNS name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,11 +128,11 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of the network interface.
+     * Indicates whether this IPv4 address is the primary private IP address of the network interface.
      * </p>
      * 
      * @param primary
-     *        Indicates whether this IP address is the primary private IP address of the network interface.
+     *        Indicates whether this IPv4 address is the primary private IP address of the network interface.
      */
 
     public void setPrimary(Boolean primary) {
@@ -141,10 +141,10 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of the network interface.
+     * Indicates whether this IPv4 address is the primary private IP address of the network interface.
      * </p>
      * 
-     * @return Indicates whether this IP address is the primary private IP address of the network interface.
+     * @return Indicates whether this IPv4 address is the primary private IP address of the network interface.
      */
 
     public Boolean getPrimary() {
@@ -153,11 +153,11 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of the network interface.
+     * Indicates whether this IPv4 address is the primary private IP address of the network interface.
      * </p>
      * 
      * @param primary
-     *        Indicates whether this IP address is the primary private IP address of the network interface.
+     *        Indicates whether this IPv4 address is the primary private IP address of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,10 +168,10 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this IP address is the primary private IP address of the network interface.
+     * Indicates whether this IPv4 address is the primary private IP address of the network interface.
      * </p>
      * 
-     * @return Indicates whether this IP address is the primary private IP address of the network interface.
+     * @return Indicates whether this IPv4 address is the primary private IP address of the network interface.
      */
 
     public Boolean isPrimary() {

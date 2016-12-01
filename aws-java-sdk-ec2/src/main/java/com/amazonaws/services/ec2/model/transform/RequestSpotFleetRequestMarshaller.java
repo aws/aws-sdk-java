@@ -39,7 +39,7 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
 
         Request<RequestSpotFleetRequest> request = new DefaultRequest<RequestSpotFleetRequest>(requestSpotFleetRequest, "AmazonEC2");
         request.addParameter("Action", "RequestSpotFleet");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         SpotFleetRequestConfigData spotFleetRequestConfig = requestSpotFleetRequest.getSpotFleetRequestConfig();
@@ -329,6 +329,30 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                 request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
                                         + networkInterfacesListIndex + ".AssociatePublicIpAddress",
                                         StringUtils.fromBoolean(spotFleetLaunchSpecificationNetworkInterfacesListValue.getAssociatePublicIpAddress()));
+                            }
+
+                            com.amazonaws.internal.SdkInternalList<InstanceIpv6Address> instanceNetworkInterfaceSpecificationIpv6AddressesList = (com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>) spotFleetLaunchSpecificationNetworkInterfacesListValue
+                                    .getIpv6Addresses();
+                            if (!instanceNetworkInterfaceSpecificationIpv6AddressesList.isEmpty()
+                                    || !instanceNetworkInterfaceSpecificationIpv6AddressesList.isAutoConstruct()) {
+                                int ipv6AddressesListIndex = 1;
+
+                                for (InstanceIpv6Address instanceNetworkInterfaceSpecificationIpv6AddressesListValue : instanceNetworkInterfaceSpecificationIpv6AddressesList) {
+
+                                    if (instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIpv6Address() != null) {
+                                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
+                                                + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".Ipv6Addresses." + ipv6AddressesListIndex
+                                                + ".Ipv6Address",
+                                                StringUtils.fromString(instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIpv6Address()));
+                                    }
+                                    ipv6AddressesListIndex++;
+                                }
+                            }
+
+                            if (spotFleetLaunchSpecificationNetworkInterfacesListValue.getIpv6AddressCount() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
+                                        + networkInterfacesListIndex + ".Ipv6AddressCount",
+                                        StringUtils.fromInteger(spotFleetLaunchSpecificationNetworkInterfacesListValue.getIpv6AddressCount()));
                             }
                             networkInterfacesListIndex++;
                         }

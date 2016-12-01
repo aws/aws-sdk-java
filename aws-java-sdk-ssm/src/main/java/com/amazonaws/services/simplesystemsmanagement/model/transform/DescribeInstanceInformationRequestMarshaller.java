@@ -74,6 +74,20 @@ public class DescribeInstanceInformationRequestMarshaller implements
                 }
                 jsonGenerator.writeEndArray();
             }
+
+            com.amazonaws.internal.SdkInternalList<InstanceInformationStringFilter> filtersList = (com.amazonaws.internal.SdkInternalList<InstanceInformationStringFilter>) describeInstanceInformationRequest
+                    .getFilters();
+            if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("Filters");
+                jsonGenerator.writeStartArray();
+                for (InstanceInformationStringFilter filtersListValue : filtersList) {
+                    if (filtersListValue != null) {
+
+                        InstanceInformationStringFilterJsonMarshaller.getInstance().marshall(filtersListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
             if (describeInstanceInformationRequest.getMaxResults() != null) {
                 jsonGenerator.writeFieldName("MaxResults").writeValue(describeInstanceInformationRequest.getMaxResults());
             }

@@ -94,6 +94,16 @@ public class RouteStaxUnmarshaller implements Unmarshaller<Route, StaxUnmarshall
                     route.setOrigin(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("destinationIpv6CidrBlock", targetDepth)) {
+                    route.setDestinationIpv6CidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("egressOnlyInternetGatewayId", targetDepth)) {
+                    route.setEgressOnlyInternetGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return route;

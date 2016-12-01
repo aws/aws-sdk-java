@@ -31,6 +31,8 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
 
     private String amazonAddress;
 
+    private String addressFamily;
+
     private String customerAddress;
 
     /**
@@ -164,6 +166,55 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
     }
 
     /**
+     * @param addressFamily
+     * @see AddressFamily
+     */
+
+    public void setAddressFamily(String addressFamily) {
+        this.addressFamily = addressFamily;
+    }
+
+    /**
+     * @return
+     * @see AddressFamily
+     */
+
+    public String getAddressFamily() {
+        return this.addressFamily;
+    }
+
+    /**
+     * @param addressFamily
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AddressFamily
+     */
+
+    public NewPrivateVirtualInterfaceAllocation withAddressFamily(String addressFamily) {
+        setAddressFamily(addressFamily);
+        return this;
+    }
+
+    /**
+     * @param addressFamily
+     * @see AddressFamily
+     */
+
+    public void setAddressFamily(AddressFamily addressFamily) {
+        this.addressFamily = addressFamily.toString();
+    }
+
+    /**
+     * @param addressFamily
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AddressFamily
+     */
+
+    public NewPrivateVirtualInterfaceAllocation withAddressFamily(AddressFamily addressFamily) {
+        setAddressFamily(addressFamily);
+        return this;
+    }
+
+    /**
      * @param customerAddress
      */
 
@@ -210,6 +261,8 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
             sb.append("AuthKey: " + getAuthKey() + ",");
         if (getAmazonAddress() != null)
             sb.append("AmazonAddress: " + getAmazonAddress() + ",");
+        if (getAddressFamily() != null)
+            sb.append("AddressFamily: " + getAddressFamily() + ",");
         if (getCustomerAddress() != null)
             sb.append("CustomerAddress: " + getCustomerAddress());
         sb.append("}");
@@ -246,6 +299,10 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
             return false;
         if (other.getAmazonAddress() != null && other.getAmazonAddress().equals(this.getAmazonAddress()) == false)
             return false;
+        if (other.getAddressFamily() == null ^ this.getAddressFamily() == null)
+            return false;
+        if (other.getAddressFamily() != null && other.getAddressFamily().equals(this.getAddressFamily()) == false)
+            return false;
         if (other.getCustomerAddress() == null ^ this.getCustomerAddress() == null)
             return false;
         if (other.getCustomerAddress() != null && other.getCustomerAddress().equals(this.getCustomerAddress()) == false)
@@ -263,6 +320,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
         hashCode = prime * hashCode + ((getAsn() == null) ? 0 : getAsn().hashCode());
         hashCode = prime * hashCode + ((getAuthKey() == null) ? 0 : getAuthKey().hashCode());
         hashCode = prime * hashCode + ((getAmazonAddress() == null) ? 0 : getAmazonAddress().hashCode());
+        hashCode = prime * hashCode + ((getAddressFamily() == null) ? 0 : getAddressFamily().hashCode());
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
         return hashCode;
     }

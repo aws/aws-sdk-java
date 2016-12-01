@@ -107,6 +107,22 @@ public class InstanceInformationJsonUnmarshaller implements Unmarshaller<Instanc
                     context.nextToken();
                     instanceInformation.setComputerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AssociationStatus", targetDepth)) {
+                    context.nextToken();
+                    instanceInformation.setAssociationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastAssociationExecutionDate", targetDepth)) {
+                    context.nextToken();
+                    instanceInformation.setLastAssociationExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("LastSuccessfulAssociationExecutionDate", targetDepth)) {
+                    context.nextToken();
+                    instanceInformation.setLastSuccessfulAssociationExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("AssociationOverview", targetDepth)) {
+                    context.nextToken();
+                    instanceInformation.setAssociationOverview(InstanceAggregatedAssociationOverviewJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

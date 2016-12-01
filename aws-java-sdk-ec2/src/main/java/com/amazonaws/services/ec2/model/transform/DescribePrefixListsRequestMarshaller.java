@@ -39,7 +39,7 @@ public class DescribePrefixListsRequestMarshaller implements Marshaller<Request<
 
         Request<DescribePrefixListsRequest> request = new DefaultRequest<DescribePrefixListsRequest>(describePrefixListsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribePrefixLists");
-        request.addParameter("Version", "2016-09-15");
+        request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> describePrefixListsRequestPrefixListIdsList = (com.amazonaws.internal.SdkInternalList<String>) describePrefixListsRequest

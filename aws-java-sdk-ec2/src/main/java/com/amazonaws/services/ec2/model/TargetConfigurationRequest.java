@@ -23,8 +23,7 @@ public class TargetConfigurationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Convertible Reserved Instance offering ID. If this isn't included in the request, the response lists your
-     * current Convertible Reserved Instance/s and their value/s.
+     * The Convertible Reserved Instance offering ID.
      * </p>
      */
     private String offeringId;
@@ -38,13 +37,11 @@ public class TargetConfigurationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Convertible Reserved Instance offering ID. If this isn't included in the request, the response lists your
-     * current Convertible Reserved Instance/s and their value/s.
+     * The Convertible Reserved Instance offering ID.
      * </p>
      * 
      * @param offeringId
-     *        The Convertible Reserved Instance offering ID. If this isn't included in the request, the response lists
-     *        your current Convertible Reserved Instance/s and their value/s.
+     *        The Convertible Reserved Instance offering ID.
      */
 
     public void setOfferingId(String offeringId) {
@@ -53,12 +50,10 @@ public class TargetConfigurationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Convertible Reserved Instance offering ID. If this isn't included in the request, the response lists your
-     * current Convertible Reserved Instance/s and their value/s.
+     * The Convertible Reserved Instance offering ID.
      * </p>
      * 
-     * @return The Convertible Reserved Instance offering ID. If this isn't included in the request, the response lists
-     *         your current Convertible Reserved Instance/s and their value/s.
+     * @return The Convertible Reserved Instance offering ID.
      */
 
     public String getOfferingId() {
@@ -67,13 +62,11 @@ public class TargetConfigurationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Convertible Reserved Instance offering ID. If this isn't included in the request, the response lists your
-     * current Convertible Reserved Instance/s and their value/s.
+     * The Convertible Reserved Instance offering ID.
      * </p>
      * 
      * @param offeringId
-     *        The Convertible Reserved Instance offering ID. If this isn't included in the request, the response lists
-     *        your current Convertible Reserved Instance/s and their value/s.
+     *        The Convertible Reserved Instance offering ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

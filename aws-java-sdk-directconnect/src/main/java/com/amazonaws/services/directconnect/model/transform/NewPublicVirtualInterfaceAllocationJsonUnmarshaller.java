@@ -71,6 +71,10 @@ public class NewPublicVirtualInterfaceAllocationJsonUnmarshaller implements Unma
                     context.nextToken();
                     newPublicVirtualInterfaceAllocation.setCustomerAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("addressFamily", targetDepth)) {
+                    context.nextToken();
+                    newPublicVirtualInterfaceAllocation.setAddressFamily(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("routeFilterPrefixes", targetDepth)) {
                     context.nextToken();
                     newPublicVirtualInterfaceAllocation.setRouteFilterPrefixes(new ListUnmarshaller<RouteFilterPrefix>(RouteFilterPrefixJsonUnmarshaller
