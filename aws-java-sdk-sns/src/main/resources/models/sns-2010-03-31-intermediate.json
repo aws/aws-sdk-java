@@ -1372,6 +1372,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "AddPermission",
         "locationName" : null,
@@ -2100,6 +2101,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -2135,6 +2137,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -2167,6 +2170,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "CheckIfPhoneNumberIsOptedOut",
         "locationName" : null,
@@ -2312,6 +2316,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "isOptedOut",
@@ -2453,6 +2458,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ConfirmSubscription",
         "locationName" : null,
@@ -2808,6 +2814,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "SubscriptionArn",
@@ -2949,6 +2956,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "CreatePlatformApplication",
         "locationName" : null,
@@ -3438,6 +3446,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "PlatformApplicationArn",
@@ -3579,6 +3588,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "CreatePlatformEndpoint",
         "locationName" : null,
@@ -4173,6 +4183,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "EndpointArn",
@@ -4314,6 +4325,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "CreateTopic",
         "locationName" : null,
@@ -4459,6 +4471,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "TopicArn",
@@ -4600,6 +4613,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "DeleteEndpoint",
         "locationName" : null,
@@ -4745,6 +4759,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -4780,6 +4795,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "DeletePlatformApplication",
         "locationName" : null,
@@ -4925,6 +4941,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -4960,6 +4977,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "DeleteTopic",
         "locationName" : null,
@@ -5105,6 +5123,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -5140,6 +5159,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "EndpointArn",
@@ -5520,6 +5540,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -5552,6 +5573,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "GetEndpointAttributes",
         "locationName" : null,
@@ -5697,6 +5719,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Attributes",
@@ -5972,6 +5995,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "GetPlatformApplicationAttributes",
         "locationName" : null,
@@ -6117,6 +6141,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Attributes",
@@ -6392,6 +6417,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "GetSMSAttributes",
         "locationName" : null,
@@ -6671,6 +6697,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "attributes",
@@ -6946,6 +6973,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "GetSubscriptionAttributes",
         "locationName" : null,
@@ -7091,6 +7119,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Attributes",
@@ -7366,6 +7395,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "GetTopicAttributes",
         "locationName" : null,
@@ -7511,6 +7541,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Attributes",
@@ -7786,6 +7817,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -7818,6 +7850,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -7850,6 +7883,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -7882,6 +7916,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListEndpointsByPlatformApplication",
         "locationName" : null,
@@ -8132,6 +8167,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Endpoints",
@@ -8512,6 +8548,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListPhoneNumbersOptedOut",
         "locationName" : null,
@@ -8657,6 +8694,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "phoneNumbers",
@@ -9037,6 +9075,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListPlatformApplications",
         "locationName" : null,
@@ -9182,6 +9221,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "PlatformApplications",
@@ -9562,6 +9602,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListSubscriptionsByTopic",
         "locationName" : null,
@@ -9812,6 +9853,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Subscriptions",
@@ -10192,6 +10234,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListSubscriptions",
         "locationName" : null,
@@ -10337,6 +10380,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Subscriptions",
@@ -10717,6 +10761,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListTopics",
         "locationName" : null,
@@ -10862,6 +10907,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Topics",
@@ -11242,6 +11288,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "DataType",
@@ -11593,6 +11640,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -11625,6 +11673,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "OptInPhoneNumber",
         "locationName" : null,
@@ -11770,6 +11819,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -11805,6 +11855,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "PlatformApplicationArn",
@@ -12185,6 +12236,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -12217,6 +12269,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "Publish",
         "locationName" : null,
@@ -13126,6 +13179,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "MessageId",
@@ -13267,6 +13321,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "RemovePermission",
         "locationName" : null,
@@ -13517,6 +13572,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -13552,6 +13608,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "SetEndpointAttributes",
         "locationName" : null,
@@ -13936,6 +13993,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -13971,6 +14029,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "SetPlatformApplicationAttributes",
         "locationName" : null,
@@ -14355,6 +14414,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -14390,6 +14450,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "SetSMSAttributes",
         "locationName" : null,
@@ -14669,6 +14730,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -14704,6 +14766,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "SetSubscriptionAttributes",
         "locationName" : null,
@@ -15059,6 +15122,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -15094,6 +15158,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "SetTopicAttributes",
         "locationName" : null,
@@ -15449,6 +15514,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -15484,6 +15550,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "Subscribe",
         "locationName" : null,
@@ -15839,6 +15906,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "SubscriptionArn",
@@ -15980,6 +16048,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "SubscriptionArn",
@@ -16541,6 +16610,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -16573,6 +16643,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -16605,6 +16676,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "TopicArn",
@@ -16746,6 +16818,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -16778,6 +16851,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "Unsubscribe",
         "locationName" : null,
@@ -16923,6 +16997,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },

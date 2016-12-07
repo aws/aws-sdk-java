@@ -2626,6 +2626,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "AcceptCertificateTransfer",
         "locationName" : null,
@@ -2876,6 +2877,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -2911,6 +2913,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "dynamoDB",
@@ -4207,6 +4210,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "AttachPrincipalPolicy",
         "locationName" : null,
@@ -4457,6 +4461,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -4492,6 +4497,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "AttachThingPrincipal",
         "locationName" : null,
@@ -4742,6 +4748,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -4777,6 +4784,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "attributes",
@@ -5163,6 +5171,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -5198,6 +5207,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificateArn",
@@ -5654,6 +5664,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificateArn",
@@ -6431,6 +6442,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -6466,6 +6478,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "CancelCertificateTransfer",
         "locationName" : null,
@@ -6611,6 +6624,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -6670,6 +6684,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -6705,6 +6720,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificateArn",
@@ -7161,6 +7177,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -7193,6 +7210,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificateArn",
@@ -8279,6 +8297,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -8329,6 +8348,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -8364,6 +8384,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -8396,6 +8417,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "roleArn",
@@ -8852,6 +8874,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "roleArn",
@@ -9518,6 +9541,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "CreateCertificateFromCsr",
         "locationName" : null,
@@ -9768,6 +9792,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificateArn",
@@ -10119,6 +10144,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "CreateKeysAndCertificate",
         "locationName" : null,
@@ -10264,6 +10290,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificateArn",
@@ -10720,6 +10747,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "CreatePolicy",
         "locationName" : null,
@@ -10970,6 +10998,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "policyName",
@@ -11426,6 +11455,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "CreatePolicyVersion",
         "locationName" : null,
@@ -11781,6 +11811,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "policyArn",
@@ -12237,6 +12268,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "CreateThing",
         "locationName" : null,
@@ -12592,6 +12624,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "thingName",
@@ -12838,6 +12871,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "CreateThingType",
         "locationName" : null,
@@ -13088,6 +13122,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "thingTypeName",
@@ -13334,6 +13369,7 @@
       "hasPayloadMember" : true,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "CreateTopicRule",
         "locationName" : null,
@@ -13584,6 +13620,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -13619,6 +13656,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DeleteCACertificate",
         "locationName" : null,
@@ -13764,6 +13802,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -13799,6 +13838,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DeleteCertificate",
         "locationName" : null,
@@ -13944,6 +13984,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -13979,6 +14020,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -14011,6 +14053,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DeletePolicy",
         "locationName" : null,
@@ -14156,6 +14199,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -14191,6 +14235,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DeletePolicyVersion",
         "locationName" : null,
@@ -14441,6 +14486,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -14476,6 +14522,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "DeleteRegistrationCode",
         "locationName" : null,
@@ -14515,6 +14562,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -14550,6 +14598,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DeleteThing",
         "locationName" : null,
@@ -14800,6 +14849,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -14835,6 +14885,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DeleteThingType",
         "locationName" : null,
@@ -14980,6 +15031,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -15015,6 +15067,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DeleteTopicRule",
         "locationName" : null,
@@ -15160,6 +15213,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -15195,6 +15249,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DeprecateThingType",
         "locationName" : null,
@@ -15445,6 +15500,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -15480,6 +15536,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DescribeCACertificate",
         "locationName" : null,
@@ -15625,6 +15682,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificateDescription",
@@ -15766,6 +15824,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DescribeCertificate",
         "locationName" : null,
@@ -15911,6 +15970,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificateDescription",
@@ -16052,6 +16112,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "DescribeEndpoint",
         "locationName" : null,
@@ -16091,6 +16152,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "endpointAddress",
@@ -16232,6 +16294,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DescribeThing",
         "locationName" : null,
@@ -16377,6 +16440,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "defaultClientId",
@@ -17072,6 +17136,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DescribeThingType",
         "locationName" : null,
@@ -17217,6 +17282,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "thingTypeName",
@@ -17568,6 +17634,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DetachPrincipalPolicy",
         "locationName" : null,
@@ -17818,6 +17885,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -17853,6 +17921,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DetachThingPrincipal",
         "locationName" : null,
@@ -18103,6 +18172,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -18138,6 +18208,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DisableTopicRule",
         "locationName" : null,
@@ -18283,6 +18354,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -18318,6 +18390,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "tableName",
@@ -19404,6 +19477,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "roleArn",
@@ -19656,6 +19730,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -19691,6 +19766,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "roleArn",
@@ -20252,6 +20328,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "EnableTopicRule",
         "locationName" : null,
@@ -20397,6 +20474,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -20432,6 +20510,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "roleArn",
@@ -20783,6 +20862,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "GetLoggingOptions",
         "locationName" : null,
@@ -20822,6 +20902,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "roleArn",
@@ -21068,6 +21149,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "GetPolicy",
         "locationName" : null,
@@ -21213,6 +21295,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "policyName",
@@ -21669,6 +21752,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "GetPolicyVersion",
         "locationName" : null,
@@ -21919,6 +22003,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "policyArn",
@@ -22480,6 +22565,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "GetRegistrationCode",
         "locationName" : null,
@@ -22519,6 +22605,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "registrationCode",
@@ -22660,6 +22747,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "GetTopicRule",
         "locationName" : null,
@@ -22805,6 +22893,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "ruleArn",
@@ -23051,6 +23140,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -23083,6 +23173,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -23115,6 +23206,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -23147,6 +23239,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "PublicKey",
@@ -23393,6 +23486,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "roleArn",
@@ -23744,6 +23838,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "functionArn",
@@ -23885,6 +23980,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -23917,6 +24013,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListCACertificates",
         "locationName" : null,
@@ -24272,6 +24369,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificates",
@@ -24652,6 +24750,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "ListCertificatesByCA",
         "locationName" : null,
@@ -25112,6 +25211,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificates",
@@ -25492,6 +25592,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListCertificates",
         "locationName" : null,
@@ -25847,6 +25948,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificates",
@@ -26227,6 +26329,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListOutgoingCertificates",
         "locationName" : null,
@@ -26582,6 +26685,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "outgoingCertificates",
@@ -26962,6 +27066,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListPolicies",
         "locationName" : null,
@@ -27317,6 +27422,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "policies",
@@ -27697,6 +27803,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListPolicyPrincipals",
         "locationName" : null,
@@ -28157,6 +28264,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "principals",
@@ -28537,6 +28645,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "ListPolicyVersions",
         "locationName" : null,
@@ -28682,6 +28791,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "policyVersions",
@@ -28957,6 +29067,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListPrincipalPolicies",
         "locationName" : null,
@@ -29417,6 +29528,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "policies",
@@ -29797,6 +29909,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListPrincipalThings",
         "locationName" : null,
@@ -30152,6 +30265,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "things",
@@ -30532,6 +30646,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "ListThingPrincipals",
         "locationName" : null,
@@ -30677,6 +30792,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "principals",
@@ -30952,6 +31068,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListThingTypes",
         "locationName" : null,
@@ -31307,6 +31424,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "thingTypes",
@@ -31687,6 +31805,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListThings",
         "locationName" : null,
@@ -32252,6 +32371,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "things",
@@ -32632,6 +32752,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListTopicRules",
         "locationName" : null,
@@ -33092,6 +33213,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "rules",
@@ -33487,6 +33609,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -33522,6 +33645,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "roleArn",
@@ -33768,6 +33892,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -33806,6 +33931,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -33841,6 +33967,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificateArn",
@@ -34507,6 +34634,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "policyName",
@@ -34753,6 +34881,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "versionId",
@@ -35104,6 +35233,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "tableName",
@@ -35245,6 +35375,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "RegisterCACertificate",
         "locationName" : null,
@@ -35705,6 +35836,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificateArn",
@@ -35951,6 +36083,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "RegisterCertificate",
         "locationName" : null,
@@ -36411,6 +36544,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "certificateArn",
@@ -36657,6 +36791,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -36689,6 +36824,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "RejectCertificateTransfer",
         "locationName" : null,
@@ -36939,6 +37075,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -36974,6 +37111,7 @@
       "hasPayloadMember" : true,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "ReplaceTopicRule",
         "locationName" : null,
@@ -37224,6 +37362,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -37259,6 +37398,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "roleArn",
@@ -37505,6 +37645,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "resourceId",
@@ -37748,6 +37889,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -37780,6 +37922,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "roleArn",
@@ -38236,6 +38379,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -38268,6 +38412,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "SetDefaultPolicyVersion",
         "locationName" : null,
@@ -38518,6 +38663,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -38553,6 +38699,7 @@
       "hasPayloadMember" : true,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "SetLoggingOptions",
         "locationName" : null,
@@ -38698,6 +38845,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -38733,6 +38881,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "targetArn",
@@ -39084,6 +39233,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -39116,6 +39266,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "roleArn",
@@ -39467,6 +39618,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "thingName",
@@ -40057,6 +40209,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "thingTypeName",
@@ -40408,6 +40561,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "deprecated",
@@ -40759,6 +40913,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "thingTypeDescription",
@@ -41139,6 +41294,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -41171,6 +41327,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "ruleName",
@@ -42076,6 +42233,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "ruleArn",
@@ -42637,6 +42795,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "sql",
@@ -43332,6 +43491,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -43364,6 +43524,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "TransferCertificate",
         "locationName" : null,
@@ -43719,6 +43880,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "transferredCertificateArn",
@@ -43860,6 +44022,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -43892,6 +44055,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "transferMessage",
@@ -44453,6 +44617,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -44485,6 +44650,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "UpdateCACertificate",
         "locationName" : null,
@@ -44840,6 +45006,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -44875,6 +45042,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "UpdateCertificate",
         "locationName" : null,
@@ -45125,6 +45293,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -45160,6 +45329,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "UpdateThing",
         "locationName" : null,
@@ -45725,6 +45895,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -45760,6 +45931,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -45792,6 +45964,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },

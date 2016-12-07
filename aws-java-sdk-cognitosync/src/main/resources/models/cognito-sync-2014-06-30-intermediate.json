@@ -820,6 +820,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -852,6 +853,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "BulkPublish",
         "locationName" : null,
@@ -997,6 +999,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "IdentityPoolId",
@@ -1150,6 +1153,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -1185,6 +1189,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "StreamName",
@@ -1536,6 +1541,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -1568,6 +1574,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "IdentityId",
@@ -2339,6 +2346,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DeleteDataset",
         "locationName" : null,
@@ -2694,6 +2702,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Dataset",
@@ -2835,6 +2844,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DescribeDataset",
         "locationName" : null,
@@ -3190,6 +3200,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Dataset",
@@ -3331,6 +3342,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DescribeIdentityPoolUsage",
         "locationName" : null,
@@ -3476,6 +3488,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "IdentityPoolUsage",
@@ -3617,6 +3630,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "DescribeIdentityUsage",
         "locationName" : null,
@@ -3867,6 +3881,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "IdentityUsage",
@@ -4008,6 +4023,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -4040,6 +4056,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "GetBulkPublishDetails",
         "locationName" : null,
@@ -4185,6 +4202,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "IdentityPoolId",
@@ -4746,6 +4764,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "GetCognitoEvents",
         "locationName" : null,
@@ -4891,6 +4910,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Events",
@@ -5166,6 +5186,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "GetIdentityPoolConfiguration",
         "locationName" : null,
@@ -5311,6 +5332,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "IdentityPoolId",
@@ -5662,6 +5684,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "IdentityPoolId",
@@ -6118,6 +6141,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "IdentityId",
@@ -6679,6 +6703,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -6711,6 +6736,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -6743,6 +6769,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -6775,6 +6802,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -6807,6 +6835,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -6839,6 +6868,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -6871,6 +6901,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "ListDatasets",
         "locationName" : null,
@@ -7331,6 +7362,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Datasets",
@@ -7816,6 +7848,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ListIdentityPoolUsage",
         "locationName" : null,
@@ -8066,6 +8099,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "IdentityPoolUsages",
@@ -8656,6 +8690,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "ListRecords",
         "locationName" : null,
@@ -9431,6 +9466,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Records",
@@ -10680,6 +10716,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -10718,6 +10755,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -10765,6 +10803,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -10800,6 +10839,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "ApplicationArns",
@@ -11180,6 +11220,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Key",
@@ -11846,6 +11887,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Op",
@@ -12407,6 +12449,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "RegisterDevice",
         "locationName" : null,
@@ -12867,6 +12910,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "DeviceId",
@@ -13008,6 +13052,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -13040,6 +13085,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -13072,6 +13118,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "SetCognitoEvents",
         "locationName" : null,
@@ -13456,6 +13503,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -13491,6 +13539,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "SetIdentityPoolConfiguration",
         "locationName" : null,
@@ -13846,6 +13895,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "IdentityPoolId",
@@ -14203,6 +14253,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -14238,6 +14289,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "SubscribeToDataset",
         "locationName" : null,
@@ -14698,6 +14750,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -14733,6 +14786,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -14765,6 +14819,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "UnsubscribeFromDataset",
         "locationName" : null,
@@ -15225,6 +15280,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
@@ -15260,6 +15316,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : true,
       "marshaller" : {
         "action" : "UpdateRecords",
         "locationName" : null,
@@ -16169,6 +16226,7 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Records",

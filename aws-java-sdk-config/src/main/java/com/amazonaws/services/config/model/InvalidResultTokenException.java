@@ -14,7 +14,7 @@ package com.amazonaws.services.config.model;
 
 /**
  * <p>
- * The result token is invalid.
+ * The speNexcified token is invalid.
  * </p>
  */
 public class InvalidResultTokenException extends com.amazonaws.services.config.model.AmazonConfigException {

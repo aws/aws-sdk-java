@@ -442,7 +442,7 @@ public interface AWSSecurityTokenService {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using Web Identity
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html">Using Web Identity
      * Federation APIs for Mobile Apps</a> and <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity"
      * >Federation Through a Web-based Identity Provider</a>.
@@ -633,7 +633,7 @@ public interface AWSSecurityTokenService {
      * </li>
      * <li>
      * <p>
-     * You cannot call any STS APIs.
+     * You cannot call any STS APIs except <code>GetCallerIdentity</code>.
      * </p>
      * </li>
      * </ul>
@@ -738,7 +738,7 @@ public interface AWSSecurityTokenService {
      * </li>
      * <li>
      * <p>
-     * You cannot call any STS API <i>except</i> <code>AssumeRole</code>.
+     * You cannot call any STS API <i>except</i> <code>AssumeRole</code> or <code>GetCallerIdentity</code>.
      * </p>
      * </li>
      * </ul>

@@ -274,6 +274,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public AbortEnvironmentUpdateResult abortEnvironmentUpdate(AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(abortEnvironmentUpdateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -325,6 +326,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(applyEnvironmentManagedActionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -365,6 +367,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public CheckDNSAvailabilityResult checkDNSAvailability(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(checkDNSAvailabilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -414,6 +417,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public ComposeEnvironmentsResult composeEnvironments(ComposeEnvironmentsRequest composeEnvironmentsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(composeEnvironmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -457,6 +461,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -513,6 +518,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public CreateApplicationVersionResult createApplicationVersion(CreateApplicationVersionRequest createApplicationVersionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createApplicationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -580,6 +586,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public CreateConfigurationTemplateResult createConfigurationTemplate(CreateConfigurationTemplateRequest createConfigurationTemplateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createConfigurationTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -623,6 +630,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public CreateEnvironmentResult createEnvironment(CreateEnvironmentRequest createEnvironmentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -671,6 +679,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public CreateStorageLocationResult createStorageLocation(CreateStorageLocationRequest createStorageLocationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createStorageLocationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -725,6 +734,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -780,6 +790,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DeleteApplicationVersionResult deleteApplicationVersion(DeleteApplicationVersionRequest deleteApplicationVersionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteApplicationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -829,6 +840,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DeleteConfigurationTemplateResult deleteConfigurationTemplate(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteConfigurationTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -875,6 +887,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DeleteEnvironmentConfigurationResult deleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteEnvironmentConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -915,6 +928,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeApplicationVersionsResult describeApplicationVersions(DescribeApplicationVersionsRequest describeApplicationVersionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeApplicationVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -960,6 +974,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeApplicationsResult describeApplications(DescribeApplicationsRequest describeApplicationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1009,6 +1024,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeConfigurationOptionsResult describeConfigurationOptions(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeConfigurationOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1068,6 +1084,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeConfigurationSettingsResult describeConfigurationSettings(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeConfigurationSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1114,6 +1131,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeEnvironmentHealthResult describeEnvironmentHealth(DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentHealthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1157,6 +1175,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     @Override
     public DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(
             DescribeEnvironmentManagedActionHistoryRequest describeEnvironmentManagedActionHistoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentManagedActionHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1201,6 +1220,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     @Override
     public DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(
             DescribeEnvironmentManagedActionsRequest describeEnvironmentManagedActionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentManagedActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1243,6 +1263,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeEnvironmentResourcesResult describeEnvironmentResources(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1283,6 +1304,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeEnvironmentsResult describeEnvironments(DescribeEnvironmentsRequest describeEnvironmentsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1333,6 +1355,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1385,6 +1408,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeInstancesHealthResult describeInstancesHealth(DescribeInstancesHealthRequest describeInstancesHealthRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeInstancesHealthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1424,6 +1448,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public ListAvailableSolutionStacksResult listAvailableSolutionStacks(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAvailableSolutionStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1471,6 +1496,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public RebuildEnvironmentResult rebuildEnvironment(RebuildEnvironmentRequest rebuildEnvironmentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(rebuildEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1532,6 +1558,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public RequestEnvironmentInfoResult requestEnvironmentInfo(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest) {
+
         ExecutionContext executionContext = createExecutionContext(requestEnvironmentInfoRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1571,6 +1598,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public RestartAppServerResult restartAppServer(RestartAppServerRequest restartAppServerRequest) {
+
         ExecutionContext executionContext = createExecutionContext(restartAppServerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1621,6 +1649,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public RetrieveEnvironmentInfoResult retrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest) {
+
         ExecutionContext executionContext = createExecutionContext(retrieveEnvironmentInfoRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1661,6 +1690,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(swapEnvironmentCNAMEsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1708,6 +1738,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public TerminateEnvironmentResult terminateEnvironment(TerminateEnvironmentRequest terminateEnvironmentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(terminateEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1754,6 +1785,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1799,6 +1831,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public UpdateApplicationVersionResult updateApplicationVersion(UpdateApplicationVersionRequest updateApplicationVersionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateApplicationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1859,6 +1892,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public UpdateConfigurationTemplateResult updateConfigurationTemplate(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateConfigurationTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1913,6 +1947,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public UpdateEnvironmentResult updateEnvironment(UpdateEnvironmentRequest updateEnvironmentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1962,6 +1997,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     @Override
     public ValidateConfigurationSettingsResult validateConfigurationSettings(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(validateConfigurationSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

@@ -388,7 +388,8 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         this.models = StandardModelFactories.of(this.s3Links);
     }
 
-    private <T extends Object> DynamoDBMapperTableModel<T> getTableModel(Class<T> clazz, DynamoDBMapperConfig config) {
+    @Override
+    public <T extends Object> DynamoDBMapperTableModel<T> getTableModel(Class<T> clazz, DynamoDBMapperConfig config) {
         return this.models.getTableFactory(config).getTable(clazz);
     }
 

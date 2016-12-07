@@ -286,6 +286,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      */
     @Override
     public CreateProtectionResult createProtection(CreateProtectionRequest createProtectionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createProtectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -330,6 +331,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      */
     @Override
     public CreateSubscriptionResult createSubscription(CreateSubscriptionRequest createSubscriptionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -377,6 +379,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      */
     @Override
     public DeleteProtectionResult deleteProtection(DeleteProtectionRequest deleteProtectionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteProtectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -424,6 +427,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      */
     @Override
     public DeleteSubscriptionResult deleteSubscription(DeleteSubscriptionRequest deleteSubscriptionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -468,6 +472,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      */
     @Override
     public DescribeAttackResult describeAttack(DescribeAttackRequest describeAttackRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAttackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -512,6 +517,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      */
     @Override
     public DescribeProtectionResult describeProtection(DescribeProtectionRequest describeProtectionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeProtectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -556,6 +562,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      */
     @Override
     public DescribeSubscriptionResult describeSubscription(DescribeSubscriptionRequest describeSubscriptionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -602,6 +609,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      */
     @Override
     public ListAttacksResult listAttacks(ListAttacksRequest listAttacksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAttacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -646,6 +654,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      */
     @Override
     public ListProtectionsResult listProtections(ListProtectionsRequest listProtectionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listProtectionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

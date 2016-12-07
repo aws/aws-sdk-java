@@ -424,6 +424,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public BatchGetRepositoriesResult batchGetRepositories(BatchGetRepositoriesRequest batchGetRepositoriesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchGetRepositoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -503,6 +504,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public CreateBranchResult createBranch(CreateBranchRequest createBranchRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createBranchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -567,6 +569,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public CreateRepositoryResult createRepository(CreateRepositoryRequest createRepositoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createRepositoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -627,6 +630,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public DeleteRepositoryResult deleteRepository(DeleteRepositoryRequest deleteRepositoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteRepositoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -693,6 +697,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public GetBranchResult getBranch(GetBranchRequest getBranchRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getBranchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -759,6 +764,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public GetCommitResult getCommit(GetCommitRequest getCommitRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getCommitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -827,6 +833,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public GetRepositoryResult getRepository(GetRepositoryRequest getRepositoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getRepositoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -887,6 +894,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public GetRepositoryTriggersResult getRepositoryTriggers(GetRepositoryTriggersRequest getRepositoryTriggersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getRepositoryTriggersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -950,6 +958,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public ListBranchesResult listBranches(ListBranchesRequest listBranchesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listBranchesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -996,6 +1005,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public ListRepositoriesResult listRepositories(ListRepositoriesRequest listRepositoriesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listRepositoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1085,6 +1095,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public PutRepositoryTriggersResult putRepositoryTriggers(PutRepositoryTriggersRequest putRepositoryTriggersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putRepositoryTriggersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1177,6 +1188,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public TestRepositoryTriggersResult testRepositoryTriggers(TestRepositoryTriggersRequest testRepositoryTriggersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(testRepositoryTriggersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1250,6 +1262,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public UpdateDefaultBranchResult updateDefaultBranch(UpdateDefaultBranchRequest updateDefaultBranchRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateDefaultBranchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1320,6 +1333,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public UpdateRepositoryDescriptionResult updateRepositoryDescription(UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateRepositoryDescriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1378,6 +1392,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      */
     @Override
     public UpdateRepositoryNameResult updateRepositoryName(UpdateRepositoryNameRequest updateRepositoryNameRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateRepositoryNameRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

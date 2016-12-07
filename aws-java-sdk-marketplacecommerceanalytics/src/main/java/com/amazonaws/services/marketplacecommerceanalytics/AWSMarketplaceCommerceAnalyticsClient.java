@@ -248,6 +248,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      */
     @Override
     public GenerateDataSetResult generateDataSet(GenerateDataSetRequest generateDataSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(generateDataSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -295,6 +296,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      */
     @Override
     public StartSupportDataExportResult startSupportDataExport(StartSupportDataExportRequest startSupportDataExportRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startSupportDataExportRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

@@ -27,6 +27,27 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> configRuleNames;
+    /**
+     * <p>
+     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * The number of rule evaluation results that you want returned.
+     * </p>
+     * <p>
+     * This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     * </p>
+     * <p>
+     * For more information about requesting a rule limit increase, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a>
+     * in the <i>AWS General Reference Guide</i>.
+     * </p>
+     */
+    private Integer limit;
 
     /**
      * <p>
@@ -110,6 +131,137 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
+     * @param nextToken
+     *        The <code>NextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
+     * @return The <code>NextToken</code> string returned on a previous page that you use to get the next page of
+     *         results in a paginated response.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
+     * @param nextToken
+     *        The <code>NextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigRuleEvaluationStatusRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of rule evaluation results that you want returned.
+     * </p>
+     * <p>
+     * This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     * </p>
+     * <p>
+     * For more information about requesting a rule limit increase, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a>
+     * in the <i>AWS General Reference Guide</i>.
+     * </p>
+     * 
+     * @param limit
+     *        The number of rule evaluation results that you want returned.</p>
+     *        <p>
+     *        This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     *        </p>
+     *        <p>
+     *        For more information about requesting a rule limit increase, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config
+     *        Limits</a> in the <i>AWS General Reference Guide</i>.
+     */
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    /**
+     * <p>
+     * The number of rule evaluation results that you want returned.
+     * </p>
+     * <p>
+     * This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     * </p>
+     * <p>
+     * For more information about requesting a rule limit increase, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a>
+     * in the <i>AWS General Reference Guide</i>.
+     * </p>
+     * 
+     * @return The number of rule evaluation results that you want returned.</p>
+     *         <p>
+     *         This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     *         </p>
+     *         <p>
+     *         For more information about requesting a rule limit increase, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config
+     *         Limits</a> in the <i>AWS General Reference Guide</i>.
+     */
+
+    public Integer getLimit() {
+        return this.limit;
+    }
+
+    /**
+     * <p>
+     * The number of rule evaluation results that you want returned.
+     * </p>
+     * <p>
+     * This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     * </p>
+     * <p>
+     * For more information about requesting a rule limit increase, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a>
+     * in the <i>AWS General Reference Guide</i>.
+     * </p>
+     * 
+     * @param limit
+     *        The number of rule evaluation results that you want returned.</p>
+     *        <p>
+     *        This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     *        </p>
+     *        <p>
+     *        For more information about requesting a rule limit increase, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config
+     *        Limits</a> in the <i>AWS General Reference Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigRuleEvaluationStatusRequest withLimit(Integer limit) {
+        setLimit(limit);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -121,7 +273,11 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRuleNames() != null)
-            sb.append("ConfigRuleNames: " + getConfigRuleNames());
+            sb.append("ConfigRuleNames: " + getConfigRuleNames() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken() + ",");
+        if (getLimit() != null)
+            sb.append("Limit: " + getLimit());
         sb.append("}");
         return sb.toString();
     }
@@ -140,6 +296,14 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
             return false;
         if (other.getConfigRuleNames() != null && other.getConfigRuleNames().equals(this.getConfigRuleNames()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getLimit() == null ^ this.getLimit() == null)
+            return false;
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
+            return false;
         return true;
     }
 
@@ -149,6 +313,8 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConfigRuleNames() == null) ? 0 : getConfigRuleNames().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         return hashCode;
     }
 

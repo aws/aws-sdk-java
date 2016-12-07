@@ -102,7 +102,8 @@ public class DefaultErrorResponseHandlerIntegrationTest extends WireMockTestBase
 
     private List<LoggingEvent> infoEvents() {
         List<LoggingEvent> info = new ArrayList<LoggingEvent>();
-        for (LoggingEvent le : logCaptor.loggedEvents()) {
+        List<LoggingEvent> loggingEvents = logCaptor.loggedEvents();
+        for (LoggingEvent le : loggingEvents) {
             if (le.getLevel().equals(Level.INFO)) {
                 info.add(le);
             }

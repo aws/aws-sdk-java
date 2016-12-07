@@ -255,6 +255,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public AddInstanceGroupsResult addInstanceGroups(AddInstanceGroupsRequest addInstanceGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addInstanceGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -319,6 +320,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public AddJobFlowStepsResult addJobFlowSteps(AddJobFlowStepsRequest addJobFlowStepsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addJobFlowStepsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -366,6 +368,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -413,6 +416,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public CancelStepsResult cancelSteps(CancelStepsRequest cancelStepsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(cancelStepsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -456,6 +460,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public CreateSecurityConfigurationResult createSecurityConfiguration(CreateSecurityConfigurationRequest createSecurityConfigurationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createSecurityConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -501,6 +506,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public DeleteSecurityConfigurationResult deleteSecurityConfiguration(DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteSecurityConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -548,6 +554,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public DescribeClusterResult describeCluster(DescribeClusterRequest describeClusterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -618,6 +625,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     @Override
     @Deprecated
     public DescribeJobFlowsResult describeJobFlows(DescribeJobFlowsRequest describeJobFlowsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeJobFlowsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -667,6 +675,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public DescribeSecurityConfigurationResult describeSecurityConfiguration(DescribeSecurityConfigurationRequest describeSecurityConfigurationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeSecurityConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -713,6 +722,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public DescribeStepResult describeStep(DescribeStepRequest describeStepRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeStepRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -757,6 +767,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public ListBootstrapActionsResult listBootstrapActions(ListBootstrapActionsRequest listBootstrapActionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listBootstrapActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -804,6 +815,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public ListClustersResult listClusters(ListClustersRequest listClustersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -853,6 +865,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public ListInstanceGroupsResult listInstanceGroups(ListInstanceGroupsRequest listInstanceGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listInstanceGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -899,6 +912,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public ListInstancesResult listInstances(ListInstancesRequest listInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -944,6 +958,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public ListSecurityConfigurationsResult listSecurityConfigurations(ListSecurityConfigurationsRequest listSecurityConfigurationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listSecurityConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -989,6 +1004,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public ListStepsResult listSteps(ListStepsRequest listStepsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listStepsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1033,6 +1049,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public ModifyInstanceGroupsResult modifyInstanceGroups(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(modifyInstanceGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1079,6 +1096,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public PutAutoScalingPolicyResult putAutoScalingPolicy(PutAutoScalingPolicyRequest putAutoScalingPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putAutoScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1118,6 +1136,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public RemoveAutoScalingPolicyResult removeAutoScalingPolicy(RemoveAutoScalingPolicyRequest removeAutoScalingPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeAutoScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1169,6 +1188,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1234,6 +1254,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public RunJobFlowResult runJobFlow(RunJobFlowRequest runJobFlowRequest) {
+
         ExecutionContext executionContext = createExecutionContext(runJobFlowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1293,6 +1314,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public SetTerminationProtectionResult setTerminationProtection(SetTerminationProtectionRequest setTerminationProtectionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setTerminationProtectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1339,6 +1361,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public SetVisibleToAllUsersResult setVisibleToAllUsers(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setVisibleToAllUsersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1388,6 +1411,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     public TerminateJobFlowsResult terminateJobFlows(TerminateJobFlowsRequest terminateJobFlowsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(terminateJobFlowsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

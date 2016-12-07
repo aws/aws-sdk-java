@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The number of AWS Config rules or AWS resources that are compliant and noncompliant, up to a maximum.
+ * The number of AWS Config rules or AWS resources that are compliant and noncompliant.
  * </p>
  */
 public class ComplianceSummary implements Serializable, Cloneable {

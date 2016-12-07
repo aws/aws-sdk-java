@@ -275,6 +275,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      */
     @Override
     public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -352,6 +353,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      */
     @Override
     public CreateJobResult createJob(CreateJobRequest createJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -404,6 +406,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      */
     @Override
     public GetShippingLabelResult getShippingLabel(GetShippingLabelRequest getShippingLabelRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getShippingLabelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -455,6 +458,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      */
     @Override
     public GetStatusResult getStatus(GetStatusRequest getStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -501,6 +505,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      */
     @Override
     public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -586,6 +591,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      */
     @Override
     public UpdateJobResult updateJob(UpdateJobRequest updateJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

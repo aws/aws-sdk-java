@@ -270,6 +270,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public AttachInstancesResult attachInstances(AttachInstancesRequest attachInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(attachInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -322,6 +323,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public AttachLoadBalancerTargetGroupsResult attachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest attachLoadBalancerTargetGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(attachLoadBalancerTargetGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -377,6 +379,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public AttachLoadBalancersResult attachLoadBalancers(AttachLoadBalancersRequest attachLoadBalancersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(attachLoadBalancersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -462,6 +465,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CompleteLifecycleActionResult completeLifecycleAction(CompleteLifecycleActionRequest completeLifecycleActionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(completeLifecycleActionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -519,6 +523,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreateAutoScalingGroupResult createAutoScalingGroup(CreateAutoScalingGroupRequest createAutoScalingGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createAutoScalingGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -576,6 +581,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreateLaunchConfigurationResult createLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createLaunchConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -633,6 +639,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreateOrUpdateTagsResult createOrUpdateTags(CreateOrUpdateTagsRequest createOrUpdateTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createOrUpdateTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -697,6 +704,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteAutoScalingGroupResult deleteAutoScalingGroup(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteAutoScalingGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -746,6 +754,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteLaunchConfigurationResult deleteLaunchConfiguration(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteLaunchConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -793,6 +802,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteLifecycleHookResult deleteLifecycleHook(DeleteLifecycleHookRequest deleteLifecycleHookRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteLifecycleHookRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -836,6 +846,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteNotificationConfigurationResult deleteNotificationConfiguration(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteNotificationConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -883,6 +894,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deletePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -925,6 +937,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteScheduledActionResult deleteScheduledAction(DeleteScheduledActionRequest deleteScheduledActionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteScheduledActionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -968,6 +981,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1014,6 +1028,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAccountLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1061,6 +1076,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeAdjustmentTypesResult describeAdjustmentTypes(DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAdjustmentTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1111,6 +1127,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeAutoScalingGroupsResult describeAutoScalingGroups(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAutoScalingGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1161,6 +1178,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeAutoScalingInstancesResult describeAutoScalingInstances(DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAutoScalingInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1209,6 +1227,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     @Override
     public DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypes(
             DescribeAutoScalingNotificationTypesRequest describeAutoScalingNotificationTypesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAutoScalingNotificationTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1260,6 +1279,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeLaunchConfigurationsResult describeLaunchConfigurations(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeLaunchConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1307,6 +1327,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeLifecycleHookTypesResult describeLifecycleHookTypes(DescribeLifecycleHookTypesRequest describeLifecycleHookTypesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeLifecycleHookTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1355,6 +1376,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeLifecycleHooksResult describeLifecycleHooks(DescribeLifecycleHooksRequest describeLifecycleHooksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeLifecycleHooksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1399,6 +1421,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     @Override
     public DescribeLoadBalancerTargetGroupsResult describeLoadBalancerTargetGroups(
             DescribeLoadBalancerTargetGroupsRequest describeLoadBalancerTargetGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeLoadBalancerTargetGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1446,6 +1469,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeLoadBalancersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1492,6 +1516,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeMetricCollectionTypesResult describeMetricCollectionTypes(DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeMetricCollectionTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1543,6 +1568,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     @Override
     public DescribeNotificationConfigurationsResult describeNotificationConfigurations(
             DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeNotificationConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1594,6 +1620,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribePoliciesResult describePolicies(DescribePoliciesRequest describePoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describePoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1644,6 +1671,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeScalingActivitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1691,6 +1719,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeScalingProcessTypesResult describeScalingProcessTypes(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeScalingProcessTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1742,6 +1771,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeScheduledActionsResult describeScheduledActions(DescribeScheduledActionsRequest describeScheduledActionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeScheduledActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1801,6 +1831,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1847,6 +1878,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeTerminationPolicyTypesResult describeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTerminationPolicyTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1912,6 +1944,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DetachInstancesResult detachInstances(DetachInstancesRequest detachInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(detachInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1954,6 +1987,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DetachLoadBalancerTargetGroupsResult detachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest detachLoadBalancerTargetGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(detachLoadBalancerTargetGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2006,6 +2040,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DetachLoadBalancersResult detachLoadBalancers(DetachLoadBalancersRequest detachLoadBalancersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(detachLoadBalancersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2054,6 +2089,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DisableMetricsCollectionResult disableMetricsCollection(DisableMetricsCollectionRequest disableMetricsCollectionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disableMetricsCollectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2099,6 +2135,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public EnableMetricsCollectionResult enableMetricsCollection(EnableMetricsCollectionRequest enableMetricsCollectionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enableMetricsCollectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2147,6 +2184,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public EnterStandbyResult enterStandby(EnterStandbyRequest enterStandbyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enterStandbyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2191,6 +2229,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ExecutePolicyResult executePolicy(ExecutePolicyRequest executePolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(executePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2238,6 +2277,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ExitStandbyResult exitStandby(ExitStandbyRequest exitStandbyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(exitStandbyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2330,6 +2370,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public PutLifecycleHookResult putLifecycleHook(PutLifecycleHookRequest putLifecycleHookRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putLifecycleHookRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2385,6 +2426,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public PutNotificationConfigurationResult putNotificationConfiguration(PutNotificationConfigurationRequest putNotificationConfigurationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putNotificationConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2439,6 +2481,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2493,6 +2536,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putScheduledUpdateGroupActionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2574,6 +2618,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public RecordLifecycleActionHeartbeatResult recordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest recordLifecycleActionHeartbeatRequest) {
+
         ExecutionContext executionContext = createExecutionContext(recordLifecycleActionHeartbeatRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2625,6 +2670,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ResumeProcessesResult resumeProcesses(ResumeProcessesRequest resumeProcessesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(resumeProcessesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2675,6 +2721,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public SetDesiredCapacityResult setDesiredCapacity(SetDesiredCapacityRequest setDesiredCapacityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setDesiredCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2723,6 +2770,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public SetInstanceHealthResult setInstanceHealth(SetInstanceHealthRequest setInstanceHealthRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setInstanceHealthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2774,6 +2822,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public SetInstanceProtectionResult setInstanceProtection(SetInstanceProtectionRequest setInstanceProtectionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setInstanceProtectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2831,6 +2880,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public SuspendProcessesResult suspendProcesses(SuspendProcessesRequest suspendProcessesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(suspendProcessesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2880,6 +2930,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     @Override
     public TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroup(
             TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(terminateInstanceInAutoScalingGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2960,6 +3011,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateAutoScalingGroupResult updateAutoScalingGroup(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateAutoScalingGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

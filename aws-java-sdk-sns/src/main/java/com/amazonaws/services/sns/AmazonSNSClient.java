@@ -269,6 +269,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public AddPermissionResult addPermission(AddPermissionRequest addPermissionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -326,6 +327,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public CheckIfPhoneNumberIsOptedOutResult checkIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest checkIfPhoneNumberIsOptedOutRequest) {
+
         ExecutionContext executionContext = createExecutionContext(checkIfPhoneNumberIsOptedOutRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -379,6 +381,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public ConfirmSubscriptionResult confirmSubscription(ConfirmSubscriptionRequest confirmSubscriptionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(confirmSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -460,6 +463,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public CreatePlatformApplicationResult createPlatformApplication(CreatePlatformApplicationRequest createPlatformApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPlatformApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -522,6 +526,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public CreatePlatformEndpointResult createPlatformEndpoint(CreatePlatformEndpointRequest createPlatformEndpointRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPlatformEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -573,6 +578,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public CreateTopicResult createTopic(CreateTopicRequest createTopicRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createTopicRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -629,6 +635,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest deleteEndpointRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -677,6 +684,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public DeletePlatformApplicationResult deletePlatformApplication(DeletePlatformApplicationRequest deletePlatformApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deletePlatformApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -726,6 +734,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public DeleteTopicResult deleteTopic(DeleteTopicRequest deleteTopicRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteTopicRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -780,6 +789,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public GetEndpointAttributesResult getEndpointAttributes(GetEndpointAttributesRequest getEndpointAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getEndpointAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -832,6 +842,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     @Override
     public GetPlatformApplicationAttributesResult getPlatformApplicationAttributes(
             GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getPlatformApplicationAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -884,6 +895,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public GetSMSAttributesResult getSMSAttributes(GetSMSAttributesRequest getSMSAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getSMSAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -932,6 +944,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public GetSubscriptionAttributesResult getSubscriptionAttributes(GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getSubscriptionAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -986,6 +999,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public GetTopicAttributesResult getTopicAttributes(GetTopicAttributesRequest getTopicAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getTopicAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1046,6 +1060,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     @Override
     public ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplication(
             ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listEndpointsByPlatformApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1103,6 +1118,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public ListPhoneNumbersOptedOutResult listPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest listPhoneNumbersOptedOutRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPhoneNumbersOptedOutRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1155,6 +1171,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public ListPlatformApplicationsResult listPlatformApplications(ListPlatformApplicationsRequest listPlatformApplicationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPlatformApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1208,6 +1225,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public ListSubscriptionsResult listSubscriptions(ListSubscriptionsRequest listSubscriptionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listSubscriptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1268,6 +1286,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public ListSubscriptionsByTopicResult listSubscriptionsByTopic(ListSubscriptionsByTopicRequest listSubscriptionsByTopicRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listSubscriptionsByTopicRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1325,6 +1344,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public ListTopicsResult listTopics(ListTopicsRequest listTopicsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTopicsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1387,6 +1407,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public OptInPhoneNumberResult optInPhoneNumber(OptInPhoneNumberRequest optInPhoneNumberRequest) {
+
         ExecutionContext executionContext = createExecutionContext(optInPhoneNumberRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1453,6 +1474,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public PublishResult publish(PublishRequest publishRequest) {
+
         ExecutionContext executionContext = createExecutionContext(publishRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1510,6 +1532,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public RemovePermissionResult removePermission(RemovePermissionRequest removePermissionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1565,6 +1588,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public SetEndpointAttributesResult setEndpointAttributes(SetEndpointAttributesRequest setEndpointAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setEndpointAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1618,6 +1642,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     @Override
     public SetPlatformApplicationAttributesResult setPlatformApplicationAttributes(
             SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setPlatformApplicationAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1673,6 +1698,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public SetSMSAttributesResult setSMSAttributes(SetSMSAttributesRequest setSMSAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setSMSAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1721,6 +1747,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public SetSubscriptionAttributesResult setSubscriptionAttributes(SetSubscriptionAttributesRequest setSubscriptionAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setSubscriptionAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1775,6 +1802,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public SetTopicAttributesResult setTopicAttributes(SetTopicAttributesRequest setTopicAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setTopicAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1832,6 +1860,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public SubscribeResult subscribe(SubscribeRequest subscribeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(subscribeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1888,6 +1917,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      */
     @Override
     public UnsubscribeResult unsubscribe(UnsubscribeRequest unsubscribeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(unsubscribeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

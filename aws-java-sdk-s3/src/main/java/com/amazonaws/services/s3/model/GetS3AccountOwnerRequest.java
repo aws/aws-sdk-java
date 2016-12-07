@@ -20,6 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Request object for retrieving S3 account owner.
  */
-public class GetS3AccountOwnerRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetS3AccountOwnerRequest extends AmazonWebServiceRequest
+        implements Serializable, S3AccelerateUnsupported {
 
 }

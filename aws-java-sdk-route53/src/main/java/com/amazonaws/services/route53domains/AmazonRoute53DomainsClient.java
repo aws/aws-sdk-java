@@ -263,6 +263,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public CheckDomainAvailabilityResult checkDomainAvailability(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(checkDomainAvailabilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -316,6 +317,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public DeleteTagsForDomainResult deleteTagsForDomain(DeleteTagsForDomainRequest deleteTagsForDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteTagsForDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -361,6 +363,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public DisableDomainAutoRenewResult disableDomainAutoRenew(DisableDomainAutoRenewRequest disableDomainAutoRenewRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disableDomainAutoRenewRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -418,6 +421,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public DisableDomainTransferLockResult disableDomainTransferLock(DisableDomainTransferLockRequest disableDomainTransferLockRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disableDomainTransferLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -474,6 +478,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public EnableDomainAutoRenewResult enableDomainAutoRenew(EnableDomainAutoRenewRequest enableDomainAutoRenewRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enableDomainAutoRenewRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -530,6 +535,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public EnableDomainTransferLockResult enableDomainTransferLock(EnableDomainTransferLockRequest enableDomainTransferLockRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enableDomainTransferLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -582,6 +588,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public GetContactReachabilityStatusResult getContactReachabilityStatus(GetContactReachabilityStatusRequest getContactReachabilityStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getContactReachabilityStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -631,6 +638,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public GetDomainDetailResult getDomainDetail(GetDomainDetailRequest getDomainDetailRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDomainDetailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -689,6 +697,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public GetDomainSuggestionsResult getDomainSuggestions(GetDomainSuggestionsRequest getDomainSuggestionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDomainSuggestionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -733,6 +742,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public GetOperationDetailResult getOperationDetail(GetOperationDetailRequest getOperationDetailRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getOperationDetailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -777,6 +787,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -826,6 +837,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public ListOperationsResult listOperations(ListOperationsRequest listOperationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listOperationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -883,6 +895,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public ListTagsForDomainResult listTagsForDomain(ListTagsForDomainRequest listTagsForDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTagsForDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -954,6 +967,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public RegisterDomainResult registerDomain(RegisterDomainRequest registerDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(registerDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1014,6 +1028,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public RenewDomainResult renewDomain(RenewDomainRequest renewDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(renewDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1063,6 +1078,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public ResendContactReachabilityEmailResult resendContactReachabilityEmail(ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest) {
+
         ExecutionContext executionContext = createExecutionContext(resendContactReachabilityEmailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1112,6 +1128,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public RetrieveDomainAuthCodeResult retrieveDomainAuthCode(RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(retrieveDomainAuthCodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1189,6 +1206,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public TransferDomainResult transferDomain(TransferDomainRequest transferDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(transferDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1247,6 +1265,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public UpdateDomainContactResult updateDomainContact(UpdateDomainContactRequest updateDomainContactRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateDomainContactRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1308,6 +1327,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public UpdateDomainContactPrivacyResult updateDomainContactPrivacy(UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateDomainContactPrivacyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1367,6 +1387,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public UpdateDomainNameserversResult updateDomainNameservers(UpdateDomainNameserversRequest updateDomainNameserversRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateDomainNameserversRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1420,6 +1441,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public UpdateTagsForDomainResult updateTagsForDomain(UpdateTagsForDomainRequest updateTagsForDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateTagsForDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1464,6 +1486,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      */
     @Override
     public ViewBillingResult viewBilling(ViewBillingRequest viewBillingRequest) {
+
         ExecutionContext executionContext = createExecutionContext(viewBillingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

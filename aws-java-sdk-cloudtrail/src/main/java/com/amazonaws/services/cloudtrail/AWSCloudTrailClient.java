@@ -412,6 +412,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -525,6 +526,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public CreateTrailResult createTrail(CreateTrailRequest createTrailRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createTrailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -602,6 +604,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public DeleteTrailResult deleteTrail(DeleteTrailRequest deleteTrailRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteTrailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -646,6 +649,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public DescribeTrailsResult describeTrails(DescribeTrailsRequest describeTrailsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTrailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -749,6 +753,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public GetEventSelectorsResult getEventSelectors(GetEventSelectorsRequest getEventSelectorsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getEventSelectorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -824,6 +829,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public GetTrailStatusResult getTrailStatus(GetTrailStatusRequest getTrailStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getTrailStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -881,6 +887,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public ListPublicKeysResult listPublicKeys(ListPublicKeysRequest listPublicKeysRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPublicKeysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -972,6 +979,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public ListTagsResult listTags(ListTagsRequest listTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1066,6 +1074,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public LookupEventsResult lookupEvents(LookupEventsRequest lookupEventsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(lookupEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1212,6 +1221,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public PutEventSelectorsResult putEventSelectors(PutEventSelectorsRequest putEventSelectorsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putEventSelectorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1299,6 +1309,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1376,6 +1387,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public StartLoggingResult startLogging(StartLoggingRequest startLoggingRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startLoggingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1455,6 +1467,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public StopLoggingResult stopLogging(StopLoggingRequest stopLoggingRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopLoggingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1572,6 +1585,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      */
     @Override
     public UpdateTrailResult updateTrail(UpdateTrailRequest updateTrailRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateTrailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

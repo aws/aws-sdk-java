@@ -330,6 +330,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      */
     @Override
     public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -388,6 +389,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      */
     @Override
     public DeregisterScalableTargetResult deregisterScalableTarget(DeregisterScalableTargetRequest deregisterScalableTargetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deregisterScalableTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -444,6 +446,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      */
     @Override
     public DescribeScalableTargetsResult describeScalableTargets(DescribeScalableTargetsRequest describeScalableTargetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeScalableTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -502,6 +505,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      */
     @Override
     public DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeScalingActivitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -566,6 +570,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      */
     @Override
     public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeScalingPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -637,6 +642,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      */
     @Override
     public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -695,6 +701,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      */
     @Override
     public RegisterScalableTargetResult registerScalableTarget(RegisterScalableTargetRequest registerScalableTargetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(registerScalableTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

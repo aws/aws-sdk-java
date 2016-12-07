@@ -59,7 +59,8 @@ public class Evaluation implements Serializable, Cloneable {
      * <p>
      * The time of the event in AWS Config that triggered the evaluation. For event-based evaluations, the time
      * indicates when AWS Config created the configuration item that triggered the evaluation. For periodic evaluations,
-     * the time indicates when AWS Config delivered the configuration snapshot that triggered the evaluation.
+     * the time indicates when AWS Config triggered the evaluation at the frequency that you specified (for example,
+     * every 24 hours).
      * </p>
      */
     private java.util.Date orderingTimestamp;
@@ -356,14 +357,15 @@ public class Evaluation implements Serializable, Cloneable {
      * <p>
      * The time of the event in AWS Config that triggered the evaluation. For event-based evaluations, the time
      * indicates when AWS Config created the configuration item that triggered the evaluation. For periodic evaluations,
-     * the time indicates when AWS Config delivered the configuration snapshot that triggered the evaluation.
+     * the time indicates when AWS Config triggered the evaluation at the frequency that you specified (for example,
+     * every 24 hours).
      * </p>
      * 
      * @param orderingTimestamp
      *        The time of the event in AWS Config that triggered the evaluation. For event-based evaluations, the time
      *        indicates when AWS Config created the configuration item that triggered the evaluation. For periodic
-     *        evaluations, the time indicates when AWS Config delivered the configuration snapshot that triggered the
-     *        evaluation.
+     *        evaluations, the time indicates when AWS Config triggered the evaluation at the frequency that you
+     *        specified (for example, every 24 hours).
      */
 
     public void setOrderingTimestamp(java.util.Date orderingTimestamp) {
@@ -374,13 +376,14 @@ public class Evaluation implements Serializable, Cloneable {
      * <p>
      * The time of the event in AWS Config that triggered the evaluation. For event-based evaluations, the time
      * indicates when AWS Config created the configuration item that triggered the evaluation. For periodic evaluations,
-     * the time indicates when AWS Config delivered the configuration snapshot that triggered the evaluation.
+     * the time indicates when AWS Config triggered the evaluation at the frequency that you specified (for example,
+     * every 24 hours).
      * </p>
      * 
      * @return The time of the event in AWS Config that triggered the evaluation. For event-based evaluations, the time
      *         indicates when AWS Config created the configuration item that triggered the evaluation. For periodic
-     *         evaluations, the time indicates when AWS Config delivered the configuration snapshot that triggered the
-     *         evaluation.
+     *         evaluations, the time indicates when AWS Config triggered the evaluation at the frequency that you
+     *         specified (for example, every 24 hours).
      */
 
     public java.util.Date getOrderingTimestamp() {
@@ -391,14 +394,15 @@ public class Evaluation implements Serializable, Cloneable {
      * <p>
      * The time of the event in AWS Config that triggered the evaluation. For event-based evaluations, the time
      * indicates when AWS Config created the configuration item that triggered the evaluation. For periodic evaluations,
-     * the time indicates when AWS Config delivered the configuration snapshot that triggered the evaluation.
+     * the time indicates when AWS Config triggered the evaluation at the frequency that you specified (for example,
+     * every 24 hours).
      * </p>
      * 
      * @param orderingTimestamp
      *        The time of the event in AWS Config that triggered the evaluation. For event-based evaluations, the time
      *        indicates when AWS Config created the configuration item that triggered the evaluation. For periodic
-     *        evaluations, the time indicates when AWS Config delivered the configuration snapshot that triggered the
-     *        evaluation.
+     *        evaluations, the time indicates when AWS Config triggered the evaluation at the frequency that you
+     *        specified (for example, every 24 hours).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

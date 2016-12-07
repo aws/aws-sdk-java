@@ -265,6 +265,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateCampaignResult createCampaign(CreateCampaignRequest createCampaignRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createCampaignRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(createCampaignRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -314,6 +317,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateImportJobResult createImportJob(CreateImportJobRequest createImportJobRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createImportJobRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(createImportJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -363,6 +369,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateSegmentResult createSegment(CreateSegmentRequest createSegmentRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createSegmentRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(createSegmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -412,6 +421,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteApnsChannelResult deleteApnsChannel(DeleteApnsChannelRequest deleteApnsChannelRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteApnsChannelRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(deleteApnsChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -461,6 +473,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteCampaignResult deleteCampaign(DeleteCampaignRequest deleteCampaignRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteCampaignRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteCampaignRequest.getCampaignId()), "CampaignId");
+
         ExecutionContext executionContext = createExecutionContext(deleteCampaignRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -510,6 +526,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteGcmChannelResult deleteGcmChannel(DeleteGcmChannelRequest deleteGcmChannelRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteGcmChannelRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(deleteGcmChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -559,6 +578,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteSegmentResult deleteSegment(DeleteSegmentRequest deleteSegmentRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteSegmentRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteSegmentRequest.getSegmentId()), "SegmentId");
+
         ExecutionContext executionContext = createExecutionContext(deleteSegmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -608,6 +631,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetApnsChannelResult getApnsChannel(GetApnsChannelRequest getApnsChannelRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getApnsChannelRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(getApnsChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -657,6 +683,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetApplicationSettingsResult getApplicationSettings(GetApplicationSettingsRequest getApplicationSettingsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getApplicationSettingsRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(getApplicationSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -707,6 +736,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetCampaignResult getCampaign(GetCampaignRequest getCampaignRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCampaignRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCampaignRequest.getCampaignId()), "CampaignId");
+
         ExecutionContext executionContext = createExecutionContext(getCampaignRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -756,6 +789,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetCampaignActivitiesResult getCampaignActivities(GetCampaignActivitiesRequest getCampaignActivitiesRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCampaignActivitiesRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCampaignActivitiesRequest.getCampaignId()), "CampaignId");
+
         ExecutionContext executionContext = createExecutionContext(getCampaignActivitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -806,6 +843,11 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetCampaignVersionResult getCampaignVersion(GetCampaignVersionRequest getCampaignVersionRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCampaignVersionRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCampaignVersionRequest.getCampaignId()), "CampaignId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCampaignVersionRequest.getVersion()), "Version");
+
         ExecutionContext executionContext = createExecutionContext(getCampaignVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -855,6 +897,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetCampaignVersionsResult getCampaignVersions(GetCampaignVersionsRequest getCampaignVersionsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCampaignVersionsRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCampaignVersionsRequest.getCampaignId()), "CampaignId");
+
         ExecutionContext executionContext = createExecutionContext(getCampaignVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -904,6 +950,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetCampaignsResult getCampaigns(GetCampaignsRequest getCampaignsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCampaignsRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(getCampaignsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -953,6 +1002,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetEndpointResult getEndpoint(GetEndpointRequest getEndpointRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getEndpointRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getEndpointRequest.getEndpointId()), "EndpointId");
+
         ExecutionContext executionContext = createExecutionContext(getEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1002,6 +1055,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetGcmChannelResult getGcmChannel(GetGcmChannelRequest getGcmChannelRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getGcmChannelRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(getGcmChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1051,6 +1107,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetImportJobResult getImportJob(GetImportJobRequest getImportJobRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getImportJobRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getImportJobRequest.getJobId()), "JobId");
+
         ExecutionContext executionContext = createExecutionContext(getImportJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1100,6 +1160,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetImportJobsResult getImportJobs(GetImportJobsRequest getImportJobsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getImportJobsRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(getImportJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1149,6 +1212,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetSegmentResult getSegment(GetSegmentRequest getSegmentRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSegmentRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSegmentRequest.getSegmentId()), "SegmentId");
+
         ExecutionContext executionContext = createExecutionContext(getSegmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1198,6 +1265,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetSegmentImportJobsResult getSegmentImportJobs(GetSegmentImportJobsRequest getSegmentImportJobsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSegmentImportJobsRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSegmentImportJobsRequest.getSegmentId()), "SegmentId");
+
         ExecutionContext executionContext = createExecutionContext(getSegmentImportJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1247,6 +1318,11 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetSegmentVersionResult getSegmentVersion(GetSegmentVersionRequest getSegmentVersionRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSegmentVersionRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSegmentVersionRequest.getSegmentId()), "SegmentId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSegmentVersionRequest.getVersion()), "Version");
+
         ExecutionContext executionContext = createExecutionContext(getSegmentVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1296,6 +1372,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetSegmentVersionsResult getSegmentVersions(GetSegmentVersionsRequest getSegmentVersionsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSegmentVersionsRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSegmentVersionsRequest.getSegmentId()), "SegmentId");
+
         ExecutionContext executionContext = createExecutionContext(getSegmentVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1345,6 +1425,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetSegmentsResult getSegments(GetSegmentsRequest getSegmentsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSegmentsRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(getSegmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1394,6 +1477,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateApnsChannelResult updateApnsChannel(UpdateApnsChannelRequest updateApnsChannelRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateApnsChannelRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(updateApnsChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1443,6 +1529,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateApplicationSettingsResult updateApplicationSettings(UpdateApplicationSettingsRequest updateApplicationSettingsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateApplicationSettingsRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(updateApplicationSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1493,6 +1582,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateCampaignResult updateCampaign(UpdateCampaignRequest updateCampaignRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateCampaignRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateCampaignRequest.getCampaignId()), "CampaignId");
+
         ExecutionContext executionContext = createExecutionContext(updateCampaignRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1542,6 +1635,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateEndpointResult updateEndpoint(UpdateEndpointRequest updateEndpointRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateEndpointRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateEndpointRequest.getEndpointId()), "EndpointId");
+
         ExecutionContext executionContext = createExecutionContext(updateEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1591,6 +1688,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateEndpointsBatchResult updateEndpointsBatch(UpdateEndpointsBatchRequest updateEndpointsBatchRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateEndpointsBatchRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(updateEndpointsBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1640,6 +1740,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateGcmChannelResult updateGcmChannel(UpdateGcmChannelRequest updateGcmChannelRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateGcmChannelRequest.getApplicationId()), "ApplicationId");
+
         ExecutionContext executionContext = createExecutionContext(updateGcmChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1689,6 +1792,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateSegmentResult updateSegment(UpdateSegmentRequest updateSegmentRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateSegmentRequest.getApplicationId()), "ApplicationId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateSegmentRequest.getSegmentId()), "SegmentId");
+
         ExecutionContext executionContext = createExecutionContext(updateSegmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

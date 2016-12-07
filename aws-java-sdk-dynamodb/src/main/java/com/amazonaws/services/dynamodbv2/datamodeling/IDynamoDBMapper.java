@@ -41,6 +41,17 @@ import java.util.Map;
  * @see AbstractDynamoDBMapper
  */
 public interface IDynamoDBMapper {
+    /**
+     * Get the table model for the class, using the default configuration.
+     *
+     * @see DynamoDBMapper#getTableModel(Class, DynamoDBMapperConfig)
+     */
+    <T extends Object> DynamoDBMapperTableModel<T> getTableModel(Class<T> clazz);
+
+    /**
+     * Get the table model for the class using the provided configuration override.
+     */
+    <T extends Object> DynamoDBMapperTableModel<T> getTableModel(Class<T> clazz, DynamoDBMapperConfig config);
 
     /**
      * Loads an object with the hash key given and a configuration override. This configuration

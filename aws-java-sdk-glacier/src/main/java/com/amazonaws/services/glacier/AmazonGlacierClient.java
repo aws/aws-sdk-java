@@ -341,6 +341,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public AbortMultipartUploadResult abortMultipartUpload(AbortMultipartUploadRequest abortMultipartUploadRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(abortMultipartUploadRequest.getVaultName()), "VaultName");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(abortMultipartUploadRequest.getUploadId()), "UploadId");
+
         ExecutionContext executionContext = createExecutionContext(abortMultipartUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -405,6 +409,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public AbortVaultLockResult abortVaultLock(AbortVaultLockRequest abortVaultLockRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(abortVaultLockRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(abortVaultLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -459,6 +466,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public AddTagsToVaultResult addTagsToVault(AddTagsToVaultRequest addTagsToVaultRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(addTagsToVaultRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(addTagsToVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -551,6 +561,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUploadRequest completeMultipartUploadRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(completeMultipartUploadRequest.getVaultName()), "VaultName");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(completeMultipartUploadRequest.getUploadId()), "UploadId");
+
         ExecutionContext executionContext = createExecutionContext(completeMultipartUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -615,6 +629,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public CompleteVaultLockResult completeVaultLock(CompleteVaultLockRequest completeVaultLockRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(completeVaultLockRequest.getVaultName()), "VaultName");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(completeVaultLockRequest.getLockId()), "LockId");
+
         ExecutionContext executionContext = createExecutionContext(completeVaultLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -696,6 +714,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public CreateVaultResult createVault(CreateVaultRequest createVaultRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createVaultRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(createVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -776,6 +797,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DeleteArchiveResult deleteArchive(DeleteArchiveRequest deleteArchiveRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteArchiveRequest.getVaultName()), "VaultName");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteArchiveRequest.getArchiveId()), "ArchiveId");
+
         ExecutionContext executionContext = createExecutionContext(deleteArchiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -848,6 +873,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DeleteVaultResult deleteVault(DeleteVaultRequest deleteVaultRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteVaultRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(deleteVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -904,6 +932,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DeleteVaultAccessPolicyResult deleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest deleteVaultAccessPolicyRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteVaultAccessPolicyRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(deleteVaultAccessPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -969,6 +1000,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DeleteVaultNotificationsResult deleteVaultNotifications(DeleteVaultNotificationsRequest deleteVaultNotificationsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteVaultNotificationsRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(deleteVaultNotificationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1042,6 +1076,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DescribeJobResult describeJob(DescribeJobRequest describeJobRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeJobRequest.getVaultName()), "VaultName");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeJobRequest.getJobId()), "JobId");
+
         ExecutionContext executionContext = createExecutionContext(describeJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1111,6 +1149,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DescribeVaultResult describeVault(DescribeVaultRequest describeVaultRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeVaultRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(describeVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1160,6 +1201,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetDataRetrievalPolicyResult getDataRetrievalPolicy(GetDataRetrievalPolicyRequest getDataRetrievalPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDataRetrievalPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1253,6 +1295,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetJobOutputResult getJobOutput(GetJobOutputRequest getJobOutputRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getJobOutputRequest.getVaultName()), "VaultName");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getJobOutputRequest.getJobId()), "JobId");
+
         ExecutionContext executionContext = createExecutionContext(getJobOutputRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1316,6 +1362,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetVaultAccessPolicyResult getVaultAccessPolicy(GetVaultAccessPolicyRequest getVaultAccessPolicyRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getVaultAccessPolicyRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(getVaultAccessPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1399,6 +1448,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetVaultLockResult getVaultLock(GetVaultLockRequest getVaultLockRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getVaultLockRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(getVaultLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1468,6 +1520,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetVaultNotificationsResult getVaultNotifications(GetVaultNotificationsRequest getVaultNotificationsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getVaultNotificationsRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(getVaultNotificationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1693,6 +1748,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public InitiateJobResult initiateJob(InitiateJobRequest initiateJobRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(initiateJobRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(initiateJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1779,6 +1837,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public InitiateMultipartUploadResult initiateMultipartUpload(InitiateMultipartUploadRequest initiateMultipartUploadRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(initiateMultipartUploadRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(initiateMultipartUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1871,6 +1932,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public InitiateVaultLockResult initiateVaultLock(InitiateVaultLockRequest initiateVaultLockRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(initiateVaultLockRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(initiateVaultLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1958,6 +2022,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listJobsRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(listJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2035,6 +2102,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListMultipartUploadsResult listMultipartUploads(ListMultipartUploadsRequest listMultipartUploadsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listMultipartUploadsRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(listMultipartUploadsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2109,6 +2179,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListPartsResult listParts(ListPartsRequest listPartsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listPartsRequest.getVaultName()), "VaultName");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listPartsRequest.getUploadId()), "UploadId");
+
         ExecutionContext executionContext = createExecutionContext(listPartsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2154,6 +2228,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListProvisionedCapacityResult listProvisionedCapacity(ListProvisionedCapacityRequest listProvisionedCapacityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listProvisionedCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2205,6 +2280,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListTagsForVaultResult listTagsForVault(ListTagsForVaultRequest listTagsForVaultRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listTagsForVaultRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(listTagsForVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2276,6 +2354,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListVaultsResult listVaults(ListVaultsRequest listVaultsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listVaultsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2323,6 +2402,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public PurchaseProvisionedCapacityResult purchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest purchaseProvisionedCapacityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(purchaseProvisionedCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2376,6 +2456,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public RemoveTagsFromVaultResult removeTagsFromVault(RemoveTagsFromVaultRequest removeTagsFromVaultRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(removeTagsFromVaultRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(removeTagsFromVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2430,6 +2513,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public SetDataRetrievalPolicyResult setDataRetrievalPolicy(SetDataRetrievalPolicyRequest setDataRetrievalPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setDataRetrievalPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2484,6 +2568,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public SetVaultAccessPolicyResult setVaultAccessPolicy(SetVaultAccessPolicyRequest setVaultAccessPolicyRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(setVaultAccessPolicyRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(setVaultAccessPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2572,6 +2659,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public SetVaultNotificationsResult setVaultNotifications(SetVaultNotificationsRequest setVaultNotificationsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(setVaultNotificationsRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(setVaultNotificationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2660,6 +2750,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public UploadArchiveResult uploadArchive(UploadArchiveRequest uploadArchiveRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(uploadArchiveRequest.getVaultName()), "VaultName");
+
         ExecutionContext executionContext = createExecutionContext(uploadArchiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2764,6 +2857,10 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public UploadMultipartPartResult uploadMultipartPart(UploadMultipartPartRequest uploadMultipartPartRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(uploadMultipartPartRequest.getVaultName()), "VaultName");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(uploadMultipartPartRequest.getUploadId()), "UploadId");
+
         ExecutionContext executionContext = createExecutionContext(uploadMultipartPartRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

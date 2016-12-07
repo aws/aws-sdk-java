@@ -291,6 +291,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public CloneReceiptRuleSetResult cloneReceiptRuleSet(CloneReceiptRuleSetRequest cloneReceiptRuleSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(cloneReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -350,6 +351,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateConfigurationSetResult createConfigurationSet(CreateConfigurationSetRequest createConfigurationSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createConfigurationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -423,6 +425,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     @Override
     public CreateConfigurationSetEventDestinationResult createConfigurationSetEventDestination(
             CreateConfigurationSetEventDestinationRequest createConfigurationSetEventDestinationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createConfigurationSetEventDestinationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -481,6 +484,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateReceiptFilterResult createReceiptFilter(CreateReceiptFilterRequest createReceiptFilterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createReceiptFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -558,6 +562,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateReceiptRuleResult createReceiptRule(CreateReceiptRuleRequest createReceiptRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createReceiptRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -615,6 +620,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateReceiptRuleSetResult createReceiptRuleSet(CreateReceiptRuleSetRequest createReceiptRuleSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -668,6 +674,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteConfigurationSetResult deleteConfigurationSet(DeleteConfigurationSetRequest deleteConfigurationSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteConfigurationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -726,6 +733,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     @Override
     public DeleteConfigurationSetEventDestinationResult deleteConfigurationSetEventDestination(
             DeleteConfigurationSetEventDestinationRequest deleteConfigurationSetEventDestinationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteConfigurationSetEventDestinationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -770,6 +778,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteIdentityResult deleteIdentity(DeleteIdentityRequest deleteIdentityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -828,6 +837,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteIdentityPolicyResult deleteIdentityPolicy(DeleteIdentityPolicyRequest deleteIdentityPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteIdentityPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -879,6 +889,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteReceiptFilterResult deleteReceiptFilter(DeleteReceiptFilterRequest deleteReceiptFilterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteReceiptFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -932,6 +943,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteReceiptRuleResult deleteReceiptRule(DeleteReceiptRuleRequest deleteReceiptRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteReceiptRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -990,6 +1002,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteReceiptRuleSetResult deleteReceiptRuleSet(DeleteReceiptRuleSetRequest deleteReceiptRuleSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1040,6 +1053,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteVerifiedEmailAddressResult deleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteVerifiedEmailAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1091,6 +1105,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public DescribeActiveReceiptRuleSetResult describeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest describeActiveReceiptRuleSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeActiveReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1144,6 +1159,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public DescribeConfigurationSetResult describeConfigurationSet(DescribeConfigurationSetRequest describeConfigurationSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeConfigurationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1199,6 +1215,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public DescribeReceiptRuleResult describeReceiptRule(DescribeReceiptRuleRequest describeReceiptRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeReceiptRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1252,6 +1269,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public DescribeReceiptRuleSetResult describeReceiptRuleSet(DescribeReceiptRuleSetRequest describeReceiptRuleSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1329,6 +1347,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetIdentityDkimAttributesResult getIdentityDkimAttributes(GetIdentityDkimAttributesRequest getIdentityDkimAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getIdentityDkimAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1376,6 +1395,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     @Override
     public GetIdentityMailFromDomainAttributesResult getIdentityMailFromDomainAttributes(
             GetIdentityMailFromDomainAttributesRequest getIdentityMailFromDomainAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getIdentityMailFromDomainAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1430,6 +1450,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     @Override
     public GetIdentityNotificationAttributesResult getIdentityNotificationAttributes(
             GetIdentityNotificationAttributesRequest getIdentityNotificationAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getIdentityNotificationAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1490,6 +1511,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetIdentityPoliciesResult getIdentityPolicies(GetIdentityPoliciesRequest getIdentityPoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getIdentityPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1540,6 +1562,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     @Override
     public GetIdentityVerificationAttributesResult getIdentityVerificationAttributes(
             GetIdentityVerificationAttributesRequest getIdentityVerificationAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getIdentityVerificationAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1582,6 +1605,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetSendQuotaResult getSendQuota(GetSendQuotaRequest getSendQuotaRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getSendQuotaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1632,6 +1656,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetSendStatisticsResult getSendStatistics(GetSendStatisticsRequest getSendStatisticsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getSendStatisticsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1688,6 +1713,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest listConfigurationSetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listConfigurationSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1733,6 +1759,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListIdentitiesResult listIdentities(ListIdentitiesRequest listIdentitiesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listIdentitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1798,6 +1825,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListIdentityPoliciesResult listIdentityPolicies(ListIdentityPoliciesRequest listIdentityPoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listIdentityPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1849,6 +1877,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListReceiptFiltersResult listReceiptFilters(ListReceiptFiltersRequest listReceiptFiltersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listReceiptFiltersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1902,6 +1931,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListReceiptRuleSetsResult listReceiptRuleSets(ListReceiptRuleSetsRequest listReceiptRuleSetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listReceiptRuleSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1950,6 +1980,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListVerifiedEmailAddressesResult listVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listVerifiedEmailAddressesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2016,6 +2047,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public PutIdentityPolicyResult putIdentityPolicy(PutIdentityPolicyRequest putIdentityPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putIdentityPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2077,6 +2109,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public ReorderReceiptRuleSetResult reorderReceiptRuleSet(ReorderReceiptRuleSetRequest reorderReceiptRuleSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(reorderReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2133,6 +2166,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public SendBounceResult sendBounce(SendBounceRequest sendBounceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(sendBounceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2220,6 +2254,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public SendEmailResult sendEmail(SendEmailRequest sendEmailRequest) {
+
         ExecutionContext executionContext = createExecutionContext(sendEmailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2361,6 +2396,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public SendRawEmailResult sendRawEmail(SendRawEmailRequest sendRawEmailRequest) {
+
         ExecutionContext executionContext = createExecutionContext(sendRawEmailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2419,6 +2455,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public SetActiveReceiptRuleSetResult setActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest setActiveReceiptRuleSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setActiveReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2487,6 +2524,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public SetIdentityDkimEnabledResult setIdentityDkimEnabled(SetIdentityDkimEnabledRequest setIdentityDkimEnabledRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setIdentityDkimEnabledRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2546,6 +2584,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     @Override
     public SetIdentityFeedbackForwardingEnabledResult setIdentityFeedbackForwardingEnabled(
             SetIdentityFeedbackForwardingEnabledRequest setIdentityFeedbackForwardingEnabledRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setIdentityFeedbackForwardingEnabledRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2599,6 +2638,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     @Override
     public SetIdentityHeadersInNotificationsEnabledResult setIdentityHeadersInNotificationsEnabled(
             SetIdentityHeadersInNotificationsEnabledRequest setIdentityHeadersInNotificationsEnabledRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setIdentityHeadersInNotificationsEnabledRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2653,6 +2693,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public SetIdentityMailFromDomainResult setIdentityMailFromDomain(SetIdentityMailFromDomainRequest setIdentityMailFromDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setIdentityMailFromDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2712,6 +2753,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public SetIdentityNotificationTopicResult setIdentityNotificationTopic(SetIdentityNotificationTopicRequest setIdentityNotificationTopicRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setIdentityNotificationTopicRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2767,6 +2809,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public SetReceiptRulePositionResult setReceiptRulePosition(SetReceiptRulePositionRequest setReceiptRulePositionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setReceiptRulePositionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2834,6 +2877,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     @Override
     public UpdateConfigurationSetEventDestinationResult updateConfigurationSetEventDestination(
             UpdateConfigurationSetEventDestinationRequest updateConfigurationSetEventDestinationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateConfigurationSetEventDestinationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2910,6 +2954,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public UpdateReceiptRuleResult updateReceiptRule(UpdateReceiptRuleRequest updateReceiptRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateReceiptRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2967,6 +3012,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public VerifyDomainDkimResult verifyDomainDkim(VerifyDomainDkimRequest verifyDomainDkimRequest) {
+
         ExecutionContext executionContext = createExecutionContext(verifyDomainDkimRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3014,6 +3060,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public VerifyDomainIdentityResult verifyDomainIdentity(VerifyDomainIdentityRequest verifyDomainIdentityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(verifyDomainIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3066,6 +3113,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public VerifyEmailAddressResult verifyEmailAddress(VerifyEmailAddressRequest verifyEmailAddressRequest) {
+
         ExecutionContext executionContext = createExecutionContext(verifyEmailAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3112,6 +3160,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      */
     @Override
     public VerifyEmailIdentityResult verifyEmailIdentity(VerifyEmailIdentityRequest verifyEmailIdentityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(verifyEmailIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

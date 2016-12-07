@@ -630,6 +630,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -698,6 +699,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateBuildResult createBuild(CreateBuildRequest createBuildRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -826,6 +828,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateFleetResult createFleet(CreateFleetRequest createFleetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -910,6 +913,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateGameSessionResult createGameSession(CreateGameSessionRequest createGameSessionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createGameSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -978,6 +982,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreatePlayerSessionResult createPlayerSession(CreatePlayerSessionRequest createPlayerSessionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPlayerSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1047,6 +1052,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreatePlayerSessionsResult createPlayerSessions(CreatePlayerSessionsRequest createPlayerSessionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPlayerSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1099,6 +1105,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1154,6 +1161,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteBuildResult deleteBuild(DeleteBuildRequest deleteBuildRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1213,6 +1221,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1265,6 +1274,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1317,6 +1327,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeAliasResult describeAlias(DescribeAliasRequest describeAliasRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1369,6 +1380,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeBuildResult describeBuild(DescribeBuildRequest describeBuildRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1433,6 +1445,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeEC2InstanceLimitsResult describeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest describeEC2InstanceLimitsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEC2InstanceLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1495,6 +1508,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeFleetAttributesResult describeFleetAttributes(DescribeFleetAttributesRequest describeFleetAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeFleetAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1558,6 +1572,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeFleetCapacityResult describeFleetCapacity(DescribeFleetCapacityRequest describeFleetCapacityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeFleetCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1612,6 +1627,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeFleetEventsResult describeFleetEvents(DescribeFleetEventsRequest describeFleetEventsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeFleetEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1666,6 +1682,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeFleetPortSettingsResult describeFleetPortSettings(DescribeFleetPortSettingsRequest describeFleetPortSettingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeFleetPortSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1728,6 +1745,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeFleetUtilizationResult describeFleetUtilization(DescribeFleetUtilizationRequest describeFleetUtilizationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeFleetUtilizationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1794,6 +1812,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeGameSessionDetailsResult describeGameSessionDetails(DescribeGameSessionDetailsRequest describeGameSessionDetailsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeGameSessionDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1861,6 +1880,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeGameSessionsResult describeGameSessions(DescribeGameSessionsRequest describeGameSessionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeGameSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1918,6 +1938,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeInstancesResult describeInstances(DescribeInstancesRequest describeInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1979,6 +2000,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribePlayerSessionsResult describePlayerSessions(DescribePlayerSessionsRequest describePlayerSessionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describePlayerSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2032,6 +2054,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeRuntimeConfigurationResult describeRuntimeConfiguration(DescribeRuntimeConfigurationRequest describeRuntimeConfigurationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeRuntimeConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2090,6 +2113,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeScalingPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2149,6 +2173,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetGameSessionLogUrlResult getGameSessionLogUrl(GetGameSessionLogUrlRequest getGameSessionLogUrlRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getGameSessionLogUrlRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2215,6 +2240,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetInstanceAccessResult getInstanceAccess(GetInstanceAccessRequest getInstanceAccessRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getInstanceAccessRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2269,6 +2295,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAliasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2324,6 +2351,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ListBuildsResult listBuilds(ListBuildsRequest listBuildsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listBuildsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2381,6 +2409,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ListFleetsResult listFleets(ListFleetsRequest listFleetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listFleetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2455,6 +2484,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2519,6 +2549,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public RequestUploadCredentialsResult requestUploadCredentials(RequestUploadCredentialsRequest requestUploadCredentialsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(requestUploadCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2576,6 +2607,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ResolveAliasResult resolveAlias(ResolveAliasRequest resolveAliasRequest) {
+
         ExecutionContext executionContext = createExecutionContext(resolveAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2692,6 +2724,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public SearchGameSessionsResult searchGameSessions(SearchGameSessionsRequest searchGameSessionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(searchGameSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2745,6 +2778,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2798,6 +2832,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateBuildResult updateBuild(UpdateBuildRequest updateBuildRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2859,6 +2894,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateFleetAttributesResult updateFleetAttributes(UpdateFleetAttributesRequest updateFleetAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateFleetAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2934,6 +2970,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateFleetCapacityResult updateFleetCapacity(UpdateFleetCapacityRequest updateFleetCapacityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateFleetCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2998,6 +3035,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateFleetPortSettingsResult updateFleetPortSettings(UpdateFleetPortSettingsRequest updateFleetPortSettingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateFleetPortSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3060,6 +3098,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateGameSessionResult updateGameSession(UpdateGameSessionRequest updateGameSessionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateGameSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3127,6 +3166,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateRuntimeConfigurationResult updateRuntimeConfiguration(UpdateRuntimeConfigurationRequest updateRuntimeConfigurationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateRuntimeConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

@@ -278,6 +278,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
      */
     @Override
     public SearchResult search(SearchRequest searchRequest) {
+
         ExecutionContext executionContext = createExecutionContext(searchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -335,6 +336,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
      */
     @Override
     public SuggestResult suggest(SuggestRequest suggestRequest) {
+
         ExecutionContext executionContext = createExecutionContext(suggestRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -396,6 +398,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
      */
     @Override
     public UploadDocumentsResult uploadDocuments(UploadDocumentsRequest uploadDocumentsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(uploadDocumentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

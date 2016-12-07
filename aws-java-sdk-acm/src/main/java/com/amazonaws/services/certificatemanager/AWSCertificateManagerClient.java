@@ -295,6 +295,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      */
     @Override
     public AddTagsToCertificateResult addTagsToCertificate(AddTagsToCertificateRequest addTagsToCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addTagsToCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -351,6 +352,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      */
     @Override
     public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -398,6 +400,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      */
     @Override
     public DescribeCertificateResult describeCertificate(DescribeCertificateRequest describeCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -452,6 +455,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      */
     @Override
     public GetCertificateResult getCertificate(GetCertificateRequest getCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -532,6 +536,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      */
     @Override
     public ImportCertificateResult importCertificate(ImportCertificateRequest importCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(importCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -572,6 +577,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      */
     @Override
     public ListCertificatesResult listCertificates(ListCertificatesRequest listCertificatesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listCertificatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -618,6 +624,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      */
     @Override
     public ListTagsForCertificateResult listTagsForCertificate(ListTagsForCertificateRequest listTagsForCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTagsForCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -672,6 +679,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      */
     @Override
     public RemoveTagsFromCertificateResult removeTagsFromCertificate(RemoveTagsFromCertificateRequest removeTagsFromCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeTagsFromCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -724,6 +732,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      */
     @Override
     public RequestCertificateResult requestCertificate(RequestCertificateRequest requestCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(requestCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -780,6 +789,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      */
     @Override
     public ResendValidationEmailResult resendValidationEmail(ResendValidationEmailRequest resendValidationEmailRequest) {
+
         ExecutionContext executionContext = createExecutionContext(resendValidationEmailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

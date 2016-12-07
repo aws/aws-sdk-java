@@ -266,6 +266,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      */
     @Override
     public CreateBudgetResult createBudget(CreateBudgetRequest createBudgetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createBudgetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -317,6 +318,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      */
     @Override
     public CreateNotificationResult createNotification(CreateNotificationRequest createNotificationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createNotificationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -365,6 +367,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      */
     @Override
     public CreateSubscriberResult createSubscriber(CreateSubscriberRequest createSubscriberRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createSubscriberRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -411,6 +414,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      */
     @Override
     public DeleteBudgetResult deleteBudget(DeleteBudgetRequest deleteBudgetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteBudgetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -457,6 +461,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      */
     @Override
     public DeleteNotificationResult deleteNotification(DeleteNotificationRequest deleteNotificationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteNotificationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -503,6 +508,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      */
     @Override
     public DeleteSubscriberResult deleteSubscriber(DeleteSubscriberRequest deleteSubscriberRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteSubscriberRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -549,6 +555,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      */
     @Override
     public DescribeBudgetResult describeBudget(DescribeBudgetRequest describeBudgetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeBudgetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -600,6 +607,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      */
     @Override
     public DescribeBudgetsResult describeBudgets(DescribeBudgetsRequest describeBudgetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeBudgetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -651,6 +659,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      */
     @Override
     public DescribeNotificationsForBudgetResult describeNotificationsForBudget(DescribeNotificationsForBudgetRequest describeNotificationsForBudgetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeNotificationsForBudgetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -705,6 +714,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     @Override
     public DescribeSubscribersForNotificationResult describeSubscribersForNotification(
             DescribeSubscribersForNotificationRequest describeSubscribersForNotificationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeSubscribersForNotificationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -753,6 +763,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      */
     @Override
     public UpdateBudgetResult updateBudget(UpdateBudgetRequest updateBudgetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateBudgetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -799,6 +810,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      */
     @Override
     public UpdateNotificationResult updateNotification(UpdateNotificationRequest updateNotificationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateNotificationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -845,6 +857,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      */
     @Override
     public UpdateSubscriberResult updateSubscriber(UpdateSubscriberRequest updateSubscriberRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateSubscriberRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

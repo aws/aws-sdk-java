@@ -341,6 +341,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     @Override
     public AddClientIDToOpenIDConnectProviderResult addClientIDToOpenIDConnectProvider(
             AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addClientIDToOpenIDConnectProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -403,6 +404,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public AddRoleToInstanceProfileResult addRoleToInstanceProfile(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addRoleToInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -450,6 +452,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public AddUserToGroupResult addUserToGroup(AddUserToGroupRequest addUserToGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addUserToGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -508,6 +511,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public AttachGroupPolicyResult attachGroupPolicy(AttachGroupPolicyRequest attachGroupPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(attachGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -569,6 +573,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public AttachRolePolicyResult attachRolePolicy(AttachRolePolicyRequest attachRolePolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(attachRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -627,6 +632,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public AttachUserPolicyResult attachUserPolicy(AttachUserPolicyRequest attachUserPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(attachUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -689,6 +695,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ChangePasswordResult changePassword(ChangePasswordRequest changePasswordRequest) {
+
         ExecutionContext executionContext = createExecutionContext(changePasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -754,6 +761,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateAccessKeyResult createAccessKey(CreateAccessKeyRequest createAccessKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createAccessKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -807,6 +815,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateAccountAliasResult createAccountAlias(CreateAccountAliasRequest createAccountAliasRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createAccountAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -861,6 +870,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateGroupResult createGroup(CreateGroupRequest createGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -912,6 +922,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateInstanceProfileResult createInstanceProfile(CreateInstanceProfileRequest createInstanceProfileRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -967,6 +978,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateLoginProfileResult createLoginProfile(CreateLoginProfileRequest createLoginProfileRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createLoginProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1032,6 +1044,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateOpenIDConnectProviderResult createOpenIDConnectProvider(CreateOpenIDConnectProviderRequest createOpenIDConnectProviderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createOpenIDConnectProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1094,6 +1107,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreatePolicyResult createPolicy(CreatePolicyRequest createPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1156,6 +1170,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreatePolicyVersionResult createPolicyVersion(CreatePolicyVersionRequest createPolicyVersionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1209,6 +1224,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateRoleResult createRole(CreateRoleRequest createRoleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1281,6 +1297,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateSAMLProviderResult createSAMLProvider(CreateSAMLProviderRequest createSAMLProviderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createSAMLProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1335,6 +1352,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateUserResult createUser(CreateUserRequest createUserRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1395,6 +1413,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public CreateVirtualMFADeviceResult createVirtualMFADevice(CreateVirtualMFADeviceRequest createVirtualMFADeviceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createVirtualMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1452,6 +1471,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeactivateMFADeviceResult deactivateMFADevice(DeactivateMFADeviceRequest deactivateMFADeviceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deactivateMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1504,6 +1524,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteAccessKeyResult deleteAccessKey(DeleteAccessKeyRequest deleteAccessKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteAccessKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1553,6 +1574,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteAccountAliasResult deleteAccountAlias(DeleteAccountAliasRequest deleteAccountAliasRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteAccountAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1600,6 +1622,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteAccountPasswordPolicyResult deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteAccountPasswordPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1655,6 +1678,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1707,6 +1731,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteGroupPolicyResult deleteGroupPolicy(DeleteGroupPolicyRequest deleteGroupPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1768,6 +1793,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteInstanceProfileResult deleteInstanceProfile(DeleteInstanceProfileRequest deleteInstanceProfileRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1827,6 +1853,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteLoginProfileResult deleteLoginProfile(DeleteLoginProfileRequest deleteLoginProfileRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteLoginProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1881,6 +1908,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteOpenIDConnectProviderResult deleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest deleteOpenIDConnectProviderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteOpenIDConnectProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1964,6 +1992,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deletePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2025,6 +2054,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeletePolicyVersionResult deletePolicyVersion(DeletePolicyVersionRequest deletePolicyVersionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deletePolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2083,6 +2113,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteRoleResult deleteRole(DeleteRoleRequest deleteRoleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2135,6 +2166,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteRolePolicyResult deleteRolePolicy(DeleteRolePolicyRequest deleteRolePolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2195,6 +2227,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteSAMLProviderResult deleteSAMLProvider(DeleteSAMLProviderRequest deleteSAMLProviderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteSAMLProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2243,6 +2276,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteSSHPublicKeyResult deleteSSHPublicKey(DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteSSHPublicKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2310,6 +2344,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteServerCertificateResult deleteServerCertificate(DeleteServerCertificateRequest deleteServerCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteServerCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2362,6 +2397,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteSigningCertificateResult deleteSigningCertificate(DeleteSigningCertificateRequest deleteSigningCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteSigningCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2413,6 +2449,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2465,6 +2502,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteUserPolicyResult deleteUserPolicy(DeleteUserPolicyRequest deleteUserPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2521,6 +2559,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DeleteVirtualMFADeviceResult deleteVirtualMFADevice(DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteVirtualMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2576,6 +2615,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DetachGroupPolicyResult detachGroupPolicy(DetachGroupPolicyRequest detachGroupPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(detachGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2631,6 +2671,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DetachRolePolicyResult detachRolePolicy(DetachRolePolicyRequest detachRolePolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(detachRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2686,6 +2727,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public DetachUserPolicyResult detachUserPolicy(DetachUserPolicyRequest detachUserPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(detachUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2743,6 +2785,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public EnableMFADeviceResult enableMFADevice(EnableMFADeviceRequest enableMFADeviceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enableMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2789,6 +2832,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GenerateCredentialReportResult generateCredentialReport(GenerateCredentialReportRequest generateCredentialReportRequest) {
+
         ExecutionContext executionContext = createExecutionContext(generateCredentialReportRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2838,6 +2882,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetAccessKeyLastUsedResult getAccessKeyLastUsed(GetAccessKeyLastUsedRequest getAccessKeyLastUsedRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getAccessKeyLastUsedRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2885,6 +2930,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetAccountAuthorizationDetailsResult getAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest getAccountAuthorizationDetailsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getAccountAuthorizationDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2936,6 +2982,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetAccountPasswordPolicyResult getAccountPasswordPolicy(GetAccountPasswordPolicyRequest getAccountPasswordPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getAccountPasswordPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2987,6 +3034,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetAccountSummaryResult getAccountSummary(GetAccountSummaryRequest getAccountSummaryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getAccountSummaryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3042,6 +3090,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetContextKeysForCustomPolicyResult getContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest getContextKeysForCustomPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getContextKeysForCustomPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3104,6 +3153,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     @Override
     public GetContextKeysForPrincipalPolicyResult getContextKeysForPrincipalPolicy(
             GetContextKeysForPrincipalPolicyRequest getContextKeysForPrincipalPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getContextKeysForPrincipalPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3157,6 +3207,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetCredentialReportResult getCredentialReport(GetCredentialReportRequest getCredentialReportRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getCredentialReportRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3207,6 +3258,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetGroupResult getGroup(GetGroupRequest getGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3268,6 +3320,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetGroupPolicyResult getGroupPolicy(GetGroupPolicyRequest getGroupPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3315,6 +3368,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetInstanceProfileResult getInstanceProfile(GetInstanceProfileRequest getInstanceProfileRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3360,6 +3414,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetLoginProfileResult getLoginProfile(GetLoginProfileRequest getLoginProfileRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getLoginProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3406,6 +3461,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetOpenIDConnectProviderResult getOpenIDConnectProvider(GetOpenIDConnectProviderRequest getOpenIDConnectProviderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getOpenIDConnectProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3466,6 +3522,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3537,6 +3594,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetPolicyVersionResult getPolicyVersion(GetPolicyVersionRequest getPolicyVersionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3591,6 +3649,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetRoleResult getRole(GetRoleRequest getRoleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3657,6 +3716,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetRolePolicyResult getRolePolicy(GetRolePolicyRequest getRolePolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3709,6 +3769,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetSAMLProviderResult getSAMLProvider(GetSAMLProviderRequest getSAMLProviderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getSAMLProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3759,6 +3820,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetSSHPublicKeyResult getSSHPublicKey(GetSSHPublicKeyRequest getSSHPublicKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getSSHPublicKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3809,6 +3871,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetServerCertificateResult getServerCertificate(GetServerCertificateRequest getServerCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getServerCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3857,6 +3920,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetUserResult getUser(GetUserRequest getUserRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3923,6 +3987,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public GetUserPolicyResult getUserPolicy(GetUserPolicyRequest getUserPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3982,6 +4047,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListAccessKeysResult listAccessKeys(ListAccessKeysRequest listAccessKeysRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAccessKeysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4030,6 +4096,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListAccountAliasesResult listAccountAliases(ListAccountAliasesRequest listAccountAliasesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAccountAliasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4093,6 +4160,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListAttachedGroupPoliciesResult listAttachedGroupPolicies(ListAttachedGroupPoliciesRequest listAttachedGroupPoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAttachedGroupPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4151,6 +4219,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListAttachedRolePoliciesResult listAttachedRolePolicies(ListAttachedRolePoliciesRequest listAttachedRolePoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAttachedRolePoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4209,6 +4278,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListAttachedUserPoliciesResult listAttachedUserPolicies(ListAttachedUserPoliciesRequest listAttachedUserPoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAttachedUserPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4263,6 +4333,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListEntitiesForPolicyResult listEntitiesForPolicy(ListEntitiesForPolicyRequest listEntitiesForPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listEntitiesForPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4317,6 +4388,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListGroupPoliciesResult listGroupPolicies(ListGroupPoliciesRequest listGroupPoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listGroupPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4361,6 +4433,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListGroupsResult listGroups(ListGroupsRequest listGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4412,6 +4485,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListGroupsForUserResult listGroupsForUser(ListGroupsForUserRequest listGroupsForUserRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listGroupsForUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4458,6 +4532,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListInstanceProfilesResult listInstanceProfiles(ListInstanceProfilesRequest listInstanceProfilesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listInstanceProfilesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4512,6 +4587,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListInstanceProfilesForRoleResult listInstanceProfilesForRole(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listInstanceProfilesForRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4561,6 +4637,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListMFADevicesResult listMFADevices(ListMFADevicesRequest listMFADevicesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listMFADevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4607,6 +4684,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListOpenIDConnectProvidersResult listOpenIDConnectProviders(ListOpenIDConnectProvidersRequest listOpenIDConnectProvidersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listOpenIDConnectProvidersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4668,6 +4746,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListPoliciesResult listPolicies(ListPoliciesRequest listPoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4724,6 +4803,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListPolicyVersionsResult listPolicyVersions(ListPolicyVersionsRequest listPolicyVersionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPolicyVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4778,6 +4858,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListRolePoliciesResult listRolePolicies(ListRolePoliciesRequest listRolePoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listRolePoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4824,6 +4905,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListRolesResult listRoles(ListRolesRequest listRolesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listRolesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4875,6 +4957,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListSAMLProvidersResult listSAMLProviders(ListSAMLProvidersRequest listSAMLProvidersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listSAMLProvidersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4933,6 +5016,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListSSHPublicKeysResult listSSHPublicKeys(ListSSHPublicKeysRequest listSSHPublicKeysRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listSSHPublicKeysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4989,6 +5073,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListServerCertificatesResult listServerCertificates(ListServerCertificatesRequest listServerCertificatesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listServerCertificatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5048,6 +5133,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListSigningCertificatesResult listSigningCertificates(ListSigningCertificatesRequest listSigningCertificatesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listSigningCertificatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5107,6 +5193,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListUserPoliciesResult listUserPolicies(ListUserPoliciesRequest listUserPoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listUserPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5152,6 +5239,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListUsersResult listUsers(ListUsersRequest listUsersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listUsersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5200,6 +5288,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ListVirtualMFADevicesResult listVirtualMFADevices(ListVirtualMFADevicesRequest listVirtualMFADevicesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listVirtualMFADevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5274,6 +5363,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public PutGroupPolicyResult putGroupPolicy(PutGroupPolicyRequest putGroupPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5350,6 +5440,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public PutRolePolicyResult putRolePolicy(PutRolePolicyRequest putRolePolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5418,6 +5509,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public PutUserPolicyResult putUserPolicy(PutUserPolicyRequest putUserPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5469,6 +5561,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     @Override
     public RemoveClientIDFromOpenIDConnectProviderResult removeClientIDFromOpenIDConnectProvider(
             RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeClientIDFromOpenIDConnectProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5530,6 +5623,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public RemoveRoleFromInstanceProfileResult removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeRoleFromInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5577,6 +5671,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public RemoveUserFromGroupResult removeUserFromGroup(RemoveUserFromGroupRequest removeUserFromGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeUserFromGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5632,6 +5727,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public ResyncMFADeviceResult resyncMFADevice(ResyncMFADeviceRequest resyncMFADeviceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(resyncMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5690,6 +5786,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public SetDefaultPolicyVersionResult setDefaultPolicyVersion(SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setDefaultPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5753,6 +5850,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public SimulateCustomPolicyResult simulateCustomPolicy(SimulateCustomPolicyRequest simulateCustomPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(simulateCustomPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5829,6 +5927,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public SimulatePrincipalPolicyResult simulatePrincipalPolicy(SimulatePrincipalPolicyRequest simulatePrincipalPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(simulatePrincipalPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5887,6 +5986,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UpdateAccessKeyResult updateAccessKey(UpdateAccessKeyRequest updateAccessKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateAccessKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5949,6 +6049,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UpdateAccountPasswordPolicyResult updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateAccountPasswordPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -6002,6 +6103,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UpdateAssumeRolePolicyResult updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateAssumeRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -6065,6 +6167,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UpdateGroupResult updateGroup(UpdateGroupRequest updateGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -6123,6 +6226,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UpdateLoginProfileResult updateLoginProfile(UpdateLoginProfileRequest updateLoginProfileRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateLoginProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -6187,6 +6291,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     @Override
     public UpdateOpenIDConnectProviderThumbprintResult updateOpenIDConnectProviderThumbprint(
             UpdateOpenIDConnectProviderThumbprintRequest updateOpenIDConnectProviderThumbprintRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateOpenIDConnectProviderThumbprintRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -6243,6 +6348,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UpdateSAMLProviderResult updateSAMLProvider(UpdateSAMLProviderRequest updateSAMLProviderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateSAMLProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -6293,6 +6399,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UpdateSSHPublicKeyResult updateSSHPublicKey(UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateSSHPublicKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -6364,6 +6471,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UpdateServerCertificateResult updateServerCertificate(UpdateServerCertificateRequest updateServerCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateServerCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -6417,6 +6525,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UpdateSigningCertificateResult updateSigningCertificate(UpdateSigningCertificateRequest updateSigningCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateSigningCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -6485,6 +6594,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UpdateUserResult updateUser(UpdateUserRequest updateUserRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -6541,6 +6651,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UploadSSHPublicKeyResult uploadSSHPublicKey(UploadSSHPublicKeyRequest uploadSSHPublicKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(uploadSSHPublicKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -6615,6 +6726,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UploadServerCertificateResult uploadServerCertificate(UploadServerCertificateRequest uploadServerCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(uploadServerCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -6688,6 +6800,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     @Override
     public UploadSigningCertificateResult uploadSigningCertificate(UploadSigningCertificateRequest uploadSigningCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(uploadSigningCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

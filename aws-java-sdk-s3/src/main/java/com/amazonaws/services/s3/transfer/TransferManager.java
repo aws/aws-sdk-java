@@ -1789,7 +1789,8 @@ public class TransferManager {
 
         GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
                 copyObjectRequest.getSourceBucketName(), copyObjectRequest.getSourceKey())
-                .withSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey());
+                .withSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey())
+                .withRequesterPays(copyObjectRequest.isRequesterPays());
 
         ObjectMetadata metadata = srcS3.getObjectMetadata(getObjectMetadataRequest);
 

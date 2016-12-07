@@ -322,6 +322,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CompareFacesResult compareFaces(CompareFacesRequest compareFacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(compareFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -385,6 +386,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreateCollectionResult createCollection(CreateCollectionRequest createCollectionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createCollectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -441,6 +443,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteCollectionResult deleteCollection(DeleteCollectionRequest deleteCollectionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteCollectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -497,6 +500,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteFacesResult deleteFaces(DeleteFacesRequest deleteFacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -573,6 +577,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DetectFacesResult detectFaces(DetectFacesRequest detectFacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(detectFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -680,6 +685,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DetectLabelsResult detectLabels(DetectLabelsRequest detectLabelsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(detectLabelsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -765,6 +771,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      */
     @Override
     public IndexFacesResult indexFaces(IndexFacesRequest indexFacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(indexFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -826,6 +833,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListCollectionsResult listCollections(ListCollectionsRequest listCollectionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listCollectionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -885,6 +893,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListFacesResult listFaces(ListFacesRequest listFacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -956,6 +965,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      */
     @Override
     public SearchFacesResult searchFaces(SearchFacesRequest searchFacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(searchFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1038,6 +1048,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      */
     @Override
     public SearchFacesByImageResult searchFacesByImage(SearchFacesByImageRequest searchFacesByImageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(searchFacesByImageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

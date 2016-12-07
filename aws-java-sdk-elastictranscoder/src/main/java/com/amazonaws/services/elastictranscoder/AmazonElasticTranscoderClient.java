@@ -286,6 +286,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(cancelJobRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -345,6 +348,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public CreateJobResult createJob(CreateJobRequest createJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -398,6 +402,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -464,6 +469,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public CreatePresetResult createPreset(CreatePresetRequest createPresetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPresetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -521,6 +527,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deletePipelineRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(deletePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -576,6 +585,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public DeletePresetResult deletePreset(DeletePresetRequest deletePresetRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deletePresetRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(deletePresetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -630,6 +642,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public ListJobsByPipelineResult listJobsByPipeline(ListJobsByPipelineRequest listJobsByPipelineRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listJobsByPipelineRequest.getPipelineId()), "PipelineId");
+
         ExecutionContext executionContext = createExecutionContext(listJobsByPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -681,6 +696,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public ListJobsByStatusResult listJobsByStatus(ListJobsByStatusRequest listJobsByStatusRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listJobsByStatusRequest.getStatus()), "Status");
+
         ExecutionContext executionContext = createExecutionContext(listJobsByStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -728,6 +746,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPipelinesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -781,6 +800,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public ListPresetsResult listPresets(ListPresetsRequest listPresetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPresetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -836,6 +856,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public ReadJobResult readJob(ReadJobRequest readJobRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(readJobRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(readJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -886,6 +909,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public ReadPipelineResult readPipeline(ReadPipelineRequest readPipelineRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(readPipelineRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(readPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -936,6 +962,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public ReadPresetResult readPreset(ReadPresetRequest readPresetRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(readPresetRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(readPresetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -993,6 +1022,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
     @Override
     @Deprecated
     public TestRoleResult testRole(TestRoleRequest testRoleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(testRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1053,6 +1083,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public UpdatePipelineResult updatePipeline(UpdatePipelineRequest updatePipelineRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updatePipelineRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(updatePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1111,6 +1144,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public UpdatePipelineNotificationsResult updatePipelineNotifications(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updatePipelineNotificationsRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(updatePipelineNotificationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1172,6 +1208,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     public UpdatePipelineStatusResult updatePipelineStatus(UpdatePipelineStatusRequest updatePipelineStatusRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updatePipelineStatusRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(updatePipelineStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

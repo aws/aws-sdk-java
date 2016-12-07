@@ -470,6 +470,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -531,6 +532,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public CancelCommandResult cancelCommand(CancelCommandRequest cancelCommandRequest) {
+
         ExecutionContext executionContext = createExecutionContext(cancelCommandRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -577,6 +579,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public CreateActivationResult createActivation(CreateActivationRequest createActivationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createActivationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -663,6 +666,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public CreateAssociationResult createAssociation(CreateAssociationRequest createAssociationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -749,6 +753,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public CreateAssociationBatchResult createAssociationBatch(CreateAssociationBatchRequest createAssociationBatchRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createAssociationBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -805,6 +810,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public CreateDocumentResult createDocument(CreateDocumentRequest createDocumentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -852,6 +858,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public CreateMaintenanceWindowResult createMaintenanceWindow(CreateMaintenanceWindowRequest createMaintenanceWindowRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -902,6 +909,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DeleteActivationResult deleteActivation(DeleteActivationRequest deleteActivationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteActivationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -970,6 +978,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DeleteAssociationResult deleteAssociation(DeleteAssociationRequest deleteAssociationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1022,6 +1031,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DeleteDocumentResult deleteDocument(DeleteDocumentRequest deleteDocumentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1063,6 +1073,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DeleteMaintenanceWindowResult deleteMaintenanceWindow(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1107,6 +1118,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DeleteParameterResult deleteParameter(DeleteParameterRequest deleteParameterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteParameterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1165,6 +1177,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DeregisterManagedInstanceResult deregisterManagedInstance(DeregisterManagedInstanceRequest deregisterManagedInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deregisterManagedInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1210,6 +1223,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @Override
     public DeregisterTargetFromMaintenanceWindowResult deregisterTargetFromMaintenanceWindow(
             DeregisterTargetFromMaintenanceWindowRequest deregisterTargetFromMaintenanceWindowRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deregisterTargetFromMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1256,6 +1270,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @Override
     public DeregisterTaskFromMaintenanceWindowResult deregisterTaskFromMaintenanceWindow(
             DeregisterTaskFromMaintenanceWindowRequest deregisterTaskFromMaintenanceWindowRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deregisterTaskFromMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1304,6 +1319,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeActivationsResult describeActivations(DescribeActivationsRequest describeActivationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeActivationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1365,6 +1381,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeAssociationResult describeAssociation(DescribeAssociationRequest describeAssociationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1408,6 +1425,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeAutomationExecutionsResult describeAutomationExecutions(DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAutomationExecutionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1455,6 +1473,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeDocumentResult describeDocument(DescribeDocumentRequest describeDocumentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1501,6 +1520,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeDocumentPermissionResult describeDocumentPermission(DescribeDocumentPermissionRequest describeDocumentPermissionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeDocumentPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1562,6 +1582,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @Override
     public DescribeEffectiveInstanceAssociationsResult describeEffectiveInstanceAssociations(
             DescribeEffectiveInstanceAssociationsRequest describeEffectiveInstanceAssociationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEffectiveInstanceAssociationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1624,6 +1645,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @Override
     public DescribeInstanceAssociationsStatusResult describeInstanceAssociationsStatus(
             DescribeInstanceAssociationsStatusRequest describeInstanceAssociationsStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeInstanceAssociationsStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1693,6 +1715,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeInstanceInformationResult describeInstanceInformation(DescribeInstanceInformationRequest describeInstanceInformationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeInstanceInformationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1740,6 +1763,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @Override
     public DescribeMaintenanceWindowExecutionTaskInvocationsResult describeMaintenanceWindowExecutionTaskInvocations(
             DescribeMaintenanceWindowExecutionTaskInvocationsRequest describeMaintenanceWindowExecutionTaskInvocationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowExecutionTaskInvocationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1786,6 +1810,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @Override
     public DescribeMaintenanceWindowExecutionTasksResult describeMaintenanceWindowExecutionTasks(
             DescribeMaintenanceWindowExecutionTasksRequest describeMaintenanceWindowExecutionTasksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowExecutionTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1831,6 +1856,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @Override
     public DescribeMaintenanceWindowExecutionsResult describeMaintenanceWindowExecutions(
             DescribeMaintenanceWindowExecutionsRequest describeMaintenanceWindowExecutionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowExecutionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1877,6 +1903,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @Override
     public DescribeMaintenanceWindowTargetsResult describeMaintenanceWindowTargets(
             DescribeMaintenanceWindowTargetsRequest describeMaintenanceWindowTargetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1922,6 +1949,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeMaintenanceWindowTasksResult describeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest describeMaintenanceWindowTasksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1965,6 +1993,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeMaintenanceWindowsResult describeMaintenanceWindows(DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2011,6 +2040,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeParametersResult describeParameters(DescribeParametersRequest describeParametersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2054,6 +2084,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public GetAutomationExecutionResult getAutomationExecution(GetAutomationExecutionRequest getAutomationExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getAutomationExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2118,6 +2149,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest getCommandInvocationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getCommandInvocationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2163,6 +2195,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public GetDocumentResult getDocument(GetDocumentRequest getDocumentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2212,6 +2245,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public GetInventoryResult getInventory(GetInventoryRequest getInventoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getInventoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2258,6 +2292,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public GetInventorySchemaResult getInventorySchema(GetInventorySchemaRequest getInventorySchemaRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getInventorySchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2301,6 +2336,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public GetMaintenanceWindowResult getMaintenanceWindow(GetMaintenanceWindowRequest getMaintenanceWindowRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2344,6 +2380,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public GetMaintenanceWindowExecutionResult getMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest getMaintenanceWindowExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getMaintenanceWindowExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2390,6 +2427,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @Override
     public GetMaintenanceWindowExecutionTaskResult getMaintenanceWindowExecutionTask(
             GetMaintenanceWindowExecutionTaskRequest getMaintenanceWindowExecutionTaskRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getMaintenanceWindowExecutionTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2437,6 +2475,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public GetParameterHistoryResult getParameterHistory(GetParameterHistoryRequest getParameterHistoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getParameterHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2478,6 +2517,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public GetParametersResult getParameters(GetParametersRequest getParametersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2521,6 +2561,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public ListAssociationsResult listAssociations(ListAssociationsRequest listAssociationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAssociationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2586,6 +2627,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public ListCommandInvocationsResult listCommandInvocations(ListCommandInvocationsRequest listCommandInvocationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listCommandInvocationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2649,6 +2691,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public ListCommandsResult listCommands(ListCommandsRequest listCommandsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listCommandsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2694,6 +2737,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public ListDocumentVersionsResult listDocumentVersions(ListDocumentVersionsRequest listDocumentVersionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDocumentVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2739,6 +2783,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public ListDocumentsResult listDocuments(ListDocumentsRequest listDocumentsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDocumentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2807,6 +2852,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public ListInventoryEntriesResult listInventoryEntries(ListInventoryEntriesRequest listInventoryEntriesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listInventoryEntriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2853,6 +2899,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2906,6 +2953,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public ModifyDocumentPermissionResult modifyDocumentPermission(ModifyDocumentPermissionRequest modifyDocumentPermissionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(modifyDocumentPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2980,6 +3028,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public PutInventoryResult putInventory(PutInventoryRequest putInventoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putInventoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3032,6 +3081,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public PutParameterResult putParameter(PutParameterRequest putParameterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putParameterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3082,6 +3132,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @Override
     public RegisterTargetWithMaintenanceWindowResult registerTargetWithMaintenanceWindow(
             RegisterTargetWithMaintenanceWindowRequest registerTargetWithMaintenanceWindowRequest) {
+
         ExecutionContext executionContext = createExecutionContext(registerTargetWithMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3134,6 +3185,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @Override
     public RegisterTaskWithMaintenanceWindowResult registerTaskWithMaintenanceWindow(
             RegisterTaskWithMaintenanceWindowRequest registerTaskWithMaintenanceWindowRequest) {
+
         ExecutionContext executionContext = createExecutionContext(registerTaskWithMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3182,6 +3234,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3263,6 +3316,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public SendCommandResult sendCommand(SendCommandRequest sendCommandRequest) {
+
         ExecutionContext executionContext = createExecutionContext(sendCommandRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3313,6 +3367,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public StartAutomationExecutionResult startAutomationExecution(StartAutomationExecutionRequest startAutomationExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startAutomationExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3357,6 +3412,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public StopAutomationExecutionResult stopAutomationExecution(StopAutomationExecutionRequest stopAutomationExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopAutomationExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3415,6 +3471,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public UpdateAssociationResult updateAssociation(UpdateAssociationRequest updateAssociationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3480,6 +3537,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public UpdateAssociationStatusResult updateAssociationStatus(UpdateAssociationStatusRequest updateAssociationStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateAssociationStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3537,6 +3595,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public UpdateDocumentResult updateDocument(UpdateDocumentRequest updateDocumentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3584,6 +3643,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public UpdateDocumentDefaultVersionResult updateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateDocumentDefaultVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3629,6 +3689,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public UpdateMaintenanceWindowResult updateMaintenanceWindow(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3687,6 +3748,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public UpdateManagedInstanceRoleResult updateManagedInstanceRole(UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateManagedInstanceRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

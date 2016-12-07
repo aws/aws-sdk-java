@@ -290,6 +290,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public ActivatePipelineResult activatePipeline(ActivatePipelineRequest activatePipelineRequest) {
+
         ExecutionContext executionContext = createExecutionContext(activatePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -340,6 +341,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -386,6 +388,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -441,6 +444,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public DeactivatePipelineResult deactivatePipeline(DeactivatePipelineRequest deactivatePipelineRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deactivatePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -495,6 +499,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deletePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -546,6 +551,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public DescribeObjectsResult describeObjects(DescribeObjectsRequest describeObjectsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeObjectsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -603,6 +609,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public DescribePipelinesResult describePipelines(DescribePipelinesRequest describePipelinesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describePipelinesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -656,6 +663,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public EvaluateExpressionResult evaluateExpression(EvaluateExpressionRequest evaluateExpressionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(evaluateExpressionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -707,6 +715,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public GetPipelineDefinitionResult getPipelineDefinition(GetPipelineDefinitionRequest getPipelineDefinitionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getPipelineDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -754,6 +763,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPipelinesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -818,6 +828,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public PollForTaskResult pollForTask(PollForTaskRequest pollForTaskRequest) {
+
         ExecutionContext executionContext = createExecutionContext(pollForTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -883,6 +894,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public PutPipelineDefinitionResult putPipelineDefinition(PutPipelineDefinitionRequest putPipelineDefinitionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putPipelineDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -934,6 +946,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public QueryObjectsResult queryObjects(QueryObjectsRequest queryObjectsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(queryObjectsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -984,6 +997,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1045,6 +1059,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public ReportTaskProgressResult reportTaskProgress(ReportTaskProgressRequest reportTaskProgressRequest) {
+
         ExecutionContext executionContext = createExecutionContext(reportTaskProgressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1093,6 +1108,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public ReportTaskRunnerHeartbeatResult reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest) {
+
         ExecutionContext executionContext = createExecutionContext(reportTaskRunnerHeartbeatRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1147,6 +1163,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public SetStatusResult setStatus(SetStatusRequest setStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1202,6 +1219,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public SetTaskStatusResult setTaskStatus(SetTaskStatusRequest setTaskStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setTaskStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1252,6 +1270,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      */
     @Override
     public ValidatePipelineDefinitionResult validatePipelineDefinition(ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(validatePipelineDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

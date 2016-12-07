@@ -320,6 +320,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      */
     @Override
     public DescribeAffectedEntitiesResult describeAffectedEntities(DescribeAffectedEntitiesRequest describeAffectedEntitiesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAffectedEntitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -361,6 +362,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      */
     @Override
     public DescribeEntityAggregatesResult describeEntityAggregates(DescribeEntityAggregatesRequest describeEntityAggregatesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEntityAggregatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -404,6 +406,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      */
     @Override
     public DescribeEventAggregatesResult describeEventAggregates(DescribeEventAggregatesRequest describeEventAggregatesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEventAggregatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -452,6 +455,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      */
     @Override
     public DescribeEventDetailsResult describeEventDetails(DescribeEventDetailsRequest describeEventDetailsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEventDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -496,6 +500,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      */
     @Override
     public DescribeEventTypesResult describeEventTypes(DescribeEventTypesRequest describeEventTypesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEventTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -546,6 +551,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      */
     @Override
     public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

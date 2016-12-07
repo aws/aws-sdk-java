@@ -413,6 +413,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public CancelKeyDeletionResult cancelKeyDeletion(CancelKeyDeletionRequest cancelKeyDeletionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(cancelKeyDeletionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -482,6 +483,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -549,6 +551,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public CreateGrantResult createGrant(CreateGrantRequest createGrantRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -621,6 +624,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public CreateKeyResult createKey(CreateKeyRequest createKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -711,6 +715,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public DecryptResult decrypt(DecryptRequest decryptRequest) {
+
         ExecutionContext executionContext = createExecutionContext(decryptRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -762,6 +767,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -829,6 +835,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public DeleteImportedKeyMaterialResult deleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteImportedKeyMaterialRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -877,6 +884,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public DescribeKeyResult describeKey(DescribeKeyRequest describeKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -933,6 +941,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public DisableKeyResult disableKey(DisableKeyRequest disableKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disableKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -991,6 +1000,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public DisableKeyRotationResult disableKeyRotation(DisableKeyRotationRequest disableKeyRotationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disableKeyRotationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1048,6 +1058,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public EnableKeyResult enableKey(EnableKeyRequest enableKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enableKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1106,6 +1117,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public EnableKeyRotationResult enableKeyRotation(EnableKeyRotationRequest enableKeyRotationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enableKeyRotationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1193,6 +1205,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public EncryptResult encrypt(EncryptRequest encryptRequest) {
+
         ExecutionContext executionContext = createExecutionContext(encryptRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1312,6 +1325,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public GenerateDataKeyResult generateDataKey(GenerateDataKeyRequest generateDataKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(generateDataKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1382,6 +1396,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public GenerateDataKeyWithoutPlaintextResult generateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest generateDataKeyWithoutPlaintextRequest) {
+
         ExecutionContext executionContext = createExecutionContext(generateDataKeyWithoutPlaintextRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1427,6 +1442,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public GenerateRandomResult generateRandom(GenerateRandomRequest generateRandomRequest) {
+
         ExecutionContext executionContext = createExecutionContext(generateRandomRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1485,6 +1501,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public GetKeyPolicyResult getKeyPolicy(GetKeyPolicyRequest getKeyPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getKeyPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1541,6 +1558,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public GetKeyRotationStatusResult getKeyRotationStatus(GetKeyRotationStatusRequest getKeyRotationStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getKeyRotationStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1612,6 +1630,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public GetParametersForImportResult getParametersForImport(GetParametersForImportRequest getParametersForImportRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getParametersForImportRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1701,6 +1720,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public ImportKeyMaterialResult importKeyMaterial(ImportKeyMaterialRequest importKeyMaterialRequest) {
+
         ExecutionContext executionContext = createExecutionContext(importKeyMaterialRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1747,6 +1767,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAliasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1808,6 +1829,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public ListGrantsResult listGrants(ListGrantsRequest listGrantsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listGrantsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1861,6 +1883,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public ListKeyPoliciesResult listKeyPolicies(ListKeyPoliciesRequest listKeyPoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listKeyPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1907,6 +1930,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public ListKeysResult listKeys(ListKeysRequest listKeysRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listKeysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1965,6 +1989,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public ListRetirableGrantsResult listRetirableGrants(ListRetirableGrantsRequest listRetirableGrantsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listRetirableGrantsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2032,6 +2057,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public PutKeyPolicyResult putKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putKeyPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2102,6 +2128,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public ReEncryptResult reEncrypt(ReEncryptRequest reEncryptRequest) {
+
         ExecutionContext executionContext = createExecutionContext(reEncryptRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2180,6 +2207,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public RetireGrantResult retireGrant(RetireGrantRequest retireGrantRequest) {
+
         ExecutionContext executionContext = createExecutionContext(retireGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2240,6 +2268,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public RevokeGrantResult revokeGrant(RevokeGrantRequest revokeGrantRequest) {
+
         ExecutionContext executionContext = createExecutionContext(revokeGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2309,6 +2338,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public ScheduleKeyDeletionResult scheduleKeyDeletion(ScheduleKeyDeletionRequest scheduleKeyDeletionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(scheduleKeyDeletionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2372,6 +2402,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2425,6 +2456,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      */
     @Override
     public UpdateKeyDescriptionResult updateKeyDescription(UpdateKeyDescriptionRequest updateKeyDescriptionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateKeyDescriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

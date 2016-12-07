@@ -273,6 +273,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public CancelUpdateStackResult cancelUpdateStack(CancelUpdateStackRequest cancelUpdateStackRequest) {
+
         ExecutionContext executionContext = createExecutionContext(cancelUpdateStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -324,6 +325,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public ContinueUpdateRollbackResult continueUpdateRollback(ContinueUpdateRollbackRequest continueUpdateRollbackRequest) {
+
         ExecutionContext executionContext = createExecutionContext(continueUpdateRollbackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -381,6 +383,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public CreateChangeSetResult createChangeSet(CreateChangeSetRequest createChangeSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createChangeSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -428,6 +431,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public CreateStackResult createStack(CreateStackRequest createStackRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -473,6 +477,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public DeleteChangeSetResult deleteChangeSet(DeleteChangeSetRequest deleteChangeSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteChangeSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -514,6 +519,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public DeleteStackResult deleteStack(DeleteStackRequest deleteStackRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -554,6 +560,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAccountLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -600,6 +607,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public DescribeChangeSetResult describeChangeSet(DescribeChangeSetRequest describeChangeSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeChangeSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -649,6 +657,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public DescribeStackEventsResult describeStackEvents(DescribeStackEventsRequest describeStackEventsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeStackEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -693,6 +702,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public DescribeStackResourceResult describeStackResource(DescribeStackResourceRequest describeStackResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeStackResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -757,6 +767,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public DescribeStackResourcesResult describeStackResources(DescribeStackResourcesRequest describeStackResourcesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeStackResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -803,6 +814,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public DescribeStacksResult describeStacks(DescribeStacksRequest describeStacksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -849,6 +861,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public EstimateTemplateCostResult estimateTemplateCost(EstimateTemplateCostRequest estimateTemplateCostRequest) {
+
         ExecutionContext executionContext = createExecutionContext(estimateTemplateCostRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -912,6 +925,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public ExecuteChangeSetResult executeChangeSet(ExecuteChangeSetRequest executeChangeSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(executeChangeSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -952,6 +966,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public GetStackPolicyResult getStackPolicy(GetStackPolicyRequest getStackPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getStackPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1003,6 +1018,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public GetTemplateResult getTemplate(GetTemplateRequest getTemplateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1052,6 +1068,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public GetTemplateSummaryResult getTemplateSummary(GetTemplateSummaryRequest getTemplateSummaryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getTemplateSummaryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1098,6 +1115,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public ListChangeSetsResult listChangeSets(ListChangeSetsRequest listChangeSetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listChangeSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1145,6 +1163,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public ListExportsResult listExports(ListExportsRequest listExportsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listExportsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1190,6 +1209,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public ListImportsResult listImports(ListImportsRequest listImportsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listImportsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1233,6 +1253,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public ListStackResourcesResult listStackResources(ListStackResourcesRequest listStackResourcesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listStackResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1276,6 +1297,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public ListStacksResult listStacks(ListStacksRequest listStacksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1320,6 +1342,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public SetStackPolicyResult setStackPolicy(SetStackPolicyRequest setStackPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setStackPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1364,6 +1387,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public SignalResourceResult signalResource(SignalResourceRequest signalResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(signalResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1416,6 +1440,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1457,6 +1482,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     @Override
     public ValidateTemplateResult validateTemplate(ValidateTemplateRequest validateTemplateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(validateTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

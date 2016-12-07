@@ -23,7 +23,6 @@ import org.junit.After;
 import org.junit.Before;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -92,7 +91,7 @@ public interface LogCaptor {
 
         @Override
         public List<LoggingEvent> loggedEvents() {
-            return Collections.unmodifiableList(loggedEvents);
+            return new ArrayList<LoggingEvent>(loggedEvents);
         }
 
         @Override

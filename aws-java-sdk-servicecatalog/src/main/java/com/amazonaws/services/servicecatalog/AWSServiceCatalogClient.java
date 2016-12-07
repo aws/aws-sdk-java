@@ -286,6 +286,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public AcceptPortfolioShareResult acceptPortfolioShare(AcceptPortfolioShareRequest acceptPortfolioShareRequest) {
+
         ExecutionContext executionContext = createExecutionContext(acceptPortfolioShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -332,6 +333,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public AssociatePrincipalWithPortfolioResult associatePrincipalWithPortfolio(AssociatePrincipalWithPortfolioRequest associatePrincipalWithPortfolioRequest) {
+
         ExecutionContext executionContext = createExecutionContext(associatePrincipalWithPortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -380,6 +382,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public AssociateProductWithPortfolioResult associateProductWithPortfolio(AssociateProductWithPortfolioRequest associateProductWithPortfolioRequest) {
+
         ExecutionContext executionContext = createExecutionContext(associateProductWithPortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -430,6 +433,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreateConstraintResult createConstraint(CreateConstraintRequest createConstraintRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createConstraintRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -474,6 +478,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreatePortfolioResult createPortfolio(CreatePortfolioRequest createPortfolioRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -520,6 +525,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreatePortfolioShareResult createPortfolioShare(CreatePortfolioShareRequest createPortfolioShareRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPortfolioShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -564,6 +570,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreateProductResult createProduct(CreateProductRequest createProductRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -611,6 +618,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreateProvisioningArtifactResult createProvisioningArtifact(CreateProvisioningArtifactRequest createProvisioningArtifactRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createProvisioningArtifactRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -655,6 +663,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteConstraintResult deleteConstraint(DeleteConstraintRequest deleteConstraintRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteConstraintRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -702,6 +711,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeletePortfolioResult deletePortfolio(DeletePortfolioRequest deletePortfolioRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deletePortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -743,6 +753,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeletePortfolioShareResult deletePortfolioShare(DeletePortfolioShareRequest deletePortfolioShareRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deletePortfolioShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -790,6 +801,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteProductResult deleteProduct(DeleteProductRequest deleteProductRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -838,6 +850,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteProvisioningArtifactResult deleteProvisioningArtifact(DeleteProvisioningArtifactRequest deleteProvisioningArtifactRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteProvisioningArtifactRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -880,6 +893,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeConstraintResult describeConstraint(DescribeConstraintRequest describeConstraintRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeConstraintRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -921,6 +935,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribePortfolioResult describePortfolio(DescribePortfolioRequest describePortfolioRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describePortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -968,6 +983,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeProductResult describeProduct(DescribeProductRequest describeProductRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1009,6 +1025,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeProductAsAdminResult describeProductAsAdmin(DescribeProductAsAdminRequest describeProductAsAdminRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeProductAsAdminRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1057,6 +1074,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeProductViewResult describeProductView(DescribeProductViewRequest describeProductViewRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeProductViewRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1098,6 +1116,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeProvisioningArtifactResult describeProvisioningArtifact(DescribeProvisioningArtifactRequest describeProvisioningArtifactRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeProvisioningArtifactRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1145,6 +1164,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeProvisioningParametersResult describeProvisioningParameters(DescribeProvisioningParametersRequest describeProvisioningParametersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeProvisioningParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1189,6 +1209,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeRecordResult describeRecord(DescribeRecordRequest describeRecordRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeRecordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1233,6 +1254,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
     @Override
     public DisassociatePrincipalFromPortfolioResult disassociatePrincipalFromPortfolio(
             DisassociatePrincipalFromPortfolioRequest disassociatePrincipalFromPortfolioRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disassociatePrincipalFromPortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1279,6 +1301,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
     @Override
     public DisassociateProductFromPortfolioResult disassociateProductFromPortfolio(
             DisassociateProductFromPortfolioRequest disassociateProductFromPortfolioRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disassociateProductFromPortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1322,6 +1345,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListAcceptedPortfolioSharesResult listAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest listAcceptedPortfolioSharesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAcceptedPortfolioSharesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1367,6 +1391,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListConstraintsForPortfolioResult listConstraintsForPortfolio(ListConstraintsForPortfolioRequest listConstraintsForPortfolioRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listConstraintsForPortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1413,6 +1438,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListLaunchPathsResult listLaunchPaths(ListLaunchPathsRequest listLaunchPathsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listLaunchPathsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1454,6 +1480,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListPortfolioAccessResult listPortfolioAccess(ListPortfolioAccessRequest listPortfolioAccessRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPortfolioAccessRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1495,6 +1522,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListPortfoliosResult listPortfolios(ListPortfoliosRequest listPortfoliosRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPortfoliosRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1538,6 +1566,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListPortfoliosForProductResult listPortfoliosForProduct(ListPortfoliosForProductRequest listPortfoliosForProductRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPortfoliosForProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1582,6 +1611,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListPrincipalsForPortfolioResult listPrincipalsForPortfolio(ListPrincipalsForPortfolioRequest listPrincipalsForPortfolioRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPrincipalsForPortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1626,6 +1656,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListProvisioningArtifactsResult listProvisioningArtifacts(ListProvisioningArtifactsRequest listProvisioningArtifactsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listProvisioningArtifactsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1669,6 +1700,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListRecordHistoryResult listRecordHistory(ListRecordHistoryRequest listRecordHistoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listRecordHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1719,6 +1751,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ProvisionProductResult provisionProduct(ProvisionProductRequest provisionProductRequest) {
+
         ExecutionContext executionContext = createExecutionContext(provisionProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1760,6 +1793,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public RejectPortfolioShareResult rejectPortfolioShare(RejectPortfolioShareRequest rejectPortfolioShareRequest) {
+
         ExecutionContext executionContext = createExecutionContext(rejectPortfolioShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1801,6 +1835,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ScanProvisionedProductsResult scanProvisionedProducts(ScanProvisionedProductsRequest scanProvisionedProductsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(scanProvisionedProductsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1846,6 +1881,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public SearchProductsResult searchProducts(SearchProductsRequest searchProductsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(searchProductsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1891,6 +1927,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public SearchProductsAsAdminResult searchProductsAsAdmin(SearchProductsAsAdminRequest searchProductsAsAdminRequest) {
+
         ExecutionContext executionContext = createExecutionContext(searchProductsAsAdminRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1940,6 +1977,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public TerminateProvisionedProductResult terminateProvisionedProduct(TerminateProvisionedProductRequest terminateProvisionedProductRequest) {
+
         ExecutionContext executionContext = createExecutionContext(terminateProvisionedProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1985,6 +2023,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateConstraintResult updateConstraint(UpdateConstraintRequest updateConstraintRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateConstraintRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2032,6 +2071,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdatePortfolioResult updatePortfolio(UpdatePortfolioRequest updatePortfolioRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updatePortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2075,6 +2115,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateProductResult updateProduct(UpdateProductRequest updateProductRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2124,6 +2165,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateProvisionedProductResult updateProvisionedProduct(UpdateProvisionedProductRequest updateProvisionedProductRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateProvisionedProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2169,6 +2211,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateProvisioningArtifactResult updateProvisioningArtifact(UpdateProvisioningArtifactRequest updateProvisioningArtifactRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateProvisioningArtifactRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

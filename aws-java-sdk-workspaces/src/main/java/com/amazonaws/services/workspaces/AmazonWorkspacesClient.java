@@ -271,6 +271,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -320,6 +321,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateWorkspacesResult createWorkspaces(CreateWorkspacesRequest createWorkspacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -364,6 +366,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -406,6 +409,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -457,6 +461,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DescribeWorkspaceBundlesResult describeWorkspaceBundles(DescribeWorkspaceBundlesRequest describeWorkspaceBundlesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeWorkspaceBundlesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -511,6 +516,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DescribeWorkspaceDirectoriesResult describeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest describeWorkspaceDirectoriesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeWorkspaceDirectoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -571,6 +577,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DescribeWorkspacesResult describeWorkspaces(DescribeWorkspacesRequest describeWorkspacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -618,6 +625,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
     @Override
     public DescribeWorkspacesConnectionStatusResult describeWorkspacesConnectionStatus(
             DescribeWorkspacesConnectionStatusRequest describeWorkspacesConnectionStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeWorkspacesConnectionStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -674,6 +682,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ModifyWorkspacePropertiesResult modifyWorkspaceProperties(ModifyWorkspacePropertiesRequest modifyWorkspacePropertiesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(modifyWorkspacePropertiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -724,6 +733,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public RebootWorkspacesResult rebootWorkspaces(RebootWorkspacesRequest rebootWorkspacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(rebootWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -792,6 +802,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public RebuildWorkspacesResult rebuildWorkspaces(RebuildWorkspacesRequest rebuildWorkspacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(rebuildWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -832,6 +843,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public StartWorkspacesResult startWorkspaces(StartWorkspacesRequest startWorkspacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -872,6 +884,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public StopWorkspacesResult stopWorkspaces(StopWorkspacesRequest stopWorkspacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -924,6 +937,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public TerminateWorkspacesResult terminateWorkspaces(TerminateWorkspacesRequest terminateWorkspacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(terminateWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

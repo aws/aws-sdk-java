@@ -317,6 +317,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     @Override
     public CreateCloudFrontOriginAccessIdentityResult createCloudFrontOriginAccessIdentity(
             CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createCloudFrontOriginAccessIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -420,6 +421,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -522,6 +524,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateDistributionWithTagsResult createDistributionWithTags(CreateDistributionWithTagsRequest createDistributionWithTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createDistributionWithTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -576,6 +579,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createInvalidationRequest.getDistributionId()), "DistributionId");
+
         ExecutionContext executionContext = createExecutionContext(createInvalidationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -665,6 +671,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createStreamingDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -728,6 +735,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     @Override
     public CreateStreamingDistributionWithTagsResult createStreamingDistributionWithTags(
             CreateStreamingDistributionWithTagsRequest createStreamingDistributionWithTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createStreamingDistributionWithTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -779,6 +787,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     @Override
     public DeleteCloudFrontOriginAccessIdentityResult deleteCloudFrontOriginAccessIdentity(
             DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteCloudFrontOriginAccessIdentityRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(deleteCloudFrontOriginAccessIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -889,6 +900,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteDistributionResult deleteDistribution(DeleteDistributionRequest deleteDistributionRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteDistributionRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(deleteDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -999,6 +1013,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteStreamingDistributionResult deleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteStreamingDistributionRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(deleteStreamingDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1044,6 +1061,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     @Override
     public GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentity(
             GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCloudFrontOriginAccessIdentityRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(getCloudFrontOriginAccessIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1090,6 +1110,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     @Override
     public GetCloudFrontOriginAccessIdentityConfigResult getCloudFrontOriginAccessIdentityConfig(
             GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCloudFrontOriginAccessIdentityConfigRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(getCloudFrontOriginAccessIdentityConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1135,6 +1158,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetDistributionResult getDistribution(GetDistributionRequest getDistributionRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getDistributionRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(getDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1179,6 +1205,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetDistributionConfigResult getDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getDistributionConfigRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(getDistributionConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1225,6 +1254,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetInvalidationResult getInvalidation(GetInvalidationRequest getInvalidationRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getInvalidationRequest.getDistributionId()), "DistributionId");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getInvalidationRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(getInvalidationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1269,6 +1302,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetStreamingDistributionResult getStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getStreamingDistributionRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(getStreamingDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1313,6 +1349,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetStreamingDistributionConfigResult getStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getStreamingDistributionConfigRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(getStreamingDistributionConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1356,6 +1395,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     @Override
     public ListCloudFrontOriginAccessIdentitiesResult listCloudFrontOriginAccessIdentities(
             ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listCloudFrontOriginAccessIdentitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1399,6 +1439,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListDistributionsResult listDistributions(ListDistributionsRequest listDistributionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDistributionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1442,6 +1483,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListDistributionsByWebACLIdResult listDistributionsByWebACLId(ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listDistributionsByWebACLIdRequest.getWebACLId()), "WebACLId");
+
         ExecutionContext executionContext = createExecutionContext(listDistributionsByWebACLIdRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1488,6 +1532,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listInvalidationsRequest.getDistributionId()), "DistributionId");
+
         ExecutionContext executionContext = createExecutionContext(listInvalidationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1530,6 +1577,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListStreamingDistributionsResult listStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listStreamingDistributionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1576,6 +1624,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1622,6 +1671,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public TagResourceResult tagResource(TagResourceRequest tagResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1667,6 +1717,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1723,6 +1774,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentity(
             UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateCloudFrontOriginAccessIdentityRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(updateCloudFrontOriginAccessIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1823,6 +1877,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateDistributionRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(updateDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1887,6 +1944,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public UpdateStreamingDistributionResult updateStreamingDistribution(UpdateStreamingDistributionRequest updateStreamingDistributionRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateStreamingDistributionRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(updateStreamingDistributionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

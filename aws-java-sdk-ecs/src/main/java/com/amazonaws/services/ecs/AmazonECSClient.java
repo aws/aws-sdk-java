@@ -291,6 +291,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public CreateClusterResult createCluster(CreateClusterRequest createClusterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -407,6 +408,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public CreateServiceResult createService(CreateServiceRequest createServiceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createServiceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -467,6 +469,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public DeleteClusterResult deleteCluster(DeleteClusterRequest deleteClusterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -534,6 +537,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public DeleteServiceResult deleteService(DeleteServiceRequest deleteServiceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteServiceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -602,6 +606,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public DeregisterContainerInstanceResult deregisterContainerInstance(DeregisterContainerInstanceRequest deregisterContainerInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deregisterContainerInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -659,6 +664,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public DeregisterTaskDefinitionResult deregisterTaskDefinition(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deregisterTaskDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -707,6 +713,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public DescribeClustersResult describeClusters(DescribeClustersRequest describeClustersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -763,6 +770,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public DescribeContainerInstancesResult describeContainerInstances(DescribeContainerInstancesRequest describeContainerInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeContainerInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -814,6 +822,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public DescribeServicesResult describeServices(DescribeServicesRequest describeServicesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeServicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -868,6 +877,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public DescribeTaskDefinitionResult describeTaskDefinition(DescribeTaskDefinitionRequest describeTaskDefinitionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTaskDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -919,6 +929,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public DescribeTasksResult describeTasks(DescribeTasksRequest describeTasksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -970,6 +981,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public DiscoverPollEndpointResult discoverPollEndpoint(DiscoverPollEndpointRequest discoverPollEndpointRequest) {
+
         ExecutionContext executionContext = createExecutionContext(discoverPollEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1022,6 +1034,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public ListClustersResult listClusters(ListClustersRequest listClustersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1077,6 +1090,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public ListContainerInstancesResult listContainerInstances(ListContainerInstancesRequest listContainerInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listContainerInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1133,6 +1147,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public ListServicesResult listServices(ListServicesRequest listServicesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listServicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1191,6 +1206,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTaskDefinitionFamiliesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1245,6 +1261,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public ListTaskDefinitionsResult listTaskDefinitions(ListTaskDefinitionsRequest listTaskDefinitionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTaskDefinitionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1309,6 +1326,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public ListTasksResult listTasks(ListTasksRequest listTasksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1365,6 +1383,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public RegisterContainerInstanceResult registerContainerInstance(RegisterContainerInstanceRequest registerContainerInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(registerContainerInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1430,6 +1449,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public RegisterTaskDefinitionResult registerTaskDefinition(RegisterTaskDefinitionRequest registerTaskDefinitionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(registerTaskDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1487,6 +1507,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public RunTaskResult runTask(RunTaskRequest runTaskRequest) {
+
         ExecutionContext executionContext = createExecutionContext(runTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1543,6 +1564,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public StartTaskResult startTask(StartTaskRequest startTaskRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1599,6 +1621,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public StopTaskResult stopTask(StopTaskRequest stopTaskRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1650,6 +1673,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public SubmitContainerStateChangeResult submitContainerStateChange(SubmitContainerStateChangeRequest submitContainerStateChangeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(submitContainerStateChangeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1707,6 +1731,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public SubmitTaskStateChangeResult submitTaskStateChange(SubmitTaskStateChangeRequest submitTaskStateChangeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(submitTaskStateChangeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1781,6 +1806,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public UpdateContainerAgentResult updateContainerAgent(UpdateContainerAgentRequest updateContainerAgentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateContainerAgentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1895,6 +1921,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      */
     @Override
     public UpdateServiceResult updateService(UpdateServiceRequest updateServiceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateServiceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

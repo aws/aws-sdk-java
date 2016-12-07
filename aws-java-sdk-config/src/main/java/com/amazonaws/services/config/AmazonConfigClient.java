@@ -362,6 +362,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public DeleteConfigRuleResult deleteConfigRule(DeleteConfigRuleRequest deleteConfigRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteConfigRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -414,6 +415,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public DeleteConfigurationRecorderResult deleteConfigurationRecorder(DeleteConfigurationRecorderRequest deleteConfigurationRecorderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteConfigurationRecorderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -465,6 +467,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public DeleteDeliveryChannelResult deleteDeliveryChannel(DeleteDeliveryChannelRequest deleteDeliveryChannelRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteDeliveryChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -513,6 +516,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public DeleteEvaluationResultsResult deleteEvaluationResults(DeleteEvaluationResultsRequest deleteEvaluationResultsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteEvaluationResultsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -580,6 +584,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public DeliverConfigSnapshotResult deliverConfigSnapshot(DeliverConfigSnapshotRequest deliverConfigSnapshotRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deliverConfigSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -657,6 +662,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public DescribeComplianceByConfigRuleResult describeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest describeComplianceByConfigRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeComplianceByConfigRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -740,6 +746,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public DescribeComplianceByResourceResult describeComplianceByResource(DescribeComplianceByResourceRequest describeComplianceByResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeComplianceByResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -787,11 +794,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.DescribeConfigRuleEvaluationStatus
      */
     @Override
     public DescribeConfigRuleEvaluationStatusResult describeConfigRuleEvaluationStatus(
             DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeConfigRuleEvaluationStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -841,6 +851,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public DescribeConfigRulesResult describeConfigRules(DescribeConfigRulesRequest describeConfigRulesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeConfigRulesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -895,6 +906,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     @Override
     public DescribeConfigurationRecorderStatusResult describeConfigurationRecorderStatus(
             DescribeConfigurationRecorderStatusRequest describeConfigurationRecorderStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeConfigurationRecorderStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -950,6 +962,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public DescribeConfigurationRecordersResult describeConfigurationRecorders(DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeConfigurationRecordersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1005,6 +1018,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public DescribeDeliveryChannelStatusResult describeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeDeliveryChannelStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1060,6 +1074,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public DescribeDeliveryChannelsResult describeDeliveryChannels(DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeDeliveryChannelsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1115,6 +1130,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     @Override
     public GetComplianceDetailsByConfigRuleResult getComplianceDetailsByConfigRule(
             GetComplianceDetailsByConfigRuleRequest getComplianceDetailsByConfigRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getComplianceDetailsByConfigRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1159,6 +1175,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public GetComplianceDetailsByResourceResult getComplianceDetailsByResource(GetComplianceDetailsByResourceRequest getComplianceDetailsByResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getComplianceDetailsByResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1201,6 +1218,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     @Override
     public GetComplianceSummaryByConfigRuleResult getComplianceSummaryByConfigRule(
             GetComplianceSummaryByConfigRuleRequest getComplianceSummaryByConfigRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getComplianceSummaryByConfigRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1251,6 +1269,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     @Override
     public GetComplianceSummaryByResourceTypeResult getComplianceSummaryByResourceType(
             GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getComplianceSummaryByResourceTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1326,6 +1345,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public GetResourceConfigHistoryResult getResourceConfigHistory(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getResourceConfigHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1390,6 +1410,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDiscoveredResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1452,7 +1473,12 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * this request.
      * </p>
      * <p>
-     * The maximum number of rules that AWS Config supports is 25.
+     * The maximum number of rules that AWS Config supports is 50.
+     * </p>
+     * <p>
+     * For more information about requesting a rule limit increase, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a>
+     * in the <i>AWS General Reference Guide</i>.
      * </p>
      * <p>
      * For more information about developing and using AWS Config rules, see <a
@@ -1465,7 +1491,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws MaxNumberOfConfigRulesExceededException
-     *         Failed to add the AWS Config rule because the account already contains the maximum number of 25 rules.
+     *         Failed to add the AWS Config rule because the account already contains the maximum number of 50 rules.
      *         Consider deleting any deactivated rules before adding new rules.
      * @throws ResourceInUseException
      *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request
@@ -1491,6 +1517,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public PutConfigRuleResult putConfigRule(PutConfigRuleRequest putConfigRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putConfigRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1553,6 +1580,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public PutConfigurationRecorderResult putConfigurationRecorder(PutConfigurationRecorderRequest putConfigurationRecorderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putConfigurationRecorderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1624,6 +1652,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public PutDeliveryChannelResult putDeliveryChannel(PutDeliveryChannelRequest putDeliveryChannelRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putDeliveryChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1663,7 +1692,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws InvalidResultTokenException
-     *         The result token is invalid.
+     *         The speNexcified token is invalid.
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
@@ -1671,6 +1700,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public PutEvaluationsResult putEvaluations(PutEvaluationsRequest putEvaluationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putEvaluationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1701,11 +1731,17 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Evaluates your resources against the specified Config rules. You can specify up to 25 Config rules per request.
+     * Runs an on-demand evaluation for the specified Config rules against the last known configuration state of the
+     * resources. Use <code>StartConfigRulesEvaluation</code> when you want to test a rule that you updated is working
+     * as expected. <code>StartConfigRulesEvaluation</code> does not re-record the latest configuration state for your
+     * resources; it re-runs an evaluation against the last known state of your resources.
      * </p>
      * <p>
-     * An existing <a>StartConfigRulesEvaluation</a> call must complete for the specified rules before you can call the
-     * API again. If you chose to have AWS Config stream to an Amazon SNS topic, you will receive a
+     * You can specify up to 25 Config rules per request.
+     * </p>
+     * <p>
+     * An existing <code>StartConfigRulesEvaluation</code> call must complete for the specified rules before you can
+     * call the API again. If you chose to have AWS Config stream to an Amazon SNS topic, you will receive a
      * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation starts.
      * </p>
      * <note>
@@ -1763,6 +1799,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public StartConfigRulesEvaluationResult startConfigRulesEvaluation(StartConfigRulesEvaluationRequest startConfigRulesEvaluationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startConfigRulesEvaluationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1811,6 +1848,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public StartConfigurationRecorderResult startConfigurationRecorder(StartConfigurationRecorderRequest startConfigurationRecorderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startConfigurationRecorderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1854,6 +1892,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      */
     @Override
     public StopConfigurationRecorderResult stopConfigurationRecorder(StopConfigurationRecorderRequest stopConfigurationRecorderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopConfigurationRecorderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

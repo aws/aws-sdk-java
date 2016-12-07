@@ -365,6 +365,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public CreateByteMatchSetResult createByteMatchSet(CreateByteMatchSetRequest createByteMatchSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createByteMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -496,6 +497,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public CreateIPSetResult createIPSet(CreateIPSetRequest createIPSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createIPSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -654,6 +656,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public CreateRuleResult createRule(CreateRuleRequest createRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -787,6 +790,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public CreateSizeConstraintSetResult createSizeConstraintSet(CreateSizeConstraintSetRequest createSizeConstraintSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createSizeConstraintSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -920,6 +924,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public CreateSqlInjectionMatchSetResult createSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest createSqlInjectionMatchSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createSqlInjectionMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1071,6 +1076,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public CreateWebACLResult createWebACL(CreateWebACLRequest createWebACLRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createWebACLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1203,6 +1209,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public CreateXssMatchSetResult createXssMatchSet(CreateXssMatchSetRequest createXssMatchSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createXssMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1316,6 +1323,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public DeleteByteMatchSetResult deleteByteMatchSet(DeleteByteMatchSetRequest deleteByteMatchSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteByteMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1428,6 +1436,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public DeleteIPSetResult deleteIPSet(DeleteIPSetRequest deleteIPSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteIPSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1540,6 +1549,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1653,6 +1663,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public DeleteSizeConstraintSetResult deleteSizeConstraintSet(DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteSizeConstraintSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1768,6 +1779,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public DeleteSqlInjectionMatchSetResult deleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest deleteSqlInjectionMatchSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteSqlInjectionMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1879,6 +1891,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public DeleteWebACLResult deleteWebACL(DeleteWebACLRequest deleteWebACLRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteWebACLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1993,6 +2006,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public DeleteXssMatchSetResult deleteXssMatchSet(DeleteXssMatchSetRequest deleteXssMatchSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteXssMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2039,6 +2053,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public GetByteMatchSetResult getByteMatchSet(GetByteMatchSetRequest getByteMatchSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getByteMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2093,6 +2108,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public GetChangeTokenResult getChangeToken(GetChangeTokenRequest getChangeTokenRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getChangeTokenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2155,6 +2171,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public GetChangeTokenStatusResult getChangeTokenStatus(GetChangeTokenStatusRequest getChangeTokenStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getChangeTokenStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2201,6 +2218,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public GetIPSetResult getIPSet(GetIPSetRequest getIPSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getIPSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2248,6 +2266,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public GetRuleResult getRule(GetRuleRequest getRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2299,6 +2318,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public GetSampledRequestsResult getSampledRequests(GetSampledRequestsRequest getSampledRequestsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getSampledRequestsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2345,6 +2365,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public GetSizeConstraintSetResult getSizeConstraintSet(GetSizeConstraintSetRequest getSizeConstraintSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getSizeConstraintSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2392,6 +2413,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public GetSqlInjectionMatchSetResult getSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest getSqlInjectionMatchSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getSqlInjectionMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2439,6 +2461,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public GetWebACLResult getWebACL(GetWebACLRequest getWebACLRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getWebACLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2486,6 +2509,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public GetXssMatchSetResult getXssMatchSet(GetXssMatchSetRequest getXssMatchSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getXssMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2530,6 +2554,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public ListByteMatchSetsResult listByteMatchSets(ListByteMatchSetsRequest listByteMatchSetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listByteMatchSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2574,6 +2599,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public ListIPSetsResult listIPSets(ListIPSetsRequest listIPSetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listIPSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2618,6 +2644,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public ListRulesResult listRules(ListRulesRequest listRulesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listRulesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2662,6 +2689,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public ListSizeConstraintSetsResult listSizeConstraintSets(ListSizeConstraintSetsRequest listSizeConstraintSetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listSizeConstraintSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2708,6 +2736,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public ListSqlInjectionMatchSetsResult listSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest listSqlInjectionMatchSetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listSqlInjectionMatchSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2753,6 +2782,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public ListWebACLsResult listWebACLs(ListWebACLsRequest listWebACLsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listWebACLsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2798,6 +2828,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public ListXssMatchSetsResult listXssMatchSets(ListXssMatchSetsRequest listXssMatchSetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listXssMatchSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3025,6 +3056,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public UpdateByteMatchSetResult updateByteMatchSet(UpdateByteMatchSetRequest updateByteMatchSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateByteMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3263,6 +3295,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public UpdateIPSetResult updateIPSet(UpdateIPSetRequest updateIPSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateIPSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3499,6 +3532,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public UpdateRuleResult updateRule(UpdateRuleRequest updateRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3740,6 +3774,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public UpdateSizeConstraintSetResult updateSizeConstraintSet(UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateSizeConstraintSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3958,6 +3993,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public UpdateSqlInjectionMatchSetResult updateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest updateSqlInjectionMatchSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateSqlInjectionMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4214,6 +4250,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public UpdateWebACLResult updateWebACL(UpdateWebACLRequest updateWebACLRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateWebACLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4431,6 +4468,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      */
     @Override
     public UpdateXssMatchSetResult updateXssMatchSet(UpdateXssMatchSetRequest updateXssMatchSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateXssMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

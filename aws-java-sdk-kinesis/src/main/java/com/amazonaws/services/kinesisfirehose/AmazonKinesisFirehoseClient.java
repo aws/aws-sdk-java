@@ -326,6 +326,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      */
     @Override
     public CreateDeliveryStreamResult createDeliveryStream(CreateDeliveryStreamRequest createDeliveryStreamRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createDeliveryStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -383,6 +384,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      */
     @Override
     public DeleteDeliveryStreamResult deleteDeliveryStream(DeleteDeliveryStreamRequest deleteDeliveryStreamRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteDeliveryStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -427,6 +429,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      */
     @Override
     public DescribeDeliveryStreamResult describeDeliveryStream(DescribeDeliveryStreamRequest describeDeliveryStreamRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeDeliveryStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -475,6 +478,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      */
     @Override
     public ListDeliveryStreamsResult listDeliveryStreams(ListDeliveryStreamsRequest listDeliveryStreamsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDeliveryStreamsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -556,6 +560,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      */
     @Override
     public PutRecordResult putRecord(PutRecordRequest putRecordRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putRecordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -657,6 +662,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      */
     @Override
     public PutRecordBatchResult putRecordBatch(PutRecordBatchRequest putRecordBatchRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putRecordBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -733,6 +739,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      */
     @Override
     public UpdateDestinationResult updateDestination(UpdateDestinationRequest updateDestinationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateDestinationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

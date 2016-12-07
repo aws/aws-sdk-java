@@ -268,6 +268,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public AssociateFleetResult associateFleet(AssociateFleetRequest associateFleetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(associateFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -318,6 +319,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CreateFleetResult createFleet(CreateFleetRequest createFleetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -361,6 +363,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CreateStackResult createStack(CreateStackRequest createStackRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -407,6 +410,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CreateStreamingURLResult createStreamingURL(CreateStreamingURLRequest createStreamingURLRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createStreamingURLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -450,6 +454,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -494,6 +499,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DeleteStackResult deleteStack(DeleteStackRequest deleteStackRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -536,6 +542,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DescribeFleetsResult describeFleets(DescribeFleetsRequest describeFleetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeFleetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -578,6 +585,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DescribeImagesResult describeImages(DescribeImagesRequest describeImagesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeImagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -619,6 +627,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DescribeSessionsResult describeSessions(DescribeSessionsRequest describeSessionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -662,6 +671,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DescribeStacksResult describeStacks(DescribeStacksRequest describeStacksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -705,6 +715,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DisassociateFleetResult disassociateFleet(DisassociateFleetRequest disassociateFleetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disassociateFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -744,6 +755,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ExpireSessionResult expireSession(ExpireSessionRequest expireSessionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(expireSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -783,6 +795,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ListAssociatedFleetsResult listAssociatedFleets(ListAssociatedFleetsRequest listAssociatedFleetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAssociatedFleetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -822,6 +835,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ListAssociatedStacksResult listAssociatedStacks(ListAssociatedStacksRequest listAssociatedStacksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAssociatedStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -865,6 +879,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public StartFleetResult startFleet(StartFleetRequest startFleetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -906,6 +921,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public StopFleetResult stopFleet(StopFleetRequest stopFleetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -954,6 +970,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public UpdateFleetResult updateFleet(UpdateFleetRequest updateFleetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -997,6 +1014,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

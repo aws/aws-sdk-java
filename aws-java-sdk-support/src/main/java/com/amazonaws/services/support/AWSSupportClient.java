@@ -357,6 +357,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      */
     @Override
     public AddAttachmentsToSetResult addAttachmentsToSet(AddAttachmentsToSetRequest addAttachmentsToSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addAttachmentsToSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -414,6 +415,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      */
     @Override
     public AddCommunicationToCaseResult addCommunicationToCase(AddCommunicationToCaseRequest addCommunicationToCaseRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addCommunicationToCaseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -533,6 +535,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      */
     @Override
     public CreateCaseResult createCase(CreateCaseRequest createCaseRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createCaseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -581,6 +584,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      */
     @Override
     public DescribeAttachmentResult describeAttachment(DescribeAttachmentRequest describeAttachmentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAttachmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -647,6 +651,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      */
     @Override
     public DescribeCasesResult describeCases(DescribeCasesRequest describeCasesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeCasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -706,6 +711,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      */
     @Override
     public DescribeCommunicationsResult describeCommunications(DescribeCommunicationsRequest describeCommunicationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeCommunicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -757,6 +763,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      */
     @Override
     public DescribeServicesResult describeServices(DescribeServicesRequest describeServicesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeServicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -804,6 +811,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      */
     @Override
     public DescribeSeverityLevelsResult describeSeverityLevels(DescribeSeverityLevelsRequest describeSeverityLevelsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeSeverityLevelsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -860,6 +868,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     @Override
     public DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatuses(
             DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckRefreshStatusesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -946,6 +955,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     @Override
     public DescribeTrustedAdvisorCheckResultResult describeTrustedAdvisorCheckResult(
             DescribeTrustedAdvisorCheckResultRequest describeTrustedAdvisorCheckResultRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -994,6 +1004,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     @Override
     public DescribeTrustedAdvisorCheckSummariesResult describeTrustedAdvisorCheckSummaries(
             DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckSummariesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1039,6 +1050,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      */
     @Override
     public DescribeTrustedAdvisorChecksResult describeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorChecksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1110,6 +1122,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      */
     @Override
     public RefreshTrustedAdvisorCheckResult refreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest refreshTrustedAdvisorCheckRequest) {
+
         ExecutionContext executionContext = createExecutionContext(refreshTrustedAdvisorCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1155,6 +1168,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      */
     @Override
     public ResolveCaseResult resolveCase(ResolveCaseRequest resolveCaseRequest) {
+
         ExecutionContext executionContext = createExecutionContext(resolveCaseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

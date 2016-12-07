@@ -378,6 +378,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ClusterSecurityGroup authorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest authorizeClusterSecurityGroupIngressRequest) {
+
         ExecutionContext executionContext = createExecutionContext(authorizeClusterSecurityGroupIngressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -438,6 +439,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Snapshot authorizeSnapshotAccess(AuthorizeSnapshotAccessRequest authorizeSnapshotAccessRequest) {
+
         ExecutionContext executionContext = createExecutionContext(authorizeSnapshotAccessRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -497,6 +499,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Snapshot copyClusterSnapshot(CopyClusterSnapshotRequest copyClusterSnapshotRequest) {
+
         ExecutionContext executionContext = createExecutionContext(copyClusterSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -587,6 +590,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Cluster createCluster(CreateClusterRequest createClusterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -647,6 +651,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ClusterParameterGroup createClusterParameterGroup(CreateClusterParameterGroupRequest createClusterParameterGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createClusterParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -702,6 +707,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ClusterSecurityGroup createClusterSecurityGroup(CreateClusterSecurityGroupRequest createClusterSecurityGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createClusterSecurityGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -758,6 +764,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Snapshot createClusterSnapshot(CreateClusterSnapshotRequest createClusterSnapshotRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createClusterSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -825,6 +832,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ClusterSubnetGroup createClusterSubnetGroup(CreateClusterSubnetGroupRequest createClusterSubnetGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createClusterSubnetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -909,6 +917,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public EventSubscription createEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createEventSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -965,6 +974,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public HsmClientCertificate createHsmClientCertificate(CreateHsmClientCertificateRequest createHsmClientCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createHsmClientCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1021,6 +1031,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public HsmConfiguration createHsmConfiguration(CreateHsmConfigurationRequest createHsmConfigurationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createHsmConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1079,6 +1090,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public SnapshotCopyGrant createSnapshotCopyGrant(CreateSnapshotCopyGrantRequest createSnapshotCopyGrantRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createSnapshotCopyGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1132,6 +1144,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1194,6 +1207,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Cluster deleteCluster(DeleteClusterRequest deleteClusterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1242,6 +1256,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteClusterParameterGroupResult deleteClusterParameterGroup(DeleteClusterParameterGroupRequest deleteClusterParameterGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteClusterParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1296,6 +1311,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteClusterSecurityGroupResult deleteClusterSecurityGroup(DeleteClusterSecurityGroupRequest deleteClusterSecurityGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteClusterSecurityGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1347,6 +1363,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Snapshot deleteClusterSnapshot(DeleteClusterSnapshotRequest deleteClusterSnapshotRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteClusterSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1391,6 +1408,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteClusterSubnetGroupResult deleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest deleteClusterSubnetGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteClusterSubnetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1435,6 +1453,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteEventSubscriptionResult deleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteEventSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1479,6 +1498,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteHsmClientCertificateResult deleteHsmClientCertificate(DeleteHsmClientCertificateRequest deleteHsmClientCertificateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteHsmClientCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1523,6 +1543,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteHsmConfigurationResult deleteHsmConfiguration(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteHsmConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1568,6 +1589,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteSnapshotCopyGrantResult deleteSnapshotCopyGrant(DeleteSnapshotCopyGrantRequest deleteSnapshotCopyGrantRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteSnapshotCopyGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1613,6 +1635,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1673,6 +1696,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeClusterParameterGroupsResult describeClusterParameterGroups(DescribeClusterParameterGroupsRequest describeClusterParameterGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeClusterParameterGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1731,6 +1755,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeClusterParametersResult describeClusterParameters(DescribeClusterParametersRequest describeClusterParametersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeClusterParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1790,6 +1815,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeClusterSecurityGroupsResult describeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest describeClusterSecurityGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeClusterSecurityGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1851,6 +1877,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeClusterSnapshotsResult describeClusterSnapshots(DescribeClusterSnapshotsRequest describeClusterSnapshotsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeClusterSnapshotsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1910,6 +1937,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeClusterSubnetGroupsResult describeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest describeClusterSubnetGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeClusterSubnetGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1957,6 +1985,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeClusterVersionsResult describeClusterVersions(DescribeClusterVersionsRequest describeClusterVersionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeClusterVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2019,6 +2048,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeClustersResult describeClusters(DescribeClustersRequest describeClustersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2068,6 +2098,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DefaultClusterParameters describeDefaultClusterParameters(DescribeDefaultClusterParametersRequest describeDefaultClusterParametersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeDefaultClusterParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2110,6 +2141,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeEventCategoriesResult describeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEventCategoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2157,6 +2189,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeEventSubscriptionsResult describeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEventSubscriptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2203,6 +2236,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2262,6 +2296,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeHsmClientCertificatesResult describeHsmClientCertificates(DescribeHsmClientCertificatesRequest describeHsmClientCertificatesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeHsmClientCertificatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2321,6 +2356,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeHsmConfigurationsResult describeHsmConfigurations(DescribeHsmConfigurationsRequest describeHsmConfigurationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeHsmConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2368,6 +2404,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeLoggingStatusResult describeLoggingStatus(DescribeLoggingStatusRequest describeLoggingStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeLoggingStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2413,6 +2450,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeOrderableClusterOptionsResult describeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest describeOrderableClusterOptionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeOrderableClusterOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2470,6 +2508,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeReservedNodeOfferingsResult describeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest describeReservedNodeOfferingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeReservedNodeOfferingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2516,6 +2555,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeReservedNodesResult describeReservedNodes(DescribeReservedNodesRequest describeReservedNodesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeReservedNodesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2570,6 +2610,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeResizeResult describeResize(DescribeResizeRequest describeResizeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeResizeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2620,6 +2661,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeSnapshotCopyGrantsResult describeSnapshotCopyGrants(DescribeSnapshotCopyGrantsRequest describeSnapshotCopyGrantsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeSnapshotCopyGrantsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2672,6 +2714,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeTableRestoreStatusResult describeTableRestoreStatus(DescribeTableRestoreStatusRequest describeTableRestoreStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTableRestoreStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2751,6 +2794,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2796,6 +2840,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DisableLoggingResult disableLogging(DisableLoggingRequest disableLoggingRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disableLoggingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2848,6 +2893,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Cluster disableSnapshotCopy(DisableSnapshotCopyRequest disableSnapshotCopyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disableSnapshotCopyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2899,6 +2945,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public EnableLoggingResult enableLogging(EnableLoggingRequest enableLoggingRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enableLoggingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2959,6 +3006,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Cluster enableSnapshotCopy(EnableSnapshotCopyRequest enableSnapshotCopyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enableSnapshotCopyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3040,6 +3088,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Cluster modifyCluster(ModifyClusterRequest modifyClusterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(modifyClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3086,6 +3135,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Cluster modifyClusterIamRoles(ModifyClusterIamRolesRequest modifyClusterIamRolesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(modifyClusterIamRolesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3134,6 +3184,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ModifyClusterParameterGroupResult modifyClusterParameterGroup(ModifyClusterParameterGroupRequest modifyClusterParameterGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(modifyClusterParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3190,6 +3241,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ClusterSubnetGroup modifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest modifyClusterSubnetGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(modifyClusterSubnetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3250,6 +3302,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(modifyEventSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3297,6 +3350,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Cluster modifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest) {
+
         ExecutionContext executionContext = createExecutionContext(modifySnapshotCopyRetentionPeriodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3353,6 +3407,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ReservedNode purchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest purchaseReservedNodeOfferingRequest) {
+
         ExecutionContext executionContext = createExecutionContext(purchaseReservedNodeOfferingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3400,6 +3455,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Cluster rebootCluster(RebootClusterRequest rebootClusterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(rebootClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3445,6 +3501,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ResetClusterParameterGroupResult resetClusterParameterGroup(ResetClusterParameterGroupRequest resetClusterParameterGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(resetClusterParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3547,6 +3604,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Cluster restoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest restoreFromClusterSnapshotRequest) {
+
         ExecutionContext executionContext = createExecutionContext(restoreFromClusterSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3612,6 +3670,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public TableRestoreStatus restoreTableFromClusterSnapshot(RestoreTableFromClusterSnapshotRequest restoreTableFromClusterSnapshotRequest) {
+
         ExecutionContext executionContext = createExecutionContext(restoreTableFromClusterSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3661,6 +3720,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ClusterSecurityGroup revokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest revokeClusterSecurityGroupIngressRequest) {
+
         ExecutionContext executionContext = createExecutionContext(revokeClusterSecurityGroupIngressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3713,6 +3773,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Snapshot revokeSnapshotAccess(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest) {
+
         ExecutionContext executionContext = createExecutionContext(revokeSnapshotAccessRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3758,6 +3819,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public Cluster rotateEncryptionKey(RotateEncryptionKeyRequest rotateEncryptionKeyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(rotateEncryptionKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

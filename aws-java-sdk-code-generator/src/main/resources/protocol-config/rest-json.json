@@ -12,6 +12,9 @@
         "location" : "/macros/syncclientclass/common/ClientMethodForOperation.ftl",
         "importAsNamespace" : "ClientMethodForOperation"
       }, {
+        "location" : "/macros/syncclientclass/rest/ClientMethodParametersValidation.ftl",
+        "importAsNamespace" : "ClientMethodParametersValidation"
+      }, {
         "location" : "/macros/syncclientclass/json/ClientInvokeMethodErrorResponseHandlerCreation.ftl",
         "importAsNamespace" : "ClientInvokeMethodErrorResponseHandlerCreation"
       }, {

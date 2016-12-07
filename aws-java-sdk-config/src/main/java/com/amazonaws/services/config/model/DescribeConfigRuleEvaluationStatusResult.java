@@ -26,6 +26,12 @@ public class DescribeConfigRuleEvaluationStatusResult extends com.amazonaws.Amaz
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus> configRulesEvaluationStatus;
+    /**
+     * <p>
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -101,6 +107,46 @@ public class DescribeConfigRuleEvaluationStatusResult extends com.amazonaws.Amaz
     }
 
     /**
+     * <p>
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * </p>
+     * 
+     * @return The string that you use in a subsequent request to get the next page of results in a paginated response.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigRuleEvaluationStatusResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -112,7 +158,9 @@ public class DescribeConfigRuleEvaluationStatusResult extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRulesEvaluationStatus() != null)
-            sb.append("ConfigRulesEvaluationStatus: " + getConfigRulesEvaluationStatus());
+            sb.append("ConfigRulesEvaluationStatus: " + getConfigRulesEvaluationStatus() + ",");
+        if (getNextToken() != null)
+            sb.append("NextToken: " + getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -131,6 +179,10 @@ public class DescribeConfigRuleEvaluationStatusResult extends com.amazonaws.Amaz
             return false;
         if (other.getConfigRulesEvaluationStatus() != null && other.getConfigRulesEvaluationStatus().equals(this.getConfigRulesEvaluationStatus()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -140,6 +192,7 @@ public class DescribeConfigRuleEvaluationStatusResult extends com.amazonaws.Amaz
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConfigRulesEvaluationStatus() == null) ? 0 : getConfigRulesEvaluationStatus().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

@@ -276,6 +276,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public AddAttributesToFindingsResult addAttributesToFindings(AddAttributesToFindingsRequest addAttributesToFindingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addAttributesToFindingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -332,6 +333,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CreateAssessmentTargetResult createAssessmentTarget(CreateAssessmentTargetRequest createAssessmentTargetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createAssessmentTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -384,6 +386,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CreateAssessmentTemplateResult createAssessmentTemplate(CreateAssessmentTemplateRequest createAssessmentTemplateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createAssessmentTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -435,6 +438,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CreateResourceGroupResult createResourceGroup(CreateResourceGroupRequest createResourceGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createResourceGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -485,6 +489,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DeleteAssessmentRunResult deleteAssessmentRun(DeleteAssessmentRunRequest deleteAssessmentRunRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteAssessmentRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -535,6 +540,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DeleteAssessmentTargetResult deleteAssessmentTarget(DeleteAssessmentTargetRequest deleteAssessmentTargetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteAssessmentTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -586,6 +592,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DeleteAssessmentTemplateResult deleteAssessmentTemplate(DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteAssessmentTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -630,6 +637,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DescribeAssessmentRunsResult describeAssessmentRuns(DescribeAssessmentRunsRequest describeAssessmentRunsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAssessmentRunsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -674,6 +682,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DescribeAssessmentTargetsResult describeAssessmentTargets(DescribeAssessmentTargetsRequest describeAssessmentTargetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAssessmentTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -718,6 +727,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DescribeAssessmentTemplatesResult describeAssessmentTemplates(DescribeAssessmentTemplatesRequest describeAssessmentTemplatesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAssessmentTemplatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -761,6 +771,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DescribeCrossAccountAccessRoleResult describeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest describeCrossAccountAccessRoleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeCrossAccountAccessRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -806,6 +817,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DescribeFindingsResult describeFindings(DescribeFindingsRequest describeFindingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeFindingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -849,6 +861,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DescribeResourceGroupsResult describeResourceGroups(DescribeResourceGroupsRequest describeResourceGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeResourceGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -893,6 +906,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DescribeRulesPackagesResult describeRulesPackages(DescribeRulesPackagesRequest describeRulesPackagesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeRulesPackagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -942,6 +956,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetTelemetryMetadataResult getTelemetryMetadata(GetTelemetryMetadataRequest getTelemetryMetadataRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getTelemetryMetadataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -990,6 +1005,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ListAssessmentRunAgentsResult listAssessmentRunAgents(ListAssessmentRunAgentsRequest listAssessmentRunAgentsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAssessmentRunAgentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1040,6 +1056,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ListAssessmentRunsResult listAssessmentRuns(ListAssessmentRunsRequest listAssessmentRunsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAssessmentRunsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1087,6 +1104,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ListAssessmentTargetsResult listAssessmentTargets(ListAssessmentTargetsRequest listAssessmentTargetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAssessmentTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1137,6 +1155,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ListAssessmentTemplatesResult listAssessmentTemplates(ListAssessmentTemplatesRequest listAssessmentTemplatesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAssessmentTemplatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1187,6 +1206,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ListEventSubscriptionsResult listEventSubscriptions(ListEventSubscriptionsRequest listEventSubscriptionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listEventSubscriptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1236,6 +1256,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ListFindingsResult listFindings(ListFindingsRequest listFindingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listFindingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1281,6 +1302,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ListRulesPackagesResult listRulesPackages(ListRulesPackagesRequest listRulesPackagesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listRulesPackagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1329,6 +1351,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1380,6 +1403,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public PreviewAgentsResult previewAgents(PreviewAgentsRequest previewAgentsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(previewAgentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1429,6 +1453,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public RegisterCrossAccountAccessRoleResult registerCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(registerCrossAccountAccessRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1480,6 +1505,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public RemoveAttributesFromFindingsResult removeAttributesFromFindings(RemoveAttributesFromFindingsRequest removeAttributesFromFindingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeAttributesFromFindingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1531,6 +1557,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public SetTagsForResourceResult setTagsForResource(SetTagsForResourceRequest setTagsForResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1589,6 +1616,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public StartAssessmentRunResult startAssessmentRun(StartAssessmentRunRequest startAssessmentRunRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startAssessmentRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1637,6 +1665,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public StopAssessmentRunResult stopAssessmentRun(StopAssessmentRunRequest stopAssessmentRunRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopAssessmentRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1689,6 +1718,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public SubscribeToEventResult subscribeToEvent(SubscribeToEventRequest subscribeToEventRequest) {
+
         ExecutionContext executionContext = createExecutionContext(subscribeToEventRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1738,6 +1768,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public UnsubscribeFromEventResult unsubscribeFromEvent(UnsubscribeFromEventRequest unsubscribeFromEventRequest) {
+
         ExecutionContext executionContext = createExecutionContext(unsubscribeFromEventRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1786,6 +1817,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public UpdateAssessmentTargetResult updateAssessmentTarget(UpdateAssessmentTargetRequest updateAssessmentTargetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateAssessmentTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

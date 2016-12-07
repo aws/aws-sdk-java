@@ -309,6 +309,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public CreateActivityResult createActivity(CreateActivityRequest createActivityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createActivityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -361,6 +362,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public CreateStateMachineResult createStateMachine(CreateStateMachineRequest createStateMachineRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createStateMachineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -402,6 +404,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public DeleteActivityResult deleteActivity(DeleteActivityRequest deleteActivityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteActivityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -444,6 +447,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public DeleteStateMachineResult deleteStateMachine(DeleteStateMachineRequest deleteStateMachineRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteStateMachineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -487,6 +491,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public DescribeActivityResult describeActivity(DescribeActivityRequest describeActivityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeActivityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -530,6 +535,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public DescribeExecutionResult describeExecution(DescribeExecutionRequest describeExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -573,6 +579,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public DescribeStateMachineResult describeStateMachine(DescribeStateMachineRequest describeStateMachineRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeStateMachineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -628,6 +635,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public GetActivityTaskResult getActivityTask(GetActivityTaskRequest getActivityTaskRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getActivityTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -676,6 +684,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public GetExecutionHistoryResult getExecutionHistory(GetExecutionHistoryRequest getExecutionHistoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getExecutionHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -718,6 +727,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public ListActivitiesResult listActivities(ListActivitiesRequest listActivitiesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listActivitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -765,6 +775,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public ListExecutionsResult listExecutions(ListExecutionsRequest listExecutionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listExecutionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -807,6 +818,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public ListStateMachinesResult listStateMachines(ListStateMachinesRequest listStateMachinesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listStateMachinesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -850,6 +862,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public SendTaskFailureResult sendTaskFailure(SendTaskFailureRequest sendTaskFailureRequest) {
+
         ExecutionContext executionContext = createExecutionContext(sendTaskFailureRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -907,6 +920,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public SendTaskHeartbeatResult sendTaskHeartbeat(SendTaskHeartbeatRequest sendTaskHeartbeatRequest) {
+
         ExecutionContext executionContext = createExecutionContext(sendTaskHeartbeatRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -952,6 +966,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public SendTaskSuccessResult sendTaskSuccess(SendTaskSuccessRequest sendTaskSuccessRequest) {
+
         ExecutionContext executionContext = createExecutionContext(sendTaskSuccessRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1006,6 +1021,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public StartExecutionResult startExecution(StartExecutionRequest startExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1049,6 +1065,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public StopExecutionResult stopExecution(StopExecutionRequest stopExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

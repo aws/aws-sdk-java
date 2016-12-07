@@ -302,6 +302,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      */
     @Override
     public DescribeStreamResult describeStream(DescribeStreamRequest describeStreamRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -386,6 +387,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      */
     @Override
     public GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -457,6 +459,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      */
     @Override
     public GetShardIteratorResult getShardIterator(GetShardIteratorRequest getShardIteratorRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getShardIteratorRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -507,6 +510,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      */
     @Override
     public ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listStreamsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

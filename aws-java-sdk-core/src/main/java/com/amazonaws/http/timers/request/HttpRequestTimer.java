@@ -32,6 +32,8 @@ import com.amazonaws.http.timers.TimeoutThreadPoolBuilder;
 @SdkInternalApi
 public class HttpRequestTimer {
 
+    private static final String threadNamePrefix = "AwsSdkRequestTimerThread";
+
     private volatile ScheduledThreadPoolExecutor executor;
 
     /**
@@ -66,13 +68,13 @@ public class HttpRequestTimer {
      */
     private synchronized void initializeExecutor() {
         if (executor == null) {
-            executor = TimeoutThreadPoolBuilder.buildDefaultTimeoutThreadPool();
+            executor = TimeoutThreadPoolBuilder.buildDefaultTimeoutThreadPool(threadNamePrefix);
         }
     }
 
     /**
      * Shutdown the underlying {@link ScheduledThreadPoolExecutor}. Should be invoked when
-     * {@link AmazonHttpClient} is shutdown
+     * {@link com.amazonaws.http.AmazonHttpClient} is shutdown
      */
     public synchronized void shutdown() {
         if (executor != null) {

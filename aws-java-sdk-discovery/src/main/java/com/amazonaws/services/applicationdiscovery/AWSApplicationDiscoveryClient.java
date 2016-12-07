@@ -643,6 +643,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      */
     @Override
     public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -695,6 +696,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      */
     @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -744,6 +746,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      */
     @Override
     public DescribeAgentsResult describeAgents(DescribeAgentsRequest describeAgentsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAgentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -795,6 +798,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      */
     @Override
     public DescribeConfigurationsResult describeConfigurations(DescribeConfigurationsRequest describeConfigurationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -847,6 +851,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      */
     @Override
     public DescribeExportConfigurationsResult describeExportConfigurations(DescribeExportConfigurationsRequest describeExportConfigurationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeExportConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -901,6 +906,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      */
     @Override
     public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -955,6 +961,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      */
     @Override
     public ExportConfigurationsResult exportConfigurations(ExportConfigurationsRequest exportConfigurationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(exportConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1007,6 +1014,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      */
     @Override
     public ListConfigurationsResult listConfigurations(ListConfigurationsRequest listConfigurationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1057,6 +1065,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      */
     @Override
     public StartDataCollectionByAgentIdsResult startDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest startDataCollectionByAgentIdsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startDataCollectionByAgentIdsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1108,6 +1117,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      */
     @Override
     public StopDataCollectionByAgentIdsResult stopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest stopDataCollectionByAgentIdsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopDataCollectionByAgentIdsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

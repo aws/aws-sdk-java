@@ -46,6 +46,7 @@ import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.SocketException;
 import java.net.URL;
+import java.nio.channels.FileChannel;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -54,6 +55,7 @@ import java.util.Map;
 import javax.net.ssl.SSLProtocolException;
 
 import static com.amazonaws.services.s3.internal.Constants.KB;
+import static com.amazonaws.services.s3.internal.Constants.MB;
 import static com.amazonaws.util.IOUtils.closeQuietly;
 import static com.amazonaws.util.StringUtils.UTF8;
 
@@ -450,15 +452,19 @@ public class ServiceUtils {
             throw new FileLockException("Fail to lock " + destinationFile);
         }
 
-        BufferedInputStream in = null;
-        BufferedOutputStream out = null;
+        FileChannel in = null;
+        FileChannel out = null;
         try {
-            in = new BufferedInputStream(new FileInputStream(sourceFile));
-            out = new BufferedOutputStream(new FileOutputStream(destinationFile, true));
-            byte[] buffer = new byte[4 * KB];
-            int length;
-            while ((length = in.read(buffer)) > 0) {
-                out.write(buffer, 0, length);
+            in = new FileInputStream(sourceFile).getChannel();
+            out = new FileOutputStream(destinationFile, true).getChannel();
+            final long size = in.size();
+            // In some Windows platforms, copying large files fail due to insufficient system resources.
+            // Limit copy size to 32 MB in each transfer
+            final long count = 32 * MB;
+            long position = 0;
+
+            while (position < size) {
+                position += in.transferTo(position, count, out);
             }
         } catch (IOException e) {
             throw new SdkClientException("Unable to append file " + sourceFile.getAbsolutePath()

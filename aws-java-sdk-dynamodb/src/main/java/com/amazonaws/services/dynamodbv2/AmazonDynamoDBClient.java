@@ -496,6 +496,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchGetItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -649,6 +650,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public BatchWriteItemResult batchWriteItem(BatchWriteItemRequest batchWriteItemRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchWriteItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -724,6 +726,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateTableResult createTable(CreateTableRequest createTableRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -800,6 +803,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -888,6 +892,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1023,6 +1028,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeLimitsResult describeLimits(DescribeLimitsRequest describeLimitsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1077,6 +1083,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeTableResult describeTable(DescribeTableRequest describeTableRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1139,6 +1146,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetItemResult getItem(GetItemRequest getItemRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1192,6 +1200,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ListTablesResult listTables(ListTablesRequest listTablesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTablesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1297,6 +1306,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public PutItemResult putItem(PutItemRequest putItemRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1383,6 +1393,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public QueryResult query(QueryRequest queryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(queryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1454,6 +1465,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ScanResult scan(ScanRequest scanRequest) {
+
         ExecutionContext executionContext = createExecutionContext(scanRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1532,6 +1544,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1633,6 +1646,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateTableResult updateTable(UpdateTableRequest updateTableRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

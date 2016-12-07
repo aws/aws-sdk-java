@@ -278,6 +278,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -322,6 +323,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public DescribeRuleResult describeRule(DescribeRuleRequest describeRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -372,6 +374,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public DisableRuleResult disableRule(DisableRuleRequest disableRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disableRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -422,6 +425,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public EnableRuleResult enableRule(EnableRuleRequest enableRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enableRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -467,6 +471,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public ListRuleNamesByTargetResult listRuleNamesByTarget(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listRuleNamesByTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -513,6 +518,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public ListRulesResult listRules(ListRulesRequest listRulesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listRulesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -557,6 +563,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public ListTargetsByRuleResult listTargetsByRule(ListTargetsByRuleRequest listTargetsByRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTargetsByRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -599,6 +606,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public PutEventsResult putEvents(PutEventsRequest putEventsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -664,6 +672,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public PutRuleResult putRule(PutRuleRequest putRuleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -739,6 +748,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public PutTargetsResult putTargets(PutTargetsRequest putTargetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -789,6 +799,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public RemoveTargetsResult removeTargets(RemoveTargetsRequest removeTargetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -838,6 +849,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public TestEventPatternResult testEventPattern(TestEventPatternRequest testEventPatternRequest) {
+
         ExecutionContext executionContext = createExecutionContext(testEventPatternRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

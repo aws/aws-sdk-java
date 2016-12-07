@@ -61,6 +61,16 @@ public class AbstractDynamoDBMapper implements IDynamoDBMapper {
     }
 
     @Override
+    public <T extends Object> DynamoDBMapperTableModel<T> getTableModel(Class<T> clazz) {
+        return getTableModel(clazz, config);
+    }
+
+    @Override
+    public <T extends Object> DynamoDBMapperTableModel<T> getTableModel(Class<T> clazz, DynamoDBMapperConfig config) {
+        throw new UnsupportedOperationException("operation not supported in " + getClass());
+    }
+
+    @Override
     public <T> T load(Class<T> clazz, Object hashKey, DynamoDBMapperConfig config) {
         return load(clazz, hashKey, (Object)null, config);
     }

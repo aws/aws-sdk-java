@@ -275,6 +275,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     @Override
     public AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnect(
             AllocateConnectionOnInterconnectRequest allocateConnectionOnInterconnectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(allocateConnectionOnInterconnectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -332,6 +333,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public AllocatePrivateVirtualInterfaceResult allocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(allocatePrivateVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -393,6 +395,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public AllocatePublicVirtualInterfaceResult allocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(allocatePublicVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -445,6 +448,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public ConfirmConnectionResult confirmConnection(ConfirmConnectionRequest confirmConnectionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(confirmConnectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -495,6 +499,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public ConfirmPrivateVirtualInterfaceResult confirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest confirmPrivateVirtualInterfaceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(confirmPrivateVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -547,6 +552,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public ConfirmPublicVirtualInterfaceResult confirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(confirmPublicVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -608,6 +614,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public CreateBGPPeerResult createBGPPeer(CreateBGPPeerRequest createBGPPeerRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createBGPPeerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -661,6 +668,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public CreateConnectionResult createConnection(CreateConnectionRequest createConnectionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createConnectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -725,6 +733,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public CreateInterconnectResult createInterconnect(CreateInterconnectRequest createInterconnectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createInterconnectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -772,6 +781,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public CreatePrivateVirtualInterfaceResult createPrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPrivateVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -826,6 +836,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public CreatePublicVirtualInterfaceResult createPublicVirtualInterface(CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPublicVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -875,6 +886,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public DeleteBGPPeerResult deleteBGPPeer(DeleteBGPPeerRequest deleteBGPPeerRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteBGPPeerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -926,6 +938,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public DeleteConnectionResult deleteConnection(DeleteConnectionRequest deleteConnectionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteConnectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -977,6 +990,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public DeleteInterconnectResult deleteInterconnect(DeleteInterconnectRequest deleteInterconnectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteInterconnectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1023,6 +1037,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public DeleteVirtualInterfaceResult deleteVirtualInterface(DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1076,6 +1091,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeConnectionLoaResult describeConnectionLoa(DescribeConnectionLoaRequest describeConnectionLoaRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeConnectionLoaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1126,6 +1142,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeConnectionsResult describeConnections(DescribeConnectionsRequest describeConnectionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeConnectionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1183,6 +1200,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     @Override
     public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(
             DescribeConnectionsOnInterconnectRequest describeConnectionsOnInterconnectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeConnectionsOnInterconnectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1237,6 +1255,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeInterconnectLoaResult describeInterconnectLoa(DescribeInterconnectLoaRequest describeInterconnectLoaRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeInterconnectLoaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1287,6 +1306,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeInterconnectsResult describeInterconnects(DescribeInterconnectsRequest describeInterconnectsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeInterconnectsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1339,6 +1359,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeLocationsResult describeLocations(DescribeLocationsRequest describeLocationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeLocationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1390,6 +1411,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1441,6 +1463,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeVirtualGatewaysResult describeVirtualGateways(DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeVirtualGatewaysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1503,6 +1526,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public DescribeVirtualInterfacesResult describeVirtualInterfaces(DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeVirtualInterfacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1564,6 +1588,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public TagResourceResult tagResource(TagResourceRequest tagResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1610,6 +1635,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

@@ -14,7 +14,7 @@ package com.amazonaws.services.config.model;
 
 /**
  * <p>
- * Failed to add the AWS Config rule because the account already contains the maximum number of 25 rules. Consider
+ * Failed to add the AWS Config rule because the account already contains the maximum number of 50 rules. Consider
  * deleting any deactivated rules before adding new rules.
  * </p>
  */

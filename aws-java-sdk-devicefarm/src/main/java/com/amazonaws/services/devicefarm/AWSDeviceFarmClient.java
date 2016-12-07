@@ -266,6 +266,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public CreateDevicePoolResult createDevicePool(CreateDevicePoolRequest createDevicePoolRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createDevicePoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -314,6 +315,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public CreateProjectResult createProject(CreateProjectRequest createProjectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createProjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -362,6 +364,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public CreateRemoteAccessSessionResult createRemoteAccessSession(CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createRemoteAccessSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -411,6 +414,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public CreateUploadResult createUpload(CreateUploadRequest createUploadRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -459,6 +463,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public DeleteDevicePoolResult deleteDevicePool(DeleteDevicePoolRequest deleteDevicePoolRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteDevicePoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -510,6 +515,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public DeleteProjectResult deleteProject(DeleteProjectRequest deleteProjectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteProjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -558,6 +564,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public DeleteRemoteAccessSessionResult deleteRemoteAccessSession(DeleteRemoteAccessSessionRequest deleteRemoteAccessSessionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteRemoteAccessSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -610,6 +617,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public DeleteRunResult deleteRun(DeleteRunRequest deleteRunRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -658,6 +666,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public DeleteUploadResult deleteUpload(DeleteUploadRequest deleteUploadRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -706,6 +715,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest getAccountSettingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getAccountSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -754,6 +764,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -802,6 +813,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public GetDevicePoolResult getDevicePool(GetDevicePoolRequest getDevicePoolRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDevicePoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -850,6 +862,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public GetDevicePoolCompatibilityResult getDevicePoolCompatibility(GetDevicePoolCompatibilityRequest getDevicePoolCompatibilityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDevicePoolCompatibilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -899,6 +912,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public GetJobResult getJob(GetJobRequest getJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -953,6 +967,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public GetOfferingStatusResult getOfferingStatus(GetOfferingStatusRequest getOfferingStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getOfferingStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1001,6 +1016,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public GetProjectResult getProject(GetProjectRequest getProjectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getProjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1049,6 +1065,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public GetRemoteAccessSessionResult getRemoteAccessSession(GetRemoteAccessSessionRequest getRemoteAccessSessionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getRemoteAccessSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1098,6 +1115,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public GetRunResult getRun(GetRunRequest getRunRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1146,6 +1164,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public GetSuiteResult getSuite(GetSuiteRequest getSuiteRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getSuiteRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1194,6 +1213,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public GetTestResult getTest(GetTestRequest getTestRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getTestRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1242,6 +1262,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public GetUploadResult getUpload(GetUploadRequest getUploadRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1292,6 +1313,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public InstallToRemoteAccessSessionResult installToRemoteAccessSession(InstallToRemoteAccessSessionRequest installToRemoteAccessSessionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(installToRemoteAccessSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1342,6 +1364,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListArtifactsResult listArtifacts(ListArtifactsRequest listArtifactsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listArtifactsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1390,6 +1413,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListDevicePoolsResult listDevicePools(ListDevicePoolsRequest listDevicePoolsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDevicePoolsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1438,6 +1462,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListDevicesResult listDevices(ListDevicesRequest listDevicesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1486,6 +1511,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1540,6 +1566,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListOfferingTransactionsResult listOfferingTransactions(ListOfferingTransactionsRequest listOfferingTransactionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listOfferingTransactionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1595,6 +1622,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListOfferingsResult listOfferings(ListOfferingsRequest listOfferingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listOfferingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1643,6 +1671,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listProjectsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1691,6 +1720,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListRemoteAccessSessionsResult listRemoteAccessSessions(ListRemoteAccessSessionsRequest listRemoteAccessSessionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listRemoteAccessSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1740,6 +1770,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListRunsResult listRuns(ListRunsRequest listRunsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listRunsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1788,6 +1819,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListSamplesResult listSamples(ListSamplesRequest listSamplesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listSamplesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1836,6 +1868,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListSuitesResult listSuites(ListSuitesRequest listSuitesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listSuitesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1884,6 +1917,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListTestsResult listTests(ListTestsRequest listTestsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTestsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1932,6 +1966,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListUniqueProblemsResult listUniqueProblems(ListUniqueProblemsRequest listUniqueProblemsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listUniqueProblemsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1980,6 +2015,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ListUploadsResult listUploads(ListUploadsRequest listUploadsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listUploadsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2034,6 +2070,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest) {
+
         ExecutionContext executionContext = createExecutionContext(purchaseOfferingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2088,6 +2125,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public RenewOfferingResult renewOffering(RenewOfferingRequest renewOfferingRequest) {
+
         ExecutionContext executionContext = createExecutionContext(renewOfferingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2138,6 +2176,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public ScheduleRunResult scheduleRun(ScheduleRunRequest scheduleRunRequest) {
+
         ExecutionContext executionContext = createExecutionContext(scheduleRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2186,6 +2225,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public StopRemoteAccessSessionResult stopRemoteAccessSession(StopRemoteAccessSessionRequest stopRemoteAccessSessionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopRemoteAccessSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2238,6 +2278,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public StopRunResult stopRun(StopRunRequest stopRunRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2287,6 +2328,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public UpdateDevicePoolResult updateDevicePool(UpdateDevicePoolRequest updateDevicePoolRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateDevicePoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2335,6 +2377,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      */
     @Override
     public UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateProjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

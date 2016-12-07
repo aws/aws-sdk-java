@@ -516,6 +516,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public AddTagsToOnPremisesInstancesResult addTagsToOnPremisesInstances(AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addTagsToOnPremisesInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -570,6 +571,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public BatchGetApplicationRevisionsResult batchGetApplicationRevisions(BatchGetApplicationRevisionsRequest batchGetApplicationRevisionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchGetApplicationRevisionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -620,6 +622,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public BatchGetApplicationsResult batchGetApplications(BatchGetApplicationsRequest batchGetApplicationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchGetApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -677,6 +680,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public BatchGetDeploymentGroupsResult batchGetDeploymentGroups(BatchGetDeploymentGroupsRequest batchGetDeploymentGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchGetDeploymentGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -730,6 +734,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public BatchGetDeploymentInstancesResult batchGetDeploymentInstances(BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchGetDeploymentInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -778,6 +783,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public BatchGetDeploymentsResult batchGetDeployments(BatchGetDeploymentsRequest batchGetDeploymentsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchGetDeploymentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -829,6 +835,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchGetOnPremisesInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -884,6 +891,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -953,6 +961,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateDeploymentResult createDeployment(CreateDeploymentRequest createDeploymentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1004,6 +1013,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateDeploymentConfigResult createDeploymentConfig(CreateDeploymentConfigRequest createDeploymentConfigRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createDeploymentConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1113,6 +1123,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateDeploymentGroupResult createDeploymentGroup(CreateDeploymentGroupRequest createDeploymentGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createDeploymentGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1158,6 +1169,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1212,6 +1224,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteDeploymentConfigResult deleteDeploymentConfig(DeleteDeploymentConfigRequest deleteDeploymentConfigRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteDeploymentConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1264,6 +1277,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteDeploymentGroupResult deleteDeploymentGroup(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteDeploymentGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1309,6 +1323,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeregisterOnPremisesInstanceResult deregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deregisterOnPremisesInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1357,6 +1372,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetApplicationResult getApplication(GetApplicationRequest getApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1409,6 +1425,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetApplicationRevisionResult getApplicationRevision(GetApplicationRevisionRequest getApplicationRevisionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getApplicationRevisionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1456,6 +1473,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetDeploymentResult getDeployment(GetDeploymentRequest getDeploymentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1502,6 +1520,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetDeploymentConfigResult getDeploymentConfig(GetDeploymentConfigRequest getDeploymentConfigRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDeploymentConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1554,6 +1573,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetDeploymentGroupResult getDeploymentGroup(GetDeploymentGroupRequest getDeploymentGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDeploymentGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1606,6 +1626,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetDeploymentInstanceResult getDeploymentInstance(GetDeploymentInstanceRequest getDeploymentInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDeploymentInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1653,6 +1674,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetOnPremisesInstanceResult getOnPremisesInstance(GetOnPremisesInstanceRequest getOnPremisesInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getOnPremisesInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1714,6 +1736,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListApplicationRevisionsResult listApplicationRevisions(ListApplicationRevisionsRequest listApplicationRevisionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listApplicationRevisionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1757,6 +1780,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1804,6 +1828,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListDeploymentConfigsResult listDeploymentConfigs(ListDeploymentConfigsRequest listDeploymentConfigsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDeploymentConfigsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1858,6 +1883,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListDeploymentGroupsResult listDeploymentGroups(ListDeploymentGroupsRequest listDeploymentGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDeploymentGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1910,6 +1936,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListDeploymentInstancesResult listDeploymentInstances(ListDeploymentInstancesRequest listDeploymentInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDeploymentInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1970,6 +1997,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListDeploymentsResult listDeployments(ListDeploymentsRequest listDeploymentsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDeploymentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2025,6 +2053,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListOnPremisesInstancesResult listOnPremisesInstances(ListOnPremisesInstancesRequest listOnPremisesInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listOnPremisesInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2083,6 +2112,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public RegisterApplicationRevisionResult registerApplicationRevision(RegisterApplicationRevisionRequest registerApplicationRevisionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(registerApplicationRevisionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2137,6 +2167,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public RegisterOnPremisesInstanceResult registerOnPremisesInstance(RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(registerOnPremisesInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2191,6 +2222,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
     @Override
     public RemoveTagsFromOnPremisesInstancesResult removeTagsFromOnPremisesInstances(
             RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeTagsFromOnPremisesInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2241,6 +2273,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public StopDeploymentResult stopDeployment(StopDeploymentRequest stopDeploymentRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2289,6 +2322,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2400,6 +2434,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public UpdateDeploymentGroupResult updateDeploymentGroup(UpdateDeploymentGroupRequest updateDeploymentGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateDeploymentGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

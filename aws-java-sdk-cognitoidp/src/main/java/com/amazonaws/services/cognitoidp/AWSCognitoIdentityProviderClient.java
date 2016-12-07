@@ -345,6 +345,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AddCustomAttributesResult addCustomAttributes(AddCustomAttributesRequest addCustomAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addCustomAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -410,6 +411,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminConfirmSignUpResult adminConfirmSignUp(AdminConfirmSignUpRequest adminConfirmSignUpRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminConfirmSignUpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -492,6 +494,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminCreateUserResult adminCreateUser(AdminCreateUserRequest adminCreateUserRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminCreateUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -544,6 +547,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminDeleteUserResult adminDeleteUser(AdminDeleteUserRequest adminDeleteUserRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminDeleteUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -596,6 +600,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminDeleteUserAttributesResult adminDeleteUserAttributes(AdminDeleteUserAttributesRequest adminDeleteUserAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminDeleteUserAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -649,6 +654,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminDisableUserResult adminDisableUser(AdminDisableUserRequest adminDisableUserRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminDisableUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -701,6 +707,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminEnableUserResult adminEnableUser(AdminEnableUserRequest adminEnableUserRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminEnableUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -755,6 +762,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminForgetDeviceResult adminForgetDevice(AdminForgetDeviceRequest adminForgetDeviceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminForgetDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -807,6 +815,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminGetDeviceResult adminGetDevice(AdminGetDeviceRequest adminGetDeviceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminGetDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -859,6 +868,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminGetUserResult adminGetUser(AdminGetUserRequest adminGetUserRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminGetUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -934,6 +944,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminInitiateAuthResult adminInitiateAuth(AdminInitiateAuthRequest adminInitiateAuthRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminInitiateAuthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -986,6 +997,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminListDevicesResult adminListDevices(AdminListDevicesRequest adminListDevicesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminListDevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1056,6 +1068,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminResetUserPasswordResult adminResetUserPassword(AdminResetUserPasswordRequest adminResetUserPasswordRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminResetUserPasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1142,6 +1155,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminRespondToAuthChallengeResult adminRespondToAuthChallenge(AdminRespondToAuthChallengeRequest adminRespondToAuthChallengeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminRespondToAuthChallengeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1194,6 +1208,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminSetUserSettingsResult adminSetUserSettings(AdminSetUserSettingsRequest adminSetUserSettingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminSetUserSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1248,6 +1263,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminUpdateDeviceStatusResult adminUpdateDeviceStatus(AdminUpdateDeviceStatusRequest adminUpdateDeviceStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminUpdateDeviceStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1313,6 +1329,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminUpdateUserAttributesResult adminUpdateUserAttributes(AdminUpdateUserAttributesRequest adminUpdateUserAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminUpdateUserAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1366,6 +1383,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public AdminUserGlobalSignOutResult adminUserGlobalSignOut(AdminUserGlobalSignOutRequest adminUserGlobalSignOutRequest) {
+
         ExecutionContext executionContext = createExecutionContext(adminUserGlobalSignOutRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1427,6 +1445,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public ChangePasswordResult changePassword(ChangePasswordRequest changePasswordRequest) {
+
         ExecutionContext executionContext = createExecutionContext(changePasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1491,6 +1510,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public ConfirmDeviceResult confirmDevice(ConfirmDeviceRequest confirmDeviceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(confirmDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1564,6 +1584,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public ConfirmForgotPasswordResult confirmForgotPassword(ConfirmForgotPasswordRequest confirmForgotPasswordRequest) {
+
         ExecutionContext executionContext = createExecutionContext(confirmForgotPasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1638,6 +1659,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public ConfirmSignUpResult confirmSignUp(ConfirmSignUpRequest confirmSignUpRequest) {
+
         ExecutionContext executionContext = createExecutionContext(confirmSignUpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1692,6 +1714,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public CreateUserImportJobResult createUserImportJob(CreateUserImportJobRequest createUserImportJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createUserImportJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1752,6 +1775,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public CreateUserPoolResult createUserPool(CreateUserPoolRequest createUserPoolRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createUserPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1804,6 +1828,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public CreateUserPoolClientResult createUserPoolClient(CreateUserPoolClientRequest createUserPoolClientRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createUserPoolClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1860,6 +1885,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1916,6 +1942,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public DeleteUserAttributesResult deleteUserAttributes(DeleteUserAttributesRequest deleteUserAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteUserAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1969,6 +1996,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public DeleteUserPoolResult deleteUserPool(DeleteUserPoolRequest deleteUserPoolRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteUserPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2019,6 +2047,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public DeleteUserPoolClientResult deleteUserPoolClient(DeleteUserPoolClientRequest deleteUserPoolClientRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteUserPoolClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2069,6 +2098,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeUserImportJobResult describeUserImportJob(DescribeUserImportJobRequest describeUserImportJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeUserImportJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2120,6 +2150,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeUserPoolResult describeUserPool(DescribeUserPoolRequest describeUserPoolRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeUserPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2170,6 +2201,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeUserPoolClientResult describeUserPoolClient(DescribeUserPoolClientRequest describeUserPoolClientRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeUserPoolClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2229,6 +2261,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public ForgetDeviceResult forgetDevice(ForgetDeviceRequest forgetDeviceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(forgetDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2305,6 +2338,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public ForgotPasswordResult forgotPassword(ForgotPasswordRequest forgotPasswordRequest) {
+
         ExecutionContext executionContext = createExecutionContext(forgotPasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2355,6 +2389,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public GetCSVHeaderResult getCSVHeader(GetCSVHeaderRequest getCSVHeaderRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getCSVHeaderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2413,6 +2448,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2469,6 +2505,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public GetUserResult getUser(GetUserRequest getUserRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2548,6 +2585,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     @Override
     public GetUserAttributeVerificationCodeResult getUserAttributeVerificationCode(
             GetUserAttributeVerificationCodeRequest getUserAttributeVerificationCodeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getUserAttributeVerificationCodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2604,6 +2642,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public GlobalSignOutResult globalSignOut(GlobalSignOutRequest globalSignOutRequest) {
+
         ExecutionContext executionContext = createExecutionContext(globalSignOutRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2670,6 +2709,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public InitiateAuthResult initiateAuth(InitiateAuthRequest initiateAuthRequest) {
+
         ExecutionContext executionContext = createExecutionContext(initiateAuthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2728,6 +2768,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public ListDevicesResult listDevices(ListDevicesRequest listDevicesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2778,6 +2819,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public ListUserImportJobsResult listUserImportJobs(ListUserImportJobsRequest listUserImportJobsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listUserImportJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2828,6 +2870,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public ListUserPoolClientsResult listUserPoolClients(ListUserPoolClientsRequest listUserPoolClientsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listUserPoolClientsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2876,6 +2919,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public ListUserPoolsResult listUserPools(ListUserPoolsRequest listUserPoolsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listUserPoolsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2926,6 +2970,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public ListUsersResult listUsers(ListUsersRequest listUsersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listUsersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3000,6 +3045,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public ResendConfirmationCodeResult resendConfirmationCode(ResendConfirmationCodeRequest resendConfirmationCodeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(resendConfirmationCodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3086,6 +3132,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public RespondToAuthChallengeResult respondToAuthChallenge(RespondToAuthChallengeRequest respondToAuthChallengeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(respondToAuthChallengeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3142,6 +3189,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public SetUserSettingsResult setUserSettings(SetUserSettingsRequest setUserSettingsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setUserSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3216,6 +3264,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public SignUpResult signUp(SignUpRequest signUpRequest) {
+
         ExecutionContext executionContext = createExecutionContext(signUpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3268,6 +3317,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public StartUserImportJobResult startUserImportJob(StartUserImportJobRequest startUserImportJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startUserImportJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3320,6 +3370,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public StopUserImportJobResult stopUserImportJob(StopUserImportJobRequest stopUserImportJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopUserImportJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3378,6 +3429,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public UpdateDeviceStatusResult updateDeviceStatus(UpdateDeviceStatusRequest updateDeviceStatusRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateDeviceStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3462,6 +3514,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public UpdateUserAttributesResult updateUserAttributes(UpdateUserAttributesRequest updateUserAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateUserAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3527,6 +3580,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public UpdateUserPoolResult updateUserPool(UpdateUserPoolRequest updateUserPoolRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateUserPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3577,6 +3631,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public UpdateUserPoolClientResult updateUserPoolClient(UpdateUserPoolClientRequest updateUserPoolClientRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateUserPoolClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3639,6 +3694,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      */
     @Override
     public VerifyUserAttributeResult verifyUserAttribute(VerifyUserAttributeRequest verifyUserAttributeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(verifyUserAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

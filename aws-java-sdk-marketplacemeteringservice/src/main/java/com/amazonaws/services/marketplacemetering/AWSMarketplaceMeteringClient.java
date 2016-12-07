@@ -328,6 +328,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      */
     @Override
     public BatchMeterUsageResult batchMeterUsage(BatchMeterUsageRequest batchMeterUsageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchMeterUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -389,6 +390,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      */
     @Override
     public MeterUsageResult meterUsage(MeterUsageRequest meterUsageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(meterUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -442,6 +444,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      */
     @Override
     public ResolveCustomerResult resolveCustomer(ResolveCustomerRequest resolveCustomerRequest) {
+
         ExecutionContext executionContext = createExecutionContext(resolveCustomerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

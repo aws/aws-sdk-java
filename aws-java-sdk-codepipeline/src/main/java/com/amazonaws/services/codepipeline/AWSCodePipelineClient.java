@@ -488,6 +488,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public AcknowledgeJobResult acknowledgeJob(AcknowledgeJobRequest acknowledgeJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(acknowledgeJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -536,6 +537,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public AcknowledgeThirdPartyJobResult acknowledgeThirdPartyJob(AcknowledgeThirdPartyJobRequest acknowledgeThirdPartyJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(acknowledgeThirdPartyJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -582,6 +584,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public CreateCustomActionTypeResult createCustomActionType(CreateCustomActionTypeRequest createCustomActionTypeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createCustomActionTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -637,6 +640,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -686,6 +690,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public DeleteCustomActionTypeResult deleteCustomActionType(DeleteCustomActionTypeRequest deleteCustomActionTypeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteCustomActionTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -729,6 +734,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deletePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -775,6 +781,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public DisableStageTransitionResult disableStageTransition(DisableStageTransitionRequest disableStageTransitionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disableStageTransitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -822,6 +829,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public EnableStageTransitionResult enableStageTransition(EnableStageTransitionRequest enableStageTransitionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enableStageTransitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -874,6 +882,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public GetJobDetailsResult getJobDetails(GetJobDetailsRequest getJobDetailsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getJobDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -922,6 +931,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public GetPipelineResult getPipeline(GetPipelineRequest getPipelineRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -970,6 +980,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public GetPipelineExecutionResult getPipelineExecution(GetPipelineExecutionRequest getPipelineExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getPipelineExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1014,6 +1025,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public GetPipelineStateResult getPipelineState(GetPipelineStateRequest getPipelineStateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getPipelineStateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1069,6 +1081,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public GetThirdPartyJobDetailsResult getThirdPartyJobDetails(GetThirdPartyJobDetailsRequest getThirdPartyJobDetailsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getThirdPartyJobDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1115,6 +1128,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public ListActionTypesResult listActionTypes(ListActionTypesRequest listActionTypesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listActionTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1158,6 +1172,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listPipelinesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1209,6 +1224,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public PollForJobsResult pollForJobs(PollForJobsRequest pollForJobsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(pollForJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1259,6 +1275,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public PollForThirdPartyJobsResult pollForThirdPartyJobs(PollForThirdPartyJobsRequest pollForThirdPartyJobsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(pollForThirdPartyJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1308,6 +1325,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public PutActionRevisionResult putActionRevision(PutActionRevisionRequest putActionRevisionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putActionRevisionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1361,6 +1379,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public PutApprovalResultResult putApprovalResult(PutApprovalResultRequest putApprovalResultRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putApprovalResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1407,6 +1426,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public PutJobFailureResultResult putJobFailureResult(PutJobFailureResultRequest putJobFailureResultRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putJobFailureResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1453,6 +1473,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public PutJobSuccessResultResult putJobSuccessResult(PutJobSuccessResultRequest putJobSuccessResultRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putJobSuccessResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1502,6 +1523,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public PutThirdPartyJobFailureResultResult putThirdPartyJobFailureResult(PutThirdPartyJobFailureResultRequest putThirdPartyJobFailureResultRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putThirdPartyJobFailureResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1553,6 +1575,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public PutThirdPartyJobSuccessResultResult putThirdPartyJobSuccessResult(PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putThirdPartyJobSuccessResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1608,6 +1631,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public RetryStageExecutionResult retryStageExecution(RetryStageExecutionRequest retryStageExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(retryStageExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1653,6 +1677,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public StartPipelineExecutionResult startPipelineExecution(StartPipelineExecutionRequest startPipelineExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startPipelineExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1706,6 +1731,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      */
     @Override
     public UpdatePipelineResult updatePipeline(UpdatePipelineRequest updatePipelineRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updatePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

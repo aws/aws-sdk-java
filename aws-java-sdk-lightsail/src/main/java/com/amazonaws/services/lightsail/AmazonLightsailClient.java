@@ -289,6 +289,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public AllocateStaticIpResult allocateStaticIp(AllocateStaticIpRequest allocateStaticIpRequest) {
+
         ExecutionContext executionContext = createExecutionContext(allocateStaticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -344,6 +345,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public AttachStaticIpResult attachStaticIp(AttachStaticIpRequest attachStaticIpRequest) {
+
         ExecutionContext executionContext = createExecutionContext(attachStaticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -399,6 +401,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CloseInstancePublicPortsResult closeInstancePublicPorts(CloseInstancePublicPortsRequest closeInstancePublicPortsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(closeInstancePublicPortsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -455,6 +458,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CreateDomainResult createDomain(CreateDomainRequest createDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -511,6 +515,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CreateDomainEntryResult createDomainEntry(CreateDomainEntryRequest createDomainEntryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createDomainEntryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -567,6 +572,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CreateInstanceSnapshotResult createInstanceSnapshot(CreateInstanceSnapshotRequest createInstanceSnapshotRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createInstanceSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -623,6 +629,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CreateInstancesResult createInstances(CreateInstancesRequest createInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -679,6 +686,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CreateInstancesFromSnapshotResult createInstancesFromSnapshot(CreateInstancesFromSnapshotRequest createInstancesFromSnapshotRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createInstancesFromSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -736,6 +744,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public CreateKeyPairResult createKeyPair(CreateKeyPairRequest createKeyPairRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -791,6 +800,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DeleteDomainResult deleteDomain(DeleteDomainRequest deleteDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -846,6 +856,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DeleteDomainEntryResult deleteDomainEntry(DeleteDomainEntryRequest deleteDomainEntryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteDomainEntryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -901,6 +912,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DeleteInstanceResult deleteInstance(DeleteInstanceRequest deleteInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -956,6 +968,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DeleteInstanceSnapshotResult deleteInstanceSnapshot(DeleteInstanceSnapshotRequest deleteInstanceSnapshotRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteInstanceSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1012,6 +1025,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DeleteKeyPairResult deleteKeyPair(DeleteKeyPairRequest deleteKeyPairRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1067,6 +1081,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DetachStaticIpResult detachStaticIp(DetachStaticIpRequest detachStaticIpRequest) {
+
         ExecutionContext executionContext = createExecutionContext(detachStaticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1122,6 +1137,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public DownloadDefaultKeyPairResult downloadDefaultKeyPair(DownloadDefaultKeyPairRequest downloadDefaultKeyPairRequest) {
+
         ExecutionContext executionContext = createExecutionContext(downloadDefaultKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1178,6 +1194,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetActiveNamesResult getActiveNames(GetActiveNamesRequest getActiveNamesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getActiveNamesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1235,6 +1252,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetBlueprintsResult getBlueprints(GetBlueprintsRequest getBlueprintsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getBlueprintsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1291,6 +1309,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetBundlesResult getBundles(GetBundlesRequest getBundlesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getBundlesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1346,6 +1365,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetDomainResult getDomain(GetDomainRequest getDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1401,6 +1421,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetDomainsResult getDomains(GetDomainsRequest getDomainsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1456,6 +1477,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetInstanceResult getInstance(GetInstanceRequest getInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1511,6 +1533,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetInstanceAccessDetailsResult getInstanceAccessDetails(GetInstanceAccessDetailsRequest getInstanceAccessDetailsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getInstanceAccessDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1567,6 +1590,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetInstanceMetricDataResult getInstanceMetricData(GetInstanceMetricDataRequest getInstanceMetricDataRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getInstanceMetricDataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1623,6 +1647,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetInstancePortStatesResult getInstancePortStates(GetInstancePortStatesRequest getInstancePortStatesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getInstancePortStatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1679,6 +1704,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetInstanceSnapshotResult getInstanceSnapshot(GetInstanceSnapshotRequest getInstanceSnapshotRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getInstanceSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1734,6 +1760,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetInstanceSnapshotsResult getInstanceSnapshots(GetInstanceSnapshotsRequest getInstanceSnapshotsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getInstanceSnapshotsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1789,6 +1816,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetInstanceStateResult getInstanceState(GetInstanceStateRequest getInstanceStateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getInstanceStateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1844,6 +1872,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetInstancesResult getInstances(GetInstancesRequest getInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1899,6 +1928,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetKeyPairResult getKeyPair(GetKeyPairRequest getKeyPairRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1954,6 +1984,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetKeyPairsResult getKeyPairs(GetKeyPairsRequest getKeyPairsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getKeyPairsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2010,6 +2041,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetOperationResult getOperation(GetOperationRequest getOperationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getOperationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2070,6 +2102,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetOperationsResult getOperations(GetOperationsRequest getOperationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getOperationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2125,6 +2158,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetOperationsForResourceResult getOperationsForResource(GetOperationsForResourceRequest getOperationsForResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getOperationsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2181,6 +2215,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetRegionsResult getRegions(GetRegionsRequest getRegionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getRegionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2236,6 +2271,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetStaticIpResult getStaticIp(GetStaticIpRequest getStaticIpRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getStaticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2291,6 +2327,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public GetStaticIpsResult getStaticIps(GetStaticIpsRequest getStaticIpsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getStaticIpsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2346,6 +2383,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ImportKeyPairResult importKeyPair(ImportKeyPairRequest importKeyPairRequest) {
+
         ExecutionContext executionContext = createExecutionContext(importKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2401,6 +2439,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public IsVpcPeeredResult isVpcPeered(IsVpcPeeredRequest isVpcPeeredRequest) {
+
         ExecutionContext executionContext = createExecutionContext(isVpcPeeredRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2456,6 +2495,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public OpenInstancePublicPortsResult openInstancePublicPorts(OpenInstancePublicPortsRequest openInstancePublicPortsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(openInstancePublicPortsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2512,6 +2552,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public PeerVpcResult peerVpc(PeerVpcRequest peerVpcRequest) {
+
         ExecutionContext executionContext = createExecutionContext(peerVpcRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2569,6 +2610,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public RebootInstanceResult rebootInstance(RebootInstanceRequest rebootInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(rebootInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2624,6 +2666,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public ReleaseStaticIpResult releaseStaticIp(ReleaseStaticIpRequest releaseStaticIpRequest) {
+
         ExecutionContext executionContext = createExecutionContext(releaseStaticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2680,6 +2723,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public StartInstanceResult startInstance(StartInstanceRequest startInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2735,6 +2779,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public StopInstanceResult stopInstance(StopInstanceRequest stopInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2790,6 +2835,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public UnpeerVpcResult unpeerVpc(UnpeerVpcRequest unpeerVpcRequest) {
+
         ExecutionContext executionContext = createExecutionContext(unpeerVpcRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2845,6 +2891,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      */
     @Override
     public UpdateDomainEntryResult updateDomainEntry(UpdateDomainEntryRequest updateDomainEntryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateDomainEntryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

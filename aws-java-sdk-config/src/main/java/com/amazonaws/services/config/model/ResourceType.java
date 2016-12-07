@@ -43,7 +43,8 @@ public enum ResourceType {
     AWSRDSDBSnapshot("AWS::RDS::DBSnapshot"),
     AWSRDSEventSubscription("AWS::RDS::EventSubscription"),
     AWSElasticLoadBalancingV2LoadBalancer("AWS::ElasticLoadBalancingV2::LoadBalancer"),
-    AWSS3Bucket("AWS::S3::Bucket");
+    AWSS3Bucket("AWS::S3::Bucket"),
+    AWSSSMManagedInstanceInventory("AWS::SSM::ManagedInstanceInventory");
 
     private String value;
 

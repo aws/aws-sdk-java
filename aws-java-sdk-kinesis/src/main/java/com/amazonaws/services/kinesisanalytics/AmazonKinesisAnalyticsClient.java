@@ -286,6 +286,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public AddApplicationInputResult addApplicationInput(AddApplicationInputRequest addApplicationInputRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addApplicationInputRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -358,6 +359,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public AddApplicationOutputResult addApplicationOutput(AddApplicationOutputRequest addApplicationOutputRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addApplicationOutputRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -422,6 +424,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
     @Override
     public AddApplicationReferenceDataSourceResult addApplicationReferenceDataSource(
             AddApplicationReferenceDataSourceRequest addApplicationReferenceDataSourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addApplicationReferenceDataSourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -498,6 +501,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -549,6 +553,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -599,6 +604,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public DeleteApplicationOutputResult deleteApplicationOutput(DeleteApplicationOutputRequest deleteApplicationOutputRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteApplicationOutputRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -657,6 +663,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
     @Override
     public DeleteApplicationReferenceDataSourceResult deleteApplicationReferenceDataSource(
             DeleteApplicationReferenceDataSourceRequest deleteApplicationReferenceDataSourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteApplicationReferenceDataSourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -708,6 +715,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public DescribeApplicationResult describeApplication(DescribeApplicationRequest describeApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -766,6 +774,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public DiscoverInputSchemaResult discoverInputSchema(DiscoverInputSchemaRequest discoverInputSchemaRequest) {
+
         ExecutionContext executionContext = createExecutionContext(discoverInputSchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -815,6 +824,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -878,6 +888,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public StartApplicationResult startApplication(StartApplicationRequest startApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -927,6 +938,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public StopApplicationResult stopApplication(StopApplicationRequest stopApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -985,6 +997,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      */
     @Override
     public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

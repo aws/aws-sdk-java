@@ -296,6 +296,9 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      */
     @Override
     public DeleteThingShadowResult deleteThingShadow(DeleteThingShadowRequest deleteThingShadowRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteThingShadowRequest.getThingName()), "ThingName");
+
         ExecutionContext executionContext = createExecutionContext(deleteThingShadowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -357,6 +360,9 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      */
     @Override
     public GetThingShadowResult getThingShadow(GetThingShadowRequest getThingShadowRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getThingShadowRequest.getThingName()), "ThingName");
+
         ExecutionContext executionContext = createExecutionContext(getThingShadowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -409,6 +415,9 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      */
     @Override
     public PublishResult publish(PublishRequest publishRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(publishRequest.getTopic()), "Topic");
+
         ExecutionContext executionContext = createExecutionContext(publishRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -472,6 +481,9 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      */
     @Override
     public UpdateThingShadowResult updateThingShadow(UpdateThingShadowRequest updateThingShadowRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateThingShadowRequest.getThingName()), "ThingName");
+
         ExecutionContext executionContext = createExecutionContext(updateThingShadowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

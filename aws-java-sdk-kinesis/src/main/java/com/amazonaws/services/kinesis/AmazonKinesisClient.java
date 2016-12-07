@@ -276,6 +276,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public AddTagsToStreamResult addTagsToStream(AddTagsToStreamRequest addTagsToStreamRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addTagsToStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -373,6 +374,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public CreateStreamResult createStream(CreateStreamRequest createStreamRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -431,6 +433,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DecreaseStreamRetentionPeriodResult decreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest) {
+
         ExecutionContext executionContext = createExecutionContext(decreaseStreamRetentionPeriodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -500,6 +503,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DeleteStreamResult deleteStream(DeleteStreamRequest deleteStreamRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -553,6 +557,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DescribeLimitsResult describeLimits(DescribeLimitsRequest describeLimitsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -617,6 +622,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DescribeStreamResult describeStream(DescribeStreamRequest describeStreamRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -683,6 +689,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DisableEnhancedMonitoringResult disableEnhancedMonitoring(DisableEnhancedMonitoringRequest disableEnhancedMonitoringRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disableEnhancedMonitoringRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -735,6 +742,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public EnableEnhancedMonitoringResult enableEnhancedMonitoring(EnableEnhancedMonitoringRequest enableEnhancedMonitoringRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enableEnhancedMonitoringRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -837,6 +845,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -928,6 +937,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetShardIteratorResult getShardIterator(GetShardIteratorRequest getShardIteratorRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getShardIteratorRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -995,6 +1005,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public IncreaseStreamRetentionPeriodResult increaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest) {
+
         ExecutionContext executionContext = createExecutionContext(increaseStreamRetentionPeriodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1055,6 +1066,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listStreamsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1118,6 +1130,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListTagsForStreamResult listTagsForStream(ListTagsForStreamRequest listTagsForStreamRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTagsForStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1208,6 +1221,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public MergeShardsResult mergeShards(MergeShardsRequest mergeShardsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(mergeShardsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1307,6 +1321,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public PutRecordResult putRecord(PutRecordRequest putRecordRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putRecordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1433,6 +1448,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public PutRecordsResult putRecords(PutRecordsRequest putRecordsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1488,6 +1504,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public RemoveTagsFromStreamResult removeTagsFromStream(RemoveTagsFromStreamRequest removeTagsFromStreamRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeTagsFromStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1589,6 +1606,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public SplitShardResult splitShard(SplitShardRequest splitShardRequest) {
+
         ExecutionContext executionContext = createExecutionContext(splitShardRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1666,6 +1684,7 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public UpdateShardCountResult updateShardCount(UpdateShardCountRequest updateShardCountRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateShardCountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

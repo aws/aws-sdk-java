@@ -325,6 +325,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(associateVPCWithHostedZoneRequest.getHostedZoneId()), "HostedZoneId");
+
         ExecutionContext executionContext = createExecutionContext(associateVPCWithHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -524,6 +527,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(changeResourceRecordSetsRequest.getHostedZoneId()), "HostedZoneId");
+
         ExecutionContext executionContext = createExecutionContext(changeResourceRecordSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -581,6 +587,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ChangeTagsForResourceResult changeTagsForResource(ChangeTagsForResourceRequest changeTagsForResourceRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(changeTagsForResourceRequest.getResourceType()), "ResourceType");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(changeTagsForResourceRequest.getResourceId()), "ResourceId");
+
         ExecutionContext executionContext = createExecutionContext(changeTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -672,6 +682,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public CreateHealthCheckResult createHealthCheck(CreateHealthCheckRequest createHealthCheckRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createHealthCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -790,6 +801,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest createHostedZoneRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -863,6 +875,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public CreateReusableDelegationSetResult createReusableDelegationSet(CreateReusableDelegationSetRequest createReusableDelegationSetRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createReusableDelegationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -920,6 +933,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public CreateTrafficPolicyResult createTrafficPolicy(CreateTrafficPolicyRequest createTrafficPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createTrafficPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -983,6 +997,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public CreateTrafficPolicyInstanceResult createTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest createTrafficPolicyInstanceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createTrafficPolicyInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1044,6 +1059,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public CreateTrafficPolicyVersionResult createTrafficPolicyVersion(CreateTrafficPolicyVersionRequest createTrafficPolicyVersionRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createTrafficPolicyVersionRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(createTrafficPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1115,6 +1133,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     @Override
     public CreateVPCAssociationAuthorizationResult createVPCAssociationAuthorization(
             CreateVPCAssociationAuthorizationRequest createVPCAssociationAuthorizationRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createVPCAssociationAuthorizationRequest.getHostedZoneId()), "HostedZoneId");
+
         ExecutionContext executionContext = createExecutionContext(createVPCAssociationAuthorizationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1174,6 +1195,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteHealthCheckRequest.getHealthCheckId()), "HealthCheckId");
+
         ExecutionContext executionContext = createExecutionContext(deleteHealthCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1237,6 +1261,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteHostedZoneRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(deleteHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1296,6 +1323,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DeleteReusableDelegationSetResult deleteReusableDelegationSet(DeleteReusableDelegationSetRequest deleteReusableDelegationSetRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteReusableDelegationSetRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(deleteReusableDelegationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1348,6 +1378,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DeleteTrafficPolicyResult deleteTrafficPolicy(DeleteTrafficPolicyRequest deleteTrafficPolicyRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteTrafficPolicyRequest.getId()), "Id");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromInteger(deleteTrafficPolicyRequest.getVersion()), "Version");
+
         ExecutionContext executionContext = createExecutionContext(deleteTrafficPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1407,6 +1441,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DeleteTrafficPolicyInstanceResult deleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteTrafficPolicyInstanceRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(deleteTrafficPolicyInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1473,6 +1510,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     @Override
     public DeleteVPCAssociationAuthorizationResult deleteVPCAssociationAuthorization(
             DeleteVPCAssociationAuthorizationRequest deleteVPCAssociationAuthorizationRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteVPCAssociationAuthorizationRequest.getHostedZoneId()), "HostedZoneId");
+
         ExecutionContext executionContext = createExecutionContext(deleteVPCAssociationAuthorizationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1543,6 +1583,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(disassociateVPCFromHostedZoneRequest.getHostedZoneId()), "HostedZoneId");
+
         ExecutionContext executionContext = createExecutionContext(disassociateVPCFromHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1600,6 +1643,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetChangeResult getChange(GetChangeRequest getChangeRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getChangeRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(getChangeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1642,6 +1688,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetCheckerIpRangesResult getCheckerIpRanges(GetCheckerIpRangesRequest getCheckerIpRangesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getCheckerIpRangesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1692,6 +1739,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetGeoLocationResult getGeoLocation(GetGeoLocationRequest getGeoLocationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getGeoLocationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1756,6 +1804,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetHealthCheckResult getHealthCheck(GetHealthCheckRequest getHealthCheckRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getHealthCheckRequest.getHealthCheckId()), "HealthCheckId");
+
         ExecutionContext executionContext = createExecutionContext(getHealthCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1798,6 +1849,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetHealthCheckCountResult getHealthCheckCount(GetHealthCheckCountRequest getHealthCheckCountRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getHealthCheckCountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1859,6 +1911,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetHealthCheckLastFailureReasonResult getHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest getHealthCheckLastFailureReasonRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getHealthCheckLastFailureReasonRequest.getHealthCheckId()), "HealthCheckId");
+
         ExecutionContext executionContext = createExecutionContext(getHealthCheckLastFailureReasonRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1905,6 +1960,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetHealthCheckStatusResult getHealthCheckStatus(GetHealthCheckStatusRequest getHealthCheckStatusRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getHealthCheckStatusRequest.getHealthCheckId()), "HealthCheckId");
+
         ExecutionContext executionContext = createExecutionContext(getHealthCheckStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1951,6 +2009,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetHostedZoneResult getHostedZone(GetHostedZoneRequest getHostedZoneRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getHostedZoneRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(getHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1994,6 +2055,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetHostedZoneCountResult getHostedZoneCount(GetHostedZoneCountRequest getHostedZoneCountRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getHostedZoneCountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2046,6 +2108,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest getReusableDelegationSetRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getReusableDelegationSetRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(getReusableDelegationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2094,6 +2159,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetTrafficPolicyResult getTrafficPolicy(GetTrafficPolicyRequest getTrafficPolicyRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getTrafficPolicyRequest.getId()), "Id");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromInteger(getTrafficPolicyRequest.getVersion()), "Version");
+
         ExecutionContext executionContext = createExecutionContext(getTrafficPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2156,6 +2225,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetTrafficPolicyInstanceResult getTrafficPolicyInstance(GetTrafficPolicyInstanceRequest getTrafficPolicyInstanceRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getTrafficPolicyInstanceRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(getTrafficPolicyInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2201,6 +2273,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest getTrafficPolicyInstanceCountRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getTrafficPolicyInstanceCountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2262,6 +2335,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListGeoLocationsResult listGeoLocations(ListGeoLocationsRequest listGeoLocationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listGeoLocationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2331,6 +2405,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listHealthChecksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2460,6 +2535,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListHostedZonesResult listHostedZones(ListHostedZonesRequest listHostedZonesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listHostedZonesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2642,6 +2718,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListHostedZonesByNameResult listHostedZonesByName(ListHostedZonesByNameRequest listHostedZonesByNameRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listHostedZonesByNameRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2747,6 +2824,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListResourceRecordSetsResult listResourceRecordSets(ListResourceRecordSetsRequest listResourceRecordSetsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listResourceRecordSetsRequest.getHostedZoneId()), "HostedZoneId");
+
         ExecutionContext executionContext = createExecutionContext(listResourceRecordSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2809,6 +2889,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListReusableDelegationSetsResult listReusableDelegationSets(ListReusableDelegationSetsRequest listReusableDelegationSetsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listReusableDelegationSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2872,6 +2953,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listTagsForResourceRequest.getResourceType()), "ResourceType");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listTagsForResourceRequest.getResourceId()), "ResourceId");
+
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2930,6 +3015,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListTagsForResourcesResult listTagsForResources(ListTagsForResourcesRequest listTagsForResourcesRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listTagsForResourcesRequest.getResourceType()), "ResourceType");
+
         ExecutionContext executionContext = createExecutionContext(listTagsForResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3023,6 +3111,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListTrafficPoliciesResult listTrafficPolicies(ListTrafficPoliciesRequest listTrafficPoliciesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTrafficPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3129,6 +3218,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListTrafficPolicyInstancesResult listTrafficPolicyInstances(ListTrafficPolicyInstancesRequest listTrafficPolicyInstancesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTrafficPolicyInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3238,6 +3328,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     @Override
     public ListTrafficPolicyInstancesByHostedZoneResult listTrafficPolicyInstancesByHostedZone(
             ListTrafficPolicyInstancesByHostedZoneRequest listTrafficPolicyInstancesByHostedZoneRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTrafficPolicyInstancesByHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3343,6 +3434,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     @Override
     public ListTrafficPolicyInstancesByPolicyResult listTrafficPolicyInstancesByPolicy(
             ListTrafficPolicyInstancesByPolicyRequest listTrafficPolicyInstancesByPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTrafficPolicyInstancesByPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3438,6 +3530,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public ListTrafficPolicyVersionsResult listTrafficPolicyVersions(ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listTrafficPolicyVersionsRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(listTrafficPolicyVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3506,6 +3601,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     @Override
     public ListVPCAssociationAuthorizationsResult listVPCAssociationAuthorizations(
             ListVPCAssociationAuthorizationsRequest listVPCAssociationAuthorizationsRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listVPCAssociationAuthorizationsRequest.getHostedZoneId()), "HostedZoneId");
+
         ExecutionContext executionContext = createExecutionContext(listVPCAssociationAuthorizationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3601,6 +3699,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public TestDNSAnswerResult testDNSAnswer(TestDNSAnswerRequest testDNSAnswerRequest) {
+
         ExecutionContext executionContext = createExecutionContext(testDNSAnswerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3654,6 +3753,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public UpdateHealthCheckResult updateHealthCheck(UpdateHealthCheckRequest updateHealthCheckRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateHealthCheckRequest.getHealthCheckId()), "HealthCheckId");
+
         ExecutionContext executionContext = createExecutionContext(updateHealthCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3699,6 +3801,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public UpdateHostedZoneCommentResult updateHostedZoneComment(UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateHostedZoneCommentRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(updateHostedZoneCommentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3752,6 +3857,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public UpdateTrafficPolicyCommentResult updateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateTrafficPolicyCommentRequest.getId()), "Id");
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromInteger(updateTrafficPolicyCommentRequest.getVersion()), "Version");
+
         ExecutionContext executionContext = createExecutionContext(updateTrafficPolicyCommentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3840,6 +3949,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      */
     @Override
     public UpdateTrafficPolicyInstanceResult updateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest updateTrafficPolicyInstanceRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateTrafficPolicyInstanceRequest.getId()), "Id");
+
         ExecutionContext executionContext = createExecutionContext(updateTrafficPolicyInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

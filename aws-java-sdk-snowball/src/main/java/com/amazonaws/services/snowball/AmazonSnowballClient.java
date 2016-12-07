@@ -273,6 +273,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CancelClusterResult cancelCluster(CancelClusterRequest cancelClusterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(cancelClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -322,6 +323,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -370,6 +372,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateAddressResult createAddress(CreateAddressRequest createAddressRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -420,6 +423,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateClusterResult createCluster(CreateClusterRequest createClusterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -476,6 +480,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateJobResult createJob(CreateJobRequest createJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -519,6 +524,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeAddressResult describeAddress(DescribeAddressRequest describeAddressRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -562,6 +568,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeAddressesResult describeAddresses(DescribeAddressesRequest describeAddressesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAddressesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -605,6 +612,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeClusterResult describeCluster(DescribeClusterRequest describeClusterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -648,6 +656,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DescribeJobResult describeJob(DescribeJobRequest describeJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -709,6 +718,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetJobManifestResult getJobManifest(GetJobManifestRequest getJobManifestRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getJobManifestRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -764,6 +774,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetJobUnlockCodeResult getJobUnlockCode(GetJobUnlockCodeRequest getJobUnlockCodeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getJobUnlockCodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -808,6 +819,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetSnowballUsageResult getSnowballUsage(GetSnowballUsageRequest getSnowballUsageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getSnowballUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -851,6 +863,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ListClusterJobsResult listClusterJobs(ListClusterJobsRequest listClusterJobsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listClusterJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -892,6 +905,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ListClustersResult listClusters(ListClustersRequest listClustersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -934,6 +948,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -987,6 +1002,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateClusterResult updateCluster(UpdateClusterRequest updateClusterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1044,6 +1060,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public UpdateJobResult updateJob(UpdateJobRequest updateJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

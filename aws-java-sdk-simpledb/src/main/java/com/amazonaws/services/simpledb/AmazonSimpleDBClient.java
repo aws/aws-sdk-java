@@ -275,6 +275,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public BatchDeleteAttributesResult batchDeleteAttributes(BatchDeleteAttributesRequest batchDeleteAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchDeleteAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -375,6 +376,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public BatchPutAttributesResult batchPutAttributes(BatchPutAttributesRequest batchPutAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchPutAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -430,6 +432,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public CreateDomainResult createDomain(CreateDomainRequest createDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -487,6 +490,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest deleteAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -529,6 +533,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DeleteDomainResult deleteDomain(DeleteDomainRequest deleteDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -573,6 +578,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public DomainMetadataResult domainMetadata(DomainMetadataRequest domainMetadataRequest) {
+
         ExecutionContext executionContext = createExecutionContext(domainMetadataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -623,6 +629,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public GetAttributesResult getAttributes(GetAttributesRequest getAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -670,6 +677,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -763,6 +771,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public PutAttributesResult putAttributes(PutAttributesRequest putAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -831,6 +840,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      */
     @Override
     public SelectResult select(SelectRequest selectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(selectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

@@ -325,6 +325,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      */
     @Override
     public BatchGetBuildsResult batchGetBuilds(BatchGetBuildsRequest batchGetBuildsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchGetBuildsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -366,6 +367,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      */
     @Override
     public BatchGetProjectsResult batchGetProjects(BatchGetProjectsRequest batchGetProjectsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchGetProjectsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -412,6 +414,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      */
     @Override
     public CreateProjectResult createProject(CreateProjectRequest createProjectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createProjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -453,6 +456,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      */
     @Override
     public DeleteProjectResult deleteProject(DeleteProjectRequest deleteProjectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteProjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -494,6 +498,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      */
     @Override
     public ListBuildsResult listBuilds(ListBuildsRequest listBuildsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listBuildsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -537,6 +542,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      */
     @Override
     public ListBuildsForProjectResult listBuildsForProject(ListBuildsForProjectRequest listBuildsForProjectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listBuildsForProjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -576,6 +582,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      */
     @Override
     public ListCuratedEnvironmentImagesResult listCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest listCuratedEnvironmentImagesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listCuratedEnvironmentImagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -619,6 +626,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      */
     @Override
     public ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listProjectsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -664,6 +672,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      */
     @Override
     public StartBuildResult startBuild(StartBuildRequest startBuildRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -712,6 +721,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      */
     @Override
     public StopBuildResult stopBuild(StopBuildRequest stopBuildRequest) {
+
         ExecutionContext executionContext = createExecutionContext(stopBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -755,6 +765,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      */
     @Override
     public UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateProjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

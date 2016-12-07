@@ -309,6 +309,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public WorkflowExecutionCount countClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(countClosedWorkflowExecutionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -381,6 +382,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public WorkflowExecutionCount countOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest countOpenWorkflowExecutionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(countOpenWorkflowExecutionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -447,6 +449,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public PendingTaskCount countPendingActivityTasks(CountPendingActivityTasksRequest countPendingActivityTasksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(countPendingActivityTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -512,6 +515,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public PendingTaskCount countPendingDecisionTasks(CountPendingDecisionTasksRequest countPendingDecisionTasksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(countPendingDecisionTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -584,6 +588,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void deprecateActivityType(DeprecateActivityTypeRequest deprecateActivityTypeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deprecateActivityTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -650,6 +655,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void deprecateDomain(DeprecateDomainRequest deprecateDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deprecateDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -720,6 +726,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void deprecateWorkflowType(DeprecateWorkflowTypeRequest deprecateWorkflowTypeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deprecateWorkflowTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -786,6 +793,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public ActivityTypeDetail describeActivityType(DescribeActivityTypeRequest describeActivityTypeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeActivityTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -848,6 +856,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public DomainDetail describeDomain(DescribeDomainRequest describeDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -912,6 +921,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public WorkflowExecutionDetail describeWorkflowExecution(DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeWorkflowExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -980,6 +990,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public WorkflowTypeDetail describeWorkflowType(DescribeWorkflowTypeRequest describeWorkflowTypeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeWorkflowTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1045,6 +1056,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public History getWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getWorkflowExecutionHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1111,6 +1123,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public ActivityTypeInfos listActivityTypes(ListActivityTypesRequest listActivityTypesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listActivityTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1183,6 +1196,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public WorkflowExecutionInfos listClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest listClosedWorkflowExecutionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listClosedWorkflowExecutionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1248,6 +1262,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public DomainInfos listDomains(ListDomainsRequest listDomainsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1320,6 +1335,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public WorkflowExecutionInfos listOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest listOpenWorkflowExecutionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listOpenWorkflowExecutionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1383,6 +1399,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public WorkflowTypeInfos listWorkflowTypes(ListWorkflowTypesRequest listWorkflowTypesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listWorkflowTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1456,6 +1473,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public ActivityTask pollForActivityTask(PollForActivityTaskRequest pollForActivityTaskRequest) {
+
         ExecutionContext executionContext = createExecutionContext(pollForActivityTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1537,6 +1555,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public DecisionTask pollForDecisionTask(PollForDecisionTaskRequest pollForDecisionTaskRequest) {
+
         ExecutionContext executionContext = createExecutionContext(pollForDecisionTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1620,6 +1639,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public ActivityTaskStatus recordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest) {
+
         ExecutionContext executionContext = createExecutionContext(recordActivityTaskHeartbeatRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1698,6 +1718,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void registerActivityType(RegisterActivityTypeRequest registerActivityTypeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(registerActivityTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1761,6 +1782,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void registerDomain(RegisterDomainRequest registerDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(registerDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1839,6 +1861,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void registerWorkflowType(RegisterWorkflowTypeRequest registerWorkflowTypeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(registerWorkflowTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1905,6 +1928,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void requestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest requestCancelWorkflowExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(requestCancelWorkflowExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1981,6 +2005,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void respondActivityTaskCanceled(RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest) {
+
         ExecutionContext executionContext = createExecutionContext(respondActivityTaskCanceledRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2055,6 +2080,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void respondActivityTaskCompleted(RespondActivityTaskCompletedRequest respondActivityTaskCompletedRequest) {
+
         ExecutionContext executionContext = createExecutionContext(respondActivityTaskCompletedRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2125,6 +2151,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void respondActivityTaskFailed(RespondActivityTaskFailedRequest respondActivityTaskFailedRequest) {
+
         ExecutionContext executionContext = createExecutionContext(respondActivityTaskFailedRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2183,6 +2210,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest) {
+
         ExecutionContext executionContext = createExecutionContext(respondDecisionTaskCompletedRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2248,6 +2276,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void signalWorkflowExecution(SignalWorkflowExecutionRequest signalWorkflowExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(signalWorkflowExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2332,6 +2361,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public Run startWorkflowExecution(StartWorkflowExecutionRequest startWorkflowExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startWorkflowExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2400,6 +2430,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      */
     @Override
     public void terminateWorkflowExecution(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(terminateWorkflowExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

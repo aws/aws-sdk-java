@@ -286,6 +286,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -345,6 +346,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public CreateElasticsearchDomainResult createElasticsearchDomain(CreateElasticsearchDomainRequest createElasticsearchDomainRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createElasticsearchDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -397,6 +399,9 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public DeleteElasticsearchDomainResult deleteElasticsearchDomain(DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteElasticsearchDomainRequest.getDomainName()), "DomainName");
+
         ExecutionContext executionContext = createExecutionContext(deleteElasticsearchDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -448,6 +453,9 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public DescribeElasticsearchDomainResult describeElasticsearchDomain(DescribeElasticsearchDomainRequest describeElasticsearchDomainRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeElasticsearchDomainRequest.getDomainName()), "DomainName");
+
         ExecutionContext executionContext = createExecutionContext(describeElasticsearchDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -502,6 +510,9 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
     @Override
     public DescribeElasticsearchDomainConfigResult describeElasticsearchDomainConfig(
             DescribeElasticsearchDomainConfigRequest describeElasticsearchDomainConfigRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeElasticsearchDomainConfigRequest.getDomainName()), "DomainName");
+
         ExecutionContext executionContext = createExecutionContext(describeElasticsearchDomainConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -553,6 +564,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public DescribeElasticsearchDomainsResult describeElasticsearchDomains(DescribeElasticsearchDomainsRequest describeElasticsearchDomainsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeElasticsearchDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -598,6 +610,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public ListDomainNamesResult listDomainNames(ListDomainNamesRequest listDomainNamesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDomainNamesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -648,6 +661,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public ListTagsResult listTags(ListTagsRequest listTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -696,6 +710,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -753,6 +768,9 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public UpdateElasticsearchDomainConfigResult updateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest) {
+
+        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateElasticsearchDomainConfigRequest.getDomainName()), "DomainName");
+
         ExecutionContext executionContext = createExecutionContext(updateElasticsearchDomainConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

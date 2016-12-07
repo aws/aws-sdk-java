@@ -254,6 +254,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -301,6 +302,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public CreateHapgResult createHapg(CreateHapgRequest createHapgRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createHapgRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -359,6 +361,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public CreateHsmResult createHsm(CreateHsmRequest createHsmRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createHsmRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -405,6 +408,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public CreateLunaClientResult createLunaClient(CreateLunaClientRequest createLunaClientRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createLunaClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -451,6 +455,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public DeleteHapgResult deleteHapg(DeleteHapgRequest deleteHapgRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteHapgRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -497,6 +502,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public DeleteHsmResult deleteHsm(DeleteHsmRequest deleteHsmRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteHsmRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -542,6 +548,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public DeleteLunaClientResult deleteLunaClient(DeleteLunaClientRequest deleteLunaClientRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteLunaClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -588,6 +595,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public DescribeHapgResult describeHapg(DescribeHapgRequest describeHapgRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeHapgRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -634,6 +642,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public DescribeHsmResult describeHsm(DescribeHsmRequest describeHsmRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeHsmRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -684,6 +693,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public DescribeLunaClientResult describeLunaClient(DescribeLunaClientRequest describeLunaClientRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeLunaClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -735,6 +745,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public GetConfigResult getConfig(GetConfigRequest getConfigRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -781,6 +792,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public ListAvailableZonesResult listAvailableZones(ListAvailableZonesRequest listAvailableZonesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listAvailableZonesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -836,6 +848,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public ListHapgsResult listHapgs(ListHapgsRequest listHapgsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listHapgsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -891,6 +904,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public ListHsmsResult listHsms(ListHsmsRequest listHsmsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listHsmsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -946,6 +960,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public ListLunaClientsResult listLunaClients(ListLunaClientsRequest listLunaClientsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listLunaClientsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -996,6 +1011,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1041,6 +1057,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public ModifyHapgResult modifyHapg(ModifyHapgRequest modifyHapgRequest) {
+
         ExecutionContext executionContext = createExecutionContext(modifyHapgRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1094,6 +1111,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public ModifyHsmResult modifyHsm(ModifyHsmRequest modifyHsmRequest) {
+
         ExecutionContext executionContext = createExecutionContext(modifyHsmRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1138,6 +1156,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public ModifyLunaClientResult modifyLunaClient(ModifyLunaClientRequest modifyLunaClientRequest) {
+
         ExecutionContext executionContext = createExecutionContext(modifyLunaClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1187,6 +1206,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      */
     @Override
     public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

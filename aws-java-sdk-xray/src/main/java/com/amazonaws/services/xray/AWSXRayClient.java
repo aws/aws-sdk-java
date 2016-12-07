@@ -250,6 +250,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      */
     @Override
     public BatchGetTracesResult batchGetTraces(BatchGetTracesRequest batchGetTracesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchGetTracesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -296,6 +297,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      */
     @Override
     public GetServiceGraphResult getServiceGraph(GetServiceGraphRequest getServiceGraphRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getServiceGraphRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -339,6 +341,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      */
     @Override
     public GetTraceGraphResult getTraceGraph(GetTraceGraphRequest getTraceGraphRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getTraceGraphRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -383,6 +386,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      */
     @Override
     public GetTraceSummariesResult getTraceSummaries(GetTraceSummariesRequest getTraceSummariesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getTraceSummariesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -426,6 +430,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      */
     @Override
     public PutTelemetryRecordsResult putTelemetryRecords(PutTelemetryRecordsRequest putTelemetryRecordsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putTelemetryRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -471,6 +476,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      */
     @Override
     public PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest putTraceSegmentsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putTraceSegmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

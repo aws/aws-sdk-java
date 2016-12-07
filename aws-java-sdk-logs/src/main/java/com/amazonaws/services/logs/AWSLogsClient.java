@@ -308,6 +308,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public CancelExportTaskResult cancelExportTask(CancelExportTaskRequest cancelExportTaskRequest) {
+
         ExecutionContext executionContext = createExecutionContext(cancelExportTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -370,6 +371,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public CreateExportTaskResult createExportTask(CreateExportTaskRequest createExportTaskRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createExportTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -443,6 +445,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public CreateLogGroupResult createLogGroup(CreateLogGroupRequest createLogGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createLogGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -513,6 +516,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public CreateLogStreamResult createLogStream(CreateLogStreamRequest createLogStreamRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createLogStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -561,6 +565,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public DeleteDestinationResult deleteDestination(DeleteDestinationRequest deleteDestinationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteDestinationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -609,6 +614,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public DeleteLogGroupResult deleteLogGroup(DeleteLogGroupRequest deleteLogGroupRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteLogGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -657,6 +663,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public DeleteLogStreamResult deleteLogStream(DeleteLogStreamRequest deleteLogStreamRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteLogStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -704,6 +711,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public DeleteMetricFilterResult deleteMetricFilter(DeleteMetricFilterRequest deleteMetricFilterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteMetricFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -754,6 +762,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public DeleteRetentionPolicyResult deleteRetentionPolicy(DeleteRetentionPolicyRequest deleteRetentionPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteRetentionPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -802,6 +811,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public DeleteSubscriptionFilterResult deleteSubscriptionFilter(DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteSubscriptionFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -846,6 +856,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public DescribeDestinationsResult describeDestinations(DescribeDestinationsRequest describeDestinationsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeDestinationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -895,6 +906,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public DescribeExportTasksResult describeExportTasks(DescribeExportTasksRequest describeExportTasksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeExportTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -939,6 +951,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public DescribeLogGroupsResult describeLogGroups(DescribeLogGroupsRequest describeLogGroupsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeLogGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -993,6 +1006,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public DescribeLogStreamsResult describeLogStreams(DescribeLogStreamsRequest describeLogStreamsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeLogStreamsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1039,6 +1053,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public DescribeMetricFiltersResult describeMetricFilters(DescribeMetricFiltersRequest describeMetricFiltersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeMetricFiltersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1086,6 +1101,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public DescribeSubscriptionFiltersResult describeSubscriptionFilters(DescribeSubscriptionFiltersRequest describeSubscriptionFiltersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeSubscriptionFiltersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1139,6 +1155,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public FilterLogEventsResult filterLogEvents(FilterLogEventsRequest filterLogEventsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(filterLogEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1189,6 +1206,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public GetLogEventsResult getLogEvents(GetLogEventsRequest getLogEventsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getLogEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1243,6 +1261,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public PutDestinationResult putDestination(PutDestinationRequest putDestinationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putDestinationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1290,6 +1309,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public PutDestinationPolicyResult putDestinationPolicy(PutDestinationPolicyRequest putDestinationPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putDestinationPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1381,6 +1401,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public PutLogEventsResult putLogEvents(PutLogEventsRequest putLogEventsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putLogEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1434,6 +1455,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public PutMetricFilterResult putMetricFilter(PutMetricFilterRequest putMetricFilterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putMetricFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1482,6 +1504,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public PutRetentionPolicyResult putRetentionPolicy(PutRetentionPolicyRequest putRetentionPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putRetentionPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1559,6 +1582,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public PutSubscriptionFilterResult putSubscriptionFilter(PutSubscriptionFilterRequest putSubscriptionFilterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putSubscriptionFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1604,6 +1628,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      */
     @Override
     public TestMetricFilterResult testMetricFilter(TestMetricFilterRequest testMetricFilterRequest) {
+
         ExecutionContext executionContext = createExecutionContext(testMetricFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

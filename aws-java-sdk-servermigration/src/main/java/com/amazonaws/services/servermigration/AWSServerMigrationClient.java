@@ -284,6 +284,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      */
     @Override
     public CreateReplicationJobResult createReplicationJob(CreateReplicationJobRequest createReplicationJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createReplicationJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -335,6 +336,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      */
     @Override
     public DeleteReplicationJobResult deleteReplicationJob(DeleteReplicationJobRequest deleteReplicationJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteReplicationJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -383,6 +385,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      */
     @Override
     public DeleteServerCatalogResult deleteServerCatalog(DeleteServerCatalogRequest deleteServerCatalogRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteServerCatalogRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -431,6 +434,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      */
     @Override
     public DisassociateConnectorResult disassociateConnector(DisassociateConnectorRequest disassociateConnectorRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disassociateConnectorRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -471,6 +475,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      */
     @Override
     public GetConnectorsResult getConnectors(GetConnectorsRequest getConnectorsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getConnectorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -516,6 +521,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      */
     @Override
     public GetReplicationJobsResult getReplicationJobs(GetReplicationJobsRequest getReplicationJobsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getReplicationJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -562,6 +568,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      */
     @Override
     public GetReplicationRunsResult getReplicationRuns(GetReplicationRunsRequest getReplicationRunsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getReplicationRunsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -602,6 +609,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      */
     @Override
     public GetServersResult getServers(GetServersRequest getServersRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getServersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -654,6 +662,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      */
     @Override
     public ImportServerCatalogResult importServerCatalog(ImportServerCatalogRequest importServerCatalogRequest) {
+
         ExecutionContext executionContext = createExecutionContext(importServerCatalogRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -705,6 +714,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      */
     @Override
     public StartOnDemandReplicationRunResult startOnDemandReplicationRun(StartOnDemandReplicationRunRequest startOnDemandReplicationRunRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startOnDemandReplicationRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -761,6 +771,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      */
     @Override
     public UpdateReplicationJobResult updateReplicationJob(UpdateReplicationJobRequest updateReplicationJobRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateReplicationJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

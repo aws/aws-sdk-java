@@ -398,6 +398,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      */
     @Override
     public AssumeRoleResult assumeRole(AssumeRoleRequest assumeRoleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(assumeRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -542,6 +543,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      */
     @Override
     public AssumeRoleWithSAMLResult assumeRoleWithSAML(AssumeRoleWithSAMLRequest assumeRoleWithSAMLRequest) {
+
         ExecutionContext executionContext = createExecutionContext(assumeRoleWithSAMLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -651,7 +653,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using Web Identity
+     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html">Using Web Identity
      * Federation APIs for Mobile Apps</a> and <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity"
      * >Federation Through a Web-based Identity Provider</a>.
@@ -716,6 +718,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      */
     @Override
     public AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest assumeRoleWithWebIdentityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(assumeRoleWithWebIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -809,6 +812,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      */
     @Override
     public DecodeAuthorizationMessageResult decodeAuthorizationMessage(DecodeAuthorizationMessageRequest decodeAuthorizationMessageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(decodeAuthorizationMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -848,6 +852,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      */
     @Override
     public GetCallerIdentityResult getCallerIdentity(GetCallerIdentityRequest getCallerIdentityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getCallerIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -926,7 +931,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * </li>
      * <li>
      * <p>
-     * You cannot call any STS APIs.
+     * You cannot call any STS APIs except <code>GetCallerIdentity</code>.
      * </p>
      * </li>
      * </ul>
@@ -997,6 +1002,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      */
     @Override
     public GetFederationTokenResult getFederationToken(GetFederationTokenRequest getFederationTokenRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getFederationTokenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1059,7 +1065,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * </li>
      * <li>
      * <p>
-     * You cannot call any STS API <i>except</i> <code>AssumeRole</code>.
+     * You cannot call any STS API <i>except</i> <code>AssumeRole</code> or <code>GetCallerIdentity</code>.
      * </p>
      * </li>
      * </ul>
@@ -1095,6 +1101,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      */
     @Override
     public GetSessionTokenResult getSessionToken(GetSessionTokenRequest getSessionTokenRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getSessionTokenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

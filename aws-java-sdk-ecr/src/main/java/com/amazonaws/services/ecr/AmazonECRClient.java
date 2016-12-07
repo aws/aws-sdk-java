@@ -304,6 +304,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public BatchCheckLayerAvailabilityResult batchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest batchCheckLayerAvailabilityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchCheckLayerAvailabilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -355,6 +356,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public BatchDeleteImageResult batchDeleteImage(BatchDeleteImageRequest batchDeleteImageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchDeleteImageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -402,6 +404,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public BatchGetImageResult batchGetImage(BatchGetImageRequest batchGetImageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(batchGetImageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -467,6 +470,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public CompleteLayerUploadResult completeLayerUpload(CompleteLayerUploadRequest completeLayerUploadRequest) {
+
         ExecutionContext executionContext = createExecutionContext(completeLayerUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -517,6 +521,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public CreateRepositoryResult createRepository(CreateRepositoryRequest createRepositoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createRepositoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -567,6 +572,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public DeleteRepositoryResult deleteRepository(DeleteRepositoryRequest deleteRepositoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteRepositoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -615,6 +621,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public DeleteRepositoryPolicyResult deleteRepositoryPolicy(DeleteRepositoryPolicyRequest deleteRepositoryPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteRepositoryPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -671,6 +678,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public DescribeImagesResult describeImages(DescribeImagesRequest describeImagesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeImagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -717,6 +725,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public DescribeRepositoriesResult describeRepositories(DescribeRepositoriesRequest describeRepositoriesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeRepositoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -767,6 +776,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public GetAuthorizationTokenResult getAuthorizationToken(GetAuthorizationTokenRequest getAuthorizationTokenRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getAuthorizationTokenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -826,6 +836,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public GetDownloadUrlForLayerResult getDownloadUrlForLayer(GetDownloadUrlForLayerRequest getDownloadUrlForLayerRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getDownloadUrlForLayerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -875,6 +886,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public GetRepositoryPolicyResult getRepositoryPolicy(GetRepositoryPolicyRequest getRepositoryPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getRepositoryPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -927,6 +939,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public InitiateLayerUploadResult initiateLayerUpload(InitiateLayerUploadRequest initiateLayerUploadRequest) {
+
         ExecutionContext executionContext = createExecutionContext(initiateLayerUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -979,6 +992,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public ListImagesResult listImages(ListImagesRequest listImagesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listImagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1041,6 +1055,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public PutImageResult putImage(PutImageRequest putImageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putImageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1087,6 +1102,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public SetRepositoryPolicyResult setRepositoryPolicy(SetRepositoryPolicyRequest setRepositoryPolicyRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setRepositoryPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1149,6 +1165,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      */
     @Override
     public UploadLayerPartResult uploadLayerPart(UploadLayerPartRequest uploadLayerPartRequest) {
+
         ExecutionContext executionContext = createExecutionContext(uploadLayerPartRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

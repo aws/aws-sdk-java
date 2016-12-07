@@ -370,6 +370,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public AddPermissionResult addPermission(AddPermissionRequest addPermissionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -449,6 +450,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public ChangeMessageVisibilityResult changeMessageVisibility(ChangeMessageVisibilityRequest changeMessageVisibilityRequest) {
+
         ExecutionContext executionContext = createExecutionContext(changeMessageVisibilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -522,6 +524,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public ChangeMessageVisibilityBatchResult changeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest) {
+
         ExecutionContext executionContext = createExecutionContext(changeMessageVisibilityBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -630,6 +633,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public CreateQueueResult createQueue(CreateQueueRequest createQueueRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -696,6 +700,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public DeleteMessageResult deleteMessage(DeleteMessageRequest deleteMessageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -766,6 +771,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public DeleteMessageBatchResult deleteMessageBatch(DeleteMessageBatchRequest deleteMessageBatchRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteMessageBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -828,6 +834,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public DeleteQueueResult deleteQueue(DeleteQueueRequest deleteQueueRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -886,6 +893,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public GetQueueAttributesResult getQueueAttributes(GetQueueAttributesRequest getQueueAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getQueueAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -940,6 +948,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public GetQueueUrlResult getQueueUrl(GetQueueUrlRequest getQueueUrlRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getQueueUrlRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -990,6 +999,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public ListDeadLetterSourceQueuesResult listDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest listDeadLetterSourceQueuesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listDeadLetterSourceQueuesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1031,6 +1041,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public ListQueuesResult listQueues(ListQueuesRequest listQueuesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listQueuesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1095,6 +1106,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public PurgeQueueResult purgeQueue(PurgeQueueRequest purgeQueueRequest) {
+
         ExecutionContext executionContext = createExecutionContext(purgeQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1207,6 +1219,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public ReceiveMessageResult receiveMessage(ReceiveMessageRequest receiveMessageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(receiveMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1252,6 +1265,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public RemovePermissionResult removePermission(RemovePermissionRequest removePermissionRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1314,6 +1328,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public SendMessageResult sendMessage(SendMessageRequest sendMessageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(sendMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1410,6 +1425,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public SendMessageBatchResult sendMessageBatch(SendMessageBatchRequest sendMessageBatchRequest) {
+
         ExecutionContext executionContext = createExecutionContext(sendMessageBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1464,6 +1480,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     @Override
     public SetQueueAttributesResult setQueueAttributes(SetQueueAttributesRequest setQueueAttributesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setQueueAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

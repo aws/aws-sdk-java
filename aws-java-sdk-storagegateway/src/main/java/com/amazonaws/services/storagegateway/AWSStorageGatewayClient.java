@@ -368,6 +368,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ActivateGatewayResult activateGateway(ActivateGatewayRequest activateGatewayRequest) {
+
         ExecutionContext executionContext = createExecutionContext(activateGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -420,6 +421,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public AddCacheResult addCache(AddCacheRequest addCacheRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addCacheRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -494,6 +496,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -544,6 +547,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public AddUploadBufferResult addUploadBuffer(AddUploadBufferRequest addUploadBufferRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addUploadBufferRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -608,6 +612,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public AddWorkingStorageResult addWorkingStorage(AddWorkingStorageRequest addWorkingStorageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(addWorkingStorageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -654,6 +659,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CancelArchivalResult cancelArchival(CancelArchivalRequest cancelArchivalRequest) {
+
         ExecutionContext executionContext = createExecutionContext(cancelArchivalRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -701,6 +707,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CancelRetrievalResult cancelRetrieval(CancelRetrievalRequest cancelRetrievalRequest) {
+
         ExecutionContext executionContext = createExecutionContext(cancelRetrievalRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -759,6 +766,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreateCachediSCSIVolumeResult createCachediSCSIVolume(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createCachediSCSIVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -844,6 +852,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreateSnapshotResult createSnapshot(CreateSnapshotRequest createSnapshotRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -909,6 +918,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     @Override
     public CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(
             CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createSnapshotFromVolumeRecoveryPointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -994,6 +1004,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreateStorediSCSIVolumeResult createStorediSCSIVolume(CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createStorediSCSIVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1047,6 +1058,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreateTapeWithBarcodeResult createTapeWithBarcode(CreateTapeWithBarcodeRequest createTapeWithBarcodeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createTapeWithBarcodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1100,6 +1112,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public CreateTapesResult createTapes(CreateTapesRequest createTapesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(createTapesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1147,6 +1160,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteBandwidthRateLimitResult deleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteBandwidthRateLimitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1206,6 +1220,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteChapCredentialsResult deleteChapCredentials(DeleteChapCredentialsRequest deleteChapCredentialsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteChapCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1269,6 +1284,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteGatewayResult deleteGateway(DeleteGatewayRequest deleteGatewayRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1327,6 +1343,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteSnapshotScheduleResult deleteSnapshotSchedule(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteSnapshotScheduleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1374,6 +1391,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteTapeResult deleteTape(DeleteTapeRequest deleteTapeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteTapeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1420,6 +1438,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteTapeArchiveResult deleteTapeArchive(DeleteTapeArchiveRequest deleteTapeArchiveRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteTapeArchiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1478,6 +1497,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DeleteVolumeResult deleteVolume(DeleteVolumeRequest deleteVolumeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1530,6 +1550,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeBandwidthRateLimitResult describeBandwidthRateLimit(DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeBandwidthRateLimitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1581,6 +1602,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeCacheResult describeCache(DescribeCacheRequest describeCacheRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeCacheRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1631,6 +1653,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeCachediSCSIVolumesResult describeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest describeCachediSCSIVolumesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeCachediSCSIVolumesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1679,6 +1702,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeChapCredentialsResult describeChapCredentials(DescribeChapCredentialsRequest describeChapCredentialsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeChapCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1728,6 +1752,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeGatewayInformationResult describeGatewayInformation(DescribeGatewayInformationRequest describeGatewayInformationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeGatewayInformationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1776,6 +1801,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeMaintenanceStartTimeResult describeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceStartTimeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1825,6 +1851,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeSnapshotScheduleResult describeSnapshotSchedule(DescribeSnapshotScheduleRequest describeSnapshotScheduleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeSnapshotScheduleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1874,6 +1901,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeStorediSCSIVolumesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1925,6 +1953,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeTapeArchivesResult describeTapeArchives(DescribeTapeArchivesRequest describeTapeArchivesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTapeArchivesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1980,6 +2009,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTapeRecoveryPointsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2028,6 +2058,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeTapesResult describeTapes(DescribeTapesRequest describeTapesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeTapesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2078,6 +2109,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeUploadBufferResult describeUploadBuffer(DescribeUploadBufferRequest describeUploadBufferRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeUploadBufferRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2128,6 +2160,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeVTLDevicesResult describeVTLDevices(DescribeVTLDevicesRequest describeVTLDevicesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeVTLDevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2186,6 +2219,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeWorkingStorageResult describeWorkingStorage(DescribeWorkingStorageRequest describeWorkingStorageRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeWorkingStorageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2242,6 +2276,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DisableGatewayResult disableGateway(DisableGatewayRequest disableGatewayRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disableGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2309,6 +2344,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListGatewaysResult listGateways(ListGatewaysRequest listGatewaysRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listGatewaysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2367,6 +2403,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListLocalDisksResult listLocalDisks(ListLocalDisksRequest listLocalDisksRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listLocalDisksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2413,6 +2450,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2488,6 +2526,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListTapesResult listTapes(ListTapesRequest listTapesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listTapesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2535,6 +2574,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListVolumeInitiatorsResult listVolumeInitiators(ListVolumeInitiatorsRequest listVolumeInitiatorsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listVolumeInitiatorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2586,6 +2626,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listVolumeRecoveryPointsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2651,6 +2692,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListVolumesResult listVolumes(ListVolumesRequest listVolumesRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listVolumesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2697,6 +2739,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+
         ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2758,6 +2801,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ResetCacheResult resetCache(ResetCacheRequest resetCacheRequest) {
+
         ExecutionContext executionContext = createExecutionContext(resetCacheRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2810,6 +2854,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public RetrieveTapeArchiveResult retrieveTapeArchive(RetrieveTapeArchiveRequest retrieveTapeArchiveRequest) {
+
         ExecutionContext executionContext = createExecutionContext(retrieveTapeArchiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2866,6 +2911,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public RetrieveTapeRecoveryPointResult retrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest retrieveTapeRecoveryPointRequest) {
+
         ExecutionContext executionContext = createExecutionContext(retrieveTapeRecoveryPointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2915,6 +2961,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public SetLocalConsolePasswordResult setLocalConsolePassword(SetLocalConsolePasswordRequest setLocalConsolePasswordRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setLocalConsolePasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2989,6 +3036,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ShutdownGatewayResult shutdownGateway(ShutdownGatewayRequest shutdownGatewayRequest) {
+
         ExecutionContext executionContext = createExecutionContext(shutdownGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3047,6 +3095,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public StartGatewayResult startGateway(StartGatewayRequest startGatewayRequest) {
+
         ExecutionContext executionContext = createExecutionContext(startGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3112,6 +3161,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateBandwidthRateLimitResult updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateBandwidthRateLimitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3187,6 +3237,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateChapCredentialsResult updateChapCredentials(UpdateChapCredentialsRequest updateChapCredentialsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateChapCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3240,6 +3291,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateGatewayInformationResult updateGatewayInformation(UpdateGatewayInformationRequest updateGatewayInformationRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateGatewayInformationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3304,6 +3356,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateGatewaySoftwareNowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3368,6 +3421,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateMaintenanceStartTimeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3444,6 +3498,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateSnapshotScheduleResult updateSnapshotSchedule(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateSnapshotScheduleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3492,6 +3547,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateVTLDeviceTypeResult updateVTLDeviceType(UpdateVTLDeviceTypeRequest updateVTLDeviceTypeRequest) {
+
         ExecutionContext executionContext = createExecutionContext(updateVTLDeviceTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

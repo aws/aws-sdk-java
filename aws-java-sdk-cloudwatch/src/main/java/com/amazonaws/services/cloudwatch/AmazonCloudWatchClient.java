@@ -265,6 +265,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteAlarmsResult deleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(deleteAlarmsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -309,6 +310,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DescribeAlarmHistoryResult describeAlarmHistory(DescribeAlarmHistoryRequest describeAlarmHistoryRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAlarmHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -356,6 +358,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DescribeAlarmsResult describeAlarms(DescribeAlarmsRequest describeAlarmsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAlarmsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -400,6 +403,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DescribeAlarmsForMetricResult describeAlarmsForMetric(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest) {
+
         ExecutionContext executionContext = createExecutionContext(describeAlarmsForMetricRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -440,6 +444,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DisableAlarmActionsResult disableAlarmActions(DisableAlarmActionsRequest disableAlarmActionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(disableAlarmActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -479,6 +484,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public EnableAlarmActionsResult enableAlarmActions(EnableAlarmActionsRequest enableAlarmActionsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(enableAlarmActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -566,6 +572,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetMetricStatisticsResult getMetricStatistics(GetMetricStatisticsRequest getMetricStatisticsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(getMetricStatisticsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -618,6 +625,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public ListMetricsResult listMetrics(ListMetricsRequest listMetricsRequest) {
+
         ExecutionContext executionContext = createExecutionContext(listMetricsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -719,6 +727,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public PutMetricAlarmResult putMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putMetricAlarmRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -783,6 +792,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public PutMetricDataResult putMetricData(PutMetricDataRequest putMetricDataRequest) {
+
         ExecutionContext executionContext = createExecutionContext(putMetricDataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -830,6 +840,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public SetAlarmStateResult setAlarmState(SetAlarmStateRequest setAlarmStateRequest) {
+
         ExecutionContext executionContext = createExecutionContext(setAlarmStateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

@@ -73,6 +73,12 @@ public class DescribeConfigRuleEvaluationStatusRequestMarshaller implements
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (describeConfigRuleEvaluationStatusRequest.getNextToken() != null) {
+                jsonGenerator.writeFieldName("NextToken").writeValue(describeConfigRuleEvaluationStatusRequest.getNextToken());
+            }
+            if (describeConfigRuleEvaluationStatusRequest.getLimit() != null) {
+                jsonGenerator.writeFieldName("Limit").writeValue(describeConfigRuleEvaluationStatusRequest.getLimit());
+            }
 
             jsonGenerator.writeEndObject();
 
