@@ -34,19 +34,16 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.BatchLoadRetryStrategy;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.BatchGetItemRequest;
 import com.amazonaws.services.dynamodbv2.model.BatchGetItemResult;
 import com.amazonaws.services.dynamodbv2.model.KeysAndAttributes;
 import com.amazonaws.services.dynamodbv2.model.PutRequest;
 import com.amazonaws.services.dynamodbv2.model.WriteRequest;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.BatchLoadRetryStrategy;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.BatchGetItemException;
 
-/**
- * @author smihir
- */
 public class BatchLoadRetryStrategyTest {
 
     private static final String TABLE_NAME = "tableName";
@@ -82,12 +79,12 @@ public class BatchLoadRetryStrategyTest {
 
     @Test
     public void testBatchReadCallFailure_NoRetry() {
-
         expect(ddbMock.batchGetItem((BatchGetItemRequest) anyObject())).andReturn(buildDefaultGetItemResult().withUnprocessedKeys(buildUnprocessedKeysMap(1)))
                 .times(1);
         mapper = new DynamoDBMapper(ddbMock, getConfigWithCustomBatchLoadRetryStrategy(new DynamoDBMapperConfig.NoRetryBatchLoadRetryStrategy()));
 
         replay(ddbMock);
+        thrown.expect(BatchGetItemException.class);
         mapper.batchLoad(itemsToGet);
         verify(ddbMock);
     }
@@ -99,6 +96,7 @@ public class BatchLoadRetryStrategyTest {
         mapper = new DynamoDBMapper(ddbMock, getConfigWithCustomBatchLoadRetryStrategy(new BatchLoadRetryStrategyWithNoDelay(3)));
 
         replay(ddbMock);
+        thrown.expect(BatchGetItemException.class);
         mapper.batchLoad(itemsToGet);
         verify(ddbMock);
     }
@@ -121,7 +119,7 @@ public class BatchLoadRetryStrategyTest {
         mapper = new DynamoDBMapper(ddbMock, getConfigWithCustomBatchLoadRetryStrategy(new DynamoDBMapperConfig.DefaultBatchLoadRetryStrategy()));
 
         replay(ddbMock);
-        thrown.expect(AmazonClientException.class);
+        thrown.expect(BatchGetItemException.class);
         mapper.batchLoad(itemsToGet);
         verify(ddbMock);
     }
@@ -133,7 +131,7 @@ public class BatchLoadRetryStrategyTest {
         mapper = new DynamoDBMapper(ddbMock, getConfigWithCustomBatchLoadRetryStrategy(new DynamoDBMapperConfig.NoRetryBatchLoadRetryStrategy()));
 
         replay(ddbMock);
-        thrown.expect(AmazonClientException.class);
+        thrown.expect(BatchGetItemException.class);
         mapper.batchLoad(itemsToGet);
         verify(ddbMock);
     }

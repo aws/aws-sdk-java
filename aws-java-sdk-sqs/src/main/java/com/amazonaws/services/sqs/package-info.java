@@ -22,27 +22,6 @@
  * without losing messages or requiring each component to be always available.
  * </p>
  * <p>
- * <b>Topics</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * </p></li>
- * <li>
- * <p>
- * </p></li>
- * <li>
- * <p>
- * <a>CommonParameters</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>CommonErrors</a>
- * </p>
- * </li>
- * </ul>
- * <p>
  * <b>Helpful Links</b>
  * </p>
  * <ul>
@@ -59,13 +38,13 @@
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html">Using
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Using
  * Amazon SQS Message Attributes</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
  * Amazon SQS Dead Letter Queues</a>
  * </p>
  * </li>

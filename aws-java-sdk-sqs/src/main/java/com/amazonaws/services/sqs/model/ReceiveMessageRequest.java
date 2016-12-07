@@ -252,8 +252,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same
      * messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility
      * timeout. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -2199,8 +2199,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same
      * messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility
      * timeout. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -2278,9 +2278,9 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return
      *        the same messages and receipt handles. If a retry occurs within the deduplication interval, it resets the
-     *        visibility timeout. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     *        Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        visibility timeout. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <important>
      *        <p>
@@ -2364,8 +2364,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same
      * messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility
      * timeout. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -2442,9 +2442,9 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return
      *         the same messages and receipt handles. If a retry occurs within the deduplication interval, it resets the
-     *         visibility timeout. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     *         Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         visibility timeout. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     *         >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <important>
      *         <p>
@@ -2529,8 +2529,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same
      * messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility
      * timeout. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -2608,9 +2608,9 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return
      *        the same messages and receipt handles. If a retry occurs within the deduplication interval, it resets the
-     *        visibility timeout. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     *        Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        visibility timeout. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <important>
      *        <p>

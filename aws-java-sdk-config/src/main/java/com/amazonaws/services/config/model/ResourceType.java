@@ -44,7 +44,13 @@ public enum ResourceType {
     AWSRDSEventSubscription("AWS::RDS::EventSubscription"),
     AWSElasticLoadBalancingV2LoadBalancer("AWS::ElasticLoadBalancingV2::LoadBalancer"),
     AWSS3Bucket("AWS::S3::Bucket"),
-    AWSSSMManagedInstanceInventory("AWS::SSM::ManagedInstanceInventory");
+    AWSSSMManagedInstanceInventory("AWS::SSM::ManagedInstanceInventory"),
+    AWSRedshiftCluster("AWS::Redshift::Cluster"),
+    AWSRedshiftClusterSnapshot("AWS::Redshift::ClusterSnapshot"),
+    AWSRedshiftClusterParameterGroup("AWS::Redshift::ClusterParameterGroup"),
+    AWSRedshiftClusterSecurityGroup("AWS::Redshift::ClusterSecurityGroup"),
+    AWSRedshiftClusterSubnetGroup("AWS::Redshift::ClusterSubnetGroup"),
+    AWSRedshiftEventSubscription("AWS::Redshift::EventSubscription");
 
     private String value;
 

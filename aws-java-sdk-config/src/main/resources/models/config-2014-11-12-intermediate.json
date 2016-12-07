@@ -28703,6 +28703,24 @@
       }, {
         "name" : "AWSSSMManagedInstanceInventory",
         "value" : "AWS::SSM::ManagedInstanceInventory"
+      }, {
+        "name" : "AWSRedshiftCluster",
+        "value" : "AWS::Redshift::Cluster"
+      }, {
+        "name" : "AWSRedshiftClusterSnapshot",
+        "value" : "AWS::Redshift::ClusterSnapshot"
+      }, {
+        "name" : "AWSRedshiftClusterParameterGroup",
+        "value" : "AWS::Redshift::ClusterParameterGroup"
+      }, {
+        "name" : "AWSRedshiftClusterSecurityGroup",
+        "value" : "AWS::Redshift::ClusterSecurityGroup"
+      }, {
+        "name" : "AWSRedshiftClusterSubnetGroup",
+        "value" : "AWS::Redshift::ClusterSubnetGroup"
+      }, {
+        "name" : "AWSRedshiftEventSubscription",
+        "value" : "AWS::Redshift::EventSubscription"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

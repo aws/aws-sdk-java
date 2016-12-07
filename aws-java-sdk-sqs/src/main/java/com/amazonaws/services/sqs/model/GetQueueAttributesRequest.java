@@ -51,9 +51,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
+     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -65,9 +65,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
-     * timed-out and are not deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * timed-out and are not deleted. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
+     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -116,16 +116,16 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source queue. For
      * more information about the redrive policy and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
+     * >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -203,8 +203,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue.
-     *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
@@ -217,8 +217,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
-     *        not timed-out and are not deleted. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
+     *        not timed-out and are not deleted. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
@@ -269,17 +269,17 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source
-     *        queue. For more information about the redrive policy and dead letter queues, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
+     *        queue. For more information about the redrive policy and dead letter queues, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
      *        >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about
-     *        the visibility timeout, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     *        Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        the visibility timeout, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -387,9 +387,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
+     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -401,9 +401,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
-     * timed-out and are not deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * timed-out and are not deleted. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
+     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -452,16 +452,16 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source queue. For
      * more information about the redrive policy and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
+     * >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -506,8 +506,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue.
-     *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *         >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
      *         </li>
@@ -520,8 +520,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
-     *         not timed-out and are not deleted. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
+     *         not timed-out and are not deleted. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *         >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
      *         </li>
@@ -573,16 +573,16 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source
      *         queue. For more information about the redrive policy and dead letter queues, see <a href=
-     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
-     *         Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
+     *         >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about
-     *         the visibility timeout, see <a
-     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     *         Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         the visibility timeout, see <a href=
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     *         >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
      *         </li>
      *         </ul>
@@ -639,9 +639,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
+     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -653,9 +653,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
-     * timed-out and are not deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * timed-out and are not deleted. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
+     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -704,16 +704,16 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source queue. For
      * more information about the redrive policy and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
+     * >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -759,8 +759,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue.
-     *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
@@ -773,8 +773,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
-     *        not timed-out and are not deleted. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
+     *        not timed-out and are not deleted. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
@@ -825,17 +825,17 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source
-     *        queue. For more information about the redrive policy and dead letter queues, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
+     *        queue. For more information about the redrive policy and dead letter queues, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
      *        >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about
-     *        the visibility timeout, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     *        Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        the visibility timeout, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -894,9 +894,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
+     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -908,9 +908,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
-     * timed-out and are not deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * timed-out and are not deleted. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
+     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -959,16 +959,16 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source queue. For
      * more information about the redrive policy and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
+     * >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1019,8 +1019,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue.
-     *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
@@ -1033,8 +1033,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
-     *        not timed-out and are not deleted. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
+     *        not timed-out and are not deleted. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
@@ -1085,17 +1085,17 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source
-     *        queue. For more information about the redrive policy and dead letter queues, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
+     *        queue. For more information about the redrive policy and dead letter queues, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
      *        >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about
-     *        the visibility timeout, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     *        Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        the visibility timeout, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1156,9 +1156,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
+     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1170,9 +1170,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
-     * timed-out and are not deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * timed-out and are not deleted. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
+     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1221,16 +1221,16 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source queue. For
      * more information about the redrive policy and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
+     * >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1276,8 +1276,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue.
-     *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
@@ -1290,8 +1290,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
-     *        not timed-out and are not deleted. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
+     *        not timed-out and are not deleted. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
@@ -1342,17 +1342,17 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source
-     *        queue. For more information about the redrive policy and dead letter queues, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
+     *        queue. For more information about the redrive policy and dead letter queues, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
      *        >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about
-     *        the visibility timeout, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     *        Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        the visibility timeout, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1408,9 +1408,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
+     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1422,9 +1422,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
-     * timed-out and are not deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * timed-out and are not deleted. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
+     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1473,16 +1473,16 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source queue. For
      * more information about the redrive policy and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
-     * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
+     * >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1528,8 +1528,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue.
-     *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
@@ -1542,8 +1542,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
-     *        not timed-out and are not deleted. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
+     *        not timed-out and are not deleted. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
@@ -1594,17 +1594,17 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source
-     *        queue. For more information about the redrive policy and dead letter queues, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
+     *        queue. For more information about the redrive policy and dead letter queues, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
      *        >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about
-     *        the visibility timeout, see <a
-     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
-     *        Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        the visibility timeout, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>

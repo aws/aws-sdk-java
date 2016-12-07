@@ -39,9 +39,9 @@ public class SendMessageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String mD5OfMessageAttributes;
     /**
      * <p>
-     * An element containing the message ID of the message sent to the queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
-     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
+     * An element containing the message ID of the message sent to the queue. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
+     * >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      */
     private String messageId;
@@ -165,14 +165,14 @@ public class SendMessageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An element containing the message ID of the message sent to the queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
-     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
+     * An element containing the message ID of the message sent to the queue. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
+     * >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageId
      *        An element containing the message ID of the message sent to the queue. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html"
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
      *        >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
@@ -182,13 +182,13 @@ public class SendMessageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An element containing the message ID of the message sent to the queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
-     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
+     * An element containing the message ID of the message sent to the queue. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
+     * >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
-     * @return An element containing the message ID of the message sent to the queue. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html"
+     * @return An element containing the message ID of the message sent to the queue. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
      *         >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
@@ -198,14 +198,14 @@ public class SendMessageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An element containing the message ID of the message sent to the queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
-     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
+     * An element containing the message ID of the message sent to the queue. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
+     * >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageId
      *        An element containing the message ID of the message sent to the queue. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html"
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
      *        >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

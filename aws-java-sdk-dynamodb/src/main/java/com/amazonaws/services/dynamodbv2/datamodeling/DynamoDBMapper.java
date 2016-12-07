@@ -1332,13 +1332,12 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         BatchLoadContext batchLoadContext = new BatchLoadContext(batchGetItemRequest);
 
         int retries = 0;
-        int noOfItemsInOriginalRequest = requestItems.size();
 
         do {
             if ( batchGetItemResult != null ) {
                 retries++;
                 batchLoadContext.setRetriesAttempted(retries);
-                if (batchGetItemResult.getUnprocessedKeys().size() > 0){
+                if (!isNullOrEmpty(batchGetItemResult.getUnprocessedKeys())) {
                     pause(batchLoadStrategy.getDelayBeforeNextRetry(batchLoadContext));
                     batchGetItemRequest.setRequestItems(
                         batchGetItemResult.getUnprocessedKeys());
@@ -1373,11 +1372,15 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             // the number of unprocessed keys and  Batch Load Strategy will drive the number of retries
         } while ( batchLoadStrategy.shouldRetry(batchLoadContext) );
 
-        //We still need to throw Amazon Client Exception when none of the requested keys are processed
-        if(noOfItemsInOriginalRequest == batchGetItemResult.getUnprocessedKeys().size()) {
-            throw new SdkClientException("Batch Get Item request to server hasn't received any data. Please try again later");
+        if (!isNullOrEmpty(batchGetItemResult.getUnprocessedKeys())) {
+            throw new BatchGetItemException(
+                    "The BatchGetItemResult has unprocessed keys after max retry attempts. Catch the BatchGetItemException to get the list of unprocessed keys.",
+                    batchGetItemResult.getUnprocessedKeys(), resultSet);
         }
-        
+    }
+
+    private static <K, V> boolean isNullOrEmpty(Map<K, V> map) {
+        return map == null || map.isEmpty();
     }
 
     /**
@@ -1687,16 +1690,16 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         // There should be least one hash key condition.
         final String keyCondExpression = queryRequest.getKeyConditionExpression();
         if (keyCondExpression == null) {
-            if (hashKeyConditions == null || hashKeyConditions.isEmpty()) {
+            if (isNullOrEmpty(hashKeyConditions)) {
                 throw new IllegalArgumentException(
                     "Illegal query expression: No hash key condition is found in the query");
             }
         } else {
-            if (hashKeyConditions != null && !hashKeyConditions.isEmpty()) {
+            if (!isNullOrEmpty(hashKeyConditions)) {
                 throw new IllegalArgumentException(
                     "Illegal query expression: Either the hash key conditions or the key condition expression must be specified but not both.");
             }
-            if (rangeKeyConditions != null && !rangeKeyConditions.isEmpty()) {
+            if (!isNullOrEmpty(rangeKeyConditions)) {
                 throw new IllegalArgumentException(
                     "Illegal query expression: The range key conditions can only be specified when the key condition expression is not specified.");
             }
@@ -2275,6 +2278,34 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new SdkClientException(e.getMessage(), e);
+        }
+    }
+
+    public static final class BatchGetItemException extends SdkClientException {
+        private final Map<String, KeysAndAttributes> unprocessedKeys;
+        private final Map<String, List<Object>> responses;
+
+        public BatchGetItemException(String message, Map<String, KeysAndAttributes> unprocessedKeys, Map<String, List<Object>> responses) {
+            super(message);
+            this.unprocessedKeys = unprocessedKeys;
+            this.responses = responses;
+        }
+
+        /**
+         * Returns a map of tables and their respective keys that were not processed during the operation..
+         */
+        public Map<String, KeysAndAttributes> getUnprocessedKeys() {
+            return unprocessedKeys;
+        }
+
+        /**
+         * Returns a map of the loaded objects. Each key in the map is the name of a DynamoDB table.
+         * Each value in the map is a list of objects that have been loaded from that table. All
+         * objects for each table can be cast to the associated user defined type that is
+         * annotated as mapping that table.
+         */
+        public Map<String, List<Object>> getResponses() {
+            return responses;
         }
     }
 

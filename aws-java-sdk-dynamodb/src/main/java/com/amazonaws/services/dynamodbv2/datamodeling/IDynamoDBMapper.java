@@ -344,6 +344,8 @@ public interface IDynamoDBMapper {
      *         Each value in the map is a list of objects that have been loaded from that table. All
      *         objects for each table can be cast to the associated user defined type that is
      *         annotated as mapping that table.
+     * @throws DynamoDBMapper.BatchGetItemException if all the requested items are not processed
+     *         within the maximum number of retries.
      */
     Map<String, List<Object>> batchLoad(Iterable<? extends Object> itemsToGet);
 
@@ -360,6 +362,8 @@ public interface IDynamoDBMapper {
      *         Each value in the map is a list of objects that have been loaded from that table. All
      *         objects for each table can be cast to the associated user defined type that is
      *         annotated as mapping that table.
+     * @throws DynamoDBMapper.BatchGetItemException if all the requested items are not processed
+     *         within the maximum number of retries.
      */
     Map<String, List<Object>> batchLoad(Iterable<? extends Object> itemsToGet, DynamoDBMapperConfig config);
 
@@ -371,6 +375,8 @@ public interface IDynamoDBMapper {
      *         Each value in the map is a list of objects that have been loaded from that table. All
      *         objects for each table can be cast to the associated user defined type that is
      *         annotated as mapping that table.
+     * @throws DynamoDBMapper.BatchGetItemException if all the requested items are not processed
+     *         within the maximum number of retries.
      * @see #batchLoad(List, DynamoDBMapperConfig)
      * @see #batchLoad(Map, DynamoDBMapperConfig)
      */
@@ -390,6 +396,8 @@ public interface IDynamoDBMapper {
      *         Each value in the map is a list of objects that have been loaded from that table. All
      *         objects for each table can be cast to the associated user defined type that is
      *         annotated as mapping that table.
+     * @throws DynamoDBMapper.BatchGetItemException if all the requested items are not processed
+     *         within the maximum number of retries.
      */
     Map<String, List<Object>> batchLoad(Map<Class<?>, List<KeyPair>> itemsToGet, DynamoDBMapperConfig config);
 
