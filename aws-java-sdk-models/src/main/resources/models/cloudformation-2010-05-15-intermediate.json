@@ -60,6 +60,7 @@
     },
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : false
   },
@@ -38084,5 +38085,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonCloudFormationException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cloudformation.model.AmazonCloudFormationException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.cloudformation.model.transform"
 }

@@ -60,7 +60,12 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      */
     private java.util.List<WebACLUpdate> updates;
-
+    /**
+     * <p>
+     * A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't
+     * match the criteria in any of the rules in a web ACL.
+     * </p>
+     */
     private WafAction defaultAction;
 
     /**
@@ -384,7 +389,14 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't
+     * match the criteria in any of the rules in a web ACL.
+     * </p>
+     * 
      * @param defaultAction
+     *        A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request
+     *        doesn't match the criteria in any of the rules in a web ACL.
      */
 
     public void setDefaultAction(WafAction defaultAction) {
@@ -392,7 +404,13 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't
+     * match the criteria in any of the rules in a web ACL.
+     * </p>
+     * 
+     * @return A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request
+     *         doesn't match the criteria in any of the rules in a web ACL.
      */
 
     public WafAction getDefaultAction() {
@@ -400,7 +418,14 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't
+     * match the criteria in any of the rules in a web ACL.
+     * </p>
+     * 
      * @param defaultAction
+     *        A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request
+     *        doesn't match the criteria in any of the rules in a web ACL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

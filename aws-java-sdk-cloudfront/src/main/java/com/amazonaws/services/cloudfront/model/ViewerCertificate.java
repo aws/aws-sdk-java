@@ -44,32 +44,10 @@ import java.io.Serializable;
  */
 public class ViewerCertificate implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name of your
-     * distribution in your object URLs (for example, <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>), set
-     * to <code>true</code>. Omit this value if you are setting an <code>ACMCertificateArn</code> or
-     * <code>IAMCertificateId</code>.
-     * </p>
-     */
     private Boolean cloudFrontDefaultCertificate;
-    /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your object
-     * URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value, <code>ACMCertificateArn</code>, or
-     * <code>CloudFrontDefaultCertificate</code>.
-     * </p>
-     */
+
     private String iAMCertificateId;
-    /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your object
-     * URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the ACM certificate ARN of the custom
-     * viewer certificate for this distribution. Specify either this value, <code>IAMCertificateId</code>, or
-     * <code>CloudFrontDefaultCertificate</code>.
-     * </p>
-     */
+
     private String aCMCertificateArn;
     /**
      * <p>
@@ -302,18 +280,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     private String certificateSource;
 
     /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name of your
-     * distribution in your object URLs (for example, <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>), set
-     * to <code>true</code>. Omit this value if you are setting an <code>ACMCertificateArn</code> or
-     * <code>IAMCertificateId</code>.
-     * </p>
-     * 
      * @param cloudFrontDefaultCertificate
-     *        If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name of
-     *        your distribution in your object URLs (for example,
-     *        <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>), set to <code>true</code>. Omit this value if
-     *        you are setting an <code>ACMCertificateArn</code> or <code>IAMCertificateId</code>.
      */
 
     public void setCloudFrontDefaultCertificate(Boolean cloudFrontDefaultCertificate) {
@@ -321,17 +288,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name of your
-     * distribution in your object URLs (for example, <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>), set
-     * to <code>true</code>. Omit this value if you are setting an <code>ACMCertificateArn</code> or
-     * <code>IAMCertificateId</code>.
-     * </p>
-     * 
-     * @return If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name of
-     *         your distribution in your object URLs (for example,
-     *         <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>), set to <code>true</code>. Omit this value
-     *         if you are setting an <code>ACMCertificateArn</code> or <code>IAMCertificateId</code>.
+     * @return
      */
 
     public Boolean getCloudFrontDefaultCertificate() {
@@ -339,18 +296,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name of your
-     * distribution in your object URLs (for example, <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>), set
-     * to <code>true</code>. Omit this value if you are setting an <code>ACMCertificateArn</code> or
-     * <code>IAMCertificateId</code>.
-     * </p>
-     * 
      * @param cloudFrontDefaultCertificate
-     *        If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name of
-     *        your distribution in your object URLs (for example,
-     *        <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>), set to <code>true</code>. Omit this value if
-     *        you are setting an <code>ACMCertificateArn</code> or <code>IAMCertificateId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -360,17 +306,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name of your
-     * distribution in your object URLs (for example, <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>), set
-     * to <code>true</code>. Omit this value if you are setting an <code>ACMCertificateArn</code> or
-     * <code>IAMCertificateId</code>.
-     * </p>
-     * 
-     * @return If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name of
-     *         your distribution in your object URLs (for example,
-     *         <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>), set to <code>true</code>. Omit this value
-     *         if you are setting an <code>ACMCertificateArn</code> or <code>IAMCertificateId</code>.
+     * @return
      */
 
     public Boolean isCloudFrontDefaultCertificate() {
@@ -378,18 +314,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your object
-     * URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value, <code>ACMCertificateArn</code>, or
-     * <code>CloudFrontDefaultCertificate</code>.
-     * </p>
-     * 
      * @param iAMCertificateId
-     *        If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your
-     *        object URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the IAM certificate
-     *        identifier of the custom viewer certificate for this distribution. Specify either this value,
-     *        <code>ACMCertificateArn</code>, or <code>CloudFrontDefaultCertificate</code>.
      */
 
     public void setIAMCertificateId(String iAMCertificateId) {
@@ -397,17 +322,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your object
-     * URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value, <code>ACMCertificateArn</code>, or
-     * <code>CloudFrontDefaultCertificate</code>.
-     * </p>
-     * 
-     * @return If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in
-     *         your object URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the IAM certificate
-     *         identifier of the custom viewer certificate for this distribution. Specify either this value,
-     *         <code>ACMCertificateArn</code>, or <code>CloudFrontDefaultCertificate</code>.
+     * @return
      */
 
     public String getIAMCertificateId() {
@@ -415,18 +330,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your object
-     * URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value, <code>ACMCertificateArn</code>, or
-     * <code>CloudFrontDefaultCertificate</code>.
-     * </p>
-     * 
      * @param iAMCertificateId
-     *        If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your
-     *        object URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the IAM certificate
-     *        identifier of the custom viewer certificate for this distribution. Specify either this value,
-     *        <code>ACMCertificateArn</code>, or <code>CloudFrontDefaultCertificate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,18 +340,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your object
-     * URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the ACM certificate ARN of the custom
-     * viewer certificate for this distribution. Specify either this value, <code>IAMCertificateId</code>, or
-     * <code>CloudFrontDefaultCertificate</code>.
-     * </p>
-     * 
      * @param aCMCertificateArn
-     *        If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your
-     *        object URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the ACM certificate ARN of
-     *        the custom viewer certificate for this distribution. Specify either this value,
-     *        <code>IAMCertificateId</code>, or <code>CloudFrontDefaultCertificate</code>.
      */
 
     public void setACMCertificateArn(String aCMCertificateArn) {
@@ -455,17 +348,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your object
-     * URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the ACM certificate ARN of the custom
-     * viewer certificate for this distribution. Specify either this value, <code>IAMCertificateId</code>, or
-     * <code>CloudFrontDefaultCertificate</code>.
-     * </p>
-     * 
-     * @return If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in
-     *         your object URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the ACM certificate
-     *         ARN of the custom viewer certificate for this distribution. Specify either this value,
-     *         <code>IAMCertificateId</code>, or <code>CloudFrontDefaultCertificate</code>.
+     * @return
      */
 
     public String getACMCertificateArn() {
@@ -473,18 +356,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your object
-     * URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the ACM certificate ARN of the custom
-     * viewer certificate for this distribution. Specify either this value, <code>IAMCertificateId</code>, or
-     * <code>CloudFrontDefaultCertificate</code>.
-     * </p>
-     * 
      * @param aCMCertificateArn
-     *        If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your
-     *        object URLs (for example, <code>https://example.com/logo.jpg)</code>, specify the ACM certificate ARN of
-     *        the custom viewer certificate for this distribution. Specify either this value,
-     *        <code>IAMCertificateId</code>, or <code>CloudFrontDefaultCertificate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -51,7 +51,7 @@ public class GetStreamingDistributionConfigRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-09-29/streaming-distribution/{Id}/config";
+        String uriResourcePath = "/2016-11-25/streaming-distribution/{Id}/config";
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",

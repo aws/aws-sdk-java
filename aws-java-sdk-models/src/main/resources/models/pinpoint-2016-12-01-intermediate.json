@@ -28,6 +28,7 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
   },
@@ -43729,5 +43730,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonPinpointException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.pinpoint.model.AmazonPinpointException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.pinpoint.model.transform"
 }

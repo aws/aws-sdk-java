@@ -50,7 +50,7 @@ public class ListStreamingDistributionsRequestMarshaller implements Marshaller<R
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-09-29/streaming-distribution";
+        String uriResourcePath = "/2016-11-25/streaming-distribution";
 
         request.setResourcePath(uriResourcePath);
 

@@ -32,6 +32,7 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
   },
@@ -34280,5 +34281,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonElasticLoadBalancingException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.elasticloadbalancingv2.model.AmazonElasticLoadBalancingException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.elasticloadbalancingv2.model.transform"
 }

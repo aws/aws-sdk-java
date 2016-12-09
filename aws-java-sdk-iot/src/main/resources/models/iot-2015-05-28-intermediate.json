@@ -32,6 +32,7 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
   },
@@ -45993,5 +45994,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSIotException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.iot.model.AWSIotException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.iot.model.transform"
 }

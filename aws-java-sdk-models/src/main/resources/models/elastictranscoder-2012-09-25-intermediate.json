@@ -39,6 +39,7 @@
     },
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : true
   },
@@ -36025,5 +36026,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonElasticTranscoderException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.elastictranscoder.model.transform"
 }

@@ -32,6 +32,7 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : true
   },
@@ -16498,5 +16499,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonCognitoSyncException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.cognitosync.model.transform"
 }

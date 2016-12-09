@@ -20,7 +20,7 @@ package com.amazonaws.services.waf.model;
  * Guide</i>.
  * </p>
  */
-public class WAFLimitsExceededException extends com.amazonaws.services.waf.model.AWSWAFException {
+public class WAFLimitsExceededException extends com.amazonaws.services.waf.model.AWSWAFRegionalException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -5,7 +5,7 @@
 <#local customConfig = dataModel.customConfig/>
 
 ${dataModel.fileHeader}
-package ${metadata.packageName}.model.transform;
+package ${dataModel.transformPackage};
 
 import java.io.ByteArrayInputStream;
 import java.util.Collections;

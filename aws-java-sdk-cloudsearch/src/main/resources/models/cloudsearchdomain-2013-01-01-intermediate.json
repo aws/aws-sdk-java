@@ -53,6 +53,7 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : true
   },
@@ -8701,5 +8702,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonCloudSearchDomainException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cloudsearchdomain.model.AmazonCloudSearchDomainException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.cloudsearchdomain.model.transform"
 }

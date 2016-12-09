@@ -29,7 +29,7 @@ package com.amazonaws.services.waf.model;
  * </li>
  * </ul>
  */
-public class WAFReferencedItemException extends com.amazonaws.services.waf.model.AWSWAFException {
+public class WAFReferencedItemException extends com.amazonaws.services.waf.model.AWSWAFRegionalException {
     private static final long serialVersionUID = 1L;
 
     /**

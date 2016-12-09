@@ -32,6 +32,7 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
   },
@@ -9617,5 +9618,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSCertificateManagerException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.certificatemanager.model.transform"
 }

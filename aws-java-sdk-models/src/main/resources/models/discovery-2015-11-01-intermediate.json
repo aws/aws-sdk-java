@@ -28,6 +28,7 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
   },
@@ -11285,5 +11286,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSApplicationDiscoveryException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.applicationdiscovery.model.transform"
 }

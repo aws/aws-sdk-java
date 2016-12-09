@@ -22,6 +22,11 @@ import java.io.Serializable;
  */
 public class XssMatchTuple implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Specifies where in a web request to look for cross-site scripting attacks.
+     * </p>
+     */
     private FieldToMatch fieldToMatch;
     /**
      * <p>
@@ -167,7 +172,12 @@ public class XssMatchTuple implements Serializable, Cloneable {
     private String textTransformation;
 
     /**
+     * <p>
+     * Specifies where in a web request to look for cross-site scripting attacks.
+     * </p>
+     * 
      * @param fieldToMatch
+     *        Specifies where in a web request to look for cross-site scripting attacks.
      */
 
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
@@ -175,7 +185,11 @@ public class XssMatchTuple implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies where in a web request to look for cross-site scripting attacks.
+     * </p>
+     * 
+     * @return Specifies where in a web request to look for cross-site scripting attacks.
      */
 
     public FieldToMatch getFieldToMatch() {
@@ -183,7 +197,12 @@ public class XssMatchTuple implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies where in a web request to look for cross-site scripting attacks.
+     * </p>
+     * 
      * @param fieldToMatch
+     *        Specifies where in a web request to look for cross-site scripting attacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

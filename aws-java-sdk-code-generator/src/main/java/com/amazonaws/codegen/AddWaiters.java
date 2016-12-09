@@ -40,13 +40,15 @@ class AddWaiters {
 
     private final Waiters waiters;
     private final Map<String, OperationModel> operations;
+    private final String codeGenBinDirectory;
 
-    AddWaiters(Waiters waiters, Map<String, OperationModel> operations){
+    AddWaiters(Waiters waiters, Map<String, OperationModel> operations, String codeGenBinDirectory) {
         this.waiters = waiters;
         this.operations = operations;
+        this.codeGenBinDirectory = codeGenBinDirectory;
     }
 
-    Map<String, WaiterDefinitionModel> constructWaiters() throws IOException{
+    Map<String, WaiterDefinitionModel> constructWaiters() throws IOException {
 
 
         Map<String, WaiterDefinitionModel> javaWaiterModels = new HashMap<>();
@@ -64,7 +66,7 @@ class AddWaiters {
             waiterDefinitionModel.setMaxAttempts(waiterDefinition.getMaxAttempts());
             waiterDefinitionModel.setWaiterName(waiterName);
             waiterDefinitionModel.setOperationModel(operations.get(waiterDefinition.getOperation()));
-            for(Acceptor acceptor: waiterDefinition.getAcceptors()){
+            for (Acceptor acceptor : waiterDefinition.getAcceptors()) {
                 AcceptorModel acceptorModel = new AcceptorModel();
                 acceptorModel.setMatcher(acceptor.getMatcher());
                 acceptorModel.setState(acceptor.getState());
@@ -81,12 +83,15 @@ class AddWaiters {
         return javaWaiterModels;
     }
 
-    private static JmesPathExpression getAstFromArgument(String argument, Map<String, JmesPathExpression> argumentToAstMap) throws IOException{
-        if(argument != null && !argumentToAstMap.containsKey(argument)) {
+    private JmesPathExpression getAstFromArgument(String argument, Map<String, JmesPathExpression> argumentToAstMap) throws
+                                                                                                                            IOException {
+        if (argument != null && !argumentToAstMap.containsKey(argument)) {
 
-            ProcessBuilder pb = new ProcessBuilder("/apollo/env/SDETools/bin/brazil-runtime-exec", "python3.4",
-                    System.getProperty("codeGenSourceDirectory") + "/bin/jp-to-ast.py", argument);
-            Process p = pb.start();
+            final Process p = executeToAstProcess(argument);
+
+            if(p.exitValue()!= 0) {
+                throw new RuntimeException(IOUtils.toString(p.getErrorStream()));
+            }
 
             JsonNode jsonNode = mapper.readTree(IOUtils.toString(p.getInputStream()));
             JmesPathExpression ast = fromAstJsonToAstJava(jsonNode);
@@ -96,10 +101,26 @@ class AddWaiters {
 
             return ast;
 
-        }
-        else if(argument != null){
+        } else if (argument != null) {
             return argumentToAstMap.get(argument);
         }
         return null;
+    }
+
+    /**
+     * Execute the jp-to-ast.py command and wait for it to complete.
+     *
+     * @param argument JP expression to compile to AST.
+     * @return Process with access to output streams.
+     */
+    private Process executeToAstProcess(String argument) throws IOException {
+        try {
+            Process p = new ProcessBuilder("python3.4", codeGenBinDirectory + "/jp-to-ast.py", argument).start();
+            p.waitFor();
+            return p;
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException(e);
+        }
     }
 }

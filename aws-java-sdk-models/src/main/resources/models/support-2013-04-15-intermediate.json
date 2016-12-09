@@ -45,6 +45,7 @@
     },
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : true,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : false
   },
@@ -17957,5 +17958,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSSupportException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.support.model.AWSSupportException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.support.model.transform"
 }

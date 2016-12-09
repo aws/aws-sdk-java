@@ -119,6 +119,7 @@
     },
     "skipInterfaceAdditions" : true,
     "skipSmokeTests" : false,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : true
   },
@@ -10959,5 +10960,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonSimpleDBException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.simpledb.model.AmazonSimpleDBException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.simpledb.model.transform"
 }

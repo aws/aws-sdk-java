@@ -36,6 +36,7 @@
     },
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : true,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : false
   },
@@ -9154,5 +9155,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonImportExportException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.importexport.model.AmazonImportExportException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.importexport.model.transform"
 }

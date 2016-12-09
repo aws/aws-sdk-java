@@ -1,1224 +1,4455 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2015-04-13",
-    "endpointPrefix":"codecommit",
-    "jsonVersion":"1.1",
-    "protocol":"json",
-    "serviceAbbreviation":"CodeCommit",
-    "serviceFullName":"AWS CodeCommit",
-    "signatureVersion":"v4",
-    "targetPrefix":"CodeCommit_20150413"
+  "metadata" : {
+    "apiVersion" : "2015-04-13",
+    "endpointPrefix" : "codecommit",
+    "jsonVersion" : "1.1",
+    "protocol" : "json",
+    "resultWrapped" : false,
+    "serviceAbbreviation" : "CodeCommit",
+    "serviceFullName" : "AWS CodeCommit",
+    "signatureVersion" : "v4",
+    "signingName" : "codecommit",
+    "targetPrefix" : "CodeCommit_20150413",
+    "xmlNamespace" : null
   },
-  "operations":{
-    "BatchGetRepositories":{
-      "name":"BatchGetRepositories",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+  "operations" : {
+    "BatchGetRepositories" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Returns information about one or more repositories.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNamesRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MaximumRepositoryNamesExceededException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"BatchGetRepositoriesInput"},
-      "output":{"shape":"BatchGetRepositoriesOutput"},
-      "errors":[
-        {"shape":"RepositoryNamesRequiredException"},
-        {"shape":"MaximumRepositoryNamesExceededException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"}
-      ],
-      "documentation":"<p>Returns information about one or more repositories.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "BatchGetRepositoriesInput",
+        "xmlNamespace" : null
+      },
+      "name" : "BatchGetRepositories",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "BatchGetRepositoriesOutput"
+      }
     },
-    "CreateBranch":{
-      "name":"CreateBranch",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "CreateBranch" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Creates a new branch in a repository and points the branch to a commit.</p> <note><p>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</p></note>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BranchNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BranchNameExistsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidBranchNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "CommitIdRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "CommitDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidCommitIdException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"CreateBranchInput"},
-      "errors":[
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"RepositoryDoesNotExistException"},
-        {"shape":"BranchNameRequiredException"},
-        {"shape":"BranchNameExistsException"},
-        {"shape":"InvalidBranchNameException"},
-        {"shape":"CommitIdRequiredException"},
-        {"shape":"CommitDoesNotExistException"},
-        {"shape":"InvalidCommitIdException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"}
-      ],
-      "documentation":"<p>Creates a new branch in a repository and points the branch to a commit.</p> <note><p>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</p></note>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateBranchInput",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateBranch",
+      "output" : null
     },
-    "CreateRepository":{
-      "name":"CreateRepository",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "CreateRepository" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Creates a new, empty repository.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameExistsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryDescriptionException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryLimitExceededException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"CreateRepositoryInput"},
-      "output":{"shape":"CreateRepositoryOutput"},
-      "errors":[
-        {"shape":"RepositoryNameExistsException"},
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"InvalidRepositoryDescriptionException"},
-        {"shape":"RepositoryLimitExceededException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"}
-      ],
-      "documentation":"<p>Creates a new, empty repository.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateRepositoryInput",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateRepository",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateRepositoryOutput"
+      }
     },
-    "DeleteRepository":{
-      "name":"DeleteRepository",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DeleteRepository" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</important>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DeleteRepositoryInput"},
-      "output":{"shape":"DeleteRepositoryOutput"},
-      "errors":[
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"}
-      ],
-      "documentation":"<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</important>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteRepositoryInput",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteRepository",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteRepositoryOutput"
+      }
     },
-    "GetBranch":{
-      "name":"GetBranch",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "GetBranch" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Returns information about a repository branch, including its name and the last commit ID.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BranchNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidBranchNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BranchDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"GetBranchInput"},
-      "output":{"shape":"GetBranchOutput"},
-      "errors":[
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"RepositoryDoesNotExistException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"BranchNameRequiredException"},
-        {"shape":"InvalidBranchNameException"},
-        {"shape":"BranchDoesNotExistException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"}
-      ],
-      "documentation":"<p>Returns information about a repository branch, including its name and the last commit ID.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetBranchInput",
+        "xmlNamespace" : null
+      },
+      "name" : "GetBranch",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetBranchOutput"
+      }
     },
-    "GetCommit":{
-      "name":"GetCommit",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "GetCommit" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Returns information about a commit, including commit message and committer information.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "CommitIdRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidCommitIdException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "CommitIdDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"GetCommitInput"},
-      "output":{"shape":"GetCommitOutput"},
-      "errors":[
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"RepositoryDoesNotExistException"},
-        {"shape":"CommitIdRequiredException"},
-        {"shape":"InvalidCommitIdException"},
-        {"shape":"CommitIdDoesNotExistException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"}
-      ],
-      "documentation":"<p>Returns information about a commit, including commit message and committer information.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetCommitInput",
+        "xmlNamespace" : null
+      },
+      "name" : "GetCommit",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetCommitOutput"
+      }
     },
-    "GetRepository":{
-      "name":"GetRepository",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "GetRepository" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Returns information about a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"GetRepositoryInput"},
-      "output":{"shape":"GetRepositoryOutput"},
-      "errors":[
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"RepositoryDoesNotExistException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"}
-      ],
-      "documentation":"<p>Returns information about a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetRepositoryInput",
+        "xmlNamespace" : null
+      },
+      "name" : "GetRepository",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetRepositoryOutput"
+      }
     },
-    "GetRepositoryTriggers":{
-      "name":"GetRepositoryTriggers",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "GetRepositoryTriggers" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Gets information about triggers configured for a repository.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"GetRepositoryTriggersInput"},
-      "output":{"shape":"GetRepositoryTriggersOutput"},
-      "errors":[
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"RepositoryDoesNotExistException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"}
-      ],
-      "documentation":"<p>Gets information about triggers configured for a repository.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetRepositoryTriggersInput",
+        "xmlNamespace" : null
+      },
+      "name" : "GetRepositoryTriggers",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetRepositoryTriggersOutput"
+      }
     },
-    "ListBranches":{
-      "name":"ListBranches",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "ListBranches" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Gets information about one or more branches in a repository.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidContinuationTokenException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"ListBranchesInput"},
-      "output":{"shape":"ListBranchesOutput"},
-      "errors":[
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"RepositoryDoesNotExistException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"},
-        {"shape":"InvalidContinuationTokenException"}
-      ],
-      "documentation":"<p>Gets information about one or more branches in a repository.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListBranchesInput",
+        "xmlNamespace" : null
+      },
+      "name" : "ListBranches",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListBranchesOutput"
+      }
     },
-    "ListRepositories":{
-      "name":"ListRepositories",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "ListRepositories" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Gets information about one or more repositories.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidSortByException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidOrderException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidContinuationTokenException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"ListRepositoriesInput"},
-      "output":{"shape":"ListRepositoriesOutput"},
-      "errors":[
-        {"shape":"InvalidSortByException"},
-        {"shape":"InvalidOrderException"},
-        {"shape":"InvalidContinuationTokenException"}
-      ],
-      "documentation":"<p>Gets information about one or more repositories.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListRepositoriesInput",
+        "xmlNamespace" : null
+      },
+      "name" : "ListRepositories",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListRepositoriesOutput"
+      }
     },
-    "PutRepositoryTriggers":{
-      "name":"PutRepositoryTriggers",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "PutRepositoryTriggers" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Replaces all triggers for a repository. This can be used to create or delete triggers.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryTriggersListRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MaximumRepositoryTriggersExceededException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryTriggerNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryTriggerDestinationArnException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryTriggerRegionException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryTriggerCustomDataException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MaximumBranchesExceededException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryTriggerBranchNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryTriggerEventsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryTriggerNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryTriggerDestinationArnRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryTriggerBranchNameListRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryTriggerEventsListRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"PutRepositoryTriggersInput"},
-      "output":{"shape":"PutRepositoryTriggersOutput"},
-      "errors":[
-        {"shape":"RepositoryDoesNotExistException"},
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"RepositoryTriggersListRequiredException"},
-        {"shape":"MaximumRepositoryTriggersExceededException"},
-        {"shape":"InvalidRepositoryTriggerNameException"},
-        {"shape":"InvalidRepositoryTriggerDestinationArnException"},
-        {"shape":"InvalidRepositoryTriggerRegionException"},
-        {"shape":"InvalidRepositoryTriggerCustomDataException"},
-        {"shape":"MaximumBranchesExceededException"},
-        {"shape":"InvalidRepositoryTriggerBranchNameException"},
-        {"shape":"InvalidRepositoryTriggerEventsException"},
-        {"shape":"RepositoryTriggerNameRequiredException"},
-        {"shape":"RepositoryTriggerDestinationArnRequiredException"},
-        {"shape":"RepositoryTriggerBranchNameListRequiredException"},
-        {"shape":"RepositoryTriggerEventsListRequiredException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"}
-      ],
-      "documentation":"<p>Replaces all triggers for a repository. This can be used to create or delete triggers.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "PutRepositoryTriggersInput",
+        "xmlNamespace" : null
+      },
+      "name" : "PutRepositoryTriggers",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "PutRepositoryTriggersOutput"
+      }
     },
-    "TestRepositoryTriggers":{
-      "name":"TestRepositoryTriggers",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "TestRepositoryTriggers" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Tests the functionality of repository triggers by sending information to the trigger target. If real data is available in the repository, the test will send data from the last commit. If no data is available, sample data will be generated.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryTriggersListRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MaximumRepositoryTriggersExceededException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryTriggerNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryTriggerDestinationArnException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryTriggerRegionException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryTriggerCustomDataException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MaximumBranchesExceededException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryTriggerBranchNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryTriggerEventsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryTriggerNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryTriggerDestinationArnRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryTriggerBranchNameListRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryTriggerEventsListRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"TestRepositoryTriggersInput"},
-      "output":{"shape":"TestRepositoryTriggersOutput"},
-      "errors":[
-        {"shape":"RepositoryDoesNotExistException"},
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"RepositoryTriggersListRequiredException"},
-        {"shape":"MaximumRepositoryTriggersExceededException"},
-        {"shape":"InvalidRepositoryTriggerNameException"},
-        {"shape":"InvalidRepositoryTriggerDestinationArnException"},
-        {"shape":"InvalidRepositoryTriggerRegionException"},
-        {"shape":"InvalidRepositoryTriggerCustomDataException"},
-        {"shape":"MaximumBranchesExceededException"},
-        {"shape":"InvalidRepositoryTriggerBranchNameException"},
-        {"shape":"InvalidRepositoryTriggerEventsException"},
-        {"shape":"RepositoryTriggerNameRequiredException"},
-        {"shape":"RepositoryTriggerDestinationArnRequiredException"},
-        {"shape":"RepositoryTriggerBranchNameListRequiredException"},
-        {"shape":"RepositoryTriggerEventsListRequiredException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"}
-      ],
-      "documentation":"<p>Tests the functionality of repository triggers by sending information to the trigger target. If real data is available in the repository, the test will send data from the last commit. If no data is available, sample data will be generated.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "TestRepositoryTriggersInput",
+        "xmlNamespace" : null
+      },
+      "name" : "TestRepositoryTriggers",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "TestRepositoryTriggersOutput"
+      }
     },
-    "UpdateDefaultBranch":{
-      "name":"UpdateDefaultBranch",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "UpdateDefaultBranch" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Sets or changes the default branch name for the specified repository.</p> <note><p>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</p></note>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BranchNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidBranchNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BranchDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"UpdateDefaultBranchInput"},
-      "errors":[
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"RepositoryDoesNotExistException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"BranchNameRequiredException"},
-        {"shape":"InvalidBranchNameException"},
-        {"shape":"BranchDoesNotExistException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"}
-      ],
-      "documentation":"<p>Sets or changes the default branch name for the specified repository.</p> <note><p>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</p></note>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateDefaultBranchInput",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateDefaultBranch",
+      "output" : null
     },
-    "UpdateRepositoryDescription":{
-      "name":"UpdateRepositoryDescription",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "UpdateRepositoryDescription" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Sets or changes the comment or description for a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryDescriptionException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionIntegrityChecksFailedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyAccessDeniedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyDisabledException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EncryptionKeyUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"UpdateRepositoryDescriptionInput"},
-      "errors":[
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"RepositoryDoesNotExistException"},
-        {"shape":"InvalidRepositoryNameException"},
-        {"shape":"InvalidRepositoryDescriptionException"},
-        {"shape":"EncryptionIntegrityChecksFailedException"},
-        {"shape":"EncryptionKeyAccessDeniedException"},
-        {"shape":"EncryptionKeyDisabledException"},
-        {"shape":"EncryptionKeyNotFoundException"},
-        {"shape":"EncryptionKeyUnavailableException"}
-      ],
-      "documentation":"<p>Sets or changes the comment or description for a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateRepositoryDescriptionInput",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateRepositoryDescription",
+      "output" : null
     },
-    "UpdateRepositoryName":{
-      "name":"UpdateRepositoryName",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "UpdateRepositoryName" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix \".git\" is prohibited. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameExistsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RepositoryNameRequiredException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRepositoryNameException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"UpdateRepositoryNameInput"},
-      "errors":[
-        {"shape":"RepositoryDoesNotExistException"},
-        {"shape":"RepositoryNameExistsException"},
-        {"shape":"RepositoryNameRequiredException"},
-        {"shape":"InvalidRepositoryNameException"}
-      ],
-      "documentation":"<p>Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix \".git\" is prohibited. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateRepositoryNameInput",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateRepositoryName",
+      "output" : null
     }
   },
-  "shapes":{
-    "AccountId":{"type":"string"},
-    "AdditionalData":{"type":"string"},
-    "Arn":{"type":"string"},
-    "BatchGetRepositoriesInput":{
-      "type":"structure",
-      "required":["repositoryNames"],
-      "members":{
-        "repositoryNames":{
-          "shape":"RepositoryNameList",
-          "documentation":"<p>The names of the repositories to get information about.</p>"
+  "shapes" : {
+    "AccountId" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "AdditionalData" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Arn" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "BatchGetRepositoriesInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a batch get repositories operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositoryNames" : {
+          "deprecated" : false,
+          "documentation" : "<p>The names of the repositories to get information about.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryNameList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of a batch get repositories operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "repositoryNames" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "BatchGetRepositoriesOutput":{
-      "type":"structure",
-      "members":{
-        "repositories":{
-          "shape":"RepositoryMetadataList",
-          "documentation":"<p>A list of repositories returned by the batch get repositories operation.</p>"
+    "BatchGetRepositoriesOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a batch get repositories operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositories" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of repositories returned by the batch get repositories operation.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryMetadataList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "repositoriesNotFound":{
-          "shape":"RepositoryNotFoundList",
-          "documentation":"<p>Returns a list of repository names for which information could not be found.</p>"
+        "repositoriesNotFound" : {
+          "deprecated" : false,
+          "documentation" : "<p>Returns a list of repository names for which information could not be found.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryNotFoundList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the output of a batch get repositories operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "BranchDoesNotExistException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The specified branch does not exist.</p>",
-      "exception":true
+    "BranchDoesNotExistException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified branch does not exist.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "BranchInfo":{
-      "type":"structure",
-      "members":{
-        "branchName":{
-          "shape":"BranchName",
-          "documentation":"<p>The name of the branch.</p>"
+    "BranchInfo" : {
+      "deprecated" : false,
+      "documentation" : "<p>Returns information about a branch.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "branchName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the branch.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BranchName",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "commitId":{
-          "shape":"CommitId",
-          "documentation":"<p>The ID of the last commit made to the branch.</p>"
+        "commitId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the last commit made to the branch.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommitId",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Returns information about a branch.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "BranchName":{
-      "type":"string",
-      "max":100,
-      "min":1
+    "BranchName" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
+      "member" : null,
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "BranchNameExistsException":{
-      "type":"structure",
-      "members":{
+    "BranchNameExistsException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified branch name already exists.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "BranchNameList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "BranchName",
+        "streaming" : false,
+        "xmlNamespace" : null
       },
-      "documentation":"<p>The specified branch name already exists.</p>",
-      "exception":true
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "BranchNameList":{
-      "type":"list",
-      "member":{"shape":"BranchName"}
+    "BranchNameRequiredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>A branch name is required but was not specified.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "BranchNameRequiredException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>A branch name is required but was not specified.</p>",
-      "exception":true
+    "CloneUrlHttp" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "CloneUrlHttp":{"type":"string"},
-    "CloneUrlSsh":{"type":"string"},
-    "Commit":{
-      "type":"structure",
-      "members":{
-        "treeId":{
-          "shape":"ObjectId",
-          "documentation":"<p>Tree information for the specified commit.</p>"
+    "CloneUrlSsh" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Commit" : {
+      "deprecated" : false,
+      "documentation" : "<p>Returns information about a specific commit.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "additionalData" : {
+          "deprecated" : false,
+          "documentation" : "<p>Any additional data associated with the specified commit.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AdditionalData",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "parents":{
-          "shape":"ParentList",
-          "documentation":"<p>The parent list for the specified commit.</p>"
+        "author" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the author of the specified commit.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserInfo",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "message":{
-          "shape":"Message",
-          "documentation":"<p>The message associated with the specified commit.</p>"
+        "committer" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the person who committed the specified commit, also known as the committer. For more information about the difference between an author and a committer in Git, see <a href=\"http://git-scm.com/book/ch2-3.html\">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserInfo",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "author":{
-          "shape":"UserInfo",
-          "documentation":"<p>Information about the author of the specified commit.</p>"
+        "message" : {
+          "deprecated" : false,
+          "documentation" : "<p>The message associated with the specified commit.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Message",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "committer":{
-          "shape":"UserInfo",
-          "documentation":"<p>Information about the person who committed the specified commit, also known as the committer. For more information about the difference between an author and a committer in Git, see <a href=\"http://git-scm.com/book/ch2-3.html\">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>"
+        "parents" : {
+          "deprecated" : false,
+          "documentation" : "<p>The parent list for the specified commit.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ParentList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "additionalData":{
-          "shape":"AdditionalData",
-          "documentation":"<p>Any additional data associated with the specified commit.</p>"
+        "treeId" : {
+          "deprecated" : false,
+          "documentation" : "<p>Tree information for the specified commit.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ObjectId",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Returns information about a specific commit.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "CommitDoesNotExistException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The specified commit does not exist or no commit was specified, and the specified repository has no default branch.</p>",
-      "exception":true
+    "CommitDoesNotExistException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified commit does not exist or no commit was specified, and the specified repository has no default branch.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "CommitId":{"type":"string"},
-    "CommitIdDoesNotExistException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The specified commit ID does not exist.</p>",
-      "exception":true
+    "CommitId" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "CommitIdRequiredException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>A commit ID was not specified.</p>",
-      "exception":true
+    "CommitIdDoesNotExistException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified commit ID does not exist.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "CreateBranchInput":{
-      "type":"structure",
-      "required":[
-        "repositoryName",
-        "branchName",
-        "commitId"
-      ],
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name of the repository in which you want to create the new branch.</p>"
+    "CommitIdRequiredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>A commit ID was not specified.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateBranchInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a create branch operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "branchName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the new branch to create.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BranchName",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "branchName":{
-          "shape":"BranchName",
-          "documentation":"<p>The name of the new branch to create.</p>"
+        "commitId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the commit to point the new branch to.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommitId",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "commitId":{
-          "shape":"CommitId",
-          "documentation":"<p>The ID of the commit to point the new branch to.</p>"
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository in which you want to create the new branch.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of a create branch operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "repositoryName", "branchName", "commitId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "CreateRepositoryInput":{
-      "type":"structure",
-      "required":["repositoryName"],
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name of the new repository to be created.</p> <note><p>The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide. The suffix \".git\" is prohibited.</p></note>"
+    "CreateRepositoryInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a create repository operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositoryDescription" : {
+          "deprecated" : false,
+          "documentation" : "<p>A comment or description about the new repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryDescription",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "repositoryDescription":{
-          "shape":"RepositoryDescription",
-          "documentation":"<p>A comment or description about the new repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>"
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the new repository to be created.</p> <note><p>The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide. The suffix \".git\" is prohibited.</p></note>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of a create repository operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "repositoryName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "CreateRepositoryOutput":{
-      "type":"structure",
-      "members":{
-        "repositoryMetadata":{
-          "shape":"RepositoryMetadata",
-          "documentation":"<p>Information about the newly created repository.</p>"
+    "CreateRepositoryOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a create repository operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositoryMetadata" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the newly created repository.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryMetadata",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the output of a create repository operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "CreationDate":{"type":"timestamp"},
-    "Date":{"type":"string"},
-    "DeleteRepositoryInput":{
-      "type":"structure",
-      "required":["repositoryName"],
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name of the repository to delete.</p>"
+    "CreationDate" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "timestamp",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Date" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteRepositoryInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a delete repository operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository to delete.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of a delete repository operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "repositoryName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "DeleteRepositoryOutput":{
-      "type":"structure",
-      "members":{
-        "repositoryId":{
-          "shape":"RepositoryId",
-          "documentation":"<p>The ID of the repository that was deleted.</p>"
+    "DeleteRepositoryOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a delete repository operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositoryId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the repository that was deleted.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryId",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the output of a delete repository operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "Email":{"type":"string"},
-    "EncryptionIntegrityChecksFailedException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>An encryption integrity check failed.</p>",
-      "exception":true,
-      "fault":true
+    "Email" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "EncryptionKeyAccessDeniedException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>An encryption key could not be accessed.</p>",
-      "exception":true
+    "EncryptionIntegrityChecksFailedException" : {
+      "deprecated" : false,
+      "documentation" : "<p>An encryption integrity check failed.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : true,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EncryptionKeyDisabledException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The encryption key is disabled.</p>",
-      "exception":true
+    "EncryptionKeyAccessDeniedException" : {
+      "deprecated" : false,
+      "documentation" : "<p>An encryption key could not be accessed.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EncryptionKeyNotFoundException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>No encryption key was found.</p>",
-      "exception":true
+    "EncryptionKeyDisabledException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The encryption key is disabled.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EncryptionKeyUnavailableException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The encryption key is not available.</p>",
-      "exception":true
+    "EncryptionKeyNotFoundException" : {
+      "deprecated" : false,
+      "documentation" : "<p>No encryption key was found.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "GetBranchInput":{
-      "type":"structure",
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name of the repository that contains the branch for which you want to retrieve information.</p>"
+    "EncryptionKeyUnavailableException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The encryption key is not available.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetBranchInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a get branch operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "branchName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the branch for which you want to retrieve information.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BranchName",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "branchName":{
-          "shape":"BranchName",
-          "documentation":"<p>The name of the branch for which you want to retrieve information.</p>"
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository that contains the branch for which you want to retrieve information.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of a get branch operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "GetBranchOutput":{
-      "type":"structure",
-      "members":{
-        "branch":{
-          "shape":"BranchInfo",
-          "documentation":"<p>The name of the branch.</p>"
+    "GetBranchOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a get branch operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "branch" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the branch.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BranchInfo",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the output of a get branch operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "GetCommitInput":{
-      "type":"structure",
-      "required":[
-        "repositoryName",
-        "commitId"
-      ],
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name of the repository to which the commit was made.</p>"
+    "GetCommitInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a get commit operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "commitId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The commit ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ObjectId",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "commitId":{
-          "shape":"ObjectId",
-          "documentation":"<p>The commit ID.</p>"
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository to which the commit was made.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of a get commit operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "repositoryName", "commitId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "GetCommitOutput":{
-      "type":"structure",
-      "required":["commit"],
-      "members":{
-        "commit":{
-          "shape":"Commit",
-          "documentation":"<p>Information about the specified commit.</p>"
+    "GetCommitOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a get commit operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "commit" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the specified commit.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Commit",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the output of a get commit operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "commit" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "GetRepositoryInput":{
-      "type":"structure",
-      "required":["repositoryName"],
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name of the repository to get information about.</p>"
+    "GetRepositoryInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a get repository operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository to get information about.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of a get repository operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "repositoryName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "GetRepositoryOutput":{
-      "type":"structure",
-      "members":{
-        "repositoryMetadata":{
-          "shape":"RepositoryMetadata",
-          "documentation":"<p>Information about the repository.</p>"
+    "GetRepositoryOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a get repository operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositoryMetadata" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the repository.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryMetadata",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the output of a get repository operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "GetRepositoryTriggersInput":{
-      "type":"structure",
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name of the repository for which the trigger is configured.</p>"
+    "GetRepositoryTriggersInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a get repository triggers operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository for which the trigger is configured.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of a get repository triggers operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "GetRepositoryTriggersOutput":{
-      "type":"structure",
-      "members":{
-        "configurationId":{
-          "shape":"RepositoryTriggersConfigurationId",
-          "documentation":"<p>The system-generated unique ID for the trigger.</p>"
+    "GetRepositoryTriggersOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a get repository triggers operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "configurationId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The system-generated unique ID for the trigger.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryTriggersConfigurationId",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "triggers":{
-          "shape":"RepositoryTriggersList",
-          "documentation":"<p>The JSON block of configuration information for each trigger.</p>"
+        "triggers" : {
+          "deprecated" : false,
+          "documentation" : "<p>The JSON block of configuration information for each trigger.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryTriggersList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the output of a get repository triggers operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidBranchNameException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The specified branch name is not valid.</p>",
-      "exception":true
+    "InvalidBranchNameException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified branch name is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidCommitIdException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The specified commit ID is not valid.</p>",
-      "exception":true
+    "InvalidCommitIdException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified commit ID is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidContinuationTokenException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The specified continuation token is not valid.</p>",
-      "exception":true
+    "InvalidContinuationTokenException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified continuation token is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidOrderException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The specified sort order is not valid.</p>",
-      "exception":true
+    "InvalidOrderException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified sort order is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidRepositoryDescriptionException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The specified repository description is not valid.</p>",
-      "exception":true
+    "InvalidRepositoryDescriptionException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified repository description is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidRepositoryNameException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>At least one specified repository name is not valid.</p> <note><p>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p></note>",
-      "exception":true
+    "InvalidRepositoryNameException" : {
+      "deprecated" : false,
+      "documentation" : "<p>At least one specified repository name is not valid.</p> <note><p>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p></note>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidRepositoryTriggerBranchNameException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>One or more branch names specified for the trigger is not valid.</p>",
-      "exception":true
+    "InvalidRepositoryTriggerBranchNameException" : {
+      "deprecated" : false,
+      "documentation" : "<p>One or more branch names specified for the trigger is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidRepositoryTriggerCustomDataException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The custom data provided for the trigger is not valid.</p>",
-      "exception":true
+    "InvalidRepositoryTriggerCustomDataException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The custom data provided for the trigger is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidRepositoryTriggerDestinationArnException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The Amazon Resource Name (ARN) for the trigger is not valid for the specified destination. The most common reason for this error is that the ARN does not meet the requirements for the service type.</p>",
-      "exception":true
+    "InvalidRepositoryTriggerDestinationArnException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The Amazon Resource Name (ARN) for the trigger is not valid for the specified destination. The most common reason for this error is that the ARN does not meet the requirements for the service type.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidRepositoryTriggerEventsException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>One or more events specified for the trigger is not valid. Check to make sure that all events specified match the requirements for allowed events.</p>",
-      "exception":true
+    "InvalidRepositoryTriggerEventsException" : {
+      "deprecated" : false,
+      "documentation" : "<p>One or more events specified for the trigger is not valid. Check to make sure that all events specified match the requirements for allowed events.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidRepositoryTriggerNameException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The name of the trigger is not valid.</p>",
-      "exception":true
+    "InvalidRepositoryTriggerNameException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The name of the trigger is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidRepositoryTriggerRegionException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The region for the trigger target does not match the region for the repository. Triggers must be created in the same region as the target for the trigger.</p>",
-      "exception":true
+    "InvalidRepositoryTriggerRegionException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The region for the trigger target does not match the region for the repository. Triggers must be created in the same region as the target for the trigger.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidSortByException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The specified sort by value is not valid.</p>",
-      "exception":true
+    "InvalidSortByException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified sort by value is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "LastModifiedDate":{"type":"timestamp"},
-    "ListBranchesInput":{
-      "type":"structure",
-      "required":["repositoryName"],
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name of the repository that contains the branches.</p>"
+    "LastModifiedDate" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "timestamp",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListBranchesInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a list branches operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An enumeration token that allows the operation to batch the results. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>An enumeration token that allows the operation to batch the results. </p>"
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository that contains the branches.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of a list branches operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "repositoryName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "ListBranchesOutput":{
-      "type":"structure",
-      "members":{
-        "branches":{
-          "shape":"BranchNameList",
-          "documentation":"<p>The list of branch names.</p>"
+    "ListBranchesOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a list branches operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "branches" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of branch names.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BranchNameList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>An enumeration token that returns the batch of the results. </p>"
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An enumeration token that returns the batch of the results. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the output of a list branches operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "ListRepositoriesInput":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>"
+    "ListRepositoriesInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a list repositories operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "sortBy":{
-          "shape":"SortByEnum",
-          "documentation":"<p>The criteria used to sort the results of a list repositories operation.</p>"
+        "order" : {
+          "deprecated" : false,
+          "documentation" : "<p>The order in which to sort the results of a list repositories operation.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "OrderEnum",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "order":{
-          "shape":"OrderEnum",
-          "documentation":"<p>The order in which to sort the results of a list repositories operation.</p>"
+        "sortBy" : {
+          "deprecated" : false,
+          "documentation" : "<p>The criteria used to sort the results of a list repositories operation.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SortByEnum",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of a list repositories operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "ListRepositoriesOutput":{
-      "type":"structure",
-      "members":{
-        "repositories":{
-          "shape":"RepositoryNameIdPairList",
-          "documentation":"<p>Lists the repositories called by the list repositories operation.</p>"
+    "ListRepositoriesOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a list repositories operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>"
+        "repositories" : {
+          "deprecated" : false,
+          "documentation" : "<p>Lists the repositories called by the list repositories operation.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryNameIdPairList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the output of a list repositories operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "MaximumBranchesExceededException":{
-      "type":"structure",
-      "members":{
+    "MaximumBranchesExceededException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The number of branches for the trigger was exceeded. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MaximumRepositoryNamesExceededException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The maximum number of allowed repository names was exceeded. Currently, this number is 25.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MaximumRepositoryTriggersExceededException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The number of triggers allowed for the repository was exceeded.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Message" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Name" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "NextToken" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ObjectId" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "OrderEnum" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "ascending", "descending" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ParentList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "ObjectId",
+        "streaming" : false,
+        "xmlNamespace" : null
       },
-      "documentation":"<p>The number of branches for the trigger was exceeded. </p>",
-      "exception":true
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "MaximumRepositoryNamesExceededException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The maximum number of allowed repository names was exceeded. Currently, this number is 25.</p>",
-      "exception":true
-    },
-    "MaximumRepositoryTriggersExceededException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The number of triggers allowed for the repository was exceeded.</p>",
-      "exception":true
-    },
-    "Message":{"type":"string"},
-    "Name":{"type":"string"},
-    "NextToken":{"type":"string"},
-    "ObjectId":{"type":"string"},
-    "OrderEnum":{
-      "type":"string",
-      "enum":[
-        "ascending",
-        "descending"
-      ]
-    },
-    "ParentList":{
-      "type":"list",
-      "member":{"shape":"ObjectId"}
-    },
-    "PutRepositoryTriggersInput":{
-      "type":"structure",
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name of the repository where you want to create or update the trigger. </p>"
+    "PutRepositoryTriggersInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input ofa put repository triggers operation. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository where you want to create or update the trigger. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "triggers":{
-          "shape":"RepositoryTriggersList",
-          "documentation":"<p>The JSON block of configuration information for each trigger. </p>"
+        "triggers" : {
+          "deprecated" : false,
+          "documentation" : "<p>The JSON block of configuration information for each trigger. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryTriggersList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input ofa put repository triggers operation. </p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "PutRepositoryTriggersOutput":{
-      "type":"structure",
-      "members":{
-        "configurationId":{
-          "shape":"RepositoryTriggersConfigurationId",
-          "documentation":"<p>The system-generated unique ID for the create or update operation. </p>"
+    "PutRepositoryTriggersOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a put repository triggers operation. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "configurationId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The system-generated unique ID for the create or update operation. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryTriggersConfigurationId",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the output of a put repository triggers operation. </p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryDescription":{
-      "type":"string",
-      "max":1000
+    "RepositoryDescription" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 1000,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryDoesNotExistException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>The specified repository does not exist.</p>",
-      "exception":true
+    "RepositoryDoesNotExistException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified repository does not exist.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryId":{"type":"string"},
-    "RepositoryLimitExceededException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>A repository resource limit was exceeded.</p>",
-      "exception":true
+    "RepositoryId" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryMetadata":{
-      "type":"structure",
-      "members":{
-        "accountId":{
-          "shape":"AccountId",
-          "documentation":"<p>The ID of the AWS account associated with the repository.</p>"
+    "RepositoryLimitExceededException" : {
+      "deprecated" : false,
+      "documentation" : "<p>A repository resource limit was exceeded.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RepositoryMetadata" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about a repository.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Arn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the repository.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "repositoryId":{
-          "shape":"RepositoryId",
-          "documentation":"<p>The ID of the repository.</p>"
+        "accountId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the AWS account associated with the repository.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AccountId",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The repository's name.</p>"
+        "cloneUrlHttp" : {
+          "deprecated" : false,
+          "documentation" : "<p>The URL to use for cloning the repository over HTTPS.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CloneUrlHttp",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "repositoryDescription":{
-          "shape":"RepositoryDescription",
-          "documentation":"<p>A comment or description about the repository.</p>"
+        "cloneUrlSsh" : {
+          "deprecated" : false,
+          "documentation" : "<p>The URL to use for cloning the repository over SSH.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CloneUrlSsh",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "defaultBranch":{
-          "shape":"BranchName",
-          "documentation":"<p>The repository's default branch name.</p>"
+        "creationDate" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date and time the repository was created, in timestamp format.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CreationDate",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "lastModifiedDate":{
-          "shape":"LastModifiedDate",
-          "documentation":"<p>The date and time the repository was last modified, in timestamp format.</p>"
+        "defaultBranch" : {
+          "deprecated" : false,
+          "documentation" : "<p>The repository's default branch name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BranchName",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "creationDate":{
-          "shape":"CreationDate",
-          "documentation":"<p>The date and time the repository was created, in timestamp format.</p>"
+        "lastModifiedDate" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date and time the repository was last modified, in timestamp format.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LastModifiedDate",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "cloneUrlHttp":{
-          "shape":"CloneUrlHttp",
-          "documentation":"<p>The URL to use for cloning the repository over HTTPS.</p>"
+        "repositoryDescription" : {
+          "deprecated" : false,
+          "documentation" : "<p>A comment or description about the repository.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryDescription",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "cloneUrlSsh":{
-          "shape":"CloneUrlSsh",
-          "documentation":"<p>The URL to use for cloning the repository over SSH.</p>"
+        "repositoryId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the repository.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryId",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "Arn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the repository.</p>"
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The repository's name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Information about a repository.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryMetadataList":{
-      "type":"list",
-      "member":{"shape":"RepositoryMetadata"}
-    },
-    "RepositoryName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[\\\\w\\\\.-]+"
-    },
-    "RepositoryNameExistsException":{
-      "type":"structure",
-      "members":{
+    "RepositoryMetadataList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "RepositoryMetadata",
+        "streaming" : false,
+        "xmlNamespace" : null
       },
-      "documentation":"<p>The specified repository name already exists.</p>",
-      "exception":true
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryNameIdPair":{
-      "type":"structure",
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name associated with the repository.</p>"
+    "RepositoryName" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
+      "member" : null,
+      "members" : null,
+      "min" : 1,
+      "pattern" : "[\\\\w\\\\.-]+",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RepositoryNameExistsException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified repository name already exists.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RepositoryNameIdPair" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about a repository name and ID.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositoryId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID associated with the repository.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryId",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "repositoryId":{
-          "shape":"RepositoryId",
-          "documentation":"<p>The ID associated with the repository.</p>"
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name associated with the repository.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Information about a repository name and ID.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryNameIdPairList":{
-      "type":"list",
-      "member":{"shape":"RepositoryNameIdPair"}
-    },
-    "RepositoryNameList":{
-      "type":"list",
-      "member":{"shape":"RepositoryName"}
-    },
-    "RepositoryNameRequiredException":{
-      "type":"structure",
-      "members":{
+    "RepositoryNameIdPairList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "RepositoryNameIdPair",
+        "streaming" : false,
+        "xmlNamespace" : null
       },
-      "documentation":"<p>A repository name is required but was not specified.</p>",
-      "exception":true
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryNamesRequiredException":{
-      "type":"structure",
-      "members":{
+    "RepositoryNameList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "RepositoryName",
+        "streaming" : false,
+        "xmlNamespace" : null
       },
-      "documentation":"<p>A repository names object is required but was not specified.</p>",
-      "exception":true
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryNotFoundList":{
-      "type":"list",
-      "member":{"shape":"RepositoryName"}
+    "RepositoryNameRequiredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>A repository name is required but was not specified.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryTrigger":{
-      "type":"structure",
-      "members":{
-        "name":{
-          "shape":"RepositoryTriggerName",
-          "documentation":"<p>The name of the trigger.</p>"
+    "RepositoryNamesRequiredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>A repository names object is required but was not specified.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RepositoryNotFoundList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "RepositoryName",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RepositoryTrigger" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about a trigger for a repository.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "branches" : {
+          "deprecated" : false,
+          "documentation" : "<p>The branches that will be included in the trigger configuration. If no branches are specified, the trigger will apply to all branches.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BranchNameList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "destinationArn":{
-          "shape":"Arn",
-          "documentation":"<p>The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple Notification Service (SNS).</p>"
+        "customData" : {
+          "deprecated" : false,
+          "documentation" : "<p>Any custom data associated with the trigger that will be included in the information sent to the target of the trigger.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryTriggerCustomData",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "customData":{
-          "shape":"RepositoryTriggerCustomData",
-          "documentation":"<p>Any custom data associated with the trigger that will be included in the information sent to the target of the trigger.</p>"
+        "destinationArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple Notification Service (SNS).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "branches":{
-          "shape":"BranchNameList",
-          "documentation":"<p>The branches that will be included in the trigger configuration. If no branches are specified, the trigger will apply to all branches.</p>"
+        "events" : {
+          "deprecated" : false,
+          "documentation" : "<p>The repository events that will cause the trigger to run actions in another service, such as sending a notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger will run for all repository events.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryTriggerEventList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "events":{
-          "shape":"RepositoryTriggerEventList",
-          "documentation":"<p>The repository events that will cause the trigger to run actions in another service, such as sending a notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger will run for all repository events.</p>"
+        "name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the trigger.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryTriggerName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Information about a trigger for a repository.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryTriggerBranchNameListRequiredException":{
-      "type":"structure",
-      "members":{
+    "RepositoryTriggerBranchNameListRequiredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>At least one branch name is required but was not specified in the trigger configuration.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RepositoryTriggerCustomData" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RepositoryTriggerDestinationArnRequiredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>A destination ARN for the target service for the trigger is required but was not specified. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RepositoryTriggerEventEnum" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "all", "updateReference", "createReference", "deleteReference" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RepositoryTriggerEventList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "RepositoryTriggerEventEnum",
+        "streaming" : false,
+        "xmlNamespace" : null
       },
-      "documentation":"<p>At least one branch name is required but was not specified in the trigger configuration.</p>",
-      "exception":true
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryTriggerCustomData":{"type":"string"},
-    "RepositoryTriggerDestinationArnRequiredException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>A destination ARN for the target service for the trigger is required but was not specified. </p>",
-      "exception":true
+    "RepositoryTriggerEventsListRequiredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>At least one event for the trigger is required but was not specified.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryTriggerEventEnum":{
-      "type":"string",
-      "enum":[
-        "all",
-        "updateReference",
-        "createReference",
-        "deleteReference"
-      ]
-    },
-    "RepositoryTriggerEventList":{
-      "type":"list",
-      "member":{"shape":"RepositoryTriggerEventEnum"}
-    },
-    "RepositoryTriggerEventsListRequiredException":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>At least one event for the trigger is required but was not specified.</p>",
-      "exception":true
-    },
-    "RepositoryTriggerExecutionFailure":{
-      "type":"structure",
-      "members":{
-        "trigger":{
-          "shape":"RepositoryTriggerName",
-          "documentation":"<p>The name of the trigger that did not run.</p>"
+    "RepositoryTriggerExecutionFailure" : {
+      "deprecated" : false,
+      "documentation" : "<p>A trigger failed to run.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "failureMessage" : {
+          "deprecated" : false,
+          "documentation" : "<p>Additional message information about the trigger that did not run.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryTriggerExecutionFailureMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "failureMessage":{
-          "shape":"RepositoryTriggerExecutionFailureMessage",
-          "documentation":"<p>Additional message information about the trigger that did not run.</p>"
+        "trigger" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the trigger that did not run.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryTriggerName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>A trigger failed to run.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryTriggerExecutionFailureList":{
-      "type":"list",
-      "member":{"shape":"RepositoryTriggerExecutionFailure"}
-    },
-    "RepositoryTriggerExecutionFailureMessage":{"type":"string"},
-    "RepositoryTriggerName":{"type":"string"},
-    "RepositoryTriggerNameList":{
-      "type":"list",
-      "member":{"shape":"RepositoryTriggerName"}
-    },
-    "RepositoryTriggerNameRequiredException":{
-      "type":"structure",
-      "members":{
+    "RepositoryTriggerExecutionFailureList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "RepositoryTriggerExecutionFailure",
+        "streaming" : false,
+        "xmlNamespace" : null
       },
-      "documentation":"<p>A name for the trigger is required but was not specified.</p>",
-      "exception":true
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryTriggersConfigurationId":{"type":"string"},
-    "RepositoryTriggersList":{
-      "type":"list",
-      "member":{"shape":"RepositoryTrigger"}
+    "RepositoryTriggerExecutionFailureMessage" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "RepositoryTriggersListRequiredException":{
-      "type":"structure",
-      "members":{
+    "RepositoryTriggerName" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RepositoryTriggerNameList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "RepositoryTriggerName",
+        "streaming" : false,
+        "xmlNamespace" : null
       },
-      "documentation":"<p>The list of triggers for the repository is required but was not specified.</p>",
-      "exception":true
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "SortByEnum":{
-      "type":"string",
-      "enum":[
-        "repositoryName",
-        "lastModifiedDate"
-      ]
+    "RepositoryTriggerNameRequiredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>A name for the trigger is required but was not specified.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "TestRepositoryTriggersInput":{
-      "type":"structure",
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name of the repository in which to test the triggers.</p>"
+    "RepositoryTriggersConfigurationId" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RepositoryTriggersList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "RepositoryTrigger",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RepositoryTriggersListRequiredException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The list of triggers for the repository is required but was not specified.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SortByEnum" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "repositoryName", "lastModifiedDate" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TestRepositoryTriggersInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a test repository triggers operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository in which to test the triggers.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "triggers":{
-          "shape":"RepositoryTriggersList",
-          "documentation":"<p>The list of triggers to test.</p>"
+        "triggers" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of triggers to test.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryTriggersList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of a test repository triggers operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "TestRepositoryTriggersOutput":{
-      "type":"structure",
-      "members":{
-        "successfulExecutions":{
-          "shape":"RepositoryTriggerNameList",
-          "documentation":"<p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>"
+    "TestRepositoryTriggersOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a test repository triggers operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "failedExecutions" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of triggers that were not able to be tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryTriggerExecutionFailureList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "failedExecutions":{
-          "shape":"RepositoryTriggerExecutionFailureList",
-          "documentation":"<p>The list of triggers that were not able to be tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>"
+        "successfulExecutions" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryTriggerNameList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the output of a test repository triggers operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "UpdateDefaultBranchInput":{
-      "type":"structure",
-      "required":[
-        "repositoryName",
-        "defaultBranchName"
-      ],
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name of the repository to set or change the default branch for.</p>"
+    "UpdateDefaultBranchInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of an update default branch operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "defaultBranchName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the branch to set as the default.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BranchName",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "defaultBranchName":{
-          "shape":"BranchName",
-          "documentation":"<p>The name of the branch to set as the default.</p>"
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository to set or change the default branch for.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of an update default branch operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "repositoryName", "defaultBranchName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "UpdateRepositoryDescriptionInput":{
-      "type":"structure",
-      "required":["repositoryName"],
-      "members":{
-        "repositoryName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The name of the repository to set or change the comment or description for.</p>"
+    "UpdateRepositoryDescriptionInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of an update repository description operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "repositoryDescription" : {
+          "deprecated" : false,
+          "documentation" : "<p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryDescription",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "repositoryDescription":{
-          "shape":"RepositoryDescription",
-          "documentation":"<p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>"
+        "repositoryName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the repository to set or change the comment or description for.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of an update repository description operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "repositoryName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "UpdateRepositoryNameInput":{
-      "type":"structure",
-      "required":[
-        "oldName",
-        "newName"
-      ],
-      "members":{
-        "oldName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The existing name of the repository.</p>"
+    "UpdateRepositoryNameInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of an update repository description operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "newName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The new name for the repository.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "newName":{
-          "shape":"RepositoryName",
-          "documentation":"<p>The new name for the repository.</p>"
+        "oldName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The existing name of the repository.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RepositoryName",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Represents the input of an update repository description operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "oldName", "newName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "UserInfo":{
-      "type":"structure",
-      "members":{
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the user who made the specified commit.</p>"
+    "UserInfo" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about the user who made a specified commit.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "date" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date when the specified commit was pushed to the repository.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Date",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "email":{
-          "shape":"Email",
-          "documentation":"<p>The email address associated with the user who made the commit, if any.</p>"
+        "email" : {
+          "deprecated" : false,
+          "documentation" : "<p>The email address associated with the user who made the commit, if any.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Email",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "date":{
-          "shape":"Date",
-          "documentation":"<p>The date when the specified commit was pushed to the repository.</p>"
+        "name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the user who made the specified commit.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Name",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Information about the user who made a specified commit.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     }
   },
-  "documentation":"<fullname>AWS CodeCommit</fullname> <p>This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions of the operations and data types for AWS CodeCommit API.</p> <p>You can use the AWS CodeCommit API to work with the following objects:</p> <ul> <li>Repositories, by calling the following: <ul> <li><a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your AWS account</li> <li><a>CreateRepository</a>, which creates an AWS CodeCommit repository</li> <li><a>DeleteRepository</a>, which deletes an AWS CodeCommit repository</li> <li><a>GetRepository</a>, which returns information about a specified repository</li> <li><a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account</li> <li><a>UpdateRepositoryDescription</a>, which sets or updates the description of the repository</li> <li><a>UpdateRepositoryName</a>, which changes the name of the repository. If you change the name of a repository, no other users of that repository will be able to access it until you send them the new HTTPS or SSH URL to use.</li> </ul></li> <li>Branches, by calling the following: <ul> <li><a>CreateBranch</a>, which creates a new branch in a specified repository</li> <li><a>GetBranch</a>, which returns information about a specified branch</li> <li><a>ListBranches</a>, which lists all branches for a specified repository</li> <li><a>UpdateDefaultBranch</a>, which changes the default branch for a repository</li> </ul></li> <li>Information about committed code in a repository, by calling the following: <ul> <li><a>GetCommit</a>, which returns information about a commit, including commit messages and committer information.</li> </ul></li> <li>Triggers, by calling the following: <ul> <li><a>GetRepositoryTriggers</a>, which returns information about triggers configured for a repository</li> <li><a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can be used to create or delete triggers</li> <li><a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger by sending data to the trigger target</li> </ul> </li> </ul> <p>For information about how to use AWS CodeCommit, see the <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html\">AWS CodeCommit User Guide</a>.</p>"
+  "documentation" : "<fullname>AWS CodeCommit</fullname> <p>This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions of the operations and data types for AWS CodeCommit API.</p> <p>You can use the AWS CodeCommit API to work with the following objects:</p> <ul> <li>Repositories, by calling the following: <ul> <li><a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your AWS account</li> <li><a>CreateRepository</a>, which creates an AWS CodeCommit repository</li> <li><a>DeleteRepository</a>, which deletes an AWS CodeCommit repository</li> <li><a>GetRepository</a>, which returns information about a specified repository</li> <li><a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account</li> <li><a>UpdateRepositoryDescription</a>, which sets or updates the description of the repository</li> <li><a>UpdateRepositoryName</a>, which changes the name of the repository. If you change the name of a repository, no other users of that repository will be able to access it until you send them the new HTTPS or SSH URL to use.</li> </ul></li> <li>Branches, by calling the following: <ul> <li><a>CreateBranch</a>, which creates a new branch in a specified repository</li> <li><a>GetBranch</a>, which returns information about a specified branch</li> <li><a>ListBranches</a>, which lists all branches for a specified repository</li> <li><a>UpdateDefaultBranch</a>, which changes the default branch for a repository</li> </ul></li> <li>Information about committed code in a repository, by calling the following: <ul> <li><a>GetCommit</a>, which returns information about a commit, including commit messages and committer information.</li> </ul></li> <li>Triggers, by calling the following: <ul> <li><a>GetRepositoryTriggers</a>, which returns information about triggers configured for a repository</li> <li><a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can be used to create or delete triggers</li> <li><a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger by sending data to the trigger target</li> </ul> </li> </ul> <p>For information about how to use AWS CodeCommit, see the <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html\">AWS CodeCommit User Guide</a>.</p>"
 }

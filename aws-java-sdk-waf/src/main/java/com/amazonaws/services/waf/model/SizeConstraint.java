@@ -24,6 +24,11 @@ import java.io.Serializable;
  */
 public class SizeConstraint implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Specifies where in a web request to look for the size constraint.
+     * </p>
+     */
     private FieldToMatch fieldToMatch;
     /**
      * <p>
@@ -219,7 +224,12 @@ public class SizeConstraint implements Serializable, Cloneable {
     private Long size;
 
     /**
+     * <p>
+     * Specifies where in a web request to look for the size constraint.
+     * </p>
+     * 
      * @param fieldToMatch
+     *        Specifies where in a web request to look for the size constraint.
      */
 
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
@@ -227,7 +237,11 @@ public class SizeConstraint implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies where in a web request to look for the size constraint.
+     * </p>
+     * 
+     * @return Specifies where in a web request to look for the size constraint.
      */
 
     public FieldToMatch getFieldToMatch() {
@@ -235,7 +249,12 @@ public class SizeConstraint implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies where in a web request to look for the size constraint.
+     * </p>
+     * 
      * @param fieldToMatch
+     *        Specifies where in a web request to look for the size constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

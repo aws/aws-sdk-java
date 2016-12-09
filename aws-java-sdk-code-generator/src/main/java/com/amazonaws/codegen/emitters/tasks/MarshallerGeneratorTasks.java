@@ -68,12 +68,14 @@ public class MarshallerGeneratorTasks extends BaseGeneratorTasks {
         final Template template = freemarker.getModelMarshallerTemplate();
         final ShapeType shapeType = shapeModel.getShapeType();
 
-        Map<String, Object> marshallerDataModel = ImmutableMapParameter.of(
-                "fileHeader", model.getFileHeader(),
-                "shapeName", javaShapeName,
-                "shapes", shapes,
-                "metadata", metadata,
-                "customConfig", model.getCustomizationConfig());
+        Map<String, Object> marshallerDataModel = ImmutableMapParameter.<String, Object>builder()
+                .put("fileHeader", model.getFileHeader())
+                .put("shapeName", javaShapeName)
+                .put("shapes", shapes)
+                .put("metadata", metadata)
+                .put("transformPackage", model.getTransformPackage())
+                .put("customConfig", model.getCustomizationConfig())
+                .build();
 
         return new FreemarkerGeneratorTask(transformClassDir,
                                            getMarshallerClassName(shapeType, javaShapeName, metadata),
@@ -90,4 +92,5 @@ public class MarshallerGeneratorTasks extends BaseGeneratorTasks {
         throw new IllegalArgumentException("Not able generate marshaller class name for " + shapeName + " type "
                                            + shapeType.getValue());
     }
+
 }

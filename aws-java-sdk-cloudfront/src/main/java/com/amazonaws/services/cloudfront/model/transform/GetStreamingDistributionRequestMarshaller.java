@@ -50,7 +50,7 @@ public class GetStreamingDistributionRequestMarshaller implements Marshaller<Req
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-09-29/streaming-distribution/{Id}";
+        String uriResourcePath = "/2016-11-25/streaming-distribution/{Id}";
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",

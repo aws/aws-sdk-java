@@ -1,1230 +1,4125 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2016-12-01",
-    "endpointPrefix":"appstream2",
-    "jsonVersion":"1.1",
-    "protocol":"json",
-    "serviceFullName":"Amazon AppStream",
-    "signatureVersion":"v4",
-    "signingName":"appstream",
-    "targetPrefix":"PhotonAdminProxyService",
-    "uid":"appstream-2016-12-01"
+  "metadata" : {
+    "apiVersion" : "2016-12-01",
+    "endpointPrefix" : "appstream2",
+    "jsonVersion" : "1.1",
+    "protocol" : "json",
+    "resultWrapped" : false,
+    "serviceAbbreviation" : null,
+    "serviceFullName" : "Amazon AppStream",
+    "signatureVersion" : "v4",
+    "signingName" : "appstream",
+    "targetPrefix" : "PhotonAdminProxyService",
+    "xmlNamespace" : null
   },
-  "operations":{
-    "AssociateFleet":{
-      "name":"AssociateFleet",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+  "operations" : {
+    "AssociateFleet" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Associate a fleet to a stack.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"AssociateFleetRequest"},
-      "output":{"shape":"AssociateFleetResult"},
-      "errors":[
-        {"shape":"LimitExceededException"},
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Associate a fleet to a stack.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "AssociateFleetRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "AssociateFleet",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "AssociateFleetResult"
+      }
     },
-    "CreateFleet":{
-      "name":"CreateFleet",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "CreateFleet" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Creates a new fleet.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceAlreadyExistsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotAvailableException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRoleException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"CreateFleetRequest"},
-      "output":{"shape":"CreateFleetResult"},
-      "errors":[
-        {"shape":"ResourceAlreadyExistsException"},
-        {"shape":"ResourceNotAvailableException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"LimitExceededException"},
-        {"shape":"InvalidRoleException"}
-      ],
-      "documentation":"<p>Creates a new fleet.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateFleetRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateFleet",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateFleetResult"
+      }
     },
-    "CreateStack":{
-      "name":"CreateStack",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "CreateStack" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Create a new stack.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceAlreadyExistsException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"CreateStackRequest"},
-      "output":{"shape":"CreateStackResult"},
-      "errors":[
-        {"shape":"LimitExceededException"},
-        {"shape":"ResourceAlreadyExistsException"}
-      ],
-      "documentation":"<p>Create a new stack.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateStackRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateStack",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateStackResult"
+      }
     },
-    "CreateStreamingURL":{
-      "name":"CreateStreamingURL",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "CreateStreamingURL" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Creates a URL to start an AppStream 2.0 streaming session for a user. By default, the URL is valid only for 1 minute from the time that it is generated.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotAvailableException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "OperationNotPermittedException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"CreateStreamingURLRequest"},
-      "output":{"shape":"CreateStreamingURLResult"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ResourceNotAvailableException"},
-        {"shape":"OperationNotPermittedException"}
-      ],
-      "documentation":"<p>Creates a URL to start an AppStream 2.0 streaming session for a user. By default, the URL is valid only for 1 minute from the time that it is generated.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateStreamingURLRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateStreamingURL",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateStreamingURLResult"
+      }
     },
-    "DeleteFleet":{
-      "name":"DeleteFleet",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DeleteFleet" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes a fleet.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceInUseException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DeleteFleetRequest"},
-      "output":{"shape":"DeleteFleetResult"},
-      "errors":[
-        {"shape":"ResourceInUseException"},
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Deletes a fleet.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteFleetRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteFleet",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteFleetResult"
+      }
     },
-    "DeleteStack":{
-      "name":"DeleteStack",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DeleteStack" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes the stack. After this operation completes, the environment can no longer be activated, and any reservations made for the stack are released.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceInUseException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DeleteStackRequest"},
-      "output":{"shape":"DeleteStackResult"},
-      "errors":[
-        {"shape":"ResourceInUseException"},
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Deletes the stack. After this operation completes, the environment can no longer be activated, and any reservations made for the stack are released.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteStackRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteStack",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteStackResult"
+      }
     },
-    "DescribeFleets":{
-      "name":"DescribeFleets",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DescribeFleets" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>If fleet names are provided, this operation describes the specified fleets; otherwise, all the fleets in the account are described.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeFleetsRequest"},
-      "output":{"shape":"DescribeFleetsResult"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>If fleet names are provided, this operation describes the specified fleets; otherwise, all the fleets in the account are described.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeFleetsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeFleets",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeFleetsResult"
+      }
     },
-    "DescribeImages":{
-      "name":"DescribeImages",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DescribeImages" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Describes the images. If a list of names is not provided, all images in your account are returned. This operation does not return a paginated result.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeImagesRequest"},
-      "output":{"shape":"DescribeImagesResult"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Describes the images. If a list of names is not provided, all images in your account are returned. This operation does not return a paginated result.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeImagesRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeImages",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeImagesResult"
+      }
     },
-    "DescribeSessions":{
-      "name":"DescribeSessions",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DescribeSessions" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items.</p>",
+      "errors" : null,
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeSessionsRequest"},
-      "output":{"shape":"DescribeSessionsResult"},
-      "documentation":"<p>Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeSessionsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeSessions",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeSessionsResult"
+      }
     },
-    "DescribeStacks":{
-      "name":"DescribeStacks",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DescribeStacks" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>If stack names are not provided, this operation describes the specified stacks; otherwise, all stacks in the account are described. Pass the <code>nextToken</code> value in a subsequent call to this operation to retrieve the next set of items.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeStacksRequest"},
-      "output":{"shape":"DescribeStacksResult"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>If stack names are not provided, this operation describes the specified stacks; otherwise, all stacks in the account are described. Pass the <code>nextToken</code> value in a subsequent call to this operation to retrieve the next set of items.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeStacksRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeStacks",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeStacksResult"
+      }
     },
-    "DisassociateFleet":{
-      "name":"DisassociateFleet",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DisassociateFleet" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Disassociates a fleet from a stack.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceInUseException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DisassociateFleetRequest"},
-      "output":{"shape":"DisassociateFleetResult"},
-      "errors":[
-        {"shape":"ResourceInUseException"},
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Disassociates a fleet from a stack.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DisassociateFleetRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DisassociateFleet",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DisassociateFleetResult"
+      }
     },
-    "ExpireSession":{
-      "name":"ExpireSession",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "ExpireSession" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>This operation immediately stops a streaming session.</p>",
+      "errors" : null,
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"ExpireSessionRequest"},
-      "output":{"shape":"ExpireSessionResult"},
-      "documentation":"<p>This operation immediately stops a streaming session.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ExpireSessionRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ExpireSession",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ExpireSessionResult"
+      }
     },
-    "ListAssociatedFleets":{
-      "name":"ListAssociatedFleets",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "ListAssociatedFleets" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Lists all fleets associated with the stack.</p>",
+      "errors" : null,
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"ListAssociatedFleetsRequest"},
-      "output":{"shape":"ListAssociatedFleetsResult"},
-      "documentation":"<p>Lists all fleets associated with the stack.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListAssociatedFleetsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListAssociatedFleets",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListAssociatedFleetsResult"
+      }
     },
-    "ListAssociatedStacks":{
-      "name":"ListAssociatedStacks",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "ListAssociatedStacks" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Lists all stacks to which the specified fleet is associated.</p>",
+      "errors" : null,
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"ListAssociatedStacksRequest"},
-      "output":{"shape":"ListAssociatedStacksResult"},
-      "documentation":"<p>Lists all stacks to which the specified fleet is associated.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListAssociatedStacksRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListAssociatedStacks",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListAssociatedStacksResult"
+      }
     },
-    "StartFleet":{
-      "name":"StartFleet",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "StartFleet" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Starts a fleet.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"StartFleetRequest"},
-      "output":{"shape":"StartFleetResult"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"LimitExceededException"}
-      ],
-      "documentation":"<p>Starts a fleet.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "StartFleetRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "StartFleet",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "StartFleetResult"
+      }
     },
-    "StopFleet":{
-      "name":"StopFleet",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "StopFleet" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Stops a fleet.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"StopFleetRequest"},
-      "output":{"shape":"StopFleetResult"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Stops a fleet.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "StopFleetRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "StopFleet",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "StopFleetResult"
+      }
     },
-    "UpdateFleet":{
-      "name":"UpdateFleet",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "UpdateFleet" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state. Only <b>ComputeCapacity</b> and <b>ImageName</b> can be updated in any other state. </p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceInUseException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRoleException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"UpdateFleetRequest"},
-      "output":{"shape":"UpdateFleetResult"},
-      "errors":[
-        {"shape":"ResourceInUseException"},
-        {"shape":"LimitExceededException"},
-        {"shape":"InvalidRoleException"},
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state. Only <b>ComputeCapacity</b> and <b>ImageName</b> can be updated in any other state. </p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateFleetRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateFleet",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "UpdateFleetResult"
+      }
     },
-    "UpdateStack":{
-      "name":"UpdateStack",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "UpdateStack" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Updates the specified fields in the stack with the specified name.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceInUseException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"UpdateStackRequest"},
-      "output":{"shape":"UpdateStackResult"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ResourceInUseException"}
-      ],
-      "documentation":"<p>Updates the specified fields in the stack with the specified name.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateStackRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateStack",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "UpdateStackResult"
+      }
     }
   },
-  "shapes":{
-    "Application":{
-      "type":"structure",
-      "members":{
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The unique identifier for the application.</p>"
+  "shapes" : {
+    "Application" : {
+      "deprecated" : false,
+      "documentation" : "<p>An entry for a single application in the application catalog.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DisplayName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the application shown to the end users.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "DisplayName":{
-          "shape":"String",
-          "documentation":"<p>The name of the application shown to the end users.</p>"
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "<p>An application can be disabled after image creation if there is a problem.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "IconURL":{
-          "shape":"String",
-          "documentation":"<p>The URL for the application icon. This URL may be time-limited.</p>"
+        "IconURL" : {
+          "deprecated" : false,
+          "documentation" : "<p>The URL for the application icon. This URL may be time-limited.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "LaunchPath":{
-          "shape":"String",
-          "documentation":"<p>The path to the application executable in the instance.</p>"
+        "LaunchParameters" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of arguments that are passed to the application at launch.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "LaunchParameters":{
-          "shape":"String",
-          "documentation":"<p>A list of arguments that are passed to the application at launch.</p>"
+        "LaunchPath" : {
+          "deprecated" : false,
+          "documentation" : "<p>The path to the application executable in the instance.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "Enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>An application can be disabled after image creation if there is a problem.</p>"
+        "Metadata" : {
+          "deprecated" : false,
+          "documentation" : "<p>Additional attributes that describes the application.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Metadata",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "Metadata":{
-          "shape":"Metadata",
-          "documentation":"<p>Additional attributes that describes the application.</p>"
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier for the application.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>An entry for a single application in the application catalog.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "Applications":{
-      "type":"list",
-      "member":{"shape":"Application"}
+    "Applications" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "Application",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "Arn":{
-      "type":"string",
-      "pattern":"^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$"
+    "Arn" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : "^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "AssociateFleetRequest":{
-      "type":"structure",
-      "required":[
-        "FleetName",
-        "StackName"
-      ],
-      "members":{
-        "FleetName":{
-          "shape":"String",
-          "documentation":"<p>The name of the fleet to associate.</p>"
+    "AssociateFleetRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FleetName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the fleet to associate.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "StackName":{
-          "shape":"String",
-          "documentation":"<p>The name of the stack to which the fleet is associated.</p>"
-        }
-      }
-    },
-    "AssociateFleetResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "Boolean":{"type":"boolean"},
-    "ComputeCapacity":{
-      "type":"structure",
-      "required":["DesiredInstances"],
-      "members":{
-        "DesiredInstances":{
-          "shape":"Integer",
-          "documentation":"<p>The desired number of streaming instances.</p>"
+        "StackName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the stack to which the fleet is associated.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The capacity configuration for the fleet.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "FleetName", "StackName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "ComputeCapacityStatus":{
-      "type":"structure",
-      "required":["Desired"],
-      "members":{
-        "Desired":{
-          "shape":"Integer",
-          "documentation":"<p>The desired number of streaming instances.</p>"
-        },
-        "Running":{
-          "shape":"Integer",
-          "documentation":"<p>The total number of simultaneous streaming instances that are running.</p>"
-        },
-        "InUse":{
-          "shape":"Integer",
-          "documentation":"<p>The number of instances that are being used for streaming.</p>"
-        },
-        "Available":{
-          "shape":"Integer",
-          "documentation":"<p>The number of currently available instances that can be used to stream sessions.</p>"
+    "AssociateFleetResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Boolean" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "boolean",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ComputeCapacity" : {
+      "deprecated" : false,
+      "documentation" : "<p>The capacity configuration for the fleet.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DesiredInstances" : {
+          "deprecated" : false,
+          "documentation" : "<p>The desired number of streaming instances.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The capacity information for the fleet.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "DesiredInstances" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "CreateFleetRequest":{
-      "type":"structure",
-      "required":[
-        "Name",
-        "ImageName",
-        "InstanceType",
-        "ComputeCapacity"
-      ],
-      "members":{
-        "Name":{
-          "shape":"Name",
-          "documentation":"<p>A unique identifier for the fleet.</p>"
+    "ComputeCapacityStatus" : {
+      "deprecated" : false,
+      "documentation" : "<p>The capacity information for the fleet.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Available" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of currently available instances that can be used to stream sessions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "ImageName":{
-          "shape":"String",
-          "documentation":"<p>Unique name of the image used by the fleet.</p>"
+        "Desired" : {
+          "deprecated" : false,
+          "documentation" : "<p>The desired number of streaming instances.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "InstanceType":{
-          "shape":"String",
-          "documentation":"<p>The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.</p>"
+        "InUse" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of instances that are being used for streaming.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "ComputeCapacity":{
-          "shape":"ComputeCapacity",
-          "documentation":"<p>The parameters for the capacity allocated to the fleet.</p>"
-        },
-        "VpcConfig":{
-          "shape":"VpcConfig",
-          "documentation":"<p>The VPC configuration for the fleet.</p>"
-        },
-        "MaxUserDurationInSeconds":{
-          "shape":"Integer",
-          "documentation":"<p>The maximum time up to which a streaming session can run.</p>"
-        },
-        "DisconnectTimeoutInSeconds":{
-          "shape":"Integer",
-          "documentation":"<p>The time after disconnection when a session is considered to have ended. If a user who got disconnected reconnects within this timeout interval, the user is connected back to his/her previous session. </p>"
-        },
-        "Description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the fleet.</p>"
-        },
-        "DisplayName":{
-          "shape":"DisplayName",
-          "documentation":"<p>The display name of the fleet.</p>"
+        "Running" : {
+          "deprecated" : false,
+          "documentation" : "<p>The total number of simultaneous streaming instances that are running.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Contains the parameters for the new fleet to create.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Desired" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "CreateFleetResult":{
-      "type":"structure",
-      "members":{
-        "Fleet":{
-          "shape":"Fleet",
-          "documentation":"<p>The details for the created fleet.</p>"
-        }
-      }
-    },
-    "CreateStackRequest":{
-      "type":"structure",
-      "required":["Name"],
-      "members":{
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The unique identifier for this stack.</p>"
+    "CreateFleetRequest" : {
+      "deprecated" : false,
+      "documentation" : "<p>Contains the parameters for the new fleet to create.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ComputeCapacity" : {
+          "deprecated" : false,
+          "documentation" : "<p>The parameters for the capacity allocated to the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ComputeCapacity",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "Description":{
-          "shape":"Description",
-          "documentation":"<p>The description displayed to end users on the AppStream 2.0 portal.</p>"
+        "Description" : {
+          "deprecated" : false,
+          "documentation" : "<p>The description of the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Description",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "DisplayName":{
-          "shape":"DisplayName",
-          "documentation":"<p>The name displayed to end users on the AppStream 2.0 portal.</p>"
-        }
-      }
-    },
-    "CreateStackResult":{
-      "type":"structure",
-      "members":{
-        "Stack":{
-          "shape":"Stack",
-          "documentation":"<p>The details for the created stack.</p>"
-        }
-      }
-    },
-    "CreateStreamingURLRequest":{
-      "type":"structure",
-      "required":[
-        "StackName",
-        "FleetName",
-        "UserId"
-      ],
-      "members":{
-        "StackName":{
-          "shape":"String",
-          "documentation":"<p>The stack for which the URL is generated.</p>"
+        "DisconnectTimeoutInSeconds" : {
+          "deprecated" : false,
+          "documentation" : "<p>The time after disconnection when a session is considered to have ended. If a user who got disconnected reconnects within this timeout interval, the user is connected back to his/her previous session. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "FleetName":{
-          "shape":"String",
-          "documentation":"<p>The fleet for which the URL is generated.</p>"
+        "DisplayName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The display name of the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DisplayName",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "UserId":{
-          "shape":"UserId",
-          "documentation":"<p>A unique user ID for whom the URL is generated.</p>"
+        "ImageName" : {
+          "deprecated" : false,
+          "documentation" : "<p>Unique name of the image used by the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "ApplicationId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the application that must be launched after the session starts.</p>"
+        "InstanceType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "Validity":{
-          "shape":"Long",
-          "documentation":"<p>The validity duration of the URL in seconds. After this duration, the URL returned by this operation becomes invalid.</p>"
+        "MaxUserDurationInSeconds" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum time up to which a streaming session can run.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "SessionContext":{
-          "shape":"String",
-          "documentation":"<p>The sessionContext of the streaming URL.</p>"
-        }
-      }
-    },
-    "CreateStreamingURLResult":{
-      "type":"structure",
-      "members":{
-        "StreamingURL":{
-          "shape":"String",
-          "documentation":"<p>The URL to start the AppStream 2.0 streaming session.</p>"
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>A unique identifier for the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Name",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "Expires":{
-          "shape":"Timestamp",
-          "documentation":"<p>Elapsed seconds after the Unix epoch, at which time this URL expires.</p>"
-        }
-      }
-    },
-    "DeleteFleetRequest":{
-      "type":"structure",
-      "required":["Name"],
-      "members":{
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The name of the fleet to be deleted.</p>"
-        }
-      }
-    },
-    "DeleteFleetResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DeleteStackRequest":{
-      "type":"structure",
-      "required":["Name"],
-      "members":{
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The name of the stack to delete.</p>"
-        }
-      }
-    },
-    "DeleteStackResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DescribeFleetsRequest":{
-      "type":"structure",
-      "members":{
-        "Names":{
-          "shape":"StringList",
-          "documentation":"<p>The fleet names to describe. Use null to describe all the fleets for the AWS account.</p>"
-        },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
-        }
-      }
-    },
-    "DescribeFleetsResult":{
-      "type":"structure",
-      "members":{
-        "Fleets":{
-          "shape":"FleetList",
-          "documentation":"<p>The list of fleet details.</p>"
-        },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>"
-        }
-      }
-    },
-    "DescribeImagesRequest":{
-      "type":"structure",
-      "members":{
-        "Names":{
-          "shape":"StringList",
-          "documentation":"<p>A specific list of images to describe.</p>"
-        }
-      }
-    },
-    "DescribeImagesResult":{
-      "type":"structure",
-      "members":{
-        "Images":{
-          "shape":"ImageList",
-          "documentation":"<p>The list of images.</p>"
-        }
-      }
-    },
-    "DescribeSessionsRequest":{
-      "type":"structure",
-      "required":[
-        "StackName",
-        "FleetName"
-      ],
-      "members":{
-        "StackName":{
-          "shape":"String",
-          "documentation":"<p>The name of the stack for which to list sessions.</p>"
-        },
-        "FleetName":{
-          "shape":"String",
-          "documentation":"<p>The name of the fleet for which to list sessions.</p>"
-        },
-        "UserId":{
-          "shape":"UserId",
-          "documentation":"<p>The user for whom to list sessions. Use null to describe all the sessions for the stack and fleet.</p>"
-        },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
-        },
-        "Limit":{
-          "shape":"Integer",
-          "documentation":"<p>The size of each page of results. The default value is 20 and the maximum supported value is 50.</p>"
-        }
-      }
-    },
-    "DescribeSessionsResult":{
-      "type":"structure",
-      "members":{
-        "Sessions":{
-          "shape":"SessionList",
-          "documentation":"<p>The list of streaming sessions.</p>"
-        },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>"
-        }
-      }
-    },
-    "DescribeStacksRequest":{
-      "type":"structure",
-      "members":{
-        "Names":{
-          "shape":"StringList",
-          "documentation":"<p>The stack names to describe. Use null to describe all the stacks for the AWS account.</p>"
-        },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
-        }
-      }
-    },
-    "DescribeStacksResult":{
-      "type":"structure",
-      "members":{
-        "Stacks":{
-          "shape":"StackList",
-          "documentation":"<p>The list of stack details.</p>"
-        },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>"
-        }
-      }
-    },
-    "Description":{
-      "type":"string",
-      "max":256
-    },
-    "DisassociateFleetRequest":{
-      "type":"structure",
-      "required":[
-        "FleetName",
-        "StackName"
-      ],
-      "members":{
-        "FleetName":{
-          "shape":"String",
-          "documentation":"<p>The name of the fleet to disassociate.</p>"
-        },
-        "StackName":{
-          "shape":"String",
-          "documentation":"<p>The name of the stack with which the fleet is associated.</p>"
-        }
-      }
-    },
-    "DisassociateFleetResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DisplayName":{
-      "type":"string",
-      "max":100
-    },
-    "ErrorMessage":{"type":"string"},
-    "ExpireSessionRequest":{
-      "type":"structure",
-      "required":["SessionId"],
-      "members":{
-        "SessionId":{
-          "shape":"String",
-          "documentation":"<p>The unique identifier of the streaming session to be stopped.</p>"
-        }
-      }
-    },
-    "ExpireSessionResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "Fleet":{
-      "type":"structure",
-      "required":[
-        "Arn",
-        "Name",
-        "ImageName",
-        "InstanceType",
-        "ComputeCapacityStatus",
-        "State"
-      ],
-      "members":{
-        "Arn":{
-          "shape":"Arn",
-          "documentation":"<p>The ARN for the fleet.</p>"
-        },
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The name of the fleet.</p>"
-        },
-        "DisplayName":{
-          "shape":"String",
-          "documentation":"<p>The name displayed to end users on the AppStream 2.0 portal.</p>"
-        },
-        "Description":{
-          "shape":"String",
-          "documentation":"<p>The description displayed to end users on the AppStream 2.0 portal.</p>"
-        },
-        "ImageName":{
-          "shape":"String",
-          "documentation":"<p>The image used by the fleet.</p>"
-        },
-        "InstanceType":{
-          "shape":"String",
-          "documentation":"<p>The instance type of compute resources for the fleet. The fleet instances are launched from this instance type. </p>"
-        },
-        "ComputeCapacityStatus":{
-          "shape":"ComputeCapacityStatus",
-          "documentation":"<p>The capacity information for the fleet.</p>"
-        },
-        "MaxUserDurationInSeconds":{
-          "shape":"Integer",
-          "documentation":"<p>The maximum time during which a streaming session can run.</p>"
-        },
-        "DisconnectTimeoutInSeconds":{
-          "shape":"Integer",
-          "documentation":"<p>The time after disconnection when a session is considered to have ended. When a user reconnects after a disconnection, the user is connected to the same session and instance within this time interval.</p>"
-        },
-        "State":{
-          "shape":"FleetState",
-          "documentation":"<p>The current state for the fleet.</p>"
-        },
-        "VpcConfig":{
-          "shape":"VpcConfig",
-          "documentation":"<p>The VPC configuration for the fleet.</p>"
-        },
-        "CreatedTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the fleet was created.</p>"
-        },
-        "FleetErrors":{
-          "shape":"FleetErrors",
-          "documentation":"<p>The list of fleet errors is appended to this list.</p>"
+        "VpcConfig" : {
+          "deprecated" : false,
+          "documentation" : "<p>The VPC configuration for the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "VpcConfig",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Contains the parameters for a fleet.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name", "ImageName", "InstanceType", "ComputeCapacity" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "FleetError":{
-      "type":"structure",
-      "members":{
-        "ErrorCode":{
-          "shape":"FleetErrorCode",
-          "documentation":"<p>The error code for the fleet error.</p>"
-        },
-        "ErrorMessage":{
-          "shape":"String",
-          "documentation":"<p>The error message generated when the fleet has errors.</p>"
+    "CreateFleetResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Fleet" : {
+          "deprecated" : false,
+          "documentation" : "<p>The details for the created fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Fleet",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The details of the fleet error.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "FleetErrorCode":{
-      "type":"string",
-      "enum":[
-        "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION",
-        "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION",
-        "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION",
-        "NETWORK_INTERFACE_LIMIT_EXCEEDED",
-        "INTERNAL_SERVICE_ERROR",
-        "IAM_SERVICE_ROLE_IS_MISSING",
-        "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES",
-        "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION",
-        "SUBNET_NOT_FOUND",
-        "IMAGE_NOT_FOUND",
-        "INVALID_SUBNET_CONFIGURATION"
-      ]
-    },
-    "FleetErrors":{
-      "type":"list",
-      "member":{"shape":"FleetError"}
-    },
-    "FleetList":{
-      "type":"list",
-      "member":{"shape":"Fleet"},
-      "documentation":"<p>A list of fleets.</p>"
-    },
-    "FleetState":{
-      "type":"string",
-      "enum":[
-        "STARTING",
-        "RUNNING",
-        "STOPPING",
-        "STOPPED"
-      ]
-    },
-    "Image":{
-      "type":"structure",
-      "required":["Name"],
-      "members":{
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The unique identifier for the image.</p>"
+    "CreateStackRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Description" : {
+          "deprecated" : false,
+          "documentation" : "<p>The description displayed to end users on the AppStream 2.0 portal.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Description",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "Arn":{
-          "shape":"Arn",
-          "documentation":"<p>The ARN for the image.</p>"
+        "DisplayName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name displayed to end users on the AppStream 2.0 portal.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DisplayName",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "BaseImageArn":{
-          "shape":"Arn",
-          "documentation":"<p>The source image ARN from which this image was created.</p>"
-        },
-        "DisplayName":{
-          "shape":"String",
-          "documentation":"<p>The display name for the image.</p>"
-        },
-        "State":{
-          "shape":"ImageState",
-          "documentation":"<p>The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation succeeds and <b>FAILED</b> if image creation has failed.</p>"
-        },
-        "Visibility":{
-          "shape":"VisibilityType",
-          "documentation":"<p>The visibility of an image to the user; images can be public or private.</p>"
-        },
-        "Platform":{
-          "shape":"PlatformType",
-          "documentation":"<p>The operating system platform of the image.</p>"
-        },
-        "Description":{
-          "shape":"String",
-          "documentation":"<p>A meaningful description for the image.</p>"
-        },
-        "StateChangeReason":{
-          "shape":"ImageStateChangeReason",
-          "documentation":"<p>The reason why the last state change occurred.</p>"
-        },
-        "Applications":{
-          "shape":"Applications",
-          "documentation":"<p>The applications associated with an image.</p>"
-        },
-        "CreatedTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The timestamp when the image was created.</p>"
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier for this stack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>New streaming instances are booted from images. The image stores the application catalog and is connected to fleets.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "ImageList":{
-      "type":"list",
-      "member":{"shape":"Image"}
-    },
-    "ImageState":{
-      "type":"string",
-      "enum":[
-        "PENDING",
-        "AVAILABLE",
-        "FAILED",
-        "DELETING"
-      ]
-    },
-    "ImageStateChangeReason":{
-      "type":"structure",
-      "members":{
-        "Code":{
-          "shape":"ImageStateChangeReasonCode",
-          "documentation":"<p>The state change reason code of the image.</p>"
-        },
-        "Message":{
-          "shape":"String",
-          "documentation":"<p>The state change reason message to the end user.</p>"
+    "CreateStackResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Stack" : {
+          "deprecated" : false,
+          "documentation" : "<p>The details for the created stack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Stack",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The reason why the last state change occurred.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "ImageStateChangeReasonCode":{
-      "type":"string",
-      "enum":[
-        "INTERNAL_ERROR",
-        "IMAGE_BUILDER_NOT_AVAILABLE"
-      ]
-    },
-    "Integer":{"type":"integer"},
-    "InvalidRoleException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ErrorMessage"}
-      },
-      "documentation":"<p>The specified role is invalid.</p>",
-      "exception":true
-    },
-    "LimitExceededException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ErrorMessage"}
-      },
-      "documentation":"<p>The requested limit exceeds the permitted limit for an account.</p>",
-      "exception":true
-    },
-    "ListAssociatedFleetsRequest":{
-      "type":"structure",
-      "required":["StackName"],
-      "members":{
-        "StackName":{
-          "shape":"String",
-          "documentation":"<p>The name of the stack whose associated fleets are listed.</p>"
+    "CreateStreamingURLRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the application that must be launched after the session starts.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
-        }
-      }
-    },
-    "ListAssociatedFleetsResult":{
-      "type":"structure",
-      "members":{
-        "Names":{
-          "shape":"StringList",
-          "documentation":"<p>The names of associated fleets.</p>"
+        "FleetName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The fleet for which the URL is generated.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>"
-        }
-      },
-      "documentation":"<p>The response from a successful operation.</p>"
-    },
-    "ListAssociatedStacksRequest":{
-      "type":"structure",
-      "required":["FleetName"],
-      "members":{
-        "FleetName":{
-          "shape":"String",
-          "documentation":"<p>The name of the fleet whose associated stacks are listed.</p>"
+        "SessionContext" : {
+          "deprecated" : false,
+          "documentation" : "<p>The sessionContext of the streaming URL.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
-        }
-      }
-    },
-    "ListAssociatedStacksResult":{
-      "type":"structure",
-      "members":{
-        "Names":{
-          "shape":"StringList",
-          "documentation":"<p>The names of associated stacks.</p>"
+        "StackName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The stack for which the URL is generated.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>"
-        }
-      },
-      "documentation":"<p>The response from a successful operation.</p>"
-    },
-    "Long":{"type":"long"},
-    "Metadata":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"String"}
-    },
-    "Name":{
-      "type":"string",
-      "pattern":"^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$"
-    },
-    "OperationNotPermittedException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ErrorMessage"}
-      },
-      "documentation":"<p>The attempted operation is not permitted.</p>",
-      "exception":true
-    },
-    "PlatformType":{
-      "type":"string",
-      "enum":["WINDOWS"]
-    },
-    "ResourceAlreadyExistsException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ErrorMessage"}
-      },
-      "documentation":"<p>The specified resource already exists.</p>",
-      "exception":true
-    },
-    "ResourceInUseException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ErrorMessage"}
-      },
-      "documentation":"<p>The specified resource is in use.</p>",
-      "exception":true
-    },
-    "ResourceNotAvailableException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ErrorMessage"}
-      },
-      "documentation":"<p>The specified resource exists and is not in use, but isn't available.</p>",
-      "exception":true
-    },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ErrorMessage"}
-      },
-      "documentation":"<p>The specified resource was not found.</p>",
-      "exception":true
-    },
-    "Session":{
-      "type":"structure",
-      "required":[
-        "Id",
-        "UserId",
-        "StackName",
-        "FleetName",
-        "State"
-      ],
-      "members":{
-        "Id":{
-          "shape":"String",
-          "documentation":"<p>The unique ID for a streaming session.</p>"
+        "UserId" : {
+          "deprecated" : false,
+          "documentation" : "<p>A unique user ID for whom the URL is generated.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserId",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "UserId":{
-          "shape":"UserId",
-          "documentation":"<p>The identifier of the user for whom the session was created.</p>"
-        },
-        "StackName":{
-          "shape":"String",
-          "documentation":"<p>The name of the stack for which the streaming session was created.</p>"
-        },
-        "FleetName":{
-          "shape":"String",
-          "documentation":"<p>The name of the fleet for which the streaming session was created.</p>"
-        },
-        "State":{
-          "shape":"SessionState",
-          "documentation":"<p>The current state of the streaming session.</p>"
+        "Validity" : {
+          "deprecated" : false,
+          "documentation" : "<p>The validity duration of the URL in seconds. After this duration, the URL returned by this operation becomes invalid.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Contains the parameters for a streaming session.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "StackName", "FleetName", "UserId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "SessionList":{
-      "type":"list",
-      "member":{"shape":"Session"},
-      "documentation":"<p>List of sessions.</p>"
-    },
-    "SessionState":{
-      "type":"string",
-      "documentation":"<p>Possible values for the state of a streaming session.</p>",
-      "enum":[
-        "ACTIVE",
-        "PENDING",
-        "EXPIRED"
-      ]
-    },
-    "Stack":{
-      "type":"structure",
-      "required":["Name"],
-      "members":{
-        "Arn":{
-          "shape":"Arn",
-          "documentation":"<p>The ARN of the stack.</p>"
+    "CreateStreamingURLResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Expires" : {
+          "deprecated" : false,
+          "documentation" : "<p>Elapsed seconds after the Unix epoch, at which time this URL expires.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The unique identifier of the stack.</p>"
-        },
-        "Description":{
-          "shape":"String",
-          "documentation":"<p>A meaningful description for the stack.</p>"
-        },
-        "DisplayName":{
-          "shape":"String",
-          "documentation":"<p>A display name for the stack.</p>"
-        },
-        "CreatedTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The timestamp when the stack was created.</p>"
+        "StreamingURL" : {
+          "deprecated" : false,
+          "documentation" : "<p>The URL to start the AppStream 2.0 streaming session.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Details about a stack.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "StackList":{
-      "type":"list",
-      "member":{"shape":"Stack"},
-      "documentation":"<p>A list of stacks.</p>"
-    },
-    "StartFleetRequest":{
-      "type":"structure",
-      "required":["Name"],
-      "members":{
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The name of the fleet to start.</p>"
-        }
-      }
-    },
-    "StartFleetResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "StopFleetRequest":{
-      "type":"structure",
-      "required":["Name"],
-      "members":{
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The name of the fleet to stop.</p>"
-        }
-      }
-    },
-    "StopFleetResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "String":{
-      "type":"string",
-      "min":1
-    },
-    "StringList":{
-      "type":"list",
-      "member":{"shape":"String"}
-    },
-    "SubnetIdList":{
-      "type":"list",
-      "member":{"shape":"String"},
-      "documentation":"<p>A list of subnet IDs.</p>",
-      "min":1
-    },
-    "Timestamp":{"type":"timestamp"},
-    "UpdateFleetRequest":{
-      "type":"structure",
-      "required":["Name"],
-      "members":{
-        "ImageName":{
-          "shape":"String",
-          "documentation":"<p>The image name from which a fleet is created.</p>"
-        },
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The name of the fleet.</p>"
-        },
-        "InstanceType":{
-          "shape":"String",
-          "documentation":"<p>The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.</p>"
-        },
-        "ComputeCapacity":{
-          "shape":"ComputeCapacity",
-          "documentation":"<p>The parameters for the capacity allocated to the fleet. </p>"
-        },
-        "VpcConfig":{
-          "shape":"VpcConfig",
-          "documentation":"<p>The VPC configuration for the fleet.</p>"
-        },
-        "MaxUserDurationInSeconds":{
-          "shape":"Integer",
-          "documentation":"<p>The maximum time during which a streaming session can run.</p>"
-        },
-        "DisconnectTimeoutInSeconds":{
-          "shape":"Integer",
-          "documentation":"<p>The time after disconnection when a session is considered to have ended. When the user reconnects after a disconnection, the user is connected to the same instance within this time interval.</p>"
-        },
-        "DeleteVpcConfig":{
-          "shape":"Boolean",
-          "documentation":"<p>Delete the VPC association for the specified fleet.</p>"
-        },
-        "Description":{
-          "shape":"Description",
-          "documentation":"<p>The description displayed to end users on the AppStream 2.0 portal.</p>"
-        },
-        "DisplayName":{
-          "shape":"DisplayName",
-          "documentation":"<p>The name displayed to end users on the AppStream 2.0 portal.</p>"
-        }
-      }
-    },
-    "UpdateFleetResult":{
-      "type":"structure",
-      "members":{
-        "Fleet":{
-          "shape":"Fleet",
-          "documentation":"<p>A list of fleet details.</p>"
-        }
-      }
-    },
-    "UpdateStackRequest":{
-      "type":"structure",
-      "required":["Name"],
-      "members":{
-        "DisplayName":{
-          "shape":"DisplayName",
-          "documentation":"<p>The name displayed to end users on the AppStream 2.0 portal.</p>"
-        },
-        "Description":{
-          "shape":"Description",
-          "documentation":"<p>The description displayed to end users on the AppStream 2.0 portal.</p>"
-        },
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The name of the stack to update.</p>"
-        }
-      }
-    },
-    "UpdateStackResult":{
-      "type":"structure",
-      "members":{
-        "Stack":{
-          "shape":"Stack",
-          "documentation":"<p>A list of stack details.</p>"
-        }
-      }
-    },
-    "UserId":{
-      "type":"string",
-      "max":32,
-      "min":2
-    },
-    "VisibilityType":{
-      "type":"string",
-      "enum":[
-        "PUBLIC",
-        "PRIVATE"
-      ]
-    },
-    "VpcConfig":{
-      "type":"structure",
-      "required":["SubnetIds"],
-      "members":{
-        "SubnetIds":{
-          "shape":"SubnetIdList",
-          "documentation":"<p>The list of subnets to which a network interface is established from the fleet instance.</p>"
+    "DeleteFleetRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the fleet to be deleted.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The VPC in which the fleet is launched.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteFleetResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteStackRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the stack to delete.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteStackResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeFleetsRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Names" : {
+          "deprecated" : false,
+          "documentation" : "<p>The fleet names to describe. Use null to describe all the fleets for the AWS account.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StringList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeFleetsResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Fleets" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of fleet details.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FleetList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeImagesRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Names" : {
+          "deprecated" : false,
+          "documentation" : "<p>A specific list of images to describe.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StringList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeImagesResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Images" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of images.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ImageList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeSessionsRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FleetName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the fleet for which to list sessions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Limit" : {
+          "deprecated" : false,
+          "documentation" : "<p>The size of each page of results. The default value is 20 and the maximum supported value is 50.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "StackName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the stack for which to list sessions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user for whom to list sessions. Use null to describe all the sessions for the stack and fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "StackName", "FleetName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeSessionsResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Sessions" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of streaming sessions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SessionList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeStacksRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Names" : {
+          "deprecated" : false,
+          "documentation" : "<p>The stack names to describe. Use null to describe all the stacks for the AWS account.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StringList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeStacksResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Stacks" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of stack details.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StackList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Description" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 256,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DisassociateFleetRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FleetName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the fleet to disassociate.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "StackName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the stack with which the fleet is associated.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "FleetName", "StackName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DisassociateFleetResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DisplayName" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ErrorMessage" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ExpireSessionRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "SessionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier of the streaming session to be stopped.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "SessionId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ExpireSessionResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Fleet" : {
+      "deprecated" : false,
+      "documentation" : "<p>Contains the parameters for a fleet.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Arn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN for the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ComputeCapacityStatus" : {
+          "deprecated" : false,
+          "documentation" : "<p>The capacity information for the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ComputeCapacityStatus",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CreatedTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The time at which the fleet was created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Description" : {
+          "deprecated" : false,
+          "documentation" : "<p>The description displayed to end users on the AppStream 2.0 portal.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DisconnectTimeoutInSeconds" : {
+          "deprecated" : false,
+          "documentation" : "<p>The time after disconnection when a session is considered to have ended. When a user reconnects after a disconnection, the user is connected to the same session and instance within this time interval.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DisplayName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name displayed to end users on the AppStream 2.0 portal.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FleetErrors" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of fleet errors is appended to this list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FleetErrors",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ImageName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The image used by the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "InstanceType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The instance type of compute resources for the fleet. The fleet instances are launched from this instance type. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MaxUserDurationInSeconds" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum time during which a streaming session can run.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "State" : {
+          "deprecated" : false,
+          "documentation" : "<p>The current state for the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FleetState",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "VpcConfig" : {
+          "deprecated" : false,
+          "documentation" : "<p>The VPC configuration for the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "VpcConfig",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Arn", "Name", "ImageName", "InstanceType", "ComputeCapacityStatus", "State" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FleetError" : {
+      "deprecated" : false,
+      "documentation" : "<p>The details of the fleet error.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ErrorCode" : {
+          "deprecated" : false,
+          "documentation" : "<p>The error code for the fleet error.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FleetErrorCode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ErrorMessage" : {
+          "deprecated" : false,
+          "documentation" : "<p>The error message generated when the fleet has errors.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FleetErrorCode" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION", "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION", "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION", "NETWORK_INTERFACE_LIMIT_EXCEEDED", "INTERNAL_SERVICE_ERROR", "IAM_SERVICE_ROLE_IS_MISSING", "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES", "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION", "SUBNET_NOT_FOUND", "IMAGE_NOT_FOUND", "INVALID_SUBNET_CONFIGURATION" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FleetErrors" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "FleetError",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FleetList" : {
+      "deprecated" : false,
+      "documentation" : "<p>A list of fleets.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "Fleet",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FleetState" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "STARTING", "RUNNING", "STOPPING", "STOPPED" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Image" : {
+      "deprecated" : false,
+      "documentation" : "<p>New streaming instances are booted from images. The image stores the application catalog and is connected to fleets.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Applications" : {
+          "deprecated" : false,
+          "documentation" : "<p>The applications associated with an image.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Applications",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Arn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN for the image.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "BaseImageArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The source image ARN from which this image was created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CreatedTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The timestamp when the image was created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Description" : {
+          "deprecated" : false,
+          "documentation" : "<p>A meaningful description for the image.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DisplayName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The display name for the image.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier for the image.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Platform" : {
+          "deprecated" : false,
+          "documentation" : "<p>The operating system platform of the image.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PlatformType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "State" : {
+          "deprecated" : false,
+          "documentation" : "<p>The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation succeeds and <b>FAILED</b> if image creation has failed.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ImageState",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "StateChangeReason" : {
+          "deprecated" : false,
+          "documentation" : "<p>The reason why the last state change occurred.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ImageStateChangeReason",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Visibility" : {
+          "deprecated" : false,
+          "documentation" : "<p>The visibility of an image to the user; images can be public or private.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "VisibilityType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ImageList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "Image",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ImageState" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "PENDING", "AVAILABLE", "FAILED", "DELETING" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ImageStateChangeReason" : {
+      "deprecated" : false,
+      "documentation" : "<p>The reason why the last state change occurred.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Code" : {
+          "deprecated" : false,
+          "documentation" : "<p>The state change reason code of the image.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ImageStateChangeReasonCode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : "<p>The state change reason message to the end user.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ImageStateChangeReasonCode" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "INTERNAL_ERROR", "IMAGE_BUILDER_NOT_AVAILABLE" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Integer" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "integer",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidRoleException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified role is invalid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "LimitExceededException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The requested limit exceeds the permitted limit for an account.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListAssociatedFleetsRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "StackName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the stack whose associated fleets are listed.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "StackName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListAssociatedFleetsResult" : {
+      "deprecated" : false,
+      "documentation" : "<p>The response from a successful operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Names" : {
+          "deprecated" : false,
+          "documentation" : "<p>The names of associated fleets.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StringList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListAssociatedStacksRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FleetName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the fleet whose associated stacks are listed.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "FleetName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListAssociatedStacksResult" : {
+      "deprecated" : false,
+      "documentation" : "<p>The response from a successful operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Names" : {
+          "deprecated" : false,
+          "documentation" : "<p>The names of associated stacks.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StringList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Long" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "long",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Metadata" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "String",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "String",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "wrapper" : false
+    },
+    "Name" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : "^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "OperationNotPermittedException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The attempted operation is not permitted.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "PlatformType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "WINDOWS" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ResourceAlreadyExistsException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified resource already exists.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ResourceInUseException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified resource is in use.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ResourceNotAvailableException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified resource exists and is not in use, but isn't available.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ResourceNotFoundException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified resource was not found.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Session" : {
+      "deprecated" : false,
+      "documentation" : "<p>Contains the parameters for a streaming session.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FleetName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the fleet for which the streaming session was created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Id" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique ID for a streaming session.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "StackName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the stack for which the streaming session was created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "State" : {
+          "deprecated" : false,
+          "documentation" : "<p>The current state of the streaming session.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SessionState",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identifier of the user for whom the session was created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Id", "UserId", "StackName", "FleetName", "State" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SessionList" : {
+      "deprecated" : false,
+      "documentation" : "<p>List of sessions.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "Session",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SessionState" : {
+      "deprecated" : false,
+      "documentation" : "<p>Possible values for the state of a streaming session.</p>",
+      "enum" : [ "ACTIVE", "PENDING", "EXPIRED" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Stack" : {
+      "deprecated" : false,
+      "documentation" : "<p>Details about a stack.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Arn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN of the stack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CreatedTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The timestamp when the stack was created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Description" : {
+          "deprecated" : false,
+          "documentation" : "<p>A meaningful description for the stack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DisplayName" : {
+          "deprecated" : false,
+          "documentation" : "<p>A display name for the stack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier of the stack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StackList" : {
+      "deprecated" : false,
+      "documentation" : "<p>A list of stacks.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "Stack",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StartFleetRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the fleet to start.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StartFleetResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StopFleetRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the fleet to stop.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StopFleetResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "String" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StringList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "String",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SubnetIdList" : {
+      "deprecated" : false,
+      "documentation" : "<p>A list of subnet IDs.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "String",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Timestamp" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "timestamp",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateFleetRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ComputeCapacity" : {
+          "deprecated" : false,
+          "documentation" : "<p>The parameters for the capacity allocated to the fleet. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ComputeCapacity",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DeleteVpcConfig" : {
+          "deprecated" : false,
+          "documentation" : "<p>Delete the VPC association for the specified fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Description" : {
+          "deprecated" : false,
+          "documentation" : "<p>The description displayed to end users on the AppStream 2.0 portal.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Description",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DisconnectTimeoutInSeconds" : {
+          "deprecated" : false,
+          "documentation" : "<p>The time after disconnection when a session is considered to have ended. When the user reconnects after a disconnection, the user is connected to the same instance within this time interval.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DisplayName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name displayed to end users on the AppStream 2.0 portal.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DisplayName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ImageName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The image name from which a fleet is created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "InstanceType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MaxUserDurationInSeconds" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum time during which a streaming session can run.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "VpcConfig" : {
+          "deprecated" : false,
+          "documentation" : "<p>The VPC configuration for the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "VpcConfig",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateFleetResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Fleet" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of fleet details.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Fleet",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateStackRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Description" : {
+          "deprecated" : false,
+          "documentation" : "<p>The description displayed to end users on the AppStream 2.0 portal.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Description",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DisplayName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name displayed to end users on the AppStream 2.0 portal.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DisplayName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the stack to update.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateStackResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Stack" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of stack details.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Stack",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UserId" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 32,
+      "member" : null,
+      "members" : null,
+      "min" : 2,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "VisibilityType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "PUBLIC", "PRIVATE" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "VpcConfig" : {
+      "deprecated" : false,
+      "documentation" : "<p>The VPC in which the fleet is launched.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "SubnetIds" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of subnets to which a network interface is established from the fleet instance.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SubnetIdList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "SubnetIds" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     }
   },
-  "documentation":"<fullname>Amazon AppStream 2.0</fullname> <p>API documentation for Amazon AppStream 2.0.</p>"
+  "documentation" : "<fullname>Amazon AppStream 2.0</fullname> <p>API documentation for Amazon AppStream 2.0.</p>"
 }

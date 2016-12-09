@@ -60,6 +60,7 @@
     },
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : true,
+    "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : true
   },
@@ -15753,5 +15754,6 @@
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonKinesisException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.kinesis.model.AmazonKinesisException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "transformPackage" : "com.amazonaws.services.kinesis.model.transform"
 }

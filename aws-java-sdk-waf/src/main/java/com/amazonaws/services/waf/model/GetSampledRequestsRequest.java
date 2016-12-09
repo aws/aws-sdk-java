@@ -50,8 +50,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code>
-     * to return a sample of requests. Specify the date and time in Unix time format (in seconds). You can specify any
-     * time range in the previous three hours.
+     * to return a sample of requests. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * </p>
      */
     private TimeWindow timeWindow;
@@ -234,14 +234,14 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code>
-     * to return a sample of requests. Specify the date and time in Unix time format (in seconds). You can specify any
-     * time range in the previous three hours.
+     * to return a sample of requests. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * </p>
      * 
      * @param timeWindow
      *        The start date and time and the end date and time of the range for which you want
-     *        <code>GetSampledRequests</code> to return a sample of requests. Specify the date and time in Unix time
-     *        format (in seconds). You can specify any time range in the previous three hours.
+     *        <code>GetSampledRequests</code> to return a sample of requests. Specify the date and time in the following
+     *        format: <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      */
 
     public void setTimeWindow(TimeWindow timeWindow) {
@@ -251,13 +251,14 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code>
-     * to return a sample of requests. Specify the date and time in Unix time format (in seconds). You can specify any
-     * time range in the previous three hours.
+     * to return a sample of requests. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * </p>
      * 
      * @return The start date and time and the end date and time of the range for which you want
-     *         <code>GetSampledRequests</code> to return a sample of requests. Specify the date and time in Unix time
-     *         format (in seconds). You can specify any time range in the previous three hours.
+     *         <code>GetSampledRequests</code> to return a sample of requests. Specify the date and time in the
+     *         following format: <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three
+     *         hours.
      */
 
     public TimeWindow getTimeWindow() {
@@ -267,14 +268,14 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code>
-     * to return a sample of requests. Specify the date and time in Unix time format (in seconds). You can specify any
-     * time range in the previous three hours.
+     * to return a sample of requests. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * </p>
      * 
      * @param timeWindow
      *        The start date and time and the end date and time of the range for which you want
-     *        <code>GetSampledRequests</code> to return a sample of requests. Specify the date and time in Unix time
-     *        format (in seconds). You can specify any time range in the previous three hours.
+     *        <code>GetSampledRequests</code> to return a sample of requests. Specify the date and time in the following
+     *        format: <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

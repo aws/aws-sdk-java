@@ -1,682 +1,2606 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2016-06-02",
-    "endpointPrefix":"shield",
-    "jsonVersion":"1.1",
-    "protocol":"json",
-    "serviceAbbreviation":"AWS Shield",
-    "serviceFullName":"AWS Shield",
-    "signatureVersion":"v4",
-    "targetPrefix":"AWSShield_20160616",
-    "uid":"shield-2016-06-02"
+  "metadata" : {
+    "apiVersion" : "2016-06-02",
+    "endpointPrefix" : "shield",
+    "jsonVersion" : "1.1",
+    "protocol" : "json",
+    "resultWrapped" : false,
+    "serviceAbbreviation" : "AWS Shield",
+    "serviceFullName" : "AWS Shield",
+    "signatureVersion" : "v4",
+    "signingName" : "shield",
+    "targetPrefix" : "AWSShield_20160616",
+    "xmlNamespace" : null
   },
-  "operations":{
-    "CreateProtection":{
-      "name":"CreateProtection",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+  "operations" : {
+    "CreateProtection" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, or an Amazon Route 53 hosted zone.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidResourceException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidOperationException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitsExceededException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceAlreadyExistsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "OptimisticLockException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"CreateProtectionRequest"},
-      "output":{"shape":"CreateProtectionResponse"},
-      "errors":[
-        {"shape":"InternalErrorException"},
-        {"shape":"InvalidResourceException"},
-        {"shape":"InvalidOperationException"},
-        {"shape":"LimitsExceededException"},
-        {"shape":"ResourceAlreadyExistsException"},
-        {"shape":"OptimisticLockException"},
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, or an Amazon Route 53 hosted zone.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateProtectionRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateProtection",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateProtectionResponse"
+      }
     },
-    "CreateSubscription":{
-      "name":"CreateSubscription",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "CreateSubscription" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Activates AWS Shield Advanced for an account.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceAlreadyExistsException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"CreateSubscriptionRequest"},
-      "output":{"shape":"CreateSubscriptionResponse"},
-      "errors":[
-        {"shape":"InternalErrorException"},
-        {"shape":"ResourceAlreadyExistsException"}
-      ],
-      "documentation":"<p>Activates AWS Shield Advanced for an account.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateSubscriptionRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateSubscription",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateSubscriptionResponse"
+      }
     },
-    "DeleteProtection":{
-      "name":"DeleteProtection",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DeleteProtection" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes an AWS Shield Advanced <a>Protection</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "OptimisticLockException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DeleteProtectionRequest"},
-      "output":{"shape":"DeleteProtectionResponse"},
-      "errors":[
-        {"shape":"InternalErrorException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"OptimisticLockException"}
-      ],
-      "documentation":"<p>Deletes an AWS Shield Advanced <a>Protection</a>.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteProtectionRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteProtection",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteProtectionResponse"
+      }
     },
-    "DeleteSubscription":{
-      "name":"DeleteSubscription",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DeleteSubscription" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Removes AWS Shield Advanced from an account.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LockedSubscriptionException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DeleteSubscriptionRequest"},
-      "output":{"shape":"DeleteSubscriptionResponse"},
-      "errors":[
-        {"shape":"InternalErrorException"},
-        {"shape":"LockedSubscriptionException"},
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Removes AWS Shield Advanced from an account.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteSubscriptionRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteSubscription",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteSubscriptionResponse"
+      }
     },
-    "DescribeAttack":{
-      "name":"DescribeAttack",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DescribeAttack" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Describes the details of a DDoS attack. </p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeAttackRequest"},
-      "output":{"shape":"DescribeAttackResponse"},
-      "errors":[
-        {"shape":"InternalErrorException"},
-        {"shape":"InvalidParameterException"}
-      ],
-      "documentation":"<p>Describes the details of a DDoS attack. </p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeAttackRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeAttack",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeAttackResponse"
+      }
     },
-    "DescribeProtection":{
-      "name":"DescribeProtection",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DescribeProtection" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Lists the details of a <a>Protection</a> object.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeProtectionRequest"},
-      "output":{"shape":"DescribeProtectionResponse"},
-      "errors":[
-        {"shape":"InternalErrorException"},
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Lists the details of a <a>Protection</a> object.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeProtectionRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeProtection",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeProtectionResponse"
+      }
     },
-    "DescribeSubscription":{
-      "name":"DescribeSubscription",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DescribeSubscription" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Provides details about the AWS Shield Advanced subscription for an account.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeSubscriptionRequest"},
-      "output":{"shape":"DescribeSubscriptionResponse"},
-      "errors":[
-        {"shape":"InternalErrorException"},
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Provides details about the AWS Shield Advanced subscription for an account.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeSubscriptionRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeSubscription",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeSubscriptionResponse"
+      }
     },
-    "ListAttacks":{
-      "name":"ListAttacks",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "ListAttacks" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time period.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidOperationException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"ListAttacksRequest"},
-      "output":{"shape":"ListAttacksResponse"},
-      "errors":[
-        {"shape":"InternalErrorException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"InvalidOperationException"}
-      ],
-      "documentation":"<p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time period.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListAttacksRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListAttacks",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListAttacksResponse"
+      }
     },
-    "ListProtections":{
-      "name":"ListProtections",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "ListProtections" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Lists all <a>Protection</a> objects for the account.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"ListProtectionsRequest"},
-      "output":{"shape":"ListProtectionsResponse"},
-      "errors":[
-        {"shape":"InternalErrorException"},
-        {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Lists all <a>Protection</a> objects for the account.</p>"
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListProtectionsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListProtections",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListProtectionsResponse"
+      }
     }
   },
-  "shapes":{
-    "AttackDetail":{
-      "type":"structure",
-      "members":{
-        "AttackId":{
-          "shape":"AttackId",
-          "documentation":"<p>The unique identifier (ID) of the attack.</p>"
+  "shapes" : {
+    "AttackDetail" : {
+      "deprecated" : false,
+      "documentation" : "<p>The details of a DDoS attack.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AttackCounters" : {
+          "deprecated" : false,
+          "documentation" : "<p>List of counters that describe the attack for the specified time period.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SummarizedCounterList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "ResourceArn":{
-          "shape":"ResourceArn",
-          "documentation":"<p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>"
+        "AttackId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier (ID) of the attack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttackId",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "SubResources":{
-          "shape":"SubResourceSummaryList",
-          "documentation":"<p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>"
+        "EndTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttackTimestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "StartTime":{
-          "shape":"AttackTimestamp",
-          "documentation":"<p>The time the attack started, in the format 2016-12-16T13:50Z.</p>"
+        "Mitigations" : {
+          "deprecated" : false,
+          "documentation" : "<p>List of mitigation actions taken for the attack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MitigationList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "EndTime":{
-          "shape":"AttackTimestamp",
-          "documentation":"<p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>"
+        "ResourceArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceArn",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "AttackCounters":{
-          "shape":"SummarizedCounterList",
-          "documentation":"<p>List of counters that describe the attack for the specified time period.</p>"
+        "StartTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The time the attack started, in the format 2016-12-16T13:50Z.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttackTimestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "Mitigations":{
-          "shape":"MitigationList",
-          "documentation":"<p>List of mitigation actions taken for the attack.</p>"
+        "SubResources" : {
+          "deprecated" : false,
+          "documentation" : "<p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SubResourceSummaryList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The details of a DDoS attack.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "AttackId":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"[a-zA-Z0-9\\\\-]*"
+    "AttackId" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 128,
+      "member" : null,
+      "members" : null,
+      "min" : 1,
+      "pattern" : "[a-zA-Z0-9\\\\-]*",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "AttackSummaries":{
-      "type":"list",
-      "member":{"shape":"AttackSummary"}
+    "AttackSummaries" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "AttackSummary",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "AttackSummary":{
-      "type":"structure",
-      "members":{
-        "AttackId":{
-          "shape":"String",
-          "documentation":"<p>The unique identifier (ID) of the attack.</p>"
+    "AttackSummary" : {
+      "deprecated" : false,
+      "documentation" : "<p>Summarizes all DDoS attacks for a specified time period.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AttackId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier (ID) of the attack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "ResourceArn":{
-          "shape":"String",
-          "documentation":"<p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>"
+        "AttackVectors" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of attacks for a specified time period.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttackVectorDescriptionList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "StartTime":{
-          "shape":"AttackTimestamp",
-          "documentation":"<p>The start time of the attack, in the format 2016-12-16T13:50Z.</p>"
+        "EndTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The end time of the attack, in the format 2016-12-16T13:50Z.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttackTimestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "EndTime":{
-          "shape":"AttackTimestamp",
-          "documentation":"<p>The end time of the attack, in the format 2016-12-16T13:50Z.</p>"
+        "ResourceArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "AttackVectors":{
-          "shape":"AttackVectorDescriptionList",
-          "documentation":"<p>The list of attacks for a specified time period.</p>"
+        "StartTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The start time of the attack, in the format 2016-12-16T13:50Z.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttackTimestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Summarizes all DDoS attacks for a specified time period.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "AttackTimestamp":{"type":"timestamp"},
-    "AttackVectorDescription":{
-      "type":"structure",
-      "required":["VectorType"],
-      "members":{
-        "VectorType":{
-          "shape":"String",
-          "documentation":"<p>The attack type, for example, SNMP reflection or SYN flood.</p>"
+    "AttackTimestamp" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "timestamp",
+      "value" : null,
+      "wrapper" : false
+    },
+    "AttackVectorDescription" : {
+      "deprecated" : false,
+      "documentation" : "<p>Describes the attack.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "VectorType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The attack type, for example, SNMP reflection or SYN flood.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Describes the attack.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "VectorType" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "AttackVectorDescriptionList":{
-      "type":"list",
-      "member":{"shape":"AttackVectorDescription"}
-    },
-    "CreateProtectionRequest":{
-      "type":"structure",
-      "required":[
-        "Name",
-        "ResourceArn"
-      ],
-      "members":{
-        "Name":{
-          "shape":"ProtectionName",
-          "documentation":"<p>Friendly name for the <code>Protection</code> you are creating.</p>"
-        },
-        "ResourceArn":{
-          "shape":"ResourceArn",
-          "documentation":"<p>The ARN (Amazon Resource Name) of the resource to be protected.</p>"
-        }
-      }
-    },
-    "CreateProtectionResponse":{
-      "type":"structure",
-      "members":{
-        "ProtectionId":{
-          "shape":"ProtectionId",
-          "documentation":"<p>The unique identifier (ID) for the <a>Protection</a> object that is created.</p>"
-        }
-      }
-    },
-    "CreateSubscriptionRequest":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "CreateSubscriptionResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DeleteProtectionRequest":{
-      "type":"structure",
-      "required":["ProtectionId"],
-      "members":{
-        "ProtectionId":{
-          "shape":"ProtectionId",
-          "documentation":"<p>The unique identifier (ID) for the <a>Protection</a> object to be deleted.</p>"
-        }
-      }
-    },
-    "DeleteProtectionResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DeleteSubscriptionRequest":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DeleteSubscriptionResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DescribeAttackRequest":{
-      "type":"structure",
-      "required":["AttackId"],
-      "members":{
-        "AttackId":{
-          "shape":"AttackId",
-          "documentation":"<p>The unique identifier (ID) for the attack that to be described.</p>"
-        }
-      }
-    },
-    "DescribeAttackResponse":{
-      "type":"structure",
-      "members":{
-        "Attack":{
-          "shape":"AttackDetail",
-          "documentation":"<p>The attack that is described.</p>"
-        }
-      }
-    },
-    "DescribeProtectionRequest":{
-      "type":"structure",
-      "required":["ProtectionId"],
-      "members":{
-        "ProtectionId":{
-          "shape":"ProtectionId",
-          "documentation":"<p>The unique identifier (ID) for the <a>Protection</a> object that is described.</p>"
-        }
-      }
-    },
-    "DescribeProtectionResponse":{
-      "type":"structure",
-      "members":{
-        "Protection":{
-          "shape":"Protection",
-          "documentation":"<p>The <a>Protection</a> object that is described.</p>"
-        }
-      }
-    },
-    "DescribeSubscriptionRequest":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DescribeSubscriptionResponse":{
-      "type":"structure",
-      "members":{
-        "Subscription":{
-          "shape":"Subscription",
-          "documentation":"<p>The AWS Shield Advanced subscription details for an account.</p>"
-        }
-      }
-    },
-    "Double":{"type":"double"},
-    "DurationInSeconds":{
-      "type":"long",
-      "min":0
-    },
-    "Integer":{"type":"integer"},
-    "InternalErrorException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"errorMessage"}
+    "AttackVectorDescriptionList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "AttackVectorDescription",
+        "streaming" : false,
+        "xmlNamespace" : null
       },
-      "documentation":"<p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>",
-      "exception":true,
-      "fault":true
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "InvalidOperationException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"errorMessage"}
-      },
-      "documentation":"<p>Exception that indicates that the operation would not cause any change to occur.</p>",
-      "exception":true
-    },
-    "InvalidParameterException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"errorMessage"}
-      },
-      "documentation":"<p>Exception that indicates that the parameters passed to the API are invalid. </p>",
-      "exception":true
-    },
-    "InvalidResourceException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"errorMessage"}
-      },
-      "documentation":"<p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>",
-      "exception":true
-    },
-    "LimitNumber":{"type":"long"},
-    "LimitType":{"type":"string"},
-    "LimitsExceededException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"errorMessage"},
-        "Type":{"shape":"LimitType"},
-        "Limit":{"shape":"LimitNumber"}
-      },
-      "documentation":"<p>Exception that indicates that the operation would exceed a limit.</p>",
-      "exception":true
-    },
-    "ListAttacksRequest":{
-      "type":"structure",
-      "members":{
-        "ResourceArns":{
-          "shape":"ResourceArnFilterList",
-          "documentation":"<p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is left blank, all applicable resources for this account will be included.</p>"
+    "CreateProtectionRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>Friendly name for the <code>Protection</code> you are creating.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProtectionName",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "StartTime":{
-          "shape":"TimeRange",
-          "documentation":"<p>The time period for the attacks.</p>"
-        },
-        "EndTime":{
-          "shape":"TimeRange",
-          "documentation":"<p>The end of the time period for the attacks.</p>"
-        },
-        "NextToken":{
-          "shape":"Token",
-          "documentation":"<p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>"
-        },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results will be returned.</p>"
-        }
-      }
-    },
-    "ListAttacksResponse":{
-      "type":"structure",
-      "members":{
-        "AttackSummaries":{
-          "shape":"AttackSummaries",
-          "documentation":"<p>The attack information for the specified time range.</p>"
-        },
-        "NextToken":{
-          "shape":"Token",
-          "documentation":"<p>The token returned by a previous call to indicate that there is more data available. If not null, more results are available. Pass this value for the <code>NextMarker</code> parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of items.</p>"
-        }
-      }
-    },
-    "ListProtectionsRequest":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"Token",
-          "documentation":"<p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.</p>"
-        },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will be returned.</p>"
-        }
-      }
-    },
-    "ListProtectionsResponse":{
-      "type":"structure",
-      "members":{
-        "Protections":{
-          "shape":"Protections",
-          "documentation":"<p>The array of enabled <a>Protection</a> objects.</p>"
-        },
-        "NextToken":{
-          "shape":"Token",
-          "documentation":"<p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>"
-        }
-      }
-    },
-    "LockedSubscriptionException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"errorMessage"}
-      },
-      "documentation":"<p>Exception that indicates that the subscription has been modified by another client. You can retry the request.</p>",
-      "exception":true
-    },
-    "MaxResults":{
-      "type":"integer",
-      "box":true,
-      "max":100,
-      "min":0
-    },
-    "Mitigation":{
-      "type":"structure",
-      "members":{
-        "MitigationName":{
-          "shape":"String",
-          "documentation":"<p>The name of the mitigation taken for this attack.</p>"
+        "ResourceArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN (Amazon Resource Name) of the resource to be protected.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceArn",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The mitigation applied to a DDoS attack.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name", "ResourceArn" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "MitigationList":{
-      "type":"list",
-      "member":{"shape":"Mitigation"}
-    },
-    "OptimisticLockException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"errorMessage"}
-      },
-      "documentation":"<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
-      "exception":true
-    },
-    "Protection":{
-      "type":"structure",
-      "members":{
-        "Id":{
-          "shape":"ProtectionId",
-          "documentation":"<p>The unique identifier (ID) of the protection.</p>"
-        },
-        "Name":{
-          "shape":"ProtectionName",
-          "documentation":"<p>The friendly name of the protection. For example, <code>My CloudFront distributions</code>.</p>"
-        },
-        "ResourceArn":{
-          "shape":"ResourceArn",
-          "documentation":"<p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>"
+    "CreateProtectionResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ProtectionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier (ID) for the <a>Protection</a> object that is created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProtectionId",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>An object that represents a resource that is under DDoS protection.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "ProtectionId":{
-      "type":"string",
-      "max":36,
-      "min":1,
-      "pattern":"[a-zA-Z0-9\\\\-]*"
+    "CreateSubscriptionRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "ProtectionName":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"[ a-zA-Z0-9_\\\\.\\\\-]*"
+    "CreateSubscriptionResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "Protections":{
-      "type":"list",
-      "member":{"shape":"Protection"}
-    },
-    "ResourceAlreadyExistsException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"errorMessage"}
-      },
-      "documentation":"<p>Exception indicating the specified resource already exists.</p>",
-      "exception":true
-    },
-    "ResourceArn":{
-      "type":"string",
-      "min":1
-    },
-    "ResourceArnFilterList":{
-      "type":"list",
-      "member":{"shape":"ResourceArn"}
-    },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"errorMessage"}
-      },
-      "documentation":"<p>Exception indicating the specified resource does not exist.</p>",
-      "exception":true
-    },
-    "String":{"type":"string"},
-    "SubResourceSummary":{
-      "type":"structure",
-      "members":{
-        "Type":{
-          "shape":"SubResourceType",
-          "documentation":"<p>The <code>SubResource</code> type.</p>"
-        },
-        "Id":{
-          "shape":"String",
-          "documentation":"<p>The unique identifier (ID) of the <code>SubResource</code>.</p>"
-        },
-        "AttackVectors":{
-          "shape":"SummarizedAttackVectorList",
-          "documentation":"<p>The list of attack types and associated counters.</p>"
-        },
-        "Counters":{
-          "shape":"SummarizedCounterList",
-          "documentation":"<p>The counters that describe the details of the attack.</p>"
+    "DeleteProtectionRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ProtectionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier (ID) for the <a>Protection</a> object to be deleted.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProtectionId",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The attack information for the specified SubResource.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ProtectionId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "SubResourceSummaryList":{
-      "type":"list",
-      "member":{"shape":"SubResourceSummary"}
+    "DeleteProtectionResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "SubResourceType":{
-      "type":"string",
-      "enum":[
-        "IP",
-        "URL"
-      ]
+    "DeleteSubscriptionRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "Subscription":{
-      "type":"structure",
-      "members":{
-        "StartTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The start time of the subscription, in the format \"2016-12-16T13:50Z\".</p>"
-        },
-        "TimeCommitmentInSeconds":{
-          "shape":"DurationInSeconds",
-          "documentation":"<p>The length, in seconds, of the AWS Shield Advanced subscription for the account.</p>"
+    "DeleteSubscriptionResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeAttackRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AttackId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier (ID) for the attack that to be described.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttackId",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Information about the AWS Shield Advanced subscription for an account.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "AttackId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "SummarizedAttackVector":{
-      "type":"structure",
-      "required":["VectorType"],
-      "members":{
-        "VectorType":{
-          "shape":"String",
-          "documentation":"<p>The attack type, for example, SNMP reflection or SYN flood.</p>"
-        },
-        "VectorCounters":{
-          "shape":"SummarizedCounterList",
-          "documentation":"<p>The list of counters that describe the details of the attack.</p>"
+    "DescribeAttackResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Attack" : {
+          "deprecated" : false,
+          "documentation" : "<p>The attack that is described.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttackDetail",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>A summary of information about the attack.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "SummarizedAttackVectorList":{
-      "type":"list",
-      "member":{"shape":"SummarizedAttackVector"}
-    },
-    "SummarizedCounter":{
-      "type":"structure",
-      "members":{
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The counter name.</p>"
-        },
-        "Max":{
-          "shape":"Double",
-          "documentation":"<p>The maximum value of the counter for a specified time period.</p>"
-        },
-        "Average":{
-          "shape":"Double",
-          "documentation":"<p>The average value of the counter for a specified time period.</p>"
-        },
-        "Sum":{
-          "shape":"Double",
-          "documentation":"<p>The total of counter values for a specified time period.</p>"
-        },
-        "N":{
-          "shape":"Integer",
-          "documentation":"<p>The number of counters for a specified time period.</p>"
-        },
-        "Unit":{
-          "shape":"String",
-          "documentation":"<p>The unit of the counters.</p>"
+    "DescribeProtectionRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ProtectionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier (ID) for the <a>Protection</a> object that is described.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProtectionId",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The counter that describes a DDoS attack.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ProtectionId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "SummarizedCounterList":{
-      "type":"list",
-      "member":{"shape":"SummarizedCounter"}
-    },
-    "TimeRange":{
-      "type":"structure",
-      "members":{
-        "FromInclusive":{
-          "shape":"AttackTimestamp",
-          "documentation":"<p>The start time, in the format 2016-12-16T13:50Z.</p>"
-        },
-        "ToExclusive":{
-          "shape":"AttackTimestamp",
-          "documentation":"<p>The end time, in the format 2016-12-16T15:50Z.</p>"
+    "DescribeProtectionResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Protection" : {
+          "deprecated" : false,
+          "documentation" : "<p>The <a>Protection</a> object that is described.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Protection",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The time range.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "Timestamp":{"type":"timestamp"},
-    "Token":{
-      "type":"string",
-      "min":1
+    "DescribeSubscriptionRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "errorMessage":{"type":"string"}
+    "DescribeSubscriptionResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Subscription" : {
+          "deprecated" : false,
+          "documentation" : "<p>The AWS Shield Advanced subscription details for an account.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Subscription",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Double" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "double",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DurationInSeconds" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "long",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Integer" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "integer",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InternalErrorException" : {
+      "deprecated" : false,
+      "documentation" : "<p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : true,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "errorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidOperationException" : {
+      "deprecated" : false,
+      "documentation" : "<p>Exception that indicates that the operation would not cause any change to occur.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "errorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidParameterException" : {
+      "deprecated" : false,
+      "documentation" : "<p>Exception that indicates that the parameters passed to the API are invalid. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "errorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidResourceException" : {
+      "deprecated" : false,
+      "documentation" : "<p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "errorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "LimitNumber" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "long",
+      "value" : null,
+      "wrapper" : false
+    },
+    "LimitType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "LimitsExceededException" : {
+      "deprecated" : false,
+      "documentation" : "<p>Exception that indicates that the operation would exceed a limit.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Limit" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LimitNumber",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Type" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LimitType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "errorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListAttacksRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "EndTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The end of the time period for the attacks.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TimeRange",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MaxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results will be returned.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MaxResults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Token",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ResourceArns" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is left blank, all applicable resources for this account will be included.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceArnFilterList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "StartTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The time period for the attacks.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TimeRange",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListAttacksResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AttackSummaries" : {
+          "deprecated" : false,
+          "documentation" : "<p>The attack information for the specified time range.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttackSummaries",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The token returned by a previous call to indicate that there is more data available. If not null, more results are available. Pass this value for the <code>NextMarker</code> parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of items.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Token",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListProtectionsRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "MaxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will be returned.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MaxResults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Token",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListProtectionsResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Token",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Protections" : {
+          "deprecated" : false,
+          "documentation" : "<p>The array of enabled <a>Protection</a> objects.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Protections",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "LockedSubscriptionException" : {
+      "deprecated" : false,
+      "documentation" : "<p>Exception that indicates that the subscription has been modified by another client. You can retry the request.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "errorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MaxResults" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "integer",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Mitigation" : {
+      "deprecated" : false,
+      "documentation" : "<p>The mitigation applied to a DDoS attack.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "MitigationName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the mitigation taken for this attack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MitigationList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "Mitigation",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "OptimisticLockException" : {
+      "deprecated" : false,
+      "documentation" : "<p>Exception that indicates that the protection state has been modified by another client. You can retry the request.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "errorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Protection" : {
+      "deprecated" : false,
+      "documentation" : "<p>An object that represents a resource that is under DDoS protection.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Id" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier (ID) of the protection.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProtectionId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The friendly name of the protection. For example, <code>My CloudFront distributions</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProtectionName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ResourceArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceArn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ProtectionId" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 36,
+      "member" : null,
+      "members" : null,
+      "min" : 1,
+      "pattern" : "[a-zA-Z0-9\\\\-]*",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ProtectionName" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 128,
+      "member" : null,
+      "members" : null,
+      "min" : 1,
+      "pattern" : "[ a-zA-Z0-9_\\\\.\\\\-]*",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Protections" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "Protection",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ResourceAlreadyExistsException" : {
+      "deprecated" : false,
+      "documentation" : "<p>Exception indicating the specified resource already exists.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "errorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ResourceArn" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ResourceArnFilterList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "ResourceArn",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ResourceNotFoundException" : {
+      "deprecated" : false,
+      "documentation" : "<p>Exception indicating the specified resource does not exist.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "errorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "String" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SubResourceSummary" : {
+      "deprecated" : false,
+      "documentation" : "<p>The attack information for the specified SubResource.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AttackVectors" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of attack types and associated counters.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SummarizedAttackVectorList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Counters" : {
+          "deprecated" : false,
+          "documentation" : "<p>The counters that describe the details of the attack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SummarizedCounterList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Id" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier (ID) of the <code>SubResource</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Type" : {
+          "deprecated" : false,
+          "documentation" : "<p>The <code>SubResource</code> type.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SubResourceType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SubResourceSummaryList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "SubResourceSummary",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SubResourceType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "IP", "URL" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Subscription" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about the AWS Shield Advanced subscription for an account.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "StartTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The start time of the subscription, in the format \"2016-12-16T13:50Z\".</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TimeCommitmentInSeconds" : {
+          "deprecated" : false,
+          "documentation" : "<p>The length, in seconds, of the AWS Shield Advanced subscription for the account.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DurationInSeconds",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SummarizedAttackVector" : {
+      "deprecated" : false,
+      "documentation" : "<p>A summary of information about the attack.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "VectorCounters" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of counters that describe the details of the attack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SummarizedCounterList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "VectorType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The attack type, for example, SNMP reflection or SYN flood.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "VectorType" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SummarizedAttackVectorList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "SummarizedAttackVector",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SummarizedCounter" : {
+      "deprecated" : false,
+      "documentation" : "<p>The counter that describes a DDoS attack.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Average" : {
+          "deprecated" : false,
+          "documentation" : "<p>The average value of the counter for a specified time period.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Double",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Max" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum value of the counter for a specified time period.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Double",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "N" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of counters for a specified time period.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The counter name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Sum" : {
+          "deprecated" : false,
+          "documentation" : "<p>The total of counter values for a specified time period.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Double",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Unit" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unit of the counters.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SummarizedCounterList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "SummarizedCounter",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TimeRange" : {
+      "deprecated" : false,
+      "documentation" : "<p>The time range.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FromInclusive" : {
+          "deprecated" : false,
+          "documentation" : "<p>The start time, in the format 2016-12-16T13:50Z.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttackTimestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ToExclusive" : {
+          "deprecated" : false,
+          "documentation" : "<p>The end time, in the format 2016-12-16T15:50Z.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttackTimestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Timestamp" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "timestamp",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Token" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "errorMessage" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    }
   },
-  "documentation":"<fullname>AWS Shield Advanced</fullname> <p>This is the <i>AWS Shield Advanced API Reference</i>. This guide is for developers who need detailed information about the AWS Shield Advanced API actions, data types, and errors. For detailed information about AWS WAF and AWS Shield Advanced features and an overview of how to use the AWS WAF and AWS Shield Advanced APIs, see the <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/\">AWS WAF and AWS Shield Developer Guide</a>.</p>"
+  "documentation" : "<fullname>AWS Shield Advanced</fullname> <p>This is the <i>AWS Shield Advanced API Reference</i>. This guide is for developers who need detailed information about the AWS Shield Advanced API actions, data types, and errors. For detailed information about AWS WAF and AWS Shield Advanced features and an overview of how to use the AWS WAF and AWS Shield Advanced APIs, see the <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/\">AWS WAF and AWS Shield Developer Guide</a>.</p>"
 }

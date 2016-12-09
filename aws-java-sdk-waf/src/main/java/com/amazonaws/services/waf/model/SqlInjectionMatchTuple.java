@@ -22,6 +22,11 @@ import java.io.Serializable;
  */
 public class SqlInjectionMatchTuple implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Specifies where in a web request to look for snippets of malicious SQL code.
+     * </p>
+     */
     private FieldToMatch fieldToMatch;
     /**
      * <p>
@@ -167,7 +172,12 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
     private String textTransformation;
 
     /**
+     * <p>
+     * Specifies where in a web request to look for snippets of malicious SQL code.
+     * </p>
+     * 
      * @param fieldToMatch
+     *        Specifies where in a web request to look for snippets of malicious SQL code.
      */
 
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
@@ -175,7 +185,11 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies where in a web request to look for snippets of malicious SQL code.
+     * </p>
+     * 
+     * @return Specifies where in a web request to look for snippets of malicious SQL code.
      */
 
     public FieldToMatch getFieldToMatch() {
@@ -183,7 +197,12 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies where in a web request to look for snippets of malicious SQL code.
+     * </p>
+     * 
      * @param fieldToMatch
+     *        Specifies where in a web request to look for snippets of malicious SQL code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,6 +15,7 @@
 
 package com.amazonaws.codegen.model.config.customization;
 
+import com.amazonaws.codegen.internal.Constants;
 import com.amazonaws.codegen.model.config.ConstructorFormsWrapper;
 import com.amazonaws.codegen.model.config.templates.CodeGenTemplatesConfig;
 
@@ -205,6 +206,12 @@ public class CustomizationConfig {
      * Fully qualified class name of presigner extension class if it exists.
      */
     private String presignersFqcn;
+
+    /**
+     * Relative path to customize transform directory. Will be generated relative
+     * to the models directory. Default is {@value Constants#PACKAGE_NAME_TRANSFORM_SUFFIX}.
+     */
+    private String transformDirectory = Constants.PACKAGE_NAME_TRANSFORM_SUFFIX;
 
     public String getRequestMetrics() {
         return requestMetrics;
@@ -477,5 +484,14 @@ public class CustomizationConfig {
 
     public void setPresignersFqcn(String presignersFqcn) {
         this.presignersFqcn = presignersFqcn;
+    }
+
+    public String getTransformDirectory() {
+        return transformDirectory;
+    }
+
+    public CustomizationConfig setTransformDirectory(String transformDirectory) {
+        this.transformDirectory = transformDirectory;
+        return this;
     }
 }

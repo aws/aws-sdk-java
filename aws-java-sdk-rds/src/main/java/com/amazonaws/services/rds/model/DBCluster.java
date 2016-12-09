@@ -146,6 +146,12 @@ public class DBCluster implements Serializable, Cloneable {
     private String readerEndpoint;
     /**
      * <p>
+     * Specifies whether the DB cluster has instances in multiple Availability Zones.
+     * </p>
+     */
+    private Boolean multiAZ;
+    /**
+     * <p>
      * Provides the name of the database engine to be used for this DB cluster.
      * </p>
      */
@@ -256,6 +262,12 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBClusterRole> associatedRoles;
+    /**
+     * <p>
+     * Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
+     * </p>
+     */
+    private java.util.Date clusterCreateTime;
 
     /**
      * <p>
@@ -871,6 +883,58 @@ public class DBCluster implements Serializable, Cloneable {
     public DBCluster withReaderEndpoint(String readerEndpoint) {
         setReaderEndpoint(readerEndpoint);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB cluster has instances in multiple Availability Zones.
+     * </p>
+     * 
+     * @param multiAZ
+     *        Specifies whether the DB cluster has instances in multiple Availability Zones.
+     */
+
+    public void setMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB cluster has instances in multiple Availability Zones.
+     * </p>
+     * 
+     * @return Specifies whether the DB cluster has instances in multiple Availability Zones.
+     */
+
+    public Boolean getMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB cluster has instances in multiple Availability Zones.
+     * </p>
+     * 
+     * @param multiAZ
+     *        Specifies whether the DB cluster has instances in multiple Availability Zones.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withMultiAZ(Boolean multiAZ) {
+        setMultiAZ(multiAZ);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB cluster has instances in multiple Availability Zones.
+     * </p>
+     * 
+     * @return Specifies whether the DB cluster has instances in multiple Availability Zones.
+     */
+
+    public Boolean isMultiAZ() {
+        return this.multiAZ;
     }
 
     /**
@@ -1802,6 +1866,46 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
+     * </p>
+     * 
+     * @param clusterCreateTime
+     *        Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
+     */
+
+    public void setClusterCreateTime(java.util.Date clusterCreateTime) {
+        this.clusterCreateTime = clusterCreateTime;
+    }
+
+    /**
+     * <p>
+     * Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
+     * </p>
+     * 
+     * @return Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
+     */
+
+    public java.util.Date getClusterCreateTime() {
+        return this.clusterCreateTime;
+    }
+
+    /**
+     * <p>
+     * Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
+     * </p>
+     * 
+     * @param clusterCreateTime
+     *        Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withClusterCreateTime(java.util.Date clusterCreateTime) {
+        setClusterCreateTime(clusterCreateTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1838,6 +1942,8 @@ public class DBCluster implements Serializable, Cloneable {
             sb.append("Endpoint: " + getEndpoint() + ",");
         if (getReaderEndpoint() != null)
             sb.append("ReaderEndpoint: " + getReaderEndpoint() + ",");
+        if (getMultiAZ() != null)
+            sb.append("MultiAZ: " + getMultiAZ() + ",");
         if (getEngine() != null)
             sb.append("Engine: " + getEngine() + ",");
         if (getEngineVersion() != null)
@@ -1873,7 +1979,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getDBClusterArn() != null)
             sb.append("DBClusterArn: " + getDBClusterArn() + ",");
         if (getAssociatedRoles() != null)
-            sb.append("AssociatedRoles: " + getAssociatedRoles());
+            sb.append("AssociatedRoles: " + getAssociatedRoles() + ",");
+        if (getClusterCreateTime() != null)
+            sb.append("ClusterCreateTime: " + getClusterCreateTime());
         sb.append("}");
         return sb.toString();
     }
@@ -1939,6 +2047,10 @@ public class DBCluster implements Serializable, Cloneable {
         if (other.getReaderEndpoint() == null ^ this.getReaderEndpoint() == null)
             return false;
         if (other.getReaderEndpoint() != null && other.getReaderEndpoint().equals(this.getReaderEndpoint()) == false)
+            return false;
+        if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
+            return false;
+        if (other.getMultiAZ() != null && other.getMultiAZ().equals(this.getMultiAZ()) == false)
             return false;
         if (other.getEngine() == null ^ this.getEngine() == null)
             return false;
@@ -2013,6 +2125,10 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getAssociatedRoles() != null && other.getAssociatedRoles().equals(this.getAssociatedRoles()) == false)
             return false;
+        if (other.getClusterCreateTime() == null ^ this.getClusterCreateTime() == null)
+            return false;
+        if (other.getClusterCreateTime() != null && other.getClusterCreateTime().equals(this.getClusterCreateTime()) == false)
+            return false;
         return true;
     }
 
@@ -2034,6 +2150,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEarliestRestorableTime() == null) ? 0 : getEarliestRestorableTime().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getReaderEndpoint() == null) ? 0 : getReaderEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getLatestRestorableTime() == null) ? 0 : getLatestRestorableTime().hashCode());
@@ -2052,6 +2169,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDbClusterResourceId() == null) ? 0 : getDbClusterResourceId().hashCode());
         hashCode = prime * hashCode + ((getDBClusterArn() == null) ? 0 : getDBClusterArn().hashCode());
         hashCode = prime * hashCode + ((getAssociatedRoles() == null) ? 0 : getAssociatedRoles().hashCode());
+        hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
         return hashCode;
     }
 

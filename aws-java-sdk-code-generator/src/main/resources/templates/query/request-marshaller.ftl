@@ -1,5 +1,5 @@
 ${fileHeader}
-package ${metadata.packageName}.model.transform;
+package ${transformPackage};
 
 import java.util.HashMap;
 import java.util.List;

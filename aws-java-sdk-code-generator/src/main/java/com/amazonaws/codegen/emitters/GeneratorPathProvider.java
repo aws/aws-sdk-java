@@ -18,7 +18,6 @@ import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 
 import static com.amazonaws.codegen.internal.Constants.AUTH_POLICY_ENUM_CLASS_DIR;
 import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_MODEL_SUFFIX;
-import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_TRANSFORM_SUFFIX;
 import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_WAITERS_SUFFIX;
 import static com.amazonaws.codegen.internal.Constants.SMOKE_TESTS_DIR_NAME;
 
@@ -44,7 +43,7 @@ public class GeneratorPathProvider {
     }
 
     public String getTransformDirectory() {
-        return getModelDirectory() + "/" + PACKAGE_NAME_TRANSFORM_SUFFIX;
+        return getModelDirectory() + "/" + model.getCustomizationConfig().getTransformDirectory();
     }
 
     public String getBasePackageDirectory() {

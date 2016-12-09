@@ -6,7 +6,7 @@
 <#local contentType = (metadata.contentType)!""/>
 
 ${dataModel.fileHeader}
-package ${metadata.packageName}.model.transform;
+package ${transformPackage};
 
 import static com.amazonaws.util.StringUtils.UTF8;
 import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;

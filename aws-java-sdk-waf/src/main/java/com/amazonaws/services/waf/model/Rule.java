@@ -60,7 +60,13 @@ public class Rule implements Serializable, Cloneable {
      * </p>
      */
     private String name;
-
+    /**
+     * <p>
+     * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
+     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>Rule</code>.
+     * </p>
+     */
     private String metricName;
     /**
      * <p>
@@ -190,7 +196,16 @@ public class Rule implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
+     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>Rule</code>.
+     * </p>
+     * 
      * @param metricName
+     *        A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only
+     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *        <code>MetricName</code> after you create the <code>Rule</code>.
      */
 
     public void setMetricName(String metricName) {
@@ -198,7 +213,15 @@ public class Rule implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
+     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>Rule</code>.
+     * </p>
+     * 
+     * @return A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only
+     *         alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *         <code>MetricName</code> after you create the <code>Rule</code>.
      */
 
     public String getMetricName() {
@@ -206,7 +229,16 @@ public class Rule implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
+     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>Rule</code>.
+     * </p>
+     * 
      * @param metricName
+     *        A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only
+     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *        <code>MetricName</code> after you create the <code>Rule</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

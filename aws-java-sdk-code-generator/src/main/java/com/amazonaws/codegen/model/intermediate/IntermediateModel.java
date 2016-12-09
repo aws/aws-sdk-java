@@ -183,4 +183,11 @@ public class IntermediateModel {
                 "com.amazonaws.ResponseMetadata" :
                 customizationConfig.getCustomResponseMetadataClassName();
     }
+
+    /**
+     * @return Name of package that the marshallers/unmarshallers are generated into.
+     */
+    public String getTransformPackage() {
+        return metadata.getPackageName() + ".model." + Utils.directoryToPackage(customizationConfig.getTransformDirectory());
+    }
 }

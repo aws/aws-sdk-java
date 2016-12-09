@@ -110,6 +110,11 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("MultiAZ", targetDepth)) {
+                    dBCluster.setMultiAZ(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Engine", targetDepth)) {
                     dBCluster.setEngine(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -200,6 +205,10 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("ClusterCreateTime", targetDepth)) {
+                    dBCluster.setClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBCluster;

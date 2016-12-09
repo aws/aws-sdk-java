@@ -1,5 +1,5 @@
 ${fileHeader}
-package ${metadata.packageName}.model.transform;
+package ${transformPackage};
 
 import org.w3c.dom.Node;
 

@@ -51,7 +51,7 @@ public class GetCloudFrontOriginAccessIdentityRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-09-29/origin-access-identity/cloudfront/{Id}";
+        String uriResourcePath = "/2016-11-25/origin-access-identity/cloudfront/{Id}";
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",

@@ -45,7 +45,13 @@ public class WebACL implements Serializable, Cloneable {
      * </p>
      */
     private String name;
-
+    /**
+     * <p>
+     * A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
+     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     * <code>MetricName</code> after you create the <code>WebACL</code>.
+     * </p>
+     */
     private String metricName;
     /**
      * <p>
@@ -176,7 +182,16 @@ public class WebACL implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
+     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     * <code>MetricName</code> after you create the <code>WebACL</code>.
+     * </p>
+     * 
      * @param metricName
+     *        A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
+     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *        <code>MetricName</code> after you create the <code>WebACL</code>.
      */
 
     public void setMetricName(String metricName) {
@@ -184,7 +199,15 @@ public class WebACL implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
+     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     * <code>MetricName</code> after you create the <code>WebACL</code>.
+     * </p>
+     * 
+     * @return A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
+     *         alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *         <code>MetricName</code> after you create the <code>WebACL</code>.
      */
 
     public String getMetricName() {
@@ -192,7 +215,16 @@ public class WebACL implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
+     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     * <code>MetricName</code> after you create the <code>WebACL</code>.
+     * </p>
+     * 
      * @param metricName
+     *        A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
+     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *        <code>MetricName</code> after you create the <code>WebACL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -49,7 +49,7 @@ public class ListInvalidationsRequestMarshaller implements Marshaller<Request<Li
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-09-29/distribution/{DistributionId}/invalidation";
+        String uriResourcePath = "/2016-11-25/distribution/{DistributionId}/invalidation";
 
         uriResourcePath = uriResourcePath.replace(
                 "{DistributionId}",

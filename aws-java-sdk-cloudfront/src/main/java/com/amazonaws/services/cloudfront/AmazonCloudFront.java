@@ -186,6 +186,13 @@ public interface AmazonCloudFront {
      * @throws TooManyOriginCustomHeadersException
      * @throws TooManyQueryStringParametersException
      * @throws InvalidQueryStringParametersException
+     * @throws TooManyDistributionsWithLambdaAssociationsException
+     *         Processing your request would cause the maximum number of distributions with Lambda function associations
+     *         per owner to be exceeded.
+     * @throws TooManyLambdaFunctionAssociationsException
+     *         Your request contains more Lambda function associations than are allowed per distribution.
+     * @throws InvalidLambdaFunctionAssociationException
+     *         The specified Lambda function association is invalid.
      * @sample AmazonCloudFront.CreateDistribution
      */
     CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest);
@@ -260,6 +267,13 @@ public interface AmazonCloudFront {
      * @throws InvalidTaggingException
      * @throws TooManyQueryStringParametersException
      * @throws InvalidQueryStringParametersException
+     * @throws TooManyDistributionsWithLambdaAssociationsException
+     *         Processing your request would cause the maximum number of distributions with Lambda function associations
+     *         per owner to be exceeded.
+     * @throws TooManyLambdaFunctionAssociationsException
+     *         Your request contains more Lambda function associations than are allowed per distribution.
+     * @throws InvalidLambdaFunctionAssociationException
+     *         The specified Lambda function association is invalid.
      * @sample AmazonCloudFront.CreateDistributionWithTags
      */
     CreateDistributionWithTagsResult createDistributionWithTags(CreateDistributionWithTagsRequest createDistributionWithTagsRequest);
@@ -913,6 +927,13 @@ public interface AmazonCloudFront {
      * @throws TooManyOriginCustomHeadersException
      * @throws TooManyQueryStringParametersException
      * @throws InvalidQueryStringParametersException
+     * @throws TooManyDistributionsWithLambdaAssociationsException
+     *         Processing your request would cause the maximum number of distributions with Lambda function associations
+     *         per owner to be exceeded.
+     * @throws TooManyLambdaFunctionAssociationsException
+     *         Your request contains more Lambda function associations than are allowed per distribution.
+     * @throws InvalidLambdaFunctionAssociationException
+     *         The specified Lambda function association is invalid.
      * @sample AmazonCloudFront.UpdateDistribution
      */
     UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest);

@@ -36,7 +36,7 @@ public class Job implements Serializable, Cloneable {
     /**
      * <p>
      * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. This number must be returned in the response.
+     * job worker. Use this number in an <a>AcknowledgeJob</a> request.
      * </p>
      */
     private String nonce;
@@ -130,12 +130,12 @@ public class Job implements Serializable, Cloneable {
     /**
      * <p>
      * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. This number must be returned in the response.
+     * job worker. Use this number in an <a>AcknowledgeJob</a> request.
      * </p>
      * 
      * @param nonce
      *        A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *        only one job worker. This number must be returned in the response.
+     *        only one job worker. Use this number in an <a>AcknowledgeJob</a> request.
      */
 
     public void setNonce(String nonce) {
@@ -145,11 +145,11 @@ public class Job implements Serializable, Cloneable {
     /**
      * <p>
      * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. This number must be returned in the response.
+     * job worker. Use this number in an <a>AcknowledgeJob</a> request.
      * </p>
      * 
      * @return A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *         only one job worker. This number must be returned in the response.
+     *         only one job worker. Use this number in an <a>AcknowledgeJob</a> request.
      */
 
     public String getNonce() {
@@ -159,12 +159,12 @@ public class Job implements Serializable, Cloneable {
     /**
      * <p>
      * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. This number must be returned in the response.
+     * job worker. Use this number in an <a>AcknowledgeJob</a> request.
      * </p>
      * 
      * @param nonce
      *        A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *        only one job worker. This number must be returned in the response.
+     *        only one job worker. Use this number in an <a>AcknowledgeJob</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

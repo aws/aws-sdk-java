@@ -49,8 +49,19 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB instances to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The
+     * results list will only include information about the DB instances identified by these ARNs.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
@@ -241,10 +252,31 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB instances to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The
+     * results list will only include information about the DB instances identified by these ARNs.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return This parameter is not currently supported.
+     * @return A filter that specifies one or more DB instances to describe.</p>
+     *         <p>
+     *         Supported filters:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names
+     *         (ARNs). The results list will only include information about the DB instances identified by these ARNs.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -256,11 +288,32 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB instances to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The
+     * results list will only include information about the DB instances identified by these ARNs.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        A filter that specifies one or more DB instances to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names
+     *        (ARNs). The results list will only include information about the DB instances identified by these ARNs.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -274,8 +327,19 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB instances to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The
+     * results list will only include information about the DB instances identified by these ARNs.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -283,7 +347,17 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        A filter that specifies one or more DB instances to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names
+     *        (ARNs). The results list will only include information about the DB instances identified by these ARNs.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,11 +373,32 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB instances to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The
+     * results list will only include information about the DB instances identified by these ARNs.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        A filter that specifies one or more DB instances to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names
+     *        (ARNs). The results list will only include information about the DB instances identified by these ARNs.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,823 +1,3248 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2016-08-04",
-    "endpointPrefix":"health",
-    "jsonVersion":"1.1",
-    "protocol":"json",
-    "serviceAbbreviation":"AWSHealth",
-    "serviceFullName":"AWS Health APIs and Notifications",
-    "signatureVersion":"v4",
-    "targetPrefix":"AWSHealth_20160804",
-    "uid":"health-2016-08-04"
+  "metadata" : {
+    "apiVersion" : "2016-08-04",
+    "endpointPrefix" : "health",
+    "jsonVersion" : "1.1",
+    "protocol" : "json",
+    "resultWrapped" : false,
+    "serviceAbbreviation" : "AWSHealth",
+    "serviceFullName" : "AWS Health APIs and Notifications",
+    "signatureVersion" : "v4",
+    "signingName" : "health",
+    "targetPrefix" : "AWSHealth_20160804",
+    "xmlNamespace" : null
   },
-  "operations":{
-    "DescribeAffectedEntities":{
-      "name":"DescribeAffectedEntities",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+  "operations" : {
+    "DescribeAffectedEntities" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Returns a list of entities that have been affected by the specified events, based on the specified filter criteria. Entities can refer to individual customer resources, groups of customer resources, or any other construct, depending on the AWS service. Events that have impact beyond that of the affected entities, or where the extent of impact is unknown, include at least one entity indicating this.</p> <p>At least one event ARN is required. Results are sorted by the <code>lastUpdatedTime</code> of the entity, starting with the most recent.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidPaginationToken"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnsupportedLocale"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeAffectedEntitiesRequest"},
-      "output":{"shape":"DescribeAffectedEntitiesResponse"},
-      "errors":[
-        {"shape":"InvalidPaginationToken"},
-        {"shape":"UnsupportedLocale"}
-      ],
-      "documentation":"<p>Returns a list of entities that have been affected by the specified events, based on the specified filter criteria. Entities can refer to individual customer resources, groups of customer resources, or any other construct, depending on the AWS service. Events that have impact beyond that of the affected entities, or where the extent of impact is unknown, include at least one entity indicating this.</p> <p>At least one event ARN is required. Results are sorted by the <code>lastUpdatedTime</code> of the entity, starting with the most recent.</p>",
-      "idempotent":true
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeAffectedEntitiesRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeAffectedEntities",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeAffectedEntitiesResponse"
+      }
     },
-    "DescribeEntityAggregates":{
-      "name":"DescribeEntityAggregates",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DescribeEntityAggregates" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Returns the number of entities that are affected by each of the specified events. If no events are specified, the counts of all affected entities are returned.</p>",
+      "errors" : null,
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeEntityAggregatesRequest"},
-      "output":{"shape":"DescribeEntityAggregatesResponse"},
-      "documentation":"<p>Returns the number of entities that are affected by each of the specified events. If no events are specified, the counts of all affected entities are returned.</p>",
-      "idempotent":true
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeEntityAggregatesRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeEntityAggregates",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeEntityAggregatesResponse"
+      }
     },
-    "DescribeEventAggregates":{
-      "name":"DescribeEventAggregates",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DescribeEventAggregates" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Returns the number of events of each event type (issue, scheduled change, and account notification). If no filter is specified, the counts of all events in each category are returned.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidPaginationToken"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeEventAggregatesRequest"},
-      "output":{"shape":"DescribeEventAggregatesResponse"},
-      "errors":[
-        {"shape":"InvalidPaginationToken"}
-      ],
-      "documentation":"<p>Returns the number of events of each event type (issue, scheduled change, and account notification). If no filter is specified, the counts of all events in each category are returned.</p>",
-      "idempotent":true
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeEventAggregatesRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeEventAggregates",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeEventAggregatesResponse"
+      }
     },
-    "DescribeEventDetails":{
-      "name":"DescribeEventDetails",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DescribeEventDetails" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Returns detailed information about one or more specified events. Information includes standard event data (region, service, etc., as returned by <a>DescribeEvents</a>), a detailed event description, and possible additional metadata that depends upon the nature of the event. Affected entities are not included; to retrieve those, use the <a>DescribeAffectedEntities</a> operation.</p> <p>If a specified event cannot be retrieved, an error message is returned for that event.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnsupportedLocale"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeEventDetailsRequest"},
-      "output":{"shape":"DescribeEventDetailsResponse"},
-      "errors":[
-        {"shape":"UnsupportedLocale"}
-      ],
-      "documentation":"<p>Returns detailed information about one or more specified events. Information includes standard event data (region, service, etc., as returned by <a>DescribeEvents</a>), a detailed event description, and possible additional metadata that depends upon the nature of the event. Affected entities are not included; to retrieve those, use the <a>DescribeAffectedEntities</a> operation.</p> <p>If a specified event cannot be retrieved, an error message is returned for that event.</p>",
-      "idempotent":true
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeEventDetailsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeEventDetails",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeEventDetailsResponse"
+      }
     },
-    "DescribeEventTypes":{
-      "name":"DescribeEventTypes",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DescribeEventTypes" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Returns the event types that meet the specified filter criteria. If no filter criteria are specified, all event types are returned, in no particular order.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidPaginationToken"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnsupportedLocale"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeEventTypesRequest"},
-      "output":{"shape":"DescribeEventTypesResponse"},
-      "errors":[
-        {"shape":"InvalidPaginationToken"},
-        {"shape":"UnsupportedLocale"}
-      ],
-      "documentation":"<p>Returns the event types that meet the specified filter criteria. If no filter criteria are specified, all event types are returned, in no particular order.</p>",
-      "idempotent":true
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeEventTypesRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeEventTypes",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeEventTypesResponse"
+      }
     },
-    "DescribeEvents":{
-      "name":"DescribeEvents",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
+    "DescribeEvents" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Returns information about events that meet the specified filter criteria. Events are returned in a summary form and do not include the detailed description, any additional metadata that depends on the event type, or any affected resources. To retrieve that information, use the <a>DescribeEventDetails</a> and <a>DescribeAffectedEntities</a> operations.</p> <p>If no filter criteria are specified, all events are returned. Results are sorted by <code>lastModifiedTime</code>, starting with the most recent.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidPaginationToken"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnsupportedLocale"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
       },
-      "input":{"shape":"DescribeEventsRequest"},
-      "output":{"shape":"DescribeEventsResponse"},
-      "errors":[
-        {"shape":"InvalidPaginationToken"},
-        {"shape":"UnsupportedLocale"}
-      ],
-      "documentation":"<p>Returns information about events that meet the specified filter criteria. Events are returned in a summary form and do not include the detailed description, any additional metadata that depends on the event type, or any affected resources. To retrieve that information, use the <a>DescribeEventDetails</a> and <a>DescribeAffectedEntities</a> operations.</p> <p>If no filter criteria are specified, all events are returned. Results are sorted by <code>lastModifiedTime</code>, starting with the most recent.</p>",
-      "idempotent":true
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeEventsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeEvents",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeEventsResponse"
+      }
     }
   },
-  "shapes":{
-    "AffectedEntity":{
-      "type":"structure",
-      "members":{
-        "entityArn":{
-          "shape":"entityArn",
-          "documentation":"<p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>"
+  "shapes" : {
+    "AffectedEntity" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about an entity that is affected by a Health event.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "awsAccountId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The 12-digit AWS account number that contains the affected entity.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "accountId",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "eventArn":{
-          "shape":"eventArn",
-          "documentation":"<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>"
+        "entityArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "entityArn",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "entityValue":{
-          "shape":"entityValue",
-          "documentation":"<p>The ID of the affected entity.</p>"
+        "entityValue" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the affected entity.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "entityValue",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "awsAccountId":{
-          "shape":"accountId",
-          "documentation":"<p>The 12-digit AWS account number that contains the affected entity.</p>"
+        "eventArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventArn",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "lastUpdatedTime":{
-          "shape":"timestamp",
-          "documentation":"<p>The most recent time that the entity was updated.</p>"
+        "lastUpdatedTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The most recent time that the entity was updated.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "statusCode":{
-          "shape":"entityStatusCode",
-          "documentation":"<p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>"
+        "statusCode" : {
+          "deprecated" : false,
+          "documentation" : "<p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "entityStatusCode",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "tags":{
-          "shape":"tagSet",
-          "documentation":"<p>A map of entity tags attached to the affected entity.</p>"
+        "tags" : {
+          "deprecated" : false,
+          "documentation" : "<p>A map of entity tags attached to the affected entity.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "tagSet",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Information about an entity that is affected by a Health event.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "DateTimeRange":{
-      "type":"structure",
-      "members":{
-        "from":{
-          "shape":"timestamp",
-          "documentation":"<p>The starting date and time of a time range.</p>"
+    "DateTimeRange" : {
+      "deprecated" : false,
+      "documentation" : "<p>A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "from" : {
+          "deprecated" : false,
+          "documentation" : "<p>The starting date and time of a time range.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "to":{
-          "shape":"timestamp",
-          "documentation":"<p>The ending date and time of a time range.</p>"
+        "to" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ending date and time of a time range.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "DescribeAffectedEntitiesRequest":{
-      "type":"structure",
-      "required":["filter"],
-      "members":{
-        "filter":{
-          "shape":"EntityFilter",
-          "documentation":"<p>Values to narrow the results returned. At least one event ARN is required. </p>"
+    "DescribeAffectedEntitiesRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "filter" : {
+          "deprecated" : false,
+          "documentation" : "<p>Values to narrow the results returned. At least one event ARN is required. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EntityFilter",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "locale":{
-          "shape":"locale",
-          "documentation":"<p>The locale (language) to return information in. The default is English.</p>"
+        "locale" : {
+          "deprecated" : false,
+          "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "locale",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "nextToken":{
-          "shape":"nextToken",
-          "documentation":"<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>"
+        "maxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "maxResults",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "maxResults":{
-          "shape":"maxResults",
-          "documentation":"<p>The maximum number of items to return in one batch.</p>"
-        }
-      }
-    },
-    "DescribeAffectedEntitiesResponse":{
-      "type":"structure",
-      "members":{
-        "entities":{
-          "shape":"EntityList",
-          "documentation":"<p>The entities that match the filter criteria.</p>"
-        },
-        "nextToken":{
-          "shape":"nextToken",
-          "documentation":"<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>"
-        }
-      }
-    },
-    "DescribeEntityAggregatesRequest":{
-      "type":"structure",
-      "members":{
-        "eventArns":{
-          "shape":"EventArnsList",
-          "documentation":"<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>"
-        }
-      }
-    },
-    "DescribeEntityAggregatesResponse":{
-      "type":"structure",
-      "members":{
-        "entityAggregates":{
-          "shape":"EntityAggregateList",
-          "documentation":"<p>The number of entities that are affected by each of the specified events.</p>"
-        }
-      }
-    },
-    "DescribeEventAggregatesRequest":{
-      "type":"structure",
-      "required":["aggregateField"],
-      "members":{
-        "filter":{
-          "shape":"EventFilter",
-          "documentation":"<p>Values to narrow the results returned.</p>"
-        },
-        "aggregateField":{
-          "shape":"eventAggregateField",
-          "documentation":"<p>The only currently supported value is <code>eventTypeCategory</code>.</p>"
-        },
-        "maxResults":{
-          "shape":"maxResults",
-          "documentation":"<p>The maximum number of items to return in one batch.</p>"
-        },
-        "nextToken":{
-          "shape":"nextToken",
-          "documentation":"<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>"
-        }
-      }
-    },
-    "DescribeEventAggregatesResponse":{
-      "type":"structure",
-      "members":{
-        "eventAggregates":{
-          "shape":"EventAggregateList",
-          "documentation":"<p>The number of events in each category that meet the optional filter criteria.</p>"
-        },
-        "nextToken":{
-          "shape":"nextToken",
-          "documentation":"<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>"
-        }
-      }
-    },
-    "DescribeEventDetailsFailedSet":{
-      "type":"list",
-      "member":{"shape":"EventDetailsErrorItem"}
-    },
-    "DescribeEventDetailsRequest":{
-      "type":"structure",
-      "required":["eventArns"],
-      "members":{
-        "eventArns":{
-          "shape":"eventArnList",
-          "documentation":"<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>"
-        },
-        "locale":{
-          "shape":"locale",
-          "documentation":"<p>The locale (language) to return information in. The default is English.</p>"
-        }
-      }
-    },
-    "DescribeEventDetailsResponse":{
-      "type":"structure",
-      "members":{
-        "successfulSet":{
-          "shape":"DescribeEventDetailsSuccessfulSet",
-          "documentation":"<p>Information about the events that could be retrieved.</p>"
-        },
-        "failedSet":{
-          "shape":"DescribeEventDetailsFailedSet",
-          "documentation":"<p>Error messages for any events that could not be retrieved.</p>"
-        }
-      }
-    },
-    "DescribeEventDetailsSuccessfulSet":{
-      "type":"list",
-      "member":{"shape":"EventDetails"}
-    },
-    "DescribeEventTypesRequest":{
-      "type":"structure",
-      "members":{
-        "filter":{
-          "shape":"EventTypeFilter",
-          "documentation":"<p>Values to narrow the results returned.</p>"
-        },
-        "locale":{
-          "shape":"locale",
-          "documentation":"<p>The locale (language) to return information in. The default is English.</p>"
-        },
-        "nextToken":{
-          "shape":"nextToken",
-          "documentation":"<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>"
-        },
-        "maxResults":{
-          "shape":"maxResults",
-          "documentation":"<p>The maximum number of items to return in one batch.</p>"
-        }
-      }
-    },
-    "DescribeEventTypesResponse":{
-      "type":"structure",
-      "members":{
-        "eventTypes":{
-          "shape":"EventTypeList",
-          "documentation":"<p>List of event types to be matched with.</p>"
-        },
-        "nextToken":{
-          "shape":"nextToken",
-          "documentation":"<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>"
-        }
-      }
-    },
-    "DescribeEventsRequest":{
-      "type":"structure",
-      "members":{
-        "filter":{
-          "shape":"EventFilter",
-          "documentation":"<p>Values to narrow the results returned.</p>"
-        },
-        "nextToken":{
-          "shape":"nextToken",
-          "documentation":"<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>"
-        },
-        "maxResults":{
-          "shape":"maxResults",
-          "documentation":"<p>The maximum number of items to return in one batch.</p>"
-        },
-        "locale":{
-          "shape":"locale",
-          "documentation":"<p>The locale (language) to return information in. The default is English.</p>"
-        }
-      }
-    },
-    "DescribeEventsResponse":{
-      "type":"structure",
-      "members":{
-        "events":{
-          "shape":"EventList",
-          "documentation":"<p>The events that match the specified filter criteria.</p>"
-        },
-        "nextToken":{
-          "shape":"nextToken",
-          "documentation":"<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>"
-        }
-      }
-    },
-    "EntityAggregate":{
-      "type":"structure",
-      "members":{
-        "eventArn":{
-          "shape":"eventArn",
-          "documentation":"<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>"
-        },
-        "count":{
-          "shape":"count",
-          "documentation":"<p>The number entities that match the criteria for the specified events.</p>"
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "nextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The number of entities that are affected by one or more events. Returned by the <a>DescribeEntityAggregates</a> operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "filter" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EntityAggregateList":{
-      "type":"list",
-      "member":{"shape":"EntityAggregate"}
-    },
-    "EntityFilter":{
-      "type":"structure",
-      "required":["eventArns"],
-      "members":{
-        "eventArns":{
-          "shape":"eventArnList",
-          "documentation":"<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>"
+    "DescribeAffectedEntitiesResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "entities" : {
+          "deprecated" : false,
+          "documentation" : "<p>The entities that match the filter criteria.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EntityList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "entityArns":{
-          "shape":"entityArnList",
-          "documentation":"<p>A list of entity ARNs (unique identifiers).</p>"
-        },
-        "entityValues":{
-          "shape":"entityValueList",
-          "documentation":"<p>A list of IDs for affected entities.</p>"
-        },
-        "lastUpdatedTimes":{
-          "shape":"dateTimeRangeList",
-          "documentation":"<p>A list of the most recent dates and times that the entity was updated.</p>"
-        },
-        "tags":{
-          "shape":"tagFilter",
-          "documentation":"<p>A map of entity tags attached to the affected entity.</p>"
-        },
-        "statusCodes":{
-          "shape":"entityStatusCodeList",
-          "documentation":"<p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>"
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "nextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The values to use to filter results from the <a>DescribeAffectedEntities</a> operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EntityList":{
-      "type":"list",
-      "member":{"shape":"AffectedEntity"}
-    },
-    "Event":{
-      "type":"structure",
-      "members":{
-        "arn":{
-          "shape":"eventArn",
-          "documentation":"<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>"
-        },
-        "service":{
-          "shape":"service",
-          "documentation":"<p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>"
-        },
-        "eventTypeCode":{
-          "shape":"eventTypeCode",
-          "documentation":"<p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>"
-        },
-        "eventTypeCategory":{
-          "shape":"eventTypeCategory",
-          "documentation":"<p>The </p>"
-        },
-        "region":{
-          "shape":"region",
-          "documentation":"<p>The AWS region name of the event.</p>"
-        },
-        "availabilityZone":{
-          "shape":"availabilityZone",
-          "documentation":"<p>The AWS Availability Zone of the event. For example, us-east-1a.</p>"
-        },
-        "startTime":{
-          "shape":"timestamp",
-          "documentation":"<p>The date and time that the event began.</p>"
-        },
-        "endTime":{
-          "shape":"timestamp",
-          "documentation":"<p>The date and time that the event ended.</p>"
-        },
-        "lastUpdatedTime":{
-          "shape":"timestamp",
-          "documentation":"<p>The most recent date and time that the event was updated.</p>"
-        },
-        "statusCode":{
-          "shape":"eventStatusCode",
-          "documentation":"<p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>"
+    "DescribeEntityAggregatesRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "eventArns" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventArnsList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Summary information about an event, returned by the <a>DescribeEvents</a> operation. The <a>DescribeEventDetails</a> operation also returns this information, as well as the <a>EventDescription</a> and additional event metadata.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EventAggregate":{
-      "type":"structure",
-      "members":{
-        "aggregateValue":{
-          "shape":"aggregateValue",
-          "documentation":"<p>The issue type for the associated count.</p>"
-        },
-        "count":{
-          "shape":"count",
-          "documentation":"<p>The number of events of the associated issue type.</p>"
+    "DescribeEntityAggregatesResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "entityAggregates" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of entities that are affected by each of the specified events.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EntityAggregateList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The number of events of each issue type. Returned by the <a>DescribeEventAggregates</a> operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EventAggregateList":{
-      "type":"list",
-      "member":{"shape":"EventAggregate"}
-    },
-    "EventArnsList":{
-      "type":"list",
-      "member":{"shape":"eventArn"},
-      "max":50,
-      "min":1
-    },
-    "EventDescription":{
-      "type":"structure",
-      "members":{
-        "latestDescription":{
-          "shape":"eventDescription",
-          "documentation":"<p>The most recent description of the event.</p>"
+    "DescribeEventAggregatesRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "aggregateField" : {
+          "deprecated" : false,
+          "documentation" : "<p>The only currently supported value is <code>eventTypeCategory</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventAggregateField",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "filter" : {
+          "deprecated" : false,
+          "documentation" : "<p>Values to narrow the results returned.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventFilter",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "maxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "maxResults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "nextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a> operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "aggregateField" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EventDetails":{
-      "type":"structure",
-      "members":{
-        "event":{
-          "shape":"Event",
-          "documentation":"<p>Summary information about the event.</p>"
+    "DescribeEventAggregatesResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "eventAggregates" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of events in each category that meet the optional filter criteria.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventAggregateList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "eventDescription":{
-          "shape":"EventDescription",
-          "documentation":"<p>The most recent description of the event.</p>"
-        },
-        "eventMetadata":{
-          "shape":"eventMetadata",
-          "documentation":"<p>Additional metadata about the event.</p>"
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "nextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and additional metadata about the event. Returned by the <a>DescribeEventDetails</a> operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EventDetailsErrorItem":{
-      "type":"structure",
-      "members":{
-        "eventArn":{
-          "shape":"eventArn",
-          "documentation":"<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>"
+    "DescribeEventDetailsFailedSet" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "EventDetailsErrorItem",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeEventDetailsRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "eventArns" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventArnList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "errorName":{
-          "shape":"string",
-          "documentation":"<p>The name of the error.</p>"
-        },
-        "errorMessage":{
-          "shape":"string",
-          "documentation":"<p>A message that describes the error.</p>"
+        "locale" : {
+          "deprecated" : false,
+          "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "locale",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Error information returned when a <a>DescribeEventDetails</a> operation cannot find a specified event.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "eventArns" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EventFilter":{
-      "type":"structure",
-      "members":{
-        "eventArns":{
-          "shape":"eventArnList",
-          "documentation":"<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>"
+    "DescribeEventDetailsResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "failedSet" : {
+          "deprecated" : false,
+          "documentation" : "<p>Error messages for any events that could not be retrieved.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DescribeEventDetailsFailedSet",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "eventTypeCodes":{
-          "shape":"eventTypeList",
-          "documentation":"<p>A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code> </p>"
-        },
-        "services":{
-          "shape":"serviceList",
-          "documentation":"<p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>"
-        },
-        "regions":{
-          "shape":"regionList",
-          "documentation":"<p>A list of AWS regions.</p>"
-        },
-        "availabilityZones":{
-          "shape":"availabilityZones",
-          "documentation":"<p>A list of AWS availability zones.</p>"
-        },
-        "startTimes":{
-          "shape":"dateTimeRangeList",
-          "documentation":"<p>A list of dates and times that the event began.</p>"
-        },
-        "endTimes":{
-          "shape":"dateTimeRangeList",
-          "documentation":"<p>A list of dates and times that the event ended.</p>"
-        },
-        "lastUpdatedTimes":{
-          "shape":"dateTimeRangeList",
-          "documentation":"<p>A list of dates and times that the event was last updated.</p>"
-        },
-        "entityArns":{
-          "shape":"entityArnList",
-          "documentation":"<p>A list of entity ARNs (unique identifiers).</p>"
-        },
-        "entityValues":{
-          "shape":"entityValueList",
-          "documentation":"<p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>"
-        },
-        "eventTypeCategories":{
-          "shape":"eventTypeCategoryList",
-          "documentation":"<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>"
-        },
-        "tags":{
-          "shape":"tagFilter",
-          "documentation":"<p>A map of entity tags attached to the affected entity.</p>"
-        },
-        "eventStatusCodes":{
-          "shape":"eventStatusCodeList",
-          "documentation":"<p>A list of event status codes.</p>"
+        "successfulSet" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the events that could be retrieved.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DescribeEventDetailsSuccessfulSet",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EventList":{
-      "type":"list",
-      "member":{"shape":"Event"}
+    "DescribeEventDetailsSuccessfulSet" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "EventDetails",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "EventType":{
-      "type":"structure",
-      "members":{
-        "service":{
-          "shape":"service",
-          "documentation":"<p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>"
+    "DescribeEventTypesRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "filter" : {
+          "deprecated" : false,
+          "documentation" : "<p>Values to narrow the results returned.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventTypeFilter",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "code":{
-          "shape":"eventTypeCode",
-          "documentation":"<p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>"
+        "locale" : {
+          "deprecated" : false,
+          "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "locale",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "category":{
-          "shape":"eventTypeCategory",
-          "documentation":"<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>"
+        "maxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "maxResults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "nextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>Metadata about a type of event that is reported by AWS Health. Data consists of the category (for example, <code>issue</code>, the service (for example, <code>EC2</code>), and the event type code (for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EventTypeCategoryList":{
-      "type":"list",
-      "member":{"shape":"eventTypeCategory"},
-      "max":10,
-      "min":1
-    },
-    "EventTypeCodeList":{
-      "type":"list",
-      "member":{"shape":"eventTypeCode"},
-      "max":10,
-      "min":1
-    },
-    "EventTypeFilter":{
-      "type":"structure",
-      "members":{
-        "eventTypeCodes":{
-          "shape":"EventTypeCodeList",
-          "documentation":"<p>A list of event type codes.</p>"
+    "DescribeEventTypesResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "eventTypes" : {
+          "deprecated" : false,
+          "documentation" : "<p>List of event types to be matched with.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventTypeList",
+          "streaming" : false,
+          "xmlNamespace" : null
         },
-        "services":{
-          "shape":"serviceList",
-          "documentation":"<p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>"
-        },
-        "eventTypeCategories":{
-          "shape":"EventTypeCategoryList",
-          "documentation":"<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>"
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "nextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
-      "documentation":"<p>The values to use to filter results from the <a>DescribeEventTypes</a> operation.</p>"
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "EventTypeList":{
-      "type":"list",
-      "member":{"shape":"EventType"}
-    },
-    "InvalidPaginationToken":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"string"}
+    "DescribeEventsRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "filter" : {
+          "deprecated" : false,
+          "documentation" : "<p>Values to narrow the results returned.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventFilter",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "locale" : {
+          "deprecated" : false,
+          "documentation" : "<p>The locale (language) to return information in. The default is English.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "locale",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "maxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of items to return in one batch.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "maxResults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "nextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
       },
-      "documentation":"<p>The specified pagination token (<code>nextToken</code>) is not valid.</p>",
-      "exception":true
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "UnsupportedLocale":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"string"}
+    "DescribeEventsResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "events" : {
+          "deprecated" : false,
+          "documentation" : "<p>The events that match the specified filter criteria.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "nextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
       },
-      "documentation":"<p>The specified locale is not supported.</p>",
-      "exception":true
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "accountId":{
-      "type":"string",
-      "pattern":"[0-9]{12}"
+    "EntityAggregate" : {
+      "deprecated" : false,
+      "documentation" : "<p>The number of entities that are affected by one or more events. Returned by the <a>DescribeEntityAggregates</a> operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "count" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number entities that match the criteria for the specified events.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "count",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "eventArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventArn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "aggregateValue":{"type":"string"},
-    "availabilityZone":{
-      "type":"string",
-      "pattern":"[a-z]{2}\\-[0-9a-z\\-]{4,16}"
+    "EntityAggregateList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "EntityAggregate",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "availabilityZones":{
-      "type":"list",
-      "member":{"shape":"availabilityZone"}
+    "EntityFilter" : {
+      "deprecated" : false,
+      "documentation" : "<p>The values to use to filter results from the <a>DescribeAffectedEntities</a> operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "entityArns" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of entity ARNs (unique identifiers).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "entityArnList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "entityValues" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of IDs for affected entities.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "entityValueList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "eventArns" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventArnList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "lastUpdatedTimes" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of the most recent dates and times that the entity was updated.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "dateTimeRangeList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "statusCodes" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "entityStatusCodeList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "tags" : {
+          "deprecated" : false,
+          "documentation" : "<p>A map of entity tags attached to the affected entity.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "tagFilter",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "eventArns" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "count":{"type":"integer"},
-    "dateTimeRangeList":{
-      "type":"list",
-      "member":{"shape":"DateTimeRange"},
-      "max":10,
-      "min":1
+    "EntityList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "AffectedEntity",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "entityArn":{
-      "type":"string",
-      "max":1600
+    "Event" : {
+      "deprecated" : false,
+      "documentation" : "<p>Summary information about an event, returned by the <a>DescribeEvents</a> operation. The <a>DescribeEventDetails</a> operation also returns this information, as well as the <a>EventDescription</a> and additional event metadata.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "arn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventArn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "availabilityZone" : {
+          "deprecated" : false,
+          "documentation" : "<p>The AWS Availability Zone of the event. For example, us-east-1a.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "availabilityZone",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "endTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date and time that the event ended.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "eventTypeCategory" : {
+          "deprecated" : false,
+          "documentation" : "<p>The </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventTypeCategory",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "eventTypeCode" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventTypeCode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "lastUpdatedTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The most recent date and time that the event was updated.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "region" : {
+          "deprecated" : false,
+          "documentation" : "<p>The AWS region name of the event.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "region",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "service" : {
+          "deprecated" : false,
+          "documentation" : "<p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "service",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "startTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date and time that the event began.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "statusCode" : {
+          "deprecated" : false,
+          "documentation" : "<p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventStatusCode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "entityArnList":{
-      "type":"list",
-      "member":{"shape":"entityArn"},
-      "max":100,
-      "min":1
+    "EventAggregate" : {
+      "deprecated" : false,
+      "documentation" : "<p>The number of events of each issue type. Returned by the <a>DescribeEventAggregates</a> operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "aggregateValue" : {
+          "deprecated" : false,
+          "documentation" : "<p>The issue type for the associated count.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "aggregateValue",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "count" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of events of the associated issue type.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "count",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "entityStatusCode":{
-      "type":"string",
-      "enum":[
-        "IMPAIRED",
-        "UNIMPAIRED",
-        "UNKNOWN"
-      ]
+    "EventAggregateList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "EventAggregate",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "entityStatusCodeList":{
-      "type":"list",
-      "member":{"shape":"entityStatusCode"},
-      "max":3,
-      "min":1
+    "EventArnsList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 50,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "eventArn",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "entityValue":{
-      "type":"string",
-      "max":256
+    "EventDescription" : {
+      "deprecated" : false,
+      "documentation" : "<p>The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a> operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "latestDescription" : {
+          "deprecated" : false,
+          "documentation" : "<p>The most recent description of the event.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventDescription",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "entityValueList":{
-      "type":"list",
-      "member":{"shape":"entityValue"},
-      "max":100,
-      "min":1
+    "EventDetails" : {
+      "deprecated" : false,
+      "documentation" : "<p>Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and additional metadata about the event. Returned by the <a>DescribeEventDetails</a> operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "event" : {
+          "deprecated" : false,
+          "documentation" : "<p>Summary information about the event.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Event",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "eventDescription" : {
+          "deprecated" : false,
+          "documentation" : "<p>The most recent description of the event.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventDescription",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "eventMetadata" : {
+          "deprecated" : false,
+          "documentation" : "<p>Additional metadata about the event.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventMetadata",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "eventAggregateField":{
-      "type":"string",
-      "enum":["eventTypeCategory"]
+    "EventDetailsErrorItem" : {
+      "deprecated" : false,
+      "documentation" : "<p>Error information returned when a <a>DescribeEventDetails</a> operation cannot find a specified event.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "errorMessage" : {
+          "deprecated" : false,
+          "documentation" : "<p>A message that describes the error.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "errorName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the error.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "eventArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventArn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "eventArn":{
-      "type":"string",
-      "max":1600,
-      "pattern":"arn:aws:health:[^:]*:[^:]*:event/[\\w-]+"
+    "EventFilter" : {
+      "deprecated" : false,
+      "documentation" : "<p>The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "availabilityZones" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of AWS availability zones.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "availabilityZones",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "endTimes" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of dates and times that the event ended.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "dateTimeRangeList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "entityArns" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of entity ARNs (unique identifiers).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "entityArnList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "entityValues" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "entityValueList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "eventArns" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventArnList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "eventStatusCodes" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of event status codes.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventStatusCodeList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "eventTypeCategories" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventTypeCategoryList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "eventTypeCodes" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventTypeList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "lastUpdatedTimes" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of dates and times that the event was last updated.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "dateTimeRangeList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "regions" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of AWS regions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "regionList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "services" : {
+          "deprecated" : false,
+          "documentation" : "<p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "serviceList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "startTimes" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of dates and times that the event began.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "dateTimeRangeList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "tags" : {
+          "deprecated" : false,
+          "documentation" : "<p>A map of entity tags attached to the affected entity.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "tagFilter",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "eventArnList":{
-      "type":"list",
-      "member":{"shape":"eventArn"},
-      "max":10,
-      "min":1
+    "EventList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "Event",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "eventDescription":{"type":"string"},
-    "eventMetadata":{
-      "type":"map",
-      "key":{"shape":"metadataKey"},
-      "value":{"shape":"metadataValue"}
+    "EventType" : {
+      "deprecated" : false,
+      "documentation" : "<p>Metadata about a type of event that is reported by AWS Health. Data consists of the category (for example, <code>issue</code>, the service (for example, <code>EC2</code>), and the event type code (for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "category" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventTypeCategory",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "code" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "eventTypeCode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "service" : {
+          "deprecated" : false,
+          "documentation" : "<p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "service",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "eventStatusCode":{
-      "type":"string",
-      "enum":[
-        "open",
-        "closed",
-        "upcoming"
-      ]
+    "EventTypeCategoryList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 10,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "eventTypeCategory",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "eventStatusCodeList":{
-      "type":"list",
-      "member":{"shape":"eventStatusCode"},
-      "max":6,
-      "min":1
+    "EventTypeCodeList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 10,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "eventTypeCode",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "eventType":{
-      "type":"string",
-      "max":100,
-      "min":3
+    "EventTypeFilter" : {
+      "deprecated" : false,
+      "documentation" : "<p>The values to use to filter results from the <a>DescribeEventTypes</a> operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "eventTypeCategories" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventTypeCategoryList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "eventTypeCodes" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of event type codes.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventTypeCodeList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "services" : {
+          "deprecated" : false,
+          "documentation" : "<p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "serviceList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "eventTypeCategory":{
-      "type":"string",
-      "enum":[
-        "issue",
-        "accountNotification",
-        "scheduledChange"
-      ],
-      "max":255,
-      "min":3
+    "EventTypeList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "EventType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "eventTypeCategoryList":{
-      "type":"list",
-      "member":{"shape":"eventTypeCategory"},
-      "max":10,
-      "min":1
+    "InvalidPaginationToken" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified pagination token (<code>nextToken</code>) is not valid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "eventTypeCode":{
-      "type":"string",
-      "max":100,
-      "min":3
+    "UnsupportedLocale" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified locale is not supported.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
     },
-    "eventTypeList":{
-      "type":"list",
-      "member":{"shape":"eventType"},
-      "max":10,
-      "min":1
+    "accountId" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : "[0-9]{12}",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "locale":{
-      "type":"string",
-      "max":256,
-      "min":2
+    "aggregateValue" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "maxResults":{
-      "type":"integer",
-      "max":100,
-      "min":10
+    "availabilityZone" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : "[a-z]{2}\\-[0-9a-z\\-]{4,16}",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "metadataKey":{"type":"string"},
-    "metadataValue":{
-      "type":"string",
-      "max":10240
+    "availabilityZones" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "availabilityZone",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "nextToken":{
-      "type":"string",
-      "pattern":"[a-zA-Z0-9=/+_.-]{4,512}"
+    "count" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "integer",
+      "value" : null,
+      "wrapper" : false
     },
-    "region":{
-      "type":"string",
-      "pattern":"[^:/]{2,25}"
+    "dateTimeRangeList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 10,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "DateTimeRange",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "regionList":{
-      "type":"list",
-      "member":{"shape":"region"},
-      "max":10,
-      "min":1
+    "entityArn" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 1600,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "service":{
-      "type":"string",
-      "max":30,
-      "min":2
+    "entityArnList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "entityArn",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "serviceList":{
-      "type":"list",
-      "member":{"shape":"service"},
-      "max":10,
-      "min":1
+    "entityStatusCode" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "IMPAIRED", "UNIMPAIRED", "UNKNOWN" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "string":{"type":"string"},
-    "tagFilter":{
-      "type":"list",
-      "member":{"shape":"tagSet"},
-      "max":50
+    "entityStatusCodeList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 3,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "entityStatusCode",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "tagKey":{
-      "type":"string",
-      "max":127
+    "entityValue" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 256,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "tagSet":{
-      "type":"map",
-      "key":{"shape":"tagKey"},
-      "value":{"shape":"tagValue"},
-      "max":50
+    "entityValueList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "entityValue",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
     },
-    "tagValue":{
-      "type":"string",
-      "max":255
+    "eventAggregateField" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "eventTypeCategory" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
     },
-    "timestamp":{"type":"timestamp"}
+    "eventArn" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 1600,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : "arn:aws:health:[^:]*:[^:]*:event/[\\w-]+",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "eventArnList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 10,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "eventArn",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "eventDescription" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "eventMetadata" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "metadataKey",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "metadataValue",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "wrapper" : false
+    },
+    "eventStatusCode" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "open", "closed", "upcoming" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "eventStatusCodeList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 6,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "eventStatusCode",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "eventType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
+      "member" : null,
+      "members" : null,
+      "min" : 3,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "eventTypeCategory" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "issue", "accountNotification", "scheduledChange" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 255,
+      "member" : null,
+      "members" : null,
+      "min" : 3,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "eventTypeCategoryList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 10,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "eventTypeCategory",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "eventTypeCode" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
+      "member" : null,
+      "members" : null,
+      "min" : 3,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "eventTypeList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 10,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "eventType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "locale" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 256,
+      "member" : null,
+      "members" : null,
+      "min" : 2,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "maxResults" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
+      "member" : null,
+      "members" : null,
+      "min" : 10,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "integer",
+      "value" : null,
+      "wrapper" : false
+    },
+    "metadataKey" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "metadataValue" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 10240,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "nextToken" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : "[a-zA-Z0-9=/+_.-]{4,512}",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "region" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : "[^:/]{2,25}",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "regionList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 10,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "region",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "service" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 30,
+      "member" : null,
+      "members" : null,
+      "min" : 2,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "serviceList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 10,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "service",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "string" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "tagFilter" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 50,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "tagSet",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "tagKey" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 127,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "tagSet" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "tagKey",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 50,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "tagValue",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "wrapper" : false
+    },
+    "tagValue" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 255,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "timestamp" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "timestamp",
+      "value" : null,
+      "wrapper" : false
+    }
   },
-  "documentation":"<fullname>AWS Health</fullname> <p>The AWS Health API provides programmatic access to the AWS Health information that is presented in the AWS Personal Health Dashboard. You can get information about events that affect your AWS resources:</p> <ul> <li> <p> <a>DescribeEvents</a>: Summary information about events.</p> </li> <li> <p> <a>DescribeEventDetails</a>: Detailed information about one or more events.</p> </li> <li> <p> <a>DescribeAffectedEntities</a>: Information about AWS resources that are affected by one or more events.</p> </li> </ul> <p>In addition, these operations provide information about event types and summary counts of events or affected entities:</p> <ul> <li> <p> <a>DescribeEventTypes</a>: Information about the kinds of events that AWS Health tracks.</p> </li> <li> <p> <a>DescribeEventAggregates</a>: A count of the number of events that meet specified criteria.</p> </li> <li> <p> <a>DescribeEntityAggregates</a>: A count of the number of affected entities that meet specified criteria.</p> </li> </ul> <p>The Health API requires a Business or Enterprise support plan from <a href=\"http://aws.amazon.com/premiumsupport/\">AWS Support</a>. Calling the Health API from an account that does not have a Business or Enterprise support plan causes a <code>SubscriptionRequiredException</code>. </p> <p>For authentication of requests, AWS Health uses the <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4 Signing Process</a>.</p> <p>See the <a href=\"http://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html\">AWS Health User Guide</a> for information about how to use the API.</p> <p> <b>Service Endpoint</b> </p> <p>The HTTP endpoint for the AWS Health API is:</p> <ul> <li> <p>https://health.us-east-1.amazonaws.com </p> </li> </ul>"
+  "documentation" : "<fullname>AWS Health</fullname> <p>The AWS Health API provides programmatic access to the AWS Health information that is presented in the AWS Personal Health Dashboard. You can get information about events that affect your AWS resources:</p> <ul> <li> <p> <a>DescribeEvents</a>: Summary information about events.</p> </li> <li> <p> <a>DescribeEventDetails</a>: Detailed information about one or more events.</p> </li> <li> <p> <a>DescribeAffectedEntities</a>: Information about AWS resources that are affected by one or more events.</p> </li> </ul> <p>In addition, these operations provide information about event types and summary counts of events or affected entities:</p> <ul> <li> <p> <a>DescribeEventTypes</a>: Information about the kinds of events that AWS Health tracks.</p> </li> <li> <p> <a>DescribeEventAggregates</a>: A count of the number of events that meet specified criteria.</p> </li> <li> <p> <a>DescribeEntityAggregates</a>: A count of the number of affected entities that meet specified criteria.</p> </li> </ul> <p>The Health API requires a Business or Enterprise support plan from <a href=\"http://aws.amazon.com/premiumsupport/\">AWS Support</a>. Calling the Health API from an account that does not have a Business or Enterprise support plan causes a <code>SubscriptionRequiredException</code>. </p> <p>For authentication of requests, AWS Health uses the <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4 Signing Process</a>.</p> <p>See the <a href=\"http://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html\">AWS Health User Guide</a> for information about how to use the API.</p> <p> <b>Service Endpoint</b> </p> <p>The HTTP endpoint for the AWS Health API is:</p> <ul> <li> <p>https://health.us-east-1.amazonaws.com </p> </li> </ul>"
 }

@@ -49,7 +49,7 @@ public class GetDistributionConfigRequestMarshaller implements Marshaller<Reques
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-09-29/distribution/{Id}/config";
+        String uriResourcePath = "/2016-11-25/distribution/{Id}/config";
 
         uriResourcePath = uriResourcePath.replace("{Id}",
                 (getDistributionConfigRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getDistributionConfigRequest.getId()), false)

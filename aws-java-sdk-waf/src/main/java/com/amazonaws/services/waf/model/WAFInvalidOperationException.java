@@ -55,7 +55,7 @@ package com.amazonaws.services.waf.model;
  * </li>
  * </ul>
  */
-public class WAFInvalidOperationException extends com.amazonaws.services.waf.model.AWSWAFException {
+public class WAFInvalidOperationException extends com.amazonaws.services.waf.model.AWSWAFRegionalException {
     private static final long serialVersionUID = 1L;
 
     /**

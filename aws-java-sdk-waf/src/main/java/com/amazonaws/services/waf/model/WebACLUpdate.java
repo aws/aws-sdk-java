@@ -27,7 +27,14 @@ public class WebACLUpdate implements Serializable, Cloneable {
      * </p>
      */
     private String action;
-
+    /**
+     * <p>
+     * The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code> that you
+     * want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that
+     * you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>
+     * , or <code>COUNT</code>).
+     * </p>
+     */
     private ActivatedRule activatedRule;
 
     /**
@@ -109,7 +116,18 @@ public class WebACLUpdate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code> that you
+     * want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that
+     * you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>
+     * , or <code>COUNT</code>).
+     * </p>
+     * 
      * @param activatedRule
+     *        The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code> that
+     *        you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the
+     *        action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>,
+     *        <code>BLOCK</code>, or <code>COUNT</code>).
      */
 
     public void setActivatedRule(ActivatedRule activatedRule) {
@@ -117,7 +135,17 @@ public class WebACLUpdate implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code> that you
+     * want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that
+     * you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>
+     * , or <code>COUNT</code>).
+     * </p>
+     * 
+     * @return The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code>
+     *         that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and
+     *         the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).
      */
 
     public ActivatedRule getActivatedRule() {
@@ -125,7 +153,18 @@ public class WebACLUpdate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code> that you
+     * want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that
+     * you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>
+     * , or <code>COUNT</code>).
+     * </p>
+     * 
      * @param activatedRule
+     *        The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code> that
+     *        you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the
+     *        action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>,
+     *        <code>BLOCK</code>, or <code>COUNT</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

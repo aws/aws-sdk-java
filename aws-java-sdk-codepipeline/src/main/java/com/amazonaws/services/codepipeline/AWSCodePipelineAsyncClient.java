@@ -85,13 +85,13 @@ import com.amazonaws.annotation.ThreadSafe;
  * </li>
  * </ul>
  * <p>
- * Pipelines include <i>stages</i>, which are which are logical groupings of gates and actions. Each stage contains one
- * or more actions that must complete before the next stage begins. A stage will result in success or failure. If a
- * stage fails, then the pipeline stops at that stage and will remain stopped until either a new version of an artifact
- * appears in the source location, or a user takes action to re-run the most recent artifact through the pipeline. You
- * can call <a>GetPipelineState</a>, which displays the status of a pipeline, including the status of stages in the
- * pipeline, or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including the stages of that
- * pipeline. For more information about the structure of stages and actions, also refer to the <a
+ * Pipelines include <i>stages</i>, which are logical groupings of gates and actions. Each stage contains one or more
+ * actions that must complete before the next stage begins. A stage will result in success or failure. If a stage fails,
+ * then the pipeline stops at that stage and will remain stopped until either a new version of an artifact appears in
+ * the source location, or a user takes action to re-run the most recent artifact through the pipeline. You can call
+ * <a>GetPipelineState</a>, which displays the status of a pipeline, including the status of stages in the pipeline, or
+ * <a>GetPipeline</a>, which returns the entire structure of the pipeline, including the stages of that pipeline. For
+ * more information about the structure of stages and actions, also refer to the <a
  * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
  * Structure Reference</a>.
  * </p>

@@ -31,7 +31,7 @@ public class AcknowledgeJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. This number must be returned in the response.
+     * job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.
      * </p>
      */
     private String nonce;
@@ -79,12 +79,13 @@ public class AcknowledgeJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. This number must be returned in the response.
+     * job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.
      * </p>
      * 
      * @param nonce
      *        A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *        only one job worker. This number must be returned in the response.
+     *        only one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned
+     *        this job.
      */
 
     public void setNonce(String nonce) {
@@ -94,11 +95,12 @@ public class AcknowledgeJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. This number must be returned in the response.
+     * job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.
      * </p>
      * 
      * @return A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *         only one job worker. This number must be returned in the response.
+     *         only one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned
+     *         this job.
      */
 
     public String getNonce() {
@@ -108,12 +110,13 @@ public class AcknowledgeJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. This number must be returned in the response.
+     * job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.
      * </p>
      * 
      * @param nonce
      *        A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *        only one job worker. This number must be returned in the response.
+     *        only one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned
+     *        this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

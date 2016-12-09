@@ -57,9 +57,15 @@ package com.amazonaws.services.waf.model;
  * <code>Data</code>.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be
+ * associated.
+ * </p>
+ * </li>
  * </ul>
  */
-public class WAFInvalidParameterException extends com.amazonaws.services.waf.model.AWSWAFException {
+public class WAFInvalidParameterException extends com.amazonaws.services.waf.model.AWSWAFRegionalException {
     private static final long serialVersionUID = 1L;
 
     private String field;

@@ -94,6 +94,11 @@ public class DefaultCacheBehaviorStaxUnmarshaller implements Unmarshaller<Defaul
                     defaultCacheBehavior.setCompress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("LambdaFunctionAssociations", targetDepth)) {
+                    defaultCacheBehavior.setLambdaFunctionAssociations(LambdaFunctionAssociationsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return defaultCacheBehavior;

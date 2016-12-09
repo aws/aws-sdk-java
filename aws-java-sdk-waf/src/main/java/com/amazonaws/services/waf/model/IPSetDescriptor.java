@@ -16,15 +16,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Specifies the IP address type (<code>IPV4</code>) and the IP address range (in CIDR format) that web requests
- * originate from.
+ * Specifies the IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR format) that
+ * web requests originate from.
  * </p>
  */
 public class IPSetDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify <code>IPV4</code>.
+     * Specify <code>IPV4</code> or <code>IPV6</code>.
      * </p>
      */
     private String type;
@@ -47,22 +47,37 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports only /8, /16, /24, and /32 IP addresses.
-     * </p>
-     * <p>
      * For more information about CIDR notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
+     * <p>
+     * Specify an IPv6 address by using CIDR notation. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String value;
 
     /**
      * <p>
-     * Specify <code>IPV4</code>.
+     * Specify <code>IPV4</code> or <code>IPV6</code>.
      * </p>
      * 
      * @param type
-     *        Specify <code>IPV4</code>.
+     *        Specify <code>IPV4</code> or <code>IPV6</code>.
      * @see IPSetDescriptorType
      */
 
@@ -72,10 +87,10 @@ public class IPSetDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify <code>IPV4</code>.
+     * Specify <code>IPV4</code> or <code>IPV6</code>.
      * </p>
      * 
-     * @return Specify <code>IPV4</code>.
+     * @return Specify <code>IPV4</code> or <code>IPV6</code>.
      * @see IPSetDescriptorType
      */
 
@@ -85,11 +100,11 @@ public class IPSetDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify <code>IPV4</code>.
+     * Specify <code>IPV4</code> or <code>IPV6</code>.
      * </p>
      * 
      * @param type
-     *        Specify <code>IPV4</code>.
+     *        Specify <code>IPV4</code> or <code>IPV6</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IPSetDescriptorType
      */
@@ -101,11 +116,11 @@ public class IPSetDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify <code>IPV4</code>.
+     * Specify <code>IPV4</code> or <code>IPV6</code>.
      * </p>
      * 
      * @param type
-     *        Specify <code>IPV4</code>.
+     *        Specify <code>IPV4</code> or <code>IPV6</code>.
      * @see IPSetDescriptorType
      */
 
@@ -115,11 +130,11 @@ public class IPSetDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify <code>IPV4</code>.
+     * Specify <code>IPV4</code> or <code>IPV6</code>.
      * </p>
      * 
      * @param type
-     *        Specify <code>IPV4</code>.
+     *        Specify <code>IPV4</code> or <code>IPV6</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IPSetDescriptorType
      */
@@ -148,12 +163,27 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports only /8, /16, /24, and /32 IP addresses.
-     * </p>
-     * <p>
      * For more information about CIDR notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
+     * <p>
+     * Specify an IPv6 address by using CIDR notation. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param value
      *        Specify an IPv4 address by using CIDR notation. For example:</p>
@@ -172,11 +202,26 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        AWS WAF supports only /8, /16, /24, and /32 IP addresses.
-     *        </p>
-     *        <p>
      *        For more information about CIDR notation, see the Wikipedia entry <a
      *        href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+     *        </p>
+     *        <p>
+     *        Specify an IPv6 address by using CIDR notation. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     *        1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     *        1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     *        <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setValue(String value) {
@@ -202,12 +247,27 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports only /8, /16, /24, and /32 IP addresses.
-     * </p>
-     * <p>
      * For more information about CIDR notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
+     * <p>
+     * Specify an IPv6 address by using CIDR notation. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Specify an IPv4 address by using CIDR notation. For example:</p>
      *         <ul>
@@ -225,11 +285,27 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         AWS WAF supports only /8, /16, /24, and /32 IP addresses.
-     *         </p>
-     *         <p>
      *         For more information about CIDR notation, see the Wikipedia entry <a
      *         href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+     *         </p>
+     *         <p>
+     *         Specify an IPv6 address by using CIDR notation. For example:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     *         1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>
+     *         .
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     *         1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     *         <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getValue() {
@@ -255,12 +331,27 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports only /8, /16, /24, and /32 IP addresses.
-     * </p>
-     * <p>
      * For more information about CIDR notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
+     * <p>
+     * Specify an IPv6 address by using CIDR notation. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param value
      *        Specify an IPv4 address by using CIDR notation. For example:</p>
@@ -279,11 +370,26 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        AWS WAF supports only /8, /16, /24, and /32 IP addresses.
-     *        </p>
-     *        <p>
      *        For more information about CIDR notation, see the Wikipedia entry <a
      *        href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+     *        </p>
+     *        <p>
+     *        Specify an IPv6 address by using CIDR notation. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     *        1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     *        1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     *        <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

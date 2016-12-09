@@ -25,7 +25,7 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 
-import com.amazonaws.codegen.ant.task.CodeGeneratorTask;
+//import com.amazonaws.codegen.ant.task.CodeGeneratorTask;
 
 /**
  * The Maven mojo to generate Java client code using aws-java-sdk-code-generator.
@@ -79,12 +79,12 @@ public class GenerationMojo extends AbstractMojo {
         setPropertyIfFileExists(P_EXAMPLES_FILE, resourcesDirectory, serviceExamplesLocation);
 
         System.setProperty(P_OUTPUT_DIRECTORY, outputDirectory);
-        try {
-            CodeGeneratorTask.main(new String[]{});
+/*        try {
+            // CodeGeneratorTask.main(new String[]{});
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+*/
         project.addCompileSourceRoot(outputDirectory);
     }
 

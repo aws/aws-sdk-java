@@ -1,5 +1,5 @@
 ${fileHeader}
-package ${metadata.packageName}.model.transform;
+package ${transformPackage};
 
 import static com.amazonaws.util.StringUtils.UTF8;
 

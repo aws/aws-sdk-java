@@ -246,6 +246,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyCacheBehaviorsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InconsistentQuantitiesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CloudFrontOriginAccessIdentityInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidLambdaFunctionAssociationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyLambdaFunctionAssociationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidViewerCertificateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DistributionNotDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MissingBodyExceptionUnmarshaller());
@@ -262,6 +264,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new BatchTooLargeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidResponseCodeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRelativePathExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyDistributionsWithLambdaAssociationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyStreamingDistributionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidHeadersForS3OriginExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsExceptionUnmarshaller());
@@ -417,6 +420,13 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyOriginCustomHeadersException
      * @throws TooManyQueryStringParametersException
      * @throws InvalidQueryStringParametersException
+     * @throws TooManyDistributionsWithLambdaAssociationsException
+     *         Processing your request would cause the maximum number of distributions with Lambda function associations
+     *         per owner to be exceeded.
+     * @throws TooManyLambdaFunctionAssociationsException
+     *         Your request contains more Lambda function associations than are allowed per distribution.
+     * @throws InvalidLambdaFunctionAssociationException
+     *         The specified Lambda function association is invalid.
      * @sample AmazonCloudFront.CreateDistribution
      */
     @Override
@@ -520,6 +530,13 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTaggingException
      * @throws TooManyQueryStringParametersException
      * @throws InvalidQueryStringParametersException
+     * @throws TooManyDistributionsWithLambdaAssociationsException
+     *         Processing your request would cause the maximum number of distributions with Lambda function associations
+     *         per owner to be exceeded.
+     * @throws TooManyLambdaFunctionAssociationsException
+     *         Your request contains more Lambda function associations than are allowed per distribution.
+     * @throws InvalidLambdaFunctionAssociationException
+     *         The specified Lambda function association is invalid.
      * @sample AmazonCloudFront.CreateDistributionWithTags
      */
     @Override
@@ -1873,6 +1890,13 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyOriginCustomHeadersException
      * @throws TooManyQueryStringParametersException
      * @throws InvalidQueryStringParametersException
+     * @throws TooManyDistributionsWithLambdaAssociationsException
+     *         Processing your request would cause the maximum number of distributions with Lambda function associations
+     *         per owner to be exceeded.
+     * @throws TooManyLambdaFunctionAssociationsException
+     *         Your request contains more Lambda function associations than are allowed per distribution.
+     * @throws InvalidLambdaFunctionAssociationException
+     *         The specified Lambda function association is invalid.
      * @sample AmazonCloudFront.UpdateDistribution
      */
     @Override

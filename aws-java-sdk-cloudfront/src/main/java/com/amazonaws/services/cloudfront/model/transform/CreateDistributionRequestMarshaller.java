@@ -49,13 +49,13 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2016-09-29/distribution";
+        String uriResourcePath = "/2016-11-25/distribution";
 
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-09-29/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-11-25/");
 
             DistributionConfig distributionConfig = createDistributionRequest.getDistributionConfig();
             if (distributionConfig != null) {
@@ -398,6 +398,37 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                     if (defaultCacheBehavior.getCompress() != null) {
                         xmlWriter.startElement("Compress").value(defaultCacheBehavior.getCompress()).endElement();
                     }
+
+                    LambdaFunctionAssociations lambdaFunctionAssociations = defaultCacheBehavior.getLambdaFunctionAssociations();
+                    if (lambdaFunctionAssociations != null) {
+                        xmlWriter.startElement("LambdaFunctionAssociations");
+
+                        if (lambdaFunctionAssociations.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity").value(lambdaFunctionAssociations.getQuantity()).endElement();
+                        }
+
+                        com.amazonaws.internal.SdkInternalList<LambdaFunctionAssociation> lambdaFunctionAssociationsItemsList = (com.amazonaws.internal.SdkInternalList<LambdaFunctionAssociation>) lambdaFunctionAssociations
+                                .getItems();
+                        if (!lambdaFunctionAssociationsItemsList.isEmpty() || !lambdaFunctionAssociationsItemsList.isAutoConstruct()) {
+                            xmlWriter.startElement("Items");
+
+                            for (LambdaFunctionAssociation lambdaFunctionAssociationsItemsListValue : lambdaFunctionAssociationsItemsList) {
+                                xmlWriter.startElement("LambdaFunctionAssociation");
+
+                                if (lambdaFunctionAssociationsItemsListValue.getLambdaFunctionARN() != null) {
+                                    xmlWriter.startElement("LambdaFunctionARN").value(lambdaFunctionAssociationsItemsListValue.getLambdaFunctionARN())
+                                            .endElement();
+                                }
+
+                                if (lambdaFunctionAssociationsItemsListValue.getEventType() != null) {
+                                    xmlWriter.startElement("EventType").value(lambdaFunctionAssociationsItemsListValue.getEventType()).endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                            xmlWriter.endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
                     xmlWriter.endElement();
                 }
 
@@ -609,6 +640,37 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
                             if (cacheBehaviorsItemsListValue.getCompress() != null) {
                                 xmlWriter.startElement("Compress").value(cacheBehaviorsItemsListValue.getCompress()).endElement();
+                            }
+
+                            LambdaFunctionAssociations lambdaFunctionAssociations = cacheBehaviorsItemsListValue.getLambdaFunctionAssociations();
+                            if (lambdaFunctionAssociations != null) {
+                                xmlWriter.startElement("LambdaFunctionAssociations");
+
+                                if (lambdaFunctionAssociations.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(lambdaFunctionAssociations.getQuantity()).endElement();
+                                }
+
+                                com.amazonaws.internal.SdkInternalList<LambdaFunctionAssociation> lambdaFunctionAssociationsItemsList = (com.amazonaws.internal.SdkInternalList<LambdaFunctionAssociation>) lambdaFunctionAssociations
+                                        .getItems();
+                                if (!lambdaFunctionAssociationsItemsList.isEmpty() || !lambdaFunctionAssociationsItemsList.isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
+
+                                    for (LambdaFunctionAssociation lambdaFunctionAssociationsItemsListValue : lambdaFunctionAssociationsItemsList) {
+                                        xmlWriter.startElement("LambdaFunctionAssociation");
+
+                                        if (lambdaFunctionAssociationsItemsListValue.getLambdaFunctionARN() != null) {
+                                            xmlWriter.startElement("LambdaFunctionARN").value(lambdaFunctionAssociationsItemsListValue.getLambdaFunctionARN())
+                                                    .endElement();
+                                        }
+
+                                        if (lambdaFunctionAssociationsItemsListValue.getEventType() != null) {
+                                            xmlWriter.startElement("EventType").value(lambdaFunctionAssociationsItemsListValue.getEventType()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
                             }
                             xmlWriter.endElement();
                         }

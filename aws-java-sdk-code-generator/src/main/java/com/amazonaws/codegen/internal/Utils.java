@@ -84,7 +84,16 @@ public class Utils {
 
         return name.length() < 2 ? StringUtils.upperCase(name) : StringUtils.upperCase(name.substring(0, 1))
                 + name.substring(1);
+    }
 
+    /**
+     * Converts a directory to a Java package name.
+     *
+     * @param directoryPath Directory to convert.
+     * @return Package name
+     */
+    public static String directoryToPackage(String directoryPath) {
+        return directoryPath.replace('/', '.');
     }
 
     public static String getDefaultEndpointWithoutHttpProtocol(String endpoint) {

@@ -39,17 +39,19 @@ import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.waf.model.*;
-import com.amazonaws.services.waf.model.transform.*;
+import com.amazonaws.services.waf.model.waf.transform.*;
 
 /**
  * Client for accessing WAF. All service calls made using this client are blocking, and will not return until the
  * service call completes.
  * <p>
  * <p>
- * This is the <i>AWS WAF API Reference</i>. This guide is for developers who need detailed information about the AWS
- * WAF API actions, data types, and errors. For detailed information about AWS WAF features and an overview of how to
- * use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
- * Guide</a>.
+ * This is the <i>AWS WAF API Reference</i> for using AWS WAF with Amazon CloudFront. The AWS WAF actions and data types
+ * listed in the reference are available for protecting Amazon CloudFront distributions. You can use these actions and
+ * data types via the endpoint <i>waf.amazonaws.com</i>. This guide is for developers who need detailed information
+ * about the AWS WAF API actions, data types, and errors. For detailed information about AWS WAF features and an
+ * overview of how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS
+ * WAF Developer Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -353,6 +355,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         value for <code>Data</code>.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
      * @throws WAFStaleDataException
      *         The operation failed because you tried to create, update, or delete an object by using a change token
      *         that has already been used.
@@ -486,6 +494,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
      *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
      *         </p>
      *         </li>
      * @throws WAFLimitsExceededException
@@ -647,6 +661,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         value for <code>Data</code>.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
@@ -781,6 +801,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         value for <code>Data</code>.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
@@ -910,6 +936,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
      *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
      *         </p>
      *         </li>
      * @throws WAFStaleDataException
@@ -1067,6 +1099,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         value for <code>Data</code>.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
@@ -1195,6 +1233,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
      *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
      *         </p>
      *         </li>
      * @throws WAFStaleDataException
@@ -3015,6 +3059,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         value for <code>Data</code>.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
      * @throws WAFNonexistentContainerException
      *         The operation failed because you tried to add an object to or delete an object from another object that
      *         doesn't exist. For example:</p>
@@ -3099,7 +3149,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </li>
      * <li>
      * <p>
-     * The IP address version, <code>IPv4</code>.
+     * The IP address version, <code>IPv4</code> or <code>IPv6</code>.
      * </p>
      * </li>
      * <li>
@@ -3111,10 +3161,35 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports /8, /16, /24, and /32 IP address ranges. For more information about CIDR notation, see the
-     * Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain
-     * Routing</a>.
+     * AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
+     * For more information about CIDR notation, see the Wikipedia entry <a
+     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
+     * <p>
+     * IPv6 addresses can be represented using any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 1111:0000:0000:0000:0000:0000:0000:0111/128
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1111:0:0:0:0:0:0:0111/128
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1111::0111/128
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1111::111/128
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * You use an <code>IPSet</code> to specify which web requests you want to allow or block based on the IP addresses
      * that the requests originated from. For example, if you're receiving a lot of requests from one or a small number
@@ -3242,6 +3317,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
      *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
      *         </p>
      *         </li>
      * @throws WAFNonexistentContainerException
@@ -3479,6 +3560,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
      *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
      *         </p>
      *         </li>
      * @throws WAFNonexistentContainerException
@@ -3723,6 +3810,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         value for <code>Data</code>.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
      * @throws WAFNonexistentContainerException
      *         The operation failed because you tried to add an object to or delete an object from another object that
      *         doesn't exist. For example:</p>
@@ -3950,6 +4043,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
      *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
      *         </p>
      *         </li>
      * @throws WAFNonexistentContainerException
@@ -4199,6 +4298,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         value for <code>Data</code>.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
      * @throws WAFNonexistentContainerException
      *         The operation failed because you tried to add an object to or delete an object from another object that
      *         doesn't exist. For example:</p>
@@ -4425,6 +4530,12 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
      *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
      *         </p>
      *         </li>
      * @throws WAFNonexistentContainerException

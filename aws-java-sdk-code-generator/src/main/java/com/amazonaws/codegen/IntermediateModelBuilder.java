@@ -15,6 +15,7 @@
 
 package com.amazonaws.codegen;
 
+import com.amazonaws.codegen.C2jModels;
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
 import com.amazonaws.codegen.customization.processors.DefaultCustomizationProcessor;
 import com.amazonaws.codegen.internal.TypeUtils;
@@ -59,19 +60,22 @@ public class IntermediateModelBuilder {
     private final TypeUtils typeUtils;
     private final List<IntermediateModelShapeProcessor> shapeProcessors;
     private final Waiters waiters;
+    private final String codeGenBinDirectory;
 
-    public IntermediateModelBuilder(CustomizationConfig customConfig,
-                                    BasicCodeGenConfig codeGenConfig, ServiceModel service,
-                                    ServiceExamples examples, Waiters waiters) {
-        this.customConfig = customConfig;
-        this.codeGenConfig = codeGenConfig;
-        this.service = service;
-        this.examples = examples;
+    public IntermediateModelBuilder(C2jModels models,
+                                    String codeGenBinDirectory) {
+        this.customConfig = models.customizationConfig();
+        this.codeGenConfig = models.codeGenConfig();
+        this.service = models.serviceModel();
+        this.examples = models.examplesModel();
         this.namingStrategy = new DefaultNamingStrategy(service, codeGenConfig, customConfig);
         this.typeUtils = new TypeUtils(namingStrategy);
         this.shapeProcessors = createShapeProcessors();
-        this.waiters = waiters;
+        this.waiters = models.waitersModel();
+        this.codeGenBinDirectory = codeGenBinDirectory;
     }
+
+
 
     /**
      * Create default shape processors.
@@ -105,7 +109,7 @@ public class IntermediateModelBuilder {
         final Map<String, WaiterDefinitionModel> waiters = new HashMap<>();
 
         operations.putAll(new AddOperations(this).constructOperations());
-        waiters.putAll(new AddWaiters(this.waiters, operations).constructWaiters());
+        waiters.putAll(new AddWaiters(this.waiters, operations, codeGenBinDirectory).constructWaiters());
 
         for (IntermediateModelShapeProcessor processor : shapeProcessors) {
             shapes.putAll(processor.process(Collections.unmodifiableMap(operations),

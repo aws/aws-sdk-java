@@ -213,6 +213,12 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      */
     private Boolean compress;
+    /**
+     * <p>
+     * A complex type that contains zero or more Lambda function associations for a cache behavior.
+     * </p>
+     */
+    private LambdaFunctionAssociations lambdaFunctionAssociations;
 
     /**
      * <p>
@@ -1468,6 +1474,46 @@ public class CacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A complex type that contains zero or more Lambda function associations for a cache behavior.
+     * </p>
+     * 
+     * @param lambdaFunctionAssociations
+     *        A complex type that contains zero or more Lambda function associations for a cache behavior.
+     */
+
+    public void setLambdaFunctionAssociations(LambdaFunctionAssociations lambdaFunctionAssociations) {
+        this.lambdaFunctionAssociations = lambdaFunctionAssociations;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains zero or more Lambda function associations for a cache behavior.
+     * </p>
+     * 
+     * @return A complex type that contains zero or more Lambda function associations for a cache behavior.
+     */
+
+    public LambdaFunctionAssociations getLambdaFunctionAssociations() {
+        return this.lambdaFunctionAssociations;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains zero or more Lambda function associations for a cache behavior.
+     * </p>
+     * 
+     * @param lambdaFunctionAssociations
+     *        A complex type that contains zero or more Lambda function associations for a cache behavior.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheBehavior withLambdaFunctionAssociations(LambdaFunctionAssociations lambdaFunctionAssociations) {
+        setLambdaFunctionAssociations(lambdaFunctionAssociations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1499,7 +1545,9 @@ public class CacheBehavior implements Serializable, Cloneable {
         if (getMaxTTL() != null)
             sb.append("MaxTTL: " + getMaxTTL() + ",");
         if (getCompress() != null)
-            sb.append("Compress: " + getCompress());
+            sb.append("Compress: " + getCompress() + ",");
+        if (getLambdaFunctionAssociations() != null)
+            sb.append("LambdaFunctionAssociations: " + getLambdaFunctionAssociations());
         sb.append("}");
         return sb.toString();
     }
@@ -1558,6 +1606,10 @@ public class CacheBehavior implements Serializable, Cloneable {
             return false;
         if (other.getCompress() != null && other.getCompress().equals(this.getCompress()) == false)
             return false;
+        if (other.getLambdaFunctionAssociations() == null ^ this.getLambdaFunctionAssociations() == null)
+            return false;
+        if (other.getLambdaFunctionAssociations() != null && other.getLambdaFunctionAssociations().equals(this.getLambdaFunctionAssociations()) == false)
+            return false;
         return true;
     }
 
@@ -1577,6 +1629,7 @@ public class CacheBehavior implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDefaultTTL() == null) ? 0 : getDefaultTTL().hashCode());
         hashCode = prime * hashCode + ((getMaxTTL() == null) ? 0 : getMaxTTL().hashCode());
         hashCode = prime * hashCode + ((getCompress() == null) ? 0 : getCompress().hashCode());
+        hashCode = prime * hashCode + ((getLambdaFunctionAssociations() == null) ? 0 : getLambdaFunctionAssociations().hashCode());
         return hashCode;
     }
 

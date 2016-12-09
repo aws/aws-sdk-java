@@ -39,7 +39,7 @@ import ${serviceBaseExceptionFqcn};
 
 
 import ${metadata.packageName}.model.*;
-import ${metadata.packageName}.model.transform.*;
+import ${transformPackage}.*;
 
 <#assign documentation = (metadata.documentation)!""/>
 

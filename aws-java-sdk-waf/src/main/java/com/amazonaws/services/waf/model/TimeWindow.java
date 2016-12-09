@@ -32,14 +32,16 @@ public class TimeWindow implements Serializable, Cloneable {
     /**
      * <p>
      * The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     * requests that your AWS resource received. You can specify any time range in the previous three hours.
+     * requests that your AWS resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
      * The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests
-     * that your AWS resource received. You can specify any time range in the previous three hours.
+     * that your AWS resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * </p>
      */
     private java.util.Date endTime;
@@ -47,12 +49,14 @@ public class TimeWindow implements Serializable, Cloneable {
     /**
      * <p>
      * The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     * requests that your AWS resource received. You can specify any time range in the previous three hours.
+     * requests that your AWS resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * </p>
      * 
      * @param startTime
      *        The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of
-     *        the requests that your AWS resource received. You can specify any time range in the previous three hours.
+     *        the requests that your AWS resource received. Specify the date and time in the following format:
+     *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -62,11 +66,13 @@ public class TimeWindow implements Serializable, Cloneable {
     /**
      * <p>
      * The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     * requests that your AWS resource received. You can specify any time range in the previous three hours.
+     * requests that your AWS resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * </p>
      * 
      * @return The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of
-     *         the requests that your AWS resource received. You can specify any time range in the previous three hours.
+     *         the requests that your AWS resource received. Specify the date and time in the following format:
+     *         <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      */
 
     public java.util.Date getStartTime() {
@@ -76,12 +82,14 @@ public class TimeWindow implements Serializable, Cloneable {
     /**
      * <p>
      * The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     * requests that your AWS resource received. You can specify any time range in the previous three hours.
+     * requests that your AWS resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * </p>
      * 
      * @param startTime
      *        The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of
-     *        the requests that your AWS resource received. You can specify any time range in the previous three hours.
+     *        the requests that your AWS resource received. Specify the date and time in the following format:
+     *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,12 +101,14 @@ public class TimeWindow implements Serializable, Cloneable {
     /**
      * <p>
      * The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests
-     * that your AWS resource received. You can specify any time range in the previous three hours.
+     * that your AWS resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * </p>
      * 
      * @param endTime
      *        The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     *        requests that your AWS resource received. You can specify any time range in the previous three hours.
+     *        requests that your AWS resource received. Specify the date and time in the following format:
+     *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -108,11 +118,13 @@ public class TimeWindow implements Serializable, Cloneable {
     /**
      * <p>
      * The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests
-     * that your AWS resource received. You can specify any time range in the previous three hours.
+     * that your AWS resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * </p>
      * 
      * @return The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     *         requests that your AWS resource received. You can specify any time range in the previous three hours.
+     *         requests that your AWS resource received. Specify the date and time in the following format:
+     *         <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      */
 
     public java.util.Date getEndTime() {
@@ -122,12 +134,14 @@ public class TimeWindow implements Serializable, Cloneable {
     /**
      * <p>
      * The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests
-     * that your AWS resource received. You can specify any time range in the previous three hours.
+     * that your AWS resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * </p>
      * 
      * @param endTime
      *        The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     *        requests that your AWS resource received. You can specify any time range in the previous three hours.
+     *        requests that your AWS resource received. Specify the date and time in the following format:
+     *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
